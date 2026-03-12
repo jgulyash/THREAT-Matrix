@@ -63,7 +63,7 @@ The framework is a reference taxonomy. Use it to:
 
 ## Current Status
 
-**v0.1 — Framework in development.**
+**v0.1: Framework in development.**
 
 The core tactical matrix is complete. Actor profiles, detection indicators, and mitigation guidance are included as initial drafts. The framework is functional as a reference taxonomy and will continue to expand based on operational feedback and threat landscape changes.
 
