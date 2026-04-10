@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+
+  <!-- White background -->
+  <rect width="900" height="400" fill="#ffffff" rx="8" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Title bar -->
+  <rect width="900" height="44" fill="#0f172a" rx="8"/>
+  <rect y="36" width="900" height="8" fill="#0f172a"/>
+  <text x="24" y="27" fill="#ffffff" font-size="13" font-weight="700" letter-spacing="1">THREAT MATRIX</text>
+  <text x="182" y="27" fill="#475569" font-size="13" font-weight="400">·</text>
+  <text x="194" y="27" fill="#94a3b8" font-size="13" font-weight="400" letter-spacing="0.5">Target Matrices</text>
+
+  <!-- ── PERSON (top left) ── -->
+  <rect x="16" y="56" width="428" height="155" fill="#ffffff" rx="6" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="16" y="56" width="428" height="5" fill="#3b82f6" rx="6"/>
+  <rect x="16" y="58" width="428" height="3" fill="#3b82f6"/>
+  <text x="28" y="81" fill="#3b82f6" font-size="10" font-weight="700" letter-spacing="1.5">PERSON</text>
+  <text x="28" y="101" fill="#0f172a" font-size="17" font-weight="700">Person</text>
+  <line x1="28" y1="113" x2="432" y2="113" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="28" y="130" fill="#94a3b8" font-size="11">Target: Specific Individual</text>
+  <text x="28" y="148" fill="#475569" font-size="13">Fixated individuals · Assassination · Kidnapping · Stalking</text>
+  <!-- V1 LIVE badge -->
+  <rect x="28" y="160" width="52" height="18" fill="#f0fdf4" rx="3" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="54" y="172" fill="#10b981" font-size="10" font-weight="700" text-anchor="middle">V1 LIVE</text>
+  <!-- 34 tactics badge -->
+  <rect x="88" y="160" width="66" height="18" fill="#eff6ff" rx="3" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="121" y="172" fill="#3b82f6" font-size="10" font-weight="700" text-anchor="middle">34 tactics</text>
+
+  <!-- ── FACILITY (top right) ── -->
+  <rect x="456" y="56" width="428" height="155" fill="#ffffff" rx="6" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="456" y="56" width="428" height="5" fill="#f59e0b" rx="6"/>
+  <rect x="456" y="58" width="428" height="3" fill="#f59e0b"/>
+  <text x="468" y="81" fill="#f59e0b" font-size="10" font-weight="700" letter-spacing="1.5">FACILITY</text>
+  <text x="468" y="101" fill="#0f172a" font-size="17" font-weight="700">Facility</text>
+  <line x1="468" y1="113" x2="872" y2="113" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="468" y="130" fill="#94a3b8" font-size="11">Target: Physical Location</text>
+  <text x="468" y="148" fill="#475569" font-size="13">Active shooter · IED/VBIED · Venue/campus attack</text>
+  <!-- V2 Planned badge -->
+  <rect x="468" y="160" width="72" height="18" fill="#f8fafc" rx="3" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="504" y="172" fill="#64748b" font-size="10" font-weight="600" text-anchor="middle">V2 Planned</text>
+  <!-- 40 tactics badge -->
+  <rect x="548" y="160" width="66" height="18" fill="#fffbeb" rx="3" stroke="#fde68a" stroke-width="1"/>
+  <text x="581" y="172" fill="#f59e0b" font-size="10" font-weight="700" text-anchor="middle">40 tactics</text>
+
+  <!-- ── ORGANIZATION (bottom left) ── -->
+  <rect x="16" y="219" width="428" height="155" fill="#ffffff" rx="6" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="16" y="219" width="428" height="5" fill="#8b5cf6" rx="6"/>
+  <rect x="16" y="221" width="428" height="3" fill="#8b5cf6"/>
+  <text x="28" y="244" fill="#8b5cf6" font-size="10" font-weight="700" letter-spacing="1.5">ORGANIZATION</text>
+  <text x="28" y="264" fill="#0f172a" font-size="17" font-weight="700">Organization</text>
+  <line x1="28" y1="276" x2="432" y2="276" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="28" y="293" fill="#94a3b8" font-size="11">Target: The Enterprise (trusted-access adversary)</text>
+  <text x="28" y="311" fill="#475569" font-size="13">Insider threat · Corporate espionage · Organizational sabotage</text>
+  <!-- V3 Planned badge -->
+  <rect x="28" y="323" width="72" height="18" fill="#f8fafc" rx="3" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="64" y="335" fill="#64748b" font-size="10" font-weight="600" text-anchor="middle">V3 Planned</text>
+  <!-- 42 tactics badge -->
+  <rect x="108" y="323" width="66" height="18" fill="#f5f3ff" rx="3" stroke="#ddd6fe" stroke-width="1"/>
+  <text x="141" y="335" fill="#8b5cf6" font-size="10" font-weight="700" text-anchor="middle">42 tactics</text>
+
+  <!-- ── SYSTEM (bottom right) ── -->
+  <rect x="456" y="219" width="428" height="155" fill="#ffffff" rx="6" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="456" y="219" width="428" height="5" fill="#10b981" rx="6"/>
+  <rect x="456" y="221" width="428" height="3" fill="#10b981"/>
+  <text x="468" y="244" fill="#10b981" font-size="10" font-weight="700" letter-spacing="1.5">SYSTEM</text>
+  <text x="468" y="264" fill="#0f172a" font-size="17" font-weight="700">System</text>
+  <line x1="468" y1="276" x2="872" y2="276" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="468" y="293" fill="#94a3b8" font-size="11">Target: Physical Infrastructure</text>
+  <text x="468" y="311" fill="#475569" font-size="13">Critical infrastructure · ICS/OT · Cyber-physical attacks</text>
+  <!-- V4 Planned badge -->
+  <rect x="468" y="323" width="72" height="18" fill="#f8fafc" rx="3" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="504" y="335" fill="#64748b" font-size="10" font-weight="600" text-anchor="middle">V4 Planned</text>
+  <!-- 38 tactics badge -->
+  <rect x="548" y="323" width="66" height="18" fill="#f0fdf4" rx="3" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="581" y="335" fill="#10b981" font-size="10" font-weight="700" text-anchor="middle">38 tactics</text>
+
+  <!-- Footer -->
+  <text x="450" y="391" fill="#94a3b8" font-size="11" text-anchor="middle" font-style="italic">154 total tactics across four target domains — Person, Facility, Organization, System</text>
+
+</svg>
