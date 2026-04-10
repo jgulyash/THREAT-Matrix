@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THREAT Matrix</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-card: #161b22;
+      --bg-hover: #1c2128;
+      --border: #30363d;
+      --border-active: #388bfd;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --text-dim: #6e7681;
+      --accent: #388bfd;
+      --accent-glow: rgba(56, 139, 253, 0.15);
+      --red: #f85149;
+      --orange: #f0883e;
+      --yellow: #d29922;
+      --green: #3fb950;
+      --purple: #a371f7;
+      --cpn: #58a6ff;
+      --phase1: #3fb950;
+      --phase2: #d29922;
+      --phase3: #f85149;
+      --phase4e: #a371f7;
+      --phase4a: #f0883e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      height: 56px;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-badge {
+      background: linear-gradient(135deg, #1a3a5c, #2d5a8e);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .header-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .header-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: none;
+    }
+    @media (min-width: 600px) { .header-subtitle { display: block; } }
+    .header-meta {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .badge-mit {
+      font-size: 11px;
+      color: var(--green);
+      border: 1px solid var(--green);
+      padding: 2px 6px;
+      border-radius: 4px;
+      opacity: 0.8;
+    }
+    .tactic-count-badge {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* MATRIX NAV */
+    .matrix-nav {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .matrix-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 8px 0;
+    }
+    .matrix-nav-inner::-webkit-scrollbar { display: none; }
+    .matrix-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .matrix-btn:hover {
+      background: var(--bg-hover);
+      color: var(--text);
+    }
+    .matrix-btn.active {
+      background: var(--accent-glow);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .matrix-btn.planned {
+      opacity: 0.5;
+      cursor: default;
+    }
+    .matrix-btn .planned-tag {
+      font-size: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    /* FILTERS */
+    .filters-bar {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 24px;
+    }
+    .filters-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+    .filter-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .filter-group {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all 0.12s ease;
+    }
+    .filter-btn:hover { background: var(--bg-hover); color: var(--text); }
+    .filter-btn.active {
+      background: var(--accent-glow);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .filter-btn.cpn-active {
+      background: rgba(88, 166, 255, 0.12);
+      border-color: var(--cpn);
+      color: var(--cpn);
+    }
+    .filter-divider {
+      width: 1px;
+      height: 20px;
+      background: var(--border);
+      margin: 0 4px;
+    }
+    .filter-results {
+      margin-left: auto;
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    /* MAIN */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    @media (min-width: 900px) {
+      .main { grid-template-columns: 1fr 380px; gap: 24px; }
+    }
+
+    /* KILL CHAIN OVERVIEW */
+    .overview-bar {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      grid-column: 1 / -1;
+    }
+    .overview-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .kill-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .kc-phase {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .kc-pill {
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid;
+    }
+    .kc-pill.p1 { background: rgba(63,185,80,0.1); border-color: var(--phase1); color: var(--phase1); }
+    .kc-pill.p2 { background: rgba(210,153,34,0.1); border-color: var(--phase2); color: var(--phase2); }
+    .kc-pill.p3 { background: rgba(248,81,73,0.1); border-color: var(--phase3); color: var(--phase3); }
+    .kc-pill.p4 { background: rgba(163,113,247,0.1); border-color: var(--phase4e); color: var(--phase4e); }
+    .kc-pill.p4e { background: rgba(163,113,247,0.1); border-color: var(--phase4e); color: var(--phase4e); }
+    .kc-pill.p4a { background: rgba(240,136,62,0.1); border-color: var(--phase4a); color: var(--phase4a); }
+    .kc-arrow { color: var(--text-dim); font-size: 16px; }
+    .kc-note {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    /* FEEDBACK LOOP */
+    .feedback-loop {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .feedback-label {
+      font-size: 11px;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+    .feedback-svg { flex-shrink: 0; }
+
+    /* PHASE SECTIONS */
+    .phase-section {
+      margin-bottom: 16px;
+    }
+    .phase-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 6px 6px 0 0;
+      border: 1px solid;
+      cursor: pointer;
+      user-select: none;
+    }
+    .phase-header.p1 { background: rgba(63,185,80,0.07); border-color: rgba(63,185,80,0.3); }
+    .phase-header.p2 { background: rgba(210,153,34,0.07); border-color: rgba(210,153,34,0.3); }
+    .phase-header.p3 { background: rgba(248,81,73,0.07); border-color: rgba(248,81,73,0.3); }
+    .phase-header.p4 { background: rgba(163,113,247,0.07); border-color: rgba(163,113,247,0.3); }
+    .phase-number {
+      font-size: 11px;
+      font-weight: 700;
+      opacity: 0.6;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .phase-name {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .p1 .phase-name { color: var(--phase1); }
+    .p2 .phase-name { color: var(--phase2); }
+    .p3 .phase-name { color: var(--phase3); }
+    .p4 .phase-name { color: var(--phase4e); }
+    .phase-tactic-count {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+    .phase-chevron {
+      font-size: 12px;
+      color: var(--text-dim);
+      transition: transform 0.2s;
+    }
+    .phase-chevron.open { transform: rotate(180deg); }
+
+    /* PHASE 4 TRACKS */
+    .track-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-left: 1px solid;
+      border-right: 1px solid;
+      background: var(--bg);
+    }
+    .track-header.evasion { border-color: rgba(163,113,247,0.25); }
+    .track-header.attribution { border-color: rgba(240,136,62,0.25); }
+    .track-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .track-dot.evasion { background: var(--phase4e); }
+    .track-dot.attribution { background: var(--phase4a); }
+    .track-name {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .track-name.evasion { color: var(--phase4e); }
+    .track-name.attribution { color: var(--phase4a); }
+    .track-desc {
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    /* TACTIC CARDS */
+    .tactics-list {
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 6px 6px;
+      overflow: hidden;
+    }
+    .tactic-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+    .tactic-card:last-child { border-bottom: none; }
+    .tactic-card:hover { background: var(--bg-hover); }
+    .tactic-card.selected { background: var(--accent-glow); border-left: 2px solid var(--accent); padding-left: 12px; }
+    .tactic-id {
+      font-size: 11px;
+      font-family: 'SFMono-Regular', Consolas, monospace;
+      color: var(--text-dim);
+      flex-shrink: 0;
+      padding-top: 2px;
+      min-width: 58px;
+    }
+    .tactic-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      flex: 1;
+    }
+    .tactic-badges {
+      display: flex;
+      gap: 4px;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .badge-cpn {
+      font-size: 10px;
+      font-weight: 600;
+      background: rgba(88, 166, 255, 0.12);
+      border: 1px solid rgba(88, 166, 255, 0.4);
+      color: var(--cpn);
+      padding: 1px 6px;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+    }
+
+    /* PLANNED MATRIX VIEW */
+    .planned-view {
+      text-align: center;
+      padding: 60px 24px;
+      color: var(--text-dim);
+    }
+    .planned-icon { font-size: 40px; margin-bottom: 16px; }
+    .planned-title { font-size: 18px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
+    .planned-text { font-size: 14px; max-width: 400px; margin: 0 auto; line-height: 1.6; }
+
+    /* DETAIL PANEL */
+    .detail-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      position: sticky;
+      top: 120px;
+    }
+    .detail-empty {
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--text-dim);
+    }
+    .detail-empty-icon { font-size: 32px; margin-bottom: 12px; }
+    .detail-empty-text { font-size: 13px; }
+    .detail-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .detail-id {
+      font-family: 'SFMono-Regular', Consolas, monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-bottom: 4px;
+    }
+    .detail-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .detail-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .detail-tag {
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      border: 1px solid;
+    }
+    .detail-tag.phase { background: rgba(56,139,253,0.1); border-color: rgba(56,139,253,0.3); color: var(--accent); }
+    .detail-tag.cpn-tag { background: rgba(88,166,255,0.12); border-color: rgba(88,166,255,0.4); color: var(--cpn); }
+    .detail-tag.track-evasion { background: rgba(163,113,247,0.1); border-color: rgba(163,113,247,0.3); color: var(--phase4e); }
+    .detail-tag.track-attribution { background: rgba(240,136,62,0.1); border-color: rgba(240,136,62,0.3); color: var(--phase4a); }
+    .detail-body { padding: 16px 20px; }
+    .detail-section { margin-bottom: 16px; }
+    .detail-section:last-child { margin-bottom: 0; }
+    .detail-section-title {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .detail-notes {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .detail-cpn-notes {
+      font-size: 12px;
+      color: #93c5fd;
+      line-height: 1.6;
+      background: rgba(88,166,255,0.06);
+      border-left: 2px solid var(--cpn);
+      padding: 8px 10px;
+      border-radius: 0 4px 4px 0;
+    }
+    .detail-families {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .family-tag {
+      font-size: 11px;
+      font-family: 'SFMono-Regular', Consolas, monospace;
+      background: rgba(163,113,247,0.1);
+      border: 1px solid rgba(163,113,247,0.25);
+      color: var(--purple);
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .detail-stub-notice {
+      font-size: 12px;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    /* ACTOR PROFILES PANEL */
+    .actor-profiles {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 16px;
+    }
+    .actor-profiles-title {
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .actor-profile-card {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .actor-profile-card:last-child { border-bottom: none; }
+    .actor-profile-card.selected { background: var(--accent-glow); }
+    .ap-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .ap-id {
+      font-size: 10px;
+      font-family: 'SFMono-Regular', Consolas, monospace;
+      color: var(--text-dim);
+    }
+    .ap-name { font-size: 13px; font-weight: 600; color: var(--text); }
+    .ap-compression {
+      margin-left: auto;
+      font-size: 10px;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+    .ap-compression.high { background: rgba(248,81,73,0.12); border: 1px solid rgba(248,81,73,0.3); color: var(--red); }
+    .ap-compression.medium { background: rgba(210,153,34,0.12); border: 1px solid rgba(210,153,34,0.3); color: var(--yellow); }
+    .ap-compression.low { background: rgba(63,185,80,0.12); border: 1px solid rgba(63,185,80,0.3); color: var(--green); }
+    .ap-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+    .ap-types { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
+    .ap-type {
+      font-size: 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    /* ACTOR PROFILES VIEW */
+    .ap-view {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 900px) {
+      .ap-view { grid-template-columns: 300px 1fr; }
+    }
+    .ap-list-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .ap-category-group { }
+    .ap-category-header {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      padding: 8px 4px 4px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .ap-category-count {
+      font-size: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      padding: 1px 5px;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+    .ap-list-card {
+      padding: 10px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.12s;
+    }
+    .ap-list-card:hover { background: var(--bg-hover); border-color: var(--text-dim); }
+    .ap-list-card.selected { background: var(--accent-glow); border-color: var(--accent); }
+    .ap-list-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 3px; }
+    .ap-list-id { font-size: 10px; font-family: monospace; color: var(--text-dim); }
+    .ap-list-name { font-size: 13px; font-weight: 500; color: var(--text); flex: 1; }
+    .ap-list-awareness {
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 600;
+      border: 1px solid;
+    }
+    .ap-list-awareness.witting { background: rgba(63,185,80,0.1); border-color: rgba(63,185,80,0.3); color: var(--green); }
+    .ap-list-awareness.unwitting { background: rgba(248,81,73,0.1); border-color: rgba(248,81,73,0.3); color: var(--red); }
+    .ap-list-awareness.coerced { background: rgba(210,153,34,0.1); border-color: rgba(210,153,34,0.3); color: var(--yellow); }
+    .ap-list-awareness.negligent { background: rgba(163,113,247,0.1); border-color: rgba(163,113,247,0.3); color: var(--purple); }
+
+    .ap-detail-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      position: sticky;
+      top: 120px;
+      max-height: calc(100vh - 160px);
+      overflow-y: auto;
+    }
+    .ap-detail-empty {
+      padding: 60px 24px;
+      text-align: center;
+      color: var(--text-dim);
+    }
+    .ap-detail-empty-icon { font-size: 32px; margin-bottom: 12px; }
+    .ap-detail-header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .ap-detail-id { font-family: monospace; font-size: 11px; color: var(--text-dim); margin-bottom: 4px; }
+    .ap-detail-name { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .ap-detail-category { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+    .ap-detail-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .ap-chip {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .ap-chip-label { font-weight: 600; opacity: 0.7; }
+    .ap-chip.awareness-witting { background: rgba(63,185,80,0.1); border-color: rgba(63,185,80,0.3); color: var(--green); }
+    .ap-chip.awareness-unwitting { background: rgba(248,81,73,0.1); border-color: rgba(248,81,73,0.3); color: var(--red); }
+    .ap-chip.awareness-coerced { background: rgba(210,153,34,0.1); border-color: rgba(210,153,34,0.3); color: var(--yellow); }
+    .ap-chip.awareness-negligent { background: rgba(163,113,247,0.1); border-color: rgba(163,113,247,0.3); color: var(--purple); }
+    .ap-chip.compression-high, .ap-chip.compression-very_high { background: rgba(248,81,73,0.1); border-color: rgba(248,81,73,0.3); color: var(--red); }
+    .ap-chip.compression-medium { background: rgba(210,153,34,0.1); border-color: rgba(210,153,34,0.3); color: var(--yellow); }
+    .ap-chip.compression-low { background: rgba(63,185,80,0.1); border-color: rgba(63,185,80,0.3); color: var(--green); }
+    .ap-chip.compression-na { background: var(--bg-card); border-color: var(--border); color: var(--text-dim); }
+    .ap-chip.direction { background: rgba(56,139,253,0.1); border-color: rgba(56,139,253,0.3); color: var(--accent); }
+    .ap-chip.access { background: rgba(88,166,255,0.08); border-color: rgba(88,166,255,0.2); color: var(--text-muted); }
+    .ap-detail-body { padding: 20px 24px; }
+    .ap-detail-section { margin-bottom: 20px; }
+    .ap-detail-section:last-child { margin-bottom: 0; }
+    .ap-detail-section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .ap-detail-desc { font-size: 13px; color: var(--text); line-height: 1.65; }
+    .ap-markers { display: flex; flex-direction: column; gap: 6px; }
+    .ap-marker {
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 6px 10px;
+      background: var(--bg);
+      border-left: 2px solid var(--border);
+      border-radius: 0 4px 4px 0;
+      line-height: 1.5;
+    }
+    .ap-vectors { display: flex; flex-wrap: wrap; gap: 4px; }
+    .ap-vector {
+      font-size: 11px;
+      font-family: monospace;
+      background: rgba(88,166,255,0.08);
+      border: 1px solid rgba(88,166,255,0.2);
+      color: var(--cpn);
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .ap-vector.ap-vector-ai_initiated_physical {
+      background: rgba(246,173,85,0.1);
+      border-color: rgba(246,173,85,0.35);
+      color: #f6ad55;
+    }
+    .ap-ai-risks { display: flex; flex-wrap: wrap; gap: 4px; }
+    .ap-ai-risk {
+      font-size: 11px;
+      font-family: 'SFMono-Regular', Consolas, monospace;
+      background: rgba(246,173,85,0.08);
+      border: 1px solid rgba(246,173,85,0.25);
+      color: #f6ad55;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .ap-matrices { display: flex; flex-wrap: wrap; gap: 4px; }
+    .ap-matrix-tag {
+      font-size: 11px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .ap-v2-bridge {
+      background: rgba(163,113,247,0.06);
+      border: 1px solid rgba(163,113,247,0.2);
+      border-radius: 6px;
+      padding: 12px 14px;
+    }
+    .ap-v2-bridge-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--purple);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ap-v2-bridge-text { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+
+    /* LOADING */
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px;
+      color: var(--text-muted);
+      font-size: 14px;
+      gap: 10px;
+    }
+    .spinner {
+      width: 18px; height: 18px;
+      border: 2px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .detail-panel { position: static; margin-top: 16px; }
+      .actor-profiles { margin-top: 0; }
+    }
+    @media (max-width: 600px) {
+      .main { padding: 12px; }
+      .filters-bar { padding: 8px 12px; }
+      .matrix-nav { padding: 0 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-logo">
+      <span class="logo-badge">THREAT</span>
+      <span class="header-title">THREAT Matrix</span>
+    </div>
+    <span class="header-subtitle">Physical Adversary TTP Taxonomy</span>
+    <div class="header-meta">
+      <span class="tactic-count-badge" id="tactic-count-label"></span>
+      <span class="badge-mit">MIT</span>
+    </div>
+  </div>
+</header>
+
+<nav class="matrix-nav">
+  <div class="matrix-nav-inner">
+    <button class="matrix-btn active" data-matrix="person" onclick="selectMatrix('person')">
+      Person
+    </button>
+    <button class="matrix-btn planned" data-matrix="facility" onclick="selectMatrix('facility')">
+      Facility <span class="planned-tag">Planned V2</span>
+    </button>
+    <button class="matrix-btn planned" data-matrix="organization" onclick="selectMatrix('organization')">
+      Organization <span class="planned-tag">Planned V3</span>
+    </button>
+    <button class="matrix-btn planned" data-matrix="system" onclick="selectMatrix('system')">
+      System <span class="planned-tag">Planned V4</span>
+    </button>
+    <button class="matrix-btn" data-matrix="actor_profiles" onclick="selectMatrix('actor_profiles')" style="margin-left:auto">
+      Actor Profiles <span style="font-size:10px;background:rgba(163,113,247,0.15);border:1px solid rgba(163,113,247,0.4);color:#a371f7;padding:1px 5px;border-radius:3px;margin-left:4px">21</span>
+    </button>
+  </div>
+</nav>
+
+<div class="filters-bar" id="filters-bar" style="display:none">
+  <div class="filters-inner">
+    <span class="filter-label">Phase:</span>
+    <div class="filter-group" id="phase-filters">
+      <button class="filter-btn active" data-phase="all" onclick="setPhaseFilter('all')">All</button>
+      <button class="filter-btn" data-phase="1" onclick="setPhaseFilter(1)">1 — Target Development</button>
+      <button class="filter-btn" data-phase="2" onclick="setPhaseFilter(2)">2 — Mobilization</button>
+      <button class="filter-btn" data-phase="3" onclick="setPhaseFilter(3)">3 — Execution</button>
+      <button class="filter-btn" data-phase="4" onclick="setPhaseFilter(4)">4 — Aftermath</button>
+    </div>
+    <div class="filter-divider"></div>
+    <button class="filter-btn" id="cpn-filter-btn" onclick="toggleCpnFilter()">⚡ CPN Only</button>
+    <span class="filter-results" id="filter-results"></span>
+  </div>
+</div>
+
+<div class="main" id="main-content">
+  <div class="loading" id="loading-state">
+    <div class="spinner"></div>
+    Loading framework data…
+  </div>
+</div>
+
+<script>
+let frameworkData = null;
+let selectedTacticId = null;
+let selectedProfileId = null;
+let activeMatrix = 'person';
+let phaseFilter = 'all';
+let cpnFilter = false;
+
+// ─── INIT ─────────────────────────────────────────────────────────
+fetch('data/framework.json', { cache: 'no-store' })
+  .then(r => r.json())
+  .then(data => {
+    frameworkData = data;
+    document.getElementById('loading-state').remove();
+    const filtersBar = document.getElementById('filters-bar');
+    if (filtersBar) filtersBar.style.display = activeMatrix === 'person' ? '' : 'none';
+    if (activeMatrix === 'actor_profiles') {
+      renderActorProfilesView();
+    } else {
+      renderMatrix(activeMatrix);
+    }
+  })
+  .catch(err => {
+    document.getElementById('loading-state').innerHTML = '⚠️ Failed to load framework.json. Run from a web server.';
+  });
+
+// ─── MATRIX SELECTION ─────────────────────────────────────────────
+function selectMatrix(matrix) {
+  activeMatrix = matrix;
+  document.querySelectorAll('.matrix-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.matrix === matrix);
+  });
+  selectedTacticId = null;
+  selectedProfileId = null;
+  phaseFilter = 'all';
+  cpnFilter = false;
+  const filtersBar = document.getElementById('filters-bar');
+  if (filtersBar) filtersBar.style.display = matrix === 'person' ? '' : 'none';
+  if (matrix === 'actor_profiles') {
+    renderActorProfilesView();
+  } else {
+    renderMatrix(matrix);
+  }
+}
+
+// ─── FILTERS ──────────────────────────────────────────────────────
+function setPhaseFilter(phase) {
+  phaseFilter = phase;
+  document.querySelectorAll('#phase-filters .filter-btn').forEach(b => {
+    b.classList.toggle('active', String(b.dataset.phase) === String(phase));
+  });
+  renderMatrix(activeMatrix);
+}
+
+function toggleCpnFilter() {
+  cpnFilter = !cpnFilter;
+  const btn = document.getElementById('cpn-filter-btn');
+  btn.classList.toggle('cpn-active', cpnFilter);
+  renderMatrix(activeMatrix);
+}
+
+// ─── RENDER ───────────────────────────────────────────────────────
+function renderMatrix(matrix) {
+  const main = document.getElementById('main-content');
+  if (!frameworkData) return;
+
+  if (matrix !== 'person') {
+    const labels = {
+      facility: { name: 'Facility', v: 'V2', desc: '40 tactics covering physical location attacks — active shooter, IED/VBIED, venue and campus threats.' },
+      organization: { name: 'Organization', v: 'V3', desc: '42 tactics covering trusted-access adversaries — insider threat, corporate espionage, and organizational sabotage.' },
+      system: { name: 'System', v: 'V4', desc: '38 tactics covering physical infrastructure attacks — critical systems, ICS/OT, and cyber-physical sabotage.' },
+    };
+    const m = labels[matrix];
+    main.innerHTML = `
+      <div style="grid-column:1/-1">
+        <div class="planned-view">
+          <div class="planned-icon">🔒</div>
+          <div class="planned-title">${m.name}</div>
+          <div class="planned-text">${m.desc}<br><br>This matrix is planned for ${m.v}. The framework architecture is complete — content population begins after Person V1 ships.</div>
+        </div>
+      </div>`;
+    document.getElementById('tactic-count-label').textContent = '';
+    return;
+  }
+
+  const tactics = frameworkData.matrices.person.tactics;
+  const actorProfiles = frameworkData.actors ? frameworkData.actors : frameworkData.actor_profiles;
+
+  // Apply filters
+  let filtered = tactics;
+  if (phaseFilter !== 'all') filtered = filtered.filter(t => t.phase === phaseFilter);
+  if (cpnFilter) filtered = filtered.filter(t => t.cpn);
+
+  document.getElementById('tactic-count-label').textContent = `${filtered.length} / ${tactics.length} tactics`;
+  document.getElementById('filter-results').textContent = filtered.length === tactics.length ? '' : `${filtered.length} tactics`;
+
+  const phases = [
+    { num: 1, name: 'Target Development', cls: 'p1', tactics: filtered.filter(t => t.phase === 1) },
+    { num: 2, name: 'Mobilization', cls: 'p2', tactics: filtered.filter(t => t.phase === 2) },
+    { num: 3, name: 'Execution', cls: 'p3', tactics: filtered.filter(t => t.phase === 3) },
+    { num: 4, name: 'Aftermath', cls: 'p4', tactics: filtered.filter(t => t.phase === 4) },
+  ];
+
+  let html = `
+    <div style="grid-column:1/-1">
+      ${renderOverviewBar()}
+    </div>
+    <div id="tactics-column">`;
+
+  for (const phase of phases) {
+    if (phaseFilter !== 'all' && phase.num !== phaseFilter) continue;
+    html += renderPhaseSection(phase);
+  }
+
+  html += `</div>
+    <div id="detail-column">
+      ${renderDetailPanel()}
+    </div>`;
+
+  main.innerHTML = html;
+}
+
+function renderOverviewBar() {
+  return `
+    <div class="overview-bar">
+      <div class="overview-title">THREAT Kill Chain — Descriptive Model</div>
+      <div class="kill-chain">
+        <div class="kc-phase"><span class="kc-pill p1">Phase 1 — Target Development</span></div>
+        <span class="kc-arrow">→</span>
+        <div class="kc-phase"><span class="kc-pill p2">Phase 2 — Mobilization</span></div>
+        <span class="kc-arrow">→</span>
+        <div class="kc-phase"><span class="kc-pill p3">Phase 3 — Execution</span></div>
+        <span class="kc-arrow">→</span>
+        <div class="kc-phase"><span class="kc-pill p4">Phase 4 — Aftermath: Flight and Claim</span></div>
+      </div>
+      <div class="feedback-loop">
+        <svg class="feedback-svg" width="120" height="22" viewBox="0 0 120 22" fill="none">
+          <path d="M8 11 L112 11" stroke="#30363d" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <path d="M8 11 L16 6 M8 11 L16 16" stroke="#a371f7" stroke-width="1.5"/>
+          <path d="M112 11 L104 6 M112 11 L104 16" stroke="#f0883e" stroke-width="1.5"/>
+          <text x="60" y="8" text-anchor="middle" fill="#6e7681" font-size="8" font-family="sans-serif">Operational Feedback Loop</text>
+        </svg>
+        <span class="feedback-label">After-Action Assessment (TA0406) → Target Development (TA0101) for persistent actors</span>
+      </div>
+      <p class="kc-note">The kill chain is descriptive, not prescriptive. The 4-phase structure describes behavioral patterns commonly observed in adversary operations. Adversaries can compress, skip, or reorder phases based on opportunity, capability, and judgment. The framework makes patterns visible — it does not assert they are inevitable or sequential.</p>
+    </div>`;
+}
+
+function renderPhaseSection(phase) {
+  if (phase.num !== 4) {
+    const tacticRows = phase.tactics.map(t => renderTacticCard(t)).join('');
+    const empty = phase.tactics.length === 0 ? '<div style="padding:12px 14px;color:var(--text-dim);font-size:13px">No tactics match current filters.</div>' : '';
+    return `
+      <div class="phase-section">
+        <div class="phase-header ${phase.cls}">
+          <span class="phase-number">Phase ${phase.num}</span>
+          <span class="phase-name">${phase.name}</span>
+          <span class="phase-tactic-count">${phase.tactics.length} tactics</span>
+        </div>
+        <div class="tactics-list">${tacticRows}${empty}</div>
+      </div>`;
+  } else {
+    // Phase 4 bifurcation
+    const evasion = phase.tactics.filter(t => t.phase_4_track === 'evasion');
+    const attribution = phase.tactics.filter(t => t.phase_4_track === 'attribution');
+    return `
+      <div class="phase-section">
+        <div class="phase-header p4">
+          <span class="phase-number">Phase 4</span>
+          <span class="phase-name">Aftermath</span>
+          <span class="phase-tactic-count">${phase.tactics.length} tactics</span>
+        </div>
+        <div class="tactics-list">
+          ${phase.tactics.length === 0
+            ? '<div style="padding:12px 14px;color:var(--text-dim);font-size:13px">No tactics match current filters.</div>'
+            : `
+            ${evasion.length > 0 ? `
+              <div class="track-header evasion">
+                <span class="track-dot evasion"></span>
+                <span class="track-name evasion">FLIGHT</span>
+                <span class="track-desc"> — Criminal, state actor, espionage, insider</span>
+              </div>
+              ${evasion.map(t => renderTacticCard(t)).join('')}
+            ` : ''}
+            ${attribution.length > 0 ? `
+              <div class="track-header attribution">
+                <span class="track-dot attribution"></span>
+                <span class="track-name attribution">CLAIM</span>
+                <span class="track-desc"> — Terrorist, extortionist, state-signaling, ideological</span>
+              </div>
+              ${attribution.map(t => renderTacticCard(t)).join('')}
+            ` : ''}
+          `}
+        </div>
+      </div>`;
+  }
+}
+
+function renderTacticCard(t) {
+  const selected = t.id === selectedTacticId ? 'selected' : '';
+  const cpnBadge = t.cpn ? '<span class="badge-cpn">CPN</span>' : '';
+  return `
+    <div class="tactic-card ${selected}" onclick="selectTactic('${t.id}')">
+      <span class="tactic-id">${t.id}</span>
+      <span class="tactic-name">${t.name}</span>
+      <span class="tactic-badges">${cpnBadge}</span>
+    </div>`;
+}
+
+function renderDetailPanel() {
+  if (!selectedTacticId || !frameworkData) {
+    return `
+      <div class="detail-panel">
+        <div class="detail-empty">
+          <div class="detail-empty-icon">↖</div>
+          <div class="detail-empty-text">Select a tactic to view details</div>
+        </div>
+      </div>`;
+  }
+  const t = frameworkData.matrices.person.tactics.find(t => t.id === selectedTacticId);
+  if (!t) return '';
+
+  const phaseLabels = {1:'Target Development',2:'Mobilization',3:'Execution',4:'Aftermath'};
+  const trackTag = t.phase_4_track === 'evasion'
+    ? '<span class="detail-tag track-evasion">Evasion-Seeking</span>'
+    : t.phase_4_track === 'attribution'
+    ? '<span class="detail-tag track-attribution">Attribution-Seeking</span>'
+    : '';
+  const cpnTag = t.cpn ? '<span class="detail-tag cpn-tag">⚡ Cyber-Physical Nexus</span>' : '';
+  const cpnSection = t.cpn ? `
+    <div class="detail-section">
+      <div class="detail-section-title">Cyber-Physical Nexus</div>
+      <div class="detail-cpn-notes">${t.cpn_notes}</div>
+    </div>` : '';
+
+  const families = t.tactic_families.map(f => `<span class="family-tag">${f}</span>`).join('');
+
+  return `
+    <div class="detail-panel">
+      <div class="detail-header">
+        <div class="detail-id">${t.id} · Person · Phase ${t.phase}</div>
+        <div class="detail-name">${t.name}</div>
+        <div class="detail-meta">
+          <span class="detail-tag phase">Phase ${t.phase} — ${phaseLabels[t.phase]}</span>
+          ${cpnTag}${trackTag}
+        </div>
+      </div>
+      <div class="detail-body">
+        <div class="detail-section">
+          <div class="detail-section-title">Description</div>
+          <div class="detail-notes">${t.notes}</div>
+        </div>
+        ${cpnSection}
+        <div class="detail-section">
+          <div class="detail-section-title">Tactic Families</div>
+          <div class="detail-families">${families}</div>
+        </div>
+        <div class="detail-section">
+          <div class="detail-section-title">Techniques</div>
+          <div class="detail-stub-notice">Technique schema defined. Content populates in V2 alongside the Detection &amp; Response Guide.</div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderActorProfiles(profiles) {
+  if (!profiles) return '';
+  const cards = profiles.map(ap => `
+    <div class="actor-profile-card">
+      <div class="ap-header">
+        <span class="ap-id">${ap.id}</span>
+        <span class="ap-name">${ap.name}</span>
+        <span class="ap-compression ${ap.phase_compression_risk}">Phase compression: ${ap.phase_compression_risk}</span>
+      </div>
+      <div class="ap-desc">${ap.description}</div>
+      <div class="ap-types">${ap.actor_types.map(t => `<span class="ap-type">${t}</span>`).join('')}</div>
+    </div>`).join('');
+
+  return `
+    <div class="actor-profiles">
+      <div class="actor-profiles-title">Actor Profiles</div>
+      ${cards}
+    </div>`;
+}
+
+// ─── ACTOR PROFILES VIEW ──────────────────────────────────────
+function renderActorProfilesView() {
+  const main = document.getElementById('main-content');
+  if (!frameworkData) return;
+
+  const profiles = frameworkData.actor_profiles;
+  const categories = [
+    { key: 'individual_personal',    label: 'Lone Actor' },
+    { key: 'insider',                label: 'Insider' },
+    { key: 'criminal',               label: 'Criminal' },
+    { key: 'commercial_intelligence',label: 'Commercial' },
+    { key: 'ideological',            label: 'Ideological' },
+    { key: 'state_intelligence',     label: 'Nation State' },
+  ];
+
+  const listHTML = categories.map(cat => {
+    const catProfiles = profiles.filter(p => p.category === cat.key);
+    if (!catProfiles.length) return '';
+    const cards = catProfiles.map(p => {
+      const sel = p.id === selectedProfileId ? 'selected' : '';
+      const aw = p.awareness === 'n/a' ? 'negligent' : p.awareness;
+      return `
+        <div class="ap-list-card ${sel}" onclick="selectProfile('${p.id}')">
+          <div class="ap-list-card-header">
+            <span class="ap-list-id">${p.id}</span>
+            <span class="ap-list-name">${p.name}</span>
+            <span class="ap-list-awareness ${aw}">${p.awareness}</span>
+          </div>
+        </div>`;
+    }).join('');
+    return `
+      <div class="ap-category-group">
+        <div class="ap-category-header">
+          ${cat.label}
+          <span class="ap-category-count">${catProfiles.length}</span>
+        </div>
+        ${cards}
+      </div>`;
+  }).join('');
+
+  main.innerHTML = `
+    <div class="ap-view">
+      <div class="ap-list-panel">${listHTML}</div>
+      <div>${renderProfileDetail()}</div>
+    </div>`;
+}
+
+function renderProfileDetail() {
+  if (!selectedProfileId || !frameworkData) {
+    return `
+      <div class="ap-detail-panel">
+        <div class="ap-detail-empty">
+          <div class="ap-detail-empty-icon">←</div>
+          <div style="font-size:13px">Select a profile to view details</div>
+        </div>
+      </div>`;
+  }
+
+  const p = frameworkData.actor_profiles.find(x => x.id === selectedProfileId);
+  if (!p) return '';
+
+  const compressionCls = p.phase_compression_risk === 'n/a' ? 'na' : p.phase_compression_risk;
+  const compressionLabel = { high: 'High', very_high: 'Very High', medium: 'Medium', low: 'Low', 'n/a': 'N/A' }[p.phase_compression_risk] || p.phase_compression_risk;
+
+  const dirLabel = {
+    self_directed: 'Self-directed',
+    state_directed: 'State-directed',
+    criminal_directed: 'Criminal-directed',
+    ideological_directed: 'Ideologically-directed',
+    opportunity_based: 'Opportunity-based',
+  }[p.direction] || p.direction;
+
+  const accessLabel = {
+    external: 'External',
+    insider: 'Insider',
+    former_insider: 'Former insider',
+    contractor_vendor: 'Contractor / Vendor',
+  }[p.access_relationship] || p.access_relationship;
+
+  const markers = p.behavioral_markers.map(m =>
+    `<div class="ap-marker">${m}</div>`).join('');
+
+  const vectorLabels = {
+    'physical_primary': 'Physical',
+    'cyber_enabled_physical': 'Cyber-Enabled Physical',
+    'cyber_initiated_physical': 'Cyber-Initiated Physical',
+    'ai_initiated_physical': 'AI-Initiated Physical',
+  };
+  const vectors = p.attack_vectors.map(v =>
+    `<span class="ap-vector ap-vector-${v}">${vectorLabels[v] || v}</span>`).join('');
+
+  const aiRiskLabels = {
+    'accelerated_target_research': 'Accelerated Target Research',
+    'synthetic_identity': 'Synthetic Identity',
+    'deepfake_manipulation': 'Deepfake Manipulation',
+    'automated_surveillance': 'Automated Surveillance',
+    'autonomous_targeting': 'Autonomous Targeting',
+  };
+  const aiRisks = p.ai_enabled_risks && p.ai_enabled_risks.length > 0
+    ? p.ai_enabled_risks.map(r => `<span class="ap-ai-risk">${aiRiskLabels[r] || r}</span>`).join('')
+    : '';
+
+  const matrices = p.primary_matrices.map(m =>
+    `<span class="ap-matrix-tag">${m.charAt(0).toUpperCase() + m.slice(1)}</span>`).join('');
+
+  return `
+    <div class="ap-detail-panel">
+      <div class="ap-detail-header">
+        <div class="ap-detail-id">${p.id}</div>
+        <div class="ap-detail-name">${p.name}</div>
+        <div class="ap-detail-category">${p.category_label}</div>
+        <div class="ap-detail-chips">
+          <span class="ap-chip awareness-${p.awareness}">
+            <span class="ap-chip-label">Awareness</span> ${p.awareness}
+          </span>
+          <span class="ap-chip direction">
+            <span class="ap-chip-label">Direction</span> ${dirLabel}
+          </span>
+          <span class="ap-chip access">
+            <span class="ap-chip-label">Access</span> ${accessLabel}
+          </span>
+          <span class="ap-chip compression-${compressionCls}">
+            <span class="ap-chip-label">Phase compression</span> ${compressionLabel}
+          </span>
+        </div>
+      </div>
+      <div class="ap-detail-body">
+        <div class="ap-detail-section">
+          <div class="ap-detail-section-title">Description</div>
+          <div class="ap-detail-desc">${p.description}</div>
+        </div>
+        <div class="ap-detail-section">
+          <div class="ap-detail-section-title">Behavioral Markers</div>
+          <div class="ap-markers">${markers}</div>
+        </div>
+        <div class="ap-detail-section">
+          <div class="ap-detail-section-title">Attack Vectors</div>
+          <div class="ap-vectors">${vectors}</div>
+        </div>
+        <div class="ap-detail-section">
+          <div class="ap-detail-section-title">Primary Matrices</div>
+          <div class="ap-matrices">${matrices}</div>
+        </div>
+        ${aiRisks ? `
+        <div class="ap-detail-section">
+          <div class="ap-detail-section-title">AI Risk Factors</div>
+          <div class="ap-ai-risks">${aiRisks}</div>
+        </div>` : ''}
+        <div class="ap-detail-section">
+          <div class="ap-v2-bridge">
+            <div class="ap-v2-bridge-title">⟳ V2 — Tactic Associations</div>
+            <div class="ap-v2-bridge-text">In V2, each actor profile will link to the specific tactics they are most likely to execute across all matrices — enabling two-way navigation: select a tactic to see which actors use it, or select an actor to see their likely tactic sequence. This also pre-loads the Operations/scenario composer with the actor's behavioral pattern.</div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function selectProfile(id) {
+  selectedProfileId = selectedProfileId === id ? null : id;
+  renderActorProfilesView();
+}
+
+function selectTactic(id) {
+  selectedTacticId = selectedTacticId === id ? null : id;
+  renderMatrix(activeMatrix);
+  // Scroll detail panel into view on mobile
+  if (window.innerWidth < 900) {
+    const detail = document.getElementById('detail-column');
+    if (detail) detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+</script>
+</body>
+</html>
