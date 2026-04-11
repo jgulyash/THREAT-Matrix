@@ -620,14 +620,14 @@ function App(){
     });
     const abc={};
     ap.forEach(a=>{if(!abc[a.category])abc[a.category]=[];abc[a.category].push(a);});
-    return{pt,ap,tacticMap,actorMap,tbp,abc};
+    const getActorTactics=id=>pt.filter(t=>t.actor_associations&&t.actor_associations.some(a=>a.actor_id===id));
+    return{pt,ap,tacticMap,actorMap,tbp,abc,getActorTactics};
   },[data]);
 
   if(loading)return<div className="loading-state">Loading THREAT Matrix…</div>;
   if(error)return<div className="error-state">{error}</div>;
 
-  const{pt,ap,tacticMap,actorMap,tbp,abc}=derived;
-  const getActorTactics=React.useCallback(id=>pt.filter(t=>t.actor_associations&&t.actor_associations.some(a=>a.actor_id===id)),[pt]);
+  const{pt,ap,tacticMap,actorMap,tbp,abc,getActorTactics}=derived;
   const isActors=route.view==='actors'||route.view==='actorDetail';
   const sv={facility:'V2',organization:'V3',system:'V4'};
 
