@@ -3,1307 +3,650 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>THREAT Matrix</title>
+  <title>THREAT Matrix — Human Threat Intelligence Framework</title>
+  <meta name="description" content="A community-driven open-source taxonomy covering how threat actors plan and execute adversarial action against people, facilities, organizations, and critical infrastructure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0d1117;
-      --bg-card: #161b22;
-      --bg-hover: #1c2128;
-      --border: #30363d;
-      --border-active: #388bfd;
-      --text: #e6edf3;
-      --text-muted: #8b949e;
-      --text-dim: #6e7681;
-      --accent: #388bfd;
-      --accent-glow: rgba(56, 139, 253, 0.15);
-      --red: #f85149;
-      --orange: #f0883e;
-      --yellow: #d29922;
-      --green: #3fb950;
-      --purple: #a371f7;
-      --cpn: #58a6ff;
-      --phase1: #3fb950;
-      --phase2: #d29922;
-      --phase3: #f85149;
-      --phase4e: #a371f7;
-      --phase4a: #f0883e;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    /* HEADER */
-    header {
-      background: var(--bg-card);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      height: 56px;
-    }
-    .header-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logo-badge {
-      background: linear-gradient(135deg, #1a3a5c, #2d5a8e);
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      padding: 3px 8px;
-      border-radius: 4px;
-    }
-    .header-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--text);
-    }
-    .header-subtitle {
-      font-size: 12px;
-      color: var(--text-muted);
-      display: none;
-    }
-    @media (min-width: 600px) { .header-subtitle { display: block; } }
-    .header-meta {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .badge-mit {
-      font-size: 11px;
-      color: var(--green);
-      border: 1px solid var(--green);
-      padding: 2px 6px;
-      border-radius: 4px;
-      opacity: 0.8;
-    }
-    .tactic-count-badge {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    /* MATRIX NAV */
-    .matrix-nav {
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-    }
-    .matrix-nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      gap: 4px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      padding: 8px 0;
-    }
-    .matrix-nav-inner::-webkit-scrollbar { display: none; }
-    .matrix-btn {
-      background: none;
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 6px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 500;
-      white-space: nowrap;
-      transition: all 0.15s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .matrix-btn:hover {
-      background: var(--bg-hover);
-      color: var(--text);
-    }
-    .matrix-btn.active {
-      background: var(--accent-glow);
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    .matrix-btn.planned {
-      opacity: 0.5;
-      cursor: default;
-    }
-    .matrix-btn .planned-tag {
-      font-size: 10px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      color: var(--text-dim);
-      padding: 1px 5px;
-      border-radius: 3px;
-    }
-
-    /* FILTERS */
-    .filters-bar {
-      background: var(--bg-card);
-      border-bottom: 1px solid var(--border);
-      padding: 8px 24px;
-    }
-    .filters-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-    }
-    .filter-label {
-      font-size: 12px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-    .filter-group {
-      display: flex;
-      gap: 4px;
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      background: none;
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 4px 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 12px;
-      transition: all 0.12s ease;
-    }
-    .filter-btn:hover { background: var(--bg-hover); color: var(--text); }
-    .filter-btn.active {
-      background: var(--accent-glow);
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    .filter-btn.cpn-active {
-      background: rgba(88, 166, 255, 0.12);
-      border-color: var(--cpn);
-      color: var(--cpn);
-    }
-    .filter-divider {
-      width: 1px;
-      height: 20px;
-      background: var(--border);
-      margin: 0 4px;
-    }
-    .filter-results {
-      margin-left: auto;
-      font-size: 12px;
-      color: var(--text-dim);
-    }
-
-    /* MAIN */
-    .main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 24px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0;
-    }
-    @media (min-width: 900px) {
-      .main { grid-template-columns: 1fr 380px; gap: 24px; }
-    }
-
-    /* KILL CHAIN OVERVIEW */
-    .overview-bar {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px 20px;
-      margin-bottom: 20px;
-      grid-column: 1 / -1;
-    }
-    .overview-title {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 12px;
-    }
-    .kill-chain {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-    }
-    .kc-phase {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .kc-pill {
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      border: 1px solid;
-    }
-    .kc-pill.p1 { background: rgba(63,185,80,0.1); border-color: var(--phase1); color: var(--phase1); }
-    .kc-pill.p2 { background: rgba(210,153,34,0.1); border-color: var(--phase2); color: var(--phase2); }
-    .kc-pill.p3 { background: rgba(248,81,73,0.1); border-color: var(--phase3); color: var(--phase3); }
-    .kc-pill.p4 { background: rgba(163,113,247,0.1); border-color: var(--phase4e); color: var(--phase4e); }
-    .kc-pill.p4e { background: rgba(163,113,247,0.1); border-color: var(--phase4e); color: var(--phase4e); }
-    .kc-pill.p4a { background: rgba(240,136,62,0.1); border-color: var(--phase4a); color: var(--phase4a); }
-    .kc-arrow { color: var(--text-dim); font-size: 16px; }
-    .kc-note {
-      font-size: 11px;
-      color: var(--text-dim);
-      margin-top: 10px;
-      font-style: italic;
-    }
-
-    /* FEEDBACK LOOP */
-    .feedback-loop {
-      margin-top: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .feedback-label {
-      font-size: 11px;
-      color: var(--text-dim);
-      font-weight: 500;
-    }
-    .feedback-svg { flex-shrink: 0; }
-
-    /* PHASE SECTIONS */
-    .phase-section {
-      margin-bottom: 16px;
-    }
-    .phase-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 6px 6px 0 0;
-      border: 1px solid;
-      cursor: pointer;
-      user-select: none;
-    }
-    .phase-header.p1 { background: rgba(63,185,80,0.07); border-color: rgba(63,185,80,0.3); }
-    .phase-header.p2 { background: rgba(210,153,34,0.07); border-color: rgba(210,153,34,0.3); }
-    .phase-header.p3 { background: rgba(248,81,73,0.07); border-color: rgba(248,81,73,0.3); }
-    .phase-header.p4 { background: rgba(163,113,247,0.07); border-color: rgba(163,113,247,0.3); }
-    .phase-number {
-      font-size: 11px;
-      font-weight: 700;
-      opacity: 0.6;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .phase-name {
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .p1 .phase-name { color: var(--phase1); }
-    .p2 .phase-name { color: var(--phase2); }
-    .p3 .phase-name { color: var(--phase3); }
-    .p4 .phase-name { color: var(--phase4e); }
-    .phase-tactic-count {
-      margin-left: auto;
-      font-size: 11px;
-      color: var(--text-dim);
-    }
-    .phase-chevron {
-      font-size: 12px;
-      color: var(--text-dim);
-      transition: transform 0.2s;
-    }
-    .phase-chevron.open { transform: rotate(180deg); }
-
-    /* PHASE 4 TRACKS */
-    .track-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-left: 1px solid;
-      border-right: 1px solid;
-      background: var(--bg);
-    }
-    .track-header.evasion { border-color: rgba(163,113,247,0.25); }
-    .track-header.attribution { border-color: rgba(240,136,62,0.25); }
-    .track-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .track-dot.evasion { background: var(--phase4e); }
-    .track-dot.attribution { background: var(--phase4a); }
-    .track-name {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .track-name.evasion { color: var(--phase4e); }
-    .track-name.attribution { color: var(--phase4a); }
-    .track-desc {
-      font-size: 11px;
-      color: var(--text-dim);
-    }
-
-    /* TACTIC CARDS */
-    .tactics-list {
-      border: 1px solid var(--border);
-      border-top: none;
-      border-radius: 0 0 6px 6px;
-      overflow: hidden;
-    }
-    .tactic-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 10px 14px;
-      border-bottom: 1px solid var(--border);
-      cursor: pointer;
-      transition: background 0.1s;
-    }
-    .tactic-card:last-child { border-bottom: none; }
-    .tactic-card:hover { background: var(--bg-hover); }
-    .tactic-card.selected { background: var(--accent-glow); border-left: 2px solid var(--accent); padding-left: 12px; }
-    .tactic-id {
-      font-size: 11px;
-      font-family: 'SFMono-Regular', Consolas, monospace;
-      color: var(--text-dim);
-      flex-shrink: 0;
-      padding-top: 2px;
-      min-width: 58px;
-    }
-    .tactic-name {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text);
-      flex: 1;
-    }
-    .tactic-badges {
-      display: flex;
-      gap: 4px;
-      flex-shrink: 0;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-    .badge-cpn {
-      font-size: 10px;
-      font-weight: 600;
-      background: rgba(88, 166, 255, 0.12);
-      border: 1px solid rgba(88, 166, 255, 0.4);
-      color: var(--cpn);
-      padding: 1px 6px;
-      border-radius: 3px;
-      letter-spacing: 0.04em;
-    }
-
-    /* PLANNED MATRIX VIEW */
-    .planned-view {
-      text-align: center;
-      padding: 60px 24px;
-      color: var(--text-dim);
-    }
-    .planned-icon { font-size: 40px; margin-bottom: 16px; }
-    .planned-title { font-size: 18px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
-    .planned-text { font-size: 14px; max-width: 400px; margin: 0 auto; line-height: 1.6; }
-
-    /* DETAIL PANEL */
-    .detail-panel {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      position: sticky;
-      top: 120px;
-    }
-    .detail-empty {
-      padding: 40px 24px;
-      text-align: center;
-      color: var(--text-dim);
-    }
-    .detail-empty-icon { font-size: 32px; margin-bottom: 12px; }
-    .detail-empty-text { font-size: 13px; }
-    .detail-header {
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
-    }
-    .detail-id {
-      font-family: 'SFMono-Regular', Consolas, monospace;
-      font-size: 11px;
-      color: var(--text-dim);
-      margin-bottom: 4px;
-    }
-    .detail-name {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-    .detail-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .detail-tag {
-      font-size: 11px;
-      padding: 2px 7px;
-      border-radius: 4px;
-      border: 1px solid;
-    }
-    .detail-tag.phase { background: rgba(56,139,253,0.1); border-color: rgba(56,139,253,0.3); color: var(--accent); }
-    .detail-tag.cpn-tag { background: rgba(88,166,255,0.12); border-color: rgba(88,166,255,0.4); color: var(--cpn); }
-    .detail-tag.track-evasion { background: rgba(163,113,247,0.1); border-color: rgba(163,113,247,0.3); color: var(--phase4e); }
-    .detail-tag.track-attribution { background: rgba(240,136,62,0.1); border-color: rgba(240,136,62,0.3); color: var(--phase4a); }
-    .detail-body { padding: 16px 20px; }
-    .detail-section { margin-bottom: 16px; }
-    .detail-section:last-child { margin-bottom: 0; }
-    .detail-section-title {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-    .detail-notes {
-      font-size: 13px;
-      color: var(--text);
-      line-height: 1.6;
-    }
-    .detail-cpn-notes {
-      font-size: 12px;
-      color: #93c5fd;
-      line-height: 1.6;
-      background: rgba(88,166,255,0.06);
-      border-left: 2px solid var(--cpn);
-      padding: 8px 10px;
-      border-radius: 0 4px 4px 0;
-    }
-    .detail-families {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-    .family-tag {
-      font-size: 11px;
-      font-family: 'SFMono-Regular', Consolas, monospace;
-      background: rgba(163,113,247,0.1);
-      border: 1px solid rgba(163,113,247,0.25);
-      color: var(--purple);
-      padding: 2px 7px;
-      border-radius: 4px;
-    }
-    .detail-stub-notice {
-      font-size: 12px;
-      color: var(--text-dim);
-      font-style: italic;
-    }
-
-    /* ACTOR PROFILES PANEL */
-    .actor-profiles {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      margin-top: 16px;
-    }
-    .actor-profiles-title {
-      padding: 10px 16px;
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      border-bottom: 1px solid var(--border);
-    }
-    .actor-profile-card {
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--border);
-    }
-    .actor-profile-card:last-child { border-bottom: none; }
-    .actor-profile-card.selected { background: var(--accent-glow); }
-    .ap-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 4px;
-    }
-    .ap-id {
-      font-size: 10px;
-      font-family: 'SFMono-Regular', Consolas, monospace;
-      color: var(--text-dim);
-    }
-    .ap-name { font-size: 13px; font-weight: 600; color: var(--text); }
-    .ap-compression {
-      margin-left: auto;
-      font-size: 10px;
-      padding: 1px 6px;
-      border-radius: 3px;
-      font-weight: 600;
-    }
-    .ap-compression.high { background: rgba(248,81,73,0.12); border: 1px solid rgba(248,81,73,0.3); color: var(--red); }
-    .ap-compression.medium { background: rgba(210,153,34,0.12); border: 1px solid rgba(210,153,34,0.3); color: var(--yellow); }
-    .ap-compression.low { background: rgba(63,185,80,0.12); border: 1px solid rgba(63,185,80,0.3); color: var(--green); }
-    .ap-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
-    .ap-types { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
-    .ap-type {
-      font-size: 10px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text-dim);
-      padding: 1px 5px;
-      border-radius: 3px;
-    }
-
-    /* ACTOR PROFILES VIEW */
-    .ap-view {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-    @media (min-width: 900px) {
-      .ap-view { grid-template-columns: 300px 1fr; }
-    }
-    .ap-list-panel {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .ap-category-group { }
-    .ap-category-header {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      padding: 8px 4px 4px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .ap-category-count {
-      font-size: 10px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      color: var(--text-dim);
-      padding: 1px 5px;
-      border-radius: 10px;
-      font-weight: 500;
-    }
-    .ap-list-card {
-      padding: 10px 12px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.12s;
-    }
-    .ap-list-card:hover { background: var(--bg-hover); border-color: var(--text-dim); }
-    .ap-list-card.selected { background: var(--accent-glow); border-color: var(--accent); }
-    .ap-list-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 3px; }
-    .ap-list-id { font-size: 10px; font-family: monospace; color: var(--text-dim); }
-    .ap-list-name { font-size: 13px; font-weight: 500; color: var(--text); flex: 1; }
-    .ap-list-awareness {
-      font-size: 10px;
-      padding: 1px 5px;
-      border-radius: 3px;
-      font-weight: 600;
-      border: 1px solid;
-    }
-    .ap-list-awareness.witting { background: rgba(63,185,80,0.1); border-color: rgba(63,185,80,0.3); color: var(--green); }
-    .ap-list-awareness.unwitting { background: rgba(248,81,73,0.1); border-color: rgba(248,81,73,0.3); color: var(--red); }
-    .ap-list-awareness.coerced { background: rgba(210,153,34,0.1); border-color: rgba(210,153,34,0.3); color: var(--yellow); }
-    .ap-list-awareness.negligent { background: rgba(163,113,247,0.1); border-color: rgba(163,113,247,0.3); color: var(--purple); }
-
-    .ap-detail-panel {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      position: sticky;
-      top: 120px;
-      max-height: calc(100vh - 160px);
-      overflow-y: auto;
-    }
-    .ap-detail-empty {
-      padding: 60px 24px;
-      text-align: center;
-      color: var(--text-dim);
-    }
-    .ap-detail-empty-icon { font-size: 32px; margin-bottom: 12px; }
-    .ap-detail-header {
-      padding: 20px 24px 16px;
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
-      position: sticky;
-      top: 0;
-      z-index: 2;
-    }
-    .ap-detail-id { font-family: monospace; font-size: 11px; color: var(--text-dim); margin-bottom: 4px; }
-    .ap-detail-name { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-    .ap-detail-category { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
-    .ap-detail-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-    .ap-chip {
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 4px;
-      border: 1px solid;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .ap-chip-label { font-weight: 600; opacity: 0.7; }
-    .ap-chip.awareness-witting { background: rgba(63,185,80,0.1); border-color: rgba(63,185,80,0.3); color: var(--green); }
-    .ap-chip.awareness-unwitting { background: rgba(248,81,73,0.1); border-color: rgba(248,81,73,0.3); color: var(--red); }
-    .ap-chip.awareness-coerced { background: rgba(210,153,34,0.1); border-color: rgba(210,153,34,0.3); color: var(--yellow); }
-    .ap-chip.awareness-negligent { background: rgba(163,113,247,0.1); border-color: rgba(163,113,247,0.3); color: var(--purple); }
-    .ap-chip.compression-high, .ap-chip.compression-very_high { background: rgba(248,81,73,0.1); border-color: rgba(248,81,73,0.3); color: var(--red); }
-    .ap-chip.compression-medium { background: rgba(210,153,34,0.1); border-color: rgba(210,153,34,0.3); color: var(--yellow); }
-    .ap-chip.compression-low { background: rgba(63,185,80,0.1); border-color: rgba(63,185,80,0.3); color: var(--green); }
-    .ap-chip.compression-na { background: var(--bg-card); border-color: var(--border); color: var(--text-dim); }
-    .ap-chip.direction { background: rgba(56,139,253,0.1); border-color: rgba(56,139,253,0.3); color: var(--accent); }
-    .ap-chip.access { background: rgba(88,166,255,0.08); border-color: rgba(88,166,255,0.2); color: var(--text-muted); }
-    .ap-detail-body { padding: 20px 24px; }
-    .ap-detail-section { margin-bottom: 20px; }
-    .ap-detail-section:last-child { margin-bottom: 0; }
-    .ap-detail-section-title {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-    .ap-detail-desc { font-size: 13px; color: var(--text); line-height: 1.65; }
-    .ap-markers { display: flex; flex-direction: column; gap: 6px; }
-    .ap-marker {
-      font-size: 12px;
-      color: var(--text-muted);
-      padding: 6px 10px;
-      background: var(--bg);
-      border-left: 2px solid var(--border);
-      border-radius: 0 4px 4px 0;
-      line-height: 1.5;
-    }
-    .ap-vectors { display: flex; flex-wrap: wrap; gap: 4px; }
-    .ap-vector {
-      font-size: 11px;
-      font-family: monospace;
-      background: rgba(88,166,255,0.08);
-      border: 1px solid rgba(88,166,255,0.2);
-      color: var(--cpn);
-      padding: 2px 7px;
-      border-radius: 4px;
-    }
-    .ap-vector.ap-vector-ai_initiated_physical {
-      background: rgba(246,173,85,0.1);
-      border-color: rgba(246,173,85,0.35);
-      color: #f6ad55;
-    }
-    .ap-ai-risks { display: flex; flex-wrap: wrap; gap: 4px; }
-    .ap-ai-risk {
-      font-size: 11px;
-      font-family: 'SFMono-Regular', Consolas, monospace;
-      background: rgba(246,173,85,0.08);
-      border: 1px solid rgba(246,173,85,0.25);
-      color: #f6ad55;
-      padding: 2px 7px;
-      border-radius: 4px;
-    }
-    .ap-matrices { display: flex; flex-wrap: wrap; gap: 4px; }
-    .ap-matrix-tag {
-      font-size: 11px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 2px 7px;
-      border-radius: 4px;
-    }
-    .ap-v2-bridge {
-      background: rgba(163,113,247,0.06);
-      border: 1px solid rgba(163,113,247,0.2);
-      border-radius: 6px;
-      padding: 12px 14px;
-    }
-    .ap-v2-bridge-title {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--purple);
-      margin-bottom: 4px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .ap-v2-bridge-text { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
-
-    /* LOADING */
-    .loading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 80px;
-      color: var(--text-muted);
-      font-size: 14px;
-      gap: 10px;
-    }
-    .spinner {
-      width: 18px; height: 18px;
-      border: 2px solid var(--border);
-      border-top-color: var(--accent);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .detail-panel { position: static; margin-top: 16px; }
-      .actor-profiles { margin-top: 0; }
-    }
-    @media (max-width: 600px) {
-      .main { padding: 12px; }
-      .filters-bar { padding: 8px 12px; }
-      .matrix-nav { padding: 0 12px; }
-    }
+      --bg:#010215; --bg-lift:#0e0b18; --bg-card:#1a141e; --bg-top:#120e1e;
+      --border:#221830; --border-act:#3a2848;
+      --amber:#F78B04; --amber-dim:rgba(247,139,4,0.12);
+      --teal:#027F93; --teal-dim:rgba(2,127,147,0.12);
+      --red:#A30502; --red-dim:rgba(163,5,2,0.12);
+      --text:#F4F7F7; --text-muted:rgba(244,247,247,0.55); --text-dim:rgba(244,247,247,0.32);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%;background:#08060f}
+    body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+    .app-root{height:100vh;display:flex;flex-direction:column}
+    .loading-state,.error-state{height:100vh;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--text-dim);letter-spacing:.06em}
+    .error-state{color:var(--red)}
+    /* Topbar */
+    .topbar{height:48px;flex-shrink:0;background:var(--bg-top);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;position:sticky;top:0;z-index:100}
+    .topbar-logo{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--text);white-space:nowrap;margin-right:20px;cursor:pointer;text-decoration:none}
+    .topbar-logo em{color:var(--amber);font-style:normal}
+    .matrix-tabs{display:flex;gap:1px}
+    .mtab{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 14px;height:48px;display:flex;align-items:center;color:var(--text-dim);border-bottom:2px solid transparent;cursor:pointer;transition:color .15s;text-decoration:none}
+    .mtab:hover{color:var(--text-muted)}
+    .mtab.active{color:var(--amber);border-bottom-color:var(--amber)}
+    .mtab.stub{cursor:default}
+    .mtab.stub:hover{color:var(--text-dim)}
+    .topbar-spacer{flex:1}
+    .topbar-meta{font-size:10px;color:var(--text-dim);letter-spacing:.06em;margin-right:12px}
+    .badge-v1{font-size:9px;color:var(--amber);border:1px solid rgba(247,139,4,.4);padding:2px 7px;border-radius:3px}
+    /* Filter bar */
+    .filterbar{flex-shrink:0;height:40px;background:var(--bg-lift);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:6px;overflow:hidden}
+    .fb-label{font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);white-space:nowrap}
+    .fb-sep{width:1px;height:14px;background:var(--border);margin:0 4px;flex-shrink:0}
+    .fb-chip{font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-left:2px solid;cursor:pointer;white-space:nowrap;transition:background .12s;user-select:none}
+    .fb-chip.dim{border-color:rgba(244,247,247,.20);color:var(--text-dim)}
+    .fb-chip.dim:hover{color:var(--text-muted)}
+    .fb-chip.amber-active{border-color:var(--amber);color:var(--amber);background:var(--amber-dim)}
+    .fb-chip.v11{border-color:rgba(244,247,247,.10);color:rgba(244,247,247,.22);cursor:not-allowed;display:inline-flex;align-items:center;gap:4px}
+    .v11-badge{font-size:6px;letter-spacing:.10em;vertical-align:super;color:rgba(244,247,247,.28)}
+    /* Main */
+    .main-content{flex:1;overflow:hidden;display:flex;flex-direction:column;min-height:0}
+    /* Heat map */
+    .hm-wrap{flex:1;padding:14px 20px;display:flex;flex-direction:column;overflow:hidden;min-height:0}
+    .hm-header-row{display:grid;grid-template-columns:90px 1fr 1fr 1fr 1fr;gap:5px;margin-bottom:5px;flex-shrink:0}
+    .hm-col-hdr{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-align:center;padding:5px 4px;border-bottom:1px solid}
+    .hm-col-hdr.phase-col{text-align:left;color:var(--text-dim);border-color:transparent}
+    .hm-col-hdr.amber{color:var(--amber);border-color:rgba(247,139,4,.35)}
+    .hm-col-hdr.teal{color:var(--teal);border-color:rgba(2,127,147,.35)}
+    .hm-col-hdr.red{color:#c44040;border-color:rgba(204,64,64,.35)}
+    .hm-col-hdr.blue{color:#7ab8f0;border-color:rgba(122,184,240,.35)}
+    .hm-rows{display:flex;flex-direction:column;gap:5px;flex:1;min-height:0}
+    .hm-row{display:grid;grid-template-columns:90px 1fr 1fr 1fr 1fr;gap:5px;flex:1;min-height:0}
+    .hm-phase-cell{display:flex;align-items:center;padding:0 8px}
+    .hm-phase-name{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)}
+    .hm-cell{background:var(--bg-card);border-radius:5px;padding:8px 10px;display:flex;flex-direction:column;gap:4px;cursor:pointer;transition:box-shadow .12s;box-shadow:0 1px 6px rgba(0,0,0,.4),0 0 0 1px rgba(247,139,4,.04);overflow:hidden;min-height:0}
+    .hm-cell:hover{box-shadow:0 0 0 1px rgba(247,139,4,.30),0 4px 12px rgba(247,139,4,.12)}
+    .hm-cell.stub{background:var(--bg-lift);opacity:.40;cursor:default;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+    .hm-cell.stub:hover{box-shadow:0 1px 4px rgba(0,0,0,.3)}
+    .hm-cell.flight-cell{background:rgba(2,127,147,.08);box-shadow:0 1px 6px rgba(0,0,0,.4),0 0 0 1px rgba(2,127,147,.20)}
+    .hm-cell.flight-cell:hover{box-shadow:0 0 0 1px rgba(2,127,147,.55),0 4px 12px rgba(2,127,147,.18)}
+    .hm-cell.claim-cell{background:rgba(163,5,2,.08);box-shadow:0 1px 6px rgba(0,0,0,.4),0 0 0 1px rgba(163,5,2,.22)}
+    .hm-cell.claim-cell:hover{box-shadow:0 0 0 1px rgba(163,5,2,.55),0 4px 12px rgba(163,5,2,.18)}
+    .hm-cell.selected{box-shadow:0 0 0 2px var(--amber),0 4px 14px rgba(247,139,4,.22)!important;background:rgba(247,139,4,.06)!important}
+    .hm-count{font-size:15px;font-weight:700;flex-shrink:0}
+    .hm-count.amber{color:var(--amber)}.hm-count.teal{color:var(--teal)}.hm-count.red{color:#c44040}.hm-count.blue{color:#7ab8f0}
+    .track-label{font-size:7px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;flex-shrink:0}
+    .track-label.flight{color:var(--teal)}.track-label.claim{color:var(--red)}
+    .hm-names{display:flex;flex-direction:column;gap:2px;overflow:hidden;flex:1}
+    .hm-name{font-size:8px;color:var(--text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .hm-overflow{font-size:7px;color:var(--text-dim);opacity:.7}
+    .stub-planned{font-size:7px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim)}
+    .cpn-strip{margin-top:auto;font-size:7px;color:var(--teal);letter-spacing:.04em;display:flex;align-items:center;gap:3px;flex-shrink:0}
+    /* Phase 4 */
+    .phase4-row{flex:1;display:flex;gap:5px;min-height:0}
+    .phase4-phase-cell{width:90px;flex-shrink:0;display:flex;align-items:center;padding:0 8px}
+    .phase4-content{flex:1;display:flex;flex-direction:column;gap:0;min-height:0}
+    .phase4-sub-row{flex:1;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:5px;min-height:0}
+    .phase4-divider{height:1px;background:rgba(247,139,4,.35);flex-shrink:0;margin:3px 0}
+    .phase4-stub-flight{background:rgba(2,127,147,.04)!important;box-shadow:0 1px 4px rgba(0,0,0,.3),0 0 0 1px rgba(2,127,147,.10)!important}
+    .phase4-stub-claim{background:rgba(163,5,2,.04)!important;box-shadow:0 1px 4px rgba(0,0,0,.3),0 0 0 1px rgba(163,5,2,.12)!important}
+    /* Split view */
+    .split-view{flex:1;display:flex;overflow:hidden;min-height:0}
+    .split-hm{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0}
+    .split-hm .hm-header-row{grid-template-columns:72px 1fr 1fr 1fr 1fr}
+    .split-hm .hm-row{grid-template-columns:72px 1fr 1fr 1fr 1fr}
+    /* Detail panel */
+    .detail-panel{width:42%;flex-shrink:0;background:var(--bg-lift);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+    .dp-header{padding:14px 16px 12px;border-bottom:1px solid var(--border);flex-shrink:0}
+    .dp-crumb{font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);display:flex;align-items:center;gap:6px;margin-bottom:5px;flex-wrap:wrap}
+    .dp-crumb-sep{color:rgba(244,247,247,.20)}.dp-crumb-active{color:var(--amber)}
+    .dp-header-title{font-size:14px;font-weight:700;color:var(--text)}
+    .dp-header-sub{font-size:10px;color:var(--text-dim);margin-top:3px}
+    .dp-back{display:inline-flex;align-items:center;gap:5px;font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;margin-bottom:8px}
+    .dp-back:hover{color:var(--text-muted)}
+    .dp-content{flex:1;padding:12px 16px;overflow-y:auto;display:flex;flex-direction:column;gap:8px}
+    .dp-content::-webkit-scrollbar{width:4px}.dp-content::-webkit-scrollbar-track{background:transparent}.dp-content::-webkit-scrollbar-thumb{background:var(--border-act);border-radius:2px}
+    /* Tactic card */
+    .dp-card{background:var(--bg-card);border-radius:5px;padding:11px 13px;box-shadow:0 2px 8px rgba(0,0,0,.4),0 0 0 1px rgba(247,139,4,.05);cursor:pointer;flex-shrink:0;transition:box-shadow .12s}
+    .dp-card:hover{box-shadow:0 0 0 1px rgba(247,139,4,.30),0 4px 12px rgba(247,139,4,.12)}
+    .dp-card-id{font-size:8px;letter-spacing:.08em;color:var(--text-dim);font-family:'IBM Plex Sans',monospace;margin-bottom:3px}
+    .dp-card-title{font-size:12px;font-weight:700;color:var(--text);margin-bottom:4px}
+    .dp-card-body{font-size:9px;line-height:1.55;color:var(--text-muted)}
+    .dp-card-tags{display:flex;gap:4px;margin-top:7px;flex-wrap:wrap}
+    .dp-ctag{font-size:7px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:2px 7px;border-left:1.5px solid}
+    .dp-ctag.flight{border-color:var(--teal);color:var(--teal)}.dp-ctag.claim{border-color:#c44040;color:#c44040}.dp-ctag.cpn{border-color:#7ab8f0;color:#7ab8f0}
+    /* Tactic detail */
+    .det-id-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+    .det-id{font-size:9px;letter-spacing:.06em;color:var(--text-dim);font-family:'IBM Plex Sans',monospace;background:rgba(244,247,247,.06);padding:2px 7px;border-radius:3px}
+    .det-track-badge{font-size:7px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:2px 7px;border-left:2px solid}
+    .det-track-badge.flight{border-color:var(--teal);color:var(--teal);background:var(--teal-dim)}
+    .det-track-badge.claim{border-color:var(--red);color:var(--red);background:var(--red-dim)}
+    .det-cpn-badge{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border-radius:3px;margin-bottom:4px;background:rgba(247,139,4,.08);border:1px solid rgba(247,139,4,.25);color:var(--amber)}
+    .det-cpn-mark{font-size:13px;line-height:1}
+    .det-section{flex-shrink:0}
+    .det-section-label{font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+    .det-section-label::after{content:'';flex:1;height:1px;background:rgba(244,247,247,.07)}
+    .det-body{font-size:11px;line-height:1.7;color:var(--text-muted)}
+    .det-cpn-section{border-left:2px solid var(--teal);padding-left:10px;font-size:11px;line-height:1.65;color:var(--text-muted)}
+    .det-actor-groups{display:flex;flex-direction:column;gap:8px}
+    .det-actor-cat-label{font-size:7px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:4px}
+    .det-actor-chips{display:flex;gap:4px;flex-wrap:wrap}
+    .det-actor-chip{font-size:8px;font-weight:600;padding:2px 8px;background:rgba(244,247,247,.05);border:1px solid var(--border-act);border-radius:3px;color:var(--text-muted);cursor:pointer;transition:background .1s,border-color .1s}
+    .det-actor-chip:hover{background:var(--amber-dim);border-color:rgba(247,139,4,.35);color:var(--amber)}
+    .det-actor-chip.high{border-color:rgba(247,139,4,.25)}
+    .det-deferred-label{font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);opacity:.6;margin-bottom:5px;display:flex;align-items:center;gap:8px}
+    .det-deferred-label::after{content:'';flex:1;height:1px;background:rgba(244,247,247,.05)}
+    .det-deferred{font-size:10px;line-height:1.6;color:var(--text-dim);font-style:italic;margin-bottom:8px}
+    /* Actor profiles */
+    .actors-view{flex:1;overflow-y:auto;padding:24px 28px}
+    .actors-view::-webkit-scrollbar{width:6px}.actors-view::-webkit-scrollbar-track{background:transparent}.actors-view::-webkit-scrollbar-thumb{background:var(--border-act);border-radius:3px}
+    .actors-view-title{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin-bottom:4px}
+    .actors-view-sub{font-size:12px;color:var(--text-dim);margin-bottom:28px}
+    .actor-cat-section{margin-bottom:28px}
+    .actor-cat-label{font-size:9px;font-weight:700;letter-spacing:.20em;text-transform:uppercase;color:var(--amber);padding-bottom:8px;margin-bottom:12px;border-bottom:1px solid rgba(247,139,4,.18);display:flex;align-items:center;gap:8px}
+    .actor-cat-count{font-size:8px;font-weight:600;padding:1px 6px;background:var(--amber-dim);color:var(--amber);border-radius:3px}
+    .actor-cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+    .actor-card{background:var(--bg-card);border-radius:5px;padding:13px 14px;box-shadow:0 2px 8px rgba(0,0,0,.4),0 0 0 1px rgba(247,139,4,.05);cursor:pointer;transition:box-shadow .12s}
+    .actor-card:hover{box-shadow:0 0 0 1px rgba(247,139,4,.30),0 4px 12px rgba(247,139,4,.12)}
+    .actor-card-id{font-size:8px;letter-spacing:.08em;color:var(--text-dim);font-family:'IBM Plex Sans',monospace;margin-bottom:4px}
+    .actor-card-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px}
+    .actor-card-attrs{display:flex;flex-direction:column;gap:3px;margin-bottom:8px}
+    .actor-attr-row{font-size:9px;color:var(--text-muted);display:flex;gap:6px}
+    .actor-attr-key{color:var(--text-dim);min-width:68px;flex-shrink:0}
+    .actor-vectors{display:flex;gap:4px;flex-wrap:wrap}
+    .actor-vector-tag{font-size:7px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:2px 7px;border-left:2px solid var(--teal);color:var(--teal)}
+    /* Actor detail */
+    .actor-detail-view{flex:1;overflow-y:auto;padding:24px 28px;max-width:820px}
+    .actor-detail-view::-webkit-scrollbar{width:6px}.actor-detail-view::-webkit-scrollbar-track{background:transparent}.actor-detail-view::-webkit-scrollbar-thumb{background:var(--border-act);border-radius:3px}
+    .adv-back{display:inline-flex;align-items:center;gap:5px;font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;margin-bottom:12px}
+    .adv-back:hover{color:var(--text-muted)}
+    .adv-crumb{font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);display:flex;align-items:center;gap:6px;margin-bottom:5px}
+    .adv-id{font-size:10px;letter-spacing:.08em;color:var(--text-dim);font-family:'IBM Plex Sans',monospace;background:rgba(244,247,247,.06);padding:2px 8px;border-radius:3px;margin-bottom:5px;display:inline-block}
+    .adv-name{font-size:22px;font-weight:700;color:var(--text);margin-bottom:22px}
+    .adv-section{margin-bottom:20px}
+    .adv-section-label{font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+    .adv-section-label::after{content:'';flex:1;height:1px;background:rgba(244,247,247,.07)}
+    .adv-attrs{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;margin-bottom:4px}
+    .adv-attr-key{font-size:8px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--text-dim);margin-bottom:2px}
+    .adv-attr-val{font-size:11px;color:var(--text-muted)}
+    .adv-body{font-size:12px;line-height:1.7;color:var(--text-muted)}
+    .adv-markers{display:flex;flex-direction:column;gap:6px}
+    .adv-marker{display:flex;gap:8px;font-size:11px;color:var(--text-muted);line-height:1.5}
+    .adv-marker-dot{flex-shrink:0;width:4px;height:4px;background:var(--amber);border-radius:50%;margin-top:6px}
+    .adv-risk-tag{font-size:8px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-left:2px solid var(--amber);color:var(--amber);background:var(--amber-dim);margin:0 4px 4px 0;display:inline-block}
+    .adv-tactic-link{display:flex;align-items:center;gap:10px;font-size:11px;padding:6px 10px;border-radius:4px;margin-bottom:2px;cursor:pointer;transition:background .1s;color:var(--text-muted)}
+    .adv-tactic-link:hover{background:var(--bg-card);color:var(--text)}
+    .adv-tactic-id{font-size:8px;letter-spacing:.06em;color:var(--text-dim);font-family:'IBM Plex Sans',monospace;flex-shrink:0}
+    /* Stub landing */
+    .stub-landing{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:40px}
+    .stub-landing-label{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;text-align:center}
+    .stub-landing-title{font-size:22px;font-weight:700;color:var(--text);margin-bottom:6px}
+    .stub-landing-sub{font-size:13px;color:var(--text-muted);max-width:420px;text-align:center}
+    @media(max-width:900px){.detail-panel{width:50%}}
+    @media(max-width:680px){.split-view{flex-direction:column}.detail-panel{width:100%;border-left:none;border-top:1px solid var(--border);height:55vh}.split-hm{height:45vh}.topbar-meta{display:none}}
   </style>
 </head>
 <body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+const PHASE_NAMES={1:'Target Development',2:'Mobilization',3:'Execution',4:'Aftermath'};
+const PHASE_SHORT={1:'Target Dev',2:'Mobilization',3:'Execution',4:'Aftermath'};
+const STUB={
+  facility:{phases:{1:10,2:9,3:9},flight:8,claim:4},
+  organization:{phases:{1:9,2:10,3:10},flight:9,claim:4},
+  system:{phases:{1:8,2:9,3:9},flight:8,claim:4}
+};
+const CATEGORY_ORDER=['lone_actor','insider','criminal','corporate_espionage','ideological','nation_state','customer_aggressor'];
+const resolveTrack=t=>t.phase_4_track==='evasion'?'flight':t.phase_4_track==='attribution'?'claim':null;
+const VECTOR_LABELS={physical_primary:'Physical',cyber_enabled_physical:'Cyber-Enabled',cyber_intrusion:'Cyber',ai_enabled:'AI-Enabled',digital_social_engineering:'Social Eng.'};
+const AI_RISK_LABELS={accelerated_target_research:'Accelerated Research',automated_surveillance:'Automated Surveillance',synthetic_identity:'Synthetic Identity',deepfake_communication:'Deepfake Comms',ai_generated_content:'AI Content',autonomous_attack_planning:'Auto Planning',llm_social_engineering:'LLM Social Eng.',spear_phishing_automation:'Spear Phishing',automated_reconnaissance:'Auto Recon',insider_threat_augmentation:'Insider Augmentation',behavioral_mimicry:'Behavioral Mimicry'};
 
-<header>
-  <div class="header-inner">
-    <div class="header-logo">
-      <span class="logo-badge">THREAT</span>
-      <span class="header-title">THREAT Matrix</span>
-    </div>
-    <span class="header-subtitle">Physical Adversary TTP Taxonomy</span>
-    <div class="header-meta">
-      <span class="tactic-count-badge" id="tactic-count-label"></span>
-      <span class="badge-mit">MIT</span>
-    </div>
-  </div>
-</header>
-
-<nav class="matrix-nav">
-  <div class="matrix-nav-inner">
-    <button class="matrix-btn active" data-matrix="person" onclick="selectMatrix('person')">
-      Person
-    </button>
-    <button class="matrix-btn planned" data-matrix="facility" onclick="selectMatrix('facility')">
-      Facility <span class="planned-tag">Planned V2</span>
-    </button>
-    <button class="matrix-btn planned" data-matrix="organization" onclick="selectMatrix('organization')">
-      Organization <span class="planned-tag">Planned V3</span>
-    </button>
-    <button class="matrix-btn planned" data-matrix="system" onclick="selectMatrix('system')">
-      System <span class="planned-tag">Planned V4</span>
-    </button>
-    <button class="matrix-btn" data-matrix="actor_profiles" onclick="selectMatrix('actor_profiles')" style="margin-left:auto">
-      Actor Profiles <span style="font-size:10px;background:rgba(163,113,247,0.15);border:1px solid rgba(163,113,247,0.4);color:#a371f7;padding:1px 5px;border-radius:3px;margin-left:4px">21</span>
-    </button>
-  </div>
-</nav>
-
-<div class="filters-bar" id="filters-bar" style="display:none">
-  <div class="filters-inner">
-    <span class="filter-label">Phase:</span>
-    <div class="filter-group" id="phase-filters">
-      <button class="filter-btn active" data-phase="all" onclick="setPhaseFilter('all')">All</button>
-      <button class="filter-btn" data-phase="1" onclick="setPhaseFilter(1)">1 — Target Development</button>
-      <button class="filter-btn" data-phase="2" onclick="setPhaseFilter(2)">2 — Mobilization</button>
-      <button class="filter-btn" data-phase="3" onclick="setPhaseFilter(3)">3 — Execution</button>
-      <button class="filter-btn" data-phase="4" onclick="setPhaseFilter(4)">4 — Aftermath</button>
-    </div>
-    <div class="filter-divider"></div>
-    <button class="filter-btn" id="cpn-filter-btn" onclick="toggleCpnFilter()">⚡ CPN Only</button>
-    <span class="filter-results" id="filter-results"></span>
-  </div>
-</div>
-
-<div class="main" id="main-content">
-  <div class="loading" id="loading-state">
-    <div class="spinner"></div>
-    Loading framework data…
-  </div>
-</div>
-
-<script>
-let frameworkData = null;
-let selectedTacticId = null;
-let selectedProfileId = null;
-let activeMatrix = 'person';
-let phaseFilter = 'all';
-let cpnFilter = false;
-
-// ─── INIT ─────────────────────────────────────────────────────────
-fetch('data/framework.json', { cache: 'no-store' })
-  .then(r => r.json())
-  .then(data => {
-    frameworkData = data;
-    document.getElementById('loading-state').remove();
-    const filtersBar = document.getElementById('filters-bar');
-    if (filtersBar) filtersBar.style.display = activeMatrix === 'person' ? '' : 'none';
-    if (activeMatrix === 'actor_profiles') {
-      renderActorProfilesView();
-    } else {
-      renderMatrix(activeMatrix);
-    }
-  })
-  .catch(err => {
-    document.getElementById('loading-state').innerHTML = '⚠️ Failed to load framework.json. Run from a web server.';
-  });
-
-// ─── MATRIX SELECTION ─────────────────────────────────────────────
-function selectMatrix(matrix) {
-  activeMatrix = matrix;
-  document.querySelectorAll('.matrix-btn').forEach(b => {
-    b.classList.toggle('active', b.dataset.matrix === matrix);
-  });
-  selectedTacticId = null;
-  selectedProfileId = null;
-  phaseFilter = 'all';
-  cpnFilter = false;
-  const filtersBar = document.getElementById('filters-bar');
-  if (filtersBar) filtersBar.style.display = matrix === 'person' ? '' : 'none';
-  if (matrix === 'actor_profiles') {
-    renderActorProfilesView();
-  } else {
-    renderMatrix(matrix);
-  }
+function parseRoute(){
+  const raw=window.location.hash.replace(/^#\/?/,'');
+  const p=raw.split('/').filter(Boolean);
+  if(!p.length||(p[0]==='person'&&p.length===1))return{view:'heatmap'};
+  if(p[0]==='actors'&&p.length===1)return{view:'actors'};
+  if(p[0]==='actors')return{view:'actorDetail',actorId:p[1]};
+  if(p[0]==='person'&&p[1]==='phase')return{view:'phase',phase:parseInt(p[2]),track:p[3]||null};
+  if(p[0]==='person'&&p[1]==='tactic')return{view:'tactic',tacticId:p[2]};
+  if(['facility','organization','system'].includes(p[0]))return{view:'stub',matrix:p[0]};
+  return{view:'heatmap'};
 }
 
-// ─── FILTERS ──────────────────────────────────────────────────────
-function setPhaseFilter(phase) {
-  phaseFilter = phase;
-  document.querySelectorAll('#phase-filters .filter-btn').forEach(b => {
-    b.classList.toggle('active', String(b.dataset.phase) === String(phase));
-  });
-  renderMatrix(activeMatrix);
-}
-
-function toggleCpnFilter() {
-  cpnFilter = !cpnFilter;
-  const btn = document.getElementById('cpn-filter-btn');
-  btn.classList.toggle('cpn-active', cpnFilter);
-  renderMatrix(activeMatrix);
-}
-
-// ─── RENDER ───────────────────────────────────────────────────────
-function renderMatrix(matrix) {
-  const main = document.getElementById('main-content');
-  if (!frameworkData) return;
-
-  if (matrix !== 'person') {
-    const labels = {
-      facility: { name: 'Facility', v: 'V2', desc: '40 tactics covering physical location attacks — active shooter, IED/VBIED, venue and campus threats.' },
-      organization: { name: 'Organization', v: 'V3', desc: '42 tactics covering trusted-access adversaries — insider threat, corporate espionage, and organizational sabotage.' },
-      system: { name: 'System', v: 'V4', desc: '38 tactics covering physical infrastructure attacks — critical systems, ICS/OT, and cyber-physical sabotage.' },
-    };
-    const m = labels[matrix];
-    main.innerHTML = `
-      <div style="grid-column:1/-1">
-        <div class="planned-view">
-          <div class="planned-icon">🔒</div>
-          <div class="planned-title">${m.name}</div>
-          <div class="planned-text">${m.desc}<br><br>This matrix is planned for ${m.v}. The framework architecture is complete — content population begins after Person V1 ships.</div>
-        </div>
-      </div>`;
-    document.getElementById('tactic-count-label').textContent = '';
-    return;
-  }
-
-  const tactics = frameworkData.matrices.person.tactics;
-  const actorProfiles = frameworkData.actors ? frameworkData.actors : frameworkData.actor_profiles;
-
-  // Apply filters
-  let filtered = tactics;
-  if (phaseFilter !== 'all') filtered = filtered.filter(t => t.phase === phaseFilter);
-  if (cpnFilter) filtered = filtered.filter(t => t.cpn);
-
-  document.getElementById('tactic-count-label').textContent = `${filtered.length} / ${tactics.length} tactics`;
-  document.getElementById('filter-results').textContent = filtered.length === tactics.length ? '' : `${filtered.length} tactics`;
-
-  const phases = [
-    { num: 1, name: 'Target Development', cls: 'p1', tactics: filtered.filter(t => t.phase === 1) },
-    { num: 2, name: 'Mobilization', cls: 'p2', tactics: filtered.filter(t => t.phase === 2) },
-    { num: 3, name: 'Execution', cls: 'p3', tactics: filtered.filter(t => t.phase === 3) },
-    { num: 4, name: 'Aftermath', cls: 'p4', tactics: filtered.filter(t => t.phase === 4) },
-  ];
-
-  let html = `
-    <div style="grid-column:1/-1">
-      ${renderOverviewBar()}
-    </div>
-    <div id="tactics-column">`;
-
-  for (const phase of phases) {
-    if (phaseFilter !== 'all' && phase.num !== phaseFilter) continue;
-    html += renderPhaseSection(phase);
-  }
-
-  html += `</div>
-    <div id="detail-column">
-      ${renderDetailPanel()}
-    </div>`;
-
-  main.innerHTML = html;
-}
-
-function renderOverviewBar() {
-  return `
-    <div class="overview-bar">
-      <div class="overview-title">THREAT Kill Chain — Descriptive Model</div>
-      <div class="kill-chain">
-        <div class="kc-phase"><span class="kc-pill p1">Phase 1 — Target Development</span></div>
-        <span class="kc-arrow">→</span>
-        <div class="kc-phase"><span class="kc-pill p2">Phase 2 — Mobilization</span></div>
-        <span class="kc-arrow">→</span>
-        <div class="kc-phase"><span class="kc-pill p3">Phase 3 — Execution</span></div>
-        <span class="kc-arrow">→</span>
-        <div class="kc-phase"><span class="kc-pill p4">Phase 4 — Aftermath: Flight and Claim</span></div>
+function TopNav({route,navigate}){
+  const isActors=route.view==='actors'||route.view==='actorDetail';
+  const isPerson=!isActors&&route.view!=='stub';
+  return(
+    <nav className="topbar">
+      <a className="topbar-logo" href="#/person" onClick={e=>{e.preventDefault();navigate('/person');}}>
+        <em>THREAT</em>&nbsp;Matrix
+      </a>
+      <div className="matrix-tabs">
+        <a className={`mtab${isPerson?' active':''}`} href="#/person" onClick={e=>{e.preventDefault();navigate('/person');}}>Person</a>
+        {[['facility','Facility'],['organization','Organization'],['system','System']].map(([m,l])=>(
+          <a key={m} className={`mtab stub${route.view==='stub'&&route.matrix===m?' active':''}`}
+             href={`#/${m}`} onClick={e=>{e.preventDefault();navigate(`/${m}`);}}>{l}</a>
+        ))}
+        <a className={`mtab${isActors?' active':''}`} href="#/actors" onClick={e=>{e.preventDefault();navigate('/actors');}}>Actor Profiles</a>
       </div>
-      <div class="feedback-loop">
-        <svg class="feedback-svg" width="120" height="22" viewBox="0 0 120 22" fill="none">
-          <path d="M8 11 L112 11" stroke="#30363d" stroke-width="1.5" stroke-dasharray="4 3"/>
-          <path d="M8 11 L16 6 M8 11 L16 16" stroke="#a371f7" stroke-width="1.5"/>
-          <path d="M112 11 L104 6 M112 11 L104 16" stroke="#f0883e" stroke-width="1.5"/>
-          <text x="60" y="8" text-anchor="middle" fill="#6e7681" font-size="8" font-family="sans-serif">Operational Feedback Loop</text>
-        </svg>
-        <span class="feedback-label">After-Action Assessment (TA0406) → Target Development (TA0101) for persistent actors</span>
-      </div>
-      <p class="kc-note">The kill chain is descriptive, not prescriptive. The 4-phase structure describes behavioral patterns commonly observed in adversary operations. Adversaries can compress, skip, or reorder phases based on opportunity, capability, and judgment. The framework makes patterns visible — it does not assert they are inevitable or sequential.</p>
-    </div>`;
+      <div className="topbar-spacer"/>
+      <span className="topbar-meta">154 tactics · 27 profiles · MIT</span>
+      <span className="badge-v1">v1</span>
+    </nav>
+  );
 }
 
-function renderPhaseSection(phase) {
-  if (phase.num !== 4) {
-    const tacticRows = phase.tactics.map(t => renderTacticCard(t)).join('');
-    const empty = phase.tactics.length === 0 ? '<div style="padding:12px 14px;color:var(--text-dim);font-size:13px">No tactics match current filters.</div>' : '';
-    return `
-      <div class="phase-section">
-        <div class="phase-header ${phase.cls}">
-          <span class="phase-number">Phase ${phase.num}</span>
-          <span class="phase-name">${phase.name}</span>
-          <span class="phase-tactic-count">${phase.tactics.length} tactics</span>
+function FilterBar({cpnFilter,setCpnFilter}){
+  return(
+    <div className="filterbar">
+      <span className="fb-label">Filter</span>
+      <div className="fb-sep"/>
+      <span className={`fb-chip${cpnFilter?' amber-active':' dim'}`}
+            onClick={()=>setCpnFilter(v=>!v)} title="Show only Cyber-Physical Nexus tactics">⌖ CPN</span>
+      <div className="fb-sep"/>
+      <span className="fb-chip v11" title="Actor filter launches in V1.1">Actor ▾<span className="v11-badge">V1.1</span></span>
+    </div>
+  );
+}
+
+function HeatMapCell({tactics,track,isSelected,onClick,cpnFilter}){
+  const displayed=cpnFilter?tactics.filter(t=>t.cpn):tactics;
+  const count=displayed.length;
+  const cpnCount=tactics.filter(t=>t.cpn).length;
+  const col=track==='flight'?'teal':track==='claim'?'red':'amber';
+  const cls=track==='flight'?'flight-cell':track==='claim'?'claim-cell':'';
+  return(
+    <div className={`hm-cell${cls?' '+cls:''}${isSelected?' selected':''}`} onClick={onClick}>
+      {track&&<div className={`track-label ${track}`}>{track==='flight'?'Flight':'Claim'}</div>}
+      <div className={`hm-count ${col}`}>{count}</div>
+      {count>0&&(
+        <div className="hm-names">
+          {displayed.slice(0,3).map(t=><div key={t.id} className="hm-name">{t.name}</div>)}
+          {count>3&&<div className="hm-overflow">+{count-3} more</div>}
         </div>
-        <div class="tactics-list">${tacticRows}${empty}</div>
-      </div>`;
-  } else {
-    // Phase 4 bifurcation
-    const evasion = phase.tactics.filter(t => t.phase_4_track === 'evasion');
-    const attribution = phase.tactics.filter(t => t.phase_4_track === 'attribution');
-    return `
-      <div class="phase-section">
-        <div class="phase-header p4">
-          <span class="phase-number">Phase 4</span>
-          <span class="phase-name">Aftermath</span>
-          <span class="phase-tactic-count">${phase.tactics.length} tactics</span>
-        </div>
-        <div class="tactics-list">
-          ${phase.tactics.length === 0
-            ? '<div style="padding:12px 14px;color:var(--text-dim);font-size:13px">No tactics match current filters.</div>'
-            : `
-            ${evasion.length > 0 ? `
-              <div class="track-header evasion">
-                <span class="track-dot evasion"></span>
-                <span class="track-name evasion">FLIGHT</span>
-                <span class="track-desc"> — Criminal, state actor, espionage, insider</span>
+      )}
+      {cpnCount>0&&!cpnFilter&&<div className="cpn-strip">⌖ {cpnCount} cyber-enabled</div>}
+    </div>
+  );
+}
+
+function StubCell({count,version,track}){
+  const col=track==='flight'?'teal':track==='claim'?'red':'blue';
+  const ex=track==='flight'?'phase4-stub-flight':track==='claim'?'phase4-stub-claim':'';
+  return(
+    <div className={`hm-cell stub${ex?' '+ex:''}`}>
+      {track&&<div className={`track-label ${track}`} style={{opacity:.5}}>{track==='flight'?'Flight':'Claim'}</div>}
+      <div className={`hm-count ${col}`}>{count}</div>
+      <div className="stub-planned">{version} Planned</div>
+    </div>
+  );
+}
+
+function HeatMapGrid({tacticsByPhase,navigate,cpnFilter,compact,selectedPhase,selectedTrack,selectedTacticId}){
+  const pc=compact?'72px':'90px';
+  const gc=`${pc} 1fr 1fr 1fr 1fr`;
+  const fsz=compact?{fontSize:'8px'}:{};
+  return(
+    <div className="hm-wrap">
+      <div className="hm-header-row" style={{gridTemplateColumns:gc}}>
+        <div className="hm-col-hdr phase-col">Phase</div>
+        <div className="hm-col-hdr amber">{compact?'Person':'Person · 34'}</div>
+        <div className="hm-col-hdr teal">{compact?'Fac':'Facility · 40'}</div>
+        <div className="hm-col-hdr red">{compact?'Org':'Organization · 42'}</div>
+        <div className="hm-col-hdr blue">{compact?'Sys':'System · 38'}</div>
+      </div>
+      <div className="hm-rows">
+        {[1,2,3].map(phase=>{
+          const sel=selectedTacticId
+            ?tacticsByPhase[phase].some(t=>t.id===selectedTacticId)
+            :selectedPhase===phase;
+          return(
+            <div key={phase} className="hm-row" style={{gridTemplateColumns:gc}}>
+              <div className="hm-phase-cell">
+                <div className="hm-phase-name" style={fsz}>{PHASE_SHORT[phase]}</div>
               </div>
-              ${evasion.map(t => renderTacticCard(t)).join('')}
-            ` : ''}
-            ${attribution.length > 0 ? `
-              <div class="track-header attribution">
-                <span class="track-dot attribution"></span>
-                <span class="track-name attribution">CLAIM</span>
-                <span class="track-desc"> — Terrorist, extortionist, state-signaling, ideological</span>
-              </div>
-              ${attribution.map(t => renderTacticCard(t)).join('')}
-            ` : ''}
-          `}
-        </div>
-      </div>`;
-  }
-}
-
-function renderTacticCard(t) {
-  const selected = t.id === selectedTacticId ? 'selected' : '';
-  const cpnBadge = t.cpn ? '<span class="badge-cpn">CPN</span>' : '';
-  return `
-    <div class="tactic-card ${selected}" onclick="selectTactic('${t.id}')">
-      <span class="tactic-id">${t.id}</span>
-      <span class="tactic-name">${t.name}</span>
-      <span class="tactic-badges">${cpnBadge}</span>
-    </div>`;
-}
-
-function renderDetailPanel() {
-  if (!selectedTacticId || !frameworkData) {
-    return `
-      <div class="detail-panel">
-        <div class="detail-empty">
-          <div class="detail-empty-icon">↖</div>
-          <div class="detail-empty-text">Select a tactic to view details</div>
-        </div>
-      </div>`;
-  }
-  const t = frameworkData.matrices.person.tactics.find(t => t.id === selectedTacticId);
-  if (!t) return '';
-
-  const phaseLabels = {1:'Target Development',2:'Mobilization',3:'Execution',4:'Aftermath'};
-  const trackTag = t.phase_4_track === 'evasion'
-    ? '<span class="detail-tag track-evasion">Evasion-Seeking</span>'
-    : t.phase_4_track === 'attribution'
-    ? '<span class="detail-tag track-attribution">Attribution-Seeking</span>'
-    : '';
-  const cpnTag = t.cpn ? '<span class="detail-tag cpn-tag">⚡ Cyber-Physical Nexus</span>' : '';
-  const cpnSection = t.cpn ? `
-    <div class="detail-section">
-      <div class="detail-section-title">Cyber-Physical Nexus</div>
-      <div class="detail-cpn-notes">${t.cpn_notes}</div>
-    </div>` : '';
-
-  const families = t.tactic_families.map(f => `<span class="family-tag">${f}</span>`).join('');
-
-  return `
-    <div class="detail-panel">
-      <div class="detail-header">
-        <div class="detail-id">${t.id} · Person · Phase ${t.phase}</div>
-        <div class="detail-name">${t.name}</div>
-        <div class="detail-meta">
-          <span class="detail-tag phase">Phase ${t.phase} — ${phaseLabels[t.phase]}</span>
-          ${cpnTag}${trackTag}
-        </div>
-      </div>
-      <div class="detail-body">
-        <div class="detail-section">
-          <div class="detail-section-title">Description</div>
-          <div class="detail-notes">${t.notes}</div>
-        </div>
-        ${cpnSection}
-        <div class="detail-section">
-          <div class="detail-section-title">Tactic Families</div>
-          <div class="detail-families">${families}</div>
-        </div>
-        <div class="detail-section">
-          <div class="detail-section-title">Techniques</div>
-          <div class="detail-stub-notice">Technique schema defined. Content populates in V2 alongside the Detection &amp; Response Guide.</div>
-        </div>
-      </div>
-    </div>`;
-}
-
-function renderActorProfiles(profiles) {
-  if (!profiles) return '';
-  const cards = profiles.map(ap => `
-    <div class="actor-profile-card">
-      <div class="ap-header">
-        <span class="ap-id">${ap.id}</span>
-        <span class="ap-name">${ap.name}</span>
-        <span class="ap-compression ${ap.phase_compression_risk}">Phase compression: ${ap.phase_compression_risk}</span>
-      </div>
-      <div class="ap-desc">${ap.description}</div>
-      <div class="ap-types">${ap.actor_types.map(t => `<span class="ap-type">${t}</span>`).join('')}</div>
-    </div>`).join('');
-
-  return `
-    <div class="actor-profiles">
-      <div class="actor-profiles-title">Actor Profiles</div>
-      ${cards}
-    </div>`;
-}
-
-// ─── ACTOR PROFILES VIEW ──────────────────────────────────────
-function renderActorProfilesView() {
-  const main = document.getElementById('main-content');
-  if (!frameworkData) return;
-
-  const profiles = frameworkData.actor_profiles;
-  const categories = [
-    { key: 'individual_personal',    label: 'Lone Actor' },
-    { key: 'insider',                label: 'Insider' },
-    { key: 'criminal',               label: 'Criminal' },
-    { key: 'commercial_intelligence',label: 'Commercial' },
-    { key: 'ideological',            label: 'Ideological' },
-    { key: 'state_intelligence',     label: 'Nation State' },
-  ];
-
-  const listHTML = categories.map(cat => {
-    const catProfiles = profiles.filter(p => p.category === cat.key);
-    if (!catProfiles.length) return '';
-    const cards = catProfiles.map(p => {
-      const sel = p.id === selectedProfileId ? 'selected' : '';
-      const aw = p.awareness === 'n/a' ? 'negligent' : p.awareness;
-      return `
-        <div class="ap-list-card ${sel}" onclick="selectProfile('${p.id}')">
-          <div class="ap-list-card-header">
-            <span class="ap-list-id">${p.id}</span>
-            <span class="ap-list-name">${p.name}</span>
-            <span class="ap-list-awareness ${aw}">${p.awareness}</span>
+              <HeatMapCell tactics={tacticsByPhase[phase]} isSelected={sel}
+                onClick={()=>navigate(`/person/phase/${phase}`)} cpnFilter={cpnFilter}/>
+              {['facility','organization','system'].map((m,i)=>(
+                <StubCell key={m} count={STUB[m].phases[phase]} version={`V${i+2}`}/>
+              ))}
+            </div>
+          );
+        })}
+        <div className="phase4-row">
+          <div className="phase4-phase-cell" style={compact?{width:'72px',padding:'0 5px'}:{}}>
+            <div className="hm-phase-name" style={fsz}>{PHASE_SHORT[4]}</div>
           </div>
-        </div>`;
-    }).join('');
-    return `
-      <div class="ap-category-group">
-        <div class="ap-category-header">
-          ${cat.label}
-          <span class="ap-category-count">${catProfiles.length}</span>
-        </div>
-        ${cards}
-      </div>`;
-  }).join('');
-
-  main.innerHTML = `
-    <div class="ap-view">
-      <div class="ap-list-panel">${listHTML}</div>
-      <div>${renderProfileDetail()}</div>
-    </div>`;
-}
-
-function renderProfileDetail() {
-  if (!selectedProfileId || !frameworkData) {
-    return `
-      <div class="ap-detail-panel">
-        <div class="ap-detail-empty">
-          <div class="ap-detail-empty-icon">←</div>
-          <div style="font-size:13px">Select a profile to view details</div>
-        </div>
-      </div>`;
-  }
-
-  const p = frameworkData.actor_profiles.find(x => x.id === selectedProfileId);
-  if (!p) return '';
-
-  const compressionCls = p.phase_compression_risk === 'n/a' ? 'na' : p.phase_compression_risk;
-  const compressionLabel = { high: 'High', very_high: 'Very High', medium: 'Medium', low: 'Low', 'n/a': 'N/A' }[p.phase_compression_risk] || p.phase_compression_risk;
-
-  const dirLabel = {
-    self_directed: 'Self-directed',
-    state_directed: 'State-directed',
-    criminal_directed: 'Criminal-directed',
-    ideological_directed: 'Ideologically-directed',
-    opportunity_based: 'Opportunity-based',
-  }[p.direction] || p.direction;
-
-  const accessLabel = {
-    external: 'External',
-    insider: 'Insider',
-    former_insider: 'Former insider',
-    contractor_vendor: 'Contractor / Vendor',
-  }[p.access_relationship] || p.access_relationship;
-
-  const markers = p.behavioral_markers.map(m =>
-    `<div class="ap-marker">${m}</div>`).join('');
-
-  const vectorLabels = {
-    'physical_primary': 'Physical',
-    'cyber_enabled_physical': 'Cyber-Enabled Physical',
-    'cyber_initiated_physical': 'Cyber-Initiated Physical',
-    'ai_initiated_physical': 'AI-Initiated Physical',
-  };
-  const vectors = p.attack_vectors.map(v =>
-    `<span class="ap-vector ap-vector-${v}">${vectorLabels[v] || v}</span>`).join('');
-
-  const aiRiskLabels = {
-    'accelerated_target_research': 'Accelerated Target Research',
-    'synthetic_identity': 'Synthetic Identity',
-    'deepfake_manipulation': 'Deepfake Manipulation',
-    'automated_surveillance': 'Automated Surveillance',
-    'autonomous_targeting': 'Autonomous Targeting',
-  };
-  const aiRisks = p.ai_enabled_risks && p.ai_enabled_risks.length > 0
-    ? p.ai_enabled_risks.map(r => `<span class="ap-ai-risk">${aiRiskLabels[r] || r}</span>`).join('')
-    : '';
-
-  const matrices = p.primary_matrices.map(m =>
-    `<span class="ap-matrix-tag">${m.charAt(0).toUpperCase() + m.slice(1)}</span>`).join('');
-
-  return `
-    <div class="ap-detail-panel">
-      <div class="ap-detail-header">
-        <div class="ap-detail-id">${p.id}</div>
-        <div class="ap-detail-name">${p.name}</div>
-        <div class="ap-detail-category">${p.category_label}</div>
-        <div class="ap-detail-chips">
-          <span class="ap-chip awareness-${p.awareness}">
-            <span class="ap-chip-label">Awareness</span> ${p.awareness}
-          </span>
-          <span class="ap-chip direction">
-            <span class="ap-chip-label">Direction</span> ${dirLabel}
-          </span>
-          <span class="ap-chip access">
-            <span class="ap-chip-label">Access</span> ${accessLabel}
-          </span>
-          <span class="ap-chip compression-${compressionCls}">
-            <span class="ap-chip-label">Phase compression</span> ${compressionLabel}
-          </span>
-        </div>
-      </div>
-      <div class="ap-detail-body">
-        <div class="ap-detail-section">
-          <div class="ap-detail-section-title">Description</div>
-          <div class="ap-detail-desc">${p.description}</div>
-        </div>
-        <div class="ap-detail-section">
-          <div class="ap-detail-section-title">Behavioral Markers</div>
-          <div class="ap-markers">${markers}</div>
-        </div>
-        <div class="ap-detail-section">
-          <div class="ap-detail-section-title">Attack Vectors</div>
-          <div class="ap-vectors">${vectors}</div>
-        </div>
-        <div class="ap-detail-section">
-          <div class="ap-detail-section-title">Primary Matrices</div>
-          <div class="ap-matrices">${matrices}</div>
-        </div>
-        ${aiRisks ? `
-        <div class="ap-detail-section">
-          <div class="ap-detail-section-title">AI Risk Factors</div>
-          <div class="ap-ai-risks">${aiRisks}</div>
-        </div>` : ''}
-        <div class="ap-detail-section">
-          <div class="ap-v2-bridge">
-            <div class="ap-v2-bridge-title">⟳ V2 — Tactic Associations</div>
-            <div class="ap-v2-bridge-text">In V2, each actor profile will link to the specific tactics they are most likely to execute across all matrices — enabling two-way navigation: select a tactic to see which actors use it, or select an actor to see their likely tactic sequence. This also pre-loads the Operations/scenario composer with the actor's behavioral pattern.</div>
+          <div className="phase4-content">
+            <div className="phase4-sub-row">
+              <HeatMapCell tactics={tacticsByPhase[4].flight} track="flight"
+                isSelected={(selectedTacticId&&tacticsByPhase[4].flight.some(t=>t.id===selectedTacticId))||(!selectedTacticId&&selectedPhase===4&&selectedTrack==='flight')}
+                onClick={()=>navigate('/person/phase/4/flight')} cpnFilter={cpnFilter}/>
+              <StubCell count={STUB.facility.flight} version="V2" track="flight"/>
+              <StubCell count={STUB.organization.flight} version="V3" track="flight"/>
+              <StubCell count={STUB.system.flight} version="V4" track="flight"/>
+            </div>
+            <div className="phase4-divider"/>
+            <div className="phase4-sub-row">
+              <HeatMapCell tactics={tacticsByPhase[4].claim} track="claim"
+                isSelected={(selectedTacticId&&tacticsByPhase[4].claim.some(t=>t.id===selectedTacticId))||(!selectedTacticId&&selectedPhase===4&&selectedTrack==='claim')}
+                onClick={()=>navigate('/person/phase/4/claim')} cpnFilter={cpnFilter}/>
+              <StubCell count={STUB.facility.claim} version="V2" track="claim"/>
+              <StubCell count={STUB.organization.claim} version="V3" track="claim"/>
+              <StubCell count={STUB.system.claim} version="V4" track="claim"/>
+            </div>
           </div>
         </div>
       </div>
-    </div>`;
+    </div>
+  );
 }
 
-function selectProfile(id) {
-  selectedProfileId = selectedProfileId === id ? null : id;
-  renderActorProfilesView();
+function PhasePanel({tactics,phase,track,navigate,cpnFilter}){
+  const disp=cpnFilter?tactics.filter(t=>t.cpn):tactics;
+  const tl=track==='flight'?'Flight':track==='claim'?'Claim':null;
+  return(
+    <>
+      <div className="dp-header">
+        <div className="dp-back" onClick={()=>navigate('/person')}>← Back</div>
+        <div className="dp-crumb">
+          <span>Phase {phase}</span>
+          <span className="dp-crumb-sep">›</span>
+          <span className="dp-crumb-active">{PHASE_NAMES[phase]}{tl?` · ${tl}`:''}</span>
+        </div>
+        <div className="dp-header-title">{tl?`${tl} Tactics`:PHASE_NAMES[phase]}</div>
+        <div className="dp-header-sub">{disp.length}{cpnFilter?` of ${tactics.length} (CPN filtered)`:''} tactics</div>
+      </div>
+      <div className="dp-content">
+        {disp.length===0&&<div style={{color:'var(--text-dim)',fontSize:'11px',padding:'8px 0'}}>No CPN-tagged tactics in this phase.</div>}
+        {disp.map(t=>(
+          <div key={t.id} className="dp-card" onClick={()=>navigate(`/person/tactic/${t.id}`)}>
+            <div className="dp-card-id">{t.id}</div>
+            <div className="dp-card-title">{t.name}</div>
+            <div className="dp-card-body">{t.notes?t.notes.slice(0,120)+(t.notes.length>120?'…':''):''}</div>
+            <div className="dp-card-tags">
+              {t.phase_4_track==='evasion'&&<span className="dp-ctag flight">Flight</span>}
+              {t.phase_4_track==='attribution'&&<span className="dp-ctag claim">Claim</span>}
+              {t.cpn&&<span className="dp-ctag cpn">⌖ CPN</span>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }
 
-function selectTactic(id) {
-  selectedTacticId = selectedTacticId === id ? null : id;
-  renderMatrix(activeMatrix);
-  // Scroll detail panel into view on mobile
-  if (window.innerWidth < 900) {
-    const detail = document.getElementById('detail-column');
-    if (detail) detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+function TacticDetail({tactic,actorMap,navigate,fromPhase,fromTrack}){
+  if(!tactic)return<div style={{padding:'20px',color:'var(--text-dim)'}}>Tactic not found.</div>;
+  const abc={};
+  (tactic.actor_associations||[]).forEach(a=>{
+    const actor=actorMap[a.actor_id];
+    if(!actor)return;
+    if(!abc[actor.category])abc[actor.category]=[];
+    abc[actor.category].push({actor,relevance:a.relevance});
+  });
+  const cats=CATEGORY_ORDER.filter(c=>abc[c]);
+  const back=fromPhase?(fromTrack?`/person/phase/${fromPhase}/${fromTrack}`:`/person/phase/${fromPhase}`):`/person`;
+  const tl=resolveTrack(tactic);
+  return(
+    <>
+      <div className="dp-header">
+        <div className="dp-back" onClick={()=>navigate(back)}>← Back</div>
+        <div className="dp-crumb">
+          <span>Phase {tactic.phase}</span>
+          <span className="dp-crumb-sep">›</span>
+          {tl&&<><span style={{color:tl==='flight'?'var(--teal)':'var(--red)'}}>{tl==='flight'?'Flight':'Claim'}</span><span className="dp-crumb-sep">›</span></>}
+          <span className="dp-crumb-active">{tactic.name}</span>
+        </div>
+        <div className="det-id-row">
+          <span className="det-id">{tactic.id}</span>
+          {tl&&<span className={`det-track-badge ${tl}`}>{tl==='flight'?'FLIGHT':'CLAIM'}</span>}
+        </div>
+        <div className="dp-header-title">{tactic.name}</div>
+      </div>
+      <div className="dp-content">
+        {tactic.cpn&&tactic.cpn_id&&<div className="det-cpn-badge"><span className="det-cpn-mark">⌖</span> {tactic.cpn_id}</div>}
+        <div className="det-section">
+          <div className="det-section-label">Description</div>
+          <div className="det-body">{tactic.notes}</div>
+        </div>
+        {tactic.cpn&&tactic.cpn_notes&&(
+          <div className="det-section">
+            <div className="det-section-label">Cyber-Physical Nexus</div>
+            <div className="det-cpn-section">{tactic.cpn_notes}</div>
+          </div>
+        )}
+        {cats.length>0&&(
+          <div className="det-section">
+            <div className="det-section-label">Actor Associations</div>
+            <div className="det-actor-groups">
+              {cats.map(cat=>(
+                <div key={cat}>
+                  <div className="det-actor-cat-label">{abc[cat][0].actor.category_label}</div>
+                  <div className="det-actor-chips">
+                    {abc[cat].map(({actor,relevance})=>(
+                      <span key={actor.id} className={`det-actor-chip${relevance==='high'?' high':''}`}
+                            onClick={()=>navigate(`/actors/${actor.id}`)} title={`${actor.id} · ${relevance} relevance`}>
+                        {actor.name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        {['Techniques','Indicators','Countermeasures'].map(s=>(
+          <div key={s}><div className="det-deferred-label">{s}</div><div className="det-deferred">Coming in V2 with the Detection &amp; Response Companion Guide.</div></div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+function SplitView({tacticsByPhase,route,navigate,tacticMap,actorMap,cpnFilter}){
+  const ot=route.tacticId?tacticMap[route.tacticId]:null;
+  let pp=route.phase,pt=route.track,ptactics=[];
+  if(ot){
+    pp=ot.phase;
+    if(pp===4){pt=resolveTrack(ot);ptactics=pt==='flight'?tacticsByPhase[4].flight:tacticsByPhase[4].claim;}
+    else{pt=null;ptactics=tacticsByPhase[pp]||[];}
+  }else if(route.phase===4){
+    ptactics=route.track==='flight'?tacticsByPhase[4].flight:tacticsByPhase[4].claim;
+  }else{
+    ptactics=tacticsByPhase[route.phase]||[];
   }
+  return(
+    <div className="split-view">
+      <div className="split-hm">
+        <HeatMapGrid tacticsByPhase={tacticsByPhase} navigate={navigate} cpnFilter={cpnFilter}
+          compact={true} selectedPhase={pp} selectedTrack={pt} selectedTacticId={route.tacticId||null}/>
+      </div>
+      <div className="detail-panel">
+        {ot?(
+          <TacticDetail tactic={ot} actorMap={actorMap} navigate={navigate} fromPhase={pp} fromTrack={pt}/>
+        ):(
+          <PhasePanel tactics={ptactics} phase={pp} track={pt} navigate={navigate} cpnFilter={cpnFilter}/>
+        )}
+      </div>
+    </div>
+  );
 }
+
+function ActorProfilesView({actorsByCategory,navigate}){
+  const total=Object.values(actorsByCategory).reduce((s,a)=>s+a.length,0);
+  return(
+    <div className="actors-view">
+      <div className="actors-view-title">Actor Profiles</div>
+      <div className="actors-view-sub">{total} profiles across {Object.keys(actorsByCategory).length} threat categories</div>
+      {CATEGORY_ORDER.filter(c=>actorsByCategory[c]).map(cat=>{
+        const actors=actorsByCategory[cat];
+        return(
+          <div key={cat} className="actor-cat-section">
+            <div className="actor-cat-label">{actors[0].category_label}<span className="actor-cat-count">{actors.length}</span></div>
+            <div className="actor-cards-grid">
+              {actors.map(a=>(
+                <div key={a.id} className="actor-card" onClick={()=>navigate(`/actors/${a.id}`)}>
+                  <div className="actor-card-id">{a.id}</div>
+                  <div className="actor-card-name">{a.name}</div>
+                  <div className="actor-card-attrs">
+                    <div className="actor-attr-row"><span className="actor-attr-key">Awareness</span><span>{a.awareness}</span></div>
+                    <div className="actor-attr-row"><span className="actor-attr-key">Direction</span><span>{a.direction}</span></div>
+                    <div className="actor-attr-row"><span className="actor-attr-key">Access</span><span>{a.access_relationship}</span></div>
+                    <div className="actor-attr-row"><span className="actor-attr-key">Phase Risk</span><span>{a.phase_compression_risk}</span></div>
+                  </div>
+                  {a.attack_vectors&&a.attack_vectors.length>0&&(
+                    <div className="actor-vectors">
+                      {a.attack_vectors.slice(0,3).map(v=><span key={v} className="actor-vector-tag">{VECTOR_LABELS[v]||v}</span>)}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function ActorDetailView({actor,navigate,getActorTactics}){
+  if(!actor)return<div className="actor-detail-view"><div className="adv-back" onClick={()=>navigate('/actors')}>← All Profiles</div><div style={{color:'var(--text-dim)',fontSize:'13px'}}>Actor not found.</div></div>;
+  const associated=getActorTactics(actor.id);
+  return(
+    <div className="actor-detail-view">
+      <div className="adv-back" onClick={()=>navigate('/actors')}>← All Profiles</div>
+      <div className="adv-crumb">
+        <span>{actor.category_label}</span>
+        <span style={{color:'rgba(244,247,247,.20)'}}>›</span>
+        <span style={{color:'var(--amber)'}}>{actor.id}</span>
+      </div>
+      <div className="adv-id">{actor.id}</div>
+      <div className="adv-name">{actor.name}</div>
+      <div className="adv-section">
+        <div className="adv-section-label">Profile Attributes</div>
+        <div className="adv-attrs">
+          {[['Awareness',actor.awareness],['Direction',actor.direction],['Access Relationship',actor.access_relationship],['Phase Compression Risk',actor.phase_compression_risk],...(actor.actor_level?[['Actor Level',actor.actor_level]]:[])].map(([k,v])=>(
+            <div key={k}><div className="adv-attr-key">{k}</div><div className="adv-attr-val">{v}</div></div>
+          ))}
+        </div>
+      </div>
+      {actor.description&&<div className="adv-section"><div className="adv-section-label">Description</div><div className="adv-body">{actor.description}</div></div>}
+      {actor.attack_vectors&&actor.attack_vectors.length>0&&(
+        <div className="adv-section">
+          <div className="adv-section-label">Attack Vectors</div>
+          <div style={{display:'flex',flexWrap:'wrap',gap:'6px'}}>
+            {actor.attack_vectors.map(v=><span key={v} className="actor-vector-tag">{VECTOR_LABELS[v]||v}</span>)}
+          </div>
+        </div>
+      )}
+      {actor.behavioral_markers&&actor.behavioral_markers.length>0&&(
+        <div className="adv-section">
+          <div className="adv-section-label">Behavioral Markers</div>
+          <div className="adv-markers">
+            {actor.behavioral_markers.map((m,i)=><div key={i} className="adv-marker"><div className="adv-marker-dot"/><div>{m}</div></div>)}
+          </div>
+        </div>
+      )}
+      {actor.ai_enabled_risks&&actor.ai_enabled_risks.length>0&&(
+        <div className="adv-section">
+          <div className="adv-section-label">AI-Enabled Risks</div>
+          <div>{actor.ai_enabled_risks.map(r=><span key={r} className="adv-risk-tag">{AI_RISK_LABELS[r]||r}</span>)}</div>
+        </div>
+      )}
+      {associated.length>0&&(
+        <div className="adv-section">
+          <div className="adv-section-label">Associated Tactics ({associated.length})</div>
+          <div>
+            {associated.map(t=>(
+              <div key={t.id} className="adv-tactic-link" onClick={()=>navigate(`/person/tactic/${t.id}`)}>
+                <span className="adv-tactic-id">{t.id}</span><span>{t.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function StubLanding({matrix,version}){
+  const label=matrix.charAt(0).toUpperCase()+matrix.slice(1);
+  const s=STUB[matrix];const total=Object.values(s.phases).reduce((n,v)=>n+v,0)+s.flight+s.claim;
+  return(
+    <div className="stub-landing">
+      <div style={{textAlign:'center'}}>
+        <div className="stub-landing-label">{version} · Planned</div>
+        <div className="stub-landing-title">{label} Matrix</div>
+        <div className="stub-landing-sub">{total} tactics across 4 phases. Ships in {version}.</div>
+      </div>
+    </div>
+  );
+}
+
+function App(){
+  const[data,setData]=React.useState(null);
+  const[loading,setLoading]=React.useState(true);
+  const[error,setError]=React.useState(null);
+  const[route,setRoute]=React.useState(()=>parseRoute());
+  const[cpnFilter,setCpnFilter]=React.useState(false);
+
+  React.useEffect(()=>{
+    fetch('data/framework.json')
+      .then(r=>{if(!r.ok)throw new Error(`Load failed (${r.status})`);return r.json();})
+      .then(d=>{setData(d);setLoading(false);})
+      .catch(e=>{setError(e.message);setLoading(false);});
+  },[]);
+
+  React.useEffect(()=>{
+    const h=()=>setRoute(parseRoute());
+    window.addEventListener('hashchange',h);
+    return()=>window.removeEventListener('hashchange',h);
+  },[]);
+
+  const navigate=React.useCallback(path=>{window.location.hash='#'+path;},[]);
+
+  const derived=React.useMemo(()=>{
+    if(!data)return null;
+    const pt=data.matrices.person.tactics;
+    const ap=data.actor_profiles;
+    const tacticMap={};pt.forEach(t=>{tacticMap[t.id]=t;});
+    const actorMap={};ap.forEach(a=>{actorMap[a.id]=a;});
+    const tbp={1:[],2:[],3:[],4:{flight:[],claim:[]}};
+    pt.forEach(t=>{
+      if(t.phase!==4)tbp[t.phase].push(t);
+      else if(resolveTrack(t)==='flight')tbp[4].flight.push(t);
+      else tbp[4].claim.push(t);
+    });
+    const abc={};
+    ap.forEach(a=>{if(!abc[a.category])abc[a.category]=[];abc[a.category].push(a);});
+    return{pt,ap,tacticMap,actorMap,tbp,abc};
+  },[data]);
+
+  if(loading)return<div className="loading-state">Loading THREAT Matrix…</div>;
+  if(error)return<div className="error-state">{error}</div>;
+
+  const{pt,ap,tacticMap,actorMap,tbp,abc}=derived;
+  const getActorTactics=React.useCallback(id=>pt.filter(t=>t.actor_associations&&t.actor_associations.some(a=>a.actor_id===id)),[pt]);
+  const isActors=route.view==='actors'||route.view==='actorDetail';
+  const sv={facility:'V2',organization:'V3',system:'V4'};
+
+  return(
+    <div className="app-root">
+      <TopNav route={route} navigate={navigate}/>
+      {!isActors&&<FilterBar cpnFilter={cpnFilter} setCpnFilter={setCpnFilter}/>}
+      <div className="main-content">
+        {route.view==='heatmap'&&<HeatMapGrid tacticsByPhase={tbp} navigate={navigate} cpnFilter={cpnFilter} compact={false} selectedPhase={null} selectedTrack={null} selectedTacticId={null}/>}
+        {(route.view==='phase'||route.view==='tactic')&&<SplitView tacticsByPhase={tbp} route={route} navigate={navigate} tacticMap={tacticMap} actorMap={actorMap} cpnFilter={cpnFilter}/>}
+        {route.view==='actors'&&<ActorProfilesView actorsByCategory={abc} navigate={navigate}/>}
+        {route.view==='actorDetail'&&<ActorDetailView actor={actorMap[route.actorId]} navigate={navigate} getActorTactics={getActorTactics}/>}
+        {route.view==='stub'&&<StubLanding matrix={route.matrix} version={sv[route.matrix]}/>}
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 </script>
 </body>
 </html>
