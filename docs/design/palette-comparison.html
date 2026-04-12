@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THREAT Matrix — Amber Noir Palette</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #080808;
+      font-family: 'Inter', sans-serif;
+      padding: 48px 32px;
+    }
+
+    .page-title {
+      color: rgba(255,255,255,0.35);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .option { margin-bottom: 72px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+
+    .option-label {
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding-left: 2px;
+    }
+
+    .option-name {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .option-desc {
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 24px;
+      opacity: 0.7;
+      max-width: 720px;
+    }
+
+    .option-panels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .wordmark-panel {
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+    }
+
+    .wm-threat {
+      font-size: clamp(52px, 6vw, 96px);
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.045em;
+      line-height: 1;
+      text-rendering: geometricPrecision;
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+      transform: scaleX(1.1);
+      display: inline-block;
+    }
+
+    .wm-matrix {
+      font-size: clamp(14px, 1.8vw, 26px);
+      font-weight: 800;
+      color: rgba(255,255,255,0.78);
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      margin-top: 14px;
+      padding-left: 0.42em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wm-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .ui-panel {
+      height: 320px;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ui-topbar {
+      height: 36px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .ui-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+
+    .ui-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .ui-body {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      overflow: hidden;
+    }
+
+    .ui-sidebar {
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-right-width: 1px;
+      border-right-style: solid;
+    }
+
+    .ui-sidebar-label {
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      margin-bottom: 6px;
+      margin-top: 10px;
+    }
+
+    .ui-sidebar-label:first-child { margin-top: 0; }
+
+    .ui-nav-item {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 8px;
+      border-radius: 4px;
+      cursor: default;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ui-nav-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .ui-main {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow: hidden;
+    }
+
+    .ui-card {
+      border-radius: 5px;
+      padding: 10px 12px;
+      border-width: 1px;
+      border-style: solid;
+    }
+
+    .ui-card-label {
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .ui-card-title {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .ui-card-body {
+      font-size: 10px;
+      line-height: 1.5;
+      opacity: 0.55;
+    }
+
+    .ui-pill-row {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .ui-pill {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 3px;
+      border-width: 1px;
+      border-style: solid;
+    }
+
+    .ui-btn {
+      display: inline-flex;
+      align-items: center;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 4px;
+      margin-top: 4px;
+      border: none;
+      cursor: default;
+    }
+
+    .thumb-strip {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .thumb-strip-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.3;
+      width: 100px;
+      flex-shrink: 0;
+    }
+
+    .thumb {
+      width: 120px;
+      height: 63px;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .thumb-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.04em;
+      transform: scaleX(1.1);
+      display: inline-block;
+      z-index: 1;
+    }
+
+    /* Amber Noir */
+    .opt-a .option-label { color: #F78B04; }
+    .opt-a .option-name  { color: #F4F7F7; }
+    .opt-a .option-desc  { color: #F4F7F7; }
+
+    .opt-a .wordmark-panel {
+      background:
+        radial-gradient(
+          ellipse 130% 80% at 50% 88%,
+          #F78B04 0%,
+          #c06008 8%,
+          #7a3008 18%,
+          #3a1808 30%,
+          #2B1718 48%,
+          #010215 75%,
+          #010215 100%
+        );
+    }
+
+    .opt-a .ui-panel      { background: #010215; }
+    .opt-a .ui-topbar     { background: #0e0b1a; border-bottom: 1px solid #1e1830; }
+    .opt-a .ui-title      { color: rgba(244,247,247,0.5); }
+    .opt-a .ui-dot        { background: #F78B04; }
+    .opt-a .ui-sidebar    { background: #080612; border-color: #1e1830; }
+    .opt-a .ui-sidebar-label { color: rgba(244,247,247,1); }
+    .opt-a .ui-nav-item   { color: rgba(244,247,247,0.65); }
+    .opt-a .ui-nav-item.active { background: rgba(247,139,4,0.12); color: #F78B04; }
+    .opt-a .ui-main       { background: #010215; }
+    .opt-a .ui-card       { background: #0c0920; border-color: #1e1830; }
+    .opt-a .ui-card-label { color: #F78B04; }
+    .opt-a .ui-card-title { color: #F4F7F7; }
+    .opt-a .ui-card-body  { color: rgba(244,247,247,1); }
+    .opt-a .ui-btn        { background: #F78B04; color: #010215; }
+    .opt-a .pill-p1 { background: rgba(247,139,4,0.12); border-color: #F78B04; color: #F78B04; }
+    .opt-a .pill-p2 { background: rgba(2,127,147,0.12); border-color: #027F93; color: #027F93; }
+    .opt-a .pill-p3 { background: rgba(163,5,2,0.15); border-color: #A30502; color: #c44040; }
+    .opt-a .nav-dot-1 { background: #F78B04; }
+    .opt-a .nav-dot-2 { background: #027F93; }
+    .opt-a .nav-dot-3 { background: #A30502; }
+
+    .opt-a .thumb {
+      background:
+        radial-gradient(ellipse 160% 90% at 50% 90%, #F78B04 0%, #7a3008 20%, #2B1718 45%, #010215 100%);
+    }
+  </style>
+</head>
+<body>
+
+  <p class="page-title">THREAT Matrix — Visual Identity</p>
+
+  <div class="option opt-a">
+    <div class="option-label">Blade Runner — Amber Noir</div>
+    <div class="option-name">The chosen palette</div>
+    <div class="option-desc">One unified palette for wordmark and UI: deep midnight blue-black, cinematic amber, dark mahogany surface lift. Cinematic, distinct, and built to hold up at thumbnail scale.</div>
+
+    <div class="option-panels">
+
+      <div class="wordmark-panel">
+        <span class="wm-threat" id="wm-a">THREAT</span>
+        <span class="wm-matrix">Matrix</span>
+        <svg class="wm-svg" id="svg-a">
+          <line id="a-tl-h" stroke="rgba(255,255,255,0.32)" stroke-width="1"/>
+          <line id="a-tl-v" stroke="rgba(255,255,255,0.32)" stroke-width="1"/>
+          <line id="a-tr-h" stroke="rgba(255,255,255,0.32)" stroke-width="1"/>
+          <line id="a-tr-v" stroke="rgba(255,255,255,0.32)" stroke-width="1"/>
+          <line id="a-bl-h" stroke="rgba(255,255,255,0.32)" stroke-width="1"/>
+          <line id="a-bl-v" stroke="rgba(255,255,255,0.32)" stroke-width="1"/>
+          <line id="a-br-h" stroke="rgba(255,255,255,0.32)" stroke-width="1"/>
+          <line id="a-br-v" stroke="rgba(255,255,255,0.32)" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <div class="ui-panel opt-a">
+        <div class="ui-topbar opt-a">
+          <div class="ui-dot opt-a"></div>
+          <div class="ui-dot opt-a"></div>
+          <div class="ui-dot opt-a"></div>
+          <span class="ui-title opt-a">THREAT Matrix</span>
+        </div>
+        <div class="ui-body">
+          <div class="ui-sidebar opt-a">
+            <div class="ui-sidebar-label opt-a">Matrices</div>
+            <div class="ui-nav-item opt-a active"><div class="ui-nav-dot nav-dot-1 opt-a"></div>Person</div>
+            <div class="ui-nav-item opt-a"><div class="ui-nav-dot nav-dot-2 opt-a"></div>Facility</div>
+            <div class="ui-nav-item opt-a"><div class="ui-nav-dot nav-dot-3 opt-a"></div>Organization</div>
+            <div class="ui-sidebar-label opt-a">Actors</div>
+            <div class="ui-nav-item opt-a">Lone Actor</div>
+            <div class="ui-nav-item opt-a">Insider</div>
+            <div class="ui-nav-item opt-a">Nation State</div>
+          </div>
+          <div class="ui-main opt-a">
+            <div class="ui-card opt-a">
+              <div class="ui-card-label opt-a">Reconnaissance</div>
+              <div class="ui-card-title opt-a">Physical Surveillance</div>
+              <div class="ui-card-body opt-a">Systematic observation of target location, personnel, and access patterns.</div>
+              <div class="ui-pill-row">
+                <span class="ui-pill opt-a pill-p1">Phase 1</span>
+                <span class="ui-pill opt-a pill-p2">Cyber-Enabled</span>
+                <span class="ui-pill opt-a pill-p3">High Risk</span>
+              </div>
+            </div>
+            <div class="ui-card opt-a">
+              <div class="ui-card-title opt-a">Identity Fabrication</div>
+              <div class="ui-card-body opt-a">Construction of false credentials or persona to gain authorized access.</div>
+              <button class="ui-btn opt-a">View Tactic →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thumb-strip">
+      <span class="thumb-strip-label">At thumbnail scale</span>
+      <div class="thumb opt-a"><span class="thumb-text">THREAT</span></div>
+    </div>
+  </div>
+
+<script>
+  function setLine(id, x1, y1, x2, y2) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.setAttribute('x1', x1); el.setAttribute('y1', y1);
+    el.setAttribute('x2', x2); el.setAttribute('y2', y2);
+  }
+
+  function bracketFor(prefix, threatId) {
+    const t  = document.getElementById(threatId);
+    const cv = document.querySelector('.opt-' + prefix + ' .wordmark-panel');
+    if (!t || !cv) return;
+    const tr = t.getBoundingClientRect();
+    const cr = cv.getBoundingClientRect();
+    const pad = 18, arm = 22;
+    const x1 = tr.left - cr.left - pad;
+    const x2 = tr.right - cr.left + pad;
+    const y1 = tr.top - cr.top - pad;
+    const y2 = tr.bottom - cr.top + pad;
+    setLine(prefix+'-tl-h', x1, y1, x1+arm, y1);
+    setLine(prefix+'-tl-v', x1, y1, x1, y1+arm);
+    setLine(prefix+'-tr-h', x2, y1, x2-arm, y1);
+    setLine(prefix+'-tr-v', x2, y1, x2, y1+arm);
+    setLine(prefix+'-bl-h', x1, y2, x1+arm, y2);
+    setLine(prefix+'-bl-v', x1, y2, x1, y2-arm);
+    setLine(prefix+'-br-h', x2, y2, x2-arm, y2);
+    setLine(prefix+'-br-v', x2, y2, x2, y2-arm);
+  }
+
+  function positionAll() {
+    bracketFor('a', 'wm-a');
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(positionAll);
+  }
+  window.addEventListener('load', positionAll);
+  window.addEventListener('resize', positionAll);
+</script>
+</body>
+</html>

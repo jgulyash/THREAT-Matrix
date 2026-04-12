@@ -5,7 +5,9 @@
 **Open-source physical adversarial threat taxonomy modeled after MITRE ATT&CK.**  
 Physical security has no equivalent to MITRE ATT&CK. The THREAT Matrix is built to be that standard.
 
-**[→ Interactive Matrix Browser](https://jgulyash.github.io/The-THREAT-Framework/)** · **[framework.json](docs/data/framework.json)** · MIT License
+**[→ Interactive Matrix Browser](https://jgulyash.github.io/THREAT-Matrix/)** · **[framework.json](docs/data/framework.json)** · MIT License
+
+![THREAT Matrix V1 — Person Matrix browser](docs/images/v1-spa-screenshot.png)
 
 ---
 
@@ -64,7 +66,7 @@ The `ai_initiated_physical` vector is architecturally distinct: the attack does 
 
 ## Using the Framework
 
-**Browse it:** [jgulyash.github.io/The-THREAT-Framework](https://jgulyash.github.io/The-THREAT-Framework/) — filter by phase, CPN tag, or actor profile. Click any tactic for full detail including notes, CPN analysis, and AI risk factors.
+**Browse it:** [jgulyash.github.io/THREAT-Matrix](https://jgulyash.github.io/THREAT-Matrix/) — filter by phase, CPN tag, or actor profile. Click any tactic for full detail including notes, CPN analysis, and AI risk factors.
 
 **Build with it:** `docs/data/framework.json` is MIT licensed, versioned, and machine-readable. Use it in detection tooling, threat assessment workflows, training platforms, or agentic pipelines.
 
