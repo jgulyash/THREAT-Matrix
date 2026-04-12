@@ -13,7 +13,8 @@
 | **V2** | Facility | 40 | Planned |
 | **V3** | Organization | 42 | Planned |
 | **V4** | System | 38 | Planned |
-| **V5** | Detection & Response Companion | — | Planned |
+
+**Detection & Response Guide ships per matrix.** Each release (V1–V4) includes the behavioral indicators, response protocols, and countermeasures for that matrix's tactics. There is no separate V5 — the operational guidance is built into every matrix release alongside the taxonomy.
 
 ---
 
@@ -23,7 +24,7 @@
 
 **Delivered:**
 - Complete tactic schema across all 4 phases
-- 21 actor profiles across 6 categories
+- 27 actor profiles across 7 categories
 - Phase 4 bifurcation (FLIGHT track / CLAIM track)
 - Operational Feedback Loop cycle (Phase 4 AAR → Phase 1 Target Development)
 - AI architecture metadata block (`ai_architecture` at framework.json root)
@@ -90,7 +91,7 @@
 
 **New Capabilities:**
 - Full indicator reverse lookup: observable → tactic → phase
-- Countermeasure design layer (foundation for V5)
+- Countermeasure design layer at infrastructure scale
 
 **Source coverage at launch:** 50–60% (power/water/pipeline deep; dam/telecom stubs)
 - NERC reliability reports
@@ -101,25 +102,22 @@
 
 ---
 
-## V5 — Detection & Response Companion Guide
-**The defender mirror to the adversary taxonomy.**
+## Detection & Response Guide — Per-Matrix Delivery
 
-For every phase and tactic across all four matrices:
-- Detection methodology
-- Investigative response
+**The defender mirror to the adversary taxonomy ships with each matrix release.** There is no separate companion version. Each matrix (V1 Person, V2 Facility, V3 Organization, V4 System) delivers its own slice of the Detection & Response Guide alongside the taxonomy itself.
+
+**Per-matrix deliverables (each version):**
+- Detection methodology for every tactic in that matrix
+- Investigative response protocols
 - Intervention strategy
-- Post-incident investigation (debriefing, network tracing, full adversary picture reconstruction)
+- Post-incident investigation workflow
+- Behavioral indicators populated (observable → tactic → phase reverse lookup)
+- Countermeasures populated with full schema: cost / time / complexity / limitations
+- Defender overlay view for the matrix (adversary view ↔ defender view toggle)
 
-**Schema additions:**
-- Countermeasures fully populated with all 4 fields: cost / time / complexity / limitations
-- Defender overlay mapped to each tactic
+**Why per-matrix instead of a single companion release:** Practitioners working a Person-matrix case shouldn't have to wait until V4 ships to get detection guidance. Each release is operationally complete on its own — taxonomy plus detection plus response plus countermeasures — for the domain it covers.
 
-**New Capabilities:**
-- Defender overlay view (toggle: adversary view ↔ defender view)
-- Phase-gate detection methodology — what to look for at each kill chain phase before escalation
-- Post-incident investigation workflow builder
-
-**Governing principle:** Defender activity lives here, not in the adversary taxonomy. V1-V4 are designed with V5 in mind — CPN tags and indicator stubs are anchors for this guide.
+**Governing principle:** Defender activity lives in the Detection & Response slice, not in the adversary taxonomy. CPN tags and indicator anchors in the tactic schema are the bridge between the two.
 
 ---
 
@@ -133,7 +131,7 @@ For every phase and tactic across all four matrices:
 
 **Tactic families:** 56 families enable cross-matrix grouping. Stable identifiers — not renamed after framework.json build. Powers Operations composer in V2+.
 
-**Technique content:** V1 ships with `techniques: []` on all 34 Person tactics. Content populates in V2 alongside the Detection & Response Guide design.
+**Technique content:** V1 ships with `techniques: []` on all 34 Person tactics — V1 delivers tactics, actor profiles, and the V1 Person Detection & Response slice. Technique decomposition and indicator population deepens through V2–V4 as each matrix lands.
 
 ---
 
