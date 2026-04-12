@@ -6,7 +6,7 @@ This document provides context for hiring managers, security leaders, and practi
 
 ## About This Project
 
-the THREAT Matrix is not a portfolio exercise. It is an open-source reference standard for physical adversary behavior — built because the gap it fills is formally documented and nothing else has filled it. The development process reflects the same analytical discipline I apply to operational security, protective intelligence, and risk management work.
+The THREAT Matrix is not a portfolio exercise. It is an open-source reference standard for physical adversary behavior — built because the gap it fills is formally documented and nothing else has filled it. The development process reflects the same analytical discipline I apply to operational security, protective intelligence, and risk management work.
 
 That said, the framework demonstrates a specific set of professional capabilities:
 
