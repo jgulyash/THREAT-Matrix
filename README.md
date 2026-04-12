@@ -2,7 +2,7 @@
 
 *Tactical Human Risk Enumeration and Adversary Taxonomy*
 
-**Open-source physical adversarial threat taxonomy. Built from 15+ years of experience leading high-stakes threat investigations with dozens of domestic and international partners.**  
+**Open-standard shared vocabulary for categorizing and detecting human adversary behavior in physical security and insider threats. Built from 15+ years of experience leading high-stakes threat investigations with more than 70 domestic and international partners.**  
 
 Physical security lacks a shared, standardized vocabulary for adversary behavior. The THREAT Matrix is built to be that standard.
 
@@ -16,9 +16,9 @@ Physical security lacks a shared, standardized vocabulary for adversary behavior
 
 ## The Problem
 
-The same pattern surfaced in every partner relationship: each organization had its own vocabulary for adversary behavior. Some had mature processes and detection methodology. Others had not yet identified TTPs that recurred across cases the field had been seeing for years. There was no shared language, no common reference standard, and no way to compare incidents across teams or build tooling against a stable taxonomy.
+The same pattern surfaced in every partner relationship: each organization had its own vocabulary for adversary behavior. Some had mature processes and detection methodology. Others had not yet identified TTPs that recurred across cases the field had been seeing for years. There was no shared language, no common reference standard, wasted time syncing incidents across teams, and no shared framework to build tooling against a stable taxonomy.
 
-In 2023, the U.S. Department of Energy commissioned a formal requirements study evaluating whether any existing methodology could serve as a structured behavioral taxonomy for physical adversary action. The conclusion: nothing existing was adequate. The THREAT Matrix is a direct response to both — the documented institutional gap and the operational reality that produced it.
+In 2023, a Lawrence Livermore National Laboratory study, sponsored by DOE/NNSA and prepared for DHS/CISA — https://doi.org/10.2172/2229613 (LLNL-TR-858139) — examined whether any existing methodology could serve as a structured framework for characterizing physical adversary action across critical infrastructure sectors. The conclusion: existing frameworks are inadequate. Most are sector- or facility-specific, focus on security assessment rather than adversary behavior, and fail to address cyber-physical risks. The THREAT Matrix is a direct response to both the documented institutional gap and the operational reality that produced it. 
 
 ## Framework Architecture
 
