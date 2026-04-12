@@ -3,6 +3,7 @@
 *Tactical Human Risk Enumeration and Adversary Taxonomy*
 
 **Open-source physical adversarial threat taxonomy. Built from 15+ years of experience leading high-stakes threat investigations with dozens of domestic and international partners.**  
+
 Physical security lacks a shared, standardized vocabulary for adversary behavior. The THREAT Matrix is built to be that standard.
 
 **[→ Interactive Matrix Browser](https://jgulyash.github.io/THREAT-Matrix/)** · **[framework.json](docs/data/framework.json)** · MIT License
