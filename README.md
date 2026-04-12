@@ -9,6 +9,7 @@ Physical security lacks a shared, standardized vocabulary for adversary behavior
 **[→ Launch THREAT Matrix in Browser](https://jgulyash.github.io/THREAT-Matrix/)** · **[framework.json](docs/data/framework.json)** · MIT License
 
 ![THREAT Matrix V1 — Person Matrix browser](docs/images/v1-spa-screenshot.png)
+
 ![THREAT Matrix V1 — Tactic detail with actor associations](docs/images/v1-spa-tactic-detail.png)
 
 ---
