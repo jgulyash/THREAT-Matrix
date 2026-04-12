@@ -2,8 +2,8 @@
 
 *Tactical Human Risk Enumeration and Adversary Taxonomy*
 
-**Open-source physical adversarial threat taxonomy modeled after MITRE ATT&CK.**  
-Physical security has no equivalent to MITRE ATT&CK. The THREAT Matrix is built to be that standard.
+**Open-source physical adversarial threat taxonomy. Built from 15+ years of experience leading high-stakes threat investigations with dozens of domestic and international partners.**  
+Physical security lacks a shared, standardized vocabulary for adversary behavior. The THREAT Matrix is built to be that standard.
 
 **[→ Interactive Matrix Browser](https://jgulyash.github.io/THREAT-Matrix/)** · **[framework.json](docs/data/framework.json)** · MIT License
 
@@ -13,17 +13,13 @@ Physical security has no equivalent to MITRE ATT&CK. The THREAT Matrix is built 
 
 ## The Problem
 
-Cyber security has MITRE ATT&CK — a shared, standardized vocabulary for adversary behavior that any team can use to build detection logic, compare incidents, and train analysts. Physical security has nothing like it. Every organization invents their own version of a similar framework, so they don't speak the same language, and you can't build tooling or training against a standard that doesn't exist.
+The same pattern surfaced in every partner relationship: each organization had its own vocabulary for adversary behavior. Some had mature processes and detection methodology. Others had not yet identified TTPs that recurred across cases the field had been seeing for years. There was no shared language, no common reference standard, and no way to compare incidents across teams or build tooling against a stable taxonomy.
 
-In 2023, the U.S. Department of Energy commissioned a formal requirements study evaluating whether any existing methodology could serve as a "physical half of MITRE ATT&CK." Their conclusion: nothing existing was adequate. The THREAT Matrix is a direct response to that documented gap.
-
-The THREAT Matrix is that standard for the physical domain.
+In 2023, the U.S. Department of Energy commissioned a formal requirements study evaluating whether any existing methodology could serve as a structured behavioral taxonomy for physical adversary action. The conclusion: nothing existing was adequate. The THREAT Matrix is a direct response to both — the documented institutional gap and the operational reality that produced it.
 
 ## Framework Architecture
 
 **Four target matrices. Four kill chain phases. 154 total tactics** (34 live in V1; 120 across V2–V4 planned).
-
-> **On terminology:** The THREAT Matrix uses *tactic* in the physical security and military sense — a specific operational method an adversary employs. This differs from MITRE ATT&CK's convention, where "tactics" label high-level goal categories and "techniques" label specific behaviors. 
 
 ### Kill Chain
 
@@ -34,6 +30,22 @@ The kill chain is descriptive, not prescriptive — adversaries compress, skip, 
 ### Target Matrices
 
 ![THREAT Matrix Target Matrices](docs/images/matrix-overview.svg)
+
+### Actor Profiles
+
+**27 actor profiles across 7 threat categories.** Each profile documents awareness, direction, access relationship, phase compression risk, attack vectors, behavioral markers, AI capability amplifiers, and the tactics each actor type is most likely to employ.
+
+| Category | Profiles | Examples |
+|----------|---------:|----------|
+| Lone Actor | 3 | Fixated individuals, public-figure stalkers, grievance-driven attackers |
+| Insider | 5 | Malicious, negligent, and compromised insiders (coerced, recruited, unwitting) |
+| Criminal | 7 | Organized crime, kidnap-for-ransom, contract violence |
+| Corporate Espionage | 2 | Trade secret theft, competitive intelligence operations |
+| Ideological | 4 | Domestic violent extremism, terrorism, mass-casualty actors |
+| Nation-State | 4 | Foreign intelligence services, state-directed disruption |
+| Customer / Client Aggressor | 2 | Workplace violence escalation from customer or client relationships |
+
+Profiles are referenced by stable ID (`AP001`–`AP029`) and connect directly to the tactics each actor type is most likely to employ. Browse them in the [interactive matrix](https://jgulyash.github.io/THREAT-Matrix/#/actors).
 
 ### Cyber-Physical Nexus (CPN)
 
@@ -60,7 +72,7 @@ The `ai_initiated_physical` vector is architecturally distinct: the attack does 
 
 ![THREAT Matrix Build Status](docs/images/build-status.svg)
 
-*V1 deploys the Person Matrix (34 tactics). V2–V4 complete the remaining 120 tactics. The Detection & Response Guide maps every tactic to detection indicators, response protocols, and countermeasures — building practitioner-ready operational guidance alongside each matrix release.*
+*V1 deploys the Person Matrix (34 tactics). V2–V4 complete the remaining 120 tactics across the Facility, Organization, and System matrices. Each matrix release ships with its own Detection & Response slice — behavioral indicators, response protocols, and countermeasures mapped to every tactic — building practitioner-ready operational guidance alongside the taxonomy.*
 
 ---
 
