@@ -6,7 +6,7 @@
 
 Physical security lacks a shared, standardized vocabulary for adversary behavior. The THREAT Matrix is built to be that standard.
 
-**[→ Interactive Matrix Browser](https://jgulyash.github.io/THREAT-Matrix/)** · **[framework.json](docs/data/framework.json)** · MIT License
+**[→ Launch THREAT Matrix in Browser](https://jgulyash.github.io/THREAT-Matrix/)** · **[framework.json](docs/data/framework.json)** · MIT License
 
 ![THREAT Matrix V1 — Person Matrix browser](docs/images/v1-spa-screenshot.png)
 
