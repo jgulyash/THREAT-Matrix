@@ -1,6 +1,6 @@
 # THREAT Matrix
 
-*Tactical Human Risk Enumeration and Adversary Taxonomy*
+*Tactical Human Risk Enumeration and Adversary Taxonomy Matrix*
 
 **Open-standard shared vocabulary for categorizing and detecting human adversary behavior in physical security and insider threats. Built from 15+ years of experience leading high-stakes threat investigations with more than 70 domestic and international partners.**  
 
