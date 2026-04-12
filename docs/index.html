@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THREAT Matrix — Human Threat Intelligence Framework</title>
+  <meta name="description" content="A community-driven open-source taxonomy covering how threat actors plan and execute adversarial action against people, facilities, organizations, and critical infrastructure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:#0a0a12; --bg-lift:#2a2a36; --bg-card:#32323e; --bg-top:#2a2a36;
+      --bg-panel:#181820;
+      --border:#3e3e4a; --border-act:#50505c;
+      --amber:#F78B04; --amber-dim:rgba(247,139,4,0.12);
+      --teal:#027F93; --teal-dim:rgba(2,127,147,0.12);
+      --red:#A30502; --red-dim:rgba(163,5,2,0.12);
+      --blue:#7ab8f0; --blue-dim:rgba(122,184,240,0.12);
+      --slate:#A8B0BF; --slate-dim:rgba(168,176,191,0.12);
+      --text:#F4F7F7; --text-muted:rgba(244,247,247,0.70); --text-dim:rgba(244,247,247,0.50);
+      --section-bg:rgba(244,247,247,0.03); --divider:rgba(244,247,247,0.12);
+    }
+    [data-theme="light"] {
+      --bg:#D8DCE2; --bg-lift:#FFFFFF; --bg-card:#FFFFFF; --bg-top:#FFFFFF;
+      --bg-panel:#EEF0F3;
+      --border:#B8BEC7; --border-act:#8A94A1;
+      --amber:#F78B04; --amber-dim:rgba(247,139,4,0.10);
+      --teal:#037586; --teal-dim:rgba(3,117,134,0.10);
+      --red:#A30502; --red-dim:rgba(163,5,2,0.10);
+      --blue:#1E3A5F; --blue-dim:rgba(30,58,95,0.10);
+      --slate:#475569; --slate-dim:rgba(71,85,105,0.10);
+      --text:#0F172A; --text-muted:#334155; --text-dim:#475569;
+      --section-bg:rgba(0,0,0,0.035); --divider:rgba(0,0,0,0.14);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%;background:var(--bg)}
+    body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased}
+    .app-root{min-height:100vh;display:flex;flex-direction:column}
+    .loading-state,.error-state{height:100vh;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text-dim);letter-spacing:.06em}
+    .error-state{color:var(--red)}
+    /* Topbar */
+    .topbar{height:48px;flex-shrink:0;background:var(--bg-top);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    .topbar-logo{font-size:15px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--text);white-space:nowrap;margin-right:20px;cursor:pointer;text-decoration:none}
+    .topbar-logo em{color:var(--amber);font-style:normal}
+    .matrix-tabs{display:flex;gap:1px}
+    .mtab{font-size:13px;font-weight:600;letter-spacing:.10em;text-transform:uppercase;padding:0 16px;height:48px;display:flex;align-items:center;color:var(--text-dim);border-bottom:2px solid transparent;cursor:pointer;transition:color .15s;text-decoration:none}
+    .mtab:hover{color:var(--text-muted)}
+    .mtab.active{color:var(--amber);border-bottom-color:var(--amber)}
+    .mtab.stub{cursor:default}
+    .mtab.stub:hover{color:var(--text-dim)}
+    .topbar-spacer{flex:1}
+    .topbar-meta{font-size:12px;color:var(--text-dim);letter-spacing:.06em;margin-right:12px}
+    .badge-v1{font-size:12px;color:var(--amber);border:1px solid rgba(247,139,4,.4);padding:2px 8px;border-radius:3px}
+    .theme-toggle{background:none;border:1px solid var(--border);border-radius:4px;padding:4px 8px;cursor:pointer;color:var(--text-muted);font-size:16px;line-height:1;margin-left:10px;transition:color .15s,border-color .15s}
+    .theme-toggle:hover{color:var(--text);border-color:var(--border-act)}
+    /* Filter bar */
+    .filterbar{flex-shrink:0;height:40px;background:var(--bg-lift);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+    .fb-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);white-space:nowrap}
+    .fb-sep{width:1px;height:14px;background:var(--border);margin:0 4px;flex-shrink:0}
+    .fb-chip{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-left:2px solid;cursor:pointer;white-space:nowrap;transition:background .12s;user-select:none}
+    .fb-chip.dim{border-color:var(--border-act);color:var(--text-dim)}
+    .fb-chip.dim:hover{color:var(--text-muted)}
+    .fb-chip.amber-active{border-color:var(--amber);color:var(--amber);background:var(--amber-dim)}
+    .fb-chip.v11{border-color:var(--border);color:var(--text-dim);opacity:.55;cursor:not-allowed;display:inline-flex;align-items:center;gap:4px}
+    .v11-badge{font-size:10px;letter-spacing:.10em;vertical-align:super;color:var(--text-dim);opacity:.75}
+    /* Main */
+    .main-content{flex:1;overflow:auto;display:flex;flex-direction:column;min-height:0;min-width:960px}
+    /* Heat map */
+    .hm-wrap{flex:1;padding:14px 20px;display:flex;flex-direction:column;min-height:480px}
+    .hm-header-row{display:grid;grid-template-columns:140px 1fr 1fr 1fr 1fr;gap:5px;margin-bottom:10px;flex-shrink:0}
+    .hm-col-hdr{font-size:14px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;text-align:center;padding:10px 4px;border-bottom:1px solid}
+    .hm-col-hdr.phase-col{font-size:13px;text-align:left;color:var(--text-dim);border-color:transparent}
+    .hm-col-hdr.amber{color:var(--amber);border-color:rgba(247,139,4,.35)}
+    .hm-col-hdr.teal{color:var(--teal);border-color:rgba(2,127,147,.35)}
+    .hm-col-hdr.red{color:var(--red);border-color:rgba(163,5,2,.35)}
+    .hm-col-hdr.blue{color:var(--blue);border-color:rgba(122,184,240,.35)}
+    .hm-rows{display:flex;flex-direction:column;gap:5px;flex:1;min-height:0}
+    .hm-row{display:grid;grid-template-columns:140px 1fr 1fr 1fr 1fr;gap:5px;flex:1;min-height:0}
+    .hm-phase-cell{display:flex;align-items:center;padding:0 8px}
+    .hm-phase-name{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);padding-right:10px}
+    .hm-cell{background:var(--bg-card);border-radius:5px;padding:8px 10px;display:flex;flex-direction:column;gap:4px;cursor:pointer;transition:box-shadow .12s;box-shadow:0 2px 8px rgba(0,0,0,.35),0 0 0 1px rgba(247,139,4,.04);overflow:hidden;min-height:0}
+    .hm-cell:hover{box-shadow:0 0 0 1px rgba(247,139,4,.30),0 4px 12px rgba(247,139,4,.12)}
+    .hm-cell.stub{background:var(--bg-lift);opacity:.40;cursor:default;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+    .hm-cell.stub:hover{box-shadow:0 1px 4px rgba(0,0,0,.3)}
+    .hm-cell.flight-cell{background:var(--bg-card);box-shadow:0 1px 6px rgba(0,0,0,.4),0 0 0 1px rgba(247,139,4,.04)}
+    .hm-cell.flight-cell:hover{box-shadow:0 0 0 1px rgba(247,139,4,.30),0 4px 12px rgba(247,139,4,.12)}
+    .hm-cell.claim-cell{background:var(--bg-card);box-shadow:0 1px 6px rgba(0,0,0,.4),0 0 0 1px rgba(247,139,4,.04)}
+    .hm-cell.claim-cell:hover{box-shadow:0 0 0 1px rgba(247,139,4,.30),0 4px 12px rgba(247,139,4,.12)}
+    .hm-cell.selected{box-shadow:0 0 0 2px var(--amber),0 4px 14px rgba(247,139,4,.22)!important;background:rgba(247,139,4,.06)!important}
+    .hm-count{font-size:15px;font-weight:700;flex-shrink:0}
+    .hm-count.amber{color:var(--amber)}.hm-count.teal{color:var(--teal)}.hm-count.red{color:#c44040}.hm-count.blue{color:var(--blue)}
+    .track-label{font-size:13px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;flex-shrink:0}
+    .track-label.flight{color:var(--text)}.track-label.claim{color:var(--text)}
+    .hm-names{display:flex;flex-direction:column;gap:2px;overflow:hidden;flex:1}
+    .hm-name{font-size:14px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .hm-overflow{font-size:13px;color:var(--text-muted)}
+    .stub-planned{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim)}
+    .cpn-strip{margin-top:auto;font-size:14px;font-weight:600;color:var(--teal);letter-spacing:.04em;display:flex;align-items:center;gap:6px;flex-shrink:0;border-left:2px solid var(--teal);padding:2px 0 2px 8px}
+    /* Phase 4 */
+    .phase4-row{flex:1;display:flex;gap:5px;min-height:0}
+    .phase4-phase-cell{width:140px;flex-shrink:0;display:flex;align-items:center;padding:0 8px}
+    .phase4-content{flex:1;display:flex;flex-direction:column;gap:0;min-height:0}
+    .phase4-sub-row{flex:1;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:5px;min-height:0}
+    .phase4-divider{height:1px;background:rgba(247,139,4,.35);flex-shrink:0;margin:3px 0}
+    .phase4-stub-flight{background:var(--bg-lift)!important;box-shadow:0 1px 4px rgba(0,0,0,.3)!important}
+    .phase4-stub-claim{background:var(--bg-lift)!important;box-shadow:0 1px 4px rgba(0,0,0,.3)!important}
+    /* Split view */
+    .split-view{flex:1;display:flex;overflow:hidden;min-height:0}
+    .split-hm{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0}
+    .split-hm .hm-header-row{grid-template-columns:140px 1fr 1fr 1fr 1fr}
+    .split-hm .hm-row{grid-template-columns:140px 1fr 1fr 1fr 1fr}
+    /* Detail panel */
+    .detail-panel{width:42%;flex-shrink:0;background:var(--bg-panel);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+    .dp-header{padding:14px 16px 12px;border-bottom:1px solid var(--border);flex-shrink:0}
+    .dp-crumb{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);display:flex;align-items:center;gap:6px;margin-bottom:5px;flex-wrap:wrap}
+    .dp-crumb-sep{color:rgba(244,247,247,.20)}.dp-crumb-active{color:var(--amber)}
+    .dp-header-title{font-size:20px;font-weight:700;color:var(--text)}
+    .dp-header-sub{font-size:14px;color:var(--text-dim);margin-top:3px}
+    .dp-back{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;margin-bottom:8px}
+    .dp-back:hover{color:var(--text-muted)}
+    .dp-content{flex:1;padding:12px 16px;overflow-y:auto;display:flex;flex-direction:column;gap:8px}
+    .dp-content::-webkit-scrollbar{width:4px}.dp-content::-webkit-scrollbar-track{background:transparent}.dp-content::-webkit-scrollbar-thumb{background:var(--border-act);border-radius:2px}
+    /* Tactic card */
+    .dp-card{background:var(--bg-card);border-radius:5px;padding:11px 13px;box-shadow:0 2px 8px rgba(0,0,0,.35),0 0 0 1px rgba(247,139,4,.05);cursor:pointer;flex-shrink:0;transition:box-shadow .12s}
+    .dp-card:hover{box-shadow:0 0 0 1px rgba(247,139,4,.30),0 4px 12px rgba(247,139,4,.12)}
+    .dp-card-id{font-size:12px;letter-spacing:.06em;color:var(--text-dim);font-family:'IBM Plex Sans',monospace;margin-bottom:3px}
+    .dp-card-title{font-size:17px;font-weight:700;color:var(--text);margin-bottom:4px}
+    .dp-card-body{font-size:15px;line-height:1.55;color:var(--text-muted)}
+    .dp-card-tags{display:flex;gap:4px;margin-top:7px;flex-wrap:wrap}
+    .dp-ctag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-left:1.5px solid}
+    .dp-ctag.flight{border-color:var(--slate);color:var(--slate)}.dp-ctag.claim{border-color:var(--slate);color:var(--slate)}.dp-ctag.cpn{border-color:var(--teal);color:var(--teal)}
+    /* Tactic detail */
+    .det-id-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+    .det-id{font-size:12px;letter-spacing:.06em;color:var(--text-dim);font-family:'IBM Plex Sans',monospace;background:rgba(244,247,247,.06);padding:3px 8px;border-radius:3px}
+    .det-track-badge{font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;padding:3px 8px;border-left:2px solid}
+    .det-track-badge.flight{border-color:var(--slate);color:var(--slate);background:var(--slate-dim)}
+    .det-track-badge.claim{border-color:var(--slate);color:var(--slate);background:var(--slate-dim)}
+    .det-cpn-badge{display:inline-flex;align-self:flex-start;width:auto;align-items:center;gap:5px;font-size:13px;font-weight:700;letter-spacing:.04em;padding:5px 12px;border-radius:3px;margin-bottom:4px;background:var(--teal-dim);border:1px solid rgba(2,127,147,.35);color:var(--teal)}
+    .det-cpn-mark{font-size:13px;line-height:1}
+    .det-section{flex-shrink:0}
+    .det-section-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid var(--divider);display:block;width:100%}
+    .det-body{font-size:16px;line-height:1.7;color:var(--text-muted)}
+    .det-cpn-section{border-left:2px solid var(--teal);padding-left:10px;font-size:16px;line-height:1.65;color:var(--text-muted)}
+    .det-actor-groups{display:flex;flex-direction:column;gap:8px}
+    .det-actor-cat-label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:4px}
+    .det-actor-chips{display:flex;gap:4px;flex-wrap:wrap}
+    .det-actor-chip{font-size:14px;font-weight:600;padding:4px 10px;background:rgba(244,247,247,.05);border:1px solid var(--border-act);border-radius:3px;color:var(--text-muted);cursor:pointer;transition:background .1s,border-color .1s}
+    .det-actor-chip:hover{background:var(--amber-dim);border-color:rgba(247,139,4,.35);color:var(--amber)}
+    .det-actor-chip.high{border-color:rgba(247,139,4,.25)}
+    .det-deferred-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);opacity:.6;margin-bottom:5px;padding-bottom:3px;border-bottom:1px solid var(--divider);display:block;width:100%}
+    .det-deferred{font-size:14px;line-height:1.6;color:var(--text-dim);font-style:italic;margin-bottom:8px}
+    /* Actor profiles */
+    .actors-view{flex:1;overflow-y:auto;padding:24px 28px}
+    .actors-view::-webkit-scrollbar{width:6px}.actors-view::-webkit-scrollbar-track{background:transparent}.actors-view::-webkit-scrollbar-thumb{background:var(--border-act);border-radius:3px}
+    .actors-view-title{font-size:14px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:4px}
+    .actors-view-sub{font-size:14px;color:var(--text-dim);margin-bottom:28px}
+    .actor-cat-section{margin-bottom:28px}
+    .actor-cat-label{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);padding-bottom:8px;margin-bottom:12px;border-bottom:1px solid rgba(247,139,4,.18);display:flex;align-items:center;gap:8px}
+    .actor-cat-count{font-size:12px;font-weight:600;padding:2px 7px;background:var(--amber-dim);color:var(--amber);border-radius:3px}
+    .actor-cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+    .actor-card{background:var(--bg-card);border-radius:5px;padding:13px 14px;box-shadow:0 2px 8px rgba(0,0,0,.35),0 0 0 1px rgba(247,139,4,.05);cursor:pointer;transition:box-shadow .12s}
+    .actor-card:hover{box-shadow:0 0 0 1px rgba(247,139,4,.30),0 4px 12px rgba(247,139,4,.12)}
+    .actor-card-id{font-size:12px;letter-spacing:.06em;color:var(--text-dim);font-family:'IBM Plex Sans',monospace;margin-bottom:4px}
+    .actor-card-name{font-size:17px;font-weight:700;color:var(--text);margin-bottom:8px}
+    .actor-card-attrs{display:flex;flex-direction:column;gap:3px;margin-bottom:8px}
+    .actor-attr-row{font-size:14px;color:var(--text-muted);display:flex;gap:6px}
+    .actor-attr-key{color:var(--text-dim);min-width:80px;flex-shrink:0}
+    .actor-vectors{display:flex;gap:4px;flex-wrap:wrap}
+    .actor-vector-tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-left:2px solid var(--teal);color:var(--teal)}
+    /* Actor detail */
+    .actor-detail-view{flex:1;overflow-y:auto;padding:28px 40px;max-width:none}
+    .actor-detail-view::-webkit-scrollbar{width:6px}.actor-detail-view::-webkit-scrollbar-track{background:transparent}.actor-detail-view::-webkit-scrollbar-thumb{background:var(--border-act);border-radius:3px}
+    .adv-back{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;margin-bottom:12px}
+    .adv-back:hover{color:var(--text-muted)}
+    .adv-crumb{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);display:flex;align-items:center;gap:6px;margin-bottom:5px}
+    .adv-category-row{display:flex;align-items:baseline;gap:14px;margin-bottom:6px;flex-wrap:wrap}
+    .adv-category-name{font-size:28px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber)}
+    .adv-category-sep{font-size:20px;color:var(--border-act)}
+    .adv-category-id{font-size:15px;letter-spacing:.08em;color:var(--text-dim);font-family:'IBM Plex Sans',monospace;background:var(--section-bg);padding:3px 10px;border-radius:3px;border:1px solid var(--border)}
+    .adv-id{font-size:13px;letter-spacing:.06em;color:var(--text-dim);font-family:'IBM Plex Sans',monospace;background:rgba(244,247,247,.06);padding:3px 9px;border-radius:3px;margin-bottom:5px;display:inline-block}
+    .adv-name{font-size:26px;font-weight:700;color:var(--text);margin-bottom:22px}
+    .adv-section{margin-bottom:22px;padding:18px 22px;background:var(--bg-card);border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.35),0 0 0 1px rgba(247,139,4,.04)}
+    .adv-section-label{font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--divider);display:block;width:100%}
+    .adv-two-col{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:start}
+    .adv-two-col-left{display:flex;flex-direction:column;gap:0;min-width:0}
+    .adv-two-col-right{display:flex;flex-direction:column;gap:0;min-width:0;position:sticky;top:0}
+    .adv-attr-row-new{display:flex;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid var(--divider)}
+    .adv-attr-row-new:last-child{border-bottom:none}
+    .adv-attr-row-new .adv-attr-key{flex-shrink:0;min-width:180px;margin-bottom:0;color:var(--text-muted);font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase}
+    .adv-attr-row-new .adv-attr-val{color:var(--text);font-size:16px;font-weight:500}
+    @media(max-width:900px){.adv-two-col{grid-template-columns:1fr}.adv-two-col-right{position:static}}
+    .adv-attrs{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;margin-bottom:4px}
+    .adv-attr-key{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);margin-bottom:2px}
+    .adv-attr-val{font-size:15px;color:var(--text-muted)}
+    .adv-body{font-size:16px;line-height:1.7;color:var(--text-muted)}
+    .adv-markers{display:flex;flex-direction:column;gap:6px}
+    .adv-marker{display:flex;gap:8px;font-size:16px;color:var(--text-muted);line-height:1.5}
+    .adv-marker-dot{flex-shrink:0;width:4px;height:4px;background:var(--amber);border-radius:50%;margin-top:6px}
+    .adv-risk-tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-left:2px solid var(--amber);color:var(--amber);background:var(--amber-dim);margin:0 4px 4px 0;display:inline-block}
+    .adv-tactic-link{display:flex;align-items:center;gap:10px;font-size:15px;padding:7px 10px;border-radius:4px;margin-bottom:2px;cursor:pointer;transition:background .1s;color:var(--text-muted)}
+    .adv-tactic-link:hover{background:var(--bg-card);color:var(--text)}
+    .adv-tactic-id{font-size:12px;letter-spacing:.06em;color:var(--text-dim);font-family:'IBM Plex Sans',monospace;flex-shrink:0}
+    /* Stub landing */
+    .stub-landing{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:40px}
+    .stub-landing-label{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;text-align:center}
+    .stub-landing-title{font-size:24px;font-weight:700;color:var(--text);margin-bottom:6px}
+    .stub-landing-sub{font-size:16px;color:var(--text-muted);max-width:420px;text-align:center}
+    [data-theme="light"] .hm-cell{box-shadow:0 3px 10px rgba(0,0,0,.12),0 1px 3px rgba(0,0,0,.08)}
+    [data-theme="light"] .hm-cell:hover{box-shadow:0 0 0 2px var(--amber),0 6px 16px rgba(247,139,4,.22)}
+    [data-theme="light"] .hm-cell.stub{box-shadow:0 2px 6px rgba(0,0,0,.08)}
+    [data-theme="light"] .dp-card{box-shadow:0 3px 10px rgba(0,0,0,.12),0 1px 3px rgba(0,0,0,.08)}
+    [data-theme="light"] .dp-card:hover{box-shadow:0 0 0 2px var(--amber),0 6px 16px rgba(247,139,4,.22)}
+    [data-theme="light"] .actor-card{box-shadow:0 3px 10px rgba(0,0,0,.12),0 1px 3px rgba(0,0,0,.08)}
+    [data-theme="light"] .actor-card:hover{box-shadow:0 0 0 2px var(--amber),0 6px 16px rgba(247,139,4,.22)}
+    [data-theme="light"] .hm-cell.flight-cell,[data-theme="light"] .hm-cell.claim-cell{box-shadow:0 3px 10px rgba(0,0,0,.12),0 1px 3px rgba(0,0,0,.08)}
+    [data-theme="light"] .det-id{background:rgba(0,0,0,.05)}
+    [data-theme="light"] .adv-id{background:rgba(0,0,0,.05)}
+    [data-theme="light"] .det-actor-chip{background:rgba(0,0,0,.03);border-color:var(--border)}
+    [data-theme="light"] .topbar{border-bottom-color:var(--border);box-shadow:0 4px 12px rgba(0,0,0,.12),0 1px 3px rgba(0,0,0,.08)}
+    [data-theme="light"] .filterbar{border-bottom-color:var(--border);box-shadow:0 3px 8px rgba(0,0,0,.10)}
+    [data-theme="light"] .detail-panel{border-left-color:var(--border);box-shadow:-3px 0 10px rgba(0,0,0,.10)}
+    [data-theme="light"] .actor-vector-tag{color:var(--teal);border-color:var(--teal)}
+    [data-theme="light"] .adv-section{box-shadow:0 3px 10px rgba(0,0,0,.12),0 1px 3px rgba(0,0,0,.08)}
+    @media(max-width:900px){.detail-panel{width:50%}}
+    @media(max-width:680px){.split-view{flex-direction:column}.detail-panel{width:100%;border-left:none;border-top:1px solid var(--border);height:55vh}.split-hm{height:45vh}.topbar-meta{display:none}}
+  </style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+const PHASE_NAMES={1:'Target Development',2:'Mobilization',3:'Execution',4:'Aftermath'};
+const PHASE_SHORT={1:'Target Dev',2:'Mobilization',3:'Execution',4:'Aftermath'};
+const STUB={
+  facility:{phases:{1:10,2:9,3:9},flight:8,claim:4},
+  organization:{phases:{1:9,2:10,3:10},flight:9,claim:4},
+  system:{phases:{1:8,2:9,3:9},flight:8,claim:4}
+};
+const CATEGORY_ORDER=['lone_actor','insider','criminal','corporate_espionage','ideological','nation_state','customer_aggressor'];
+const resolveTrack=t=>t.phase_4_track==='evasion'?'flight':t.phase_4_track==='attribution'?'claim':null;
+const VECTOR_LABELS={physical_primary:'Physical',cyber_enabled_physical:'Cyber-Enabled',cyber_intrusion:'Cyber',ai_enabled:'AI-Enabled',digital_social_engineering:'Social Eng.'};
+const AI_RISK_LABELS={accelerated_target_research:'Accelerated Research',automated_surveillance:'Automated Surveillance',synthetic_identity:'Synthetic Identity',deepfake_communication:'Deepfake Comms',ai_generated_content:'AI Content',autonomous_attack_planning:'Auto Planning',llm_social_engineering:'LLM Social Eng.',spear_phishing_automation:'Spear Phishing',automated_reconnaissance:'Auto Recon',insider_threat_augmentation:'Insider Augmentation',behavioral_mimicry:'Behavioral Mimicry'};
+
+function parseRoute(){
+  const raw=window.location.hash.replace(/^#\/?/,'');
+  const p=raw.split('/').filter(Boolean);
+  if(!p.length||(p[0]==='person'&&p.length===1))return{view:'heatmap'};
+  if(p[0]==='actors'&&p.length===1)return{view:'actors'};
+  if(p[0]==='actors')return{view:'actorDetail',actorId:p[1]};
+  if(p[0]==='person'&&p[1]==='phase')return{view:'phase',phase:parseInt(p[2]),track:p[3]||null};
+  if(p[0]==='person'&&p[1]==='tactic')return{view:'tactic',tacticId:p[2]};
+  if(['facility','organization','system'].includes(p[0]))return{view:'stub',matrix:p[0]};
+  return{view:'heatmap'};
+}
+
+function TopNav({route,navigate,theme,setTheme}){
+  const isActors=route.view==='actors'||route.view==='actorDetail';
+  const isPerson=!isActors&&route.view!=='stub';
+  return(
+    <nav className="topbar">
+      <a className="topbar-logo" href="#/person" onClick={e=>{e.preventDefault();navigate('/person');}}>
+        <em>THREAT</em>&nbsp;Matrix
+      </a>
+      <div className="matrix-tabs">
+        <a className={`mtab${isPerson?' active':''}`} href="#/person" onClick={e=>{e.preventDefault();navigate('/person');}}>Person</a>
+        {[['facility','Facility'],['organization','Organization'],['system','System']].map(([m,l])=>(
+          <a key={m} className={`mtab stub${route.view==='stub'&&route.matrix===m?' active':''}`}
+             href={`#/${m}`} onClick={e=>{e.preventDefault();navigate(`/${m}`);}}>{l}</a>
+        ))}
+        <a className={`mtab${isActors?' active':''}`} href="#/actors" onClick={e=>{e.preventDefault();navigate('/actors');}}>Actor Profiles</a>
+      </div>
+      <div className="topbar-spacer"/>
+      <span className="topbar-meta">154 tactics · 27 profiles · MIT</span>
+      <span className="badge-v1">v1</span>
+      <button className="theme-toggle" onClick={()=>{const next=theme==='dark'?'light':'dark';setTheme(next);}} title={theme==='dark'?'Switch to light mode':'Switch to dark mode'}>
+        {theme==='dark'?'☀':'☾'}
+      </button>
+    </nav>
+  );
+}
+
+function FilterBar({cpnFilter,setCpnFilter}){
+  return(
+    <div className="filterbar">
+      <span className="fb-label">Filter</span>
+      <div className="fb-sep"/>
+      <span className={`fb-chip${cpnFilter?' amber-active':' dim'}`}
+            onClick={()=>setCpnFilter(v=>!v)} title="Show only Cyber-Physical Nexus tactics">⌖ CPN</span>
+      <div className="fb-sep"/>
+      <span className="fb-chip v11" title="Actor filter launches in V1.1">Actor ▾<span className="v11-badge">V1.1</span></span>
+    </div>
+  );
+}
+
+function HeatMapCell({tactics,track,isSelected,onClick,cpnFilter}){
+  const displayed=cpnFilter?tactics.filter(t=>t.cpn):tactics;
+  const count=displayed.length;
+  const cpnCount=tactics.filter(t=>t.cpn).length;
+  const col='amber';
+  const cls=track==='flight'?'flight-cell':track==='claim'?'claim-cell':'';
+  return(
+    <div className={`hm-cell${cls?' '+cls:''}${isSelected?' selected':''}`} onClick={onClick}>
+      {track&&<div className={`track-label ${track}`}>{track==='flight'?'Evade':'Claim'}</div>}
+      <div className={`hm-count ${col}`}>{count}</div>
+      {count>0&&(()=>{
+        const limit=track?2:3;
+        return(
+          <div className="hm-names">
+            {displayed.slice(0,limit).map(t=><div key={t.id} className="hm-name">{t.name}</div>)}
+            {count>limit&&<div className="hm-overflow">+{count-limit} more</div>}
+          </div>
+        );
+      })()}
+      {cpnCount>0&&!cpnFilter&&<div className="cpn-strip">⌖ {cpnCount} cyber-enabled</div>}
+    </div>
+  );
+}
+
+function StubCell({count,version,track}){
+  const col=track?'amber':'blue';
+  const ex=track==='flight'?'phase4-stub-flight':track==='claim'?'phase4-stub-claim':'';
+  return(
+    <div className={`hm-cell stub${ex?' '+ex:''}`}>
+      {track&&<div className={`track-label ${track}`} style={{opacity:.5}}>{track==='flight'?'Evade':'Claim'}</div>}
+      <div className={`hm-count ${col}`}>{count}</div>
+      <div className="stub-planned">{version} Planned</div>
+    </div>
+  );
+}
+
+function HeatMapGrid({tacticsByPhase,navigate,cpnFilter,compact,selectedPhase,selectedTrack,selectedTacticId}){
+  const pc='140px';
+  const gc=`${pc} 1fr 1fr 1fr 1fr`;
+  return(
+    <div className="hm-wrap">
+      <div className="hm-header-row" style={{gridTemplateColumns:gc}}>
+        <div className="hm-col-hdr phase-col">Phase</div>
+        <div className="hm-col-hdr amber">{compact?'Person':'Person · 34'}</div>
+        <div className="hm-col-hdr teal">{compact?'Facility':'Facility · 40'}</div>
+        <div className="hm-col-hdr red">{compact?'Organization':'Organization · 42'}</div>
+        <div className="hm-col-hdr blue">{compact?'System':'System · 38'}</div>
+      </div>
+      <div className="hm-rows">
+        {[1,2,3].map(phase=>{
+          const sel=selectedTacticId
+            ?tacticsByPhase[phase].some(t=>t.id===selectedTacticId)
+            :selectedPhase===phase;
+          return(
+            <div key={phase} className="hm-row" style={{gridTemplateColumns:gc}}>
+              <div className="hm-phase-cell">
+                <div className="hm-phase-name">{PHASE_SHORT[phase]}</div>
+              </div>
+              <HeatMapCell tactics={tacticsByPhase[phase]} isSelected={sel}
+                onClick={()=>navigate(`/person/phase/${phase}`)} cpnFilter={cpnFilter}/>
+              {['facility','organization','system'].map((m,i)=>(
+                <StubCell key={m} count={STUB[m].phases[phase]} version={`V${i+2}`}/>
+              ))}
+            </div>
+          );
+        })}
+        <div className="phase4-row">
+          <div className="phase4-phase-cell" style={{width:'140px'}}>
+            <div className="hm-phase-name">{PHASE_SHORT[4]}</div>
+          </div>
+          <div className="phase4-content">
+            <div className="phase4-sub-row">
+              <HeatMapCell tactics={tacticsByPhase[4].flight} track="flight"
+                isSelected={(selectedTacticId&&tacticsByPhase[4].flight.some(t=>t.id===selectedTacticId))||(!selectedTacticId&&selectedPhase===4&&selectedTrack==='flight')}
+                onClick={()=>navigate('/person/phase/4/flight')} cpnFilter={cpnFilter}/>
+              <StubCell count={STUB.facility.flight} version="V2" track="flight"/>
+              <StubCell count={STUB.organization.flight} version="V3" track="flight"/>
+              <StubCell count={STUB.system.flight} version="V4" track="flight"/>
+            </div>
+            <div className="phase4-divider"/>
+            <div className="phase4-sub-row">
+              <HeatMapCell tactics={tacticsByPhase[4].claim} track="claim"
+                isSelected={(selectedTacticId&&tacticsByPhase[4].claim.some(t=>t.id===selectedTacticId))||(!selectedTacticId&&selectedPhase===4&&selectedTrack==='claim')}
+                onClick={()=>navigate('/person/phase/4/claim')} cpnFilter={cpnFilter}/>
+              <StubCell count={STUB.facility.claim} version="V2" track="claim"/>
+              <StubCell count={STUB.organization.claim} version="V3" track="claim"/>
+              <StubCell count={STUB.system.claim} version="V4" track="claim"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PhasePanel({tactics,phase,track,navigate,cpnFilter}){
+  const disp=cpnFilter?tactics.filter(t=>t.cpn):tactics;
+  const tl=track==='flight'?'Evade':track==='claim'?'Claim':null;
+  return(
+    <>
+      <div className="dp-header">
+        <div className="dp-back" onClick={()=>navigate('/person')}>← Back</div>
+        <div className="dp-crumb">
+          <span>Phase {phase}</span>
+          <span className="dp-crumb-sep">›</span>
+          <span className="dp-crumb-active">{PHASE_NAMES[phase]}{tl?` · ${tl}`:''}</span>
+        </div>
+        <div className="dp-header-title">{tl?`${tl} Tactics`:PHASE_NAMES[phase]}</div>
+        <div className="dp-header-sub">{disp.length}{cpnFilter?` of ${tactics.length} (CPN filtered)`:''} tactics</div>
+      </div>
+      <div className="dp-content">
+        {disp.length===0&&<div style={{color:'var(--text-dim)',fontSize:'11px',padding:'8px 0'}}>No CPN-tagged tactics in this phase.</div>}
+        {disp.map(t=>(
+          <div key={t.id} className="dp-card" onClick={()=>navigate(`/person/tactic/${t.id}`)}>
+            <div className="dp-card-id">{t.id}</div>
+            <div className="dp-card-title">{t.name}</div>
+            <div className="dp-card-body">{t.notes?t.notes.slice(0,120)+(t.notes.length>120?'…':''):''}</div>
+            <div className="dp-card-tags">
+              {t.phase_4_track==='evasion'&&<span className="dp-ctag flight">Evade</span>}
+              {t.phase_4_track==='attribution'&&<span className="dp-ctag claim">Claim</span>}
+              {t.cpn&&<span className="dp-ctag cpn">⌖ CPN</span>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+function TacticDetail({tactic,actorMap,navigate,fromPhase,fromTrack}){
+  if(!tactic)return<div style={{padding:'20px',color:'var(--text-dim)'}}>Tactic not found.</div>;
+  const abc={};
+  (tactic.actor_associations||[]).forEach(a=>{
+    const actor=actorMap[a.actor_id];
+    if(!actor)return;
+    if(!abc[actor.category])abc[actor.category]=[];
+    abc[actor.category].push({actor,relevance:a.relevance});
+  });
+  const cats=CATEGORY_ORDER.filter(c=>abc[c]);
+  const back=fromPhase?(fromTrack?`/person/phase/${fromPhase}/${fromTrack}`:`/person/phase/${fromPhase}`):`/person`;
+  const tl=resolveTrack(tactic);
+  return(
+    <>
+      <div className="dp-header">
+        <div className="dp-back" onClick={()=>navigate(back)}>← Back</div>
+        <div className="dp-crumb">
+          <span>Phase {tactic.phase}</span>
+          <span className="dp-crumb-sep">›</span>
+          {tl&&<><span style={{color:'var(--slate)'}}>{tl==='flight'?'Evade':'Claim'}</span><span className="dp-crumb-sep">›</span></>}
+          <span className="dp-crumb-active">{tactic.name}</span>
+        </div>
+        <div className="det-id-row">
+          <span className="det-id">{tactic.id}</span>
+          {tl&&<span className={`det-track-badge ${tl}`}>{tl==='flight'?'EVADE':'CLAIM'}</span>}
+        </div>
+        <div className="dp-header-title">{tactic.name}</div>
+      </div>
+      <div className="dp-content">
+        {tactic.cpn&&tactic.cpn_id&&<div className="det-cpn-badge"><span className="det-cpn-mark">⌖</span> {tactic.cpn_id}</div>}
+        <div className="det-section">
+          <div className="det-section-label">Description</div>
+          <div className="det-body">{tactic.notes}</div>
+        </div>
+        {tactic.cpn&&tactic.cpn_notes&&(
+          <div className="det-section">
+            <div className="det-section-label">Cyber-Physical Nexus</div>
+            <div className="det-cpn-section">{tactic.cpn_notes}</div>
+          </div>
+        )}
+        {cats.length>0&&(
+          <div className="det-section">
+            <div className="det-section-label">Actor Associations</div>
+            <div className="det-actor-groups">
+              {cats.map(cat=>(
+                <div key={cat}>
+                  <div className="det-actor-cat-label">{abc[cat][0].actor.category_label}</div>
+                  <div className="det-actor-chips">
+                    {abc[cat].map(({actor,relevance})=>(
+                      <span key={actor.id} className={`det-actor-chip${relevance==='high'?' high':''}`}
+                            onClick={()=>navigate(`/actors/${actor.id}`)} title={`${actor.id} · ${relevance} relevance`}>
+                        {actor.name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        {['Techniques','Indicators','Countermeasures'].map(s=>(
+          <div key={s}><div className="det-deferred-label">{s}</div><div className="det-deferred">Coming in V2 with the Detection &amp; Response Companion Guide.</div></div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+function SplitView({tacticsByPhase,route,navigate,tacticMap,actorMap,cpnFilter}){
+  const ot=route.tacticId?tacticMap[route.tacticId]:null;
+  let pp=route.phase,pt=route.track,ptactics=[];
+  if(ot){
+    pp=ot.phase;
+    if(pp===4){pt=resolveTrack(ot);ptactics=pt==='flight'?tacticsByPhase[4].flight:tacticsByPhase[4].claim;}
+    else{pt=null;ptactics=tacticsByPhase[pp]||[];}
+  }else if(route.phase===4){
+    ptactics=route.track==='flight'?tacticsByPhase[4].flight:tacticsByPhase[4].claim;
+  }else{
+    ptactics=tacticsByPhase[route.phase]||[];
+  }
+  return(
+    <div className="split-view">
+      <div className="split-hm">
+        <HeatMapGrid tacticsByPhase={tacticsByPhase} navigate={navigate} cpnFilter={cpnFilter}
+          compact={true} selectedPhase={pp} selectedTrack={pt} selectedTacticId={route.tacticId||null}/>
+      </div>
+      <div className="detail-panel">
+        {ot?(
+          <TacticDetail tactic={ot} actorMap={actorMap} navigate={navigate} fromPhase={pp} fromTrack={pt}/>
+        ):(
+          <PhasePanel tactics={ptactics} phase={pp} track={pt} navigate={navigate} cpnFilter={cpnFilter}/>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function ActorProfilesView({actorsByCategory,navigate}){
+  const total=Object.values(actorsByCategory).reduce((s,a)=>s+a.length,0);
+  return(
+    <div className="actors-view">
+      <div className="actors-view-title">Actor Profiles</div>
+      <div className="actors-view-sub">{total} profiles across {Object.keys(actorsByCategory).length} threat categories</div>
+      {CATEGORY_ORDER.filter(c=>actorsByCategory[c]).map(cat=>{
+        const actors=actorsByCategory[cat];
+        return(
+          <div key={cat} className="actor-cat-section">
+            <div className="actor-cat-label">{actors[0].category_label}<span className="actor-cat-count">{actors.length}</span></div>
+            <div className="actor-cards-grid">
+              {actors.map(a=>(
+                <div key={a.id} className="actor-card" onClick={()=>navigate(`/actors/${a.id}`)}>
+                  <div className="actor-card-id">{a.id}</div>
+                  <div className="actor-card-name">{a.name}</div>
+                  <div className="actor-card-attrs">
+                    <div className="actor-attr-row"><span className="actor-attr-key">Awareness</span><span>{a.awareness}</span></div>
+                    <div className="actor-attr-row"><span className="actor-attr-key">Direction</span><span>{a.direction}</span></div>
+                    <div className="actor-attr-row"><span className="actor-attr-key">Access</span><span>{a.access_relationship}</span></div>
+                    <div className="actor-attr-row"><span className="actor-attr-key">Phase Risk</span><span>{a.phase_compression_risk}</span></div>
+                  </div>
+                  {a.attack_vectors&&a.attack_vectors.length>0&&(
+                    <div className="actor-vectors">
+                      {a.attack_vectors.slice(0,3).map(v=><span key={v} className="actor-vector-tag">{VECTOR_LABELS[v]||v}</span>)}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function ActorDetailView({actor,navigate,getActorTactics}){
+  if(!actor)return<div className="actor-detail-view"><div className="adv-back" onClick={()=>navigate('/actors')}>← All Profiles</div><div style={{color:'var(--text-dim)',fontSize:'13px'}}>Actor not found.</div></div>;
+  const associated=getActorTactics(actor.id);
+  return(
+    <div className="actor-detail-view">
+      <div className="adv-back" onClick={()=>navigate('/actors')}>← All Profiles</div>
+      <div className="adv-category-row">
+        <span className="adv-category-name">{actor.category_label}</span>
+        <span className="adv-category-sep">›</span>
+        <span className="adv-category-id">{actor.id}</span>
+      </div>
+      <div className="adv-name">{actor.name}</div>
+      <div className="adv-two-col">
+        <div className="adv-two-col-left">
+          <div className="adv-section">
+            <div className="adv-section-label">Profile Attributes</div>
+            <div className="adv-attrs-list">
+              {[['Awareness',actor.awareness],['Direction',actor.direction],['Access Relationship',actor.access_relationship],['Phase Compression Risk',actor.phase_compression_risk],...(actor.actor_level?[['Actor Level',actor.actor_level]]:[])].map(([k,v])=>(
+                <div key={k} className="adv-attr-row-new">
+                  <div className="adv-attr-key">{k}</div>
+                  <div className="adv-attr-val">{v}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {actor.description&&<div className="adv-section"><div className="adv-section-label">Description</div><div className="adv-body">{actor.description}</div></div>}
+          {actor.attack_vectors&&actor.attack_vectors.length>0&&(
+            <div className="adv-section">
+              <div className="adv-section-label">Attack Vectors</div>
+              <div style={{display:'flex',flexWrap:'wrap',gap:'6px'}}>
+                {actor.attack_vectors.map(v=><span key={v} className="actor-vector-tag">{VECTOR_LABELS[v]||v}</span>)}
+              </div>
+            </div>
+          )}
+          {actor.behavioral_markers&&actor.behavioral_markers.length>0&&(
+            <div className="adv-section">
+              <div className="adv-section-label">Behavioral Markers</div>
+              <div className="adv-markers">
+                {actor.behavioral_markers.map((m,i)=><div key={i} className="adv-marker"><div className="adv-marker-dot"/><div>{m}</div></div>)}
+              </div>
+            </div>
+          )}
+          {actor.ai_enabled_risks&&actor.ai_enabled_risks.length>0&&(
+            <div className="adv-section">
+              <div className="adv-section-label">AI-Enabled Risks</div>
+              <div>{actor.ai_enabled_risks.map(r=><span key={r} className="adv-risk-tag">{AI_RISK_LABELS[r]||r}</span>)}</div>
+            </div>
+          )}
+        </div>
+        <div className="adv-two-col-right">
+          {associated.length>0&&(
+            <div className="adv-section">
+              <div className="adv-section-label">Associated Tactics ({associated.length})</div>
+              <div>
+                {associated.map(t=>(
+                  <div key={t.id} className="adv-tactic-link" onClick={()=>navigate(`/person/tactic/${t.id}`)}>
+                    <span className="adv-tactic-id">{t.id}</span><span>{t.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function StubLanding({matrix,version}){
+  const label=matrix.charAt(0).toUpperCase()+matrix.slice(1);
+  const s=STUB[matrix];const total=Object.values(s.phases).reduce((n,v)=>n+v,0)+s.flight+s.claim;
+  return(
+    <div className="stub-landing">
+      <div style={{textAlign:'center'}}>
+        <div className="stub-landing-label">{version} · Planned</div>
+        <div className="stub-landing-title">{label} Matrix</div>
+        <div className="stub-landing-sub">{total} tactics across 4 phases. Ships in {version}.</div>
+      </div>
+    </div>
+  );
+}
+
+function App(){
+  const[data,setData]=React.useState(null);
+  const[loading,setLoading]=React.useState(true);
+  const[error,setError]=React.useState(null);
+  const[route,setRoute]=React.useState(()=>parseRoute());
+  const[cpnFilter,setCpnFilter]=React.useState(false);
+  const[theme,setThemeState]=React.useState(()=>localStorage.getItem('threat-matrix-theme')||'dark');
+  const setTheme=React.useCallback(t=>{setThemeState(t);localStorage.setItem('threat-matrix-theme',t);document.documentElement.setAttribute('data-theme',t==='light'?'light':'');},[]);
+  React.useEffect(()=>{if(theme==='light')document.documentElement.setAttribute('data-theme','light');},[]);
+
+  React.useEffect(()=>{
+    fetch('data/framework.json')
+      .then(r=>{if(!r.ok)throw new Error(`Load failed (${r.status})`);return r.json();})
+      .then(d=>{setData(d);setLoading(false);})
+      .catch(e=>{setError(e.message);setLoading(false);});
+  },[]);
+
+  React.useEffect(()=>{
+    const h=()=>setRoute(parseRoute());
+    window.addEventListener('hashchange',h);
+    return()=>window.removeEventListener('hashchange',h);
+  },[]);
+
+  const navigate=React.useCallback(path=>{window.location.hash='#'+path;},[]);
+
+  const derived=React.useMemo(()=>{
+    if(!data)return null;
+    const pt=data.matrices.person.tactics;
+    const ap=data.actor_profiles;
+    const tacticMap={};pt.forEach(t=>{tacticMap[t.id]=t;});
+    const actorMap={};ap.forEach(a=>{actorMap[a.id]=a;});
+    const tbp={1:[],2:[],3:[],4:{flight:[],claim:[]}};
+    pt.forEach(t=>{
+      if(t.phase!==4)tbp[t.phase].push(t);
+      else if(resolveTrack(t)==='flight')tbp[4].flight.push(t);
+      else tbp[4].claim.push(t);
+    });
+    const abc={};
+    ap.forEach(a=>{if(!abc[a.category])abc[a.category]=[];abc[a.category].push(a);});
+    const getActorTactics=id=>pt.filter(t=>t.actor_associations&&t.actor_associations.some(a=>a.actor_id===id));
+    return{pt,ap,tacticMap,actorMap,tbp,abc,getActorTactics};
+  },[data]);
+
+  if(loading)return<div className="loading-state">Loading THREAT Matrix…</div>;
+  if(error)return<div className="error-state">{error}</div>;
+
+  const{pt,ap,tacticMap,actorMap,tbp,abc,getActorTactics}=derived;
+  const isActors=route.view==='actors'||route.view==='actorDetail';
+  const sv={facility:'V2',organization:'V3',system:'V4'};
+
+  return(
+    <div className="app-root">
+      <TopNav route={route} navigate={navigate} theme={theme} setTheme={setTheme}/>
+      {!isActors&&<FilterBar cpnFilter={cpnFilter} setCpnFilter={setCpnFilter}/>}
+      <div className="main-content">
+        {route.view==='heatmap'&&<HeatMapGrid tacticsByPhase={tbp} navigate={navigate} cpnFilter={cpnFilter} compact={false} selectedPhase={null} selectedTrack={null} selectedTacticId={null}/>}
+        {(route.view==='phase'||route.view==='tactic')&&<SplitView tacticsByPhase={tbp} route={route} navigate={navigate} tacticMap={tacticMap} actorMap={actorMap} cpnFilter={cpnFilter}/>}
+        {route.view==='actors'&&<ActorProfilesView actorsByCategory={abc} navigate={navigate}/>}
+        {route.view==='actorDetail'&&<ActorDetailView actor={actorMap[route.actorId]} navigate={navigate} getActorTactics={getActorTactics}/>}
+        {route.view==='stub'&&<StubLanding matrix={route.matrix} version={sv[route.matrix]}/>}
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
