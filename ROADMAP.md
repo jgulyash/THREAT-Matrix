@@ -1,7 +1,7 @@
 # THREAT Matrix — Development Roadmap
 
 **Current Version:** V1 (THREAT/Person — 34 tactics)
-**Framework:** Tactical Human Risk Enumeration and Adversary Taxonomy (THREAT)
+**Product:** THREAT Matrix
 
 ---
 
