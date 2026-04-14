@@ -2,7 +2,7 @@
 
 *Tactical Human Risk Enumeration and Adversary Taxonomy Matrix*
 
-**Open-standard shared vocabulary for categorizing and detecting human adversary behavior in physical security and insider threats. Built from 15+ years of experience leading high-stakes threat investigations with more than 70 domestic and international partners.**  
+**An open-standard shared vocabulary for categorizing and detecting human adversary behavior in physical security and insider threats. Built from 15+ years of experience leading high-stakes threat investigations with more than 70 domestic and international partners.**  
 
 Physical security lacks a shared, standardized vocabulary for adversary behavior. The THREAT Matrix is built to be that standard.
 
