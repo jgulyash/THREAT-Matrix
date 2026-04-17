@@ -1,0 +1,75 @@
+name: Use Case Proposal
+description: Propose a new use case or real-world application of the THREAT Matrix framework
+title: "[Use Case] "
+labels: ["use-case", "discussion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use cases validate the framework against operational reality. We are especially interested in sectors that aren't yet well-represented: healthcare, education, transportation, critical infrastructure, and public events.
+
+        Use cases that surface gaps in the framework are more useful than ones that confirm it works. Actual or composite incidents (with appropriate redaction) are more useful than abstract scenarios.
+
+  - type: input
+    id: title
+    attributes:
+      label: Use Case Title
+      description: A short descriptive title for this use case.
+      placeholder: e.g., Stadium Event Threat Assessment Using THREAT Matrix
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: >
+        Describe the scenario or application. Include the sector, context, and what
+        problem the THREAT Matrix would help solve. If based on a real or composite
+        incident, redact identifying details as needed.
+      placeholder: |
+        Describe the use case: what happened (or could happen), in what environment,
+        and what the stakes are.
+    validations:
+      required: true
+
+  - type: textarea
+    id: target-audience
+    attributes:
+      label: Target Audience
+      description: >
+        Who would benefit from this use case? What roles or teams would use the
+        framework in this context?
+      placeholder: |
+        e.g., Corporate security teams conducting pre-event threat assessments for large public gatherings
+    validations:
+      required: false
+
+  - type: textarea
+    id: application
+    attributes:
+      label: How the Framework Would Be Applied
+      description: >
+        Describe how the THREAT Matrix would be used in this scenario. Which matrices,
+        phases, tactics, or actor profiles are relevant? How would a practitioner
+        walk through the framework to address this use case?
+      placeholder: |
+        e.g., Map known adversary behaviors to Person matrix Phase 1 tactics, cross-reference
+        actor profiles to identify likely threat categories, use countermeasures to build
+        a mitigation plan.
+    validations:
+      required: false
+
+  - type: textarea
+    id: framework-changes
+    attributes:
+      label: Required Framework Changes
+      description: >
+        Would this use case require any additions or changes to the framework?
+        New tactics, new actor profiles, new fields, or structural changes?
+        If the framework works as-is, say so — that is useful feedback too.
+      placeholder: |
+        e.g., No changes needed — existing Person matrix covers this well.
+        Or: This use case reveals a gap in Phase 2 for facility-specific reconnaissance behaviors.
+    validations:
+      required: false

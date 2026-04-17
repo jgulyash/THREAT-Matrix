@@ -1,7 +1,7 @@
 {
   "name": "THREAT Matrix",
   "full_name": "Tactical Human Risk Enumeration and Adversary Taxonomy Matrix",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "matrices": {
     "person": {
@@ -15,13 +15,184 @@
           "matrix": "person",
           "phase": 1,
           "phase_name": "Target Development",
-          "notes": "Who, what, and why this target. Precedes all reconnaissance. Actor evaluates candidate individuals against attack objectives \u2014 relationship to grievance, symbolic value, access feasibility, and vulnerability. The decision to focus on a specific named individual marks the transition from general grievance to targeted threat.",
+          "notes": "Who, what, and why this target. Precedes all reconnaissance. Actor evaluates candidate individuals against attack objectives — relationship to grievance, symbolic value, access feasibility, and vulnerability. The decision to focus on a specific named individual marks the transition from general grievance to targeted threat.",
           "cpn": true,
           "cpn_id": "CPN-0101",
           "cpn_notes": "Social media, LinkedIn, data brokers, and OSINT tools are primary sources for modern target selection. Digital footprint analysis can produce a detailed vulnerability assessment before any physical reconnaissance occurs.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0101-01",
+              "behavior": "Subject articulates specific grievance tied to a named individual, attributing personal harm or injustice to that person's actions or role",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "social_media",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "FEIN-VOSSEKUIL-1999",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0101-02",
+              "behavior": "Subject conducts sustained online research into a specific individual's personal details, schedule, residence, workplace, family members, or daily routines",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "MELOY-TRAP18-2016"
+              ]
+            },
+            {
+              "id": "IND-0101-03",
+              "behavior": "Subject repeatedly returns to grievance-related topics about a specific individual in conversations, writings, or social media posts, with increasing frequency or intensity over time",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "peer_report",
+                "social_media",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "MELOY-TRAP18-2016"
+              ]
+            },
+            {
+              "id": "IND-0101-04",
+              "behavior": "Subject communicates intent regarding a specific individual to a third party, including statements about wanting to harm, confront, or 'make them pay'",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "social_media",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "NTAC-AVERTED-2021",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0101-05",
+              "behavior": "Subject researches prior attacks against similar targets, studying methodology, outcomes, and media coverage of previous incidents",
+              "category": "planning",
+              "detection_sources": [
+                "it_logs",
+                "social_media",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "NTAC-SCHOOLS-2019",
+                "NTAC-AVERTED-2021"
+              ]
+            },
+            {
+              "id": "IND-0101-06",
+              "behavior": "Insider subject accesses personnel records, organizational charts, or executive travel schedules outside the scope of their job function",
+              "category": "access",
+              "detection_sources": [
+                "it_logs",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CERT-CSG-7-2022",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0101-01",
+              "measure": "Implement digital footprint reduction program for protected individuals including social media privacy hardening, data broker opt-out services, and personal information removal from public databases",
+              "category": "preventive",
+              "domain": "personnel_security",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "limitations": "Cannot eliminate all public records. Determined adversary can still aggregate partial information from multiple sources.",
+              "source_refs": [
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0101-02",
+              "measure": "Deploy social media monitoring for mentions of protected individuals, organizational leaders, and key personnel across public platforms",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "limitations": "Only captures public posts. Encrypted messaging and private communications are not visible. False positive rate is high without human analyst review.",
+              "source_refs": [
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0101-03",
+              "measure": "Establish anonymous reporting channel for employees and associates to report concerning statements, fixation behaviors, or grievance escalation without fear of retaliation",
+              "category": "detective",
+              "domain": "behavioral_intervention",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "limitations": "Effectiveness depends on organizational trust and reporting culture. Anonymous tips require corroboration before action.",
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "ASIS-WVPI-2021",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "CM-0101-04",
+              "measure": "Conduct proactive threat assessment briefings for individuals in high-visibility or high-risk roles, covering personal security awareness, digital hygiene, and when to report concerning contacts",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "limitations": "Briefings raise awareness but do not prevent a determined actor from conducting research. Must be refreshed periodically to maintain vigilance.",
+              "source_refs": [
+                "NTAC-SYSTEMS-2020",
+                "FEIN-VOSSEKUIL-HOLDEN-1995"
+              ]
+            },
+            {
+              "id": "CM-0101-05",
+              "measure": "Implement access controls on personnel databases, executive calendars, and organizational directories with logging and anomaly alerting for access outside job scope",
+              "category": "detective",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "limitations": "Insiders with legitimate access may not trigger alerts. Requires baseline behavior modeling to detect anomalies effectively.",
+              "source_refs": [
+                "CERT-CSG-7-2022",
+                "NITTF-GUIDE-2017"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -125,6 +296,70 @@
               "actor_id": "AP029",
               "relevance": "high"
             }
+          ],
+          "source_refs": [
+            "FEIN-VOSSEKUIL-1999",
+            "NTAC-MASS-2021",
+            "MELOY-TRAP18-2016",
+            "FBI-PREATTACK-2018",
+            "CERT-CSG-7-2022"
+          ],
+          "response_protocols": [
+            {
+              "id": "RP-0101-01",
+              "trigger": "Single indicator of target-specific grievance or fixation detected through peer report, social media monitoring, or behavioral observation",
+              "action": "Document the indicator in the threat management case tracking system. Assign a threat management team analyst for preliminary review. Gather context from available data sources within 5 business days. Determine if additional monitoring or assessment is warranted.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations"
+              ],
+              "escalation_trigger": "Second indicator from a different category (e.g., communication + digital research) detected for the same subject-target pair, or subject's behavior escalates in intensity or specificity",
+              "legal_notes": "Document observations factually. Do not characterize mental health status. Ensure reporting channel complies with organizational anti-retaliation policy. If the subject is an employee, consult HR before any direct engagement. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "NTAC-SYSTEMS-2020",
+                "ASIS-WVPI-2021"
+              ],
+              "priority": "priority"
+            },
+            {
+              "id": "RP-0101-02",
+              "trigger": "Multiple correlated indicators across different categories detected for the same subject-target pair, or a single high-severity indicator (direct communication of intent to harm a specific individual)",
+              "action": "Convene threat management team within 24 hours. Conduct formal threat assessment using structured professional judgment. Implement protective measures for the identified target (awareness briefing, security posture increase, route variation guidance). Initiate enhanced monitoring of the subject across available data sources. Notify law enforcement if the threat is credible and specific.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "legal",
+                "law_enforcement"
+              ],
+              "escalation_trigger": "Subject acquires means (weapon, access credential, vehicle) or demonstrates capability and proximity to the target. Subject's behavior meets the threshold for imminent risk.",
+              "legal_notes": "Threat management team assessment is a protected security function. Coordinate with legal counsel before initiating any surveillance of the subject. If law enforcement is notified, document the basis for the notification. Ensure target protective measures do not inadvertently disclose the investigation to the subject. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "ASIS-WVPI-2021",
+                "NITTF-GUIDE-2017",
+                "FEIN-VOSSEKUIL-HOLDEN-1995"
+              ],
+              "priority": "immediate"
+            },
+            {
+              "id": "RP-0101-03",
+              "trigger": "Subject confirmed to have means, motive, and proximity to the target, with behavioral indicators suggesting imminent action (energy burst, last resort framing, final act behaviors)",
+              "action": "Activate protective detail for the target immediately. Coordinate with law enforcement for subject interdiction or interview. Brief executive leadership. Implement emergency security measures at target's residence and workplace. If the subject is an insider, execute immediate access revocation across all physical and digital systems.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "security_operations",
+                "it_security"
+              ],
+              "escalation_trigger": "Subject initiates approach to target or breaches security perimeter. Transition to active threat response protocols.",
+              "legal_notes": "Coordinate all interdiction actions through law enforcement. Ensure any access revocation follows established procedures to preserve evidence and protect against wrongful termination claims. Document the imminent threat assessment that triggered emergency measures. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "ASIS-WVPI-2021",
+                "NITTF-GUIDE-2017"
+              ],
+              "priority": "urgent"
+            }
           ]
         },
         {
@@ -136,10 +371,10 @@
           "matrix": "person",
           "phase": 1,
           "phase_name": "Target Development",
-          "notes": "Sustained pattern-of-life intelligence collection on a specific named person. Actor builds a behavioral and spatial model of the subject: daily schedule, regular locations, social relationships, personal routines, and response patterns. This tactic is ongoing \u2014 it does not complete before Phase 2 begins.",
+          "notes": "Sustained pattern-of-life intelligence collection on a specific named person. Actor builds a behavioral and spatial model of the subject: daily schedule, regular locations, social relationships, personal routines, and response patterns. This tactic is ongoing — it does not complete before Phase 2 begins.",
           "cpn": true,
           "cpn_id": "CPN-0102",
-          "cpn_notes": "Digital profile \u2014 social media activity, location check-ins, fitness tracker data, public records aggregation \u2014 often precedes and supplements physical surveillance. Apps that publicly share routes or check-ins provide operationally precise location intelligence.",
+          "cpn_notes": "Digital profile — social media activity, location check-ins, fitness tracker data, public records aggregation — often precedes and supplements physical surveillance. Apps that publicly share routes or check-ins provide operationally precise location intelligence.",
           "techniques": [],
           "indicators": [],
           "countermeasures": [],
@@ -233,7 +468,9 @@
               "actor_id": "AP029",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0103",
@@ -244,7 +481,7 @@
           "matrix": "person",
           "phase": 1,
           "phase_name": "Target Development",
-          "notes": "Physical site assessment of locations associated with the subject \u2014 residence, workplace, vehicle routes, regular venues. Actor builds a spatial model of environments where the subject is present and vulnerable. Distinct from Subject Profiling (which focuses on the person); this tactic focuses on the locations.",
+          "notes": "Physical site assessment of locations associated with the subject — residence, workplace, vehicle routes, regular venues. Actor builds a spatial model of environments where the subject is present and vulnerable. Distinct from Subject Profiling (which focuses on the person); this tactic focuses on the locations.",
           "cpn": true,
           "cpn_id": "CPN-0103",
           "cpn_notes": "Satellite imagery, Google Maps Street View, live webcams, and publicly posted photos and videos of locations augment or replace physical walkthroughs. High-resolution imagery can provide actionable access and egress analysis before the actor visits a location in person.",
@@ -337,7 +574,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0104",
@@ -348,7 +587,7 @@
           "matrix": "person",
           "phase": 1,
           "phase_name": "Target Development",
-          "notes": "Actor acquires the means to execute the planned action \u2014 weapons, tools, financing, false credentials, vehicles, communications equipment. Capability acquisition is bounded by the planned technique: the acquisition profile reveals the intended method.",
+          "notes": "Actor acquires the means to execute the planned action — weapons, tools, financing, false credentials, vehicles, communications equipment. Capability acquisition is bounded by the planned technique: the acquisition profile reveals the intended method.",
           "cpn": true,
           "cpn_id": "CPN-0104",
           "cpn_notes": "Dark web procurement, cryptocurrency for anonymous purchasing, and online forgery services are the primary acquisition channels for many capability types. Encrypted communications enable coordination with suppliers without generating conventional financial or communications records.",
@@ -464,7 +703,9 @@
               "actor_id": "AP029",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0105",
@@ -475,7 +716,7 @@
           "matrix": "person",
           "phase": 1,
           "phase_name": "Target Development",
-          "notes": "Recruiting and organizing facilitators, access agents, cutouts, and handlers who will support the operation. Network development converts a solo actor into a multi-node threat with distributed capabilities and deniability. For lone actors, this tactic may be absent \u2014 its absence is itself an indicator of actor type.",
+          "notes": "Recruiting and organizing facilitators, access agents, cutouts, and handlers who will support the operation. Network development converts a solo actor into a multi-node threat with distributed capabilities and deniability. For lone actors, this tactic may be absent — its absence is itself an indicator of actor type.",
           "cpn": true,
           "cpn_id": "CPN-0105",
           "cpn_notes": "Encrypted messaging apps, dark web forums, and privacy-preserving communications platforms are the coordination infrastructure for modern operational networks. Recruitment can occur entirely online with no physical meeting before execution.",
@@ -552,7 +793,9 @@
               "actor_id": "AP029",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0106",
@@ -636,7 +879,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0107",
@@ -647,7 +892,7 @@
           "matrix": "person",
           "phase": 1,
           "phase_name": "Target Development",
-          "notes": "Observable pre-attack behavioral signals \u2014 grievance escalation, ideation, leakage, and preparation behaviors \u2014 that indicate an actor is moving toward violence. For fixated individuals and insider threats, pathway indicators are often the only pre-attack detection window. These are not tactics the actor chooses to execute; they are behavioral byproducts of the threat development process detectable by protective intelligence practitioners.",
+          "notes": "Observable pre-attack behavioral signals — grievance escalation, ideation, leakage, and preparation behaviors — that indicate an actor is moving toward violence. For fixated individuals and insider threats, pathway indicators are often the only pre-attack detection window. These are not tactics the actor chooses to execute; they are behavioral byproducts of the threat development process detectable by protective intelligence practitioners.",
           "cpn": true,
           "cpn_id": "CPN-0107",
           "cpn_notes": "Online leakage via social media posts, forum activity, messaging apps, and blog content is now the most detectable pre-attack indicator channel. Digital leakage often occurs before physical preparation begins and may continue throughout the threat development cycle.",
@@ -704,7 +949,9 @@
               "actor_id": "AP029",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0108",
@@ -788,7 +1035,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0201",
@@ -799,7 +1048,7 @@
           "matrix": "person",
           "phase": 2,
           "phase_name": "Mobilization",
-          "notes": "Controlled dry run of the planned approach \u2014 timing assessments, route confirmation, access testing, go/no-go decision point validation. Operational rehearsal is a controlled exercise, not the live approach. Distinct from Partial Approach Rehearsal (TA0209), which uses the live target site with abort triggers.",
+          "notes": "Controlled dry run of the planned approach — timing assessments, route confirmation, access testing, go/no-go decision point validation. Operational rehearsal is a controlled exercise, not the live approach. Distinct from Partial Approach Rehearsal (TA0209), which uses the live target site with abort triggers.",
           "cpn": true,
           "cpn_id": "CPN-0201",
           "cpn_notes": "GPS and mapping apps, real-time traffic data, and satellite imagery are standard rehearsal planning tools. Digital simulation of timing and routing can substitute for physical rehearsal in some scenarios.",
@@ -872,7 +1121,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0202",
@@ -883,7 +1134,7 @@
           "matrix": "person",
           "phase": 2,
           "phase_name": "Mobilization",
-          "notes": "Managing physical appearance and behavior to avoid detection under human observation. Actor blends into the environment appropriate to the location and context \u2014 adjusting dress, behavior, pace, and attention pattern to match expected profiles. Concealment is an ongoing behavioral discipline throughout the Approach phase, not a single action.",
+          "notes": "Managing physical appearance and behavior to avoid detection under human observation. Actor blends into the environment appropriate to the location and context — adjusting dress, behavior, pace, and attention pattern to match expected profiles. Concealment is an ongoing behavioral discipline throughout the Approach phase, not a single action.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -979,7 +1230,9 @@
               "actor_id": "AP029",
               "relevance": "medium"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0203",
@@ -990,7 +1243,7 @@
           "matrix": "person",
           "phase": 2,
           "phase_name": "Mobilization",
-          "notes": "Defeating the outermost security layer protecting access to the subject \u2014 building perimeters, residential security, vehicle protection details, or controlled access zones. The method varies by target protective posture: social engineering for low-profile targets, technical defeat for hardened environments.",
+          "notes": "Defeating the outermost security layer protecting access to the subject — building perimeters, residential security, vehicle protection details, or controlled access zones. The method varies by target protective posture: social engineering for low-profile targets, technical defeat for hardened environments.",
           "cpn": true,
           "cpn_id": "CPN-0203",
           "cpn_notes": "Credential cloning, RFID/NFC skimming, and electronic lock exploit tools are cyber-enabled defeat methods that bypass physical barriers without direct force. Access control systems that are digitally exploitable change the threat calculus for protected subjects in secured environments.",
@@ -1083,7 +1336,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0204",
@@ -1094,7 +1349,7 @@
           "matrix": "person",
           "phase": 2,
           "phase_name": "Mobilization",
-          "notes": "Moving through successive security layers after initial perimeter breach \u2014 from public space to controlled access, from controlled access to restricted zones, from restricted zones to the subject's location. Each layer requires a distinct access method; failure at any layer aborts the approach.",
+          "notes": "Moving through successive security layers after initial perimeter breach — from public space to controlled access, from controlled access to restricted zones, from restricted zones to the subject's location. Each layer requires a distinct access method; failure at any layer aborts the approach.",
           "cpn": true,
           "cpn_id": "CPN-0204",
           "cpn_notes": "Electronic lock bypass and elevator system manipulation extend the actor's reach through security-tiered environments. Physical security systems with digital control planes are vulnerable to zone penetration via cyber methods without physical force.",
@@ -1187,7 +1442,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0205",
@@ -1198,7 +1455,7 @@
           "matrix": "person",
           "phase": 2,
           "phase_name": "Mobilization",
-          "notes": "Gaining higher-tier physical access through deception, social engineering, or credential abuse rather than force. Actor obtains access rights or physical proximity that their actual status does not authorize \u2014 vendor badge, escort manipulation, insider assistance. Distinct from Barrier Defeat (TA0302), which uses force.",
+          "notes": "Gaining higher-tier physical access through deception, social engineering, or credential abuse rather than force. Actor obtains access rights or physical proximity that their actual status does not authorize — vendor badge, escort manipulation, insider assistance. Distinct from Barrier Defeat (TA0302), which uses force.",
           "cpn": true,
           "cpn_id": "CPN-0205",
           "cpn_notes": "Cloned access credentials, spoofed caller ID, and fabricated digital authorization documents enable access elevation without physical contact. Attackers may use digitally-generated fake work orders or appointment confirmations to pass social engineering checkpoints.",
@@ -1267,7 +1524,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0206",
@@ -1370,7 +1629,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0207",
@@ -1381,7 +1642,7 @@
           "matrix": "person",
           "phase": 2,
           "phase_name": "Mobilization",
-          "notes": "Deliberate stand-down to allow counter-surveillance conditions to clear, security posture to relax, or an environmental opportunity to materialize. Operational pause is a risk management decision \u2014 the actor has the capability and position but chooses to wait. Generates cold trails that complicate later investigation.",
+          "notes": "Deliberate stand-down to allow counter-surveillance conditions to clear, security posture to relax, or an environmental opportunity to materialize. Operational pause is a risk management decision — the actor has the capability and position but chooses to wait. Generates cold trails that complicate later investigation.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -1449,7 +1710,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0208",
@@ -1553,7 +1816,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0209",
@@ -1564,7 +1829,7 @@
           "matrix": "person",
           "phase": 2,
           "phase_name": "Mobilization",
-          "notes": "Actor executes a partial approach sequence with pre-set abort triggers \u2014 approaching the subject's location, observing response, then withdrawing without completing the action. Repeated across multiple days or occasions before committing to full execution. Distinct from Operational Rehearsal (TA0201), which is a controlled dry run at a surrogate location. Partial Approach Rehearsal uses the live target environment and generates observable forensic signatures: access log anomalies, CCTV appearances near the subject's location, and witness sightings that establish a pre-attack timeline.",
+          "notes": "Actor executes a partial approach sequence with pre-set abort triggers — approaching the subject's location, observing response, then withdrawing without completing the action. Repeated across multiple days or occasions before committing to full execution. Distinct from Operational Rehearsal (TA0201), which is a controlled dry run at a surrogate location. Partial Approach Rehearsal uses the live target environment and generates observable forensic signatures: access log anomalies, CCTV appearances near the subject's location, and witness sightings that establish a pre-attack timeline.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -1636,7 +1901,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0301",
@@ -1647,7 +1914,7 @@
           "matrix": "person",
           "phase": 3,
           "phase_name": "Execution",
-          "notes": "The deliberate use of violence, coercion, or seizure against the subject. The mechanism of harm. Sub-techniques capture the full range of force methods: lethal ranged attack, lethal contact attack, area or mass lethal attack, non-lethal incapacitation, abduction or seizure, coercive display, property destruction, and area denial. Force Application was the critical missing tactic in early framework versions \u2014 it is the apex behavior that all preceding phases build toward.",
+          "notes": "The deliberate use of violence, coercion, or seizure against the subject. The mechanism of harm. Sub-techniques capture the full range of force methods: lethal ranged attack, lethal contact attack, area or mass lethal attack, non-lethal incapacitation, abduction or seizure, coercive display, property destruction, and area denial. Force Application was the critical missing tactic in early framework versions — it is the apex behavior that all preceding phases build toward.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -1727,7 +1994,9 @@
               "actor_id": "AP028",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0302",
@@ -1738,7 +2007,7 @@
           "matrix": "person",
           "phase": 3,
           "phase_name": "Execution",
-          "notes": "Physically defeating access controls or protective barriers through force \u2014 forced entry, vehicle ramming, physical overpowering of a bodyguard. Distinct from Access Elevation (TA0205), which uses deception. Barrier Defeat occurs when deception-based access has failed or when the actor chooses force as the primary method.",
+          "notes": "Physically defeating access controls or protective barriers through force — forced entry, vehicle ramming, physical overpowering of a bodyguard. Distinct from Access Elevation (TA0205), which uses deception. Barrier Defeat occurs when deception-based access has failed or when the actor chooses force as the primary method.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -1826,7 +2095,9 @@
               "actor_id": "AP028",
               "relevance": "medium"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0303",
@@ -1837,7 +2108,7 @@
           "matrix": "person",
           "phase": 3,
           "phase_name": "Execution",
-          "notes": "Securing the operational target \u2014 the person, the information they carry, the asset they control, or the location they occupy. In kidnapping operations, Objective Seizure is the physical act of taking control of the subject. In intelligence operations, it may be the acquisition of a device or document the subject possesses.",
+          "notes": "Securing the operational target — the person, the information they carry, the asset they control, or the location they occupy. In kidnapping operations, Objective Seizure is the physical act of taking control of the subject. In intelligence operations, it may be the acquisition of a device or document the subject possesses.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -1909,7 +2180,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0304",
@@ -1920,7 +2193,7 @@
           "matrix": "person",
           "phase": 3,
           "phase_name": "Execution",
-          "notes": "Controlling one or more persons during kidnapping, barricade, or hostage scenarios. Includes physical restraint, psychological management, and ongoing compliance maintenance. Captive Control is unique to the Person matrix \u2014 there is no structural analog in the other three matrices. The duration and quality of captive control directly determines the operational leverage in Phase 4.",
+          "notes": "Controlling one or more persons during kidnapping, barricade, or hostage scenarios. Includes physical restraint, psychological management, and ongoing compliance maintenance. Captive Control is unique to the Person matrix — there is no structural analog in the other three matrices. The duration and quality of captive control directly determines the operational leverage in Phase 4.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -1964,7 +2237,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0305",
@@ -1978,10 +2253,147 @@
           "notes": "Delaying or degrading the security or law enforcement response to extend the window for action on objective. Methods include communications jamming, diversionary incidents at alternate locations, access route blocking, and neutralizing security personnel. Response suppression is particularly critical in high-profile operations where a rapid LE response is expected.",
           "cpn": true,
           "cpn_id": "CPN-0305",
-          "cpn_notes": "Radio frequency jamming blocks security communications. Spoofed emergency calls create diversionary response commitments. Cyber-enabled disabling of security systems \u2014 cameras, communications, access controls \u2014 can suppress response without physical presence at the response suppression point.",
+          "cpn_notes": "Radio frequency jamming blocks security communications. Spoofed emergency calls create diversionary response commitments. Cyber-enabled disabling of security systems — cameras, communications, access controls — can suppress response without physical presence at the response suppression point.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0305-01",
+              "behavior": "Subject acquires or researches radio frequency jamming equipment, signal blockers, or communications disruption devices",
+              "category": "acquisition",
+              "detection_sources": [
+                "financial_records",
+                "it_logs",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0305-02",
+              "behavior": "Subject conducts surveillance of security response patterns, guard shift changes, patrol routes, or emergency response staging areas at or near the target location",
+              "category": "surveillance",
+              "detection_sources": [
+                "cctv",
+                "physical_observation",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "source_refs": [
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0305-03",
+              "behavior": "Subject places false emergency calls or reports diversionary incidents at locations away from the intended target to draw response resources",
+              "category": "planning",
+              "detection_sources": [
+                "public_records",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0305-04",
+              "behavior": "Subject researches or probes building security systems, alarm panels, camera networks, or emergency communication infrastructure",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "physical_observation",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "LLNL-TR-858139"
+              ]
+            },
+            {
+              "id": "IND-0305-05",
+              "behavior": "Subject positions obstacles, vehicles, or barriers near facility entry points, emergency exits, or response force staging areas prior to or during an attack",
+              "category": "planning",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0305-01",
+              "measure": "Deploy redundant communications systems for security operations including hardwired intercom, cellular backup, and satellite phone capability to maintain command and control if primary radio is jammed",
+              "category": "preventive",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "limitations": "Redundancy increases cost and training burden. Staff must be drilled on failover procedures. Satellite phones have latency and coverage limitations indoors.",
+              "source_refs": [
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0305-02",
+              "measure": "Establish mutual aid agreements with adjacent jurisdictions and on-site response capabilities that do not depend on external dispatch for initial response",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "limitations": "Mutual aid response times vary. On-site response capability requires trained personnel and may not be feasible for all facility types.",
+              "source_refs": [
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "CM-0305-03",
+              "measure": "Install tamper detection and alerting on security system infrastructure including camera feeds, alarm panels, access control systems, and communications equipment",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "limitations": "Sophisticated adversary can disable tamper detection as part of the suppression. Alerts are only useful if monitored in real time by personnel who can act.",
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "LLNL-TR-858139"
+              ]
+            },
+            {
+              "id": "CM-0305-04",
+              "measure": "Conduct regular exercises that simulate communications failure and response force delay, training security personnel to operate under degraded conditions",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "limitations": "Exercises build capability but cannot replicate the stress and confusion of a real attack. Frequency must be maintained to prevent skill decay.",
+              "source_refs": [
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -2039,6 +2451,44 @@
             {
               "actor_id": "AP025",
               "relevance": "high"
+            }
+          ],
+          "source_refs": [
+            "NTAC-MASS-2021",
+            "LLNL-TR-858139",
+            "CISA-CONVERGE-2021"
+          ],
+          "response_protocols": [
+            {
+              "id": "RP-0305-01",
+              "trigger": "Security communications degraded, jammed, or unexpectedly offline concurrent with any other security anomaly (alarm, access breach, suspicious activity report)",
+              "action": "Immediately assume potential hostile action. Activate backup communications. Initiate lockdown or shelter-in-place per facility protocol. Deploy on-site response capability without waiting for external dispatch. Notify law enforcement via backup channel (cellular, landline, runner). Verify status of all security system components.",
+              "stakeholders": [
+                "security_operations",
+                "law_enforcement",
+                "executive_leadership"
+              ],
+              "escalation_trigger": "Communications failure confirmed as intentional (jamming detected) or concurrent with confirmed hostile act. Transition to active threat response.",
+              "legal_notes": "Lockdown and shelter-in-place are protective actions that do not require law enforcement authorization. Document the decision basis for initiating emergency protocols. If RF jamming is detected, report to FCC and law enforcement as it is a federal crime (47 USC 333). This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "CISA-CONVERGE-2021"
+              ],
+              "priority": "urgent"
+            },
+            {
+              "id": "RP-0305-02",
+              "trigger": "Diversionary incident reported at alternate location concurrent with suspicious activity at the primary facility",
+              "action": "Do not divert primary facility security resources to the diversionary location. Maintain full security posture at the primary facility. Coordinate with law enforcement to verify the diversionary incident independently. Increase monitoring of primary facility perimeter and access points. Alert security personnel that the diversionary incident may be a response suppression tactic.",
+              "stakeholders": [
+                "security_operations",
+                "law_enforcement"
+              ],
+              "escalation_trigger": "Diversionary incident confirmed as staged or suspicious activity at primary facility escalates. Activate full emergency response.",
+              "legal_notes": "Communicate the diversionary assessment to law enforcement dispatch clearly and factually. Do not speculate on the diversion in external communications. If the diversionary incident causes real harm, it must still receive appropriate emergency response from mutual aid resources. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "NTAC-MASS-2021"
+              ],
+              "priority": "urgent"
             }
           ]
         },
@@ -2119,7 +2569,9 @@
               "actor_id": "AP029",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0307",
@@ -2130,7 +2582,7 @@
           "matrix": "person",
           "phase": 3,
           "phase_name": "Execution",
-          "notes": "Real-time environmental assessment during execution \u2014 continuously monitoring for law enforcement, protective detail response, witness attention, or camera coverage that would require the actor to abort or modify the action. Counter-surveillance during execution is distinct from pre-operational surveillance detection (TA0108), which occurs in Phase 1.",
+          "notes": "Real-time environmental assessment during execution — continuously monitoring for law enforcement, protective detail response, witness attention, or camera coverage that would require the actor to abort or modify the action. Counter-surveillance during execution is distinct from pre-operational surveillance detection (TA0108), which occurs in Phase 1.",
           "cpn": true,
           "cpn_id": "CPN-0307",
           "cpn_notes": "Monitoring live camera feeds, checking police scanner apps, and using drone overwatch are cyber-enabled counter-surveillance methods increasingly used during execution. Real-time tracking of security force locations via their own digital signals is an emerging technique for sophisticated actors.",
@@ -2195,7 +2647,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0308",
@@ -2206,7 +2660,7 @@
           "matrix": "person",
           "phase": 3,
           "phase_name": "Execution",
-          "notes": "Real-time coordination among operation members during execution \u2014 signaling timing, position, role completion, and abort/continue decisions. For solo actors this tactic is absent. For multi-actor operations, operational communication is the nervous system of execution; its failure cascades across all other Phase 3 tactics.",
+          "notes": "Real-time coordination among operation members during execution — signaling timing, position, role completion, and abort/continue decisions. For solo actors this tactic is absent. For multi-actor operations, operational communication is the nervous system of execution; its failure cascades across all other Phase 3 tactics.",
           "cpn": true,
           "cpn_id": "CPN-0308",
           "cpn_notes": "Encrypted communications apps, pre-arranged signal codes via SMS, and covert earpiece systems are standard operational communications infrastructure. Radio systems can be jammed by adversaries; encrypted data communications provide more resilient coordination.",
@@ -2279,7 +2733,9 @@
               "actor_id": "AP026",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0401",
@@ -2291,7 +2747,7 @@
           "phase": 4,
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
-          "notes": "Physical extraction from the operational area following the action on objective. Withdrawal is planned in Phase 1 as an integral component of the operation \u2014 not improvised after execution. Route, timing, cover, and transport method are all pre-selected. The window between action completion and security perimeter establishment is the critical variable.",
+          "notes": "Physical extraction from the operational area following the action on objective. Withdrawal is planned in Phase 1 as an integral component of the operation — not improvised after execution. Route, timing, cover, and transport method are all pre-selected. The window between action completion and security perimeter establishment is the critical variable.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -2383,7 +2839,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0402",
@@ -2395,7 +2853,7 @@
           "phase": 4,
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
-          "notes": "Counter-forensics actions to reduce the traceability of the operation \u2014 physical evidence destruction, digital cleanup, biological material management, scene staging. The sophistication of evidence management is a reliable actor classification signal: lone actors rarely execute systematic counter-forensics; state actors plan it as a Phase 1 requirement.",
+          "notes": "Counter-forensics actions to reduce the traceability of the operation — physical evidence destruction, digital cleanup, biological material management, scene staging. The sophistication of evidence management is a reliable actor classification signal: lone actors rarely execute systematic counter-forensics; state actors plan it as a Phase 1 requirement.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -2473,7 +2931,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0403",
@@ -2485,7 +2945,7 @@
           "phase": 4,
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
-          "notes": "Returning to a normal behavioral envelope after the operation \u2014 reestablishing the appearance that the actor was not involved. Includes alibi establishment, contact normalization with colleagues and associates, and behavioral management to avoid post-incident detection.",
+          "notes": "Returning to a normal behavioral envelope after the operation — reestablishing the appearance that the actor was not involved. Includes alibi establishment, contact normalization with colleagues and associates, and behavioral management to avoid post-incident detection.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -2566,7 +3026,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0404",
@@ -2578,7 +3040,7 @@
           "phase": 4,
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
-          "notes": "Protecting remaining members of the operational network \u2014 communication shutdown, personnel dispersal, infrastructure removal, and cutout management. For organized actors, network protection determines whether a single operation exposure becomes a network-wide compromise. For lone actors, this tactic is absent.",
+          "notes": "Protecting remaining members of the operational network — communication shutdown, personnel dispersal, infrastructure removal, and cutout management. For organized actors, network protection determines whether a single operation exposure becomes a network-wide compromise. For lone actors, this tactic is absent.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -2647,7 +3109,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0405",
@@ -2659,10 +3123,10 @@
           "phase": 4,
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
-          "notes": "Processing ransom payments, receiving contracted payment for professional actors, moving funds to obscure origin, and managing cryptocurrency associated with the operation. Financial Disposition is present when a financial motive exists \u2014 kidnap-for-ransom, contract operations, extortion.",
+          "notes": "Processing ransom payments, receiving contracted payment for professional actors, moving funds to obscure origin, and managing cryptocurrency associated with the operation. Financial Disposition is present when a financial motive exists — kidnap-for-ransom, contract operations, extortion.",
           "cpn": true,
           "cpn_id": "CPN-0405",
-          "cpn_notes": "Cryptocurrency is the primary post-operation payment mechanism for both ransom and contract operations. Mixing services, chain hopping, and privacy coins are the standard obfuscation chain. Financial forensics on blockchain transactions have become a primary investigative tool \u2014 sophistication of financial disposition directly determines investigative success.",
+          "cpn_notes": "Cryptocurrency is the primary post-operation payment mechanism for both ransom and contract operations. Mixing services, chain hopping, and privacy coins are the standard obfuscation chain. Financial forensics on blockchain transactions have become a primary investigative tool — sophistication of financial disposition directly determines investigative success.",
           "techniques": [],
           "indicators": [],
           "countermeasures": [],
@@ -2730,7 +3194,9 @@
               "actor_id": "AP026",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0406",
@@ -2742,7 +3208,7 @@
           "phase": 4,
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
-          "notes": "Adversary evaluation of what worked, what failed, and what must change for future operations. After-Action Assessment is present only for persistent, organized actors with intent to operate again. It closes the Operational Feedback Loop \u2014 the output of this tactic feeds directly into Phase 1 Target Development for the next operation. Lone actors and opportunity-based actors typically do not execute this tactic.",
+          "notes": "Adversary evaluation of what worked, what failed, and what must change for future operations. After-Action Assessment is present only for persistent, organized actors with intent to operate again. It closes the Operational Feedback Loop — the output of this tactic feeds directly into Phase 1 Target Development for the next operation. Lone actors and opportunity-based actors typically do not execute this tactic.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -2814,7 +3280,9 @@
               "actor_id": "AP025",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0407",
@@ -2826,7 +3294,7 @@
           "phase": 4,
           "phase_name": "Aftermath",
           "phase_4_track": "attribution",
-          "notes": "Actor claims responsibility for the operation \u2014 communiqu\u00e9, propaganda release, manifesto delivery, media contact, or direct communication to authorities. Attribution declaration is the defining behavior of terrorists, ideologically motivated actors, and extortionists. The claim is the communicative act that converts physical violence into political or social leverage.",
+          "notes": "Actor claims responsibility for the operation — communiqué, propaganda release, manifesto delivery, media contact, or direct communication to authorities. Attribution declaration is the defining behavior of terrorists, ideologically motivated actors, and extortionists. The claim is the communicative act that converts physical violence into political or social leverage.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -2874,7 +3342,9 @@
               "actor_id": "AP029",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0408",
@@ -2886,7 +3356,7 @@
           "phase": 4,
           "phase_name": "Aftermath",
           "phase_4_track": "attribution",
-          "notes": "Actor maximizes the reach and impact of the attribution message \u2014 media exploitation, social platform posting, staged documentation distribution, manipulation of coverage framing. Audience Amplification is the force multiplier for attribution-seeking actors: the operation's communicative impact is proportional to audience reach.",
+          "notes": "Actor maximizes the reach and impact of the attribution message — media exploitation, social platform posting, staged documentation distribution, manipulation of coverage framing. Audience Amplification is the force multiplier for attribution-seeking actors: the operation's communicative impact is proportional to audience reach.",
           "cpn": true,
           "cpn_id": "CPN-0408",
           "cpn_notes": "Social media platforms, video hosting sites, and encrypted broadcast channels have displaced traditional media as the primary audience amplification channel. Actors with media production capabilities can release high-quality content that drives algorithmic amplification without press contact.",
@@ -2931,7 +3401,9 @@
               "actor_id": "AP029",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         },
         {
           "id": "TA0409",
@@ -2943,7 +3415,7 @@
           "phase": 4,
           "phase_name": "Aftermath",
           "phase_4_track": "attribution",
-          "notes": "Actor makes direct contact with the victim, victim's family, or relevant decision-makers to assert leverage \u2014 ransom demand, negotiation, proof-of-life, threat escalation, and deadline management. Coercive Leverage requires the actor to have achieved a position of power (captive, stolen asset, credible threat) and now converts that position into a demand.",
+          "notes": "Actor makes direct contact with the victim, victim's family, or relevant decision-makers to assert leverage — ransom demand, negotiation, proof-of-life, threat escalation, and deadline management. Coercive Leverage requires the actor to have achieved a position of power (captive, stolen asset, credible threat) and now converts that position into a demand.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -3007,7 +3479,9 @@
               "actor_id": "AP029",
               "relevance": "high"
             }
-          ]
+          ],
+          "source_refs": [],
+          "response_protocols": []
         }
       ]
     },
@@ -3038,13 +3512,13 @@
       "primary_matrices": [
         "person"
       ],
-      "description": "Psychologically-driven actor with obsessive focus on a specific named target. The fixation is the defining characteristic \u2014 this actor's threat is organized entirely around one person. Motivation is personal, delusional, or grievance-rooted. Follows a slow-building predatory pathway that may span months to years. Clinical anchor: WAVR-21, PATH model, Threat Assessment in Schools.",
+      "description": "Psychologically-driven actor with obsessive focus on a specific named target. The fixation is the defining characteristic — this actor's threat is organized entirely around one person. Motivation is personal, delusional, or grievance-rooted. Follows a slow-building predatory pathway that may span months to years. Clinical anchor: WAVR-21, PATH model, Threat Assessment in Schools.",
       "behavioral_markers": [
         "Sustained surveillance or contact attempts directed at one specific named target",
-        "Leakage of fixation content to third parties \u2014 friends, family, online platforms",
+        "Leakage of fixation content to third parties — friends, family, online platforms",
         "Escalating attempts to communicate with or approach the target despite rejection",
         "Acquisition of the target's personal information, schedule, and location patterns",
-        "Grievance documentation \u2014 letters, journals, social media posts referencing the target"
+        "Grievance documentation — letters, journals, social media posts referencing the target"
       ],
       "v2_tactic_associations": [],
       "ai_enabled_risks": [
@@ -3070,7 +3544,7 @@
       "primary_matrices": [
         "person"
       ],
-      "description": "Actor in or formerly in an intimate, family, or cohabiting relationship with the target. The prior relationship is both the access vector and the motivational anchor. Distinct from the Fixated Individual \u2014 the pathway is rooted in control, jealousy, or retaliation rather than obsessive attachment from a distance. Covers intimate partner violence, domestic homicide, stalking by former partners, and family-based violence.",
+      "description": "Actor in or formerly in an intimate, family, or cohabiting relationship with the target. The prior relationship is both the access vector and the motivational anchor. Distinct from the Fixated Individual — the pathway is rooted in control, jealousy, or retaliation rather than obsessive attachment from a distance. Covers intimate partner violence, domestic homicide, stalking by former partners, and family-based violence.",
       "behavioral_markers": [
         "Prior or current intimate/family relationship with the target",
         "History of controlling, coercive, or threatening behavior within the relationship",
@@ -3103,11 +3577,11 @@
         "person",
         "facility"
       ],
-      "description": "Individual actor whose pathway to violence is precipitated by an identifiable personal crisis \u2014 job loss, financial ruin, relationship breakdown, mental health episode, or a desire for notoriety and legacy. Unlike the Fixated Individual, the target is often symbolic or opportunistic rather than a specific named person. The crisis compresses Phase 1 dramatically: the window from ideation to action may be days or weeks, not months. The notoriety-seeking dimension connects this actor type to attribution-seeking Phase 4 behavior even without ideological content.",
+      "description": "Individual actor whose pathway to violence is precipitated by an identifiable personal crisis — job loss, financial ruin, relationship breakdown, mental health episode, or a desire for notoriety and legacy. Unlike the Fixated Individual, the target is often symbolic or opportunistic rather than a specific named person. The crisis compresses Phase 1 dramatically: the window from ideation to action may be days or weeks, not months. The notoriety-seeking dimension connects this actor type to attribution-seeking Phase 4 behavior even without ideological content.",
       "behavioral_markers": [
         "Identifiable precipitating crisis event immediately preceding behavioral change",
         "Rapid deterioration in work performance, relationships, or personal stability",
-        "Leakage of intent \u2014 often to multiple people, sometimes publicly",
+        "Leakage of intent — often to multiple people, sometimes publicly",
         "Language expressing desire to be known, remembered, or understood",
         "Target selection based on symbolic representation of the grievance source, not personal relationship"
       ],
@@ -3135,10 +3609,10 @@
         "organization",
         "person"
       ],
-      "description": "Current employee, contractor, or trusted-access holder who deliberately exploits their legitimate access to harm the organization, its people, or its assets. The trust relationship is the attack surface. Motivation may be grievance-based, financially motivated, or ideological. Phase 1 is compressed because the actor is already inside \u2014 they know the target, the layout, the security gaps, and the personnel.",
+      "description": "Current employee, contractor, or trusted-access holder who deliberately exploits their legitimate access to harm the organization, its people, or its assets. The trust relationship is the attack surface. Motivation may be grievance-based, financially motivated, or ideological. Phase 1 is compressed because the actor is already inside — they know the target, the layout, the security gaps, and the personnel.",
       "behavioral_markers": [
-        "Observable behavioral deterioration \u2014 withdrawal, hostility, policy violations",
-        "Anomalous access patterns \u2014 systems, locations, or data outside their operational need",
+        "Observable behavioral deterioration — withdrawal, hostility, policy violations",
+        "Anomalous access patterns — systems, locations, or data outside their operational need",
         "Unexplained external contact establishment or suspicious external relationships",
         "Acquisition of materials inconsistent with job role (portable storage, recording equipment)",
         "Testing organizational response to minor violations to calibrate detection capability"
@@ -3170,11 +3644,11 @@
         "organization",
         "system"
       ],
-      "description": "Current trusted-access holder who is being blackmailed, threatened, or otherwise coerced into facilitating an attack or intelligence collection operation. The actor knows what they are doing but is not acting freely. Coercion may be based on personal compromising information, threats to family, or financial leverage. Detection is complicated because the actor's outward grievance indicators are suppressed \u2014 they appear compliant rather than hostile.",
+      "description": "Current trusted-access holder who is being blackmailed, threatened, or otherwise coerced into facilitating an attack or intelligence collection operation. The actor knows what they are doing but is not acting freely. Coercion may be based on personal compromising information, threats to family, or financial leverage. Detection is complicated because the actor's outward grievance indicators are suppressed — they appear compliant rather than hostile.",
       "behavioral_markers": [
-        "Sudden behavioral change without apparent internal grievance \u2014 anxiety, hypervigilance, social withdrawal",
+        "Sudden behavioral change without apparent internal grievance — anxiety, hypervigilance, social withdrawal",
         "Unexplained financial pressure or sudden resolution of financial problems",
-        "Unusual communications security behaviors \u2014 new devices, encrypted apps, changed routines",
+        "Unusual communications security behaviors — new devices, encrypted apps, changed routines",
         "Compliance with unusual external requests without pushback or documentation",
         "Reluctance to discuss personal life; possible indicators of external surveillance of the actor themselves"
       ],
@@ -3205,13 +3679,13 @@
         "organization",
         "system"
       ],
-      "description": "Current trusted-access holder who has been deliberately recruited by an external actor \u2014 typically a state intelligence service, organized criminal group, or competitor \u2014 and is willingly cooperating. Unlike the coerced insider, this actor chose the relationship. They are disciplined, operationally patient, and actively work to expand their access and preserve their position. Among the hardest insider threat profiles to detect.",
+      "description": "Current trusted-access holder who has been deliberately recruited by an external actor — typically a state intelligence service, organized criminal group, or competitor — and is willingly cooperating. Unlike the coerced insider, this actor chose the relationship. They are disciplined, operationally patient, and actively work to expand their access and preserve their position. Among the hardest insider threat profiles to detect.",
       "behavioral_markers": [
         "Sustained covert relationship with an external handler, often disguised as a professional or personal contact",
         "Deliberate access scope expansion beyond their operational role over time",
         "Disciplined information aggregation across systems and people without triggering individual alarms",
         "Unexplained affluence or financial activity inconsistent with salary",
-        "High operational security \u2014 carefully manages evidence trail, may generate false audit records"
+        "High operational security — carefully manages evidence trail, may generate false audit records"
       ],
       "v2_tactic_associations": [],
       "ai_enabled_risks": [
@@ -3238,10 +3712,10 @@
       "primary_matrices": [
         "organization"
       ],
-      "description": "Current trusted-access holder who creates risk through carelessness, poor security hygiene, or disregard for policy \u2014 without intent to cause harm. Not a threat actor in the traditional sense, but a significant risk vector. The negligent insider is frequently the entry point exploited by external actors. Susceptibility to social engineering and phishing is the primary mechanism.",
+      "description": "Current trusted-access holder who creates risk through carelessness, poor security hygiene, or disregard for policy — without intent to cause harm. Not a threat actor in the traditional sense, but a significant risk vector. The negligent insider is frequently the entry point exploited by external actors. Susceptibility to social engineering and phishing is the primary mechanism.",
       "behavioral_markers": [
         "Repeated security policy violations without apparent concern for consequences",
-        "Susceptibility to social engineering attempts \u2014 shares passwords, follows unauthorized instructions",
+        "Susceptibility to social engineering attempts — shares passwords, follows unauthorized instructions",
         "Ignores escalating warning signals or security notifications",
         "Uses personal devices or unsecured channels for sensitive work",
         "Does not report suspicious contacts or requests from unknown parties"
@@ -3270,9 +3744,9 @@
         "organization",
         "system"
       ],
-      "description": "Current trusted-access holder who is being exploited by an external actor without their knowledge. Their normal work behavior is the delivery mechanism. They may provide access, information, or physical proximity that they believe is routine. Detection requires identifying the external actor doing the exploiting \u2014 the insider's behavior appears normal because it is normal from their perspective. A state intelligence service using a foreign business contact as an unwitting collection platform is the archetype.",
+      "description": "Current trusted-access holder who is being exploited by an external actor without their knowledge. Their normal work behavior is the delivery mechanism. They may provide access, information, or physical proximity that they believe is routine. Detection requires identifying the external actor doing the exploiting — the insider's behavior appears normal because it is normal from their perspective. A state intelligence service using a foreign business contact as an unwitting collection platform is the archetype.",
       "behavioral_markers": [
-        "From the insider's perspective: normal behavior \u2014 no behavioral indicators present",
+        "From the insider's perspective: normal behavior — no behavioral indicators present",
         "Detection pathway: identify the external actor, then map who they have access to",
         "May be approached under a professional or personal pretext with no indication of intelligence purpose",
         "The exploiting actor manages the relationship to keep the insider unaware",
@@ -3302,12 +3776,12 @@
         "person",
         "facility"
       ],
-      "description": "Financially motivated actor with minimal planning who exploits available opportunity. Target is selected based on perceived vulnerability, not advance research. Low operational sophistication and low operational security \u2014 evidence trail is typically recoverable. Violence is instrumental and proportional to perceived resistance. Acts quickly on available conditions rather than waiting for optimal timing.",
+      "description": "Financially motivated actor with minimal planning who exploits available opportunity. Target is selected based on perceived vulnerability, not advance research. Low operational sophistication and low operational security — evidence trail is typically recoverable. Violence is instrumental and proportional to perceived resistance. Acts quickly on available conditions rather than waiting for optimal timing.",
       "behavioral_markers": [
-        "Target selection based on visible vulnerability \u2014 unlocked vehicle, isolated pedestrian, unattended property",
+        "Target selection based on visible vulnerability — unlocked vehicle, isolated pedestrian, unattended property",
         "Minimal pre-attack preparation or reconnaissance",
-        "Low operational security \u2014 no counter-surveillance behavior",
-        "Improvised capability \u2014 uses whatever is at hand",
+        "Low operational security — no counter-surveillance behavior",
+        "Improvised capability — uses whatever is at hand",
         "Pattern of escalation from minor offenses toward more serious crimes"
       ],
       "v2_tactic_associations": [],
@@ -3333,11 +3807,11 @@
         "person",
         "facility"
       ],
-      "description": "Financially motivated actor operating as a hired professional \u2014 assassin, kidnap-for-ransom specialist, security contractor operating outside legal bounds. Executes for payment, not ideology. Applies professional tradecraft: pre-operational surveillance, covert capability acquisition, practiced withdrawal. Full phase completion is the operational norm. Distinguishable from organized criminal enterprise by individual or small-team structure and contract-based operation.",
+      "description": "Financially motivated actor operating as a hired professional — assassin, kidnap-for-ransom specialist, security contractor operating outside legal bounds. Executes for payment, not ideology. Applies professional tradecraft: pre-operational surveillance, covert capability acquisition, practiced withdrawal. Full phase completion is the operational norm. Distinguishable from organized criminal enterprise by individual or small-team structure and contract-based operation.",
       "behavioral_markers": [
         "Pre-operational surveillance of target using professional counter-detection methods",
         "Covert capability acquisition through channels that obscure the procurement trail",
-        "No ideological or personal connection to the target \u2014 purely transactional",
+        "No ideological or personal connection to the target — purely transactional",
         "Systematic withdrawal and evidence management post-operation",
         "Financial transaction pattern consistent with contracted payment receipt"
       ],
@@ -3399,13 +3873,13 @@
       "primary_matrices": [
         "organization"
       ],
-      "description": "Actor focused on covert intelligence collection \u2014 stealing trade secrets, IP, client data, strategic plans, or personnel information for delivery to a competitor, state actor, or criminal purchaser. The defining operational logic is preservation of access: unlike the saboteur, the corporate spy wants to keep going back. Stealth and access maintenance are primary operational values. May be an insider acting on behalf of an external principal or an external actor who has gained insider access through recruitment or social engineering.",
+      "description": "Actor focused on covert intelligence collection — stealing trade secrets, IP, client data, strategic plans, or personnel information for delivery to a competitor, state actor, or criminal purchaser. The defining operational logic is preservation of access: unlike the saboteur, the corporate spy wants to keep going back. Stealth and access maintenance are primary operational values. May be an insider acting on behalf of an external principal or an external actor who has gained insider access through recruitment or social engineering.",
       "behavioral_markers": [
         "Covert access to sensitive data or systems beyond their operational role",
         "Aggregation of information across multiple systems and people in a pattern inconsistent with job function",
-        "Deliberate concealment of information collection activities \u2014 after-hours access, personal devices",
+        "Deliberate concealment of information collection activities — after-hours access, personal devices",
         "Sustained contact with an external handler disguised as professional or personal relationship",
-        "Deliberate preservation of access \u2014 avoids triggering reviews, maintains low profile"
+        "Deliberate preservation of access — avoids triggering reviews, maintains low profile"
       ],
       "v2_tactic_associations": [],
       "ai_enabled_risks": [
@@ -3433,7 +3907,7 @@
         "system",
         "facility"
       ],
-      "description": "Actor focused on physically destroying or disabling operational capability \u2014 machinery, production systems, infrastructure, or records. Unlike the corporate spy, the saboteur's operation is consumptive: the objective is to break something, not take something. May be grievance-driven, state-directed, competitor-directed, or ideologically motivated. Timing around business-critical events (product launch, merger, regulatory deadline) is a characteristic indicator. Uses legitimate access to reach systems that would otherwise require forced entry.",
+      "description": "Actor focused on physically destroying or disabling operational capability — machinery, production systems, infrastructure, or records. Unlike the corporate spy, the saboteur's operation is consumptive: the objective is to break something, not take something. May be grievance-driven, state-directed, competitor-directed, or ideologically motivated. Timing around business-critical events (product launch, merger, regulatory deadline) is a characteristic indicator. Uses legitimate access to reach systems that would otherwise require forced entry.",
       "behavioral_markers": [
         "Access to operational or physical systems beyond normal job function",
         "Unexplained presence near critical equipment, infrastructure nodes, or safety systems",
@@ -3465,12 +3939,12 @@
         "facility",
         "organization"
       ],
-      "description": "Ideologically motivated actor whose goal is exposure, embarrassment, disruption, or policy change \u2014 not physical harm to people. Physical harm to persons is actively avoided because it would undermine the message. Property damage and operational disruption are within scope. Attribution is essential \u2014 the claim is the point. Operates in a legal-to-illegal spectrum that makes early intervention difficult. Distinguishable from terrorist by the absence of mass casualty intent and the communicative primacy of the non-violent message.",
+      "description": "Ideologically motivated actor whose goal is exposure, embarrassment, disruption, or policy change — not physical harm to people. Physical harm to persons is actively avoided because it would undermine the message. Property damage and operational disruption are within scope. Attribution is essential — the claim is the point. Operates in a legal-to-illegal spectrum that makes early intervention difficult. Distinguishable from terrorist by the absence of mass casualty intent and the communicative primacy of the non-violent message.",
       "behavioral_markers": [
         "Public organizing activity, social media coordination, and recruitment visible before the action",
         "Targets selected for symbolic or operational significance to the cause, not for maximum casualties",
         "Prior incidents of civil disobedience or low-level property disruption in the pattern",
-        "Strong attribution-seeking behavior \u2014 prepared statements, media contacts, livestreaming",
+        "Strong attribution-seeking behavior — prepared statements, media contacts, livestreaming",
         "Avoidance of methods likely to cause human casualties"
       ],
       "v2_tactic_associations": [],
@@ -3498,10 +3972,10 @@
         "system",
         "organization"
       ],
-      "description": "Ideologically motivated actor whose goal is the destruction or disabling of infrastructure or operational capability. Physical harm to people is acceptable, not the primary objective. Targets are selected for their operational significance \u2014 pipelines, power nodes, water systems, communications infrastructure. May operate as a lone actor or in a small cell. Attribution is conditional: environmental or anti-state saboteurs may claim credit; state-affiliated saboteurs typically do not.",
+      "description": "Ideologically motivated actor whose goal is the destruction or disabling of infrastructure or operational capability. Physical harm to people is acceptable, not the primary objective. Targets are selected for their operational significance — pipelines, power nodes, water systems, communications infrastructure. May operate as a lone actor or in a small cell. Attribution is conditional: environmental or anti-state saboteurs may claim credit; state-affiliated saboteurs typically do not.",
       "behavioral_markers": [
-        "Reconnaissance of infrastructure targets \u2014 substations, pipelines, pumping stations, communication towers",
-        "Acquisition of destructive materials \u2014 explosives, incendiaries, or tools for physical tampering",
+        "Reconnaissance of infrastructure targets — substations, pipelines, pumping stations, communication towers",
+        "Acquisition of destructive materials — explosives, incendiaries, or tools for physical tampering",
         "Operational security behaviors suggesting awareness of surveillance",
         "Target selection pattern focused on operational chokepoints and high-consequence nodes",
         "May conduct Partial Approach Rehearsal at target sites across multiple days"
@@ -3531,13 +4005,13 @@
         "person",
         "facility"
       ],
-      "description": "Ideologically or politically motivated actor who uses violence as a communicative instrument \u2014 to coerce policy, shape public perception, or demonstrate capability. The violence is not the end; it is the message. Attribution is operationally required: terrorism without a claim loses its coercive power. Target selection is based on symbolic value or policy leverage, not maximum casualty efficiency. Organized cells apply full phase completion. Lone terrorists may compress Phase 1 based on radicalization timeline.",
+      "description": "Ideologically or politically motivated actor who uses violence as a communicative instrument — to coerce policy, shape public perception, or demonstrate capability. The violence is not the end; it is the message. Attribution is operationally required: terrorism without a claim loses its coercive power. Target selection is based on symbolic value or policy leverage, not maximum casualty efficiency. Organized cells apply full phase completion. Lone terrorists may compress Phase 1 based on radicalization timeline.",
       "behavioral_markers": [
-        "Ideological radicalization indicators \u2014 consumption of extremist content, rhetoric escalation, community withdrawal",
-        "Operational security behaviors \u2014 encrypted communications, new devices, changed routines",
+        "Ideological radicalization indicators — consumption of extremist content, rhetoric escalation, community withdrawal",
+        "Operational security behaviors — encrypted communications, new devices, changed routines",
         "Target selection research focused on symbolic value or media visibility",
         "Capability acquisition for mass-casualty or high-impact methods",
-        "Phase 4 attribution is mandatory \u2014 prepared communiqu\u00e9s, media contacts, or symbolic claim delivery"
+        "Phase 4 attribution is mandatory — prepared communiqués, media contacts, or symbolic claim delivery"
       ],
       "v2_tactic_associations": [],
       "ai_enabled_risks": [
@@ -3565,13 +4039,13 @@
         "person",
         "facility"
       ],
-      "description": "Ideologically motivated actor for whom causing mass harm or death is the operational end, not merely the instrument. Distinct from the terrorist \u2014 coercion is not the goal; elimination or destruction of the target group is. Attribution may be claimed or implicit but is not operationally required. Mass casualty capacity is the capability selection criterion. May exhibit martyrdom posture in Phase 4 \u2014 no evasion planning, active engagement with responders, or suicide by cop.",
+      "description": "Ideologically motivated actor for whom causing mass harm or death is the operational end, not merely the instrument. Distinct from the terrorist — coercion is not the goal; elimination or destruction of the target group is. Attribution may be claimed or implicit but is not operationally required. Mass casualty capacity is the capability selection criterion. May exhibit martyrdom posture in Phase 4 — no evasion planning, active engagement with responders, or suicide by cop.",
       "behavioral_markers": [
         "Escalating dehumanization of a target group in communications and expressed ideology",
-        "Leakage of eliminationist language \u2014 destruction, annihilation, cleansing rhetoric",
-        "Acquisition of mass-casualty capable methods \u2014 firearms, explosives, vehicles",
+        "Leakage of eliminationist language — destruction, annihilation, cleansing rhetoric",
+        "Acquisition of mass-casualty capable methods — firearms, explosives, vehicles",
         "Target selection based on demographic density of the target group, not symbolic value",
-        "Martyrdom posture \u2014 no withdrawal planning, final communications framed as legacy"
+        "Martyrdom posture — no withdrawal planning, final communications framed as legacy"
       ],
       "v2_tactic_associations": [],
       "ai_enabled_risks": [
@@ -3602,11 +4076,11 @@
         "organization",
         "system"
       ],
-      "description": "Nation-state directed, sponsored, or sanctioned adversary operating with the full intelligence apparatus of a state \u2014 collection, planning support, logistics, and exfiltration infrastructure. Deniability architecture is a Phase 1 planning input, not an afterthought. Highest capability across all matrices. May use proxy actors. Operations span all four matrices simultaneously for complex targets. Full phase completion is the norm; Phase 1 may extend over months with parallel Phase 2 preparation.",
+      "description": "Nation-state directed, sponsored, or sanctioned adversary operating with the full intelligence apparatus of a state — collection, planning support, logistics, and exfiltration infrastructure. Deniability architecture is a Phase 1 planning input, not an afterthought. Highest capability across all matrices. May use proxy actors. Operations span all four matrices simultaneously for complex targets. Full phase completion is the norm; Phase 1 may extend over months with parallel Phase 2 preparation.",
       "behavioral_markers": [
         "Professional counter-surveillance and surveillance detection routines throughout all phases",
         "Multi-actor team with compartmented roles and need-to-know discipline",
-        "Access to sophisticated capability \u2014 specialized tools, forged documents, sterile communications",
+        "Access to sophisticated capability — specialized tools, forged documents, sterile communications",
         "Pre-planned withdrawal with assets positioned before operation initiation",
         "Deniability architecture visible in how the operation is structured and what is left behind"
       ],
@@ -3642,7 +4116,7 @@
         "organization",
         "system"
       ],
-      "description": "Actor funded, directed, or enabled by a state intelligence service while maintaining a non-state appearance \u2014 contractor, criminal organization, hacktivist front, or private intelligence firm operating with state backing. Witting of the state relationship. The sponsoring state gains operational capability with plausible deniability. Distinct from State Actor (direct operation) \u2014 the sponsoring relationship adds a layer that complicates attribution and legal accountability.",
+      "description": "Actor funded, directed, or enabled by a state intelligence service while maintaining a non-state appearance — contractor, criminal organization, hacktivist front, or private intelligence firm operating with state backing. Witting of the state relationship. The sponsoring state gains operational capability with plausible deniability. Distinct from State Actor (direct operation) — the sponsoring relationship adds a layer that complicates attribution and legal accountability.",
       "behavioral_markers": [
         "Operates with resources and capability inconsistent with apparent organizational size or revenue",
         "Access to state-grade intelligence products and tradecraft without apparent state affiliation",
@@ -3678,9 +4152,9 @@
         "organization",
         "system"
       ],
-      "description": "An individual or organization exploited by a state intelligence service as an access or collection vehicle without their knowledge. Recruited under a false pretext \u2014 as a researcher, business contact, journalist, or academic \u2014 and used to provide physical access, information, or relationships that the state actor cannot reach directly. From the proxy's perspective, the relationship is entirely normal. Detection requires identifying the state handler and mapping who they have cultivated access to. The proxy is typically a victim, not a prosecutorial target.",
+      "description": "An individual or organization exploited by a state intelligence service as an access or collection vehicle without their knowledge. Recruited under a false pretext — as a researcher, business contact, journalist, or academic — and used to provide physical access, information, or relationships that the state actor cannot reach directly. From the proxy's perspective, the relationship is entirely normal. Detection requires identifying the state handler and mapping who they have cultivated access to. The proxy is typically a victim, not a prosecutorial target.",
       "behavioral_markers": [
-        "From the proxy's perspective: entirely normal behavior \u2014 no meaningful behavioral indicators",
+        "From the proxy's perspective: entirely normal behavior — no meaningful behavioral indicators",
         "Detection pathway: identify the state handler's relationship network, not the proxy's behavior",
         "May have been approached with flattery, professional opportunity, or apparent friendship",
         "Provides access or information to the handler believing it serves a legitimate purpose",
@@ -3712,7 +4186,7 @@
         "organization",
         "system"
       ],
-      "description": "A commercial entity \u2014 business, research institution, joint venture, or consultancy \u2014 that operates as a vehicle for state intelligence collection or influence operations. Leadership is witting; operational staff may range from witting to entirely unwitting. The commercial cover provides access to sensitive environments that direct state actors cannot reach. Detection requires analysis of the corporate structure, beneficial ownership, and the pattern of access sought rather than behavioral indicators in individual personnel.",
+      "description": "A commercial entity — business, research institution, joint venture, or consultancy — that operates as a vehicle for state intelligence collection or influence operations. Leadership is witting; operational staff may range from witting to entirely unwitting. The commercial cover provides access to sensitive environments that direct state actors cannot reach. Detection requires analysis of the corporate structure, beneficial ownership, and the pattern of access sought rather than behavioral indicators in individual personnel.",
       "behavioral_markers": [
         "Corporate structure with beneficial ownership obscured through multiple jurisdictions",
         "Business activities that create access to sensitive technology, infrastructure, or personnel",
@@ -3752,7 +4226,7 @@
       "behavioral_markers": [
         "Surveillance and pattern-of-life collection on target consistent with professional operational planning",
         "Use of cutouts, intermediaries, and encrypted communications to insulate principals",
-        "Multiple operational actors with defined roles \u2014 intelligence, logistics, execution",
+        "Multiple operational actors with defined roles — intelligence, logistics, execution",
         "Cross-border financial flows and money laundering infrastructure",
         "Willingness to conduct violence against witnesses, family members, or security personnel"
       ],
@@ -3779,13 +4253,13 @@
       "primary_matrices": [
         "person"
       ],
-      "description": "Individual engaged to commit murder in exchange for payment. May be employed by organized criminal groups, transnational criminal organizations, state actors, commercial actors, or private individuals. Professional execution and operational security distinguish this actor from impulsive criminal violence. The transactional nature means the actor has no personal grievance \u2014 threat does not de-escalate if the underlying grievance is resolved.",
+      "description": "Individual engaged to commit murder in exchange for payment. May be employed by organized criminal groups, transnational criminal organizations, state actors, commercial actors, or private individuals. Professional execution and operational security distinguish this actor from impulsive criminal violence. The transactional nature means the actor has no personal grievance — threat does not de-escalate if the underlying grievance is resolved.",
       "behavioral_markers": [
         "Methodical pre-attack surveillance and target confirmation behaviors",
         "Use of counter-surveillance techniques and route variation during reconnaissance",
         "Acquisition of weapons through channels designed to prevent attribution",
         "Limited digital footprint and use of cash or cryptocurrency for operational expenses",
-        "No observable personal grievance with the target \u2014 access to target is the only objective"
+        "No observable personal grievance with the target — access to target is the only objective"
       ],
       "v2_tactic_associations": [],
       "ai_enabled_risks": [
@@ -3813,7 +4287,7 @@
       "behavioral_markers": [
         "Extended pattern-of-life collection to identify predictable routines and low-coverage windows",
         "Acquisition of restraints, vehicles, or communications equipment inconsistent with known activities",
-        "Probing of security measures \u2014 testing response times, guard schedules, or escort procedures",
+        "Probing of security measures — testing response times, guard schedules, or escort procedures",
         "Pre-positioning of resources at likely intercept points along target's regular routes",
         "Establishment of secure holding location prior to execution"
       ],
@@ -3842,7 +4316,7 @@
         "person",
         "organization"
       ],
-      "description": "Actor who uses threatened harm \u2014 to a person, their family, their assets, or their reputation \u2014 to compel payment or behavioral compliance. May leverage compromising information, physical threats, or harm to third parties as leverage. Distinct from kidnapping in that the primary tool is the threat rather than the act. Threat may be sustained over extended periods and escalated incrementally to maximize compliance.",
+      "description": "Actor who uses threatened harm — to a person, their family, their assets, or their reputation — to compel payment or behavioral compliance. May leverage compromising information, physical threats, or harm to third parties as leverage. Distinct from kidnapping in that the primary tool is the threat rather than the act. Threat may be sustained over extended periods and escalated incrementally to maximize compliance.",
       "behavioral_markers": [
         "Initial contact establishing the threat and demand, often through anonymous or obfuscated channels",
         "Demonstrated access to private information or ability to harm as proof of capability",
@@ -3874,7 +4348,7 @@
         "person",
         "facility"
       ],
-      "description": "Individual who has a legitimate service relationship with the target organization \u2014 patient, client, student, customer \u2014 and directs violence or threatening behavior toward staff or other service users within that context. The highest-volume category of workplace violence in the United States (Cal/OSHA Type II). Threat typically emerges from dissatisfaction with service, denial of benefits, or perceived mistreatment. Violence is often impulsive and situationally triggered rather than premeditated.",
+      "description": "Individual who has a legitimate service relationship with the target organization — patient, client, student, customer — and directs violence or threatening behavior toward staff or other service users within that context. The highest-volume category of workplace violence in the United States (Cal/OSHA Type II). Threat typically emerges from dissatisfaction with service, denial of benefits, or perceived mistreatment. Violence is often impulsive and situationally triggered rather than premeditated.",
       "behavioral_markers": [
         "Verbal aggression or threatening statements directed at staff during service interactions",
         "Escalating complaints with explicit or implicit threats of harm",
@@ -3906,13 +4380,13 @@
         "facility",
         "organization"
       ],
-      "description": "Organized or semi-organized collective with a shared grievance against a specific organization, its leadership, or its policies. Distinguished from ideological actors (AP015\u2013AP018) by the specificity and personal nature of the grievance \u2014 this group was directly affected by a decision, product failure, policy, or perceived injustice. May organize protests, harassment campaigns, coordinated complaints, or escalate to physical disruption and targeted threats against executives or staff.",
+      "description": "Organized or semi-organized collective with a shared grievance against a specific organization, its leadership, or its policies. Distinguished from ideological actors (AP015–AP018) by the specificity and personal nature of the grievance — this group was directly affected by a decision, product failure, policy, or perceived injustice. May organize protests, harassment campaigns, coordinated complaints, or escalate to physical disruption and targeted threats against executives or staff.",
       "behavioral_markers": [
-        "Coordinated contact campaigns \u2014 calls, emails, social media \u2014 directed at specific staff or leadership",
+        "Coordinated contact campaigns — calls, emails, social media — directed at specific staff or leadership",
         "Organized protest activity at organizational facilities or events",
         "Doxing of executive or staff personal information to group members",
         "Explicit threatening communications directed at named individuals",
-        "Escalation pattern: public campaign \u2192 targeted harassment \u2192 physical threat"
+        "Escalation pattern: public campaign → targeted harassment → physical threat"
       ],
       "v2_tactic_associations": [],
       "ai_enabled_risks": [
@@ -3926,23 +4400,151 @@
   "warden_integration": {
     "status": "reserved",
     "version_target": "V3",
-    "notes": "WARDEN alert schema maps to THREAT taxonomy via agentic ingestion pipeline. V3 implementation: WARDEN behavioral alerts \u2192 structured TTP assessment in THREAT taxonomy language. Both tools are demonstrably more powerful together \u2014 WARDEN detects the pathway; THREAT maps where the actor is in the kill chain."
+    "notes": "WARDEN alert schema maps to THREAT taxonomy via agentic ingestion pipeline. V3 implementation: WARDEN behavioral alerts → structured TTP assessment in THREAT taxonomy language. Both tools are demonstrably more powerful together — WARDEN detects the pathway; THREAT maps where the actor is in the kill chain."
   },
   "ai_architecture": {
     "version": "1.0",
-    "philosophy": "AI is a force multiplier on existing attack vectors \u2014 not a separate pathway. AI compresses Phase 1 timelines, lowers tradecraft requirements, and makes capabilities previously requiring nation-state resources accessible to unsophisticated actors. It does not create new physical attack pathways; it reduces the skill floor for existing ones.",
+    "philosophy": "AI is a force multiplier on existing attack vectors — not a separate pathway. AI compresses Phase 1 timelines, lowers tradecraft requirements, and makes capabilities previously requiring nation-state resources accessible to unsophisticated actors. It does not create new physical attack pathways; it reduces the skill floor for existing ones.",
     "vectors": {
-      "ai_initiated_physical": "An autonomous or semi-autonomous AI system directly executes physical harm without real-time human direction at the point of attack. Distinct from cyber_initiated_physical: the attack does not necessarily route through networked cyberspace \u2014 the AI agent operates locally, autonomously, in physical space. Examples: AI-directed drones with autonomous targeting, robotic platforms executing without human oversight, compromised autonomous vehicle systems.",
-      "ai_enabled_risks": "Capability modifier field on every actor profile. Documents AI-specific risk amplifiers applicable to each actor type. Not a vector \u2014 an inventory of how AI tools lower the barrier for existing attack vectors on a per-profile basis."
+      "ai_initiated_physical": "An autonomous or semi-autonomous AI system directly executes physical harm without real-time human direction at the point of attack. Distinct from cyber_initiated_physical: the attack does not necessarily route through networked cyberspace — the AI agent operates locally, autonomously, in physical space. Examples: AI-directed drones with autonomous targeting, robotic platforms executing without human oversight, compromised autonomous vehicle systems.",
+      "ai_enabled_risks": "Capability modifier field on every actor profile. Documents AI-specific risk amplifiers applicable to each actor type. Not a vector — an inventory of how AI tools lower the barrier for existing attack vectors on a per-profile basis."
     },
     "capability_taxonomy": {
       "accelerated_target_research": "LLMs, OSINT aggregators, and AI-powered social graph analyzers compress Phase 1 target development from weeks to hours, without requiring technical expertise.",
       "synthetic_identity": "AI-generated personas, documents, voice, and online presence used for cover identities, social engineering, or recruitment operations.",
-      "deepfake_manipulation": "AI-generated audio, video, or text impersonating trusted parties \u2014 used for manipulation, extortion, or access enablement.",
+      "deepfake_manipulation": "AI-generated audio, video, or text impersonating trusted parties — used for manipulation, extortion, or access enablement.",
       "automated_surveillance": "AI-powered monitoring of a target's digital footprint, location patterns, social connections, and behavioral indicators at scale.",
       "autonomous_targeting": "AI systems capable of independent targeting decisions for physical harm, without real-time human direction at point of execution."
     },
-    "cpn_impact": "The Cyber-Physical Nexus dimension carries the highest AI amplification risk. AI tools directly accelerate Phase 1 (Target Development) for any actor targeting individuals with a digital footprint. Detection models must account for AI-compressed threat timelines \u2014 a Fixated Individual now has access to research capability that previously required professional-grade intelligence resources.",
+    "cpn_impact": "The Cyber-Physical Nexus dimension carries the highest AI amplification risk. AI tools directly accelerate Phase 1 (Target Development) for any actor targeting individuals with a digital footprint. Detection models must account for AI-compressed threat timelines — a Fixated Individual now has access to research capability that previously required professional-grade intelligence resources.",
     "v2_roadmap": "V2 will add per-tactic AI capability annotations, expand ai_enabled_risks with tactic-level associations, and introduce the Operations/scenario composer with AI-assisted behavioral pattern generation."
+  },
+  "bibliography": {
+    "FEIN-VOSSEKUIL-1999": {
+      "type": "academic_paper",
+      "title": "Assassination in the United States: An Operational Study of Recent Assassins, Attackers, and Near-Lethal Approachers",
+      "author": "Fein, R.A. & Vossekuil, B.",
+      "date": "1999",
+      "url": "https://doi.org/10.1520/JFS14457J",
+      "doi": "10.1520/JFS14457J",
+      "relevance_summary": "Foundational pathway model for targeted violence: grievance to ideation to research/planning to preparation to breach to attack. Established that violence is a process with observable behavioral stages."
+    },
+    "NTAC-MASS-2021": {
+      "type": "government_report",
+      "title": "Mass Attacks in Public Spaces: 2016-2020",
+      "author": "U.S. Secret Service, National Threat Assessment Center",
+      "date": "2021",
+      "url": "https://www.secretservice.gov/sites/default/files/reports/2023-01/usss-ntac-mass-attacks-public-spaces-2016-2020.pdf",
+      "doi": null,
+      "relevance_summary": "Behavioral analysis of 173 mass attack incidents including pre-attack grievance patterns, communication of intent, target selection factors, and resource acquisition behaviors."
+    },
+    "NTAC-SCHOOLS-2019": {
+      "type": "government_report",
+      "title": "Protecting America's Schools: A U.S. Secret Service Analysis of Targeted School Violence",
+      "author": "U.S. Secret Service, National Threat Assessment Center",
+      "date": "2019",
+      "url": "https://www.secretservice.gov/data/protection/ntac/usss-analysis-of-targeted-school-violence.pdf",
+      "doi": null,
+      "relevance_summary": "Analysis of targeted school violence incidents documenting social stressors, concerning communications, research on prior attacks, and site-specific planning as pre-attack behavioral indicators."
+    },
+    "NTAC-AVERTED-2021": {
+      "type": "government_report",
+      "title": "Averting Targeted School Violence: A U.S. Secret Service Analysis of Plots Against Schools",
+      "author": "U.S. Secret Service, National Threat Assessment Center",
+      "date": "2021",
+      "url": "https://www.secretservice.gov/data/protection/ntac/usss-averting-targeted-school-violence.pdf",
+      "doi": null,
+      "relevance_summary": "Analysis of averted plots capturing the full Phase 1-2 behavioral arc without execution. Shows what planning and mobilization look like when detected and interrupted."
+    },
+    "MELOY-TRAP18-2016": {
+      "type": "academic_paper",
+      "title": "The Lone-Actor Terrorist and the TRAP-18",
+      "author": "Meloy, J.R. & Gill, P.",
+      "date": "2016",
+      "url": "https://doi.org/10.1037/tam0000061",
+      "doi": "10.1037/tam0000061",
+      "relevance_summary": "Terrorist Radicalization Assessment Protocol with 8 proximal warning behaviors (pathway, fixation, identification, novel aggression, energy burst, leakage, last resort, directly communicated threat) and 10 distal characteristics."
+    },
+    "FBI-PREATTACK-2018": {
+      "type": "government_report",
+      "title": "A Study of the Pre-Attack Behaviors of Active Shooters in the United States Between 2000 and 2013",
+      "author": "Silver, J., Simons, A., & Craun, S., Federal Bureau of Investigation",
+      "date": "2018",
+      "url": "https://www.fbi.gov/file-repository/pre-attack-behaviors-of-active-shooters-in-us-2000-2013.pdf",
+      "doi": null,
+      "relevance_summary": "Study of 63 active shooters documenting behavioral changes in mental health, interpersonal interactions, leakage, and weapons behaviors in the weeks and months before attacks."
+    },
+    "CERT-CSG-7-2022": {
+      "type": "practitioner_guide",
+      "title": "Common Sense Guide to Mitigating Insider Threats, Seventh Edition",
+      "author": "Carnegie Mellon University, Software Engineering Institute, CERT Division",
+      "date": "2022",
+      "url": null,
+      "doi": null,
+      "relevance_summary": "Comprehensive insider threat mitigation guide based on 1000+ cases. Defines behavioral, digital, psychological, and contextual indicator categories with multi-disciplinary response protocols."
+    },
+    "NITTF-GUIDE-2017": {
+      "type": "government_report",
+      "title": "Insider Threat Guide: A Compendium of Best Practices to Accompany the National Insider Threat Policy and Minimum Standards",
+      "author": "National Insider Threat Task Force (NITTF), ODNI",
+      "date": "2017",
+      "url": null,
+      "doi": null,
+      "relevance_summary": "Federal insider threat program minimum standards including hub/spoke detection model, 5-tier escalation framework (awareness through response), and stakeholder involvement matrix."
+    },
+    "ASIS-WVPI-2021": {
+      "type": "standard",
+      "title": "ASIS/SHRM WVPI.1-2011 (R2021): Workplace Violence Prevention and Intervention",
+      "author": "ASIS International / SHRM",
+      "date": "2021",
+      "url": null,
+      "doi": null,
+      "relevance_summary": "ANSI standard defining Threat Assessment Team model, behavioral escalation indicators, 5-level response protocol, and timing windows for workplace violence prevention."
+    },
+    "CISA-DIT-2023": {
+      "type": "government_report",
+      "title": "Defining Insider Threats",
+      "author": "Cybersecurity and Infrastructure Security Agency (CISA)",
+      "date": "2023",
+      "url": "https://www.cisa.gov/topics/physical-security/insider-threat-mitigation",
+      "doi": null,
+      "relevance_summary": "CISA insider threat definition framework with published behavioral indicator list organized by intentional vs. unintentional categories."
+    },
+    "FEIN-VOSSEKUIL-HOLDEN-1995": {
+      "type": "government_report",
+      "title": "Threat Assessment: An Approach to Prevent Targeted Violence",
+      "author": "Fein, R.A., Vossekuil, B., & Holden, G.A.",
+      "date": "1995",
+      "url": null,
+      "doi": null,
+      "relevance_summary": "NIJ Research in Action report establishing threat assessment as the preferred approach over threat profiling. Focus on behaviors over traits for targeted violence prevention."
+    },
+    "NTAC-SYSTEMS-2020": {
+      "type": "government_report",
+      "title": "Using a Systems Approach for Threat Assessment Investigations: A 10-Step Guide for Threat Management Professionals",
+      "author": "U.S. Secret Service, National Threat Assessment Center",
+      "date": "2020",
+      "url": null,
+      "doi": null,
+      "relevance_summary": "Practitioner methodology for systematic threat assessment investigations. 10-step framework for threat management teams applied to organizational settings."
+    },
+    "CISA-CONVERGE-2021": {
+      "type": "government_report",
+      "title": "Convergence of Physical and Cyber Insider Threats",
+      "author": "Cybersecurity and Infrastructure Security Agency (CISA)",
+      "date": "2021",
+      "url": null,
+      "doi": null,
+      "relevance_summary": "Identifies converged physical-cyber insider threat indicators including badge/network anomaly correlation, physical surveillance combined with digital reconnaissance, and cross-domain detection integration."
+    },
+    "LLNL-TR-858139": {
+      "type": "government_report",
+      "title": "Requirements and Recommendations for a Physical Attack Characterization Framework",
+      "author": "McGrath, J.K., Scott, H.R., & Slone, L.R., Lawrence Livermore National Laboratory",
+      "date": "2023",
+      "url": "https://doi.org/10.2172/2229613",
+      "doi": "10.2172/2229613",
+      "relevance_summary": "DOE/NNSA-sponsored requirements study evaluating whether any existing methodology could serve as a structured framework for characterizing physical adversary action. Concluded existing frameworks are inadequate."
+    }
   }
 }

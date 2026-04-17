@@ -1,0 +1,72 @@
+name: Framework Issue
+description: Report an issue with existing framework content — incorrect data, missing information, or structural problems
+title: "[Issue] "
+labels: ["framework-issue", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to flag inconsistencies, errors, or problems in the THREAT Matrix framework data.
+
+        Examples: terminology drift, scope mismatch, an actor profile that doesn't fit its category, a tactic placed in the wrong phase, or a description that contradicts the source it cites.
+
+  - type: input
+    id: affected-ids
+    attributes:
+      label: Affected Tactic or Profile ID(s)
+      description: >
+        List the tactic IDs (TAxxxx) or actor profile IDs (APxxx) affected.
+        Reference the specific records in docs/data/framework.json.
+      placeholder: e.g., TA0301, TA0302, AP012
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What kind of issue is this?
+      options:
+        - Incorrect data
+        - Missing information
+        - Structural inconsistency
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: >
+        Describe the issue in detail. What is wrong, and where exactly in the framework
+        does the problem appear? Reference specific fields (name, phase, notes, techniques,
+        indicators, countermeasures, actor_associations) where applicable.
+      placeholder: |
+        Describe the problem. Be specific about which field or relationship is incorrect.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-correction
+    attributes:
+      label: Suggested Correction
+      description: >
+        If you know what the correct data should be, describe the fix.
+        This is optional but speeds up resolution.
+      placeholder: |
+        e.g., TA0301 should be in Phase 2 (Mobilization) rather than Phase 3 (Execution) because...
+    validations:
+      required: false
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting Evidence or Sources
+      description: >
+        Provide sources that support your correction. Government reports, academic research,
+        court documents, and after-action reviews preferred.
+      placeholder: |
+        - Source: title, author/org, year, URL or document reference
+    validations:
+      required: false
