@@ -11,10 +11,10 @@ export function TopNav({ route, navigate, theme, setTheme }: Props) {
   const isActors = route.view === 'actors' || route.view === 'actorDetail';
   const isReferences = route.view === 'references';
   const isPerson = !isActors && !isReferences && route.view !== 'stub';
-  const stubs: Array<['facility' | 'organization' | 'system', string]> = [
+  const stubs: Array<['facility' | 'organization' | 'infrastructure', string]> = [
     ['facility', 'Facility'],
     ['organization', 'Organization'],
-    ['system', 'System'],
+    ['infrastructure', 'Infrastructure'],
   ];
   return (
     <nav className="topbar">

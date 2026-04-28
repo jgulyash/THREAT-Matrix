@@ -3492,7 +3492,7 @@
     "organization": {
       "tactics": []
     },
-    "system": {
+    "infrastructure": {
       "tactics": []
     }
   },
@@ -3643,7 +3643,7 @@
       ],
       "primary_matrices": [
         "organization",
-        "system"
+        "infrastructure"
       ],
       "description": "Current trusted-access holder who is being blackmailed, threatened, or otherwise coerced into facilitating an attack or intelligence collection operation. The actor knows what they are doing but is not acting freely. Coercion may be based on personal compromising information, threats to family, or financial leverage. Detection is complicated because the actor's outward grievance indicators are suppressed — they appear compliant rather than hostile.",
       "behavioral_markers": [
@@ -3678,7 +3678,7 @@
       ],
       "primary_matrices": [
         "organization",
-        "system"
+        "infrastructure"
       ],
       "description": "Current trusted-access holder who has been deliberately recruited by an external actor — typically a state intelligence service, organized criminal group, or competitor — and is willingly cooperating. Unlike the coerced insider, this actor chose the relationship. They are disciplined, operationally patient, and actively work to expand their access and preserve their position. Among the hardest insider threat profiles to detect.",
       "behavioral_markers": [
@@ -3743,7 +3743,7 @@
       ],
       "primary_matrices": [
         "organization",
-        "system"
+        "infrastructure"
       ],
       "description": "Current trusted-access holder who is being exploited by an external actor without their knowledge. Their normal work behavior is the delivery mechanism. They may provide access, information, or physical proximity that they believe is routine. Detection requires identifying the external actor doing the exploiting — the insider's behavior appears normal because it is normal from their perspective. A state intelligence service using a foreign business contact as an unwitting collection platform is the archetype.",
       "behavioral_markers": [
@@ -3905,7 +3905,7 @@
       ],
       "primary_matrices": [
         "organization",
-        "system",
+        "infrastructure",
         "facility"
       ],
       "description": "Actor focused on physically destroying or disabling operational capability — machinery, production systems, infrastructure, or records. Unlike the corporate spy, the saboteur's operation is consumptive: the objective is to break something, not take something. May be grievance-driven, state-directed, competitor-directed, or ideologically motivated. Timing around business-critical events (product launch, merger, regulatory deadline) is a characteristic indicator. Uses legitimate access to reach systems that would otherwise require forced entry.",
@@ -3970,7 +3970,7 @@
       ],
       "primary_matrices": [
         "facility",
-        "system",
+        "infrastructure",
         "organization"
       ],
       "description": "Ideologically motivated actor whose goal is the destruction or disabling of infrastructure or operational capability. Physical harm to people is acceptable, not the primary objective. Targets are selected for their operational significance — pipelines, power nodes, water systems, communications infrastructure. May operate as a lone actor or in a small cell. Attribution is conditional: environmental or anti-state saboteurs may claim credit; state-affiliated saboteurs typically do not.",
@@ -4075,7 +4075,7 @@
         "person",
         "facility",
         "organization",
-        "system"
+        "infrastructure"
       ],
       "description": "Nation-state directed, sponsored, or sanctioned adversary operating with the full intelligence apparatus of a state — collection, planning support, logistics, and exfiltration infrastructure. Deniability architecture is a Phase 1 planning input, not an afterthought. Highest capability across all matrices. May use proxy actors. Operations span all four matrices simultaneously for complex targets. Full phase completion is the norm; Phase 1 may extend over months with parallel Phase 2 preparation.",
       "behavioral_markers": [
@@ -4115,7 +4115,7 @@
         "person",
         "facility",
         "organization",
-        "system"
+        "infrastructure"
       ],
       "description": "Actor funded, directed, or enabled by a state intelligence service while maintaining a non-state appearance — contractor, criminal organization, hacktivist front, or private intelligence firm operating with state backing. Witting of the state relationship. The sponsoring state gains operational capability with plausible deniability. Distinct from State Actor (direct operation) — the sponsoring relationship adds a layer that complicates attribution and legal accountability.",
       "behavioral_markers": [
@@ -4151,7 +4151,7 @@
       ],
       "primary_matrices": [
         "organization",
-        "system"
+        "infrastructure"
       ],
       "description": "An individual or organization exploited by a state intelligence service as an access or collection vehicle without their knowledge. Recruited under a false pretext — as a researcher, business contact, journalist, or academic — and used to provide physical access, information, or relationships that the state actor cannot reach directly. From the proxy's perspective, the relationship is entirely normal. Detection requires identifying the state handler and mapping who they have cultivated access to. The proxy is typically a victim, not a prosecutorial target.",
       "behavioral_markers": [
@@ -4185,7 +4185,7 @@
       ],
       "primary_matrices": [
         "organization",
-        "system"
+        "infrastructure"
       ],
       "description": "A commercial entity — business, research institution, joint venture, or consultancy — that operates as a vehicle for state intelligence collection or influence operations. Leadership is witting; operational staff may range from witting to entirely unwitting. The commercial cover provides access to sensitive environments that direct state actors cannot reach. Detection requires analysis of the corporate structure, beneficial ownership, and the pattern of access sought rather than behavioral indicators in individual personnel.",
       "behavioral_markers": [

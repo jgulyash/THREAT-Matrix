@@ -4,7 +4,7 @@ export type Route =
   | { view: 'tactic'; tacticId: string }
   | { view: 'actors' }
   | { view: 'actorDetail'; actorId: string }
-  | { view: 'stub'; matrix: 'facility' | 'organization' | 'system' }
+  | { view: 'stub'; matrix: 'facility' | 'organization' | 'infrastructure' }
   | { view: 'references' };
 
 export function parseRoute(): Route {
@@ -18,7 +18,7 @@ export function parseRoute(): Route {
     return { view: 'phase', phase: parseInt(p[2], 10), track: p[3] || null };
   }
   if (p[0] === 'person' && p[1] === 'tactic') return { view: 'tactic', tacticId: p[2] };
-  if (p[0] === 'facility' || p[0] === 'organization' || p[0] === 'system') {
+  if (p[0] === 'facility' || p[0] === 'organization' || p[0] === 'infrastructure') {
     return { view: 'stub', matrix: p[0] };
   }
   return { view: 'heatmap' };
