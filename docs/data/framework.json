@@ -487,8 +487,196 @@
           "cpn_id": "CPN-0103",
           "cpn_notes": "Satellite imagery, Google Maps Street View, live webcams, and publicly posted photos and videos of locations augment or replace physical walkthroughs. High-resolution imagery can provide actionable access and egress analysis before the actor visits a location in person.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0103-01",
+              "behavior": "Threat actor appears at locations associated with the targeted subject on multiple occasions with no apparent legitimate reason",
+              "category": "surveillance",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0101-01",
+                "IND-0103-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0103-02",
+              "behavior": "Threat actor conducts reverse image searches, satellite imagery review, or street-view navigation of locations associated with the targeted subject",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "social_media",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "correlates_with": [
+                "IND-0103-01",
+                "IND-0102-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0103-03",
+              "behavior": "Threat actor photographs or video-records targeted subject-associated locations including building exteriors, parking access points, security checkpoints, or interior layouts",
+              "category": "surveillance",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "social_media",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0103-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0103-04",
+              "behavior": "Threat actor acquires or studies floor plans, blueprints, security camera diagrams, or emergency exit routes for targeted subject-associated locations",
+              "category": "planning",
+              "detection_sources": [
+                "public_records",
+                "it_logs",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0103-03",
+                "IND-0203-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0103-05",
+              "behavior": "Threat actor inquires with current or former employees, security personnel, or facility staff about access procedures, schedules, or targeted subject's routines",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "correlates_with": [
+                "IND-0102-02",
+                "IND-0105-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0103-01",
+              "measure": "Implement varied-route protocols for targeted subject's travel and avoid posting predictable schedules in publicly accessible systems",
+              "category": "preventive",
+              "domain": "personnel_security",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Routine may remain observable to a determined threat actor conducting repeated surveillance; this measure raises the cost of pattern-of-life mapping but does not prevent it",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0103-02",
+              "measure": "Conduct surveillance detection sweeps of protectee-associated locations on a randomized schedule, focusing on persons or vehicles appearing on multiple occasions",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Detection success depends on operator skill and adversary tradecraft; sophisticated subjects rotate observation positions to defeat surveillance detection",
+              "compensates_for": [
+                "CM-0103-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            },
+            {
+              "id": "CM-0103-03",
+              "measure": "Deploy CCTV coverage of approach routes, parking access, and entry points associated with the targeted subject, with retention sufficient to support retrospective pattern analysis",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development",
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Recording without active monitoring detects in retrospect, not in time; coverage gaps and aging footage retention limit retrospective value",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0103-04",
+              "measure": "Conduct digital footprint reduction for the targeted subject including data broker opt-outs, removal of property and address records where legally permitted, establish LLCs and Land Trusts where permitted, and social media privacy hardening",
+              "category": "preventive",
+              "domain": "personnel_security",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks to months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Public records (court filings, property records, voter registration) cannot be fully removed; partial reduction raises adversary effort but does not eliminate the surface",
+              "compensates_for": [
+                "CM-0103-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -576,8 +764,66 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
-          "response_protocols": []
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021",
+            "FBI-PREATTACK-2018",
+            "CALHOUN-WESTON-2003"
+          ],
+          "response_protocols": [
+            {
+              "id": "RP-0103-01",
+              "trigger": "One or more Environmental Survey indicators reported (drive-by pattern, reconnaissance imagery, inquiries about targeted subject's routine)",
+              "action": "Open or update the case file. Conduct a 24-hour preliminary assessment that includes (a) corroboration of the observation, (b) digital footprint review of any identified threat actor, (c) baseline review of recent communications and access requests involving the targeted subject. Document all sourcing.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Threat actor identified with apparent means and proximity to the targeted subject, OR additional indicators across other tactics surface for the same threat actor",
+              "coordinates_with": [
+                "RP-0101-01",
+                "RP-0102-01"
+              ],
+              "legal_notes": "Surveillance of an identified threat actor by the organization may have legal implications under privacy and stalking statutes that vary by jurisdiction. Consult counsel before initiating any active monitoring of the threat actor. Document the basis for any investigative action; pretextual or undocumented monitoring creates downstream legal risk.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0103-02",
+              "trigger": "Environmental Survey indicators co-observed with credible threat communication, target-specific weapons inquiry, or other Phase 2 mobilization signals",
+              "action": "Convene the threat management team. Conduct full risk assessment. Notify protective operations and human resources (if subject is internal). Brief executive leadership and consider law-enforcement liaison consult. Implement enhanced protective posture for the targeted subject.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "human_resources",
+                "executive_leadership",
+                "legal"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Threat actor confirmed with means and access OR direct or indirect threat communicated.",
+              "coordinates_with": [
+                "RP-0101-02",
+                "RP-0203-01"
+              ],
+              "legal_notes": "At this priority tier, parallel notifications to legal and (when applicable) law enforcement are standard. Document the indicator constellation that drove escalation. Preserve evidence of the original observations. Consult counsel on jurisdiction-specific reporting obligations and on privileged-communication scope for the threat management team.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "field_notes": "The first signal you usually catch is repetition where there shouldn't be any. Same person at the same coffee shop across the street from the targeted subject's office, three mornings in a row, no apparent business or personal reason. Or a vehicle that appears in the parking garage footage at unusual times. Environmental Survey is rarely a single event you can point to; it's a pattern that resolves over days or weeks of routine observation. Online recon is usually not observed at the time it's happening, so latency is a factor — discovered when preset alerts trigger or after another tactic surfaces and you go back to look at access patterns.",
+          "observed_contexts": [
+            "fixated subject conducting repeated drive-bys of the targeted subject's residence at consistent times",
+            "former employee photographing the loading dock and after-hours entry points",
+            "stalking case where social media posts revealed the subject had been at the target's gym, restaurant, and church before any direct contact",
+            "executive protection case where reverse image search of an open-source post identified the subject standing across from the targeted subject's home",
+            "[literature: NTAC-MASS-2021 case pattern — pre-attack site visits in the weeks before mass attacks at workplaces and public venues]"
+          ],
+          "evidence_basis": "operational_primary"
         },
         {
           "id": "TA0104",
