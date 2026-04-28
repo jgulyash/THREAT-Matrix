@@ -113,7 +113,7 @@ export function HeatMapGrid({
                 cpnFilter={cpnFilter}
               />
               {(['facility', 'organization', 'infrastructure'] as const).map((m, i) => (
-                <StubCell key={m} count={STUB[m].phases[phase]} version={`V${i + 2}`} />
+                <StubCell key={m} count={STUB[m].phases[phase]} version={`V1.${i + 3}`} />
               ))}
             </div>
           );
@@ -135,9 +135,9 @@ export function HeatMapGrid({
                 onClick={() => navigate('/person/phase/4/flight')}
                 cpnFilter={cpnFilter}
               />
-              <StubCell count={STUB.facility.flight} version="V2" track="flight" />
-              <StubCell count={STUB.organization.flight} version="V3" track="flight" />
-              <StubCell count={STUB.infrastructure.flight} version="V4" track="flight" />
+              <StubCell count={STUB.facility.flight} version="V1.3" track="flight" />
+              <StubCell count={STUB.organization.flight} version="V1.4" track="flight" />
+              <StubCell count={STUB.infrastructure.flight} version="V1.5" track="flight" />
             </div>
             <div className="phase4-divider" />
             <div className="phase4-sub-row">
@@ -152,9 +152,9 @@ export function HeatMapGrid({
                 onClick={() => navigate('/person/phase/4/claim')}
                 cpnFilter={cpnFilter}
               />
-              <StubCell count={STUB.facility.claim} version="V2" track="claim" />
-              <StubCell count={STUB.organization.claim} version="V3" track="claim" />
-              <StubCell count={STUB.infrastructure.claim} version="V4" track="claim" />
+              <StubCell count={STUB.facility.claim} version="V1.3" track="claim" />
+              <StubCell count={STUB.organization.claim} version="V1.4" track="claim" />
+              <StubCell count={STUB.infrastructure.claim} version="V1.5" track="claim" />
             </div>
           </div>
         </div>
