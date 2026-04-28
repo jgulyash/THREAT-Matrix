@@ -8,7 +8,7 @@
   <rect y="36" width="900" height="8" fill="#0f172a"/>
   <text x="24" y="27" fill="#ffffff" font-size="13" font-weight="700" letter-spacing="1">THREAT MATRIX</text>
   <text x="182" y="27" fill="#475569" font-size="13" font-weight="400">·</text>
-  <text x="194" y="27" fill="#94a3b8" font-size="13" font-weight="400" letter-spacing="0.5">Kill Chain</text>
+  <text x="194" y="27" fill="#94a3b8" font-size="13" font-weight="400" letter-spacing="0.5">Threat Lifecycle</text>
 
   <!-- ── PHASE 1: Target Development ── -->
   <rect x="16" y="56" width="192" height="172" fill="#ffffff" rx="6" stroke="#e2e8f0" stroke-width="1"/>
@@ -26,9 +26,11 @@
   <text x="28" y="168" fill="#475569" font-size="13">Profiling</text>
   <text x="28" y="184" fill="#475569" font-size="13">Survey</text>
   <text x="28" y="200" fill="#475569" font-size="13">Capability Acquisition</text>
-  <!-- CPN badge -->
+  <!-- CPN + AIP badges -->
   <rect x="28" y="208" width="38" height="18" fill="#eff6ff" rx="3" stroke="#bfdbfe" stroke-width="1"/>
   <text x="47" y="220" fill="#3b82f6" font-size="10" font-weight="700" text-anchor="middle">CPN</text>
+  <rect x="72" y="208" width="38" height="18" fill="#eff6ff" rx="3" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="91" y="220" fill="#3b82f6" font-size="10" font-weight="700" text-anchor="middle">AIP</text>
 
   <!-- Arrow 1→2 -->
   <line x1="211" y1="142" x2="226" y2="142" stroke="#cbd5e1" stroke-width="2"/>
@@ -47,6 +49,8 @@
   <text x="252" y="186" fill="#475569" font-size="13">Position Establishment</text>
   <rect x="252" y="196" width="38" height="18" fill="#f5f3ff" rx="3" stroke="#ddd6fe" stroke-width="1"/>
   <text x="271" y="208" fill="#8b5cf6" font-size="10" font-weight="700" text-anchor="middle">CPN</text>
+  <rect x="296" y="196" width="38" height="18" fill="#f5f3ff" rx="3" stroke="#ddd6fe" stroke-width="1"/>
+  <text x="315" y="208" fill="#8b5cf6" font-size="10" font-weight="700" text-anchor="middle">AIP</text>
 
   <!-- Arrow 2→3 -->
   <line x1="435" y1="142" x2="450" y2="142" stroke="#cbd5e1" stroke-width="2"/>
@@ -63,6 +67,8 @@
   <text x="476" y="150" fill="#475569" font-size="13">Concurrent Operations</text>
   <rect x="476" y="178" width="38" height="18" fill="#fff5f5" rx="3" stroke="#fecaca" stroke-width="1"/>
   <text x="495" y="190" fill="#ef4444" font-size="10" font-weight="700" text-anchor="middle">CPN</text>
+  <rect x="520" y="178" width="38" height="18" fill="#fff5f5" rx="3" stroke="#fecaca" stroke-width="1"/>
+  <text x="539" y="190" fill="#ef4444" font-size="10" font-weight="700" text-anchor="middle">AIP</text>
 
   <!-- Arrow 3→4 -->
   <line x1="659" y1="142" x2="674" y2="142" stroke="#cbd5e1" stroke-width="2"/>
@@ -74,17 +80,19 @@
   <rect x="688" y="58" width="196" height="3" fill="#10b981"/>
   <text x="700" y="81" fill="#10b981" font-size="10" font-weight="700" letter-spacing="1.5">PHASE 4</text>
   <text x="700" y="101" fill="#0f172a" font-size="17" font-weight="700">Aftermath</text>
-  <!-- Flight + Claim sub-labels -->
+  <!-- Evade + Claim sub-labels -->
   <rect x="700" y="110" width="48" height="20" fill="#f0fdf4" rx="3" stroke="#bbf7d0" stroke-width="1"/>
-  <text x="724" y="124" fill="#059669" font-size="11" font-weight="600" text-anchor="middle">Flight</text>
+  <text x="724" y="124" fill="#059669" font-size="11" font-weight="600" text-anchor="middle">Evade</text>
   <text x="754" y="124" fill="#94a3b8" font-size="11">·</text>
   <rect x="760" y="110" width="46" height="20" fill="#f0fdf4" rx="3" stroke="#bbf7d0" stroke-width="1"/>
   <text x="783" y="124" fill="#059669" font-size="11" font-weight="600" text-anchor="middle">Claim</text>
   <line x1="700" y1="136" x2="872" y2="136" stroke="#f1f5f9" stroke-width="1"/>
-  <text x="700" y="156" fill="#475569" font-size="13">Flight — cover, flee, blend</text>
+  <text x="700" y="156" fill="#475569" font-size="13">Evade — cover, flee, blend</text>
   <text x="700" y="174" fill="#475569" font-size="13">Claim — amplify, message</text>
   <rect x="700" y="196" width="38" height="18" fill="#f0fdf4" rx="3" stroke="#bbf7d0" stroke-width="1"/>
   <text x="719" y="208" fill="#10b981" font-size="10" font-weight="700" text-anchor="middle">CPN</text>
+  <rect x="744" y="196" width="38" height="18" fill="#f0fdf4" rx="3" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="763" y="208" fill="#10b981" font-size="10" font-weight="700" text-anchor="middle">AIP</text>
 
   <!-- Footer note -->
   <text x="450" y="247" fill="#94a3b8" font-size="11" text-anchor="middle" font-style="italic">Descriptive model — phases may compress, skip, or reorder based on adversary opportunity and capability</text>

@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jgulyash.github.io/THREAT-Matrix/docs/data/framework.schema.json",
+  "title": "THREAT Matrix Framework Schema",
+  "description": "JSON Schema for the THREAT Matrix framework.json canonical artifact. THREAT Matrix is an AI-native operational ontology for physical adversary behavior. The schema is the public contract for consumers (RAG systems, AI agents, downstream security tooling).",
+  "type": "object",
+  "required": [
+    "name",
+    "full_name",
+    "version",
+    "schema_version",
+    "license",
+    "matrices",
+    "actor_profiles",
+    "bibliography"
+  ],
+  "properties": {
+    "name": { "type": "string", "description": "Short name of the framework." },
+    "full_name": { "type": "string", "description": "Full descriptive name." },
+    "version": { "type": "string", "description": "Semantic version of the framework content release." },
+    "schema_version": { "type": "string", "description": "Semantic version of this schema. Increments on schema-breaking or schema-additive changes." },
+    "license": { "type": "string", "description": "Framework license. Currently MIT." },
+    "matrices": {
+      "type": "object",
+      "description": "Four target matrices: person, facility, organization, system. Each matrix contains tactics.",
+      "patternProperties": {
+        "^(person|facility|organization|system)$": {
+          "type": "object",
+          "properties": {
+            "tactics": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/tactic" }
+            }
+          }
+        }
+      }
+    },
+    "actor_profiles": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/actor_profile" }
+    },
+    "operations": { "type": ["object", "array"], "description": "Operations / scenarios composer (V5+). Currently empty array; will become object in V5." },
+    "warden_integration": { "type": "object", "description": "WARDEN framework integration metadata." },
+    "ai_architecture": { "type": "object", "description": "AI capability vectors and amplification risk metadata." },
+    "bibliography": {
+      "type": "object",
+      "description": "Central citation library. Each key is a unique reference ID; each value is a bibliographic entry.",
+      "additionalProperties": { "$ref": "#/$defs/bibliography_entry" }
+    },
+    "phase_mappings": {
+      "type": "object",
+      "description": "Cross-walk from THREAT Matrix phases to NTAC, Calhoun-Weston, CERT, Cyber Kill Chain, MITRE ATT&CK, and MITRE ATLAS stages. Enables AI/RAG cross-framework interoperability across physical, cyber, and AI-systems adversary models.",
+      "patternProperties": {
+        "^phase_[1-4]_(target_development|mobilization|execution|aftermath)$": {
+          "type": "object",
+          "properties": {
+            "ntac_pathway": { "type": "array", "items": { "type": "string" } },
+            "calhoun_weston": { "type": "array", "items": { "type": "string" } },
+            "cert_insider": { "type": "array", "items": { "type": "string" } },
+            "cyber_kill_chain": { "type": "array", "items": { "type": "string" } },
+            "mitre_attack": { "type": "array", "items": { "type": "string" } },
+            "mitre_atlas": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "detection_mesh": {
+      "type": "object",
+      "description": "Architectural prose object describing the cross-cutting Detection Mesh property along five axes.",
+      "required": ["principle", "axes", "doctrinal_antecedent", "schema_links"],
+      "properties": {
+        "principle": { "type": "string" },
+        "axes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "description"],
+            "properties": {
+              "name": { "type": "string", "enum": ["cross_phase", "cross_matrix", "cross_domain", "cross_countermeasure", "cross_stakeholder"] },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "doctrinal_antecedent": { "type": "string" },
+        "schema_links": {
+          "type": "object",
+          "properties": {
+            "indicators": { "type": "string", "const": "correlates_with" },
+            "countermeasures": { "type": "string", "const": "compensates_for" },
+            "response_protocols": { "type": "string", "const": "coordinates_with" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "tactic": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "matrix",
+        "phase",
+        "phase_name",
+        "notes",
+        "field_notes",
+        "observed_contexts",
+        "evidence_basis",
+        "source_refs"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^TA[0-9]{4}$" },
+        "name": { "type": "string" },
+        "tactic_families": { "type": "array", "items": { "type": "string" } },
+        "matrix": { "type": "string", "enum": ["person", "facility", "organization", "system"] },
+        "phase": { "type": "integer", "minimum": 1, "maximum": 4 },
+        "phase_name": { "type": "string", "description": "Human-readable phase name. Current data uses Title Case with phase number prefix (e.g., '1 Target Development'); V1.2 may normalize." },
+        "notes": { "type": "string", "description": "Formal taxonomic description of the tactic." },
+        "field_notes": { "type": "string", "minLength": 1, "description": "Practitioner-voice paragraph (V1.1 mandatory)." },
+        "observed_contexts": { "type": "array", "minItems": 1, "items": { "type": "string" }, "description": "Generic context archetypes (V1.1 mandatory). Pattern archetypes only; never case names." },
+        "evidence_basis": {
+          "type": "string",
+          "enum": ["operational_primary", "hybrid", "literature_primary", "literature_only"],
+          "description": "Declares the tactic's grounding (V1.1 mandatory). Machine-readable provenance."
+        },
+        "cpn": { "type": "boolean", "description": "Cyber-Physical Nexus relevance." },
+        "cpn_id": { "type": ["string", "null"] },
+        "cpn_notes": { "type": ["string", "null"], "description": "Cyber-Physical Nexus annotation. Null when cpn=false." },
+        "techniques": { "type": "array", "items": { "$ref": "#/$defs/technique" } },
+        "indicators": { "type": "array", "items": { "$ref": "#/$defs/indicator" } },
+        "countermeasures": { "type": "array", "items": { "$ref": "#/$defs/countermeasure" } },
+        "response_protocols": { "type": "array", "items": { "$ref": "#/$defs/response_protocol" } },
+        "related_tactics": { "type": "array", "items": { "type": "string" } },
+        "actor_associations": { "type": "array", "items": { "$ref": "#/$defs/actor_association" } },
+        "source_refs": { "type": "array", "minItems": 1, "items": { "type": "string" }, "description": "Bibliography keys. Min 1, with at least one Tier 1 source." }
+      }
+    },
+    "technique": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" }
+      }
+    },
+    "indicator": {
+      "type": "object",
+      "required": ["id", "behavior", "category", "detection_sources", "phase_relevance", "source_refs"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^IND-[0-9]{4}-[0-9]{2}$" },
+        "behavior": { "type": "string" },
+        "category": { "type": "string", "enum": ["surveillance", "acquisition", "communication", "behavioral_change", "planning", "access", "financial", "digital"] },
+        "detection_sources": { "type": "array", "items": { "type": "string", "enum": ["physical_observation", "cctv", "access_logs", "social_media", "peer_report", "financial_records", "it_logs", "public_records", "communications_intercept", "open_source"] } },
+        "phase_relevance": { "type": "array", "minItems": 1, "items": { "type": "string", "enum": ["target_development", "mobilization", "execution", "aftermath"] } },
+        "correlates_with": { "type": "array", "items": { "type": "string" }, "description": "Other indicator IDs (Detection Mesh cross-correlation)." },
+        "source_refs": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+    "countermeasure": {
+      "type": "object",
+      "required": ["id", "measure", "category", "domain", "cost", "complexity", "time_to_implement", "phase_relevance", "limitations", "source_refs"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^CM-[0-9]{4}-[0-9]{2}$" },
+        "measure": { "type": "string" },
+        "category": { "type": "string", "enum": ["preventive", "detective", "corrective", "deterrent"] },
+        "domain": { "type": "string", "enum": ["physical_barriers", "surveillance_systems", "access_control", "personnel_security", "policy_procedure", "training_awareness", "technical_monitoring", "environmental_design", "behavioral_intervention"] },
+        "cost": { "type": "string", "enum": ["low", "medium", "high"] },
+        "complexity": { "type": "string", "enum": ["low", "medium", "high"] },
+        "time_to_implement": { "type": "string", "enum": ["immediate", "days", "weeks", "months"] },
+        "phase_relevance": { "type": "array", "minItems": 1, "items": { "type": "string", "enum": ["target_development", "mobilization", "execution", "aftermath"] } },
+        "limitations": { "type": "string" },
+        "compensates_for": { "type": "array", "items": { "type": "string" }, "description": "Other countermeasure IDs (Detection Mesh compensation)." },
+        "source_refs": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+    "response_protocol": {
+      "type": "object",
+      "required": ["id", "trigger", "action", "stakeholders", "priority", "escalation_trigger", "legal_notes", "source_refs"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^RP-[0-9]{4}-[0-9]{2}$" },
+        "trigger": { "type": "string" },
+        "action": { "type": "string" },
+        "stakeholders": { "type": "array", "items": { "type": "string", "enum": ["threat_management_team", "security_operations", "protective_operations", "human_resources", "legal", "law_enforcement", "executive_leadership", "it_security", "communications", "employee_assistance"] } },
+        "priority": { "type": "string", "enum": ["urgent", "immediate", "priority", "routine", "ongoing"] },
+        "escalation_trigger": { "type": "string" },
+        "coordinates_with": { "type": "array", "items": { "type": "string" }, "description": "Other protocol IDs (Detection Mesh parallel-execution)." },
+        "legal_notes": { "type": "string" },
+        "source_refs": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+    "actor_association": {
+      "type": "object",
+      "required": ["actor_id", "relevance"],
+      "properties": {
+        "actor_id": { "type": "string", "pattern": "^AP[0-9]{3}$" },
+        "relevance": { "type": "string", "enum": ["high", "medium", "low"] },
+        "employment_status": { "type": "string", "enum": ["former"], "description": "Optional; omit means current/not-applicable." }
+      }
+    },
+    "actor_profile": {
+      "type": "object",
+      "required": ["id", "name", "category"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^AP[0-9]{3}$" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "description": { "type": "string" }
+      }
+    },
+    "bibliography_entry": {
+      "type": "object",
+      "required": ["type", "title", "author", "date", "relevance_summary"],
+      "properties": {
+        "type": { "type": "string", "enum": ["government_report", "academic_paper", "book", "court_document", "after_action_review", "news_investigation", "incident_database", "practitioner_guide", "standard", "field_observation", "practitioner_elicitation", "partner_attestation", "case_composite"] },
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "date": { "type": "string" },
+        "url": { "type": ["string", "null"] },
+        "doi": { "type": ["string", "null"] },
+        "relevance_summary": { "type": "string" }
+      }
+    }
+  }
+}
