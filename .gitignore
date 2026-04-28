@@ -3,3 +3,21 @@
 node_modules/
 *.log
 .env
+
+# Vite
+dist/
+.vite/
+*.tsbuildinfo
+vite.config.d.ts
+vite.config.js
+
+# Internal research / working docs — never commit (may contain proprietary-instrument references)
+_Private/
+_Internal/
+*-Research-INTERNAL.md
+*-Research-DRAFT.md
+*-Handoff.md
+*-Handoff-*.md
+*-Validated-Frameworks-Research.md
+*-Countermeasure-Frameworks-Research.md
+*-LLNL-Report-Analysis-*.md
