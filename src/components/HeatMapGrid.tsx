@@ -93,7 +93,7 @@ export function HeatMapGrid({
         <div className="hm-col-hdr amber">{compact ? 'Person' : 'Person · 34'}</div>
         <div className="hm-col-hdr teal">{compact ? 'Facility' : 'Facility · 40'}</div>
         <div className="hm-col-hdr red">{compact ? 'Organization' : 'Organization · 42'}</div>
-        <div className="hm-col-hdr blue">{compact ? 'System' : 'System · 38'}</div>
+        <div className="hm-col-hdr blue">{compact ? 'Infrastructure' : 'Infrastructure · 38'}</div>
       </div>
       <div className="hm-rows">
         {([1, 2, 3] as const).map((phase) => {
@@ -112,7 +112,7 @@ export function HeatMapGrid({
                 onClick={() => navigate(`/person/phase/${phase}`)}
                 cpnFilter={cpnFilter}
               />
-              {(['facility', 'organization', 'system'] as const).map((m, i) => (
+              {(['facility', 'organization', 'infrastructure'] as const).map((m, i) => (
                 <StubCell key={m} count={STUB[m].phases[phase]} version={`V${i + 2}`} />
               ))}
             </div>
@@ -137,7 +137,7 @@ export function HeatMapGrid({
               />
               <StubCell count={STUB.facility.flight} version="V2" track="flight" />
               <StubCell count={STUB.organization.flight} version="V3" track="flight" />
-              <StubCell count={STUB.system.flight} version="V4" track="flight" />
+              <StubCell count={STUB.infrastructure.flight} version="V4" track="flight" />
             </div>
             <div className="phase4-divider" />
             <div className="phase4-sub-row">
@@ -154,7 +154,7 @@ export function HeatMapGrid({
               />
               <StubCell count={STUB.facility.claim} version="V2" track="claim" />
               <StubCell count={STUB.organization.claim} version="V3" track="claim" />
-              <StubCell count={STUB.system.claim} version="V4" track="claim" />
+              <StubCell count={STUB.infrastructure.claim} version="V4" track="claim" />
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { STUB } from '../lib/constants';
 
 interface Props {
-  matrix: 'facility' | 'organization' | 'system';
+  matrix: 'facility' | 'organization' | 'infrastructure';
   version: string;
 }
 

@@ -97,7 +97,7 @@ export default function App() {
   const { tacticMap, actorMap, tbp, abc, bib, bibReverseMap, getActorTactics } = derived;
   const isActors = route.view === 'actors' || route.view === 'actorDetail';
   const isReferences = route.view === 'references';
-  const sv = { facility: 'V2', organization: 'V3', system: 'V4' } as const;
+  const sv = { facility: 'V2', organization: 'V3', infrastructure: 'V4' } as const;
 
   return (
     <div className="app-root">
