@@ -2,6 +2,7 @@
   "name": "THREAT Matrix",
   "full_name": "Tactical Human Risk Enumeration and Adversary Taxonomy Matrix",
   "version": "1.1.0",
+  "schema_version": "1.1.0",
   "license": "MIT",
   "matrices": {
     "person": {
@@ -4396,11 +4397,152 @@
       ]
     }
   ],
+  "phase_mappings": {
+    "phase_1_target_development": {
+      "ntac_pathway": [
+        "grievance",
+        "ideation",
+        "research_planning_early"
+      ],
+      "calhoun_weston": [
+        "grievance",
+        "violent_ideation"
+      ],
+      "cert_insider": [
+        "tipping_point",
+        "ideation"
+      ],
+      "cyber_kill_chain": [
+        "reconnaissance"
+      ],
+      "mitre_attack": [
+        "reconnaissance",
+        "resource_development"
+      ],
+      "mitre_atlas": [
+        "reconnaissance",
+        "resource_development",
+        "ml_model_access"
+      ]
+    },
+    "phase_2_mobilization": {
+      "ntac_pathway": [
+        "research_planning_late",
+        "preparation"
+      ],
+      "calhoun_weston": [
+        "research_planning",
+        "preparation"
+      ],
+      "cert_insider": [
+        "planning_preparation"
+      ],
+      "cyber_kill_chain": [
+        "weaponization",
+        "delivery"
+      ],
+      "mitre_attack": [
+        "resource_development",
+        "initial_access"
+      ],
+      "mitre_atlas": [
+        "resource_development",
+        "ml_attack_staging"
+      ]
+    },
+    "phase_3_execution": {
+      "ntac_pathway": [
+        "breach_approach",
+        "attack"
+      ],
+      "calhoun_weston": [
+        "probing_breaching",
+        "attack"
+      ],
+      "cert_insider": [
+        "execution"
+      ],
+      "cyber_kill_chain": [
+        "exploitation",
+        "installation",
+        "command_and_control",
+        "actions_on_objectives"
+      ],
+      "mitre_attack": [
+        "execution",
+        "privilege_escalation",
+        "defense_evasion",
+        "credential_access",
+        "discovery",
+        "lateral_movement",
+        "collection",
+        "command_and_control",
+        "exfiltration",
+        "impact"
+      ],
+      "mitre_atlas": [
+        "execution",
+        "defense_evasion",
+        "discovery",
+        "collection",
+        "exfiltration",
+        "impact"
+      ]
+    },
+    "phase_4_aftermath": {
+      "ntac_pathway": [
+        "aftermath"
+      ],
+      "calhoun_weston": [],
+      "cert_insider": [
+        "escape_aftermath"
+      ],
+      "cyber_kill_chain": [],
+      "mitre_attack": [
+        "impact",
+        "exfiltration"
+      ],
+      "mitre_atlas": [
+        "impact"
+      ]
+    }
+  },
+  "detection_mesh": {
+    "principle": "THREAT Matrix treats detection and response as a mesh, not a chain. Indicators from any phase, any matrix, and any detection domain can correlate with indicators from anywhere else in the framework. Countermeasures from any domain can compensate for gaps in another. Response protocols from any stakeholder (threat management teams, HR, legal, law enforcement, protective operations, EAP) can fire in parallel on the same indicator set, each acting within their own authority.",
+    "axes": [
+      {
+        "name": "cross_phase",
+        "description": "An indicator observed in one phase can correlate to an indicator observed in another phase for the same actor. Late-phase indicators retroactively illuminate earlier-phase activity; early-phase indicators prime recognition of later signals."
+      },
+      {
+        "name": "cross_matrix",
+        "description": "Adversaries do not respect matrix boundaries. The mesh weaves the four matrices (Person, Facility, Organization, System) into one coherent detection space. An indicator in any matrix can pull context from any other matrix."
+      },
+      {
+        "name": "cross_domain",
+        "description": "Detection sources are cross-domain: physical observation, CCTV, access logs, social media, peer reports, financial records, IT logs, public records, OSINT. Any domain's signal can activate any phase's detection."
+      },
+      {
+        "name": "cross_countermeasure",
+        "description": "Countermeasures from any domain can compensate for gaps in another. Defense-in-depth is structural in the framework via the compensates_for links."
+      },
+      {
+        "name": "cross_stakeholder",
+        "description": "Response protocols fire in parallel, not sequentially. Multiple stakeholders engage the same indicator set from their respective authorities, coordinated via the coordinates_with links."
+      }
+    ],
+    "doctrinal_antecedent": "The structural antecedent is the Kill Web concept in modern military doctrine; THREAT Matrix adapts the principle to physical adversary detection in organizational contexts.",
+    "schema_links": {
+      "indicators": "correlates_with",
+      "countermeasures": "compensates_for",
+      "response_protocols": "coordinates_with"
+    }
+  },
   "operations": [],
   "warden_integration": {
     "status": "reserved",
     "version_target": "V3",
-    "notes": "WARDEN alert schema maps to THREAT taxonomy via agentic ingestion pipeline. V3 implementation: WARDEN behavioral alerts → structured TTP assessment in THREAT taxonomy language. Both tools are demonstrably more powerful together — WARDEN detects the pathway; THREAT maps where the actor is in the kill chain."
+    "notes": "WARDEN alert schema maps to THREAT taxonomy via agentic ingestion pipeline. V3 implementation: WARDEN behavioral alerts to structured TTP assessment in THREAT taxonomy language. Both tools are demonstrably more powerful together: WARDEN detects the pathway; THREAT maps where the actor is in the Threat Lifecycle."
   },
   "ai_architecture": {
     "version": "1.0",
@@ -4420,6 +4562,15 @@
     "v2_roadmap": "V2 will add per-tactic AI capability annotations, expand ai_enabled_risks with tactic-level associations, and introduce the Operations/scenario composer with AI-assisted behavioral pattern generation."
   },
   "bibliography": {
+    "GULYASH-FIELD-OPS-2010-2025": {
+      "type": "field_observation",
+      "title": "Operational observations: protective intelligence, insider threat, and physical security casework",
+      "author": "Jay Gulyash",
+      "date": "2010-2025",
+      "url": null,
+      "doi": null,
+      "relevance_summary": "Pattern documentation synthesized from 15+ years of practitioner work across federal law enforcement, corporate security, and intelligence roles, spanning dozens of domestic and international partner organizations. Tactics, indicators, and countermeasures cited to this source reflect recurring patterns observed in operational practice. Individual cases are not disclosable; the patterns are attestable. Patterns are validated by cross-reference with published threat-assessment literature where possible."
+    },
     "FEIN-VOSSEKUIL-1999": {
       "type": "academic_paper",
       "title": "Assassination in the United States: An Operational Study of Recent Assassins, Attackers, and Near-Lethal Approachers",
@@ -4463,7 +4614,7 @@
       "date": "2016",
       "url": "https://doi.org/10.1037/tam0000061",
       "doi": "10.1037/tam0000061",
-      "relevance_summary": "Terrorist Radicalization Assessment Protocol with 8 proximal warning behaviors (pathway, fixation, identification, novel aggression, energy burst, leakage, last resort, directly communicated threat) and 10 distal characteristics."
+      "relevance_summary": "Terrorist Radicalization Assessment Protocol with 8 proximal warning behaviors and 10 distal characteristics, used to assess lone-actor radicalization trajectories."
     },
     "FBI-PREATTACK-2018": {
       "type": "government_report",

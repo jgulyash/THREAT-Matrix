@@ -38,7 +38,7 @@ body:
     id: phase
     attributes:
       label: Proposed Phase
-      description: Which phase of the kill chain does this behavior occur in?
+      description: Which phase of the Threat Lifecycle does this behavior occur in?
       options:
         - "Phase 1: Target Development"
         - "Phase 2: Mobilization"
@@ -83,7 +83,7 @@ body:
         List any existing tactics (by ID or name) that are related to this suggestion.
         This helps evaluate placement and avoid duplication.
       placeholder: |
-        e.g., TA0103 (Physical Surveillance) - this tactic would precede surveillance in the kill chain
+        e.g., TA0103 (Physical Surveillance) - this tactic would precede surveillance in the Threat Lifecycle
     validations:
       required: false
 
