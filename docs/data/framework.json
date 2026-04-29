@@ -24,7 +24,7 @@
           "indicators": [
             {
               "id": "IND-0101-01",
-              "behavior": "Subject articulates specific grievance tied to a named individual, attributing personal harm or injustice to that person's actions or role",
+              "behavior": "Threat actor articulates specific grievance tied to a named individual, attributing personal harm or injustice to that person's actions or role",
               "category": "communication",
               "detection_sources": [
                 "peer_report",
@@ -41,7 +41,7 @@
             },
             {
               "id": "IND-0101-02",
-              "behavior": "Subject conducts sustained online research into a specific individual's personal details, schedule, residence, workplace, family members, or daily routines",
+              "behavior": "Threat actor conducts sustained online research into a specific individual's personal details, schedule, residence, workplace, family members, or daily routines",
               "category": "digital",
               "detection_sources": [
                 "it_logs",
@@ -57,7 +57,7 @@
             },
             {
               "id": "IND-0101-03",
-              "behavior": "Subject repeatedly returns to grievance-related topics about a specific individual in conversations, writings, or social media posts, with increasing frequency or intensity over time",
+              "behavior": "Threat actor repeatedly returns to grievance-related topics about a specific individual in conversations, writings, or social media posts, with increasing frequency or intensity over time",
               "category": "behavioral_change",
               "detection_sources": [
                 "peer_report",
@@ -73,7 +73,7 @@
             },
             {
               "id": "IND-0101-04",
-              "behavior": "Subject communicates intent regarding a specific individual to a third party, including statements about wanting to harm, confront, or 'make them pay'",
+              "behavior": "Threat actor communicates intent regarding a specific individual to a third party, including statements about wanting to harm, confront, or 'make them pay'",
               "category": "communication",
               "detection_sources": [
                 "peer_report",
@@ -91,7 +91,7 @@
             },
             {
               "id": "IND-0101-05",
-              "behavior": "Subject researches prior attacks against similar targets, studying methodology, outcomes, and media coverage of previous incidents",
+              "behavior": "Threat actor researches prior attacks against similar targets, studying methodology, outcomes, and media coverage of previous incidents",
               "category": "planning",
               "detection_sources": [
                 "it_logs",
@@ -108,7 +108,7 @@
             },
             {
               "id": "IND-0101-06",
-              "behavior": "Insider subject accesses personnel records, organizational charts, or executive travel schedules outside the scope of their job function",
+              "behavior": "Insider threat actor accesses personnel records, organizational charts, or executive travel schedules outside the scope of their job function",
               "category": "access",
               "detection_sources": [
                 "it_logs",
@@ -135,7 +135,11 @@
               "limitations": "Cannot eliminate all public records. Determined adversary can still aggregate partial information from multiple sources.",
               "source_refs": [
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "compensates_for": []
             },
             {
               "id": "CM-0101-02",
@@ -148,7 +152,12 @@
               "limitations": "Only captures public posts. Encrypted messaging and private communications are not visible. False positive rate is high without human analyst review.",
               "source_refs": [
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "compensates_for": []
             },
             {
               "id": "CM-0101-03",
@@ -163,7 +172,12 @@
                 "NTAC-MASS-2021",
                 "ASIS-WVPI-2021",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "compensates_for": []
             },
             {
               "id": "CM-0101-04",
@@ -177,7 +191,11 @@
               "source_refs": [
                 "NTAC-SYSTEMS-2020",
                 "FEIN-VOSSEKUIL-HOLDEN-1995"
-              ]
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "compensates_for": []
             },
             {
               "id": "CM-0101-05",
@@ -191,7 +209,11 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
-              ]
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "compensates_for": []
             }
           ],
           "related_tactics": [],
@@ -314,8 +336,8 @@
                 "threat_management_team",
                 "security_operations"
               ],
-              "escalation_trigger": "Second indicator from a different category (e.g., communication + digital research) detected for the same subject-target pair, or subject's behavior escalates in intensity or specificity",
-              "legal_notes": "Document observations factually. Do not characterize mental health status. Ensure reporting channel complies with organizational anti-retaliation policy. If the subject is an employee, consult HR before any direct engagement. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "escalation_trigger": "Second indicator from a different category (e.g., communication + digital research) detected for the same threat actor / targeted subject pair, or the threat actor's behavior escalates in intensity or specificity",
+              "legal_notes": "Document observations factually. Do not characterize mental health status. Ensure reporting channel complies with organizational anti-retaliation policy. If the threat actor is an employee, consult HR before any direct engagement. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "NTAC-SYSTEMS-2020",
                 "ASIS-WVPI-2021"
@@ -324,16 +346,16 @@
             },
             {
               "id": "RP-0101-02",
-              "trigger": "Multiple correlated indicators across different categories detected for the same subject-target pair, or a single high-severity indicator (direct communication of intent to harm a specific individual)",
-              "action": "Convene threat management team within 24 hours. Conduct formal threat assessment using structured professional judgment. Implement protective measures for the identified target (awareness briefing, security posture increase, route variation guidance). Initiate enhanced monitoring of the subject across available data sources. Notify law enforcement if the threat is credible and specific.",
+              "trigger": "Multiple correlated indicators across different categories detected for the same threat actor / targeted subject pair, or a single high-severity indicator (direct communication of intent to harm a specific individual)",
+              "action": "Convene threat management team within 24 hours. Conduct formal threat assessment using structured professional judgment. Implement protective measures for the identified targeted subject (awareness briefing, security posture increase, route variation guidance). Initiate enhanced monitoring of the threat actor across available data sources. Notify law enforcement if the threat is credible and specific.",
               "stakeholders": [
                 "threat_management_team",
                 "protective_operations",
                 "legal",
                 "law_enforcement"
               ],
-              "escalation_trigger": "Subject acquires means (weapon, access credential, vehicle) or demonstrates capability and proximity to the target. Subject's behavior meets the threshold for imminent risk.",
-              "legal_notes": "Threat management team assessment is a protected security function. Coordinate with legal counsel before initiating any surveillance of the subject. If law enforcement is notified, document the basis for the notification. Ensure target protective measures do not inadvertently disclose the investigation to the subject. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "escalation_trigger": "Threat actor acquires means (weapon, access credential, vehicle) or demonstrates capability and proximity to the targeted subject. Threat actor's behavior meets the threshold for imminent risk.",
+              "legal_notes": "Threat management team assessment is a protected security function. Coordinate with legal counsel before initiating any surveillance of the threat actor. If law enforcement is notified, document the basis for the notification. Ensure targeted-subject protective measures do not inadvertently disclose the investigation to the threat actor. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "ASIS-WVPI-2021",
                 "NITTF-GUIDE-2017",
@@ -343,8 +365,8 @@
             },
             {
               "id": "RP-0101-03",
-              "trigger": "Subject confirmed to have means, motive, and proximity to the target, with behavioral indicators suggesting imminent action (energy burst, last resort framing, final act behaviors)",
-              "action": "Activate protective detail for the target immediately. Coordinate with law enforcement for subject interdiction or interview. Brief executive leadership. Implement emergency security measures at target's residence and workplace. If the subject is an insider, execute immediate access revocation across all physical and digital systems.",
+              "trigger": "Threat actor confirmed to have means, motive, and proximity to the targeted subject, with behavioral indicators suggesting imminent action (energy burst, last resort framing, final act behaviors)",
+              "action": "Activate protective detail for the targeted subject immediately. Coordinate with law enforcement for threat actor interdiction or interview. Brief executive leadership. Implement emergency security measures at the targeted subject's residence and workplace. If the threat actor is an insider, execute immediate access revocation across all physical and digital systems.",
               "stakeholders": [
                 "threat_management_team",
                 "protective_operations",
@@ -353,7 +375,7 @@
                 "security_operations",
                 "it_security"
               ],
-              "escalation_trigger": "Subject initiates approach to target or breaches security perimeter. Transition to active threat response protocols.",
+              "escalation_trigger": "Threat actor initiates approach to the targeted subject or breaches security perimeter. Transition to active threat response protocols.",
               "legal_notes": "Coordinate all interdiction actions through law enforcement. Ensure any access revocation follows established procedures to preserve evidence and protect against wrongful termination claims. Document the imminent threat assessment that triggered emergency measures. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "ASIS-WVPI-2021",
@@ -361,7 +383,16 @@
               ],
               "priority": "urgent"
             }
-          ]
+          ],
+          "field_notes": "The first signal you usually catch in target selection is the name. Not 'a manager' or 'security' — a specific person. Once a threat actor has resolved a grievance against a single named individual, the work shifts: they start collecting on that person specifically — schedule, residence, family, daily routine. Online research patterns spike for the targeted subject. Inside an organization, the parallel signal is records access outside job scope: the personnel file, the executive calendar, the org chart. The behavioral tell is that the grievance narrative converges on one targeted subject and stays there over time, not drifting across categories of complaint.",
+          "observed_contexts": [
+            "former employee whose written grievance shifts from policy complaints to a specific manager's name and continues escalating in social media posts",
+            "fixated threat actor conducting digital research on a specific executive's residence, family routine, and travel pattern over weeks",
+            "insider with legitimate role access pulling personnel records, calendars, and travel itineraries that fall outside their declared job function",
+            "domestic stalking case progressing from generalized harassment to targeted research on the targeted subject's daily movements",
+            "[literature: NTAC-MASS-2021 case pattern — pre-attack target grievance narrowed to a single named individual identified weeks or months before mobilization]"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0102",
@@ -2505,7 +2536,7 @@
           "indicators": [
             {
               "id": "IND-0305-01",
-              "behavior": "Subject acquires or researches radio frequency jamming equipment, signal blockers, or communications disruption devices",
+              "behavior": "Threat actor acquires or researches radio frequency jamming equipment, signal blockers, or communications disruption devices",
               "category": "acquisition",
               "detection_sources": [
                 "financial_records",
@@ -2522,7 +2553,7 @@
             },
             {
               "id": "IND-0305-02",
-              "behavior": "Subject conducts surveillance of security response patterns, guard shift changes, patrol routes, or emergency response staging areas at or near the target location",
+              "behavior": "Threat actor conducts surveillance of security response patterns, guard shift changes, patrol routes, or emergency response staging areas at or near the target location",
               "category": "surveillance",
               "detection_sources": [
                 "cctv",
@@ -2539,7 +2570,7 @@
             },
             {
               "id": "IND-0305-03",
-              "behavior": "Subject places false emergency calls or reports diversionary incidents at locations away from the intended target to draw response resources",
+              "behavior": "Threat actor places false emergency calls or reports diversionary incidents at locations away from the intended target location to draw response resources",
               "category": "planning",
               "detection_sources": [
                 "public_records",
@@ -2554,7 +2585,7 @@
             },
             {
               "id": "IND-0305-04",
-              "behavior": "Subject researches or probes building security systems, alarm panels, camera networks, or emergency communication infrastructure",
+              "behavior": "Threat actor researches or probes building security systems, alarm panels, camera networks, or emergency communication infrastructure",
               "category": "digital",
               "detection_sources": [
                 "it_logs",
@@ -2572,7 +2603,7 @@
             },
             {
               "id": "IND-0305-05",
-              "behavior": "Subject positions obstacles, vehicles, or barriers near facility entry points, emergency exits, or response force staging areas prior to or during an attack",
+              "behavior": "Threat actor positions obstacles, vehicles, or barriers near facility entry points, emergency exits, or response force staging areas prior to or during an attack",
               "category": "planning",
               "detection_sources": [
                 "cctv",
@@ -2598,7 +2629,11 @@
               "limitations": "Redundancy increases cost and training burden. Staff must be drilled on failover procedures. Satellite phones have latency and coverage limitations indoors.",
               "source_refs": [
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "compensates_for": []
             },
             {
               "id": "CM-0305-02",
@@ -2611,7 +2646,11 @@
               "limitations": "Mutual aid response times vary. On-site response capability requires trained personnel and may not be feasible for all facility types.",
               "source_refs": [
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "compensates_for": []
             },
             {
               "id": "CM-0305-03",
@@ -2625,7 +2664,13 @@
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "LLNL-TR-858139"
-              ]
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization",
+                "execution"
+              ],
+              "compensates_for": []
             },
             {
               "id": "CM-0305-04",
@@ -2638,7 +2683,12 @@
               "limitations": "Exercises build capability but cannot replicate the stress and confusion of a real attack. Frequency must be maintained to prevent skill decay.",
               "source_refs": [
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "compensates_for": []
             }
           ],
           "related_tactics": [],
@@ -2737,7 +2787,16 @@
               ],
               "priority": "urgent"
             }
-          ]
+          ],
+          "field_notes": "Response suppression is the tactic that decides whether an attack succeeds in the planned window or gets interrupted before objectives are reached. The signals you catch ahead of execution are usually procurement-related — RF jammers, signal blockers, and communications equipment that has no legitimate civilian use. Concurrent with that, you see surveillance of the response apparatus itself: who arrives first, by what route, how fast. The tactic resolves at execution when comms drop, a diversionary call gets staged, or barriers appear at egress points. After-action reviews are where most response suppression gets recognized retrospectively — the dispatch log shows the call that pulled units away, or the radio log shows the moment communications failed.",
+          "observed_contexts": [
+            "active shooter pre-attack period where the threat actor researched or acquired RF jamming equipment to disrupt facility security communications",
+            "sophisticated insider attack scenario where building security systems were probed for weeks before being disabled at execution",
+            "coordinated attack with diversionary 911 call placed at an alternate location to redirect law enforcement response",
+            "[literature: NTAC-MASS-2021 case pattern — pre-attack surveillance of response timing including police response routes and on-site security shift changes]",
+            "facility attack where physical barriers were positioned at perimeter access points to delay response force entry"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0306",
