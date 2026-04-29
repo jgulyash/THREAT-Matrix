@@ -7,7 +7,7 @@
     </filter>
   </defs>
 
-  <!-- Outer canvas: white bg, light border (matches --bg-lift / --border) -->
+  <!-- Outer canvas: white background with light border -->
   <rect width="900" height="280" fill="#FFFFFF" rx="6" stroke="#B8BEC7" stroke-width="1"/>
 
   <!-- Header strip: white with bottom border (matches .topbar) -->
