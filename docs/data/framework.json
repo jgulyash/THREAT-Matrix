@@ -408,8 +408,212 @@
           "cpn_id": "CPN-0102",
           "cpn_notes": "Digital profile — social media activity, location check-ins, fitness tracker data, public records aggregation — often precedes and supplements physical surveillance. Apps that publicly share routes or check-ins provide operationally precise location intelligence.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0102-01",
+              "behavior": "Threat actor compiles personal information about the targeted subject including home address, family member names, daily routine, and known associates",
+              "category": "planning",
+              "detection_sources": [
+                "it_logs",
+                "open_source",
+                "public_records"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "correlates_with": [
+                "IND-0103-04",
+                "IND-0101-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "MELOY-TRAP18-2016"
+              ]
+            },
+            {
+              "id": "IND-0102-02",
+              "behavior": "Threat actor monitors the targeted subject's social media activity over an extended period, archiving posts, photos, location check-ins, and life events",
+              "category": "digital",
+              "detection_sources": [
+                "social_media",
+                "open_source",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0103-02",
+                "IND-0101-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0102-03",
+              "behavior": "Threat actor obtains or attempts to obtain the targeted subject's personal documents — financial records, medical information, family details — through public records pulls, OSINT tools, or pretextual contact",
+              "category": "planning",
+              "detection_sources": [
+                "public_records",
+                "it_logs",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "correlates_with": [
+                "IND-0103-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0102-04",
+              "behavior": "Threat actor cultivates contact with the targeted subject's coworkers, neighbors, or family members under cover stories to elicit information about routine, schedule, or personal vulnerabilities",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "correlates_with": [
+                "IND-0103-05"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "MELOY-TRAP18-2016"
+              ]
+            },
+            {
+              "id": "IND-0102-05",
+              "behavior": "Threat actor builds a profile of the targeted subject's vehicles, including make, model, license plates, parking pattern, and typical departure and arrival times",
+              "category": "surveillance",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "social_media"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0103-01",
+                "IND-0103-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0102-06",
+              "behavior": "Threat actor researches the targeted subject's recurring off-work venues — gym, restaurants, places of worship, hobbies — to identify predictable presence outside protected environments",
+              "category": "planning",
+              "detection_sources": [
+                "it_logs",
+                "social_media",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "correlates_with": [
+                "IND-0103-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FEIN-VOSSEKUIL-1999"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0102-01",
+              "measure": "Conduct digital footprint reduction for the targeted subject — data broker opt-outs, address record removal where legally permitted, social media privacy hardening — to reduce the profileable surface available to a threat actor",
+              "category": "preventive",
+              "domain": "personnel_security",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Public records (court filings, property records, voter registration) cannot be fully removed; partial reduction raises adversary effort but does not eliminate the surface",
+              "compensates_for": [
+                "CM-0103-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0102-02",
+              "measure": "Brief the targeted subject and immediate household on common social engineering pretexts and cover stories used to extract personal information from family members and associates",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Awareness fades over time without refresh; family members under personal stress may still respond to plausible-sounding pretexts",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0102-03",
+              "measure": "Establish reporting channels for coworkers, neighbors, and household members to flag concerning inquiries from strangers, suspicious cover stories, or unexpected approaches",
+              "category": "detective",
+              "domain": "behavioral_intervention",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Reporting threshold varies by individual and culture; many concerning approaches are dismissed as harmless at the time",
+              "compensates_for": [],
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0102-04",
+              "measure": "Deploy social media monitoring for mentions of the targeted subject, immediate family members, and recurring locations across public platforms",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Captures only public posts; encrypted or private monitoring is not visible. False positive rate is high without analyst review",
+              "compensates_for": [
+                "CM-0101-02"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -501,8 +705,66 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
-          "response_protocols": []
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "MELOY-TRAP18-2016",
+            "NTAC-MASS-2021",
+            "FBI-PREATTACK-2018"
+          ],
+          "response_protocols": [
+            {
+              "id": "RP-0102-01",
+              "trigger": "One or more Subject Profiling indicators reported (suspicious inquiries about the targeted subject's routine, social media archival pattern, attempted records pull on the targeted subject or immediate family)",
+              "action": "Open or update the case file. Conduct a 5-business-day preliminary assessment that includes (a) corroboration of the observation, (b) identification of any candidate threat actor, (c) baseline review of recent contact reports involving the targeted subject and immediate household. Document all sourcing.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Profiling activity extends to immediate family members OR co-occurs with indicators from another Phase 1 tactic for the same threat actor",
+              "coordinates_with": [
+                "RP-0103-01",
+                "RP-0101-01"
+              ],
+              "legal_notes": "Document factually. Concerning inquiries from a stranger are not by themselves unlawful; the security response is corroboration and pattern detection, not adverse action. If the threat actor is identifiable and an employee, consult HR before any direct engagement. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0102-02",
+              "trigger": "Multiple Subject Profiling indicators co-observed for the same threat actor, OR profiling extends to family members, OR concurrent indicators surface from other Phase 1 tactics",
+              "action": "Convene the threat management team. Conduct full risk assessment using structured professional judgment. Brief the targeted subject and immediate household on operational security and reporting expectations. Implement digital footprint reduction. Notify protective operations. Consider law-enforcement liaison consult depending on jurisdiction.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "human_resources",
+                "executive_leadership"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Threat actor identified with apparent means OR direct contact attempt with the targeted subject OR family member OR escalation to physical surveillance.",
+              "coordinates_with": [
+                "RP-0103-02",
+                "RP-0101-02"
+              ],
+              "legal_notes": "Brief the targeted subject and household on the specific indicators observed without disclosing investigative methodology. Privacy implications of monitoring third-party communications (coworkers, neighbors) must be reviewed before action. Document the indicator constellation that drove escalation. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "field_notes": "Subject Profiling is the tactic that turns 'a name' into 'a target file'. The threat actor is no longer just looking up an address; they are building a detailed picture of who the targeted subject is — who they live with, where their kids go to school, what gym they belong to, what time they leave for work. The signal you usually catch is human-source: a stranger striking up conversation with a coworker about the targeted subject's family, or a self-described 'researcher' calling neighbors with implausible cover stories. The digital signal is a sustained pattern of social media monitoring — not casual interest, but methodical archival of posts, photos, and check-ins over weeks or months. Profiling is heaviest in Target Development but compresses sharply just before mobilization, when the threat actor confirms current status and validates assumptions made earlier in the cycle.",
+          "observed_contexts": [
+            "domestic violence case where the threat actor cultivated friendships with the targeted subject's coworkers to extract daily schedule and family routine",
+            "executive protection case where social media archival revealed a multi-year pattern of the threat actor monitoring the targeted subject's posts, including children's events and travel photos",
+            "stalking case progressing from public-records research to in-person inquiries with neighbors under contractor cover stories",
+            "fixated insider compiling profile of an executive's family members, vehicles, and weekend routine outside any job function",
+            "[literature: MELOY-TRAP18-2016 — pathway warning sign of pre-attack research and 'studying' of the intended targeted subject]"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0103",
@@ -1175,8 +1437,237 @@
           "cpn_id": "CPN-0107",
           "cpn_notes": "Online leakage via social media posts, forum activity, messaging apps, and blog content is now the most detectable pre-attack indicator channel. Digital leakage often occurs before physical preparation begins and may continue throughout the threat development cycle.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0107-01",
+              "behavior": "Threat actor exhibits ideation behavior — referencing violent solutions to grievance, romanticizing prior attackers, or framing harm to the targeted subject as the only viable path forward",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "peer_report",
+                "social_media",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "correlates_with": [
+                "IND-0101-01",
+                "IND-0101-03"
+              ],
+              "source_refs": [
+                "MELOY-TRAP18-2016",
+                "FEIN-VOSSEKUIL-1999"
+              ]
+            },
+            {
+              "id": "IND-0107-02",
+              "behavior": "Threat actor moves from generalized statements of harm to specific planning behavior — selecting a method, identifying timing, evaluating opportunities for access to the targeted subject",
+              "category": "planning",
+              "detection_sources": [
+                "it_logs",
+                "social_media",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0101-02",
+                "IND-0103-04"
+              ],
+              "source_refs": [
+                "FEIN-VOSSEKUIL-1999",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0107-03",
+              "behavior": "Threat actor engages in preparation behavior — acquiring weapons, conducting dry runs, surveilling locations, or making logistical arrangements consistent with an attack plan",
+              "category": "acquisition",
+              "detection_sources": [
+                "financial_records",
+                "physical_observation",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0103-01",
+                "IND-0103-03"
+              ],
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "FBI-PREATTACK-2018",
+                "MELOY-TRAP18-2016"
+              ]
+            },
+            {
+              "id": "IND-0107-04",
+              "behavior": "Threat actor exhibits a final-act behavioral signature — distributing personal possessions, writing a manifesto, recording a final statement, or saying goodbye to a confidant",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "peer_report",
+                "social_media"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0101-04"
+              ],
+              "source_refs": [
+                "MELOY-TRAP18-2016",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0107-05",
+              "behavior": "Threat actor exhibits identification with prior attackers — collecting media coverage of past incidents, studying tradecraft details, or expressing admiration for individuals who have committed targeted violence",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "it_logs",
+                "social_media",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0101-05"
+              ],
+              "source_refs": [
+                "MELOY-TRAP18-2016",
+                "NTAC-SCHOOLS-2019"
+              ]
+            },
+            {
+              "id": "IND-0107-06",
+              "behavior": "Threat actor exhibits novel aggression — a discrete escalation in the kind or intensity of violent imagery, statement, or low-level act distinct from the threat actor's prior behavioral baseline",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "peer_report",
+                "social_media",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0101-03"
+              ],
+              "source_refs": [
+                "MELOY-TRAP18-2016"
+              ]
+            },
+            {
+              "id": "IND-0107-07",
+              "behavior": "Threat actor exhibits an energy burst — a sudden visible increase in goal-directed activity such as research, communication, movement, or expenditure consistent with imminent action",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "peer_report",
+                "physical_observation",
+                "financial_records"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0103-01"
+              ],
+              "source_refs": [
+                "MELOY-TRAP18-2016",
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0107-01",
+              "measure": "Train the threat management team and security peer reporters on the eight pathway warning signs (per Meloy TRAP-18 / Calhoun-Weston pathway model) so concerning behaviors are recognized at the pattern level rather than as isolated events",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Pathway literacy fades without periodic refresh; novel aggression and energy burst signals are particularly difficult to distinguish from baseline at low frequency",
+              "compensates_for": [],
+              "source_refs": [
+                "MELOY-TRAP18-2016",
+                "FEIN-VOSSEKUIL-HOLDEN-1995"
+              ]
+            },
+            {
+              "id": "CM-0107-02",
+              "measure": "Establish a structured behavioral assessment workflow that maps observed indicators to pathway stages (ideation, planning, preparation, breach, attack), with explicit escalation gates at each stage",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Stage assignment requires trained judgment; pathway progression is not strictly linear and can compress under pressure or skip stages entirely in some case typologies",
+              "compensates_for": [
+                "CM-0101-03"
+              ],
+              "source_refs": [
+                "FEIN-VOSSEKUIL-HOLDEN-1995",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "CM-0107-03",
+              "measure": "Implement organizational reporting culture that captures pre-attack signals at low thresholds, including peer reports of concerning statements, fixation behaviors, and behavioral baseline shifts, without retaliation against reporters",
+              "category": "detective",
+              "domain": "behavioral_intervention",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Effectiveness depends on organizational trust and reporting maturity; many pre-attack signals are dismissed by associates as 'just talk' until corroborated by other indicators",
+              "compensates_for": [],
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "ASIS-WVPI-2021",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "CM-0107-04",
+              "measure": "Conduct retrospective pathway analysis on prior threat assessment cases (closed and active) to validate that the framework distinguishes pathway progression from baseline behavior in the operational environment",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Retrospective analysis is subject to hindsight bias; pathway-stage determinations made after a known outcome may not generalize cleanly to live cases",
+              "compensates_for": [],
+              "source_refs": [
+                "NTAC-SYSTEMS-2020",
+                "MELOY-TRAP18-2016"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -1228,8 +1719,68 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
-          "response_protocols": []
+          "source_refs": [
+            "MELOY-TRAP18-2016",
+            "FEIN-VOSSEKUIL-1999",
+            "NTAC-MASS-2021",
+            "FBI-PREATTACK-2018",
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
+          "response_protocols": [
+            {
+              "id": "RP-0107-01",
+              "trigger": "One or more pathway indicators detected at ideation or research stage for an identified threat actor, alone or in combination with other Phase 1 tactic indicators",
+              "action": "Document each indicator against the pathway model. Conduct behavioral baseline review for the threat actor. Determine pathway stage (ideation / planning / preparation / breach / attack). Open or update the case file. Brief the threat management team within 5 business days. Establish a monitoring cadence appropriate to the assigned pathway stage.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Pathway progresses from ideation to planning OR concurrent indicators surface from another Phase 1 tactic for the same threat actor.",
+              "coordinates_with": [
+                "RP-0101-01",
+                "RP-0103-01"
+              ],
+              "legal_notes": "Pathway-stage determinations are protective intelligence assessments, not clinical or psychiatric findings — document them as observable behavior patterns, not mental health characterizations. If the threat actor is an employee, coordinate with HR before any direct engagement. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "MELOY-TRAP18-2016",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0107-02",
+              "trigger": "Pathway indicators reach preparation stage (means acquisition, dry runs, logistical staging) OR a final-act behavioral signature is observed OR an energy burst is detected concurrent with prior pathway indicators",
+              "action": "Convene the threat management team within 24 hours. Conduct formal threat assessment using structured professional judgment. Implement protective measures for the targeted subject including awareness brief, posture increase, and route variation. Initiate enhanced monitoring of the threat actor across available data sources. Coordinate with law enforcement; consider interdiction options if jurisdiction permits.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "legal"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Threat actor demonstrates means and proximity to the targeted subject OR direct or indirect threat communicated OR breach attempt observed.",
+              "coordinates_with": [
+                "RP-0101-02",
+                "RP-0103-02"
+              ],
+              "legal_notes": "At preparation stage and beyond, parallel notifications to legal and (when applicable) law enforcement become standard. Document the indicator constellation that drove escalation — particularly the pathway-stage rationale — and preserve evidence of the original observations. Consult counsel on jurisdiction-specific reporting obligations and on privileged-communication scope for the threat management team. This guidance does not constitute legal advice.",
+              "source_refs": [
+                "MELOY-TRAP18-2016",
+                "NTAC-SYSTEMS-2020",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
+          "field_notes": "Pathway Indicators is where the threat-assessment literature meets fieldwork. Calhoun and Weston framed it as ideation → research → planning → preparation → breach → attack; Meloy's TRAP-18 codifies the proximal warning signs. In practice you do not usually catch a threat actor at every stage — you catch a few signals that, mapped against the pathway model, locate the threat actor at a specific stage with a specific time horizon. The most catchable signals tend to be ideation (in writing or peer-reported speech), preparation (means acquisition shows up in financial or procurement records), and the energy burst right before action. The literature is unanimous that pathway behaviors precede targeted violence by weeks to months, and that the people closest to the threat actor — coworkers, family members, peers — see the signals first. The most common detection failure is not absence of signal; it is failure to aggregate and recognize the signal as pathway.",
+          "observed_contexts": [
+            "[literature: MELOY-TRAP18-2016 / FEIN-VOSSEKUIL-1999 — consensus pattern of ideation-to-action progression preceding targeted attacks by weeks to months]",
+            "[literature: NTAC-MASS-2021 — pre-attack warning behaviors documented in the majority of mass attacks against public spaces]",
+            "[literature: FBI-PREATTACK-2018 — concerning behaviors observed by associates and family members during the months preceding active shooter attacks]",
+            "workplace violence case with documented progression from generalized grievance to specific planning to means acquisition over a six-month window",
+            "domestic terrorism investigation where peer-reported ideation and online identification with prior attackers preceded weapons acquisition by months"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0108",
