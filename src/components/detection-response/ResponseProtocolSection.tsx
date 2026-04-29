@@ -61,11 +61,16 @@ export function ResponseProtocolSection({ protocols, navigate }: Props) {
           )}
 
           {rp.source_refs?.length > 0 && (
-            <div className="dr-tag-row" style={{ marginTop: '8px' }}>
-              {rp.source_refs.map((ref) => (
-                <SourceRefLink key={ref} refKey={ref} navigate={navigate} />
-              ))}
-            </div>
+            <details className="dr-details">
+              <summary>Sources</summary>
+              <div className="dr-details-body">
+                <div className="dr-tag-row">
+                  {rp.source_refs.map((ref) => (
+                    <SourceRefLink key={ref} refKey={ref} navigate={navigate} />
+                  ))}
+                </div>
+              </div>
+            </details>
           )}
         </div>
       ))}

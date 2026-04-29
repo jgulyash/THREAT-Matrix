@@ -1,100 +1,104 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" width="900" height="260" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="900" height="280" font-family="'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif">
 
-  <!-- White background -->
-  <rect width="900" height="260" fill="#ffffff" rx="8" stroke="#e2e8f0" stroke-width="1"/>
+  <!-- Drop shadow for cards (matches SPA light-mode .dp-card) -->
+  <defs>
+    <filter id="cardShadow" x="-2%" y="-5%" width="104%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.10"/>
+    </filter>
+  </defs>
 
-  <!-- Title bar -->
-  <rect width="900" height="44" fill="#0f172a" rx="8"/>
-  <rect y="36" width="900" height="8" fill="#0f172a"/>
-  <text x="24" y="27" fill="#ffffff" font-size="13" font-weight="700" letter-spacing="1">THREAT MATRIX</text>
-  <text x="182" y="27" fill="#475569" font-size="13" font-weight="400">·</text>
-  <text x="194" y="27" fill="#94a3b8" font-size="13" font-weight="400" letter-spacing="0.5">Threat Lifecycle</text>
+  <!-- Outer canvas: white bg, light border (matches --bg-lift / --border) -->
+  <rect width="900" height="280" fill="#FFFFFF" rx="6" stroke="#B8BEC7" stroke-width="1"/>
+
+  <!-- Header strip: white with bottom border (matches .topbar) -->
+  <line x1="0" y1="44" x2="900" y2="44" stroke="#B8BEC7" stroke-width="1"/>
+  <text x="24" y="28" fill="#F78B04" font-size="15" font-weight="700" font-style="italic" letter-spacing="1.4">THREAT</text>
+  <text x="98" y="28" fill="#0F172A" font-size="15" font-weight="700" letter-spacing="1.4">MATRIX</text>
+  <text x="876" y="28" fill="#475569" font-size="11" font-weight="700" letter-spacing="1.6" text-anchor="end">THREAT LIFECYCLE</text>
 
   <!-- ── PHASE 1: Target Development ── -->
-  <rect x="16" y="56" width="192" height="172" fill="#ffffff" rx="6" stroke="#e2e8f0" stroke-width="1"/>
-  <rect x="16" y="56" width="192" height="5" fill="#3b82f6" rx="6"/>
-  <rect x="16" y="58" width="192" height="3" fill="#3b82f6"/>
-  <!-- Phase label -->
-  <text x="28" y="81" fill="#3b82f6" font-size="10" font-weight="700" letter-spacing="1.5">PHASE 1</text>
-  <!-- Phase name -->
-  <text x="28" y="101" fill="#0f172a" font-size="17" font-weight="700">Target</text>
-  <text x="28" y="121" fill="#0f172a" font-size="17" font-weight="700">Development</text>
-  <!-- Divider -->
-  <line x1="28" y1="132" x2="196" y2="132" stroke="#f1f5f9" stroke-width="1"/>
-  <!-- Sub-items -->
-  <text x="28" y="150" fill="#475569" font-size="13">Selection</text>
-  <text x="28" y="168" fill="#475569" font-size="13">Profiling</text>
-  <text x="28" y="184" fill="#475569" font-size="13">Survey</text>
-  <text x="28" y="200" fill="#475569" font-size="13">Capability Acquisition</text>
-  <!-- CPN + AIP badges -->
-  <rect x="28" y="208" width="38" height="18" fill="#eff6ff" rx="3" stroke="#bfdbfe" stroke-width="1"/>
-  <text x="47" y="220" fill="#3b82f6" font-size="10" font-weight="700" text-anchor="middle">CPN</text>
-  <rect x="72" y="208" width="38" height="18" fill="#eff6ff" rx="3" stroke="#bfdbfe" stroke-width="1"/>
-  <text x="91" y="220" fill="#3b82f6" font-size="10" font-weight="700" text-anchor="middle">AIP</text>
+  <rect x="16" y="60" width="192" height="190" fill="#FFFFFF" rx="5" stroke="#B8BEC7" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="28" y="84" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">PHASE 1</text>
+  <text x="28" y="106" fill="#0F172A" font-size="17" font-weight="700">Target</text>
+  <text x="28" y="125" fill="#0F172A" font-size="17" font-weight="700">Development</text>
+  <line x1="28" y1="136" x2="196" y2="136" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="28" y="155" fill="#475569" font-size="13">Selection</text>
+  <text x="28" y="172" fill="#475569" font-size="13">Profiling</text>
+  <text x="28" y="189" fill="#475569" font-size="13">Survey</text>
+  <text x="28" y="206" fill="#475569" font-size="13">Capability Acquisition</text>
+  <!-- CPN pill (matches .dr-tag teal style) -->
+  <rect x="28" y="222" width="40" height="18" fill="rgba(3,117,134,0.10)" rx="2"/>
+  <line x1="28" y1="222" x2="28" y2="240" stroke="#037586" stroke-width="2"/>
+  <text x="48" y="234" fill="#037586" font-size="10" font-weight="700" letter-spacing=".06em" text-anchor="middle">CPN</text>
+  <!-- AIP pill (matches .dr-tag amber style) -->
+  <rect x="74" y="222" width="40" height="18" fill="rgba(247,139,4,0.10)" rx="2"/>
+  <line x1="74" y1="222" x2="74" y2="240" stroke="#F78B04" stroke-width="2"/>
+  <text x="94" y="234" fill="#F78B04" font-size="10" font-weight="700" letter-spacing=".06em" text-anchor="middle">AIP</text>
 
   <!-- Arrow 1→2 -->
-  <line x1="211" y1="142" x2="226" y2="142" stroke="#cbd5e1" stroke-width="2"/>
-  <polygon points="226,137 236,142 226,147" fill="#cbd5e1"/>
+  <line x1="211" y1="155" x2="232" y2="155" stroke="#8A94A1" stroke-width="2"/>
+  <polygon points="232,150 240,155 232,160" fill="#8A94A1"/>
 
   <!-- ── PHASE 2: Mobilization ── -->
-  <rect x="240" y="56" width="192" height="172" fill="#ffffff" rx="6" stroke="#e2e8f0" stroke-width="1"/>
-  <rect x="240" y="56" width="192" height="5" fill="#8b5cf6" rx="6"/>
-  <rect x="240" y="58" width="192" height="3" fill="#8b5cf6"/>
-  <text x="252" y="81" fill="#8b5cf6" font-size="10" font-weight="700" letter-spacing="1.5">PHASE 2</text>
-  <text x="252" y="101" fill="#0f172a" font-size="17" font-weight="700">Mobilization</text>
-  <line x1="252" y1="112" x2="420" y2="112" stroke="#f1f5f9" stroke-width="1"/>
-  <text x="252" y="132" fill="#475569" font-size="13">Staging</text>
-  <text x="252" y="150" fill="#475569" font-size="13">Rehearsal</text>
-  <text x="252" y="168" fill="#475569" font-size="13">Infiltration</text>
-  <text x="252" y="186" fill="#475569" font-size="13">Position Establishment</text>
-  <rect x="252" y="196" width="38" height="18" fill="#f5f3ff" rx="3" stroke="#ddd6fe" stroke-width="1"/>
-  <text x="271" y="208" fill="#8b5cf6" font-size="10" font-weight="700" text-anchor="middle">CPN</text>
-  <rect x="296" y="196" width="38" height="18" fill="#f5f3ff" rx="3" stroke="#ddd6fe" stroke-width="1"/>
-  <text x="315" y="208" fill="#8b5cf6" font-size="10" font-weight="700" text-anchor="middle">AIP</text>
+  <rect x="240" y="60" width="192" height="190" fill="#FFFFFF" rx="5" stroke="#B8BEC7" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="252" y="84" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">PHASE 2</text>
+  <text x="252" y="106" fill="#0F172A" font-size="17" font-weight="700">Mobilization</text>
+  <line x1="252" y1="118" x2="420" y2="118" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="252" y="138" fill="#475569" font-size="13">Staging</text>
+  <text x="252" y="155" fill="#475569" font-size="13">Rehearsal</text>
+  <text x="252" y="172" fill="#475569" font-size="13">Infiltration</text>
+  <text x="252" y="189" fill="#475569" font-size="13">Position Establishment</text>
+  <rect x="252" y="222" width="40" height="18" fill="rgba(3,117,134,0.10)" rx="2"/>
+  <line x1="252" y1="222" x2="252" y2="240" stroke="#037586" stroke-width="2"/>
+  <text x="272" y="234" fill="#037586" font-size="10" font-weight="700" letter-spacing=".06em" text-anchor="middle">CPN</text>
+  <rect x="298" y="222" width="40" height="18" fill="rgba(247,139,4,0.10)" rx="2"/>
+  <line x1="298" y1="222" x2="298" y2="240" stroke="#F78B04" stroke-width="2"/>
+  <text x="318" y="234" fill="#F78B04" font-size="10" font-weight="700" letter-spacing=".06em" text-anchor="middle">AIP</text>
 
   <!-- Arrow 2→3 -->
-  <line x1="435" y1="142" x2="450" y2="142" stroke="#cbd5e1" stroke-width="2"/>
-  <polygon points="450,137 460,142 450,147" fill="#cbd5e1"/>
+  <line x1="435" y1="155" x2="456" y2="155" stroke="#8A94A1" stroke-width="2"/>
+  <polygon points="456,150 464,155 456,160" fill="#8A94A1"/>
 
   <!-- ── PHASE 3: Execution ── -->
-  <rect x="464" y="56" width="192" height="172" fill="#ffffff" rx="6" stroke="#e2e8f0" stroke-width="1"/>
-  <rect x="464" y="56" width="192" height="5" fill="#ef4444" rx="6"/>
-  <rect x="464" y="58" width="192" height="3" fill="#ef4444"/>
-  <text x="476" y="81" fill="#ef4444" font-size="10" font-weight="700" letter-spacing="1.5">PHASE 3</text>
-  <text x="476" y="101" fill="#0f172a" font-size="17" font-weight="700">Execution</text>
-  <line x1="476" y1="112" x2="644" y2="112" stroke="#f1f5f9" stroke-width="1"/>
-  <text x="476" y="132" fill="#475569" font-size="13">Attack Execution</text>
-  <text x="476" y="150" fill="#475569" font-size="13">Concurrent Operations</text>
-  <rect x="476" y="178" width="38" height="18" fill="#fff5f5" rx="3" stroke="#fecaca" stroke-width="1"/>
-  <text x="495" y="190" fill="#ef4444" font-size="10" font-weight="700" text-anchor="middle">CPN</text>
-  <rect x="520" y="178" width="38" height="18" fill="#fff5f5" rx="3" stroke="#fecaca" stroke-width="1"/>
-  <text x="539" y="190" fill="#ef4444" font-size="10" font-weight="700" text-anchor="middle">AIP</text>
+  <rect x="464" y="60" width="192" height="190" fill="#FFFFFF" rx="5" stroke="#B8BEC7" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="476" y="84" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">PHASE 3</text>
+  <text x="476" y="106" fill="#0F172A" font-size="17" font-weight="700">Execution</text>
+  <line x1="476" y1="118" x2="644" y2="118" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="476" y="138" fill="#475569" font-size="13">Attack Execution</text>
+  <text x="476" y="155" fill="#475569" font-size="13">Concurrent Operations</text>
+  <rect x="476" y="222" width="40" height="18" fill="rgba(3,117,134,0.10)" rx="2"/>
+  <line x1="476" y1="222" x2="476" y2="240" stroke="#037586" stroke-width="2"/>
+  <text x="496" y="234" fill="#037586" font-size="10" font-weight="700" letter-spacing=".06em" text-anchor="middle">CPN</text>
+  <rect x="522" y="222" width="40" height="18" fill="rgba(247,139,4,0.10)" rx="2"/>
+  <line x1="522" y1="222" x2="522" y2="240" stroke="#F78B04" stroke-width="2"/>
+  <text x="542" y="234" fill="#F78B04" font-size="10" font-weight="700" letter-spacing=".06em" text-anchor="middle">AIP</text>
 
   <!-- Arrow 3→4 -->
-  <line x1="659" y1="142" x2="674" y2="142" stroke="#cbd5e1" stroke-width="2"/>
-  <polygon points="674,137 684,142 674,147" fill="#cbd5e1"/>
+  <line x1="659" y1="155" x2="680" y2="155" stroke="#8A94A1" stroke-width="2"/>
+  <polygon points="680,150 688,155 680,160" fill="#8A94A1"/>
 
-  <!-- ── PHASE 4: Aftermath ── -->
-  <rect x="688" y="56" width="196" height="172" fill="#ffffff" rx="6" stroke="#e2e8f0" stroke-width="1"/>
-  <rect x="688" y="56" width="196" height="5" fill="#10b981" rx="6"/>
-  <rect x="688" y="58" width="196" height="3" fill="#10b981"/>
-  <text x="700" y="81" fill="#10b981" font-size="10" font-weight="700" letter-spacing="1.5">PHASE 4</text>
-  <text x="700" y="101" fill="#0f172a" font-size="17" font-weight="700">Aftermath</text>
-  <!-- Evade + Claim sub-labels -->
-  <rect x="700" y="110" width="48" height="20" fill="#f0fdf4" rx="3" stroke="#bbf7d0" stroke-width="1"/>
-  <text x="724" y="124" fill="#059669" font-size="11" font-weight="600" text-anchor="middle">Evade</text>
-  <text x="754" y="124" fill="#94a3b8" font-size="11">·</text>
-  <rect x="760" y="110" width="46" height="20" fill="#f0fdf4" rx="3" stroke="#bbf7d0" stroke-width="1"/>
-  <text x="783" y="124" fill="#059669" font-size="11" font-weight="600" text-anchor="middle">Claim</text>
-  <line x1="700" y1="136" x2="872" y2="136" stroke="#f1f5f9" stroke-width="1"/>
-  <text x="700" y="156" fill="#475569" font-size="13">Evade — cover, flee, blend</text>
-  <text x="700" y="174" fill="#475569" font-size="13">Claim — amplify, message</text>
-  <rect x="700" y="196" width="38" height="18" fill="#f0fdf4" rx="3" stroke="#bbf7d0" stroke-width="1"/>
-  <text x="719" y="208" fill="#10b981" font-size="10" font-weight="700" text-anchor="middle">CPN</text>
-  <rect x="744" y="196" width="38" height="18" fill="#f0fdf4" rx="3" stroke="#bbf7d0" stroke-width="1"/>
-  <text x="763" y="208" fill="#10b981" font-size="10" font-weight="700" text-anchor="middle">AIP</text>
+  <!-- ── PHASE 4: Aftermath (Evade + Claim) ── -->
+  <rect x="688" y="60" width="196" height="190" fill="#FFFFFF" rx="5" stroke="#B8BEC7" stroke-width="1" filter="url(#cardShadow)"/>
+  <text x="700" y="84" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">PHASE 4</text>
+  <text x="700" y="106" fill="#0F172A" font-size="17" font-weight="700">Aftermath</text>
+  <!-- Evade + Claim track badges (matches .dp-ctag.flight/.claim) -->
+  <rect x="700" y="116" width="50" height="20" fill="rgba(71,85,105,0.08)" rx="2"/>
+  <line x1="700" y1="116" x2="700" y2="136" stroke="#475569" stroke-width="2"/>
+  <text x="725" y="130" fill="#475569" font-size="11" font-weight="700" letter-spacing=".08em" text-anchor="middle">EVADE</text>
+  <rect x="756" y="116" width="50" height="20" fill="rgba(71,85,105,0.08)" rx="2"/>
+  <line x1="756" y1="116" x2="756" y2="136" stroke="#475569" stroke-width="2"/>
+  <text x="781" y="130" fill="#475569" font-size="11" font-weight="700" letter-spacing=".08em" text-anchor="middle">CLAIM</text>
+  <line x1="700" y1="144" x2="872" y2="144" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="700" y="163" fill="#475569" font-size="13">Evade — cover, flee, blend</text>
+  <text x="700" y="180" fill="#475569" font-size="13">Claim — amplify, message</text>
+  <rect x="700" y="222" width="40" height="18" fill="rgba(3,117,134,0.10)" rx="2"/>
+  <line x1="700" y1="222" x2="700" y2="240" stroke="#037586" stroke-width="2"/>
+  <text x="720" y="234" fill="#037586" font-size="10" font-weight="700" letter-spacing=".06em" text-anchor="middle">CPN</text>
+  <rect x="746" y="222" width="40" height="18" fill="rgba(247,139,4,0.10)" rx="2"/>
+  <line x1="746" y1="222" x2="746" y2="240" stroke="#F78B04" stroke-width="2"/>
+  <text x="766" y="234" fill="#F78B04" font-size="10" font-weight="700" letter-spacing=".06em" text-anchor="middle">AIP</text>
 
-  <!-- Footer note -->
-  <text x="450" y="247" fill="#94a3b8" font-size="11" text-anchor="middle" font-style="italic">Descriptive model — phases may compress, skip, or reorder based on adversary opportunity and capability</text>
+  <!-- Footer note (matches .det-deferred styling) -->
+  <text x="450" y="270" fill="#8A94A1" font-size="11" text-anchor="middle" font-style="italic">Descriptive model — phases may compress, skip, or reorder based on adversary opportunity and capability</text>
 
 </svg>

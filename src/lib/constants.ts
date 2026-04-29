@@ -71,7 +71,7 @@ export const INDICATOR_CATEGORY_LABELS: Record<string, string> = {
 
 export const COUNTERMEASURE_CATEGORY_LABELS: Record<string, string> = {
   preventive: 'Preventive',
-  detective: 'Detective',
+  detective: 'Detection',
   corrective: 'Corrective',
   deterrent: 'Deterrent',
 };

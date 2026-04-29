@@ -60,11 +60,16 @@ export function CountermeasureSection({ countermeasures, navigate }: Props) {
                 </div>
               )}
               {cm.source_refs?.length > 0 && (
-                <div className="dr-tag-row">
-                  {cm.source_refs.map((ref) => (
-                    <SourceRefLink key={ref} refKey={ref} navigate={navigate} />
-                  ))}
-                </div>
+                <details className="dr-details">
+                  <summary>Sources</summary>
+                  <div className="dr-details-body">
+                    <div className="dr-tag-row">
+                      {cm.source_refs.map((ref) => (
+                        <SourceRefLink key={ref} refKey={ref} navigate={navigate} />
+                      ))}
+                    </div>
+                  </div>
+                </details>
               )}
             </div>
           ))}
