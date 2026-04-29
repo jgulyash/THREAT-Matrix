@@ -57,7 +57,7 @@
 - Versioning + breaking-change policy — semver applied to framework artifact and schema independently; stable identifier contract (`TA####`, `AP###`, `IND-*`, `CM-*`, `RP-*`); deprecation discipline
 - Reference consumer at `examples/python_consumer.py` — minimal non-SPA artifact that fetches `framework.json`, validates against the schema, and demonstrates filtering by phase and actor profile lookup
 - `examples/README.md` — "minimum viable consumer; build your own"
-- Consumers section in `README.md` — SPA, WARDEN (planned, V1.4), and community consumers listed as peers
+- Consumers section in `README.md` — SPA, and community consumers listed as peers
  
 **Delivers (Person Detection & Response):**
 - Behavioral indicators for all 34 Person tactics (observable behaviors with detection sources, phase relevance, mesh links, and source citations)
@@ -134,7 +134,6 @@ The contract has to be in writing before the platform is built on top of it. Sch
 - Full V1.1 schema applied to every Organization tactic
 - Cross-matrix links populated where Organization tactics interact with Person and Facility tactics
 - Insider actor profiles deepened
-- WARDEN integration point partially activated
  
 ---
  
@@ -197,11 +196,10 @@ The contract has to be in writing before the platform is built on top of it. Sch
 The THREAT Matrix is the canonical ontology. Vector databases are a retrieval mechanism that indexes the ontology. They are complementary, not competitive. The taxonomy defines what the categories ARE. Embeddings provide fuzzy matching to map real-world observations to those categories. Structured reasoning (Threat Lifecycle phase, actor profile, response protocol, escalation logic) requires the taxonomy. Cosine similarity alone cannot drive an escalation decision.
  
 **Integration with case management:**
-The THREAT Matrix is designed to plug into existing and future AI-native case management platforms, not to replace them. The market has capable case management products that will continue to evolve with AI capabilities. The framework provides the structured adversary behavior taxonomy that case management tools can consume. The WARDEN framework (open-source personnel threat platform) is a parallel project that demonstrates this integration model: WARDEN handles case operations, THREAT Matrix provides the TTP classification layer. Whether THREAT Matrix integrates with WARDEN, commercial case management tools, or both is a decision deferred until V5+ when the Operations Composer and cross-matrix composition are proven.
+The THREAT Matrix is designed to plug into existing and future AI-native case management platforms, not to replace them. The market has capable case management products that will continue to evolve with AI capabilities. The framework provides the structured adversary behavior taxonomy that case management tools can consume. Any open-source or SaaS physical threat platform demonstrates this integration model: The SaaS handles case operations, THREAT Matrix provides the TTP classification layer.
  
 ---
- 
- 
+
 ## V5 — Continuous Learning Loop
 **Status:** Planned (after V3 Case Library)
  
@@ -218,8 +216,7 @@ The THREAT Matrix is designed to plug into existing and future AI-native case ma
 - Cross-organization learning (privacy-preserving): anonymized pattern data shared across participating organizations to improve detection without exposing case details
  
 **Design constraint:** The human practitioner remains the authority. AI agents recommend, practitioners decide. The taxonomy is authored by practitioners, validated by sources, and refined through operational feedback. AI accelerates the cycle but does not replace the editorial judgment.
- 
- 
+
 ---
  
 ## Detection & Response Guide — Per-Matrix Delivery

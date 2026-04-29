@@ -105,7 +105,7 @@ V1.1 establishes THREAT Matrix as a headless-first open standard. The contract h
 | **Versioning + stability policy** | Semver applied independently to the framework artifact (`version`) and the schema (`schema_version`) — see [VERSIONING.md](VERSIONING.md). Stable identifier contract (`TA####`, `AP###`, `IND-*`, `CM-*`, `RP-*`) defined in [IDENTIFIERS.md](IDENTIFIERS.md) — IDs are never reused, even after deprecation. Lifecycle states and sunset rules in [DEPRECATION.md](DEPRECATION.md). |
 | **Multiple independent consumers** | The React SPA at jgulyash.github.io/THREAT-Matrix; the reference Python consumer at [`examples/python_consumer.py`](examples/python_consumer.py) (with [`examples/README.md`](examples/README.md) as a starting-point guide); community consumers welcome. |
  
-Standards talk to platforms. The contract is what makes integrations with RAG systems, AI agents, MCP-based tooling, and downstream security platforms tractable rather than bespoke. Full schema specification: [`V1.1-Schema-Spec.md`](V1.1-Schema-Spec.md).
+Standards talk to platforms. The contract is what makes integrations with RAG systems, AI agents, MCP-based tooling, and downstream security platforms tractable rather than bespoke.
  
 ---
  
