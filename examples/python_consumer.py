@@ -21,8 +21,7 @@ Requires: jsonschema (pip install jsonschema)
 
 This file is the reference consumer for the THREAT Matrix standard.
 It is intentionally small and dependency-light. Build your own consumer
-by starting from this file or from scratch — the contract is what matters,
-not this code.
+by starting from this file or from scratch.
 """
 from __future__ import annotations
 
