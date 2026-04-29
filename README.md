@@ -103,7 +103,7 @@ V1.1 establishes THREAT Matrix as a headless-first open standard. The contract h
 | **Canonical artifact** | [`docs/data/framework.json`](docs/data/framework.json) — single source of truth. The SPA is one consumer of this file, not its primary expression. |
 | **Formal schema** | [`docs/data/framework.schema.json`](docs/data/framework.schema.json) — JSON Schema (draft 2020-12) that every consumer validates against. |
 | **Versioning + stability policy** | Semver applied independently to the framework artifact (`version`) and the schema (`schema_version`) — see [VERSIONING.md](VERSIONING.md). Stable identifier contract (`TA####`, `AP###`, `IND-*`, `CM-*`, `RP-*`) defined in [IDENTIFIERS.md](IDENTIFIERS.md) — IDs are never reused, even after deprecation. Lifecycle states and sunset rules in [DEPRECATION.md](DEPRECATION.md). |
-| **Multiple independent consumers** | The React SPA at jgulyash.github.io/THREAT-Matrix; the reference Python consumer at [`examples/python_consumer.py`](examples/python_consumer.py) (with [`examples/README.md`](examples/README.md) as a starting-point guide); WARDEN (planned, V1.4); community consumers welcome. |
+| **Multiple independent consumers** | The React SPA at jgulyash.github.io/THREAT-Matrix; the reference Python consumer at [`examples/python_consumer.py`](examples/python_consumer.py) (with [`examples/README.md`](examples/README.md) as a starting-point guide); community consumers welcome. |
  
 Standards talk to platforms. The contract is what makes integrations with RAG systems, AI agents, MCP-based tooling, and downstream security platforms tractable rather than bespoke. Full schema specification: [`V1.1-Schema-Spec.md`](V1.1-Schema-Spec.md).
  
@@ -141,7 +141,6 @@ Standards talk to platforms. The contract is what makes integrations with RAG sy
 The SPA is one consumer of the standard. Other consumers shipped or planned:
  
 - **[Reference Python consumer](examples/python_consumer.py)** — minimal worked example: fetch, validate, filter by phase, look up actor profiles by ID. Build your own from it.
-- **WARDEN** — Executive & Key Personnel Threat Monitoring Framework. Consumes THREAT Matrix taxonomy via agentic ingestion (planned, V1.4 activation).
 - **MCP server** — AI agents query the framework natively over Model Context Protocol (planned, V2).
 - **Python and TypeScript SDKs** — thin wrappers over schema-validated fetch (planned, V2).
 - **Pre-built RAG embeddings** — tactics, indicators, countermeasures, field_notes embedded for semantic retrieval (planned, V2).
