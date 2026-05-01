@@ -384,7 +384,7 @@
               "priority": "urgent"
             }
           ],
-          "field_notes": "The first signal you usually catch in target selection is the name. Not 'a manager' or 'security' — a specific person. Once a threat actor has resolved a grievance against a single named individual, the work shifts: they start collecting on that person specifically — schedule, residence, family, daily routine. Online research patterns spike for the targeted subject. Inside an organization, the parallel signal is records access outside job scope: the personnel file, the executive calendar, the org chart. The behavioral tell is that the grievance narrative converges on one targeted subject and stays there over time, not drifting across categories of complaint.",
+          "field_notes": "Target Selection is the point where a vague or specific grievance lands on a named person. The threat actor's attention then reshapes around that individual — their schedule, where they live, their family, their daily routine. Inside an organization, the parallel signal is a threat actor pulling records that have little to nothing to do with their job: the personnel file, the target's calendar, and project information. The behavioral tell is simple — the grievance locks onto one person and stays there.",
           "observed_contexts": [
             "former employee whose written grievance shifts from policy complaints to a specific manager's name and continues escalating in social media posts",
             "fixated threat actor conducting digital research on a specific executive's residence, family routine, and travel pattern over weeks",
@@ -756,7 +756,7 @@
               ]
             }
           ],
-          "field_notes": "Subject Profiling is the tactic that turns 'a name' into 'a target file'. The threat actor is no longer just looking up an address; they are building a detailed picture of who the targeted subject is — who they live with, where their kids go to school, what gym they belong to, what time they leave for work. The signal you usually catch is human-source: a stranger striking up conversation with a coworker about the targeted subject's family, or a self-described 'researcher' calling neighbors with implausible cover stories. The digital signal is a sustained pattern of social media monitoring — not casual interest, but methodical archival of posts, photos, and check-ins over weeks or months. Profiling is heaviest in Target Development but compresses sharply just before mobilization, when the threat actor confirms current status and validates assumptions made earlier in the cycle.",
+          "field_notes": "Subject Profiling is the tactic that turns 'a name' into 'a target file'. The threat actor is no longer just looking up an address; they are building a detailed picture of who the targeted subject is — who they live with, where their kids go to school, what gym they belong to, what time they leave for work. Operationally, this can resolve into two collection streams — human-source (a known or unknown individual striking up a conversation with a coworker about the targeted subject's family, or a self-described 'researcher' calling neighbors with thin or implausible cover stories) and digital (a sustained pattern of social media monitoring — not casual interest, but methodical archival of posts, photos, and check-ins over weeks or months). Most of Subject Profiling sits in Target Development; what bleeds into mobilization is the threat actor confirming current status and validating earlier assumptions before action.",
           "observed_contexts": [
             "domestic violence case where the threat actor cultivated friendships with the targeted subject's coworkers to extract daily schedule and family routine",
             "executive protection case where social media archival revealed a multi-year pattern of the threat actor monitoring the targeted subject's posts, including children's events and travel photos",
@@ -1132,8 +1132,213 @@
           "cpn_id": "CPN-0104",
           "cpn_notes": "Dark web procurement, cryptocurrency for anonymous purchasing, and online forgery services are the primary acquisition channels for many capability types. Encrypted communications enable coordination with suppliers without generating conventional financial or communications records.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0104-01",
+              "behavior": "Threat actor acquires weapons, ammunition, or restricted equipment in quantities or configurations inconsistent with hobbyist or sporting use, particularly in a compressed time window",
+              "category": "acquisition",
+              "detection_sources": [
+                "financial_records",
+                "open_source",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0107-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0104-02",
+              "behavior": "Threat actor purchases or rents vehicles, tools, or equipment that have no apparent legitimate use in their declared activities, especially items operationally relevant to the planned attack method",
+              "category": "acquisition",
+              "detection_sources": [
+                "financial_records",
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0107-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0104-03",
+              "behavior": "Threat actor obtains or attempts to obtain access credentials, uniforms, identification documents, or workplace keys outside the scope of their legitimate role",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "peer_report",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0106-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-0104-04",
+              "behavior": "Threat actor leverages a third party — family member, friend, employee — to acquire an item the threat actor cannot legally or practically obtain directly",
+              "category": "acquisition",
+              "detection_sources": [
+                "financial_records",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0105-04"
+              ],
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0104-05",
+              "behavior": "Threat actor researches modification, conversion, or improvised construction of attack capability — including 3D-printed firearm components, IED precursor combinations, or vehicle modifications",
+              "category": "planning",
+              "detection_sources": [
+                "it_logs",
+                "open_source",
+                "social_media"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0101-05"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NTAC-AVERTED-2021"
+              ]
+            },
+            {
+              "id": "IND-0104-06",
+              "behavior": "Threat actor accesses workplace inventory, supply rooms, or restricted storage outside the scope of declared duties to obtain attack-relevant items",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0101-06"
+              ],
+              "source_refs": [
+                "CERT-CSG-7-2022",
+                "CISA-DIT-2023",
+                "NITTF-GUIDE-2017"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0104-01",
+              "measure": "Implement structured background and continuous-evaluation programs for personnel in roles with access to attack-relevant materials, with reporting obligations for behavioral changes",
+              "category": "preventive",
+              "domain": "personnel_security",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Background checks are point-in-time; continuous evaluation requires sustained funding and workforce buy-in. Family-member acquisition pathways are not addressed by personnel programs",
+              "compensates_for": [],
+              "source_refs": [
+                "CERT-CSG-7-2022",
+                "NITTF-GUIDE-2017"
+              ]
+            },
+            {
+              "id": "CM-0104-02",
+              "measure": "Deliver household firearm and equipment safety briefings for the targeted subject and immediate family, including expectations for reporting unauthorized access by extended family or guests",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Awareness fades; family members may resist treating relatives as suspects. Effectiveness depends on the household's existing security culture",
+              "compensates_for": [],
+              "source_refs": [
+                "NTAC-SCHOOLS-2019",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "CM-0104-03",
+              "measure": "Maintain workplace inventory and access-log monitoring with anomaly detection for restricted storage, particularly for keys, uniforms, identification, and equipment that maps to known attack capabilities",
+              "category": "detective",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Insiders with legitimate access may not trigger alerts. Inventory baselines must be accurate before anomalies can be detected",
+              "compensates_for": [
+                "CM-0101-05"
+              ],
+              "source_refs": [
+                "CERT-CSG-7-2022",
+                "NITTF-GUIDE-2017"
+              ]
+            },
+            {
+              "id": "CM-0104-04",
+              "measure": "Train associates and family members on proxy-purchase warning indicators, including unusual requests to buy items outside the requester's normal interests",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Many proxy purchases appear benign in isolation and are only recognizable when combined with other concerning context the proxy may not have",
+              "compensates_for": [
+                "CM-0101-03"
+              ],
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -1244,8 +1449,67 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
-          "response_protocols": []
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021",
+            "FBI-PREATTACK-2018",
+            "CERT-CSG-7-2022",
+            "CISA-DIT-2023"
+          ],
+          "response_protocols": [
+            {
+              "id": "RP-0104-01",
+              "trigger": "Single capability acquisition indicator detected (unusual purchase, anomalous workplace inventory access, peer-reported request for proxy assistance)",
+              "action": "Document the indicator. Conduct a 5-business-day preliminary assessment that includes (a) corroboration of the observation, (b) financial-pattern review where authorized and available, (c) baseline review of the threat actor's prior acquisition history. Determine whether the acquisition profile maps to a coherent attack method.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Acquisition profile maps coherently to a specific attack method OR concurrent indicators surface from another Phase 1 tactic for the same threat actor.",
+              "coordinates_with": [
+                "RP-0101-01",
+                "RP-0107-01"
+              ],
+              "legal_notes": "Personal acquisition history may have privacy implications; coordinate with legal before any direct inquiry. Workplace acquisition data is generally accessible under normal security policy. Document the basis for any monitoring escalation. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0104-02",
+              "trigger": "Multiple acquisition indicators consistent with attack capability OR single high-severity indicator (illegal weapon acquisition, IED precursor combinations, restricted-access credential theft)",
+              "action": "Convene the threat management team within 24 hours. Conduct formal threat assessment. Implement protective posture for the targeted subject. Notify law enforcement where the acquisition itself is unlawful or where jurisdiction requires reporting. Initiate enhanced monitoring of the threat actor across available data sources.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "legal"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Threat actor demonstrates means and proximity to the targeted subject OR direct communication of intent to use acquired capability.",
+              "coordinates_with": [
+                "RP-0101-02",
+                "RP-0107-02"
+              ],
+              "legal_notes": "Illegal weapon acquisition and certain IED precursor combinations carry mandatory reporting obligations in many jurisdictions. Document the indicator constellation that drove escalation. Preserve evidence of the original observations. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "NTAC-SYSTEMS-2020",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
+          "field_notes": "Capability Acquisition resolves into three pathways: legitimate purchase (firearms transfer through licensed dealers, vehicle rentals, equipment from retailers), theft or diversion (workplace theft of credentials, building keys, or equipment; family-member firearm taken without consent), and proxy procurement (a third party purchases the capability on the threat actor's behalf, sometimes wittingly, often not). Each pathway leaves a different signature. Legitimate purchases surface in financial records and background-check databases; theft surfaces in workplace inventory or peer reports of missing items; proxy procurement surfaces in associate interviews and after-incident analysis of who actually bought what. The detection difficulty rises sharply across the three: a threat assessment team can routinely catch legitimate purchases through structured data; proxy procurement is often only recognizable in retrospect. The acquisition profile usually reveals the intended attack method — what was acquired, in what combination, on what timeline.",
+          "observed_contexts": [
+            "workplace violence case where the threat actor purchased a firearm from a licensed dealer and ammunition from multiple retailers within a three-week window before the attack",
+            "domestic case where the threat actor accessed a household firearm belonging to a family member, with no purchase trail of their own to identify",
+            "insider threat case where the threat actor used legitimate workplace access to remove uniforms, ID badges, and a contractor vehicle key in the weeks preceding mobilization",
+            "[literature: NTAC-MASS-2021 — pre-attack acquisition timelines for mass attacks against public spaces, including weapons, vehicles, and protective gear]",
+            "extremist radicalization case where the threat actor researched 3D-printed firearm components and IED precursors online for months before any physical acquisition occurred"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0105",
@@ -1261,8 +1525,210 @@
           "cpn_id": "CPN-0105",
           "cpn_notes": "Encrypted messaging apps, dark web forums, and privacy-preserving communications platforms are the coordination infrastructure for modern operational networks. Recruitment can occur entirely online with no physical meeting before execution.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0105-01",
+              "behavior": "Threat actor introduces another individual to the grievance narrative through shared communications, joint research, or coordinated complaint",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "social_media",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0107-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "IND-0105-02",
+              "behavior": "Threat actor begins coordinating logistics, schedules, or transportation with another individual whose involvement is operationally relevant rather than socially incidental",
+              "category": "planning",
+              "detection_sources": [
+                "physical_observation",
+                "communications_intercept",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0107-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0105-03",
+              "behavior": "Threat actor communicates with peers, online associates, or co-ideologues in a forum or platform that openly endorses violence or targeted harm",
+              "category": "communication",
+              "detection_sources": [
+                "it_logs",
+                "social_media",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0107-05"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0105-04",
+              "behavior": "Threat actor recruits or attempts to recruit family members, employees, or social connections to provide access, transportation, capability, or information about the targeted subject",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0102-04",
+                "IND-0104-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0105-05",
+              "behavior": "Threat actor transfers attack-relevant information — target details, schedule, environmental data, capability — to another individual via written or verbal communication",
+              "category": "communication",
+              "detection_sources": [
+                "it_logs",
+                "communications_intercept",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0102-01"
+              ],
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "IND-0105-06",
+              "behavior": "Threat actor's pattern of contact shifts to include new associates whose connection has no clear social or professional basis, particularly in a compressed time window",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "peer_report",
+                "physical_observation",
+                "social_media"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NITTF-GUIDE-2017"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0105-01",
+              "measure": "Maintain insider-threat program coverage of association patterns including new co-worker affiliations, off-hours coordination, and out-of-band communication channels",
+              "category": "detective",
+              "domain": "behavioral_intervention",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Personal associations are protected information; programs must be scoped to job-relevant context. False-positive rate is high without behavioral baseline",
+              "compensates_for": [],
+              "source_refs": [
+                "CERT-CSG-7-2022",
+                "NITTF-GUIDE-2017"
+              ]
+            },
+            {
+              "id": "CM-0105-02",
+              "measure": "Deliver awareness briefings for associates of the targeted subject — coworkers, family members, friends — on common recruitment patterns including requests to provide access, transportation, or information that seems unrelated to legitimate need",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Recruitment requests may be subtle or framed as personal favors. Effectiveness depends on the associate's ability to recognize the pattern in retrospect",
+              "compensates_for": [
+                "CM-0101-03"
+              ],
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0105-03",
+              "measure": "Conduct open-source and authorized closed-source intelligence collection on online forums and platforms known to host content that endorses violence or coordinates targeted harm against individuals, mapping participants to organizational interest where appropriate",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Most participants in such forums are not operationally relevant; analyst time is the binding constraint. Privacy and platform-policy considerations require careful scoping",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "CM-0105-04",
+              "measure": "Establish reporting expectations across the workforce for unusual coordination requests, recruitment overtures, or off-band communications that touch organizationally sensitive information",
+              "category": "detective",
+              "domain": "behavioral_intervention",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Reporting culture matures slowly; many concerning requests are dismissed as harmless when received",
+              "compensates_for": [],
+              "source_refs": [
+                "CERT-CSG-7-2022",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -1334,8 +1800,67 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
-          "response_protocols": []
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CERT-CSG-7-2022",
+            "NITTF-GUIDE-2017",
+            "NTAC-MASS-2021",
+            "ASIS-WVPI-2021"
+          ],
+          "response_protocols": [
+            {
+              "id": "RP-0105-01",
+              "trigger": "Single Network Development indicator reported (recruitment overture, unusual co-coordination, joint grievance escalation)",
+              "action": "Document the indicator. Conduct a 5-business-day preliminary assessment that includes (a) corroboration of the observation, (b) baseline review of the threat actor's recent association patterns, (c) identification of the recruited individual or associate. Determine whether the association is operationally relevant or socially incidental.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Association determined operationally relevant OR concurrent indicators surface from another Phase 1 tactic.",
+              "coordinates_with": [
+                "RP-0101-01"
+              ],
+              "legal_notes": "Investigation of personal associations carries privacy implications; coordinate with legal before any inquiry beyond the immediate observation. Document factually. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "NITTF-GUIDE-2017",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0105-02",
+              "trigger": "Multiple Network Development indicators co-observed for the same threat actor OR confirmed transfer of attack-relevant information OR confirmed recruitment of an associate to provide access or capability",
+              "action": "Convene the threat management team. Conduct full risk assessment including the recruited associate's risk profile. Brief protective operations on the expanded threat surface (now multi-node). Coordinate with HR if an associate is an employee; coordinate with law enforcement if recruitment crosses into criminal conspiracy.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "human_resources",
+                "legal",
+                "law_enforcement"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Multi-node coordination demonstrates means and proximity to targeted subject OR confirmed planning across the network.",
+              "coordinates_with": [
+                "RP-0101-02",
+                "RP-0107-02"
+              ],
+              "legal_notes": "Conspiracy thresholds and reporting obligations vary materially by jurisdiction. Document the indicator constellation that drove escalation including evidence of coordination beyond mere association. Preserve evidence. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "NITTF-GUIDE-2017",
+                "NTAC-SYSTEMS-2020",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
+          "field_notes": "By the time Network Development is observable, the threat actor has decided they need help — co-conspirators for execution, witting or unwitting accomplices for capability acquisition, or supporters for ideological reinforcement. The introduction of a second voice into the grievance narrative is the first detectable shift. Once that voice is present, an investigator can usually find concrete artifacts: shared communications, joint research, transferred information, and sometimes a meeting cadence that did not exist before. Network Development can be small (one accomplice for transportation) or large (a cell organized around a shared ideology). The work for the analyst is distinguishing connection that is operationally relevant from connection that is socially incidental. The absence of Network Development in a developing case is itself diagnostic — it signals the threat actor is preparing as a lone operator and the case will likely not produce coordination artifacts.",
+          "observed_contexts": [
+            "workplace violence case where the threat actor recruited a coworker to provide after-hours building access in exchange for help with personal grievances unrelated to the attack",
+            "domestic case where the threat actor's pattern of contact shifted in the weeks before mobilization to include a new associate met online whose role in the attack was not understood until after-action review",
+            "extremist case where co-ideologue communications in an encrypted group preceded coordinated capability acquisition by months",
+            "[literature: CERT-CSG-7-2022 — coordinated insider activity patterns including recruitment of co-workers and family members to support unauthorized access]",
+            "lone-actor case where the absence of any associate involvement was itself diagnostic; the threat assessment team correctly anticipated a single-actor execution"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0106",
@@ -1351,8 +1876,206 @@
           "cpn_id": "CPN-0106",
           "cpn_notes": "Synthetic social media presence, forged digital credentials, and fake email and phone infrastructure are standard components of modern cover identity construction. A digital footprint is now an expected component of a credible legend.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0106-01",
+              "behavior": "Threat actor adopts an identity, uniform, or vehicle marking inconsistent with their actual employment, education, or background",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0103-05"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0106-02",
+              "behavior": "Threat actor presents fabricated credentials — employer ID, contractor badge, business cards, vendor identification — when seeking access to restricted environments",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0103-04",
+                "IND-0104-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0106-03",
+              "behavior": "Threat actor establishes shell social media profiles, online personas, or business presence to support a cover identity used for approach or surveillance",
+              "category": "digital",
+              "detection_sources": [
+                "social_media",
+                "open_source",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0102-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0106-04",
+              "behavior": "Threat actor's stated reason for being at a location does not align with verifiable activity — no work order, no scheduled appointment, no destination, no sponsoring contact",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0103-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            },
+            {
+              "id": "IND-0106-05",
+              "behavior": "Threat actor's verbal account of their role contains gaps inconsistent with someone actually in that role — wrong jargon, missing routine knowledge, cannot answer basic procedural questions someone working that job day-to-day would know",
+              "category": "communication",
+              "detection_sources": [
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0106-06",
+              "behavior": "Threat actor's identifying details — name, employer, license plate, business name — cannot be corroborated through normal verification channels",
+              "category": "communication",
+              "detection_sources": [
+                "public_records",
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0106-01",
+              "measure": "Enforce visitor verification protocols requiring confirmable work orders, scheduled appointments, or sponsoring contact before access to restricted environments",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Verification fatigue erodes effectiveness during high-traffic periods; sophisticated threat actors pre-stage sponsoring contacts that withstand basic verification",
+              "compensates_for": [],
+              "source_refs": [
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            },
+            {
+              "id": "CM-0106-02",
+              "measure": "Train reception and security personnel on second-order identity verification — challenge questions about role-specific knowledge, procedural details, and routine artifacts the cover identity should possess",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Personnel may default to politeness over challenge; effectiveness depends on culture that empowers reception staff to question",
+              "compensates_for": [
+                "CM-0103-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0106-03",
+              "measure": "Pre-coordinate supplier and vendor visits including verified contact lookup, expected arrival window, and named individuals authorized to attend",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Pre-coordination overhead can slow legitimate operations; emergency or unscheduled visits create gaps in coverage",
+              "compensates_for": [],
+              "source_refs": [
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0106-04",
+              "measure": "Implement two-factor identity verification for sensitive area access — visual badge plus sponsoring-contact callback or biometric, with escort requirements for unverified visitors",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Cost and friction grow with sensitivity tier; insider sponsors can defeat callback verification if not separately validated",
+              "compensates_for": [],
+              "source_refs": [
+                "ASIS-WVPI-2021",
+                "CERT-CSG-7-2022"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -1420,8 +2143,66 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
-          "response_protocols": []
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "ASIS-WVPI-2021",
+            "CERT-CSG-7-2022",
+            "CISA-CONVERGE-2021"
+          ],
+          "response_protocols": [
+            {
+              "id": "RP-0106-01",
+              "trigger": "Single Cover Construction indicator detected (unverifiable identity claim, fabricated credentials, role-knowledge incongruity reported by reception or peer)",
+              "action": "Document the indicator. Detain politely if the individual is on-site; verify identity through sponsoring contact or external corroboration. Report to threat management team within the same business day. Preserve any physical artifacts (business cards, IDs, vehicle photos).",
+              "stakeholders": [
+                "security_operations",
+                "threat_management_team"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Identity cannot be corroborated OR cover artifact connects to other concerning context (prior surveillance reports, prior access attempts).",
+              "coordinates_with": [
+                "RP-0103-01"
+              ],
+              "legal_notes": "Detention or extended challenge of an individual carries legal implications that vary by jurisdiction. Coordinate with legal before any action beyond polite verification. Document factually; do not characterize the individual's intent. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            },
+            {
+              "id": "RP-0106-02",
+              "trigger": "Cover construction detected at access to a sensitive area OR concurrent with other Phase 1 indicators OR coupled with proximity to the targeted subject",
+              "action": "Activate full incident response. Detain pending verification where lawful. Notify law enforcement; pretexting at protected sites may itself be unlawful. Implement enhanced posture for the targeted subject and the affected facility. Capture all physical and digital evidence of the cover construction.",
+              "stakeholders": [
+                "security_operations",
+                "threat_management_team",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "legal"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Cover construction breaches a sensitive perimeter OR threat actor flees on challenge OR identity ties to prior threat case.",
+              "coordinates_with": [
+                "RP-0103-02",
+                "RP-0101-02"
+              ],
+              "legal_notes": "Pretexting and trespass laws vary; some jurisdictions criminalize cover construction at protected sites independently of intent. Preserve evidence carefully. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "ASIS-WVPI-2021",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "field_notes": "The thing about Cover Construction is that it doesn't usually fail at the cover — it fails at the second-order detail nobody scripted: the wrong jargon for the role, a missing employer-issued artifact, a procedure that does not match the claimed credential, or knowledge gaps an actual member of that role would not have. A threat actor with a 'utility worker' cover may have the uniform but no work order, no truck, and no answer for which substation they're servicing. An investigator catches Cover Construction by interrogating the second order: not 'is this person who they claim to be?' but 'do their answers, artifacts, and behavior match the role they claim?' The signal is incongruity — small mismatches between the claimed identity and the operational details only an actual incumbent would know. Cover Construction can range from a minimal behavioral pretext (posing as a jogger or rideshare passenger) to a full legend (fabricated identity with verifiable employer history and online footprint), and the detection difficulty rises in proportion.",
+          "observed_contexts": [
+            "executive protection case where a threat actor in a contractor uniform was challenged at reception; the work order did not exist and the truck in the parking lot belonged to a different vendor",
+            "stalking case where the threat actor maintained a fabricated dating-app persona for months to support repeated approach attempts on the targeted subject",
+            "insider-conspirator case where an external accomplice presented forged contractor credentials in coordination with an insider sponsor who validated the cover",
+            "[literature: ASIS-WVPI-2021 — recurring pre-attack pattern of pretexting access to facility environments via fabricated vendor or contractor identity]",
+            "domestic case where a low-tech behavioral cover (jogger, dog walker) sustained repeated environmental survey of the targeted subject's residence over several weeks"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0107",
@@ -1547,7 +2328,7 @@
             },
             {
               "id": "IND-0107-06",
-              "behavior": "Threat actor exhibits novel aggression — a discrete escalation in the kind or intensity of violent imagery, statement, or low-level act distinct from the threat actor's prior behavioral baseline",
+              "behavior": "Threat actor exhibits a discrete escalation in the kind or intensity of violent imagery, statement, or low-level act distinct from the threat actor's prior behavioral baseline",
               "category": "behavioral_change",
               "detection_sources": [
                 "peer_report",
@@ -1567,7 +2348,7 @@
             },
             {
               "id": "IND-0107-07",
-              "behavior": "Threat actor exhibits an energy burst — a sudden visible increase in goal-directed activity such as research, communication, movement, or expenditure consistent with imminent action",
+              "behavior": "Threat actor exhibits a sudden visible increase in goal-directed activity such as research, communication, movement, or expenditure consistent with imminent action",
               "category": "behavioral_change",
               "detection_sources": [
                 "peer_report",
@@ -1772,7 +2553,7 @@
               ]
             }
           ],
-          "field_notes": "Pathway Indicators is where the threat-assessment literature meets fieldwork. Calhoun and Weston framed it as ideation → research → planning → preparation → breach → attack; Meloy's TRAP-18 codifies the proximal warning signs. In practice you do not usually catch a threat actor at every stage — you catch a few signals that, mapped against the pathway model, locate the threat actor at a specific stage with a specific time horizon. The most catchable signals tend to be ideation (in writing or peer-reported speech), preparation (means acquisition shows up in financial or procurement records), and the energy burst right before action. The literature is unanimous that pathway behaviors precede targeted violence by weeks to months, and that the people closest to the threat actor — coworkers, family members, peers — see the signals first. The most common detection failure is not absence of signal; it is failure to aggregate and recognize the signal as pathway.",
+          "field_notes": "Pathway Indicators are the observable behaviors that mark a threat actor's progression toward an attack — grievance escalation, ideation, leakage, planning, preparation, and the final-act behaviors that often appear in the days or hours before mobilization. The pathway is described in the literature as a sequence of stages (Calhoun-Weston: ideation → research → planning → preparation → breach → attack; Meloy's TRAP-18 codifies the proximal warning signs). In casework, an analyst rarely observes every stage in order — what surfaces is a few signals from different stages, and the work is mapping those signals against the pathway model to locate the threat actor at a specific stage with a specific time horizon. The most catchable signals tend to be ideation (in writing or peer-reported speech), preparation (means acquisition shows up in financial or procurement records), and the energy burst right before action. The recurring detection failure is not absence of signal — it is failure to aggregate scattered signals across reporters and recognize them as pathway.",
           "observed_contexts": [
             "[literature: MELOY-TRAP18-2016 / FEIN-VOSSEKUIL-1999 — consensus pattern of ideation-to-action progression preceding targeted attacks by weeks to months]",
             "[literature: NTAC-MASS-2021 — pre-attack warning behaviors documented in the majority of mass attacks against public spaces]",
@@ -1796,8 +2577,205 @@
           "cpn_id": "CPN-0108",
           "cpn_notes": "Digital counter-surveillance includes checking devices for surveillance software, monitoring social media for mentions of their name or image, and using RF detection apps to identify surveillance equipment. Sophisticated actors may monitor protective intelligence social media accounts for indicators of active investigation.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0108-01",
+              "behavior": "Threat actor varies vehicle, route, or arrival time across repeated visits to a targeted-subject-associated location in a pattern consistent with deliberate surveillance detection",
+              "category": "surveillance",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0103-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0108-02",
+              "behavior": "Threat actor performs vehicle dismounts and walking transitions at non-destination points (parking-lot-to-walking pattern, ride-share-then-walk) before arriving at the actual location of interest",
+              "category": "surveillance",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0103-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            },
+            {
+              "id": "IND-0108-03",
+              "behavior": "Threat actor uses cutouts, intermediaries, or third parties for tasks that would normally be performed directly — calling, visiting, or asking questions about the targeted subject's environment",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "correlates_with": [
+                "IND-0102-04",
+                "IND-0103-05"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "IND-0108-04",
+              "behavior": "Threat actor substitutes physical reconnaissance with technical surrogates — satellite imagery, Street View, public live cameras, drone overflight — to avoid being physically observed at the location",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "correlates_with": [
+                "IND-0103-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0108-05",
+              "behavior": "Threat actor uses VPN, Tor, burner devices, anonymous accounts, or pseudonymous social media to mask digital reconnaissance activity directed at the targeted subject or environment",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0102-02"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            },
+            {
+              "id": "IND-0108-06",
+              "behavior": "Threat actor maintains a thin cover story for proximity to the target environment that they activate only when challenged or observed, distinct from the routine cover used for active access attempts",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "peer_report",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0106-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0108-01",
+              "measure": "Train surveillance detection sweeps to recognize over-engineered variance — repeated minor changes to a recurring observation pattern that exceed organic schedule diversity",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Distinguishing over-engineered variance from organic schedule diversity is judgment-intensive; false positive rate is high without trained operators",
+              "compensates_for": [
+                "CM-0103-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            },
+            {
+              "id": "CM-0108-02",
+              "measure": "Implement multi-camera correlation across non-adjacent observation points — matching faces, vehicles, or behavioral signatures across approach routes to detect cutout patterns and walking transitions",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Cross-camera correlation requires coverage density and either operator time or analytics support; privacy considerations apply outside controlled environments",
+              "compensates_for": [
+                "CM-0103-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0108-03",
+              "measure": "Maintain network-level monitoring for access from anonymized IP ranges, Tor exit nodes, or pseudonymous services to high-value internal resources associated with the targeted subject",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Anonymizing services have legitimate uses; alerting must be tuned to context to avoid noise. Sophisticated threat actors will rotate anonymizing infrastructure",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "CM-0108-04",
+              "measure": "Conduct random-interval rotations of surveillance detection observation positions, vehicles, and personnel to defeat threat-actor pattern modeling of the protective surveillance team itself",
+              "category": "preventive",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Rotations create coverage gaps if not coordinated; sophisticated threat actors may infer the rotation schedule itself given enough observations",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -1865,8 +2843,65 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
-          "response_protocols": []
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021",
+            "CISA-CONVERGE-2021",
+            "CERT-CSG-7-2022"
+          ],
+          "response_protocols": [
+            {
+              "id": "RP-0108-01",
+              "trigger": "Single Surveillance Detection Countermeasure indicator detected (over-engineered variance, walking transition, cutout pattern, technical-surrogate reconnaissance)",
+              "action": "Document the indicator. Conduct a 5-business-day preliminary assessment that includes (a) corroboration through additional observation, (b) cross-camera or multi-source correlation where available, (c) baseline review of any threat actor candidate. SD-CM behavior is itself a high-confidence signal of operational sophistication; treat the detection threshold accordingly.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "security_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "SD-CM activity confirmed across multiple observation points OR concurrent with other Phase 1 indicators.",
+              "coordinates_with": [
+                "RP-0103-01"
+              ],
+              "legal_notes": "Detection of SD-CM behavior raises the inferred sophistication of the threat actor and may justify enhanced monitoring within legal scope. Document the basis for any escalation. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0108-02",
+              "trigger": "Multiple SD-CM indicators co-observed for the same threat actor OR SD-CM behavior coupled with confirmed environmental survey or capability acquisition",
+              "action": "Convene the threat management team. Treat SD-CM presence as evidence of operational sophistication. Implement enhanced protective posture including SD team rotation and coverage tightening. Coordinate with law enforcement to share the SD-CM signature; an externally-coordinated threat actor may be in scope of broader investigation.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Threat actor demonstrates sophistication consistent with prior coordinated cases OR signature ties to a known threat actor or affiliated network.",
+              "coordinates_with": [
+                "RP-0103-02",
+                "RP-0101-02"
+              ],
+              "legal_notes": "Sharing surveillance signatures with law enforcement may carry information-sharing obligations or restrictions depending on jurisdiction and case context. Document the indicator constellation and observation conditions. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "field_notes": "Surveillance Detection Countermeasures sort into three families: behavior obfuscation (varied routes, varied times, vehicle rotation, walk-then-drive transitions), persona obfuscation (cover stories, third-party proxies, fabricated employer affiliations to explain proximity to the target environment), and technical obfuscation (VPNs, Tor, burner phones, satellite or Street View imagery substituted for physical visits). The behavioral tell that separates a threat actor running SD-CMs from a careful private citizen is consistency — the threat actor varies the SAME behavior repeatedly in ways a private citizen would not, because the threat actor is solving for a specific surveillance-detection problem they expect the protected environment to have. An investigator catches SD-CM behavior by looking for over-engineered variance: too many vehicle changes for a single visit, too many short-distance walks before reaching the actual destination, too many cover stories that do not need to be cover stories. Detection of SD-CM behavior is itself a high-confidence indicator that the threat actor has reached operational sophistication and assumes a protective program is active around the targeted subject.",
+          "observed_contexts": [
+            "executive protection case where the threat actor performed three vehicle changes within a four-mile corridor en route to repeated drive-bys of the targeted subject's residence",
+            "domestic case where the threat actor used a relative as a cutout to call the targeted subject's workplace and ask schedule-related questions, then later denied any such call had been made",
+            "insider-supported case where the threat actor relied entirely on satellite imagery and Street View for environmental survey to avoid generating any physical-observation signal",
+            "[literature: NTAC-MASS-2021 — pre-attack pattern of varied approaches and counter-surveillance behaviors observed in higher-sophistication mass attack cases]",
+            "extremist case where the threat actor used Tor and pseudonymous social media for all targeted-subject reconnaissance, with no clear-net signal until very late in the planning cycle"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0201",
@@ -3339,7 +4374,7 @@
               "priority": "urgent"
             }
           ],
-          "field_notes": "Response suppression is the tactic that decides whether an attack succeeds in the planned window or gets interrupted before objectives are reached. The signals you catch ahead of execution are usually procurement-related — RF jammers, signal blockers, and communications equipment that has no legitimate civilian use. Concurrent with that, you see surveillance of the response apparatus itself: who arrives first, by what route, how fast. The tactic resolves at execution when comms drop, a diversionary call gets staged, or barriers appear at egress points. After-action reviews are where most response suppression gets recognized retrospectively — the dispatch log shows the call that pulled units away, or the radio log shows the moment communications failed.",
+          "field_notes": "Response suppression is the tactic that buys the threat actor more time on objective by delaying or degrading the security or law-enforcement response. The methods range from low-tech — a diversionary 911 call to a different address, a vehicle parked across an ingress lane, a fire alarm pulled at the wrong end of the building — to high-tech — RF jamming, cyber-disabling of cameras and access control, or spoofed dispatch calls. The pre-execution signal a threat management team is most likely to surface depends on which method is in play: procurement records and online research surface the technical methods, peer reports and physical surveillance surface the low-tech ones. Most cases of response suppression are recognized only in after-action review — when the dispatch log shows the call that pulled units away, or the radio log shows the moment communications failed.",
           "observed_contexts": [
             "active shooter pre-attack period where the threat actor researched or acquired RF jamming equipment to disrupt facility security communications",
             "sophisticated insider attack scenario where building security systems were probed for weeks before being disabled at execution",
