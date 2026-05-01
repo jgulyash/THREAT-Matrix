@@ -36,7 +36,8 @@
               ],
               "source_refs": [
                 "FEIN-VOSSEKUIL-1999",
-                "NTAC-MASS-2021"
+                "NTAC-MASS-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -52,7 +53,8 @@
               ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
-                "MELOY-TRAP18-2016"
+                "MELOY-TRAP18-2016",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -68,7 +70,8 @@
                 "target_development"
               ],
               "source_refs": [
-                "MELOY-TRAP18-2016"
+                "MELOY-TRAP18-2016",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -86,7 +89,8 @@
               "source_refs": [
                 "NTAC-MASS-2021",
                 "NTAC-AVERTED-2021",
-                "FBI-PREATTACK-2018"
+                "FBI-PREATTACK-2018",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -103,7 +107,8 @@
               ],
               "source_refs": [
                 "NTAC-SCHOOLS-2019",
-                "NTAC-AVERTED-2021"
+                "NTAC-AVERTED-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -119,7 +124,8 @@
               ],
               "source_refs": [
                 "CERT-CSG-7-2022",
-                "CISA-DIT-2023"
+                "CISA-DIT-2023",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -134,7 +140,8 @@
               "time_to_implement": "days",
               "limitations": "Cannot eliminate all public records. Determined adversary can still aggregate partial information from multiple sources.",
               "source_refs": [
-                "CISA-CONVERGE-2021"
+                "CISA-CONVERGE-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ],
               "phase_relevance": [
                 "target_development"
@@ -151,7 +158,8 @@
               "time_to_implement": "weeks",
               "limitations": "Only captures public posts. Encrypted messaging and private communications are not visible. False positive rate is high without human analyst review.",
               "source_refs": [
-                "CISA-CONVERGE-2021"
+                "CISA-CONVERGE-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ],
               "phase_relevance": [
                 "target_development",
@@ -171,7 +179,8 @@
               "source_refs": [
                 "NTAC-MASS-2021",
                 "ASIS-WVPI-2021",
-                "CERT-CSG-7-2022"
+                "CERT-CSG-7-2022",
+                "GULYASH-FIELD-OPS-2004-2026"
               ],
               "phase_relevance": [
                 "target_development",
@@ -190,7 +199,8 @@
               "limitations": "Briefings raise awareness but do not prevent a determined actor from conducting research. Must be refreshed periodically to maintain vigilance.",
               "source_refs": [
                 "NTAC-SYSTEMS-2020",
-                "FEIN-VOSSEKUIL-HOLDEN-1995"
+                "FEIN-VOSSEKUIL-HOLDEN-1995",
+                "GULYASH-FIELD-OPS-2004-2026"
               ],
               "phase_relevance": [
                 "target_development"
@@ -208,7 +218,8 @@
               "limitations": "Insiders with legitimate access may not trigger alerts. Requires baseline behavior modeling to detect anomalies effectively.",
               "source_refs": [
                 "CERT-CSG-7-2022",
-                "NITTF-GUIDE-2017"
+                "NITTF-GUIDE-2017",
+                "GULYASH-FIELD-OPS-2004-2026"
               ],
               "phase_relevance": [
                 "target_development"
@@ -325,7 +336,8 @@
             "NTAC-MASS-2021",
             "MELOY-TRAP18-2016",
             "FBI-PREATTACK-2018",
-            "CERT-CSG-7-2022"
+            "CERT-CSG-7-2022",
+            "GULYASH-FIELD-OPS-2004-2026"
           ],
           "response_protocols": [
             {
@@ -340,7 +352,8 @@
               "legal_notes": "Document observations factually. Do not characterize mental health status. Ensure reporting channel complies with organizational anti-retaliation policy. If the threat actor is an employee, consult HR before any direct engagement. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "NTAC-SYSTEMS-2020",
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ],
               "priority": "priority"
             },
@@ -359,7 +372,8 @@
               "source_refs": [
                 "ASIS-WVPI-2021",
                 "NITTF-GUIDE-2017",
-                "FEIN-VOSSEKUIL-HOLDEN-1995"
+                "FEIN-VOSSEKUIL-HOLDEN-1995",
+                "GULYASH-FIELD-OPS-2004-2026"
               ],
               "priority": "immediate"
             },
@@ -379,7 +393,8 @@
               "legal_notes": "Coordinate all interdiction actions through law enforcement. Ensure any access revocation follows established procedures to preserve evidence and protect against wrongful termination claims. Document the imminent threat assessment that triggered emergency measures. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "ASIS-WVPI-2021",
-                "NITTF-GUIDE-2017"
+                "NITTF-GUIDE-2017",
+                "GULYASH-FIELD-OPS-2004-2026"
               ],
               "priority": "urgent"
             }
@@ -590,7 +605,8 @@
               "compensates_for": [],
               "source_refs": [
                 "NTAC-MASS-2021",
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -610,7 +626,8 @@
                 "CM-0101-02"
               ],
               "source_refs": [
-                "CISA-CONVERGE-2021"
+                "CISA-CONVERGE-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -1212,7 +1229,8 @@
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
-                "FBI-PREATTACK-2018"
+                "FBI-PREATTACK-2018",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -1232,7 +1250,8 @@
               ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
-                "NTAC-AVERTED-2021"
+                "NTAC-AVERTED-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -1254,7 +1273,8 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023",
-                "NITTF-GUIDE-2017"
+                "NITTF-GUIDE-2017",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -1275,7 +1295,8 @@
               "compensates_for": [],
               "source_refs": [
                 "CERT-CSG-7-2022",
-                "NITTF-GUIDE-2017"
+                "NITTF-GUIDE-2017",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -1294,7 +1315,8 @@
               "compensates_for": [],
               "source_refs": [
                 "NTAC-SCHOOLS-2019",
-                "NTAC-MASS-2021"
+                "NTAC-MASS-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -1315,7 +1337,8 @@
               ],
               "source_refs": [
                 "CERT-CSG-7-2022",
-                "NITTF-GUIDE-2017"
+                "NITTF-GUIDE-2017",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -1335,7 +1358,8 @@
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -1497,7 +1521,8 @@
               "legal_notes": "Illegal weapon acquisition and certain IED precursor combinations carry mandatory reporting obligations in many jurisdictions. Document the indicator constellation that drove escalation. Preserve evidence of the original observations. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "NTAC-SYSTEMS-2020",
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -1585,7 +1610,8 @@
               ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
-                "NTAC-MASS-2021"
+                "NTAC-MASS-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -1626,7 +1652,8 @@
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
-                "CERT-CSG-7-2022"
+                "CERT-CSG-7-2022",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -1666,7 +1693,8 @@
               "compensates_for": [],
               "source_refs": [
                 "CERT-CSG-7-2022",
-                "NITTF-GUIDE-2017"
+                "NITTF-GUIDE-2017",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -1687,7 +1715,8 @@
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -1706,7 +1735,8 @@
               "compensates_for": [],
               "source_refs": [
                 "CISA-CONVERGE-2021",
-                "FBI-PREATTACK-2018"
+                "FBI-PREATTACK-2018",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -1725,7 +1755,8 @@
               "compensates_for": [],
               "source_refs": [
                 "CERT-CSG-7-2022",
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -1824,7 +1855,8 @@
               "legal_notes": "Investigation of personal associations carries privacy implications; coordinate with legal before any inquiry beyond the immediate observation. Document factually. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "NITTF-GUIDE-2017",
-                "NTAC-SYSTEMS-2020"
+                "NTAC-SYSTEMS-2020",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -1848,7 +1880,8 @@
               "source_refs": [
                 "NITTF-GUIDE-2017",
                 "NTAC-SYSTEMS-2020",
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -2053,7 +2086,8 @@
               "limitations": "Pre-coordination overhead can slow legitimate operations; emergency or unscheduled visits create gaps in coverage",
               "compensates_for": [],
               "source_refs": [
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -2072,7 +2106,8 @@
               "compensates_for": [],
               "source_refs": [
                 "ASIS-WVPI-2021",
-                "CERT-CSG-7-2022"
+                "CERT-CSG-7-2022",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -2190,7 +2225,8 @@
               "legal_notes": "Pretexting and trespass laws vary; some jurisdictions criminalize cover construction at protected sites independently of intent. Preserve evidence carefully. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "ASIS-WVPI-2021",
-                "NTAC-SYSTEMS-2020"
+                "NTAC-SYSTEMS-2020",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -2237,7 +2273,8 @@
               ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
-                "FEIN-VOSSEKUIL-1999"
+                "FEIN-VOSSEKUIL-1999",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -2259,7 +2296,8 @@
               ],
               "source_refs": [
                 "FEIN-VOSSEKUIL-1999",
-                "FBI-PREATTACK-2018"
+                "FBI-PREATTACK-2018",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -2282,7 +2320,8 @@
               "source_refs": [
                 "NTAC-MASS-2021",
                 "FBI-PREATTACK-2018",
-                "MELOY-TRAP18-2016"
+                "MELOY-TRAP18-2016",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -2302,7 +2341,8 @@
               ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
-                "FBI-PREATTACK-2018"
+                "FBI-PREATTACK-2018",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -2323,7 +2363,8 @@
               ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
-                "NTAC-SCHOOLS-2019"
+                "NTAC-SCHOOLS-2019",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -2343,7 +2384,8 @@
                 "IND-0101-03"
               ],
               "source_refs": [
-                "MELOY-TRAP18-2016"
+                "MELOY-TRAP18-2016",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -2364,7 +2406,8 @@
               ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
-                "NTAC-MASS-2021"
+                "NTAC-MASS-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -2385,7 +2428,8 @@
               "compensates_for": [],
               "source_refs": [
                 "MELOY-TRAP18-2016",
-                "FEIN-VOSSEKUIL-HOLDEN-1995"
+                "FEIN-VOSSEKUIL-HOLDEN-1995",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -2406,7 +2450,8 @@
               ],
               "source_refs": [
                 "FEIN-VOSSEKUIL-HOLDEN-1995",
-                "NTAC-SYSTEMS-2020"
+                "NTAC-SYSTEMS-2020",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -2426,7 +2471,8 @@
               "source_refs": [
                 "NTAC-MASS-2021",
                 "ASIS-WVPI-2021",
-                "CERT-CSG-7-2022"
+                "CERT-CSG-7-2022",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -2445,7 +2491,8 @@
               "compensates_for": [],
               "source_refs": [
                 "NTAC-SYSTEMS-2020",
-                "MELOY-TRAP18-2016"
+                "MELOY-TRAP18-2016",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -2525,7 +2572,8 @@
               "legal_notes": "Pathway-stage determinations are protective intelligence assessments, not clinical or psychiatric findings — document them as observable behavior patterns, not mental health characterizations. If the threat actor is an employee, coordinate with HR before any direct engagement. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "MELOY-TRAP18-2016",
-                "NTAC-SYSTEMS-2020"
+                "NTAC-SYSTEMS-2020",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -2549,7 +2597,8 @@
               "source_refs": [
                 "MELOY-TRAP18-2016",
                 "NTAC-SYSTEMS-2020",
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -2754,7 +2803,8 @@
               "compensates_for": [],
               "source_refs": [
                 "CISA-CONVERGE-2021",
-                "CERT-CSG-7-2022"
+                "CERT-CSG-7-2022",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -2997,12 +3047,13 @@
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
-                "FBI-PREATTACK-2018"
+                "FBI-PREATTACK-2018",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
               "id": "IND-0201-05",
-              "behavior": "Threat actor uses stand-in targets — a similar building, similar vehicle, or similar individual — to rehearse execution without prematurely revealing intent",
+              "behavior": "Threat actor uses stand-in targets — a comparable building or vehicle, a sim prop, or a role-player mimicking the individual — to rehearse execution without prematurely revealing intent",
               "category": "planning",
               "detection_sources": [
                 "peer_report",
@@ -3238,7 +3289,7 @@
               ]
             }
           ],
-          "field_notes": "Operational Rehearsal is the threat actor's dress rehearsal — a partial or full walkthrough of the planned attack to test the plan against reality. It is often only recognizable in retrospect: the person sitting in the coffee shop across from the targeted subject's office didn't draw attention at the time; only after the attack does the cashier remember the man who came in three Tuesdays in a row, ordered the same drink, sat by the window, and left without finishing it. Most rehearsals are partial — the threat actor practices the breach but not the egress, or times the security shift but not the actual approach. Full rehearsals are rarer because they require operational artifacts (uniforms, weapons, vehicles) that themselves create detection signal. Detection depends on behavioral-baseline awareness around the targeted subject's environment — recognizing repeated presence at consistent times that no normal activity explains.",
+          "field_notes": "Operational Rehearsal is the threat actor's dress rehearsal — a partial or full walkthrough of the planned attack to test the plan against reality. It is often only recognizable in retrospect: the person sitting in the coffee shop across from the targeted subject's office didn't draw attention at the time; only after the attack does the cashier remember the man who came in three Tuesdays in a row, ordered the same drink, sat by the window, and left without finishing it. Most rehearsals are partial — the threat actor practices the breach but not the egress, or times the security shift but not the actual approach. Full rehearsals are rarer because they require operational artifacts (uniforms, weapons, vehicles) that themselves create detection signal. What an analyst is looking for is repeated presence at consistent times that no normal activity explains.",
           "observed_contexts": [
             "executive protection case where the threat actor was identified after the attack as having visited the targeted subject's office building and adjacent coffee shop on multiple consecutive Tuesdays",
             "workplace violence case where the threat actor performed weapon function checks at a remote rural site weeks before the attack, identified retrospectively through purchase records of range-style ammunition the threat actor had no documented sporting use for",
@@ -3299,7 +3350,8 @@
               ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
-                "CERT-CSG-7-2022"
+                "CERT-CSG-7-2022",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -3374,7 +3426,8 @@
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
-                "FBI-PREATTACK-2018"
+                "FBI-PREATTACK-2018",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -3398,7 +3451,8 @@
               "source_refs": [
                 "NTAC-MASS-2021",
                 "ASIS-WVPI-2021",
-                "CERT-CSG-7-2022"
+                "CERT-CSG-7-2022",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -3419,7 +3473,8 @@
               ],
               "source_refs": [
                 "CERT-CSG-7-2022",
-                "NITTF-GUIDE-2017"
+                "NITTF-GUIDE-2017",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -3456,7 +3511,8 @@
               "compensates_for": [],
               "source_refs": [
                 "FBI-PREATTACK-2018",
-                "CERT-CSG-7-2022"
+                "CERT-CSG-7-2022",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -3598,7 +3654,8 @@
               "legal_notes": "Concealment is rarely unlawful in itself; the response posture is preventive intelligence, not criminal investigation, until concrete operational indicators surface. Document the indicator constellation thoroughly. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "NTAC-SYSTEMS-2020",
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -3745,7 +3802,8 @@
               ],
               "source_refs": [
                 "CERT-CSG-7-2022",
-                "NITTF-GUIDE-2017"
+                "NITTF-GUIDE-2017",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -3766,7 +3824,8 @@
               "compensates_for": [],
               "source_refs": [
                 "ASIS-WVPI-2021",
-                "LLNL-TR-858139"
+                "LLNL-TR-858139",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -3784,7 +3843,8 @@
               "limitations": "Random-interval checks have coverage gaps; sophisticated threat actors may infer the inspection cadence given enough observations",
               "compensates_for": [],
               "source_refs": [
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -3805,7 +3865,8 @@
               ],
               "source_refs": [
                 "ASIS-WVPI-2021",
-                "CERT-CSG-7-2022"
+                "CERT-CSG-7-2022",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -3823,7 +3884,8 @@
               "limitations": "Mantrap vestibules slow legitimate operations and may be bypassed via emergency exits or coordinated insider tailgating",
               "compensates_for": [],
               "source_refs": [
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -3964,7 +4026,8 @@
               "legal_notes": "Lockdown and emergency response are protective actions that do not require law enforcement authorization. Document the basis for initiating emergency protocols. Pretexting at protected sites and trespass into restricted areas may carry independent criminal liability; preserve evidence carefully. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "ASIS-WVPI-2021",
-                "NTAC-SYSTEMS-2020"
+                "NTAC-SYSTEMS-2020",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -4081,7 +4144,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -4163,7 +4228,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -4268,7 +4335,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -4349,7 +4418,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -4455,7 +4526,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -4540,7 +4613,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -4594,7 +4669,8 @@
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
-                "FBI-PREATTACK-2018"
+                "FBI-PREATTACK-2018",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -4613,7 +4689,8 @@
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
-                "LLNL-TR-858139"
+                "LLNL-TR-858139",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -4636,7 +4713,7 @@
             },
             {
               "id": "IND-0301-05",
-              "behavior": "Threat actor displays announced or visible commitment markers — verbal declaration of intent to harm, operational dress, weapon presentation — at the location of the targeted subject",
+              "behavior": "Threat actor displays announced or visible commitment markers — verbal declaration of intent to harm, operationally appropriate clothing (tactical gear, body armor, concealment apparel), weapon presentation — at the location of the targeted subject",
               "category": "behavioral_change",
               "detection_sources": [
                 "physical_observation",
@@ -4651,7 +4728,8 @@
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
-                "FBI-PREATTACK-2018"
+                "FBI-PREATTACK-2018",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -4673,7 +4751,8 @@
               ],
               "source_refs": [
                 "ASIS-WVPI-2021",
-                "NTAC-MASS-2021"
+                "NTAC-MASS-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -4711,12 +4790,13 @@
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
               "id": "CM-0301-04",
-              "measure": "Maintain medical-response readiness including trauma kits, hemorrhage-control supplies, AED equipment, and pre-coordinated emergency medical service arrival paths from the protected environment",
+              "measure": "Maintain medical-response readiness including trauma kits, hemorrhage-control supplies, AEDs, and pre-coordinated emergency medical service arrival paths from the protected environment",
               "category": "corrective",
               "domain": "policy_procedure",
               "cost": "medium",
@@ -4728,7 +4808,8 @@
               "limitations": "Medical response capability is bounded by training, supply availability, and the time to hospital. Mass-casualty events overwhelm local resources",
               "compensates_for": [],
               "source_refs": [
-                "NTAC-MASS-2021"
+                "NTAC-MASS-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -4834,7 +4915,8 @@
               "source_refs": [
                 "ASIS-WVPI-2021",
                 "NTAC-SYSTEMS-2020",
-                "NTAC-MASS-2021"
+                "NTAC-MASS-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -4857,7 +4939,8 @@
               "legal_notes": "Mass-casualty incidents trigger overlapping federal, state, and local jurisdiction with mandatory reporting obligations. Preserve evidence under chain-of-custody discipline. External communications must be coordinated with law enforcement to avoid prejudicing investigation. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "NTAC-MASS-2021",
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -4969,7 +5052,9 @@
               "relevance": "medium"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -5054,7 +5139,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -5111,7 +5198,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -5143,7 +5232,8 @@
                 "execution"
               ],
               "source_refs": [
-                "CISA-CONVERGE-2021"
+                "CISA-CONVERGE-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -5160,7 +5250,8 @@
                 "mobilization"
               ],
               "source_refs": [
-                "NTAC-MASS-2021"
+                "NTAC-MASS-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -5175,7 +5266,8 @@
                 "execution"
               ],
               "source_refs": [
-                "NTAC-MASS-2021"
+                "NTAC-MASS-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -5193,7 +5285,8 @@
               ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
-                "LLNL-TR-858139"
+                "LLNL-TR-858139",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -5208,7 +5301,8 @@
                 "execution"
               ],
               "source_refs": [
-                "NTAC-MASS-2021"
+                "NTAC-MASS-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -5223,7 +5317,8 @@
               "time_to_implement": "weeks",
               "limitations": "Redundancy increases cost and training burden. Staff must be drilled on failover procedures. Satellite phones have latency and coverage limitations indoors.",
               "source_refs": [
-                "CISA-CONVERGE-2021"
+                "CISA-CONVERGE-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ],
               "phase_relevance": [
                 "execution"
@@ -5240,7 +5335,8 @@
               "time_to_implement": "months",
               "limitations": "Mutual aid response times vary. On-site response capability requires trained personnel and may not be feasible for all facility types.",
               "source_refs": [
-                "NTAC-MASS-2021"
+                "NTAC-MASS-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ],
               "phase_relevance": [
                 "execution"
@@ -5258,7 +5354,8 @@
               "limitations": "Sophisticated adversary can disable tamper detection as part of the suppression. Alerts are only useful if monitored in real time by personnel who can act.",
               "source_refs": [
                 "CISA-CONVERGE-2021",
-                "LLNL-TR-858139"
+                "LLNL-TR-858139",
+                "GULYASH-FIELD-OPS-2004-2026"
               ],
               "phase_relevance": [
                 "target_development",
@@ -5277,7 +5374,8 @@
               "time_to_implement": "weeks",
               "limitations": "Exercises build capability but cannot replicate the stress and confusion of a real attack. Frequency must be maintained to prevent skill decay.",
               "source_refs": [
-                "NTAC-MASS-2021"
+                "NTAC-MASS-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ],
               "phase_relevance": [
                 "mobilization",
@@ -5348,7 +5446,8 @@
           "source_refs": [
             "NTAC-MASS-2021",
             "LLNL-TR-858139",
-            "CISA-CONVERGE-2021"
+            "CISA-CONVERGE-2021",
+            "GULYASH-FIELD-OPS-2004-2026"
           ],
           "response_protocols": [
             {
@@ -5363,7 +5462,8 @@
               "escalation_trigger": "Communications failure confirmed as intentional (jamming detected) or concurrent with confirmed hostile act. Transition to active threat response.",
               "legal_notes": "Lockdown and shelter-in-place are protective actions that do not require law enforcement authorization. Document the decision basis for initiating emergency protocols. If RF jamming is detected, report to FCC and law enforcement as it is a federal crime (47 USC 333). This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
-                "CISA-CONVERGE-2021"
+                "CISA-CONVERGE-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ],
               "priority": "urgent"
             },
@@ -5378,7 +5478,8 @@
               "escalation_trigger": "Diversionary incident confirmed as staged or suspicious activity at primary facility escalates. Activate full emergency response.",
               "legal_notes": "Communicate the diversionary assessment to law enforcement dispatch clearly and factually. Do not speculate on the diversion in external communications. If the diversionary incident causes real harm, it must still receive appropriate emergency response from mutual aid resources. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
-                "NTAC-MASS-2021"
+                "NTAC-MASS-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ],
               "priority": "urgent"
             }
@@ -5471,7 +5572,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -5549,7 +5652,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -5635,7 +5740,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -5705,7 +5812,8 @@
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
-                "FBI-PREATTACK-2018"
+                "FBI-PREATTACK-2018",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -5783,7 +5891,8 @@
               "compensates_for": [],
               "source_refs": [
                 "NTAC-MASS-2021",
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -5817,7 +5926,8 @@
               "limitations": "Engagement decisions during withdrawal carry use-of-force and bystander-safety implications. Recording fidelity under stress is variable",
               "compensates_for": [],
               "source_refs": [
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -5955,7 +6065,8 @@
               "legal_notes": "Post-incident investigation carries chain-of-custody requirements for any artifact recovered. Information sharing with law enforcement should follow established protocols. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "NTAC-SYSTEMS-2020",
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -6001,7 +6112,8 @@
               ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
-                "CERT-CSG-7-2022"
+                "CERT-CSG-7-2022",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -6073,7 +6185,8 @@
               ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
-                "CERT-CSG-7-2022"
+                "CERT-CSG-7-2022",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -6113,7 +6226,8 @@
               "compensates_for": [],
               "source_refs": [
                 "ASIS-WVPI-2021",
-                "NTAC-SYSTEMS-2020"
+                "NTAC-SYSTEMS-2020",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -6133,7 +6247,8 @@
               ],
               "source_refs": [
                 "CERT-CSG-7-2022",
-                "NITTF-GUIDE-2017"
+                "NITTF-GUIDE-2017",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -6151,7 +6266,8 @@
               "compensates_for": [],
               "source_refs": [
                 "CISA-CONVERGE-2021",
-                "FBI-PREATTACK-2018"
+                "FBI-PREATTACK-2018",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -6274,7 +6390,8 @@
               "legal_notes": "Chain-of-custody integrity is critical for any subsequent prosecution. Post-incident monitoring of the threat actor and associates carries jurisdiction-specific authorization requirements. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "ASIS-WVPI-2021",
-                "NTAC-SYSTEMS-2020"
+                "NTAC-SYSTEMS-2020",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             },
             {
@@ -6295,7 +6412,8 @@
               "legal_notes": "Expanded searches under legal process require probable cause supported by documented evidence-management indicators. Coordinate with prosecutors before any covert action. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
                 "NTAC-SYSTEMS-2020",
-                "CERT-CSG-7-2022"
+                "CERT-CSG-7-2022",
+                "GULYASH-FIELD-OPS-2004-2026"
               ]
             }
           ],
@@ -6401,7 +6519,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -6484,7 +6604,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -6569,7 +6691,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -6655,7 +6779,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -6717,7 +6843,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -6776,7 +6904,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         },
         {
@@ -6854,7 +6984,9 @@
               "relevance": "high"
             }
           ],
-          "source_refs": [],
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+          ],
           "response_protocols": []
         }
       ]
