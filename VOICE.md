@@ -106,11 +106,13 @@ This rule is enforced retroactively. Any pre-canonical wording surfaced during a
 
 ## Rule 6 — Voice variety palette (anti pattern-collapse)
 
-**The framework will scale to 150+ tactics. If 30% of tactics open the same way, the corpus reads as Mad-Libs and the voice fails — irrespective of whether each individual paragraph is well-written. Variety is enforced at three levels: opener pattern, mid-paragraph pivot, and diction.**
+**The framework will scale to 150+ tactics. If 30% of tactics use the same opener phrase, the corpus reads as Mad-Libs and the voice fails — irrespective of whether each individual paragraph is well-written. Variety is enforced at three levels: opener phrase, mid-paragraph pivot phrase, and diction.**
 
-### Six opener patterns (rotate)
+**Pattern usage is unconstrained — phrase variety is the actual enforcement.** The six opener patterns below are tools, not quotas. Pick the pattern that best fits the tactic. The same pattern may be used for many tactics in a row as long as no opener PHRASE repeats more than three times across the corpus.
 
-Each pattern is voice-compliant under Rules 1–4. Pick one per tactic; rotate across the corpus. No opener PHRASE may repeat more than three times across the full framework.
+### Six opener patterns (pick the best fit)
+
+Each pattern is voice-compliant under Rules 1–4. Pick the pattern that best fits the tactic — pattern frequency is descriptive, not prescriptive. The phrase-level cap (no opener PHRASE repeats more than three times across the full framework) is the variety enforcement.
 
 | # | Pattern | Example | Best for |
 |---|---|---|---|
@@ -179,7 +181,7 @@ Excluded from the rotation: `practitioner` (clinical), `protective intelligence 
 
 ### Three-rule discipline (the standard)
 
-1. **No identical opener PHRASE** appears more than 3 times across the full corpus.
+1. **No identical opener PHRASE** appears more than 3 times across the full corpus. (Pattern usage itself is unconstrained — best fit wins.)
 2. **No mid-paragraph pivot phrase** appears more than 2 times.
 3. **You-address stance** ≤ 15% of tactic `field_notes`.
 
