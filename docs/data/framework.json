@@ -4055,8 +4055,219 @@
           "cpn_id": "CPN-0204",
           "cpn_notes": "Electronic lock bypass and elevator system manipulation extend the actor's reach through security-tiered environments. Physical security systems with digital control planes are vulnerable to zone penetration via cyber methods without physical force.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0204-01",
+              "behavior": "Threat actor's badge is swiped at an access point above the tier authorized for the credential holder, with the holder either physically present or credentials cloned",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0203-03",
+                "IND-0106-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "IND-0204-02",
+              "behavior": "Threat actor moves through interior security tiers via tailgating, escort manipulation, or social engineering of personnel staffing each tier",
+              "category": "access",
+              "detection_sources": [
+                "cctv",
+                "access_logs",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0203-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0204-03",
+              "behavior": "Threat actor uses elevator system manipulation, electronic lock bypass, or door-control system manipulation to defeat tier-internal access controls without force",
+              "category": "access",
+              "detection_sources": [
+                "it_logs",
+                "access_logs",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0204-04",
+              "behavior": "Threat actor's path through the protected environment matches a pre-determined route inconsistent with the destination claimed at perimeter or in visitor logs",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "cctv",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0103-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0204-05",
+              "behavior": "Threat actor accesses interior security infrastructure (camera systems, alarm panels, communication systems) at any point during transit through tiered zones",
+              "category": "access",
+              "detection_sources": [
+                "it_logs",
+                "access_logs",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0305-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0204-06",
+              "behavior": "Threat actor's interior access pattern shows pre-planning artifacts — knowledge of tier topology, badge zone boundaries, supervisory shift changes — inconsistent with a first-time visitor",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "cctv",
+                "access_logs",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0103-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0204-01",
+              "measure": "Implement zone-by-zone access logging with anomaly alerting for badge use at unfamiliar tiers, off-hours interior access, and access patterns inconsistent with the holder's job function",
+              "category": "detective",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development",
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Anomaly tuning requires baseline behavioral data per credential holder; high-turnover environments produce excess false positives",
+              "compensates_for": [
+                "CM-0101-05"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022",
+                "NITTF-GUIDE-2017"
+              ]
+            },
+            {
+              "id": "CM-0204-02",
+              "measure": "Maintain interior CCTV coverage at zone transitions with cross-camera correlation supporting retrospective path reconstruction across the entire protected environment",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Coverage gaps and non-coverage zones (restrooms, executive offices) cannot be addressed by CCTV alone; cross-camera correlation requires either operator time or analytics support",
+              "compensates_for": [
+                "CM-0103-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0204-03",
+              "measure": "Deploy two-factor zone authentication at sensitive-tier transitions — badge plus visual identification, or badge plus biometric — with logging of authentication failures",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Two-factor friction can erode legitimate operations during high-traffic periods; biometric capture has privacy and regulatory implications",
+              "compensates_for": [
+                "CM-0203-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "CM-0204-04",
+              "measure": "Establish escort accountability protocols requiring sponsoring contact identification, visit purpose validation, and continuous-presence requirements within sensitive tiers",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Escort discipline degrades during sustained operations and across shift changes; long-tenure staff may relax verification under social pressure",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -4145,9 +4356,68 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "ASIS-WVPI-2021",
+            "CERT-CSG-7-2022",
+            "CISA-CONVERGE-2021",
+            "NITTF-GUIDE-2017"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0204-01",
+              "trigger": "Single Zone Penetration indicator detected (badge anomaly, cross-camera inconsistency, route mismatch with stated destination)",
+              "action": "Document the indicator. Conduct same-business-day verification of the credential holder, the visit purpose, and the sponsoring contact. Pull cross-camera footage to reconstruct the threat actor's path. Notify the threat assessment team. Activate enhanced posture at adjacent sensitive tiers.",
+              "stakeholders": [
+                "security_operations",
+                "threat_management_team"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Verification fails OR path reconstruction reveals additional unauthorized tier access OR threat actor identity ties to prior threat case.",
+              "coordinates_with": [
+                "RP-0203-01",
+                "RP-0103-01"
+              ],
+              "legal_notes": "Interior CCTV footage and access logs are generally accessible under normal security policy; coordinate with legal before retention or sharing beyond standard policy. Document factually. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "RP-0204-02",
+              "trigger": "Confirmed unauthorized zone penetration OR penetration coupled with capability acquisition, cover construction, or pathway-stage progression",
+              "action": "Activate emergency response. Initiate facility lockdown or containment as appropriate to the tier breached. Notify law enforcement immediately. Implement enhanced protective posture for the targeted subject. Capture and preserve all physical and digital evidence including credentials, vehicles, and devices in the threat actor's possession.",
+              "stakeholders": [
+                "security_operations",
+                "threat_management_team",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "legal"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Penetration reaches the targeted subject's immediate environment OR threat actor demonstrates means and proximity.",
+              "coordinates_with": [
+                "RP-0203-02",
+                "RP-0107-02"
+              ],
+              "legal_notes": "Trespass into restricted areas may carry independent criminal liability; preserve evidence carefully. Use of force by security personnel is governed by jurisdiction-specific authority. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "field_notes": "The signature of Zone Penetration is movement through a building that doesn't match the threat actor's stated reason for being there — a contractor on an executive floor, a vendor in a restricted communications room, a visitor escorted past the meeting room and never seen exiting. Each tier of a layered security design exists because the previous tier admitted someone whose access at the next tier wasn't validated. What an investigator looks for is the badge swipe at a tier above the holder's authorization, the appearance in CCTV at a location the threat actor has no apparent business being, and the timing pattern that suggests the path was rehearsed. Zone Penetration tactics range from low-tech (tailgating one tier, then social-engineering the next) to high-tech (cloning credentials at one tier and using elevator-system manipulation to reach another). The detection difficulty rises with each tier: by the time the threat actor reaches the targeted subject's immediate environment, the upstream tiers have already failed.",
+          "observed_contexts": [
+            "executive protection case where a contractor with valid lobby-tier access tailgated through three interior tiers via successive social engineering of staff at each transition, identified retrospectively through cross-camera correlation",
+            "facility attack where the threat actor cloned a maintenance-tier badge and used elevator-system manipulation to reach an executive floor without ever interacting with reception or escort staff",
+            "insider-conspirator case where an external accomplice was escorted by an insider sponsor through multiple zones with no zone-by-zone verification, allowing access to a sensitive area outside the sponsor's authorization",
+            "[literature: ASIS-WVPI-2021 — recurring pattern of interior tier penetration via tailgating and escort manipulation at workplace violence cases]",
+            "domestic attack at a protected residence where the threat actor entered via the perimeter then defeated three interior locks in sequence using bump-key tools, recognized through audio sensor logs in retrospect"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0205",
@@ -4163,8 +4433,213 @@
           "cpn_id": "CPN-0205",
           "cpn_notes": "Cloned access credentials, spoofed caller ID, and fabricated digital authorization documents enable access elevation without physical contact. Attackers may use digitally-generated fake work orders or appointment confirmations to pass social engineering checkpoints.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0205-01",
+              "behavior": "Threat actor presents a fabricated or borrowed credential to a guard, receptionist, or escort to gain access above the tier their actual status authorizes",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "access_logs",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0106-02",
+                "IND-0203-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0205-02",
+              "behavior": "Threat actor exploits an authorized escort relationship to access a tier the threat actor cannot enter independently — vendor escorted into an executive area, contractor accompanied to a restricted server room",
+              "category": "access",
+              "detection_sources": [
+                "cctv",
+                "access_logs",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0204-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "IND-0205-03",
+              "behavior": "Threat actor uses social engineering — pretexted phone calls, urgent-need framing, name-dropping a senior — to convince personnel to grant access not normally extended",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0102-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0205-04",
+              "behavior": "Threat actor's claimed sponsoring contact does not exist, is uncontactable, or denies the engagement when verified",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0106-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0205-05",
+              "behavior": "Threat actor uses a cloned access credential, fabricated work order, or spoofed appointment confirmation to pass automated or human verification at an access point",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0106-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0205-06",
+              "behavior": "Threat actor's access elevation creates an audit anomaly — a badge holder appearing at a tier inconsistent with role, a visitor with no sponsoring record, a contractor with no work-order match",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0205-01",
+              "measure": "Require sponsoring-contact callback verification for all visitor access at sensitive tiers, with no admission until the sponsoring contact independently confirms the engagement",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Callback verification slows legitimate operations and is often relaxed by reception staff under pressure to admit waiting visitors",
+              "compensates_for": [
+                "CM-0203-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0205-02",
+              "measure": "Implement work-order matching protocols requiring vendor and contractor visits to align with a pre-recorded order in the maintenance system before access is granted",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Requires disciplined work-order entry that contractors may bypass for emergency calls; maintenance system integration adds operational overhead",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0205-03",
+              "measure": "Train reception, escort personnel, and sensitive-tier custodians on common social-engineering pretexts including urgent-need framing, senior-name-dropping, and credential-loss claims",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Training fades; staff turnover requires constant refresh. Effectiveness depends on a culture that empowers personnel to challenge senior-appearing requests",
+              "compensates_for": [
+                "CM-0106-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0205-04",
+              "measure": "Deploy biometric or multi-factor verification at sensitive-tier access points to defeat cloned or borrowed credentials",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "high",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Biometric capture has privacy and regulatory implications; cost and friction may be unjustified for lower-sensitivity tiers",
+              "compensates_for": [
+                "CM-0204-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -4229,9 +4704,68 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "ASIS-WVPI-2021",
+            "CERT-CSG-7-2022",
+            "CISA-CONVERGE-2021"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0205-01",
+              "trigger": "Single Access Elevation indicator detected (sponsoring contact unverifiable, badge tier mismatch, suspected social-engineering attempt)",
+              "action": "Detain the individual politely if on-site; verify identity through independent channels including direct contact with the named sponsoring person. Notify the threat assessment team within the same business hour. Preserve any physical artifacts including credentials, work orders, and business cards. Pull access logs for review.",
+              "stakeholders": [
+                "security_operations",
+                "threat_management_team",
+                "human_resources"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Identity cannot be verified OR access elevation connects to other concerning context (prior surveillance, prior cover construction, prior attempted approach).",
+              "coordinates_with": [
+                "RP-0106-01",
+                "RP-0203-01"
+              ],
+              "legal_notes": "Detention or extended challenge of an individual carries legal implications; coordinate with legal before any action beyond polite verification. Pretexting at protected sites may itself be unlawful in some jurisdictions. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "RP-0205-02",
+              "trigger": "Confirmed access elevation past sensitive-tier controls OR access elevation coupled with capability acquisition or rehearsal indicators",
+              "action": "Activate emergency response. Initiate sensitive-tier lockdown. Notify law enforcement. Implement enhanced protective posture for the targeted subject. Capture all physical and digital evidence including the threat actor's credentials and the audit trail of the elevation pathway. Brief executive leadership.",
+              "stakeholders": [
+                "security_operations",
+                "threat_management_team",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "legal"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Threat actor reaches the targeted subject's tier OR demonstrates means and proximity.",
+              "coordinates_with": [
+                "RP-0106-02",
+                "RP-0203-02"
+              ],
+              "legal_notes": "Pretexting and unauthorized access at protected sites may carry independent criminal liability; preserve evidence under chain-of-custody discipline. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "field_notes": "Access Elevation is the threat actor's exploitation of trust — gaining higher-tier physical access through deception, social engineering, or credential abuse rather than force. What separates Access Elevation from a force-based breach is that there's no physical signal: no broken lock, no climbed fence, no tackled guard. The detection signal is the audit trail: the badge swipe at the wrong tier, the visitor log with a name nobody can verify, the contractor with no matching work order. Access Elevation is constant work for the threat actor because every successful elevation expires when the access window closes; the threat actor is not just gaining access once but maintaining the cover that justifies returning. An investigator catches Access Elevation by treating the audit trail as the primary evidence and validating each elevation against the holder's actual authorization.",
+          "observed_contexts": [
+            "executive protection case where a threat actor presented a stolen contractor badge at reception, was escorted to a senior executive's floor, and was identified only when the escort attempted callback verification post-meeting",
+            "domestic protection case where a threat actor used a pretexted urgent-need claim — claiming to be a family member's friend with a delivery — to gain residence access, identified retrospectively through doorbell camera recovery",
+            "insider-conspirator case where the threat actor's elevation was sponsored by an insider, with the audit trail showing a series of badge swipes at tiers inconsistent with the contractor role on file",
+            "[literature: ASIS-WVPI-2021 — recurring pre-attack pattern of pretexted vendor and contractor access at workplace violence incidents]",
+            "facility attack case where the threat actor used a cloned employee badge to bypass automated verification, with the elevation recognized only after post-incident audit-trail analysis"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0206",
@@ -4246,8 +4780,189 @@
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0206-01",
+              "behavior": "Threat actor is observed in a static position at a location offering line-of-sight, approach angle, or proximity to the targeted subject's anticipated arrival, departure, or routine location",
+              "category": "surveillance",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0103-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0206-02",
+              "behavior": "Threat actor has positioned a vehicle, equipment, or staging materials at the position consistent with sustained occupation rather than transient presence",
+              "category": "surveillance",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0206-03",
+              "behavior": "Threat actor's position is held over a duration inconsistent with normal routine activity at that location — a person at a coffee shop window for three hours, a vehicle in a parking spot with no occupants for an extended period",
+              "category": "surveillance",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0103-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0206-04",
+              "behavior": "Threat actor's position is selected for line-of-sight to a known route, residence, vehicle, or appointment of the targeted subject, with the position itself offering concealment or visual cover",
+              "category": "surveillance",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0103-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0206-05",
+              "behavior": "Threat actor's position behavior shows operational alertness — repeated horizon scanning, communication device monitoring, watch-checking — inconsistent with passive presence",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0206-01",
+              "measure": "Conduct surveillance detection sweeps of known approach corridors and vantage points at consistent intervals, particularly during the targeted subject's routine arrival, departure, and known appointment windows",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Sweep schedules may themselves become observable to the threat actor; trained operators are required to distinguish operational alertness from routine waiting",
+              "compensates_for": [
+                "CM-0103-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0206-02",
+              "measure": "Deploy CCTV coverage of approach angles and likely vantage points associated with the protected environment, with automated alerting for sustained presence beyond a threshold duration",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Sustained-presence thresholds must balance false positives against missing brief positions; coverage gaps in adjacent public space limit effectiveness",
+              "compensates_for": [
+                "CM-0103-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0206-03",
+              "measure": "Train reception, lobby personnel, parking attendants, and adjacent business staff (coffee shops, retail tenants) on indicators of operationally-alert presence inconsistent with patron behavior",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Awareness fades without reinforcement; adjacent business cooperation requires established relationships and may be subject to staff turnover",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0206-04",
+              "measure": "Vary the targeted subject's routine timing and route across observable schedule periods to deny the threat actor a stable position-establishment opportunity",
+              "category": "preventive",
+              "domain": "personnel_security",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Route variation has operational and personal cost for the targeted subject; sophisticated threat actors infer the variation pattern given enough observations",
+              "compensates_for": [
+                "CM-0103-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -4336,9 +5051,68 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021",
+            "FBI-PREATTACK-2018",
+            "ASIS-WVPI-2021",
+            "CISA-CONVERGE-2021"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0206-01",
+              "trigger": "Single Position Establishment indicator detected (sustained presence at a vantage point, staged vehicle with no occupant, operationally-alert behavior at proximity to the targeted subject's routine)",
+              "action": "Document the indicator. Conduct same-business-day verification through additional observation, CCTV review, and cross-camera correlation. Notify the threat assessment team. Activate enhanced surveillance detection at adjacent vantage points. Brief the targeted subject on observed indicator and consider route variation.",
+              "stakeholders": [
+                "security_operations",
+                "threat_management_team",
+                "protective_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Sustained presence confirmed across multiple observations OR position is selected for line-of-sight to the targeted subject's routine.",
+              "coordinates_with": [
+                "RP-0103-01"
+              ],
+              "legal_notes": "Observation of an unidentified person in public space generally requires no legal pre-clearance. Investigative escalation carries jurisdiction-specific privacy implications. Document factually. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0206-02",
+              "trigger": "Confirmed Position Establishment with operational alertness OR position coupled with capability acquisition, rehearsal, or pathway-stage progression",
+              "action": "Convene the threat management team within 24 hours. Conduct full risk assessment. Implement enhanced protective posture including immediate route variation and on-site response capability deployment. Coordinate with law enforcement; sustained position with apparent operational intent is a high-confidence pre-execution signal.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "security_operations",
+                "law_enforcement",
+                "executive_leadership"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Threat actor identified with means and demonstrates intent to act OR transitions from position to approach.",
+              "coordinates_with": [
+                "RP-0103-02",
+                "RP-0301-01",
+                "RP-0107-02"
+              ],
+              "legal_notes": "Pre-execution interruption at Position Establishment carries the highest preventive leverage in the late mobilization window. Document the indicator constellation thoroughly. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
+          "field_notes": "Position Establishment is the final precondition before execution — the threat actor has reached the location, achieved the angle, the proximity, the line-of-sight, and now waits for the final commitment trigger. Everything before this point was movement; everything after is action. The position can be brief (a sniper position held for minutes) or sustained (a surveillance position maintained over days), and the duration shapes detection: brief positions leave little signal, sustained positions create the encounter window where presence becomes observable. The threat actor at this stage is increasingly committed and decreasingly mobile. What an analyst is looking for is the person who has stopped, who has chosen a vantage point, and whose proximity to the targeted subject's environment cannot be explained by routine.",
+          "observed_contexts": [
+            "executive protection case where the threat actor occupied a coffee shop window seat across from the targeted subject's office for three consecutive mornings, identified by the cashier through baseline-awareness training",
+            "domestic case where the threat actor staged a vehicle at a vantage point overlooking the targeted subject's residence for multiple nights, recognized through cross-camera correlation in retrospect",
+            "active shooter event where the threat actor held a position in a parking garage stairwell with line-of-sight to the building entrance for nearly forty minutes before the kinetic moment",
+            "[literature: NTAC-MASS-2021 — pre-attack pattern of static-position observation prior to mass attacks against public spaces]",
+            "facility attack where the threat actor's operational alertness behaviors (horizon scanning, watch-checking) were captured on CCTV but not aggregated to a threat assessment trigger until after-action review"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0207",
@@ -4353,8 +5127,180 @@
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0207-01",
+              "behavior": "Threat actor maintains observable presence near the targeted subject's environment over multiple days or weeks without apparent purpose and without proceeding to action",
+              "category": "surveillance",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0103-01",
+                "IND-0206-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0207-02",
+              "behavior": "Threat actor's presence pattern shows return-after-withdrawal behavior — leaving the area, then returning at a later time matching changed conditions (different shift, different day-of-week, different security posture)",
+              "category": "surveillance",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0103-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            },
+            {
+              "id": "IND-0207-03",
+              "behavior": "Threat actor maintains operational artifacts (vehicle staged, equipment cached, cover identity active) over a duration that suggests sustained pause rather than abandonment",
+              "category": "surveillance",
+              "detection_sources": [
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0206-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0207-04",
+              "behavior": "Threat actor's communications, financial activity, or online behavior shows continued operational tempo — research on the targeted subject, operationally-relevant procurement — inconsistent with a routine waiting period",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "it_logs",
+                "social_media",
+                "financial_records"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0102-02",
+                "IND-0202-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0207-05",
+              "behavior": "Threat actor's pause coincides with observable environmental triggers — increased security posture, public attention to the targeted subject, news of an unrelated similar attack — indicating tactical patience rather than abandonment",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "peer_report",
+                "social_media",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0207-01",
+              "measure": "Maintain elevated surveillance detection posture for an extended period after any concerning indicator surfaces; the threat actor's response to detection may be pause rather than abandonment",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Sustained elevated posture has high resource cost; threat assessment teams cannot maintain peak alertness indefinitely without burnout",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0207-02",
+              "measure": "Track cases through the threat assessment caseload over time rather than closing them prematurely on absence of activity; Operational Pause is one of the most common reasons a case appears to close and then re-emerges",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Caseload size constraints force closure decisions; analyst attention is finite and case re-emergence may not be recognized as the same threat actor without caseload-management discipline",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "CM-0207-03",
+              "measure": "Implement variable security posture across observable schedule periods to deny the threat actor a stable assessment of conditions to wait out",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Variation has operational cost and may itself become observable to a sustained-pause threat actor given enough observations",
+              "compensates_for": [
+                "CM-0201-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            },
+            {
+              "id": "CM-0207-04",
+              "measure": "Conduct periodic re-assessment of cases in pause status, particularly at known trigger windows including anniversary dates, public events involving the targeted subject, and concurrent crisis periods",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Trigger windows are inferred and may not align with the threat actor's actual decision points; re-assessment overhead must be balanced against active-case workload",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -4419,9 +5365,67 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021",
+            "FBI-PREATTACK-2018",
+            "NTAC-SYSTEMS-2020",
+            "ASIS-WVPI-2021"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0207-01",
+              "trigger": "Threat actor in established pause status (case open, indicators previously surfaced, no kinetic activity) shows behavioral change consistent with end of pause — return to environment, resumed operational tempo, environmental trigger event",
+              "action": "Reactivate the case to active monitoring. Brief the threat assessment team on the trigger event. Conduct rapid baseline review of the threat actor's recent communications, movement, and procurement. Implement enhanced protective posture for the targeted subject. Consider pre-emptive coordination with law enforcement.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "security_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Pause-end behavior progresses to position establishment, capability acquisition resumption, or pathway-stage advancement.",
+              "coordinates_with": [
+                "RP-0103-01",
+                "RP-0107-01"
+              ],
+              "legal_notes": "Reactivation of dormant cases must follow caseload-management policy; document the trigger event and behavioral basis for the reactivation decision. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0207-02",
+              "trigger": "Pause ends with confirmed return to operational tempo coupled with capability acquisition, rehearsal, or position establishment at the targeted subject's environment",
+              "action": "Convene the threat management team within 24 hours. Conduct formal threat assessment. Implement enhanced protective posture. Coordinate with law enforcement; pause-end transitions are a high-confidence pre-execution signal because the threat actor is moving from waiting to action.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "legal"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Threat actor demonstrates means and proximity to the targeted subject after pause ends.",
+              "coordinates_with": [
+                "RP-0107-02",
+                "RP-0206-02"
+              ],
+              "legal_notes": "Pause-end activity may not by itself constitute criminal conduct; the response posture is preventive intelligence until concrete operational indicators surface. Document the indicator constellation thoroughly. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
+          "field_notes": "Operational Pause is the tactic that looks like nothing happening — the threat actor has reached position, has the means, and is choosing to wait. The pause is a risk-management decision, not a failure to act: counter-surveillance heat, security posture, environmental conditions, or absence of the targeted subject have produced an unfavorable window, and the threat actor would rather wait for a better one than commit to a degraded operation. The risk for the threat actor is that the pause itself can become a behavioral signature; the same person back at the same vantage across multiple days, with no apparent purpose, generates the very surveillance footprint that prior tactics worked to avoid. For the threat assessment team, Operational Pause creates the longest detection window in the entire operation — the threat actor is in place but not yet acting, and the behavioral baseline has time to surface the anomaly. The hardest case is the pause that ends without execution at all: an aborted operation that leaves no kinetic event to trigger after-action review and may never be recognized as a near-miss.",
+          "observed_contexts": [
+            "executive protection case where the threat actor maintained intermittent presence near the targeted subject's residence over five weeks, with the pause ending only after public attention to an unrelated similar attack triggered a window of distraction",
+            "active shooter case where the threat actor's pause coincided with the targeted facility's enhanced security posture during a public event; the threat actor returned the following week when posture normalized",
+            "domestic case where the threat actor's operational tempo continued (research, procurement, communications) during a multi-month pause where physical proximity to the targeted subject was suspended",
+            "[literature: NTAC-MASS-2021 — pattern of pre-attack delays and stand-downs in mass attack cases, with kinetic moment occurring weeks or months after initial planning consolidation]",
+            "near-miss case where the threat actor aborted entirely after extended pause; recognized only retrospectively when a separate investigation identified the threat actor's pre-attack research patterns matching the protected environment"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0208",
@@ -4437,8 +5441,212 @@
           "cpn_id": "CPN-0208",
           "cpn_notes": "Live event feeds, venue capacity trackers, real-time traffic monitoring, and social media location tagging allow precise execution timing without physical pre-positioning. An actor can confirm the subject's real-time location and security context remotely before committing to approach.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0208-01",
+              "behavior": "Threat actor's approach or operational presence aligns with a security shift change, patrol gap, or response posture rotation at the protected environment",
+              "category": "surveillance",
+              "detection_sources": [
+                "cctv",
+                "physical_observation",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0103-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0208-02",
+              "behavior": "Threat actor's approach coincides with a recurring crowd event (concert, sporting event, holiday gathering) that creates ambient activity at the protected environment",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "cctv",
+                "physical_observation",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0208-03",
+              "behavior": "Threat actor's approach uses an environmental condition (weather, low-light, fog) that degrades observation, response time, or evidence collection",
+              "category": "surveillance",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0208-04",
+              "behavior": "Threat actor's approach is timed to a delivery, contractor visit, or scheduled access event that creates legitimate-appearing ambient presence at perimeter or interior tiers",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0106-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0208-05",
+              "behavior": "Threat actor uses real-time location feeds (social media check-in, live event cameras, public traffic data) to confirm the targeted subject's presence and security context immediately before approach",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "social_media",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0102-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0208-06",
+              "behavior": "Threat actor's pre-approach activity shows monitoring of the targeted subject's schedule, calendar, or routine through digital surveillance consistent with timing-window selection",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0102-01",
+                "IND-0102-06"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0208-01",
+              "measure": "Apply random-interval variation to security shift changes, patrol patterns, and response rotations to defeat threat-actor timing-window capture",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Operational predictability has legitimate value (staff coordination, contractor scheduling); over-randomization erodes effectiveness. Sophisticated threat actors infer the variation pattern given sustained observation",
+              "compensates_for": [
+                "CM-0201-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026"
+              ]
+            },
+            {
+              "id": "CM-0208-02",
+              "measure": "Implement schedule confidentiality and access-information controls for the targeted subject's routine, calendar, and travel patterns to deny the threat actor pattern data needed for timing exploitation",
+              "category": "preventive",
+              "domain": "personnel_security",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "limitations": "Calendar systems with broad organizational access defeat confidentiality controls; family and personal schedules are outside organizational control",
+              "compensates_for": [
+                "CM-0102-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0208-03",
+              "measure": "Coordinate with public event organizers and venue operators on enhanced security posture during identified high-risk crowd events that overlap with the targeted subject's routine",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Coordination depends on advance event identification; spontaneous or pop-up events lack the lead time for joint security planning",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0208-04",
+              "measure": "Maintain real-time monitoring of public location signals (social media tagging, live cameras, OSINT) for the targeted subject to identify when external visibility creates a timing-exploitation window",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Real-time monitoring requires dedicated analyst attention; closed platforms and encrypted services are not visible without legal process",
+              "compensates_for": [
+                "CM-0102-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -4527,9 +5735,69 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021",
+            "FBI-PREATTACK-2018",
+            "ASIS-WVPI-2021",
+            "CISA-CONVERGE-2021"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0208-01",
+              "trigger": "Single Timing Exploitation indicator detected (suspicious approach aligned with known schedule gap, timing-coincident reconnaissance, real-time targeted-subject monitoring)",
+              "action": "Document the indicator. Conduct same-business-day cross-reference against the targeted subject's schedule, the security posture rotation, and any concurrent public event. Notify the threat assessment team. Activate enhanced protective posture during the window in question.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "security_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Timing alignment confirmed across multiple windows OR threat actor identity ties to prior threat case OR concurrent indicators surface from another tactic.",
+              "coordinates_with": [
+                "RP-0102-01",
+                "RP-0103-01"
+              ],
+              "legal_notes": "Schedule and routine analysis is generally accessible under standard security policy; coordinate with legal before any monitoring escalation beyond observation. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0208-02",
+              "trigger": "Multiple Timing Exploitation indicators co-observed for the same threat actor OR confirmed real-time targeted-subject location monitoring coupled with capability acquisition or rehearsal",
+              "action": "Convene the threat management team within 24 hours. Conduct formal threat assessment. Implement enhanced protective posture including immediate route variation and schedule disruption. Coordinate with law enforcement; precise timing alignment is a high-confidence late-mobilization signal.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "legal"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Threat actor approaches during identified timing window OR demonstrates means and proximity at the predicted moment.",
+              "coordinates_with": [
+                "RP-0102-02",
+                "RP-0103-02",
+                "RP-0107-02"
+              ],
+              "legal_notes": "Real-time monitoring of a third party requires authorization under jurisdiction-specific law; coordinate with legal before any active investigative step. Document the indicator constellation. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "field_notes": "Timing Exploitation sorts into windows the threat actor has identified through prior surveillance: shift changes, crowd events, delivery cycles, environmental conditions like weather and lighting, and protective-detail rotations. Each window narrows the response capability available to the targeted subject for a brief, predictable interval. The threat actor's job in this tactic is to align the operation with the window the surveillance and rehearsal phases identified as most favorable — the moment when on-site response is at its lowest, when CCTV coverage shifts, when a predictable delivery creates ambient activity that masks operational presence. Timing Exploitation depends entirely on the upstream tactics: the windows are observable only because TA0102 Subject Profiling and TA0103 Environmental Survey produced the pattern data, and the synchronization is feasible only because TA0201 Operational Rehearsal validated the window in practice. Detection in advance is rare; it usually surfaces after the fact when the post-incident timeline reveals how precisely the threat actor synchronized with a known operational gap.",
+          "observed_contexts": [
+            "active shooter event timed to a security shift change at the protected environment, recognized retrospectively when the post-incident timeline showed the kinetic moment occurred within four minutes of the rotation",
+            "executive protection case where the threat actor monitored the targeted subject's social media check-ins to confirm location at a recurring restaurant before approach, identified through pre-attack OSINT analysis",
+            "facility attack timed to a delivery window where ambient activity at the loading dock masked the threat actor's approach, with after-action review showing the threat actor had observed the delivery pattern over weeks",
+            "[literature: NTAC-MASS-2021 — pattern of pre-attack timing alignment with shift changes and crowd events at mass attack cases]",
+            "domestic case where the threat actor used live traffic data and a public event live-stream to confirm the targeted subject's residence absence before forced entry"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0209",
@@ -4544,8 +5812,185 @@
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0209-01",
+              "behavior": "Threat actor approaches the targeted subject's actual environment, observes security response or absence of response, and withdraws without completing any other operational action",
+              "category": "surveillance",
+              "detection_sources": [
+                "cctv",
+                "physical_observation",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0103-01",
+                "IND-0201-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0209-02",
+              "behavior": "Threat actor's approach pattern repeats across multiple days, occasions, or environmental conditions, with each approach resembling a partial dry run rather than a sustained presence",
+              "category": "surveillance",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0201-06"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0209-03",
+              "behavior": "Threat actor's approach generates an access log anomaly, CCTV appearance, or reception-staff sighting at the targeted subject's environment that does not correspond to a verifiable visit purpose",
+              "category": "surveillance",
+              "detection_sources": [
+                "access_logs",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0103-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0209-04",
+              "behavior": "Threat actor's approach is timed at recognizably different operational windows (different shift change, different day-of-week, different crowd event) consistent with rehearsal of multiple approach variants",
+              "category": "surveillance",
+              "detection_sources": [
+                "cctv",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [
+                "IND-0208-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0209-05",
+              "behavior": "Threat actor abandons or aborts the approach mid-sequence in response to observable security posture or to the threat actor's own assessment of conditions, rather than completing the action",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "cctv",
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0209-01",
+              "measure": "Maintain after-action review of all aborted approach incidents, off-hours unverified visitors, and reception-flagged behaviors to establish a baseline of pre-attack signatures across observable visits",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Hindsight bias inflates the apparent clarity of pre-incident signals; retrospective patterns must be validated against negative cases to remain operationally useful",
+              "compensates_for": [
+                "CM-0201-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "CM-0209-02",
+              "measure": "Implement cross-camera correlation across days and weeks to identify repeat approach patterns by the same threat actor — same face, same vehicle, same approach signature",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Multi-day correlation requires retention beyond standard CCTV policy and either operator time or analytics support; sophisticated threat actors rotate vehicles and clothing to defeat correlation",
+              "compensates_for": [
+                "CM-0201-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0209-03",
+              "measure": "Train reception and security personnel on partial approach indicators including the visitor who arrives, asks routine questions, and leaves without completing a stated purpose",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Awareness fades; high-traffic environments produce many such visitors with benign explanations, and reception staff must distinguish operational rehearsal from routine visitor patterns",
+              "compensates_for": [
+                "CM-0201-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0209-04",
+              "measure": "Establish low-threshold reporting of any visitor whose stated purpose dissolves on inquiry; the unverifiable visit that ends in withdrawal is the partial-approach signature",
+              "category": "detective",
+              "domain": "behavioral_intervention",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Reporting threshold must be calibrated against false positives; many benign visitors abandon visits for legitimate reasons and would be misclassified",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -4614,9 +6059,68 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021",
+            "FBI-PREATTACK-2018",
+            "ASIS-WVPI-2021",
+            "NTAC-SYSTEMS-2020"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0209-01",
+              "trigger": "Single Partial Approach Rehearsal indicator detected (visitor arrived and withdrew without completing purpose, repeat approach pattern observed, access-log anomaly tied to no verifiable visit)",
+              "action": "Document the indicator. Conduct same-business-day verification against visitor logs, sponsoring contacts, and access-log records. Pull cross-camera footage for the approach window. Notify the threat assessment team. Activate enhanced posture at the affected access points.",
+              "stakeholders": [
+                "security_operations",
+                "threat_management_team"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Partial approach pattern confirmed across multiple incidents OR threat actor identity ties to prior threat case OR concurrent indicators surface from another tactic.",
+              "coordinates_with": [
+                "RP-0103-01",
+                "RP-0201-01"
+              ],
+              "legal_notes": "Visitor logs and access records are accessible under standard security policy; coordinate with legal before any investigative escalation beyond observation. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "RP-0209-02",
+              "trigger": "Multiple partial approach rehearsals confirmed for the same threat actor OR partial approach coupled with capability acquisition, position establishment, or pathway-stage progression",
+              "action": "Convene the threat management team within 24 hours. Conduct formal threat assessment. Implement enhanced protective posture including immediate access-point hardening, schedule variation, and on-site response capability. Coordinate with law enforcement; partial approach rehearsal is a high-confidence late-mobilization signal that the threat actor is testing final commitment conditions.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "legal"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Threat actor's next approach reaches deeper into the environment OR demonstrates transition from rehearsal to commitment.",
+              "coordinates_with": [
+                "RP-0201-02",
+                "RP-0107-02",
+                "RP-0206-02"
+              ],
+              "legal_notes": "Pre-execution interruption at Partial Approach Rehearsal carries the highest preventive leverage in the late mobilization window because the threat actor is generating observable evidence of intent. Document the indicator constellation thoroughly. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
+          "field_notes": "Partial Approach Rehearsal is a live dress rehearsal at the targeted subject's actual environment — the threat actor approaches, observes the security response, and withdraws without completing the operation, sometimes repeated multiple times before final commitment. What separates this tactic from Operational Rehearsal is location: TA0201 happens at a surrogate site (similar building, similar route); Partial Approach Rehearsal uses the live target environment, generating actual forensic signatures — access log anomalies, CCTV appearances near the targeted subject's location, and witness sightings that establish a pre-attack timeline. The threat actor accepts the detection risk because live rehearsal validates assumptions that surrogate rehearsal cannot: actual response time of on-site security, behavioral baseline of reception staff, real CCTV coverage as it operates rather than as it appears in floor plans. Each partial approach generates a signature, and a sequence of these signatures across days or weeks is the pre-attack pattern that, with retrospective analysis, telegraphs the operation.",
+          "observed_contexts": [
+            "executive protection case where the threat actor approached the targeted subject's office building on three consecutive Tuesdays, each time asking a different reception question and withdrawing, with the pattern recognized only when reception staff aggregated their reports after the third visit",
+            "domestic case where the threat actor performed multiple partial approaches at the targeted subject's residence over two weeks, each ending with withdrawal in response to observable security activity (delivery, neighbor presence, lit windows)",
+            "active shooter case where the threat actor's pre-attack timeline included four documented partial approaches at the protected environment, each one pushing slightly deeper before withdrawal",
+            "[literature: NTAC-MASS-2021 — pre-attack pattern of repeated partial approaches at the live target environment in mass attack cases]",
+            "facility attack case where access-log anomalies (unverified contractor visit, abandoned vendor delivery) preceded the kinetic moment by weeks and were recognized as partial approach rehearsal only in after-action review"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0301",
