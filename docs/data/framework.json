@@ -4260,7 +4260,7 @@
                 "mobilization",
                 "execution"
               ],
-              "limitations": "Escort discipline degrades during sustained operations and across shift changes; long-tenure staff may relax verification under social pressure",
+              "limitations": "Escort discipline degrades during sustained operations and across shift changes; staff with established relationships may relax verification under social pressure",
               "compensates_for": [],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -4757,7 +4757,7 @@
               ]
             }
           ],
-          "field_notes": "Access Elevation is the threat actor's exploitation of trust — gaining higher-tier physical access through deception, social engineering, or credential abuse rather than force. What separates Access Elevation from a force-based breach is that there's no physical signal: no broken lock, no climbed fence, no tackled guard. The detection signal is the audit trail: the badge swipe at the wrong tier, the visitor log with a name nobody can verify, the contractor with no matching work order. Access Elevation is constant work for the threat actor because every successful elevation expires when the access window closes; the threat actor is not just gaining access once but maintaining the cover that justifies returning. An investigator catches Access Elevation by treating the audit trail as the primary evidence and validating each elevation against the holder's actual authorization.",
+          "field_notes": "Access Elevation is the threat actor's exploitation of trust — gaining higher-tier physical access through deception, social engineering, or credential abuse rather than force. There's no physical signal in Access Elevation: no broken lock, no climbed fence, no tackled guard. The detection signal is the audit trail: the badge swipe at the wrong tier, the visitor log with a name nobody can verify, the contractor with no matching work order. Access Elevation is constant work for the threat actor because every successful elevation expires when the access window closes; the threat actor is not just gaining access once but maintaining the cover that justifies returning. An investigator catches Access Elevation by treating the audit trail as the primary evidence and validating each elevation against the holder's actual authorization.",
           "observed_contexts": [
             "executive protection case where a threat actor presented a stolen contractor badge at reception, was escorted to a senior executive's floor, and was identified only when the escort attempted callback verification post-meeting",
             "domestic protection case where a threat actor used a pretexted urgent-need claim — claiming to be a family member's friend with a delivery — to gain residence access, identified retrospectively through doorbell camera recovery",
@@ -4862,7 +4862,7 @@
             },
             {
               "id": "IND-0206-05",
-              "behavior": "Threat actor's position behavior shows operational alertness — repeated horizon scanning, communication device monitoring, watch-checking — inconsistent with passive presence",
+              "behavior": "Threat actor's position behavior shows operational alertness — repeated horizon scanning, watch-checking, repeated phone glances, or device-monitoring behavior — inconsistent with passive presence",
               "category": "behavioral_change",
               "detection_sources": [
                 "physical_observation",
@@ -5123,7 +5123,7 @@
           "matrix": "person",
           "phase": 2,
           "phase_name": "Mobilization",
-          "notes": "Deliberate stand-down to allow counter-surveillance conditions to clear, security posture to relax, or an environmental opportunity to materialize. Operational pause is a risk management decision — the actor has the capability and position but chooses to wait. Generates cold trails that complicate later investigation.",
+          "notes": "Deliberate stand-down to allow counter-surveillance conditions to clear, security posture to relax, an environmental opportunity to materialize, or to adapt to changes such as shifts in resource availability or information gathered during Target Development becoming no longer viable. Operational pause is a risk management decision — the actor may choose to wait due to internal or external factors that may not surface until later. Generates cold trails that complicate later investigation.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -5789,7 +5789,7 @@
               ]
             }
           ],
-          "field_notes": "Timing Exploitation sorts into windows the threat actor has identified through prior surveillance: shift changes, crowd events, delivery cycles, environmental conditions like weather and lighting, and protective-detail rotations. Each window narrows the response capability available to the targeted subject for a brief, predictable interval. The threat actor's job in this tactic is to align the operation with the window the surveillance and rehearsal phases identified as most favorable — the moment when on-site response is at its lowest, when CCTV coverage shifts, when a predictable delivery creates ambient activity that masks operational presence. Timing Exploitation depends entirely on the upstream tactics: the windows are observable only because TA0102 Subject Profiling and TA0103 Environmental Survey produced the pattern data, and the synchronization is feasible only because TA0201 Operational Rehearsal validated the window in practice. Detection in advance is rare; it usually surfaces after the fact when the post-incident timeline reveals how precisely the threat actor synchronized with a known operational gap.",
+          "field_notes": "What looks like luck in retrospect is rarely luck. The threat actor who arrives precisely during a security shift change, the entry that coincides with a scheduled delivery, the approach in low-light conditions — each is the deliberate output of prior surveillance work that identified the window. Timing Exploitation depends entirely on what came before: the schedule patterns extracted from prior subject profiling, the response timing observed during environmental survey, and the windows validated during rehearsal. Without the upstream pattern data there's no exploitable timing window, and the threat actor's job is to align the operation with the moment the upstream tactics identified as most favorable — when on-site response is at its lowest, when CCTV coverage shifts, when ambient activity masks operational presence. Detection in advance is rare; it usually surfaces after the fact when the post-incident timeline reveals how precisely the threat actor synchronized with a known operational gap.",
           "observed_contexts": [
             "active shooter event timed to a security shift change at the protected environment, recognized retrospectively when the post-incident timeline showed the kinetic moment occurred within four minutes of the rotation",
             "executive protection case where the threat actor monitored the targeted subject's social media check-ins to confirm location at a recurring restaurant before approach, identified through pre-attack OSINT analysis",
@@ -5875,7 +5875,7 @@
             },
             {
               "id": "IND-0209-04",
-              "behavior": "Threat actor's approach is timed at recognizably different operational windows (different shift change, different day-of-week, different crowd event) consistent with rehearsal of multiple approach variants",
+              "behavior": "Threat actor's approach is timed at recognizably different operational windows across multiple visits (different shift change one day, different day-of-week another, different crowd event a third) consistent with rehearsal of multiple approach variants rather than commitment to a single timing window",
               "category": "surveillance",
               "detection_sources": [
                 "cctv",
@@ -6112,7 +6112,7 @@
               ]
             }
           ],
-          "field_notes": "Partial Approach Rehearsal is a live dress rehearsal at the targeted subject's actual environment — the threat actor approaches, observes the security response, and withdraws without completing the operation, sometimes repeated multiple times before final commitment. What separates this tactic from Operational Rehearsal is location: TA0201 happens at a surrogate site (similar building, similar route); Partial Approach Rehearsal uses the live target environment, generating actual forensic signatures — access log anomalies, CCTV appearances near the targeted subject's location, and witness sightings that establish a pre-attack timeline. The threat actor accepts the detection risk because live rehearsal validates assumptions that surrogate rehearsal cannot: actual response time of on-site security, behavioral baseline of reception staff, real CCTV coverage as it operates rather than as it appears in floor plans. Each partial approach generates a signature, and a sequence of these signatures across days or weeks is the pre-attack pattern that, with retrospective analysis, telegraphs the operation.",
+          "field_notes": "Partial Approach Rehearsal is a live test run at the targeted subject's actual environment — the threat actor approaches, observes the security response, and withdraws without completing the operation, sometimes repeated multiple times before final commitment. What separates this tactic from Operational Rehearsal is location: TA0201 happens at a surrogate site (similar building, similar route); Partial Approach Rehearsal uses the live target environment, generating actual forensic signatures — access log anomalies, CCTV appearances near the targeted subject's location, and witness sightings that establish a pre-attack timeline. The threat actor accepts the detection risk because live rehearsal validates assumptions that surrogate rehearsal cannot: actual response time of on-site security, behavioral baseline of reception staff, real CCTV coverage as it operates rather than as it appears in floor plans. Each partial approach generates a signature, and a sequence of these signatures across days or weeks is the pre-attack pattern that, with retrospective analysis, telegraphs the operation.",
           "observed_contexts": [
             "executive protection case where the threat actor approached the targeted subject's office building on three consecutive Tuesdays, each time asking a different reception question and withdrawing, with the pattern recognized only when reception staff aggregated their reports after the third visit",
             "domestic case where the threat actor performed multiple partial approaches at the targeted subject's residence over two weeks, each ending with withdrawal in response to observable security activity (delivery, neighbor presence, lit windows)",
