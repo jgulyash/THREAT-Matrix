@@ -6471,8 +6471,186 @@
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0302-01",
+              "behavior": "Threat actor uses force, prying tools, cutting tools, or impact methods to defeat a perimeter barrier — door, gate, fence, window, or wall",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0203-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0302-02",
+              "behavior": "Threat actor uses a vehicle as a battering tool to defeat a fixed barrier — gate, bollards, glass entry — at the protected environment",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0301-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0302-03",
+              "behavior": "Threat actor physically overpowers, restrains, or incapacitates a security guard, escort, bodyguard, or other personnel staffing an access point or barrier",
+              "category": "access",
+              "detection_sources": [
+                "cctv",
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0301-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0302-04",
+              "behavior": "Threat actor deploys mechanical bypass tools — bolt cutters, breaching tools, lock picks, hydraulic spreaders — to defeat access controls or barriers",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0104-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0302-05",
+              "behavior": "Threat actor times the force application to a moment when alarm response, on-site security, or surveillance coverage is degraded or absent",
+              "category": "access",
+              "detection_sources": [
+                "cctv",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0208-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0302-01",
+              "measure": "Implement layered perimeter design with intrusion alarms, hardened barriers (anti-ram bollards at vehicle approach points), and on-site response capability sufficient to intervene during the alarm window",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Hardened perimeter design is cost-intensive and may not be feasible for all protected environments; sophisticated threat actors plan for layered defeat over an extended kinetic window",
+              "compensates_for": [
+                "CM-0203-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "LLNL-TR-858139"
+              ]
+            },
+            {
+              "id": "CM-0302-02",
+              "measure": "Deploy CCTV with automated alarm-correlated alerting and live operator monitoring at high-sensitivity perimeter access points to compress detection latency during force-based attacks",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Live monitoring requires staffed positions and is subject to operator fatigue; automated alerts produce false positives that erode response readiness over time",
+              "compensates_for": [
+                "CM-0103-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0302-03",
+              "measure": "Train security personnel on immediate-action response to barrier-defeat events including alarm communication, evacuation triggers, and engagement protocols within use-of-force authority",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Training fidelity decays without reinforcement; the stress of an actual force-based attack produces performance degradation regardless of training depth",
+              "compensates_for": [
+                "CM-0301-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0302-04",
+              "measure": "Maintain rapid law enforcement coordination including pre-coordinated response routes from the protected environment to interrupt force-based attacks within the kinetic window",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Law enforcement response time depends on jurisdiction, distance, and concurrent demand; sophisticated threat actors plan operations to clear the response radius before law enforcement arrives",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -6557,9 +6735,67 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021",
+            "ASIS-WVPI-2021",
+            "FBI-PREATTACK-2018",
+            "LLNL-TR-858139"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0302-01",
+              "trigger": "Confirmed barrier defeat in progress at the protected environment — alarm activation, observed forced entry, vehicle ramming of perimeter",
+              "action": "Activate emergency response. Initiate facility lockdown. Notify law enforcement immediately with location and direction of breach. Deploy on-site response capability to delay or interdict the threat actor. Implement immediate protective movement of the targeted subject away from the breach axis.",
+              "stakeholders": [
+                "security_operations",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Threat actor proceeds past barrier toward the targeted subject's location OR multiple barriers breached in sequence.",
+              "coordinates_with": [
+                "RP-0203-02",
+                "RP-0301-01"
+              ],
+              "legal_notes": "Use of force by security personnel during a barrier defeat event is governed by jurisdiction-specific authority and use-of-force standards. Document decision basis for any engagement. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "RP-0302-02",
+              "trigger": "Barrier defeat indicators detected without confirmed in-progress event — recovered breaching tools, attempted breach signs, alarm activation pattern consistent with reconnaissance",
+              "action": "Document the indicators. Conduct same-business-day investigation including CCTV review, perimeter walk, and tool/artifact preservation. Notify the threat assessment team. Activate enhanced perimeter posture. Coordinate with law enforcement on any recovered artifacts that suggest pre-attack tool acquisition.",
+              "stakeholders": [
+                "security_operations",
+                "threat_management_team",
+                "law_enforcement"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Tool recovery ties to known threat actor OR reconnaissance pattern surfaces additional indicators across other tactics.",
+              "coordinates_with": [
+                "RP-0203-01",
+                "RP-0103-01"
+              ],
+              "legal_notes": "Recovered tools and forensic artifacts must be preserved under chain-of-custody if they may inform later prosecution. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
+          "field_notes": "Barrier Defeat announces itself. Unlike Access Elevation, where the audit trail is the only signal, Barrier Defeat creates a physical signature the moment it begins — broken glass, deformed metal, alarm activation, the sound of a vehicle accelerating into a fixed object. The threat actor accepts this signal because the operational plan requires force at this point: deception has been judged inadequate, or the timing window doesn't allow for a slower social-engineering approach. What distinguishes Barrier Defeat from the kinetic moment that often follows is that the target of force here is a barrier, not a person, though the two tactics frequently fire in sequence when the threat actor breaks through to reach the targeted subject. Detection at Barrier Defeat is rarely the limiting factor; response time is, because the alarm has already sounded and the question is whether on-site capability can intervene before the operation proceeds.",
+          "observed_contexts": [
+            "facility attack where the threat actor used a stolen utility truck to ram an anti-ram bollard array, recognized in after-action review as a tool that had been acquired specifically for the breach phase",
+            "executive protection case where the threat actor breached the residence's side gate using bolt cutters, with the attempt detected by an intrusion alarm that triggered law enforcement response within four minutes",
+            "active shooter event where the threat actor physically overpowered a single unarmed lobby officer to gain interior access, with after-action review identifying the lone-officer staffing as the critical vulnerability",
+            "[literature: NTAC-MASS-2021 — pattern of vehicle-ramming and forced-entry at mass attacks against public spaces, with on-site response capability identified as the determinative variable in casualty outcomes]",
+            "domestic case where the threat actor used a hydraulic spreader to defeat a residential door lock, recovered post-incident from the threat actor's vehicle and tied to capability acquisition records weeks earlier"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0303",
@@ -6574,8 +6810,183 @@
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0303-01",
+              "behavior": "Threat actor takes physical custody of the targeted subject through restraint, threat of harm, or coordinated team action, removing the targeted subject from the protected environment",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0301-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0303-02",
+              "behavior": "Threat actor seizes operationally relevant assets carried by the targeted subject — devices, documents, identity media, biometric materials, sensitive equipment",
+              "category": "acquisition",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "IND-0303-03",
+              "behavior": "Threat actor extracts the targeted subject from the protected environment via vehicle, foot, or transit, sometimes using coordinated multi-actor extraction",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0401-01",
+                "IND-0105-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0303-04",
+              "behavior": "Threat actor uses coercive threats — display of weapon, threat to harm the targeted subject or others, threat to destroy property — to compel surrender of a person, asset, or location",
+              "category": "communication",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0301-05"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0303-05",
+              "behavior": "Threat actor occupies a location associated with the targeted subject — office, residence, vehicle — and prevents access, denying the targeted subject's protective network the ability to intervene",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0303-01",
+              "measure": "Implement protective formation, hardened transport, and layered access for high-risk targeted subjects to extend the seizure window during which response can intervene",
+              "category": "preventive",
+              "domain": "personnel_security",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Hardened protection introduces operational friction and is reserved for the highest-risk targeted subjects; coordinated multi-actor seizure can defeat individual-protection postures",
+              "compensates_for": [
+                "CM-0301-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0303-02",
+              "measure": "Maintain authorized response capability — armed protection, law enforcement coordination — pre-positioned for high-likelihood seizure scenarios at the targeted subject's environment",
+              "category": "corrective",
+              "domain": "personnel_security",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Pre-positioning assumes accurate threat prediction; assets staffed for low-probability events have high recurring cost and may degrade in readiness over time",
+              "compensates_for": [
+                "CM-0301-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "CM-0303-03",
+              "measure": "Conduct seizure-response training including deny-defend protocols, hostage-incident immediate-action, and rapid escape routing for the targeted subject",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Training under duress produces inconsistent performance; the targeted subject's psychological response in a real seizure may diverge from training behavior",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0303-04",
+              "measure": "Maintain personal-asset reduction posture — minimal sensitive devices and documents on the targeted subject's person — to reduce the value of any successful seizure",
+              "category": "preventive",
+              "domain": "personnel_security",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development",
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Operational utility may require the targeted subject to carry sensitive materials; personal-asset minimization has a workflow cost that erodes adherence over time",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -6644,9 +7055,72 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021",
+            "FBI-PREATTACK-2018",
+            "ASIS-WVPI-2021",
+            "CERT-CSG-7-2022"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0303-01",
+              "trigger": "Confirmed seizure of the targeted subject — physical custody taken, extraction in progress, or coercive threat compelling surrender of person or asset",
+              "action": "Activate emergency response. Notify law enforcement immediately with all known threat actor details including direction of extraction, vehicle description, and number of accomplices. Activate hostage-negotiation and crisis-management protocols. Implement protective measures for any remaining targets in the same protective program. Brief executive leadership and family liaison.",
+              "stakeholders": [
+                "security_operations",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "legal",
+                "communications"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Multi-victim seizure OR seizure crossing jurisdictional lines OR seizure with confirmed intent to harm.",
+              "coordinates_with": [
+                "RP-0301-01",
+                "RP-0401-01"
+              ],
+              "legal_notes": "Kidnapping and hostage-taking cross overlapping jurisdictional authority in most environments; coordinate immediately with both local law enforcement and federal authorities (FBI in the United States) per applicable mandatory-reporting framework. Preserve evidence under chain-of-custody discipline. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0303-02",
+              "trigger": "Hostage-incident development — confirmed seizure with the targeted subject held at a contained location, with the threat actor making demands or refusing to release",
+              "action": "Activate full crisis-management response. Coordinate hostage-negotiation team deployment. Maintain perimeter containment without forced entry pending tactical assessment. Brief executive leadership, family liaison, and legal. Establish information-control protocols for external communications to avoid prejudicing negotiation or rescue.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "legal",
+                "communications",
+                "human_resources"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Time-sensitive demands with credible threat of harm OR multiple captives OR threat of mass casualty.",
+              "coordinates_with": [
+                "RP-0301-02"
+              ],
+              "legal_notes": "Hostage incidents trigger jurisdiction-specific crisis-negotiation authority and tactical-intervention thresholds; coordination with law enforcement on negotiation strategy and use-of-force authority is mandatory. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
+          "field_notes": "Objective Seizure is the moment of operational success or failure — the threat actor either takes possession of the targeted subject (or the asset, document, or device the targeted subject possesses) or doesn't. Everything before this point was investment in this transition; everything after is management of what was seized. Seizure can be physical (taking custody of a person), informational (extracting a document or copying a device), or positional (occupying a location and denying access). What distinguishes Objective Seizure from Force Application is that seizure has a state outcome — possession of the objective — while force application is a process. The two tactics often co-occur but they are not the same: force may be applied without seizing anything, and seizure may occur without force in coercion-by-threat scenarios.",
+          "observed_contexts": [
+            "executive protection case where the threat actor restrained the targeted subject in a parking facility and extracted via a pre-positioned vehicle, with the seizure window measured in seconds and recovery contingent on rapid law enforcement response",
+            "kidnapping case where the threat actor coerced the targeted subject's surrender through threats against family members, removing the targeted subject without any visible struggle that would have alerted bystanders",
+            "intelligence operation where the threat actor seized a sensitive device from the targeted subject's pocket during a coordinated multi-actor distraction, recognized only when the device's loss was reported hours later",
+            "[literature: ASIS-WVPI-2021 — pattern of seizure events at workplace violence cases, including coercive-threat seizures that produced no visible force signature]",
+            "barricade incident where the threat actor occupied the targeted subject's residence and held it for negotiation, with the operational outcome determined by negotiation duration and tactical patience"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0304",
@@ -6661,8 +7135,179 @@
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0304-01",
+              "behavior": "Threat actor maintains physical restraint of the targeted subject — handcuffs, rope, zip ties, lockable container, locked room — over an extended duration consistent with sustained captive control",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0303-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0304-02",
+              "behavior": "Threat actor employs psychological management of the targeted subject including threats, deprivation, isolation, sensory manipulation, or alternation of treatment to maintain compliance",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0304-03",
+              "behavior": "Threat actor uses force, threats of force, or coercive deprivation (food, water, sleep, medical access) to maintain captive compliance over time",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0303-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0304-04",
+              "behavior": "Threat actor moves the targeted subject between holding locations to defeat search efforts, evade tactical response, or adapt to the operational situation",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "cctv",
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0401-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0304-05",
+              "behavior": "Threat actor's communications during Captive Control reflect ongoing operational decision-making — negotiation framing, demand articulation, threat language, or deception toward responders",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0308-05"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0304-01",
+              "measure": "Maintain pre-coordinated hostage-rescue and crisis-negotiation protocols with law enforcement, including jurisdictional response paths and inter-agency coordination expectations for the protected environment",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Hostage rescue and negotiation protocols depend on law enforcement capability and jurisdictional authority; private security cannot substitute for tactical-intervention capability in most jurisdictions",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "CM-0304-02",
+              "measure": "Conduct hostage-survival awareness training for high-risk targeted subjects including compliance protocols, signaling techniques, and post-event psychological care expectations",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Hostage-survival training imposes psychological burden on the targeted subject; effectiveness depends on the targeted subject's ability to apply training under extended duress",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0304-03",
+              "measure": "Maintain forensic-readiness protocols for any captive-control scene including chain-of-custody for devices, vehicles, restraints, and physical evidence recovered post-incident",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Scene control may be delayed by law enforcement priority on victim recovery; forensic discipline degrades under multi-day operational stress",
+              "compensates_for": [
+                "CM-0402-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "CM-0304-04",
+              "measure": "Establish family liaison and information-management protocols for cases involving sustained captive control to coordinate external communications without prejudicing investigation or negotiation",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Family liaison requires trained personnel; information control during active hostage events is constantly tested by media inquiry and family distress",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -6703,9 +7348,73 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021",
+            "FBI-PREATTACK-2018",
+            "ASIS-WVPI-2021",
+            "NTAC-SYSTEMS-2020"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0304-01",
+              "trigger": "Confirmed captive control situation — targeted subject held at a contained location, with the threat actor demonstrating active management",
+              "action": "Activate full crisis-management response. Coordinate law enforcement tactical and negotiation response. Maintain perimeter containment without forced entry pending tactical assessment. Activate family liaison and information-management protocols. Brief executive leadership and legal. Document the timeline contemporaneously for after-action review.",
+              "stakeholders": [
+                "security_operations",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "legal",
+                "human_resources",
+                "communications"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Threat to life materializes OR multi-day duration OR cross-jurisdictional movement.",
+              "coordinates_with": [
+                "RP-0303-01",
+                "RP-0303-02",
+                "RP-0301-02"
+              ],
+              "legal_notes": "Hostage and captive-control incidents trigger jurisdiction-specific crisis-negotiation authority and tactical-intervention thresholds; coordination with law enforcement on use-of-force authority and negotiation strategy is mandatory. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0304-02",
+              "trigger": "Post-resolution investigation following captive-control event including recovery of the targeted subject, surrender or neutralization of the threat actor, or extended search investigation",
+              "action": "Activate scene-control and forensic recovery. Coordinate with law enforcement on threat actor identification, holding-location forensics, and accomplice investigation. Initiate post-event psychological care for the targeted subject and immediate family. Conduct after-action review of operational decisions, response timing, and pre-incident indicator detection.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "executive_leadership",
+                "human_resources",
+                "legal"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Investigation reveals expanded network involvement OR connection to other ongoing threat cases.",
+              "coordinates_with": [
+                "RP-0402-01",
+                "RP-0401-02"
+              ],
+              "legal_notes": "Post-event evidence preservation supports both prosecution and after-action learning; chain-of-custody integrity is critical. Psychological care for victims is governed by jurisdiction-specific medical and mental-health authority. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "field_notes": "By the time Captive Control is observable, the seizure has occurred and the targeted subject is in the threat actor's possession; what follows is management of that possession across time, location, and changing operational pressure. The threat actor's control problem during this phase is sustaining: physical restraint must hold for hours or days, psychological management must keep the targeted subject compliant without escalating to fatal harm, and the operational environment — holding location, presence of accomplices, evidence of the operation — must remain stable enough to extend leverage into the aftermath. Detection during Captive Control is bounded by the threat actor's success in the prior tactics: if the seizure has been concealed and the holding location is well chosen, external observation is limited; if either is compromised, captive control devolves into a barricade or hostage incident with a different response posture. The duration of Captive Control is not predictable from operational intent. Hostage scenarios may compress to minutes, kidnapping operations may extend across weeks, and barricade incidents resolve on their own timeline driven by negotiation or tactical intervention.",
+          "observed_contexts": [
+            "kidnapping case where the threat actor moved the targeted subject across three holding locations over four days to defeat search efforts, recovered through coordinated cross-jurisdictional CCTV correlation and informant intelligence",
+            "barricade incident where sustained negotiation across eighteen hours produced peaceful resolution after initial demands were assessed as bounded and the threat actor's fatigue threshold was reached",
+            "domestic case where the threat actor maintained captive control of a family member through psychological deprivation and threat language, with detection occurring only when a missed work meeting triggered welfare-check escalation",
+            "[literature: NTAC-SYSTEMS-2020 — patterns of demand articulation and negotiation framing observed across hostage-incident cases, with implications for crisis-negotiation team posture]",
+            "executive protection case where rapid law enforcement intervention during the captive-control window prevented the operational shift from kidnapping to ransom-demand by interrupting the threat actor's communications cadence"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0305",
@@ -7011,8 +7720,176 @@
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0306-01",
+              "behavior": "Threat actor verbally controls witnesses or bystanders through threat of harm, instruction to comply, or instruction to leave the area, without applying physical force",
+              "category": "communication",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0306-02",
+              "behavior": "Threat actor physically neutralizes — incapacitates without killing — security personnel, bodyguards, or other interference-capable bystanders to remove their ability to interfere with the operation",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0301-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0306-03",
+              "behavior": "Threat actor disperses or directs a crowd through staged events, false alarm activation, or controlled communication to clear the operational environment of bystanders",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0306-04",
+              "behavior": "Threat actor deceives bystanders about the nature of the incident — claiming a drill, a medical event, a film production — to delay recognition that the operation is underway",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0106-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0306-05",
+              "behavior": "Threat actor accepts visible bystander exposure as operational cost when containment, neutralization, or deception is judged infeasible — typical of high-tempo ideologically-driven attacks",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0306-01",
+              "measure": "Conduct bystander-response training for personnel and tenants of the protected environment including immediate-action protocols (run/hide/fight), structured reporting of observations, and avoidance of premature engagement",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Training under controlled conditions may not transfer to actual incident performance; bystanders without training default to freezing or premature exposure",
+              "compensates_for": [
+                "CM-0301-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "CM-0306-02",
+              "measure": "Maintain CCTV coverage of bystander-presence areas with retention sufficient to support post-incident witness reconstruction and identification of bystander-management patterns",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Coverage gaps in adjacent public spaces limit retrospective recovery; bystander privacy considerations may constrain retention duration in some jurisdictions",
+              "compensates_for": [
+                "CM-0103-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0306-03",
+              "measure": "Provide executive protection and bodyguard training including resistance-without-escalation protocols and recognition of neutralization tactics targeting them specifically",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Bodyguard training depth varies materially by program; high-skill threat actors may target bodyguards with techniques that exceed standard executive-protection preparation",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0306-04",
+              "measure": "Develop crisis-communications protocols allowing bystanders to report observations without competing with primary incident response, including silent-alert mechanisms and post-incident debriefing structure",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Silent-alert and debriefing mechanisms depend on bystander recognition that they have observed something operational; threshold awareness fades without reinforcement",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -7077,9 +7954,66 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021",
+            "ASIS-WVPI-2021",
+            "FBI-PREATTACK-2018",
+            "NTAC-SYSTEMS-2020"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0306-01",
+              "trigger": "Bystander management observed during execution — verbal control, neutralization of personnel, dispersal of crowd, or deception of bystanders",
+              "action": "Activate active-incident response. Alert all personnel via mass-notification. Initiate evacuation, lockdown, or shelter-in-place per protocol. Deploy on-site response capability with priority on protecting non-target bystanders. Notify law enforcement immediately. Document the bystander-management pattern contemporaneously for after-action review.",
+              "stakeholders": [
+                "security_operations",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Bystander injury or fatality OR multi-site spread OR threat actor moves to mass-casualty pattern.",
+              "coordinates_with": [
+                "RP-0301-01"
+              ],
+              "legal_notes": "Use of force by security personnel during active bystander-management events is governed by jurisdiction-specific authority. Bystander-protection actions (evacuation, shelter-in-place) do not require law enforcement authorization. Document decision basis. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "RP-0306-02",
+              "trigger": "Post-incident bystander debriefing required following any incident with non-target presence",
+              "action": "Coordinate witness interviews under law enforcement supervision. Capture observations of bystander-management tactics observed (verbal threats, deception, neutralization). Provide post-event psychological care to bystanders exposed to the incident. Update training and protocols based on observed bystander-management patterns.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "human_resources",
+                "legal"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Bystander observations reveal expanded operational network or methodology not previously documented.",
+              "coordinates_with": [
+                "RP-0402-01"
+              ],
+              "legal_notes": "Witness interviews must be coordinated with law enforcement to avoid prejudicing investigation. Bystander psychological care is governed by jurisdiction-specific medical and mental-health authority. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "field_notes": "Bystander Management operates through three modes: containment (bystanders held away from the threat actor's action via barriers, threats, or controlled-access design), neutralization (bystanders incapacitated to remove their detection or interference capability), and direction (bystanders redirected to assist the operation, distract from it, or simply absorb the immediate response capacity). The mode chosen depends on the operation's tolerance for collateral signal: a low-tolerance operation prefers containment; a high-tolerance operation may use neutralization. The threat actor at this phase is making real-time tactical decisions about which bystanders are operationally relevant — bodyguards must be neutralized, witnesses must be contained or deceived, peripheral civilians may be ignored entirely if their interference capability is judged low. What an investigator sees during Bystander Management is the imprint of these decisions: the witness with no injuries who reports being told to lie down, the bodyguard injured in a manner consistent with neutralization-not-execution, the bystander redirected to call 911 for the wrong incident.",
+          "observed_contexts": [
+            "active shooter event where the threat actor verbally instructed bystanders to remain in place rather than fleeing, recognized in after-action review as deliberate containment to maintain target proximity",
+            "kidnapping case where the threat actor incapacitated a single bodyguard through a sustained physical-neutralization technique distinct from fatal force, with the bodyguard recovering and providing testimony",
+            "facility attack where the threat actor activated a fire alarm to disperse non-target bystanders away from the kinetic axis, recognized retrospectively as deliberate direction rather than ambient panic",
+            "[literature: NTAC-MASS-2021 — pattern of bystander-management decisions in mass-attack cases, with high-tempo operations accepting bystander exposure as operational cost]",
+            "executive protection case where the threat actor used a fabricated film-production claim to delay bystander recognition that the operation was underway, gaining operational tempo before law enforcement was alerted"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0307",
@@ -7095,8 +8029,196 @@
           "cpn_id": "CPN-0307",
           "cpn_notes": "Monitoring live camera feeds, checking police scanner apps, and using drone overwatch are cyber-enabled counter-surveillance methods increasingly used during execution. Real-time tracking of security force locations via their own digital signals is an emerging technique for sophisticated actors.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0307-01",
+              "behavior": "Threat actor scans the operational environment in real time during execution for security personnel, law enforcement, witnesses with cameras, or other observers capable of interrupting the action",
+              "category": "surveillance",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0108-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0307-02",
+              "behavior": "Threat actor monitors public safety communications — police scanner applications, fire dispatch feeds, public alert systems — during execution to detect response activation and approach timing",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0305-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0307-03",
+              "behavior": "Threat actor monitors live CCTV or video feeds of the protected environment or its approaches during execution, sometimes via cyber access to facility systems",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0305-04",
+                "IND-0204-05"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0307-04",
+              "behavior": "Threat actor uses drone overwatch or aerial surveillance during execution to extend observation capability beyond ground-level scan",
+              "category": "surveillance",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0307-05",
+              "behavior": "Threat actor coordinates with pre-positioned spotters or counter-surveillance team members who relay real-time updates on response activation and observer behavior",
+              "category": "communication",
+              "detection_sources": [
+                "physical_observation",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0105-02",
+                "IND-0308-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "IND-0307-06",
+              "behavior": "Threat actor's behavior changes mid-execution in response to observed counter-surveillance signals — pace acceleration, route change, abort initiation, engagement of an observer",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0307-01",
+              "measure": "Maintain operational discipline of security and protective personnel including communications hygiene, predictable patrol pattern avoidance, and awareness that the threat actor may be monitoring response systems in real time",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Discipline degrades under sustained operational pressure; security personnel turnover requires ongoing reinforcement of counter-counter-surveillance posture",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0307-02",
+              "measure": "Implement encrypted public safety communications channels and access controls on facility CCTV systems to deny the threat actor visibility into response activation and operational layout during execution",
+              "category": "preventive",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Encrypted channels add latency and require trained operators; sophisticated threat actors with insider access may bypass encryption controls entirely",
+              "compensates_for": [
+                "CM-0305-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0307-03",
+              "measure": "Conduct counter-counter-surveillance training for protective personnel including recognition of drone overwatch, spotter networks, and digital reconnaissance during incidents",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Counter-counter-surveillance training requires specialized expertise that may not be available in standard protection programs; the threat actor's tools evolve faster than training cycles",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0307-04",
+              "measure": "Establish incident-time secure communications protocols separating tactical comms from public dispatch to deny the threat actor real-time visibility into response coordination",
+              "category": "preventive",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Tactical-comms separation requires inter-agency coordination and may slow response in jurisdictions where unified channels are the standard",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -7157,9 +8279,67 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021",
+            "CISA-CONVERGE-2021",
+            "FBI-PREATTACK-2018",
+            "CERT-CSG-7-2022"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0307-01",
+              "trigger": "Counter-surveillance behavior detected during execution — observed scanning, intercepted scanner monitoring, drone overwatch present, spotter network identified",
+              "action": "Activate active-incident response with counter-counter-surveillance posture. Switch to pre-coordinated secure tactical comms. Vary response timing and routes to defeat the threat actor's observation modeling. Notify law enforcement of the counter-surveillance signature; sophisticated counter-surveillance is itself diagnostic of operational sophistication and may indicate broader network involvement.",
+              "stakeholders": [
+                "security_operations",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Counter-surveillance ties to known threat group OR drone overwatch or spotter network indicates expanded operation.",
+              "coordinates_with": [
+                "RP-0301-01",
+                "RP-0108-01"
+              ],
+              "legal_notes": "Drone overwatch and digital counter-surveillance during incidents may carry independent regulatory and criminal implications; coordinate with law enforcement on response and post-incident enforcement. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0307-02",
+              "trigger": "Post-incident counter-surveillance forensic recovery — recovered devices, drone wreckage, spotter identification, digital infrastructure traces",
+              "action": "Coordinate forensic recovery with law enforcement under chain-of-custody discipline. Document the counter-surveillance signature for inclusion in adversary tradecraft database. Brief the threat assessment team on observed methodology. Coordinate with information-sharing partners on signature recognition.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "executive_leadership",
+                "legal"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Forensic findings reveal connection to known organized adversary or expanded operational network.",
+              "coordinates_with": [
+                "RP-0402-01"
+              ],
+              "legal_notes": "Forensic recovery under chain-of-custody supports both prosecution and intelligence sharing. Information sharing with partners may carry classification or jurisdictional restrictions. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            }
+          ],
+          "field_notes": "Counter-Surveillance during execution is harder than counter-surveillance during planning. The threat actor is now exposed, time-pressured, and committed — there's no withdrawing to study the environment, no opportunity to defer the operation. Detection of an observer must happen fast or not at all, and the response options are constrained: the threat actor can abort (which has its own signature), accelerate (which exposes more), or engage the observer (which generates additional kinetic signal). Sophisticated threat actors equip for this phase with tools that move faster than human observation — police scanner apps, live CCTV feed monitoring, drone overwatch, pre-positioned spotters relaying real-time updates over encrypted comms. What an analyst recovers in after-action review is the threat actor's awareness footprint: the moment the threat actor's pace changed when a security vehicle came into view, the abort initiated when the police scanner reported nearby units, the route alteration triggered by an observer's unsubtle attention.",
+          "observed_contexts": [
+            "active shooter event where the threat actor monitored a police scanner application during the kinetic phase, identified retrospectively when the recovered device showed the scanner app open with a timestamp aligned to the response activation moment",
+            "kidnapping case where the threat actor used a pre-positioned spotter relaying CCTV-feed updates over encrypted messaging, with the spotter network recognized only after digital forensic recovery from the operation lead's device",
+            "facility attack where drone overwatch identified law enforcement approach routes during execution, with the drone recovered during post-incident perimeter sweep",
+            "[literature: CISA-CONVERGE-2021 — pattern of cyber-enabled counter-surveillance during physical operations, including monitoring of facility CCTV systems via prior unauthorized access]",
+            "executive protection case where mid-execution counter-surveillance triggered an abort when the threat actor recognized that an observer had identified the staged getaway vehicle, with the case closing without a kinetic event"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0308",
@@ -7175,8 +8355,183 @@
           "cpn_id": "CPN-0308",
           "cpn_notes": "Encrypted communications apps, pre-arranged signal codes via SMS, and covert earpiece systems are standard operational communications infrastructure. Radio systems can be jammed by adversaries; encrypted data communications provide more resilient coordination.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0308-01",
+              "behavior": "Threat actor uses encrypted communications applications (signal-rich messaging, voice-over-IP, custom protocols) for coordination among accomplices during execution",
+              "category": "communication",
+              "detection_sources": [
+                "it_logs",
+                "physical_observation",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0202-02",
+                "IND-0307-05"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "IND-0308-02",
+              "behavior": "Threat actor uses pre-arranged signal codes — SMS strings, phone-call ring patterns, physical signals — to communicate operational state without revealing content to interceptors",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "IND-0308-03",
+              "behavior": "Threat actor uses radio communications (handheld, vehicle-mounted) for accomplice coordination, accepting the jamming and intercept risk in exchange for low latency and team reach",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0305-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0308-04",
+              "behavior": "Threat actor uses covert wearable communications — earpieces, body-worn microphones, pulse signaling devices — to coordinate without visible cue to bystanders or observers",
+              "category": "communication",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0308-05",
+              "behavior": "Threat actor's signal exchange across the operation creates an observable coordination footprint — multiple accomplices acting on shared information they could only have received via transmission",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "cctv",
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "correlates_with": [
+                "IND-0105-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0308-01",
+              "measure": "Coordinate with law enforcement on RF detection and signal-intercept capability for high-risk events where multi-actor operations are anticipated, including pre-event sweep and incident-time monitoring",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "RF detection requires specialized equipment and trained operators; encrypted comms within narrow frequency ranges may evade routine monitoring",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0308-02",
+              "measure": "Maintain organizational counter-jamming infrastructure including redundant communications, RF surveillance, and rapid degradation reporting that may also detect adversary communications activity",
+              "category": "preventive",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Counter-jamming infrastructure has high recurring cost and requires sustained operational tempo; sophisticated adversaries rotate frequencies and modulation to defeat detection",
+              "compensates_for": [
+                "CM-0305-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0308-03",
+              "measure": "Conduct after-action communications analysis on incident timelines to reconstruct accomplice coordination patterns, refine future detection methodology, and inform adversary tradecraft documentation",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Reconstruction depends on preserved evidence — recovered devices, CCTV footage, witness accounts; adversary anti-forensic discipline can erase the communications signature entirely",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "CM-0308-04",
+              "measure": "Establish information sharing with law enforcement and intelligence partners on adversary communications signatures observed in similar prior cases to support pattern recognition",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development",
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Information-sharing depth depends on jurisdiction, classification, and partner relationships; signatures evolve as adversaries adapt to known detection methods",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022",
+                "NITTF-GUIDE-2017"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -7245,9 +8600,68 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021",
+            "CISA-CONVERGE-2021",
+            "FBI-PREATTACK-2018",
+            "CERT-CSG-7-2022"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0308-01",
+              "trigger": "Multi-actor operation with confirmed communications activity during execution — intercepted signals, observed coordination signatures, recovered device traces",
+              "action": "Activate active-incident response. Coordinate immediately with law enforcement and signal-intercept partners. Maintain on-site posture against multi-axis attack. Document the communications signature contemporaneously. Brief executive leadership on the multi-actor character of the incident.",
+              "stakeholders": [
+                "security_operations",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Communications pattern suggests broader network involvement OR signal traces tie to known adversary group.",
+              "coordinates_with": [
+                "RP-0301-01",
+                "RP-0305-01"
+              ],
+              "legal_notes": "Communications intercept during incidents requires authorization under jurisdiction-specific law; coordinate immediately with law enforcement on intercept authority. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "RP-0308-02",
+              "trigger": "Post-incident communications forensic analysis — recovered devices, network logs, intercepted exchanges, witness accounts of observed signaling",
+              "action": "Coordinate forensic recovery with law enforcement under chain-of-custody discipline. Reconstruct the operational communications timeline. Identify accomplice nodes and signal patterns. Brief the threat assessment team on adversary methodology. Update detection methodology and information-sharing posture based on findings.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "executive_leadership",
+                "legal"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Forensic recovery reveals expanded network OR signature ties to other open investigations.",
+              "coordinates_with": [
+                "RP-0402-01"
+              ],
+              "legal_notes": "Forensic recovery under chain-of-custody supports both prosecution and intelligence sharing. Encrypted device access may require legal process and specialized capability. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022",
+                "NITTF-GUIDE-2017"
+              ]
+            }
+          ],
+          "field_notes": "Operational Communication is the most fragile thread of any multi-actor operation. Encrypted comms can be jammed, codes can be misread under stress, channels can be lost in the noise of the kinetic moment, and the cost of misalignment is the operation's coherence — accomplices acting on stale information, contradictory commands, or no command at all. Detection of operational communication during execution depends on intercept capability that is generally outside the protective program's authority; what the threat assessment team recovers in after-action is the artifact trail — encrypted app metadata, signal codes documented in seized devices, the silence between transmissions that indicates a comms-down moment in the operational timeline. Solo-actor operations have no communication signal to detect, while multi-actor operations create observable coordination signatures the moment the threat actors stop being able to maintain stealth across the team. What an investigator looks for is the timing pattern of inferred signaling — the moment when one accomplice acts on information another could only have transmitted, the breakdown when comms failure creates visible operational confusion.",
+          "observed_contexts": [
+            "kidnapping case where multi-actor coordination via encrypted messaging was reconstructed post-incident through forensic recovery of two of three accomplices' devices, identifying the signal codes used during the seizure window",
+            "active shooter event involving two threat actors where a comms-down moment created observable confusion in the operational timeline, recognized in after-action review as the breakdown between pre-attack rehearsal and live execution",
+            "domestic terrorism case where pre-arranged SMS signal codes between accomplices were recovered from financial-record forensics tied to burner phone purchases weeks before the kinetic moment",
+            "[literature: CERT-CSG-7-2022 — pattern of compartmentalized communications among coordinated insider threat operations, including signaling techniques designed to evade workplace monitoring]",
+            "facility attack with three coordinated threat actors where the absence of recovered comms artifacts (devices destroyed, codes never written down) limited post-incident network reconstruction to bystander observation"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0401",
