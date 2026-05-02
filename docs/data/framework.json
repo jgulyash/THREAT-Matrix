@@ -6787,7 +6787,7 @@
               ]
             }
           ],
-          "field_notes": "Barrier Defeat announces itself. Unlike Access Elevation, where the audit trail is the only signal, Barrier Defeat creates a physical signature the moment it begins — broken glass, deformed metal, alarm activation, the sound of a vehicle accelerating into a fixed object. The threat actor accepts this signal because the operational plan requires force at this point: deception has been judged inadequate, or the timing window doesn't allow for a slower social-engineering approach. What distinguishes Barrier Defeat from the kinetic moment that often follows is that the target of force here is a barrier, not a person, though the two tactics frequently fire in sequence when the threat actor breaks through to reach the targeted subject. Detection at Barrier Defeat is rarely the limiting factor; response time is, because the alarm has already sounded and the question is whether on-site capability can intervene before the operation proceeds.",
+          "field_notes": "Barrier Defeat is the use of physical force to defeat security controls or personnel guarding an access point — forced entry through doors, gates, or windows; vehicle ramming of fixed barriers; or physical overpowering of staff at perimeter or interior posts. Unlike Access Elevation, which uses deception and leaves only an audit trail, Barrier Defeat creates a physical signature the moment it begins: alarm activation, structural damage, or visible kinetic event at the access point. The threat actor accepts this signal because the operational plan requires force at this point: deception has been judged inadequate, or the timing window does not allow for a slower social-engineering approach. What distinguishes Barrier Defeat from the kinetic moment that often follows is that the target of force here is a barrier, not a person, though the two tactics frequently fire in sequence when the threat actor breaks through to reach the targeted subject. Detection at Barrier Defeat is rarely the limiting factor; response time is, because the alarm has already sounded and the question is whether on-site capability can intervene before the operation proceeds.",
           "observed_contexts": [
             "facility attack where the threat actor used a stolen utility truck to ram an anti-ram bollard array, recognized in after-action review as a tool that had been acquired specifically for the breach phase",
             "executive protection case where the threat actor breached the residence's side gate using bolt cutters, with the attempt detected by an intrusion alarm that triggered law enforcement response within four minutes",
@@ -6833,7 +6833,7 @@
             },
             {
               "id": "IND-0303-02",
-              "behavior": "Threat actor seizes operationally relevant assets carried by the targeted subject — devices, documents, identity media, biometric materials, sensitive equipment",
+              "behavior": "Threat actor seizes operationally relevant assets carried by the targeted subject — devices, documents, identity media, sensitive equipment, or biometric materials (fingerprints, blood, or other biological samples used to bypass biometric access controls or fabricate forensic attribution)",
               "category": "acquisition",
               "detection_sources": [
                 "physical_observation",
@@ -7193,7 +7193,7 @@
             },
             {
               "id": "IND-0304-04",
-              "behavior": "Threat actor moves the targeted subject between holding locations to defeat search efforts, evade tactical response, or adapt to the operational situation",
+              "behavior": "In sustained kidnapping operations, threat actor moves the targeted subject between holding locations to defeat search efforts, evade tactical response, or adapt to the operational situation",
               "category": "behavioral_change",
               "detection_sources": [
                 "cctv",
@@ -7406,7 +7406,7 @@
               ]
             }
           ],
-          "field_notes": "By the time Captive Control is observable, the seizure has occurred and the targeted subject is in the threat actor's possession; what follows is management of that possession across time, location, and changing operational pressure. The threat actor's control problem during this phase is sustaining: physical restraint must hold for hours or days, psychological management must keep the targeted subject compliant without escalating to fatal harm, and the operational environment — holding location, presence of accomplices, evidence of the operation — must remain stable enough to extend leverage into the aftermath. Detection during Captive Control is bounded by the threat actor's success in the prior tactics: if the seizure has been concealed and the holding location is well chosen, external observation is limited; if either is compromised, captive control devolves into a barricade or hostage incident with a different response posture. The duration of Captive Control is not predictable from operational intent. Hostage scenarios may compress to minutes, kidnapping operations may extend across weeks, and barricade incidents resolve on their own timeline driven by negotiation or tactical intervention.",
+          "field_notes": "By the time Captive Control is observable, the seizure has occurred and the targeted subject is in the threat actor's possession; what follows is management of that possession across time, location, and changing operational pressure. The threat actor's control problem during this phase is sustaining: physical restraint must hold for hours or days, psychological management must keep the targeted subject compliant without escalating to fatal harm, and the operational environment — holding location, presence of accomplices, evidence of the operation — must remain stable enough to extend leverage into the aftermath. Detection during Captive Control is bounded by the threat actor's success in the prior tactics: if the seizure has been concealed and the holding location is well chosen, external observation is limited; if either is compromised, captive control devolves into a barricade or hostage incident with a different response posture. The duration of Captive Control varies materially with the threat actor's assessed or known purpose. Operations whose objective is to hand the targeted subject over to another threat actor or group are usually shorter; operations whose objective is rendition to a foreign jurisdiction for trial and sentencing extend across weeks or months and are bounded by the legal timeline; barricade and demand-driven incidents resolve on a timeline driven by negotiation or tactical intervention. Estimating duration requires understanding the threat actor and the purpose of the operation — there is no single duration profile.",
           "observed_contexts": [
             "kidnapping case where the threat actor moved the targeted subject across three holding locations over four days to defeat search efforts, recovered through coordinated cross-jurisdictional CCTV correlation and informant intelligence",
             "barricade incident where sustained negotiation across eighteen hours produced peaceful resolution after initial demands were assessed as bounded and the threat actor's fatigue threshold was reached",
@@ -7777,7 +7777,7 @@
             },
             {
               "id": "IND-0306-04",
-              "behavior": "Threat actor deceives bystanders about the nature of the incident — claiming a drill, a medical event, a film production — to delay recognition that the operation is underway",
+              "behavior": "Threat actor deceives bystanders about the nature of the incident — claiming a drill, a medical event, or a media production — to delay recognition that the operation is underway, or recruits unwitting bystanders into the operation through misrepresentation of its purpose",
               "category": "communication",
               "detection_sources": [
                 "peer_report",
@@ -7791,7 +7791,8 @@
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
-                "ASIS-WVPI-2021"
+                "ASIS-WVPI-2021",
+                "KIM-JONGNAM-KUL-2017"
               ]
             },
             {
@@ -7958,7 +7959,8 @@
             "NTAC-MASS-2021",
             "ASIS-WVPI-2021",
             "FBI-PREATTACK-2018",
-            "NTAC-SYSTEMS-2020"
+            "NTAC-SYSTEMS-2020",
+            "KIM-JONGNAM-KUL-2017"
           ],
           "response_protocols": [
             {
@@ -8094,7 +8096,9 @@
               "category": "surveillance",
               "detection_sources": [
                 "physical_observation",
-                "cctv"
+                "cctv",
+                "rf_detection",
+                "anti_drone_systems"
               ],
               "phase_relevance": [
                 "execution"
@@ -8331,7 +8335,7 @@
               ]
             }
           ],
-          "field_notes": "Counter-Surveillance during execution is harder than counter-surveillance during planning. The threat actor is now exposed, time-pressured, and committed — there's no withdrawing to study the environment, no opportunity to defer the operation. Detection of an observer must happen fast or not at all, and the response options are constrained: the threat actor can abort (which has its own signature), accelerate (which exposes more), or engage the observer (which generates additional kinetic signal). Sophisticated threat actors equip for this phase with tools that move faster than human observation — police scanner apps, live CCTV feed monitoring, drone overwatch, pre-positioned spotters relaying real-time updates over encrypted comms. What an analyst recovers in after-action review is the threat actor's awareness footprint: the moment the threat actor's pace changed when a security vehicle came into view, the abort initiated when the police scanner reported nearby units, the route alteration triggered by an observer's unsubtle attention.",
+          "field_notes": "Counter-Surveillance during execution is the threat actor's real-time scanning for security personnel, law enforcement, witnesses, or other observers capable of interrupting the operation. The threat actor at this stage is exposed, time-pressured, and committed. Detection of an observer must happen fast or not at all, and the response options are constrained: abort (which has its own signature), accelerate (which exposes more), or engage the observer (which generates additional kinetic signal). Sophisticated threat actors equip for this phase with tools that move faster than human observation — police scanner apps, live CCTV feed monitoring, drone overwatch, pre-positioned spotters relaying real-time updates over encrypted comms. What an analyst recovers in after-action review is the threat actor's awareness footprint: the moment the threat actor's pace changed when a security vehicle came into view, the abort initiated when the police scanner reported nearby units, the route alteration triggered by an observer's unsubtle attention.",
           "observed_contexts": [
             "active shooter event where the threat actor monitored a police scanner application during the kinetic phase, identified retrospectively when the recovered device showed the scanner app open with a timestamp aligned to the response activation moment",
             "kidnapping case where the threat actor used a pre-positioned spotter relaying CCTV-feed updates over encrypted messaging, with the spotter network recognized only after digital forensic recovery from the operation lead's device",
@@ -8402,7 +8406,8 @@
               "category": "communication",
               "detection_sources": [
                 "communications_intercept",
-                "physical_observation"
+                "physical_observation",
+                "rf_detection"
               ],
               "phase_relevance": [
                 "execution"
@@ -8653,7 +8658,7 @@
               ]
             }
           ],
-          "field_notes": "Operational Communication is the most fragile thread of any multi-actor operation. Encrypted comms can be jammed, codes can be misread under stress, channels can be lost in the noise of the kinetic moment, and the cost of misalignment is the operation's coherence — accomplices acting on stale information, contradictory commands, or no command at all. Detection of operational communication during execution depends on intercept capability that is generally outside the protective program's authority; what the threat assessment team recovers in after-action is the artifact trail — encrypted app metadata, signal codes documented in seized devices, the silence between transmissions that indicates a comms-down moment in the operational timeline. Solo-actor operations have no communication signal to detect, while multi-actor operations create observable coordination signatures the moment the threat actors stop being able to maintain stealth across the team. What an investigator looks for is the timing pattern of inferred signaling — the moment when one accomplice acts on information another could only have transmitted, the breakdown when comms failure creates visible operational confusion.",
+          "field_notes": "Operational Communication can be one of the most fragile aspects of any multi-actor operation. Encrypted comms can be jammed, codes can be misread under stress, channels can be lost in the noise of the kinetic moment, and the cost of misalignment is the operation's coherence — accomplices acting on stale information, contradictory commands, or no command at all. Detection of operational communication during execution depends on intercept capability that is generally outside the protective program's authority; what the threat assessment team recovers in after-action is the artifact trail — encrypted app metadata, signal codes documented in seized devices, the silence between transmissions that indicates a comms-down moment in the operational timeline. Solo-actor operations have no communication signal to detect, while multi-actor operations create observable coordination signatures the moment the threat actors stop being able to maintain stealth across the team. What an investigator looks for is the timing pattern of inferred signaling — the moment when one accomplice acts on information another could only have transmitted, the breakdown when comms failure creates visible operational confusion.",
           "observed_contexts": [
             "kidnapping case where multi-actor coordination via encrypted messaging was reconstructed post-incident through forensic recovery of two of three accomplices' devices, identifying the signal codes used during the seizure window",
             "active shooter event involving two threat actors where a comms-down moment created observable confusion in the operational timeline, recognized in after-action review as the breakdown between pre-attack rehearsal and live execution",
@@ -11119,6 +11124,15 @@
       "url": "https://doi.org/10.2172/2229613",
       "doi": "10.2172/2229613",
       "relevance_summary": "DOE/NNSA-sponsored requirements study evaluating whether any existing methodology could serve as a structured framework for characterizing physical adversary action. Concluded existing frameworks are inadequate."
+    },
+    "KIM-JONGNAM-KUL-2017": {
+      "type": "news_investigation",
+      "title": "Making a Murderer: The Assassination of Kim Jong-nam",
+      "author": "Lowy Institute (The Interpreter)",
+      "date": "2017",
+      "url": "https://www.lowyinstitute.org/the-interpreter/making-murderer-assassination-kim-jong-nam",
+      "doi": null,
+      "relevance_summary": "Documents the 13 February 2017 assassination of Kim Jong-nam at Kuala Lumpur International Airport, including the recruitment of two women under a 'prank video for a TV show' media-production cover who applied VX nerve agent without knowing they were committing the assassination. The case is the canonical operational example of bystander recruitment through media-production deception. The Lowy Institute analysis is cited as the operationally focused source; comparable coverage is available from major international news organizations including NPR and CNN."
     }
   }
 }
