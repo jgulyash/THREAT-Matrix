@@ -974,7 +974,7 @@
               "domain": "personnel_security",
               "cost": "low",
               "complexity": "low",
-              "time_to_implement": "weeks to months",
+              "time_to_implement": "weeks_to_months",
               "phase_relevance": [
                 "target_development"
               ],
@@ -9501,7 +9501,7 @@
             },
             {
               "id": "CM-0403-03",
-              "measure": "Conduct extended monitoring of high-confidence threat actor candidates beyond the immediate post-incident window — Cover Reestablishment is most observable at one to three months post-event when the threat actor's discipline begins to slip",
+              "measure": "Conduct extended monitoring of high-confidence threat actor candidates beyond the immediate post-incident window — Cover Reestablishment is most observable when the threat actor's discipline begins to slip, which can occur on widely varying timelines depending on the actor and operational pressure",
               "category": "detective",
               "domain": "behavioral_intervention",
               "cost": "medium",
@@ -10001,7 +10001,7 @@
               ]
             }
           ],
-          "field_notes": "Network Protection is the asymmetric problem at the end of any multi-actor operation: every accomplice who survives is a potential point of compromise, and the network's discipline must hold across every member or the protection fails. The threat actor leading the operation is now responsible for shutting down communications, dispersing personnel, removing infrastructure, and managing cutouts before any single accomplice is interviewed by law enforcement. What makes this asymmetric is that the network has to succeed everywhere, while law enforcement only has to succeed once: a single accomplice who breaks under questioning, a single dropped device that wasn't wiped, a single cutout who wasn't paid produces the seam that unravels the rest. For lone-actor operations this tactic is absent, which is itself diagnostic. For organized actors, Network Protection determines whether the operation generates one prosecution or many.",
+          "field_notes": "Network Protection effectiveness depends on operational discipline and compartmentation across the entire operational network. If every member maintained strict OPSEC, the loss of one accomplice exposes only what that accomplice knew — often a single operational role rather than the broader operation. If a segment of the network practiced poor OPSEC, exposure of any member in that segment may compromise the entire segment, while well-disciplined compartments remain protected behind the operational firewall. The threat actor leading the operation is responsible at this stage for shutting down communications, dispersing personnel, removing infrastructure, and managing cutouts before any single accomplice is interviewed by law enforcement. For lone-actor operations this tactic is absent, which is itself diagnostic. For organized actors, Network Protection determines whether the operation generates one prosecution, one segment exposed, or many.",
           "observed_contexts": [
             "kidnapping case where the threat actor's network protection succeeded for two of three accomplices (devices wiped, dispersal completed, payments made) but the third accomplice's failure to wipe a single device produced the forensic seam that identified the network",
             "extremist case where pre-coordinated network discipline (silence, lawyer-up, pre-arranged story) held across initial interviews but unraveled after immunity offers were extended to mid-tier accomplices over a six-month investigation",
@@ -10156,7 +10156,8 @@
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
-                "CISA-CONVERGE-2021"
+                "CISA-CONVERGE-2021",
+                "CHAINALYSIS-CCR-2024"
               ]
             },
             {
@@ -10266,7 +10267,8 @@
             "CISA-CONVERGE-2021",
             "FBI-PREATTACK-2018",
             "CERT-CSG-7-2022",
-            "NITTF-GUIDE-2017"
+            "NITTF-GUIDE-2017",
+            "CHAINALYSIS-CCR-2024"
           ],
           "response_protocols": [
             {
@@ -10617,7 +10619,7 @@
               ]
             }
           ],
-          "field_notes": "After-Action Assessment is what threat actors do when they intend to operate again. The operation just completed produced lessons — what worked, what nearly failed, what was observable that shouldn't have been, what surveillance signature the team did not anticipate — and a persistent threat actor extracts those lessons and feeds them back into the next operation's planning. This tactic is absent for lone actors and opportunity-based actors who operate once; its presence is itself diagnostic of organizational capacity and operational tempo. The output of After-Action Assessment is not directly observable — there's no document or transmission that an investigator can intercept in most cases — but its effects appear in the next operation: the surveillance signature that was visible last time is absent, the cover story that fell apart under questioning is replaced with a more plausible one, the timing window that was exploited but barely is replaced with a more reliable alternative. What an analyst looks for is the operational evolution of repeat threat actors: each cycle of activity should reveal a tighter, less-observable pattern, and that tightening is the signature of After-Action Assessment in practice.",
+          "field_notes": "After-Action Assessment is the threat actor's evaluation of what worked, what failed, and what must change — applied to future operation planning, false-flag maintenance, deniability preservation, or simply to learn from the operation regardless of any decision about future activity. The operation just completed produced lessons — what worked, what nearly failed, what was observable that shouldn't have been, what surveillance signature the team did not anticipate — and a persistent threat actor extracts those lessons and applies them where useful. This tactic is most prominent for organized actors with operational tempo; lone actors who do not anticipate further activity may skip it, while lone actors under continued investigation pressure often perform it implicitly through cover maintenance. The output of After-Action Assessment is not directly observable in most cases — there's no document or transmission that an investigator can intercept — but its effects appear later: the surveillance signature that was visible last time is absent, the cover story that fell apart under questioning is replaced with a more plausible one, the timing window that was exploited but barely is replaced with a more reliable alternative. What an analyst looks for is the operational evolution of repeat threat actors: each cycle of activity should reveal a tighter, less-observable pattern, and that tightening is the signature of After-Action Assessment in practice.",
           "observed_contexts": [
             "transnational organized case where successive kidnapping operations showed progressive surveillance-footprint reduction across three years, identified retrospectively through cross-operation pattern analysis",
             "extremist case where recovered training materials at a captured safe house documented explicit lessons-learned from a prior operation, including detection-method critique and methodology updates",
@@ -10719,7 +10721,7 @@
             },
             {
               "id": "IND-0407-05",
-              "behavior": "Threat actor conspicuously declines to claim responsibility despite political incentive to do so, indicating either operational discipline (network protection priority) or third-party attribution misdirection",
+              "behavior": "Threat actor remains silent on attribution despite political incentive to claim responsibility, indicating either operational discipline (network protection priority) or deliberate third-party attribution misdirection",
               "category": "communication",
               "detection_sources": [
                 "open_source",
@@ -11343,7 +11345,7 @@
             },
             {
               "id": "IND-0409-06",
-              "behavior": "Threat actor uses third-party intermediaries — lawyers, religious figures, journalists — as channels for demand transmission, exploiting their access while constraining direct attribution",
+              "behavior": "Threat actor uses third-party intermediaries — religious figures, community leaders, or traditional intermediaries — as channels for demand transmission, exploiting their access while constraining direct attribution",
               "category": "communication",
               "detection_sources": [
                 "communications_intercept",
@@ -11553,7 +11555,7 @@
               ]
             }
           ],
-          "field_notes": "By the time Coercive Leverage is observable, the threat actor has converted operational success into ongoing demand: the targeted subject is held captive, sensitive information has been extracted, or a credible threat of recurrence has been established, and the threat actor now uses that position to extract concessions from the victim's family, employer, government, or affiliated decision-makers. The leverage may be physical (a held hostage), informational (proof-of-life paired with extortion threat), positional (occupied facility with hostages or sensitive material), or threat-based (credible promise of further violence absent compliance). Coercive Leverage requires sustained operational tempo: the threat actor must maintain the leverage condition — captive remains held, information remains unreleased, threat remains credible — while simultaneously extracting concessions, which creates the longest sustained operational window of any tactic. What an analyst observes during Coercive Leverage is the demand articulation: the timing of contacts, the channel chosen, the form of proof-of-life or proof-of-leverage, the deadline structure, and the threat escalation path used to compel compliance.",
+          "field_notes": "By the time Coercive Leverage is observable, the threat actor has converted operational success into ongoing demand: the targeted subject is held captive, sensitive information has been extracted, or a credible threat of recurrence has been established, and the threat actor now uses that position to extract concessions from the victim's family, employer, government, or affiliated decision-makers. The leverage may be physical (a held hostage), informational (proof-of-life paired with extortion threat), positional (occupied facility with hostages or sensitive material), or threat-based (credible promise of further violence absent compliance). Coercive Leverage requires sustained operational tempo: the threat actor must maintain the leverage condition — captive remains held, information remains unreleased, threat remains credible — while simultaneously extracting concessions. What an analyst observes during Coercive Leverage is the demand articulation: the timing of contacts, the channel chosen, the form of proof-of-life or proof-of-leverage, the deadline structure, and the threat escalation path used to compel compliance.",
           "observed_contexts": [
             "kidnap-for-ransom case where coercive leverage was sustained across eleven days, with the threat actor cycling demand articulation through three intermediaries before final resolution via cryptocurrency payment",
             "extortion case where the threat actor maintained credible threat-based leverage against a corporate decision-maker over six months, using staged escalation incidents to demonstrate capability without crossing into operational triggers",
@@ -12784,6 +12786,15 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/making-murderer-assassination-kim-jong-nam",
       "doi": null,
       "relevance_summary": "Documents the 13 February 2017 assassination of Kim Jong-nam at Kuala Lumpur International Airport, including the recruitment of two women under a 'prank video for a TV show' media-production cover who applied VX nerve agent without knowing they were committing the assassination. The case is the canonical operational example of bystander recruitment through media-production deception. The Lowy Institute analysis is cited as the operationally focused source; comparable coverage is available from major international news organizations including NPR and CNN."
+    },
+    "CHAINALYSIS-CCR-2024": {
+      "type": "incident_database",
+      "title": "Crypto Crime Report — Annual Analysis of Illicit Cryptocurrency Activity",
+      "author": "Chainalysis Inc.",
+      "date": "2024",
+      "url": "https://www.chainalysis.com/crypto-crime-report/",
+      "doi": null,
+      "relevance_summary": "Annual industry report documenting illicit cryptocurrency flows, ransomware payment patterns, mixing service activity, and the timeline characteristics of blockchain-forensics tracing. The report establishes that poorly-mixed cryptocurrency receipts can be traced to off-ramps within hours through chain analysis, while well-laundered flows using privacy coins (Monero, Zcash) and multi-protocol layering can extend attribution timelines to months or years. Cited in TA0405 Financial Disposition for the comparative-tracing-speed claim."
     }
   }
 }
