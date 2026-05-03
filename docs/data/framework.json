@@ -9364,8 +9364,178 @@
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0403-01",
+              "behavior": "Threat actor establishes a documented alibi for the operational window — credit card use at distant location, confirmed social media activity, witnessed presence at a venue inconsistent with operational location",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "financial_records",
+                "social_media",
+                "peer_report",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0202-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0403-02",
+              "behavior": "Threat actor's contact pattern with colleagues, family, and associates resumes at a cadence and tone matching pre-operation baseline, without deviation that would suggest psychological residue from the operation",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0403-03",
+              "behavior": "Threat actor returns to normal routine activities — workplace attendance, hobbies, social engagements — within a timeframe consistent with pre-operation behavior",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "peer_report",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0403-04",
+              "behavior": "Threat actor's online presence shows deliberate normalization — routine posts, no commemoration of the operation, no behavioral break that would draw attention",
+              "category": "digital",
+              "detection_sources": [
+                "social_media",
+                "open_source",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0202-03",
+                "IND-0402-06"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0403-05",
+              "behavior": "Threat actor's response to the operation in conversation matches the response of an uninvolved peer — appropriate concern, no insider knowledge that wasn't publicly available",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0403-01",
+              "measure": "Maintain peer and family awareness of post-incident behavioral baseline indicators including over-rehearsed alibis, atypical reluctance to discuss the incident, or inconsistencies between claimed and verifiable activities",
+              "category": "detective",
+              "domain": "behavioral_intervention",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Many associates of a successful threat actor are themselves disinclined to suspect; reporting threshold is high in close personal relationships",
+              "compensates_for": [
+                "CM-0202-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "CM-0403-02",
+              "measure": "Coordinate with law enforcement on cross-reference of alibi claims against transaction records, location data, and witness reports for high-confidence threat actor candidates",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Cross-reference depends on retained records that may be unavailable across jurisdictions or platforms; alibi claims that are partially true are harder to invalidate than fully fabricated ones",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "CM-0403-03",
+              "measure": "Conduct extended monitoring of high-confidence threat actor candidates beyond the immediate post-incident window — Cover Reestablishment is most observable at one to three months post-event when the threat actor's discipline begins to slip",
+              "category": "detective",
+              "domain": "behavioral_intervention",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Extended monitoring requires sustained analyst attention and legal scope; without a high-confidence candidate, monitoring is unfocused and produces noise rather than detection",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0403-04",
+              "measure": "Establish information-sharing with law enforcement on behavioral patterns characteristic of post-incident cover reestablishment, including over-rehearsed alibi structures and contact-pattern normalization signatures",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Pattern documentation lags adversary behavior; signatures characteristic of one threat actor class may not generalize to others",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -9443,9 +9613,65 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "FBI-PREATTACK-2018",
+            "ASIS-WVPI-2021",
+            "NTAC-SYSTEMS-2020",
+            "CERT-CSG-7-2022"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0403-01",
+              "trigger": "Single Cover Reestablishment indicator detected for a threat actor candidate (alibi inconsistency, behavioral baseline anomaly, online normalization signal)",
+              "action": "Document the indicator. Coordinate with law enforcement on cross-reference of the alibi claim against available records. Conduct baseline review of the threat actor candidate's pre-operation activity pattern. Notify the threat assessment team for inclusion in any active case.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "security_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Multiple indicators tied to the same threat actor candidate OR alibi cross-reference fails OR behavioral pattern reveals operationally-relevant inconsistency.",
+              "coordinates_with": [
+                "RP-0202-01",
+                "RP-0402-01"
+              ],
+              "legal_notes": "Investigation of an individual's behavioral pattern and alibi claim carries jurisdiction-specific privacy implications; coordinate with legal before any escalation. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0403-02",
+              "trigger": "Multiple Cover Reestablishment indicators tied to a high-confidence threat actor candidate, particularly where indicators surface across the one-to-three-month post-event window",
+              "action": "Coordinate with law enforcement on enhanced post-incident investigation. Apply forensic discipline to alibi cross-reference, behavioral pattern reconstruction, and online-presence analysis. Brief the threat assessment team and executive leadership on the candidate's standing in active investigation.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "executive_leadership",
+                "legal"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Cover Reestablishment evidence supports formal investigation OR ties to other open threat cases.",
+              "coordinates_with": [
+                "RP-0402-02"
+              ],
+              "legal_notes": "Sustained investigation of an individual requires evidentiary support; coordinate with prosecutors on the threshold for formal action. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "field_notes": "By the time Cover Reestablishment is observable, the operation has either succeeded or failed and the threat actor has returned to public life — and the question is whether the threat actor's behavioral envelope has reverted to something indistinguishable from normal. The threat actor at this stage is performing absence: appearing at expected places at expected times, resuming routine social and professional contacts, generating no behavioral signal that would distinguish them from someone who had not just executed an operation. Cover Reestablishment overlaps with Cover Construction conceptually but operates in reverse: Cover Construction builds a fabricated identity to enable approach; Cover Reestablishment restores the threat actor's pre-operation identity to deflect attribution. What an investigator looks for during this tactic is incongruity — the routine that's slightly off, the contact pattern that's resumed too quickly or too slowly, the alibi that holds at first inspection but doesn't survive cross-reference.",
+          "observed_contexts": [
+            "workplace violence case where the threat actor returned to work the day after the attack and conducted routine duties with no apparent change in pattern, identified retrospectively when alibi cross-reference revealed a 90-minute gap unaccounted for during the operational window",
+            "domestic case where the threat actor's contact pattern with extended family resumed within 48 hours of the incident, recognized as deliberate cover behavior only when peer reports of over-rehearsed alibi answers aggregated across multiple interviews",
+            "executive protection case where the threat actor's online presence showed a deliberate gap in posting during the operational window followed by a normalized pattern, identified through retrospective social-media archival analysis",
+            "[literature: FBI-PREATTACK-2018 — pattern of post-incident behavioral normalization in active shooter cases, with disciplined return to routine identified as a marker of pre-meditation rather than impulsive attack]",
+            "insider threat case where the threat actor's resumed workplace routine showed the precise tone-matching of pre-incident peer interactions but failed under cross-reference of badge-swipe patterns inconsistent with claimed activities"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0404",
@@ -9461,8 +9687,204 @@
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0404-01",
+              "behavior": "Threat actor initiates communications shutdown across the operational network — devices destroyed, accounts deleted, channels abandoned, encrypted-app contact lists wiped",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0202-02",
+                "IND-0402-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "IND-0404-02",
+              "behavior": "Threat actor disperses operational personnel away from the protected environment, the targeted subject's region, or any location associated with the operation",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0401-05"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0404-03",
+              "behavior": "Threat actor removes operational infrastructure including safe houses, vehicle staging, equipment caches, and digital infrastructure used during the operation",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "it_logs",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0402-02",
+                "IND-0402-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0404-04",
+              "behavior": "Threat actor manages witting accomplices through payment, reassignment, relocation, or in extreme cases threatened or actual harm to ensure silence under post-incident questioning",
+              "category": "communication",
+              "detection_sources": [
+                "financial_records",
+                "peer_report",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0105-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022",
+                "NITTF-GUIDE-2017"
+              ]
+            },
+            {
+              "id": "IND-0404-05",
+              "behavior": "Threat actor manages unwitting cutouts (proxy purchasers, transportation providers, document forgers) through compartmentalization, payment, or removal of operational connection — the cutout often not knowing they were operationally relevant",
+              "category": "communication",
+              "detection_sources": [
+                "financial_records",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0104-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0404-06",
+              "behavior": "Threat actor's network response to law enforcement contact with any single accomplice shows pre-coordinated discipline — silence, lawyer-up, denial, or pre-arranged story",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NITTF-GUIDE-2017"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0404-01",
+              "measure": "Coordinate with law enforcement on rapid post-incident interview and forensic recovery across identified accomplice nodes before network protection completes — the post-incident window is bounded and shrinking",
+              "category": "detective",
+              "domain": "policy_procedure",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Rapid interview depends on accomplice identification within the post-incident window; sophisticated networks pre-coordinate dispersal that places accomplices outside reach",
+              "compensates_for": [
+                "CM-0402-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NITTF-GUIDE-2017",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0404-02",
+              "measure": "Maintain capability to track accomplice movement, communication, and financial activity in the post-incident window through coordinated law enforcement and intelligence-sharing channels",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Tracking carries jurisdiction-specific authorization requirements; cross-border movement requires international coordination that may lag the threat actor's dispersal speed",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "CM-0404-03",
+              "measure": "Establish legal-process pathways for compelling accomplice testimony where evidence supports it, including immunity offers and witness protection where appropriate",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Compelled testimony depends on prosecutor judgment and witness reliability; pre-coordinated network discipline may resist immunity offers when leadership is at risk",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "CM-0404-04",
+              "measure": "Implement coordination with international counterparts where network protection involves cross-border movement of accomplices or assets, particularly into jurisdictions with limited extradition or cooperation",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "International coordination is constrained by treaty, diplomatic relations, and political considerations that may not align with operational urgency",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NITTF-GUIDE-2017"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -9528,9 +9950,66 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CERT-CSG-7-2022",
+            "NITTF-GUIDE-2017",
+            "FBI-PREATTACK-2018",
+            "NTAC-MASS-2021"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0404-01",
+              "trigger": "Network protection indicators detected post-incident — communications shutdown across multiple nodes, personnel dispersal, infrastructure removal, accomplice management activity",
+              "action": "Activate rapid post-incident investigation. Coordinate with law enforcement on accomplice identification, interview deployment, and forensic recovery. Treat the post-incident window as the primary detection opportunity; once network protection completes, attribution becomes materially harder.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "executive_leadership"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Network protection signature ties to known organized adversary OR cross-border movement initiated.",
+              "coordinates_with": [
+                "RP-0402-01",
+                "RP-0401-02"
+              ],
+              "legal_notes": "Investigation of multi-actor networks requires coordination across jurisdictional and prosecutorial authority; chain-of-custody integrity for any artifact recovered is critical for downstream prosecution. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NITTF-GUIDE-2017",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0404-02",
+              "trigger": "Sustained network-protection discipline detected during ongoing investigation indicating organized operational sophistication and broader network involvement",
+              "action": "Treat the network-protection pattern as diagnostic input to threat actor profile and adjust investigative posture accordingly. Coordinate with intelligence-sharing partners on signature recognition. Document the network's discipline pattern for inclusion in adversary tradecraft database. Consider expanded legal process where evidentiary support permits.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "executive_leadership",
+                "legal"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Network-protection pattern reveals connection to known organized threat group or expanded operational network.",
+              "coordinates_with": [
+                "RP-0402-02"
+              ],
+              "legal_notes": "Expanded legal process requires evidentiary threshold; coordinate with prosecutors before any covert investigative step. Information-sharing with intelligence partners may carry classification or jurisdictional restrictions. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            }
+          ],
+          "field_notes": "Network Protection is the asymmetric problem at the end of any multi-actor operation: every accomplice who survives is a potential point of compromise, and the network's discipline must hold across every member or the protection fails. The threat actor leading the operation is now responsible for shutting down communications, dispersing personnel, removing infrastructure, and managing cutouts before any single accomplice is interviewed by law enforcement. What makes this asymmetric is that the network has to succeed everywhere, while law enforcement only has to succeed once: a single accomplice who breaks under questioning, a single dropped device that wasn't wiped, a single cutout who wasn't paid produces the seam that unravels the rest. For lone-actor operations this tactic is absent, which is itself diagnostic. For organized actors, Network Protection determines whether the operation generates one prosecution or many.",
+          "observed_contexts": [
+            "kidnapping case where the threat actor's network protection succeeded for two of three accomplices (devices wiped, dispersal completed, payments made) but the third accomplice's failure to wipe a single device produced the forensic seam that identified the network",
+            "extremist case where pre-coordinated network discipline (silence, lawyer-up, pre-arranged story) held across initial interviews but unraveled after immunity offers were extended to mid-tier accomplices over a six-month investigation",
+            "transnational organized case where rapid cross-border dispersal placed the operational lead and senior accomplices outside extradition before post-incident interviews could be conducted, with the case resolving only against domestic-tier accomplices",
+            "[literature: NITTF-GUIDE-2017 — pattern of insider-network discipline post-incident, including pre-coordinated response protocols and the diagnostic value of network-protection sophistication]",
+            "lone-actor case where the absence of any network-protection signature was correctly read as confirmation of lone-actor profile, simplifying the post-incident investigation focus"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0405",
@@ -9547,8 +10026,176 @@
           "cpn_id": "CPN-0405",
           "cpn_notes": "Cryptocurrency is the primary post-operation payment mechanism for both ransom and contract operations. Mixing services, chain hopping, and privacy coins are the standard obfuscation chain. Financial forensics on blockchain transactions have become a primary investigative tool — sophistication of financial disposition directly determines investigative success.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0405-01",
+              "behavior": "Threat actor receives ransom payment, contract payment, or extortion proceeds via cryptocurrency, prepaid cards, wire transfer, or hawala consistent with the operation's financial scale",
+              "category": "financial",
+              "detection_sources": [
+                "financial_records",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0303-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0405-02",
+              "behavior": "Threat actor uses cryptocurrency mixing services, chain hopping across multiple wallets, privacy coins (Monero, Zcash), or DeFi protocols to obfuscate the link between operational receipt and the threat actor's accessible wallet",
+              "category": "financial",
+              "detection_sources": [
+                "it_logs",
+                "financial_records",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0405-03",
+              "behavior": "Threat actor converts operational proceeds into legitimate-appearing forms — real estate purchases, business investments, prepaid commercial instruments, physical commodities — within months of the operation",
+              "category": "financial",
+              "detection_sources": [
+                "financial_records",
+                "public_records",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0405-04",
+              "behavior": "Threat actor uses layered conventional accounts, often across multiple jurisdictions, to break the audit trail between operational receipt and threat actor's primary financial position",
+              "category": "financial",
+              "detection_sources": [
+                "financial_records",
+                "public_records"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0202-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "IND-0405-05",
+              "behavior": "Threat actor's lifestyle changes in a manner consistent with operational proceeds — vehicle purchases, real-estate acquisition, expanded household consumption — without a documented legitimate income source supporting the new pattern",
+              "category": "financial",
+              "detection_sources": [
+                "public_records",
+                "peer_report",
+                "social_media"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0405-01",
+              "measure": "Coordinate with financial intelligence units and law enforcement on transaction monitoring for known threat actor candidates and accomplices in the post-incident window",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Transaction monitoring depends on financial-system cooperation that varies by jurisdiction; cryptocurrency receipts may bypass conventional monitoring entirely",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0405-02",
+              "measure": "Apply blockchain forensics tools to operational cryptocurrency receipts to trace through mixers and identify cash-out points, particularly at exchanges with KYC requirements",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Privacy coins (Monero, Zcash) substantially defeat current blockchain forensics; sophisticated threat actors layer mixing across multiple chains and protocols to extend the analytical timeline",
+              "compensates_for": [
+                "CM-0402-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0405-03",
+              "measure": "Coordinate with international financial enforcement partners where disposition crosses jurisdictional lines, particularly into privacy-tolerant or sanctions-non-cooperating jurisdictions",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "International cooperation is constrained by treaty and political considerations; some jurisdictions actively shield operational beneficiaries",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NITTF-GUIDE-2017"
+              ]
+            },
+            {
+              "id": "CM-0405-04",
+              "measure": "Maintain detection capability for lifestyle-change patterns in known threat actor candidates as a long-tail attribution vector, particularly for cases where direct financial trails have been successfully obfuscated",
+              "category": "detective",
+              "domain": "behavioral_intervention",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Lifestyle-change detection requires longitudinal observation and benchmark income data that may not be available; signal-to-noise is low without other tying evidence",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -9615,9 +10262,64 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CISA-CONVERGE-2021",
+            "FBI-PREATTACK-2018",
+            "CERT-CSG-7-2022",
+            "NITTF-GUIDE-2017"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0405-01",
+              "trigger": "Financial disposition indicators detected post-incident — operational-scale receipt traced, mixing activity observed, lifestyle-change pattern surfaced for a threat actor candidate",
+              "action": "Coordinate with financial intelligence and law enforcement on transaction analysis. Apply blockchain forensics where cryptocurrency is involved. Document the disposition pattern for inclusion in the threat actor profile. Brief the threat assessment team on financial-attribution status.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "executive_leadership"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Disposition pattern ties to known organized network OR cross-border movement of proceeds initiated.",
+              "coordinates_with": [
+                "RP-0402-01"
+              ],
+              "legal_notes": "Financial investigation requires legal-process authorization; coordinate with prosecutors and financial intelligence units before any active investigative step. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-0405-02",
+              "trigger": "Sustained disposition discipline suggesting organized network or professional operator — multi-jurisdictional layering, privacy-coin migration, sustained lifestyle-change concealment",
+              "action": "Coordinate with international financial enforcement partners. Maintain longitudinal monitoring of identified threat actor candidates and accomplices. Treat the disposition signature as diagnostic of operational sophistication. Update detection methodology and information-sharing posture based on observed patterns.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "executive_leadership",
+                "legal"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Disposition pattern reveals connection to known organized financial network or broader criminal enterprise.",
+              "coordinates_with": [
+                "RP-0402-02"
+              ],
+              "legal_notes": "Cross-border financial investigation depends on treaty cooperation and foreign jurisdiction policy; coordinate with international enforcement partners early. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NITTF-GUIDE-2017"
+              ]
+            }
+          ],
+          "field_notes": "Financial Disposition is the threat actor's handling of money after the operation, falling into three pathways in current practice: receipt (ransom payment, contract payment, extortion proceeds arriving from the victim or sponsor), obfuscation (mixing services, chain hopping, privacy coins, layered conventional accounts that break linkability between operation and beneficiary), and laundering (conversion into forms — real estate, business interests, prepaid cards, physical commodities — that present as legitimate to subsequent inspection). The pathway selected reflects the threat actor's resources, sophistication, and the size of the financial flow. Modern financial forensics on blockchain transactions have become a primary investigative tool, and the sophistication of the threat actor's disposition often determines investigative success: a poorly-mixed cryptocurrency receipt traces in hours; a well-laundered flow may take years to attribute. What an investigator looks for is the seam where the operation's proceeds cross from operational anonymity into legitimate-appearing form — that crossing is where Financial Disposition is most catchable.",
+          "observed_contexts": [
+            "kidnap-for-ransom case where the threat actor's cryptocurrency receipt was traced through three mixing services to a regional exchange with KYC requirements, identifying the cash-out beneficiary within 72 hours",
+            "contract operation case where layered conventional accounts across four jurisdictions delayed financial attribution by 18 months, with eventual prosecution depending on a single accomplice's cooperation rather than direct financial tracing",
+            "extortion case where the threat actor converted operational proceeds into real estate purchases within four months of the operation, identified through public-records analysis after a lifestyle-change pattern surfaced",
+            "[literature: CISA-CONVERGE-2021 — pattern of cyber-physical convergent operations using cryptocurrency for both capability acquisition and post-operation receipt, with disposition sophistication determining investigative success]",
+            "ransom case where the threat actor's privacy-coin migration of proceeds substantially defeated blockchain forensics, with attribution achieved only through parallel investigation of accomplice communications"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0406",
@@ -9633,8 +10335,171 @@
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0406-01",
+              "behavior": "Threat actor's operational signature in successive operations shows progressive refinement — surveillance footprint reduced, cover construction more thorough, timing more reliable, evidence management tighter",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0107-05"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "MELOY-TRAP18-2016"
+              ]
+            },
+            {
+              "id": "IND-0406-02",
+              "behavior": "Threat actor incorporates lessons from law enforcement public statements about prior operations into modified methodology in subsequent operations",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "open_source",
+                "social_media"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0406-03",
+              "behavior": "Threat actor's communications and document recovery from prior operations show deliberate analytical activity — methodology critique, after-action notes, lessons-learned documents",
+              "category": "communication",
+              "detection_sources": [
+                "it_logs",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "IND-0406-04",
+              "behavior": "Threat actor's training of new accomplices includes deliberate methodology transfer reflecting prior-operation learning, identifiable through accomplice testimony or recovered training materials",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0105-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "IND-0406-05",
+              "behavior": "Threat actor's operational tempo accelerates or decelerates in patterns consistent with deliberate planning cycles rather than opportunity-driven operation",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0406-01",
+              "measure": "Maintain longitudinal threat actor tracking across operations to identify methodology evolution that signals organized after-action assessment",
+              "category": "detective",
+              "domain": "behavioral_intervention",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Longitudinal tracking requires sustained analyst attention, jurisdictional authority for cross-case investigation, and sufficient case volume to detect evolution patterns",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "CM-0406-02",
+              "measure": "Manage public statements about operational methodology carefully — public disclosure of detection methods provides the threat actor's after-action assessment with direct intelligence input",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Operational secrecy must be balanced against public accountability and legitimate transparency expectations; over-redaction erodes public trust",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0406-03",
+              "measure": "Establish information-sharing with law enforcement and intelligence partners on adversary methodology evolution to enable detection of post-AAR refinements before they are operationally deployed",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Information-sharing depth depends on classification, jurisdictional authority, and partner relationships; methodology evolution may outpace sharing cycles",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NITTF-GUIDE-2017"
+              ]
+            },
+            {
+              "id": "CM-0406-04",
+              "measure": "Maintain detection methodology evolution at a tempo that matches or exceeds adversary AAR cycles — defensive learning must not lag offensive learning",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Defensive evolution is constrained by funding, training, and institutional inertia; threat actors with focused resources can outpace defensive cycles in narrow operational lanes",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -9703,9 +10568,64 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "MELOY-TRAP18-2016",
+            "FBI-PREATTACK-2018",
+            "NTAC-SYSTEMS-2020",
+            "CERT-CSG-7-2022"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0406-01",
+              "trigger": "Methodology evolution detected across linked threat actor operations — signature refinement, cover improvement, tactical adaptation pattern",
+              "action": "Document the evolution. Update the threat actor profile with current operational signature. Coordinate with intelligence-sharing partners on the observed adaptation. Brief the threat assessment team on detection-methodology gaps revealed by the evolution. Adjust detection posture for subsequent operations.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "executive_leadership"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Evolution pattern indicates capability or organizational expansion OR ties to other open investigations.",
+              "coordinates_with": [
+                "RP-0107-01",
+                "RP-0402-02"
+              ],
+              "legal_notes": "Cross-case methodology analysis requires investigative authority across the linked operations; coordinate with prosecutors on case-linking thresholds. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0406-02",
+              "trigger": "Recovered AAR materials in post-incident forensic discovery — methodology critique documents, lessons-learned notes, training materials transferred to accomplices",
+              "action": "Coordinate forensic recovery under chain-of-custody discipline. Brief the threat assessment team on the documented methodology. Cross-reference against current detection capability to identify gaps. Update training and detection posture based on recovered AAR content.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "executive_leadership"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "AAR materials reveal capability or organizational scope beyond the immediate operation.",
+              "coordinates_with": [
+                "RP-0402-01"
+              ],
+              "legal_notes": "Recovered documents are evidence subject to chain-of-custody; coordinate with prosecutors before any analysis or sharing that may prejudice prosecution. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            }
+          ],
+          "field_notes": "After-Action Assessment is what threat actors do when they intend to operate again. The operation just completed produced lessons — what worked, what nearly failed, what was observable that shouldn't have been, what surveillance signature the team did not anticipate — and a persistent threat actor extracts those lessons and feeds them back into the next operation's planning. This tactic is absent for lone actors and opportunity-based actors who operate once; its presence is itself diagnostic of organizational capacity and operational tempo. The output of After-Action Assessment is not directly observable — there's no document or transmission that an investigator can intercept in most cases — but its effects appear in the next operation: the surveillance signature that was visible last time is absent, the cover story that fell apart under questioning is replaced with a more plausible one, the timing window that was exploited but barely is replaced with a more reliable alternative. What an analyst looks for is the operational evolution of repeat threat actors: each cycle of activity should reveal a tighter, less-observable pattern, and that tightening is the signature of After-Action Assessment in practice.",
+          "observed_contexts": [
+            "transnational organized case where successive kidnapping operations showed progressive surveillance-footprint reduction across three years, identified retrospectively through cross-operation pattern analysis",
+            "extremist case where recovered training materials at a captured safe house documented explicit lessons-learned from a prior operation, including detection-method critique and methodology updates",
+            "insider-conspirator case where the threat actor's communications during planning of a second operation referenced specific failures from a prior operation and the methodology adaptations being applied",
+            "[literature: NTAC-SYSTEMS-2020 — pattern of methodology evolution across linked threat actor operations, with after-action assessment identified as the mechanism producing detection-resistance over time]",
+            "professional operator case where the threat actor's pattern across five operations over a decade showed continuous tightening of operational signature, with each cycle producing fewer recoverable artifacts than the prior"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0407",
@@ -9721,8 +10641,192 @@
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0407-01",
+              "behavior": "Threat actor releases a written communiqué, manifesto, or video statement claiming responsibility for the operation through any public or semi-public channel",
+              "category": "communication",
+              "detection_sources": [
+                "social_media",
+                "open_source",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0107-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0407-02",
+              "behavior": "Threat actor contacts media organizations directly with attribution claims, supporting documentation, or operational details that confirm insider knowledge",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "open_source",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0407-03",
+              "behavior": "Threat actor releases pre-recorded attribution material — manifesto video, statement document — to multiple platforms simultaneously to defeat takedown and maximize reach",
+              "category": "digital",
+              "detection_sources": [
+                "social_media",
+                "it_logs",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0107-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0407-04",
+              "behavior": "Threat actor communicates attribution directly to the targeted subject's organization, family, or law enforcement with operational demands or leverage assertions",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0407-05",
+              "behavior": "Threat actor conspicuously declines to claim responsibility despite political incentive to do so, indicating either operational discipline (network protection priority) or third-party attribution misdirection",
+              "category": "communication",
+              "detection_sources": [
+                "open_source",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "IND-0407-06",
+              "behavior": "Threat actor's affiliated group or parent organization issues the attribution claim rather than the threat actor directly, with the threat actor either confirming through subsequent communication or remaining silent to preserve operational deniability",
+              "category": "communication",
+              "detection_sources": [
+                "open_source",
+                "social_media",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0407-01",
+              "measure": "Coordinate with media organizations and platform providers on rapid takedown of attribution materials that violate platform policy or cross into incitement of further violence",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Takedown is reactive and slower than initial reach; sophisticated threat actors pre-distribute material across multiple platforms to defeat single-platform takedown",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0407-02",
+              "measure": "Maintain forensic capability to authenticate or invalidate attribution claims — voice analysis, document forensics, metadata examination — to defeat misdirection attempts",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Attribution forensics requires specialized expertise; sophisticated threat actors can produce material designed to defeat current authentication methods",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "CM-0407-03",
+              "measure": "Coordinate public-information posture with law enforcement to avoid amplifying the threat actor's intended message while still providing accurate factual information to affected communities",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Information control during active investigation must balance operational security against legitimate public transparency expectations",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0407-04",
+              "measure": "Establish information-sharing with intelligence partners on attribution claims to detect false-flag or third-party-misdirection attempts and identify pattern matches across cases",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Attribution analysis depends on cross-case data and signature recognition; novel attribution methods may not match prior patterns",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NITTF-GUIDE-2017"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -9767,9 +10871,66 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021",
+            "FBI-PREATTACK-2018",
+            "CISA-CONVERGE-2021",
+            "NTAC-SYSTEMS-2020"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0407-01",
+              "trigger": "Attribution declaration received during or immediately after incident — communiqué, manifesto, video statement, or direct media contact",
+              "action": "Activate attribution-response protocols. Coordinate with law enforcement on authentication. Initiate platform-takedown coordination if material crosses policy thresholds. Apply public-information discipline to avoid amplification while providing accurate factual information. Brief executive leadership and external communications team.",
+              "stakeholders": [
+                "security_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "legal",
+                "communications"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Attribution is authenticated AND ties to known threat group OR contains additional threats requiring protective response.",
+              "coordinates_with": [
+                "RP-0408-01"
+              ],
+              "legal_notes": "Attribution material may be evidence subject to chain-of-custody; coordinate with prosecutors before any analysis or sharing. Platform takedown decisions may carry First Amendment or jurisdictional implications. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "RP-0407-02",
+              "trigger": "Delayed or third-party attribution claim post-incident — affiliated group claim, manifesto release weeks after the incident, or recovered material containing attribution intent not previously publicized",
+              "action": "Coordinate authentication with law enforcement. Brief the threat assessment team on the attribution context and threat actor profile implications. Update public-information posture if previously framed as unattributed. Cross-reference against open investigations for pattern matches.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "executive_leadership",
+                "communications"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Authenticated attribution reveals expanded organizational involvement OR ties to other open investigations.",
+              "coordinates_with": [
+                "RP-0408-02"
+              ],
+              "legal_notes": "Third-party attribution claims must be authenticated before being treated as accurate; affiliated-group claims may not reflect actual operational responsibility. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "field_notes": "Attribution Declaration is the moment the threat actor commits the operation to a public political, ideological, or coercive frame. The kinetic event is now complete and the threat actor faces a discrete choice: claim responsibility (and convert physical violence into political or social leverage), deny responsibility (and protect the operational network and personal safety), or remain anonymous (and let the act stand without interpretation). The declaration may be a written communiqué, a manifesto release, a video statement, a media contact, or a direct communication to law enforcement or the targeted subject's organization. For terrorists, ideologically motivated actors, and extortionists, attribution declaration is the operational point — without the claim, the violence does not produce the intended political or coercive effect. For nation-state actors, attribution may be deliberately withheld or fabricated to misdirect blame to a third party. What an analyst observes is the timing, channel, and content of the declaration: who claims, when they claim, what platform they choose, and how the message is framed.",
+          "observed_contexts": [
+            "extremist attack where the threat actor pre-distributed a manifesto across multiple platforms minutes before the kinetic moment, defeating initial takedown and maximizing reach within the first 24 hours",
+            "kidnap-for-ransom case where the threat actor delivered attribution to the targeted subject's family privately, declining public claim to preserve negotiation leverage and operational deniability",
+            "ideologically motivated case where attribution was claimed by an affiliated group within hours, with the operational lead remaining silent to protect the broader network",
+            "[literature: NTAC-MASS-2021 — pattern of pre-recorded attribution material distribution at mass attack cases, including manifesto-platform pre-staging]",
+            "nation-state operation where attribution was deliberately constructed to misdirect blame to a third party, identified retrospectively through forensic analysis of message metadata and operational artifacts"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0408",
@@ -9786,8 +10947,196 @@
           "cpn_id": "CPN-0408",
           "cpn_notes": "Social media platforms, video hosting sites, and encrypted broadcast channels have displaced traditional media as the primary audience amplification channel. Actors with media production capabilities can release high-quality content that drives algorithmic amplification without press contact.",
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0408-01",
+              "behavior": "Threat actor distributes attribution material across multiple social media platforms simultaneously to maximize reach and defeat platform-by-platform takedown",
+              "category": "digital",
+              "detection_sources": [
+                "social_media",
+                "open_source",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0407-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0408-02",
+              "behavior": "Threat actor uses encrypted broadcast channels (Telegram, Discord, dark web forums) to seed attribution material to affiliated communities for re-amplification on public platforms",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "open_source",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0408-03",
+              "behavior": "Threat actor produces high-quality media materials — edited video, narrative documents, propaganda graphics — that drive algorithmic amplification independent of press contact",
+              "category": "digital",
+              "detection_sources": [
+                "social_media",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0408-04",
+              "behavior": "Threat actor's amplification strategy exploits ongoing news cycles, anniversary dates, or related events to maintain sustained visibility beyond the immediate post-incident window",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "social_media",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-0408-05",
+              "behavior": "Threat actor coordinates amplification with affiliated networks — sympathizer accounts, shared community pages — to drive engagement metrics that trigger algorithmic recommendation",
+              "category": "digital",
+              "detection_sources": [
+                "social_media",
+                "it_logs",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0105-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-0408-06",
+              "behavior": "Threat actor's amplification pattern shifts in response to platform takedown — moving to less-moderated platforms, fragmenting content to defeat detection, or using human re-uploads to evade automated removal",
+              "category": "digital",
+              "detection_sources": [
+                "social_media",
+                "open_source",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0408-01",
+              "measure": "Coordinate with major social media platforms on rapid attribution-material takedown protocols for incidents that meet platform-policy thresholds for violent content or incitement",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Takedown is reactive and content reposts faster than removal; platform policies vary and may not cover all attribution material",
+              "compensates_for": [
+                "CM-0407-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0408-02",
+              "measure": "Maintain monitoring of secondary and tertiary platforms — encrypted broadcast channels, less-moderated sites — where attribution material migrates after primary-platform takedown",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Secondary-platform monitoring requires sustained analyst attention; encrypted channels may not be visible without legal process or insider access",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-0408-03",
+              "measure": "Apply public-information discipline to incident response that does not amplify the threat actor's intended message while still providing accurate factual information to affected communities",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Public-information balance is judgment-intensive and varies by event type; over-restriction erodes public trust",
+              "compensates_for": [
+                "CM-0407-03"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0408-04",
+              "measure": "Coordinate with research and academic partners on tracking algorithmic amplification patterns to inform detection and counter-amplification methodology",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Algorithmic amplification analysis is constrained by platform data access; methodology evolves continuously and academic cycles may lag operational tempo",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -9828,9 +11177,64 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CISA-CONVERGE-2021",
+            "NTAC-MASS-2021",
+            "FBI-PREATTACK-2018",
+            "ASIS-WVPI-2021"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0408-01",
+              "trigger": "Attribution material distribution detected during incident or immediate post-incident period",
+              "action": "Activate platform-takedown coordination. Apply public-information discipline. Monitor secondary and tertiary platforms for migration. Coordinate with law enforcement on authentication and attribution analysis. Brief executive leadership and external communications team.",
+              "stakeholders": [
+                "security_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "communications"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Distribution scale exceeds rapid takedown capacity OR material includes additional threats requiring protective response.",
+              "coordinates_with": [
+                "RP-0407-01"
+              ],
+              "legal_notes": "Platform takedown decisions may carry First Amendment or jurisdictional implications; coordinate with legal before any unilateral action. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-0408-02",
+              "trigger": "Sustained amplification activity through secondary platforms after primary takedown — encrypted broadcast channels, dark web forums, alt-platform reposts",
+              "action": "Maintain longitudinal monitoring of identified amplification networks. Coordinate with law enforcement on legal-process pathways for closed-platform investigation. Update detection methodology based on observed migration patterns. Brief intelligence-sharing partners on signature recognition.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "executive_leadership"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Amplification pattern reveals connection to known organized network or ongoing operational activity.",
+              "coordinates_with": [
+                "RP-0407-02"
+              ],
+              "legal_notes": "Closed-platform investigation requires legal-process authorization; coordinate with prosecutors and platform legal teams before any active investigative step. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            }
+          ],
+          "field_notes": "Audience Amplification is the threat actor's deliberate maximization of the attribution message's reach and impact. The operation has produced violence and the attribution declaration has produced a frame; Audience Amplification converts that frame into ongoing political, social, or coercive leverage by ensuring the largest possible audience receives it in the form the threat actor intends. Modern threat actors increasingly bypass traditional media: social media platforms, video hosting services, encrypted broadcast channels, and algorithm-driven recommendation systems allow direct distribution of attribution material at scale and speed that previously required institutional gatekeepers. For ideological and extortion-motivated actors, amplification is the force multiplier — the operation's communicative impact is proportional to audience reach, and a successfully amplified attribution claim can produce political effects far in excess of the kinetic act itself. What an analyst observes during Audience Amplification is the distribution pattern: which platforms, what timing, what supporting media, what algorithmic cues the threat actor exploits to drive engagement.",
+          "observed_contexts": [
+            "extremist attack where the threat actor pre-distributed a manifesto video across six platforms simultaneously, defeating initial takedown and reaching an estimated audience of millions in the first 48 hours",
+            "ideologically motivated case where coordinated affiliated-network amplification drove the attribution material to algorithmic recommendation, sustaining visibility for weeks despite primary-platform takedown",
+            "extortion case where the threat actor amplified attribution through encrypted broadcast channels seeded with sympathizer communities, generating sustained pressure on the targeted organization",
+            "[literature: CISA-CONVERGE-2021 — pattern of cyber-physical convergent amplification using social media and encrypted channels to maximize ideological-attack communicative impact]",
+            "domestic terrorism case where the threat actor's amplification strategy exploited a related news cycle weeks after the incident, returning the case to public attention and pressuring policy response"
+          ],
+          "evidence_basis": "hybrid"
         },
         {
           "id": "TA0409",
@@ -9846,8 +11250,192 @@
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
-          "indicators": [],
-          "countermeasures": [],
+          "indicators": [
+            {
+              "id": "IND-0409-01",
+              "behavior": "Threat actor makes direct contact with the victim's family, employer, government agency, or other decision-maker to assert leverage and articulate demands",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0303-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0409-02",
+              "behavior": "Threat actor provides proof-of-life — recorded video of the captive with current-event reference, fingerprint or biometric submission, recorded voice with date confirmation — to validate the leverage position",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0303-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-0409-03",
+              "behavior": "Threat actor articulates specific demands with deadlines and consequences for non-compliance — ransom amount, prisoner release, policy change, financial disposition",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "IND-0409-04",
+              "behavior": "Threat actor escalates threats over time — increasing severity, accelerating deadlines, demonstrating capability — to pressure decision-makers toward compliance",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "IND-0409-05",
+              "behavior": "Threat actor's communications during leverage phase show negotiation framing, demand evolution, and willingness to test various pressure paths to identify the most compliance-likely target",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [
+                "IND-0304-05"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "IND-0409-06",
+              "behavior": "Threat actor uses third-party intermediaries — lawyers, religious figures, journalists — as channels for demand transmission, exploiting their access while constraining direct attribution",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "correlates_with": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-0409-01",
+              "measure": "Coordinate with law enforcement on crisis-negotiation deployment for incidents involving sustained leverage scenarios — ransom demand, hostage situation, extortion threat",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Crisis-negotiation effectiveness varies by jurisdiction and case type; some leverage scenarios resolve only through tactical intervention rather than negotiation",
+              "compensates_for": [
+                "CM-0304-01"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "CM-0409-02",
+              "measure": "Maintain proof-of-life and proof-of-leverage authentication capability — voice analysis, video forensics, biometric verification — to detect fabrication attempts and validate genuine leverage positions",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Authentication forensics requires specialized expertise; sophisticated threat actors can fabricate proof material that defeats current verification methods",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022"
+              ]
+            },
+            {
+              "id": "CM-0409-03",
+              "measure": "Establish family liaison and decision-maker preparation protocols including non-disclosure of negotiation status and information-control during the leverage window",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Information control during emotional family pressure is difficult to maintain; media inquiry and social-media leakage can compromise negotiation posture",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            },
+            {
+              "id": "CM-0409-04",
+              "measure": "Coordinate with international counterparts where leverage scenarios involve cross-border movement of captives, demands, or beneficiaries",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "International coordination is constrained by treaty and political considerations; some jurisdictions actively shield operational beneficiaries",
+              "compensates_for": [],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "NITTF-GUIDE-2017"
+              ]
+            }
+          ],
           "related_tactics": [],
           "actor_associations": [
             {
@@ -9908,9 +11496,72 @@
             }
           ],
           "source_refs": [
-            "GULYASH-FIELD-OPS-2004-2026"
+            "GULYASH-FIELD-OPS-2004-2026",
+            "ASIS-WVPI-2021",
+            "FBI-PREATTACK-2018",
+            "NTAC-SYSTEMS-2020",
+            "CERT-CSG-7-2022"
           ],
-          "response_protocols": []
+          "response_protocols": [
+            {
+              "id": "RP-0409-01",
+              "trigger": "Coercive leverage assertion received with active leverage position — captive held, sensitive material withheld, credible threat of recurrence",
+              "action": "Activate full crisis-management response. Coordinate hostage-negotiation team or extortion-response team deployment. Authenticate leverage claims (proof-of-life, proof-of-material). Activate family liaison and information-control protocols. Brief executive leadership and legal. Document the demand articulation and deadline structure contemporaneously.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "legal",
+                "human_resources",
+                "communications"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Time-sensitive demands with credible threat of harm OR multi-victim leverage OR cross-jurisdictional demand structure.",
+              "coordinates_with": [
+                "RP-0303-01",
+                "RP-0304-01"
+              ],
+              "legal_notes": "Leverage scenarios trigger jurisdiction-specific crisis-negotiation authority and tactical-intervention thresholds; coordination with law enforcement on use-of-force authority and negotiation strategy is mandatory. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021",
+                "NTAC-SYSTEMS-2020"
+              ]
+            },
+            {
+              "id": "RP-0409-02",
+              "trigger": "Sustained leverage scenario requiring multi-day negotiation management — extended hostage situation, prolonged extortion campaign, ongoing demand escalation",
+              "action": "Maintain crisis-management posture across multiple operational periods. Conduct negotiation strategy reviews at each shift change. Coordinate authentication of every escalation claim. Maintain family liaison continuity. Prepare for possible tactical intervention pending negotiation outcome.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership",
+                "legal",
+                "human_resources"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Negotiation breakdown OR threat-credibility increase OR threat actor demonstrates capability to act on escalating threats.",
+              "coordinates_with": [
+                "RP-0304-01"
+              ],
+              "legal_notes": "Multi-day crisis management carries jurisdiction-specific authorities and obligations including notification to higher levels of government in some cases. Coordinate with legal continuously throughout the scenario. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "ASIS-WVPI-2021"
+              ]
+            }
+          ],
+          "field_notes": "By the time Coercive Leverage is observable, the threat actor has converted operational success into ongoing demand: the targeted subject is held captive, sensitive information has been extracted, or a credible threat of recurrence has been established, and the threat actor now uses that position to extract concessions from the victim's family, employer, government, or affiliated decision-makers. The leverage may be physical (a held hostage), informational (proof-of-life paired with extortion threat), positional (occupied facility with hostages or sensitive material), or threat-based (credible promise of further violence absent compliance). Coercive Leverage requires sustained operational tempo: the threat actor must maintain the leverage condition — captive remains held, information remains unreleased, threat remains credible — while simultaneously extracting concessions, which creates the longest sustained operational window of any tactic. What an analyst observes during Coercive Leverage is the demand articulation: the timing of contacts, the channel chosen, the form of proof-of-life or proof-of-leverage, the deadline structure, and the threat escalation path used to compel compliance.",
+          "observed_contexts": [
+            "kidnap-for-ransom case where coercive leverage was sustained across eleven days, with the threat actor cycling demand articulation through three intermediaries before final resolution via cryptocurrency payment",
+            "extortion case where the threat actor maintained credible threat-based leverage against a corporate decision-maker over six months, using staged escalation incidents to demonstrate capability without crossing into operational triggers",
+            "hostage incident where rapid crisis-negotiation deployment authenticated proof-of-life within four hours and managed a 36-hour negotiation to peaceful resolution",
+            "[literature: ASIS-WVPI-2021 — pattern of demand articulation and deadline structures across leverage cases, with implications for crisis-negotiation team posture]",
+            "transnational case where coercive leverage was applied through religious-figure intermediary to a foreign government, identified retrospectively when the intermediary disclosed the threat actor's instructions during post-resolution debriefing"
+          ],
+          "evidence_basis": "hybrid"
         }
       ]
     },
