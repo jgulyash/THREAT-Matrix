@@ -1,0 +1,109 @@
+name: New Tactic Suggestion
+description: Suggest a new tactic to add to the THREAT Matrix framework
+title: "[Tactic] "
+labels: ["tactic-suggestion", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new tactic. The THREAT Matrix evolves through practitioner contribution.
+
+        **Source quality matters.** Government reports (NTAC, DHS, DOE), academic research, court documents, and after-action reviews carry the most weight. News articles are acceptable as supporting evidence but should not be the sole source.
+
+  - type: input
+    id: tactic-name
+    attributes:
+      label: Tactic Name
+      description: >
+        A short, behavior-first name describing what the adversary is doing.
+        Example: "Physical Surveillance" not "Surveillance Threat."
+      placeholder: e.g., Supply Chain Infiltration
+    validations:
+      required: true
+
+  - type: dropdown
+    id: target-matrix
+    attributes:
+      label: Target Matrix
+      description: Which matrix does this tactic belong to?
+      options:
+        - Person
+        - Facility
+        - Organization
+        - System
+    validations:
+      required: true
+
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Proposed Phase
+      description: Which phase of the Threat Lifecycle does this behavior occur in?
+      options:
+        - "Phase 1: Target Development"
+        - "Phase 2: Mobilization"
+        - "Phase 3: Execution"
+        - "Phase 4: Aftermath"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: >
+        Describe the adversary behavior in 2-4 sentences using operational terms.
+        Focus on what the adversary is doing, not what defenders are worried about.
+      placeholder: |
+        Describe the behavior: what does the adversary do, how, and in what context?
+        If the behavior spans multiple phases, explain why you placed it in the selected phase.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and Sources
+      description: >
+        At least one real-world source is required. All framework data must be grounded in
+        observed or feasible adversary behavior with cited sources. Preferred source types:
+        government reports (NTAC, DHS, DOE, LLNL), academic/peer-reviewed research, court
+        documents, after-action reviews. News articles are acceptable as supporting evidence.
+      placeholder: |
+        - [Required] Primary source: title, author/org, year, URL or document reference
+        - [Optional] Additional supporting sources
+    validations:
+      required: true
+
+  - type: textarea
+    id: related-tactics
+    attributes:
+      label: Related Existing Tactics
+      description: >
+        List any existing tactics (by ID or name) that are related to this suggestion.
+        This helps evaluate placement and avoid duplication.
+      placeholder: |
+        e.g., TA0103 (Physical Surveillance) - this tactic would precede surveillance in the Threat Lifecycle
+    validations:
+      required: false
+
+  - type: textarea
+    id: actor-profiles
+    attributes:
+      label: Applicable Actor Profiles
+      description: >
+        Which actor profiles would use this tactic? Reference by ID (APxxx) or category name.
+        Categories: Lone Actor, Insider, Criminal, Corporate Espionage, Ideological, Nation-State, Customer/Client Aggressor.
+      placeholder: |
+        e.g., AP005 (Corporate Spy), Nation-State category broadly
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: cpn
+    attributes:
+      label: Cyber-Physical Nexus (CPN)
+      description: Does this tactic have a cyber-physical nexus dimension?
+      options:
+        - label: This tactic involves both cyber and physical domains
+          required: false

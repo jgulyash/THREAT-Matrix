@@ -23,12 +23,12 @@ Contributions from any of these backgrounds are welcome. Operational experience 
 
 ### 1. Suggest a new tactic
 
-If you have observed (or have documented evidence of) adversary behavior that isn't represented in the framework, open an issue describing it. The framework is intentionally incomplete in V1 — V2-V4 add the Facility, Organization, and System matrices, and even the Person matrix has known gaps.
+If you have observed (or have documented evidence of) adversary behavior that isn't represented in the framework, open an issue describing it. The framework is intentionally incomplete in V1 — V1.3–V1.5 add the Facility, Organization, and Infrastructure matrices, and even the Person matrix has known gaps.
 
 **Good tactic suggestions include:**
 - A short, behavior-first name (what the adversary is *doing*, not what defenders are worried about)
 - Which phase it belongs to (Target Development, Mobilization, Execution, Aftermath)
-- Which target matrix it applies to (Person, Facility, Organization, System)
+- Which target matrix it applies to (Person, Facility, Organization, Infrastructure)
 - 2–4 sentences describing the behavior in operational terms
 - A reference: a public after-action review, court document, NTAC publication, peer-reviewed study, or first-person account
 - (If applicable) Whether it has a Cyber-Physical Nexus dimension
