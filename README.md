@@ -111,8 +111,6 @@ Standards talk to platforms. The contract is what makes integrations with RAG sy
  
 ## Build Status
  
-![THREAT Matrix Build Status](docs/images/build-status.svg)
- 
 | Version | Scope | Status |
 |---|---|---|
 | **V1** | Person matrix taxonomy (34 tactics) | Shipped |
