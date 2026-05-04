@@ -4,7 +4,45 @@ All notable changes to THREAT Matrix are documented here, per [VERSIONING.md](VE
 
 This project adheres to [Semantic Versioning](https://semver.org). Framework
 content and JSON Schema are versioned independently; both are at `1.1.0`
-as of this release.
+as of the latest release.
+
+## [1.1.1] — 2026-05-04
+
+Patch release correcting a build-artifact defect in the `1.1.0` viewer
+bundle. The `framework.json` and `framework.schema.json` artifacts at
+`1.1.0` were correct (downstream consumers fetching either file directly
+were unaffected); the SPA bundle that GitHub Pages served to the viewer
+was a stale Session 20-era build that did not include the V1.1 content
+authored after 2026-04-29.
+
+The `framework.json` content version remains `1.1.0`. The
+`framework.schema.json` schema version remains `1.1.0`. Only the SPA
+build artifact and `package.json` were updated.
+
+### Fixed
+
+- SPA bundle (`docs/assets/index-*.js`) rebuilt from current source. The
+  previously-shipped `1.1.0` bundle was built before the Session 21
+  V1.1 content authoring and contained framework data with only TA0101,
+  TA0103, and TA0305 populated and 15 bibliography entries. The
+  rebuilt bundle includes all 34 Person tactics with full V1.1 mandatory
+  fields, indicators, countermeasures, response protocols, and Detection
+  Mesh cross-links; both new bibliography entries
+  (`KIM-JONGNAM-KUL-2017`, `CHAINALYSIS-CCR-2024`); the schema enum
+  extensions (`rf_detection`, `anti_drone_systems`, `weeks_to_months`);
+  and the `GULYASH-FIELD-OPS-2004-2026` source attribution across the
+  corpus.
+- `package.json` version bumped from `1.1.0` to `1.1.1` to reflect the
+  build artifact change.
+
+### Notes
+
+Root cause: `src/App.tsx` imports `framework.json` at build time (Vite
+bundles JSON imports), so framework content commits do not reach the
+viewer until the SPA bundle is rebuilt. The release ritual for `1.1.0`
+did not include a pre-tag bundle rebuild step. A pre-release build
+verification check should be added to the release process to prevent
+recurrence.
 
 ## [1.1.0] — 2026-05-02
 
