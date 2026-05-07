@@ -2,7 +2,7 @@
  
 *Tactical Human Risk Enumeration and Adversary Taxonomy Matrix*
  
-**An open-standard, shared vocabulary for the physical threat domain. Built for the analysts, investigators, field teams, and engineers across corporate security, law enforcement, and the Intelligence Community — and for the leaders who rely on their work, and the educators and researchers shaping the discipline. Drawn from 15+ years of experience leading high-stakes threat investigations with more than 70 domestic and international partners.**
+**An open-standard, shared vocabulary for the physical-threat domain. Built for the analysts, investigators, field teams, and engineers across corporate security, law enforcement, and the Intelligence Community — and for the leaders who rely on their work, and the educators and researchers shaping the discipline. Drawn from 15+ years of experience leading high-stakes threat investigations with more than 70 domestic and international partners.**
 
 The physical threat domain lacks a shared, standardized vocabulary. The THREAT Matrix is built to be that standard. Four matrices, 154 tactics, 27 actor profiles spanning seven threat categories, accompanied by Detection Mesh and Response options. Structured from V1 to function as headless-first machine-consumable threat signal library for RAG systems, AI agents, and downstream detection and investigation tooling. Shipped with a UI and reference consumer that demonstrates the contract end-to-end.  
  
