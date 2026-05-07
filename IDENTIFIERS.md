@@ -6,7 +6,7 @@ Stable identifiers are the load-bearing surface of THREAT Matrix. Vector databas
 
 | Namespace | Format | Example | Refers to |
 |---|---|---|---|
-| **Tactic** | `TA####` | `TA0103` | A behavioral category — what the adversary is trying to accomplish |
+| **Tactic** | `TM####` | `TM0103` | A behavioral category — what the adversary is trying to accomplish |
 | **Actor profile** | `AP###` | `AP005` | A category of threat actor (e.g., insider, lone actor, nation-state) |
 | **Indicator** | `IND-####-##` | `IND-0103-01` | An observable behavior tied to a specific tactic |
 | **Countermeasure** | `CM-####-##` | `CM-0103-01` | A defensive measure tied to a specific tactic |
@@ -22,10 +22,10 @@ Indicator, countermeasure, and response-protocol IDs encode their parent tactic 
 IND-0103-01
     ^^^^ ^^
     │    └── sequence within the tactic (zero-padded, two digits)
-    └─────── parent tactic number (matches TA0103, zero-padded, four digits)
+    └─────── parent tactic number (matches TM0103, zero-padded, four digits)
 ```
 
-This is intentional. A consumer that sees `IND-0103-01` knows without dereferencing the schema that this indicator belongs to tactic `TA0103`. The structural redundancy with the `tactic_id` field on the indicator object is a feature: it enables flat consumption (a consumer that flattens the document does not lose parent-child information).
+This is intentional. A consumer that sees `IND-0103-01` knows without dereferencing the schema that this indicator belongs to tactic `TM0103`. The structural redundancy with the `tactic_id` field on the indicator object is a feature: it enables flat consumption (a consumer that flattens the document does not lose parent-child information).
 
 ### Tactic numbering scheme
 
@@ -85,7 +85,7 @@ THREAT Matrix has five operational namespaces with different rates of change. Th
 
 | Namespace | Expected churn | Rationale |
 |---|---|---|
-| `TA####` (tactics) | Very low | Tactics are behavioral categories. A new tactic represents a recognized adversary behavior that was not previously captured. |
+| `TM####` (tactics) | Very low | Tactics are behavioral categories. A new tactic represents a recognized adversary behavior that was not previously captured. |
 | `AP###` (actor profiles) | Low | Actor profiles are taxonomic groupings. They evolve as the taxonomy matures. |
 | `IND-*` (indicators) | Higher | Indicators evolve with detection practice and emerging attack patterns. |
 | `CM-*` (countermeasures) | Higher | Countermeasures evolve with defensive technology and operational practice. |
@@ -97,7 +97,7 @@ A MINOR release will commonly add new indicators, countermeasures, and response 
 
 THREAT Matrix references the following external identifier conventions verbatim, treating them as opaque strings:
 
-- **MITRE ATT&CK**: `T####`, `T####.###`, `S####`, `G####`, `TA####` (note: ATT&CK's `TA####` and THREAT Matrix's `TA####` namespaces are independent — the structural collision is acknowledged, and any cross-walk between them is explicit, not implicit)
+- **MITRE ATT&CK**: `T####`, `T####.###`, `S####`, `G####`, `TA####`
 - **MITRE CAPEC**: `CAPEC-####`
 - **MITRE D3FEND**: `D3-[ACRONYM]`
 - **MITRE ATLAS**: `AML.T####`, `AML.TA####`

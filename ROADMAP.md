@@ -64,7 +64,7 @@
 - Countermeasures for all 34 Person tactics (actionable measures with cost, complexity, time-to-implement, phase relevance, and limitations)
 - Response protocols for all 34 Person tactics (stakeholder-assigned actions with escalation triggers, parallel-execution coordination links, and legal/compliance notes)
 - Three mandatory practitioner-grounding fields per tactic: `field_notes`, `observed_contexts`, `evidence_basis`
-- TA0103 Environmental Survey pilot fully authored as the canonical exemplar
+- TM0103 Environmental Survey pilot fully authored as the canonical exemplar
 - GitHub issue templates for community contribution (New Tactic Suggestion, Framework Issue, Use Case Proposal)
  
 **Delivers (AI-native architecture):**
@@ -95,7 +95,7 @@ The contract has to be in writing before the platform is built on top of it. Sch
  
 **Delivers (UI experience):**
 - Phase Mode UI as a peer to Tactic Mode — cross-tactic rollup of all indicators relevant to a chosen phase, across the entire framework
-- Cross-phase indicator badges with clickable navigation back to parent tactic (e.g., `↳ prep for Response Suppression (Phase 3 · TA0305)`)
+- Cross-phase indicator badges with clickable navigation back to parent tactic (e.g., `↳ prep for Response Suppression (Phase 3 · TM0305)`)
 - Heat map cell layered count format: "9 tactics · 35 indicators" with hover-state evidence_basis split (e.g., "9 tactics · 35 indicators · 22 operational / 13 literature")
 - Parent tactic page inverse callout — "this tactic's preparation indicators surface in earlier phases" notice for cross-phase indicators authored under this tactic
  

@@ -206,7 +206,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^TA[0-9]{4}$"
+          "pattern": "^TM[0-9]{4}$"
         },
         "name": {
           "type": "string"

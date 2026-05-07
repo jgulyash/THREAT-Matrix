@@ -83,7 +83,7 @@ body:
         List any existing tactics (by ID or name) that are related to this suggestion.
         This helps evaluate placement and avoid duplication.
       placeholder: |
-        e.g., TA0103 (Physical Surveillance) - this tactic would precede surveillance in the Threat Lifecycle
+        e.g., TM0103 (Physical Surveillance) - this tactic would precede surveillance in the Threat Lifecycle
     validations:
       required: false
 

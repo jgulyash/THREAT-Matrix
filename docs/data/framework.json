@@ -8,7 +8,7 @@
     "person": {
       "tactics": [
         {
-          "id": "TA0101",
+          "id": "TM0101",
           "name": "Target Selection",
           "tactic_families": [
             "target_selection"
@@ -410,7 +410,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0102",
+          "id": "TM0102",
           "name": "Subject Profiling",
           "tactic_families": [
             "target_profiling"
@@ -784,7 +784,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0103",
+          "id": "TM0103",
           "name": "Environmental Survey",
           "tactic_families": [
             "environmental_survey"
@@ -1136,7 +1136,7 @@
           "evidence_basis": "operational_primary"
         },
         {
-          "id": "TA0104",
+          "id": "TM0104",
           "name": "Capability Acquisition",
           "tactic_families": [
             "capability_acquisition"
@@ -1537,7 +1537,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0105",
+          "id": "TM0105",
           "name": "Network Development",
           "tactic_families": [
             "network_development"
@@ -1896,7 +1896,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0106",
+          "id": "TM0106",
           "name": "Cover Construction",
           "tactic_families": [
             "cover_construction"
@@ -2241,7 +2241,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0107",
+          "id": "TM0107",
           "name": "Pathway Indicators",
           "tactic_families": [
             "pathway_indicators"
@@ -2613,7 +2613,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0108",
+          "id": "TM0108",
           "name": "Surveillance Detection Countermeasures",
           "tactic_families": [
             "surveillance_countermeasures"
@@ -2956,7 +2956,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0201",
+          "id": "TM0201",
           "name": "Operational Rehearsal",
           "tactic_families": [
             "operational_rehearsal"
@@ -2964,7 +2964,7 @@
           "matrix": "person",
           "phase": 2,
           "phase_name": "Mobilization",
-          "notes": "Controlled dry run of the planned approach — timing assessments, route confirmation, access testing, go/no-go decision point validation. Operational rehearsal is a controlled exercise, not the live approach. Distinct from Partial Approach Rehearsal (TA0209), which uses the live target site with abort triggers.",
+          "notes": "Controlled dry run of the planned approach — timing assessments, route confirmation, access testing, go/no-go decision point validation. Operational rehearsal is a controlled exercise, not the live approach. Distinct from Partial Approach Rehearsal (TM0209), which uses the live target site with abort triggers.",
           "cpn": true,
           "cpn_id": "CPN-0201",
           "cpn_notes": "GPS and mapping apps, real-time traffic data, and satellite imagery are standard rehearsal planning tools. Digital simulation of timing and routing can substitute for physical rehearsal in some scenarios.",
@@ -3302,7 +3302,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0202",
+          "id": "TM0202",
           "name": "Concealment",
           "tactic_families": [
             "concealment"
@@ -3672,7 +3672,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0203",
+          "id": "TM0203",
           "name": "Perimeter Breach",
           "tactic_families": [
             "access_defeat"
@@ -4044,7 +4044,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0204",
+          "id": "TM0204",
           "name": "Zone Penetration",
           "tactic_families": [
             "zone_penetration"
@@ -4422,7 +4422,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0205",
+          "id": "TM0205",
           "name": "Access Elevation",
           "tactic_families": [
             "access_elevation"
@@ -4430,7 +4430,7 @@
           "matrix": "person",
           "phase": 2,
           "phase_name": "Mobilization",
-          "notes": "Gaining higher-tier physical access through deception, social engineering, or credential abuse rather than force. Actor obtains access rights or physical proximity that their actual status does not authorize — vendor badge, escort manipulation, insider assistance. Distinct from Barrier Defeat (TA0302), which uses force.",
+          "notes": "Gaining higher-tier physical access through deception, social engineering, or credential abuse rather than force. Actor obtains access rights or physical proximity that their actual status does not authorize — vendor badge, escort manipulation, insider assistance. Distinct from Barrier Defeat (TM0302), which uses force.",
           "cpn": true,
           "cpn_id": "CPN-0205",
           "cpn_notes": "Cloned access credentials, spoofed caller ID, and fabricated digital authorization documents enable access elevation without physical contact. Attackers may use digitally-generated fake work orders or appointment confirmations to pass social engineering checkpoints.",
@@ -4770,7 +4770,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0206",
+          "id": "TM0206",
           "name": "Position Establishment",
           "tactic_families": [
             "position_establishment"
@@ -5117,7 +5117,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0207",
+          "id": "TM0207",
           "name": "Operational Pause",
           "tactic_families": [
             "operational_pause"
@@ -5430,7 +5430,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0208",
+          "id": "TM0208",
           "name": "Timing Exploitation",
           "tactic_families": [
             "timing_exploitation"
@@ -5802,7 +5802,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0209",
+          "id": "TM0209",
           "name": "Partial Approach Rehearsal",
           "tactic_families": [
             "partial_approach_rehearsal"
@@ -5810,7 +5810,7 @@
           "matrix": "person",
           "phase": 2,
           "phase_name": "Mobilization",
-          "notes": "Actor executes a partial approach sequence with pre-set abort triggers — approaching the subject's location, observing response, then withdrawing without completing the action. Repeated across multiple days or occasions before committing to full execution. Distinct from Operational Rehearsal (TA0201), which is a controlled dry run at a surrogate location. Partial Approach Rehearsal uses the live target environment and generates observable forensic signatures: access log anomalies, CCTV appearances near the subject's location, and witness sightings that establish a pre-attack timeline.",
+          "notes": "Actor executes a partial approach sequence with pre-set abort triggers — approaching the subject's location, observing response, then withdrawing without completing the action. Repeated across multiple days or occasions before committing to full execution. Distinct from Operational Rehearsal (TM0201), which is a controlled dry run at a surrogate location. Partial Approach Rehearsal uses the live target environment and generates observable forensic signatures: access log anomalies, CCTV appearances near the subject's location, and witness sightings that establish a pre-attack timeline.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -6125,7 +6125,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0301",
+          "id": "TM0301",
           "name": "Force Application",
           "tactic_families": [
             "force_application"
@@ -6461,7 +6461,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0302",
+          "id": "TM0302",
           "name": "Barrier Defeat",
           "tactic_families": [
             "barrier_defeat"
@@ -6469,7 +6469,7 @@
           "matrix": "person",
           "phase": 3,
           "phase_name": "Execution",
-          "notes": "Physically defeating access controls or protective barriers through force — forced entry, vehicle ramming, physical overpowering of a bodyguard. Distinct from Access Elevation (TA0205), which uses deception. Barrier Defeat occurs when deception-based access has failed or when the actor chooses force as the primary method.",
+          "notes": "Physically defeating access controls or protective barriers through force — forced entry, vehicle ramming, physical overpowering of a bodyguard. Distinct from Access Elevation (TM0205), which uses deception. Barrier Defeat occurs when deception-based access has failed or when the actor chooses force as the primary method.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
@@ -6800,7 +6800,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0303",
+          "id": "TM0303",
           "name": "Objective Seizure",
           "tactic_families": [
             "objective_seizure"
@@ -7125,7 +7125,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0304",
+          "id": "TM0304",
           "name": "Captive Control",
           "tactic_families": [
             "captive_control"
@@ -7419,7 +7419,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0305",
+          "id": "TM0305",
           "name": "Response Suppression",
           "tactic_families": [
             "response_suppression"
@@ -7711,7 +7711,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0306",
+          "id": "TM0306",
           "name": "Bystander Management",
           "tactic_families": [
             "bystander_management"
@@ -8021,7 +8021,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0307",
+          "id": "TM0307",
           "name": "Counter-Surveillance",
           "tactic_families": [
             "counter_surveillance"
@@ -8029,7 +8029,7 @@
           "matrix": "person",
           "phase": 3,
           "phase_name": "Execution",
-          "notes": "Real-time environmental assessment during execution — continuously monitoring for law enforcement, protective detail response, witness attention, or camera coverage that would require the actor to abort or modify the action. Counter-surveillance during execution is distinct from pre-operational surveillance detection (TA0108), which occurs in Phase 1.",
+          "notes": "Real-time environmental assessment during execution — continuously monitoring for law enforcement, protective detail response, witness attention, or camera coverage that would require the actor to abort or modify the action. Counter-surveillance during execution is distinct from pre-operational surveillance detection (TM0108), which occurs in Phase 1.",
           "cpn": true,
           "cpn_id": "CPN-0307",
           "cpn_notes": "Monitoring live camera feeds, checking police scanner apps, and using drone overwatch are cyber-enabled counter-surveillance methods increasingly used during execution. Real-time tracking of security force locations via their own digital signals is an emerging technique for sophisticated actors.",
@@ -8349,7 +8349,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0308",
+          "id": "TM0308",
           "name": "Operational Communication",
           "tactic_families": [
             "operational_communication"
@@ -8672,7 +8672,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0401",
+          "id": "TM0401",
           "name": "Withdrawal",
           "tactic_families": [
             "withdrawal"
@@ -9007,7 +9007,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0402",
+          "id": "TM0402",
           "name": "Evidence Management",
           "tactic_families": [
             "evidence_management"
@@ -9354,7 +9354,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0403",
+          "id": "TM0403",
           "name": "Cover Reestablishment",
           "tactic_families": [
             "cover_reestablishment"
@@ -9677,7 +9677,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0404",
+          "id": "TM0404",
           "name": "Network Protection",
           "tactic_families": [
             "network_protection"
@@ -10015,7 +10015,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0405",
+          "id": "TM0405",
           "name": "Financial Disposition",
           "tactic_families": [
             "financial_disposition"
@@ -10327,7 +10327,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0406",
+          "id": "TM0406",
           "name": "After-Action Assessment",
           "tactic_families": [
             "after_action_assessment"
@@ -10633,7 +10633,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0407",
+          "id": "TM0407",
           "name": "Attribution Declaration",
           "tactic_families": [
             "attribution_declaration"
@@ -10938,7 +10938,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0408",
+          "id": "TM0408",
           "name": "Audience Amplification",
           "tactic_families": [
             "audience_amplification"
@@ -11242,7 +11242,7 @@
           "evidence_basis": "hybrid"
         },
         {
-          "id": "TA0409",
+          "id": "TM0409",
           "name": "Coercive Leverage",
           "tactic_families": [
             "coercive_leverage"
@@ -12797,7 +12797,7 @@
       "date": "2024",
       "url": "https://www.chainalysis.com/crypto-crime-report/",
       "doi": null,
-      "relevance_summary": "Annual industry report documenting illicit cryptocurrency flows, ransomware payment patterns, mixing service activity, and the timeline characteristics of blockchain-forensics tracing. The report establishes that poorly-mixed cryptocurrency receipts can be traced to off-ramps within hours through chain analysis, while well-laundered flows using privacy coins (Monero, Zcash) and multi-protocol layering can extend attribution timelines to months or years. Cited in TA0405 Financial Disposition for the comparative-tracing-speed claim."
+      "relevance_summary": "Annual industry report documenting illicit cryptocurrency flows, ransomware payment patterns, mixing service activity, and the timeline characteristics of blockchain-forensics tracing. The report establishes that poorly-mixed cryptocurrency receipts can be traced to off-ramps within hours through chain analysis, while well-laundered flows using privacy coins (Monero, Zcash) and multi-protocol layering can extend attribution timelines to months or years. Cited in TM0405 Financial Disposition for the comparative-tracing-speed claim."
     }
   }
 }

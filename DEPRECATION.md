@@ -134,15 +134,15 @@ In V1.0 design, `AP022` was proposed as "Former Insider." Review concluded that 
 
 ### Worked example: hypothetical tactic supersession
 
-If a hypothetical `TA0190` were to be split into `TA0191` (selection) and `TA0192` (recruitment) in a MINOR release, `TA0190` would transition to `deprecated` (no single replacement) with the deprecation reason explaining the split:
+If a hypothetical `TM0190` were to be split into `TM0191` (selection) and `TM0192` (recruitment) in a MINOR release, `TM0190` would transition to `deprecated` (no single replacement) with the deprecation reason explaining the split:
 
 ```json
 {
-  "id": "TA0190",
+  "id": "TM0190",
   "lifecycle_state": "deprecated",
   "deprecated_in": "1.7.0",
-  "deprecation_reason": "Split into TA0191 (selection) and TA0192 (recruitment) for clearer authoring boundaries. Consumers should map references to the appropriate successor based on the indicator set in use."
+  "deprecation_reason": "Split into TM0191 (selection) and TM0192 (recruitment) for clearer authoring boundaries. Consumers should map references to the appropriate successor based on the indicator set in use."
 }
 ```
 
-The next MINOR (1.8.0) would retain TA0190's content. The MINOR after that (1.9.0) would be the earliest at which content could be removed (transitioning to `reserved`); in practice, the maintainer would likely retain content indefinitely as historical record.
+The next MINOR (1.8.0) would retain TM0190's content. The MINOR after that (1.9.0) would be the earliest at which content could be removed (transitioning to `reserved`); in practice, the maintainer would likely retain content indefinitely as historical record.
