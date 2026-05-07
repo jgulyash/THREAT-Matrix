@@ -1890,7 +1890,7 @@
             "workplace violence case where the threat actor recruited a coworker to provide after-hours building access in exchange for help with personal grievances unrelated to the attack",
             "domestic case where the threat actor's pattern of contact shifted in the weeks before mobilization to include a new associate met online whose role in the attack was not understood until after-action review",
             "extremist case where co-ideologue communications in an encrypted group preceded coordinated capability acquisition by months",
-            "[literature: CERT-CSG-7-2022 — coordinated insider activity patterns including recruitment of co-workers and family members to support unauthorized access]",
+            "Across casework, insider actors building target access often work through people already in their orbit — co-workers, family members, professional contacts drawn in to extend access without drawing scrutiny",
             "lone-actor case where the absence of any associate involvement was itself diagnostic; the threat assessment team correctly anticipated a single-actor execution"
           ],
           "evidence_basis": "hybrid"
@@ -2235,7 +2235,7 @@
             "executive protection case where a threat actor in a contractor uniform was challenged at reception; the work order did not exist and the truck in the parking lot belonged to a different vendor",
             "stalking case where the threat actor maintained a fabricated dating-app persona for months to support repeated approach attempts on the targeted subject",
             "insider-conspirator case where an external accomplice presented forged contractor credentials in coordination with an insider sponsor who validated the cover",
-            "[literature: ASIS-WVPI-2021 — recurring pre-attack pattern of pretexting access to facility environments via fabricated vendor or contractor identity]",
+            "Vendor or contractor identity is the dominant cover-for-action pattern across facility-targeted casework — fabricated business presence supported by visible artifacts (badge requests, scheduled deliveries, accompanied walkthroughs) that precede any kinetic action",
             "domestic case where a low-tech behavioral cover (jogger, dog walker) sustained repeated environmental survey of the targeted subject's residence over several weeks"
           ],
           "evidence_basis": "hybrid"
@@ -4038,7 +4038,7 @@
             "facility attack where the threat actor used a fabricated contractor uniform and prepared work-order documentation to pass perimeter reception, with the breach recognized only after cross-camera correlation in after-action review",
             "executive protection case where a tailgating attempt at a parking-garage badge gate was caught by an alert security officer, leading to identification of the threat actor and interruption before reaching the targeted subject",
             "insider-conspirator case where an external accomplice presented stolen credentials at a service entrance during a coordinated shift change, supported by an insider sponsor who validated the cover",
-            "[literature: ASIS-WVPI-2021 — recurring pre-attack pattern of pretexted access through service entrances and loading docks at workplace violence incidents]",
+            "Casework pattern: service-side access points — loading docks, vendor entrances, freight elevators — present a friendlier social-engineering surface than the front of house, and breach attempts during mobilization concentrate there",
             "domestic attack at a protected residence where the threat actor breached the perimeter at a side gate with no camera coverage, with detection occurring only when the threat actor was already inside the property"
           ],
           "evidence_basis": "hybrid"
@@ -4416,7 +4416,7 @@
             "executive protection case where a contractor with valid lobby-tier access tailgated through three interior tiers via successive social engineering of staff at each transition, identified retrospectively through cross-camera correlation",
             "facility attack where the threat actor cloned a maintenance-tier badge and used elevator-system manipulation to reach an executive floor without ever interacting with reception or escort staff",
             "insider-conspirator case where an external accomplice was escorted by an insider sponsor through multiple zones with no zone-by-zone verification, allowing access to a sensitive area outside the sponsor's authorization",
-            "[literature: ASIS-WVPI-2021 — recurring pattern of interior tier penetration via tailgating and escort manipulation at workplace violence cases]",
+            "Across casework, tailgating and escort manipulation are the standard methods for moving across interior access tiers — attaching to legitimate movement rather than presenting credentials, especially at the edges between public-facing and restricted zones",
             "domestic attack at a protected residence where the threat actor entered via the perimeter then defeated three interior locks in sequence using bump-key tools, recognized through audio sensor logs in retrospect"
           ],
           "evidence_basis": "hybrid"
@@ -4764,7 +4764,7 @@
             "executive protection case where a threat actor presented a stolen contractor badge at reception, was escorted to a senior executive's floor, and was identified only when the escort attempted callback verification post-meeting",
             "domestic protection case where a threat actor used a pretexted urgent-need claim — claiming to be a family member's friend with a delivery — to gain residence access, identified retrospectively through doorbell camera recovery",
             "insider-conspirator case where the threat actor's elevation was sponsored by an insider, with the audit trail showing a series of badge swipes at tiers inconsistent with the contractor role on file",
-            "[literature: ASIS-WVPI-2021 — recurring pre-attack pattern of pretexted vendor and contractor access at workplace violence incidents]",
+            "Casework pattern: access elevation through cover-for-action — the threat actor presents in a role that grants higher access than their actual status authorizes — vendor, contractor, visiting executive, IT support, or a social-engineering call to reception that produces a temporary badge — and operates from inside that elevated tier without the friction of credential challenges",
             "facility attack case where the threat actor used a cloned employee badge to bypass automated verification, with the elevation recognized only after post-incident audit-trail analysis"
           ],
           "evidence_basis": "hybrid"
@@ -7119,7 +7119,7 @@
             "executive protection case where the threat actor restrained the targeted subject in a parking facility and extracted via a pre-positioned vehicle, with the seizure window measured in seconds and recovery contingent on rapid law enforcement response",
             "kidnapping case where the threat actor coerced the targeted subject's surrender through threats against family members, removing the targeted subject without any visible struggle that would have alerted bystanders",
             "intelligence operation where the threat actor seized a sensitive device from the targeted subject's pocket during a coordinated multi-actor distraction, recognized only when the device's loss was reported hours later",
-            "[literature: ASIS-WVPI-2021 — pattern of seizure events at workplace violence cases, including coercive-threat seizures that produced no visible force signature]",
+            "Seizure events in execution sometimes proceed without physical force — the targeted subject complies under verbal threat alone, leaving no visible force signature and limited forensic surface for downstream reconstruction",
             "barricade incident where the threat actor occupied the targeted subject's residence and held it for negotiation, with the operational outcome determined by negotiation duration and tactical patience"
           ],
           "evidence_basis": "hybrid"
@@ -8666,7 +8666,7 @@
             "kidnapping case where multi-actor coordination via encrypted messaging was reconstructed post-incident through forensic recovery of two of three accomplices' devices, identifying the signal codes used during the seizure window",
             "active shooter event involving two threat actors where a comms-down moment created observable confusion in the operational timeline, recognized in after-action review as the breakdown between pre-attack rehearsal and live execution",
             "domestic terrorism case where pre-arranged SMS signal codes between accomplices were recovered from financial-record forensics tied to burner phone purchases weeks before the kinetic moment",
-            "[literature: CERT-CSG-7-2022 — pattern of compartmentalized communications among coordinated insider threat operations, including signaling techniques designed to evade workplace monitoring]",
+            "Cases involving coordinated actors routinely show compartmentalized communications — out-of-band channels, code phrases, time-of-day signaling — designed to evade workplace monitoring without losing coordination",
             "facility attack with three coordinated threat actors where the absence of recovered comms artifacts (devices destroyed, codes never written down) limited post-incident network reconstruction to bystander observation"
           ],
           "evidence_basis": "hybrid"
@@ -11563,7 +11563,7 @@
             "kidnap-for-ransom case where coercive leverage was sustained across eleven days, with the threat actor cycling demand articulation through three intermediaries before final resolution via cryptocurrency payment",
             "extortion case where the threat actor maintained credible threat-based leverage against a corporate decision-maker over six months, using staged escalation incidents to demonstrate capability without crossing into operational triggers",
             "hostage incident where rapid crisis-negotiation deployment authenticated proof-of-life within four hours and managed a 36-hour negotiation to peaceful resolution",
-            "[literature: ASIS-WVPI-2021 — pattern of demand articulation and deadline structures across leverage cases, with implications for crisis-negotiation team posture]",
+            "In aftermath leverage, the actor's demands typically come in sequence with deadlines attached — specific demand sequences, time pressure, escalation triggers that shape the crisis-negotiation team's posture from the first contact",
             "transnational case where coercive leverage was applied through religious-figure intermediary to a foreign government, identified retrospectively when the intermediary disclosed the threat actor's instructions during post-resolution debriefing"
           ],
           "evidence_basis": "hybrid"
@@ -12797,7 +12797,7 @@
       "date": "2024",
       "url": "https://www.chainalysis.com/crypto-crime-report/",
       "doi": null,
-      "relevance_summary": "Annual industry report documenting illicit cryptocurrency flows, ransomware payment patterns, mixing service activity, and the timeline characteristics of blockchain-forensics tracing. The report establishes that poorly-mixed cryptocurrency receipts can be traced to off-ramps within hours through chain analysis, while well-laundered flows using privacy coins (Monero, Zcash) and multi-protocol layering can extend attribution timelines to months or years. Cited in TM0405 Financial Disposition for the comparative-tracing-speed claim."
+      "relevance_summary": "Annual industry report on illicit cryptocurrency flows, ransomware payment patterns, mixing service activity, and the operational characteristics of blockchain-forensics tracing across the cryptocurrency landscape. Cited in TM0405 Financial Disposition where blockchain-forensics tracing capability informs analyst reads on financial-disposition timelines."
     }
   }
 }
