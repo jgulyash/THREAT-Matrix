@@ -2,9 +2,9 @@
  
 *Tactical Human Risk Enumeration and Adversary Taxonomy Matrix*
  
-**An open-standard shared vocabulary for categorizing and detecting human adversary behavior in physical security and insider threats. Built from 15+ years of experience leading high-stakes threat investigations with more than 70 domestic and international partners.**
- 
-Physical security lacks a shared, standardized vocabulary for adversary behavior. The THREAT Matrix is built to be that standard. Four matrices, 154 tactics, 27 actor profiles spanning seven threat categories, accompanied by Detection Mesh and Response options. Structured from V1 to function as headless-first machine-consumable threat signal library for RAG systems, AI agents, and downstream detection and investigation tooling. Shipped with a UI and reference consumer that demonstrates the contract end-to-end.
+**An open-standard, shared vocabulary for the physical-threat domain. Built for the analysts, investigators, field teams, and engineers across corporate security, law enforcement, and the Intelligence Community — and for the leaders who rely on their work, and the educators and researchers shaping the discipline. Drawn from 15+ years of experience leading high-stakes threat investigations with more than 70 domestic and international partners.**
+
+The physical threat domain lacks a shared, standardized vocabulary. The THREAT Matrix is built to be that standard. Four matrices, 154 tactics, 27 actor profiles spanning seven threat categories, accompanied by Detection Mesh and Response options. Structured from V1 to function as headless-first machine-consumable threat signal library for RAG systems, AI agents, and downstream detection and investigation tooling. Shipped with a UI and reference consumer that demonstrates the contract end-to-end.  
  
 **[→ Launch THREAT Matrix in Browser](https://jgulyash.github.io/THREAT-Matrix/)** · **[framework.json](docs/data/framework.json)** · **[JSON Schema](docs/data/framework.schema.json)** · **[Reference consumer](examples/python_consumer.py)** · MIT License
  
@@ -16,7 +16,7 @@ Physical security lacks a shared, standardized vocabulary for adversary behavior
  
 ## The Problem
  
-The same pattern surfaced in every partner relationship: each organization had its own vocabulary for adversary behavior. Some had mature processes and detection methodology. Others had not yet identified TTPs that recurred across cases the field had been seeing for years. There was no shared language, no common reference standard, wasted time syncing incidents across teams, and no shared framework to build tooling against a stable taxonomy.
+The same pattern surfaced in most partner relationship: each organization had its own vocabulary for physical threat behavior. Some had mature processes and detection methodology. Others had not yet identified advesary tactics, techniques, or behavior that recurred across cases the field had been seeing for years. There was no shared language, no common reference standard, wasted time syncing incidents across teams, and no shared framework to build tooling against a stable taxonomy.
  
 In 2023, a Lawrence Livermore National Laboratory study, sponsored by DOE/NNSA and prepared for DHS/CISA examined whether any existing methodology could serve as a structured framework for characterizing physical adversary action across critical infrastructure sectors. The conclusion: existing frameworks are inadequate. Most are sector- or facility-specific, focus on security assessment rather than adversary behavior, and fail to address cyber-physical risks. The THREAT Matrix is a direct response to both the documented institutional gap and the operational reality that produced it.
 > McGrath, J.K., Scott, H.R., & Slone, L.R. (2023). *Requirements and Recommendations
