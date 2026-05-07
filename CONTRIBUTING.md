@@ -55,7 +55,7 @@ Detection indicators map observable behaviors to tactics. V1 ships with `indicat
 
 ### 5. Code contributions
 
-The interactive browser at `docs/index.html` is a single-file React SPA loaded via CDN (no build step). The data model lives in `docs/data/framework.json`.
+The interactive browser is a React SPA built with Vite. Source lives in `src/`; the build emits hashed bundles to `docs/assets/`. Data lives in `docs/data/framework.json`. Build with `bun run build`. Requires Bun 1.3.9+ (`curl -fsSL https://bun.sh/install | bash` if not installed).
 
 **Welcome code contributions:**
 - Bug fixes in the SPA (rendering, navigation, routing)
@@ -68,6 +68,30 @@ The interactive browser at `docs/index.html` is a single-file React SPA loaded v
 - New tactics or actor profiles via PR — open an issue first so the addition can be reviewed against the framework's editorial standards
 - Major UI redesigns — the V1 visual identity (Amber Noir palette, IBM Plex Sans, the layout system) is intentional. See `docs/design/palette-comparison.html` for context.
 - V2–V4 matrix work — these are scheduled and will be opened for contribution as each version begins
+
+---
+
+## Build hygiene — pre-commit hook setup
+
+THREAT Matrix's SPA bundles `docs/data/framework.json` into the JavaScript at build time (Vite). Edits to `framework.json` only reach the live viewer when the bundle is rebuilt. To prevent shipping a stale bundle (the v1.1.1 regression), this repository ships a pre-commit hook that catches `framework.json` edits without a corresponding bundle rebuild.
+
+**Install the hook once after cloning** (from repo root):
+
+```bash
+git config core.hooksPath scripts/git-hooks
+```
+
+The hook runs automatically on every `git commit`. If you stage `framework.json` without staging a `docs/assets/index-*.{js,css}` file, the commit is blocked with a clear message. To clear it, run:
+
+```bash
+rm -f docs/assets/index-*
+bun run build
+git add docs/assets/ docs/index.html
+```
+
+then re-run your commit.
+
+**Bypass (avoid):** `git commit --no-verify` skips the local hook. The CI workflow (`.github/workflows/bundle-freshness.yml`) re-runs the same check on every PR to `main` and every push to `v1-build`, so bypassing locally only defers the failure. If CI fails on bundle freshness, the same rebuild-and-recommit sequence above is the fix.
 
 ---
 

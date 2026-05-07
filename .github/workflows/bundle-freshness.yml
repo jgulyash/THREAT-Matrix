@@ -1,0 +1,98 @@
+name: Bundle Freshness
+
+# Catches the v1.1.1-class regression where docs/data/framework.json
+# changes without a corresponding rebuild of docs/assets/index-*.{js,css}.
+# Runs on PRs to main (release-merge moment) and pushes to v1-build
+# (active dev branch). The local pre-commit hook at
+# scripts/git-hooks/pre-commit covers the per-commit case; this workflow
+# is the durable safety net.
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - v1-build
+
+concurrency:
+  group: bundle-freshness-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  bundle-freshness:
+    name: Verify SPA bundle matches source
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.9
+
+      - name: Hash committed bundle
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          committed=(docs/assets/index-*.js docs/assets/index-*.css)
+          if [ ${#committed[@]} -eq 0 ]; then
+            echo "✗ No committed bundle found at docs/assets/index-*.{js,css}." >&2
+            echo "  The repository must contain a built bundle." >&2
+            exit 1
+          fi
+          printf '%s\n' "${committed[@]}" | sort | xargs sha256sum | awk '{print $1}' > /tmp/committed-hashes.txt
+          echo "Committed bundle SHA-256:"
+          cat /tmp/committed-hashes.txt
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Rebuild bundle
+        run: |
+          rm -f docs/assets/index-*
+          bun run build
+
+      - name: Hash fresh bundle
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          fresh=(docs/assets/index-*.js docs/assets/index-*.css)
+          if [ ${#fresh[@]} -eq 0 ]; then
+            echo "✗ Fresh build produced no bundle at docs/assets/index-*.{js,css}." >&2
+            exit 1
+          fi
+          printf '%s\n' "${fresh[@]}" | sort | xargs sha256sum | awk '{print $1}' > /tmp/fresh-hashes.txt
+          echo "Fresh bundle SHA-256:"
+          cat /tmp/fresh-hashes.txt
+
+      - name: Compare hashes
+        run: |
+          if ! diff -q /tmp/committed-hashes.txt /tmp/fresh-hashes.txt > /dev/null; then
+            echo ""
+            echo "✗ Bundle freshness check FAILED"
+            echo ""
+            echo "  The committed SPA bundle does not match a fresh build."
+            echo "  This means src/ or docs/data/framework.json changed"
+            echo "  without the corresponding rebuild of docs/assets/index-*."
+            echo ""
+            echo "  To fix locally:"
+            echo "    rm -f docs/assets/index-*"
+            echo "    bun run build"
+            echo "    git add docs/assets/ docs/index.html"
+            echo "    git commit -m 'build: rebuild bundle'"
+            echo ""
+            echo "  See CHANGELOG.md [1.1.1] for the bug class this prevents."
+            echo ""
+            echo "  Committed:"
+            sed 's/^/    /' /tmp/committed-hashes.txt
+            echo "  Fresh:"
+            sed 's/^/    /' /tmp/fresh-hashes.txt
+            exit 1
+          fi
+          echo "✓ Bundle freshness check PASSED"

@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+#
+# THREAT Matrix pre-commit hook: bundle-freshness check
+#
+# The SPA bundles docs/data/framework.json into docs/assets/index-*.js at
+# build time (Vite). Edits to framework.json do not reach the live viewer
+# until the bundle is rebuilt. This hook blocks commits where
+# framework.json is staged but no bundle file is also staged, catching
+# the v1.1.1-class regression at the local commit boundary.
+#
+# Install (run once, from repo root):
+#   git config core.hooksPath scripts/git-hooks
+#
+# Bypass (avoid):
+#   git commit --no-verify
+# The CI workflow (.github/workflows/bundle-freshness.yml) re-runs the
+# same check on every PR to main and every push to v1-build, so bypassing
+# locally only defers the failure.
+
+set -euo pipefail
+
+staged_files="$(git diff --cached --name-only)"
+
+# If framework.json isn't staged, nothing to check.
+if ! printf '%s\n' "$staged_files" | grep -qE '^docs/data/framework\.json$'; then
+  exit 0
+fi
+
+# framework.json is staged — verify BOTH a bundle file AND docs/index.html
+# are also staged. Vite bakes the hashed bundle filename into index.html,
+# so a rebuilt bundle without an updated index.html leaves the deployed
+# page pointing at the wrong (or 404) asset hash.
+bundle_staged=false
+index_staged=false
+if printf '%s\n' "$staged_files" | grep -qE '^docs/assets/index-.*\.(js|css)$'; then
+  bundle_staged=true
+fi
+if printf '%s\n' "$staged_files" | grep -qE '^docs/index\.html$'; then
+  index_staged=true
+fi
+
+if [ "$bundle_staged" = "true" ] && [ "$index_staged" = "true" ]; then
+  exit 0
+fi
+
+cat >&2 <<EOF
+✗ pre-commit FAILED — bundle-freshness check
+
+  docs/data/framework.json is staged for commit, but the rebuilt
+  SPA artifacts are not fully staged:
+
+    docs/assets/index-*.{js,css}   $([ "$bundle_staged" = "true" ] && echo "✓ staged" || echo "✗ MISSING")
+    docs/index.html                 $([ "$index_staged" = "true" ] && echo "✓ staged" || echo "✗ MISSING")
+
+  Vite bundles framework.json at build time AND bakes the hashed
+  bundle filename into index.html. Both must move together — the
+  bundle alone is not enough; the HTML alone is not enough.
+
+  To fix:
+    rm -f docs/assets/index-*
+    bun run build
+    git add docs/assets/ docs/index.html
+
+  Then re-run your commit. See CHANGELOG.md [1.1.1] for the
+  release-class bug this hook prevents.
+
+EOF
+exit 1
