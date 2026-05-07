@@ -43,9 +43,9 @@ python3 examples/python_consumer.py --no-validate
 
 A consumer is anything that loads `framework.json`, optionally validates against `framework.schema.json`, and does something useful. The contract guarantees that:
 
-- Identifiers are stable across releases (see [IDENTIFIERS.md](../IDENTIFIERS.md))
-- The schema versions independently from the content (see [VERSIONING.md](../VERSIONING.md))
-- Deprecated and superseded items are surfaced via `lifecycle_state` (see [DEPRECATION.md](../DEPRECATION.md))
+- Identifiers are stable across releases (see [IDENTIFIERS.md](../docs/IDENTIFIERS.md))
+- The schema versions independently from the content (see [VERSIONING.md](../docs/VERSIONING.md))
+- Deprecated and superseded items are surfaced via `lifecycle_state` (see [DEPRECATION.md](../docs/DEPRECATION.md))
 
 Common consumer shapes:
 

@@ -1,6 +1,6 @@
 # CHANGELOG
 
-All notable changes to THREAT Matrix are documented here, per [VERSIONING.md](VERSIONING.md).
+All notable changes to THREAT Matrix are documented here, per [VERSIONING.md](docs/VERSIONING.md).
 
 This project adheres to [Semantic Versioning](https://semver.org). Framework
 content and JSON Schema are versioned independently; both are at `1.1.0`
