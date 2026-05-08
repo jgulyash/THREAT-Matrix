@@ -2,11 +2,11 @@
  
 *Tactical Human Risk Enumeration and Adversary Taxonomy Matrix*
  
-**An open-standard shared vocabulary for categorizing and detecting human adversary behavior in physical security and insider threats. Built from 15+ years of experience leading high-stakes threat investigations with more than 70 domestic and international partners.**
+**An open-standard, shared vocabulary for the physical-threat domain. Built for the analysts, investigators, field teams, and engineers across corporate security, law enforcement, and the Intelligence Community — and for the leaders who rely on their work, and the educators and researchers shaping the discipline. Drawn from 15+ years of experience leading high-stakes threat investigations with more than 70 domestic and international partners.**
  
-Physical security lacks a shared, standardized vocabulary for adversary behavior. The THREAT Matrix is built to be that standard. Four matrices, 154 tactics, 27 actor profiles spanning seven threat categories, accompanied by Detection Mesh and Response options. Structured from V1 to function as headless-first machine-consumable threat signal library for RAG systems, AI agents, and downstream detection and investigation tooling. Shipped with a UI and reference consumer that demonstrates the contract end-to-end.
+The physical-threat domain lacks a shared, standardized vocabulary. The THREAT Matrix is built to be that standard. Four matrices, 154 tactics, 27 actor profiles spanning seven threat categories, accompanied by Detection Mesh and Response options. Structured from V1 to function as headless-first machine-consumable threat signal library for RAG systems, AI agents, and downstream detection and investigation tooling. Shipped with a UI and reference consumer that demonstrates the contract end-to-end.
  
-**[→ Launch THREAT Matrix in Browser](https://jgulyash.github.io/THREAT-Matrix/)** · **[framework.json](docs/data/framework.json)** · **[JSON Schema](docs/data/framework.schema.json)** · **[Reference consumer](examples/python_consumer.py)** · MIT License
+**[→ Launch THREAT Matrix in Browser](https://jgulyash.github.io/THREAT-Matrix/)** · **[Responsible Use](#responsible-use)** · **[framework.json](docs/data/framework.json)** · **[JSON Schema](docs/data/framework.schema.json)** · **[Reference consumer](examples/python_consumer.py)** · MIT License
  
 ![THREAT Matrix V1 — Person Matrix browser](docs/images/v1-spa-screenshot.png)
  
@@ -94,6 +94,22 @@ The `ai_initiated_physical` vector is architecturally distinct: the attack does 
  
 ---
  
+## Responsible Use
+
+**Audience.** THREAT Matrix is built for the analysts, investigators, field teams, and engineers across corporate security, law enforcement, and the Intelligence Community — and for the leaders who rely on their work, and the educators and researchers shaping the discipline. The framework supports the work of recognizing patterns of physical-threat behavior, characterizing activity in motion, and mitigating outcomes across the threat lifecycle. It covers four target matrices — Person, Facility, Organization, and Infrastructure — with Cyber-Physical Nexus tagging where digital and physical threat intelligence converge.
+
+**What this provides.** THREAT Matrix maps what adversaries do, when, and why, so analysts and investigators can recognize patterns in their casework and respond with context. It supports the workflow of analysts, investigators, and security teams across the threat lifecycle — from recognizing pre-attack indicators, to characterizing activity already in motion, to mapping completed cases against a shared structure. The taxonomy is published as machine-readable JSON (`framework.json`); security professionals work with it through the published viewer, custom integrations their team builds, or AI agents that read the framework directly.
+
+**Scope.** What's in scope: adversary behavior at the tactic and indicator level — what adversaries do, when in the threat lifecycle, in what patterns, with what observable signals, and against what countermeasures and response protocols. What's out of scope: operational-execution detail — exploit code, weapon construction, step-by-step attack tradecraft, and targeting information for specific persons or organizations.
+
+**Acceptable use.** Case mapping. Investigation and threat-assessment workflow support. Detection-rule and alert development. Threat-hunting workflow design. Security-program planning. Analyst and investigator training. Intelligence analysis. Academic research. Tooling and AI agents that consume the `framework.json` contract for legitimate threat-assessment, protective intelligence, investigative, and security-operations work.
+
+**Unacceptable use.** Operational planning of attacks. Targeting of specific persons, facilities, or organizations. Adversarial use against the analysts and professionals the framework is built to serve. Inclusion in tooling, content, or services that facilitate harm.
+
+**Reporting concerns.** If you believe content in this repository falls outside the scope or acceptable-use framework above, open an issue with the `responsible-use` label.
+
+---
+
 ## Standard Contract
  
 V1.1 establishes THREAT Matrix as a headless-first open standard. The contract has four properties:
@@ -163,7 +179,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
  
 ## License
  
-MIT. Open standard for physical adversary behavior. Value compounds with adoption.
+MIT. Open standard for the physical-threat domain. Value compounds with adoption.
  
 ---
  

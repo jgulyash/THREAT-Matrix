@@ -196,7 +196,7 @@ The contract has to be in writing before the platform is built on top of it. Sch
 The THREAT Matrix is the canonical ontology. Vector databases are a retrieval mechanism that indexes the ontology. They are complementary, not competitive. The taxonomy defines what the categories ARE. Embeddings provide fuzzy matching to map real-world observations to those categories. Structured reasoning (Threat Lifecycle phase, actor profile, response protocol, escalation logic) requires the taxonomy. Cosine similarity alone cannot drive an escalation decision.
  
 **Integration with case management:**
-The THREAT Matrix is designed to plug into existing and future AI-native case management platforms, not to replace them. The market has capable case management products that will continue to evolve with AI capabilities. The framework provides the structured adversary behavior taxonomy that case management tools can consume. Any open-source or SaaS physical threat platform demonstrates this integration model: The SaaS handles case operations, THREAT Matrix provides the TTP classification layer.
+The THREAT Matrix is designed to plug into existing and future AI-native case management platforms, not to replace them. The market has capable case management products that will continue to evolve with AI capabilities. The framework provides the structured physical-threat behavior taxonomy that case management tools can consume. Any open-source or SaaS physical threat platform demonstrates this integration model: The SaaS handles case operations, THREAT Matrix provides the TTP classification layer.
  
 ---
 
@@ -252,4 +252,4 @@ The THREAT Matrix is designed to plug into existing and future AI-native case ma
  
 ---
  
-*THREAT Matrix is an open standard for physical adversary behavior. Canonical artifact under a published contract, MIT licensed, consumer ecosystem welcome. Value compounds with adoption.*
+*THREAT Matrix is an open-standard, shared vocabulary for the physical-threat domain. Canonical artifact under a published contract, MIT licensed, consumer ecosystem welcome. Value compounds with adoption.*

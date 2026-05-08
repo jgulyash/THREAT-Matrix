@@ -71,6 +71,16 @@ The interactive browser is a React SPA built with Vite. Source lives in `src/`; 
 
 ---
 
+## Responsible content
+
+Some kinds of content are intentionally out of scope. Pull requests must not contain operational instructions, exploit code, weapon construction, or step-by-step attack tradecraft. THREAT Matrix describes adversary behavior at the tactic and indicator level — what adversaries do, when in the threat lifecycle, in what patterns, and against what countermeasures and response protocols. It does not describe how to operationally execute attacks.
+
+Case examples must reference public-record incidents only. Do not name living persons. For deceased perpetrators in publicly adjudicated cases, stay within court-record and news-record facts; treat the source material with restraint.
+
+If you're unsure whether content fits, open an issue describing what you have in mind before submitting a PR.
+
+---
+
 ## Build hygiene — pre-commit hook setup
 
 THREAT Matrix's SPA bundles `docs/data/framework.json` into the JavaScript at build time (Vite). Edits to `framework.json` only reach the live viewer when the bundle is rebuilt. To prevent shipping a stale bundle (the v1.1.1 regression), this repository ships a pre-commit hook that catches `framework.json` edits without a corresponding bundle rebuild.

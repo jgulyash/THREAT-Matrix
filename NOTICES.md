@@ -72,6 +72,15 @@ Cited as scholarly references. Bibliographic citation is permitted without licen
   - *ANSI/ASIS WVPI.1-2020 — Workplace Violence Prevention and Intervention Standard* (published 2021).
   - ANSI-accredited standard. Copyright ASIS International. Cited by title and designation only. Reproduction of standard text requires written permission from ASIS International.
  
+### Independent Research and Industry Analysis
+
+- **Lowy Institute (The Interpreter):**
+  - Robertson, J. (2017). *The brazen, broad-daylight assassination of Kim Jong-nam.* https://www.lowyinstitute.org/the-interpreter/brazen-broad-daylight-assassination-kim-jong-nam
+  - Cited by URL reference. Lowy Institute is a non-partisan international policy think tank; The Interpreter publishes analysis intended for public reference.
+- **Chainalysis Inc.:**
+  - *Crypto Crime Report* (2024). https://www.chainalysis.com/crypto-crime-report/
+  - Cited by title and date. Chainalysis is a commercial blockchain-analytics firm; the Crypto Crime Report is a published industry reference.
+ 
 ---
  
 ## Related Work and Structural Pattern

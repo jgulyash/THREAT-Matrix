@@ -21,7 +21,7 @@ That's how I approach every problem: find the gap, build the thing that closes i
  
 **Cross-Domain Synthesis:** Each tactic is accompanied by behavioral descriptions, actor applicability, phase placement, and Cyber-Physical Nexus (CPN) and AI-Initiated-Physical (AIP) tagging. The CPN and AIP tagging and four-vector AI architecture reflect sustained analysis of where physical and cyber threat intelligence converge and diverge, allowing for mapping to cyber and AI-focused frameworks.
  
-**A Problem-Solving, Action-Oriented Mindset:** The THREAT Matrix is built ground-up for physical adversary behavior at the granularity security practitioners need to identify, characterize, and mitigate threat activity. No analogous structured public ontology existed; now one does, designed for the AI era and engineered to be consumed by AI tooling natively.
+**A Problem-Solving, Action-Oriented Mindset:** The THREAT Matrix is built ground-up for the physical-threat domain at the granularity security practitioners need to identify, characterize, and mitigate threat activity. No analogous structured public ontology existed; now one does, designed for the AI era and engineered to be consumed by AI tooling natively.
  
 **Threat Investigator Operating as an AI-Native Builder:** I am not a credentialed engineer who use AI tooling. I am a security practitioner who built deliberate fluency with AI agents, skills, and workflows so I could ship a solution the physical security community needs. THREAT Matrix's engineering surface — schema, versioning policy, identifier discipline, headless architecture, reference consumer — is not what 15+ years of investigations alone produces. It is what 15+ years of investigations plus disciplined AI-native execution accomplishes.
  
