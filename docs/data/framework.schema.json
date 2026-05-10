@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jgulyash.github.io/THREAT-Matrix/docs/data/framework.schema.json",
   "title": "THREAT Matrix Framework Schema",
-  "description": "JSON Schema for the THREAT Matrix framework.json canonical artifact. THREAT Matrix is an AI-native operational ontology for physical adversary behavior. The schema is the public contract for consumers (RAG systems, AI agents, downstream security tooling).",
+  "description": "JSON Schema for the THREAT Matrix framework.json canonical artifact. THREAT Matrix is an AI-native operational ontology for physical adversary behavior. The schema is the public contract for consumers (RAG systems, AI agents, downstream security tooling). Field values must describe a property of the indicator/tactic type, not of any specific case or assessment. See CONTRIBUTING.md \"Schema design principles\" for the full rule.",
   "type": "object",
   "required": [
     "name",
@@ -56,6 +56,30 @@
       "type": "array",
       "items": {
         "$ref": "#/$defs/actor_profile"
+      }
+    },
+    "escalation_rubric": {
+      "type": "object",
+      "description": "Framework-published recommendation for deriving escalation_weight from escalation_axes and mapping to severity_band. Type-level reference; consumers may follow or override with documented rationale. See CONTRIBUTING.md \"Schema design principles\".",
+      "properties": {
+        "composite_math": {
+          "type": "string",
+          "description": "Recommended formula for deriving escalation_weight from escalation_axes. Multiplicative across axes is the default; weighted-additive variants are acceptable when documented."
+        },
+        "severity_thresholds": {
+          "type": "object",
+          "description": "Numeric thresholds mapping escalation_weight to severity_band buckets.",
+          "properties": {
+            "low": { "type": "number" },
+            "medium": { "type": "number" },
+            "high": { "type": "number" },
+            "critical": { "type": "number" }
+          }
+        },
+        "rubric_version": {
+          "type": "string",
+          "description": "Bumps when the rubric changes."
+        }
       }
     },
     "operations": {
@@ -322,6 +346,53 @@
             "type": "string"
           },
           "description": "Bibliography keys. Min 1, with at least one Tier 1 source."
+        },
+        "assessment_guidance": {
+          "type": "object",
+          "description": "Optional structured per-tactic scoring guidance. Type-level inherent property of the tactic class; consumers cite the high/low signal anchors, false-positive contexts, and threshold guidance to inform their own assessments. Not a case-specific score. See CONTRIBUTING.md \"Schema design principles\".",
+          "properties": {
+            "credibility": {
+              "type": "object",
+              "properties": {
+                "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
+                "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
+              }
+            },
+            "capability": {
+              "type": "object",
+              "properties": {
+                "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
+                "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
+              }
+            },
+            "intent": {
+              "type": "object",
+              "properties": {
+                "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
+                "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
+              }
+            },
+            "opportunity": {
+              "type": "object",
+              "properties": {
+                "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
+                "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
+              }
+            },
+            "false_positive_context": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "threshold_guidance": {
+              "type": "string",
+              "description": "Prose describing the escalation threshold."
+            },
+            "escalation_priority": {
+              "type": "string",
+              "enum": ["Urgent", "Immediate", "Priority", "Routine"],
+              "description": "Type-level priority class for the tactic — characterizes typical action-urgency at the tactic-class level, not case-level urgency at any specific assessment. See CONTRIBUTING.md \"Schema design principles\"."
+            }
+          }
         }
       }
     },
@@ -419,6 +490,94 @@
           "minItems": 1,
           "items": {
             "type": "string"
+          }
+        },
+        "temporal_signature": {
+          "type": "string",
+          "enum": [
+            "horizon",
+            "advancing",
+            "imminent",
+            "staging",
+            "in_progress",
+            "aftermath"
+          ],
+          "description": "Type-level property of the indicator class describing how close to action it typically appears. Distinct from phase_relevance, which describes which lifecycle phase the indicator belongs to. Type-level inherent property; not case-specific. See CONTRIBUTING.md \"Schema design principles\"."
+        },
+        "escalation_weight": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 10.0,
+          "description": "Type-level composite over escalation_axes (0.0–10.0, one-decimal precision). Recommended derivation is published in escalation_rubric.composite_math; consumers may follow the recommendation or override with documented rationale. Type-level inherent property of the indicator class, not a case-specific score. See CONTRIBUTING.md \"Schema design principles\"."
+        },
+        "escalation_axes": {
+          "type": "object",
+          "description": "Type-level inherent properties of the indicator class along four axes. Sub-fields use _potential and _inverse suffixes deliberately, signalling that these describe the behavior class's typical implications, not case-level realizations at any specific facility or assessment. See CONTRIBUTING.md \"Schema design principles\".",
+          "properties": {
+            "impact_potential": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 10.0,
+              "description": "Type-level magnitude of harm if the threat lands."
+            },
+            "blast_radius_potential": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 10.0,
+              "description": "Type-level geographic / population scope if the threat lands."
+            },
+            "recoverability_inverse": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 10.0,
+              "description": "Type-level inverse-recoverability — how hard the harm is to undo. Permanence weighted higher; lives lost = highest."
+            },
+            "detectability": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 10.0,
+              "description": "Type-level observability of the indicator in flight by trained personnel."
+            }
+          }
+        },
+        "severity_band": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ],
+          "description": "Optional derived bucket from escalation_weight per escalation_rubric.severity_thresholds. Consumers may compute on read or store. Type-level descriptor of the indicator class. See CONTRIBUTING.md \"Schema design principles\"."
+        },
+        "informs_axes": {
+          "type": "object",
+          "description": "EXPERIMENTAL (V1.2). Type-level metadata describing which axes of the larger threat picture this indicator class typically informs. Six axes covering actor (capability / intent / opportunity) and the postulated event (timing / target / method). Categorical scale {strong, moderate, weak, none} — not numeric. The framework's collective judgment about how strongly an indicator class informs an axis is itself categorical at root; numeric values would be false precision. For AI/ML consumers needing continuous features, the documented mapping is strong=0.9, moderate=0.6, weak=0.3, none=0.0; this mapping is a downstream-consumer convention only, not framework-level scoring. Field is optional; pilot in V1.2 Step 6 (TM0103) gates broader population in Step 7. Feedback wanted in V1.2; refinement in V1.3. See CONTRIBUTING.md \"Schema design principles\".",
+          "properties": {
+            "actor_capability": {
+              "type": "string",
+              "enum": ["strong", "moderate", "weak", "none"]
+            },
+            "actor_intent": {
+              "type": "string",
+              "enum": ["strong", "moderate", "weak", "none"]
+            },
+            "actor_opportunity": {
+              "type": "string",
+              "enum": ["strong", "moderate", "weak", "none"]
+            },
+            "threat_timing": {
+              "type": "string",
+              "enum": ["strong", "moderate", "weak", "none"]
+            },
+            "threat_target": {
+              "type": "string",
+              "enum": ["strong", "moderate", "weak", "none"]
+            },
+            "threat_method": {
+              "type": "string",
+              "enum": ["strong", "moderate", "weak", "none"]
+            }
           }
         }
       }

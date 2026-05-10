@@ -155,6 +155,28 @@ If you're contributing tactics, profiles, or descriptions, the following princip
 
 ---
 
+## Schema design principles
+
+THREAT Matrix is a type system for the physical-threat domain — a dictionary of stable, named descriptions of tactic classes, indicator classes, countermeasure types, response protocol types, and actor profile archetypes. Downstream consumers (RAG systems, AI agents, threat-management platforms like WARDEN) cite these definitions as the vocabulary for what they're observing, but the actual evidence, scoring, and decisions about specific threats live in the consumer's own data store, not in the framework.
+
+Before proposing a new field for `framework.schema.json`, apply this test:
+
+> **Could two competent consumers, observing the same world on the same day, legitimately disagree on this field's value for the same indicator/tactic — without either being wrong?**
+>
+> - **No** → dictionary-level. The value is a property of the *type*, not the consumer's read of the world. Goes in THREAT Matrix.
+> - **Yes** → consumer-level. The value depends on a specific assessment, telemetry, posture, or judgment that varies legitimately across consumers and across time. Goes in WARDEN / downstream.
+> - **Sometimes** → split it. There's almost certainly a stable type-property hiding inside an unstable case-property; expose the type-property and document the consumer-property as a recommended downstream pattern.
+
+Examples:
+
+- `temporal_signature` (whether an indicator typically signals horizon / advancing / imminent / etc.) → **dictionary**. The temporal positioning is a property of the indicator class.
+- `realization_probability` (how likely a specific threat is to land in 30 days) → **consumer**. Depends entirely on the consumer's telemetry and intel.
+- `escalation_weight` and its constituent `escalation_axes` → **dictionary** for the type-level potentials (impact, blast radius, recoverability, detectability of the indicator class); **consumer** for the case-level realizations (impact at *my* facility, *my* response time).
+
+If you're proposing a field that fails this test, the right home is documentation of a recommended downstream pattern — not the schema.
+
+---
+
 ## Code of conduct
 
 Be civil. Critique ideas, not people. If a contribution gets rejected, it's a judgment about the contribution, not the contributor — try again with a different angle, or ask what would make it acceptable.
