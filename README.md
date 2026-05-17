@@ -2,9 +2,9 @@
  
 *Tactical Human Risk Enumeration and Adversary Taxonomy Matrix*
  
-**An open-standard, shared vocabulary for the physical-threat domain. Built for the analysts, investigators, field teams, and engineers across corporate security, law enforcement, and the Intelligence Community — and for the leaders who rely on their work, and the educators and researchers shaping the discipline. Drawn from 15+ years of experience leading high-stakes threat investigations with more than 70 domestic and international partners.**
+**The physical threat domain lacks a shared, open, standardized vocabulary. The THREAT Matrix is built to be that standard.** Four target matrices — **People, Facilities, Organizations, Infrastructure** — across a four-phase Threat Lifecycle: **Target Development → Mobilization → Execution → Aftermath**. 154 tactics, 27 actor profiles spanning seven threat categories, with a behavioral Detection Mesh and response protocols layered on top. Cyber-Physical Nexus and AI-Initiated-Physical tags surface online-to-physical mobilization pathways and AI-enabled reconnaissance across tactics. Structured from V1 to function as a headless, machine-consumable threat signal library for RAG systems, AI agents, MCP clients, and downstream detection and investigation platforms — cross-walked to established cyber and AI-systems adversary frameworks for interoperability with existing programs. MIT-licensed and shipped with a UI and reference Python consumer that demonstrate the contract end-to-end.
 
-The physical threat domain lacks a shared, standardized vocabulary. The THREAT Matrix is built to be that standard. Four matrices, 154 tactics, 27 actor profiles spanning seven threat categories, accompanied by Detection Mesh and Response options. Structured from V1 to function as headless-first machine-consumable threat signal library for RAG systems, AI agents, and downstream detection and investigation tooling. Shipped with a UI and reference consumer that demonstrates the contract end-to-end.  
+Built for the analysts, investigators, field teams, and engineers across corporate security, law enforcement, and the Intelligence Community — and for the leaders who rely on their work, and the educators and researchers shaping the discipline. Drawn from 15+ years of experience leading high-stakes threat investigations with more than 70 domestic and international partners.
  
 **[→ Launch THREAT Matrix in Browser](https://jgulyash.github.io/THREAT-Matrix/)** · **[framework.json](docs/data/framework.json)** · **[JSON Schema](docs/data/framework.schema.json)** · **[Reference consumer](examples/python_consumer.py)** · MIT License
  
@@ -16,7 +16,7 @@ The physical threat domain lacks a shared, standardized vocabulary. The THREAT M
  
 ## The Problem
  
-The same pattern surfaced in most partner relationship: each organization had its own vocabulary for physical threat behavior. Some had mature processes and detection methodology. Others had not yet identified advesary tactics, techniques, or behavior that recurred across cases the field had been seeing for years. There was no shared language, no common reference standard, wasted time syncing incidents across teams, and no shared framework to build tooling against a stable taxonomy.
+The same pattern surfaced across most partner relationships: each organization had its own vocabulary for physical threat behavior. Some had mature processes and detection methodology. Others had not yet identified adversary tactics, techniques, or behavior that recurred across cases the field had been seeing for years. There was no shared language, no common reference standard, wasted time syncing incidents across teams, and no shared framework to build tooling against a stable taxonomy.
  
 In 2023, a Lawrence Livermore National Laboratory study, sponsored by DOE/NNSA and prepared for DHS/CISA examined whether any existing methodology could serve as a structured framework for characterizing physical adversary action across critical infrastructure sectors. The conclusion: existing frameworks are inadequate. Most are sector- or facility-specific, focus on security assessment rather than adversary behavior, and fail to address cyber-physical risks. The THREAT Matrix is a direct response to both the documented institutional gap and the operational reality that produced it.
 > McGrath, J.K., Scott, H.R., & Slone, L.R. (2023). *Requirements and Recommendations
@@ -25,13 +25,13 @@ In 2023, a Lawrence Livermore National Laboratory study, sponsored by DOE/NNSA a
  
 ## Framework Architecture
  
-**Four target matrices. A four-phase Threat Lifecycle. 154 total tactics** (34 live in V1; 120 across V1.3–V1.5 planned).
+**Four target matrices — People, Facilities, Organizations, Infrastructure. A four-phase Threat Lifecycle: Target Development → Mobilization → Execution → Aftermath. 154 total tactics** (34 live in V1; 120 across V1.3–V1.5 planned).
  
 ### Threat Lifecycle
  
 ![THREAT Matrix Threat Lifecycle](docs/images/threat-lifecycle-diagram.svg)
  
-The Threat Lifecycle is descriptive, not prescriptive — adversaries compress, skip, and reorder phases based on opportunity and capability. The framework makes behavioral patterns visible; it doesn't assert they are inevitable or sequential. Detection and response operate as a Detection Mesh across the lifecycle (see below), not as a linear chain.
+The Threat Lifecycle is descriptive, not prescriptive — adversaries compress, skip, and reorder phases based on opportunity and capability. The framework makes behavioral patterns visible; it doesn't assert they are inevitable or sequential. Detection and response operate as a Detection Mesh across the lifecycle (see below), not as a linear chain. The result is a unified threat picture security practitioners can use for investigation, prioritization, and physical-threat mitigation.
  
 ### Target Matrices
  
@@ -55,7 +55,7 @@ Profiles are referenced by stable ID (`AP001`–`AP029`) and connect directly to
  
 ### Cyber-Physical Nexus (CPN)
  
-Cyber capabilities enable and accelerate physical operations across virtually every phase for sophisticated actors. The `[CPN]` tag marks tactics where digital capabilities play a significant or primary enabling role — showing practitioners where to look for digital indicators alongside physical behaviors.
+Cyber capabilities enable and accelerate physical operations across virtually every phase for sophisticated actors. The `[CPN]` tag marks tactics where digital capabilities play a significant or primary enabling role, surfacing online-to-physical mobilization pathways — and showing practitioners where to look for digital indicators alongside physical behaviors.
  
 ### Detection Mesh
  
@@ -153,7 +153,7 @@ The THREAT Matrix grows through practitioner contribution. You don't need to be 
 - **Suggest a tactic** — open an issue describing an adversary behavior not yet in the framework
 - **Flag an inconsistency** — terminology, scope, or classification issues
 - **Propose a use case** — real-world scenarios help validate the framework against operational reality
-- - **Developer contributions** — schema work, React SPA features, V1.3–V1.5 matrix tooling, alternative consumers (CLIs, language SDKs, MCP integrations, visualizations)
+- **Developer contributions** — schema work, React SPA features, V1.3–V1.5 matrix tooling, alternative consumers (CLIs, language SDKs, MCP integrations, visualizations)
  
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
  
