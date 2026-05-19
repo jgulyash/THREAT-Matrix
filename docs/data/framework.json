@@ -2,7 +2,7 @@
   "name": "THREAT Matrix",
   "full_name": "Tactical Human Risk Enumeration and Adversary Taxonomy Matrix",
   "version": "1.1.0",
-  "schema_version": "1.2.0",
+  "schema_version": "1.2.1",
   "license": "MIT",
   "matrices": {
     "person": {
@@ -796,6 +796,95 @@
           "cpn": true,
           "cpn_id": "CPN-0103",
           "cpn_notes": "Satellite imagery, Google Maps Street View, live webcams, and publicly posted photos and videos of locations augment or replace physical walkthroughs. High-resolution imagery can provide actionable access and egress analysis before the actor visits a location in person.",
+          "assessment_guidance": {
+            "credibility": {
+              "criteria": "Credibility rises with corroboration across modalities, persistence over time, and recoverable evidence backing first-hand witness reports. Credibility falls when the source, the content, or the temporal pattern is thin, and when plausible benign explanations were never ruled out.",
+              "high_signal_anchors": [
+                "Cross-modal corroboration — multiple indicators across different observation modes against the same subject within overlapping timeframes.",
+                "Temporal persistence — observed pattern across weeks-to-months within any modality, not single-event.",
+                "Material evidence — documents, recovered imagery, browser history, public-records request logs that physically link the actor to the subject; does not require accurate witness recall.",
+                "First-hand witness fidelity — named witness directly interacted with the actor; high-resolution reporting payload covering question content, pretext used, actor description, contact mechanism, and timing.",
+                "Behavioral specificity — actor named the specific subject, specific addresses, or specific operational details.",
+                "Source motivation aligned with accuracy — trained professional reporting through formal channel, not informal tip with potential agenda."
+              ],
+              "low_signal_anchors": [
+                "Source-quality weakness — single anonymous tip without corroboration; reporter cannot be re-contacted.",
+                "Content-specificity weakness — vague description without operational detail that could fit dozens of mundane explanations.",
+                "Temporal-pattern weakness — one-time observation with no follow-through or escalation.",
+                "Source-motivation misalignment — reporter has structural motivation to embellish (active custody dispute, professional rivalry, ongoing litigation).",
+                "Unrebutted mundane explanation — indicator pattern admits a plausible benign interpretation that investigation did not rule out.",
+                "Reconstructive memory — reporting delay so long that details may be retrofitted to the threat narrative rather than observed."
+              ]
+            },
+            "capability": {
+              "criteria": "Capability rises with operational discipline that produces observable tradecraft — concealment, coordination across modes, acquisition of materials beyond casual OSINT reach, and pretexts that hold up under scrutiny. Capability falls with conspicuous behavior, weak pretexts, single-modality reach, and discipline failures that breach the actor's operational cover.",
+              "high_signal_anchors": [
+                "Covert imaging tradecraft — telephoto from concealment, drone usage, brief-duration captures, no observable return-pattern.",
+                "Multi-modal operational coordination — physical, digital, and insider efforts coordinated across overlapping timeframes; not incidental coincidence.",
+                "Restricted-material acquisition — documents obtained include non-public materials such as security camera diagrams or internal floor plans, requiring social engineering, insider exploitation, or specialized records-request capability.",
+                "Pretext durability — pretexts and cutouts hold up under witness scrutiny; witness initially did not recognize they were being elicited.",
+                "Counter-surveillance behaviors — actor varies routes, scans for defender patrols, identifies camera coverage.",
+                "Demonstrated technical capability — actor reads or analyzes acquired materials productively, such as engineering analysis of blueprints or operational sequencing from acquired schedules."
+              ],
+              "low_signal_anchors": [
+                "Conspicuous posture — loitering at sightlines, obvious recording, lingering past observation needs.",
+                "No-concealment repetition — multiple visits with no observable pretext or concealment.",
+                "Pretext failure on initial contact — witness immediately recognized the questioning as unusual.",
+                "OSINT-only reach — all acquired materials are from publicly available sources; no operational reach beyond browser-and-public-records.",
+                "Single-modality recon — only digital or only physical; no coordination across modes.",
+                "Direct target-contact attempts — actor sought direct contact with target or immediate orbit, breaching operational discipline about exposure."
+              ]
+            },
+            "intent": {
+              "criteria": "Intent rises when behavior progresses from broad exploration toward operationally specific detail against a named target, and especially when the actor demonstrates retention of acquired material or pairs reconnaissance with stated grievance toward the subject. Intent falls with generic interest, encounters that don't escalate, and behavior that has a verifiable benign explanation.",
+              "high_signal_anchors": [
+                "Behavioral progression broad-to-narrow — observable funnel from initial OSINT through narrowing focus to operational-detail acquisition.",
+                "Target-specific behavior — behavior concentrates on the named subject and specific subject-associated addresses.",
+                "Operational specificity in inquiry or document selection — asking about emergency exit routes, camera coverage gaps, shift-change windows; selecting blueprints, security diagrams, or schedule documents specifically.",
+                "Sustained attention to defender posture — actor tracks countermeasures over time and adapts; not a one-and-done observation.",
+                "Retention of acquired materials — photos archived, plans saved, notes maintained; suggests later operational use rather than passing curiosity.",
+                "Hostile attribution paired with recon — actor has expressed grievance, blame, or hostile attribution toward the subject AND is observed conducting reconnaissance against subject-associated locations. The combination is intent-diagnostic in a way no single indicator captures."
+              ],
+              "low_signal_anchors": [
+                "Generic-interest behavior — broad neighborhood photography, ambient OSINT not pinned to specific subjects.",
+                "One-time encounter without escalation — observation occurred but no follow-through or pattern emerged.",
+                "Verifiable legitimate purpose — journalist credentials, employer relationship, or professional license surfaces on inquiry and checks out.",
+                "No retention behavior — photos taken casually but not stored or organized; mentions of subject not pursued.",
+                "Target ambiguity — multiple subjects observed without focusing on one; pattern fits geographic interest rather than person-targeting."
+              ]
+            },
+            "opportunity": {
+              "criteria": "Opportunity rises when the actor can act on knowledge of the subject — combining pattern-of-life mastery, operational security-gap awareness, exploited insider connections (not dormant ones), and the positional ability to reach the subject's environment when the subject is predictably present. Opportunity falls with defensive friction not adapted to, geographic distance not closed, or barriers created by the subject's posture; when opportunity appears reduced, the durability of that reduction matters.",
+              "high_signal_anchors": [
+                "No defensive friction encountered — countermeasures absent or unobserved; actor's behavior continues unimpeded despite organizational posture.",
+                "Pattern-of-life mastery — actor reliably locates the subject across schedule, routes, and regular venues; working knowledge of when and where the subject is predictably present. The informational dimension of opportunity.",
+                "Geographic-temporal proximity — actor physically lives or works near the subject's environment AND is available during the subject's vulnerable windows. The positional-and-availability dimension. Complementary to pattern-of-life mastery, not redundant: an actor with detailed schedule intelligence but located across the country has reduced opportunity (travel investment required); an actor with proximity but no schedule intel has positional ability without an actionable window.",
+                "Operational security-gap knowledge — actor knows patrol rotation times, camera blind spots, shift-change windows, or other facility-specific defender weaknesses.",
+                "Insider connection being exploited — identified insider relationship (current or former employee, vendor, social connection) that the actor is actively leveraging for operational intelligence or access gains. Dormant insider connections alone are opportunity potential, not realized opportunity; the EXPLOITATION pattern is what's high-signal.",
+                "Direct facility access — actor has unsupervised access to subject-associated facilities through a legitimate role."
+              ],
+              "low_signal_anchors": [
+                "Targeting failed against hardened defensive posture — subject's countermeasures actively defeated the actor's approach. Durable signal: the low-opportunity reading is sticky and won't reconstitute without major actor adaptation or posture change.",
+                "Institutional rule-out of insider connection — formal access audits or institutional process actively cleared the possibility, not just failed-to-find. High-confidence absence.",
+                "Structural access degradation — actor's prior access pathway terminated (role ended, relationship severed, geographic relocation). Distinct from temporary distance: this is a durable structural change.",
+                "Defensive friction encountered without adaptation — actor left after being challenged or detected; did not return or adapt approach. Transient signal: may flip back if actor adapts.",
+                "Geographic distance not closed — actor across country or region; physical action requires major travel investment that has not been made. Transient: may close if actor commits.",
+                "Subject's posture creates effective barriers — subject changed pattern-of-life, hardened venues, or active surveillance detection is working; actor's known methods are blocked. Transient unless durable; depends on whether barriers are sustained."
+              ]
+            },
+            "false_positive_context": {
+              "criteria": "Many legitimate activities produce behaviors that look like this tactic's indicators on the surface — a contractor surveying a site looks similar to a threat actor casing a building; a journalist asking questions looks similar to an actor eliciting information. What distinguishes a false-positive from a real concern is whether the underlying activity has a verifiable legitimate purpose, a transparent identity behind it, or institutional accountability that can be checked.",
+              "contexts": [
+                "Verified professional purpose — journalists, biographers, documentary teams; contractors, vendors, and service providers with site-visit business; real estate professionals on due-diligence visits; appraisers, developers, insurance adjusters, compliance auditors.",
+                "Legal authority — authorized law-enforcement or intelligence surveillance with proper legal basis; licensed private investigators on lawful matters; security professionals conducting authorized vulnerability assessments or pen-testing.",
+                "Personal or community connection — current and former employees with legitimate facility knowledge (alumni events, retirement visits); neighbors, family, or social connections orienting; new residents or employees in the area.",
+                "Non-threatening attention — paparazzi, fans, admirers engaged in invasive but non-threatening behavior; hobbyist photographers.",
+                "Academic and research purpose — students researching architecture, urban planning, or history; academic researchers; genealogists; historians with site-visit interests."
+              ]
+            },
+            "threshold_guidance": "Findings correlating with staging-class behaviors elsewhere — weapon acquisition, observed dry runs, schedule alignment with action windows — warrant immediate activation of response protocols regardless of this tactic's internal tier. Escalation tier-determination for this tactic's findings depends on three factors: credibility of the indicator per the credibility criteria, breadth across modalities, and persistence over time. A single low-credibility indicator with available mundane explanation sits at the monitoring tier. A single high-credibility indicator with operational specificity sits at the investigation tier. Cross-modal corroboration — two or more indicators correlating against the same subject across different observation modes — sits at the elevation tier and warrants treating as coordinated target-development. Indicators persisting despite implemented countermeasures sit at the committed-actor tier, suggesting potential entry into mobilization. Multiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any individual finding warrants in isolation; consumer triage tooling should make this composition rule explicit. Tier-triggered response actions: the monitoring tier triggers logging and pattern-detection workflows; the investigation tier triggers actor-identification effort and subject-vulnerability assessment; the elevation tier triggers countermeasure activation appropriate to the subject's posture; the committed-actor tier triggers defensive-posture upgrade; confirmed actor identity matching a known threat actor profile at any tier warrants urgent law-enforcement coordination.",
+            "escalation_priority": "Priority"
+          },
           "techniques": [],
           "indicators": [
             {
@@ -818,7 +907,24 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "advancing_early",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.20,
+              "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "weak",
+                "actor_intent": "moderate",
+                "actor_opportunity": "moderate",
+                "threat_timing": "weak",
+                "threat_target": "strong",
+                "threat_method": "weak"
+              }
             },
             {
               "id": "IND-0103-02",
@@ -839,7 +945,24 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "horizon_late",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 1.5
+              },
+              "escalation_weight": 5.67,
+              "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "weak",
+                "actor_intent": "moderate",
+                "actor_opportunity": "weak",
+                "threat_timing": "weak",
+                "threat_target": "strong",
+                "threat_method": "weak"
+              }
             },
             {
               "id": "IND-0103-03",
@@ -861,7 +984,24 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 6.0
+              },
+              "escalation_weight": 5.09,
+              "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "strong",
+                "actor_opportunity": "strong",
+                "threat_timing": "moderate",
+                "threat_target": "strong",
+                "threat_method": "moderate"
+              }
             },
             {
               "id": "IND-0103-04",
@@ -884,7 +1024,24 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 8.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.5,
+                "detectability": 2.5
+              },
+              "escalation_weight": 6.15,
+              "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "strong",
+                "actor_intent": "strong",
+                "actor_opportunity": "moderate",
+                "threat_timing": "moderate",
+                "threat_target": "strong",
+                "threat_method": "moderate"
+              }
             },
             {
               "id": "IND-0103-05",
@@ -904,7 +1061,24 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 5.0
+              },
+              "escalation_weight": 5.38,
+              "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "strong",
+                "actor_opportunity": "strong",
+                "threat_timing": "moderate",
+                "threat_target": "strong",
+                "threat_method": "moderate"
+              }
             }
           ],
           "countermeasures": [
@@ -12481,6 +12655,17 @@
       ]
     }
   ],
+  "escalation_rubric": {
+    "composite_math": "Recommended composite is the geometric mean of the four type-level potentials, with detectability flipped to reflect its mitigating role: escalation_weight = (impact_potential × blast_radius_potential × recoverability_inverse × (10 - detectability))^(1/4). The geometric mean ensures the composite is bounded 0.0–10.0 and that a weak value on any single axis pulls the composite down — appropriate for security-intuitive 'weakest-link' reading. Detectability is flipped because high observability by trained personnel reduces (not raises) the realized escalation potential. Consumers may substitute weighted-additive or other variants with documented rationale per CONTRIBUTING.md 'Schema design principles.'",
+    "severity_thresholds": {
+      "low": 0.0,
+      "medium": 2.5,
+      "high": 5.0,
+      "critical": 7.5
+    },
+    "rubric_version": "1.0.0",
+    "calibration_guidance": "The severity_thresholds above reflect equal-quartile bucketing as the framework's default. Consumers SHOULD calibrate the thresholds to their threat-posture environment for best results. Higher-posture environments (e.g., critical infrastructure, executive protection, dignitary protection) may shift `high` and `critical` thresholds downward (e.g., high=4.0, critical=6.0) to surface medium-weight indicators earlier in triage. Lower-posture environments may shift them upward. Document the rationale for any deviation per CONTRIBUTING.md \"Schema design principles\"."
+  },
   "phase_mappings": {
     "phase_1_target_development": {
       "ntac_pathway": [

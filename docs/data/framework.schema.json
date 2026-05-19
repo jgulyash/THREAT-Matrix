@@ -79,6 +79,10 @@
         "rubric_version": {
           "type": "string",
           "description": "Bumps when the rubric changes."
+        },
+        "calibration_guidance": {
+          "type": "string",
+          "description": "Type-level framework guidance on calibrating severity_thresholds to a consumer's threat-posture environment. The framework's default thresholds reflect equal-quartile bucketing; consumers operating in higher-threat-posture environments (critical infrastructure, executive protection, dignitary protection) should shift `high` and `critical` thresholds downward to surface medium-weight indicators earlier in triage. Lower-posture environments may shift them upward. Document any deviation per CONTRIBUTING.md \"Schema design principles\"."
         }
       }
     },
@@ -349,11 +353,12 @@
         },
         "assessment_guidance": {
           "type": "object",
-          "description": "Optional structured per-tactic scoring guidance. Type-level inherent property of the tactic class; consumers cite the high/low signal anchors, false-positive contexts, and threshold guidance to inform their own assessments. Not a case-specific score. See CONTRIBUTING.md \"Schema design principles\".",
+          "description": "Optional structured per-tactic scoring guidance. Type-level inherent property of the tactic class; consumers cite the criteria preambles, high/low signal anchors, false-positive contexts, and threshold guidance to inform their own assessments. The criteria field on each of credibility/capability/intent/opportunity articulates the underlying judgment rule (e.g., 'Credibility rises with X, Y, Z; falls with A, B, C'); the high_signal_anchors and low_signal_anchors arrays illustrate the criteria with specific patterns and are indicative rather than exhaustive. Not a case-specific score. See CONTRIBUTING.md \"Schema design principles\".",
           "properties": {
             "credibility": {
               "type": "object",
               "properties": {
+                "criteria": { "type": "string", "description": "Type-level prose preamble articulating the underlying credibility-judgment rule. Carries the contract; anchors illustrate it." },
                 "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
                 "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
               }
@@ -361,6 +366,7 @@
             "capability": {
               "type": "object",
               "properties": {
+                "criteria": { "type": "string", "description": "Type-level prose preamble articulating the underlying capability-judgment rule. Carries the contract; anchors illustrate it." },
                 "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
                 "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
               }
@@ -368,6 +374,7 @@
             "intent": {
               "type": "object",
               "properties": {
+                "criteria": { "type": "string", "description": "Type-level prose preamble articulating the underlying intent-judgment rule. Carries the contract; anchors illustrate it." },
                 "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
                 "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
               }
@@ -375,13 +382,18 @@
             "opportunity": {
               "type": "object",
               "properties": {
+                "criteria": { "type": "string", "description": "Type-level prose preamble articulating the underlying opportunity-judgment rule. Carries the contract; anchors illustrate it." },
                 "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
                 "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
               }
             },
             "false_positive_context": {
-              "type": "array",
-              "items": { "type": "string" }
+              "type": "object",
+              "description": "Patterns where surface behavior matches the tactic's indicators but the underlying activity is legitimate. Criteria + contexts shape mirrors the credibility/capability/intent/opportunity sub-fields.",
+              "properties": {
+                "criteria": { "type": "string", "description": "Type-level prose articulating what distinguishes a false-positive from a real concern. Carries the contract; contexts illustrate it." },
+                "contexts": { "type": "array", "items": { "type": "string" } }
+              }
             },
             "threshold_guidance": {
               "type": "string",
@@ -496,13 +508,21 @@
           "type": "string",
           "enum": [
             "horizon",
+            "horizon_early",
+            "horizon_late",
             "advancing",
+            "advancing_early",
+            "advancing_late",
             "imminent",
+            "imminent_early",
+            "imminent_late",
             "staging",
             "in_progress",
-            "aftermath"
+            "aftermath",
+            "aftermath_early",
+            "aftermath_late"
           ],
-          "description": "Type-level property of the indicator class describing how close to action it typically appears. Distinct from phase_relevance, which describes which lifecycle phase the indicator belongs to. Type-level inherent property; not case-specific. See CONTRIBUTING.md \"Schema design principles\"."
+          "description": "Type-level property of the indicator class describing how close to action it typically appears. Distinct from phase_relevance, which describes which lifecycle phase the indicator belongs to. Base values (horizon, advancing, imminent, staging, in_progress, aftermath) define primary pathway positions; optional _early / _late refinements are available for horizon, advancing, imminent, and aftermath where within-band variation carries meaningful operational signal. Staging and in_progress are not split (staging is already a tight terminal-prep window; in_progress is binary). Authors should use the base value when within-band position is ambiguous; use a granular variant only when the indicator class clearly clusters at the early or late edge of its band. Type-level inherent property; not case-specific. See CONTRIBUTING.md \"Schema design principles\"."
         },
         "escalation_weight": {
           "type": "number",
