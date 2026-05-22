@@ -2,7 +2,13 @@
  
 *Tactical Human Risk Enumeration and Adversary Taxonomy Matrix*
  
-The physical threat domain lacks a shared, open, standardized vocabulary. **The THREAT Matrix is built to be that standard.** Four target matrices — **People, Facilities, Organizations, Infrastructure** — across a four-phase Threat Lifecycle: **Target Development → Mobilization → Execution → Aftermath**. 154 tactics, 27 actor profiles spanning seven threat categories, with a behavioral Detection Mesh and response protocols layered on top. Cyber-Physical Nexus and AI-Initiated-Physical tags surface online-to-physical mobilization pathways and AI-enabled reconnaissance across tactics. Structured from V1 to function as a headless, machine-consumable threat signal library for RAG systems, AI agents, MCP clients, and downstream detection and investigation platforms — cross-walked to established cyber and AI-systems adversary frameworks for interoperability with existing programs. MIT-licensed and shipped with a UI and reference Python consumer that demonstrate the contract end-to-end.
+The physical threat domain lacks a shared, open, standardized vocabulary. The **THREAT Matrix** is built to be that standard, one that not only catalogs threat behavior but scores it to support operational decisions.
+
+Four target matrices — **People, Facilities, Organizations, Infrastructure** — span a four-phase Threat Lifecycle: **Target Development → Mobilization → Execution → Aftermath**. It documents 154 tactics and 27 actor profiles across seven threat categories, with a behavioral Detection Mesh, escalation scoring, and response protocols layered on top. The THREAT Matrix names the behavior, weighs the threat, and drives the response.
+
+Cyber-Physical Nexus and AI-Initiated-Physical tags surface online-to-physical mobilization pathways and AI-enabled reconnaissance across tactics.
+
+From V1, the THREAT Matrix is structured as a headless, machine-consumable threat signal library, built for RAG systems, AI agents, MCP clients, and downstream detection and investigation platforms. It cross-walks to established cyber and AI-systems adversary frameworks for interoperability with existing programs. MIT-licensed, it ships with a UI and a reference Python consumer that demonstrate the contract end-to-end.
 
 Built for the analysts, investigators, field teams, and engineers across corporate security, law enforcement, and the Intelligence Community — and for the leaders who rely on their work, and the educators and researchers shaping the discipline. Drawn from 15+ years of experience leading high-stakes threat investigations with more than 70 domestic and international partners.
  
@@ -31,7 +37,7 @@ In 2023, a Lawrence Livermore National Laboratory study, sponsored by DOE/NNSA a
  
 ![THREAT Matrix Threat Lifecycle](docs/images/threat-lifecycle-diagram.svg)
  
-The Threat Lifecycle is descriptive, not prescriptive — adversaries compress, skip, and reorder phases based on opportunity and capability. The framework makes behavioral patterns visible; it doesn't assert they are inevitable or sequential. Detection and response operate as a Detection Mesh across the lifecycle (see below), not as a linear chain. The result is a unified threat picture security practitioners can use for investigation, prioritization, and physical-threat mitigation.
+The Threat Lifecycle is descriptive, not prescriptive — adversaries compress, skip, and reorder phases based on opportunity and capability. The framework makes behavioral patterns visible; it doesn't assert they are inevitable or sequential. Detection and response operate as a Detection Mesh across the lifecycle (see below), not as a linear chain. The result is a unified threat picture security professionals can use for investigation, prioritization, and physical-threat mitigation. Escalation scoring backs that prioritization with a per-indicator severity signal.
  
 ### Target Matrices
  
@@ -70,7 +76,30 @@ The mesh is machine-walkable. Three graph link fields make it traversable by AI 
 | `coordinates_with` | Response Protocols | Parallel-execution links across stakeholder authorities |
  
 Full architectural rationale is in the `detection_mesh` block in `docs/data/framework.json`.
- 
+
+### Escalation Scoring
+
+The taxonomy names a behavior. The escalation layer scores it — turning "this indicator was observed" into "here is how severe it is, and how urgently it warrants action." Every indicator carries a `temporal_signature` and four `escalation_axes`; the framework computes a weight and severity band from them, so downstream consumers receive a ready-to-use priority signal rather than raw values to interpret.
+
+**temporal_signature** — where the indicator sits on the threat clock: `horizon → advancing → imminent → staging → in_progress → aftermath`. Four of the six split into early/late stages; `staging` and `in_progress` stay single-stage because their timelines are inherently compressed.
+
+**escalation_axes** — four authored values, each 0.0–10.0:
+
+| Axis | Measures |
+|---|---|
+| `impact_potential` | Magnitude of harm if the downstream threat lands |
+| `blast_radius_potential` | Geographic / population scope — single victim to mass-casualty |
+| `recoverability_inverse` | How hard the harm is to undo (higher = harder) |
+| `detectability` | How observable the indicator is, in flight, to trained personnel |
+
+**escalation_weight** — computed, not authored: the geometric mean of `impact_potential`, `blast_radius_potential`, `recoverability_inverse`, and inverted detectability (`10 − detectability`). The geometric mean is deliberate — a low value on any single axis pulls the whole weight down, so a high score requires all four dimensions to be elevated and no axis can be fully compensated by the others.
+
+**severity_band** — computed from the weight against fixed thresholds, giving each indicator a stable categorical severity for filtering, triage, and display.
+
+**assessment_guidance** — tactic-level prose that sits alongside the computed score: credibility / capability / intent / opportunity anchors, false-positive context, threshold guidance, and an escalation priority. Where the weight is the quantitative signal, `assessment_guidance` is the structured human-judgment layer — what raises or lowers confidence in a finding, and what looks like the tactic but isn't.
+
+Full scoring rationale, the axis rubric, and band thresholds live in the `escalation_rubric` block in `docs/data/framework.json`.
+
 ### Cross-Framework Interoperability
  
 THREAT Matrix's four-phase Threat Lifecycle is cross-walked to established adversary threat frameworks via the `phase_mappings` block in `docs/data/framework.json`
@@ -101,7 +130,7 @@ V1.1 establishes THREAT Matrix as a headless-first open standard. The contract h
 | Property | Where it lives |
 |---|---|
 | **Canonical artifact** | [`docs/data/framework.json`](docs/data/framework.json) — single source of truth. The SPA is one consumer of this file, not its primary expression. |
-| **Formal schema** | [`docs/data/framework.schema.json`](docs/data/framework.schema.json) — JSON Schema (draft 2020-12) that every consumer validates against. |
+| **Formal schema** | [`docs/data/framework.schema.json`](docs/data/framework.schema.json) — JSON Schema (draft 2020-12) that every consumer validates against. | Current schema version: 1.2.1 (adds the escalation_rubric block).
 | **Versioning + stability policy** | Semver applied independently to the framework artifact (`version`) and the schema (`schema_version`) — see [VERSIONING.md](VERSIONING.md). Stable identifier contract (`TA####`, `AP###`, `IND-*`, `CM-*`, `RP-*`) defined in [IDENTIFIERS.md](IDENTIFIERS.md) — IDs are never reused, even after deprecation. Lifecycle states and sunset rules in [DEPRECATION.md](DEPRECATION.md). |
 | **Multiple independent consumers** | The React SPA at jgulyash.github.io/THREAT-Matrix; the reference Python consumer at [`examples/python_consumer.py`](examples/python_consumer.py) (with [`examples/README.md`](examples/README.md) as a starting-point guide); community consumers welcome. |
  
@@ -115,7 +144,7 @@ Standards talk to platforms. The contract is what makes integrations with RAG sy
 |---|---|---|
 | **V1** | Person matrix taxonomy (34 tactics) | Shipped |
 | **V1.1** | Standard contract (JSON Schema, versioning policy, stable IDs, reference consumer) + Person Detection & Response + AI-native foundations (`phase_mappings`, `detection_mesh`, `evidence_basis`) | In Progress |
-| **V1.2** | Phase Lens UI + assessment guidance | In Progress |
+| **V1.2** | Phase Lens UI + escalation scoring (rubric, severity bands) + assessment guidance | In Progress |
 | **V1.3** | Facility matrix complete (~40 tactics) | In Progress |
 | **V1.4** | Organization matrix complete (~42 tactics) | In Progress |
 | **V1.5** | Infrastructure matrix complete (~38 tactics) | In Progress |
@@ -143,6 +172,7 @@ The SPA is one consumer of the standard. Other consumers shipped or planned:
 - **Python and TypeScript SDKs** — thin wrappers over schema-validated fetch (planned, V2).
 - **Pre-built RAG embeddings** — tactics, indicators, countermeasures, field_notes embedded for semantic retrieval (planned, V2).
 - **Community consumers** — visualizations, integrations, ingestion pipelines welcome. Submit a link via issue and yours gets listed here.
+- **Schema-validated consumers** - read each indicator's computed `escalation_weight` and `severity_band` directly — a RAG pipeline or AI agent gets a ready-to-use priority signal without implementing the rubric itself.
  
 ---
  
