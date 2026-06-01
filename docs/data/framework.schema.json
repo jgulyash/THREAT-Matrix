@@ -37,9 +37,15 @@
     },
     "matrices": {
       "type": "object",
-      "description": "Four target matrices: person, facility, organization, system. Each matrix contains tactics.",
+      "description": "Four target matrices: person, facility, organization, infrastructure. Each matrix contains tactics, an optional scope sentence describing the primary adversary objective that places a tactic in that matrix. The matrices container also carries an optional boundary_rule describing the framework-vs-operational partition principle. boundary_rule and scope are type-level statements; they do not affect schema validity for matrices that omit them.",
+      "properties": {
+        "boundary_rule": {
+          "type": "string",
+          "description": "Framework-vs-operational boundary principle governing matrix placement. Authoring-time: one matrix per tactic, set by the adversary's primary objective. Operational-time: real incidents may invoke tactics from multiple matrices via Detection Mesh cross-references (correlates_with at the indicator level). Type-level statement of the framework's organizing principle."
+        }
+      },
       "patternProperties": {
-        "^(person|facility|organization|system)$": {
+        "^(person|facility|organization|infrastructure)$": {
           "type": "object",
           "properties": {
             "tactics": {
@@ -47,6 +53,10 @@
               "items": {
                 "$ref": "#/$defs/tactic"
               }
+            },
+            "scope": {
+              "type": "string",
+              "description": "Canonical scope sentence for this matrix, expressed in WHAT/WHY/WHERE terms. Defines the primary adversary objective that places a tactic in this matrix at authoring time. Type-level field; not case-specific. See matrices.boundary_rule for the framework-vs-operational distinction."
             }
           }
         }
@@ -251,7 +261,7 @@
             "person",
             "facility",
             "organization",
-            "system"
+            "infrastructure"
           ]
         },
         "phase": {
@@ -405,6 +415,20 @@
               "description": "Type-level priority class for the tactic — characterizes typical action-urgency at the tactic-class level, not case-level urgency at any specific assessment. See CONTRIBUTING.md \"Schema design principles\"."
             }
           }
+        },
+        "target_identity_scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "named_individual",
+              "role_or_identity_category",
+              "affinity_group",
+              "indiscriminate"
+            ]
+          },
+          "uniqueItems": true,
+          "description": "Optional. Type-level declaration of which target_identity sub-classes this tactic's prose covers. Primarily meaningful for People matrix tactics. Authored per tactic based on actual prose coverage; tactics whose operational logic generalizes carry multiple values, tactics intrinsically narrow declare a single value. See target_identity on indicator for the per-indicator sub-dimension."
         }
       }
     },
@@ -599,6 +623,30 @@
               "enum": ["strong", "moderate", "weak", "none"]
             }
           }
+        },
+        "target_identity": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "named_individual",
+              "role_or_identity_category",
+              "affinity_group",
+              "indiscriminate"
+            ]
+          },
+          "uniqueItems": true,
+          "description": "Optional multi-select sub-dimension within the People matrix describing the identity-class(es) this indicator targets. named_individual = specific known person (assassination, stalking, kidnapping of a known target). role_or_identity_category = targeted because of what they are, not who (cops by uniform, journalists, clinic staff, judges). affinity_group = group property selects the people or location (demographic, religious, ethnic, locational-affinity — e.g. Jews at a synagogue, patrons of a community-specific mall). indiscriminate = no group property filter (random crowd, generic public space chosen for proximity / availability alone). Multi-select to preserve multi-axis identity reality (e.g., a judge attacked because of role and affinity simultaneously is ['role_or_identity_category', 'affinity_group']). Boundary rule between affinity_group and indiscriminate: did a group property select either the people or the location? Yes → affinity_group; no → indiscriminate."
+        },
+        "primary_objective_evidence_tier": {
+          "type": "string",
+          "enum": [
+            "stated",
+            "strongly_inferred",
+            "weakly_inferred",
+            "unknown"
+          ],
+          "description": "Optional. Incident-level annotation of the confidence with which the adversary's primary objective (which sets matrix placement per matrices.boundary_rule) is established. stated = claimed responsibility or manifested intent. strongly_inferred = operational evidence overwhelming. weakly_inferred = operational evidence ambiguous. unknown = no basis for inference; matrix placement defaults to the matrix containing the tactic that produced the most observable consequence (see matrices.boundary_rule). Full IRR protocol for this field deferred to V1.3."
         }
       }
     },

@@ -1,10 +1,11 @@
 {
   "name": "THREAT Matrix",
   "full_name": "Tactical Human Risk Enumeration and Adversary Taxonomy Matrix",
-  "version": "1.1.0",
-  "schema_version": "1.2.1",
+  "version": "1.2.0",
+  "schema_version": "1.2.2",
   "license": "MIT",
   "matrices": {
+    "boundary_rule": "Each tactic in this catalog is placed in exactly one matrix at authoring time, determined by the adversary's primary objective. The WHAT/WHY/WHERE separation is the disambiguation tool for the People matrix specifically; for Facility, Organization, and Infrastructure, WHERE collapses into WHAT and the boundary is set by what the adversary's primary objective targets. Motivation lives in actor profiles, not in matrix placement. Real-world incidents may legitimately invoke tactics from multiple matrices simultaneously; cross-matrix coverage is expressed through the Detection Mesh via indicator correlates_with references. When a downstream consumer requires a single primary-matrix call per incident, default to the matrix containing the tactic that achieved the adversary's terminal objective; ties broken by precedence People > Facilities > Organizations > Infrastructure. Where the adversary's primary objective is uncertain or unknown, primary-matrix placement defaults to the matrix containing the tactic that produced the most observable consequence; the incident-level confidence of this inference is annotated separately via primary_objective_evidence_tier. Consumers may override.",
     "person": {
       "tactics": [
         {
@@ -11742,16 +11743,20 @@
           ],
           "evidence_basis": "hybrid"
         }
-      ]
+      ],
+      "scope": "Tactics centered on one or more human beings as the primary target. The adversary's primary objective is harm, control, coercion, or surveillance directed at people. Setting and motivation are separate dimensions and do not change matrix placement."
     },
     "facility": {
-      "tactics": []
+      "tactics": [],
+      "scope": "Tactics centered on a physical venue, structure, or built environment as the primary target. The adversary's primary objective is damage, destruction, denial, or symbolic action against the place itself. Incidental human harm in an unoccupied facility does not move the tactic to People."
     },
     "organization": {
-      "tactics": []
+      "tactics": [],
+      "scope": "Tactics centered on an institution, mission, brand, or operational continuity as the primary target. The adversary's primary objective is disruption, delegitimization, infiltration, or coercion of what the organization does or represents, distinct from its facilities or its individuals."
     },
     "infrastructure": {
-      "tactics": []
+      "tactics": [],
+      "scope": "Tactics centered on infrastructure or technical systems as the primary target. The adversary's primary objective is disruption, degradation, or compromise of the system's function — physical infrastructure, cyber-physical systems, or critical service delivery. Cyber-Physical Nexus tactics are tagged via the cpn field on tactic."
     }
   },
   "actor_profiles": [
@@ -12785,7 +12790,7 @@
       },
       {
         "name": "cross_matrix",
-        "description": "Adversaries do not respect matrix boundaries. The mesh weaves the four matrices (Person, Facility, Organization, System) into one coherent detection space. An indicator in any matrix can pull context from any other matrix."
+        "description": "Adversaries do not respect matrix boundaries. The mesh weaves the four matrices (People, Facilities, Organizations, Infrastructure) into one coherent detection space. An indicator in any matrix can pull context from any other matrix."
       },
       {
         "name": "cross_domain",

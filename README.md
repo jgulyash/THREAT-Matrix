@@ -43,6 +43,8 @@ The Threat Lifecycle is descriptive, not prescriptive — adversaries compress, 
  
 ![THREAT Matrix Target Matrices](docs/images/matrix-overview.svg)
  
+Each tactic in the catalog lives in exactly one matrix, determined by the adversary's primary objective. The People matrix covers harm, control, coercion, or surveillance directed at one or more human beings — V1.2.2 broadened this scope from V1's named-individual focus to include mass-casualty events and group-targeted attacks (see `target_identity` sub-dimension). The Facilities, Organizations, and Infrastructure matrices cover physical venues, institutions, and critical systems respectively. Real-world incidents may legitimately invoke tactics from multiple matrices simultaneously; cross-matrix coverage is expressed through the Detection Mesh (`correlates_with`) rather than by re-classifying tactics. Full scope sentences and the framework-vs-operational boundary rule live in the `matrices.{name}.scope` and `matrices.boundary_rule` fields of `framework.json`.
+ 
 ### Actor Profiles
  
 **27 actor profiles across 7 threat categories.** Each profile documents awareness, direction, access relationship, phase compression risk, attack vectors, behavioral markers, AI capability amplifiers, and the tactics each actor type is most likely to employ.
@@ -125,7 +127,7 @@ The `ai_initiated_physical` vector is architecturally distinct: the attack does 
  
 ## Responsible Use
 
-**Audience.** THREAT Matrix is built for the analysts, investigators, field teams, and engineers across corporate security, law enforcement, and the Intelligence Community — and for the leaders who rely on their work, and the educators and researchers shaping the discipline. The framework supports the work of recognizing patterns of physical-threat behavior, characterizing activity in motion, and mitigating outcomes across the threat lifecycle. It covers four target matrices — Person, Facility, Organization, and Infrastructure — with Cyber-Physical Nexus tagging where digital and physical threat intelligence converge.
+**Audience.** THREAT Matrix is built for the analysts, investigators, field teams, and engineers across corporate security, law enforcement, and the Intelligence Community — and for the leaders who rely on their work, and the educators and researchers shaping the discipline. The framework supports the work of recognizing patterns of physical-threat behavior, characterizing activity in motion, and mitigating outcomes across the threat lifecycle. It covers four target matrices — People, Facilities, Organizations, and Infrastructure — with Cyber-Physical Nexus tagging where digital and physical threat intelligence converge.
 
 **What this provides.** THREAT Matrix maps what adversaries do, when, and why, so analysts and investigators can recognize patterns in their casework and respond with context. It supports the workflow of analysts, investigators, and security teams across the threat lifecycle — from recognizing pre-attack indicators, to characterizing activity already in motion, to mapping completed cases against a shared structure. The taxonomy is published as machine-readable JSON (`framework.json`); security professionals work with it through the published viewer, custom integrations their team builds, or AI agents that read the framework directly.
 
@@ -146,7 +148,7 @@ V1.1 establishes THREAT Matrix as a headless-first open standard. The contract h
 | Property | Where it lives |
 |---|---|
 | **Canonical artifact** | [`docs/data/framework.json`](docs/data/framework.json) — single source of truth. The SPA is one consumer of this file, not its primary expression. |
-| **Formal schema** | [`docs/data/framework.schema.json`](docs/data/framework.schema.json) — JSON Schema (draft 2020-12) that every consumer validates against. Current schema version: 1.2.1 (adds the escalation_rubric block). |
+| **Formal schema** | [`docs/data/framework.schema.json`](docs/data/framework.schema.json) — JSON Schema (draft 2020-12) that every consumer validates against. Current schema version: 1.2.2 (adds `matrices.boundary_rule`, per-matrix `scope` sentences, `target_identity` sub-dimension on indicators, `target_identity_scope` on tactics, `primary_objective_evidence_tier` on indicators). |
 | **Versioning + stability policy** | Semver applied independently to the framework artifact (`version`) and the schema (`schema_version`) — see [VERSIONING.md](docs/VERSIONING.md). Stable identifier contract (`TA####`, `AP###`, `IND-*`, `CM-*`, `RP-*`) defined in [IDENTIFIERS.md](docs/IDENTIFIERS.md) — IDs are never reused, even after deprecation. Lifecycle states and sunset rules in [DEPRECATION.md](docs/DEPRECATION.md). |
 | **Multiple independent consumers** | The React SPA at jgulyash.github.io/THREAT-Matrix; the reference Python consumer at [`examples/python_consumer.py`](examples/python_consumer.py) (with [`examples/README.md`](examples/README.md) as a starting-point guide); community consumers welcome. |
  
@@ -160,11 +162,11 @@ Standards talk to platforms. The contract is what makes integrations with RAG sy
  
 | Version | Scope | Status |
 |---|---|---|
-| **V1** | Person matrix taxonomy (34 tactics) | Shipped |
-| **V1.1** | Standard contract (JSON Schema, versioning policy, stable IDs, reference consumer) + Person Detection & Response + AI-native foundations (`phase_mappings`, `detection_mesh`, `evidence_basis`) | In Progress |
+| **V1** | People matrix taxonomy (34 tactics) | Shipped |
+| **V1.1** | Standard contract (JSON Schema, versioning policy, stable IDs, reference consumer) + People Detection & Response + AI-native foundations (`phase_mappings`, `detection_mesh`, `evidence_basis`) | In Progress |
 | **V1.2** | Phase Lens UI + escalation scoring (rubric, severity bands) + assessment guidance | In Progress |
-| **V1.3** | Facility matrix complete (~40 tactics) | In Progress |
-| **V1.4** | Organization matrix complete (~42 tactics) | In Progress |
+| **V1.3** | Facilities matrix complete (~40 tactics) | In Progress |
+| **V1.4** | Organizations matrix complete (~42 tactics) | In Progress |
 | **V1.5** | Infrastructure matrix complete (~38 tactics) | In Progress |
 | **V2** | Platform release: custom domain, Python and TypeScript SDKs, MCP server, RAG embeddings, change feed | Planned |
 | **V3** | Real-world case library | Planned |
