@@ -26,6 +26,35 @@ if ! printf '%s\n' "$staged_files" | grep -qE '^docs/data/framework\.json$'; the
   exit 0
 fi
 
+# framework.json is staged — first validate Detection Mesh references.
+if command -v python3 >/dev/null 2>&1; then
+  if ! python3 scripts/lint/mesh-refs.py docs/data/framework.json; then
+    cat >&2 <<'EOF'
+
+✗ pre-commit FAILED — Detection Mesh reference-resolution lint
+
+  One or more mesh fields (indicator.correlates_with,
+  countermeasure.compensates_for, response_protocol.coordinates_with)
+  reference an ID that does not exist in framework.json or does not
+  match the canonical IND-XXXX-XX / CM-XXXX-XX / RP-XXXX-XX format.
+
+  See the broken-reference list above. Fix by either correcting the
+  reference or adding the missing indicator / countermeasure /
+  response_protocol, then re-run your commit.
+
+EOF
+    exit 1
+  fi
+else
+  cat >&2 <<'EOF'
+
+⚠ pre-commit: python3 not found — skipping Detection Mesh reference lint.
+  Install Python 3 to enable local mesh-refs validation. CI will catch
+  broken references on push.
+
+EOF
+fi
+
 # framework.json is staged — verify BOTH a bundle file AND docs/index.html
 # are also staged. Vite bakes the hashed bundle filename into index.html,
 # so a rebuilt bundle without an updated index.html leaves the deployed

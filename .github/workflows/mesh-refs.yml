@@ -1,0 +1,42 @@
+name: Mesh Refs
+
+# Validates that every Detection Mesh reference in framework.json resolves:
+#   - indicator.correlates_with         → existing IND-XXXX-XX
+#   - countermeasure.compensates_for    → existing CM-XXXX-XX
+#   - response_protocol.coordinates_with → existing RP-XXXX-XX
+# Runs alongside Bundle Freshness on the same trigger surface.
+# The local pre-commit hook at scripts/git-hooks/pre-commit calls the
+# same scripts/lint/mesh-refs.py; this workflow is the durable
+# safety net.
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - v1-build
+
+concurrency:
+  group: mesh-refs-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  mesh-refs:
+    name: Validate Detection Mesh references
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run mesh-refs lint
+        run: python3 scripts/lint/mesh-refs.py docs/data/framework.json

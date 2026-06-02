@@ -1,6 +1,71 @@
 export type Priority = 'urgent' | 'immediate' | 'priority' | 'routine' | 'ongoing';
 export type RiskLevel = 'low' | 'medium' | 'high';
-export type TimeToImplement = 'immediate' | 'days' | 'weeks' | 'months';
+export type TimeToImplement = 'immediate' | 'days' | 'weeks' | 'months' | 'weeks_to_months';
+
+// V1.2 escalation scoring
+export type SeverityBand = 'low' | 'medium' | 'high' | 'critical';
+export type InformsAxisStrength = 'strong' | 'moderate' | 'weak' | 'none';
+
+// V1.2.2 People matrix scope sub-dimension
+export type TargetIdentity =
+  | 'named_individual'
+  | 'role_or_identity_category'
+  | 'affinity_group'
+  | 'indiscriminate';
+
+export type PrimaryObjectiveEvidenceTier =
+  | 'stated'
+  | 'strongly_inferred'
+  | 'weakly_inferred'
+  | 'unknown';
+
+// V1.1 tactic evidence-basis taxonomy
+export type EvidenceBasis =
+  | 'operational_primary'
+  | 'hybrid'
+  | 'literature_primary'
+  | 'literature_only';
+
+// V1.2 tactic-level assessment guidance escalation priority (Title Case;
+// distinct from the lowercase Priority used on response_protocol)
+export type AssessmentEscalationPriority = 'Urgent' | 'Immediate' | 'Priority' | 'Routine';
+
+export interface EscalationAxes {
+  impact_potential?: number;
+  blast_radius_potential?: number;
+  recoverability_inverse?: number;
+  detectability?: number;
+}
+
+export interface InformsAxes {
+  actor_capability?: InformsAxisStrength;
+  actor_intent?: InformsAxisStrength;
+  actor_opportunity?: InformsAxisStrength;
+  threat_timing?: InformsAxisStrength;
+  threat_target?: InformsAxisStrength;
+  threat_method?: InformsAxisStrength;
+}
+
+export interface AssessmentGuidanceSection {
+  criteria?: string;
+  high_signal_anchors?: string[];
+  low_signal_anchors?: string[];
+}
+
+export interface AssessmentGuidanceFalsePositive {
+  criteria?: string;
+  contexts?: string[];
+}
+
+export interface AssessmentGuidance {
+  credibility?: AssessmentGuidanceSection;
+  capability?: AssessmentGuidanceSection;
+  intent?: AssessmentGuidanceSection;
+  opportunity?: AssessmentGuidanceSection;
+  false_positive_context?: AssessmentGuidanceFalsePositive;
+  threshold_guidance?: string;
+  escalation_priority?: AssessmentEscalationPriority;
+}
 
 export interface Indicator {
   id: string;
@@ -9,6 +74,17 @@ export interface Indicator {
   detection_sources: string[];
   phase_relevance?: string[];
   source_refs: string[];
+  // V1.1 Detection Mesh
+  correlates_with?: string[];
+  // V1.2 escalation scoring
+  temporal_signature?: string;
+  escalation_axes?: EscalationAxes;
+  escalation_weight?: number;
+  severity_band?: SeverityBand;
+  informs_axes?: InformsAxes;
+  // V1.2.2 People matrix scope sub-dimension
+  target_identity?: TargetIdentity[];
+  primary_objective_evidence_tier?: PrimaryObjectiveEvidenceTier;
 }
 
 export interface Countermeasure {
@@ -19,8 +95,11 @@ export interface Countermeasure {
   cost: RiskLevel;
   complexity: RiskLevel;
   time_to_implement: TimeToImplement;
+  phase_relevance?: string[];
   limitations: string;
   source_refs: string[];
+  // V1.1 Detection Mesh
+  compensates_for?: string[];
 }
 
 export interface ResponseProtocol {
@@ -32,6 +111,8 @@ export interface ResponseProtocol {
   escalation_trigger: string;
   legal_notes: string;
   source_refs: string[];
+  // V1.1 Detection Mesh
+  coordinates_with?: string[];
 }
 
 export interface ActorAssociation {
@@ -48,6 +129,9 @@ export interface Tactic {
   phase: 1 | 2 | 3 | 4;
   phase_name: string;
   notes: string;
+  field_notes?: string;
+  observed_contexts?: string[];
+  evidence_basis?: EvidenceBasis;
   cpn: boolean;
   cpn_id?: string;
   cpn_notes?: string;
@@ -59,6 +143,10 @@ export interface Tactic {
   source_refs?: string[];
   response_protocols: ResponseProtocol[];
   phase_4_track?: 'evasion' | 'attribution';
+  // V1.2 assessment guidance
+  assessment_guidance?: AssessmentGuidance;
+  // V1.2.2 People matrix scope sub-dimension
+  target_identity_scope?: TargetIdentity[];
 }
 
 export interface ActorProfile {
@@ -88,15 +176,28 @@ export interface BibliographyEntry {
   relevance_summary: string;
 }
 
+export interface MatrixContainer {
+  tactics: Tactic[];
+  // V1.2.2 per-matrix scope sentence
+  scope?: string;
+}
+
+export interface Matrices {
+  person: MatrixContainer;
+  facility?: MatrixContainer;
+  organization?: MatrixContainer;
+  infrastructure?: MatrixContainer;
+  // V1.2.2 framework-vs-operational boundary principle
+  boundary_rule?: string;
+}
+
 export interface FrameworkData {
   name: string;
   full_name?: string;
   version: string;
+  schema_version?: string;
   license?: string;
-  matrices: {
-    person: { tactics: Tactic[] };
-    [k: string]: { tactics: Tactic[] };
-  };
+  matrices: Matrices;
   actor_profiles: ActorProfile[];
   bibliography: Record<string, BibliographyEntry>;
   [k: string]: unknown;

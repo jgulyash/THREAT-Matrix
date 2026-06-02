@@ -13,7 +13,7 @@ This document explains what kinds of contributions are useful, how to submit the
 - **Physical security operators** — facility infiltration, access control bypass, hostile reconnaissance
 - **Threat intelligence analysts** — actor profiling, TTP attribution, source analysis
 - **Researchers** — academic studies, after-action reviews, primary source documents
-- **Software developers** — schema work, React SPA features, V2–V4 matrix tooling
+- **Software developers** — schema work, React SPA features, V1.3–V1.5 matrix tooling
 
 Contributions from any of these backgrounds are welcome. Operational experience and source-backed claims carry the most weight.
 
@@ -23,12 +23,12 @@ Contributions from any of these backgrounds are welcome. Operational experience 
 
 ### 1. Suggest a new tactic
 
-If you have observed (or have documented evidence of) adversary behavior that isn't represented in the framework, open an issue describing it. The framework is intentionally incomplete in V1 — V1.3–V1.5 add the Facility, Organization, and Infrastructure matrices, and even the Person matrix has known gaps.
+If you have observed (or have documented evidence of) adversary behavior that isn't represented in the framework, open an issue describing it. The framework is intentionally incomplete in V1 — V1.3–V1.5 add the Facilities, Organizations, and Infrastructure matrices, and even the People matrix has known gaps.
 
 **Good tactic suggestions include:**
 - A short, behavior-first name (what the adversary is *doing*, not what defenders are worried about)
 - Which phase it belongs to (Target Development, Mobilization, Execution, Aftermath)
-- Which target matrix it applies to (Person, Facility, Organization, Infrastructure)
+- Which target matrix it applies to (People, Facilities, Organizations, Infrastructure)
 - 2–4 sentences describing the behavior in operational terms
 - A reference: a public after-action review, court document, NTAC publication, peer-reviewed study, or first-person account
 - (If applicable) Whether it has a Cyber-Physical Nexus dimension
@@ -49,11 +49,35 @@ Use cases that include actual or composite incidents (with appropriate redaction
 
 **Use the issue template:** `Use Case Proposal`
 
-### 4. Contribute a behavioral indicator (V3+)
+### 4. Contribute a behavioral indicator
 
-Detection indicators map observable behaviors to tactics. V1 ships with `indicators: []` arrays as placeholders — these populate in V3 alongside the Organization matrix. If you have indicator content for V1 Person tactics, open an issue. Don't submit a pull request to populate them yet — the schema for indicator records is still being designed.
+Detection indicators map observable behaviors to tactics. V1.1 populated all 34 People-matrix tactics with indicators (190 total); V1.3–V1.5 author indicators for the Facilities, Organizations, and Infrastructure matrices as those matrices land. If you have indicator content for a specific tactic, open an issue describing the behavior, its detection sources, and the source you're drawing from — peer-reviewed study, after-action review, NTAC publication, or first-person operational account. Indicator contributions go through editorial review the same way tactic contributions do; PRs are accepted only after the issue discussion has reached agreement on the indicator's scope and grounding.
 
-### 5. Code contributions
+### 5. Populate or extend Detection Mesh cross-references
+
+The Detection Mesh weaves the framework's indicators, countermeasures, and response protocols into a single traversable graph across the four matrices and the four threat-lifecycle phases. Three fields carry the mesh:
+
+- `correlates_with` on indicators — other indicator IDs that this indicator typically co-occurs with or precedes (cross-phase, cross-matrix, or within-tactic)
+- `compensates_for` on countermeasures — other countermeasure IDs whose coverage gap this countermeasure addresses
+- `coordinates_with` on response protocols — other response protocol IDs that fire in parallel on the same indicator set across stakeholder authorities
+
+**What counts as a mesh link worth noting:**
+
+- Same actor profile typically exhibits both behaviors (one operational thread)
+- Observable handoff between two indicator types in field practice (e.g., grievance articulation → subject profiling)
+- Defense-in-depth complementarity for countermeasures (one detects what the other prevents)
+- Parallel-authority response coordination that's documented operationally (HR + Legal + Law Enforcement converging on the same case)
+
+**What is NOT a mesh link:**
+
+- "Vaguely related" or "topically similar" — the mesh is a precision instrument, not a tag soup
+- Speculative correlations not grounded in field observation or documented case material
+
+**Granularity.** 2–4 references per item is typical. More than 4 usually signals over-linking; consider whether the additional references are genuine or just topically adjacent.
+
+**ID format.** `IND-XXXX-XX` (indicators), `CM-XXXX-XX` (countermeasures), `RP-XXXX-XX` (response protocols), where `XXXX` is the parent tactic's `TM` number and `XX` is the sequence within the tactic. The pre-commit hook validates that all mesh references resolve to existing IDs in `framework.json`; broken references block the commit. Hook source: `scripts/git-hooks/`.
+
+### 6. Code contributions
 
 The interactive browser is a React SPA built with Vite. Source lives in `src/`; the build emits hashed bundles to `docs/assets/`. Data lives in `docs/data/framework.json`. Build with `bun run build`. Requires Bun 1.3.9+ (`curl -fsSL https://bun.sh/install | bash` if not installed).
 
@@ -67,7 +91,7 @@ The interactive browser is a React SPA built with Vite. Source lives in `src/`; 
 **Hold on these for now:**
 - New tactics or actor profiles via PR — open an issue first so the addition can be reviewed against the framework's editorial standards
 - Major UI redesigns — the V1 visual identity (Amber Noir palette, IBM Plex Sans, the layout system) is intentional. See `docs/design/palette-comparison.html` for context.
-- V2–V4 matrix work — these are scheduled and will be opened for contribution as each version begins
+- V1.3–V1.5 matrix work — these are scheduled and will be opened for contribution as each version begins
 
 ---
 

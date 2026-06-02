@@ -17,7 +17,7 @@
           "matrix": "person",
           "phase": 1,
           "phase_name": "Target Development",
-          "notes": "Who, what, and why this target. Precedes all reconnaissance. Actor evaluates candidate individuals against attack objectives — relationship to grievance, symbolic value, access feasibility, and vulnerability. The decision to focus on a specific named individual marks the transition from general grievance to targeted threat.",
+          "notes": "Who, what, and why this target. Precedes all reconnaissance. Actor evaluates candidate targets against attack objectives — relationship to grievance, symbolic value, access feasibility, and vulnerability. The decision to focus on a specific target — whether a named individual, a role or identity category, an affinity group, or an indiscriminate set — marks the transition from general grievance to targeted threat.",
           "cpn": true,
           "cpn_id": "CPN-0101",
           "cpn_notes": "Social media, LinkedIn, data brokers, and OSINT tools are primary sources for modern target selection. Digital footprint analysis can produce a detailed vulnerability assessment before any physical reconnaissance occurs.",
@@ -35,11 +35,25 @@
               "phase_relevance": [
                 "target_development"
               ],
+              "correlates_with": [
+                "IND-0101-04",
+                "IND-0102-01"
+              ],
               "source_refs": [
                 "FEIN-VOSSEKUIL-1999",
                 "NTAC-MASS-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "horizon_late",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 4.97,
+              "severity_band": "medium",
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0101-02",
@@ -52,11 +66,25 @@
               "phase_relevance": [
                 "target_development"
               ],
+              "correlates_with": [
+                "IND-0102-01",
+                "IND-0102-02"
+              ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
                 "MELOY-TRAP18-2016",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "advancing_early",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 1.5
+              },
+              "escalation_weight": 5.67,
+              "severity_band": "high",
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0101-03",
@@ -70,10 +98,24 @@
               "phase_relevance": [
                 "target_development"
               ],
+              "correlates_with": [
+                "IND-0101-01",
+                "IND-0101-04"
+              ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "horizon_late",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.20,
+              "severity_band": "high",
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0101-04",
@@ -87,12 +129,26 @@
               "phase_relevance": [
                 "target_development"
               ],
+              "correlates_with": [
+                "IND-0101-01",
+                "IND-0101-03"
+              ],
               "source_refs": [
                 "NTAC-MASS-2021",
                 "NTAC-AVERTED-2021",
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "horizon_late",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 6.0
+              },
+              "escalation_weight": 4.70,
+              "severity_band": "medium",
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0101-05",
@@ -106,11 +162,24 @@
               "phase_relevance": [
                 "target_development"
               ],
+              "correlates_with": [
+                "IND-0104-05"
+              ],
               "source_refs": [
                 "NTAC-SCHOOLS-2019",
                 "NTAC-AVERTED-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "advancing_early",
+              "escalation_axes": {
+                "impact_potential": 8.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.5,
+                "detectability": 2.0
+              },
+              "escalation_weight": 6.25,
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0101-06",
@@ -123,11 +192,24 @@
               "phase_relevance": [
                 "target_development"
               ],
+              "correlates_with": [
+                "IND-0104-06"
+              ],
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "advancing_early",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 6.0
+              },
+              "escalation_weight": 5.09,
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category"]
             }
           ],
           "countermeasures": [
@@ -408,7 +490,95 @@
             "domestic stalking case progressing from generalized harassment to targeted research on the targeted subject's daily movements",
             "[literature: NTAC-MASS-2021 case pattern — pre-attack target grievance narrowed to a single named individual identified weeks or months before mobilization]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "hybrid",
+          "assessment_guidance": {
+            "credibility": {
+              "criteria": "Credibility of a Target Selection finding rises with convergence — separate indicator types pointing at the same named individual within overlapping timeframes — with a trajectory observed over time rather than a single moment, and with recoverable evidence that does not depend on accurate witness recall. It falls with single uncorroborated reports, targeting that stays diffuse, an unaddressed ordinary explanation, and reporters whose stake in the matter could distort what they pass on.",
+              "high_signal_anchors": [
+                "Convergence across indicator types onto one named subject — grievance expression, target research, and intent disclosure independently pointing at the same individual; no single indicator carries this and it is the strongest credibility pattern in the tactic.",
+                "An observed trajectory rather than a snapshot — the concern is documented as a pattern across weeks or months, so the assessor is weighing a trend, not a remark.",
+                "Recoverable corroborating evidence — retained search activity, written or posted content, or access records that physically tie the actor to the subject and survive independent of how well a witness remembers.",
+                "First-hand disclosure fidelity — a named person who directly received an account of the actor's interest and can relay its content, context, and the individual named, rather than second-hand summary.",
+                "Operational specificity in what is reported — the actor's attention is described as fixed on a specific named individual and concrete personal detail, not a generalized complaint.",
+                "Reporter standing aligned with accuracy — the account reaches the assessor through a person or channel with no structural stake in the outcome and no incentive to amplify."
+              ],
+              "low_signal_anchors": [
+                "A lone uncorroborated report — one tip, no second indicator, and a source who cannot be re-contacted to test it.",
+                "Targeting that stays diffuse — hostility expressed toward a role, an institution, or a category, with no specific individual resolved.",
+                "An ordinary explanation left standing — the behavior fits a mundane account (a genuine workplace dispute, ordinary curiosity) that the assessment never actually ruled out.",
+                "Reporter stake that could distort — the person raising the concern is inside an active dispute, rivalry, or proceeding with the subject, so the account may be inflated.",
+                "Reconstructive recall — a long gap between observation and report, where detail may have been retrofitted to a threatening narrative after the fact.",
+                "A static, isolated mention — a one-time expression with no recurrence, no intensification, and no second behavior to corroborate it."
+              ]
+            },
+            "capability": {
+              "criteria": "Capability is generally a low-signal dimension for Target Selection — most of the tactic is grievance expression, disclosure, and research, none of which demonstrate tradecraft, and open disclosure of intent is closer to an operational-security failure than a competence. Capability registers only where the actor draws on a position of legitimate access used beyond its scope, conducts research that exceeds casual lookups, or shows discipline in compartmentalizing what they gather. It stays low wherever behavior is conspicuous, undisciplined, and trivially attributable.",
+              "high_signal_anchors": [
+                "A position of access exploited for target intelligence — the actor reaches information about the subject through legitimate standing used outside its proper scope, a capability ordinary actors do not have.",
+                "Research that exceeds casual lookup — structured compilation of a subject's pattern of life, or methodical study of how earlier attacks were conducted, rather than surface searches anyone could run.",
+                "Operational-security discipline — the actor gathers intelligence while withholding intent, works through intermediaries, or avoids channels that would attribute the activity.",
+                "Synthesis rather than collection — the actor is organizing what they gather into an actionable picture of the subject, not merely accumulating fragments.",
+                "Sustained, methodical effort — target development carried out deliberately and in an organized way over time, rather than impulsively."
+              ],
+              "low_signal_anchors": [
+                "Open disclosure of intent or grievance — the actor broadcasts hostility where it is readily heard, demonstrating no concern for concealment.",
+                "Casual public lookups only — all research is surface-level and requires no skill or non-obvious sourcing.",
+                "Trivially attributable activity — research and expression conducted under the actor's own identity, on channels that tie straight back to them.",
+                "Impulsive, disorganized expression — grievance vented without structure, method, or any sign of sustained development.",
+                "No sign of synthesis — fragments of information about the subject accumulate with no indication they are being organized toward action."
+              ]
+            },
+            "intent": {
+              "criteria": "Intent is the primary dimension of Target Selection — this is the tactic in which intent forms and first becomes observable. Intent rises as a grievance narrows from a diffuse sense of injustice onto a specific named individual, as fixation recurs with increasing frequency or intensity, as the actor articulates a desire to harm, and as grievance is paired with research into the subject's life. It falls with a static non-escalating complaint, targeting that never resolves to an individual, a verifiable benign purpose, and grievance that is unaccompanied by any target-development behavior.",
+              "high_signal_anchors": [
+                "A grievance that has narrowed onto a person — a sense of injustice that has resolved from a diffuse complaint to a specific named individual held singularly responsible.",
+                "An escalation trajectory — fixation on the subject recurring with rising frequency or intensity over time; the trend itself, not any single expression, is the signal.",
+                "Intent voiced as a concrete act rather than a feeling — the assessor weighs a stated wish to harm, confront, or punish the subject differently from generalized anger, and weights it further when it was disclosed to someone with no reason to invent it.",
+                "Grievance paired with target development — hostility toward the subject and information-gathering about the subject co-occurring; the pairing is intent-diagnostic in a way neither behavior is alone.",
+                "Movement from grievance toward method — the actor's attention shifting from why the subject deserves harm toward how harm would be carried out, whether through study of comparable cases, interest in weapons, or attention to the subject's vulnerabilities.",
+                "Attribution of singular blame — the actor frames one named individual as the unique cause of their grievance, the framing that precedes target fixation."
+              ],
+              "low_signal_anchors": [
+                "A static grievance — a complaint expressed once, with no recurrence, escalation, or intensification.",
+                "Diffuse targeting — hostility toward a role, an institution, or a category, with no named individual.",
+                "A verifiable benign purpose — the contact or research has a checkable legitimate basis (professional duty, genuine dispute resolution, ordinary interest).",
+                "Grievance without target development — a complaint voiced but unaccompanied by any research, observation, or intel-gathering directed at the subject.",
+                "Expression treated as catharsis — venting that the actor and those around them experience as letting off steam, with no directed follow-through."
+              ]
+            },
+            "opportunity": {
+              "criteria": "Opportunity is generally a low-signal dimension for Target Selection — grievance and intent expression resolve nothing about whether the actor can actually reach the subject. Opportunity registers where the actor has acquired pattern-of-life intelligence (the subject's routine, schedule, residence, or regular venues) or is drawing on a position of access that places them in or near the subject's environment. It stays low where the actor holds only a grievance, where targeting is diffuse, or where what the actor knows is generic and public rather than the operational picture that resolves a reachable window.",
+              "high_signal_anchors": [
+                "Pattern-of-life intelligence acquired — the actor has compiled the subject's routine, schedule, residence, or regular venues, the informational form of opportunity.",
+                "A position of access being drawn on — the actor occupies legitimate standing that reaches into the subject's environment and is using it beyond its scope.",
+                "Timing intelligence resolved — the actor has obtained the subject's schedule or travel pattern, narrowing toward when the subject is predictably reachable.",
+                "Demonstrated environmental reach — research or access that shows working knowledge of the subject's physical or organizational surroundings, not just biographical facts.",
+                "Proximity through role or relationship — the actor's standing as a colleague, neighbour, or associate already places them in or adjacent to the subject's environment.",
+                "Intelligence converging toward a reachable window — separate research threads narrowing together onto a specific time or place the subject is accessible."
+              ],
+              "low_signal_anchors": [
+                "Grievance without environmental knowledge — hostility expressed with no sign the actor knows anything about the subject's life or surroundings.",
+                "Diffuse targeting — no specific subject, so no opportunity to resolve.",
+                "Generic study with no subject-specific reach — research into prior cases or general method, carrying no operational picture of this subject.",
+                "No indication of reach — nothing suggests the actor can get into or near the subject's environment.",
+                "A public-information picture only — what the actor knows is all generic and openly available, not the operational pattern of life that resolves a window.",
+                "Intent unaccompanied by access — an explicit desire to harm with no indication of how the actor would reach the subject at all."
+              ]
+            },
+            "false_positive_context": {
+              "criteria": "Several ordinary activities resemble Target Selection indicators on the surface — workplace conflict produces grievance language, ordinary curiosity produces lookups of an individual, and genuine disputes produce intense and recurring complaint. What separates a false positive from a concern is whether the grievance has a verifiable ordinary basis, whether targeting stays diffuse rather than resolving onto a named individual marked for harm, whether research has a checkable legitimate purpose, and whether the pattern lacks the escalation and operational specificity that distinguish target development from ordinary grievance.",
+              "contexts": [
+                "Ordinary workplace or interpersonal conflict — grievance language arising from a real, documented dispute, where the complaint is about a situation or a decision and shows no narrowing toward a person marked for harm.",
+                "Legitimate research and professional duty — journalists, investigators, HR or legal staff, recruiters, and background-check professionals whose lookups of an individual have a checkable mandate.",
+                "Ordinary social curiosity — looking up a public figure, a former partner, a new colleague, or a neighbour out of non-threatening interest.",
+                "Protected grievance expression — people airing genuine complaints about an institution or a public figure as ordinary expression, with no specific individual singled out for harm.",
+                "Hobby and current-events interest — studying past attacks or incidents as a student, researcher, or media consumer, with no connection to a specific subject."
+              ]
+            },
+            "threshold_guidance": "Target Selection findings sit at the foundation of the threat pathway: they establish whether a specific person is being selected as a target and whether intent is forming around them. Because this is the earliest tactic, the most important reading is trajectory — a static finding and the same finding recurring with rising intensity warrant very different responses. Tier determination rests on three factors: credibility per the credibility criteria, convergence across indicator types, and escalation over time. A single low-credibility finding with an available ordinary explanation sits at a monitoring tier. A single high-credibility finding — a specific named grievance, an explicit disclosure of intent to harm, or target intelligence drawn from exploited access — sits at an investigation tier. Convergence — grievance, research, and disclosure pointing together at the same named subject — sits at an elevation tier and should be treated as coordinated target development. Escalation — fixation intensifying despite intervening time or de-escalation effort — sits at a committed-actor tier and suggests movement toward mobilization. Findings that correlate with later-phase behavior elsewhere — surveillance, capability acquisition, rehearsal — warrant immediate response-protocol activation regardless of this tactic's internal tier. Multiple lower-tier findings correlating in time or against the same subject compose to a higher aggregate tier than any one warrants alone; consumer triage tooling should make this composition rule explicit. Tier-triggered actions: the monitoring tier triggers logging and pattern-detection; the investigation tier triggers actor identification and an assessment of whether the subject should be notified; the elevation tier triggers a structured threat assessment and consideration of subject-protective measures; the committed-actor tier triggers defensive-posture coordination and law-enforcement liaison.",
+            "escalation_priority": "Priority"
+          },
+          "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
         },
         {
           "id": "TM0102",
@@ -444,7 +614,17 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "MELOY-TRAP18-2016"
-              ]
+              ],
+              "temporal_signature": "advancing_early",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 2.5
+              },
+              "escalation_weight": 5.50,
+              "severity_band": "high",
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0102-02",
@@ -466,7 +646,17 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "temporal_signature": "advancing_early",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 1.5
+              },
+              "escalation_weight": 5.67,
+              "severity_band": "high",
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0102-03",
@@ -486,7 +676,17 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "temporal_signature": "advancing_early",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 2.5
+              },
+              "escalation_weight": 5.50,
+              "severity_band": "high",
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0102-04",
@@ -505,7 +705,17 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "MELOY-TRAP18-2016"
-              ]
+              ],
+              "temporal_signature": "advancing_early",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 4.97,
+              "severity_band": "medium",
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0102-05",
@@ -527,7 +737,17 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "advancing_early",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.20,
+              "severity_band": "high",
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0102-06",
@@ -547,7 +767,17 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FEIN-VOSSEKUIL-1999"
-              ]
+              ],
+              "temporal_signature": "advancing_early",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 2.5
+              },
+              "escalation_weight": 5.75,
+              "severity_band": "high",
+              "target_identity": ["named_individual"]
             }
           ],
           "countermeasures": [
@@ -782,7 +1012,94 @@
             "fixated insider compiling profile of an executive's family members, vehicles, and weekend routine outside any job function",
             "[literature: MELOY-TRAP18-2016 — pathway warning sign of pre-attack research and 'studying' of the intended targeted subject]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "hybrid",
+          "assessment_guidance": {
+            "credibility": {
+              "criteria": "Credibility of a Subject Profiling finding rises with convergence across collection modalities — digital, insider, and physical observation independently building one coherent operational picture — with a profile that is actively maintained and updated over time, and with recoverable evidence that does not depend on witness recall. It falls with isolated single-modality lookups, collection that fits an ordinary explanation, scattered detail that never assembles into a picture, and reporters whose stake could distort the account.",
+              "high_signal_anchors": [
+                "Convergence across collection modalities — digital monitoring, insider inquiry, and physical observation independently assembling the same operational picture of one subject; no single indicator carries this.",
+                "An actively maintained profile — the intelligence is being updated and extended over time rather than gathered once, indicating ongoing operational use.",
+                "Recoverable collection evidence — archived material, records-request trails, or observation notes that physically tie the actor to the subject and survive independent of how well a witness remembers.",
+                "Operational coherence of the detail — the gathered facts fit together into an actionable picture rather than sitting as scattered, unrelated fragments.",
+                "First-hand reporting of an elicitation approach — a named person who was approached can relay the questions asked, the pretext used, and the specific detail sought.",
+                "Reporter standing aligned with accuracy — the account reaches the assessor through a person or channel with no structural stake in the outcome."
+              ],
+              "low_signal_anchors": [
+                "An isolated single-modality lookup — one search or one record pull, with no second collection thread and no pattern.",
+                "Collection consistent with an ordinary explanation — the gathered information fits a mundane account the assessment never actually ruled out.",
+                "Reporter stake that could distort — the person raising the concern is inside an active dispute or proceeding with the actor or the subject.",
+                "Reconstructive recall — a long gap between an elicitation or observation and the report, where detail may be retrofitted to a threatening narrative.",
+                "Scattered, incoherent detail — the information does not assemble into an operational picture and may reflect unfocused curiosity.",
+                "Unverifiable second-hand summary — the concern is a summary of a summary, with no first-hand collection witness reachable."
+              ]
+            },
+            "capability": {
+              "criteria": "Capability is a moderate-signal dimension for Subject Profiling — most collection is open-source compilation that requires little skill, but the tactic does surface real tradecraft where the actor reaches beyond open sources, sustains a cover story under scrutiny, coordinates collection across modalities, or synthesizes fragments into an operational picture. It stays low where collection is casual, single-modality, and trivially attributable.",
+              "high_signal_anchors": [
+                "Reach beyond open sources — collection has obtained records or detail that are not publicly available, through pretext, records-request expertise, or specialized tooling.",
+                "A cover story that held under scrutiny — a person approached for information did not recognize the approach as unusual, indicating a durable pretext.",
+                "Collection coordinated across modalities — digital, insider, and physical threads pursued together and deliberately, not as incidental overlap.",
+                "Synthesis into an operational picture — the actor is organizing gathered detail into an actionable profile of routine, venues, and reachability, not merely accumulating it.",
+                "Sustained, methodical collection — profiling carried out deliberately and maintained over time rather than impulsively."
+              ],
+              "low_signal_anchors": [
+                "Casual public lookups only — all collection is surface-level open-source material requiring no skill.",
+                "A cover story that failed on contact — the person approached immediately recognized the questioning as unusual.",
+                "Single-modality collection — only digital, or only physical, with no coordination across collection types.",
+                "Trivially attributable activity — collection conducted under the actor's own identity on channels that tie straight back to them.",
+                "Accumulation without synthesis — fragments gathered with no sign they are being organized toward an operational picture."
+              ]
+            },
+            "intent": {
+              "criteria": "Intent is a high-signal dimension for Subject Profiling — sustained, organized collection of a specific person's pattern of life is rarely idle, and this is the tactic in which intent moves from grievance into operational target development. Intent rises with the breadth and operational focus of the profile, with collection that narrows toward how and where the subject is reachable, and with profiling maintained over time. It falls with a single incidental lookup, collection with a verifiable benign purpose, and interest that stays biographical rather than operational.",
+              "high_signal_anchors": [
+                "Breadth of the operational picture — collection spanning routine, associates, venues, and movement, assembling the picture an actor would need to act rather than to satisfy curiosity.",
+                "Collection focused on reachability — profiling that narrows toward where and when the subject is accessible, especially outside protected settings.",
+                "A profile maintained over time — collection sustained and kept current, indicating the picture is being held for use rather than gathered once.",
+                "Escalation from grievance into target development — profiling that follows, and is directed at, a subject the actor has already expressed hostility toward.",
+                "Operational rather than biographical focus — the detail gathered is the kind that enables action, not the kind that satisfies general interest in who the subject is.",
+                "Concealed collection — information gathered through pretext or cover rather than openly, signalling the actor's own awareness that the collection would not be sanctioned."
+              ],
+              "low_signal_anchors": [
+                "A single incidental lookup — one search or record pull with no breadth, sustainment, or operational focus.",
+                "A verifiable benign purpose — the collection has a checkable legitimate basis such as a background check, professional duty, or genuine reconnection.",
+                "Biographical rather than operational interest — the detail gathered concerns who the subject is, not how or where they could be reached.",
+                "Collection not resolved onto a named subject — profiling-type activity with no specific individual in view.",
+                "Open, un-pretexted inquiry — questions asked openly and honestly, consistent with ordinary interest rather than concealed collection."
+              ]
+            },
+            "opportunity": {
+              "criteria": "Opportunity is a high-signal dimension for Subject Profiling — this is the tactic in which the actor acquires the pattern-of-life intelligence that constitutes opportunity. Opportunity rises as collection resolves the subject's routine, predictable presence, and reachability outside protected settings, and as the actor draws on insider access or proximity to gather what an outsider could not. It falls where collection stays biographical, where the picture is generic and public, and where nothing indicates the actor can convert knowledge into reach.",
+              "high_signal_anchors": [
+                "Pattern of life resolved — the actor has assembled the subject's routine, schedule, and movement patterns, the informational substance of opportunity.",
+                "Reachability outside protective cover resolved — collection has established where and when the subject is predictably present without protection.",
+                "Insider access drawn on for collection — the actor occupies legitimate standing, or has cultivated insider contacts, and is using them to gather target intelligence an outsider could not.",
+                "Movement intelligence resolved — the actor has worked out how the subject travels and when, converting abstract knowledge into concrete reachable moments.",
+                "Multiple collection threads converging on a window — digital, physical, and insider intelligence narrowing together onto specific reachable times or places.",
+                "Proximity through role or relationship being exploited — the actor's standing as a colleague, neighbour, or associate used to gather what distance would deny."
+              ],
+              "low_signal_anchors": [
+                "Biographical collection only — the actor has gathered who the subject is, with nothing about routine or reachability.",
+                "A generic, public picture — what the actor knows is all openly available and does not resolve the operational pattern of life.",
+                "No movement or venue intelligence — collection carries no routine, schedule, venue, or movement detail.",
+                "No indication of reach — nothing suggests the actor can convert collected knowledge into physical proximity.",
+                "Collection not resolved onto a subject — profiling-type activity with no specific individual, so no opportunity to resolve."
+              ]
+            },
+            "false_positive_context": {
+              "criteria": "Many ordinary activities resemble Subject Profiling indicators on the surface — background checks compile personal information, recruiters and journalists research individuals, and people ordinarily come to know the routines of colleagues and neighbours. What separates a false positive from a concern is whether the collection has a verifiable legitimate purpose, whether it stays biographical rather than resolving operational reachability, whether it is conducted openly rather than under a cover story, and whether it is a one-time inquiry rather than a sustained and maintained profile.",
+              "contexts": [
+                "Authorized background and due-diligence checks — employers, landlords, lenders, and licensed screeners compiling personal information under a checkable mandate, typically with the subject's awareness or consent.",
+                "Professional research duty — journalists, biographers, recruiters, and licensed investigators researching an individual within a legitimate, checkable assignment.",
+                "Ordinary social knowledge — colleagues, neighbours, and acquaintances who know one another's routines, vehicles, and regular venues through ordinary proximity rather than deliberate collection.",
+                "Genuine reconnection or relationship interest — people locating an old friend, a relative, or a prospective partner out of non-threatening interest.",
+                "Open public-records and genealogy interest — hobbyists, family historians, and researchers using public records and OSINT openly, with no specific individual marked for harm."
+              ]
+            },
+            "threshold_guidance": "Subject Profiling findings show whether an actor is assembling the operational picture needed to reach a specific person. The key reading is the coherence and operational focus of that picture: scattered biographical lookups and a maintained, multi-modal operational profile warrant very different responses. Tier determination rests on three factors: credibility per the credibility criteria, the breadth and operational focus of the collection, and whether collection is sustained and maintained over time. A single low-credibility biographical lookup with an available ordinary explanation sits at a monitoring tier. A single high-credibility finding of operational collection — pattern of life resolved, predictable presence outside protective cover identified, or insider access drawn on — sits at an investigation tier. Convergence — digital, insider, and physical collection assembling the same operational picture — sits at an elevation tier and should be treated as coordinated target development. Collection that has resolved the subject's reachability outside protected settings sits at a committed-actor tier and suggests readiness to move toward mobilization. Findings that correlate with later-phase behavior elsewhere — surveillance, capability acquisition, rehearsal — warrant immediate response-protocol activation regardless of this tactic's internal tier. Multiple lower-tier findings correlating in time or against the same subject compose to a higher aggregate tier than any one warrants alone; consumer triage tooling should make this composition rule explicit. Tier-triggered actions: the monitoring tier triggers logging and pattern-detection; the investigation tier triggers actor identification and an assessment of the subject's exposure; the elevation tier triggers a structured threat assessment and subject-protective measures, focused on the venues and routines the collection has resolved; the committed-actor tier triggers defensive-posture coordination and law-enforcement liaison.",
+            "escalation_priority": "Priority"
+          },
+          "target_identity_scope": ["named_individual"]
         },
         {
           "id": "TM0103",
@@ -1344,7 +1661,17 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 9.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 8.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.96,
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0104-02",
@@ -1364,7 +1691,17 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 8.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.82,
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0104-03",
@@ -1386,7 +1723,17 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.75,
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0104-04",
@@ -1406,7 +1753,17 @@
                 "NTAC-MASS-2021",
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 9.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 8.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 6.33,
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0104-05",
@@ -1427,7 +1784,17 @@
                 "FBI-PREATTACK-2018",
                 "NTAC-AVERTED-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 9.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 8.5,
+                "detectability": 2.5
+              },
+              "escalation_weight": 6.44,
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0104-06",
@@ -1450,7 +1817,17 @@
                 "CISA-DIT-2023",
                 "NITTF-GUIDE-2017",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 5.5
+              },
+              "escalation_weight": 5.24,
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -1709,7 +2086,92 @@
             "[literature: NTAC-MASS-2021 — pre-attack acquisition timelines for mass attacks against public spaces, including weapons, vehicles, and protective gear]",
             "extremist radicalization case where the threat actor researched 3D-printed firearm components and IED precursors online for months before any physical acquisition occurred"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "hybrid",
+          "assessment_guidance": {
+            "credibility": {
+              "criteria": "Credibility of a Capability Acquisition finding rises with recoverable transactional evidence — financial, rental, delivery, and access records — that physically ties the actor to the materiel, with corroboration across separate acquisition threads, and with an anomaly of quantity, configuration, or timing that lawful use does not account for. It falls with uncorroborated single reports, acquisitions that have a checkable lawful purpose, an ordinary explanation left unaddressed, and reporters whose stake could distort the account.",
+              "high_signal_anchors": [
+                "Recoverable transactional evidence — financial, rental, delivery, or access records that physically tie the actor to the materiel, independent of how well a witness remembers.",
+                "An anomaly without an ordinary explanation — a quantity, configuration, or compressed timing of acquisition that lawful hobby, sporting, or occupational use does not account for.",
+                "Corroboration across acquisition threads — separate acquisitions of materiel, access means, and technical knowledge converging toward one operational capability.",
+                "A proxy relationship surfaced first-hand — a named third party who can confirm being asked to obtain something on the actor's behalf.",
+                "Operational matching of what was obtained — acquired items that fit together into a coherent attack means rather than unrelated purchases.",
+                "Reporter standing aligned with accuracy — the account reaches the assessor through a channel with no structural stake in the outcome."
+              ],
+              "low_signal_anchors": [
+                "A single uncorroborated report — one tip, with no transactional record and no second acquisition thread.",
+                "An acquisition with a checkable lawful purpose — the materiel fits a verifiable hobby, occupation, or sporting activity that investigation confirms.",
+                "An ordinary explanation left standing — the purchase or access fits a mundane account the assessment never actually ruled out.",
+                "Reporter stake that could distort — the person raising the concern is inside an active dispute or proceeding with the actor.",
+                "Reconstructive recall — a long delay between the acquisition and the report, where detail may be retrofitted to a threatening narrative.",
+                "An isolated, unmatched purchase — a single item with no operational relationship to any other acquisition or to a method."
+              ]
+            },
+            "capability": {
+              "criteria": "Capability is a high-signal dimension for Capability Acquisition — this is the tactic in which an actor's capacity to carry out a threat materially crystallizes. It is read less from the sophistication of the acquisition itself, which is usually only moderate, than from what has been obtained: the lethality of the materiel, how completely it assembles into a functioning attack means, and whether the actor has converted acquired items from latent to operational. It falls where acquisitions are incomplete, untested, mismatched to any method, or remain ordinary dual-use items with no operational configuration.",
+              "high_signal_anchors": [
+                "Lethal means obtained — the actor has acquired weapons, ammunition, or materials whose realistic use is the infliction of serious harm.",
+                "An attack means assembling toward completeness — separate acquisitions combining into a functioning capability rather than isolated items.",
+                "Acquired materiel matched to a method — what has been obtained corresponds to a specific, coherent way of carrying out an attack.",
+                "Capability converted from latent to operational — acquired items prepared, modified, tested, or assembled into working order rather than left as purchased.",
+                "Capability the actor is building rather than buying — research or practice aimed at producing or improvising a means the actor cannot readily obtain ready-made, raising the ceiling of what they could field.",
+                "A barrier to acquisition overcome — materiel obtained that the actor could not lawfully or readily get, whether through a proxy, an exploited access route, or improvisation."
+              ],
+              "low_signal_anchors": [
+                "Dual-use items with no operational configuration — acquisitions that remain ordinary and could serve any number of lawful purposes.",
+                "Incomplete or mismatched acquisition — items obtained that do not assemble into, or correspond to, any coherent attack means.",
+                "Untested, unprepared materiel — acquired items left as purchased, with no sign of being made operational.",
+                "A single ordinary purchase — one item, lawfully obtained, with no anomaly of quantity, configuration, or timing.",
+                "Aspirational interest without acquisition — attack means discussed or admired but with no materiel obtained and no construction attempted."
+              ]
+            },
+            "intent": {
+              "criteria": "Intent is a high-signal dimension for Capability Acquisition — committing money, effort, and risk to obtain the means of an attack is among the least ambiguous intent signals in the threat pathway. Intent rises with acquisition that is operationally specific to a method, with effort or exposure taken on to overcome a barrier, with materiel assembled in a compressed timeframe, and with acquisition that follows expressed grievance and target development. It falls with acquisitions that have a verifiable benign purpose, with ordinary dual-use purchases, and with interest in capability that produces no acquisition.",
+              "high_signal_anchors": [
+                "Resources committed to attack means — money, effort, or legal exposure expended to obtain materiel whose purpose is an attack.",
+                "Operational specificity of the acquisition — what is obtained corresponds to a particular method rather than to general preparedness.",
+                "A barrier deliberately overcome — the actor took on the effort or exposure of a proxy, an exploited access route, or improvisation to get something they could not obtain directly.",
+                "Acquisition compressed in time — materiel assembled rapidly rather than accumulated slowly, indicating a timeline behind the activity.",
+                "Acquisition following grievance and target development — capability obtained by an actor who has already expressed hostility toward, and profiled, a subject.",
+                "Concealment of the acquisition — purchases routed, disguised, or proxied in a way that signals the actor's own awareness the acquisition would not be sanctioned."
+              ],
+              "low_signal_anchors": [
+                "A verifiable benign purpose — the acquisition fits a checkable hobby, occupation, or lawful activity.",
+                "Ordinary dual-use purchasing — items with broad lawful uses and no operational configuration toward an attack.",
+                "Capability interest without acquisition — attack means discussed or researched but nothing obtained.",
+                "An isolated purchase with no pattern — a single acquisition with no anomaly, no method match, and no other acquisition thread.",
+                "Long-standing lawful collecting — materiel accumulated over years consistent with a known hobby, not assembled toward a timeline."
+              ]
+            },
+            "opportunity": {
+              "criteria": "Opportunity is a lower-signal dimension for Capability Acquisition — most of the tactic concerns the means of an attack rather than access to the subject, and acquiring materiel resolves little about whether the actor can reach the target. Opportunity registers in this tactic only through its access sub-thread: where the actor obtains credentials, identification, or keys, or exploits insider standing to reach restricted environments. It stays low wherever the finding concerns materiel alone.",
+              "high_signal_anchors": [
+                "Means of entry obtained — the actor has acquired credentials, identification, or keys that would let them pass into a controlled environment.",
+                "Insider standing exploited for reach — the actor turning a position of legitimate access, used outside its scope, into reach the actor's role would not otherwise allow.",
+                "Access acquisition matched to the target environment — the credentials or access obtained correspond to the subject's workplace or controlled setting.",
+                "Acquisition that itself creates proximity — obtaining a role, vehicle, or relationship that places the actor in or near the subject's environment."
+              ],
+              "low_signal_anchors": [
+                "Materiel acquisition only — weapons, tools, or equipment obtained, resolving nothing about reaching the subject.",
+                "Capability research with no access dimension — technical study of attack means that carries no information about proximity or entry.",
+                "Generic access with no target match — credentials or access obtained that do not correspond to the subject's environment.",
+                "No indication of reach — nothing in the finding suggests the actor can convert acquired capability into proximity to the subject."
+              ]
+            },
+            "false_positive_context": {
+              "criteria": "Many ordinary activities resemble Capability Acquisition indicators on the surface — lawful firearms ownership, hobby and occupational purchasing, vehicle and tool acquisition, and routine workplace access all produce surface-similar behavior. What separates a false positive from a concern is whether the acquisition has a verifiable lawful purpose, whether the quantity, configuration, and timing are consistent with that purpose, whether the items assemble toward an attack means, and whether access obtained stays within the actor's legitimate role.",
+              "contexts": [
+                "Lawful firearms and sporting ownership — hunters, sport shooters, and collectors acquiring and holding weapons and ammunition consistent with a documented, long-standing activity.",
+                "Hobby, trade, and occupational purchasing — tradespeople, hobbyists, makers, and professionals buying tools, chemicals, vehicles, or equipment their work or pastime ordinarily requires.",
+                "Ordinary vehicle and equipment acquisition — buying or renting a vehicle, tools, or gear for relocation, a project, or recreation, with no operational relationship to a subject.",
+                "Legitimate workplace access — employees drawing on credentials, keys, and storage within the scope of their actual duties.",
+                "Maker and technical hobby interest — 3D printing, electronics, chemistry, and fabrication pursued as a documented hobby or course of study, with no movement toward a weapon or a subject."
+              ]
+            },
+            "threshold_guidance": "Capability Acquisition findings show whether an actor is obtaining the means to carry out an attack — the point in the pathway where intent becomes materially equipped. The key reading is whether what has been acquired assembles toward a functioning attack means, and how completely. Tier determination rests on three factors: credibility per the credibility criteria, the lethality and operational specificity of what has been acquired, and whether the acquisition shows a compressed timeframe. A single low-credibility acquisition with a verifiable lawful purpose sits at a monitoring tier. A single high-credibility finding — lethal materiel obtained, a barrier deliberately overcome, or insider access acquired to a controlled environment — sits at an investigation tier. Convergence — materiel, access means, and technical capability assembling toward one coherent attack means — sits at an elevation tier and should be treated as active mobilization. Acquisition in a compressed timeframe, or capability converted from latent to operational, sits at a committed-actor tier and indicates the intervention window is closing. Because this tactic equips the threat, findings here warrant faster escalation than the earlier target-development tactics, and any finding correlating with surveillance, rehearsal, or staging behavior elsewhere warrants immediate response-protocol activation regardless of this tactic's internal tier. Multiple lower-tier findings correlating in time or toward one attack means compose to a higher aggregate tier than any one warrants alone; consumer triage tooling should make this composition rule explicit. Tier-triggered actions: the monitoring tier triggers logging and pattern-detection; the investigation tier triggers actor identification, a capability assessment, and a review of the subject's exposure; the elevation tier triggers a structured threat assessment, subject-protective measures, and law-enforcement liaison; the committed-actor tier triggers defensive-posture coordination and urgent law-enforcement engagement.",
+            "escalation_priority": "Immediate"
+          },
+          "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
         },
         {
           "id": "TM0105",

@@ -237,6 +237,8 @@ body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;lin
 .dr-tag.source-link:hover{opacity:.75}
 .dr-tag.stakeholder{border-color:var(--text-muted);color:var(--text-muted);background:rgba(244,247,247,.05)}
 .dr-tag.phase{border-color:var(--slate);color:var(--slate);background:var(--slate-dim)}
+.dr-tag.mesh{border-color:var(--blue);color:var(--blue);background:var(--blue-dim)}
+.dr-mesh-label{font-size:10px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--text-dim);align-self:center;margin-right:2px}
 .dr-badge-row{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 6px}
 .dr-badge{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;display:inline-flex;align-items:baseline;gap:4px}
 .dr-badge-key{opacity:.65;font-weight:600}

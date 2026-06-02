@@ -40,6 +40,14 @@ export function IndicatorSection({ indicators, navigate }: Props) {
                   ))}
                 </div>
               )}
+              {ind.correlates_with && ind.correlates_with.length > 0 && (
+                <div className="dr-tag-row">
+                  <span className="dr-mesh-label">Related</span>
+                  {ind.correlates_with.map((relId) => (
+                    <span key={relId} className="dr-tag mesh">{relId}</span>
+                  ))}
+                </div>
+              )}
               {ind.source_refs?.length > 0 && (
                 <details className="dr-details">
                   <summary>Sources</summary>
