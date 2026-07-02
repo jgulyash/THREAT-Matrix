@@ -29,7 +29,21 @@ export function IndicatorSection({ indicators, navigate }: Props) {
           </div>
           {grouped[cat].map((ind) => (
             <div key={ind.id} className="dr-item">
-              <div className="dr-item-id">{ind.id}</div>
+              <div
+                className="dr-item-id link"
+                role="button"
+                tabIndex={0}
+                onClick={() => navigate(`/person/indicator/${ind.id}`)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    navigate(`/person/indicator/${ind.id}`);
+                  }
+                }}
+                title="View indicator detail"
+              >
+                {ind.id} ›
+              </div>
               <div className="dr-item-body">{ind.behavior}</div>
               {ind.detection_sources?.length > 0 && (
                 <div className="dr-tag-row">
@@ -44,7 +58,21 @@ export function IndicatorSection({ indicators, navigate }: Props) {
                 <div className="dr-tag-row">
                   <span className="dr-mesh-label">Related</span>
                   {ind.correlates_with.map((relId) => (
-                    <span key={relId} className="dr-tag mesh">{relId}</span>
+                    <span
+                      key={relId}
+                      className="dr-tag mesh link"
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => navigate(`/person/indicator/${relId}`)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          navigate(`/person/indicator/${relId}`);
+                        }
+                      }}
+                    >
+                      {relId}
+                    </span>
                   ))}
                 </div>
               )}

@@ -69,6 +69,65 @@ export const INDICATOR_CATEGORY_LABELS: Record<string, string> = {
   digital: 'Digital',
 };
 
+// V1.2.2 People-matrix scope sub-dimension
+export const TARGET_IDENTITY_LABELS: Record<string, string> = {
+  named_individual: 'Named Individual',
+  role_or_identity_category: 'Role / Identity Category',
+  affinity_group: 'Affinity Group',
+  indiscriminate: 'Indiscriminate',
+};
+
+// V1.2 escalation severity band
+export const SEVERITY_BAND_LABELS: Record<string, string> = {
+  low: 'Low',
+  medium: 'Medium',
+  high: 'High',
+  critical: 'Critical',
+};
+
+// V1.2 temporal signature ({tempo}_{stage})
+export const TEMPORAL_SIGNATURE_LABELS: Record<string, string> = {
+  horizon_early: 'Horizon · Early',
+  horizon_late: 'Horizon · Late',
+  advancing_early: 'Advancing · Early',
+  advancing_late: 'Advancing · Late',
+  imminent_early: 'Imminent · Early',
+  imminent_late: 'Imminent · Late',
+};
+
+// V1.2.2 primary-objective evidence tier
+export const EVIDENCE_TIER_LABELS: Record<string, string> = {
+  stated: 'Stated',
+  strongly_inferred: 'Strongly Inferred',
+  weakly_inferred: 'Weakly Inferred',
+  unknown: 'Unknown',
+};
+
+// V1.2 escalation axes (escalation_axes sub-scores)
+export const ESCALATION_AXIS_LABELS: Record<string, string> = {
+  impact_potential: 'Impact Potential',
+  blast_radius_potential: 'Blast Radius',
+  recoverability_inverse: 'Recoverability (inv.)',
+  detectability: 'Detectability',
+};
+
+// V1.2 informs_axes (which axes of the threat picture an indicator informs)
+export const INFORMS_AXIS_LABELS: Record<string, string> = {
+  actor_capability: 'Actor · Capability',
+  actor_intent: 'Actor · Intent',
+  actor_opportunity: 'Actor · Opportunity',
+  threat_timing: 'Event · Timing',
+  threat_target: 'Event · Target',
+  threat_method: 'Event · Method',
+};
+
+export const PHASE_RELEVANCE_LABELS: Record<string, string> = {
+  target_development: 'Target Development',
+  mobilization: 'Mobilization',
+  execution: 'Execution',
+  aftermath: 'Aftermath',
+};
+
 export const COUNTERMEASURE_CATEGORY_LABELS: Record<string, string> = {
   preventive: 'Preventive',
   detective: 'Detection',

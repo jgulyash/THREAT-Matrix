@@ -8,6 +8,7 @@ import { HeatMapGrid } from './components/HeatMapGrid';
 import { SplitView } from './components/SplitView';
 import { ActorProfilesView } from './components/ActorProfilesView';
 import { ActorDetailView } from './components/ActorDetailView';
+import { IndicatorDetail, type IndicatorEntry } from './components/IndicatorDetail';
 import { StubLanding } from './components/StubLanding';
 import { BibliographyView } from './components/BibliographyView';
 import frameworkData from '../docs/data/framework.json';
@@ -59,6 +60,14 @@ export default function App() {
     const actorMap: Record<string, ActorProfile> = {};
     ap.forEach((a) => { actorMap[a.id] = a; });
 
+    // Flat lookup of every person-matrix indicator → its parent tactic
+    const indicatorMap: Record<string, IndicatorEntry> = {};
+    pt.forEach((t) => {
+      (t.indicators || []).forEach((ind) => {
+        indicatorMap[ind.id] = { indicator: ind, tactic: t };
+      });
+    });
+
     const tbp: TacticsByPhase = { 1: [], 2: [], 3: [], 4: { flight: [], claim: [] } };
     pt.forEach((t) => {
       if (t.phase !== 4) tbp[t.phase as 1 | 2 | 3].push(t);
@@ -91,18 +100,19 @@ export default function App() {
       });
     });
 
-    return { pt, ap, tacticMap, actorMap, tbp, abc, bib, bibReverseMap, getActorTactics };
+    return { pt, ap, tacticMap, actorMap, indicatorMap, tbp, abc, bib, bibReverseMap, getActorTactics };
   }, [data]);
 
-  const { tacticMap, actorMap, tbp, abc, bib, bibReverseMap, getActorTactics } = derived;
+  const { tacticMap, actorMap, indicatorMap, tbp, abc, bib, bibReverseMap, getActorTactics } = derived;
   const isActors = route.view === 'actors' || route.view === 'actorDetail';
   const isReferences = route.view === 'references';
+  const isIndicator = route.view === 'indicator';
   const sv = { facility: 'V1.3', organization: 'V1.4', infrastructure: 'V1.5' } as const;
 
   return (
     <div className="app-root">
       <TopNav route={route} navigate={navigate} theme={theme} setTheme={setTheme} />
-      {!isActors && !isReferences && (
+      {!isActors && !isReferences && !isIndicator && (
         <FilterBar cpnFilter={cpnFilter} setCpnFilter={setCpnFilter} />
       )}
       <div className="main-content">
@@ -126,6 +136,13 @@ export default function App() {
             actorMap={actorMap}
             bibliography={bib}
             cpnFilter={cpnFilter}
+          />
+        )}
+        {route.view === 'indicator' && (
+          <IndicatorDetail
+            indicatorId={route.indicatorId}
+            indicatorMap={indicatorMap}
+            navigate={navigate}
           />
         )}
         {route.view === 'actors' && (
