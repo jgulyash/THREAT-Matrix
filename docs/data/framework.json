@@ -61,7 +61,7 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
-              "target_identity": ["named_individual"]
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             },
             {
               "id": "IND-0101-02",
@@ -100,7 +100,7 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
-              "target_identity": ["named_individual"]
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             },
             {
               "id": "IND-0101-03",
@@ -139,7 +139,7 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
-              "target_identity": ["named_individual"]
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             },
             {
               "id": "IND-0101-04",
@@ -180,7 +180,7 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
-              "target_identity": ["named_individual"]
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             },
             {
               "id": "IND-0101-05",
@@ -680,7 +680,7 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
-              "target_identity": ["named_individual"]
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             },
             {
               "id": "IND-0102-02",
@@ -720,7 +720,7 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
-              "target_identity": ["named_individual"]
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             },
             {
               "id": "IND-0102-03",
@@ -758,7 +758,7 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
-              "target_identity": ["named_individual"]
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             },
             {
               "id": "IND-0102-04",
@@ -795,7 +795,7 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
-              "target_identity": ["named_individual"]
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             },
             {
               "id": "IND-0102-05",
@@ -835,7 +835,7 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
-              "target_identity": ["named_individual"]
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             },
             {
               "id": "IND-0102-06",
@@ -873,7 +873,7 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
-              "target_identity": ["named_individual"]
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             }
           ],
           "countermeasures": [
@@ -1306,6 +1306,7 @@
               "id": "IND-0103-01",
               "behavior": "Threat actor appears at locations associated with the target on multiple occasions with no apparent legitimate reason",
               "category": "surveillance",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
               "detection_sources": [
                 "physical_observation",
                 "cctv",
@@ -1345,6 +1346,7 @@
               "id": "IND-0103-02",
               "behavior": "Threat actor conducts reverse image searches, satellite imagery review, or street-view navigation of locations associated with the target",
               "category": "digital",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
               "detection_sources": [
                 "it_logs",
                 "social_media",
@@ -1383,6 +1385,7 @@
               "id": "IND-0103-03",
               "behavior": "Threat actor photographs or video-records target-associated locations including building exteriors, parking access points, security checkpoints, or interior layouts",
               "category": "surveillance",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
               "detection_sources": [
                 "physical_observation",
                 "cctv",
@@ -1422,6 +1425,7 @@
               "id": "IND-0103-04",
               "behavior": "Threat actor acquires or studies floor plans, blueprints, security camera diagrams, or emergency exit routes for target-associated locations",
               "category": "planning",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
               "detection_sources": [
                 "public_records",
                 "it_logs",
@@ -1462,6 +1466,7 @@
               "id": "IND-0103-05",
               "behavior": "Threat actor inquires with current or former employees, security personnel, or facility staff about access procedures, schedules, or the target's routines",
               "category": "communication",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
               "detection_sources": [
                 "peer_report",
                 "physical_observation"
@@ -1501,6 +1506,7 @@
               "id": "CM-0103-01",
               "measure": "Implement varied-route protocols for targeted subject's travel and avoid posting predictable schedules in publicly accessible systems",
               "category": "preventive",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
               "domain": "personnel_security",
               "cost": "low",
               "complexity": "low",
@@ -1520,6 +1526,7 @@
               "id": "CM-0103-02",
               "measure": "Conduct surveillance detection sweeps of protectee-associated locations on a randomized schedule, focusing on persons or vehicles appearing on multiple occasions",
               "category": "detective",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
               "domain": "surveillance_systems",
               "cost": "medium",
               "complexity": "medium",
@@ -1540,6 +1547,7 @@
               "id": "CM-0103-03",
               "measure": "Deploy CCTV coverage of approach routes, parking access, and entry points associated with the targeted subject, with retention sufficient to support retrospective pattern analysis",
               "category": "detective",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
               "domain": "surveillance_systems",
               "cost": "medium",
               "complexity": "medium",
@@ -1560,6 +1568,7 @@
               "id": "CM-0103-04",
               "measure": "Conduct digital footprint reduction for the targeted subject including data broker opt-outs, removal of property and address records where legally permitted, establish LLCs and Land Trusts where permitted, and social media privacy hardening",
               "category": "preventive",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
               "domain": "personnel_security",
               "cost": "low",
               "complexity": "low",

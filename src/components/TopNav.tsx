@@ -1,4 +1,5 @@
 import type { Route } from '../lib/route';
+import frameworkData from '../../docs/data/framework.json';
 
 interface Props {
   route: Route;
@@ -60,7 +61,7 @@ export function TopNav({ route, navigate, theme, setTheme }: Props) {
       </div>
       <div className="topbar-spacer" />
       <span className="topbar-meta">154 tactics · 27 profiles · MIT</span>
-      <span className="badge-v1">v1.1</span>
+      <span className="badge-v1">v{frameworkData.version}</span>
       <button
         className="theme-toggle"
         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}

@@ -70,9 +70,7 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
       </div>
 
       <div className="adv-category-row">
-        <span className="adv-category-name">{catLabel}</span>
-        <span className="adv-category-sep">›</span>
-        <span className="adv-category-id">{ind.id}</span>
+        <span className="adv-category-name">{ind.id}</span>
       </div>
 
       <div className="ind-crumb">
