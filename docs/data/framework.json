@@ -1,7 +1,7 @@
 {
   "name": "THREAT Matrix",
   "full_name": "Tactical Human Risk Enumeration and Adversary Taxonomy Matrix",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "schema_version": "1.2.2",
   "license": "MIT",
   "matrices": {
@@ -25,7 +25,7 @@
           "indicators": [
             {
               "id": "IND-0101-01",
-              "behavior": "Threat actor articulates specific grievance tied to a named individual, attributing personal harm or injustice to that person's actions or role",
+              "behavior": "Threat actor articulates specific grievance tied to a specific individual, role, or identifiable group, attributing personal harm or injustice to the target's actions, role, or identity",
               "category": "communication",
               "detection_sources": [
                 "peer_report",
@@ -65,7 +65,7 @@
             },
             {
               "id": "IND-0101-02",
-              "behavior": "Threat actor conducts sustained online research into a specific individual's personal details, schedule, residence, workplace, family members, or daily routines",
+              "behavior": "Threat actor conducts sustained online research into a specific individual's — or a targeted role or group's — personal details, schedule, residence, workplace, family members, associated venues, or daily routines",
               "category": "digital",
               "detection_sources": [
                 "it_logs",
@@ -104,7 +104,7 @@
             },
             {
               "id": "IND-0101-03",
-              "behavior": "Threat actor repeatedly returns to grievance-related topics about a specific individual in conversations, writings, or social media posts, with increasing frequency or intensity over time",
+              "behavior": "Threat actor repeatedly returns to grievance-related topics about a specific individual, role, or group in conversations, writings, or social media posts, with increasing frequency or intensity over time",
               "category": "behavioral_change",
               "detection_sources": [
                 "peer_report",
@@ -143,7 +143,7 @@
             },
             {
               "id": "IND-0101-04",
-              "behavior": "Threat actor communicates intent regarding a specific individual to a third party, including statements about wanting to harm, confront, or 'make them pay'",
+              "behavior": "Threat actor communicates intent regarding a specific individual, role, or group to a third party, including statements about wanting to harm, confront, or 'make them pay'",
               "category": "communication",
               "detection_sources": [
                 "peer_report",
@@ -530,7 +530,7 @@
               "priority": "urgent"
             }
           ],
-          "field_notes": "Target Selection is the point where a vague or specific grievance lands on a named person. The threat actor's attention then reshapes around that individual — their schedule, where they live, their family, their daily routine. Inside an organization, the parallel signal is a threat actor pulling records that have little to nothing to do with their job: the personnel file, the target's calendar, and project information. The behavioral tell is simple — the grievance locks onto one person and stays there.",
+          "field_notes": "Target Selection is the point where a vague or specific grievance lands on its target — a specific person, a role or category of people (a profession, an office), or an identifiable group. When the target is an individual, the threat actor's attention reshapes around that person — their schedule, residence, family, and routine; when it is a role or group, around the category and where its members can be found. Inside an organization, the parallel signal is a threat actor pulling records that have little to nothing to do with their job: the personnel file, the target's calendar, and project information. The behavioral tell is simple — the grievance locks onto one person and stays there.",
           "observed_contexts": [
             "former employee whose written grievance shifts from policy complaints to a specific manager's name and continues escalating in social media posts",
             "fixated threat actor conducting digital research on a specific executive's residence, family routine, and travel pattern over weeks",
@@ -637,7 +637,7 @@
           "matrix": "person",
           "phase": 1,
           "phase_name": "Target Development",
-          "notes": "Sustained pattern-of-life intelligence collection on a specific named person. Actor builds a behavioral and spatial model of the subject: daily schedule, regular locations, social relationships, personal routines, and response patterns. This tactic is ongoing — it does not complete before Phase 2 begins.",
+          "notes": "Sustained pattern-of-life intelligence collection on a cohesive target — a specific person, or a role or affinity group whose members share patterns worth modeling (a family, a team, a congregation, a chartered group). Profiling applies wherever the target set coheres; a genuinely indiscriminate target has no shared pattern to profile and is addressed through Environmental Survey of the location instead. Actor builds a behavioral and spatial model of the subject or subjects: daily schedule, regular locations, social relationships, personal routines, and response patterns. This tactic is ongoing — it does not complete before Phase 2 begins.",
           "cpn": true,
           "cpn_id": "CPN-0102",
           "cpn_notes": "Digital profile — social media activity, location check-ins, fitness tracker data, public records aggregation — often precedes and supplements physical surveillance. Apps that publicly share routes or check-ins provide operationally precise location intelligence.",
@@ -1195,7 +1195,7 @@
             "threshold_guidance": "Subject Profiling findings show whether an actor is assembling the operational picture needed to reach a specific person. The key reading is the coherence and operational focus of that picture: scattered biographical lookups and a maintained, multi-modal operational profile warrant very different responses. Tier determination rests on three factors: credibility per the credibility criteria, the breadth and operational focus of the collection, and whether collection is sustained and maintained over time. A single low-credibility biographical lookup with an available ordinary explanation sits at a monitoring tier. A single high-credibility finding of operational collection — pattern of life resolved, predictable presence outside protective cover identified, or insider access drawn on — sits at an investigation tier. Convergence — digital, insider, and physical collection assembling the same operational picture — sits at an elevation tier and should be treated as coordinated target development. Collection that has resolved the subject's reachability outside protected settings sits at a committed-actor tier and suggests readiness to move toward mobilization. Findings that correlate with later-phase behavior elsewhere — surveillance, capability acquisition, rehearsal — warrant immediate response-protocol activation regardless of this tactic's internal tier. Multiple lower-tier findings correlating in time or against the same subject compose to a higher aggregate tier than any one warrants alone; consumer triage tooling should make this composition rule explicit. Tier-triggered actions: the monitoring tier triggers logging and pattern-detection; the investigation tier triggers actor identification and an assessment of the subject's exposure; the elevation tier triggers a structured threat assessment and subject-protective measures, focused on the venues and routines the collection has resolved; the committed-actor tier triggers defensive-posture coordination and law-enforcement liaison.",
             "escalation_priority": "Priority"
           },
-          "target_identity_scope": ["named_individual"]
+          "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group"]
         },
         {
           "id": "TM0103",
@@ -1206,7 +1206,8 @@
           "matrix": "person",
           "phase": 1,
           "phase_name": "Target Development",
-          "notes": "Physical site assessment of locations associated with the subject — residence, workplace, vehicle routes, regular venues. Actor builds a spatial model of environments where the subject is present and vulnerable. Distinct from Subject Profiling (which focuses on the person); this tactic focuses on the locations.",
+          "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
+          "notes": "Physical site assessment of locations associated with the target — an individual's residence, workplace, and routes, or a target site, venue, or public space where a group or crowd gathers. Actor builds a spatial model of environments where the target is present and vulnerable. Distinct from Subject Profiling (which focuses on the person); this tactic focuses on the locations.",
           "cpn": true,
           "cpn_id": "CPN-0103",
           "cpn_notes": "Satellite imagery, Google Maps Street View, live webcams, and publicly posted photos and videos of locations augment or replace physical walkthroughs. High-resolution imagery can provide actionable access and egress analysis before the actor visits a location in person.",
@@ -1303,7 +1304,7 @@
           "indicators": [
             {
               "id": "IND-0103-01",
-              "behavior": "Threat actor appears at locations associated with the targeted subject on multiple occasions with no apparent legitimate reason",
+              "behavior": "Threat actor appears at locations associated with the target on multiple occasions with no apparent legitimate reason",
               "category": "surveillance",
               "detection_sources": [
                 "physical_observation",
@@ -1342,7 +1343,7 @@
             },
             {
               "id": "IND-0103-02",
-              "behavior": "Threat actor conducts reverse image searches, satellite imagery review, or street-view navigation of locations associated with the targeted subject",
+              "behavior": "Threat actor conducts reverse image searches, satellite imagery review, or street-view navigation of locations associated with the target",
               "category": "digital",
               "detection_sources": [
                 "it_logs",
@@ -1380,7 +1381,7 @@
             },
             {
               "id": "IND-0103-03",
-              "behavior": "Threat actor photographs or video-records targeted subject-associated locations including building exteriors, parking access points, security checkpoints, or interior layouts",
+              "behavior": "Threat actor photographs or video-records target-associated locations including building exteriors, parking access points, security checkpoints, or interior layouts",
               "category": "surveillance",
               "detection_sources": [
                 "physical_observation",
@@ -1419,7 +1420,7 @@
             },
             {
               "id": "IND-0103-04",
-              "behavior": "Threat actor acquires or studies floor plans, blueprints, security camera diagrams, or emergency exit routes for targeted subject-associated locations",
+              "behavior": "Threat actor acquires or studies floor plans, blueprints, security camera diagrams, or emergency exit routes for target-associated locations",
               "category": "planning",
               "detection_sources": [
                 "public_records",
@@ -1459,7 +1460,7 @@
             },
             {
               "id": "IND-0103-05",
-              "behavior": "Threat actor inquires with current or former employees, security personnel, or facility staff about access procedures, schedules, or targeted subject's routines",
+              "behavior": "Threat actor inquires with current or former employees, security personnel, or facility staff about access procedures, schedules, or the target's routines",
               "category": "communication",
               "detection_sources": [
                 "peer_report",
@@ -1713,7 +1714,7 @@
               ]
             }
           ],
-          "field_notes": "The first signal you usually catch is repetition where there shouldn't be any. Same person at the same coffee shop across the street from the targeted subject's office, three mornings in a row, no apparent business or personal reason. Or a vehicle that appears in the parking garage footage at unusual times. Environmental Survey is rarely a single event you can point to; it's a pattern that resolves over days or weeks of routine observation. Online recon is usually not observed at the time it's happening, so latency is a factor — discovered when preset alerts trigger or after another tactic surfaces and you go back to look at access patterns.",
+          "field_notes": "The first signal you usually catch is repetition where there shouldn't be any. Same person at the same coffee shop across the street from the target site, three mornings in a row, no apparent business or personal reason. Or a vehicle that appears in the parking garage footage at unusual times. Environmental Survey is rarely a single event you can point to; it's a pattern that resolves over days or weeks of routine observation. Online recon is usually not observed at the time it's happening, so latency is a factor — discovered when preset alerts trigger or after another tactic surfaces and you go back to look at access patterns.",
           "observed_contexts": [
             "fixated subject conducting repeated drive-bys of the targeted subject's residence at consistent times",
             "former employee photographing the loading dock and after-hours entry points",
@@ -2397,7 +2398,7 @@
             },
             {
               "id": "IND-0105-04",
-              "behavior": "Threat actor recruits or attempts to recruit family members, employees, or social connections to provide access, transportation, capability, or information about the targeted subject",
+              "behavior": "Threat actor recruits or attempts to recruit family members, employees, or social connections to provide access, transportation, capability, or information about the target or target environment",
               "category": "communication",
               "detection_sources": [
                 "peer_report",
@@ -3038,7 +3039,7 @@
           "indicators": [
             {
               "id": "IND-0107-01",
-              "behavior": "Threat actor exhibits ideation behavior — referencing violent solutions to grievance, romanticizing prior attackers, or framing harm to the targeted subject as the only viable path forward",
+              "behavior": "Threat actor exhibits ideation behavior — referencing violent solutions to grievance, romanticizing prior attackers, or framing harm to the target — a person, group, or population — as the only viable path forward",
               "category": "behavioral_change",
               "detection_sources": [
                 "peer_report",
@@ -3060,7 +3061,7 @@
             },
             {
               "id": "IND-0107-02",
-              "behavior": "Threat actor moves from generalized statements of harm to specific planning behavior — selecting a method, identifying timing, evaluating opportunities for access to the targeted subject",
+              "behavior": "Threat actor moves from generalized statements of harm to specific planning behavior — selecting a method, identifying timing, evaluating opportunities for access to the target or target environment",
               "category": "planning",
               "detection_sources": [
                 "it_logs",
@@ -3753,7 +3754,7 @@
           "indicators": [
             {
               "id": "IND-0201-01",
-              "behavior": "Threat actor performs repeated visits to the targeted subject's location at consistent times matching a planned attack window, without legitimate purpose",
+              "behavior": "Threat actor performs repeated visits to the target site at consistent times matching a planned attack window, without legitimate purpose",
               "category": "surveillance",
               "detection_sources": [
                 "physical_observation",
@@ -3853,7 +3854,7 @@
             },
             {
               "id": "IND-0201-06",
-              "behavior": "Threat actor's behavior at the targeted subject's environment shifts from observation to action-rehearsal — testing entry timing, identifying response gaps, walking the egress route",
+              "behavior": "Threat actor's behavior at the target environment shifts from observation to action-rehearsal — testing entry timing, identifying response gaps, walking the egress route",
               "category": "behavioral_change",
               "detection_sources": [
                 "cctv",
@@ -4072,7 +4073,7 @@
               ]
             }
           ],
-          "field_notes": "Operational Rehearsal is the threat actor's dress rehearsal — a partial or full walkthrough of the planned attack to test the plan against reality. It is often only recognizable in retrospect: the person sitting in the coffee shop across from the targeted subject's office didn't draw attention at the time; only after the attack does the cashier remember the man who came in three Tuesdays in a row, ordered the same drink, sat by the window, and left without finishing it. Most rehearsals are partial — the threat actor practices the breach but not the egress, or times the security shift but not the actual approach. Full rehearsals are rarer because they require operational artifacts (uniforms, weapons, vehicles) that themselves create detection signal. What an analyst is looking for is repeated presence at consistent times that no normal activity explains.",
+          "field_notes": "Operational Rehearsal is the threat actor's dress rehearsal — a partial or full walkthrough of the planned attack to test the plan against reality. It is often only recognizable in retrospect: the person sitting in the coffee shop across from the target's office didn't draw attention at the time; only after the attack does the cashier remember the man who came in three Tuesdays in a row, ordered the same drink, sat by the window, and left without finishing it. Most rehearsals are partial — the threat actor practices the breach but not the egress, or times the security shift but not the actual approach. Full rehearsals are rarer because they require operational artifacts (uniforms, weapons, vehicles) that themselves create detection signal. What an analyst is looking for is repeated presence at consistent times that no normal activity explains.",
           "observed_contexts": [
             "executive protection case where the threat actor was identified after the attack as having visited the targeted subject's office building and adjacent coffee shop on multiple consecutive Tuesdays",
             "workplace violence case where the threat actor performed weapon function checks at a remote rural site weeks before the attack, identified retrospectively through purchase records of range-style ammunition the threat actor had no documented sporting use for",
@@ -4461,7 +4462,7 @@
           "matrix": "person",
           "phase": 2,
           "phase_name": "Mobilization",
-          "notes": "Defeating the outermost security layer protecting access to the subject — building perimeters, residential security, vehicle protection details, or controlled access zones. The method varies by target protective posture: social engineering for low-profile targets, technical defeat for hardened environments.",
+          "notes": "Defeating the outermost security layer protecting access to the target — building perimeters, residential security, vehicle protection details, or controlled access zones. The method varies by target protective posture: social engineering for low-profile targets, technical defeat for hardened environments.",
           "cpn": true,
           "cpn_id": "CPN-0203",
           "cpn_notes": "Credential cloning, RFID/NFC skimming, and electronic lock exploit tools are cyber-enabled defeat methods that bypass physical barriers without direct force. Access control systems that are digitally exploitable change the threat calculus for protected subjects in secured environments.",
@@ -4833,7 +4834,7 @@
           "matrix": "person",
           "phase": 2,
           "phase_name": "Mobilization",
-          "notes": "Moving through successive security layers after initial perimeter breach — from public space to controlled access, from controlled access to restricted zones, from restricted zones to the subject's location. Each layer requires a distinct access method; failure at any layer aborts the approach.",
+          "notes": "Moving through successive security layers after initial perimeter breach — from public space to controlled access, from controlled access to restricted zones, from restricted zones to the target's location. Each layer requires a distinct access method; failure at any layer aborts the approach.",
           "cpn": true,
           "cpn_id": "CPN-0204",
           "cpn_notes": "Electronic lock bypass and elevator system manipulation extend the actor's reach through security-tiered environments. Physical security systems with digital control planes are vulnerable to zone penetration via cyber methods without physical force.",
@@ -5192,7 +5193,7 @@
               ]
             }
           ],
-          "field_notes": "The signature of Zone Penetration is movement through a building that doesn't match the threat actor's stated reason for being there — a contractor on an executive floor, a vendor in a restricted communications room, a visitor escorted past the meeting room and never seen exiting. Each tier of a layered security design exists because the previous tier admitted someone whose access at the next tier wasn't validated. What an investigator looks for is the badge swipe at a tier above the holder's authorization, the appearance in CCTV at a location the threat actor has no apparent business being, and the timing pattern that suggests the path was rehearsed. Zone Penetration tactics range from low-tech (tailgating one tier, then social-engineering the next) to high-tech (cloning credentials at one tier and using elevator-system manipulation to reach another). The detection difficulty rises with each tier: by the time the threat actor reaches the targeted subject's immediate environment, the upstream tiers have already failed.",
+          "field_notes": "The signature of Zone Penetration is movement through a building that doesn't match the threat actor's stated reason for being there — a contractor on an executive floor, a vendor in a restricted communications room, a visitor escorted past the meeting room and never seen exiting. Each tier of a layered security design exists because the previous tier admitted someone whose access at the next tier wasn't validated. What an investigator looks for is the badge swipe at a tier above the holder's authorization, the appearance in CCTV at a location the threat actor has no apparent business being, and the timing pattern that suggests the path was rehearsed. Zone Penetration tactics range from low-tech (tailgating one tier, then social-engineering the next) to high-tech (cloning credentials at one tier and using elevator-system manipulation to reach another). The detection difficulty rises with each tier: by the time the threat actor reaches the target's immediate environment, the upstream tiers have already failed.",
           "observed_contexts": [
             "executive protection case where a contractor with valid lobby-tier access tailgated through three interior tiers via successive social engineering of staff at each transition, identified retrospectively through cross-camera correlation",
             "facility attack where the threat actor cloned a maintenance-tier badge and used elevator-system manipulation to reach an executive floor without ever interacting with reception or escort staff",
@@ -5566,7 +5567,7 @@
           "indicators": [
             {
               "id": "IND-0206-01",
-              "behavior": "Threat actor is observed in a static position at a location offering line-of-sight, approach angle, or proximity to the targeted subject's anticipated arrival, departure, or routine location",
+              "behavior": "Threat actor is observed in a static position at a location offering line-of-sight, approach angle, or proximity to the intended target — a subject's anticipated arrival, departure, or routine location, or a targeted venue, gathering, or crowd",
               "category": "surveillance",
               "detection_sources": [
                 "physical_observation",
@@ -5625,7 +5626,7 @@
             },
             {
               "id": "IND-0206-04",
-              "behavior": "Threat actor's position is selected for line-of-sight to a known route, residence, vehicle, or appointment of the targeted subject, with the position itself offering concealment or visual cover",
+              "behavior": "Threat actor's position is selected for line-of-sight to a known route, residence, vehicle, or appointment of the targeted subject, or to a targeted site, venue, or gathering, with the position itself offering concealment or visual cover",
               "category": "surveillance",
               "detection_sources": [
                 "physical_observation",
@@ -5913,7 +5914,7 @@
           "indicators": [
             {
               "id": "IND-0207-01",
-              "behavior": "Threat actor maintains observable presence near the targeted subject's environment over multiple days or weeks without apparent purpose and without proceeding to action",
+              "behavior": "Threat actor maintains observable presence near the target environment over multiple days or weeks without apparent purpose and without proceeding to action",
               "category": "surveillance",
               "detection_sources": [
                 "physical_observation",
@@ -5971,7 +5972,7 @@
             },
             {
               "id": "IND-0207-04",
-              "behavior": "Threat actor's communications, financial activity, or online behavior shows continued operational tempo — research on the targeted subject, operationally-relevant procurement — inconsistent with a routine waiting period",
+              "behavior": "Threat actor's communications, financial activity, or online behavior shows continued operational tempo — research on the target, operationally-relevant procurement — inconsistent with a routine waiting period",
               "category": "behavioral_change",
               "detection_sources": [
                 "it_logs",
@@ -5992,7 +5993,7 @@
             },
             {
               "id": "IND-0207-05",
-              "behavior": "Threat actor's pause coincides with observable environmental triggers — increased security posture, public attention to the targeted subject, news of an unrelated similar attack — indicating tactical patience rather than abandonment",
+              "behavior": "Threat actor's pause coincides with observable environmental triggers — increased security posture, public attention to the target, news of an unrelated similar attack — indicating tactical patience rather than abandonment",
               "category": "behavioral_change",
               "detection_sources": [
                 "peer_report",
@@ -6200,7 +6201,7 @@
               ]
             }
           ],
-          "field_notes": "Operational Pause is the tactic that looks like nothing happening — the threat actor has reached position, has the means, and is choosing to wait. The pause is a risk-management decision, not a failure to act: counter-surveillance heat, security posture, environmental conditions, or absence of the targeted subject have produced an unfavorable window, and the threat actor would rather wait for a better one than commit to a degraded operation. The risk for the threat actor is that the pause itself can become a behavioral signature; the same person back at the same vantage across multiple days, with no apparent purpose, generates the very surveillance footprint that prior tactics worked to avoid. For the threat assessment team, Operational Pause creates the longest detection window in the entire operation — the threat actor is in place but not yet acting, and the behavioral baseline has time to surface the anomaly. The hardest case is the pause that ends without execution at all: an aborted operation that leaves no kinetic event to trigger after-action review and may never be recognized as a near-miss.",
+          "field_notes": "Operational Pause is the tactic that looks like nothing happening — the threat actor has reached position, has the means, and is choosing to wait. The pause is a risk-management decision, not a failure to act: counter-surveillance heat, security posture, environmental conditions, or absence of the target have produced an unfavorable window, and the threat actor would rather wait for a better one than commit to a degraded operation. The risk for the threat actor is that the pause itself can become a behavioral signature; the same person back at the same vantage across multiple days, with no apparent purpose, generates the very surveillance footprint that prior tactics worked to avoid. For the threat assessment team, Operational Pause creates the longest detection window in the entire operation — the threat actor is in place but not yet acting, and the behavioral baseline has time to surface the anomaly. The hardest case is the pause that ends without execution at all: an aborted operation that leaves no kinetic event to trigger after-action review and may never be recognized as a near-miss.",
           "observed_contexts": [
             "executive protection case where the threat actor maintained intermittent presence near the targeted subject's residence over five weeks, with the pause ending only after public attention to an unrelated similar attack triggered a window of distraction",
             "active shooter case where the threat actor's pause coincided with the targeted facility's enhanced security posture during a public event; the threat actor returned the following week when posture normalized",
@@ -6306,7 +6307,7 @@
             },
             {
               "id": "IND-0208-05",
-              "behavior": "Threat actor uses real-time location feeds (social media check-in, live event cameras, public traffic data) to confirm the targeted subject's presence and security context immediately before approach",
+              "behavior": "Threat actor uses real-time location feeds (social media check-in, live event cameras, public traffic data) to confirm the target's presence and security context immediately before approach",
               "category": "digital",
               "detection_sources": [
                 "it_logs",
@@ -6327,7 +6328,7 @@
             },
             {
               "id": "IND-0208-06",
-              "behavior": "Threat actor's pre-approach activity shows monitoring of the targeted subject's schedule, calendar, or routine through digital surveillance consistent with timing-window selection",
+              "behavior": "Threat actor's pre-approach activity shows monitoring of the targeted subject's schedule, calendar, or routine — or the operating schedule of a targeted venue or event — through digital surveillance consistent with timing-window selection",
               "category": "digital",
               "detection_sources": [
                 "it_logs",
@@ -6591,14 +6592,14 @@
           "matrix": "person",
           "phase": 2,
           "phase_name": "Mobilization",
-          "notes": "Actor executes a partial approach sequence with pre-set abort triggers — approaching the subject's location, observing response, then withdrawing without completing the action. Repeated across multiple days or occasions before committing to full execution. Distinct from Operational Rehearsal (TM0201), which is a controlled dry run at a surrogate location. Partial Approach Rehearsal uses the live target environment and generates observable forensic signatures: access log anomalies, CCTV appearances near the subject's location, and witness sightings that establish a pre-attack timeline.",
+          "notes": "Actor executes a partial approach sequence with pre-set abort triggers — approaching the target's location, observing response, then withdrawing without completing the action. Repeated across multiple days or occasions before committing to full execution. Distinct from Operational Rehearsal (TM0201), which is a controlled dry run at a surrogate location. Partial Approach Rehearsal uses the live target environment and generates observable forensic signatures: access log anomalies, CCTV appearances near the subject's location, and witness sightings that establish a pre-attack timeline.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
           "indicators": [
             {
               "id": "IND-0209-01",
-              "behavior": "Threat actor approaches the targeted subject's actual environment, observes security response or absence of response, and withdraws without completing any other operational action",
+              "behavior": "Threat actor approaches the target's actual environment, observes security response or absence of response, and withdraws without completing any other operational action",
               "category": "surveillance",
               "detection_sources": [
                 "cctv",
@@ -6638,7 +6639,7 @@
             },
             {
               "id": "IND-0209-03",
-              "behavior": "Threat actor's approach generates an access log anomaly, CCTV appearance, or reception-staff sighting at the targeted subject's environment that does not correspond to a verifiable visit purpose",
+              "behavior": "Threat actor's approach generates an access log anomaly, CCTV appearance, or reception-staff sighting at the target environment that does not correspond to a verifiable visit purpose",
               "category": "surveillance",
               "detection_sources": [
                 "access_logs",
@@ -6895,7 +6896,7 @@
               ]
             }
           ],
-          "field_notes": "Partial Approach Rehearsal is a live test run at the targeted subject's actual environment — the threat actor approaches, observes the security response, and withdraws without completing the operation, sometimes repeated multiple times before final commitment. What separates this tactic from Operational Rehearsal is location: Operational Rehearsal happens at a surrogate site (similar building, similar route); Partial Approach Rehearsal uses the live target environment, generating actual forensic signatures — access log anomalies, CCTV appearances near the targeted subject's location, and witness sightings that establish a pre-attack timeline. The threat actor accepts the detection risk because live rehearsal validates assumptions that surrogate rehearsal cannot: actual response time of on-site security, behavioral baseline of reception staff, real CCTV coverage as it operates rather than as it appears in floor plans. Each partial approach generates a signature, and a sequence of these signatures across days or weeks is the pre-attack pattern that, with retrospective analysis, telegraphs the operation.",
+          "field_notes": "Partial Approach Rehearsal is a live test run at the target's actual environment — the threat actor approaches, observes the security response, and withdraws without completing the operation, sometimes repeated multiple times before final commitment. What separates this tactic from Operational Rehearsal is location: Operational Rehearsal happens at a surrogate site (similar building, similar route); Partial Approach Rehearsal uses the live target environment, generating actual forensic signatures — access log anomalies, CCTV appearances near the targeted subject's location, and witness sightings that establish a pre-attack timeline. The threat actor accepts the detection risk because live rehearsal validates assumptions that surrogate rehearsal cannot: actual response time of on-site security, behavioral baseline of reception staff, real CCTV coverage as it operates rather than as it appears in floor plans. Each partial approach generates a signature, and a sequence of these signatures across days or weeks is the pre-attack pattern that, with retrospective analysis, telegraphs the operation.",
           "observed_contexts": [
             "executive protection case where the threat actor approached the targeted subject's office building on three consecutive Tuesdays, each time asking a different reception question and withdrawing, with the pattern recognized only when reception staff aggregated their reports after the third visit",
             "domestic case where the threat actor performed multiple partial approaches at the targeted subject's residence over two weeks, each ending with withdrawal in response to observable security activity (delivery, neighbor presence, lit windows)",
@@ -6914,6 +6915,7 @@
           "matrix": "person",
           "phase": 3,
           "phase_name": "Execution",
+          "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "notes": "The deliberate use of violence, coercion, or seizure against the subject. The mechanism of harm. Sub-techniques capture the full range of force methods: lethal ranged attack, lethal contact attack, area or mass lethal attack, non-lethal incapacitation, abduction or seizure, coercive display, property destruction, and area denial. Force Application was the critical missing tactic in early framework versions — it is the apex behavior that all preceding phases build toward.",
           "cpn": false,
           "cpn_notes": null,
@@ -6942,7 +6944,7 @@
             },
             {
               "id": "IND-0301-02",
-              "behavior": "Threat actor accelerates, rams, or directs a vehicle into the targeted subject, a protective formation, or a protected structure",
+              "behavior": "Threat actor accelerates, rams, or directs a vehicle into the targeted subject or subjects, a crowd or gathering, a protective formation, or a protected structure",
               "category": "behavioral_change",
               "detection_sources": [
                 "physical_observation",
@@ -6982,7 +6984,7 @@
             },
             {
               "id": "IND-0301-04",
-              "behavior": "Threat actor uses physical assault — striking, grappling, restraining — to coerce or harm the targeted subject directly",
+              "behavior": "Threat actor uses physical assault — striking, grappling, restraining — to coerce or harm the targeted subject or subjects directly",
               "category": "behavioral_change",
               "detection_sources": [
                 "physical_observation",
@@ -7000,7 +7002,7 @@
             },
             {
               "id": "IND-0301-05",
-              "behavior": "Threat actor displays announced or visible commitment markers — verbal declaration of intent to harm, operationally appropriate clothing (tactical gear, body armor, concealment apparel), weapon presentation — at the location of the targeted subject",
+              "behavior": "Threat actor displays announced or visible commitment markers — verbal declaration of intent to harm, operationally appropriate clothing (tactical gear, body armor, concealment apparel), weapon presentation — at the target location",
               "category": "behavioral_change",
               "detection_sources": [
                 "physical_observation",
@@ -7570,7 +7572,7 @@
               ]
             }
           ],
-          "field_notes": "Barrier Defeat is the use of physical force to defeat security controls or personnel guarding an access point — forced entry through doors, gates, or windows; vehicle ramming of fixed barriers; or physical overpowering of staff at perimeter or interior posts. Unlike Access Elevation, which uses deception and leaves only an audit trail, Barrier Defeat creates a physical signature the moment it begins: alarm activation, structural damage, or visible kinetic event at the access point. The threat actor accepts this signal because the operational plan requires force at this point: deception has been judged inadequate, or the timing window does not allow for a slower social-engineering approach. What distinguishes Barrier Defeat from the kinetic moment that often follows is that the target of force here is a barrier, not a person, though the two tactics frequently fire in sequence when the threat actor breaks through to reach the targeted subject. Detection at Barrier Defeat is rarely the limiting factor; response time is, because the alarm has already sounded and the question is whether on-site capability can intervene before the operation proceeds.",
+          "field_notes": "Barrier Defeat is the use of physical force to defeat security controls or personnel guarding an access point — forced entry through doors, gates, or windows; vehicle ramming of fixed barriers; or physical overpowering of staff at perimeter or interior posts. Unlike Access Elevation, which uses deception and leaves only an audit trail, Barrier Defeat creates a physical signature the moment it begins: alarm activation, structural damage, or visible kinetic event at the access point. The threat actor accepts this signal because the operational plan requires force at this point: deception has been judged inadequate, or the timing window does not allow for a slower social-engineering approach. What distinguishes Barrier Defeat from the kinetic moment that often follows is that the target of force here is a barrier, not a person, though the two tactics frequently fire in sequence when the threat actor breaks through to reach the target or targets beyond it. Detection at Barrier Defeat is rarely the limiting factor; response time is, because the alarm has already sounded and the question is whether on-site capability can intervene before the operation proceeds.",
           "observed_contexts": [
             "facility attack where the threat actor used a stolen utility truck to ram an anti-ram bollard array, recognized in after-action review as a tool that had been acquired specifically for the breach phase",
             "executive protection case where the threat actor breached the residence's side gate using bolt cutters, with the attempt detected by an intrusion alarm that triggered law enforcement response within four minutes",
@@ -7589,6 +7591,7 @@
           "matrix": "person",
           "phase": 3,
           "phase_name": "Execution",
+          "target_identity_scope": ["named_individual", "affinity_group", "indiscriminate"],
           "notes": "Securing the operational target — the person, the information they carry, the asset they control, or the location they occupy. In kidnapping operations, Objective Seizure is the physical act of taking control of the subject. In intelligence operations, it may be the acquisition of a device or document the subject possesses.",
           "cpn": false,
           "cpn_notes": null,
@@ -7596,7 +7599,7 @@
           "indicators": [
             {
               "id": "IND-0303-01",
-              "behavior": "Threat actor takes physical custody of the targeted subject through restraint, threat of harm, or coordinated team action, removing the targeted subject from the protected environment",
+              "behavior": "Threat actor takes physical custody of the targeted subject or subjects through restraint, threat of harm, or coordinated team action, removing them from the protected environment",
               "category": "behavioral_change",
               "detection_sources": [
                 "physical_observation",
@@ -7633,7 +7636,7 @@
             },
             {
               "id": "IND-0303-03",
-              "behavior": "Threat actor extracts the targeted subject from the protected environment via vehicle, foot, or transit, sometimes using coordinated multi-actor extraction",
+              "behavior": "Threat actor extracts the targeted subject or subjects from the protected environment via vehicle, foot, or transit, sometimes using coordinated multi-actor extraction",
               "category": "behavioral_change",
               "detection_sources": [
                 "cctv",
@@ -7673,7 +7676,7 @@
             },
             {
               "id": "IND-0303-05",
-              "behavior": "Threat actor occupies a location associated with the targeted subject — office, residence, vehicle — and prevents access, denying the targeted subject's protective network the ability to intervene",
+              "behavior": "Threat actor occupies a location associated with the target — office, residence, vehicle, or a public site — and prevents access, denying the target's protective network the ability to intervene",
               "category": "access",
               "detection_sources": [
                 "physical_observation",
@@ -7914,6 +7917,7 @@
           "matrix": "person",
           "phase": 3,
           "phase_name": "Execution",
+          "target_identity_scope": ["named_individual", "affinity_group", "indiscriminate"],
           "notes": "Controlling one or more persons during kidnapping, barricade, or hostage scenarios. Includes physical restraint, psychological management, and ongoing compliance maintenance. Captive Control is unique to the Person matrix — there is no structural analog in the other three matrices. The duration and quality of captive control directly determines the operational leverage in Phase 4.",
           "cpn": false,
           "cpn_notes": null,
@@ -7921,7 +7925,7 @@
           "indicators": [
             {
               "id": "IND-0304-01",
-              "behavior": "Threat actor maintains physical restraint of the targeted subject — handcuffs, rope, zip ties, lockable container, locked room — over an extended duration consistent with sustained captive control",
+              "behavior": "Threat actor maintains physical restraint of the captive or captives — handcuffs, rope, zip ties, lockable container, locked room — over an extended duration consistent with sustained captive control",
               "category": "behavioral_change",
               "detection_sources": [
                 "physical_observation",
@@ -7940,7 +7944,7 @@
             },
             {
               "id": "IND-0304-02",
-              "behavior": "Threat actor employs psychological management of the targeted subject including threats, deprivation, isolation, sensory manipulation, or alternation of treatment to maintain compliance",
+              "behavior": "Threat actor employs psychological management of the captive or captives including threats, deprivation, isolation, sensory manipulation, or alternation of treatment to maintain compliance",
               "category": "behavioral_change",
               "detection_sources": [
                 "peer_report",
@@ -7976,7 +7980,7 @@
             },
             {
               "id": "IND-0304-04",
-              "behavior": "In sustained kidnapping operations, threat actor moves the targeted subject between holding locations to defeat search efforts, evade tactical response, or adapt to the operational situation",
+              "behavior": "In sustained kidnapping operations, threat actor moves the captive or captives between holding locations to defeat search efforts, evade tactical response, or adapt to the operational situation",
               "category": "behavioral_change",
               "detection_sources": [
                 "cctv",
@@ -10495,7 +10499,7 @@
             },
             {
               "id": "IND-0404-02",
-              "behavior": "Threat actor disperses operational personnel away from the protected environment, the targeted subject's region, or any location associated with the operation",
+              "behavior": "Threat actor disperses operational personnel away from the protected environment, the target area, or any location associated with the operation",
               "category": "behavioral_change",
               "detection_sources": [
                 "physical_observation",
@@ -11422,6 +11426,7 @@
           "matrix": "person",
           "phase": 4,
           "phase_name": "Aftermath",
+          "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "phase_4_track": "attribution",
           "notes": "Actor claims responsibility for the operation — communiqué, propaganda release, manifesto delivery, media contact, or direct communication to authorities. Attribution declaration is the defining behavior of terrorists, ideologically motivated actors, and extortionists. The claim is the communicative act that converts physical violence into political or social leverage.",
           "cpn": false,
@@ -11488,7 +11493,7 @@
             },
             {
               "id": "IND-0407-04",
-              "behavior": "Threat actor communicates attribution directly to the targeted subject's organization, family, or law enforcement with operational demands or leverage assertions",
+              "behavior": "Threat actor communicates attribution directly to the targeted individual's or affected group's organization or family, an affected community or institution, the public, or law enforcement with operational demands or leverage assertions",
               "category": "communication",
               "detection_sources": [
                 "communications_intercept",
@@ -11708,7 +11713,7 @@
               ]
             }
           ],
-          "field_notes": "Attribution Declaration is the moment the threat actor commits the operation to a public political, ideological, or coercive frame. The kinetic event is now complete and the threat actor faces a discrete choice: claim responsibility (and convert physical violence into political or social leverage), deny responsibility (and protect the operational network and personal safety), or remain anonymous (and let the act stand without interpretation). The declaration may be a written communiqué, a manifesto release, a video statement, a media contact, or a direct communication to law enforcement or the targeted subject's organization. For terrorists, ideologically motivated actors, and extortionists, attribution declaration is the operational point — without the claim, the violence does not produce the intended political or coercive effect. For nation-state actors, attribution may be deliberately withheld or fabricated to misdirect blame to a third party. What an analyst observes is the timing, channel, and content of the declaration: who claims, when they claim, what platform they choose, and how the message is framed.",
+          "field_notes": "Attribution Declaration is the moment the threat actor commits the operation to a public political, ideological, or coercive frame. The kinetic event is now complete and the threat actor faces a discrete choice: claim responsibility (and convert physical violence into political or social leverage), deny responsibility (and protect the operational network and personal safety), or remain anonymous (and let the act stand without interpretation). The declaration may be a written communiqué, a manifesto release, a video statement, a media contact, or a direct communication to law enforcement, an affected organization or community, or the public. For terrorists, ideologically motivated actors, and extortionists, attribution declaration is the operational point — without the claim, the violence does not produce the intended political or coercive effect. For nation-state actors, attribution may be deliberately withheld or fabricated to misdirect blame to a third party. What an analyst observes is the timing, channel, and content of the declaration: who claims, when they claim, what platform they choose, and how the message is framed.",
           "observed_contexts": [
             "extremist attack where the threat actor pre-distributed a manifesto across multiple platforms minutes before the kinetic moment, defeating initial takedown and maximizing reach within the first 24 hours",
             "kidnap-for-ransom case where the threat actor delivered attribution to the targeted subject's family privately, declining public claim to preserve negotiation leverage and operational deniability",
@@ -12031,15 +12036,16 @@
           "matrix": "person",
           "phase": 4,
           "phase_name": "Aftermath",
+          "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "phase_4_track": "attribution",
-          "notes": "Actor makes direct contact with the victim, victim's family, or relevant decision-makers to assert leverage — ransom demand, negotiation, proof-of-life, threat escalation, and deadline management. Coercive Leverage requires the actor to have achieved a position of power (captive, stolen asset, credible threat) and now converts that position into a demand.",
+          "notes": "Actor makes direct contact with the victim or victims, their families, or relevant decision-makers to assert leverage — ransom demand, negotiation, proof-of-life, threat escalation, and deadline management. Coercive Leverage requires the actor to have achieved a position of power (captive, stolen asset, credible threat) and now converts that position into a demand.",
           "cpn": false,
           "cpn_notes": null,
           "techniques": [],
           "indicators": [
             {
               "id": "IND-0409-01",
-              "behavior": "Threat actor makes direct contact with the victim's family, employer, government agency, or other decision-maker to assert leverage and articulate demands",
+              "behavior": "Threat actor makes direct contact with the victims' families, employer, government agency, or other decision-maker to assert leverage and articulate demands",
               "category": "communication",
               "detection_sources": [
                 "communications_intercept",
@@ -12058,7 +12064,7 @@
             },
             {
               "id": "IND-0409-02",
-              "behavior": "Threat actor provides proof-of-life — recorded video of the captive with current-event reference, fingerprint or biometric submission, recorded voice with date confirmation — to validate the leverage position",
+              "behavior": "Threat actor provides proof-of-life — recorded video of the captive or captives with current-event reference, fingerprint or biometric submission, recorded voice with date confirmation — to validate the leverage position",
               "category": "communication",
               "detection_sources": [
                 "communications_intercept",
@@ -12339,7 +12345,7 @@
               ]
             }
           ],
-          "field_notes": "By the time Coercive Leverage is observable, the threat actor has converted operational success into ongoing demand: the targeted subject is held captive, sensitive information has been extracted, or a credible threat of recurrence has been established, and the threat actor now uses that position to extract concessions from the victim's family, employer, government, or affiliated decision-makers. The leverage may be physical (a held hostage), informational (proof-of-life paired with extortion threat), positional (occupied facility with hostages or sensitive material), or threat-based (credible promise of further violence absent compliance). Coercive Leverage requires sustained operational tempo: the threat actor must maintain the leverage condition — captive remains held, information remains unreleased, threat remains credible — while simultaneously extracting concessions. What an analyst observes during Coercive Leverage is the demand articulation: the timing of contacts, the channel chosen, the form of proof-of-life or proof-of-leverage, the deadline structure, and the threat escalation path used to compel compliance.",
+          "field_notes": "By the time Coercive Leverage is observable, the threat actor has converted operational success into ongoing demand: one or more targeted subjects are held captive, sensitive information has been extracted, or a credible threat of recurrence has been established, and the threat actor now uses that position to extract concessions from the victim's family, employer, government, or affiliated decision-makers. The leverage may be physical (a held hostage), informational (proof-of-life paired with extortion threat), positional (occupied facility with hostages or sensitive material), or threat-based (credible promise of further violence absent compliance). Coercive Leverage requires sustained operational tempo: the threat actor must maintain the leverage condition — captive remains held, information remains unreleased, threat remains credible — while simultaneously extracting concessions. What an analyst observes during Coercive Leverage is the demand articulation: the timing of contacts, the channel chosen, the form of proof-of-life or proof-of-leverage, the deadline structure, and the threat escalation path used to compel compliance.",
           "observed_contexts": [
             "kidnap-for-ransom case where coercive leverage was sustained across eleven days, with the threat actor cycling demand articulation through three intermediaries before final resolution via cryptocurrency payment",
             "extortion case where the threat actor maintained credible threat-based leverage against a corporate decision-maker over six months, using staged escalation incidents to demonstrate capability without crossing into operational triggers",

@@ -3,8 +3,63 @@
 All notable changes to THREAT Matrix are documented here, per [VERSIONING.md](docs/VERSIONING.md).
 
 This project adheres to [Semantic Versioning](https://semver.org). Framework
-content and JSON Schema are versioned independently; both are at `1.1.0`
-as of the latest release.
+content and JSON Schema are versioned independently; the framework content
+and JSON Schema are both at `1.2.2` as of the latest release.
+
+## [1.2.2] — 2026-07-04
+
+Feature release. Broadens the People matrix scope from a single specific
+individual to one or more human beings as the primary target, adds the
+Detection Mesh cross-referencing layer with an interactive indicator detail
+page, and introduces two experimental type-level annotation surfaces —
+`informs_axes` and the escalation-scoring fields — as pilots on the
+phase-1 chunk (TM0101–TM0104). Framework content advances to `1.2.2` to
+align with the JSON Schema and release; the schema additions are all
+additive (existing `1.1.0` content validates unchanged).
+
+### Added
+
+- **People-matrix scope broadening.** The matrix now covers one or more
+  human beings as the primary target, spanning four target-identity
+  sub-classes: `named_individual`, `role_or_identity_category`,
+  `affinity_group`, and `indiscriminate`. New per-indicator
+  `target_identity` (multi-select) and per-tactic `target_identity_scope`
+  fields, a canonical `matrices.{X}.scope` sentence per matrix, and a
+  `matrices.boundary_rule` describing framework-vs-operational placement.
+- **Detection Mesh.** Per-indicator `correlates_with` cross-references,
+  an inline "Related" surface, and a new `/person/indicator/:id` detail
+  page with click-through navigation. Reference-resolution lint
+  (`scripts/lint/mesh-refs.py`) and CI (`.github/workflows/mesh-refs.yml`).
+- **`informs_axes` (EXPERIMENTAL — pilot).** Type-level categorical
+  metadata (six axes, `strong`/`moderate`/`weak`/`none`) describing which
+  axes of the threat picture an indicator class informs. Populated on the
+  23 phase-1 chunk indicators (TM0101–TM0104) via a sealed-blind
+  inter-rater exercise (weighted Cohen κ 0.66 / Gwet AC2 0.78, substantial
+  agreement). Not yet populated on the remaining 167 indicators; treat as
+  a pilot, not full coverage.
+- **Escalation scoring (EXPERIMENTAL — pilot).** Type-level
+  `escalation_axes`, `escalation_weight`, `severity_band`, and
+  `temporal_signature`, with an `escalation_rubric` documenting the
+  recommended composite and severity thresholds. Populated on the same 23
+  phase-1 indicators. Consumers should calibrate `severity_band`
+  thresholds to their environment and treat the current coverage as a
+  pilot.
+
+### Changed
+
+- **34-tactic scope-prose audit.** People-matrix tactic notes and
+  indicator behavior text extended so that behaviors whose logic
+  generalizes are no longer worded to a single named individual: location
+  and target references broadened to admit venues, crowds, and cohesive
+  groups; force, seizure, captive-control, attribution, and coercive-
+  leverage indicators extended to multiple or group targets. Subject
+  Profiling remains individual-and-cohesive-group by design (a genuinely
+  indiscriminate target has no shared pattern to profile and is addressed
+  through Environmental Survey).
+- Plural display labels (People / Facilities / Organizations) across the
+  SVG overview and README; `system` → `infrastructure` rename aligned with
+  the V1.1 data-side rename.
+- SPA TypeScript types extended to cover all V1.2 fields.
 
 ## [1.1.1] — 2026-05-04
 
