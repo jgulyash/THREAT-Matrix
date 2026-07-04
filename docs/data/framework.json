@@ -53,6 +53,14 @@
               },
               "escalation_weight": 4.97,
               "severity_band": "medium",
+              "informs_axes": {
+                "actor_capability": "weak",
+                "actor_intent": "moderate",
+                "actor_opportunity": "none",
+                "threat_timing": "weak",
+                "threat_target": "strong",
+                "threat_method": "weak"
+              },
               "target_identity": ["named_individual"]
             },
             {
@@ -84,6 +92,14 @@
               },
               "escalation_weight": 5.67,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "weak",
+                "actor_intent": "moderate",
+                "actor_opportunity": "moderate",
+                "threat_timing": "weak",
+                "threat_target": "strong",
+                "threat_method": "weak"
+              },
               "target_identity": ["named_individual"]
             },
             {
@@ -115,6 +131,14 @@
               },
               "escalation_weight": 5.20,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "weak",
+                "actor_intent": "strong",
+                "actor_opportunity": "none",
+                "threat_timing": "moderate",
+                "threat_target": "strong",
+                "threat_method": "weak"
+              },
               "target_identity": ["named_individual"]
             },
             {
@@ -148,6 +172,14 @@
               },
               "escalation_weight": 4.70,
               "severity_band": "medium",
+              "informs_axes": {
+                "actor_capability": "weak",
+                "actor_intent": "strong",
+                "actor_opportunity": "none",
+                "threat_timing": "weak",
+                "threat_target": "strong",
+                "threat_method": "weak"
+              },
               "target_identity": ["named_individual"]
             },
             {
@@ -179,6 +211,14 @@
               },
               "escalation_weight": 6.25,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "weak",
+                "actor_intent": "strong",
+                "actor_opportunity": "weak",
+                "threat_timing": "weak",
+                "threat_target": "weak",
+                "threat_method": "moderate"
+              },
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
@@ -209,6 +249,14 @@
               },
               "escalation_weight": 5.09,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "moderate",
+                "actor_opportunity": "strong",
+                "threat_timing": "moderate",
+                "threat_target": "strong",
+                "threat_method": "weak"
+              },
               "target_identity": ["named_individual", "role_or_identity_category"]
             }
           ],
@@ -624,6 +672,14 @@
               },
               "escalation_weight": 5.50,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "weak",
+                "actor_intent": "strong",
+                "actor_opportunity": "moderate",
+                "threat_timing": "moderate",
+                "threat_target": "strong",
+                "threat_method": "weak"
+              },
               "target_identity": ["named_individual"]
             },
             {
@@ -656,6 +712,14 @@
               },
               "escalation_weight": 5.67,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "weak",
+                "actor_intent": "moderate",
+                "actor_opportunity": "moderate",
+                "threat_timing": "weak",
+                "threat_target": "strong",
+                "threat_method": "weak"
+              },
               "target_identity": ["named_individual"]
             },
             {
@@ -686,6 +750,14 @@
               },
               "escalation_weight": 5.50,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "strong",
+                "actor_opportunity": "weak",
+                "threat_timing": "weak",
+                "threat_target": "strong",
+                "threat_method": "weak"
+              },
               "target_identity": ["named_individual"]
             },
             {
@@ -715,6 +787,14 @@
               },
               "escalation_weight": 4.97,
               "severity_band": "medium",
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "strong",
+                "actor_opportunity": "strong",
+                "threat_timing": "moderate",
+                "threat_target": "strong",
+                "threat_method": "moderate"
+              },
               "target_identity": ["named_individual"]
             },
             {
@@ -747,6 +827,14 @@
               },
               "escalation_weight": 5.20,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "weak",
+                "actor_intent": "moderate",
+                "actor_opportunity": "moderate",
+                "threat_timing": "weak",
+                "threat_target": "strong",
+                "threat_method": "weak"
+              },
               "target_identity": ["named_individual"]
             },
             {
@@ -777,6 +865,14 @@
               },
               "escalation_weight": 5.75,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "weak",
+                "actor_intent": "strong",
+                "actor_opportunity": "moderate",
+                "threat_timing": "moderate",
+                "threat_target": "strong",
+                "threat_method": "moderate"
+              },
               "target_identity": ["named_individual"]
             }
           ],
@@ -1671,6 +1767,14 @@
               },
               "escalation_weight": 5.96,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "strong",
+                "actor_opportunity": "weak",
+                "threat_timing": "moderate",
+                "threat_target": "weak",
+                "threat_method": "strong"
+              },
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
@@ -1701,6 +1805,14 @@
               },
               "escalation_weight": 5.82,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "strong",
+                "actor_opportunity": "weak",
+                "threat_timing": "moderate",
+                "threat_target": "weak",
+                "threat_method": "strong"
+              },
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
@@ -1733,6 +1845,14 @@
               },
               "escalation_weight": 5.75,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "moderate",
+                "actor_opportunity": "strong",
+                "threat_timing": "moderate",
+                "threat_target": "strong",
+                "threat_method": "weak"
+              },
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
@@ -1763,6 +1883,14 @@
               },
               "escalation_weight": 6.33,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "strong",
+                "actor_opportunity": "weak",
+                "threat_timing": "moderate",
+                "threat_target": "weak",
+                "threat_method": "weak"
+              },
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
@@ -1794,6 +1922,14 @@
               },
               "escalation_weight": 6.44,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "strong",
+                "actor_opportunity": "weak",
+                "threat_timing": "weak",
+                "threat_target": "weak",
+                "threat_method": "moderate"
+              },
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
@@ -1827,6 +1963,14 @@
               },
               "escalation_weight": 5.24,
               "severity_band": "high",
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "strong",
+                "actor_opportunity": "strong",
+                "threat_timing": "moderate",
+                "threat_target": "weak",
+                "threat_method": "moderate"
+              },
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
