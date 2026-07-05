@@ -4004,7 +4004,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.63,
+              "severity_band": "high"
             },
             {
               "id": "IND-0201-02",
@@ -4024,7 +4033,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.63,
+              "severity_band": "high"
             },
             {
               "id": "IND-0201-03",
@@ -4045,7 +4063,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.75,
+              "severity_band": "high"
             },
             {
               "id": "IND-0201-04",
@@ -4067,7 +4094,16 @@
                 "NTAC-MASS-2021",
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 8.5,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 7.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 6.50,
+              "severity_band": "high"
             },
             {
               "id": "IND-0201-05",
@@ -4084,7 +4120,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 8.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 7.5,
+                "detectability": 2.5
+              },
+              "escalation_weight": 6.40,
+              "severity_band": "high"
             },
             {
               "id": "IND-0201-06",
@@ -4105,7 +4150,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-AVERTED-2021"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 8.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 7.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 6.05,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -4348,7 +4402,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 4.97,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0202-02",
@@ -4370,7 +4433,16 @@
                 "CISA-CONVERGE-2021",
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 2.0
+              },
+              "escalation_weight": 5.59,
+              "severity_band": "high"
             },
             {
               "id": "IND-0202-03",
@@ -4390,7 +4462,16 @@
               "source_refs": [
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 2.5
+              },
+              "escalation_weight": 5.50,
+              "severity_band": "high"
             },
             {
               "id": "IND-0202-04",
@@ -4408,7 +4489,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.66,
+              "severity_band": "high"
             },
             {
               "id": "IND-0202-05",
@@ -4426,7 +4516,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 4.90,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0202-06",
@@ -4446,7 +4545,16 @@
                 "NTAC-MASS-2021",
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 5.0
+              },
+              "escalation_weight": 4.79,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -4722,7 +4830,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 5.20,
+              "severity_band": "high"
             },
             {
               "id": "IND-0203-02",
@@ -4741,7 +4858,16 @@
               "source_refs": [
                 "ASIS-WVPI-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             },
             {
               "id": "IND-0203-03",
@@ -4762,7 +4888,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             },
             {
               "id": "IND-0203-04",
@@ -4781,7 +4916,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 5.5
+              },
+              "escalation_weight": 5.24,
+              "severity_band": "high"
             },
             {
               "id": "IND-0203-05",
@@ -4799,7 +4943,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.44,
+              "severity_band": "high"
             },
             {
               "id": "IND-0203-06",
@@ -4822,7 +4975,16 @@
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.44,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -5094,7 +5256,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.44,
+              "severity_band": "high"
             },
             {
               "id": "IND-0204-02",
@@ -5115,7 +5286,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             },
             {
               "id": "IND-0204-03",
@@ -5134,7 +5314,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.44,
+              "severity_band": "high"
             },
             {
               "id": "IND-0204-04",
@@ -5154,7 +5343,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.63,
+              "severity_band": "high"
             },
             {
               "id": "IND-0204-05",
@@ -5175,7 +5373,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.97,
+              "severity_band": "high"
             },
             {
               "id": "IND-0204-06",
@@ -5196,7 +5403,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.75,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -5472,7 +5688,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             },
             {
               "id": "IND-0205-02",
@@ -5493,7 +5718,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             },
             {
               "id": "IND-0205-03",
@@ -5513,7 +5747,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.44,
+              "severity_band": "high"
             },
             {
               "id": "IND-0205-04",
@@ -5533,7 +5776,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 4.90,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0205-05",
@@ -5553,7 +5805,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.55,
+              "severity_band": "high"
             },
             {
               "id": "IND-0205-06",
@@ -5571,7 +5832,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.44,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -5817,7 +6087,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "imminent_late",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.73,
+              "severity_band": "high"
             },
             {
               "id": "IND-0206-02",
@@ -5835,7 +6114,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
-              ]
+              ],
+              "temporal_signature": "imminent_late",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.86,
+              "severity_band": "high"
             },
             {
               "id": "IND-0206-03",
@@ -5856,7 +6144,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             },
             {
               "id": "IND-0206-04",
@@ -5876,7 +6173,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "temporal_signature": "imminent_late",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 6.24,
+              "severity_band": "high"
             },
             {
               "id": "IND-0206-05",
@@ -5895,7 +6201,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "imminent_late",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.73,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -6165,7 +6480,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             },
             {
               "id": "IND-0207-02",
@@ -6183,7 +6507,16 @@
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.44,
+              "severity_band": "high"
             },
             {
               "id": "IND-0207-03",
@@ -6202,7 +6535,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.44,
+              "severity_band": "high"
             },
             {
               "id": "IND-0207-04",
@@ -6223,7 +6565,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.44,
+              "severity_band": "high"
             },
             {
               "id": "IND-0207-05",
@@ -6241,7 +6592,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-SYSTEMS-2020"
-              ]
+              ],
+              "temporal_signature": "advancing_late",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -6479,7 +6839,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.75,
+              "severity_band": "high"
             },
             {
               "id": "IND-0208-02",
@@ -6498,7 +6867,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 8.5,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 7.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 6.92,
+              "severity_band": "high"
             },
             {
               "id": "IND-0208-03",
@@ -6516,7 +6894,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.86,
+              "severity_band": "high"
             },
             {
               "id": "IND-0208-04",
@@ -6537,7 +6924,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.44,
+              "severity_band": "high"
             },
             {
               "id": "IND-0208-05",
@@ -6558,7 +6954,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "temporal_signature": "imminent_late",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.86,
+              "severity_band": "high"
             },
             {
               "id": "IND-0208-06",
@@ -6579,7 +6984,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.66,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -6850,7 +7264,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.63,
+              "severity_band": "high"
             },
             {
               "id": "IND-0209-02",
@@ -6869,7 +7292,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.63,
+              "severity_band": "high"
             },
             {
               "id": "IND-0209-03",
@@ -6889,7 +7321,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             },
             {
               "id": "IND-0209-04",
@@ -6908,7 +7349,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.63,
+              "severity_band": "high"
             },
             {
               "id": "IND-0209-05",
@@ -6926,7 +7376,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "temporal_signature": "imminent_early",
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
