@@ -163,8 +163,8 @@ Standards talk to platforms. The contract is what makes integrations with RAG sy
 | Version | Scope | Status |
 |---|---|---|
 | **V1** | People matrix taxonomy (34 tactics) | Shipped |
-| **V1.1** | Standard contract (JSON Schema, versioning policy, stable IDs, reference consumer) + People Detection & Response + AI-native foundations (`phase_mappings`, `detection_mesh`, `evidence_basis`) | In Progress |
-| **V1.2** | Phase Lens UI + escalation scoring (rubric, severity bands) + assessment guidance | In Progress |
+| **V1.1** | Standard contract (JSON Schema, versioning policy, stable IDs, reference consumer) + People Detection & Response + AI-native foundations (`phase_mappings`, `detection_mesh`, `evidence_basis`) | Shipped |
+| **V1.2** | People-matrix scope broadening (one or more human beings; `target_identity`) + Detection Mesh with indicator detail page + escalation scoring & `informs_axes` (experimental pilots, chunk-1) + assessment guidance | Shipped |
 | **V1.3** | Facilities matrix complete (~40 tactics) | In Progress |
 | **V1.4** | Organizations matrix complete (~42 tactics) | In Progress |
 | **V1.5** | Infrastructure matrix complete (~38 tactics) | In Progress |
