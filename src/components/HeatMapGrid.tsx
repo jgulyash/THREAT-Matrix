@@ -93,7 +93,7 @@ export function HeatMapGrid({
     <div className="hm-wrap">
       <div className="hm-header-row" style={{ gridTemplateColumns: gc }}>
         <div className="hm-col-hdr phase-col">Phase</div>
-        <div className="hm-col-hdr amber">{compact ? 'Person' : 'Person · 34'}</div>
+        <div className="hm-col-hdr amber">{compact ? 'People' : 'People · 34'}</div>
         <div className="hm-col-hdr teal">{compact ? 'Facility' : 'Facility · 40'}</div>
         <div className="hm-col-hdr red">{compact ? 'Organization' : 'Organization · 42'}</div>
         <div className="hm-col-hdr blue">{compact ? 'Infrastructure' : 'Infrastructure · 38'}</div>
