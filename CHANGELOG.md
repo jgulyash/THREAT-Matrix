@@ -28,7 +28,21 @@ and JSON Schema are both at `1.2.2` as of the latest release.
   (27 medium / 34 high / 3 critical, versus 20 high / 3 medium / 0 critical
   before the execution pass).
 
+- **Capability-acquisition blast re-authored to method-revealed ceilings (B-05).**
+  Where a TM0104 acquisition behavior reveals the attack method, blast_radius_
+  potential now carries that method's collateral ceiling instead of the old
+  single-victim pin: weapons-in-quantity (8.00), third-party straw purchase
+  (7.82), and IED / 3D-printed-firearm construction research (8.48) reach
+  critical; vehicle/tool acquisition and restricted-storage access stay high.
+  Recon and profiling (TM0101–TM0103) are unchanged — those behaviors do not
+  reveal a method, so their moderate blast is correct under this policy. Person-
+  matrix criticals: 3 → 6.
+
 ### Changed
+
+- **People-matrix column label.** The matrix-overview grid header now reads
+  "People" to match the V1.2.2 scope prose (one or more human beings). The
+  `matrices.person` data key and routes are unchanged for consumer stability.
 
 - **Escalation-scoring pilot coverage labeled explicitly (B-01).** README
   now states the escalation layer's pilot scope — 23 of 190 People-matrix
