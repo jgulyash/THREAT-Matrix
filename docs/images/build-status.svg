@@ -1,89 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
-
-  <!-- White background -->
-  <rect width="900" height="320" fill="#ffffff" rx="8" stroke="#e2e8f0" stroke-width="1"/>
-
-  <!-- Title bar -->
-  <rect width="900" height="44" fill="#0f172a" rx="8"/>
-  <rect y="36" width="900" height="8" fill="#0f172a"/>
-  <text x="24" y="27" fill="#ffffff" font-size="13" font-weight="700" letter-spacing="1">THREAT MATRIX</text>
-  <text x="182" y="27" fill="#475569" font-size="13" font-weight="400">·</text>
-  <text x="194" y="27" fill="#94a3b8" font-size="13" font-weight="400" letter-spacing="0.5">Build Status</text>
-
-  <!-- Column headers -->
-  <text x="32" y="70" fill="#94a3b8" font-size="10" font-weight="700" letter-spacing="1">MATRIX</text>
-  <text x="268" y="70" fill="#94a3b8" font-size="10" font-weight="700" letter-spacing="1">VERSION</text>
-  <text x="368" y="70" fill="#94a3b8" font-size="10" font-weight="700" letter-spacing="1">TACTICS</text>
-  <text x="464" y="70" fill="#94a3b8" font-size="10" font-weight="700" letter-spacing="1">SCOPE</text>
-  <text x="740" y="70" fill="#94a3b8" font-size="10" font-weight="700" letter-spacing="1">STATUS</text>
-  <line x1="16" y1="76" x2="884" y2="76" stroke="#e2e8f0" stroke-width="1"/>
-
-  <!-- ── Row 1: Person V1 LIVE ── -->
-  <rect x="16" y="77" width="868" height="44" fill="#f8fafc" rx="0"/>
-  <!-- Left color indicator -->
-  <rect x="16" y="85" width="4" height="28" fill="#3b82f6" rx="2"/>
-  <!-- Name -->
-  <text x="32" y="102" fill="#0f172a" font-size="14" font-weight="700">Person</text>
-  <!-- Version badge -->
-  <rect x="260" y="87" width="30" height="20" fill="#eff6ff" rx="3" stroke="#bfdbfe" stroke-width="1"/>
-  <text x="275" y="100" fill="#3b82f6" font-size="11" font-weight="700" text-anchor="middle">V1</text>
-  <!-- Tactic count -->
-  <text x="368" y="102" fill="#0f172a" font-size="14" font-weight="600">34</text>
-  <!-- Scope -->
-  <text x="464" y="102" fill="#475569" font-size="12">Targeted violence against specific individuals</text>
-  <!-- Status badge -->
-  <rect x="736" y="87" width="148" height="20" fill="#f0fdf4" rx="3" stroke="#bbf7d0" stroke-width="1"/>
-  <text x="810" y="100" fill="#059669" font-size="11" font-weight="700" text-anchor="middle">✓ Interactive browser live</text>
-  <line x1="16" y1="121" x2="884" y2="121" stroke="#e2e8f0" stroke-width="1"/>
-
-  <!-- ── Row 2: Facility V2 ── -->
-  <rect x="16" y="122" width="868" height="44" fill="#ffffff" rx="0"/>
-  <rect x="16" y="130" width="4" height="28" fill="#f59e0b" rx="2"/>
-  <text x="32" y="147" fill="#0f172a" font-size="14" font-weight="700">Facility</text>
-  <rect x="260" y="132" width="30" height="20" fill="#fffbeb" rx="3" stroke="#fde68a" stroke-width="1"/>
-  <text x="275" y="145" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">V2</text>
-  <text x="368" y="147" fill="#0f172a" font-size="14" font-weight="600">40</text>
-  <text x="464" y="147" fill="#475569" font-size="12">Active shooter · IED/VBIED · Venue attack</text>
-  <rect x="736" y="132" width="148" height="20" fill="#f8fafc" rx="3" stroke="#e2e8f0" stroke-width="1"/>
-  <text x="810" y="145" fill="#64748b" font-size="11" font-weight="600" text-anchor="middle">In Development</text>
-  <line x1="16" y1="166" x2="884" y2="166" stroke="#e2e8f0" stroke-width="1"/>
-
-  <!-- ── Row 3: Organization V3 ── -->
-  <rect x="16" y="167" width="868" height="44" fill="#f8fafc" rx="0"/>
-  <rect x="16" y="175" width="4" height="28" fill="#8b5cf6" rx="2"/>
-  <text x="32" y="192" fill="#0f172a" font-size="14" font-weight="700">Organization</text>
-  <rect x="260" y="177" width="30" height="20" fill="#f5f3ff" rx="3" stroke="#ddd6fe" stroke-width="1"/>
-  <text x="275" y="190" fill="#8b5cf6" font-size="11" font-weight="700" text-anchor="middle">V3</text>
-  <text x="368" y="192" fill="#0f172a" font-size="14" font-weight="600">42</text>
-  <text x="464" y="192" fill="#475569" font-size="12">Insider threat · Espionage · Sabotage</text>
-  <rect x="736" y="177" width="148" height="20" fill="#f8fafc" rx="3" stroke="#e2e8f0" stroke-width="1"/>
-  <text x="810" y="190" fill="#64748b" font-size="11" font-weight="600" text-anchor="middle">In Development</text>
-  <line x1="16" y1="211" x2="884" y2="211" stroke="#e2e8f0" stroke-width="1"/>
-
-  <!-- ── Row 4: System V4 ── -->
-  <rect x="16" y="212" width="868" height="44" fill="#ffffff" rx="0"/>
-  <rect x="16" y="220" width="4" height="28" fill="#10b981" rx="2"/>
-  <text x="32" y="237" fill="#0f172a" font-size="14" font-weight="700">System</text>
-  <rect x="260" y="222" width="30" height="20" fill="#f0fdf4" rx="3" stroke="#bbf7d0" stroke-width="1"/>
-  <text x="275" y="235" fill="#10b981" font-size="11" font-weight="700" text-anchor="middle">V4</text>
-  <text x="368" y="237" fill="#0f172a" font-size="14" font-weight="600">38</text>
-  <text x="464" y="237" fill="#475569" font-size="11">Infrastructure · ICS/OT · Cyber-Physical Converge</text>
-  <rect x="736" y="222" width="148" height="20" fill="#f8fafc" rx="3" stroke="#e2e8f0" stroke-width="1"/>
-  <text x="810" y="235" fill="#64748b" font-size="11" font-weight="600" text-anchor="middle">In Development</text>
-  <line x1="16" y1="256" x2="884" y2="256" stroke="#e2e8f0" stroke-width="1"/>
-
-  <!-- ── Row 5: Detection & Response Guide ── -->
-  <rect x="16" y="257" width="868" height="44" fill="#f8fafc" rx="0"/>
-  <rect x="16" y="265" width="4" height="28" fill="#475569" rx="2"/>
-  <text x="32" y="282" fill="#0f172a" font-size="14" font-weight="700">Detection &amp; Response Guide</text>
-  <rect x="260" y="267" width="52" height="20" fill="#f1f5f9" rx="3" stroke="#e2e8f0" stroke-width="1"/>
-  <text x="286" y="280" fill="#64748b" font-size="11" font-weight="600" text-anchor="middle">V2–V4</text>
-  <text x="368" y="282" fill="#94a3b8" font-size="14">—</text>
-  <text x="464" y="282" fill="#475569" font-size="12">Detection · Response · Countermeasures</text>
-  <rect x="736" y="267" width="148" height="20" fill="#f8fafc" rx="3" stroke="#e2e8f0" stroke-width="1"/>
-  <text x="810" y="280" fill="#64748b" font-size="11" font-weight="600" text-anchor="middle">Ships with each matrix</text>
-
-  <!-- Footer -->
-  <text x="450" y="311" fill="#94a3b8" font-size="11" text-anchor="middle" font-style="italic">V1 Person Matrix is live — V2–V4 and Detection Guide ship in sequence</text>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 372" width="900" height="372" font-family="'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <defs><filter id="cardShadow" x="-2%" y="-5%" width="104%" height="115%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.10"/></filter></defs>
+  <rect width="900" height="372" fill="#FFFFFF" rx="6" stroke="#B8BEC7" stroke-width="1"/>
+  <line x1="0" y1="44" x2="900" y2="44" stroke="#B8BEC7" stroke-width="1"/>
+  <text x="24" y="28" fill="#F78B04" font-size="15" font-weight="700" font-style="italic" letter-spacing="1.4">THREAT</text>
+  <text x="98" y="28" fill="#0F172A" font-size="15" font-weight="700" letter-spacing="1.4">MATRIX</text>
+  <text x="876" y="28" fill="#475569" font-size="11" font-weight="700" letter-spacing="1.6" text-anchor="end">BUILD STATUS</text>
+  <text x="28" y="68" fill="#8A94A1" font-size="10" font-weight="700" letter-spacing="1.5">VERSION</text>
+  <text x="96" y="68" fill="#8A94A1" font-size="10" font-weight="700" letter-spacing="1.5">SCOPE</text>
+  <text x="728" y="68" fill="#8A94A1" font-size="10" font-weight="700" letter-spacing="1.5">STATUS</text>
+  <line x1="16" y1="76" x2="884" y2="76" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="16" y="88" width="4" height="28" fill="#037586" rx="2"/>
+  <rect x="28" y="92" width="50" height="20" fill="rgba(3,117,134,0.1)" rx="2"/>
+  <line x1="28" y1="92" x2="28" y2="112" stroke="#037586" stroke-width="2"/>
+  <text x="55" y="106" fill="#037586" font-size="11" font-weight="700" letter-spacing=".04em" text-anchor="middle">V1</text>
+  <text x="96" y="107" fill="#475569" font-size="13">People matrix taxonomy — 34 tactics, 27 actor profiles</text>
+  <rect x="728" y="92" width="140" height="20" fill="rgba(3,117,134,0.1)" rx="2"/>
+  <line x1="728" y1="92" x2="728" y2="112" stroke="#037586" stroke-width="2"/>
+  <text x="798" y="106" fill="#037586" font-size="11" font-weight="700" letter-spacing=".06em" text-anchor="middle">SHIPPED</text>
+  <line x1="16" y1="124" x2="884" y2="124" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="16" y="132" width="4" height="28" fill="#037586" rx="2"/>
+  <rect x="28" y="136" width="50" height="20" fill="rgba(3,117,134,0.1)" rx="2"/>
+  <line x1="28" y1="136" x2="28" y2="156" stroke="#037586" stroke-width="2"/>
+  <text x="55" y="150" fill="#037586" font-size="11" font-weight="700" letter-spacing=".04em" text-anchor="middle">V1.1</text>
+  <text x="96" y="151" fill="#475569" font-size="13">Standard contract, Detection &amp; Response, AI-native foundations</text>
+  <rect x="728" y="136" width="140" height="20" fill="rgba(3,117,134,0.1)" rx="2"/>
+  <line x1="728" y1="136" x2="728" y2="156" stroke="#037586" stroke-width="2"/>
+  <text x="798" y="150" fill="#037586" font-size="11" font-weight="700" letter-spacing=".06em" text-anchor="middle">SHIPPED</text>
+  <line x1="16" y1="168" x2="884" y2="168" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="16" y="168" width="868" height="44" fill="rgba(3,117,134,0.05)"/>
+  <rect x="16" y="176" width="4" height="28" fill="#037586" rx="2"/>
+  <rect x="28" y="180" width="50" height="20" fill="rgba(3,117,134,0.1)" rx="2"/>
+  <line x1="28" y1="180" x2="28" y2="200" stroke="#037586" stroke-width="2"/>
+  <text x="55" y="194" fill="#037586" font-size="11" font-weight="700" letter-spacing=".04em" text-anchor="middle">V1.2</text>
+  <text x="96" y="195" fill="#475569" font-size="13">Scope broadening, Detection Mesh, escalation &amp; informs_axes pilots</text>
+  <text x="684" y="194" fill="#8A94A1" font-size="9" font-weight="700" letter-spacing=".10em" text-anchor="end">◆ LATEST</text>
+  <rect x="728" y="180" width="140" height="20" fill="rgba(3,117,134,0.1)" rx="2"/>
+  <line x1="728" y1="180" x2="728" y2="200" stroke="#037586" stroke-width="2"/>
+  <text x="798" y="194" fill="#037586" font-size="11" font-weight="700" letter-spacing=".06em" text-anchor="middle">SHIPPED</text>
+  <line x1="16" y1="212" x2="884" y2="212" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="16" y="220" width="4" height="28" fill="#F78B04" rx="2"/>
+  <rect x="28" y="224" width="50" height="20" fill="rgba(247,139,4,0.1)" rx="2"/>
+  <line x1="28" y1="224" x2="28" y2="244" stroke="#F78B04" stroke-width="2"/>
+  <text x="55" y="238" fill="#F78B04" font-size="11" font-weight="700" letter-spacing=".04em" text-anchor="middle">V1.3</text>
+  <text x="96" y="239" fill="#475569" font-size="13">Facilities matrix — ~40 tactics</text>
+  <rect x="728" y="224" width="140" height="20" fill="rgba(247,139,4,0.1)" rx="2"/>
+  <line x1="728" y1="224" x2="728" y2="244" stroke="#F78B04" stroke-width="2"/>
+  <text x="798" y="238" fill="#F78B04" font-size="11" font-weight="700" letter-spacing=".06em" text-anchor="middle">IN PROGRESS</text>
+  <line x1="16" y1="256" x2="884" y2="256" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="16" y="264" width="4" height="28" fill="#F78B04" rx="2"/>
+  <rect x="28" y="268" width="50" height="20" fill="rgba(247,139,4,0.1)" rx="2"/>
+  <line x1="28" y1="268" x2="28" y2="288" stroke="#F78B04" stroke-width="2"/>
+  <text x="55" y="282" fill="#F78B04" font-size="11" font-weight="700" letter-spacing=".04em" text-anchor="middle">V1.4</text>
+  <text x="96" y="283" fill="#475569" font-size="13">Organizations matrix — ~42 tactics</text>
+  <rect x="728" y="268" width="140" height="20" fill="rgba(247,139,4,0.1)" rx="2"/>
+  <line x1="728" y1="268" x2="728" y2="288" stroke="#F78B04" stroke-width="2"/>
+  <text x="798" y="282" fill="#F78B04" font-size="11" font-weight="700" letter-spacing=".06em" text-anchor="middle">IN PROGRESS</text>
+  <line x1="16" y1="300" x2="884" y2="300" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="16" y="308" width="4" height="28" fill="#F78B04" rx="2"/>
+  <rect x="28" y="312" width="50" height="20" fill="rgba(247,139,4,0.1)" rx="2"/>
+  <line x1="28" y1="312" x2="28" y2="332" stroke="#F78B04" stroke-width="2"/>
+  <text x="55" y="326" fill="#F78B04" font-size="11" font-weight="700" letter-spacing=".04em" text-anchor="middle">V1.5</text>
+  <text x="96" y="327" fill="#475569" font-size="13">Infrastructure matrix — ~38 tactics</text>
+  <rect x="728" y="312" width="140" height="20" fill="rgba(247,139,4,0.1)" rx="2"/>
+  <line x1="728" y1="312" x2="728" y2="332" stroke="#F78B04" stroke-width="2"/>
+  <text x="798" y="326" fill="#F78B04" font-size="11" font-weight="700" letter-spacing=".06em" text-anchor="middle">IN PROGRESS</text>
+  <line x1="16" y1="344" x2="884" y2="344" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="450" y="361" fill="#8A94A1" font-size="11" text-anchor="middle" font-style="italic">Framework content &amp; JSON Schema at v1.2.2 · 154 total tactics planned · MIT licensed</text>
 </svg>
