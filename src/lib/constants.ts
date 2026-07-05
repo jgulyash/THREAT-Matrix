@@ -181,6 +181,15 @@ export const PRIORITY_ORDER: Priority[] = [
   'ongoing',
 ];
 
+export const tacticMatchesFilters = (
+  t: Tactic,
+  cpnFilter: boolean,
+  actorFilter: string
+): boolean =>
+  (!cpnFilter || !!t.cpn) &&
+  (!actorFilter ||
+    (t.actor_associations || []).some((a) => a.actor_id === actorFilter));
+
 export const resolveTrack = (t: Tactic): 'flight' | 'claim' | null =>
   t.phase_4_track === 'evasion'
     ? 'flight'

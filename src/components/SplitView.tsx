@@ -14,6 +14,7 @@ interface Props {
   actorMap: Record<string, ActorProfile>;
   bibliography: Record<string, BibliographyEntry>;
   cpnFilter: boolean;
+  actorFilter: string;
 }
 
 export function SplitView({
@@ -23,6 +24,7 @@ export function SplitView({
   tacticMap,
   actorMap,
   cpnFilter,
+  actorFilter,
 }: Props) {
   const ot = route.view === 'tactic' ? tacticMap[route.tacticId] : null;
 
@@ -60,6 +62,7 @@ export function SplitView({
           tacticsByPhase={tacticsByPhase}
           navigate={navigate}
           cpnFilter={cpnFilter}
+          actorFilter={actorFilter}
           compact={true}
           selectedPhase={pp}
           selectedTrack={pt}
@@ -82,6 +85,7 @@ export function SplitView({
             track={pt}
             navigate={navigate}
             cpnFilter={cpnFilter}
+            actorFilter={actorFilter}
           />
         )}
       </div>

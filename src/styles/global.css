@@ -61,8 +61,11 @@ body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;lin
 .fb-chip.dim{border-color:var(--border-act);color:var(--text-dim)}
 .fb-chip.dim:hover{color:var(--text-muted)}
 .fb-chip.amber-active{border-color:var(--amber);color:var(--amber);background:var(--amber-dim)}
-.fb-chip.v11{border-color:var(--border);color:var(--text-dim);opacity:.55;cursor:not-allowed;display:inline-flex;align-items:center;gap:4px}
-.v11-badge{font-size:10px;letter-spacing:.10em;vertical-align:super;color:var(--text-dim);opacity:.75}
+.fb-select{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border:none;border-left:2px solid var(--border-act);background:transparent;color:var(--text-dim);cursor:pointer;max-width:280px;font-family:inherit;transition:background .12s}
+.fb-select:hover{color:var(--text-muted)}
+.fb-select.amber-active{border-left-color:var(--amber);color:var(--amber);background:var(--amber-dim)}
+.fb-select option,.fb-select optgroup{background:var(--bg-lift);color:var(--text);text-transform:none;letter-spacing:normal;font-weight:400}
+.fb-select optgroup{font-weight:700}
 /* Main */
 .main-content{flex:1;overflow:auto;display:flex;flex-direction:column;min-height:0;min-width:960px}
 /* Heat map */

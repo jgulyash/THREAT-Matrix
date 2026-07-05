@@ -1,5 +1,5 @@
 import type { Tactic } from '../types/framework';
-import { PHASE_NAMES } from '../lib/constants';
+import { PHASE_NAMES, tacticMatchesFilters } from '../lib/constants';
 
 interface Props {
   tactics: Tactic[];
@@ -7,10 +7,12 @@ interface Props {
   track: string | null;
   navigate: (path: string) => void;
   cpnFilter: boolean;
+  actorFilter: string;
 }
 
-export function PhasePanel({ tactics, phase, track, navigate, cpnFilter }: Props) {
-  const disp = cpnFilter ? tactics.filter((t) => t.cpn) : tactics;
+export function PhasePanel({ tactics, phase, track, navigate, cpnFilter, actorFilter }: Props) {
+  const disp = tactics.filter((t) => tacticMatchesFilters(t, cpnFilter, actorFilter));
+  const filtered = cpnFilter || !!actorFilter;
   const tl = track === 'flight' ? 'Evade' : track === 'claim' ? 'Claim' : null;
   return (
     <>
@@ -29,13 +31,13 @@ export function PhasePanel({ tactics, phase, track, navigate, cpnFilter }: Props
         <div className="dp-header-title">{tl ? `${tl} Tactics` : PHASE_NAMES[phase]}</div>
         <div className="dp-header-sub">
           {disp.length}
-          {cpnFilter ? ` of ${tactics.length} (CPN filtered)` : ''} tactics
+          {filtered ? ` of ${tactics.length} (filtered)` : ''} tactics
         </div>
       </div>
       <div className="dp-content">
         {disp.length === 0 && (
           <div style={{ color: 'var(--text-dim)', fontSize: '11px', padding: '8px 0' }}>
-            No CPN-tagged tactics in this phase.
+            No tactics match the active filter in this phase.
           </div>
         )}
         {disp.map((t) => (

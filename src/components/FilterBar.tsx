@@ -1,9 +1,21 @@
+import type { ActorProfile } from '../types/framework';
+import { CATEGORY_ORDER } from '../lib/constants';
+
 interface Props {
   cpnFilter: boolean;
   setCpnFilter: (fn: (v: boolean) => boolean) => void;
+  actorFilter: string;
+  setActorFilter: (v: string) => void;
+  actorsByCategory: Record<string, ActorProfile[]>;
 }
 
-export function FilterBar({ cpnFilter, setCpnFilter }: Props) {
+export function FilterBar({
+  cpnFilter,
+  setCpnFilter,
+  actorFilter,
+  setActorFilter,
+  actorsByCategory,
+}: Props) {
   return (
     <div className="filterbar">
       <span className="fb-label">Filter</span>
@@ -16,9 +28,27 @@ export function FilterBar({ cpnFilter, setCpnFilter }: Props) {
         ⌖ CPN
       </span>
       <div className="fb-sep" />
-      <span className="fb-chip v11" title="Actor filter launches in V1.1">
-        Actor ▾<span className="v11-badge">V1.1</span>
-      </span>
+      <select
+        className={`fb-select${actorFilter ? ' amber-active' : ''}`}
+        value={actorFilter}
+        onChange={(e) => setActorFilter(e.target.value)}
+        title="Show only tactics associated with an actor profile"
+      >
+        <option value="">Actor · All</option>
+        {CATEGORY_ORDER.map((cat) => {
+          const actors = actorsByCategory[cat];
+          if (!actors || actors.length === 0) return null;
+          return (
+            <optgroup key={cat} label={actors[0].category_label}>
+              {actors.map((a) => (
+                <option key={a.id} value={a.id}>
+                  {a.id} · {a.name}
+                </option>
+              ))}
+            </optgroup>
+          );
+        })}
+      </select>
     </div>
   );
 }

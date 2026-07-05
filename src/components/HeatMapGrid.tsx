@@ -1,5 +1,5 @@
 import type { Tactic } from '../types/framework';
-import { PHASE_SHORT, STUB } from '../lib/constants';
+import { PHASE_SHORT, STUB, tacticMatchesFilters } from '../lib/constants';
 import type { TacticsByPhase } from '../App';
 
 interface HeatMapCellProps {
@@ -8,12 +8,13 @@ interface HeatMapCellProps {
   isSelected: boolean;
   onClick: () => void;
   cpnFilter: boolean;
+  actorFilter: string;
 }
 
-function HeatMapCell({ tactics, track, isSelected, onClick, cpnFilter }: HeatMapCellProps) {
-  const displayed = cpnFilter ? tactics.filter((t) => t.cpn) : tactics;
+function HeatMapCell({ tactics, track, isSelected, onClick, cpnFilter, actorFilter }: HeatMapCellProps) {
+  const displayed = tactics.filter((t) => tacticMatchesFilters(t, cpnFilter, actorFilter));
   const count = displayed.length;
-  const cpnCount = tactics.filter((t) => t.cpn).length;
+  const cpnCount = displayed.filter((t) => t.cpn).length;
   const col = 'amber';
   const cls = track === 'flight' ? 'flight-cell' : track === 'claim' ? 'claim-cell' : '';
   const limit = track ? 2 : 3;
@@ -69,6 +70,7 @@ interface GridProps {
   tacticsByPhase: TacticsByPhase;
   navigate: (path: string) => void;
   cpnFilter: boolean;
+  actorFilter: string;
   compact: boolean;
   selectedPhase: number | null;
   selectedTrack: string | null;
@@ -79,6 +81,7 @@ export function HeatMapGrid({
   tacticsByPhase,
   navigate,
   cpnFilter,
+  actorFilter,
   compact,
   selectedPhase,
   selectedTrack,
@@ -111,6 +114,7 @@ export function HeatMapGrid({
                 isSelected={sel}
                 onClick={() => navigate(`/person/phase/${phase}`)}
                 cpnFilter={cpnFilter}
+                actorFilter={actorFilter}
               />
               {(['facility', 'organization', 'infrastructure'] as const).map((m, i) => (
                 <StubCell key={m} count={STUB[m].phases[phase]} version={`V1.${i + 3}`} />
@@ -134,6 +138,7 @@ export function HeatMapGrid({
                 }
                 onClick={() => navigate('/person/phase/4/flight')}
                 cpnFilter={cpnFilter}
+                actorFilter={actorFilter}
               />
               <StubCell count={STUB.facility.flight} version="V1.3" track="flight" />
               <StubCell count={STUB.organization.flight} version="V1.4" track="flight" />
@@ -151,6 +156,7 @@ export function HeatMapGrid({
                 }
                 onClick={() => navigate('/person/phase/4/claim')}
                 cpnFilter={cpnFilter}
+                actorFilter={actorFilter}
               />
               <StubCell count={STUB.facility.claim} version="V1.3" track="claim" />
               <StubCell count={STUB.organization.claim} version="V1.4" track="claim" />

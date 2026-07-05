@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { FrameworkData, Tactic, ActorProfile } from './types/framework';
 import { parseRoute } from './lib/route';
-import { resolveTrack } from './lib/constants';
+import { resolveTrack, tacticMatchesFilters } from './lib/constants';
 import { TopNav } from './components/TopNav';
 import { FilterBar } from './components/FilterBar';
 import { HeatMapGrid } from './components/HeatMapGrid';
@@ -25,6 +25,7 @@ export default function App() {
 
   const [route, setRoute] = useState(() => parseRoute());
   const [cpnFilter, setCpnFilter] = useState(false);
+  const [actorFilter, setActorFilter] = useState('');
   const [theme, setThemeState] = useState<'dark' | 'light'>(() =>
     (localStorage.getItem('threat-matrix-theme') as 'dark' | 'light' | null) || 'dark'
   );
@@ -82,9 +83,7 @@ export default function App() {
     });
 
     const getActorTactics = (id: string) =>
-      pt.filter((t) =>
-        t.actor_associations && t.actor_associations.some((a) => a.actor_id === id)
-      );
+      pt.filter((t) => tacticMatchesFilters(t, false, id));
 
     // Reverse lookup: which tactics cite each bibliography entry
     const bibReverseMap: Record<string, Tactic[]> = {};
@@ -113,7 +112,13 @@ export default function App() {
     <div className="app-root">
       <TopNav route={route} navigate={navigate} theme={theme} setTheme={setTheme} />
       {!isActors && !isReferences && !isIndicator && (
-        <FilterBar cpnFilter={cpnFilter} setCpnFilter={setCpnFilter} />
+        <FilterBar
+          cpnFilter={cpnFilter}
+          setCpnFilter={setCpnFilter}
+          actorFilter={actorFilter}
+          setActorFilter={setActorFilter}
+          actorsByCategory={abc}
+        />
       )}
       <div className="main-content">
         {route.view === 'heatmap' && (
@@ -121,6 +126,7 @@ export default function App() {
             tacticsByPhase={tbp}
             navigate={navigate}
             cpnFilter={cpnFilter}
+            actorFilter={actorFilter}
             compact={false}
             selectedPhase={null}
             selectedTrack={null}
@@ -136,6 +142,7 @@ export default function App() {
             actorMap={actorMap}
             bibliography={bib}
             cpnFilter={cpnFilter}
+            actorFilter={actorFilter}
           />
         )}
         {route.view === 'indicator' && (
