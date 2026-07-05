@@ -13289,7 +13289,24 @@
       "high": 5.0,
       "critical": 7.5
     },
-    "rubric_version": "1.0.0",
+    "blast_radius_guidance": {
+      "definition": "blast_radius_potential encodes TOTAL expected victim scope for the indicator class: intended targets PLUS expected collateral (bystander / non-target) casualties. It is not intended-victim count alone — a single-target attack can carry high blast_radius when its method produces collateral (a bombing that kills one intended target and nearby bystanders scores high, not low). Method sets the type-level base rate below; venue, timing, and crowd density modulate at assessment (instance) time.",
+      "method_collateral_base_rates": {
+        "note": "Recommended type-level anchors (0.0-10.0) for the attack method a class embodies or presages. Combine with intended-target scope — a mass-casualty-intended attack raises blast_radius above the collateral base rate — and deviate for sub-type. These are the People matrix; other matrices re-derive.",
+        "explosive_incendiary_chemical": 9.0,
+        "vehicle_ramming": 8.0,
+        "firearm_public_or_crowded": 7.0,
+        "firearm_isolated_or_precise": 4.0,
+        "edged_or_blunt_weapon": 3.0,
+        "hands_on_assault": 2.5,
+        "abduction_or_seizure": 3.0,
+        "captive_control": 2.5,
+        "covert_or_poison_targeted": 2.0
+      },
+      "authoring_notes": "Pre-attack indicators inherit the collateral ceiling of the method they presage (acquiring an explosive takes the explosive base rate). Venue-selection and timing signals are bystander-risk indicators even in target-development and mobilization phases — an approach timed to a crowd event, or a firing position with line-of-sight to a gathering. The People matrix models bystanders as a distinct population in tactic TM0306 (Bystander Management); this axis carries the SEVERITY of that exposure, which TM0306 alone does not. Instance-level venue and crowd-density conditioning belongs in the assessment layer, not the type-level base rate.",
+      "authoring_status": "Added rubric v1.1.0 (2026-07-04). Existing scored indicators predate this guidance and still carry single-victim blast_radius (2.5-3.0); re-authoring per this table, and scoring the execution phase, is a pending V1.3 pass (see scoring backlog B-05 / B-09)."
+    },
+    "rubric_version": "1.1.0",
     "calibration_guidance": "The severity_thresholds above reflect equal-quartile bucketing as the framework's default. Consumers SHOULD calibrate the thresholds to their threat-posture environment for best results. Higher-posture environments (e.g., critical infrastructure, executive protection, dignitary protection) may shift `high` and `critical` thresholds downward (e.g., high=4.0, critical=6.0) to surface medium-weight indicators earlier in triage. Lower-posture environments may shift them upward. Document the rationale for any deviation per CONTRIBUTING.md \"Schema design principles\"."
   },
   "phase_mappings": {
