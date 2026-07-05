@@ -6949,7 +6949,16 @@
                 "NTAC-MASS-2021",
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "in_progress",
+              "escalation_axes": {
+                "impact_potential": 9.5,
+                "blast_radius_potential": 8.0,
+                "recoverability_inverse": 9.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 8.00,
+              "severity_band": "critical"
             },
             {
               "id": "IND-0301-02",
@@ -6969,7 +6978,16 @@
                 "NTAC-MASS-2021",
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "in_progress",
+              "escalation_axes": {
+                "impact_potential": 9.0,
+                "blast_radius_potential": 8.5,
+                "recoverability_inverse": 9.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 8.18,
+              "severity_band": "critical"
             },
             {
               "id": "IND-0301-03",
@@ -6989,7 +7007,16 @@
                 "NTAC-MASS-2021",
                 "LLNL-TR-858139",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "in_progress",
+              "escalation_axes": {
+                "impact_potential": 9.5,
+                "blast_radius_potential": 9.0,
+                "recoverability_inverse": 9.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 8.68,
+              "severity_band": "critical"
             },
             {
               "id": "IND-0301-04",
@@ -7007,7 +7034,16 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
-              ]
+              ],
+              "temporal_signature": "in_progress",
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 4.48,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0301-05",
@@ -7028,7 +7064,16 @@
                 "NTAC-MASS-2021",
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 8.5,
+                "blast_radius_potential": 7.0,
+                "recoverability_inverse": 8.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 7.09,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
