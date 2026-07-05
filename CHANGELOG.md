@@ -16,13 +16,17 @@ and JSON Schema are both at `1.2.2` as of the latest release.
   profile, composing with the CPN filter. Completes the filter set the
   V1.1 matrix browser described.
 
-- **Execution-phase escalation scoring begins (TM0301 Force Application).** The
-  five Force Application indicators now carry escalation axes, weight, and band,
-  authored to the broadened-scope collateral ceiling in escalation_rubric v1.1.0.
-  Mass-casualty force reaches the critical band for the first time — explosive
-  device 8.68, vehicle-ramming 8.18, weapon discharge 8.00 — while hands-on
-  assault (4.48) and announced-commitment markers (7.09) spread across medium
-  and high. Scored coverage is now 28 of 190 People-matrix indicator classes.
+- **Execution-phase escalation scoring (all of phase 3, TM0301–TM0308).** The
+  41 execution indicators now carry escalation axes, weight, and band, authored
+  to the broadened-scope collateral ceiling in escalation_rubric v1.1.0. Mass-
+  casualty Force Application reaches the critical band for the first time —
+  explosive device 8.68, vehicle-ramming 8.18, weapon discharge 8.00 — while the
+  support tactics (barrier defeat, seizure, captive control, response
+  suppression, bystander management, counter-surveillance, operational
+  communication) spread across high and medium. Scored coverage is now 64 of 190
+  People-matrix indicator classes; the severity band is no longer degenerate
+  (27 medium / 34 high / 3 critical, versus 20 high / 3 medium / 0 critical
+  before the execution pass).
 
 ### Changed
 
