@@ -1,4 +1,5 @@
 import type { Route } from '../lib/route';
+import { MATRIX_LABELS } from '../lib/constants';
 import frameworkData from '../../docs/data/framework.json';
 
 interface Props {
@@ -13,9 +14,9 @@ export function TopNav({ route, navigate, theme, setTheme }: Props) {
   const isReferences = route.view === 'references';
   const isPerson = !isActors && !isReferences && route.view !== 'stub';
   const stubs: Array<['facility' | 'organization' | 'infrastructure', string]> = [
-    ['facility', 'Facility'],
-    ['organization', 'Organization'],
-    ['infrastructure', 'Infrastructure'],
+    ['facility', MATRIX_LABELS.facility],
+    ['organization', MATRIX_LABELS.organization],
+    ['infrastructure', MATRIX_LABELS.infrastructure],
   ];
   return (
     <nav className="topbar">
@@ -32,7 +33,7 @@ export function TopNav({ route, navigate, theme, setTheme }: Props) {
           href="#/person"
           onClick={(e) => { e.preventDefault(); navigate('/person'); }}
         >
-          Person
+          {MATRIX_LABELS.person}
         </a>
         {stubs.map(([m, l]) => (
           <a

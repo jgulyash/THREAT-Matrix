@@ -1,5 +1,5 @@
 import type { Tactic } from '../types/framework';
-import { PHASE_SHORT, STUB, tacticMatchesFilters } from '../lib/constants';
+import { PHASE_SHORT, STUB, MATRIX_LABELS, tacticMatchesFilters } from '../lib/constants';
 import type { TacticsByPhase } from '../App';
 
 interface HeatMapCellProps {
@@ -93,10 +93,10 @@ export function HeatMapGrid({
     <div className="hm-wrap">
       <div className="hm-header-row" style={{ gridTemplateColumns: gc }}>
         <div className="hm-col-hdr phase-col">Phase</div>
-        <div className="hm-col-hdr amber">{compact ? 'People' : 'People · 34'}</div>
-        <div className="hm-col-hdr teal">{compact ? 'Facility' : 'Facility · 40'}</div>
-        <div className="hm-col-hdr red">{compact ? 'Organization' : 'Organization · 42'}</div>
-        <div className="hm-col-hdr blue">{compact ? 'Infrastructure' : 'Infrastructure · 38'}</div>
+        <div className="hm-col-hdr amber">{compact ? MATRIX_LABELS.person : `${MATRIX_LABELS.person} · 34`}</div>
+        <div className="hm-col-hdr teal">{compact ? MATRIX_LABELS.facility : `${MATRIX_LABELS.facility} · 40`}</div>
+        <div className="hm-col-hdr red">{compact ? MATRIX_LABELS.organization : `${MATRIX_LABELS.organization} · 42`}</div>
+        <div className="hm-col-hdr blue">{compact ? MATRIX_LABELS.infrastructure : `${MATRIX_LABELS.infrastructure} · 38`}</div>
       </div>
       <div className="hm-rows">
         {([1, 2, 3] as const).map((phase) => {

@@ -1,4 +1,4 @@
-import { STUB } from '../lib/constants';
+import { STUB, MATRIX_LABELS } from '../lib/constants';
 
 interface Props {
   matrix: 'facility' | 'organization' | 'infrastructure';
@@ -6,7 +6,7 @@ interface Props {
 }
 
 export function StubLanding({ matrix, version }: Props) {
-  const label = matrix.charAt(0).toUpperCase() + matrix.slice(1);
+  const label = MATRIX_LABELS[matrix];
   const s = STUB[matrix];
   const total =
     Object.values(s.phases).reduce((n, v) => n + v, 0) + s.flight + s.claim;

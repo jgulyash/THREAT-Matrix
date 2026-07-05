@@ -23,6 +23,18 @@ export const STUB: Record<
   infrastructure: { phases: { 1: 8, 2: 9, 3: 9 }, flight: 8, claim: 4 },
 };
 
+// Display labels for the four target matrices. Plural to match the V1.2.2
+// scope prose ("one or more human beings", etc.); Infrastructure is invariant.
+// Data keys / routes / schema enum stay singular (matrices.person, /person)
+// for consumer stability — this map is display-only, the single source of
+// truth so the column headers, nav tabs, and stub landings can't drift.
+export const MATRIX_LABELS: Record<string, string> = {
+  person: 'People',
+  facility: 'Facilities',
+  organization: 'Organizations',
+  infrastructure: 'Infrastructure',
+};
+
 export const CATEGORY_ORDER = [
   'lone_actor',
   'insider',
