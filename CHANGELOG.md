@@ -6,6 +6,24 @@ This project adheres to [Semantic Versioning](https://semver.org). Framework
 content and JSON Schema are versioned independently; the framework content
 and JSON Schema are both at `1.2.2` as of the latest release.
 
+## [Unreleased]
+
+### Added
+
+- **Actor-profile filter in the matrix browser.** The FilterBar's Actor
+  control is now live: a category-grouped dropdown that filters the heat
+  map and phase panels to tactics associated with a selected actor
+  profile, composing with the CPN filter. Completes the filter set the
+  V1.1 matrix browser described.
+
+### Changed
+
+- **Escalation-scoring pilot coverage labeled explicitly (B-01).** README
+  now states the escalation layer's pilot scope — 23 of 190 People-matrix
+  indicator classes (TM0101–TM0104) — and that unscored indicators mean
+  *not yet scored*, not zero-severity. Coverage extends across the matrix
+  through the V1.3 cycle.
+
 ## [1.2.2] — 2026-07-04
 
 Feature release. Broadens the People matrix scope from a single specific

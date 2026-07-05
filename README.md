@@ -81,7 +81,9 @@ Full architectural rationale is in the `detection_mesh` block in `docs/data/fram
 
 ### Escalation Scoring
 
-The taxonomy names a behavior. The escalation layer scores it — turning "this indicator was observed" into "here is how severe it is, and how urgently it warrants action." Every indicator carries a `temporal_signature` and four `escalation_axes`; the framework computes a weight and severity band from them, so downstream consumers receive a ready-to-use priority signal rather than raw values to interpret.
+The taxonomy names a behavior. The escalation layer scores it — turning "this indicator was observed" into "here is how severe it is, and how urgently it warrants action." Each scored indicator carries a `temporal_signature` and four `escalation_axes`; the framework computes a weight and severity band from them, so downstream consumers receive a ready-to-use priority signal rather than raw values to interpret.
+
+The escalation layer ships as a **pilot** on the phase-1 Target Development chunk — 23 of the People matrix's 190 indicator classes (TM0101–TM0104) carry scores today. Consumers should treat unscored indicators as *not yet scored*, never as zero-severity. Scoring extends across the full matrix through the V1.3 cycle, alongside a blast-radius authoring pass that widens the realized severity range (see the `escalation_rubric` authoring status in `framework.json`).
 
 **temporal_signature** — where the indicator sits on the threat clock: `horizon → advancing → imminent → staging → in_progress → aftermath`. Four of the six split into early/late stages; `staging` and `in_progress` stay single-stage because their timelines are inherently compressed.
 
