@@ -16,39 +16,34 @@ and JSON Schema are both at `1.2.2` as of the latest release.
   profile, composing with the CPN filter. Completes the filter set the
   V1.1 matrix browser described.
 
-- **Execution-phase escalation scoring (all of phase 3, TM0301–TM0308).** The
-  41 execution indicators now carry escalation axes, weight, and band, authored
-  to the broadened-scope collateral ceiling in escalation_rubric v1.1.0. Mass-
-  casualty Force Application reaches the critical band for the first time —
-  explosive device 8.68, vehicle-ramming 8.18, weapon discharge 8.00 — while the
-  support tactics (barrier defeat, seizure, captive control, response
-  suppression, bystander management, counter-surveillance, operational
-  communication) spread across high and medium. Scored coverage is now 64 of 190
-  People-matrix indicator classes; the severity band is no longer degenerate
-  (27 medium / 34 high / 3 critical, versus 20 high / 3 medium / 0 critical
-  before the execution pass).
-
-- **Capability-acquisition blast re-authored to method-revealed ceilings (B-05).**
-  Where a TM0104 acquisition behavior reveals the attack method, blast_radius_
-  potential now carries that method's collateral ceiling instead of the old
-  single-victim pin: weapons-in-quantity (8.00), third-party straw purchase
-  (7.82), and IED / 3D-printed-firearm construction research (8.48) reach
-  critical; vehicle/tool acquisition and restricted-storage access stay high.
-  Recon and profiling (TM0101–TM0103) are unchanged — those behaviors do not
-  reveal a method, so their moderate blast is correct under this policy. Person-
-  matrix criticals: 3 → 6.
+- **Full escalation scoring across the People matrix (B-05).** All 190
+  indicator classes across all four phases now carry a `temporal_signature`,
+  four `escalation_axes`, a computed `escalation_weight`, and a `severity_band`
+  (up from the 23-indicator phase-1 pilot). Blast is authored to method-revealed
+  collateral ceilings per escalation_rubric v1.1.0: it rises to a method's
+  mass-casualty ceiling only where a behavior reveals or presages that method,
+  so recon and profiling keep moderate blast while capability acquisition and
+  force application escalate. The severity band, previously degenerate
+  (20 high / 3 medium / 0 critical on the pilot), now spans **56 medium /
+  128 high / 6 critical**. The six criticals are the mass-casualty Force
+  Application behaviors (explosive 8.68, vehicle-ramming 8.18, weapon discharge
+  8.00) and the method-revealing capability acquisitions (IED-construction
+  research 8.48, straw purchase 7.82, weapons-in-quantity 8.00). Aftermath
+  behaviors top out at high (impunity, recurrence, ongoing coercive leverage);
+  no aftermath behavior is critical, since the mass-casualty event is past.
 
 ### Changed
 
-- **People-matrix column label.** The matrix-overview grid header now reads
-  "People" to match the V1.2.2 scope prose (one or more human beings). The
-  `matrices.person` data key and routes are unchanged for consumer stability.
+- **People-matrix column label.** The matrix-overview grid header, nav tabs,
+  and stub landing pages now read People / Facilities / Organizations /
+  Infrastructure (plural, via a shared `MATRIX_LABELS` map) to match the
+  V1.2.2 scope prose. The `matrices.person` data key, routes, and schema enum
+  are unchanged for consumer stability.
 
-- **Escalation-scoring pilot coverage labeled explicitly (B-01).** README
-  now states the escalation layer's pilot scope — 23 of 190 People-matrix
-  indicator classes (TM0101–TM0104) — and that unscored indicators mean
-  *not yet scored*, not zero-severity. Coverage extends across the matrix
-  through the V1.3 cycle.
+- **`informs_axes` is now the sole remaining escalation pilot (B-01).** With
+  escalation scoring complete, the README pilot caveat applies only to the
+  `informs_axes` annotation layer (23 indicators, TM0101–TM0104), which awaits
+  the sealed-blind inter-rater reliability pass on the rest of the matrix.
 
 ## [1.2.2] — 2026-07-04
 
