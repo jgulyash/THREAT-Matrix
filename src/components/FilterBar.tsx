@@ -1,5 +1,5 @@
 import type { ActorProfile } from '../types/framework';
-import { CATEGORY_ORDER } from '../lib/constants';
+import { orderedActorCategories } from '../lib/constants';
 
 interface Props {
   cpnFilter: boolean;
@@ -35,19 +35,15 @@ export function FilterBar({
         title="Show only tactics associated with an actor profile"
       >
         <option value="">Actor · All</option>
-        {CATEGORY_ORDER.map((cat) => {
-          const actors = actorsByCategory[cat];
-          if (!actors || actors.length === 0) return null;
-          return (
-            <optgroup key={cat} label={actors[0].category_label}>
-              {actors.map((a) => (
-                <option key={a.id} value={a.id}>
-                  {a.id} · {a.name}
-                </option>
-              ))}
-            </optgroup>
-          );
-        })}
+        {orderedActorCategories(actorsByCategory).map(({ cat, label, actors }) => (
+          <optgroup key={cat} label={label}>
+            {actors.map((a) => (
+              <option key={a.id} value={a.id}>
+                {a.id} · {a.name}
+              </option>
+            ))}
+          </optgroup>
+        ))}
       </select>
     </div>
   );

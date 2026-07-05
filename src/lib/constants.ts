@@ -1,4 +1,4 @@
-import type { Tactic, Priority } from '../types/framework';
+import type { Tactic, Priority, ActorProfile } from '../types/framework';
 
 export const PHASE_NAMES: Record<number, string> = {
   1: 'Target Development',
@@ -180,6 +180,20 @@ export const PRIORITY_ORDER: Priority[] = [
   'routine',
   'ongoing',
 ];
+
+// Ordered, empty-skipping actor-category groups with a display label.
+// Single source of truth for the CATEGORY_ORDER iteration shared by the
+// FilterBar dropdown and the ActorProfilesView grid — so a category that
+// appears in the data but not in CATEGORY_ORDER cannot silently drop from
+// one surface while showing in the other.
+export const orderedActorCategories = (
+  actorsByCategory: Record<string, ActorProfile[]>
+): { cat: string; label: string; actors: ActorProfile[] }[] =>
+  CATEGORY_ORDER.filter((c) => actorsByCategory[c]?.length).map((cat) => ({
+    cat,
+    label: actorsByCategory[cat][0].category_label,
+    actors: actorsByCategory[cat],
+  }));
 
 export const tacticMatchesFilters = (
   t: Tactic,
