@@ -91,8 +91,8 @@ Escalation scoring now covers **all 190 People-matrix indicator classes across a
 
 | Axis | Measures |
 |---|---|
-| `impact_potential` | Magnitude of harm if the downstream threat lands |
-| `blast_radius_potential` | Geographic / population scope — single victim to mass-casualty |
+| `impact_potential` | Magnitude of harm the behavior directly produces or imminently enables — a grievance or profiling step carries little realized harm; capability acquisition and force application carry most or all of it. This is a severity gradient along the pathway, distinct from `temporal_signature` (which measures *how soon*, not *how bad*). |
+| `blast_radius_potential` | Geographic / population scope — intended targets plus expected collateral casualties, single victim to mass-casualty (see `blast_radius_guidance`) |
 | `recoverability_inverse` | How hard the harm is to undo (higher = harder) |
 | `detectability` | How observable the indicator is, in flight, to trained personnel |
 

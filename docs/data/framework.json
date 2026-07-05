@@ -46,12 +46,12 @@
               ],
               "temporal_signature": "horizon_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 5.0
               },
-              "escalation_weight": 4.97,
+              "escalation_weight": 4.49,
               "severity_band": "medium",
               "informs_axes": {
                 "actor_capability": "weak",
@@ -85,12 +85,12 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 1.5
               },
-              "escalation_weight": 5.67,
+              "escalation_weight": 5.13,
               "severity_band": "high",
               "informs_axes": {
                 "actor_capability": "weak",
@@ -124,13 +124,13 @@
               ],
               "temporal_signature": "horizon_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.20,
-              "severity_band": "high",
+              "escalation_weight": 4.70,
+              "severity_band": "medium",
               "informs_axes": {
                 "actor_capability": "weak",
                 "actor_intent": "strong",
@@ -165,12 +165,12 @@
               ],
               "temporal_signature": "horizon_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 6.0
               },
-              "escalation_weight": 4.70,
+              "escalation_weight": 4.25,
               "severity_band": "medium",
               "informs_axes": {
                 "actor_capability": "weak",
@@ -204,12 +204,12 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 8.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.5,
                 "detectability": 2.0
               },
-              "escalation_weight": 6.25,
+              "escalation_weight": 5.48,
               "severity_band": "high",
               "informs_axes": {
                 "actor_capability": "weak",
@@ -242,13 +242,13 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 6.0
               },
-              "escalation_weight": 5.09,
-              "severity_band": "high",
+              "escalation_weight": 4.53,
+              "severity_band": "medium",
               "informs_axes": {
                 "actor_capability": "moderate",
                 "actor_intent": "moderate",
@@ -665,12 +665,12 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 2.5
               },
-              "escalation_weight": 5.50,
+              "escalation_weight": 5.09,
               "severity_band": "high",
               "informs_axes": {
                 "actor_capability": "weak",
@@ -705,12 +705,12 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 1.5
               },
-              "escalation_weight": 5.67,
+              "escalation_weight": 5.25,
               "severity_band": "high",
               "informs_axes": {
                 "actor_capability": "weak",
@@ -743,12 +743,12 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 2.5
               },
-              "escalation_weight": 5.50,
+              "escalation_weight": 5.09,
               "severity_band": "high",
               "informs_axes": {
                 "actor_capability": "moderate",
@@ -780,12 +780,12 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 5.0
               },
-              "escalation_weight": 4.97,
+              "escalation_weight": 4.60,
               "severity_band": "medium",
               "informs_axes": {
                 "actor_capability": "moderate",
@@ -820,13 +820,13 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.20,
-              "severity_band": "high",
+              "escalation_weight": 4.81,
+              "severity_band": "medium",
               "informs_axes": {
                 "actor_capability": "weak",
                 "actor_intent": "moderate",
@@ -858,12 +858,12 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 2.5
               },
-              "escalation_weight": 5.75,
+              "escalation_weight": 5.33,
               "severity_band": "high",
               "informs_axes": {
                 "actor_capability": "weak",
@@ -1326,13 +1326,13 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.20,
-              "severity_band": "high",
+              "escalation_weight": 4.81,
+              "severity_band": "medium",
               "informs_axes": {
                 "actor_capability": "weak",
                 "actor_intent": "moderate",
@@ -1365,12 +1365,12 @@
               ],
               "temporal_signature": "horizon_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 1.5
               },
-              "escalation_weight": 5.67,
+              "escalation_weight": 5.25,
               "severity_band": "high",
               "informs_axes": {
                 "actor_capability": "weak",
@@ -1405,13 +1405,13 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 6.0
               },
-              "escalation_weight": 5.09,
-              "severity_band": "high",
+              "escalation_weight": 4.64,
+              "severity_band": "medium",
               "informs_axes": {
                 "actor_capability": "moderate",
                 "actor_intent": "strong",
@@ -1446,12 +1446,12 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 8.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.5,
                 "detectability": 2.5
               },
-              "escalation_weight": 6.15,
+              "escalation_weight": 5.52,
               "severity_band": "high",
               "informs_axes": {
                 "actor_capability": "strong",
@@ -1484,13 +1484,13 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 5.0
               },
-              "escalation_weight": 5.38,
-              "severity_band": "high",
+              "escalation_weight": 4.90,
+              "severity_band": "medium",
               "informs_axes": {
                 "actor_capability": "moderate",
                 "actor_intent": "strong",
@@ -1808,12 +1808,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 8.5,
+                "impact_potential": 7.5,
                 "blast_radius_potential": 7.0,
                 "recoverability_inverse": 7.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 7.19,
+              "escalation_weight": 6.97,
               "severity_band": "high",
               "informs_axes": {
                 "actor_capability": "moderate",
@@ -1848,12 +1848,12 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.75,
+              "escalation_weight": 5.46,
               "severity_band": "high",
               "informs_axes": {
                 "actor_capability": "moderate",
@@ -1966,12 +1966,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 4.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 5.5
               },
-              "escalation_weight": 5.63,
+              "escalation_weight": 5.35,
               "severity_band": "high",
               "informs_axes": {
                 "actor_capability": "moderate",
@@ -2364,12 +2364,12 @@
               ],
               "temporal_signature": "horizon_late",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.0,
                 "detectability": 5.0
               },
-              "escalation_weight": 4.79,
+              "escalation_weight": 4.51,
               "severity_band": "medium"
             },
             {
@@ -2393,12 +2393,12 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 3.0
               },
-              "escalation_weight": 5.66,
+              "escalation_weight": 5.23,
               "severity_band": "high"
             },
             {
@@ -2424,12 +2424,12 @@
               ],
               "temporal_signature": "horizon_late",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.35,
+              "escalation_weight": 5.04,
               "severity_band": "high"
             },
             {
@@ -2454,12 +2454,12 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.86,
+              "escalation_weight": 5.33,
               "severity_band": "high"
             },
             {
@@ -2484,12 +2484,12 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.44,
+              "escalation_weight": 5.04,
               "severity_band": "high"
             },
             {
@@ -2512,13 +2512,13 @@
               ],
               "temporal_signature": "horizon_late",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.0,
                 "detectability": 5.0
               },
-              "escalation_weight": 5.01,
-              "severity_band": "high"
+              "escalation_weight": 4.72,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -2777,13 +2777,13 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.0,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.13,
-              "severity_band": "high"
+              "escalation_weight": 4.59,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0106-02",
@@ -2808,13 +2808,13 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.33,
-              "severity_band": "high"
+              "escalation_weight": 4.69,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0106-03",
@@ -2838,13 +2838,13 @@
               ],
               "temporal_signature": "horizon_late",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 5.5,
                 "detectability": 2.5
               },
-              "escalation_weight": 5.09,
-              "severity_band": "high"
+              "escalation_weight": 4.64,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0106-04",
@@ -2866,12 +2866,12 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.0,
                 "detectability": 5.5
               },
-              "escalation_weight": 4.88,
+              "escalation_weight": 4.37,
               "severity_band": "medium"
             },
             {
@@ -2893,12 +2893,12 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 5.5,
                 "detectability": 6.0
               },
-              "escalation_weight": 4.35,
+              "escalation_weight": 3.97,
               "severity_band": "medium"
             },
             {
@@ -2920,12 +2920,12 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 5.5,
                 "detectability": 5.0
               },
-              "escalation_weight": 4.60,
+              "escalation_weight": 4.19,
               "severity_band": "medium"
             }
           ],
@@ -3177,12 +3177,12 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 4.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 6.24,
+              "escalation_weight": 5.68,
               "severity_band": "high"
             },
             {
@@ -3209,12 +3209,12 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 8.5,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 7.5,
                 "detectability": 3.0
               },
-              "escalation_weight": 6.29,
+              "escalation_weight": 5.88,
               "severity_band": "high"
             },
             {
@@ -3242,12 +3242,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 9.0,
+                "impact_potential": 7.5,
                 "blast_radius_potential": 5.0,
                 "recoverability_inverse": 8.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 6.82,
+              "escalation_weight": 6.51,
               "severity_band": "high"
             },
             {
@@ -3272,12 +3272,12 @@
               ],
               "temporal_signature": "imminent_late",
               "escalation_axes": {
-                "impact_potential": 9.0,
+                "impact_potential": 7.5,
                 "blast_radius_potential": 5.0,
                 "recoverability_inverse": 8.5,
                 "detectability": 3.5
               },
-              "escalation_weight": 7.06,
+              "escalation_weight": 6.75,
               "severity_band": "high"
             },
             {
@@ -3303,12 +3303,12 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.66,
+              "escalation_weight": 5.23,
               "severity_band": "high"
             },
             {
@@ -3333,13 +3333,13 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.33,
-              "severity_band": "high"
+              "escalation_weight": 4.93,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0107-07",
@@ -3364,12 +3364,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 8.5,
+                "impact_potential": 7.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 7.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 6.05,
+              "escalation_weight": 5.76,
               "severity_band": "high"
             }
           ],
@@ -3610,13 +3610,13 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.20,
-              "severity_band": "high"
+              "escalation_weight": 4.58,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0108-02",
@@ -3638,13 +3638,13 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.20,
-              "severity_band": "high"
+              "escalation_weight": 4.58,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0108-03",
@@ -3667,13 +3667,13 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.11,
-              "severity_band": "high"
+              "escalation_weight": 4.58,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0108-04",
@@ -3697,13 +3697,13 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.0,
                 "detectability": 2.0
               },
-              "escalation_weight": 5.38,
-              "severity_band": "high"
+              "escalation_weight": 4.82,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0108-05",
@@ -3726,13 +3726,13 @@
               ],
               "temporal_signature": "advancing_early",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.0,
                 "detectability": 1.5
               },
-              "escalation_weight": 5.47,
-              "severity_band": "high"
+              "escalation_weight": 4.89,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0108-06",
@@ -3754,12 +3754,12 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 5.5,
                 "detectability": 5.5
               },
-              "escalation_weight": 4.48,
+              "escalation_weight": 4.08,
               "severity_band": "medium"
             }
           ],
@@ -4007,12 +4007,12 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.63,
+              "escalation_weight": 5.24,
               "severity_band": "high"
             },
             {
@@ -4036,12 +4036,12 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.63,
+              "escalation_weight": 5.24,
               "severity_band": "high"
             },
             {
@@ -4066,12 +4066,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.75,
+              "escalation_weight": 5.35,
               "severity_band": "high"
             },
             {
@@ -4097,12 +4097,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 8.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 4.0,
                 "recoverability_inverse": 7.5,
                 "detectability": 3.0
               },
-              "escalation_weight": 6.50,
+              "escalation_weight": 5.96,
               "severity_band": "high"
             },
             {
@@ -4123,12 +4123,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 8.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 7.5,
                 "detectability": 2.5
               },
-              "escalation_weight": 6.40,
+              "escalation_weight": 5.86,
               "severity_band": "high"
             },
             {
@@ -4153,12 +4153,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 8.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 7.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 6.05,
+              "escalation_weight": 5.54,
               "severity_band": "high"
             }
           ],
@@ -4405,12 +4405,12 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 5.0
               },
-              "escalation_weight": 4.97,
+              "escalation_weight": 4.37,
               "severity_band": "medium"
             },
             {
@@ -4436,13 +4436,13 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 2.0
               },
-              "escalation_weight": 5.59,
-              "severity_band": "high"
+              "escalation_weight": 4.92,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0202-03",
@@ -4465,13 +4465,13 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 2.5
               },
-              "escalation_weight": 5.50,
-              "severity_band": "high"
+              "escalation_weight": 4.84,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0202-04",
@@ -4492,13 +4492,13 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 3.0
               },
-              "escalation_weight": 5.66,
-              "severity_band": "high"
+              "escalation_weight": 4.98,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0202-05",
@@ -4519,12 +4519,12 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.0,
                 "detectability": 4.5
               },
-              "escalation_weight": 4.90,
+              "escalation_weight": 4.39,
               "severity_band": "medium"
             },
             {
@@ -4548,12 +4548,12 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.0,
                 "detectability": 5.0
               },
-              "escalation_weight": 4.79,
+              "escalation_weight": 4.29,
               "severity_band": "medium"
             }
           ],
@@ -4833,12 +4833,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 5.0
               },
-              "escalation_weight": 5.20,
+              "escalation_weight": 5.02,
               "severity_band": "high"
             },
             {
@@ -4861,12 +4861,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.33,
+              "escalation_weight": 5.14,
               "severity_band": "high"
             },
             {
@@ -4891,12 +4891,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.33,
+              "escalation_weight": 5.14,
               "severity_band": "high"
             },
             {
@@ -4919,13 +4919,13 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 5.5
               },
-              "escalation_weight": 5.24,
-              "severity_band": "high"
+              "escalation_weight": 4.98,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0203-05",
@@ -4946,12 +4946,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.44,
+              "escalation_weight": 5.25,
               "severity_band": "high"
             },
             {
@@ -4978,12 +4978,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.44,
+              "escalation_weight": 5.25,
               "severity_band": "high"
             }
           ],
@@ -5259,12 +5259,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.44,
+              "escalation_weight": 5.25,
               "severity_band": "high"
             },
             {
@@ -5289,12 +5289,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.33,
+              "escalation_weight": 5.14,
               "severity_band": "high"
             },
             {
@@ -5317,12 +5317,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.44,
+              "escalation_weight": 5.25,
               "severity_band": "high"
             },
             {
@@ -5346,12 +5346,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.63,
+              "escalation_weight": 5.35,
               "severity_band": "high"
             },
             {
@@ -5376,12 +5376,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.97,
+              "escalation_weight": 5.67,
               "severity_band": "high"
             },
             {
@@ -5406,12 +5406,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.75,
+              "escalation_weight": 5.46,
               "severity_band": "high"
             }
           ],
@@ -5691,12 +5691,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.33,
+              "escalation_weight": 5.04,
               "severity_band": "high"
             },
             {
@@ -5721,12 +5721,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.33,
+              "escalation_weight": 5.04,
               "severity_band": "high"
             },
             {
@@ -5750,12 +5750,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.44,
+              "escalation_weight": 5.15,
               "severity_band": "high"
             },
             {
@@ -5779,12 +5779,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.0,
                 "detectability": 4.5
               },
-              "escalation_weight": 4.90,
+              "escalation_weight": 4.72,
               "severity_band": "medium"
             },
             {
@@ -5808,12 +5808,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.55,
+              "escalation_weight": 5.25,
               "severity_band": "high"
             },
             {
@@ -5835,12 +5835,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.44,
+              "escalation_weight": 5.15,
               "severity_band": "high"
             }
           ],
@@ -6090,12 +6090,12 @@
               ],
               "temporal_signature": "imminent_late",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 7.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.73,
+              "escalation_weight": 5.54,
               "severity_band": "high"
             },
             {
@@ -6117,12 +6117,12 @@
               ],
               "temporal_signature": "imminent_late",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 7.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.86,
+              "escalation_weight": 5.66,
               "severity_band": "high"
             },
             {
@@ -6147,12 +6147,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 7.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.33,
+              "escalation_weight": 5.23,
               "severity_band": "high"
             },
             {
@@ -6176,12 +6176,12 @@
               ],
               "temporal_signature": "imminent_late",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 7.0,
                 "blast_radius_potential": 4.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 6.24,
+              "escalation_weight": 6.03,
               "severity_band": "high"
             },
             {
@@ -6204,12 +6204,12 @@
               ],
               "temporal_signature": "imminent_late",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 7.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.73,
+              "escalation_weight": 5.54,
               "severity_band": "high"
             }
           ],
@@ -6483,13 +6483,13 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.33,
-              "severity_band": "high"
+              "escalation_weight": 4.81,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0207-02",
@@ -6510,13 +6510,13 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.44,
-              "severity_band": "high"
+              "escalation_weight": 4.92,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0207-03",
@@ -6538,13 +6538,13 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.44,
-              "severity_band": "high"
+              "escalation_weight": 4.92,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0207-04",
@@ -6568,13 +6568,13 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.44,
-              "severity_band": "high"
+              "escalation_weight": 4.92,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0207-05",
@@ -6595,13 +6595,13 @@
               ],
               "temporal_signature": "advancing_late",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.33,
-              "severity_band": "high"
+              "escalation_weight": 4.81,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -6842,12 +6842,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.75,
+              "escalation_weight": 5.35,
               "severity_band": "high"
             },
             {
@@ -6870,12 +6870,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 8.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 6.0,
                 "recoverability_inverse": 7.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 6.92,
+              "escalation_weight": 6.34,
               "severity_band": "high"
             },
             {
@@ -6897,12 +6897,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 3.0
               },
-              "escalation_weight": 5.86,
+              "escalation_weight": 5.45,
               "severity_band": "high"
             },
             {
@@ -6927,12 +6927,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.44,
+              "escalation_weight": 5.15,
               "severity_band": "high"
             },
             {
@@ -6957,12 +6957,12 @@
               ],
               "temporal_signature": "imminent_late",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 3.0
               },
-              "escalation_weight": 5.86,
+              "escalation_weight": 5.45,
               "severity_band": "high"
             },
             {
@@ -6987,12 +6987,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 3.0
               },
-              "escalation_weight": 5.66,
+              "escalation_weight": 5.35,
               "severity_band": "high"
             }
           ],
@@ -7267,12 +7267,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.63,
+              "escalation_weight": 5.24,
               "severity_band": "high"
             },
             {
@@ -7295,12 +7295,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.63,
+              "escalation_weight": 5.24,
               "severity_band": "high"
             },
             {
@@ -7324,12 +7324,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.33,
+              "escalation_weight": 5.04,
               "severity_band": "high"
             },
             {
@@ -7352,12 +7352,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.63,
+              "escalation_weight": 5.24,
               "severity_band": "high"
             },
             {
@@ -7379,12 +7379,12 @@
               ],
               "temporal_signature": "imminent_early",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.33,
+              "escalation_weight": 5.04,
               "severity_band": "high"
             }
           ],
@@ -7721,12 +7721,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 7.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 5.5,
                 "detectability": 5.5
               },
-              "escalation_weight": 4.48,
+              "escalation_weight": 4.64,
               "severity_band": "medium"
             },
             {
@@ -7751,12 +7751,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 8.5,
+                "impact_potential": 8.0,
                 "blast_radius_potential": 7.0,
                 "recoverability_inverse": 8.5,
                 "detectability": 5.0
               },
-              "escalation_weight": 7.09,
+              "escalation_weight": 6.98,
               "severity_band": "high"
             }
           ],
@@ -8016,12 +8016,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 5.5,
                 "detectability": 6.5
               },
-              "escalation_weight": 4.57,
+              "escalation_weight": 4.48,
               "severity_band": "medium"
             },
             {
@@ -8044,12 +8044,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 8.0,
                 "recoverability_inverse": 8.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 7.44,
+              "escalation_weight": 6.93,
               "severity_band": "high"
             },
             {
@@ -8101,12 +8101,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 5.0,
                 "detectability": 4.5
               },
-              "escalation_weight": 4.62,
+              "escalation_weight": 4.72,
               "severity_band": "medium"
             },
             {
@@ -8129,12 +8129,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 5.5,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.34,
+              "escalation_weight": 5.23,
               "severity_band": "high"
             }
           ],
@@ -8401,12 +8401,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 7.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 5.0
               },
-              "escalation_weight": 5.38,
+              "escalation_weight": 5.30,
               "severity_band": "high"
             },
             {
@@ -8456,12 +8456,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 8.0,
+                "impact_potential": 7.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 5.5
               },
-              "escalation_weight": 5.24,
+              "escalation_weight": 5.16,
               "severity_band": "high"
             },
             {
@@ -8485,12 +8485,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 7.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 5.5,
                 "detectability": 5.5
               },
-              "escalation_weight": 4.77,
+              "escalation_weight": 4.86,
               "severity_band": "medium"
             },
             {
@@ -8797,12 +8797,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 7.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 3.0
               },
-              "escalation_weight": 5.11,
+              "escalation_weight": 5.31,
               "severity_band": "high"
             },
             {
@@ -8882,12 +8882,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 5.5,
                 "detectability": 5.0
               },
-              "escalation_weight": 4.41,
+              "escalation_weight": 4.51,
               "severity_band": "medium"
             }
           ],
@@ -9111,12 +9111,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 5.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.21,
+              "escalation_weight": 5.00,
               "severity_band": "high"
             },
             {
@@ -9138,12 +9138,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 4.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 4.70,
+              "escalation_weight": 4.59,
               "severity_band": "medium"
             },
             {
@@ -9163,12 +9163,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 4.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 4.87,
+              "escalation_weight": 4.67,
               "severity_band": "medium"
             },
             {
@@ -9191,12 +9191,12 @@
               ],
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 5.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 4.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 4.70,
+              "escalation_weight": 4.59,
               "severity_band": "medium"
             },
             {
@@ -9446,12 +9446,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 4.0,
                 "recoverability_inverse": 4.0,
                 "detectability": 6.0
               },
-              "escalation_weight": 4.33,
+              "escalation_weight": 4.43,
               "severity_band": "medium"
             },
             {
@@ -9529,12 +9529,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 4.5,
                 "recoverability_inverse": 4.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.08,
+              "escalation_weight": 5.20,
               "severity_band": "high"
             },
             {
@@ -9831,12 +9831,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 4.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 4.46,
+              "escalation_weight": 4.36,
               "severity_band": "medium"
             },
             {
@@ -9860,12 +9860,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 4.5,
                 "detectability": 3.5
               },
-              "escalation_weight": 4.79,
+              "escalation_weight": 4.58,
               "severity_band": "medium"
             },
             {
@@ -9888,12 +9888,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 4.0,
                 "detectability": 4.5
               },
-              "escalation_weight": 4.54,
+              "escalation_weight": 4.43,
               "severity_band": "medium"
             },
             {
@@ -9917,12 +9917,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 4.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 4.77,
+              "escalation_weight": 4.56,
               "severity_band": "medium"
             },
             {
@@ -9943,12 +9943,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 5.0,
                 "detectability": 5.5
               },
-              "escalation_weight": 4.76,
+              "escalation_weight": 4.45,
               "severity_band": "medium"
             }
           ],
@@ -10188,12 +10188,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 4.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 4.73,
+              "escalation_weight": 4.62,
               "severity_band": "medium"
             },
             {
@@ -10215,12 +10215,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 4.0,
                 "detectability": 3.0
               },
-              "escalation_weight": 4.82,
+              "escalation_weight": 4.70,
               "severity_band": "medium"
             },
             {
@@ -10244,12 +10244,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 4.0,
                 "detectability": 5.5
               },
-              "escalation_weight": 4.31,
+              "escalation_weight": 4.21,
               "severity_band": "medium"
             },
             {
@@ -10270,12 +10270,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 4.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 4.73,
+              "escalation_weight": 4.62,
               "severity_band": "medium"
             },
             {
@@ -10299,12 +10299,12 @@
               ],
               "temporal_signature": "in_progress",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 4.0,
                 "recoverability_inverse": 4.5,
                 "detectability": 5.0
               },
-              "escalation_weight": 4.82,
+              "escalation_weight": 4.61,
               "severity_band": "medium"
             }
           ],
@@ -10551,12 +10551,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.0,
                 "detectability": 5.0
               },
-              "escalation_weight": 4.51,
+              "escalation_weight": 4.29,
               "severity_band": "medium"
             },
             {
@@ -10579,12 +10579,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 4.81,
+              "escalation_weight": 4.58,
               "severity_band": "medium"
             },
             {
@@ -10608,12 +10608,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 5.0,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.0,
                 "recoverability_inverse": 5.0,
                 "detectability": 6.0
               },
-              "escalation_weight": 3.76,
+              "escalation_weight": 3.66,
               "severity_band": "medium"
             },
             {
@@ -10635,12 +10635,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 4.81,
+              "escalation_weight": 4.58,
               "severity_band": "medium"
             },
             {
@@ -10664,12 +10664,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 4.92,
+              "escalation_weight": 4.58,
               "severity_band": "medium"
             }
           ],
@@ -10935,13 +10935,13 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 7.5,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.20,
-              "severity_band": "high"
+              "escalation_weight": 4.84,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0402-02",
@@ -10962,13 +10962,13 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.01,
-              "severity_band": "high"
+              "escalation_weight": 4.66,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0402-03",
@@ -10989,12 +10989,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 4.92,
+              "escalation_weight": 4.58,
               "severity_band": "medium"
             },
             {
@@ -11013,13 +11013,13 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.46,
-              "severity_band": "high"
+              "escalation_weight": 4.98,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0402-05",
@@ -11044,12 +11044,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 7.5,
                 "detectability": 2.5
               },
-              "escalation_weight": 5.50,
+              "escalation_weight": 5.02,
               "severity_band": "high"
             },
             {
@@ -11073,13 +11073,13 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 3.0
               },
-              "escalation_weight": 5.00,
-              "severity_band": "high"
+              "escalation_weight": 4.76,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -11336,13 +11336,13 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 4.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.01,
-              "severity_band": "high"
+              "escalation_weight": 4.53,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0403-02",
@@ -11362,12 +11362,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 4.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.0,
                 "detectability": 5.0
               },
-              "escalation_weight": 4.51,
+              "escalation_weight": 4.16,
               "severity_band": "medium"
             },
             {
@@ -11388,12 +11388,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 4.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.0,
                 "detectability": 5.5
               },
-              "escalation_weight": 4.39,
+              "escalation_weight": 4.05,
               "severity_band": "medium"
             },
             {
@@ -11418,12 +11418,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 4.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 4.81,
+              "escalation_weight": 4.44,
               "severity_band": "medium"
             },
             {
@@ -11444,12 +11444,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 4.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.0,
                 "detectability": 6.0
               },
-              "escalation_weight": 4.26,
+              "escalation_weight": 3.94,
               "severity_band": "medium"
             }
           ],
@@ -11704,13 +11704,13 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.11,
-              "severity_band": "high"
+              "escalation_weight": 4.88,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0404-02",
@@ -11733,12 +11733,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 4.92,
+              "escalation_weight": 4.70,
               "severity_band": "medium"
             },
             {
@@ -11763,13 +11763,13 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.01,
-              "severity_band": "high"
+              "escalation_weight": 4.79,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0404-04",
@@ -11793,13 +11793,13 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.14,
-              "severity_band": "high"
+              "escalation_weight": 4.81,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0404-05",
@@ -11821,12 +11821,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 4.92,
+              "escalation_weight": 4.70,
               "severity_band": "medium"
             },
             {
@@ -11847,13 +11847,13 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.11,
-              "severity_band": "high"
+              "escalation_weight": 4.79,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -12095,13 +12095,13 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.02,
-              "severity_band": "high"
+              "escalation_weight": 4.58,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0405-02",
@@ -12122,13 +12122,13 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 7.5,
                 "detectability": 3.0
               },
-              "escalation_weight": 5.40,
-              "severity_band": "high"
+              "escalation_weight": 4.93,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0405-03",
@@ -12149,13 +12149,13 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.21,
-              "severity_band": "high"
+              "escalation_weight": 4.76,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0405-04",
@@ -12177,13 +12177,13 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 7.5,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.31,
-              "severity_band": "high"
+              "escalation_weight": 4.84,
+              "severity_band": "medium"
             },
             {
               "id": "IND-0405-05",
@@ -12204,12 +12204,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.0,
+                "impact_potential": 4.5,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 6.0,
                 "detectability": 5.0
               },
-              "escalation_weight": 4.61,
+              "escalation_weight": 4.29,
               "severity_band": "medium"
             }
           ],
@@ -12451,12 +12451,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.46,
+              "escalation_weight": 5.25,
               "severity_band": "high"
             },
             {
@@ -12477,12 +12477,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 3.0
               },
-              "escalation_weight": 5.56,
+              "escalation_weight": 5.35,
               "severity_band": "high"
             },
             {
@@ -12503,12 +12503,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.36,
+              "escalation_weight": 5.25,
               "severity_band": "high"
             },
             {
@@ -12531,12 +12531,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 7.5,
+                "impact_potential": 6.5,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 3.5
               },
-              "escalation_weight": 5.88,
+              "escalation_weight": 5.67,
               "severity_band": "high"
             },
             {
@@ -12557,12 +12557,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.15,
+              "escalation_weight": 5.05,
               "severity_band": "high"
             }
           ],
@@ -12804,12 +12804,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 7.0
               },
-              "escalation_weight": 4.76,
+              "escalation_weight": 4.58,
               "severity_band": "medium"
             },
             {
@@ -12831,12 +12831,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 6.5
               },
-              "escalation_weight": 4.95,
+              "escalation_weight": 4.76,
               "severity_band": "medium"
             },
             {
@@ -12860,12 +12860,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 4.0,
                 "recoverability_inverse": 7.5,
                 "detectability": 5.5
               },
-              "escalation_weight": 5.54,
+              "escalation_weight": 5.33,
               "severity_band": "high"
             },
             {
@@ -12886,12 +12886,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 5.5
               },
-              "escalation_weight": 4.89,
+              "escalation_weight": 4.79,
               "severity_band": "medium"
             },
             {
@@ -12912,12 +12912,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 5.5,
+                "impact_potential": 5.0,
                 "blast_radius_potential": 2.5,
                 "recoverability_inverse": 5.5,
                 "detectability": 4.0
               },
-              "escalation_weight": 4.62,
+              "escalation_weight": 4.51,
               "severity_band": "medium"
             },
             {
@@ -12939,12 +12939,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 6.5
               },
-              "escalation_weight": 4.95,
+              "escalation_weight": 4.76,
               "severity_band": "medium"
             }
           ],
@@ -13164,12 +13164,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 4.0,
                 "recoverability_inverse": 7.5,
                 "detectability": 6.0
               },
-              "escalation_weight": 5.38,
+              "escalation_weight": 5.18,
               "severity_band": "high"
             },
             {
@@ -13191,12 +13191,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 4.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 5.86,
+              "escalation_weight": 5.63,
               "severity_band": "high"
             },
             {
@@ -13217,12 +13217,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 4.5,
                 "recoverability_inverse": 7.5,
                 "detectability": 6.0
               },
-              "escalation_weight": 5.54,
+              "escalation_weight": 5.33,
               "severity_band": "high"
             },
             {
@@ -13243,12 +13243,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 4.0,
                 "recoverability_inverse": 6.5,
                 "detectability": 5.5
               },
-              "escalation_weight": 5.25,
+              "escalation_weight": 5.15,
               "severity_band": "high"
             },
             {
@@ -13272,12 +13272,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 7.0,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 4.0,
                 "recoverability_inverse": 7.0,
                 "detectability": 5.0
               },
-              "escalation_weight": 5.60,
+              "escalation_weight": 5.38,
               "severity_band": "high"
             },
             {
@@ -13299,12 +13299,12 @@
               ],
               "temporal_signature": "aftermath",
               "escalation_axes": {
-                "impact_potential": 6.5,
+                "impact_potential": 6.0,
                 "blast_radius_potential": 3.5,
                 "recoverability_inverse": 6.5,
                 "detectability": 5.0
               },
-              "escalation_weight": 5.21,
+              "escalation_weight": 5.11,
               "severity_band": "high"
             }
           ],
