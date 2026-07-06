@@ -7642,7 +7642,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 8.00,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "severity_floor": "high"
             },
             {
               "id": "IND-0301-02",
@@ -7671,7 +7672,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 8.18,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "severity_floor": "high"
             },
             {
               "id": "IND-0301-03",
@@ -7700,7 +7702,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 8.68,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "severity_floor": "high"
             },
             {
               "id": "IND-0301-04",
@@ -7727,7 +7730,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.64,
-              "severity_band": "medium"
+              "severity_band": "high",
+              "severity_floor": "high"
             },
             {
               "id": "IND-0301-05",
@@ -8079,7 +8083,8 @@
                 "detectability": 6.0
               },
               "escalation_weight": 4.16,
-              "severity_band": "medium"
+              "severity_band": "high",
+              "severity_floor": "high"
             },
             {
               "id": "IND-0302-04",
@@ -8407,7 +8412,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 5.30,
-              "severity_band": "high"
+              "severity_band": "high",
+              "severity_floor": "high"
             },
             {
               "id": "IND-0303-02",
@@ -8462,7 +8468,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 5.16,
-              "severity_band": "high"
+              "severity_band": "high",
+              "severity_floor": "high"
             },
             {
               "id": "IND-0303-04",
@@ -8777,7 +8784,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.21,
-              "severity_band": "high"
+              "severity_band": "high",
+              "severity_floor": "high"
             },
             {
               "id": "IND-0304-02",
@@ -8831,7 +8839,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.31,
-              "severity_band": "high"
+              "severity_band": "high",
+              "severity_floor": "high"
             },
             {
               "id": "IND-0304-04",
@@ -9480,7 +9489,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.87,
-              "severity_band": "medium"
+              "severity_band": "high",
+              "severity_floor": "high"
             },
             {
               "id": "IND-0306-03",
@@ -14791,6 +14801,11 @@
       "medium": 2.5,
       "high": 5.0,
       "critical": 7.5
+    },
+    "severity_floor_rule": {
+      "definition": "A triage floor layered on the severity math: an indicator whose behavior applies DIRECT PHYSICAL FORCE to a person's body carries severity_band = high at minimum, regardless of its computed escalation_weight. escalation_weight is unchanged — it remains the true severity computation — and severity_band is the max of the computed band and this floor. Such indicators carry a `severity_floor` field set to \"high\". Rationale: a single-victim, hands-on, highly-observable act of force computes to medium on the pure severity axes (low blast_radius, high detectability), but operational triage always escalates direct violence against a person. This is a values/triage rule, not a change to the weight formula.",
+      "applies_to": "Behaviors that directly apply physical force to a person: weapon discharge, vehicle ramming, explosive detonation, physical assault, overpowering or incapacitating personnel, taking physical custody by restraint, forcible extraction, and physical restraint or force against a captive.",
+      "added": "V1.3 (2026-07-05)"
     },
     "blast_radius_guidance": {
       "definition": "blast_radius_potential encodes TOTAL expected victim scope for the indicator class: intended targets PLUS expected collateral (bystander / non-target) casualties. It is not intended-victim count alone — a single-target attack can carry high blast_radius when its method produces collateral (a bombing that kills one intended target and nearby bystanders scores high, not low). Method sets the type-level base rate below; venue, timing, and crowd density modulate at assessment (instance) time.",

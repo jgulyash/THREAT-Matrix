@@ -592,7 +592,14 @@
             "high",
             "critical"
           ],
-          "description": "Optional derived bucket from escalation_weight per escalation_rubric.severity_thresholds. Consumers may compute on read or store. Type-level descriptor of the indicator class. See CONTRIBUTING.md \"Schema design principles\"."
+          "description": "Optional derived bucket from escalation_weight per escalation_rubric.severity_thresholds. Consumers may compute on read or store. Type-level descriptor of the indicator class. Note: when severity_floor is present, severity_band is the greater of the computed band and the floor (see escalation_rubric.severity_floor_rule). See CONTRIBUTING.md \"Schema design principles\"."
+        },
+        "severity_floor": {
+          "type": "string",
+          "enum": [
+            "high"
+          ],
+          "description": "V1.3 triage floor. Present on indicators whose behavior applies direct physical force to a person; forces severity_band to at least this value regardless of the computed escalation_weight (which is left unchanged). See escalation_rubric.severity_floor_rule."
         },
         "informs_axes": {
           "type": "object",

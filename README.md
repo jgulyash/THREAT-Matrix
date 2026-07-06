@@ -98,7 +98,7 @@ Escalation scoring now covers **all 190 People-matrix indicator classes across a
 
 **escalation_weight** — computed, not authored: the geometric mean of `impact_potential`, `blast_radius_potential`, `recoverability_inverse`, and inverted detectability (`10 − detectability`). The geometric mean is deliberate — a low value on any single axis pulls the whole weight down, so a high score requires all four dimensions to be elevated and no axis can be fully compensated by the others.
 
-**severity_band** — computed from the weight against fixed thresholds, giving each indicator a stable categorical severity for filtering, triage, and display.
+**severity_band** — computed from the weight against fixed thresholds, giving each indicator a stable categorical severity for filtering, triage, and display. One triage exception: behaviors that apply **direct physical force to a person** carry a `severity_floor` of `high`, so their band is the greater of the computed band and that floor — a single-victim, hands-on, highly-observable assault computes to medium on the pure severity axes, but operational triage always escalates direct violence against a person. The weight itself is never floored (see `severity_floor_rule` in `escalation_rubric`).
 
 **assessment_guidance** — tactic-level prose that sits alongside the computed score: credibility / capability / intent / opportunity anchors, false-positive context, threshold guidance, and an escalation priority. Where the weight is the quantitative signal, `assessment_guidance` is the structured human-judgment layer — what raises or lowers confidence in a finding, and what looks like the tactic but isn't.
 

@@ -34,6 +34,25 @@ and JSON Schema are both at `1.2.2` as of the latest release.
 
 ### Changed
 
+- **Direct-harm severity floor.** Behaviors that apply direct physical force to
+  a person (weapon discharge, ramming, detonation, physical assault, overpowering
+  personnel, seizing/restraining a person) now carry a `severity_floor` of `high`
+  — `severity_band` is the greater of the computed band and that floor. On the
+  pure severity axes a single-victim, hands-on, highly-observable assault computes
+  to medium (low blast, high detectability); operational triage always escalates
+  direct violence against a person, so three such behaviors move medium → high.
+  `escalation_weight` is left unchanged (it stays the honest severity computation);
+  the floor is a documented triage rule (`escalation_rubric.severity_floor_rule`),
+  not a change to the formula.
+
+- **impact_potential re-spread as a pathway severity gradient.** impact was
+  clustered at 7.0–8.0 because every behavior presages a lethal attack, forcing
+  ~67% of the matrix into `high`. It now measures the harm a behavior directly
+  produces or imminently enables: recon/tradecraft 4.0–5.5, planning/access
+  6.0–6.5, force/seizure/acquisition 7.5–9.5. Band distribution moved 56 medium /
+  128 high / 6 critical → 91 / 93 / 6, and reads sensibly per phase (Target
+  Development mostly medium, Mobilization skews high, Aftermath skews medium).
+
 - **People-matrix column label.** The matrix-overview grid header, nav tabs,
   and stub landing pages now read People / Facilities / Organizations /
   Infrastructure (plural, via a shared `MATRIX_LABELS` map) to match the
