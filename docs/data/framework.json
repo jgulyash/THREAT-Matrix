@@ -14087,6 +14087,95 @@
          "cpn": true,
          "cpn_id": "CPN-F0101",
          "cpn_notes": "Facility selection is increasingly informed by online reconnaissance \u2014 public building directories, permitting records, satellite imagery, and organizational websites that expose a facility's function, tenants, hours, and symbolic associations before any physical visit.",
+         "assessment_guidance": {
+          "credibility": {
+           "criteria": "Credibility rises with corroboration across modalities, persistence over time, and recoverable evidence backing first-hand reports that the actor has fixed on a specific place. Credibility falls when the source, the content, or the temporal pattern is thin, and when a plausible legitimate interest in the facility was never ruled out.",
+           "high_signal_anchors": [
+            "Cross-modal corroboration \u2014 grievance statements, search activity, and physical presence against the same facility within overlapping timeframes.",
+            "Temporal persistence \u2014 a fixation on the place observed across weeks to months, not a single remark.",
+            "Material evidence \u2014 saved facility research, browser history, annotated imagery, or recovered communications that physically tie the actor to the named site.",
+            "First-hand witness fidelity \u2014 a named witness who heard the actor name the facility and describe why it matters; high-resolution reporting of the statement, context, and timing.",
+            "Behavioral specificity \u2014 the actor named the specific facility, address, or tenant rather than a vague category.",
+            "Source motivation aligned with accuracy \u2014 trained reporter through a formal channel, not an informal tip with a competing agenda."
+           ],
+           "low_signal_anchors": [
+            "Source-quality weakness \u2014 single anonymous tip, reporter cannot be re-contacted.",
+            "Content-specificity weakness \u2014 a vague statement of dislike that could fit dozens of buildings.",
+            "Temporal-pattern weakness \u2014 one-time remark with no follow-through.",
+            "Source-motivation misalignment \u2014 reporter has a structural reason to embellish (dispute with the facility, tenant rivalry, litigation).",
+            "Unrebutted legitimate explanation \u2014 the actor's interest in the facility admits a benign reading (prospective tenant, neighbor, contractor) that investigation did not exclude.",
+            "Reconstructive memory \u2014 reporting delay long enough that details may be retrofitted to a threat narrative."
+           ]
+          },
+          "capability": {
+           "criteria": "Capability rises when the actor's engagement with the facility shows operational discipline \u2014 covert research, acquisition of non-public site information, durable pretexts, and the technical literacy to read a building's vulnerabilities. Capability falls with conspicuous behavior, OSINT-only reach, and pretexts that fail on first contact.",
+           "high_signal_anchors": [
+            "Covert research tradecraft \u2014 anonymized searches, use of cut-outs, no observable return pattern to the site.",
+            "Multi-modal coordination \u2014 digital research, physical proximity, and insider elicitation coordinated across overlapping timeframes.",
+            "Restricted-material acquisition \u2014 the actor obtains non-public site information such as internal floor plans, fire-suppression schematics, or security-camera diagrams for the facility.",
+            "Pretext durability \u2014 cover stories for interest in the building hold up under staff scrutiny.",
+            "Counter-surveillance behaviors \u2014 the actor varies approach, identifies camera coverage, notes patrol timing around the facility.",
+            "Demonstrated technical literacy \u2014 the actor reads acquired materials productively, reasoning about structural, utility, or fire vulnerabilities of the place."
+           ],
+           "low_signal_anchors": [
+            "Conspicuous posture \u2014 obvious loitering, photographing entrances in the open, lingering past any plausible purpose.",
+            "No-concealment repetition \u2014 repeated interest in the site with no pretext or concealment.",
+            "Pretext failure on initial contact \u2014 staff immediately recognized the interest as unusual.",
+            "OSINT-only reach \u2014 all site knowledge is from public sources; no operational reach beyond browser-and-public-records.",
+            "Single-modality engagement \u2014 only digital or only physical; no coordination.",
+            "Direct-contact attempts \u2014 the actor sought direct engagement with facility staff or management, breaching operational discipline about exposure."
+           ]
+          },
+          "intent": {
+           "criteria": "Intent rises when engagement with the facility progresses from broad interest toward operationally specific detail, when the actor retains site information, and when reconnaissance is paired with stated grievance against the place or what it represents. Intent falls with generic interest, encounters that do not escalate, and a verifiable benign purpose.",
+           "high_signal_anchors": [
+            "Behavioral progression broad-to-narrow \u2014 an observable funnel from general interest to operational-detail acquisition about the specific facility.",
+            "Facility-specific behavior \u2014 attention concentrates on the named site and its specific access, standoff, or occupancy features.",
+            "Operational specificity in inquiry or document selection \u2014 asking about occupancy times, emergency-exit routes, fire-suppression, standoff distance, or after-hours access; selecting blueprints or security diagrams.",
+            "Sustained attention to defender posture \u2014 the actor tracks the facility's countermeasures over time and adapts.",
+            "Retention of acquired materials \u2014 site photos archived, plans saved, notes maintained, suggesting later operational use.",
+            "Hostile attribution paired with recon \u2014 the actor has expressed grievance toward the facility or its function AND is observed researching or surveilling the site; the combination is intent-diagnostic in a way no single indicator captures."
+           ],
+           "low_signal_anchors": [
+            "Generic-interest behavior \u2014 broad interest in architecture or a neighborhood, not pinned to a specific site as an objective.",
+            "One-time encounter without escalation \u2014 interest surfaced but no follow-through or pattern.",
+            "Verifiable legitimate purpose \u2014 prospective-tenant, employment, contractor, or press relationship surfaces and checks out.",
+            "No retention behavior \u2014 materials viewed casually but not saved or organized.",
+            "Target ambiguity \u2014 multiple facilities considered without narrowing to one."
+           ]
+          },
+          "opportunity": {
+           "criteria": "Opportunity rises when the actor can act on knowledge of the facility \u2014 combining mastery of its occupancy and access patterns, awareness of its security gaps, exploited insider access, and the positional ability to reach the site. Opportunity falls with defensive friction not adapted to, distance not closed, or a hardened posture that blocks the actor's known methods; when opportunity appears reduced, the durability of that reduction matters.",
+           "high_signal_anchors": [
+            "No defensive friction encountered \u2014 the actor's engagement with the site continues unimpeded despite the facility's posture.",
+            "Facility pattern-of-life mastery \u2014 the actor reliably knows the site's occupancy cycles, delivery and service windows, and low-security periods. The informational dimension of opportunity.",
+            "Security-gap knowledge \u2014 the actor knows camera blind spots, standoff weaknesses, patrol timing, or utility- and fire-system access points for the facility.",
+            "Insider connection being exploited \u2014 an identified employee, contractor, or vendor relationship the actor is actively leveraging for site intelligence or access. Dormant connections are potential, not realized; the exploitation pattern is what is high-signal.",
+            "Geographic-temporal proximity \u2014 the actor lives or works near the facility and is present during its vulnerable windows.",
+            "Direct facility access \u2014 the actor has unsupervised access to the site through a legitimate role."
+           ],
+           "low_signal_anchors": [
+            "Approach defeated by hardened posture \u2014 the facility's countermeasures actively blocked the actor's engagement. Durable signal: sticky unless the actor materially adapts or the posture drops.",
+            "Institutional rule-out of insider access \u2014 access audits or process actively cleared the possibility, not merely failed to find it.",
+            "Structural access degradation \u2014 the actor's prior access pathway terminated (role ended, contract lapsed, relocation).",
+            "Defensive friction encountered without adaptation \u2014 the actor left after being challenged and did not return or adapt. Transient: may flip if the actor adapts.",
+            "Geographic distance not closed \u2014 the actor is remote and physical action requires a major travel investment not yet made.",
+            "Facility posture change created barriers \u2014 hardened access, changed schedules, or active surveillance detection blocks the actor's known methods; transient unless sustained."
+           ]
+          },
+          "false_positive_context": {
+           "criteria": "Many legitimate activities resemble facility target selection on the surface \u2014 a prospective tenant studying a building looks similar to an actor casing it; an urban explorer photographing a structure looks similar to reconnaissance. What distinguishes a false positive is whether the underlying interest has a verifiable legitimate purpose, a transparent identity behind it, or institutional accountability that can be checked.",
+           "contexts": [
+            "Verified professional purpose \u2014 architects, contractors, appraisers, developers, inspectors, insurance adjusters, and real-estate professionals with site-visit business; prospective tenants or buyers on due-diligence visits.",
+            "Legal authority \u2014 authorized law-enforcement activity with proper basis; licensed private investigators on lawful matters; security professionals conducting authorized vulnerability assessments or pen-tests of the facility.",
+            "Personal or community connection \u2014 current and former employees, neighbors, congregants, or patrons with legitimate familiarity or orientation needs.",
+            "Non-threatening attention \u2014 urban explorers, architecture and history photographers, hobbyists with non-threatening interest in the structure.",
+            "Academic and research purpose \u2014 students of architecture, urban planning, or history; researchers and genealogists with site interests."
+           ]
+          },
+          "threshold_guidance": "Findings correlating with staging-class facility behaviors elsewhere \u2014 accelerant or explosive-precursor acquisition, observed dry runs against the site, emplacement of materiel, or alignment with an occupancy or anniversary window \u2014 warrant immediate activation of response protocols regardless of this tactic's internal tier. Tier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time. A single low-credibility indicator with an available legitimate explanation sits at the monitoring tier. A single high-credibility indicator with operational specificity about the facility sits at the investigation tier. Cross-modal corroboration \u2014 grievance plus research plus proximity against the same site \u2014 sits at the elevation tier and warrants treating as coordinated facility target development. Indicators persisting despite implemented countermeasures sit at the committed-actor tier, suggesting potential entry into mobilization. Multiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit. Tier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification and a facility-vulnerability assessment; elevation triggers countermeasure activation appropriate to the site's posture; the committed-actor tier triggers a defensive-posture upgrade; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
+          "escalation_priority": "Priority"
+         },
          "techniques": [],
          "indicators": [
           {
