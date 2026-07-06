@@ -14073,7 +14073,349 @@
       "scope": "Tactics centered on one or more human beings as the primary target. The adversary's primary objective is harm, control, coercion, or surveillance directed at people. Setting and motivation are separate dimensions and do not change matrix placement."
     },
     "facility": {
-      "tactics": [],
+      "tactics": [
+        {
+         "id": "TF0101",
+         "name": "Facility Target Selection",
+         "tactic_families": [
+          "target_selection"
+         ],
+         "matrix": "facility",
+         "phase": 1,
+         "phase_name": "Target Development",
+         "notes": "Selection of a specific physical venue, structure, or built environment as the primary attack target, driven by symbolic significance, occupancy, accessibility, economic value, or grievance association with the place. Distinct from Site Profiling (which studies an already-chosen facility) and from People Target Selection (where the human occupant, not the structure, is the objective). The selection logic here is about the place: what it represents, what its destruction or denial accomplishes, and why this facility over another.",
+         "cpn": true,
+         "cpn_id": "CPN-F0101",
+         "cpn_notes": "Facility selection is increasingly informed by online reconnaissance \u2014 public building directories, permitting records, satellite imagery, and organizational websites that expose a facility's function, tenants, hours, and symbolic associations before any physical visit.",
+         "techniques": [],
+         "indicators": [
+          {
+           "id": "IND-F0101-01",
+           "behavior": "Threat actor articulates a grievance or ideological motivation tied to a specific facility, an organization's premises, or a category of site (place of worship, clinic, government building, corporate headquarters)",
+           "category": "communication",
+           "detection_sources": [
+            "peer_report",
+            "social_media",
+            "communications_intercept"
+           ],
+           "phase_relevance": [
+            "target_development"
+           ],
+           "correlates_with": [
+            "IND-F0101-03",
+            "IND-F0101-05"
+           ],
+           "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "FBI-PREATTACK-2018"
+           ],
+           "temporal_signature": "horizon_late",
+           "escalation_axes": {
+            "impact_potential": 5.0,
+            "blast_radius_potential": 4.0,
+            "recoverability_inverse": 6.0,
+            "detectability": 5.0
+           },
+           "escalation_weight": 4.95,
+           "severity_band": "medium"
+          },
+          {
+           "id": "IND-F0101-02",
+           "behavior": "Threat actor conducts sustained online research into a specific facility's function, occupancy patterns, tenants, or operating schedule",
+           "category": "digital",
+           "detection_sources": [
+            "it_logs",
+            "social_media",
+            "physical_observation"
+           ],
+           "phase_relevance": [
+            "target_development"
+           ],
+           "correlates_with": [
+            "IND-F0101-03"
+           ],
+           "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021"
+           ],
+           "temporal_signature": "advancing_early",
+           "escalation_axes": {
+            "impact_potential": 5.0,
+            "blast_radius_potential": 4.0,
+            "recoverability_inverse": 6.0,
+            "detectability": 1.5
+           },
+           "escalation_weight": 5.65,
+           "severity_band": "high"
+          },
+          {
+           "id": "IND-F0101-03",
+           "behavior": "Threat actor identifies a facility by its symbolic, religious, political, or economic significance, framing the place itself as the objective",
+           "category": "behavioral_change",
+           "detection_sources": [
+            "peer_report",
+            "social_media"
+           ],
+           "phase_relevance": [
+            "target_development"
+           ],
+           "correlates_with": [
+            "IND-F0101-01"
+           ],
+           "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "FBI-PREATTACK-2018"
+           ],
+           "temporal_signature": "horizon_late",
+           "escalation_axes": {
+            "impact_potential": 5.5,
+            "blast_radius_potential": 5.0,
+            "recoverability_inverse": 6.5,
+            "detectability": 4.0
+           },
+           "escalation_weight": 5.72,
+           "severity_band": "high"
+          },
+          {
+           "id": "IND-F0101-04",
+           "behavior": "Threat actor researches or references prior attacks on similar facilities, studying target-selection logic, methods, and outcomes",
+           "category": "planning",
+           "detection_sources": [
+            "it_logs",
+            "peer_report"
+           ],
+           "phase_relevance": [
+            "target_development"
+           ],
+           "correlates_with": [
+            "IND-F0101-02"
+           ],
+           "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-MASS-2021"
+           ],
+           "temporal_signature": "advancing_early",
+           "escalation_axes": {
+            "impact_potential": 5.5,
+            "blast_radius_potential": 4.5,
+            "recoverability_inverse": 6.5,
+            "detectability": 2.0
+           },
+           "escalation_weight": 5.99,
+           "severity_band": "high"
+          },
+          {
+           "id": "IND-F0101-05",
+           "behavior": "Threat actor communicates intent regarding a specific facility or class of facilities to a third party, including statements about wanting to burn, bomb, occupy, or destroy the place",
+           "category": "communication",
+           "detection_sources": [
+            "peer_report",
+            "social_media",
+            "communications_intercept"
+           ],
+           "phase_relevance": [
+            "target_development"
+           ],
+           "correlates_with": [
+            "IND-F0101-01",
+            "IND-F0101-03"
+           ],
+           "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "FBI-PREATTACK-2018"
+           ],
+           "temporal_signature": "advancing_early",
+           "escalation_axes": {
+            "impact_potential": 5.5,
+            "blast_radius_potential": 5.0,
+            "recoverability_inverse": 6.5,
+            "detectability": 5.5
+           },
+           "escalation_weight": 5.33,
+           "severity_band": "high"
+          }
+         ],
+         "countermeasures": [
+          {
+           "id": "CM-F0101-01",
+           "measure": "Establish OSINT monitoring for mentions of the facility, its tenants, and its symbolic associations across social media, extremist forums, and grievance channels",
+           "category": "detective",
+           "domain": "technical_monitoring",
+           "cost": "medium",
+           "complexity": "medium",
+           "time_to_implement": "weeks",
+           "phase_relevance": [
+            "target_development"
+           ],
+           "limitations": "Coverage is incomplete; encrypted and closed channels are not visible, and symbolic targeting may be expressed obliquely before a facility is named explicitly",
+           "compensates_for": [],
+           "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+           ]
+          },
+          {
+           "id": "CM-F0101-02",
+           "measure": "Conduct a symbolic-exposure assessment identifying why the facility might be selected (tenant profile, public associations, anniversary dates) and share the risk picture with facility security leadership",
+           "category": "preventive",
+           "domain": "policy_procedure",
+           "cost": "low",
+           "complexity": "medium",
+           "time_to_implement": "weeks",
+           "phase_relevance": [
+            "target_development"
+           ],
+           "limitations": "Assesses likelihood of selection but cannot prevent a determined actor from choosing the facility; informs posture rather than blocking the tactic",
+           "compensates_for": [],
+           "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+           ]
+          },
+          {
+           "id": "CM-F0101-03",
+           "measure": "Maintain liaison with peer facilities of the same class and with fusion centers to receive early warning of targeting trends against the facility category",
+           "category": "detective",
+           "domain": "policy_procedure",
+           "cost": "low",
+           "complexity": "low",
+           "time_to_implement": "weeks",
+           "phase_relevance": [
+            "target_development",
+            "mobilization"
+           ],
+           "limitations": "Depends on peer reporting discipline and fusion-center throughput; category-level warning may not name the specific facility",
+           "compensates_for": [],
+           "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+           ]
+          },
+          {
+           "id": "CM-F0101-04",
+           "measure": "Reduce publicly exposed facility detail (tenant directories, floor plans in permitting portals, real-time occupancy feeds) where legally and operationally feasible",
+           "category": "preventive",
+           "domain": "policy_procedure",
+           "cost": "low",
+           "complexity": "medium",
+           "time_to_implement": "weeks",
+           "phase_relevance": [
+            "target_development"
+           ],
+           "limitations": "Much facility information is public by law (permits, assessor records) and cannot be withdrawn; raises the cost of research without eliminating it",
+           "compensates_for": [],
+           "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+           ]
+          }
+         ],
+         "related_tactics": [
+          "TF0102",
+          "TF0103"
+         ],
+         "actor_associations": [
+          {
+           "actor_id": "AP001",
+           "relevance": "medium"
+          },
+          {
+           "actor_id": "AP012",
+           "relevance": "high"
+          },
+          {
+           "actor_id": "AP013",
+           "relevance": "high"
+          },
+          {
+           "actor_id": "AP014",
+           "relevance": "high"
+          },
+          {
+           "actor_id": "AP015",
+           "relevance": "high"
+          },
+          {
+           "actor_id": "AP016",
+           "relevance": "high"
+          },
+          {
+           "actor_id": "AP017",
+           "relevance": "high"
+          },
+          {
+           "actor_id": "AP018",
+           "relevance": "high"
+          },
+          {
+           "actor_id": "AP019",
+           "relevance": "high"
+          },
+          {
+           "actor_id": "AP020",
+           "relevance": "high"
+          },
+          {
+           "actor_id": "AP023",
+           "relevance": "medium"
+          },
+          {
+           "actor_id": "AP024",
+           "relevance": "medium"
+          }
+         ],
+         "source_refs": [
+          "GULYASH-FIELD-OPS-2004-2026",
+          "FBI-PREATTACK-2018",
+          "NTAC-MASS-2021"
+         ],
+         "response_protocols": [
+          {
+           "id": "RP-F0101-01",
+           "trigger": "One or more Facility Target Selection indicators reported (grievance naming the facility, research into the site, third-party statements of intent against the place)",
+           "action": "Open or update the facility threat case. Conduct a 24-hour preliminary assessment: (a) corroborate the observation, (b) review the digital footprint of any identified actor, (c) assess the facility's current symbolic exposure and occupancy profile, (d) brief facility security leadership on posture. Document all sourcing.",
+           "stakeholders": [
+            "threat_management_team",
+            "security_operations",
+            "protective_operations"
+           ],
+           "priority": "priority",
+           "escalation_trigger": "Actor identified with apparent means and proximity to the facility, OR indicators across other facility tactics surface for the same actor",
+           "coordinates_with": [
+            "RP-F0102-01",
+            "RP-F0103-01"
+           ],
+           "legal_notes": "Monitoring of an identified actor may implicate privacy and anti-stalking statutes that vary by jurisdiction. Consult counsel before active monitoring; document the investigative basis for any action.",
+           "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+           ]
+          },
+          {
+           "id": "RP-F0101-02",
+           "trigger": "Credible symbolic-targeting signal against the facility class (anniversary, news event, or extremist campaign) without a named individual actor",
+           "action": "Elevate facility posture for the exposure window: increase visible security presence, brief staff on reporting, review access controls and standoff, and coordinate with local law enforcement on patrol emphasis. Reassess at window close.",
+           "stakeholders": [
+            "security_operations",
+            "protective_operations",
+            "law_enforcement"
+           ],
+           "priority": "routine",
+           "escalation_trigger": "Symbolic signal resolves to a specific actor or a specific date-certain threat",
+           "coordinates_with": [
+            "RP-F0101-01"
+           ],
+           "legal_notes": "Posture changes are within facility authority; document the threat basis to support any resource requests and to defend proportionality.",
+           "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026"
+           ]
+          }
+         ],
+         "field_notes": "Facility target selection is usually inferred backward from what the actor says and searches, not caught in the act of deciding. The clearest early tell is a grievance that fixes on a place rather than a person \u2014 'that clinic,' 'the mosque on Main,' 'their headquarters' \u2014 paired with research that treats the building as the objective: hours, tenants, what it represents. Symbolic targets get selected for what their destruction communicates, so anniversary dates and news cycles matter. The hard part is that most of the selection signal is expressive (statements, searches) and looks like protected speech until it pairs with acquisition or reconnaissance.",
+         "observed_contexts": [
+          "ideologically motivated actor naming a specific place of worship in grievance posts weeks before a reconnaissance visit",
+          "arson case where the actor researched a clinic's hours and staffing before selecting it over two nearer facilities",
+          "actor referencing a prior high-profile facility attack as a model and asking how the target had been chosen",
+          "[literature: NTAC-MASS-2021 / FBI-PREATTACK-2018 pattern \u2014 grievance-driven fixation on a symbolic site preceding facility attacks]"
+         ],
+         "evidence_basis": "operational_primary"
+        }
+      ],
       "scope": "Tactics centered on a physical venue, structure, or built environment as the primary target. The adversary's primary objective is damage, destruction, denial, or symbolic action against the place itself. Incidental human harm in an unoccupied facility does not move the tactic to People."
     },
     "organization": {
