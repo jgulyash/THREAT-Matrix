@@ -46,16 +46,19 @@ and JSON Schema are both at `1.2.2` as of the latest release.
   positioning/timing/bystander behavior with high blast but moderate impact
   reads high, not critical.
 
-- **Direct-harm severity floor.** Behaviors that apply direct physical force to
-  a person (weapon discharge, ramming, detonation, physical assault, overpowering
-  personnel, seizing/restraining a person) now carry a `severity_floor` of `high`
-  — `severity_band` is the greater of the computed band and that floor. On the
-  pure severity axes a single-victim, hands-on, highly-observable assault computes
-  to medium (low blast, high detectability); operational triage always escalates
-  direct violence against a person, so three such behaviors move medium → high.
-  `escalation_weight` is left unchanged (it stays the honest severity computation);
-  the floor is a documented triage rule (`escalation_rubric.severity_floor_rule`),
-  not a change to the formula.
+- **Casualty severity floor.** Behaviors that apply direct physical force to a
+  person (weapon discharge, ramming, detonation, physical assault, overpowering
+  personnel, taking/restraining a person, injuring a captive) carry a
+  `severity_floor` of `critical` — `severity_band` is the greater of the computed
+  band and that floor. A casualty is critical at any scale: the severity math
+  gates the top band on `blast_radius` (population scope), which would leave a
+  single-victim killing at high and reserve critical for mass-casualty events,
+  but for triage any application of force to a person is top-priority. Seven such
+  behaviors move to critical (three were already critical by weight), taking the
+  People-matrix criticals to 13. `escalation_weight` is left unchanged, so the
+  severity gradient between a single assault (~4.6) and a mass bombing (~8.7) is
+  preserved even though both band as critical. Documented triage rule
+  (`escalation_rubric.severity_floor_rule`), not a formula change.
 
 - **impact_potential re-spread as a pathway severity gradient.** impact was
   clustered at 7.0–8.0 because every behavior presages a lethal attack, forcing

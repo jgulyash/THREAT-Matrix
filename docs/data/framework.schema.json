@@ -597,9 +597,10 @@
         "severity_floor": {
           "type": "string",
           "enum": [
-            "high"
+            "high",
+            "critical"
           ],
-          "description": "V1.3 triage floor. Present on indicators whose behavior applies direct physical force to a person; forces severity_band to at least this value regardless of the computed escalation_weight (which is left unchanged). See escalation_rubric.severity_floor_rule."
+          "description": "V1.3 triage floor. Present on indicators whose behavior applies direct physical force to a person; forces severity_band to at least this value regardless of the computed escalation_weight (which is left unchanged). Currently 'critical' for all such behaviors — a casualty is critical at any scale. See escalation_rubric.severity_floor_rule."
         },
         "informs_axes": {
           "type": "object",
