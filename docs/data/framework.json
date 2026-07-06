@@ -15634,7 +15634,18 @@
       "date": "2010-2025",
       "url": null,
       "doi": null,
-      "relevance_summary": "Pattern documentation synthesized from 15+ years of practitioner work across federal law enforcement, corporate security, and intelligence roles, spanning dozens of domestic and international partner organizations. Tactics, indicators, and countermeasures cited to this source reflect recurring patterns observed in operational practice. Individual cases are not disclosable; the patterns are attestable. Patterns are validated by cross-reference with published threat-assessment literature where possible."
+      "relevance_summary": "Pattern documentation synthesized from 15+ years of practitioner work across federal law enforcement, corporate security, and intelligence roles, spanning dozens of domestic and international partner organizations. Tactics, indicators, and countermeasures cited to this source reflect recurring patterns observed in operational practice. Individual cases are not disclosable; the patterns are attestable. Patterns are validated by cross-reference with published threat-assessment literature where possible.",
+      "matrices": [
+        "person",
+        "facility",
+        "organization",
+        "infrastructure"
+      ],
+      "topics": [
+        "threat_assessment",
+        "protective_intelligence",
+        "insider_threat"
+      ]
     },
     "FEIN-VOSSEKUIL-1999": {
       "type": "academic_paper",
@@ -15643,7 +15654,14 @@
       "date": "1999",
       "url": "https://doi.org/10.1520/JFS14457J",
       "doi": "10.1520/JFS14457J",
-      "relevance_summary": "Foundational pathway model for targeted violence: grievance to ideation to research/planning to preparation to breach to attack. Established that violence is a process with observable behavioral stages."
+      "relevance_summary": "Foundational pathway model for targeted violence: grievance to ideation to research/planning to preparation to breach to attack. Established that violence is a process with observable behavioral stages.",
+      "matrices": [
+        "person"
+      ],
+      "topics": [
+        "target_selection",
+        "threat_assessment"
+      ]
     },
     "NTAC-MASS-2021": {
       "type": "government_report",
@@ -15652,7 +15670,15 @@
       "date": "2021",
       "url": "https://www.secretservice.gov/sites/default/files/reports/2023-01/usss-ntac-mass-attacks-public-spaces-2016-2020.pdf",
       "doi": null,
-      "relevance_summary": "Behavioral analysis of 173 mass attack incidents including pre-attack grievance patterns, communication of intent, target selection factors, and resource acquisition behaviors."
+      "relevance_summary": "Behavioral analysis of 173 mass attack incidents including pre-attack grievance patterns, communication of intent, target selection factors, and resource acquisition behaviors.",
+      "matrices": [
+        "person",
+        "facility"
+      ],
+      "topics": [
+        "mass_attack",
+        "target_selection"
+      ]
     },
     "NTAC-SCHOOLS-2019": {
       "type": "government_report",
@@ -15661,7 +15687,15 @@
       "date": "2019",
       "url": "https://www.secretservice.gov/data/protection/ntac/usss-analysis-of-targeted-school-violence.pdf",
       "doi": null,
-      "relevance_summary": "Analysis of targeted school violence incidents documenting social stressors, concerning communications, research on prior attacks, and site-specific planning as pre-attack behavioral indicators."
+      "relevance_summary": "Analysis of targeted school violence incidents documenting social stressors, concerning communications, research on prior attacks, and site-specific planning as pre-attack behavioral indicators.",
+      "matrices": [
+        "person",
+        "facility"
+      ],
+      "topics": [
+        "mass_attack",
+        "threat_assessment"
+      ]
     },
     "NTAC-AVERTED-2021": {
       "type": "government_report",
@@ -15670,7 +15704,15 @@
       "date": "2021",
       "url": "https://www.secretservice.gov/data/protection/ntac/usss-averting-targeted-school-violence.pdf",
       "doi": null,
-      "relevance_summary": "Analysis of averted plots capturing the full Phase 1-2 behavioral arc without execution. Shows what planning and mobilization look like when detected and interrupted."
+      "relevance_summary": "Analysis of averted plots capturing the full Phase 1-2 behavioral arc without execution. Shows what planning and mobilization look like when detected and interrupted.",
+      "matrices": [
+        "person",
+        "facility"
+      ],
+      "topics": [
+        "mass_attack",
+        "threat_assessment"
+      ]
     },
     "MELOY-TRAP18-2016": {
       "type": "academic_paper",
@@ -15679,7 +15721,13 @@
       "date": "2016",
       "url": "https://doi.org/10.1037/tam0000061",
       "doi": "10.1037/tam0000061",
-      "relevance_summary": "Terrorist Radicalization Assessment Protocol with 8 proximal warning behaviors and 10 distal characteristics, used to assess lone-actor radicalization trajectories."
+      "relevance_summary": "Terrorist Radicalization Assessment Protocol with 8 proximal warning behaviors and 10 distal characteristics, used to assess lone-actor radicalization trajectories.",
+      "matrices": [
+        "person"
+      ],
+      "topics": [
+        "threat_assessment"
+      ]
     },
     "FBI-PREATTACK-2018": {
       "type": "government_report",
@@ -15688,7 +15736,15 @@
       "date": "2018",
       "url": "https://www.fbi.gov/file-repository/pre-attack-behaviors-of-active-shooters-in-us-2000-2013.pdf",
       "doi": null,
-      "relevance_summary": "Study of 63 active shooters documenting behavioral changes in mental health, interpersonal interactions, leakage, and weapons behaviors in the weeks and months before attacks."
+      "relevance_summary": "Study of 63 active shooters documenting behavioral changes in mental health, interpersonal interactions, leakage, and weapons behaviors in the weeks and months before attacks.",
+      "matrices": [
+        "person"
+      ],
+      "topics": [
+        "active_shooter",
+        "mass_attack",
+        "threat_assessment"
+      ]
     },
     "CERT-CSG-7-2022": {
       "type": "practitioner_guide",
@@ -15697,7 +15753,14 @@
       "date": "2022",
       "url": null,
       "doi": null,
-      "relevance_summary": "Comprehensive insider threat mitigation guide based on 1000+ cases. Defines behavioral, digital, psychological, and contextual indicator categories with multi-disciplinary response protocols."
+      "relevance_summary": "Comprehensive insider threat mitigation guide based on 1000+ cases. Defines behavioral, digital, psychological, and contextual indicator categories with multi-disciplinary response protocols.",
+      "matrices": [
+        "person",
+        "organization"
+      ],
+      "topics": [
+        "insider_threat"
+      ]
     },
     "NITTF-GUIDE-2017": {
       "type": "government_report",
@@ -15706,7 +15769,14 @@
       "date": "2017",
       "url": null,
       "doi": null,
-      "relevance_summary": "Federal insider threat program minimum standards including hub/spoke detection model, 5-tier escalation framework (awareness through response), and stakeholder involvement matrix."
+      "relevance_summary": "Federal insider threat program minimum standards including hub/spoke detection model, 5-tier escalation framework (awareness through response), and stakeholder involvement matrix.",
+      "matrices": [
+        "person",
+        "organization"
+      ],
+      "topics": [
+        "insider_threat"
+      ]
     },
     "ASIS-WVPI-2021": {
       "type": "standard",
@@ -15715,7 +15785,14 @@
       "date": "2021",
       "url": null,
       "doi": null,
-      "relevance_summary": "ANSI standard defining Threat Assessment Team model, behavioral escalation indicators, 5-level response protocol, and timing windows for workplace violence prevention."
+      "relevance_summary": "ANSI standard defining Threat Assessment Team model, behavioral escalation indicators, 5-level response protocol, and timing windows for workplace violence prevention.",
+      "matrices": [
+        "person",
+        "organization"
+      ],
+      "topics": [
+        "threat_assessment"
+      ]
     },
     "CISA-DIT-2023": {
       "type": "government_report",
@@ -15724,7 +15801,14 @@
       "date": "2023",
       "url": "https://www.cisa.gov/topics/physical-security/insider-threat-mitigation",
       "doi": null,
-      "relevance_summary": "CISA insider threat definition framework with published behavioral indicator list organized by intentional vs. unintentional categories."
+      "relevance_summary": "CISA insider threat definition framework with published behavioral indicator list organized by intentional vs. unintentional categories.",
+      "matrices": [
+        "person",
+        "organization"
+      ],
+      "topics": [
+        "insider_threat"
+      ]
     },
     "FEIN-VOSSEKUIL-HOLDEN-1995": {
       "type": "government_report",
@@ -15733,7 +15817,13 @@
       "date": "1995",
       "url": null,
       "doi": null,
-      "relevance_summary": "NIJ Research in Action report establishing threat assessment as the preferred approach over threat profiling. Focus on behaviors over traits for targeted violence prevention."
+      "relevance_summary": "NIJ Research in Action report establishing threat assessment as the preferred approach over threat profiling. Focus on behaviors over traits for targeted violence prevention.",
+      "matrices": [
+        "person"
+      ],
+      "topics": [
+        "threat_assessment"
+      ]
     },
     "NTAC-SYSTEMS-2020": {
       "type": "government_report",
@@ -15742,7 +15832,13 @@
       "date": "2020",
       "url": null,
       "doi": null,
-      "relevance_summary": "Practitioner methodology for systematic threat assessment investigations. 10-step framework for threat management teams applied to organizational settings."
+      "relevance_summary": "Practitioner methodology for systematic threat assessment investigations. 10-step framework for threat management teams applied to organizational settings.",
+      "matrices": [
+        "person"
+      ],
+      "topics": [
+        "threat_assessment"
+      ]
     },
     "CISA-CONVERGE-2021": {
       "type": "government_report",
@@ -15751,7 +15847,16 @@
       "date": "2021",
       "url": null,
       "doi": null,
-      "relevance_summary": "Identifies converged physical-cyber insider threat indicators including badge/network anomaly correlation, physical surveillance combined with digital reconnaissance, and cross-domain detection integration."
+      "relevance_summary": "Identifies converged physical-cyber insider threat indicators including badge/network anomaly correlation, physical surveillance combined with digital reconnaissance, and cross-domain detection integration.",
+      "matrices": [
+        "person",
+        "organization",
+        "infrastructure"
+      ],
+      "topics": [
+        "insider_threat",
+        "cyber_physical"
+      ]
     },
     "LLNL-TR-858139": {
       "type": "government_report",
@@ -15760,7 +15865,17 @@
       "date": "2023",
       "url": "https://doi.org/10.2172/2229613",
       "doi": "10.2172/2229613",
-      "relevance_summary": "DOE/NNSA-sponsored requirements study evaluating whether any existing methodology could serve as a structured framework for characterizing physical adversary action. Concluded existing frameworks are inadequate."
+      "relevance_summary": "DOE/NNSA-sponsored requirements study evaluating whether any existing methodology could serve as a structured framework for characterizing physical adversary action. Concluded existing frameworks are inadequate.",
+      "matrices": [
+        "person",
+        "facility",
+        "organization",
+        "infrastructure"
+      ],
+      "topics": [
+        "risk_methodology",
+        "threat_assessment"
+      ]
     },
     "KIM-JONGNAM-KUL-2017": {
       "type": "news_investigation",
@@ -15769,7 +15884,13 @@
       "date": "2017",
       "url": "https://www.lowyinstitute.org/the-interpreter/making-murderer-assassination-kim-jong-nam",
       "doi": null,
-      "relevance_summary": "Documents the 13 February 2017 assassination of Kim Jong-nam at Kuala Lumpur International Airport, including the recruitment of two women under a 'prank video for a TV show' media-production cover who applied VX nerve agent without knowing they were committing the assassination. The case is the canonical operational example of bystander recruitment through media-production deception. The Lowy Institute analysis is cited as the operationally focused source; comparable coverage is available from major international news organizations including NPR and CNN."
+      "relevance_summary": "Documents the 13 February 2017 assassination of Kim Jong-nam at Kuala Lumpur International Airport, including the recruitment of two women under a 'prank video for a TV show' media-production cover who applied VX nerve agent without knowing they were committing the assassination. The case is the canonical operational example of bystander recruitment through media-production deception. The Lowy Institute analysis is cited as the operationally focused source; comparable coverage is available from major international news organizations including NPR and CNN.",
+      "matrices": [
+        "person"
+      ],
+      "topics": [
+        "target_selection"
+      ]
     },
     "CHAINALYSIS-CCR-2024": {
       "type": "incident_database",
@@ -15778,7 +15899,507 @@
       "date": "2024",
       "url": "https://www.chainalysis.com/crypto-crime-report/",
       "doi": null,
-      "relevance_summary": "Annual industry report on illicit cryptocurrency flows, ransomware payment patterns, mixing service activity, and the operational characteristics of blockchain-forensics tracing across the cryptocurrency landscape. Cited in TM0405 Financial Disposition where blockchain-forensics tracing capability informs analyst reads on financial-disposition timelines."
+      "relevance_summary": "Annual industry report on illicit cryptocurrency flows, ransomware payment patterns, mixing service activity, and the operational characteristics of blockchain-forensics tracing across the cryptocurrency landscape. Cited in TM0405 Financial Disposition where blockchain-forensics tracing capability informs analyst reads on financial-disposition timelines.",
+      "matrices": [
+        "organization",
+        "person"
+      ],
+      "topics": [
+        "financial_crime",
+        "incident_data"
+      ]
+    },
+    "START-GTD-2020": {
+      "type": "incident_database",
+      "title": "Global Terrorism Database (GTD)",
+      "author": "National Consortium for the Study of Terrorism and Responses to Terrorism (START), University of Maryland",
+      "date": "2021",
+      "url": "https://www.start.umd.edu/research-projects/global-terrorism-database-gtd",
+      "doi": null,
+      "relevance_summary": "Incident-level database of 200,000+ terrorist events (1970-2020) coded by target type and by nine attack types, including discrete Facility/Infrastructure Attack and Barricade (hostage-taking) categories. Empirical grounding for facility target selection and attack-type distribution.",
+      "matrices": [
+        "person",
+        "facility",
+        "organization",
+        "infrastructure"
+      ],
+      "topics": [
+        "incident_data",
+        "target_selection"
+      ]
+    },
+    "DHS-ISC-RMP-2021": {
+      "type": "standard",
+      "title": "The Risk Management Process for Federal Facilities: An Interagency Security Committee Standard",
+      "author": "U.S. Department of Homeland Security / CISA Interagency Security Committee (ISC)",
+      "date": "2021",
+      "url": "https://www.wbdg.org/FFC/DHS/isc_risk_mgmt_process_2021.pdf",
+      "doi": null,
+      "relevance_summary": "The U.S. government standard for determining Facility Security Levels and selecting baseline physical-security countermeasures for nonmilitary federal facilities. Defines the undesirable-event set (bombing, arson, forced entry, contamination) and the threat/vulnerability/consequence methodology.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "risk_methodology",
+        "threat_assessment"
+      ]
+    },
+    "SANDIA-RAM-2008": {
+      "type": "government_report",
+      "title": "Overview of Sandia's Security Risk Assessment Methodologies (SAND2008-1604P)",
+      "author": "Jaeger, C.D., Sandia National Laboratories (USDOE/NNSA)",
+      "date": "2008",
+      "url": "https://www.osti.gov/biblio/1713138",
+      "doi": null,
+      "relevance_summary": "Overview of Sandia's family of facility risk-assessment methodologies (RAM-W, RAM-C, and variants) for adversary-path and vulnerability assessment of critical facilities.",
+      "matrices": [
+        "facility",
+        "infrastructure"
+      ],
+      "topics": [
+        "risk_methodology"
+      ]
+    },
+    "SANDIA-GARCIA-DEPPS-2007": {
+      "type": "book",
+      "title": "Design and Evaluation of Physical Protection Systems, 2nd Edition",
+      "author": "Garcia, M.L., Sandia National Laboratories (Butterworth-Heinemann / Elsevier)",
+      "date": "2007",
+      "url": "https://shop.elsevier.com/books/design-and-evaluation-of-physical-protection-systems/garcia/978-0-08-055428-0",
+      "doi": null,
+      "relevance_summary": "Foundational text on designing and evaluating facility physical protection systems via detection-delay-response and adversary-sequence path analysis. Methodological backbone for forced-entry and structural-attack delay scoring. ISBN 9780750683524.",
+      "matrices": [
+        "facility",
+        "infrastructure"
+      ],
+      "topics": [
+        "physical_protection_systems",
+        "risk_methodology"
+      ]
+    },
+    "SANDIA-GARCIA-VAPPS-2006": {
+      "type": "book",
+      "title": "Vulnerability Assessment of Physical Protection Systems",
+      "author": "Garcia, M.L., Sandia National Laboratories (Butterworth-Heinemann / Elsevier)",
+      "date": "2006",
+      "url": "https://shop.elsevier.com/books/vulnerability-assessment-of-physical-protection-systems/garcia/978-0-7506-7788-2",
+      "doi": null,
+      "relevance_summary": "Sandia's end-to-end vulnerability-assessment process for evaluating how a facility's protection system withstands adversary path and breach scenarios. ISBN 9780750677882.",
+      "matrices": [
+        "facility",
+        "infrastructure"
+      ],
+      "topics": [
+        "physical_protection_systems",
+        "risk_methodology"
+      ]
+    },
+    "ATF-EIR-2024": {
+      "type": "government_report",
+      "title": "United States Bomb Data Center (USBDC) Explosives Incident Report (EIR)",
+      "author": "Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF), U.S. Bomb Data Center",
+      "date": "2025",
+      "url": "https://www.atf.gov/explosives/enforcement-tools-services/us-bomb-data-center",
+      "doi": null,
+      "relevance_summary": "Annual national tally of explosions, bombings, device recoveries, suspicious packages, and bomb threats drawn from the Bomb Arson Tracking System (BATS). Direct base rates for IED/VBIED tactics against facilities. Latest edition CY2024.",
+      "matrices": [
+        "facility",
+        "infrastructure",
+        "person"
+      ],
+      "topics": [
+        "bombing",
+        "incident_data"
+      ]
+    },
+    "CISA-BOMBTHREAT-2023": {
+      "type": "government_report",
+      "title": "Bomb Threat Guide (Version 1.9)",
+      "author": "Cybersecurity and Infrastructure Security Agency (CISA), Office for Bombing Prevention",
+      "date": "2023",
+      "url": "https://www.cisa.gov/resources-tools/resources/bomb-threat-guide",
+      "doi": null,
+      "relevance_summary": "Federal operational guidance on bomb-threat assessment, evacuate-vs-shelter decisions, and standoff distances by device size. Informs facility bombing-response protocols and protective measures.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "bombing"
+      ]
+    },
+    "FEMA-426-2011": {
+      "type": "government_report",
+      "title": "Reference Manual to Mitigate Potential Terrorist Attacks Against Buildings (FEMA-426 / BIPS-06), 2nd Edition",
+      "author": "U.S. Department of Homeland Security Science & Technology Directorate / FEMA (Buildings and Infrastructure Protection Series)",
+      "date": "2011",
+      "url": "https://www.wbdg.org/dhs/criteria/bips-06",
+      "doi": null,
+      "relevance_summary": "The definitive U.S. engineering-mitigation reference on blast effects against buildings, standoff distance, progressive-collapse and structural hardening, and a dedicated chemical/biological/radiological (CBR) protection chapter. Multi-domain facility source.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "bombing",
+        "structural_sabotage",
+        "vehicle_ramming",
+        "cbrn_contamination",
+        "physical_protection_systems"
+      ]
+    },
+    "ATF-AIR-2023": {
+      "type": "government_report",
+      "title": "United States Bomb Data Center (USBDC) Arson Incident Report (AIR), Calendar Year 2023",
+      "author": "Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF), U.S. Bomb Data Center",
+      "date": "2024",
+      "url": "https://www.atf.gov/resource-center/docs/report/2023arsonincidentreportpdf/download",
+      "doi": null,
+      "relevance_summary": "National arson and incendiary-fire incident dataset from BATS, giving structure-fire arson counts, target types, and incendiary methods. Companion to the ATF Explosives Incident Report.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "arson",
+        "incident_data"
+      ]
+    },
+    "NFPA-INTENTIONAL-2021": {
+      "type": "incident_database",
+      "title": "Intentional Structure Fires",
+      "author": "Campbell, R., National Fire Protection Association (NFPA)",
+      "date": "2021",
+      "url": "https://www.nfpa.org/education-and-research/research/nfpa-research/fire-statistical-reports/intentional-fires",
+      "doi": null,
+      "relevance_summary": "NFPA's statistical analysis of deliberately set structure fires: timing, property-use distribution, area of origin, and casualty/loss patterns. Base rates distinguishing intentional structure fires from accidental.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "arson",
+        "incident_data"
+      ]
+    },
+    "DOD-UFC4010-2018": {
+      "type": "standard",
+      "title": "UFC 4-010-01 DoD Minimum Antiterrorism Standards for Buildings (with Change 3)",
+      "author": "U.S. Department of Defense (Unified Facilities Criteria)",
+      "date": "2018",
+      "url": "https://www.wbdg.org/FFC/DOD/UFC/ufc_4_010_01_2018_c3.pdf",
+      "doi": null,
+      "relevance_summary": "Mandatory DoD standoff-distance, structural-hardening, and progressive-collapse-avoidance criteria for buildings. The authoritative standard for facility hardening against blast, forced entry, and vehicle attack.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "structural_sabotage",
+        "forced_entry",
+        "vehicle_ramming",
+        "bombing",
+        "physical_protection_systems"
+      ]
+    },
+    "DOD-UFC4022-2017": {
+      "type": "standard",
+      "title": "UFC 4-022-01 Security Engineering: Entry Control Facilities / Access Control Points",
+      "author": "U.S. Department of Defense (Unified Facilities Criteria)",
+      "date": "2017",
+      "url": "https://www.wbdg.org/dod/ufc/ufc-4-022-01",
+      "doi": null,
+      "relevance_summary": "Design criteria for entry-control facilities, active vehicle barriers, and access-point layout to defeat forced or unauthorized entry and vehicle breach at a facility perimeter.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "forced_entry",
+        "vehicle_ramming",
+        "physical_protection_systems"
+      ]
+    },
+    "ASTM-F2656-2020": {
+      "type": "standard",
+      "title": "ASTM F2656/F2656M-20 Standard Test Method for Crash Testing of Vehicle Security Barriers",
+      "author": "ASTM International",
+      "date": "2020",
+      "url": "https://webstore.ansi.org/standards/astm/astmf2656f2656m20",
+      "doi": null,
+      "relevance_summary": "The U.S. impact-test standard establishing M-rating (mass/speed) and P-rating (penetration) for perimeter and entry vehicle barriers. International equivalents: PAS 68 (BSI), IWA 14-1 (ISO).",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "vehicle_ramming",
+        "physical_protection_systems"
+      ]
+    },
+    "CISA-HVM-2024": {
+      "type": "government_report",
+      "title": "Vehicle Incident Prevention and Mitigation Security Guide",
+      "author": "Cybersecurity and Infrastructure Security Agency (CISA)",
+      "date": "2024",
+      "url": "https://www.cisa.gov/topics/physical-security/hostile-vehicle-mitigation",
+      "doi": null,
+      "relevance_summary": "Reference on vehicle-as-weapon attacks against crowded places and facility perimeters, with a Plan-Prevent-Protect framework and hostile-vehicle-mitigation barrier/bollard countermeasures.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "vehicle_ramming",
+        "soft_targets"
+      ]
+    },
+    "CISA-SOFTTARGETS-2019": {
+      "type": "government_report",
+      "title": "Security of Soft Targets and Crowded Places - Resource Guide",
+      "author": "U.S. Department of Homeland Security / CISA",
+      "date": "2019",
+      "url": "https://www.cisa.gov/resources-tools/resources/security-soft-targets-and-crowded-places-resource-guide",
+      "doi": null,
+      "relevance_summary": "Federal reference framework defining soft targets and crowded places (venues, houses of worship, malls) and protective measures against active-assailant, IED, UAS, and vehicle-ramming attacks.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "soft_targets",
+        "target_selection"
+      ]
+    },
+    "RAND-SOFTTARGETS-2024": {
+      "type": "government_report",
+      "title": "Improving the Security of Soft Targets and Crowded Places: A Landscape Assessment (RRA2260-1)",
+      "author": "Homeland Security Operational Analysis Center, RAND Corporation",
+      "date": "2024",
+      "url": "https://www.rand.org/pubs/research_reports/RRA2260-1.html",
+      "doi": null,
+      "relevance_summary": "Evidence-based landscape assessment of soft-target and crowded-place attacks: education and workplace buildings most frequently targeted; houses of worship, malls, and venues highest average lethality. Informs facility target-selection lethality weighting.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "soft_targets",
+        "target_selection",
+        "incident_data"
+      ]
+    },
+    "FBI-ACTIVESHOOTER-2024": {
+      "type": "government_report",
+      "title": "Active Shooter Incidents in the United States in 2024",
+      "author": "Federal Bureau of Investigation / ALERRT Center, Texas State University",
+      "date": "2025",
+      "url": "https://www.fbi.gov/file-repository/reports-and-publications/2024-active-shooter-report/view",
+      "doi": null,
+      "relevance_summary": "Categorizes every U.S. active-shooter incident by facility location type (commerce, education, government, houses of worship, healthcare, open space), giving the authoritative distribution of armed-assault attacks across facility categories.",
+      "matrices": [
+        "facility",
+        "person"
+      ],
+      "topics": [
+        "active_shooter",
+        "soft_targets",
+        "incident_data"
+      ]
+    },
+    "NIOSH-BLDG-CBR-2002": {
+      "type": "government_report",
+      "title": "Guidance for Protecting Building Environments from Airborne Chemical, Biological, or Radiological Attacks (DHHS/NIOSH Pub. 2002-139)",
+      "author": "National Institute for Occupational Safety and Health (NIOSH) / CDC",
+      "date": "2002",
+      "url": "https://www.cdc.gov/niosh/docs/2002-139/",
+      "doi": null,
+      "relevance_summary": "The canonical U.S. government reference on HVAC and air-handling systems as a chemical/biological/radiological attack vector: ventilation/filtration hardening, physical security of air intakes, and airborne release inside buildings.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "cbrn_contamination",
+        "building_systems_sabotage"
+      ]
+    },
+    "NIST-SP800-82-2023": {
+      "type": "standard",
+      "title": "Guide to Operational Technology (OT) Security (NIST Special Publication 800-82 Revision 3)",
+      "author": "Stouffer, K., et al., National Institute of Standards and Technology",
+      "date": "2023",
+      "url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final",
+      "doi": "10.6028/NIST.SP.800-82r3",
+      "relevance_summary": "Authoritative federal standard for securing operational technology (OT/ICS/SCADA), explicitly covering building automation systems (BAS) and IT/OT convergence as an attack surface. Canonical for cyber-physical attacks on building controls.",
+      "matrices": [
+        "facility",
+        "infrastructure"
+      ],
+      "topics": [
+        "cyber_physical",
+        "building_systems_sabotage"
+      ]
+    },
+    "GAO-15-6-2014": {
+      "type": "government_report",
+      "title": "Federal Facility Cybersecurity: DHS and GSA Should Address Cyber Risk to Building and Access Control Systems (GAO-15-6)",
+      "author": "U.S. Government Accountability Office",
+      "date": "2014",
+      "url": "https://www.gao.gov/products/gao-15-6",
+      "doi": null,
+      "relevance_summary": "Documents that building control systems (elevators, electrical, HVAC) and electronic access-control systems at ~9,000 federal facilities are internet-connected and vulnerable to cyber-attack, with a 74% rise in building/access-control cyber incidents FY2011-2014.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "cyber_physical",
+        "building_systems_sabotage"
+      ]
+    },
+    "GAO-19-138-2018": {
+      "type": "government_report",
+      "title": "Federal Building Security: Actions Needed to Help Achieve Vision for Secure, Interoperable Physical Access Control (GAO-19-138)",
+      "author": "U.S. Government Accountability Office",
+      "date": "2018",
+      "url": "https://www.gao.gov/products/gao-19-138",
+      "doi": null,
+      "relevance_summary": "Focused treatment of Physical Access Control Systems (PACS) - card/reader/credential infrastructure - across federal buildings, including interoperability and oversight gaps exploitable in access-control compromise.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "cyber_physical",
+        "forced_entry"
+      ]
+    },
+    "GAO-24-106744-2024": {
+      "type": "government_report",
+      "title": "Critical Infrastructure Protection: EPA Urgently Needs a Strategy to Address Cybersecurity Risks to Water and Wastewater Systems (GAO-24-106744)",
+      "author": "U.S. Government Accountability Office",
+      "date": "2024",
+      "url": "https://www.gao.gov/products/gao-24-106744",
+      "doi": null,
+      "relevance_summary": "Assesses cyber vulnerability of ~170,000 U.S. water systems, naming unsafe drinking-water contamination as a consequence of operational-technology compromise. Bridges water-system security and contamination-via-systems-sabotage.",
+      "matrices": [
+        "facility",
+        "infrastructure"
+      ],
+      "topics": [
+        "cyber_physical",
+        "cbrn_contamination",
+        "building_systems_sabotage"
+      ]
+    },
+    "NAF-CLINICVIOLENCE-2024": {
+      "type": "incident_database",
+      "title": "NAF 2024 Violence & Disruption Statistics",
+      "author": "National Abortion Federation (NAF)",
+      "date": "2024",
+      "url": "https://nationalabortionfederation.org/safety-security/2024-naf-violence-disruption/",
+      "doi": null,
+      "relevance_summary": "The definitive longitudinal dataset on ideologically motivated attacks against reproductive-health facilities since 1977: murders, bombings, ~200 arsons, clinic invasions, blockades and occupations. Core source for symbolic/ideological facility attacks and the occupation/blockade tactic.",
+      "matrices": [
+        "facility",
+        "person"
+      ],
+      "topics": [
+        "symbolic_ideological",
+        "arson",
+        "bombing",
+        "occupation_siege",
+        "incident_data"
+      ]
+    },
+    "CTC-INFRATERROR-2026": {
+      "type": "academic_paper",
+      "title": "From Earth Liberation to Accelerationism: A High-Level Review of Fifty Years of Domestic Infrastructure Terrorism (CTC Sentinel 19:3)",
+      "author": "Humpal, J., Combating Terrorism Center at West Point",
+      "date": "2026",
+      "url": "https://ctc.westpoint.edu/from-earth-liberation-to-accelerationism-a-high-level-review-of-fifty-years-of-domestic-infrastructure-terrorism/",
+      "doi": null,
+      "relevance_summary": "Original 194-incident dataset of extremist attacks and plots on U.S. critical-infrastructure facilities (1970-2025), tracing the shift from eco-sabotage arson to accelerationist electrical-grid and substation attacks. Recent scholarly source for symbolic/economic facility targeting.",
+      "matrices": [
+        "facility",
+        "infrastructure"
+      ],
+      "topics": [
+        "symbolic_ideological",
+        "arson",
+        "incident_data"
+      ]
+    },
+    "USFA-ARSON-2021": {
+      "type": "government_report",
+      "title": "Arson and Fire Investigation",
+      "author": "U.S. Fire Administration (USFA), FEMA",
+      "date": "2021",
+      "url": "https://www.usfa.fema.gov/a-z/arson-fire-investigation/",
+      "doi": null,
+      "relevance_summary": "USFA national arson analysis and Topical Fire Report series covering motive categories, incendiary methods, and structure-fire arson trends. A second federal voice complementing NFPA and the ATF Arson Incident Report.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "arson",
+        "incident_data"
+      ]
+    },
+    "DHS-STCP-2018": {
+      "type": "government_report",
+      "title": "Soft Targets and Crowded Places Security Plan Overview",
+      "author": "U.S. Department of Homeland Security",
+      "date": "2018",
+      "url": "https://www.hsdl.org/?abstract=&did=812763",
+      "doi": null,
+      "relevance_summary": "DHS's coordinated national approach to securing easily accessible, low-security public spaces (venues, schools, transit) against attack. Companion to the CISA Soft Targets Resource Guide.",
+      "matrices": [
+        "facility"
+      ],
+      "topics": [
+        "soft_targets",
+        "target_selection"
+      ]
+    },
+    "CISA-CFATS-2023": {
+      "type": "government_report",
+      "title": "Chemical Facility Anti-Terrorism Standards (CFATS)",
+      "author": "U.S. Department of Homeland Security / CISA",
+      "date": "2023",
+      "url": "https://www.cisa.gov/resources-tools/programs/chemical-facility-anti-terrorism-standards-cfats",
+      "doi": null,
+      "relevance_summary": "Chemical-facility security framework covering 300+ Chemicals of Interest and theft/diversion/release/sabotage security-issue categories. NOTE: statutory authority lapsed July 28, 2023 - cite as a historical/reference framework, not active regulation.",
+      "matrices": [
+        "facility",
+        "infrastructure"
+      ],
+      "topics": [
+        "cbrn_contamination",
+        "building_systems_sabotage"
+      ]
+    },
+    "FBI-HOBAS-2024": {
+      "type": "government_report",
+      "title": "Leveraging Data to Predict Outcomes in Hostage and Barricade Incidents (FBI HOBAS)",
+      "author": "Federal Bureau of Investigation, Law Enforcement Bulletin",
+      "date": "2024",
+      "url": "https://leb.fbi.gov/articles/featured-articles/leveraging-data-to-predict-outcomes-in-hostage-and-barricade-incidents",
+      "doi": null,
+      "relevance_summary": "Analysis drawing on the FBI Hostage Barricade Database System (HOBAS, 7,000+ incidents), the authoritative U.S. dataset for facility siege, barricade, and occupation incidents.",
+      "matrices": [
+        "facility",
+        "person"
+      ],
+      "topics": [
+        "occupation_siege",
+        "incident_data"
+      ]
+    },
+    "FBI-HATECRIME-2024": {
+      "type": "government_report",
+      "title": "Hate Crime Statistics (Uniform Crime Reporting Program)",
+      "author": "Federal Bureau of Investigation, UCR Program",
+      "date": "2024",
+      "url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr/hate-crime",
+      "doi": null,
+      "relevance_summary": "National anti-religious and bias-motivated crime data quantifying attacks on houses of worship and identity-associated facilities. Supports symbolic/ideological facility target selection.",
+      "matrices": [
+        "facility",
+        "person"
+      ],
+      "topics": [
+        "symbolic_ideological",
+        "incident_data"
+      ]
     }
   }
 }

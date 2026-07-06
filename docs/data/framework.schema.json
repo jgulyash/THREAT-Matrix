@@ -80,10 +80,18 @@
           "type": "object",
           "description": "Numeric thresholds mapping escalation_weight to severity_band buckets.",
           "properties": {
-            "low": { "type": "number" },
-            "medium": { "type": "number" },
-            "high": { "type": "number" },
-            "critical": { "type": "number" }
+            "low": {
+              "type": "number"
+            },
+            "medium": {
+              "type": "number"
+            },
+            "high": {
+              "type": "number"
+            },
+            "critical": {
+              "type": "number"
+            }
           }
         },
         "rubric_version": {
@@ -368,41 +376,101 @@
             "credibility": {
               "type": "object",
               "properties": {
-                "criteria": { "type": "string", "description": "Type-level prose preamble articulating the underlying credibility-judgment rule. Carries the contract; anchors illustrate it." },
-                "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
-                "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
+                "criteria": {
+                  "type": "string",
+                  "description": "Type-level prose preamble articulating the underlying credibility-judgment rule. Carries the contract; anchors illustrate it."
+                },
+                "high_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "low_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
               }
             },
             "capability": {
               "type": "object",
               "properties": {
-                "criteria": { "type": "string", "description": "Type-level prose preamble articulating the underlying capability-judgment rule. Carries the contract; anchors illustrate it." },
-                "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
-                "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
+                "criteria": {
+                  "type": "string",
+                  "description": "Type-level prose preamble articulating the underlying capability-judgment rule. Carries the contract; anchors illustrate it."
+                },
+                "high_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "low_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
               }
             },
             "intent": {
               "type": "object",
               "properties": {
-                "criteria": { "type": "string", "description": "Type-level prose preamble articulating the underlying intent-judgment rule. Carries the contract; anchors illustrate it." },
-                "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
-                "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
+                "criteria": {
+                  "type": "string",
+                  "description": "Type-level prose preamble articulating the underlying intent-judgment rule. Carries the contract; anchors illustrate it."
+                },
+                "high_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "low_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
               }
             },
             "opportunity": {
               "type": "object",
               "properties": {
-                "criteria": { "type": "string", "description": "Type-level prose preamble articulating the underlying opportunity-judgment rule. Carries the contract; anchors illustrate it." },
-                "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
-                "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
+                "criteria": {
+                  "type": "string",
+                  "description": "Type-level prose preamble articulating the underlying opportunity-judgment rule. Carries the contract; anchors illustrate it."
+                },
+                "high_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "low_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
               }
             },
             "false_positive_context": {
               "type": "object",
               "description": "Patterns where surface behavior matches the tactic's indicators but the underlying activity is legitimate. Criteria + contexts shape mirrors the credibility/capability/intent/opportunity sub-fields.",
               "properties": {
-                "criteria": { "type": "string", "description": "Type-level prose articulating what distinguishes a false-positive from a real concern. Carries the contract; contexts illustrate it." },
-                "contexts": { "type": "array", "items": { "type": "string" } }
+                "criteria": {
+                  "type": "string",
+                  "description": "Type-level prose articulating what distinguishes a false-positive from a real concern. Carries the contract; contexts illustrate it."
+                },
+                "contexts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
               }
             },
             "threshold_guidance": {
@@ -411,7 +479,12 @@
             },
             "escalation_priority": {
               "type": "string",
-              "enum": ["Urgent", "Immediate", "Priority", "Routine"],
+              "enum": [
+                "Urgent",
+                "Immediate",
+                "Priority",
+                "Routine"
+              ],
               "description": "Type-level priority class for the tactic — characterizes typical action-urgency at the tactic-class level, not case-level urgency at any specific assessment. See CONTRIBUTING.md \"Schema design principles\"."
             }
           }
@@ -608,27 +681,57 @@
           "properties": {
             "actor_capability": {
               "type": "string",
-              "enum": ["strong", "moderate", "weak", "none"]
+              "enum": [
+                "strong",
+                "moderate",
+                "weak",
+                "none"
+              ]
             },
             "actor_intent": {
               "type": "string",
-              "enum": ["strong", "moderate", "weak", "none"]
+              "enum": [
+                "strong",
+                "moderate",
+                "weak",
+                "none"
+              ]
             },
             "actor_opportunity": {
               "type": "string",
-              "enum": ["strong", "moderate", "weak", "none"]
+              "enum": [
+                "strong",
+                "moderate",
+                "weak",
+                "none"
+              ]
             },
             "threat_timing": {
               "type": "string",
-              "enum": ["strong", "moderate", "weak", "none"]
+              "enum": [
+                "strong",
+                "moderate",
+                "weak",
+                "none"
+              ]
             },
             "threat_target": {
               "type": "string",
-              "enum": ["strong", "moderate", "weak", "none"]
+              "enum": [
+                "strong",
+                "moderate",
+                "weak",
+                "none"
+              ]
             },
             "threat_method": {
               "type": "string",
-              "enum": ["strong", "moderate", "weak", "none"]
+              "enum": [
+                "strong",
+                "moderate",
+                "weak",
+                "none"
+              ]
             }
           }
         },
@@ -936,6 +1039,28 @@
         },
         "relevance_summary": {
           "type": "string"
+        },
+        "matrices": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "person",
+              "facility",
+              "organization",
+              "infrastructure"
+            ]
+          },
+          "description": "Optional. Which target matrices this source supports/informs. Enables consumers to pull sourcing by matrix and the UI to group the bibliography by matrix. A source may support multiple matrices; tagging (not partitioning) keeps flat key-based citation intact."
+        },
+        "topics": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          },
+          "description": "Optional. Attack-method / subject tags for filtering sources by need (e.g., bombing, arson, structural_sabotage, forced_entry, vehicle_ramming, soft_targets, target_selection, cbrn_contamination, cyber_physical, building_systems_sabotage, occupation_siege, symbolic_ideological, active_shooter, insider_threat, mass_attack, threat_assessment, protective_intelligence, risk_methodology, physical_protection_systems, incident_data, financial_crime). Free-string to allow extension; the listed vocabulary is the recommended starter set."
         }
       }
     }
