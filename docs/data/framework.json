@@ -2329,6 +2329,7 @@
         },
         {
           "id": "TM0105",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Network Development",
           "tactic_families": [
             "network_development"
@@ -2370,7 +2371,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.51,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0105-02",
@@ -2399,7 +2401,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.23,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0105-03",
@@ -2430,7 +2433,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.04,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0105-04",
@@ -2460,7 +2464,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.33,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0105-05",
@@ -2490,7 +2495,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.04,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0105-06",
@@ -2518,7 +2524,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.72,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -2742,6 +2749,7 @@
         },
         {
           "id": "TM0106",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Cover Construction",
           "tactic_families": [
             "cover_construction"
@@ -2783,7 +2791,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 4.59,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0106-02",
@@ -2814,7 +2823,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 4.69,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0106-03",
@@ -2844,7 +2854,8 @@
                 "detectability": 2.5
               },
               "escalation_weight": 4.64,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0106-04",
@@ -2872,7 +2883,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.37,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0106-05",
@@ -2899,7 +2911,8 @@
                 "detectability": 6.0
               },
               "escalation_weight": 3.97,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0106-06",
@@ -2926,7 +2939,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.19,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -3141,6 +3155,7 @@
         },
         {
           "id": "TM0107",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Pathway Indicators",
           "tactic_families": [
             "pathway_indicators"
@@ -3183,7 +3198,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.68,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0107-02",
@@ -3215,7 +3231,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.88,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0107-03",
@@ -3248,7 +3265,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 6.51,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0107-04",
@@ -3278,7 +3296,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 6.75,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0107-05",
@@ -3309,7 +3328,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.23,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0107-06",
@@ -3339,7 +3359,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 4.93,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0107-07",
@@ -3370,7 +3391,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.76,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -3576,6 +3598,7 @@
         },
         {
           "id": "TM0108",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Surveillance Detection Countermeasures",
           "tactic_families": [
             "surveillance_countermeasures"
@@ -3616,7 +3639,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.58,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0108-02",
@@ -3644,7 +3668,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.58,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0108-03",
@@ -3673,7 +3698,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 4.58,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0108-04",
@@ -3703,7 +3729,8 @@
                 "detectability": 2.0
               },
               "escalation_weight": 4.82,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0108-05",
@@ -3732,7 +3759,8 @@
                 "detectability": 1.5
               },
               "escalation_weight": 4.89,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0108-06",
@@ -3760,7 +3788,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.08,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -3973,6 +4002,7 @@
         },
         {
           "id": "TM0201",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Operational Rehearsal",
           "tactic_families": [
             "operational_rehearsal"
@@ -4013,7 +4043,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.24,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0201-02",
@@ -4042,7 +4073,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.24,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0201-03",
@@ -4072,7 +4104,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.35,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0201-04",
@@ -4103,7 +4136,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.96,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0201-05",
@@ -4129,7 +4163,8 @@
                 "detectability": 2.5
               },
               "escalation_weight": 5.86,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0201-06",
@@ -4159,7 +4194,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.54,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -4373,6 +4409,7 @@
         },
         {
           "id": "TM0202",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Concealment",
           "tactic_families": [
             "concealment"
@@ -4411,7 +4448,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.37,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0202-02",
@@ -4442,7 +4480,8 @@
                 "detectability": 2.0
               },
               "escalation_weight": 4.92,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0202-03",
@@ -4471,7 +4510,8 @@
                 "detectability": 2.5
               },
               "escalation_weight": 4.84,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0202-04",
@@ -4498,7 +4538,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 4.98,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0202-05",
@@ -4525,7 +4566,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 4.39,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0202-06",
@@ -4554,7 +4596,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.29,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -4797,6 +4840,7 @@
         },
         {
           "id": "TM0203",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Perimeter Breach",
           "tactic_families": [
             "access_defeat"
@@ -4839,7 +4883,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 5.02,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0203-02",
@@ -4867,7 +4912,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 5.14,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0203-03",
@@ -4897,7 +4943,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 5.14,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0203-04",
@@ -4925,7 +4972,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.98,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0203-05",
@@ -4952,7 +5000,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.25,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0203-06",
@@ -4984,7 +5033,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.25,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -5223,6 +5273,7 @@
         },
         {
           "id": "TM0204",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Zone Penetration",
           "tactic_families": [
             "zone_penetration"
@@ -5265,7 +5316,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.25,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0204-02",
@@ -5295,7 +5347,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 5.14,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0204-03",
@@ -5323,7 +5376,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.25,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0204-04",
@@ -5352,7 +5406,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.35,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0204-05",
@@ -5382,7 +5437,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.67,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0204-06",
@@ -5412,7 +5468,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.46,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -5655,6 +5712,7 @@
         },
         {
           "id": "TM0205",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Access Elevation",
           "tactic_families": [
             "access_elevation"
@@ -5697,7 +5755,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 5.04,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0205-02",
@@ -5727,7 +5786,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 5.04,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0205-03",
@@ -5756,7 +5816,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.15,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0205-04",
@@ -5785,7 +5846,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 4.72,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0205-05",
@@ -5814,7 +5876,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.25,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0205-06",
@@ -5841,7 +5904,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.15,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -6057,6 +6121,7 @@
         },
         {
           "id": "TM0206",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Position Establishment",
           "tactic_families": [
             "position_establishment"
@@ -6096,7 +6161,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 5.90,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0206-02",
@@ -6123,7 +6189,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.66,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0206-03",
@@ -6153,7 +6220,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 5.23,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0206-04",
@@ -6182,7 +6250,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 6.03,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0206-05",
@@ -6210,7 +6279,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 5.54,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -6449,6 +6519,7 @@
         },
         {
           "id": "TM0207",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Operational Pause",
           "tactic_families": [
             "operational_pause"
@@ -6489,7 +6560,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 4.81,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0207-02",
@@ -6516,7 +6588,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.92,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0207-03",
@@ -6544,7 +6617,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.92,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0207-04",
@@ -6574,7 +6648,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.92,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0207-05",
@@ -6601,7 +6676,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 4.81,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -6807,6 +6883,7 @@
         },
         {
           "id": "TM0208",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Timing Exploitation",
           "tactic_families": [
             "timing_exploitation"
@@ -6848,7 +6925,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.35,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0208-02",
@@ -6876,7 +6954,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 6.34,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0208-03",
@@ -6903,7 +6982,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.45,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0208-04",
@@ -6933,7 +7013,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.15,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0208-05",
@@ -6963,7 +7044,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.45,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0208-06",
@@ -6993,7 +7075,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.35,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -7233,6 +7316,7 @@
         },
         {
           "id": "TM0209",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Partial Approach Rehearsal",
           "tactic_families": [
             "partial_approach_rehearsal"
@@ -7273,7 +7357,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.24,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0209-02",
@@ -7301,7 +7386,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.24,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0209-03",
@@ -7330,7 +7416,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 5.04,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0209-04",
@@ -7358,7 +7445,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.24,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0209-05",
@@ -7385,7 +7473,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 5.04,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -7643,7 +7732,8 @@
               },
               "escalation_weight": 8.00,
               "severity_band": "critical",
-              "severity_floor": "critical"
+              "severity_floor": "critical",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0301-02",
@@ -7673,7 +7763,8 @@
               },
               "escalation_weight": 8.18,
               "severity_band": "critical",
-              "severity_floor": "critical"
+              "severity_floor": "critical",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0301-03",
@@ -7703,7 +7794,8 @@
               },
               "escalation_weight": 8.68,
               "severity_band": "critical",
-              "severity_floor": "critical"
+              "severity_floor": "critical",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0301-04",
@@ -7731,7 +7823,8 @@
               },
               "escalation_weight": 4.64,
               "severity_band": "critical",
-              "severity_floor": "critical"
+              "severity_floor": "critical",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0301-05",
@@ -7761,7 +7854,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 6.98,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -7987,6 +8081,7 @@
         },
         {
           "id": "TM0302",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Barrier Defeat",
           "tactic_families": [
             "barrier_defeat"
@@ -8026,7 +8121,8 @@
                 "detectability": 6.5
               },
               "escalation_weight": 4.48,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0302-02",
@@ -8054,7 +8150,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 6.93,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0302-03",
@@ -8084,7 +8181,8 @@
               },
               "escalation_weight": 4.16,
               "severity_band": "critical",
-              "severity_floor": "critical"
+              "severity_floor": "critical",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0302-04",
@@ -8112,7 +8210,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 4.72,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0302-05",
@@ -8140,7 +8239,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.23,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -8379,7 +8479,7 @@
           "matrix": "person",
           "phase": 3,
           "phase_name": "Execution",
-          "target_identity_scope": ["named_individual", "affinity_group", "indiscriminate"],
+          "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "notes": "Securing the operational target — the person, the information they carry, the asset they control, or the location they occupy. In kidnapping operations, Objective Seizure is the physical act of taking control of the subject. In intelligence operations, it may be the acquisition of a device or document the subject possesses.",
           "cpn": false,
           "cpn_notes": null,
@@ -8413,7 +8513,8 @@
               },
               "escalation_weight": 5.30,
               "severity_band": "critical",
-              "severity_floor": "critical"
+              "severity_floor": "critical",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0303-02",
@@ -8439,7 +8540,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.70,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0303-03",
@@ -8469,7 +8571,8 @@
               },
               "escalation_weight": 5.16,
               "severity_band": "critical",
-              "severity_floor": "critical"
+              "severity_floor": "critical",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0303-04",
@@ -8498,7 +8601,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.86,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0303-05",
@@ -8525,7 +8629,8 @@
                 "detectability": 6.5
               },
               "escalation_weight": 4.82,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -8752,7 +8857,7 @@
           "matrix": "person",
           "phase": 3,
           "phase_name": "Execution",
-          "target_identity_scope": ["named_individual", "affinity_group", "indiscriminate"],
+          "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "notes": "Controlling one or more persons during kidnapping, barricade, or hostage scenarios. Includes physical restraint, psychological management, and ongoing compliance maintenance. Captive Control is unique to the Person matrix — there is no structural analog in the other three matrices. The duration and quality of captive control directly determines the operational leverage in Phase 4.",
           "cpn": false,
           "cpn_notes": null,
@@ -8785,7 +8890,8 @@
               },
               "escalation_weight": 5.21,
               "severity_band": "critical",
-              "severity_floor": "critical"
+              "severity_floor": "critical",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0304-02",
@@ -8811,7 +8917,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.31,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0304-03",
@@ -8840,7 +8947,8 @@
               },
               "escalation_weight": 5.31,
               "severity_band": "critical",
-              "severity_floor": "critical"
+              "severity_floor": "critical",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0304-04",
@@ -8869,7 +8977,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.11,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0304-05",
@@ -8897,7 +9006,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.51,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -9087,6 +9197,7 @@
         },
         {
           "id": "TM0305",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Response Suppression",
           "tactic_families": [
             "response_suppression"
@@ -9126,7 +9237,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.00,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0305-02",
@@ -9153,7 +9265,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.59,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0305-03",
@@ -9178,7 +9291,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 4.67,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0305-04",
@@ -9206,7 +9320,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.59,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0305-05",
@@ -9231,7 +9346,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 5.05,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -9424,6 +9540,7 @@
         },
         {
           "id": "TM0306",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Bystander Management",
           "tactic_families": [
             "bystander_management"
@@ -9461,7 +9578,8 @@
                 "detectability": 6.0
               },
               "escalation_weight": 4.43,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0306-02",
@@ -9490,7 +9608,8 @@
               },
               "escalation_weight": 4.87,
               "severity_band": "critical",
-              "severity_floor": "critical"
+              "severity_floor": "critical",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0306-03",
@@ -9516,7 +9635,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 5.10,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0306-04",
@@ -9545,7 +9665,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.20,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0306-05",
@@ -9571,7 +9692,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 6.93,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -9780,6 +9902,7 @@
         },
         {
           "id": "TM0307",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Counter-Surveillance",
           "tactic_families": [
             "counter_surveillance"
@@ -9819,7 +9942,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.05,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0307-02",
@@ -9847,7 +9971,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.36,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0307-03",
@@ -9876,7 +10001,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 4.58,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0307-04",
@@ -9904,7 +10030,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 4.43,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0307-05",
@@ -9933,7 +10060,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 4.56,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0307-06",
@@ -9959,7 +10087,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.45,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -10162,6 +10291,7 @@
         },
         {
           "id": "TM0308",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Operational Communication",
           "tactic_families": [
             "operational_communication"
@@ -10204,7 +10334,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 4.62,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0308-02",
@@ -10231,7 +10362,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 4.70,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0308-03",
@@ -10260,7 +10392,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.21,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0308-04",
@@ -10286,7 +10419,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 4.62,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0308-05",
@@ -10315,7 +10449,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.61,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -10530,6 +10665,7 @@
         },
         {
           "id": "TM0401",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Withdrawal",
           "tactic_families": [
             "withdrawal"
@@ -10567,7 +10703,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.29,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0401-02",
@@ -10595,7 +10732,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.58,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0401-03",
@@ -10624,7 +10762,8 @@
                 "detectability": 6.0
               },
               "escalation_weight": 3.66,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0401-04",
@@ -10651,7 +10790,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.58,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0401-05",
@@ -10680,7 +10820,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.58,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -10910,6 +11051,7 @@
         },
         {
           "id": "TM0402",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Evidence Management",
           "tactic_families": [
             "evidence_management"
@@ -10951,7 +11093,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 4.84,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0402-02",
@@ -10978,7 +11121,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.66,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0402-03",
@@ -11005,7 +11149,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.58,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0402-04",
@@ -11029,7 +11174,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 4.98,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0402-05",
@@ -11060,7 +11206,8 @@
                 "detectability": 2.5
               },
               "escalation_weight": 5.02,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0402-06",
@@ -11089,7 +11236,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 4.76,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -11311,6 +11459,7 @@
         },
         {
           "id": "TM0403",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Cover Reestablishment",
           "tactic_families": [
             "cover_reestablishment"
@@ -11352,7 +11501,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.53,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0403-02",
@@ -11378,7 +11528,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.16,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0403-03",
@@ -11404,7 +11555,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.05,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0403-04",
@@ -11434,7 +11586,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 4.44,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0403-05",
@@ -11460,7 +11613,8 @@
                 "detectability": 6.0
               },
               "escalation_weight": 3.94,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -11679,6 +11833,7 @@
         },
         {
           "id": "TM0404",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Network Protection",
           "tactic_families": [
             "network_protection"
@@ -11720,7 +11875,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 4.88,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0404-02",
@@ -11749,7 +11905,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.70,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0404-03",
@@ -11779,7 +11936,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.79,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0404-04",
@@ -11809,7 +11967,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 4.81,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0404-05",
@@ -11837,7 +11996,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.70,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0404-06",
@@ -11863,7 +12023,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.79,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -12071,6 +12232,7 @@
         },
         {
           "id": "TM0405",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Financial Disposition",
           "tactic_families": [
             "financial_disposition"
@@ -12111,7 +12273,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.58,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0405-02",
@@ -12138,7 +12301,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 4.93,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0405-03",
@@ -12165,7 +12329,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 4.76,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0405-04",
@@ -12193,7 +12358,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 4.84,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0405-05",
@@ -12220,7 +12386,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.29,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -12428,6 +12595,7 @@
         },
         {
           "id": "TM0406",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "After-Action Assessment",
           "tactic_families": [
             "after_action_assessment"
@@ -12467,7 +12635,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.25,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0406-02",
@@ -12493,7 +12662,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.35,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0406-03",
@@ -12519,7 +12689,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.25,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0406-04",
@@ -12547,7 +12718,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.67,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0406-05",
@@ -12573,7 +12745,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.05,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -12820,7 +12993,8 @@
                 "detectability": 7.0
               },
               "escalation_weight": 4.58,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0407-02",
@@ -12847,7 +13021,8 @@
                 "detectability": 6.5
               },
               "escalation_weight": 4.76,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0407-03",
@@ -12876,7 +13051,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 5.33,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0407-04",
@@ -12902,7 +13078,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.79,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0407-05",
@@ -12928,7 +13105,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.51,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0407-06",
@@ -12955,7 +13133,8 @@
                 "detectability": 6.5
               },
               "escalation_weight": 4.76,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -13139,6 +13318,7 @@
         },
         {
           "id": "TM0408",
+      "target_identity_scope": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
           "name": "Audience Amplification",
           "tactic_families": [
             "audience_amplification"
@@ -13180,7 +13360,8 @@
                 "detectability": 6.0
               },
               "escalation_weight": 5.18,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0408-02",
@@ -13207,7 +13388,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.63,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0408-03",
@@ -13233,7 +13415,8 @@
                 "detectability": 6.0
               },
               "escalation_weight": 5.33,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0408-04",
@@ -13259,7 +13442,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 5.15,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0408-05",
@@ -13288,7 +13472,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 5.38,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0408-06",
@@ -13315,7 +13500,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 5.11,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -13537,7 +13723,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 5.16,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0409-02",
@@ -13565,7 +13752,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 5.06,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0409-03",
@@ -13591,7 +13779,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 5.48,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0409-04",
@@ -13617,7 +13806,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 5.48,
-              "severity_band": "high"
+              "severity_band": "high",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0409-05",
@@ -13644,7 +13834,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.88,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0409-06",
@@ -13670,7 +13861,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 4.81,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [

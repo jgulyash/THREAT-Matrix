@@ -32,6 +32,21 @@ and JSON Schema are both at `1.2.2` as of the latest release.
   behaviors top out at high (impunity, recurrence, ongoing coercive leverage);
   no aftermath behavior is critical, since the mass-casualty event is past.
 
+### Added
+
+- **`target_identity` populated matrix-wide.** The per-indicator People-matrix
+  identity-class field now covers all 190 indicators (up from the 23-indicator
+  chunk-1 pilot), and every tactic carries a `target_identity_scope` (34/34).
+  Authoring convention: a behavior carries `indiscriminate` unless it inherently
+  requires a specific known subject — so only target-selection and subject-
+  profiling behaviors are narrowed (named/role/affinity, no indiscriminate);
+  every other behavior carries all four sub-classes. This is a reproducible
+  compatibility reading rather than a subjective "characteristic target" call.
+  Two pre-existing tactic scopes corrected: TM0303 (Objective Seizure) and
+  TM0304 (Captive Control) gain `role_or_identity_category` — role-based
+  kidnapping (a judge, a diplomat, an executive taken for their position) is
+  real, so seizure and captivity span all four identity-classes.
+
 ### Changed
 
 - **Collateral-reveal blast policy documented and reconciled.** The blast_radius
