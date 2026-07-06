@@ -34,6 +34,18 @@ and JSON Schema are both at `1.2.2` as of the latest release.
 
 ### Changed
 
+- **Collateral-reveal blast policy documented and reconciled.** The blast_radius
+  authoring rule — raise blast above the single-victim floor only where the
+  behavior itself observably reveals a group/population target or a public/crowd
+  venue (the parallel to method-revealed) — is now a first-class, reusable rule
+  in `escalation_rubric.blast_radius_guidance.collateral_reveal_guidance`, with
+  graduated tiers and an explicit deferral of unrevealed-venue collateral to the
+  instance layer. One consistency fix (`IND-0206-01` line-of-sight to a
+  gathering: blast 3.5 → 4.5 to match its sibling). The policy adds no criticals
+  by design: critical requires both mass-lethal impact and mass blast, so a
+  positioning/timing/bystander behavior with high blast but moderate impact
+  reads high, not critical.
+
 - **Direct-harm severity floor.** Behaviors that apply direct physical force to
   a person (weapon discharge, ramming, detonation, physical assault, overpowering
   personnel, seizing/restraining a person) now carry a `severity_floor` of `high`

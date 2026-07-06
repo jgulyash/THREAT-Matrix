@@ -6091,11 +6091,11 @@
               "temporal_signature": "imminent_late",
               "escalation_axes": {
                 "impact_potential": 7.0,
-                "blast_radius_potential": 3.5,
+                "blast_radius_potential": 4.5,
                 "recoverability_inverse": 7.0,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.54,
+              "escalation_weight": 5.90,
               "severity_band": "high"
             },
             {
@@ -14822,6 +14822,18 @@
         "covert_or_poison_targeted": 2.0
       },
       "authoring_notes": "Pre-attack indicators inherit the collateral ceiling of the method they presage (acquiring an explosive takes the explosive base rate). Venue-selection and timing signals are bystander-risk indicators even in target-development and mobilization phases — an approach timed to a crowd event, or a firing position with line-of-sight to a gathering. The People matrix models bystanders as a distinct population in tactic TM0306 (Bystander Management); this axis carries the SEVERITY of that exposure, which TM0306 alone does not. Instance-level venue and crowd-density conditioning belongs in the assessment layer, not the type-level base rate.",
+      "collateral_reveal_guidance": {
+        "principle": "Collateral-revealed, the parallel to method-revealed: raise blast_radius above the single-victim / method-base floor only where the BEHAVIOR ITSELF observably reveals a group/population target or a public/crowd venue. Do NOT uplift on mere compatibility with a group target (e.g., a target_identity that merely permits a group) — that over-applies and collapses toward a blanket floor. A behavior against a single individual in an unrevealed venue keeps the floor.",
+        "tiers": {
+          "indiscriminate_or_population_target_revealed": "mass ceiling 7.0-9.0, combined with the method base rate",
+          "public_or_crowd_venue_revealed": "5.0-7.0 — line-of-sight to a gathering, approach timed to a crowd event, an attack staged in a crowded venue",
+          "bystanders_present_or_managed": "4.0-5.0 — bystander-management behaviors, or occupation/siege of a public site",
+          "cohesive_group_or_affinity_target_revealed": "3.5-4.0 — a specific cohesive group, not a crowd",
+          "single_individual_or_venue_unrevealed": "method base rate or single-victim floor (2.5-3.0)"
+        },
+        "instance_deferral": "The statistical likelihood that an unrevealed-venue targeted attack produces bystander casualties is an INSTANCE-level assessment — it depends on the specific target's typical environment (a public figure in crowds vs. a private individual) — and is resolved at assessment time in the instance-conditioning layer, NOT encoded in the type-level blast_radius. Keeping the type-level floor for unrevealed venues is deliberate, not an omission.",
+        "critical_requires_both": "blast_radius (collateral) alone does not produce a critical band. Critical requires BOTH mass-lethal impact_potential AND mass blast_radius — the active application or direct acquisition of mass-casualty force. A positioning, timing, or bystander-management behavior with high blast but moderate impact reads high, not critical."
+      },
       "authoring_status": "Added rubric v1.1.0 (2026-07-04). Existing scored indicators predate this guidance and still carry single-victim blast_radius (2.5-3.0); re-authoring per this table, and scoring the execution phase, is a pending V1.3 pass (see scoring backlog B-05 / B-09)."
     },
     "rubric_version": "1.1.0",
