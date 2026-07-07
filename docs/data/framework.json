@@ -2434,6 +2434,7 @@
           "indicators": [
             {
               "id": "IND-0105-01",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "moderate", "threat_method": "none"},
               "behavior": "Threat actor introduces another individual to the grievance narrative through shared communications, joint research, or coordinated complaint",
               "category": "communication",
               "detection_sources": [
@@ -2465,6 +2466,7 @@
             },
             {
               "id": "IND-0105-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor begins coordinating logistics, schedules, or transportation with another individual whose involvement is operationally relevant rather than socially incidental",
               "category": "planning",
               "detection_sources": [
@@ -2495,6 +2497,7 @@
             },
             {
               "id": "IND-0105-03",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "weak", "threat_method": "weak"},
               "behavior": "Threat actor communicates with peers, online associates, or co-ideologues in a forum or platform that openly endorses violence or targeted harm",
               "category": "communication",
               "detection_sources": [
@@ -2527,6 +2530,7 @@
             },
             {
               "id": "IND-0105-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor recruits or attempts to recruit family members, employees, or social connections to provide access, transportation, capability, or information about the target or target environment",
               "category": "communication",
               "detection_sources": [
@@ -2558,6 +2562,7 @@
             },
             {
               "id": "IND-0105-05",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor transfers attack-relevant information — target details, schedule, environmental data, capability — to another individual via written or verbal communication",
               "category": "communication",
               "detection_sources": [
@@ -2589,6 +2594,7 @@
             },
             {
               "id": "IND-0105-06",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "moderate", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor's pattern of contact shifts to include new associates whose connection has no clear social or professional basis, particularly in a compressed time window",
               "category": "behavioral_change",
               "detection_sources": [
@@ -2943,6 +2949,7 @@
           "indicators": [
             {
               "id": "IND-0106-01",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "moderate", "threat_target": "weak", "threat_method": "weak"},
               "behavior": "Threat actor adopts an identity, uniform, or vehicle marking inconsistent with their actual employment, education, or background",
               "category": "behavioral_change",
               "detection_sources": [
@@ -2974,6 +2981,7 @@
             },
             {
               "id": "IND-0106-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor presents fabricated credentials — employer ID, contractor badge, business cards, vendor identification — when seeking access to restricted environments",
               "category": "access",
               "detection_sources": [
@@ -3006,6 +3014,7 @@
             },
             {
               "id": "IND-0106-03",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor establishes shell social media profiles, online personas, or business presence to support a cover identity used for approach or surveillance",
               "category": "digital",
               "detection_sources": [
@@ -3037,6 +3046,7 @@
             },
             {
               "id": "IND-0106-04",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor's stated reason for being at a location does not align with verifiable activity — no work order, no scheduled appointment, no destination, no sponsoring contact",
               "category": "behavioral_change",
               "detection_sources": [
@@ -3066,6 +3076,7 @@
             },
             {
               "id": "IND-0106-05",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "weak", "threat_method": "weak"},
               "behavior": "Threat actor's verbal account of their role contains gaps inconsistent with someone actually in that role — wrong jargon, missing routine knowledge, cannot answer basic procedural questions someone working that job day-to-day would know",
               "category": "communication",
               "detection_sources": [
@@ -3094,6 +3105,7 @@
             },
             {
               "id": "IND-0106-06",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "weak", "threat_method": "weak"},
               "behavior": "Threat actor's identifying details — name, employer, license plate, business name — cannot be corroborated through normal verification channels",
               "category": "communication",
               "detection_sources": [
@@ -3438,6 +3450,7 @@
           "indicators": [
             {
               "id": "IND-0107-01",
+              "informs_axes": {"actor_capability": "none", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor exhibits ideation behavior — referencing violent solutions to grievance, romanticizing prior attackers, or framing harm to the target — a person, group, or population — as the only viable path forward",
               "category": "behavioral_change",
               "detection_sources": [
@@ -3470,6 +3483,7 @@
             },
             {
               "id": "IND-0107-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "strong"},
               "behavior": "Threat actor moves from generalized statements of harm to specific planning behavior — selecting a method, identifying timing, evaluating opportunities for access to the target or target environment",
               "category": "planning",
               "detection_sources": [
@@ -3503,6 +3517,7 @@
             },
             {
               "id": "IND-0107-03",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "strong"},
               "behavior": "Threat actor engages in preparation behavior — acquiring weapons, conducting dry runs, surveilling locations, or making logistical arrangements consistent with an attack plan",
               "category": "acquisition",
               "detection_sources": [
@@ -3537,6 +3552,7 @@
             },
             {
               "id": "IND-0107-04",
+              "informs_axes": {"actor_capability": "none", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "strong", "threat_target": "weak", "threat_method": "weak"},
               "behavior": "Threat actor exhibits a final-act behavioral signature — distributing personal possessions, writing a manifesto, recording a final statement, or saying goodbye to a confidant",
               "category": "behavioral_change",
               "detection_sources": [
@@ -3568,6 +3584,7 @@
             },
             {
               "id": "IND-0107-05",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "weak", "threat_method": "moderate"},
               "behavior": "Threat actor exhibits identification with prior attackers — collecting media coverage of past incidents, studying tradecraft details, or expressing admiration for individuals who have committed targeted violence",
               "category": "behavioral_change",
               "detection_sources": [
@@ -3600,6 +3617,7 @@
             },
             {
               "id": "IND-0107-06",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "moderate", "threat_target": "weak", "threat_method": "weak"},
               "behavior": "Threat actor exhibits a discrete escalation in the kind or intensity of violent imagery, statement, or low-level act distinct from the threat actor's prior behavioral baseline",
               "category": "behavioral_change",
               "detection_sources": [
@@ -3631,6 +3649,7 @@
             },
             {
               "id": "IND-0107-07",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "strong", "threat_target": "weak", "threat_method": "weak"},
               "behavior": "Threat actor exhibits a sudden visible increase in goal-directed activity such as research, communication, movement, or expenditure consistent with imminent action",
               "category": "behavioral_change",
               "detection_sources": [
@@ -3970,6 +3989,7 @@
           "indicators": [
             {
               "id": "IND-0108-01",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor varies vehicle, route, or arrival time across repeated visits to a targeted-subject-associated location in a pattern consistent with deliberate surveillance detection",
               "category": "surveillance",
               "detection_sources": [
@@ -4000,6 +4020,7 @@
             },
             {
               "id": "IND-0108-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor performs vehicle dismounts and walking transitions at non-destination points (parking-lot-to-walking pattern, ride-share-then-walk) before arriving at the actual location of interest",
               "category": "surveillance",
               "detection_sources": [
@@ -4029,6 +4050,7 @@
             },
             {
               "id": "IND-0108-03",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "weak"},
               "behavior": "Threat actor uses cutouts, intermediaries, or third parties for tasks that would normally be performed directly — calling, visiting, or asking questions about the targeted subject's environment",
               "category": "communication",
               "detection_sources": [
@@ -4059,6 +4081,7 @@
             },
             {
               "id": "IND-0108-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor substitutes physical reconnaissance with technical surrogates — satellite imagery, Street View, public live cameras, drone overflight — to avoid being physically observed at the location",
               "category": "digital",
               "detection_sources": [
@@ -4090,6 +4113,7 @@
             },
             {
               "id": "IND-0108-05",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor uses VPN, Tor, burner devices, anonymous accounts, or pseudonymous social media to mask digital reconnaissance activity directed at the targeted subject or environment",
               "category": "digital",
               "detection_sources": [
@@ -4120,6 +4144,7 @@
             },
             {
               "id": "IND-0108-06",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor maintains a thin cover story for proximity to the target environment that they activate only when challenged or observed, distinct from the routine cover used for active access attempts",
               "category": "behavioral_change",
               "detection_sources": [
