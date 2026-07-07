@@ -4,11 +4,46 @@ All notable changes to THREAT Matrix are documented here, per [VERSIONING.md](do
 
 This project adheres to [Semantic Versioning](https://semver.org). Framework
 content and JSON Schema are versioned independently; the framework content
-and JSON Schema are both at `1.2.2` as of the latest release.
+and JSON Schema both advance to `1.3.0` with this release.
 
-## [Unreleased]
+## [1.3.0] — 2026-07-06
+
+Feature release. Completes the **Facilities matrix** (40 tactics across all four
+phases — the first non-person attack-surface matrix authored end-to-end), brings
+**escalation scoring to the full People matrix** (190 indicators, up from the
+23-indicator pilot), and lands **`assessment_guidance` on every tactic in both
+matrices** (People 34/34, Facilities 40/40) — the per-tactic four-factor analytic
+layer that is the V1.3 hard release gate. `target_identity` is populated
+matrix-wide, the identifier contract is extended to non-person matrices, and a
+verified 46-entry bibliography (29 new facility sources) is tagged by matrix and
+topic. Schema additions are additive; existing content validates unchanged.
 
 ### Added
+
+- **Facilities matrix — complete (40 tactics, all four phases).** The first
+  non-person attack surface, authored end-to-end: Target Development (TF0101–
+  TF0110), Mobilization (TF0201–TF0209), Execution (TF0301–TF0309), and Aftermath
+  (TF0401–TF0412). Each tactic carries ~5 escalation-scored indicators, ~4
+  countermeasures, ~2 response protocols, a full `assessment_guidance` block,
+  `field_notes`, `observed_contexts`, `actor_associations`, and a CPN marker.
+  Facility escalation is calibrated to the built environment: a blast floor of
+  ~4.0 (facilities admit mass-casualty by default), method base rates for
+  incendiary/explosive/structural/vehicle-ram/contamination execution, the
+  casualty floor on force-on-person execution behaviors, and property-only
+  tactics (vandalism) held to medium/high. Facility tactics carry no
+  `target_identity` (the place is the objective); voice is "Threat actor" /
+  "the targeted facility."
+
+- **Non-person identifier contract.** Schema patterns now accept facility
+  identifiers — `TF####` tactics and `IND-F####-##` / `CM-F####-##` /
+  `RP-F####-##` compound IDs (with an optional `[FOI]` prefix) — alongside the
+  unchanged Person `TM####` scheme, extending the framework to additional matrices.
+
+- **Verified facility bibliography with matrix/topic tagging.** 29 new verified
+  facility sources (46 entries total), every entry tagged `matrices[]` and
+  `topics[]` so the reference set can be grouped by matrix without partitioning
+  the flat key space. No fabricated citations — facility content cites only
+  verified keys.
 
 - **Actor-profile filter in the matrix browser.** The FilterBar's Actor
   control is now live: a category-grouped dropdown that filters the heat
@@ -32,7 +67,17 @@ and JSON Schema are both at `1.2.2` as of the latest release.
   behaviors top out at high (impunity, recurrence, ongoing coercive leverage);
   no aftermath behavior is critical, since the mass-casualty event is past.
 
-### Added
+- **`assessment_guidance` on every tactic in both matrices (34/34 People,
+  40/40 Facilities).** Each tactic now carries the four-factor analytic block —
+  `credibility`, `capability`, `intent`, and `opportunity` (each with a criteria
+  statement plus high- and low-signal anchors), a `false_positive_context`, a
+  `threshold_guidance` paragraph (tier logic, multi-indicator composition rule,
+  and known-threat-actor clause), and an `escalation_priority`. This is the V1.3
+  hard release gate; it clears the previous 4/34 People coverage. Anchors are
+  tactic-specific and phase-calibrated (Target Development / Aftermath at
+  Priority, Mobilization at Immediate, Execution at Urgent/Immediate), in the
+  matrix's own voice — "the target" for People, "the targeted facility" for
+  Facilities.
 
 - **`target_identity` populated matrix-wide.** The per-indicator People-matrix
   identity-class field now covers all 190 indicators (up from the 23-indicator
