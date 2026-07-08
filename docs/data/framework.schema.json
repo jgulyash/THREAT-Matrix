@@ -647,7 +647,7 @@
               "type": "number",
               "minimum": 0.0,
               "maximum": 10.0,
-              "description": "Type-level inverse-recoverability — how hard the harm is to undo. Permanence weighted higher; lives lost = highest."
+              "description": "Type-level inverse-recoverability \u2014 how hard the harm is to undo. Permanence weighted higher; lives lost = highest. Reading election (rubric v1.2.0): this axis scores the harm the behavior class DIRECTLY produces \u2014 it does not inherit the permanence of the harm a behavior presages or enables (contrast impact_potential, which counts harm a behavior directly produces or imminently enables). Victim-facing pre-attack behaviors (surveillance, approach) score their durable psychological harm; operational support behaviors (rehearsal, diversion, coordination comms) score their own transient harm. Known seam: some phase-1/2 preparatory indicators were authored before this election under a presaged-harm reading and sit above it \u2014 reconciliation is a backlogged scoring pass (B-10), not silent per-indicator drift."
             },
             "detectability": {
               "type": "number",

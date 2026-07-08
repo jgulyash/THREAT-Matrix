@@ -111,6 +111,16 @@ topic. Schema additions are additive; existing content validates unchanged.
   are published alongside the recalibrated phase-1 defaults in the authoring
   workspace. No `escalation_weight`, axis value, or floor assignment changed.
 
+- **`recoverability_inverse` reading elected (schema axis text).** The axis
+  scores the harm a behavior class directly produces — it does not inherit the
+  permanence of the harm a behavior presages or enables (contrast
+  `impact_potential`, which counts both). The election resolves the apparent
+  phase-3 "dip": execution force behaviors score 9.0–9.5 as the axis demands,
+  while in-execution support behaviors honestly score their own transient
+  harm. A known seam — phase-1/2 preparatory indicators authored under the
+  earlier presaged-harm reading — is logged for a future gated scoring pass
+  rather than silently re-scored.
+
 - **Collateral-reveal blast policy documented and reconciled.** The blast_radius
   authoring rule — raise blast above the single-victim floor only where the
   behavior itself observably reveals a group/population target or a public/crowd
