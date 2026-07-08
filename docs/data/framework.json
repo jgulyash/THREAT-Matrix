@@ -4488,6 +4488,7 @@
           "indicators": [
             {
               "id": "IND-0201-01",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor performs repeated visits to the target site at consistent times matching a planned attack window, without legitimate purpose",
               "category": "surveillance",
               "detection_sources": [
@@ -4518,6 +4519,7 @@
             },
             {
               "id": "IND-0201-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor drives or walks the planned approach route on multiple occasions, sometimes with stand-in vehicles or alternative timing to test variants",
               "category": "surveillance",
               "detection_sources": [
@@ -4548,6 +4550,7 @@
             },
             {
               "id": "IND-0201-03",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
               "behavior": "Threat actor times specific high-uncertainty operational segments — security shift change, building lockup, route arrival — repeatedly to validate planning assumptions",
               "category": "surveillance",
               "detection_sources": [
@@ -4579,6 +4582,7 @@
             },
             {
               "id": "IND-0201-04",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "strong", "threat_target": "weak", "threat_method": "strong"},
               "behavior": "Threat actor conducts partial rehearsal of equipment or capability — weapon function checks at remote locations, vehicle handling tests, breach-tool practice — without revealing the operation",
               "category": "planning",
               "detection_sources": [
@@ -4611,6 +4615,7 @@
             },
             {
               "id": "IND-0201-05",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor uses stand-in targets — a comparable building or vehicle, a sim prop, or a role-player mimicking the individual — to rehearse execution without prematurely revealing intent",
               "category": "planning",
               "detection_sources": [
@@ -4638,6 +4643,7 @@
             },
             {
               "id": "IND-0201-06",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor's behavior at the target environment shifts from observation to action-rehearsal — testing entry timing, identifying response gaps, walking the egress route",
               "category": "behavioral_change",
               "detection_sources": [
@@ -4983,6 +4989,7 @@
           "indicators": [
             {
               "id": "IND-0202-01",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor's stated activity pattern develops gaps inconsistent with normal life — unaccounted-for time, unexplained absences, missing receipts or location data",
               "category": "behavioral_change",
               "detection_sources": [
@@ -5012,6 +5019,7 @@
             },
             {
               "id": "IND-0202-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor maintains compartmentalized communications — separate device, encrypted application, anonymous account — for operationally relevant contacts not used in normal life",
               "category": "digital",
               "detection_sources": [
@@ -5044,6 +5052,7 @@
             },
             {
               "id": "IND-0202-03",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
               "behavior": "Threat actor's online presence becomes selectively curated — deletion of grievance posts, suppression of identifiable statements of intent, removal of evidence from social media",
               "category": "digital",
               "detection_sources": [
@@ -5074,6 +5083,7 @@
             },
             {
               "id": "IND-0202-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "weak"},
               "behavior": "Threat actor's financial pattern shows withdrawals or transfers consistent with cash or anonymized-payment operational expenses, with no corresponding documented purpose",
               "category": "acquisition",
               "detection_sources": [
@@ -5102,6 +5112,7 @@
             },
             {
               "id": "IND-0202-05",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor introduces inconsistencies between stated activities and physical or digital evidence — claimed locations not matching cell-tower data, claimed meetings with no corresponding records",
               "category": "communication",
               "detection_sources": [
@@ -5130,6 +5141,7 @@
             },
             {
               "id": "IND-0202-06",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor's behavior toward family members or peers becomes guarded — withdrawal from normal sharing, requests for privacy that exceed ordinary, irritability at routine questions about plans or whereabouts",
               "category": "behavioral_change",
               "detection_sources": [
@@ -5504,6 +5516,7 @@
           "indicators": [
             {
               "id": "IND-0203-01",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor presents at a perimeter access point at off-hours or with timing inconsistent with verified visitor schedules, claimed appointments, or sponsoring contact",
               "category": "access",
               "detection_sources": [
@@ -5536,6 +5549,7 @@
             },
             {
               "id": "IND-0203-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor attempts to bypass perimeter controls by tailgating an authorized individual through a secured access point",
               "category": "access",
               "detection_sources": [
@@ -5565,6 +5579,7 @@
             },
             {
               "id": "IND-0203-03",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor uses a fabricated or stolen credential to attempt authorized passage through a perimeter access point",
               "category": "access",
               "detection_sources": [
@@ -5596,6 +5611,7 @@
             },
             {
               "id": "IND-0203-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor defeats a physical perimeter control — climbing a fence, forcing a door, defeating an electronic lock — at a location not under active observation",
               "category": "access",
               "detection_sources": [
@@ -5625,6 +5641,7 @@
             },
             {
               "id": "IND-0203-05",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor breaches the perimeter at a non-standard entry point — loading dock, service entrance, perimeter gap not under camera coverage",
               "category": "access",
               "detection_sources": [
@@ -5653,6 +5670,7 @@
             },
             {
               "id": "IND-0203-06",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor's badge or credential is presented at the perimeter but the holder's biometric, photo, or behavioral profile does not match the credential's registered owner",
               "category": "access",
               "detection_sources": [
@@ -6026,6 +6044,7 @@
           "indicators": [
             {
               "id": "IND-0204-01",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor's badge is swiped at an access point above the tier authorized for the credential holder, with the holder either physically present or credentials cloned",
               "category": "access",
               "detection_sources": [
@@ -6058,6 +6077,7 @@
             },
             {
               "id": "IND-0204-02",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
               "behavior": "Threat actor moves through interior security tiers via tailgating, escort manipulation, or social engineering of personnel staffing each tier",
               "category": "access",
               "detection_sources": [
@@ -6089,6 +6109,7 @@
             },
             {
               "id": "IND-0204-03",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
               "behavior": "Threat actor uses elevator system manipulation, electronic lock bypass, or door-control system manipulation to defeat tier-internal access controls without force",
               "category": "access",
               "detection_sources": [
@@ -6118,6 +6139,7 @@
             },
             {
               "id": "IND-0204-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
               "behavior": "Threat actor's path through the protected environment matches a pre-determined route inconsistent with the destination claimed at perimeter or in visitor logs",
               "category": "behavioral_change",
               "detection_sources": [
@@ -6148,6 +6170,7 @@
             },
             {
               "id": "IND-0204-05",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "weak"},
               "behavior": "Threat actor accesses interior security infrastructure (camera systems, alarm panels, communication systems) at any point during transit through tiered zones",
               "category": "access",
               "detection_sources": [
@@ -6179,6 +6202,7 @@
             },
             {
               "id": "IND-0204-06",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "none"},
               "behavior": "Threat actor's interior access pattern shows pre-planning artifacts — knowledge of tier topology, badge zone boundaries, supervisory shift changes — inconsistent with a first-time visitor",
               "category": "behavioral_change",
               "detection_sources": [
