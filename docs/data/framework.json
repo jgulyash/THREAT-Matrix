@@ -15131,6 +15131,7 @@
           "indicators": [
             {
               "id": "IND-0406-01",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "weak", "threat_method": "weak"},
               "behavior": "Threat actor's operational signature in successive operations shows progressive refinement — surveillance footprint reduced, cover construction more thorough, timing more reliable, evidence management tighter",
               "category": "behavioral_change",
               "detection_sources": [
@@ -15160,6 +15161,7 @@
             },
             {
               "id": "IND-0406-02",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "weak", "threat_method": "weak"},
               "behavior": "Threat actor incorporates lessons from law enforcement public statements about prior operations into modified methodology in subsequent operations",
               "category": "behavioral_change",
               "detection_sources": [
@@ -15187,6 +15189,7 @@
             },
             {
               "id": "IND-0406-03",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
               "behavior": "Threat actor's communications and document recovery from prior operations show deliberate analytical activity — methodology critique, after-action notes, lessons-learned documents",
               "category": "communication",
               "detection_sources": [
@@ -15214,6 +15217,7 @@
             },
             {
               "id": "IND-0406-04",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "weak", "threat_method": "weak"},
               "behavior": "Threat actor's training of new accomplices includes deliberate methodology transfer reflecting prior-operation learning, identifiable through accomplice testimony or recovered training materials",
               "category": "communication",
               "detection_sources": [
@@ -15243,6 +15247,7 @@
             },
             {
               "id": "IND-0406-05",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
               "behavior": "Threat actor's operational tempo accelerates or decelerates in patterns consistent with deliberate planning cycles rather than opportunity-driven operation",
               "category": "behavioral_change",
               "detection_sources": [
@@ -15577,6 +15582,7 @@
           "indicators": [
             {
               "id": "IND-0407-01",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
               "behavior": "Threat actor releases a written communiqué, manifesto, or video statement claiming responsibility for the operation through any public or semi-public channel",
               "category": "communication",
               "detection_sources": [
@@ -15607,6 +15613,7 @@
             },
             {
               "id": "IND-0407-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "weak"},
               "behavior": "Threat actor contacts media organizations directly with attribution claims, supporting documentation, or operational details that confirm insider knowledge",
               "category": "communication",
               "detection_sources": [
@@ -15635,6 +15642,7 @@
             },
             {
               "id": "IND-0407-03",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
               "behavior": "Threat actor releases pre-recorded attribution material — manifesto video, statement document — to multiple platforms simultaneously to defeat takedown and maximize reach",
               "category": "digital",
               "detection_sources": [
@@ -15665,6 +15673,7 @@
             },
             {
               "id": "IND-0407-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor communicates attribution directly to the targeted individual's or affected group's organization or family, an affected community or institution, the public, or law enforcement with operational demands or leverage assertions",
               "category": "communication",
               "detection_sources": [
@@ -15692,6 +15701,7 @@
             },
             {
               "id": "IND-0407-05",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor remains silent on attribution despite political incentive to claim responsibility, indicating either operational discipline (network protection priority) or deliberate third-party attribution misdirection",
               "category": "communication",
               "detection_sources": [
@@ -15719,6 +15729,7 @@
             },
             {
               "id": "IND-0407-06",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
               "behavior": "Threat actor's affiliated group or parent organization issues the attribution claim rather than the threat actor directly, with the threat actor either confirming through subsequent communication or remaining silent to preserve operational deniability",
               "category": "communication",
               "detection_sources": [
@@ -16033,6 +16044,7 @@
           "indicators": [
             {
               "id": "IND-0408-01",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
               "behavior": "Threat actor distributes attribution material across multiple social media platforms simultaneously to maximize reach and defeat platform-by-platform takedown",
               "category": "digital",
               "detection_sources": [
@@ -16063,6 +16075,7 @@
             },
             {
               "id": "IND-0408-02",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
               "behavior": "Threat actor uses encrypted broadcast channels (Telegram, Discord, dark web forums) to seed attribution material to affiliated communities for re-amplification on public platforms",
               "category": "digital",
               "detection_sources": [
@@ -16091,6 +16104,7 @@
             },
             {
               "id": "IND-0408-03",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
               "behavior": "Threat actor produces high-quality media materials — edited video, narrative documents, propaganda graphics — that drive algorithmic amplification independent of press contact",
               "category": "digital",
               "detection_sources": [
@@ -16118,6 +16132,7 @@
             },
             {
               "id": "IND-0408-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
               "behavior": "Threat actor's amplification strategy exploits ongoing news cycles, anniversary dates, or related events to maintain sustained visibility beyond the immediate post-incident window",
               "category": "behavioral_change",
               "detection_sources": [
@@ -16145,6 +16160,7 @@
             },
             {
               "id": "IND-0408-05",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
               "behavior": "Threat actor coordinates amplification with affiliated networks — sympathizer accounts, shared community pages — to drive engagement metrics that trigger algorithmic recommendation",
               "category": "digital",
               "detection_sources": [
@@ -16175,6 +16191,7 @@
             },
             {
               "id": "IND-0408-06",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
               "behavior": "Threat actor's amplification pattern shifts in response to platform takedown — moving to less-moderated platforms, fragmenting content to defeat detection, or using human re-uploads to evade automated removal",
               "category": "digital",
               "detection_sources": [
@@ -16486,6 +16503,7 @@
           "indicators": [
             {
               "id": "IND-0409-01",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor makes direct contact with the victims' families, employer, government agency, or other decision-maker to assert leverage and articulate demands",
               "category": "communication",
               "detection_sources": [
@@ -16515,6 +16533,7 @@
             },
             {
               "id": "IND-0409-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "behavior": "Threat actor provides proof-of-life — recorded video of the captive or captives with current-event reference, fingerprint or biometric submission, recorded voice with date confirmation — to validate the leverage position",
               "category": "communication",
               "detection_sources": [
@@ -16544,6 +16563,7 @@
             },
             {
               "id": "IND-0409-03",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor articulates specific demands with deadlines and consequences for non-compliance — ransom amount, prisoner release, policy change, financial disposition",
               "category": "communication",
               "detection_sources": [
@@ -16571,6 +16591,7 @@
             },
             {
               "id": "IND-0409-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor escalates threats over time — increasing severity, accelerating deadlines, demonstrating capability — to pressure decision-makers toward compliance",
               "category": "communication",
               "detection_sources": [
@@ -16598,6 +16619,7 @@
             },
             {
               "id": "IND-0409-05",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor's communications during leverage phase show negotiation framing, demand evolution, and willingness to test various pressure paths to identify the most compliance-likely target",
               "category": "communication",
               "detection_sources": [
@@ -16626,6 +16648,7 @@
             },
             {
               "id": "IND-0409-06",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor uses third-party intermediaries — religious figures, community leaders, or traditional intermediaries — as channels for demand transmission, exploiting their access while constraining direct attribution",
               "category": "communication",
               "detection_sources": [
