@@ -134,10 +134,21 @@ topic. Schema additions are additive; existing content validates unchanged.
   V1.2.2 scope prose. The `matrices.person` data key, routes, and schema enum
   are unchanged for consumer stability.
 
-- **`informs_axes` is now the sole remaining escalation pilot (B-01).** With
-  escalation scoring complete, the README pilot caveat applies only to the
-  `informs_axes` annotation layer (23 indicators, TM0101–TM0104), which awaits
-  the sealed-blind inter-rater reliability pass on the rest of the matrix.
+- **`informs_axes` completed matrix-wide — no longer a pilot (B-01 closed).** The
+  type-level annotation layer now covers **all 190 People-matrix indicators (34/34
+  tactics)**, up from the 23-indicator V1.2 pilot. Coverage was authored via the
+  established sealed-blind inter-rater process — an independent AI rater and Jay
+  each code every indicator's six axes from the locked boundary rubric, then
+  weighted Cohen κ + Gwet AC2 gate each chunk at κ≥0.60 before values ship. Seven
+  chunks, all passing after adjudication (κ 0.75 / 0.65 / 0.75 / 0.77 / 0.88 / 0.93
+  / 0.74). The process surfaced and locked several cross-phase definitional calls
+  (`threat_method` = attack-method only; mobilization rehearsal/probing = strong
+  `threat_timing`; `threat_target` = strong when target-associated; during-execution
+  support inherits realized `actor_opportunity`; aftermath retrospective behaviors
+  score the postulated-event axes at `none` with the recurrence residual deferred to
+  the instance layer). The four-bucket scale and per-indicator "leans" (the
+  situational directionality) are retained as seed data for the future
+  instance-conditioning layer (B-03).
 
 ## [1.2.2] — 2026-07-04
 

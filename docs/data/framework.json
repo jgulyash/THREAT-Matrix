@@ -12756,6 +12756,7 @@
           "indicators": [
             {
               "id": "IND-0401-01",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor moves directly away from the scene at sustained speed via vehicle, foot, or mass transit, in a direction inconsistent with normal post-incident movement around the location",
               "category": "behavioral_change",
               "detection_sources": [
@@ -12783,6 +12784,7 @@
             },
             {
               "id": "IND-0401-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor changes vehicle, clothing, or other identifying features at a pre-staged location during withdrawal",
               "category": "behavioral_change",
               "detection_sources": [
@@ -12812,6 +12814,7 @@
             },
             {
               "id": "IND-0401-03",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor surrenders or makes no withdrawal attempt, indicating a planned terminal commitment to the operation",
               "category": "behavioral_change",
               "detection_sources": [
@@ -12842,6 +12845,7 @@
             },
             {
               "id": "IND-0401-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor's withdrawal route avoids known CCTV coverage, intersections with security patrols, or arterial roads with rapid emergency response",
               "category": "behavioral_change",
               "detection_sources": [
@@ -12870,6 +12874,7 @@
             },
             {
               "id": "IND-0401-05",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor uses an accomplice — witting or unwitting — to provide transportation or extraction support during withdrawal",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13231,6 +13236,7 @@
           "indicators": [
             {
               "id": "IND-0402-01",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor wipes or destroys electronic devices — phones, computers, storage media — before, during, or after the operation",
               "category": "digital",
               "detection_sources": [
@@ -13262,6 +13268,7 @@
             },
             {
               "id": "IND-0402-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor disposes of operationally relevant clothing, weapons, vehicles, or equipment in locations or via methods designed to prevent recovery",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13290,6 +13297,7 @@
             },
             {
               "id": "IND-0402-03",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor relocates artifacts — manifestos, planning materials, documentation — from operationally relevant locations (residence, vehicle) to dead-drop or third-party storage",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13318,6 +13326,7 @@
             },
             {
               "id": "IND-0402-04",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor stages artifacts at the scene or related locations to misdirect investigation toward an unrelated party, motive, or method",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13343,6 +13352,7 @@
             },
             {
               "id": "IND-0402-05",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor maintains operational discipline that prevents accumulation of evidence in the first place — minimal communications, cash transactions, no documentation of planning steps",
               "category": "planning",
               "detection_sources": [
@@ -13375,6 +13385,7 @@
             },
             {
               "id": "IND-0402-06",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor's online presence is reduced or curated post-incident — account deletion, content removal, identity scrubbing — consistent with anti-forensic post-action behavior",
               "category": "digital",
               "detection_sources": [
@@ -13728,6 +13739,7 @@
           "indicators": [
             {
               "id": "IND-0403-01",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor establishes a documented alibi for the operational window — credit card use at distant location, confirmed social media activity, witnessed presence at a venue inconsistent with operational location",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13759,6 +13771,7 @@
             },
             {
               "id": "IND-0403-02",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor's contact pattern with colleagues, family, and associates resumes at a cadence and tone matching pre-operation baseline, without deviation that would suggest psychological residue from the operation",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13786,6 +13799,7 @@
             },
             {
               "id": "IND-0403-03",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor returns to normal routine activities — workplace attendance, hobbies, social engagements — within a timeframe consistent with pre-operation behavior",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13813,6 +13827,7 @@
             },
             {
               "id": "IND-0403-04",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor's online presence shows deliberate normalization — routine posts, no commemoration of the operation, no behavioral break that would draw attention",
               "category": "digital",
               "detection_sources": [
@@ -13844,6 +13859,7 @@
             },
             {
               "id": "IND-0403-05",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor's response to the operation in conversation matches the response of an uninvolved peer — appropriate concern, no insider knowledge that wasn't publicly available",
               "category": "communication",
               "detection_sources": [
@@ -14191,6 +14207,7 @@
           "indicators": [
             {
               "id": "IND-0404-01",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor initiates communications shutdown across the operational network — devices destroyed, accounts deleted, channels abandoned, encrypted-app contact lists wiped",
               "category": "digital",
               "detection_sources": [
@@ -14222,6 +14239,7 @@
             },
             {
               "id": "IND-0404-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor disperses operational personnel away from the protected environment, the target area, or any location associated with the operation",
               "category": "behavioral_change",
               "detection_sources": [
@@ -14252,6 +14270,7 @@
             },
             {
               "id": "IND-0404-03",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor removes operational infrastructure including safe houses, vehicle staging, equipment caches, and digital infrastructure used during the operation",
               "category": "behavioral_change",
               "detection_sources": [
@@ -14283,6 +14302,7 @@
             },
             {
               "id": "IND-0404-04",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor manages witting accomplices through payment, reassignment, relocation, or in extreme cases threatened or actual harm to ensure silence under post-incident questioning",
               "category": "communication",
               "detection_sources": [
@@ -14314,6 +14334,7 @@
             },
             {
               "id": "IND-0404-05",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor manages unwitting cutouts (proxy purchasers, transportation providers, document forgers) through compartmentalization, payment, or removal of operational connection — the cutout often not knowing they were operationally relevant",
               "category": "communication",
               "detection_sources": [
@@ -14343,6 +14364,7 @@
             },
             {
               "id": "IND-0404-06",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor's network response to law enforcement contact with any single accomplice shows pre-coordinated discipline — silence, lawyer-up, denial, or pre-arranged story",
               "category": "communication",
               "detection_sources": [
@@ -14680,6 +14702,7 @@
           "indicators": [
             {
               "id": "IND-0405-01",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor receives ransom payment, contract payment, or extortion proceeds via cryptocurrency, prepaid cards, wire transfer, or hawala consistent with the operation's financial scale",
               "category": "financial",
               "detection_sources": [
@@ -14709,6 +14732,7 @@
             },
             {
               "id": "IND-0405-02",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor uses cryptocurrency mixing services, chain hopping across multiple wallets, privacy coins (Monero, Zcash), or DeFi protocols to obfuscate the link between operational receipt and the threat actor's accessible wallet",
               "category": "financial",
               "detection_sources": [
@@ -14737,6 +14761,7 @@
             },
             {
               "id": "IND-0405-03",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor converts operational proceeds into legitimate-appearing forms — real estate purchases, business investments, prepaid commercial instruments, physical commodities — within months of the operation",
               "category": "financial",
               "detection_sources": [
@@ -14765,6 +14790,7 @@
             },
             {
               "id": "IND-0405-04",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor uses layered conventional accounts, often across multiple jurisdictions, to break the audit trail between operational receipt and threat actor's primary financial position",
               "category": "financial",
               "detection_sources": [
@@ -14794,6 +14820,7 @@
             },
             {
               "id": "IND-0405-05",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor's lifestyle changes in a manner consistent with operational proceeds — vehicle purchases, real-estate acquisition, expanded household consumption — without a documented legitimate income source supporting the new pattern",
               "category": "financial",
               "detection_sources": [
