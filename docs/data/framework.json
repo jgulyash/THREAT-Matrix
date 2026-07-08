@@ -9027,6 +9027,7 @@
           "indicators": [
             {
               "id": "IND-0301-01",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "behavior": "Threat actor produces, discharges, or directs a weapon — firearm, edged weapon, blunt-force implement — toward the targeted subject or the protected environment",
               "category": "behavioral_change",
               "detection_sources": [
@@ -9059,6 +9060,7 @@
             },
             {
               "id": "IND-0301-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "behavior": "Threat actor accelerates, rams, or directs a vehicle into the targeted subject or subjects, a crowd or gathering, a protective formation, or a protected structure",
               "category": "behavioral_change",
               "detection_sources": [
@@ -9090,6 +9092,7 @@
             },
             {
               "id": "IND-0301-03",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "behavior": "Threat actor activates, deploys, or attempts to deploy an improvised or commercial explosive device, incendiary, or chemical agent at the protected environment",
               "category": "behavioral_change",
               "detection_sources": [
@@ -9121,6 +9124,7 @@
             },
             {
               "id": "IND-0301-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "behavior": "Threat actor uses physical assault — striking, grappling, restraining — to coerce or harm the targeted subject or subjects directly",
               "category": "behavioral_change",
               "detection_sources": [
@@ -9150,6 +9154,7 @@
             },
             {
               "id": "IND-0301-05",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor displays announced or visible commitment markers — verbal declaration of intent to harm, operationally appropriate clothing (tactical gear, body armor, concealment apparel), weapon presentation — at the target location",
               "category": "behavioral_change",
               "detection_sources": [
@@ -9507,6 +9512,7 @@
           "indicators": [
             {
               "id": "IND-0302-01",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor uses force, prying tools, cutting tools, or impact methods to defeat a perimeter barrier — door, gate, fence, window, or wall",
               "category": "access",
               "detection_sources": [
@@ -9537,6 +9543,7 @@
             },
             {
               "id": "IND-0302-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "behavior": "Threat actor uses a vehicle as a battering tool to defeat a fixed barrier — gate, bollards, glass entry — at the protected environment",
               "category": "access",
               "detection_sources": [
@@ -9566,6 +9573,7 @@
             },
             {
               "id": "IND-0302-03",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "behavior": "Threat actor physically overpowers, restrains, or incapacitates a security guard, escort, bodyguard, or other personnel staffing an access point or barrier",
               "category": "access",
               "detection_sources": [
@@ -9597,6 +9605,7 @@
             },
             {
               "id": "IND-0302-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor deploys mechanical bypass tools — bolt cutters, breaching tools, lock picks, hydraulic spreaders — to defeat access controls or barriers",
               "category": "access",
               "detection_sources": [
@@ -9626,6 +9635,7 @@
             },
             {
               "id": "IND-0302-05",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "weak"},
               "behavior": "Threat actor times the force application to a moment when alarm response, on-site security, or surveillance coverage is degraded or absent",
               "category": "access",
               "detection_sources": [
@@ -9987,6 +9997,7 @@
           "indicators": [
             {
               "id": "IND-0303-01",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "behavior": "Threat actor takes physical custody of the targeted subject or subjects through restraint, threat of harm, or coordinated team action, removing them from the protected environment",
               "category": "behavioral_change",
               "detection_sources": [
@@ -10018,6 +10029,7 @@
             },
             {
               "id": "IND-0303-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor seizes operationally relevant assets carried by the targeted subject — devices, documents, identity media, sensitive equipment, or biometric materials (fingerprints, blood, or other biological samples used to bypass biometric access controls or fabricate forensic attribution)",
               "category": "acquisition",
               "detection_sources": [
@@ -10045,6 +10057,7 @@
             },
             {
               "id": "IND-0303-03",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "behavior": "Threat actor extracts the targeted subject or subjects from the protected environment via vehicle, foot, or transit, sometimes using coordinated multi-actor extraction",
               "category": "behavioral_change",
               "detection_sources": [
@@ -10076,6 +10089,7 @@
             },
             {
               "id": "IND-0303-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor uses coercive threats — display of weapon, threat to harm the targeted subject or others, threat to destroy property — to compel surrender of a person, asset, or location",
               "category": "communication",
               "detection_sources": [
@@ -10106,6 +10120,7 @@
             },
             {
               "id": "IND-0303-05",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor occupies a location associated with the target — office, residence, vehicle, or a public site — and prevents access, denying the target's protective network the ability to intervene",
               "category": "access",
               "detection_sources": [
@@ -10454,6 +10469,7 @@
           "indicators": [
             {
               "id": "IND-0304-01",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "behavior": "Threat actor maintains physical restraint of the captive or captives — handcuffs, rope, zip ties, lockable container, locked room — over an extended duration consistent with sustained captive control",
               "category": "behavioral_change",
               "detection_sources": [
@@ -10484,6 +10500,7 @@
             },
             {
               "id": "IND-0304-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor employs psychological management of the captive or captives including threats, deprivation, isolation, sensory manipulation, or alternation of treatment to maintain compliance",
               "category": "behavioral_change",
               "detection_sources": [
@@ -10511,6 +10528,7 @@
             },
             {
               "id": "IND-0304-03",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "behavior": "Threat actor uses force, threats of force, or coercive deprivation (food, water, sleep, medical access) to maintain captive compliance over time",
               "category": "behavioral_change",
               "detection_sources": [
@@ -10541,6 +10559,7 @@
             },
             {
               "id": "IND-0304-04",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "behavior": "In sustained kidnapping operations, threat actor moves the captive or captives between holding locations to defeat search efforts, evade tactical response, or adapt to the operational situation",
               "category": "behavioral_change",
               "detection_sources": [
@@ -10571,6 +10590,7 @@
             },
             {
               "id": "IND-0304-05",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "behavior": "Threat actor's communications during Captive Control reflect ongoing operational decision-making — negotiation framing, demand articulation, threat language, or deception toward responders",
               "category": "communication",
               "detection_sources": [
