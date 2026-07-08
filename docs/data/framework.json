@@ -10911,6 +10911,7 @@
           "indicators": [
             {
               "id": "IND-0305-01",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "weak", "threat_method": "none"},
               "behavior": "Threat actor acquires or researches radio frequency jamming equipment, signal blockers, or communications disruption devices",
               "category": "acquisition",
               "detection_sources": [
@@ -10940,6 +10941,7 @@
             },
             {
               "id": "IND-0305-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor conducts surveillance of security response patterns, guard shift changes, patrol routes, or emergency response staging areas at or near the target location",
               "category": "surveillance",
               "detection_sources": [
@@ -10968,6 +10970,7 @@
             },
             {
               "id": "IND-0305-03",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
               "behavior": "Threat actor places false emergency calls or reports diversionary incidents at locations away from the intended target location to draw response resources",
               "category": "planning",
               "detection_sources": [
@@ -10994,6 +10997,7 @@
             },
             {
               "id": "IND-0305-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor researches or probes building security systems, alarm panels, camera networks, or emergency communication infrastructure",
               "category": "digital",
               "detection_sources": [
@@ -11023,6 +11027,7 @@
             },
             {
               "id": "IND-0305-05",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "weak"},
               "behavior": "Threat actor positions obstacles, vehicles, or barriers near facility entry points, emergency exits, or response force staging areas prior to or during an attack",
               "category": "planning",
               "detection_sources": [
@@ -11342,6 +11347,7 @@
           "indicators": [
             {
               "id": "IND-0306-01",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor verbally controls witnesses or bystanders through threat of harm, instruction to comply, or instruction to leave the area, without applying physical force",
               "category": "communication",
               "detection_sources": [
@@ -11370,6 +11376,7 @@
             },
             {
               "id": "IND-0306-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "behavior": "Threat actor physically neutralizes — incapacitates without killing — security personnel, bodyguards, or other interference-capable bystanders to remove their ability to interfere with the operation",
               "category": "behavioral_change",
               "detection_sources": [
@@ -11400,6 +11407,7 @@
             },
             {
               "id": "IND-0306-03",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "weak"},
               "behavior": "Threat actor disperses or directs a crowd through staged events, false alarm activation, or controlled communication to clear the operational environment of bystanders",
               "category": "behavioral_change",
               "detection_sources": [
@@ -11427,6 +11435,7 @@
             },
             {
               "id": "IND-0306-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
               "behavior": "Threat actor deceives bystanders about the nature of the incident — claiming a drill, a medical event, or a media production — to delay recognition that the operation is underway, or recruits unwitting bystanders into the operation through misrepresentation of its purpose",
               "category": "communication",
               "detection_sources": [
@@ -11457,6 +11466,7 @@
             },
             {
               "id": "IND-0306-05",
+              "informs_axes": {"actor_capability": "weak", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor accepts visible bystander exposure as operational cost when containment, neutralization, or deception is judged infeasible — typical of high-tempo ideologically-driven attacks",
               "category": "behavioral_change",
               "detection_sources": [
@@ -11794,6 +11804,7 @@
           "indicators": [
             {
               "id": "IND-0307-01",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor scans the operational environment in real time during execution for security personnel, law enforcement, witnesses with cameras, or other observers capable of interrupting the action",
               "category": "surveillance",
               "detection_sources": [
@@ -11823,6 +11834,7 @@
             },
             {
               "id": "IND-0307-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
               "behavior": "Threat actor monitors public safety communications — police scanner applications, fire dispatch feeds, public alert systems — during execution to detect response activation and approach timing",
               "category": "digital",
               "detection_sources": [
@@ -11852,6 +11864,7 @@
             },
             {
               "id": "IND-0307-03",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor monitors live CCTV or video feeds of the protected environment or its approaches during execution, sometimes via cyber access to facility systems",
               "category": "digital",
               "detection_sources": [
@@ -11882,6 +11895,7 @@
             },
             {
               "id": "IND-0307-04",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor uses drone overwatch or aerial surveillance during execution to extend observation capability beyond ground-level scan",
               "category": "surveillance",
               "detection_sources": [
@@ -11911,6 +11925,7 @@
             },
             {
               "id": "IND-0307-05",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
               "behavior": "Threat actor coordinates with pre-positioned spotters or counter-surveillance team members who relay real-time updates on response activation and observer behavior",
               "category": "communication",
               "detection_sources": [
@@ -11941,6 +11956,7 @@
             },
             {
               "id": "IND-0307-06",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "weak"},
               "behavior": "Threat actor's behavior changes mid-execution in response to observed counter-surveillance signals — pace acceleration, route change, abort initiation, engagement of an observer",
               "category": "behavioral_change",
               "detection_sources": [
@@ -12272,6 +12288,7 @@
           "indicators": [
             {
               "id": "IND-0308-01",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
               "behavior": "Threat actor uses encrypted communications applications (signal-rich messaging, voice-over-IP, custom protocols) for coordination among accomplices during execution",
               "category": "communication",
               "detection_sources": [
@@ -12304,6 +12321,7 @@
             },
             {
               "id": "IND-0308-02",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
               "behavior": "Threat actor uses pre-arranged signal codes — SMS strings, phone-call ring patterns, physical signals — to communicate operational state without revealing content to interceptors",
               "category": "communication",
               "detection_sources": [
@@ -12332,6 +12350,7 @@
             },
             {
               "id": "IND-0308-03",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
               "behavior": "Threat actor uses radio communications (handheld, vehicle-mounted) for accomplice coordination, accepting the jamming and intercept risk in exchange for low latency and team reach",
               "category": "communication",
               "detection_sources": [
@@ -12362,6 +12381,7 @@
             },
             {
               "id": "IND-0308-04",
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
               "behavior": "Threat actor uses covert wearable communications — earpieces, body-worn microphones, pulse signaling devices — to coordinate without visible cue to bystanders or observers",
               "category": "communication",
               "detection_sources": [
@@ -12389,6 +12409,7 @@
             },
             {
               "id": "IND-0308-05",
+              "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
               "behavior": "Threat actor's signal exchange across the operation creates an observable coordination footprint — multiple accomplices acting on shared information they could only have received via transmission",
               "category": "behavioral_change",
               "detection_sources": [
