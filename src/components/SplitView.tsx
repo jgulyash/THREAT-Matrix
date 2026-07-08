@@ -1,24 +1,23 @@
-import type { Tactic, ActorProfile, BibliographyEntry } from '../types/framework';
+import type { Tactic, ActorProfile } from '../types/framework';
 import type { Route } from '../lib/route';
-import type { TacticsByPhase } from '../App';
+import type { TacticsByMatrix } from '../App';
 import { resolveTrack } from '../lib/constants';
 import { HeatMapGrid } from './HeatMapGrid';
 import { PhasePanel } from './PhasePanel';
 import { TacticDetail } from './TacticDetail';
 
 interface Props {
-  tacticsByPhase: TacticsByPhase;
+  tacticsByMatrix: TacticsByMatrix;
   route: Extract<Route, { view: 'phase' } | { view: 'tactic' }>;
   navigate: (path: string) => void;
   tacticMap: Record<string, Tactic>;
   actorMap: Record<string, ActorProfile>;
-  bibliography: Record<string, BibliographyEntry>;
   cpnFilter: boolean;
   actorFilter: string;
 }
 
 export function SplitView({
-  tacticsByPhase,
+  tacticsByMatrix,
   route,
   navigate,
   tacticMap,
@@ -26,6 +25,8 @@ export function SplitView({
   cpnFilter,
   actorFilter,
 }: Props) {
+  const matrix = route.matrix;
+  const tacticsByPhase = tacticsByMatrix[matrix];
   const ot = route.view === 'tactic' ? tacticMap[route.tacticId] : null;
 
   let pp: number;
@@ -59,11 +60,12 @@ export function SplitView({
     <div className="split-view">
       <div className="split-hm">
         <HeatMapGrid
-          tacticsByPhase={tacticsByPhase}
+          tacticsByMatrix={tacticsByMatrix}
           navigate={navigate}
           cpnFilter={cpnFilter}
           actorFilter={actorFilter}
           compact={true}
+          selectedMatrix={matrix}
           selectedPhase={pp}
           selectedTrack={pt}
           selectedTacticId={route.view === 'tactic' ? route.tacticId : null}
@@ -81,6 +83,7 @@ export function SplitView({
         ) : (
           <PhasePanel
             tactics={ptactics}
+            matrix={matrix}
             phase={pp}
             track={pt}
             navigate={navigate}

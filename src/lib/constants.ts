@@ -15,10 +15,9 @@ export const PHASE_SHORT: Record<number, string> = {
 };
 
 export const STUB: Record<
-  'facility' | 'organization' | 'infrastructure',
+  'organization' | 'infrastructure',
   { phases: Record<number, number>; flight: number; claim: number }
 > = {
-  facility: { phases: { 1: 10, 2: 9, 3: 9 }, flight: 8, claim: 4 },
   organization: { phases: { 1: 9, 2: 10, 3: 10 }, flight: 9, claim: 4 },
   infrastructure: { phases: { 1: 8, 2: 9, 3: 9 }, flight: 8, claim: 4 },
 };

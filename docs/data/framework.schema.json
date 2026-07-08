@@ -281,6 +281,11 @@
           "type": "string",
           "description": "Human-readable phase name. Current data uses Title Case with phase number prefix (e.g., '1 Target Development'); V1.2 may normalize."
         },
+        "phase_4_track": {
+          "type": "string",
+          "enum": ["evasion", "attribution"],
+          "description": "Aftermath sub-track for phase-4 tactics: 'evasion' (Evade \u2014 withdrawal, evidence management, cover, counter-forensics, re-attack positioning) or 'attribution' (Claim \u2014 declaring, amplifying, messaging, coercive leverage). Framework-level structure carried by every matrix's phase-4 tactics; absent on phases 1\u20133. Formalized V1.3 (previously an undocumented data field on the People matrix)."
+        },
         "notes": {
           "type": "string",
           "description": "Formal taxonomic description of the tactic."

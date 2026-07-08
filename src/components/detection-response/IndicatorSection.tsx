@@ -8,10 +8,11 @@ import { SourceRefLink } from './SourceRefLink';
 
 interface Props {
   indicators: Indicator[];
+  matrix: string;
   navigate: (path: string) => void;
 }
 
-export function IndicatorSection({ indicators, navigate }: Props) {
+export function IndicatorSection({ indicators, matrix, navigate }: Props) {
   if (!indicators?.length) return null;
 
   const { orderedKeys, grouped } = groupByCategory(indicators, INDICATOR_CATEGORY_LABELS);
@@ -33,11 +34,11 @@ export function IndicatorSection({ indicators, navigate }: Props) {
                 className="dr-item-id link"
                 role="button"
                 tabIndex={0}
-                onClick={() => navigate(`/person/indicator/${ind.id}`)}
+                onClick={() => navigate(`/${matrix}/indicator/${ind.id}`)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    navigate(`/person/indicator/${ind.id}`);
+                    navigate(`/${matrix}/indicator/${ind.id}`);
                   }
                 }}
                 title="View indicator detail"
@@ -63,11 +64,11 @@ export function IndicatorSection({ indicators, navigate }: Props) {
                       className="dr-tag mesh link"
                       role="button"
                       tabIndex={0}
-                      onClick={() => navigate(`/person/indicator/${relId}`)}
+                      onClick={() => navigate(`/${matrix}/indicator/${relId}`)}
                       onKeyDown={(e) => {
                         if (e.key === 'Enter' || e.key === ' ') {
                           e.preventDefault();
-                          navigate(`/person/indicator/${relId}`);
+                          navigate(`/${matrix}/indicator/${relId}`);
                         }
                       }}
                     >

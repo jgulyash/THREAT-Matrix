@@ -64,7 +64,7 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
     <div className="actor-detail-view">
       <div
         className="adv-back"
-        onClick={() => navigate(`/person/tactic/${tactic.id}`)}
+        onClick={() => navigate(`/${tactic.matrix}/tactic/${tactic.id}`)}
       >
         ← {tactic.id} {tactic.name}
       </div>
@@ -78,7 +78,7 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
         <span className="dp-crumb-sep">›</span>
         <span
           className="ind-crumb-link"
-          onClick={() => navigate(`/person/tactic/${tactic.id}`)}
+          onClick={() => navigate(`/${tactic.matrix}/tactic/${tactic.id}`)}
         >
           {tactic.name}
         </span>
@@ -235,11 +235,11 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
                     className="ind-related-link"
                     role="button"
                     tabIndex={0}
-                    onClick={() => navigate(`/person/indicator/${relId}`)}
+                    onClick={() => navigate(`/${(rel?.tactic || tactic).matrix}/indicator/${relId}`)}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
-                        navigate(`/person/indicator/${relId}`);
+                        navigate(`/${(rel?.tactic || tactic).matrix}/indicator/${relId}`);
                       }
                     }}
                   >

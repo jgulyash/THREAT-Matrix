@@ -34,9 +34,9 @@ export function TacticDetail({ tactic, actorMap, navigate, fromPhase, fromTrack 
 
   const back = fromPhase
     ? fromTrack
-      ? `/person/phase/${fromPhase}/${fromTrack}`
-      : `/person/phase/${fromPhase}`
-    : `/person`;
+      ? `/${tactic.matrix}/phase/${fromPhase}/${fromTrack}`
+      : `/${tactic.matrix}/phase/${fromPhase}`
+    : `/${tactic.matrix}`;
   const tl = resolveTrack(tactic);
 
   const hasIndicators = (tactic.indicators || []).length > 0;
@@ -123,7 +123,7 @@ export function TacticDetail({ tactic, actorMap, navigate, fromPhase, fromTrack 
         {hasAnyDR ? (
           <>
             {hasIndicators && (
-              <IndicatorSection indicators={tactic.indicators} navigate={navigate} />
+              <IndicatorSection indicators={tactic.indicators} matrix={tactic.matrix} navigate={navigate} />
             )}
             {hasCountermeasures && (
               <CountermeasureSection

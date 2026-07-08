@@ -1,9 +1,14 @@
 import type { Tactic } from '../types/framework';
 import { PHASE_SHORT, STUB, MATRIX_LABELS, tacticMatchesFilters } from '../lib/constants';
-import type { TacticsByPhase } from '../App';
+import { LIVE_MATRICES, type LiveMatrix } from '../lib/route';
+import type { TacticsByMatrix } from '../App';
+
+// Column identity colors follow the header scheme (amber/teal/red/blue).
+const MATRIX_COL: Record<LiveMatrix, string> = { person: 'amber', facility: 'teal' };
 
 interface HeatMapCellProps {
   tactics: Tactic[];
+  col: string;
   track?: 'flight' | 'claim';
   isSelected: boolean;
   onClick: () => void;
@@ -11,11 +16,10 @@ interface HeatMapCellProps {
   actorFilter: string;
 }
 
-function HeatMapCell({ tactics, track, isSelected, onClick, cpnFilter, actorFilter }: HeatMapCellProps) {
+function HeatMapCell({ tactics, col, track, isSelected, onClick, cpnFilter, actorFilter }: HeatMapCellProps) {
   const displayed = tactics.filter((t) => tacticMatchesFilters(t, cpnFilter, actorFilter));
   const count = displayed.length;
   const cpnCount = displayed.filter((t) => t.cpn).length;
-  const col = 'amber';
   const cls = track === 'flight' ? 'flight-cell' : track === 'claim' ? 'claim-cell' : '';
   const limit = track ? 2 : 3;
   return (
@@ -67,98 +71,124 @@ function StubCell({ count, version, track }: StubCellProps) {
 }
 
 interface GridProps {
-  tacticsByPhase: TacticsByPhase;
+  tacticsByMatrix: TacticsByMatrix;
   navigate: (path: string) => void;
   cpnFilter: boolean;
   actorFilter: string;
   compact: boolean;
+  selectedMatrix: LiveMatrix | null;
   selectedPhase: number | null;
   selectedTrack: string | null;
   selectedTacticId: string | null;
 }
 
 export function HeatMapGrid({
-  tacticsByPhase,
+  tacticsByMatrix,
   navigate,
   cpnFilter,
   actorFilter,
   compact,
+  selectedMatrix,
   selectedPhase,
   selectedTrack,
   selectedTacticId,
 }: GridProps) {
   const pc = '140px';
   const gc = `${pc} 1fr 1fr 1fr 1fr`;
+
+  // Live column counts derive from the data; stub totals from the STUB plan.
+  const liveCount = (m: LiveMatrix) => {
+    const tbp = tacticsByMatrix[m];
+    return tbp[1].length + tbp[2].length + tbp[3].length + tbp[4].flight.length + tbp[4].claim.length;
+  };
+  const stubCount = (m: 'organization' | 'infrastructure') =>
+    Object.values(STUB[m].phases).reduce((n, v) => n + v, 0) + STUB[m].flight + STUB[m].claim;
+
+  const phaseSelected = (m: LiveMatrix, phase: 1 | 2 | 3) => {
+    if (selectedMatrix !== m) return false;
+    return selectedTacticId
+      ? tacticsByMatrix[m][phase].some((t) => t.id === selectedTacticId)
+      : selectedPhase === phase;
+  };
+
+  const trackSelected = (m: LiveMatrix, track: 'flight' | 'claim') => {
+    if (selectedMatrix !== m) return false;
+    const tactics = tacticsByMatrix[m][4][track];
+    return (
+      (!!selectedTacticId && tactics.some((t) => t.id === selectedTacticId)) ||
+      (!selectedTacticId && selectedPhase === 4 && selectedTrack === track)
+    );
+  };
+
   return (
     <div className="hm-wrap">
       <div className="hm-header-row" style={{ gridTemplateColumns: gc }}>
         <div className="hm-col-hdr phase-col">Phase</div>
-        <div className="hm-col-hdr amber">{compact ? MATRIX_LABELS.person : `${MATRIX_LABELS.person} · 34`}</div>
-        <div className="hm-col-hdr teal">{compact ? MATRIX_LABELS.facility : `${MATRIX_LABELS.facility} · 40`}</div>
-        <div className="hm-col-hdr red">{compact ? MATRIX_LABELS.organization : `${MATRIX_LABELS.organization} · 42`}</div>
-        <div className="hm-col-hdr blue">{compact ? MATRIX_LABELS.infrastructure : `${MATRIX_LABELS.infrastructure} · 38`}</div>
+        {LIVE_MATRICES.map((m) => (
+          <div key={m} className={`hm-col-hdr ${MATRIX_COL[m]}`}>
+            {compact ? MATRIX_LABELS[m] : `${MATRIX_LABELS[m]} · ${liveCount(m)}`}
+          </div>
+        ))}
+        <div className="hm-col-hdr red">{compact ? MATRIX_LABELS.organization : `${MATRIX_LABELS.organization} · ${stubCount('organization')}`}</div>
+        <div className="hm-col-hdr blue">{compact ? MATRIX_LABELS.infrastructure : `${MATRIX_LABELS.infrastructure} · ${stubCount('infrastructure')}`}</div>
       </div>
       <div className="hm-rows">
-        {([1, 2, 3] as const).map((phase) => {
-          const phaseTactics = tacticsByPhase[phase];
-          const sel = selectedTacticId
-            ? phaseTactics.some((t) => t.id === selectedTacticId)
-            : selectedPhase === phase;
-          return (
-            <div key={phase} className="hm-row" style={{ gridTemplateColumns: gc }}>
-              <div className="hm-phase-cell">
-                <div className="hm-phase-name">{PHASE_SHORT[phase]}</div>
-              </div>
+        {([1, 2, 3] as const).map((phase) => (
+          <div key={phase} className="hm-row" style={{ gridTemplateColumns: gc }}>
+            <div className="hm-phase-cell">
+              <div className="hm-phase-name">{PHASE_SHORT[phase]}</div>
+            </div>
+            {LIVE_MATRICES.map((m) => (
               <HeatMapCell
-                tactics={phaseTactics}
-                isSelected={sel}
-                onClick={() => navigate(`/person/phase/${phase}`)}
+                key={m}
+                tactics={tacticsByMatrix[m][phase]}
+                col={MATRIX_COL[m]}
+                isSelected={phaseSelected(m, phase)}
+                onClick={() => navigate(`/${m}/phase/${phase}`)}
                 cpnFilter={cpnFilter}
                 actorFilter={actorFilter}
               />
-              {(['facility', 'organization', 'infrastructure'] as const).map((m, i) => (
-                <StubCell key={m} count={STUB[m].phases[phase]} version={`V1.${i + 3}`} />
-              ))}
-            </div>
-          );
-        })}
+            ))}
+            {(['organization', 'infrastructure'] as const).map((m, i) => (
+              <StubCell key={m} count={STUB[m].phases[phase]} version={`V1.${i + 4}`} />
+            ))}
+          </div>
+        ))}
         <div className="phase4-row">
           <div className="phase4-phase-cell" style={{ width: '140px' }}>
             <div className="hm-phase-name">{PHASE_SHORT[4]}</div>
           </div>
           <div className="phase4-content">
             <div className="phase4-sub-row">
-              <HeatMapCell
-                tactics={tacticsByPhase[4].flight}
-                track="flight"
-                isSelected={
-                  (!!selectedTacticId &&
-                    tacticsByPhase[4].flight.some((t) => t.id === selectedTacticId)) ||
-                  (!selectedTacticId && selectedPhase === 4 && selectedTrack === 'flight')
-                }
-                onClick={() => navigate('/person/phase/4/flight')}
-                cpnFilter={cpnFilter}
-                actorFilter={actorFilter}
-              />
-              <StubCell count={STUB.facility.flight} version="V1.3" track="flight" />
+              {LIVE_MATRICES.map((m) => (
+                <HeatMapCell
+                  key={m}
+                  tactics={tacticsByMatrix[m][4].flight}
+                  col={MATRIX_COL[m]}
+                  track="flight"
+                  isSelected={trackSelected(m, 'flight')}
+                  onClick={() => navigate(`/${m}/phase/4/flight`)}
+                  cpnFilter={cpnFilter}
+                  actorFilter={actorFilter}
+                />
+              ))}
               <StubCell count={STUB.organization.flight} version="V1.4" track="flight" />
               <StubCell count={STUB.infrastructure.flight} version="V1.5" track="flight" />
             </div>
             <div className="phase4-divider" />
             <div className="phase4-sub-row">
-              <HeatMapCell
-                tactics={tacticsByPhase[4].claim}
-                track="claim"
-                isSelected={
-                  (!!selectedTacticId &&
-                    tacticsByPhase[4].claim.some((t) => t.id === selectedTacticId)) ||
-                  (!selectedTacticId && selectedPhase === 4 && selectedTrack === 'claim')
-                }
-                onClick={() => navigate('/person/phase/4/claim')}
-                cpnFilter={cpnFilter}
-                actorFilter={actorFilter}
-              />
-              <StubCell count={STUB.facility.claim} version="V1.3" track="claim" />
+              {LIVE_MATRICES.map((m) => (
+                <HeatMapCell
+                  key={m}
+                  tactics={tacticsByMatrix[m][4].claim}
+                  col={MATRIX_COL[m]}
+                  track="claim"
+                  isSelected={trackSelected(m, 'claim')}
+                  onClick={() => navigate(`/${m}/phase/4/claim`)}
+                  cpnFilter={cpnFilter}
+                  actorFilter={actorFilter}
+                />
+              ))}
               <StubCell count={STUB.organization.claim} version="V1.4" track="claim" />
               <StubCell count={STUB.infrastructure.claim} version="V1.5" track="claim" />
             </div>

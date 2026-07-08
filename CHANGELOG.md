@@ -45,6 +45,32 @@ topic. Schema additions are additive; existing content validates unchanged.
   the flat key space. No fabricated citations — facility content cites only
   verified keys.
 
+- **Facility matrix rendered in the browser.** The matrix browser now renders
+  the Facilities matrix end-to-end, mirroring the People rendering: a live
+  teal heat-map column (10/9/9 tactics across phases 1–3 plus the Aftermath
+  Evade/Claim split), phase panels, full tactic detail (description,
+  cyber-physical nexus, actor associations, indicators, countermeasures,
+  response protocols), and indicator detail with the escalation profile.
+  Navigation is matrix-aware throughout — routes take `/facility/...` paths
+  parallel to `/person/...`, and cross-links (related indicators, actor-detail
+  tactic lists, bibliography citations) resolve each tactic's own matrix.
+  Organizations and Infrastructure remain planned stubs.
+
+- **Facility Aftermath tracks (`phase_4_track`).** The facility phase-4
+  tactics now carry the framework-level Evade/Claim sub-track the People
+  matrix established: `evasion` on TF0401–TF0408 (withdrawal, evidence
+  management, cover reestablishment, network protection, financial
+  disposition, after-action assessment, counter-forensics, re-attack
+  positioning) and `attribution` on TF0409–TF0412 (declaration,
+  amplification, symbolic messaging, coercive demand). The schema now
+  formalizes `phase_4_track` (previously an undocumented data field).
+
+- **Bibliography grouped by matrix.** The References view groups the 46
+  sources into sections by their `matrices[]` tag (a multi-matrix source
+  appears under each matrix it informs), and the cited-by reverse map now
+  includes Facility tactics, so facility sources list their citing TF####
+  tactics.
+
 - **Actor-profile filter in the matrix browser.** The FilterBar's Actor
   control is now live: a category-grouped dropdown that filters the heat
   map and phase panels to tactics associated with a selected actor

@@ -174,6 +174,9 @@ export interface BibliographyEntry {
   url: string | null;
   doi?: string | null;
   relevance_summary: string;
+  // V1.3 matrix/topic tagging
+  matrices?: string[];
+  topics?: string[];
 }
 
 export interface MatrixContainer {

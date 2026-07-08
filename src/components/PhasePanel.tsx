@@ -3,6 +3,7 @@ import { PHASE_NAMES, tacticMatchesFilters } from '../lib/constants';
 
 interface Props {
   tactics: Tactic[];
+  matrix: string;
   phase: number;
   track: string | null;
   navigate: (path: string) => void;
@@ -10,14 +11,14 @@ interface Props {
   actorFilter: string;
 }
 
-export function PhasePanel({ tactics, phase, track, navigate, cpnFilter, actorFilter }: Props) {
+export function PhasePanel({ tactics, matrix, phase, track, navigate, cpnFilter, actorFilter }: Props) {
   const disp = tactics.filter((t) => tacticMatchesFilters(t, cpnFilter, actorFilter));
   const filtered = cpnFilter || !!actorFilter;
   const tl = track === 'flight' ? 'Evade' : track === 'claim' ? 'Claim' : null;
   return (
     <>
       <div className="dp-header">
-        <div className="dp-back" onClick={() => navigate('/person')}>
+        <div className="dp-back" onClick={() => navigate(`/${matrix}`)}>
           ← Back
         </div>
         <div className="dp-crumb">
@@ -44,7 +45,7 @@ export function PhasePanel({ tactics, phase, track, navigate, cpnFilter, actorFi
           <div
             key={t.id}
             className="dp-card"
-            onClick={() => navigate(`/person/tactic/${t.id}`)}
+            onClick={() => navigate(`/${t.matrix}/tactic/${t.id}`)}
           >
             <div className="dp-card-id">{t.id}</div>
             <div className="dp-card-title">{t.name}</div>

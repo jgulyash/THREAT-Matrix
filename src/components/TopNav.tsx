@@ -1,4 +1,4 @@
-import type { Route } from '../lib/route';
+import { LIVE_MATRICES, type Route } from '../lib/route';
 import { MATRIX_LABELS } from '../lib/constants';
 import frameworkData from '../../docs/data/framework.json';
 
@@ -12,9 +12,14 @@ interface Props {
 export function TopNav({ route, navigate, theme, setTheme }: Props) {
   const isActors = route.view === 'actors' || route.view === 'actorDetail';
   const isReferences = route.view === 'references';
-  const isPerson = !isActors && !isReferences && route.view !== 'stub';
-  const stubs: Array<['facility' | 'organization' | 'infrastructure', string]> = [
-    ['facility', MATRIX_LABELS.facility],
+  const activeMatrix =
+    route.view === 'heatmap' ||
+    route.view === 'phase' ||
+    route.view === 'tactic' ||
+    route.view === 'indicator'
+      ? route.matrix
+      : null;
+  const stubs: Array<['organization' | 'infrastructure', string]> = [
     ['organization', MATRIX_LABELS.organization],
     ['infrastructure', MATRIX_LABELS.infrastructure],
   ];
@@ -28,13 +33,16 @@ export function TopNav({ route, navigate, theme, setTheme }: Props) {
         <em>THREAT</em>&nbsp;Matrix
       </a>
       <div className="matrix-tabs">
-        <a
-          className={`mtab${isPerson ? ' active' : ''}`}
-          href="#/person"
-          onClick={(e) => { e.preventDefault(); navigate('/person'); }}
-        >
-          {MATRIX_LABELS.person}
-        </a>
+        {LIVE_MATRICES.map((m) => (
+          <a
+            key={m}
+            className={`mtab${activeMatrix === m ? ' active' : ''}`}
+            href={`#/${m}`}
+            onClick={(e) => { e.preventDefault(); navigate(`/${m}`); }}
+          >
+            {MATRIX_LABELS[m]}
+          </a>
+        ))}
         {stubs.map(([m, l]) => (
           <a
             key={m}
