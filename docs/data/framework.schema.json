@@ -100,7 +100,7 @@
         },
         "calibration_guidance": {
           "type": "string",
-          "description": "Type-level framework guidance on calibrating severity_thresholds to a consumer's threat-posture environment. The framework's default thresholds reflect equal-quartile bucketing; consumers operating in higher-threat-posture environments (critical infrastructure, executive protection, dignitary protection) should shift `high` and `critical` thresholds downward to surface medium-weight indicators earlier in triage. Lower-posture environments may shift them upward. Document any deviation per CONTRIBUTING.md \"Schema design principles\"."
+          "description": "Type-level framework guidance on calibrating severity_thresholds to a consumer's threat-posture environment. The framework's default thresholds reflect the rubric v1.2.0 recalibration (medium/high keep the equal-quartile cuts; critical lowered from 7.5 to 6.5 against the realized scored population); consumers operating in higher-threat-posture environments (critical infrastructure, executive protection, dignitary protection) should shift `high` and `critical` thresholds downward to surface medium-weight indicators earlier in triage. Lower-posture environments may shift them upward. Document any deviation per CONTRIBUTING.md \"Schema design principles\"."
         }
       }
     },

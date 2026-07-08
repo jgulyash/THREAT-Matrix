@@ -1814,7 +1814,7 @@
                 "detectability": 4.0
               },
               "escalation_weight": 6.97,
-              "severity_band": "high",
+              "severity_band": "critical",
               "informs_axes": {
                 "actor_capability": "moderate",
                 "actor_intent": "strong",
@@ -3547,7 +3547,7 @@
                 "detectability": 4.0
               },
               "escalation_weight": 6.51,
-              "severity_band": "high",
+              "severity_band": "critical",
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
@@ -3579,7 +3579,7 @@
                 "detectability": 3.5
               },
               "escalation_weight": 6.75,
-              "severity_band": "high",
+              "severity_band": "critical",
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
@@ -9181,7 +9181,7 @@
                 "detectability": 5.0
               },
               "escalation_weight": 6.98,
-              "severity_band": "high",
+              "severity_band": "critical",
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
@@ -9568,7 +9568,7 @@
                 "detectability": 4.0
               },
               "escalation_weight": 6.93,
-              "severity_band": "high",
+              "severity_band": "critical",
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             },
             {
@@ -11489,7 +11489,7 @@
                 "detectability": 4.5
               },
               "escalation_weight": 6.93,
-              "severity_band": "high",
+              "severity_band": "critical",
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
             }
           ],
@@ -21894,7 +21894,7 @@
                 "detectability": 2.5
               },
               "escalation_weight": 6.99,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0202-02",
@@ -23255,7 +23255,7 @@
                 "detectability": 3.0
               },
               "escalation_weight": 7.10,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0205-02",
@@ -23344,7 +23344,7 @@
                 "detectability": 4.0
               },
               "escalation_weight": 6.84,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0205-05",
@@ -23373,7 +23373,7 @@
                 "detectability": 2.5
               },
               "escalation_weight": 7.34,
-              "severity_band": "high"
+              "severity_band": "critical"
             }
           ],
           "countermeasures": [
@@ -23728,7 +23728,7 @@
                 "detectability": 3.5
               },
               "escalation_weight": 6.74,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0206-03",
@@ -24227,7 +24227,7 @@
                 "detectability": 2.5
               },
               "escalation_weight": 6.86,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0207-05",
@@ -24602,7 +24602,7 @@
                 "detectability": 2.5
               },
               "escalation_weight": 7.36,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0208-03",
@@ -24631,7 +24631,7 @@
                 "detectability": 3.5
               },
               "escalation_weight": 6.62,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0208-04",
@@ -25044,7 +25044,7 @@
                 "detectability": 3.5
               },
               "escalation_weight": 6.75,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0209-03",
@@ -25076,7 +25076,7 @@
                 "detectability": 4.0
               },
               "escalation_weight": 7.09,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0209-04",
@@ -25545,7 +25545,7 @@
                 "detectability": 5.0
               },
               "escalation_weight": 6.88,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0301-05",
@@ -25897,7 +25897,7 @@
                 "detectability": 4.0
               },
               "escalation_weight": 7.09,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0302-02",
@@ -25990,7 +25990,7 @@
                 "detectability": 6.5
               },
               "escalation_weight": 7.01,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0302-05",
@@ -26412,7 +26412,7 @@
                 "detectability": 2.5
               },
               "escalation_weight": 7.49,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0303-04",
@@ -26473,7 +26473,7 @@
                 "detectability": 3.0
               },
               "escalation_weight": 7.12,
-              "severity_band": "high"
+              "severity_band": "critical"
             }
           ],
           "countermeasures": [
@@ -26805,7 +26805,7 @@
                 "detectability": 3.0
               },
               "escalation_weight": 7.00,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0304-02",
@@ -27292,7 +27292,7 @@
                 "detectability": 6.0
               },
               "escalation_weight": 6.73,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0305-03",
@@ -28652,7 +28652,7 @@
                 "detectability": 4.0
               },
               "escalation_weight": 6.73,
-              "severity_band": "high"
+              "severity_band": "critical"
             },
             {
               "id": "IND-F0308-04",
@@ -35514,7 +35514,7 @@
       "low": 0.0,
       "medium": 2.5,
       "high": 5.0,
-      "critical": 7.5
+      "critical": 6.5
     },
     "severity_floor_rule": {
       "definition": "A triage floor layered on the severity math: an indicator whose behavior applies DIRECT PHYSICAL FORCE to a person's body carries severity_band = critical at minimum, regardless of its computed escalation_weight. escalation_weight is unchanged — it remains the true severity computation, so the gradient between a single assault (~4.6) and a mass bombing (~8.7) is preserved — but the triage band for any force against a person is critical. Such indicators carry a `severity_floor` field set to \"critical\". Rationale: a casualty is critical regardless of scale. The severity math gates the top band on blast_radius (population scope), which would place a single-victim killing at high and reserve critical for mass-casualty events; but for triage, any application of force to a person is a top-priority event. Count is a severity GRADIENT (in escalation_weight), not the critical THRESHOLD. This is a values/triage rule, not a change to the weight formula.",
@@ -35546,12 +35546,12 @@
           "single_individual_or_venue_unrevealed": "method base rate or single-victim floor (2.5-3.0)"
         },
         "instance_deferral": "The statistical likelihood that an unrevealed-venue targeted attack produces bystander casualties is an INSTANCE-level assessment — it depends on the specific target's typical environment (a public figure in crowds vs. a private individual) — and is resolved at assessment time in the instance-conditioning layer, NOT encoded in the type-level blast_radius. Keeping the type-level floor for unrevealed venues is deliberate, not an omission.",
-        "computed_critical_requires_both": "blast_radius (collateral) alone does not produce a critical band VIA THE COMPUTED WEIGHT. A computed-critical weight requires BOTH mass-lethal impact_potential AND mass blast_radius — the active application or direct acquisition of mass-casualty force. A positioning, timing, or bystander-management behavior with high blast but moderate impact computes to high, not critical. NOTE: this concerns the computed weight only; the separate severity_floor_rule floors any direct-physical-force-on-a-person behavior to critical regardless of computed weight (a casualty is critical at any scale)."
+        "computed_critical_requires_both": "blast_radius (collateral) alone does not produce a critical band VIA THE COMPUTED WEIGHT — the geometric mean still requires strong showings on multiple axes. Under the original equal-quartile critical cut (7.5), computed-critical required BOTH mass-lethal impact_potential AND mass blast_radius; the rubric v1.2.0 recalibration (critical=6.5) relaxes this at the margin: a behavior combining mass blast_radius with substantial but not mass-lethal impact_potential — e.g., in-execution positioning or bystander-exposure behaviors weighing 6.5–7.5 — now computes critical. NOTE: this concerns the computed weight only; the separate severity_floor_rule floors any direct-physical-force-on-a-person behavior to critical regardless of computed weight (a casualty is critical at any scale)."
       },
       "authoring_status": "Added rubric v1.1.0 (2026-07-04). Existing scored indicators predate this guidance and still carry single-victim blast_radius (2.5-3.0); re-authoring per this table, and scoring the execution phase, is a pending V1.3 pass (see scoring backlog B-05 / B-09)."
     },
-    "rubric_version": "1.1.0",
-    "calibration_guidance": "The severity_thresholds above reflect equal-quartile bucketing as the framework's default. Consumers SHOULD calibrate the thresholds to their threat-posture environment for best results. Higher-posture environments (e.g., critical infrastructure, executive protection, dignitary protection) may shift `high` and `critical` thresholds downward (e.g., high=4.0, critical=6.0) to surface medium-weight indicators earlier in triage. Lower-posture environments may shift them upward. Document the rationale for any deviation per CONTRIBUTING.md \"Schema design principles\"."
+    "rubric_version": "1.2.0",
+    "calibration_guidance": "The severity_thresholds above reflect the rubric v1.2.0 recalibration against the realized scored population (V1.3, 390 indicators): medium and high keep the original equal-quartile cuts (2.5 / 5.0); the critical threshold was lowered from the equal-quartile 7.5 to 6.5 so the critical band carries a weight-driven population — under the 7.5 cut, two-thirds of critical-band indicators reached the band only via the severity_floor rule. Consumers SHOULD calibrate the thresholds to their threat-posture environment for best results. Higher-posture environments (e.g., critical infrastructure, executive protection, dignitary protection) may shift `high` and `critical` thresholds downward (e.g., high=4.0, critical=6.0) to surface medium-weight indicators earlier in triage. Lower-posture environments may shift them upward. Document the rationale for any deviation per CONTRIBUTING.md \"Schema design principles\"."
   },
   "phase_mappings": {
     "phase_1_target_development": {

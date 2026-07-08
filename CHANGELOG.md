@@ -94,6 +94,23 @@ topic. Schema additions are additive; existing content validates unchanged.
 
 ### Changed
 
+- **Severity thresholds recalibrated against the realized scored population
+  (escalation_rubric v1.2.0).** With both matrices fully scored (390 indicators),
+  the equal-quartile `critical` cut of 7.5 left the critical band floor-driven:
+  24 of 41 critical indicators reached the band only via the casualty severity
+  floor, because the geometric mean rarely computes past 7.5. The `critical`
+  threshold moves to **6.5** (medium 2.5 and high 5.0 are unchanged), giving the
+  band a genuine weight-driven population while preserving the medium/high
+  split: 24 indicators move high → critical (People 13 → 19, Facilities 28 → 46).
+  `calibration_guidance` (framework + schema) now documents the recalibrated
+  default, and `computed_critical_requires_both` is updated for the new cut —
+  at 6.5, a behavior combining mass blast_radius with substantial (not
+  mass-lethal) impact_potential can compute critical at the margin. The
+  consumer-side posture knob (shift thresholds to your environment) is
+  unchanged. Per-phase category scoring defaults (phases 2–4, n≥8 cells only)
+  are published alongside the recalibrated phase-1 defaults in the authoring
+  workspace. No `escalation_weight`, axis value, or floor assignment changed.
+
 - **Collateral-reveal blast policy documented and reconciled.** The blast_radius
   authoring rule — raise blast above the single-victim floor only where the
   behavior itself observably reveals a group/population target or a public/crowd
@@ -102,9 +119,11 @@ topic. Schema additions are additive; existing content validates unchanged.
   graduated tiers and an explicit deferral of unrevealed-venue collateral to the
   instance layer. One consistency fix (`IND-0206-01` line-of-sight to a
   gathering: blast 3.5 → 4.5 to match its sibling). The policy adds no criticals
-  by design: critical requires both mass-lethal impact and mass blast, so a
-  positioning/timing/bystander behavior with high blast but moderate impact
-  reads high, not critical.
+  by design under the equal-quartile 7.5 cut it was authored against: critical
+  required both mass-lethal impact and mass blast, so a positioning/timing/
+  bystander behavior with high blast but moderate impact read high, not
+  critical. (The severity-threshold recalibration entry above moves the
+  critical cut to 6.5, which admits a handful of those behaviors at the margin.)
 
 - **Casualty severity floor.** Behaviors that apply direct physical force to a
   person (weapon discharge, ramming, detonation, physical assault, overpowering
