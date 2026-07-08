@@ -1,6 +1,10 @@
+import { MATRICES } from './constants';
+
 // Matrices with full browser rendering; organization/infrastructure remain stubs.
 export type LiveMatrix = 'person' | 'facility';
-export const LIVE_MATRICES: LiveMatrix[] = ['person', 'facility'];
+export const LIVE_MATRICES = MATRICES.filter((m) => m.version === null).map(
+  (m) => m.key
+) as LiveMatrix[];
 
 export type Route =
   | { view: 'heatmap'; matrix: LiveMatrix }

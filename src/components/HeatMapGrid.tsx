@@ -1,10 +1,12 @@
 import type { Tactic } from '../types/framework';
-import { PHASE_SHORT, STUB, MATRIX_LABELS, tacticMatchesFilters } from '../lib/constants';
+import { PHASE_SHORT, STUB, MATRICES, STUB_MATRICES, tacticMatchesFilters } from '../lib/constants';
 import { LIVE_MATRICES, type LiveMatrix } from '../lib/route';
 import type { TacticsByMatrix } from '../App';
 
-// Column identity colors follow the header scheme (amber/teal/red/blue).
-const MATRIX_COL: Record<LiveMatrix, string> = { person: 'amber', facility: 'teal' };
+// Column identity colors come from the shared MATRICES descriptor.
+const MATRIX_COL: Record<string, string> = Object.fromEntries(
+  MATRICES.map((m) => [m.key, m.color])
+);
 
 interface HeatMapCellProps {
   tactics: Tactic[];
@@ -101,7 +103,7 @@ export function HeatMapGrid({
     const tbp = tacticsByMatrix[m];
     return tbp[1].length + tbp[2].length + tbp[3].length + tbp[4].flight.length + tbp[4].claim.length;
   };
-  const stubCount = (m: 'organization' | 'infrastructure') =>
+  const stubCount = (m: keyof typeof STUB) =>
     Object.values(STUB[m].phases).reduce((n, v) => n + v, 0) + STUB[m].flight + STUB[m].claim;
 
   const phaseSelected = (m: LiveMatrix, phase: 1 | 2 | 3) => {
@@ -124,13 +126,13 @@ export function HeatMapGrid({
     <div className="hm-wrap">
       <div className="hm-header-row" style={{ gridTemplateColumns: gc }}>
         <div className="hm-col-hdr phase-col">Phase</div>
-        {LIVE_MATRICES.map((m) => (
-          <div key={m} className={`hm-col-hdr ${MATRIX_COL[m]}`}>
-            {compact ? MATRIX_LABELS[m] : `${MATRIX_LABELS[m]} · ${liveCount(m)}`}
+        {MATRICES.map((m) => (
+          <div key={m.key} className={`hm-col-hdr ${m.color}`}>
+            {compact
+              ? m.label
+              : `${m.label} · ${m.version === null ? liveCount(m.key as LiveMatrix) : stubCount(m.key as keyof typeof STUB)}`}
           </div>
         ))}
-        <div className="hm-col-hdr red">{compact ? MATRIX_LABELS.organization : `${MATRIX_LABELS.organization} · ${stubCount('organization')}`}</div>
-        <div className="hm-col-hdr blue">{compact ? MATRIX_LABELS.infrastructure : `${MATRIX_LABELS.infrastructure} · ${stubCount('infrastructure')}`}</div>
       </div>
       <div className="hm-rows">
         {([1, 2, 3] as const).map((phase) => (
@@ -149,8 +151,8 @@ export function HeatMapGrid({
                 actorFilter={actorFilter}
               />
             ))}
-            {(['organization', 'infrastructure'] as const).map((m, i) => (
-              <StubCell key={m} count={STUB[m].phases[phase]} version={`V1.${i + 4}`} />
+            {STUB_MATRICES.map((m) => (
+              <StubCell key={m.key} count={STUB[m.key].phases[phase]} version={m.version} />
             ))}
           </div>
         ))}
@@ -172,8 +174,9 @@ export function HeatMapGrid({
                   actorFilter={actorFilter}
                 />
               ))}
-              <StubCell count={STUB.organization.flight} version="V1.4" track="flight" />
-              <StubCell count={STUB.infrastructure.flight} version="V1.5" track="flight" />
+              {STUB_MATRICES.map((m) => (
+                <StubCell key={m.key} count={STUB[m.key].flight} version={m.version} track="flight" />
+              ))}
             </div>
             <div className="phase4-divider" />
             <div className="phase4-sub-row">
@@ -189,8 +192,9 @@ export function HeatMapGrid({
                   actorFilter={actorFilter}
                 />
               ))}
-              <StubCell count={STUB.organization.claim} version="V1.4" track="claim" />
-              <StubCell count={STUB.infrastructure.claim} version="V1.5" track="claim" />
+              {STUB_MATRICES.map((m) => (
+                <StubCell key={m.key} count={STUB[m.key].claim} version={m.version} track="claim" />
+              ))}
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { FrameworkData, Tactic, ActorProfile } from './types/framework';
 import { parseRoute, LIVE_MATRICES, type LiveMatrix } from './lib/route';
-import { resolveTrack, tacticMatchesFilters } from './lib/constants';
+import { resolveTrack, tacticMatchesFilters, STUB_MATRICES } from './lib/constants';
 import { TopNav } from './components/TopNav';
 import { FilterBar } from './components/FilterBar';
 import { HeatMapGrid } from './components/HeatMapGrid';
@@ -116,7 +116,10 @@ export default function App() {
   const isActors = route.view === 'actors' || route.view === 'actorDetail';
   const isReferences = route.view === 'references';
   const isIndicator = route.view === 'indicator';
-  const sv = { organization: 'V1.4', infrastructure: 'V1.5' } as const;
+  const sv = Object.fromEntries(STUB_MATRICES.map((m) => [m.key, m.version])) as Record<
+    'organization' | 'infrastructure',
+    string
+  >;
 
   return (
     <div className="app-root">

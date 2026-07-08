@@ -22,17 +22,24 @@ export const STUB: Record<
   infrastructure: { phases: { 1: 8, 2: 9, 3: 9 }, flight: 8, claim: 4 },
 };
 
-// Display labels for the four target matrices. Plural to match the V1.2.2
-// scope prose ("one or more human beings", etc.); Infrastructure is invariant.
-// Data keys / routes / schema enum stay singular (matrices.person, /person)
-// for consumer stability — this map is display-only, the single source of
-// truth so the column headers, nav tabs, and stub landings can't drift.
-export const MATRIX_LABELS: Record<string, string> = {
-  person: 'People',
-  facility: 'Facilities',
-  organization: 'Organizations',
-  infrastructure: 'Infrastructure',
-};
+// The single ordered descriptor for the four target matrices — drives column
+// order, display labels, identity colors, live-vs-stub status, and planned
+// versions everywhere (heat map, nav tabs, bibliography sections, stub
+// landings). Promoting a matrix to live = flipping its `version` to null.
+// Labels are plural to match the V1.2.2 scope prose; data keys / routes /
+// schema enum stay singular (matrices.person, /person) for consumer stability.
+export const MATRICES = [
+  { key: 'person', label: 'People', color: 'amber', version: null },
+  { key: 'facility', label: 'Facilities', color: 'teal', version: null },
+  { key: 'organization', label: 'Organizations', color: 'red', version: 'V1.4' },
+  { key: 'infrastructure', label: 'Infrastructure', color: 'blue', version: 'V1.5' },
+] as const;
+
+export const MATRIX_LABELS: Record<string, string> = Object.fromEntries(
+  MATRICES.map((m) => [m.key, m.label])
+);
+
+export const STUB_MATRICES = MATRICES.filter((m) => m.version !== null);
 
 export const CATEGORY_ORDER = [
   'lone_actor',

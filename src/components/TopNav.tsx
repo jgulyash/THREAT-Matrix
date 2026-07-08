@@ -1,5 +1,5 @@
 import { LIVE_MATRICES, type Route } from '../lib/route';
-import { MATRIX_LABELS } from '../lib/constants';
+import { MATRIX_LABELS, STUB_MATRICES } from '../lib/constants';
 import frameworkData from '../../docs/data/framework.json';
 
 interface Props {
@@ -19,10 +19,6 @@ export function TopNav({ route, navigate, theme, setTheme }: Props) {
     route.view === 'indicator'
       ? route.matrix
       : null;
-  const stubs: Array<['organization' | 'infrastructure', string]> = [
-    ['organization', MATRIX_LABELS.organization],
-    ['infrastructure', MATRIX_LABELS.infrastructure],
-  ];
   return (
     <nav className="topbar">
       <a
@@ -43,14 +39,14 @@ export function TopNav({ route, navigate, theme, setTheme }: Props) {
             {MATRIX_LABELS[m]}
           </a>
         ))}
-        {stubs.map(([m, l]) => (
+        {STUB_MATRICES.map((m) => (
           <a
-            key={m}
-            className={`mtab stub${route.view === 'stub' && route.matrix === m ? ' active' : ''}`}
-            href={`#/${m}`}
-            onClick={(e) => { e.preventDefault(); navigate(`/${m}`); }}
+            key={m.key}
+            className={`mtab stub${route.view === 'stub' && route.matrix === m.key ? ' active' : ''}`}
+            href={`#/${m.key}`}
+            onClick={(e) => { e.preventDefault(); navigate(`/${m.key}`); }}
           >
-            {l}
+            {m.label}
           </a>
         ))}
         <a

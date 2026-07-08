@@ -1,5 +1,5 @@
 import type { BibliographyEntry, Tactic } from '../types/framework';
-import { MATRIX_LABELS } from '../lib/constants';
+import { MATRICES, MATRIX_LABELS } from '../lib/constants';
 
 interface Props {
   bibliography: Record<string, BibliographyEntry>;
@@ -19,7 +19,7 @@ const TYPE_LABELS: Record<string, string> = {
   standard: 'Standard',
 };
 
-const MATRIX_ORDER = ['person', 'facility', 'organization', 'infrastructure'];
+const MATRIX_ORDER = MATRICES.map((m) => m.key as string);
 
 export function BibliographyView({ bibliography, bibReverseMap, navigate }: Props) {
   const entries = Object.entries(bibliography || {}).sort((a, b) => {
