@@ -137,6 +137,20 @@ topic. Schema additions are additive; existing content validates unchanged.
   are published alongside the recalibrated phase-1 defaults in the authoring
   workspace. No `escalation_weight`, axis value, or floor assignment changed.
 
+- **Indicator behavior texts hardened to observable-only criteria (13
+  classes).** Thirteen phase-1/2 behavior descriptions carried clauses that
+  presupposed observer knowledge of the actor's plan ("the planned attack
+  method", "attack-relevant items", "the intended attack window") — matching
+  them required already knowing the plan, baking method/intent signal into
+  the definition instead of the observation. Each is reworded to an
+  observable criterion that preserves the class's scope (e.g., "items whose
+  most coherent use is harmful", "consistent times concentrated on one
+  recurring window", "the same route to or past the target"). During- and
+  post-attack behaviors that reference "the operation" are unchanged — there
+  the attack is observed reality, not presupposed knowledge. No escalation
+  or informs_axes value changed with the wording; the affected People-matrix
+  informs_axes ratings get a sealed-blind spot re-check.
+
 - **`informs_axes` axis semantics formalized in the schema (V1.3 refinements
   #1–#4).** The six axes now carry description text encoding the locked
   boundary rubric the matrix-wide authoring was rated against: the universal

@@ -1789,7 +1789,7 @@
             },
             {
               "id": "IND-0104-02",
-              "behavior": "Threat actor purchases or rents vehicles, tools, or equipment that have no apparent legitimate use in their declared activities, especially items operationally relevant to the planned attack method",
+              "behavior": "Threat actor purchases or rents vehicles, tools, or equipment that have no apparent legitimate use in their declared activities, especially items whose most coherent use is harmful — weapons-adjacent equipment, restraints, breach tools, accelerants — or whose combination has no benign explanation",
               "category": "acquisition",
               "detection_sources": [
                 "financial_records",
@@ -1944,7 +1944,7 @@
             },
             {
               "id": "IND-0104-06",
-              "behavior": "Threat actor accesses workplace inventory, supply rooms, or restricted storage outside the scope of declared duties to obtain attack-relevant items",
+              "behavior": "Threat actor accesses workplace inventory, supply rooms, or restricted storage outside the scope of declared duties to obtain items unrelated to their duties whose most coherent use is harmful — weapons, hazardous materials, access tools, sensitive documents",
               "category": "access",
               "detection_sources": [
                 "access_logs",
@@ -2467,7 +2467,7 @@
             {
               "id": "IND-0105-02",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "weak"},
-              "behavior": "Threat actor begins coordinating logistics, schedules, or transportation with another individual whose involvement is operationally relevant rather than socially incidental",
+              "behavior": "Threat actor begins coordinating logistics, schedules, or transportation with another individual whose role is functional rather than social — task division, lookout positioning, synchronized movement, or logistics the relationship itself does not explain",
               "category": "planning",
               "detection_sources": [
                 "physical_observation",
@@ -2563,7 +2563,7 @@
             {
               "id": "IND-0105-05",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "moderate"},
-              "behavior": "Threat actor transfers attack-relevant information — target details, schedule, environmental data, capability — to another individual via written or verbal communication",
+              "behavior": "Threat actor transfers targeting information — target details, schedule, environmental data, capability — to another individual via written or verbal communication",
               "category": "communication",
               "detection_sources": [
                 "it_logs",
@@ -3518,7 +3518,7 @@
             {
               "id": "IND-0107-03",
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "strong"},
-              "behavior": "Threat actor engages in preparation behavior — acquiring weapons, conducting dry runs, surveilling locations, or making logistical arrangements consistent with an attack plan",
+              "behavior": "Threat actor engages in preparation behavior — acquiring weapons, conducting dry runs, surveilling locations, or making logistical arrangements that converge on a specific time, place, or person",
               "category": "acquisition",
               "detection_sources": [
                 "financial_records",
@@ -4489,7 +4489,7 @@
             {
               "id": "IND-0201-01",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
-              "behavior": "Threat actor performs repeated visits to the target site at consistent times matching a planned attack window, without legitimate purpose",
+              "behavior": "Threat actor performs repeated visits to the target site at consistent times concentrated on one recurring window rather than varied across the day, without legitimate purpose",
               "category": "surveillance",
               "detection_sources": [
                 "physical_observation",
@@ -4520,7 +4520,7 @@
             {
               "id": "IND-0201-02",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "weak"},
-              "behavior": "Threat actor drives or walks the planned approach route on multiple occasions, sometimes with stand-in vehicles or alternative timing to test variants",
+              "behavior": "Threat actor drives or walks the same route to or past the target on multiple occasions, sometimes with stand-in vehicles or alternative timing to test variants",
               "category": "surveillance",
               "detection_sources": [
                 "physical_observation",
@@ -4583,7 +4583,7 @@
             {
               "id": "IND-0201-04",
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "strong", "threat_target": "weak", "threat_method": "strong"},
-              "behavior": "Threat actor conducts partial rehearsal of equipment or capability — weapon function checks at remote locations, vehicle handling tests, breach-tool practice — without revealing the operation",
+              "behavior": "Threat actor conducts partial rehearsal of equipment or capability — weapon function checks at remote locations, vehicle handling tests, breach-tool practice — outside any legitimate context (organized sport, licensed range use, professional training)",
               "category": "planning",
               "detection_sources": [
                 "financial_records",
@@ -5020,7 +5020,7 @@
             {
               "id": "IND-0202-02",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "none"},
-              "behavior": "Threat actor maintains compartmentalized communications — separate device, encrypted application, anonymous account — for operationally relevant contacts not used in normal life",
+              "behavior": "Threat actor maintains compartmentalized communications — separate device, encrypted application, anonymous account — for a compartmented set of contacts kept separate from normal life",
               "category": "digital",
               "detection_sources": [
                 "it_logs",
@@ -21510,7 +21510,7 @@
             },
             {
               "id": "IND-F0201-04",
-              "behavior": "Threat actor practices with the intended attack means at an off-site location resembling the target — a stand-in structure, mock layout, or comparable venue — to rehearse the method before use",
+              "behavior": "Threat actor practices with a specific weapon, device, or method at an off-site location resembling the target — a stand-in structure, mock layout, or comparable venue — to rehearse the method before use",
               "category": "planning",
               "detection_sources": [
                 "physical_observation",
@@ -21539,7 +21539,7 @@
             },
             {
               "id": "IND-F0201-05",
-              "behavior": "Threat actor runs a decoy or reconnaissance-in-force pass timed to the facility's occupied hours, observing crowd density and staff positioning during the intended attack window",
+              "behavior": "Threat actor runs a decoy or reconnaissance-in-force pass timed to the facility's occupied hours, observing crowd density and staff positioning during a specific recurring window",
               "category": "surveillance",
               "detection_sources": [
                 "cctv",
@@ -24140,7 +24140,7 @@
             },
             {
               "id": "IND-F0207-02",
-              "behavior": "Threat actor aligns the planned action to a symbolic anniversary or date-certain tied to grievance or ideology, treating the calendar date itself as part of the objective",
+              "behavior": "Threat actor concentrates preparatory activity toward a symbolic anniversary or date-certain tied to grievance or ideology, treating the calendar date itself as part of the objective",
               "category": "planning",
               "detection_sources": [
                 "social_media",
@@ -24606,7 +24606,7 @@
             },
             {
               "id": "IND-F0208-03",
-              "behavior": "Threat actor accesses or tampers with the facility's fire-detection or suppression system to defeat the life-safety response ahead of an intended attack",
+              "behavior": "Threat actor accesses or tampers with the facility's fire-detection or suppression system, degrading the life-safety response in advance — tampering with no plausible maintenance explanation",
               "category": "access",
               "detection_sources": [
                 "physical_observation",
