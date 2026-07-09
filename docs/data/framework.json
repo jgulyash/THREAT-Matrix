@@ -35533,6 +35533,12 @@
       "applies_to": "Behaviors that directly apply physical force to a person: weapon discharge, vehicle ramming, explosive detonation, physical assault, overpowering or incapacitating personnel, taking physical custody by restraint, forcible extraction, and physical restraint or force against a captive.",
       "added": "V1.3 (2026-07-05)"
     },
+    "detectability_guidance": {
+      "flip_rationale": "Detectability enters the composite INVERTED — (10 − detectability) — by design: high observability by trained personnel shrinks expected residual harm because an interdiction window exists, while stealth removes that window. This matches the CVSS and insider-threat convention of conditioning realized risk on observability. The composite therefore reads as EXPECTED RESIDUAL HARM, not raw severity: a stealthy indicator class outweighs an equally harmful conspicuous one because it is less likely to be interrupted.",
+      "misread_guard": "Do not read a high weight on a stealthy class as 'stealth is severe.' Stealth is not severity — it is the removal of the interdiction discount. The severity content lives in impact_potential, blast_radius_potential, and recoverability_inverse; detectability only conditions how much of it is expected to survive countermeasures.",
+      "self_censoring_caveat": "Detectability is a self-censoring axis: the stealthiest behavior classes are systematically the least observed and least reported, so their authored detectability values rest on the thinnest observational base. Treat very-low detectability values as carrying wider uncertainty than the rest of the rubric.",
+      "added": "V1.3 (2026-07-09), documenting the standing formula (scoring-review B-06/F6); no formula change."
+    },
     "blast_radius_guidance": {
       "definition": "blast_radius_potential encodes TOTAL expected victim scope for the indicator class: intended targets PLUS expected collateral (bystander / non-target) casualties. It is not intended-victim count alone — a single-target attack can carry high blast_radius when its method produces collateral (a bombing that kills one intended target and nearby bystanders scores high, not low). Method sets the type-level base rate below; venue, timing, and crowd density modulate at assessment (instance) time.",
       "method_collateral_base_rates": {

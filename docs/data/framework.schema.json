@@ -400,6 +400,7 @@
               }
             },
             "capability": {
+              "description": "Per-tactic aid for READING a specific actor's capability from evidence — the third of three deliberately distinct capability constructs: impact_potential presumes the class's capability ceiling; informs_axes.actor_capability scores what observing the class reveals about capability; this block guides the evidence reading. The per-case instance judgment is the future instance-conditioning record (B-03).",
               "type": "object",
               "properties": {
                 "criteria": {
@@ -640,7 +641,7 @@
               "type": "number",
               "minimum": 0.0,
               "maximum": 10.0,
-              "description": "Type-level magnitude of harm if the threat lands."
+              "description": "Type-level magnitude of harm the behavior class directly produces or imminently enables — a severity gradient along the pathway (reconnaissance/tradecraft low, planning/access mid, force application and capability acquisition high). Presumes the capability CEILING of the class (what it could effect at most); contrast informs_axes.actor_capability (what observing the class reveals about skill) and assessment_guidance.capability (how to read a specific actor's capability from evidence). The per-case does-THIS-actor-have-the-skill judgment belongs to the instance-conditioning layer (B-03) and is never discounted into this value."
             },
             "blast_radius_potential": {
               "type": "number",
@@ -682,9 +683,10 @@
         },
         "informs_axes": {
           "type": "object",
-          "description": "EXPERIMENTAL (V1.2). Type-level metadata describing which axes of the larger threat picture this indicator class typically informs. Six axes covering actor (capability / intent / opportunity) and the postulated event (timing / target / method). Categorical scale {strong, moderate, weak, none} — not numeric. The framework's collective judgment about how strongly an indicator class informs an axis is itself categorical at root; numeric values would be false precision. For AI/ML consumers needing continuous features, the documented mapping is strong=0.9, moderate=0.6, weak=0.3, none=0.0; this mapping is a downstream-consumer convention only, not framework-level scoring. Field is optional; pilot in V1.2 Step 6 (TM0103) gates broader population in Step 7. Feedback wanted in V1.2; refinement in V1.3. See CONTRIBUTING.md \"Schema design principles\".",
+          "description": "Type-level metadata describing which axes of the larger threat picture this indicator class typically informs, and how finely. Universal resolution scale (resolution, not severity — severity lives in escalation_axes): none = no signal on the axis; weak = resolves only the axis's coarsest grain (the axis-relevant fact exists); moderate = one grain finer (the coarse fact plus one narrowing); strong = resolves to a specific value. Rate the indicator class as written, type-level — never a vivid case instance. Six axes covering actor (capability / intent / opportunity) and the postulated event (timing / target / method). Categorical scale {strong, moderate, weak, none} — not numeric. The framework's collective judgment about how strongly an indicator class informs an axis is itself categorical at root; numeric values would be false precision. For AI/ML consumers needing continuous features, the documented mapping is strong=0.9, moderate=0.6, weak=0.3, none=0.0; this mapping is a downstream-consumer convention only, not framework-level scoring. Coverage: authored across all 190 People-matrix indicator classes (V1.3) via a sealed-blind two-rater inter-rater process gated at weighted κ ≥ 0.60 per chunk; per-axis level semantics are formalized in each axis description (V1.3 refinements #1–#4). Extension to the other matrices is an explicit deferred decision (B-09). Field remains optional on any indicator. See CONTRIBUTING.md \"Schema design principles\".",
           "properties": {
             "actor_capability": {
+              "description": "What observing the class REVEALS about the actor's skill, tradecraft, and operational sophistication — distinct from impact_potential (which presumes the class's capability ceiling) and from assessment_guidance.capability (a per-tactic aid for reading a specific actor's capability from evidence). Grains: weak = a deliberate action with no tradecraft visible; moderate = a real competence demonstrated (pretext durability, concealed-imaging tradecraft, counter-surveillance); strong = advanced or specialized tradecraft (productive analysis of restricted artifacts, credential fabrication, regulatory-control defeat).",
               "type": "string",
               "enum": [
                 "strong",
@@ -694,6 +696,7 @@
               ]
             },
             "actor_intent": {
+              "description": "The actor's GENERAL intent-to-act, read at type level only — specific motive class is case-level and excluded. Grains: weak = diffuse or ambient adverse interest, not yet directed; moderate = purposive, directed attention toward the subject without clear commitment; strong = clear general intent-to-act (broad-to-narrow behavioral progression, operational specificity, retention of acquired materials, grievance paired with reconnaissance). Never raise to strong because a specific motive can be imagined. Formalizes V1.3 refinement #1.",
               "type": "string",
               "enum": [
                 "strong",
@@ -703,6 +706,7 @@
               ]
             },
             "actor_opportunity": {
+              "description": "The actor's opportunity, tiered rather than averaged across its two sub-meanings: weak = generic or ambient reach only; moderate = a resolved exploitable condition at the INFORMATIONAL tier (pattern-of-life knowledge, security-gap awareness); strong = REALIZED action-opportunity (an exploited insider relationship, direct unsupervised access, demonstrated reach within an exploitable window). During-execution support behaviors inherit the operation's realized opportunity (strong). Formalizes V1.3 refinement #2.",
               "type": "string",
               "enum": [
                 "strong",
@@ -712,6 +716,7 @@
               ]
             },
             "threat_timing": {
+              "description": "Proximity-to-action. Locked boundary: weak = phase-only (places the threat in a pathway phase with no finer resolution); moderate = phase plus something narrower (schedule-aligned behavior, operational-tempo cues); strong = pins a specific action window (imminent, dated, or event-aligned). Mobilization-phase rehearsal, probing, and attempted or actual breach/penetration behaviors read strong; concealment and OPSEC behaviors are excepted (weak).",
               "type": "string",
               "enum": [
                 "strong",
@@ -721,6 +726,7 @@
               ]
             },
             "threat_target": {
+              "description": "Which specific target or asset is in view. Grains: weak = targeting at a target-class level only; moderate = narrowed to a candidate set or subject-associated locations; strong = the specific named subject or subject-specific assets, including behaviors tied to a specific target-associated environment.",
               "type": "string",
               "enum": [
                 "strong",
@@ -730,6 +736,7 @@
               ]
             },
             "threat_method": {
+              "description": "How the attack would be conducted — the ATTACK method only: access and approach tradecraft does not inform method (reads none or weak). All execution in framework scope is physical; never treat physical-vs-digital as a narrowing (digital reconnaissance still describes a physical attack downstream). Grains: weak = barely narrows the physical-methods space; moderate = narrows to 2–3 candidate physical methods; strong = pins a specific physical method (e.g., VBIED, hostage scenario, targeted assassination). Formalizes V1.3 refinement #3.",
               "type": "string",
               "enum": [
                 "strong",

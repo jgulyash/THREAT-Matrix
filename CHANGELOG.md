@@ -137,6 +137,35 @@ topic. Schema additions are additive; existing content validates unchanged.
   are published alongside the recalibrated phase-1 defaults in the authoring
   workspace. No `escalation_weight`, axis value, or floor assignment changed.
 
+- **`informs_axes` axis semantics formalized in the schema (V1.3 refinements
+  #1–#4).** The six axes now carry description text encoding the locked
+  boundary rubric the matrix-wide authoring was rated against: the universal
+  none/weak/moderate/strong resolution scale (resolution, not severity),
+  `actor_intent` = general intent-to-act only (#1), `actor_opportunity`
+  tiered informational-moderate / realized-action-strong (#2),
+  `threat_method` = attack-method-only within the framework's all-physical
+  scope (#3), and the locked phase-boundary wording on `threat_timing`. The
+  top-level field description sheds its V1.2 EXPERIMENTAL/pilot framing —
+  coverage is authored matrix-wide (190/190) through the sealed-blind
+  inter-rater process — and the cross-matrix extension remains an explicit
+  deferred decision (B-09).
+
+- **Three capability constructs distinguished in schema text.**
+  `impact_potential` (presumes the class's capability ceiling; now also
+  documents the V1.3 directly-produces-or-imminently-enables gradient),
+  `informs_axes.actor_capability` (what observing the class reveals about
+  skill), and `assessment_guidance.capability` (how to read a specific
+  actor's capability from evidence) each name the distinction and point to
+  the instance-conditioning layer as the per-case judgment's home.
+
+- **Detectability-flip documented (`escalation_rubric.detectability_guidance`).**
+  The (10 − detectability) inversion is documented as deliberate: the
+  composite reads as expected residual harm (stealth removes the
+  interdiction window, matching CVSS/insider-threat convention), with an
+  explicit guard against misreading stealth as severity and a caveat that
+  detectability is a self-censoring axis (the stealthiest classes rest on
+  the thinnest observational base). No formula change.
+
 - **`recoverability_inverse` reading elected (schema axis text).** The axis
   scores the harm a behavior class directly produces — it does not inherit the
   permanence of the harm a behavior presages or enables (contrast
