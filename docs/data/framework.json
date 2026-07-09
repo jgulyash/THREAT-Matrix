@@ -7082,7 +7082,7 @@
             {
               "id": "IND-0206-01",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
-              "behavior": "Threat actor is observed in a static position at a location offering line-of-sight, approach angle, or proximity to the intended target — a subject's anticipated arrival, departure, or routine location, or a targeted venue, gathering, or crowd",
+              "behavior": "Threat actor is observed in a static position at a location offering line-of-sight, approach angle, or proximity to the target — a subject's anticipated arrival, departure, or routine location, or a targeted venue, gathering, or crowd",
               "category": "surveillance",
               "detection_sources": [
                 "physical_observation",
