@@ -6644,6 +6644,7 @@
             {
               "id": "IND-0205-03",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"threat_timing": "moderate"},
               "behavior": "Threat actor uses social engineering — pretexted phone calls, urgent-need framing, name-dropping a senior — to convince personnel to grant access not normally extended",
               "category": "communication",
               "detection_sources": [
@@ -6675,6 +6676,7 @@
             {
               "id": "IND-0205-04",
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_capability": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate"},
               "behavior": "Threat actor's claimed sponsoring contact does not exist, is uncontactable, or denies the engagement when verified",
               "category": "communication",
               "detection_sources": [
@@ -6706,6 +6708,7 @@
             {
               "id": "IND-0205-05",
               "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_intent": "strong"},
               "behavior": "Threat actor uses a cloned access credential, fabricated work order, or spoofed appointment confirmation to pass automated or human verification at an access point",
               "category": "access",
               "detection_sources": [
@@ -6737,6 +6740,7 @@
             {
               "id": "IND-0205-06",
               "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "strong", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_capability": "moderate", "actor_intent": "moderate", "threat_timing": "moderate", "threat_target": "moderate"},
               "behavior": "Threat actor's access elevation creates an audit anomaly — a badge holder appearing at a tier inconsistent with role, a visitor with no sponsoring record, a contractor with no work-order match",
               "category": "access",
               "detection_sources": [
@@ -7113,6 +7117,7 @@
             {
               "id": "IND-0206-02",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"threat_target": "moderate"},
               "behavior": "Threat actor has positioned a vehicle, equipment, or staging materials at the position consistent with sustained occupation rather than transient presence",
               "category": "surveillance",
               "detection_sources": [
@@ -7142,6 +7147,7 @@
             {
               "id": "IND-0206-03",
               "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_capability": "moderate", "actor_intent": "moderate", "threat_timing": "moderate"},
               "behavior": "Threat actor's position is held over a duration inconsistent with normal routine activity at that location — a person at a coffee shop window for three hours, a vehicle in a parking spot with no occupants for an extended period",
               "category": "surveillance",
               "detection_sources": [
@@ -7174,6 +7180,7 @@
             {
               "id": "IND-0206-04",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_intent": "strong"},
               "behavior": "Threat actor's position is selected for line-of-sight to a known route, residence, vehicle, or appointment of the targeted subject, or to a targeted site, venue, or gathering, with the position itself offering concealment or visual cover",
               "category": "surveillance",
               "detection_sources": [
@@ -7205,6 +7212,7 @@
             {
               "id": "IND-0206-05",
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_capability": "moderate", "threat_target": "moderate"},
               "behavior": "Threat actor's position behavior shows operational alertness — repeated horizon scanning, watch-checking, repeated phone glances, or device-monitoring behavior — inconsistent with passive presence",
               "category": "behavioral_change",
               "detection_sources": [
@@ -7574,6 +7582,7 @@
             {
               "id": "IND-0207-01",
               "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_capability": "moderate", "actor_intent": "moderate", "threat_target": "moderate"},
               "behavior": "Threat actor maintains observable presence near the target environment over multiple days or weeks without apparent purpose and without proceeding to action",
               "category": "surveillance",
               "detection_sources": [
@@ -7606,6 +7615,7 @@
             {
               "id": "IND-0207-02",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"threat_timing": "moderate", "threat_target": "moderate"},
               "behavior": "Threat actor's presence pattern shows return-after-withdrawal behavior — leaving the area, then returning at a later time matching changed conditions (different shift, different day-of-week, different security posture)",
               "category": "surveillance",
               "detection_sources": [
@@ -7635,6 +7645,7 @@
             {
               "id": "IND-0207-03",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "weak"},
+              "instance_conditioning_hints": {"actor_capability": "strong", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "moderate"},
               "behavior": "Threat actor maintains operational artifacts (vehicle staged, equipment cached, cover identity active) over a duration that suggests sustained pause rather than abandonment",
               "category": "surveillance",
               "detection_sources": [
@@ -7665,6 +7676,7 @@
             {
               "id": "IND-0207-04",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "weak"},
+              "instance_conditioning_hints": {"actor_intent": "strong"},
               "behavior": "Threat actor's communications, financial activity, or online behavior shows continued operational tempo — research on the target, operationally-relevant procurement — inconsistent with a routine waiting period",
               "category": "behavioral_change",
               "detection_sources": [
@@ -7697,6 +7709,7 @@
             {
               "id": "IND-0207-05",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"threat_timing": "moderate", "threat_target": "moderate"},
               "behavior": "Threat actor's pause coincides with observable environmental triggers — increased security posture, public attention to the target, news of an unrelated similar attack — indicating tactical patience rather than abandonment",
               "category": "behavioral_change",
               "detection_sources": [
@@ -8033,6 +8046,7 @@
             {
               "id": "IND-0208-01",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_intent": "strong"},
               "behavior": "Threat actor's approach or operational presence aligns with a security shift change, patrol gap, or response posture rotation at the protected environment",
               "category": "surveillance",
               "detection_sources": [
@@ -8065,6 +8079,7 @@
             {
               "id": "IND-0208-02",
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_capability": "moderate", "threat_timing": "strong", "threat_target": "moderate"},
               "behavior": "Threat actor's approach coincides with a recurring crowd event (concert, sporting event, holiday gathering) that creates ambient activity at the protected environment",
               "category": "behavioral_change",
               "detection_sources": [
@@ -8095,6 +8110,7 @@
             {
               "id": "IND-0208-03",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate"},
               "behavior": "Threat actor's approach uses an environmental condition (weather, low-light, fog) that degrades observation, response time, or evidence collection",
               "category": "surveillance",
               "detection_sources": [
@@ -8156,6 +8172,7 @@
             {
               "id": "IND-0208-05",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_capability": "strong"},
               "behavior": "Threat actor uses real-time location feeds (social media check-in, live event cameras, public traffic data) to confirm the target's presence and security context immediately before approach",
               "category": "digital",
               "detection_sources": [
@@ -8188,6 +8205,7 @@
             {
               "id": "IND-0208-06",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"threat_target": "strong"},
               "behavior": "Threat actor's pre-approach activity shows monitoring of the targeted subject's schedule, calendar, or routine — or the operating schedule of a targeted venue or event — through digital surveillance consistent with timing-window selection",
               "category": "digital",
               "detection_sources": [
@@ -8560,6 +8578,7 @@
             {
               "id": "IND-0209-01",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_intent": "strong", "actor_opportunity": "strong"},
               "behavior": "Threat actor approaches the target's actual environment, observes security response or absence of response, and withdraws without completing any other operational action",
               "category": "surveillance",
               "detection_sources": [
@@ -8592,6 +8611,7 @@
             {
               "id": "IND-0209-02",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_capability": "strong", "actor_opportunity": "strong"},
               "behavior": "Threat actor's approach pattern repeats across multiple days, occasions, or environmental conditions, with each approach resembling a partial dry run rather than a sustained presence",
               "category": "surveillance",
               "detection_sources": [
@@ -8622,6 +8642,7 @@
             {
               "id": "IND-0209-03",
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_capability": "moderate"},
               "behavior": "Threat actor's approach generates an access log anomaly, CCTV appearance, or reception-staff sighting at the target environment that does not correspond to a verifiable visit purpose",
               "category": "surveillance",
               "detection_sources": [
@@ -8653,6 +8674,7 @@
             {
               "id": "IND-0209-04",
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_opportunity": "strong"},
               "behavior": "Threat actor's approach is timed at recognizably different operational windows across multiple visits (different shift change one day, different day-of-week another, different crowd event a third) consistent with rehearsal of multiple approach variants rather than commitment to a single timing window",
               "category": "surveillance",
               "detection_sources": [
@@ -8683,6 +8705,7 @@
             {
               "id": "IND-0209-05",
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "instance_conditioning_hints": {"actor_capability": "strong"},
               "behavior": "Threat actor abandons or aborts the approach mid-sequence in response to observable security posture or to the threat actor's own assessment of conditions, rather than completing the action",
               "category": "behavioral_change",
               "detection_sources": [
@@ -35570,6 +35593,15 @@
     },
     "rubric_version": "1.2.0",
     "calibration_guidance": "The severity_thresholds above reflect the rubric v1.2.0 recalibration against the realized scored population (V1.3, 390 indicators): medium and high keep the original equal-quartile cuts (2.5 / 5.0); the critical threshold was lowered from the equal-quartile 7.5 to 6.5 so the critical band carries a weight-driven population — under the 7.5 cut, two-thirds of critical-band indicators reached the band only via the severity_floor rule. Consumers SHOULD calibrate the thresholds to their threat-posture environment for best results. Higher-posture environments (e.g., critical infrastructure, executive protection, dignitary protection) may shift `high` and `critical` thresholds downward (e.g., high=4.0, critical=6.0) to surface medium-weight indicators earlier in triage. Lower-posture environments may shift them upward. Document the rationale for any deviation per CONTRIBUTING.md \"Schema design principles\"."
+  },
+  "instance_conditioning": {
+    "layer": "Layer 2 (instance) of the type/instance split \u2014 CVSS Base-vs-Environmental. Layer 1 (escalation_axes / escalation_weight / severity_band and informs_axes) scores the indicator CLASS; Layer 2 conditions that type score for a specific case (this actor, this target, now). The framework DEFINES this layer (schema $defs instance_assessment + conditioned_assessment) and ships NO instances; consumers hold the per-case records.",
+    "factors": ["target_focus", "pathway_stage", "means_in_hand", "tempo_trajectory", "source_credibility"],
+    "escalate_only_rule": "Instance conditioning may RAISE a case's priority above the type band \u2014 to catch the false-LOW, a mild-looking type with a screaming instance, which is the deadliest error \u2014 but may NEVER lower it below the type band. There is no computed capability discount: means_in_hand='unknown' is the safe default and does not demote a case. Encoded in the schema by conditioning_effect having no 'lowered' value and conditioned_priority being floored at type_severity_band.",
+    "binding_contract": "A type score is non-renderable and non-rankable without its instance record. The conditioned_assessment object requires both; wherever a score travels (queue, dashboard, handoff, API) it must carry, or be joined to, its instance record. A bare type number with no instance record is a Layer-1 datum, not an assessment.",
+    "conditioning_hints": "Indicators may carry optional type-level instance_conditioning_hints (which informs_axes tend to lift at instance time), seeded from the V1.3 sealed-blind IRR leans. Pilot coverage (chunk-2B seed); full population is a follow-on.",
+    "status": "Contract defined V1.3 (2026-07-09). The consumer/UI instance-entry surface is deferred to a later cycle.",
+    "provenance": "Scoring review B-03 (structured instance record) and B-04 (display-binding contract); F12 (false-LOW is deadliest) and F13 (no computed capability discount)."
   },
   "phase_mappings": {
     "phase_1_target_development": {

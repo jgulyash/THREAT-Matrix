@@ -20,6 +20,25 @@ topic. Schema additions are additive; existing content validates unchanged.
 
 ### Added
 
+- **Instance-conditioning layer (Layer 2) contract — B-03 / B-04.** The
+  framework's type/instance split (CVSS Base-vs-Environmental) gains its second
+  layer as a schema contract: `$defs.instance_assessment` (a required, structured
+  per-case record — target_focus, pathway_stage, means_in_hand, tempo_trajectory,
+  source_credibility) and `$defs.conditioned_assessment` (the binding object).
+  The framework DEFINES the layer and ships NO instances — it stays a type-level
+  artifact; consumers instantiate per case. Two safety invariants are encoded in
+  the schema, not just documented: the binding requires BOTH a type-score
+  reference and an instance record (a bare number cannot be emitted as a
+  conditioned assessment — B-04), and conditioning is escalate-only
+  (`conditioning_effect` has no `lowered` value; `conditioned_priority` is floored
+  at the type band) so instance evidence can catch the false-LOW (F12) but never
+  silently discount capability (F13). Indicators gain an optional type-level
+  `instance_conditioning_hints` slot, seeded from the V1.3 sealed-blind IRR leans
+  (chunk-2B pilot, 23 indicators; full population a follow-on). A top-level
+  `instance_conditioning` block documents the layer, the escalate-only rule, and
+  the display-binding contract. The consumer/UI instance-entry surface is
+  deferred to a later cycle.
+
 - **Facilities matrix — complete (40 tactics, all four phases).** The first
   non-person attack surface, authored end-to-end: Target Development (TF0101–
   TF0110), Mobilization (TF0201–TF0209), Execution (TF0301–TF0309), and Aftermath
