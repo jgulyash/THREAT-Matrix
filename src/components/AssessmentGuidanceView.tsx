@@ -20,13 +20,16 @@ const PRIORITY_CLASS: Record<string, string> = {
   Routine: 'low',
 };
 
-// First ~14 words of a block, so a collapsed row carries information scent.
-function teaser(text?: string): string {
-  if (!text) return '';
-  const words = text.trim().split(/\s+/);
-  const head = words.slice(0, 14).join(' ');
-  return words.length > 14 ? head + '…' : head;
-}
+// Fixed per-block descriptors — curated to fit one line at any panel width, so a
+// collapsed row reads as an intentional label rather than a truncated sentence.
+const TEASERS: Record<string, string> = {
+  credibility: 'How much to trust the finding',
+  capability: "What the actor's skill signals",
+  intent: 'Whether intent to act is forming',
+  opportunity: 'Whether the actor can reach the target',
+  false_positive: 'Benign activities that mimic it',
+  threshold: 'How findings escalate to action tiers',
+};
 
 interface AccProps {
   label: string;
@@ -39,7 +42,7 @@ function Accordion({ label, teaserText, children }: AccProps) {
     <details className="ag-acc">
       <summary>
         <span className="ag-acc-label">{label}</span>
-        {teaserText && <span className="ag-acc-teaser">{teaser(teaserText)}</span>}
+        {teaserText && <span className="ag-acc-teaser">{teaserText}</span>}
       </summary>
       <div className="ag-acc-body">{children}</div>
     </details>
@@ -88,19 +91,20 @@ export function AssessmentGuidanceView({ guidance }: { guidance?: AssessmentGuid
           <span className={`ind-sev ${PRIORITY_CLASS[priority] || 'medium'}`}>{priority}</span>
         )}
       </div>
+      <div className="ag-subtitle">How to weigh observed findings of this tactic.</div>
 
       {FACTORS.map((f) => {
         const section = guidance[f.key] as AssessmentGuidanceSection | undefined;
         if (!section) return null;
         return (
-          <Accordion key={f.key} label={f.label} teaserText={section.criteria}>
+          <Accordion key={f.key} label={f.label} teaserText={TEASERS[f.key as string]}>
             <AnchorLists section={section} />
           </Accordion>
         );
       })}
 
       {fp && (fp.criteria || (fp.contexts && fp.contexts.length > 0)) && (
-        <Accordion label="Looks Like This, But Isn't" teaserText={fp.criteria}>
+        <Accordion label="Looks Like This, But Isn't" teaserText={TEASERS.false_positive}>
           <div className="ag-fp">
             {fp.criteria && <div className="ag-criteria">{fp.criteria}</div>}
             {fp.contexts && fp.contexts.length > 0 && (
@@ -115,7 +119,7 @@ export function AssessmentGuidanceView({ guidance }: { guidance?: AssessmentGuid
       )}
 
       {threshold && (
-        <Accordion label="Threshold Guidance" teaserText={threshold}>
+        <Accordion label="Threshold Guidance" teaserText={TEASERS.threshold}>
           {threshold.split('\n\n').map((para, i) => (
             <p key={i} className="ag-para">
               {para}

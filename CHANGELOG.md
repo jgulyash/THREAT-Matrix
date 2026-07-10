@@ -148,13 +148,15 @@ topic. Schema additions are additive; existing content validates unchanged.
 
 ### Changed
 
-- **Assessment Guidance is now a compact accordion, moved up under Description.**
+- **Assessment Guidance is now a compact accordion that introduces the indicators.**
   The four factors, the false-positive block, and threshold guidance each
-  collapse to a single row showing a short teaser (information scent) and expand
-  on click; the escalation-priority badge stays visible in the section header at
-  all times. Threshold guidance renders its authored paragraphs. The whole
-  section moved from below the indicator list to directly after Description, so
-  the key analytic layer is high and visible without dominating the panel.
+  collapse to a single row with a fixed one-line descriptor and expand on click;
+  the escalation-priority badge stays visible in the section header at all times,
+  and threshold guidance renders its authored paragraphs. The section sits
+  directly before the Indicators list with the subtitle "How to weigh observed
+  findings of this tactic" — the guidance is tactic-level advice for weighing
+  the tactic's findings, so it frames the indicators rather than reading as an
+  assessment of the tactic description.
 
 - **Assessment-guidance threshold text broken into paragraphs.** Each tactic's
   `threshold_guidance` (previously a single ~2,000-character block) is now

@@ -275,6 +275,7 @@ body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;lin
 .dr-details summary:hover{color:var(--text-muted)}
 .dr-details-body{font-size:13px;line-height:1.55;color:var(--text-muted);margin-top:6px;padding-left:12px}
 /* Assessment Guidance — collapsible rows with teasers */
+.ag-subtitle{font-size:12px;line-height:1.4;color:var(--text-dim);margin:-2px 0 6px;font-style:italic}
 .ag-acc{border-bottom:1px solid var(--divider)}
 .ag-acc:last-child{border-bottom:none}
 .ag-acc>summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:8px;padding:8px 0;user-select:none}
