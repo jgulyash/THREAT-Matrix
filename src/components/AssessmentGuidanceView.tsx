@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import type {
   AssessmentGuidance,
   AssessmentGuidanceSection,
@@ -19,38 +20,53 @@ const PRIORITY_CLASS: Record<string, string> = {
   Routine: 'low',
 };
 
-function FactorBlock({ label, section }: { label: string; section?: AssessmentGuidanceSection }) {
-  if (!section) return null;
+// First ~14 words of a block, so a collapsed row carries information scent.
+function teaser(text?: string): string {
+  if (!text) return '';
+  const words = text.trim().split(/\s+/);
+  const head = words.slice(0, 14).join(' ');
+  return words.length > 14 ? head + '…' : head;
+}
+
+interface AccProps {
+  label: string;
+  teaserText?: string;
+  children: ReactNode;
+}
+
+function Accordion({ label, teaserText, children }: AccProps) {
+  return (
+    <details className="ag-acc">
+      <summary>
+        <span className="ag-acc-label">{label}</span>
+        {teaserText && <span className="ag-acc-teaser">{teaser(teaserText)}</span>}
+      </summary>
+      <div className="ag-acc-body">{children}</div>
+    </details>
+  );
+}
+
+function AnchorLists({ section }: { section: AssessmentGuidanceSection }) {
   const highs = section.high_signal_anchors || [];
   const lows = section.low_signal_anchors || [];
   return (
-    <div className="ag-factor">
-      <div className="ag-factor-label">{label}</div>
+    <>
       {section.criteria && <div className="ag-criteria">{section.criteria}</div>}
-      {(highs.length > 0 || lows.length > 0) && (
-        <details className="dr-details">
-          <summary>
-            Signal anchors ({highs.length} raise · {lows.length} lower)
-          </summary>
-          <div className="dr-details-body">
-            {highs.length > 0 && (
-              <ul className="ag-anchor-list ag-raise">
-                {highs.map((a, i) => (
-                  <li key={`h${i}`}>{a}</li>
-                ))}
-              </ul>
-            )}
-            {lows.length > 0 && (
-              <ul className="ag-anchor-list ag-lower">
-                {lows.map((a, i) => (
-                  <li key={`l${i}`}>{a}</li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </details>
+      {highs.length > 0 && (
+        <ul className="ag-anchor-list ag-raise">
+          {highs.map((a, i) => (
+            <li key={`h${i}`}>{a}</li>
+          ))}
+        </ul>
       )}
-    </div>
+      {lows.length > 0 && (
+        <ul className="ag-anchor-list ag-lower">
+          {lows.map((a, i) => (
+            <li key={`l${i}`}>{a}</li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 }
 
@@ -73,34 +89,39 @@ export function AssessmentGuidanceView({ guidance }: { guidance?: AssessmentGuid
         )}
       </div>
 
-      {FACTORS.map((f) => (
-        <FactorBlock key={f.key} label={f.label} section={guidance[f.key] as AssessmentGuidanceSection} />
-      ))}
+      {FACTORS.map((f) => {
+        const section = guidance[f.key] as AssessmentGuidanceSection | undefined;
+        if (!section) return null;
+        return (
+          <Accordion key={f.key} label={f.label} teaserText={section.criteria}>
+            <AnchorLists section={section} />
+          </Accordion>
+        );
+      })}
 
       {fp && (fp.criteria || (fp.contexts && fp.contexts.length > 0)) && (
-        <div className="ag-factor ag-fp">
-          <div className="ag-factor-label">Looks Like This, But Isn't</div>
-          {fp.criteria && <div className="ag-criteria">{fp.criteria}</div>}
-          {fp.contexts && fp.contexts.length > 0 && (
-            <details className="dr-details">
-              <summary>False-positive contexts ({fp.contexts.length})</summary>
-              <div className="dr-details-body">
-                <ul className="ag-anchor-list ag-fp-list">
-                  {fp.contexts.map((c, i) => (
-                    <li key={i}>{c}</li>
-                  ))}
-                </ul>
-              </div>
-            </details>
-          )}
-        </div>
+        <Accordion label="Looks Like This, But Isn't" teaserText={fp.criteria}>
+          <div className="ag-fp">
+            {fp.criteria && <div className="ag-criteria">{fp.criteria}</div>}
+            {fp.contexts && fp.contexts.length > 0 && (
+              <ul className="ag-anchor-list ag-fp-list">
+                {fp.contexts.map((c, i) => (
+                  <li key={i}>{c}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </Accordion>
       )}
 
       {threshold && (
-        <div className="ag-factor">
-          <div className="ag-factor-label">Threshold Guidance</div>
-          <div className="ag-criteria">{threshold}</div>
-        </div>
+        <Accordion label="Threshold Guidance" teaserText={threshold}>
+          {threshold.split('\n\n').map((para, i) => (
+            <p key={i} className="ag-para">
+              {para}
+            </p>
+          ))}
+        </Accordion>
       )}
     </div>
   );

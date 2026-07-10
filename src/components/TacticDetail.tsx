@@ -86,6 +86,8 @@ export function TacticDetail({ tactic, actorMap, navigate, fromPhase, fromTrack 
           <div className="det-body">{tactic.notes}</div>
         </div>
 
+        <AssessmentGuidanceView guidance={tactic.assessment_guidance} />
+
         {tactic.cpn && tactic.cpn_notes && (
           <div className="det-section">
             <div className="det-section-label">Cyber-Physical Nexus</div>
@@ -119,8 +121,6 @@ export function TacticDetail({ tactic, actorMap, navigate, fromPhase, fromTrack 
             </div>
           </div>
         )}
-
-        <AssessmentGuidanceView guidance={tactic.assessment_guidance} />
 
         {/* Detection & Response */}
         {hasAnyDR ? (

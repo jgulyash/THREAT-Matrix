@@ -274,18 +274,27 @@ body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;lin
 .dr-details[open] summary::before{content:"▾ "}
 .dr-details summary:hover{color:var(--text-muted)}
 .dr-details-body{font-size:13px;line-height:1.55;color:var(--text-muted);margin-top:6px;padding-left:12px}
-/* Assessment Guidance */
-.ag-factor{padding:8px 0;border-bottom:1px solid var(--divider)}
-.ag-factor:last-child{border-bottom:none}
-.ag-factor-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
+/* Assessment Guidance — collapsible rows with teasers */
+.ag-acc{border-bottom:1px solid var(--divider)}
+.ag-acc:last-child{border-bottom:none}
+.ag-acc>summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:8px;padding:8px 0;user-select:none}
+.ag-acc>summary::-webkit-details-marker{display:none}
+.ag-acc>summary::before{content:"▸";color:var(--amber);font-size:10px;flex-shrink:0;transform:translateY(-1px)}
+.ag-acc[open]>summary::before{content:"▾"}
+.ag-acc-label{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--text-muted);flex-shrink:0}
+.ag-acc[open] .ag-acc-label{color:var(--amber)}
+.ag-acc-teaser{font-size:13px;line-height:1.4;color:var(--text-dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ag-acc[open] .ag-acc-teaser{display:none}
+.ag-acc-body{padding:2px 0 10px 18px}
 .ag-criteria{font-size:14px;line-height:1.55;color:var(--text)}
-.ag-anchor-list{margin:6px 0 0;padding-left:16px;list-style:none}
-.ag-anchor-list li{position:relative;margin-bottom:4px;padding-left:4px}
+.ag-para{font-size:14px;line-height:1.55;color:var(--text);margin:0 0 8px}
+.ag-para:last-child{margin-bottom:0}
+.ag-anchor-list{margin:8px 0 0;padding-left:16px;list-style:none}
+.ag-anchor-list li{position:relative;margin-bottom:4px;padding-left:4px;font-size:13px;line-height:1.5;color:var(--text-muted)}
 .ag-anchor-list li::before{position:absolute;left:-14px;font-weight:700}
 .ag-raise li::before{content:"▲";color:var(--amber);font-size:9px}
 .ag-lower li::before{content:"▼";color:var(--text-dim);font-size:9px}
 .ag-fp-list li::before{content:"≈";color:var(--teal);font-size:12px;left:-15px}
-.ag-fp .ag-factor-label{color:var(--teal)}
 /* D&R empty state */
 .dr-empty{padding:14px 16px;border:1px dashed var(--border-act);border-radius:4px;text-align:center;background:rgba(244,247,247,.02)}
 .dr-empty-title{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:4px}
