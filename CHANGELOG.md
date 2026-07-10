@@ -148,6 +148,16 @@ topic. Schema additions are additive; existing content validates unchanged.
 
 ### Changed
 
+- **Detail-panel section hierarchy clarified.** Major section headers
+  (Description, Cyber-Physical Nexus, Actor Associations, Assessment Guidance,
+  Indicators, Countermeasures, Response Protocols, Sources) now share one
+  treatment — a consistent amber label with a left accent bar and more space
+  between sections — so each reads as a distinct section start. The
+  actor-category sub-labels (Lone Actor, Insider, …), previously amber and the
+  same weight as section headers, are muted to match the indicator-category
+  sub-labels, so sub-groups sit clearly below their section rather than blending
+  into the next one.
+
 - **Assessment Guidance is now a compact accordion that introduces the indicators.**
   The four factors, the false-positive block, and threshold guidance each
   collapse to a single row with a fixed one-line descriptor and expand on click;

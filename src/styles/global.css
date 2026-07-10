@@ -125,7 +125,7 @@ body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;lin
 .dp-header-sub{font-size:14px;color:var(--text-dim);margin-top:3px}
 .dp-back{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;margin-bottom:8px}
 .dp-back:hover{color:var(--text-muted)}
-.dp-content{flex:1;min-height:0;padding:12px 16px;overflow-y:auto;display:flex;flex-direction:column;gap:8px}
+.dp-content{flex:1;min-height:0;padding:12px 16px;overflow-y:auto;display:flex;flex-direction:column;gap:16px}
 /* Tactic card */
 .dp-card{background:var(--bg-card);border-radius:5px;padding:11px 13px;box-shadow:0 2px 8px rgba(0,0,0,.35),0 0 0 1px rgba(247,139,4,.05);cursor:pointer;flex-shrink:0;transition:box-shadow .12s}
 .dp-card:hover{box-shadow:0 0 0 1px rgba(247,139,4,.30),0 4px 12px rgba(247,139,4,.12)}
@@ -144,11 +144,15 @@ body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;lin
 .det-cpn-badge{display:inline-flex;align-self:flex-start;width:auto;align-items:center;gap:5px;font-size:13px;font-weight:700;letter-spacing:.04em;padding:5px 12px;border-radius:3px;margin-bottom:4px;background:var(--teal-dim);border:1px solid rgba(2,127,147,.35);color:var(--teal)}
 .det-cpn-mark{font-size:13px;line-height:1}
 .det-section{flex-shrink:0}
-.det-section-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid var(--divider);display:block;width:100%}
+/* Major section headers — unified treatment with a left accent bar so they read
+   as clear section starts, distinct from the muted sub-labels inside them. */
+.det-section-label,.dr-section-header{position:relative;padding-left:11px}
+.det-section-label::before,.dr-section-header::before{content:"";position:absolute;left:0;top:1px;bottom:4px;width:3px;background:var(--amber);border-radius:2px}
+.det-section-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid rgba(247,139,4,.18);display:block;width:100%}
 .det-body{font-size:16px;line-height:1.7;color:var(--text-muted)}
 .det-cpn-section{border-left:2px solid var(--teal);padding-left:10px;font-size:16px;line-height:1.65;color:var(--text-muted)}
 .det-actor-groups{display:flex;flex-direction:column;gap:8px}
-.det-actor-cat-label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:4px}
+.det-actor-cat-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
 .det-actor-chips{display:flex;gap:4px;flex-wrap:wrap}
 .det-actor-chip{font-size:14px;font-weight:600;padding:4px 10px;background:rgba(244,247,247,.05);border:1px solid var(--border-act);border-radius:3px;color:var(--text-muted);cursor:pointer;transition:background .1s,border-color .1s}
 .det-actor-chip:hover{background:var(--amber-dim);border-color:rgba(247,139,4,.35);color:var(--amber)}
