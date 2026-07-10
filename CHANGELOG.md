@@ -148,6 +148,16 @@ topic. Schema additions are additive; existing content validates unchanged.
 
 ### Changed
 
+- **Assessment-guidance threshold text broken into paragraphs.** Each tactic's
+  `threshold_guidance` (previously a single ~2,000-character block) is now
+  authored with paragraph breaks at its natural seams — framing, the
+  tier-determination factors, each tier rung on its own line, the
+  correlation-escalation and composition rules, and the tier-triggered actions
+  (5–10 paragraphs per tactic). Breaks live in the data (agents and
+  downstream systems read the structure), inserted by a seam rule keyed on the
+  consistent tier skeleton and verified word-for-word unchanged. A V1.4 item is
+  logged to promote this into a structured tier-ladder object.
+
 - **Severity thresholds recalibrated against the realized scored population
   (escalation_rubric v1.2.0).** With both matrices fully scored (390 indicators),
   the equal-quartile `critical` cut of 7.5 left the critical band floor-driven:
