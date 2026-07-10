@@ -274,6 +274,18 @@ body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;lin
 .dr-details[open] summary::before{content:"▾ "}
 .dr-details summary:hover{color:var(--text-muted)}
 .dr-details-body{font-size:13px;line-height:1.55;color:var(--text-muted);margin-top:6px;padding-left:12px}
+/* Assessment Guidance */
+.ag-factor{padding:8px 0;border-bottom:1px solid var(--divider)}
+.ag-factor:last-child{border-bottom:none}
+.ag-factor-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
+.ag-criteria{font-size:14px;line-height:1.55;color:var(--text)}
+.ag-anchor-list{margin:6px 0 0;padding-left:16px;list-style:none}
+.ag-anchor-list li{position:relative;margin-bottom:4px;padding-left:4px}
+.ag-anchor-list li::before{position:absolute;left:-14px;font-weight:700}
+.ag-raise li::before{content:"▲";color:var(--amber);font-size:9px}
+.ag-lower li::before{content:"▼";color:var(--text-dim);font-size:9px}
+.ag-fp-list li::before{content:"≈";color:var(--teal);font-size:12px;left:-15px}
+.ag-fp .ag-factor-label{color:var(--teal)}
 /* D&R empty state */
 .dr-empty{padding:14px 16px;border:1px dashed var(--border-act);border-radius:4px;text-align:center;background:rgba(244,247,247,.02)}
 .dr-empty-title{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:4px}

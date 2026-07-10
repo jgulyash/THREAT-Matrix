@@ -20,6 +20,15 @@ topic. Schema additions are additive; existing content validates unchanged.
 
 ### Added
 
+- **Assessment Guidance rendered in the tactic detail.** The per-tactic
+  `assessment_guidance` layer — the V1.3 hard-gate content, authored on all 74
+  tactics but previously imported in types and rendered nowhere — now displays
+  in the detail panel: an escalation-priority badge, the four analytic factors
+  (credibility / capability / intent / opportunity) each with their criteria and
+  collapsible raise/lower signal anchors, a false-positive-context block, and
+  threshold guidance. Faithful to the existing detail-section pattern; renders
+  identically for People and Facilities (the voice difference lives in the data).
+
 - **Instance-conditioning layer (Layer 2) contract — B-03 / B-04.** The
   framework's type/instance split (CVSS Base-vs-Environmental) gains its second
   layer as a schema contract: `$defs.instance_assessment` (a required, structured

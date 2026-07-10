@@ -7,6 +7,7 @@ import {
   EmptyState,
   SourceRefLink,
 } from './detection-response';
+import { AssessmentGuidanceView } from './AssessmentGuidanceView';
 
 interface Props {
   tactic: Tactic | undefined;
@@ -118,6 +119,8 @@ export function TacticDetail({ tactic, actorMap, navigate, fromPhase, fromTrack 
             </div>
           </div>
         )}
+
+        <AssessmentGuidanceView guidance={tactic.assessment_guidance} />
 
         {/* Detection & Response */}
         {hasAnyDR ? (
