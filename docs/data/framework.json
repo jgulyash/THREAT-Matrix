@@ -2562,7 +2562,7 @@
             },
             {
               "id": "IND-0105-05",
-              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "moderate"},
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "weak"},
               "behavior": "Threat actor transfers targeting information — target details, schedule, environmental data, capability — to another individual via written or verbal communication",
               "category": "communication",
               "detection_sources": [
