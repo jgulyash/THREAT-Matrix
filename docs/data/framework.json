@@ -2466,7 +2466,7 @@
             },
             {
               "id": "IND-0105-02",
-              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "weak"},
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "weak"},
               "behavior": "Threat actor begins coordinating logistics, schedules, or transportation with another individual whose role is functional rather than social — task division, lookout positioning, synchronized movement, or logistics the relationship itself does not explain",
               "category": "planning",
               "detection_sources": [
@@ -5019,7 +5019,7 @@
             },
             {
               "id": "IND-0202-02",
-              "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "none"},
+              "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "none"},
               "behavior": "Threat actor maintains compartmentalized communications — separate device, encrypted application, anonymous account — for a compartmented set of contacts kept separate from normal life",
               "category": "digital",
               "detection_sources": [
