@@ -1,5 +1,5 @@
 import type { Tactic } from '../types/framework';
-import { PHASE_SHORT, STUB, MATRICES, STUB_MATRICES, tacticMatchesFilters } from '../lib/constants';
+import { PHASE_SHORT, STUB, MATRICES, MATRIX_LABELS, STUB_MATRICES, tacticMatchesFilters } from '../lib/constants';
 import { LIVE_MATRICES, type LiveMatrix } from '../lib/route';
 import type { TacticsByMatrix } from '../App';
 
@@ -106,6 +106,18 @@ export function HeatMapGrid({
   const stubCount = (m: keyof typeof STUB) =>
     Object.values(STUB[m].phases).reduce((n, v) => n + v, 0) + STUB[m].flight + STUB[m].claim;
 
+  // Filter transparency: when a filter is active, show how much is hidden so a
+  // reduced heat map never reads as missing/deleted data.
+  const filterActive = cpnFilter || !!actorFilter;
+  const shownCount = (m: LiveMatrix) => {
+    const tbp = tacticsByMatrix[m];
+    const all = [...tbp[1], ...tbp[2], ...tbp[3], ...tbp[4].flight, ...tbp[4].claim];
+    return all.filter((t) => tacticMatchesFilters(t, cpnFilter, actorFilter)).length;
+  };
+  const filterLabel = [cpnFilter ? 'CPN' : null, actorFilter || null]
+    .filter(Boolean)
+    .join(' + ');
+
   const phaseSelected = (m: LiveMatrix, phase: 1 | 2 | 3) => {
     if (selectedMatrix !== m) return false;
     return selectedTacticId
@@ -124,6 +136,20 @@ export function HeatMapGrid({
 
   return (
     <div className="hm-wrap">
+      {filterActive && (
+        <div className="hm-filter-note">
+          <span className="hm-filter-tag">⌖ Filtered · {filterLabel}</span>
+          <span className="hm-filter-detail">
+            {LIVE_MATRICES.map((m, i) => (
+              <span key={m}>
+                {i > 0 ? ' · ' : ''}
+                {MATRIX_LABELS[m]} <strong>{shownCount(m)}</strong> of {liveCount(m)}
+              </span>
+            ))}
+            {' — clear the filter to see all tactics'}
+          </span>
+        </div>
+      )}
       <div className="hm-header-row" style={{ gridTemplateColumns: gc }}>
         <div className="hm-col-hdr phase-col">Phase</div>
         {MATRICES.map((m) => (
