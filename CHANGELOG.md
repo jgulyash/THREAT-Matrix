@@ -36,20 +36,25 @@ topic. Schema additions are additive; existing content validates unchanged.
   Rendered in the indicator detail as **Target Scope** and **Within-Site
   Focus**, mirroring the People target_identity presentation (populated-only).
 
-- **`informs_axes` extended to the Facilities matrix (in progress).** The
-  six-axis type-level threat-picture metadata carried on the People matrix is
-  being extended to all 200 facility indicators via the same sealed-blind
-  two-rater IRR (κ≥0.60 gate, boundary rubric + the phase-locked definitional
-  calls, per-chunk adjudication). Phase-1/2/3 chunks F1A–F3B shipped: 140/200
-  indicators. Weighted κ: F1A 0.75, F1B 0.82, F2A 0.89, F2B 0.86, F3A 0.88;
-  F3B raw 0.57 → 0.85 after a new locked call (Gwet AC2 0.82–0.98). Consensus
-  adjudication resolved the soft threat_timing/threat_method axes toward the
-  stricter access-vs-method reading and actor_opportunity toward the
-  realized-action bar; >1-step target-scope splits settled to the candidate-set
-  middle. F3B added the **terminal-act method locked call**: execution-phase
-  tactics that ARE the attack modality (occupation, blockade, hostage,
-  vandalism, contamination) pin threat_method=strong, while support/suppression
-  behaviors stay none/weak.
+- **`informs_axes` completed matrix-wide on the Facilities matrix (200/200).**
+  The six-axis type-level threat-picture metadata carried on the People matrix
+  now covers all 200 facility indicators, extended via the same sealed-blind
+  two-rater IRR (κ≥0.60 gate, boundary rubric + phase-locked definitional calls,
+  per-chunk adjudication). All eight chunks passed. Weighted κ: F1A 0.75,
+  F1B 0.82, F2A 0.89, F2B 0.86, F3A 0.88, F3B 0.85 (raw 0.57 → 0.85 after a new
+  locked call), F4A 0.90, F4B 0.76 (Gwet AC2 0.77–0.98). Consensus adjudication
+  resolved the soft threat_timing/threat_method axes toward the stricter
+  access-vs-method reading and actor_opportunity toward the realized-action bar;
+  >1-step target-scope splits settled to the candidate-set middle. Two new
+  locked calls were surfaced and recorded: (1) **terminal-act method** —
+  execution-phase tactics that ARE the attack modality (occupation, blockade,
+  hostage, vandalism, contamination) pin threat_method=strong, while
+  support/suppression behaviors stay none/weak; (2) **aftermath intent +
+  postulated-event axes** — aftermath intent is strong for declaration/ownership
+  behaviors (attribution, amplification, symbolic messaging, coercive demand)
+  and moderate for evasion, while the postulated-event axes stay none for
+  retrospective behaviors and go live only for forward-looking re-attack
+  (TF0408) and coercion (TF0412).
 
 - **Assessment Guidance rendered in the tactic detail.** The per-tactic
   `assessment_guidance` layer — the V1.3 hard-gate content, authored on all 74
