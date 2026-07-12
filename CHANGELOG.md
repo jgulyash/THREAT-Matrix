@@ -40,11 +40,12 @@ topic. Schema additions are additive; existing content validates unchanged.
   six-axis type-level threat-picture metadata carried on the People matrix is
   being extended to all 200 facility indicators via the same sealed-blind
   two-rater IRR (κ≥0.60 gate, boundary rubric + the phase-locked definitional
-  calls, per-chunk adjudication). Phase-1 chunks F1A+F1B shipped first-pass:
-  50/200 indicators, weighted κ 0.75 / 0.82 (Gwet AC2 0.82). Consensus
-  adjudication resolved the soft threat_timing/threat_method axes toward the
-  stricter access-vs-method reading; two >1-step target-scope splits settled to
-  the candidate-set middle value.
+  calls, per-chunk adjudication). Phase-1 chunks F1A+F1B and phase-2 chunks
+  F2A+F2B shipped first-pass: 95/200 indicators. Weighted κ: F1A 0.75, F1B 0.82,
+  F2A 0.89, F2B 0.86 (Gwet AC2 0.82–0.94). Consensus adjudication resolved the
+  soft threat_timing/threat_method axes toward the stricter access-vs-method
+  reading and actor_opportunity toward the realized-action bar; four >1-step
+  target-scope splits settled to the candidate-set middle value.
 
 - **Assessment Guidance rendered in the tactic detail.** The per-tactic
   `assessment_guidance` layer — the V1.3 hard-gate content, authored on all 74
