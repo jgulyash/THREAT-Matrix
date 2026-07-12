@@ -3,6 +3,8 @@ import {
   INDICATOR_CATEGORY_LABELS,
   DETECTION_SOURCE_LABELS,
   TARGET_IDENTITY_LABELS,
+  FACILITY_TARGET_SCOPE_LABELS,
+  WITHIN_SITE_FOCUS_LABELS,
   SEVERITY_BAND_LABELS,
   TEMPORAL_SIGNATURE_LABELS,
   EVIDENCE_TIER_LABELS,
@@ -128,6 +130,32 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
                   {ind.target_identity.map((ti) => (
                     <span key={ti} className="dr-tag identity">
                       {TARGET_IDENTITY_LABELS[ti] || ti}
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {ind.facility_target_scope && ind.facility_target_scope.length > 0 && (
+              <>
+                <div className="ind-subhead">Target Scope</div>
+                <div className="dr-tag-row">
+                  {ind.facility_target_scope.map((ts) => (
+                    <span key={ts} className="dr-tag identity">
+                      {FACILITY_TARGET_SCOPE_LABELS[ts] || ts}
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {ind.within_site_focus && ind.within_site_focus.length > 0 && (
+              <>
+                <div className="ind-subhead">Within-Site Focus</div>
+                <div className="dr-tag-row">
+                  {ind.within_site_focus.map((wf) => (
+                    <span key={wf} className="dr-tag identity">
+                      {WITHIN_SITE_FOCUS_LABELS[wf] || wf}
                     </span>
                   ))}
                 </div>

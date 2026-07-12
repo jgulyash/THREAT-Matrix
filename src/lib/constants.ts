@@ -95,6 +95,21 @@ export const TARGET_IDENTITY_LABELS: Record<string, string> = {
   indiscriminate: 'Indiscriminate',
 };
 
+// V1.3 Facility-matrix target sub-dimensions (revealed reading)
+export const FACILITY_TARGET_SCOPE_LABELS: Record<string, string> = {
+  specific_site: 'Specific Site',
+  site_class: 'Site Class',
+  symbolic_category: 'Symbolic Category',
+  indiscriminate: 'Indiscriminate',
+};
+
+export const WITHIN_SITE_FOCUS_LABELS: Record<string, string> = {
+  structure: 'Structure',
+  occupants: 'Occupants',
+  systems: 'Systems',
+  whole_site: 'Whole Site',
+};
+
 // V1.2 escalation severity band
 export const SEVERITY_BAND_LABELS: Record<string, string> = {
   low: 'Low',
