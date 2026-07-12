@@ -18,6 +18,24 @@ matrix-wide, the identifier contract is extended to non-person matrices, and a
 verified 46-entry bibliography (29 new facility sources) is tagged by matrix and
 topic. Schema additions are additive; existing content validates unchanged.
 
+### Changed
+
+- **People `target_identity` re-authored to the revealed reading (190/190).** The
+  field previously carried a *compatibility* reading — 179 of 190 indicators
+  tagged with all four values ("which classes the behavior COULD serve"), which
+  told an analyst nothing. It now carries a *revealed* reading: tag only the
+  victim identity-class the behavior actually resolves. 124 indicators are now
+  empty (capability, breach/access mechanics, OPSEC/tradecraft, financing,
+  evidence management, most aftermath — these reveal nothing about who), 54 are
+  `named_individual` (subject profiling, surveillance/positioning/approach
+  against the target's person or coupled site, force/seizure/captivity/leverage),
+  and 12 span group/crowd/selection classes. `named_individual` is clarified as
+  plural-capable — a specific target-associated site couples to the specific
+  known person(s), one or more, who are the target. Reproducibility validated by
+  a sealed-blind spot-IRR (per-value Cohen κ 0.80, 20-indicator stratified
+  sample). The schema description is updated to the revealed reading; the enum is
+  unchanged.
+
 ### Added
 
 - **Facility target dimension (facility_target_scope + within_site_focus).** The

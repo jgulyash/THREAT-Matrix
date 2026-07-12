@@ -219,7 +219,7 @@
                 "threat_target": "weak",
                 "threat_method": "moderate"
               },
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0101-06",
@@ -680,7 +680,7 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0102-02",
@@ -720,7 +720,7 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0102-03",
@@ -758,7 +758,7 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0102-04",
@@ -795,7 +795,7 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0102-05",
@@ -835,7 +835,7 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0102-06",
@@ -873,7 +873,7 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
+              "target_identity": ["named_individual"]
             }
           ],
           "countermeasures": [
@@ -1306,7 +1306,7 @@
               "id": "IND-0103-01",
               "behavior": "Threat actor appears at locations associated with the target on multiple occasions with no apparent legitimate reason",
               "category": "surveillance",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
+              "target_identity": ["named_individual"],
               "detection_sources": [
                 "physical_observation",
                 "cctv",
@@ -1346,7 +1346,7 @@
               "id": "IND-0103-02",
               "behavior": "Threat actor conducts reverse image searches, satellite imagery review, or street-view navigation of locations associated with the target",
               "category": "digital",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
+              "target_identity": ["named_individual"],
               "detection_sources": [
                 "it_logs",
                 "social_media",
@@ -1385,7 +1385,7 @@
               "id": "IND-0103-03",
               "behavior": "Threat actor photographs or video-records target-associated locations including building exteriors, parking access points, security checkpoints, or interior layouts",
               "category": "surveillance",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
+              "target_identity": ["named_individual"],
               "detection_sources": [
                 "physical_observation",
                 "cctv",
@@ -1425,7 +1425,7 @@
               "id": "IND-0103-04",
               "behavior": "Threat actor acquires or studies floor plans, blueprints, security camera diagrams, or emergency exit routes for target-associated locations",
               "category": "planning",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
+              "target_identity": ["named_individual"],
               "detection_sources": [
                 "public_records",
                 "it_logs",
@@ -1466,7 +1466,7 @@
               "id": "IND-0103-05",
               "behavior": "Threat actor inquires with current or former employees, security personnel, or facility staff about access procedures, schedules, or the target's routines",
               "category": "communication",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"],
+              "target_identity": ["named_individual"],
               "detection_sources": [
                 "peer_report",
                 "physical_observation"
@@ -1785,7 +1785,7 @@
                 "threat_target": "weak",
                 "threat_method": "strong"
               },
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0104-02",
@@ -1823,7 +1823,7 @@
                 "threat_target": "weak",
                 "threat_method": "strong"
               },
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0104-03",
@@ -1863,7 +1863,7 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0104-04",
@@ -1901,7 +1901,7 @@
                 "threat_target": "weak",
                 "threat_method": "weak"
               },
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0104-05",
@@ -1940,7 +1940,7 @@
                 "threat_target": "weak",
                 "threat_method": "moderate"
               },
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0104-06",
@@ -1981,7 +1981,7 @@
                 "threat_target": "weak",
                 "threat_method": "moderate"
               },
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -2462,7 +2462,7 @@
               },
               "escalation_weight": 4.51,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0105-02",
@@ -2493,7 +2493,7 @@
               },
               "escalation_weight": 5.23,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0105-03",
@@ -2526,7 +2526,7 @@
               },
               "escalation_weight": 5.04,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0105-04",
@@ -2558,7 +2558,7 @@
               },
               "escalation_weight": 5.33,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0105-05",
@@ -2590,7 +2590,7 @@
               },
               "escalation_weight": 5.04,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0105-06",
@@ -2620,7 +2620,7 @@
               },
               "escalation_weight": 4.72,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -2977,7 +2977,7 @@
               },
               "escalation_weight": 4.59,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0106-02",
@@ -3010,7 +3010,7 @@
               },
               "escalation_weight": 4.69,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0106-03",
@@ -3042,7 +3042,7 @@
               },
               "escalation_weight": 4.64,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0106-04",
@@ -3072,7 +3072,7 @@
               },
               "escalation_weight": 4.37,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0106-05",
@@ -3101,7 +3101,7 @@
               },
               "escalation_weight": 3.97,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0106-06",
@@ -3130,7 +3130,7 @@
               },
               "escalation_weight": 4.19,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -3513,7 +3513,7 @@
               },
               "escalation_weight": 5.88,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0107-03",
@@ -3548,7 +3548,7 @@
               },
               "escalation_weight": 6.51,
               "severity_band": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0107-04",
@@ -3580,7 +3580,7 @@
               },
               "escalation_weight": 6.75,
               "severity_band": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0107-05",
@@ -3613,7 +3613,7 @@
               },
               "escalation_weight": 5.23,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0107-06",
@@ -3645,7 +3645,7 @@
               },
               "escalation_weight": 4.93,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0107-07",
@@ -3678,7 +3678,7 @@
               },
               "escalation_weight": 5.76,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -4016,7 +4016,7 @@
               },
               "escalation_weight": 4.58,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0108-02",
@@ -4046,7 +4046,7 @@
               },
               "escalation_weight": 4.58,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0108-03",
@@ -4077,7 +4077,7 @@
               },
               "escalation_weight": 4.58,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0108-04",
@@ -4109,7 +4109,7 @@
               },
               "escalation_weight": 4.82,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0108-05",
@@ -4140,7 +4140,7 @@
               },
               "escalation_weight": 4.89,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0108-06",
@@ -4170,7 +4170,7 @@
               },
               "escalation_weight": 4.08,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             }
           ],
           "countermeasures": [
@@ -4515,7 +4515,7 @@
               },
               "escalation_weight": 5.24,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0201-02",
@@ -4546,7 +4546,7 @@
               },
               "escalation_weight": 5.24,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0201-03",
@@ -4578,7 +4578,7 @@
               },
               "escalation_weight": 5.35,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0201-04",
@@ -4611,7 +4611,7 @@
               },
               "escalation_weight": 5.96,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0201-05",
@@ -4639,7 +4639,7 @@
               },
               "escalation_weight": 5.86,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0201-06",
@@ -4671,7 +4671,7 @@
               },
               "escalation_weight": 5.54,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             }
           ],
           "countermeasures": [
@@ -5015,7 +5015,7 @@
               },
               "escalation_weight": 4.37,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0202-02",
@@ -5048,7 +5048,7 @@
               },
               "escalation_weight": 4.92,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0202-03",
@@ -5079,7 +5079,7 @@
               },
               "escalation_weight": 4.84,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0202-04",
@@ -5108,7 +5108,7 @@
               },
               "escalation_weight": 4.98,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0202-05",
@@ -5137,7 +5137,7 @@
               },
               "escalation_weight": 4.39,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0202-06",
@@ -5168,7 +5168,7 @@
               },
               "escalation_weight": 4.29,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -5545,7 +5545,7 @@
               },
               "escalation_weight": 5.02,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0203-02",
@@ -5575,7 +5575,7 @@
               },
               "escalation_weight": 5.14,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0203-03",
@@ -5607,7 +5607,7 @@
               },
               "escalation_weight": 5.14,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0203-04",
@@ -5637,7 +5637,7 @@
               },
               "escalation_weight": 4.98,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0203-05",
@@ -5666,7 +5666,7 @@
               },
               "escalation_weight": 5.25,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0203-06",
@@ -5700,7 +5700,7 @@
               },
               "escalation_weight": 5.25,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -6073,7 +6073,7 @@
               },
               "escalation_weight": 5.25,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0204-02",
@@ -6105,7 +6105,7 @@
               },
               "escalation_weight": 5.14,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0204-03",
@@ -6135,7 +6135,7 @@
               },
               "escalation_weight": 5.25,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0204-04",
@@ -6166,7 +6166,7 @@
               },
               "escalation_weight": 5.35,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0204-05",
@@ -6198,7 +6198,7 @@
               },
               "escalation_weight": 5.67,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0204-06",
@@ -6230,7 +6230,7 @@
               },
               "escalation_weight": 5.46,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -6607,7 +6607,7 @@
               },
               "escalation_weight": 5.04,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0205-02",
@@ -6639,7 +6639,7 @@
               },
               "escalation_weight": 5.04,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0205-03",
@@ -6671,7 +6671,7 @@
               },
               "escalation_weight": 5.15,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0205-04",
@@ -6703,7 +6703,7 @@
               },
               "escalation_weight": 4.72,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0205-05",
@@ -6735,7 +6735,7 @@
               },
               "escalation_weight": 5.25,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0205-06",
@@ -6765,7 +6765,7 @@
               },
               "escalation_weight": 5.15,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -7112,7 +7112,7 @@
               },
               "escalation_weight": 5.90,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0206-02",
@@ -7142,7 +7142,7 @@
               },
               "escalation_weight": 5.66,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0206-03",
@@ -7175,7 +7175,7 @@
               },
               "escalation_weight": 5.23,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0206-04",
@@ -7207,7 +7207,7 @@
               },
               "escalation_weight": 6.03,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0206-05",
@@ -7238,7 +7238,7 @@
               },
               "escalation_weight": 5.54,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -7610,7 +7610,7 @@
               },
               "escalation_weight": 4.81,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0207-02",
@@ -7640,7 +7640,7 @@
               },
               "escalation_weight": 4.92,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0207-03",
@@ -7671,7 +7671,7 @@
               },
               "escalation_weight": 4.92,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0207-04",
@@ -7704,7 +7704,7 @@
               },
               "escalation_weight": 4.92,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0207-05",
@@ -7734,7 +7734,7 @@
               },
               "escalation_weight": 4.81,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -8074,7 +8074,7 @@
               },
               "escalation_weight": 5.35,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0208-02",
@@ -8105,7 +8105,7 @@
               },
               "escalation_weight": 6.34,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0208-03",
@@ -8135,7 +8135,7 @@
               },
               "escalation_weight": 5.45,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0208-04",
@@ -8167,7 +8167,7 @@
               },
               "escalation_weight": 5.15,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0208-05",
@@ -8200,7 +8200,7 @@
               },
               "escalation_weight": 5.45,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0208-06",
@@ -8233,7 +8233,7 @@
               },
               "escalation_weight": 5.35,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual", "affinity_group", "indiscriminate"]
             }
           ],
           "countermeasures": [
@@ -8606,7 +8606,7 @@
               },
               "escalation_weight": 5.24,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0209-02",
@@ -8637,7 +8637,7 @@
               },
               "escalation_weight": 5.24,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0209-03",
@@ -8669,7 +8669,7 @@
               },
               "escalation_weight": 5.04,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0209-04",
@@ -8700,7 +8700,7 @@
               },
               "escalation_weight": 5.24,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0209-05",
@@ -8730,7 +8730,7 @@
               },
               "escalation_weight": 5.04,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             }
           ],
           "countermeasures": [
@@ -9079,7 +9079,7 @@
               "escalation_weight": 8.00,
               "severity_band": "critical",
               "severity_floor": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0301-02",
@@ -9111,7 +9111,7 @@
               "escalation_weight": 8.18,
               "severity_band": "critical",
               "severity_floor": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual", "affinity_group", "indiscriminate"]
             },
             {
               "id": "IND-0301-03",
@@ -9143,7 +9143,7 @@
               "escalation_weight": 8.68,
               "severity_band": "critical",
               "severity_floor": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual", "indiscriminate"]
             },
             {
               "id": "IND-0301-04",
@@ -9173,7 +9173,7 @@
               "escalation_weight": 4.64,
               "severity_band": "critical",
               "severity_floor": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0301-05",
@@ -9205,7 +9205,7 @@
               },
               "escalation_weight": 6.98,
               "severity_band": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             }
           ],
           "countermeasures": [
@@ -9562,7 +9562,7 @@
               },
               "escalation_weight": 4.48,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0302-02",
@@ -9592,7 +9592,7 @@
               },
               "escalation_weight": 6.93,
               "severity_band": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0302-03",
@@ -9624,7 +9624,7 @@
               "escalation_weight": 4.16,
               "severity_band": "critical",
               "severity_floor": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0302-04",
@@ -9654,7 +9654,7 @@
               },
               "escalation_weight": 4.72,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0302-05",
@@ -9684,7 +9684,7 @@
               },
               "escalation_weight": 5.23,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -10048,7 +10048,7 @@
               "escalation_weight": 5.30,
               "severity_band": "critical",
               "severity_floor": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0303-02",
@@ -10076,7 +10076,7 @@
               },
               "escalation_weight": 4.70,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0303-03",
@@ -10108,7 +10108,7 @@
               "escalation_weight": 5.16,
               "severity_band": "critical",
               "severity_floor": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0303-04",
@@ -10139,7 +10139,7 @@
               },
               "escalation_weight": 4.86,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0303-05",
@@ -10168,7 +10168,7 @@
               },
               "escalation_weight": 4.82,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             }
           ],
           "countermeasures": [
@@ -10519,7 +10519,7 @@
               "escalation_weight": 5.21,
               "severity_band": "critical",
               "severity_floor": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0304-02",
@@ -10547,7 +10547,7 @@
               },
               "escalation_weight": 5.31,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0304-03",
@@ -10578,7 +10578,7 @@
               "escalation_weight": 5.31,
               "severity_band": "critical",
               "severity_floor": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0304-04",
@@ -10609,7 +10609,7 @@
               },
               "escalation_weight": 5.11,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0304-05",
@@ -10639,7 +10639,7 @@
               },
               "escalation_weight": 4.51,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             }
           ],
           "countermeasures": [
@@ -10960,7 +10960,7 @@
               },
               "escalation_weight": 5.00,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0305-02",
@@ -10989,7 +10989,7 @@
               },
               "escalation_weight": 4.59,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0305-03",
@@ -11016,7 +11016,7 @@
               },
               "escalation_weight": 4.67,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0305-04",
@@ -11046,7 +11046,7 @@
               },
               "escalation_weight": 4.59,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0305-05",
@@ -11073,7 +11073,7 @@
               },
               "escalation_weight": 5.05,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -11395,7 +11395,7 @@
               },
               "escalation_weight": 4.43,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0306-02",
@@ -11426,7 +11426,7 @@
               "escalation_weight": 4.87,
               "severity_band": "critical",
               "severity_floor": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0306-03",
@@ -11454,7 +11454,7 @@
               },
               "escalation_weight": 5.10,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0306-04",
@@ -11485,7 +11485,7 @@
               },
               "escalation_weight": 5.20,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0306-05",
@@ -11513,7 +11513,7 @@
               },
               "escalation_weight": 6.93,
               "severity_band": "critical",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -11853,7 +11853,7 @@
               },
               "escalation_weight": 4.05,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0307-02",
@@ -11883,7 +11883,7 @@
               },
               "escalation_weight": 4.36,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0307-03",
@@ -11914,7 +11914,7 @@
               },
               "escalation_weight": 4.58,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0307-04",
@@ -11944,7 +11944,7 @@
               },
               "escalation_weight": 4.43,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0307-05",
@@ -11975,7 +11975,7 @@
               },
               "escalation_weight": 4.56,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0307-06",
@@ -12003,7 +12003,7 @@
               },
               "escalation_weight": 4.45,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -12340,7 +12340,7 @@
               },
               "escalation_weight": 4.62,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0308-02",
@@ -12369,7 +12369,7 @@
               },
               "escalation_weight": 4.70,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0308-03",
@@ -12400,7 +12400,7 @@
               },
               "escalation_weight": 4.21,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0308-04",
@@ -12428,7 +12428,7 @@
               },
               "escalation_weight": 4.62,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0308-05",
@@ -12459,7 +12459,7 @@
               },
               "escalation_weight": 4.61,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -12803,7 +12803,7 @@
               },
               "escalation_weight": 4.29,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0401-02",
@@ -12833,7 +12833,7 @@
               },
               "escalation_weight": 4.58,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0401-03",
@@ -12864,7 +12864,7 @@
               },
               "escalation_weight": 3.66,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0401-04",
@@ -12893,7 +12893,7 @@
               },
               "escalation_weight": 4.58,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0401-05",
@@ -12924,7 +12924,7 @@
               },
               "escalation_weight": 4.58,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -13287,7 +13287,7 @@
               },
               "escalation_weight": 4.84,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0402-02",
@@ -13316,7 +13316,7 @@
               },
               "escalation_weight": 4.66,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0402-03",
@@ -13345,7 +13345,7 @@
               },
               "escalation_weight": 4.58,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0402-04",
@@ -13371,7 +13371,7 @@
               },
               "escalation_weight": 4.98,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0402-05",
@@ -13404,7 +13404,7 @@
               },
               "escalation_weight": 5.02,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0402-06",
@@ -13435,7 +13435,7 @@
               },
               "escalation_weight": 4.76,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -13790,7 +13790,7 @@
               },
               "escalation_weight": 4.53,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0403-02",
@@ -13818,7 +13818,7 @@
               },
               "escalation_weight": 4.16,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0403-03",
@@ -13846,7 +13846,7 @@
               },
               "escalation_weight": 4.05,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0403-04",
@@ -13878,7 +13878,7 @@
               },
               "escalation_weight": 4.44,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0403-05",
@@ -13906,7 +13906,7 @@
               },
               "escalation_weight": 3.94,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -14258,7 +14258,7 @@
               },
               "escalation_weight": 4.88,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0404-02",
@@ -14289,7 +14289,7 @@
               },
               "escalation_weight": 4.70,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0404-03",
@@ -14321,7 +14321,7 @@
               },
               "escalation_weight": 4.79,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0404-04",
@@ -14353,7 +14353,7 @@
               },
               "escalation_weight": 4.81,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0404-05",
@@ -14383,7 +14383,7 @@
               },
               "escalation_weight": 4.70,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0404-06",
@@ -14411,7 +14411,7 @@
               },
               "escalation_weight": 4.79,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -14751,7 +14751,7 @@
               },
               "escalation_weight": 4.58,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0405-02",
@@ -14780,7 +14780,7 @@
               },
               "escalation_weight": 4.93,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0405-03",
@@ -14809,7 +14809,7 @@
               },
               "escalation_weight": 4.76,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0405-04",
@@ -14839,7 +14839,7 @@
               },
               "escalation_weight": 4.84,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0405-05",
@@ -14868,7 +14868,7 @@
               },
               "escalation_weight": 4.29,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -15207,7 +15207,7 @@
               },
               "escalation_weight": 5.25,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0406-02",
@@ -15235,7 +15235,7 @@
               },
               "escalation_weight": 5.35,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0406-03",
@@ -15263,7 +15263,7 @@
               },
               "escalation_weight": 5.25,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0406-04",
@@ -15293,7 +15293,7 @@
               },
               "escalation_weight": 5.67,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0406-05",
@@ -15321,7 +15321,7 @@
               },
               "escalation_weight": 5.05,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -15659,7 +15659,7 @@
               },
               "escalation_weight": 4.58,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0407-02",
@@ -15688,7 +15688,7 @@
               },
               "escalation_weight": 4.76,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0407-03",
@@ -15719,7 +15719,7 @@
               },
               "escalation_weight": 5.33,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0407-04",
@@ -15747,7 +15747,7 @@
               },
               "escalation_weight": 4.79,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual", "affinity_group"]
             },
             {
               "id": "IND-0407-05",
@@ -15775,7 +15775,7 @@
               },
               "escalation_weight": 4.51,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0407-06",
@@ -15804,7 +15804,7 @@
               },
               "escalation_weight": 4.76,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -16121,7 +16121,7 @@
               },
               "escalation_weight": 5.18,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0408-02",
@@ -16150,7 +16150,7 @@
               },
               "escalation_weight": 5.63,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0408-03",
@@ -16178,7 +16178,7 @@
               },
               "escalation_weight": 5.33,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0408-04",
@@ -16206,7 +16206,7 @@
               },
               "escalation_weight": 5.15,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0408-05",
@@ -16237,7 +16237,7 @@
               },
               "escalation_weight": 5.38,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             },
             {
               "id": "IND-0408-06",
@@ -16266,7 +16266,7 @@
               },
               "escalation_weight": 5.11,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": []
             }
           ],
           "countermeasures": [
@@ -16579,7 +16579,7 @@
               },
               "escalation_weight": 5.16,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0409-02",
@@ -16609,7 +16609,7 @@
               },
               "escalation_weight": 5.06,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0409-03",
@@ -16637,7 +16637,7 @@
               },
               "escalation_weight": 5.48,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0409-04",
@@ -16665,7 +16665,7 @@
               },
               "escalation_weight": 5.48,
               "severity_band": "high",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0409-05",
@@ -16694,7 +16694,7 @@
               },
               "escalation_weight": 4.88,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             },
             {
               "id": "IND-0409-06",
@@ -16722,7 +16722,7 @@
               },
               "escalation_weight": 4.81,
               "severity_band": "medium",
-              "target_identity": ["named_individual", "role_or_identity_category", "affinity_group", "indiscriminate"]
+              "target_identity": ["named_individual"]
             }
           ],
           "countermeasures": [
