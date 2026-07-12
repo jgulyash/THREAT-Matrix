@@ -33,6 +33,18 @@ topic. Schema additions are additive; existing content validates unchanged.
   (capability/method/recon-of-dimensions stay empty), authored across all 200
   facility indicators. Reproducibility validated by a sealed-blind spot-IRR
   (scope κ=0.94, focus κ=0.88; the site_class/symbolic_category split held).
+  Rendered in the indicator detail as **Target Scope** and **Within-Site
+  Focus**, mirroring the People target_identity presentation (populated-only).
+
+- **`informs_axes` extended to the Facilities matrix (in progress).** The
+  six-axis type-level threat-picture metadata carried on the People matrix is
+  being extended to all 200 facility indicators via the same sealed-blind
+  two-rater IRR (κ≥0.60 gate, boundary rubric + the phase-locked definitional
+  calls, per-chunk adjudication). Phase-1 chunks F1A+F1B shipped first-pass:
+  50/200 indicators, weighted κ 0.75 / 0.82 (Gwet AC2 0.82). Consensus
+  adjudication resolved the soft threat_timing/threat_method axes toward the
+  stricter access-vs-method reading; two >1-step target-scope splits settled to
+  the candidate-set middle value.
 
 - **Assessment Guidance rendered in the tactic detail.** The per-tactic
   `assessment_guidance` layer — the V1.3 hard-gate content, authored on all 74
