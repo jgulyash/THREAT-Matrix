@@ -17066,7 +17066,8 @@
             "detectability": 5.0
            },
            "escalation_weight": 4.95,
-           "severity_band": "medium"
+           "severity_band": "medium",
+           "facility_target_scope": ["specific_site", "site_class", "symbolic_category"]
           },
           {
            "id": "IND-F0101-02",
@@ -17095,7 +17096,8 @@
             "detectability": 1.5
            },
            "escalation_weight": 5.65,
-           "severity_band": "high"
+           "severity_band": "high",
+           "facility_target_scope": ["specific_site"]
           },
           {
            "id": "IND-F0101-03",
@@ -17123,7 +17125,9 @@
             "detectability": 4.0
            },
            "escalation_weight": 5.72,
-           "severity_band": "high"
+           "severity_band": "high",
+           "facility_target_scope": ["specific_site"],
+           "within_site_focus": ["whole_site"]
           },
           {
            "id": "IND-F0101-04",
@@ -17151,7 +17155,8 @@
             "detectability": 2.0
            },
            "escalation_weight": 5.99,
-           "severity_band": "high"
+           "severity_band": "high",
+           "facility_target_scope": ["site_class"]
           },
           {
            "id": "IND-F0101-05",
@@ -17181,7 +17186,9 @@
             "detectability": 5.5
            },
            "escalation_weight": 5.33,
-           "severity_band": "high"
+           "severity_band": "high",
+           "facility_target_scope": ["specific_site", "site_class"],
+           "within_site_focus": ["structure", "whole_site"]
           }
          ],
          "countermeasures": [
@@ -17497,7 +17504,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.38,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0102-02",
@@ -17528,7 +17536,8 @@
                 "detectability": 2.5
               },
               "escalation_weight": 6.05,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0102-03",
@@ -17558,7 +17567,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.96,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0102-04",
@@ -17588,7 +17598,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.94,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0102-05",
@@ -17618,7 +17629,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.95,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"]
             }
           ],
           "countermeasures": [
@@ -17935,7 +17947,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.95,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0103-02",
@@ -17964,7 +17977,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.72,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0103-03",
@@ -17994,7 +18008,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.95,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0103-04",
@@ -18025,7 +18040,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.57,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0103-05",
@@ -18054,7 +18070,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.95,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"]
             }
           ],
           "countermeasures": [
@@ -18379,7 +18396,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.59,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0104-02",
@@ -18409,7 +18427,9 @@
                 "detectability": 2.5
               },
               "escalation_weight": 5.89,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"],
+              "within_site_focus": ["structure"]
             },
             {
               "id": "IND-F0104-03",
@@ -18439,7 +18459,9 @@
                 "detectability": 4.0
               },
               "escalation_weight": 4.94,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"],
+              "within_site_focus": ["systems"]
             },
             {
               "id": "IND-F0104-04",
@@ -18470,7 +18492,9 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.97,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"],
+              "within_site_focus": ["structure"]
             },
             {
               "id": "IND-F0104-05",
@@ -18501,7 +18525,9 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.95,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"],
+              "within_site_focus": ["structure"]
             }
           ],
           "countermeasures": [
@@ -18822,7 +18848,8 @@
                 "detectability": 2.5
               },
               "escalation_weight": 5.48,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0105-02",
@@ -18853,7 +18880,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.72,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0105-03",
@@ -18884,7 +18912,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.95,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0105-04",
@@ -18915,7 +18944,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.79,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0105-05",
@@ -18946,7 +18976,8 @@
                 "detectability": 6.0
               },
               "escalation_weight": 4.68,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"]
             }
           ],
           "countermeasures": [
@@ -19702,7 +19733,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.96,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0107-02",
@@ -19731,7 +19763,8 @@
                 "detectability": 2.5
               },
               "escalation_weight": 5.89,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0107-03",
@@ -19761,7 +19794,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 5.60,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["occupants"]
             },
             {
               "id": "IND-F0107-04",
@@ -20131,7 +20165,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.79,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0108-02",
@@ -20160,7 +20195,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.82,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0108-03",
@@ -20219,7 +20255,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.96,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0108-05",
@@ -20248,7 +20285,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.69,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"]
             }
           ],
           "countermeasures": [
@@ -21470,7 +21508,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.82,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0201-02",
@@ -21500,7 +21539,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 6.08,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0201-03",
@@ -21529,7 +21569,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.79,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0201-04",
@@ -21587,7 +21628,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 6.35,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"]
             }
           ],
           "countermeasures": [
@@ -21917,7 +21959,8 @@
                 "detectability": 2.5
               },
               "escalation_weight": 6.99,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0202-02",
@@ -22006,7 +22049,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.61,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["specific_site"]
             },
             {
               "id": "IND-F0202-05",
@@ -22908,7 +22952,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 6.36,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["occupants"]
             },
             {
               "id": "IND-F0204-05",
@@ -23307,7 +23352,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 7.58,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["structure", "occupants"]
             },
             {
               "id": "IND-F0205-03",
@@ -23367,7 +23413,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 6.84,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["structure"]
             },
             {
               "id": "IND-F0205-05",
@@ -23751,7 +23798,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 6.74,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["occupants"]
             },
             {
               "id": "IND-F0206-03",
@@ -23781,7 +23829,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 6.36,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["occupants"]
             },
             {
               "id": "IND-F0206-04",
@@ -23812,7 +23861,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 6.48,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["occupants"]
             },
             {
               "id": "IND-F0206-05",
@@ -24159,7 +24209,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 6.48,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["occupants"]
             },
             {
               "id": "IND-F0207-02",
@@ -24250,7 +24301,8 @@
                 "detectability": 2.5
               },
               "escalation_weight": 6.86,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["occupants"]
             },
             {
               "id": "IND-F0207-05",
@@ -24281,7 +24333,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 5.96,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["occupants"]
             }
           ],
           "countermeasures": [
@@ -24595,7 +24648,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.63,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["systems"]
             },
             {
               "id": "IND-F0208-02",
@@ -24625,7 +24679,8 @@
                 "detectability": 2.5
               },
               "escalation_weight": 7.36,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["systems", "occupants"]
             },
             {
               "id": "IND-F0208-03",
@@ -24654,7 +24709,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 6.62,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["systems"]
             },
             {
               "id": "IND-F0208-04",
@@ -24684,7 +24740,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 5.92,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["systems"]
             },
             {
               "id": "IND-F0208-05",
@@ -24713,7 +24770,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 4.95,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "within_site_focus": ["systems"]
             }
           ],
           "countermeasures": [
@@ -25099,7 +25157,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 7.09,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["occupants"]
             },
             {
               "id": "IND-F0209-04",
@@ -25479,6 +25538,7 @@
               },
               "escalation_weight": 6.74,
               "severity_band": "critical",
+              "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
             },
             {
@@ -25510,6 +25570,7 @@
               },
               "escalation_weight": 7.01,
               "severity_band": "critical",
+              "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
             },
             {
@@ -25538,7 +25599,8 @@
                 "detectability": 6.0
               },
               "escalation_weight": 6.28,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["structure"]
             },
             {
               "id": "IND-F0301-04",
@@ -25568,7 +25630,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 6.88,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["structure", "occupants"]
             },
             {
               "id": "IND-F0301-05",
@@ -25599,6 +25662,7 @@
               },
               "escalation_weight": 6.62,
               "severity_band": "critical",
+              "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
             }
           ],
@@ -25920,7 +25984,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 7.09,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["structure", "occupants"]
             },
             {
               "id": "IND-F0302-02",
@@ -25953,6 +26018,7 @@
               },
               "escalation_weight": 6.26,
               "severity_band": "critical",
+              "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
             },
             {
@@ -25984,7 +26050,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 8.06,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["structure", "occupants"]
             },
             {
               "id": "IND-F0302-04",
@@ -26013,7 +26080,8 @@
                 "detectability": 6.5
               },
               "escalation_weight": 7.01,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["structure", "occupants"]
             },
             {
               "id": "IND-F0302-05",
@@ -26044,7 +26112,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 7.51,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["occupants"]
             }
           ],
           "countermeasures": [
@@ -26374,6 +26443,7 @@
               },
               "escalation_weight": 8.07,
               "severity_band": "critical",
+              "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
             },
             {
@@ -26405,6 +26475,7 @@
               },
               "escalation_weight": 7.55,
               "severity_band": "critical",
+              "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
             },
             {
@@ -26435,7 +26506,8 @@
                 "detectability": 2.5
               },
               "escalation_weight": 7.49,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["structure"]
             },
             {
               "id": "IND-F0303-04",
@@ -26466,6 +26538,7 @@
               },
               "escalation_weight": 7.03,
               "severity_band": "critical",
+              "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
             },
             {
@@ -26496,7 +26569,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 7.12,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["structure"]
             }
           ],
           "countermeasures": [
@@ -26828,7 +26902,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 7.00,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["systems", "occupants"]
             },
             {
               "id": "IND-F0304-02",
@@ -26859,6 +26934,7 @@
               },
               "escalation_weight": 8.21,
               "severity_band": "critical",
+              "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
             },
             {
@@ -26889,7 +26965,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 6.49,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["systems", "occupants"]
             },
             {
               "id": "IND-F0304-04",
@@ -26921,7 +26998,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.85,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["systems"]
             },
             {
               "id": "IND-F0304-05",
@@ -26952,6 +27030,7 @@
               },
               "escalation_weight": 7.36,
               "severity_band": "critical",
+              "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
             }
           ],
@@ -27285,6 +27364,7 @@
               },
               "escalation_weight": 6.35,
               "severity_band": "critical",
+              "within_site_focus": ["occupants"],
               "severity_floor": "critical"
             },
             {
@@ -27315,7 +27395,8 @@
                 "detectability": 6.0
               },
               "escalation_weight": 6.73,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["occupants"]
             },
             {
               "id": "IND-F0305-03",
@@ -27735,7 +27816,8 @@
                 "detectability": 7.0
               },
               "escalation_weight": 4.49,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "within_site_focus": ["whole_site"]
             },
             {
               "id": "IND-F0306-02",
@@ -27766,7 +27848,8 @@
                 "detectability": 6.5
               },
               "escalation_weight": 5.11,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["occupants"]
             },
             {
               "id": "IND-F0306-03",
@@ -27796,7 +27879,8 @@
                 "detectability": 7.5
               },
               "escalation_weight": 4.05,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "within_site_focus": ["whole_site"]
             },
             {
               "id": "IND-F0306-04",
@@ -27828,6 +27912,7 @@
               },
               "escalation_weight": 5.93,
               "severity_band": "critical",
+              "within_site_focus": ["occupants"],
               "severity_floor": "critical"
             },
             {
@@ -27859,7 +27944,8 @@
                 "detectability": 6.0
               },
               "escalation_weight": 5.04,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["whole_site"]
             }
           ],
           "countermeasures": [
@@ -28177,7 +28263,8 @@
                 "detectability": 6.0
               },
               "escalation_weight": 4.79,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "within_site_focus": ["structure"]
             },
             {
               "id": "IND-F0307-02",
@@ -28208,7 +28295,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 5.54,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["structure"]
             },
             {
               "id": "IND-F0307-03",
@@ -28238,7 +28326,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 5.17,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["structure"]
             },
             {
               "id": "IND-F0307-04",
@@ -28268,7 +28357,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 5.04,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["structure"]
             },
             {
               "id": "IND-F0307-05",
@@ -28297,7 +28387,8 @@
                 "detectability": 6.0
               },
               "escalation_weight": 4.79,
-              "severity_band": "medium"
+              "severity_band": "medium",
+              "within_site_focus": ["structure"]
             }
           ],
           "countermeasures": [
@@ -28612,6 +28703,7 @@
               },
               "escalation_weight": 8.11,
               "severity_band": "critical",
+              "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
             },
             {
@@ -28644,6 +28736,7 @@
               },
               "escalation_weight": 8.09,
               "severity_band": "critical",
+              "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
             },
             {
@@ -28675,7 +28768,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 6.73,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["systems", "occupants"]
             },
             {
               "id": "IND-F0308-04",
@@ -28707,6 +28801,7 @@
               },
               "escalation_weight": 7.36,
               "severity_band": "critical",
+              "within_site_focus": ["occupants"],
               "severity_floor": "critical"
             },
             {
@@ -28740,6 +28835,7 @@
               },
               "escalation_weight": 7.03,
               "severity_band": "critical",
+              "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
             }
           ],
@@ -29069,6 +29165,7 @@
               },
               "escalation_weight": 6.91,
               "severity_band": "critical",
+              "within_site_focus": ["occupants"],
               "severity_floor": "critical"
             },
             {
@@ -29099,7 +29196,8 @@
                 "detectability": 3.5
               },
               "escalation_weight": 7.71,
-              "severity_band": "critical"
+              "severity_band": "critical",
+              "within_site_focus": ["systems", "occupants"]
             },
             {
               "id": "IND-F0309-03",
@@ -29129,6 +29227,7 @@
               },
               "escalation_weight": 8.09,
               "severity_band": "critical",
+              "within_site_focus": ["occupants"],
               "severity_floor": "critical"
             },
             {
@@ -29158,7 +29257,8 @@
                 "detectability": 3.0
               },
               "escalation_weight": 6.35,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["systems"]
             },
             {
               "id": "IND-F0309-05",
@@ -29190,6 +29290,7 @@
               },
               "escalation_weight": 6.28,
               "severity_band": "critical",
+              "within_site_focus": ["occupants"],
               "severity_floor": "critical"
             }
           ],
@@ -32591,6 +32692,7 @@
               },
               "escalation_weight": 8.09,
               "severity_band": "critical",
+              "within_site_focus": ["occupants"],
               "severity_floor": "critical"
             },
             {
@@ -32622,6 +32724,7 @@
               },
               "escalation_weight": 7.21,
               "severity_band": "critical",
+              "within_site_focus": ["occupants"],
               "severity_floor": "critical"
             },
             {
@@ -32653,7 +32756,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 5.70,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["occupants"]
             },
             {
               "id": "IND-F0408-04",
@@ -32684,6 +32788,7 @@
               },
               "escalation_weight": 7.35,
               "severity_band": "critical",
+              "within_site_focus": ["occupants"],
               "severity_floor": "critical"
             },
             {
@@ -32714,7 +32819,8 @@
                 "detectability": 4.5
               },
               "escalation_weight": 6.47,
-              "severity_band": "high"
+              "severity_band": "high",
+              "within_site_focus": ["occupants"]
             }
           ],
           "countermeasures": [
@@ -33524,7 +33630,8 @@
                 "detectability": 5.0
               },
               "escalation_weight": 5.43,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["site_class"]
             },
             {
               "id": "IND-F0410-04",
@@ -33980,7 +34087,8 @@
                 "detectability": 4.0
               },
               "escalation_weight": 5.68,
-              "severity_band": "high"
+              "severity_band": "high",
+              "facility_target_scope": ["site_class"]
             },
             {
               "id": "IND-F0411-05",

@@ -20,6 +20,20 @@ topic. Schema additions are additive; existing content validates unchanged.
 
 ### Added
 
+- **Facility target dimension (facility_target_scope + within_site_focus).** The
+  Facility matrix gains the target sub-dimension People's target_identity
+  provides but that facility lacked. facility_target_scope captures the breadth
+  of site selection an indicator reveals — specific_site / site_class
+  (functional type) / symbolic_category (ideological/symbolic category) /
+  indiscriminate — answering "which/how many sites" (the Nairobi embassy vs
+  any US embassy vs any government building). within_site_focus captures the
+  facility-native "what inside bears the harm" — structure / occupants /
+  systems / whole_site. Both use a REVEALED reading (tag only what the behavior
+  indicates, empty when it reveals nothing) under a target-coupling rule
+  (capability/method/recon-of-dimensions stay empty), authored across all 200
+  facility indicators. Reproducibility validated by a sealed-blind spot-IRR
+  (scope κ=0.94, focus κ=0.88; the site_class/symbolic_category split held).
+
 - **Assessment Guidance rendered in the tactic detail.** The per-tactic
   `assessment_guidance` layer — the V1.3 hard-gate content, authored on all 74
   tactics but previously imported in types and rendered nowhere — now displays

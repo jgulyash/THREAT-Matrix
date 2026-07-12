@@ -761,6 +761,34 @@
           "uniqueItems": true,
           "description": "Optional multi-select sub-dimension within the People matrix describing the identity-class(es) this indicator targets. named_individual = specific known person (assassination, stalking, kidnapping of a known target). role_or_identity_category = targeted because of what they are, not who (cops by uniform, journalists, clinic staff, judges). affinity_group = group property selects the people or location (demographic, religious, ethnic, locational-affinity — e.g. Jews at a synagogue, patrons of a community-specific mall). indiscriminate = no group property filter (random crowd, generic public space chosen for proximity / availability alone). Multi-select to preserve multi-axis identity reality (e.g., a judge attacked because of role and affinity simultaneously is ['role_or_identity_category', 'affinity_group']). Boundary rule between affinity_group and indiscriminate: did a group property select either the people or the location? Yes → affinity_group; no → indiscriminate. Authoring convention (V1.3, matrix-wide population): a behavior carries `indiscriminate` unless it inherently requires a specific known subject — i.e., only target-selection and subject-profiling behaviors exclude `indiscriminate`. Every other behavior (capability, tradecraft, breach, positioning, force, seizure, captivity, leverage, aftermath) has both targeted and mass/indiscriminate versions and carries all four sub-classes. This is a compatibility reading (which identity-classes the behavior CAN serve), chosen over a subjective 'characteristic target' reading so contributors can apply it reproducibly."
         },
+        "facility_target_scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "specific_site",
+              "site_class",
+              "symbolic_category",
+              "indiscriminate"
+            ]
+          },
+          "uniqueItems": true,
+          "description": "Optional Facility-matrix sub-dimension: the breadth of site selection this indicator class REVEALS about the actor (revealed reading — tag only what the behavior actually indicates, not what it could apply to; empty/absent = reveals nothing about breadth). specific_site = one identified building (grievance tied to a named facility, surveillance of a specific building, as-built drawings of this site). site_class = any facility of a FUNCTIONAL/OPERATIONAL type — grouped by what the site does (any branch of an org, any hospital, any transit hub, clinics/schools of a type). symbolic_category = any site of an IDEOLOGICALLY/SYMBOLICALLY-defined category — grouped by what the site represents (any government building, any place of worship of a faith, landmarks). The discriminator between site_class and symbolic_category is the BASIS OF GROUPING (function vs meaning), not specificity; both are breadth values (any member of the group). A single named site chosen for symbolic motive is specific_site, not symbolic_category. indiscriminate = any accessible site, opportunistic with no site preference. The Facility parallel to the People matrix `target_identity`; captures breadth (which/how many sites) distinct from blast_radius (how many victims) and informs_axes.threat_target (how well the indicator resolves the target). TARGET-COUPLING RULE: populate only when the behavior reveals the breadth of an ACTUAL target selection; general knowledge, capability, or method acquisition not coupled to a target or target-class carries no scope (empty). SYMBOLIC RULE: symbolic_category applies only when symbolism defines the target BREADTH (a category chosen for its meaning); symbolic MOTIVE for a named or class target does not make it symbolic_category — a specific building chosen for what it represents is specific_site. MULTI-TAG RULE: assign multiple values only when the behavior text explicitly spans breadths, or the observable behavior independently supports each — never because several possibilities can be inferred."
+        },
+        "within_site_focus": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "structure",
+              "occupants",
+              "systems",
+              "whole_site"
+            ]
+          },
+          "uniqueItems": true,
+          "description": "Optional Facility-matrix sub-dimension: what inside the facility the indicator class REVEALS as the harm focus (revealed reading; empty/absent = unresolved). structure = the building/physical asset (arson, structural sabotage, defacement, demolition). occupants = the people inside (mass-casualty intent, hostage-taking, active-shooter positioning). systems = utilities/controls/functional systems whose defeat or contamination is the aim (power, water, HVAC/contamination, fire/security-system defeat that is the attack itself — NOT security-system defeat merely to gain access). whole_site = the site as an undifferentiated unit (seizure/occupation, generic threat against the facility). Decision rule for occupied-structure attacks: `occupants` when casualty intent is shown, `structure` when the aim is property/denial with incidental casualties, both only when the behavior genuinely reveals both aims. Facility-native (no People analog); load-bearing for triage. AIM-COUPLING RULE: populate only when the behavior reveals the within-site OBJECT OF HARM. Recon of site dimensions (floor plans, layout, security posture), method/capability acquisition (breaching tools, accelerants, ramming vehicles), and general technical literacy carry no focus (empty) unless explicitly coupled to a within-site aim. Floor-plan/layout study is recon, NOT a structure focus — reserve `structure` for load-bearing/collapse/destruction aims; reserve `systems` for utility/HVAC/fire-system defeat that is the attack itself."
+        },
         "primary_objective_evidence_tier": {
           "type": "string",
           "enum": [
