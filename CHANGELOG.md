@@ -20,6 +20,23 @@ topic. Schema additions are additive; existing content validates unchanged.
 
 ### Changed
 
+- **Recoverability reading-seam reconciled (B-10) — `recoverability_inverse` is now
+  a clean own-harm axis matrix-wide.** Phase-1/2 preparatory behaviors previously
+  carried a presaged-harm R (weapon rehearsal 7.5, acquisition 8.5) inconsistent
+  with the own-harm reading elected in rubric v1.2.0 and already used by phase-3
+  support behaviors. 39 phase-1/2 person indicators were re-scored: harm-nothing
+  preparation (acquisition, cover, OPSEC, financial, rehearsal, logistics) to
+  own-harm R ≈ 4.0, and breach/penetration/access-elevation to R ≈ 5.5. Because
+  the elected reading would otherwise drop breach severity, `blast_radius_potential`
+  for those intrusion behaviors was re-authored off the stale single-victim floor
+  (3.0) to the occupied-environment collateral tier (perimeter 5.0, zone-penetration
+  5.5, access-elevation 5.0) — a defeated control exposes the population behind it —
+  which holds them at high on the weight math, no severity floor required. Net: 8
+  band flips (3 weapon-acquisition critical→high, others high↔medium), person
+  distribution 91/80/19 → 94/80/16 (medium/high/critical). Detection-catch timing
+  and lone-vs-group actor structure logged as instance-conditioning (B-03) leans.
+  No double-count: the enabled-harm signal lives in `impact_potential`.
+
 - **People `target_identity` re-authored to the revealed reading (190/190).** The
   field previously carried a *compatibility* reading — 179 of 190 indicators
   tagged with all four values ("which classes the behavior COULD serve"), which
