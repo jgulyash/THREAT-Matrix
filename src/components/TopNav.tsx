@@ -65,7 +65,7 @@ export function TopNav({ route, navigate, theme, setTheme }: Props) {
         </a>
       </div>
       <div className="topbar-spacer" />
-      <span className="topbar-meta">154 tactics · 27 profiles · MIT</span>
+      <span className="topbar-meta">74 tactics · 390 indicators · 27 profiles · MIT</span>
       <span className="badge-v1">v{frameworkData.version}</span>
       <button
         className="theme-toggle"

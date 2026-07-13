@@ -6,7 +6,7 @@ This project adheres to [Semantic Versioning](https://semver.org). Framework
 content and JSON Schema are versioned independently; the framework content
 and JSON Schema both advance to `1.3.0` with this release.
 
-## [1.3.0] — unreleased
+## [1.3.0] — 2026-07-12
 
 Feature release. Completes the **Facilities matrix** (40 tactics across all four
 phases — the first non-person attack-surface matrix authored end-to-end), brings
