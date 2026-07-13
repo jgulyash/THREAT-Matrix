@@ -25,6 +25,43 @@ interface Props {
   navigate: (path: string) => void;
 }
 
+function IndicatorLinkCard({
+  relId,
+  entry,
+  fallbackTactic,
+  navigate,
+}: {
+  relId: string;
+  entry: IndicatorEntry | undefined;
+  fallbackTactic: Tactic;
+  navigate: (path: string) => void;
+}) {
+  const go = () =>
+    navigate(`/${(entry?.tactic || fallbackTactic).matrix}/indicator/${relId}`);
+  return (
+    <div
+      className="ind-related-link"
+      role="button"
+      tabIndex={0}
+      onClick={go}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          go();
+        }
+      }}
+    >
+      <div className="ind-related-head">
+        <span className="adv-tactic-id">{relId}</span>
+        {entry && <span className="ind-related-tactic">{entry.tactic.name}</span>}
+      </div>
+      <div className="ind-related-beh">
+        {entry ? entry.indicator.behavior : 'Unresolved reference'}
+      </div>
+    </div>
+  );
+}
+
 export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) {
   const entry = indicatorMap[indicatorId];
 
@@ -61,6 +98,16 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
     relId,
     entry: indicatorMap[relId] as IndicatorEntry | undefined,
   }));
+
+  // Reverse links: indicators whose correlates_with points here. Outbound links
+  // already render under Related Indicators, so mutual pairs are excluded.
+  const outbound = new Set(ind.correlates_with || []);
+  const referencedBy = Object.values(indicatorMap).filter(
+    (e) =>
+      e.indicator.id !== ind.id &&
+      !outbound.has(e.indicator.id) &&
+      (e.indicator.correlates_with || []).includes(ind.id)
+  );
 
   return (
     <div className="actor-detail-view">
@@ -258,29 +305,13 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
             {related.length > 0 ? (
               <div>
                 {related.map(({ relId, entry: rel }) => (
-                  <div
+                  <IndicatorLinkCard
                     key={relId}
-                    className="ind-related-link"
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => navigate(`/${(rel?.tactic || tactic).matrix}/indicator/${relId}`)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        navigate(`/${(rel?.tactic || tactic).matrix}/indicator/${relId}`);
-                      }
-                    }}
-                  >
-                    <div className="ind-related-head">
-                      <span className="adv-tactic-id">{relId}</span>
-                      {rel && (
-                        <span className="ind-related-tactic">{rel.tactic.name}</span>
-                      )}
-                    </div>
-                    <div className="ind-related-beh">
-                      {rel ? rel.indicator.behavior : 'Unresolved reference'}
-                    </div>
-                  </div>
+                    relId={relId}
+                    entry={rel}
+                    fallbackTactic={tactic}
+                    navigate={navigate}
+                  />
                 ))}
               </div>
             ) : (
@@ -289,6 +320,25 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
               </div>
             )}
           </div>
+
+          {referencedBy.length > 0 && (
+            <div className="adv-section">
+              <div className="adv-section-label">
+                Referenced By ({referencedBy.length})
+              </div>
+              <div>
+                {referencedBy.map((rel) => (
+                  <IndicatorLinkCard
+                    key={rel.indicator.id}
+                    relId={rel.indicator.id}
+                    entry={rel}
+                    fallbackTactic={tactic}
+                    navigate={navigate}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
 
           {ind.source_refs && ind.source_refs.length > 0 && (
             <div className="adv-section">
