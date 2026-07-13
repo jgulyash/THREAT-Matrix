@@ -4,8 +4,8 @@ THREAT Matrix is a published open standard. Two artifacts in this repository are
 
 | Artifact | Versioned at | Current |
 |---|---|---|
-| **Framework content** | `version` in `docs/data/framework.json` | `1.1.0` |
-| **JSON Schema** | `schema_version` in `docs/data/framework.json` and the `$id` of `docs/data/framework.schema.json` | `1.1.0` |
+| **Framework content** | `version` in `docs/data/framework.json` | `1.3.0` |
+| **JSON Schema** | `schema_version` in `docs/data/framework.json` and the `$id` of `docs/data/framework.schema.json` | `1.3.0` |
 
 Both follow [Semantic Versioning 2.0.0](https://semver.org). They move independently — a content release can ship without a schema bump, and vice versa.
 

@@ -108,7 +108,7 @@ export function ActorDetailView({ actor, navigate, getActorTactics }: Props) {
                   <div
                     key={t.id}
                     className="adv-tactic-link"
-                    onClick={() => navigate(`/person/tactic/${t.id}`)}
+                    onClick={() => navigate(`/${t.matrix}/tactic/${t.id}`)}
                   >
                     <span className="adv-tactic-id">{t.id}</span>
                     <span>{t.name}</span>

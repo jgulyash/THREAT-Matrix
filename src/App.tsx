@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { FrameworkData, Tactic, ActorProfile } from './types/framework';
-import { parseRoute } from './lib/route';
-import { resolveTrack } from './lib/constants';
+import { parseRoute, LIVE_MATRICES, type LiveMatrix } from './lib/route';
+import { resolveTrack, tacticMatchesFilters, STUB_MATRICES } from './lib/constants';
 import { TopNav } from './components/TopNav';
 import { FilterBar } from './components/FilterBar';
 import { HeatMapGrid } from './components/HeatMapGrid';
@@ -20,11 +20,14 @@ export type TacticsByPhase = {
   4: { flight: Tactic[]; claim: Tactic[] };
 };
 
+export type TacticsByMatrix = Record<LiveMatrix, TacticsByPhase>;
+
 export default function App() {
   const data = frameworkData as unknown as FrameworkData;
 
   const [route, setRoute] = useState(() => parseRoute());
   const [cpnFilter, setCpnFilter] = useState(false);
+  const [actorFilter, setActorFilter] = useState('');
   const [theme, setThemeState] = useState<'dark' | 'light'>(() =>
     (localStorage.getItem('threat-matrix-theme') as 'dark' | 'light' | null) || 'dark'
   );
@@ -50,29 +53,37 @@ export default function App() {
   }, []);
 
   const derived = useMemo(() => {
-    const pt = data.matrices.person.tactics;
+    // All tactics across the live (rendered) matrices; IDs are globally unique
+    // (TM####/TF####, IND-####/IND-F####), so the lookup maps stay flat.
+    const allTactics: Tactic[] = LIVE_MATRICES.flatMap(
+      (m) => data.matrices[m]?.tactics || []
+    );
     const ap = data.actor_profiles;
     const bib = data.bibliography || {};
 
     const tacticMap: Record<string, Tactic> = {};
-    pt.forEach((t) => { tacticMap[t.id] = t; });
+    allTactics.forEach((t) => { tacticMap[t.id] = t; });
 
     const actorMap: Record<string, ActorProfile> = {};
     ap.forEach((a) => { actorMap[a.id] = a; });
 
-    // Flat lookup of every person-matrix indicator → its parent tactic
+    // Flat lookup of every rendered indicator → its parent tactic
     const indicatorMap: Record<string, IndicatorEntry> = {};
-    pt.forEach((t) => {
+    allTactics.forEach((t) => {
       (t.indicators || []).forEach((ind) => {
         indicatorMap[ind.id] = { indicator: ind, tactic: t };
       });
     });
 
-    const tbp: TacticsByPhase = { 1: [], 2: [], 3: [], 4: { flight: [], claim: [] } };
-    pt.forEach((t) => {
-      if (t.phase !== 4) tbp[t.phase as 1 | 2 | 3].push(t);
-      else if (resolveTrack(t) === 'flight') tbp[4].flight.push(t);
-      else tbp[4].claim.push(t);
+    const tbm = {} as TacticsByMatrix;
+    LIVE_MATRICES.forEach((m) => {
+      const tbp: TacticsByPhase = { 1: [], 2: [], 3: [], 4: { flight: [], claim: [] } };
+      (data.matrices[m]?.tactics || []).forEach((t) => {
+        if (t.phase !== 4) tbp[t.phase as 1 | 2 | 3].push(t);
+        else if (resolveTrack(t) === 'flight') tbp[4].flight.push(t);
+        else tbp[4].claim.push(t);
+      });
+      tbm[m] = tbp;
     });
 
     const abc: Record<string, ActorProfile[]> = {};
@@ -82,13 +93,11 @@ export default function App() {
     });
 
     const getActorTactics = (id: string) =>
-      pt.filter((t) =>
-        t.actor_associations && t.actor_associations.some((a) => a.actor_id === id)
-      );
+      allTactics.filter((t) => tacticMatchesFilters(t, false, id));
 
     // Reverse lookup: which tactics cite each bibliography entry
     const bibReverseMap: Record<string, Tactic[]> = {};
-    pt.forEach((t) => {
+    allTactics.forEach((t) => {
       const refs = new Set<string>();
       (t.source_refs || []).forEach((r) => refs.add(r));
       (t.indicators || []).forEach((i) => (i.source_refs || []).forEach((r) => refs.add(r)));
@@ -100,28 +109,39 @@ export default function App() {
       });
     });
 
-    return { pt, ap, tacticMap, actorMap, indicatorMap, tbp, abc, bib, bibReverseMap, getActorTactics };
+    return { tacticMap, actorMap, indicatorMap, tbm, abc, bib, bibReverseMap, getActorTactics };
   }, [data]);
 
-  const { tacticMap, actorMap, indicatorMap, tbp, abc, bib, bibReverseMap, getActorTactics } = derived;
+  const { tacticMap, actorMap, indicatorMap, tbm, abc, bib, bibReverseMap, getActorTactics } = derived;
   const isActors = route.view === 'actors' || route.view === 'actorDetail';
   const isReferences = route.view === 'references';
   const isIndicator = route.view === 'indicator';
-  const sv = { facility: 'V1.3', organization: 'V1.4', infrastructure: 'V1.5' } as const;
+  const sv = Object.fromEntries(STUB_MATRICES.map((m) => [m.key, m.version])) as Record<
+    'organization' | 'infrastructure',
+    string
+  >;
 
   return (
     <div className="app-root">
       <TopNav route={route} navigate={navigate} theme={theme} setTheme={setTheme} />
       {!isActors && !isReferences && !isIndicator && (
-        <FilterBar cpnFilter={cpnFilter} setCpnFilter={setCpnFilter} />
+        <FilterBar
+          cpnFilter={cpnFilter}
+          setCpnFilter={setCpnFilter}
+          actorFilter={actorFilter}
+          setActorFilter={setActorFilter}
+          actorsByCategory={abc}
+        />
       )}
       <div className="main-content">
         {route.view === 'heatmap' && (
           <HeatMapGrid
-            tacticsByPhase={tbp}
+            tacticsByMatrix={tbm}
             navigate={navigate}
             cpnFilter={cpnFilter}
+            actorFilter={actorFilter}
             compact={false}
+            selectedMatrix={null}
             selectedPhase={null}
             selectedTrack={null}
             selectedTacticId={null}
@@ -129,13 +149,13 @@ export default function App() {
         )}
         {(route.view === 'phase' || route.view === 'tactic') && (
           <SplitView
-            tacticsByPhase={tbp}
+            tacticsByMatrix={tbm}
             route={route}
             navigate={navigate}
             tacticMap={tacticMap}
             actorMap={actorMap}
-            bibliography={bib}
             cpnFilter={cpnFilter}
+            actorFilter={actorFilter}
           />
         )}
         {route.view === 'indicator' && (

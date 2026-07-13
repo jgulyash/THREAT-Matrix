@@ -1,5 +1,5 @@
 import type { ActorProfile } from '../types/framework';
-import { CATEGORY_ORDER, VECTOR_LABELS } from '../lib/constants';
+import { orderedActorCategories, VECTOR_LABELS } from '../lib/constants';
 
 interface Props {
   actorsByCategory: Record<string, ActorProfile[]>;
@@ -14,12 +14,11 @@ export function ActorProfilesView({ actorsByCategory, navigate }: Props) {
       <div className="actors-view-sub">
         {total} profiles across {Object.keys(actorsByCategory).length} threat categories
       </div>
-      {CATEGORY_ORDER.filter((c) => actorsByCategory[c]).map((cat) => {
-        const actors = actorsByCategory[cat];
+      {orderedActorCategories(actorsByCategory).map(({ cat, label, actors }) => {
         return (
           <div key={cat} className="actor-cat-section">
             <div className="actor-cat-label">
-              {actors[0].category_label}
+              {label}
               <span className="actor-cat-count">{actors.length}</span>
             </div>
             <div className="actor-cards-grid">

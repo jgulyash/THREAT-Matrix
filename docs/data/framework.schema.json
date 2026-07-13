@@ -80,10 +80,18 @@
           "type": "object",
           "description": "Numeric thresholds mapping escalation_weight to severity_band buckets.",
           "properties": {
-            "low": { "type": "number" },
-            "medium": { "type": "number" },
-            "high": { "type": "number" },
-            "critical": { "type": "number" }
+            "low": {
+              "type": "number"
+            },
+            "medium": {
+              "type": "number"
+            },
+            "high": {
+              "type": "number"
+            },
+            "critical": {
+              "type": "number"
+            }
           }
         },
         "rubric_version": {
@@ -92,7 +100,7 @@
         },
         "calibration_guidance": {
           "type": "string",
-          "description": "Type-level framework guidance on calibrating severity_thresholds to a consumer's threat-posture environment. The framework's default thresholds reflect equal-quartile bucketing; consumers operating in higher-threat-posture environments (critical infrastructure, executive protection, dignitary protection) should shift `high` and `critical` thresholds downward to surface medium-weight indicators earlier in triage. Lower-posture environments may shift them upward. Document any deviation per CONTRIBUTING.md \"Schema design principles\"."
+          "description": "Type-level framework guidance on calibrating severity_thresholds to a consumer's threat-posture environment. The framework's default thresholds reflect the rubric v1.2.0 recalibration (medium/high keep the equal-quartile cuts; critical lowered from 7.5 to 6.5 against the realized scored population); consumers operating in higher-threat-posture environments (critical infrastructure, executive protection, dignitary protection) should shift `high` and `critical` thresholds downward to surface medium-weight indicators earlier in triage. Lower-posture environments may shift them upward. Document any deviation per CONTRIBUTING.md \"Schema design principles\"."
         }
       }
     },
@@ -244,7 +252,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^TM[0-9]{4}$"
+          "pattern": "^T[MFOI][0-9]{4}$"
         },
         "name": {
           "type": "string"
@@ -272,6 +280,11 @@
         "phase_name": {
           "type": "string",
           "description": "Human-readable phase name. Current data uses Title Case with phase number prefix (e.g., '1 Target Development'); V1.2 may normalize."
+        },
+        "phase_4_track": {
+          "type": "string",
+          "enum": ["evasion", "attribution"],
+          "description": "Aftermath sub-track for phase-4 tactics: 'evasion' (Evade \u2014 withdrawal, evidence management, cover, counter-forensics, re-attack positioning) or 'attribution' (Claim \u2014 declaring, amplifying, messaging, coercive leverage). Framework-level structure carried by every matrix's phase-4 tactics; absent on phases 1\u20133. Formalized V1.3 (previously an undocumented data field on the People matrix)."
         },
         "notes": {
           "type": "string",
@@ -368,41 +381,102 @@
             "credibility": {
               "type": "object",
               "properties": {
-                "criteria": { "type": "string", "description": "Type-level prose preamble articulating the underlying credibility-judgment rule. Carries the contract; anchors illustrate it." },
-                "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
-                "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
+                "criteria": {
+                  "type": "string",
+                  "description": "Type-level prose preamble articulating the underlying credibility-judgment rule. Carries the contract; anchors illustrate it."
+                },
+                "high_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "low_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
               }
             },
             "capability": {
+              "description": "Per-tactic aid for READING a specific actor's capability from evidence — the third of three deliberately distinct capability constructs: impact_potential presumes the class's capability ceiling; informs_axes.actor_capability scores what observing the class reveals about capability; this block guides the evidence reading. The per-case instance judgment is the future instance-conditioning record (B-03).",
               "type": "object",
               "properties": {
-                "criteria": { "type": "string", "description": "Type-level prose preamble articulating the underlying capability-judgment rule. Carries the contract; anchors illustrate it." },
-                "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
-                "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
+                "criteria": {
+                  "type": "string",
+                  "description": "Type-level prose preamble articulating the underlying capability-judgment rule. Carries the contract; anchors illustrate it."
+                },
+                "high_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "low_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
               }
             },
             "intent": {
               "type": "object",
               "properties": {
-                "criteria": { "type": "string", "description": "Type-level prose preamble articulating the underlying intent-judgment rule. Carries the contract; anchors illustrate it." },
-                "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
-                "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
+                "criteria": {
+                  "type": "string",
+                  "description": "Type-level prose preamble articulating the underlying intent-judgment rule. Carries the contract; anchors illustrate it."
+                },
+                "high_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "low_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
               }
             },
             "opportunity": {
               "type": "object",
               "properties": {
-                "criteria": { "type": "string", "description": "Type-level prose preamble articulating the underlying opportunity-judgment rule. Carries the contract; anchors illustrate it." },
-                "high_signal_anchors": { "type": "array", "items": { "type": "string" } },
-                "low_signal_anchors": { "type": "array", "items": { "type": "string" } }
+                "criteria": {
+                  "type": "string",
+                  "description": "Type-level prose preamble articulating the underlying opportunity-judgment rule. Carries the contract; anchors illustrate it."
+                },
+                "high_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "low_signal_anchors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
               }
             },
             "false_positive_context": {
               "type": "object",
               "description": "Patterns where surface behavior matches the tactic's indicators but the underlying activity is legitimate. Criteria + contexts shape mirrors the credibility/capability/intent/opportunity sub-fields.",
               "properties": {
-                "criteria": { "type": "string", "description": "Type-level prose articulating what distinguishes a false-positive from a real concern. Carries the contract; contexts illustrate it." },
-                "contexts": { "type": "array", "items": { "type": "string" } }
+                "criteria": {
+                  "type": "string",
+                  "description": "Type-level prose articulating what distinguishes a false-positive from a real concern. Carries the contract; contexts illustrate it."
+                },
+                "contexts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
               }
             },
             "threshold_guidance": {
@@ -411,7 +485,12 @@
             },
             "escalation_priority": {
               "type": "string",
-              "enum": ["Urgent", "Immediate", "Priority", "Routine"],
+              "enum": [
+                "Urgent",
+                "Immediate",
+                "Priority",
+                "Routine"
+              ],
               "description": "Type-level priority class for the tactic — characterizes typical action-urgency at the tactic-class level, not case-level urgency at any specific assessment. See CONTRIBUTING.md \"Schema design principles\"."
             }
           }
@@ -463,7 +542,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^IND-[0-9]{4}-[0-9]{2}$"
+          "pattern": "^IND-[FOI]?[0-9]{4}-[0-9]{2}$"
         },
         "behavior": {
           "type": "string"
@@ -562,7 +641,7 @@
               "type": "number",
               "minimum": 0.0,
               "maximum": 10.0,
-              "description": "Type-level magnitude of harm if the threat lands."
+              "description": "Type-level magnitude of harm the behavior class directly produces or imminently enables — a severity gradient along the pathway (reconnaissance/tradecraft low, planning/access mid, force application and capability acquisition high). Presumes the capability CEILING of the class (what it could effect at most); contrast informs_axes.actor_capability (what observing the class reveals about skill) and assessment_guidance.capability (how to read a specific actor's capability from evidence). The per-case does-THIS-actor-have-the-skill judgment belongs to the instance-conditioning layer (B-03) and is never discounted into this value."
             },
             "blast_radius_potential": {
               "type": "number",
@@ -574,7 +653,7 @@
               "type": "number",
               "minimum": 0.0,
               "maximum": 10.0,
-              "description": "Type-level inverse-recoverability — how hard the harm is to undo. Permanence weighted higher; lives lost = highest."
+              "description": "Type-level inverse-recoverability \u2014 how hard the harm is to undo. Permanence weighted higher; lives lost = highest. Reading election (rubric v1.2.0): this axis scores the harm the behavior class DIRECTLY produces \u2014 it does not inherit the permanence of the harm a behavior presages or enables (contrast impact_potential, which counts harm a behavior directly produces or imminently enables). Victim-facing pre-attack behaviors (surveillance, approach) score their durable psychological harm; operational support behaviors (rehearsal, diversion, coordination comms) score their own transient harm. Known seam: some phase-1/2 preparatory indicators were authored before this election under a presaged-harm reading and sit above it \u2014 reconciliation is a backlogged scoring pass (B-10), not silent per-indicator drift."
             },
             "detectability": {
               "type": "number",
@@ -592,35 +671,79 @@
             "high",
             "critical"
           ],
-          "description": "Optional derived bucket from escalation_weight per escalation_rubric.severity_thresholds. Consumers may compute on read or store. Type-level descriptor of the indicator class. See CONTRIBUTING.md \"Schema design principles\"."
+          "description": "Optional derived bucket from escalation_weight per escalation_rubric.severity_thresholds. Consumers may compute on read or store. Type-level descriptor of the indicator class. Note: when severity_floor is present, severity_band is the greater of the computed band and the floor (see escalation_rubric.severity_floor_rule). See CONTRIBUTING.md \"Schema design principles\"."
+        },
+        "severity_floor": {
+          "type": "string",
+          "enum": [
+            "high",
+            "critical"
+          ],
+          "description": "V1.3 triage floor. Present on indicators whose behavior applies direct physical force to a person; forces severity_band to at least this value regardless of the computed escalation_weight (which is left unchanged). Currently 'critical' for all such behaviors — a casualty is critical at any scale. See escalation_rubric.severity_floor_rule."
         },
         "informs_axes": {
           "type": "object",
-          "description": "EXPERIMENTAL (V1.2). Type-level metadata describing which axes of the larger threat picture this indicator class typically informs. Six axes covering actor (capability / intent / opportunity) and the postulated event (timing / target / method). Categorical scale {strong, moderate, weak, none} — not numeric. The framework's collective judgment about how strongly an indicator class informs an axis is itself categorical at root; numeric values would be false precision. For AI/ML consumers needing continuous features, the documented mapping is strong=0.9, moderate=0.6, weak=0.3, none=0.0; this mapping is a downstream-consumer convention only, not framework-level scoring. Field is optional; pilot in V1.2 Step 6 (TM0103) gates broader population in Step 7. Feedback wanted in V1.2; refinement in V1.3. See CONTRIBUTING.md \"Schema design principles\".",
+          "description": "Type-level metadata describing which axes of the larger threat picture this indicator class typically informs, and how finely. Universal resolution scale (resolution, not severity — severity lives in escalation_axes): none = no signal on the axis; weak = resolves only the axis's coarsest grain (the axis-relevant fact exists); moderate = one grain finer (the coarse fact plus one narrowing); strong = resolves to a specific value. Rate the indicator class as written, type-level — never a vivid case instance. Six axes covering actor (capability / intent / opportunity) and the postulated event (timing / target / method). Categorical scale {strong, moderate, weak, none} — not numeric. The framework's collective judgment about how strongly an indicator class informs an axis is itself categorical at root; numeric values would be false precision. For AI/ML consumers needing continuous features, the documented mapping is strong=0.9, moderate=0.6, weak=0.3, none=0.0; this mapping is a downstream-consumer convention only, not framework-level scoring. Coverage: authored across all 190 People-matrix indicator classes (V1.3) via a sealed-blind two-rater inter-rater process gated at weighted κ ≥ 0.60 per chunk; per-axis level semantics are formalized in each axis description (V1.3 refinements #1–#4). Extension to the other matrices is an explicit deferred decision (B-09). Field remains optional on any indicator. See CONTRIBUTING.md \"Schema design principles\".",
           "properties": {
             "actor_capability": {
+              "description": "What observing the class REVEALS about the actor's skill, tradecraft, and operational sophistication — distinct from impact_potential (which presumes the class's capability ceiling) and from assessment_guidance.capability (a per-tactic aid for reading a specific actor's capability from evidence). Grains: none = purely passive/ambient behavior achievable with zero skill and zero deliberate effort (rare); weak = a deliberate action with no tradecraft visible; moderate = a real competence demonstrated (pretext durability, multi-modal coordination, concealed-imaging tradecraft, counter-surveillance); strong = advanced or specialized tradecraft (productive analysis of restricted artifacts, credential fabrication, manufacturing, regulatory-control defeat).",
               "type": "string",
-              "enum": ["strong", "moderate", "weak", "none"]
+              "enum": [
+                "strong",
+                "moderate",
+                "weak",
+                "none"
+              ]
             },
             "actor_intent": {
+              "description": "The actor's GENERAL intent-to-act, read at type level only — specific motive class is case-level and excluded. Grains: weak = diffuse or ambient adverse interest, not yet directed; moderate = purposive, directed attention toward the subject without clear commitment; strong = clear general intent-to-act (broad-to-narrow behavioral progression, operational specificity, retention of acquired materials, grievance paired with reconnaissance). Never raise to strong because a specific motive can be imagined. Formalizes V1.3 refinement #1.",
               "type": "string",
-              "enum": ["strong", "moderate", "weak", "none"]
+              "enum": [
+                "strong",
+                "moderate",
+                "weak",
+                "none"
+              ]
             },
             "actor_opportunity": {
+              "description": "The actor's opportunity, tiered rather than averaged across its two sub-meanings: weak = generic or ambient reach only; moderate = a resolved exploitable condition at the INFORMATIONAL tier (pattern-of-life knowledge, security-gap awareness); strong = REALIZED action-opportunity (an exploited insider relationship, direct unsupervised access, demonstrated reach within an exploitable window). During-execution support behaviors inherit the operation's realized opportunity (strong). Formalizes V1.3 refinement #2.",
               "type": "string",
-              "enum": ["strong", "moderate", "weak", "none"]
+              "enum": [
+                "strong",
+                "moderate",
+                "weak",
+                "none"
+              ]
             },
             "threat_timing": {
+              "description": "Proximity-to-action. Locked boundary: weak = phase-only (places the threat in a pathway phase with no finer resolution); moderate = phase plus something narrower (schedule-aligned behavior, operational-tempo cues); strong = pins a specific action window (imminent, dated, or event-aligned). Mobilization-phase rehearsal, probing, and attempted or actual breach/penetration behaviors read strong; concealment and OPSEC behaviors are excepted (weak).",
               "type": "string",
-              "enum": ["strong", "moderate", "weak", "none"]
+              "enum": [
+                "strong",
+                "moderate",
+                "weak",
+                "none"
+              ]
             },
             "threat_target": {
+              "description": "Which specific target or asset is in view. Grains: weak = targeting at a target-class level only; moderate = narrowed to a candidate set or subject-associated locations; strong = the specific named subject or subject-specific assets, including behaviors tied to a specific target-associated environment.",
               "type": "string",
-              "enum": ["strong", "moderate", "weak", "none"]
+              "enum": [
+                "strong",
+                "moderate",
+                "weak",
+                "none"
+              ]
             },
             "threat_method": {
+              "description": "How the attack would be conducted — the ATTACK method only: access and approach tradecraft does not inform method (reads none or weak). All execution in framework scope is physical; never treat physical-vs-digital as a narrowing (digital reconnaissance still describes a physical attack downstream). Grains: none = method-agnostic, all physical methods remain in play; weak = barely narrows the physical-methods space; moderate = narrows to 2–3 candidate physical methods; strong = pins a specific physical method (e.g., VBIED, hostage scenario, targeted assassination). Formalizes V1.3 refinement #3.",
               "type": "string",
-              "enum": ["strong", "moderate", "weak", "none"]
+              "enum": [
+                "strong",
+                "moderate",
+                "weak",
+                "none"
+              ]
             }
           }
         },
@@ -636,7 +759,35 @@
             ]
           },
           "uniqueItems": true,
-          "description": "Optional multi-select sub-dimension within the People matrix describing the identity-class(es) this indicator targets. named_individual = specific known person (assassination, stalking, kidnapping of a known target). role_or_identity_category = targeted because of what they are, not who (cops by uniform, journalists, clinic staff, judges). affinity_group = group property selects the people or location (demographic, religious, ethnic, locational-affinity — e.g. Jews at a synagogue, patrons of a community-specific mall). indiscriminate = no group property filter (random crowd, generic public space chosen for proximity / availability alone). Multi-select to preserve multi-axis identity reality (e.g., a judge attacked because of role and affinity simultaneously is ['role_or_identity_category', 'affinity_group']). Boundary rule between affinity_group and indiscriminate: did a group property select either the people or the location? Yes → affinity_group; no → indiscriminate."
+          "description": "Optional multi-select sub-dimension within the People matrix: the victim identity-class(es) this indicator class REVEALS (revealed reading — tag only what the behavior actually indicates; empty/absent = reveals nothing about victim identity). named_individual = one OR MORE specific pre-identified persons are the object — surveillance/profiling/approach/force/seizure/captivity/leverage directed at the person(s), OR a specific target-associated site/environment/route coupled to them (a site reveals that specific known person(s), singular or plural, are the target). role_or_identity_category = selection is by role/what-they-are (a judge, cops by uniform, clinic staff, journalists). affinity_group = a cohesive group property selects the victims (demographic, religious, ethnic — e.g. worshippers, a gathering). indiscriminate = anyone / random crowd, no selection filter (mass-casualty by proximity/availability). Empty/absent = the behavior class reveals nothing about victim identity (capability acquisition, breach/access mechanics, OPSEC/tradecraft, logistics, financing, evidence management, most aftermath evasion). Coupling rule: tag only when observing the class resolves WHO the victim is — the person(s) or their coupled site/environment; behaviors that merely presuppose a victim without revealing the class stay empty. Reproducibility validated by a sealed-blind spot-IRR (per-value Cohen κ 0.80). Replaces the prior compatibility reading, which tagged every class a behavior COULD serve and left the field near-constant at 179/190 all-four."
+        },
+        "facility_target_scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "specific_site",
+              "site_class",
+              "symbolic_category",
+              "indiscriminate"
+            ]
+          },
+          "uniqueItems": true,
+          "description": "Optional Facility-matrix sub-dimension: the breadth of site selection this indicator class REVEALS about the actor (revealed reading — tag only what the behavior actually indicates, not what it could apply to; empty/absent = reveals nothing about breadth). specific_site = one identified building (grievance tied to a named facility, surveillance of a specific building, as-built drawings of this site). site_class = any facility of a FUNCTIONAL/OPERATIONAL type — grouped by what the site does (any branch of an org, any hospital, any transit hub, clinics/schools of a type). symbolic_category = any site of an IDEOLOGICALLY/SYMBOLICALLY-defined category — grouped by what the site represents (any government building, any place of worship of a faith, landmarks). The discriminator between site_class and symbolic_category is the BASIS OF GROUPING (function vs meaning), not specificity; both are breadth values (any member of the group). A single named site chosen for symbolic motive is specific_site, not symbolic_category. indiscriminate = any accessible site, opportunistic with no site preference. The Facility parallel to the People matrix `target_identity`; captures breadth (which/how many sites) distinct from blast_radius (how many victims) and informs_axes.threat_target (how well the indicator resolves the target). TARGET-COUPLING RULE: populate only when the behavior reveals the breadth of an ACTUAL target selection; general knowledge, capability, or method acquisition not coupled to a target or target-class carries no scope (empty). SYMBOLIC RULE: symbolic_category applies only when symbolism defines the target BREADTH (a category chosen for its meaning); symbolic MOTIVE for a named or class target does not make it symbolic_category — a specific building chosen for what it represents is specific_site. MULTI-TAG RULE: assign multiple values only when the behavior text explicitly spans breadths, or the observable behavior independently supports each — never because several possibilities can be inferred."
+        },
+        "within_site_focus": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "structure",
+              "occupants",
+              "systems",
+              "whole_site"
+            ]
+          },
+          "uniqueItems": true,
+          "description": "Optional Facility-matrix sub-dimension: what inside the facility the indicator class REVEALS as the harm focus (revealed reading; empty/absent = unresolved). structure = the building/physical asset (arson, structural sabotage, defacement, demolition). occupants = the people inside (mass-casualty intent, hostage-taking, active-shooter positioning). systems = utilities/controls/functional systems whose defeat or contamination is the aim (power, water, HVAC/contamination, fire/security-system defeat that is the attack itself — NOT security-system defeat merely to gain access). whole_site = the site as an undifferentiated unit (seizure/occupation, generic threat against the facility). Decision rule for occupied-structure attacks: `occupants` when casualty intent is shown, `structure` when the aim is property/denial with incidental casualties, both only when the behavior genuinely reveals both aims. Facility-native (no People analog); load-bearing for triage. AIM-COUPLING RULE: populate only when the behavior reveals the within-site OBJECT OF HARM. Recon of site dimensions (floor plans, layout, security posture), method/capability acquisition (breaching tools, accelerants, ramming vehicles), and general technical literacy carry no focus (empty) unless explicitly coupled to a within-site aim. Floor-plan/layout study is recon, NOT a structure focus — reserve `structure` for load-bearing/collapse/destruction aims; reserve `systems` for utility/HVAC/fire-system defeat that is the attack itself."
         },
         "primary_objective_evidence_tier": {
           "type": "string",
@@ -647,6 +798,19 @@
             "unknown"
           ],
           "description": "Optional. Incident-level annotation of the confidence with which the adversary's primary objective (which sets matrix placement per matrices.boundary_rule) is established. stated = claimed responsibility or manifested intent. strongly_inferred = operational evidence overwhelming. weakly_inferred = operational evidence ambiguous. unknown = no basis for inference; matrix placement defaults to the matrix containing the tactic that produced the most observable consequence (see matrices.boundary_rule). Full IRR protocol for this field deferred to V1.3."
+        },
+        "instance_conditioning_hints": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Optional TYPE-level guidance (not a per-case record): for this indicator class, which informs_axes tend to lift under instance conditioning and to what level \u2014 the directionality an analyst should probe at assessment time. Seeded from the V1.3 sealed-blind IRR leans (see instance_conditioning). Pilot coverage; full population is a follow-on. Does not affect the type score.",
+          "properties": {
+            "actor_capability": { "type": "string", "enum": ["weak", "moderate", "strong"] },
+            "actor_intent": { "type": "string", "enum": ["weak", "moderate", "strong"] },
+            "actor_opportunity": { "type": "string", "enum": ["weak", "moderate", "strong"] },
+            "threat_timing": { "type": "string", "enum": ["weak", "moderate", "strong"] },
+            "threat_target": { "type": "string", "enum": ["weak", "moderate", "strong"] },
+            "threat_method": { "type": "string", "enum": ["weak", "moderate", "strong"] }
+          }
         }
       }
     },
@@ -667,7 +831,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^CM-[0-9]{4}-[0-9]{2}$"
+          "pattern": "^CM-[FOI]?[0-9]{4}-[0-9]{2}$"
         },
         "measure": {
           "type": "string"
@@ -768,7 +932,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^RP-[0-9]{4}-[0-9]{2}$"
+          "pattern": "^RP-[FOI]?[0-9]{4}-[0-9]{2}$"
         },
         "trigger": {
           "type": "string"
@@ -928,7 +1092,56 @@
         },
         "relevance_summary": {
           "type": "string"
+        },
+        "matrices": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "person",
+              "facility",
+              "organization",
+              "infrastructure"
+            ]
+          },
+          "description": "Optional. Which target matrices this source supports/informs. Enables consumers to pull sourcing by matrix and the UI to group the bibliography by matrix. A source may support multiple matrices; tagging (not partitioning) keeps flat key-based citation intact."
+        },
+        "topics": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          },
+          "description": "Optional. Attack-method / subject tags for filtering sources by need (e.g., bombing, arson, structural_sabotage, forced_entry, vehicle_ramming, soft_targets, target_selection, cbrn_contamination, cyber_physical, building_systems_sabotage, occupation_siege, symbolic_ideological, active_shooter, insider_threat, mass_attack, threat_assessment, protective_intelligence, risk_methodology, physical_protection_systems, incident_data, financial_crime). Free-string to allow extension; the listed vocabulary is the recommended starter set."
         }
+      }
+    },
+    "instance_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_focus", "pathway_stage", "means_in_hand", "tempo_trajectory", "source_credibility"],
+      "description": "Layer 2 \u2014 a per-CASE instance-conditioning record for a specific assessment of a specific actor and target, SEPARATE from the type-level indicator score. The framework defines this contract but ships NO instances (it is a type-level artifact; consumers instantiate per case). Records discrete observations, never optional prose, and never a computed capability discount. See the top-level instance_conditioning block for the escalate-only rule and binding contract.",
+      "properties": {
+        "target_focus": { "type": "string", "enum": ["diffuse", "narrowing", "specific_target", "unknown"], "description": "Directionality of the observed behavior toward a target: diffuse (no resolved target) \u2192 narrowing (candidate set or associated locus) \u2192 specific_target (a specific subject/asset resolved). unknown when not assessable." },
+        "pathway_stage": { "type": "string", "enum": ["grievance", "ideation", "research_planning", "preparation", "breach_or_probing", "attack", "aftermath", "unknown"], "description": "This actor's assessed position on the pathway to violence (NTAC / phase_mappings vocabulary) \u2014 the CASE stage, which may lead or lag the indicator class's type-level phase." },
+        "means_in_hand": { "type": "string", "enum": ["unknown", "assessed_absent", "partial", "assessed_present", "confirmed_present"], "description": "Whether THIS actor actually has the capability/means now \u2014 the honest per-case capability cell. unknown is the default and must NOT lower priority (absence of evidence is not evidence of absence; capability is volatile and easy to be wrong about). Used to ESCALATE when present, never to discount." },
+        "tempo_trajectory": { "type": "string", "enum": ["accelerating", "steady", "stalling", "unknown"], "description": "Direction and rate of the actor's movement along the pathway across observations." },
+        "source_credibility": { "type": "string", "enum": ["high", "moderate", "low", "unknown"], "description": "Reliability of the reporting behind this record \u2014 conditions how much weight the other four factors carry." },
+        "basis": { "type": "string", "description": "Optional free-text evidentiary basis or analyst note." }
+      }
+    },
+    "conditioned_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["indicator_id", "type_severity_band", "instance", "conditioning_effect", "conditioned_priority"],
+      "description": "The binding object (B-04): a type-level indicator score CONDITIONED by an instance record. A type score is non-renderable and non-rankable without its instance record \u2014 this object requires BOTH, so a consumer cannot emit a conditioned assessment from the bare number. Escalate-only: conditioned_priority may raise priority above the type band but never lower it below (the false-LOW is the deadly error; a silent capability discount is forbidden).",
+      "properties": {
+        "indicator_id": { "type": "string", "description": "Reference to the type-level indicator whose score is being conditioned." },
+        "type_severity_band": { "type": "string", "enum": ["low", "medium", "high", "critical"], "description": "The indicator's type-level severity_band \u2014 the FLOOR. conditioned_priority is never below this." },
+        "instance": { "$ref": "#/$defs/instance_assessment" },
+        "conditioning_effect": { "type": "string", "enum": ["held", "raised"], "description": "Whether the instance evidence held the type band or raised it. There is deliberately NO 'lowered' value \u2014 the schema cannot express a downward move." },
+        "conditioned_priority": { "type": "string", "enum": ["low", "medium", "high", "critical"], "description": "The resulting triage priority, always >= type_severity_band (escalate-only invariant). JSON Schema cannot compare the two enums directly, so consumers MUST NOT emit conditioned_priority below type_severity_band." }
       }
     }
   }

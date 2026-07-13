@@ -1,4 +1,4 @@
-import type { Tactic, Priority } from '../types/framework';
+import type { Tactic, Priority, ActorProfile } from '../types/framework';
 
 export const PHASE_NAMES: Record<number, string> = {
   1: 'Target Development',
@@ -15,13 +15,31 @@ export const PHASE_SHORT: Record<number, string> = {
 };
 
 export const STUB: Record<
-  'facility' | 'organization' | 'infrastructure',
+  'organization' | 'infrastructure',
   { phases: Record<number, number>; flight: number; claim: number }
 > = {
-  facility: { phases: { 1: 10, 2: 9, 3: 9 }, flight: 8, claim: 4 },
   organization: { phases: { 1: 9, 2: 10, 3: 10 }, flight: 9, claim: 4 },
   infrastructure: { phases: { 1: 8, 2: 9, 3: 9 }, flight: 8, claim: 4 },
 };
+
+// The single ordered descriptor for the four target matrices — drives column
+// order, display labels, identity colors, live-vs-stub status, and planned
+// versions everywhere (heat map, nav tabs, bibliography sections, stub
+// landings). Promoting a matrix to live = flipping its `version` to null.
+// Labels are plural to match the V1.2.2 scope prose; data keys / routes /
+// schema enum stay singular (matrices.person, /person) for consumer stability.
+export const MATRICES = [
+  { key: 'person', label: 'People', color: 'amber', version: null },
+  { key: 'facility', label: 'Facilities', color: 'teal', version: null },
+  { key: 'organization', label: 'Organizations', color: 'red', version: 'V1.4' },
+  { key: 'infrastructure', label: 'Infrastructure', color: 'blue', version: 'V1.5' },
+] as const;
+
+export const MATRIX_LABELS: Record<string, string> = Object.fromEntries(
+  MATRICES.map((m) => [m.key, m.label])
+);
+
+export const STUB_MATRICES = MATRICES.filter((m) => m.version !== null);
 
 export const CATEGORY_ORDER = [
   'lone_actor',
@@ -75,6 +93,21 @@ export const TARGET_IDENTITY_LABELS: Record<string, string> = {
   role_or_identity_category: 'Role / Identity Category',
   affinity_group: 'Affinity Group',
   indiscriminate: 'Indiscriminate',
+};
+
+// V1.3 Facility-matrix target sub-dimensions (revealed reading)
+export const FACILITY_TARGET_SCOPE_LABELS: Record<string, string> = {
+  specific_site: 'Specific Site',
+  site_class: 'Site Class',
+  symbolic_category: 'Symbolic Category',
+  indiscriminate: 'Indiscriminate',
+};
+
+export const WITHIN_SITE_FOCUS_LABELS: Record<string, string> = {
+  structure: 'Structure',
+  occupants: 'Occupants',
+  systems: 'Systems',
+  whole_site: 'Whole Site',
 };
 
 // V1.2 escalation severity band
@@ -180,6 +213,29 @@ export const PRIORITY_ORDER: Priority[] = [
   'routine',
   'ongoing',
 ];
+
+// Ordered, empty-skipping actor-category groups with a display label.
+// Single source of truth for the CATEGORY_ORDER iteration shared by the
+// FilterBar dropdown and the ActorProfilesView grid — so a category that
+// appears in the data but not in CATEGORY_ORDER cannot silently drop from
+// one surface while showing in the other.
+export const orderedActorCategories = (
+  actorsByCategory: Record<string, ActorProfile[]>
+): { cat: string; label: string; actors: ActorProfile[] }[] =>
+  CATEGORY_ORDER.filter((c) => actorsByCategory[c]?.length).map((cat) => ({
+    cat,
+    label: actorsByCategory[cat][0].category_label,
+    actors: actorsByCategory[cat],
+  }));
+
+export const tacticMatchesFilters = (
+  t: Tactic,
+  cpnFilter: boolean,
+  actorFilter: string
+): boolean =>
+  (!cpnFilter || !!t.cpn) &&
+  (!actorFilter ||
+    (t.actor_associations || []).some((a) => a.actor_id === actorFilter));
 
 export const resolveTrack = (t: Tactic): 'flight' | 'claim' | null =>
   t.phase_4_track === 'evasion'

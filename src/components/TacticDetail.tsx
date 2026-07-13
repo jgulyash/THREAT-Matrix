@@ -7,6 +7,7 @@ import {
   EmptyState,
   SourceRefLink,
 } from './detection-response';
+import { AssessmentGuidanceView } from './AssessmentGuidanceView';
 
 interface Props {
   tactic: Tactic | undefined;
@@ -34,9 +35,9 @@ export function TacticDetail({ tactic, actorMap, navigate, fromPhase, fromTrack 
 
   const back = fromPhase
     ? fromTrack
-      ? `/person/phase/${fromPhase}/${fromTrack}`
-      : `/person/phase/${fromPhase}`
-    : `/person`;
+      ? `/${tactic.matrix}/phase/${fromPhase}/${fromTrack}`
+      : `/${tactic.matrix}/phase/${fromPhase}`
+    : `/${tactic.matrix}`;
   const tl = resolveTrack(tactic);
 
   const hasIndicators = (tactic.indicators || []).length > 0;
@@ -119,11 +120,13 @@ export function TacticDetail({ tactic, actorMap, navigate, fromPhase, fromTrack 
           </div>
         )}
 
+        <AssessmentGuidanceView guidance={tactic.assessment_guidance} />
+
         {/* Detection & Response */}
         {hasAnyDR ? (
           <>
             {hasIndicators && (
-              <IndicatorSection indicators={tactic.indicators} navigate={navigate} />
+              <IndicatorSection indicators={tactic.indicators} matrix={tactic.matrix} navigate={navigate} />
             )}
             {hasCountermeasures && (
               <CountermeasureSection

@@ -81,7 +81,9 @@ Full architectural rationale is in the `detection_mesh` block in `docs/data/fram
 
 ### Escalation Scoring
 
-The taxonomy names a behavior. The escalation layer scores it — turning "this indicator was observed" into "here is how severe it is, and how urgently it warrants action." Every indicator carries a `temporal_signature` and four `escalation_axes`; the framework computes a weight and severity band from them, so downstream consumers receive a ready-to-use priority signal rather than raw values to interpret.
+The taxonomy names a behavior. The escalation layer scores it — turning "this indicator was observed" into "here is how severe it is, and how urgently it warrants action." Each scored indicator carries a `temporal_signature` and four `escalation_axes`; the framework computes a weight and severity band from them, so downstream consumers receive a ready-to-use priority signal rather than raw values to interpret.
+
+Escalation scoring now covers **all 190 People-matrix indicator classes across all four phases** — every indicator carries a `temporal_signature`, four `escalation_axes`, a computed `escalation_weight`, and a `severity_band`. Blast is authored to method-revealed collateral ceilings (see the `escalation_rubric` in `framework.json`). Nineteen People-matrix indicators band critical under the recalibrated thresholds (escalation_rubric v1.2.0): the direct-force behaviors held there by the casualty severity floor, plus the weight-driven criticals — mass-casualty force application, method-revealing capability acquisitions, and the highest-weight in-execution commitment and barrier-defeat behaviors. The `informs_axes` annotation layer (a separate, coarser signal about what an indicator reveals) now covers all 190 indicators matrix-wide, authored through the sealed-blind inter-rater reliability process (seven chunks, each gated at weighted κ ≥ 0.60).
 
 **temporal_signature** — where the indicator sits on the threat clock: `horizon → advancing → imminent → staging → in_progress → aftermath`. Four of the six split into early/late stages; `staging` and `in_progress` stay single-stage because their timelines are inherently compressed.
 
@@ -89,14 +91,14 @@ The taxonomy names a behavior. The escalation layer scores it — turning "this 
 
 | Axis | Measures |
 |---|---|
-| `impact_potential` | Magnitude of harm if the downstream threat lands |
-| `blast_radius_potential` | Geographic / population scope — single victim to mass-casualty |
+| `impact_potential` | Magnitude of harm the behavior directly produces or imminently enables — a grievance or profiling step carries little realized harm; capability acquisition and force application carry most or all of it. This is a severity gradient along the pathway, distinct from `temporal_signature` (which measures *how soon*, not *how bad*). |
+| `blast_radius_potential` | Geographic / population scope — intended targets plus expected collateral casualties, single victim to mass-casualty (see `blast_radius_guidance`) |
 | `recoverability_inverse` | How hard the harm is to undo (higher = harder) |
 | `detectability` | How observable the indicator is, in flight, to trained personnel |
 
 **escalation_weight** — computed, not authored: the geometric mean of `impact_potential`, `blast_radius_potential`, `recoverability_inverse`, and inverted detectability (`10 − detectability`). The geometric mean is deliberate — a low value on any single axis pulls the whole weight down, so a high score requires all four dimensions to be elevated and no axis can be fully compensated by the others.
 
-**severity_band** — computed from the weight against fixed thresholds, giving each indicator a stable categorical severity for filtering, triage, and display.
+**severity_band** — computed from the weight against fixed thresholds, giving each indicator a stable categorical severity for filtering, triage, and display. One triage exception: behaviors that apply **direct physical force to a person** carry a `severity_floor` of `critical`, so their band is the greater of the computed band and that floor. A casualty is critical at any scale — the severity math gates the top band on `blast_radius` (population scope), which would leave a single-victim killing at high, but for triage any application of force to a person is a top-priority event. The `escalation_weight` itself is never floored, so the severity *gradient* between a single assault and a mass bombing is preserved even though both band as critical (see `severity_floor_rule` in `escalation_rubric`).
 
 **assessment_guidance** — tactic-level prose that sits alongside the computed score: credibility / capability / intent / opportunity anchors, false-positive context, threshold guidance, and an escalation priority. Where the weight is the quantitative signal, `assessment_guidance` is the structured human-judgment layer — what raises or lowers confidence in a finding, and what looks like the tactic but isn't.
 

@@ -1,4 +1,5 @@
-import type { Route } from '../lib/route';
+import { LIVE_MATRICES, type Route } from '../lib/route';
+import { MATRIX_LABELS, STUB_MATRICES } from '../lib/constants';
 import frameworkData from '../../docs/data/framework.json';
 
 interface Props {
@@ -11,12 +12,13 @@ interface Props {
 export function TopNav({ route, navigate, theme, setTheme }: Props) {
   const isActors = route.view === 'actors' || route.view === 'actorDetail';
   const isReferences = route.view === 'references';
-  const isPerson = !isActors && !isReferences && route.view !== 'stub';
-  const stubs: Array<['facility' | 'organization' | 'infrastructure', string]> = [
-    ['facility', 'Facility'],
-    ['organization', 'Organization'],
-    ['infrastructure', 'Infrastructure'],
-  ];
+  const activeMatrix =
+    route.view === 'heatmap' ||
+    route.view === 'phase' ||
+    route.view === 'tactic' ||
+    route.view === 'indicator'
+      ? route.matrix
+      : null;
   return (
     <nav className="topbar">
       <a
@@ -27,21 +29,24 @@ export function TopNav({ route, navigate, theme, setTheme }: Props) {
         <em>THREAT</em>&nbsp;Matrix
       </a>
       <div className="matrix-tabs">
-        <a
-          className={`mtab${isPerson ? ' active' : ''}`}
-          href="#/person"
-          onClick={(e) => { e.preventDefault(); navigate('/person'); }}
-        >
-          Person
-        </a>
-        {stubs.map(([m, l]) => (
+        {LIVE_MATRICES.map((m) => (
           <a
             key={m}
-            className={`mtab stub${route.view === 'stub' && route.matrix === m ? ' active' : ''}`}
+            className={`mtab${activeMatrix === m ? ' active' : ''}`}
             href={`#/${m}`}
             onClick={(e) => { e.preventDefault(); navigate(`/${m}`); }}
           >
-            {l}
+            {MATRIX_LABELS[m]}
+          </a>
+        ))}
+        {STUB_MATRICES.map((m) => (
+          <a
+            key={m.key}
+            className={`mtab stub${route.view === 'stub' && route.matrix === m.key ? ' active' : ''}`}
+            href={`#/${m.key}`}
+            onClick={(e) => { e.preventDefault(); navigate(`/${m.key}`); }}
+          >
+            {m.label}
           </a>
         ))}
         <a
@@ -60,7 +65,7 @@ export function TopNav({ route, navigate, theme, setTheme }: Props) {
         </a>
       </div>
       <div className="topbar-spacer" />
-      <span className="topbar-meta">154 tactics · 27 profiles · MIT</span>
+      <span className="topbar-meta">74 tactics · 390 indicators · 27 profiles · MIT</span>
       <span className="badge-v1">v{frameworkData.version}</span>
       <button
         className="theme-toggle"

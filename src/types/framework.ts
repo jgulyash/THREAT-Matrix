@@ -19,6 +19,19 @@ export type PrimaryObjectiveEvidenceTier =
   | 'weakly_inferred'
   | 'unknown';
 
+// V1.3 Facility matrix target sub-dimensions (revealed reading)
+export type FacilityTargetScope =
+  | 'specific_site'
+  | 'site_class'
+  | 'symbolic_category'
+  | 'indiscriminate';
+
+export type WithinSiteFocus =
+  | 'structure'
+  | 'occupants'
+  | 'systems'
+  | 'whole_site';
+
 // V1.1 tactic evidence-basis taxonomy
 export type EvidenceBasis =
   | 'operational_primary'
@@ -85,6 +98,9 @@ export interface Indicator {
   // V1.2.2 People matrix scope sub-dimension
   target_identity?: TargetIdentity[];
   primary_objective_evidence_tier?: PrimaryObjectiveEvidenceTier;
+  // V1.3 Facility matrix target sub-dimensions (revealed reading)
+  facility_target_scope?: FacilityTargetScope[];
+  within_site_focus?: WithinSiteFocus[];
 }
 
 export interface Countermeasure {
@@ -174,6 +190,9 @@ export interface BibliographyEntry {
   url: string | null;
   doi?: string | null;
   relevance_summary: string;
+  // V1.3 matrix/topic tagging
+  matrices?: string[];
+  topics?: string[];
 }
 
 export interface MatrixContainer {
