@@ -330,12 +330,6 @@
           ],
           "description": "Cyber-Physical Nexus annotation. Null when cpn=false."
         },
-        "techniques": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/technique"
-          }
-        },
         "indicators": {
           "type": "array",
           "items": {
@@ -508,24 +502,6 @@
           },
           "uniqueItems": true,
           "description": "Optional. Type-level declaration of which target_identity sub-classes this tactic's prose covers. Primarily meaningful for People matrix tactics. Authored per tactic based on actual prose coverage; tactics whose operational logic generalizes carry multiple values, tactics intrinsically narrow declare a single value. See target_identity on indicator for the per-indicator sub-dimension."
-        }
-      }
-    },
-    "technique": {
-      "type": "object",
-      "required": [
-        "id",
-        "name"
-      ],
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
         }
       }
     },

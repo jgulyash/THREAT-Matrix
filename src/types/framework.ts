@@ -151,7 +151,6 @@ export interface Tactic {
   cpn: boolean;
   cpn_id?: string;
   cpn_notes?: string;
-  techniques?: unknown[];
   indicators: Indicator[];
   countermeasures: Countermeasure[];
   related_tactics?: string[];

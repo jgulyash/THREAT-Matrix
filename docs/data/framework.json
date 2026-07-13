@@ -21,7 +21,6 @@
           "cpn": true,
           "cpn_id": "CPN-0101",
           "cpn_notes": "Social media, LinkedIn, data brokers, and OSINT tools are primary sources for modern target selection. Digital footprint analysis can produce a detailed vulnerability assessment before any physical reconnaissance occurs.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0101-01",
@@ -641,7 +640,6 @@
           "cpn": true,
           "cpn_id": "CPN-0102",
           "cpn_notes": "Digital profile — social media activity, location check-ins, fitness tracker data, public records aggregation — often precedes and supplements physical surveillance. Apps that publicly share routes or check-ins provide operationally precise location intelligence.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0102-01",
@@ -1300,7 +1298,6 @@
             "threshold_guidance": "Findings correlating with staging-class behaviors elsewhere — weapon acquisition, observed dry runs, schedule alignment with action windows — warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nEscalation tier-determination for this tactic's findings depends on three factors: credibility of the indicator per the credibility criteria, breadth across modalities, and persistence over time.\n\nA single low-credibility indicator with available mundane explanation sits at the monitoring tier.\n\nA single high-credibility indicator with operational specificity sits at the investigation tier.\n\nCross-modal corroboration — two or more indicators correlating against the same subject across different observation modes — sits at the elevation tier and warrants treating as coordinated target-development.\n\nIndicators persisting despite implemented countermeasures sit at the committed-actor tier, suggesting potential entry into mobilization.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any individual finding warrants in isolation; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered response actions: the monitoring tier triggers logging and pattern-detection workflows; the investigation tier triggers actor-identification effort and subject-vulnerability assessment; the elevation tier triggers countermeasure activation appropriate to the subject's posture; the committed-actor tier triggers defensive-posture upgrade; confirmed actor identity matching a known threat actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0103-01",
@@ -1746,7 +1743,6 @@
           "cpn": true,
           "cpn_id": "CPN-0104",
           "cpn_notes": "Dark web procurement, cryptocurrency for anonymous purchasing, and online forgery services are the primary acquisition channels for many capability types. Encrypted communications enable coordination with suppliers without generating conventional financial or communications records.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0104-01",
@@ -2430,7 +2426,6 @@
           "cpn": true,
           "cpn_id": "CPN-0105",
           "cpn_notes": "Encrypted messaging apps, dark web forums, and privacy-preserving communications platforms are the coordination infrastructure for modern operational networks. Recruitment can occur entirely online with no physical meeting before execution.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0105-01",
@@ -2945,7 +2940,6 @@
           "cpn": true,
           "cpn_id": "CPN-0106",
           "cpn_notes": "Synthetic social media presence, forged digital credentials, and fake email and phone infrastructure are standard components of modern cover identity construction. A digital footprint is now an expected component of a credible legend.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0106-01",
@@ -3446,7 +3440,6 @@
           "cpn": true,
           "cpn_id": "CPN-0107",
           "cpn_notes": "Online leakage via social media posts, forum activity, messaging apps, and blog content is now the most detectable pre-attack indicator channel. Digital leakage often occurs before physical preparation begins and may continue throughout the threat development cycle.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0107-01",
@@ -3985,7 +3978,6 @@
           "cpn": true,
           "cpn_id": "CPN-0108",
           "cpn_notes": "Digital counter-surveillance includes checking devices for surveillance software, monitoring social media for mentions of their name or image, and using RF detection apps to identify surveillance equipment. Sophisticated actors may monitor protective intelligence social media accounts for indicators of active investigation.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0108-01",
@@ -4484,7 +4476,6 @@
           "cpn": true,
           "cpn_id": "CPN-0201",
           "cpn_notes": "GPS and mapping apps, real-time traffic data, and satellite imagery are standard rehearsal planning tools. Digital simulation of timing and routing can substitute for physical rehearsal in some scenarios.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0201-01",
@@ -4985,7 +4976,6 @@
           "notes": "Managing physical appearance and behavior to avoid detection under human observation. Actor blends into the environment appropriate to the location and context — adjusting dress, behavior, pace, and attention pattern to match expected profiles. Concealment is an ongoing behavioral discipline throughout the Approach phase, not a single action.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0202-01",
@@ -5512,7 +5502,6 @@
           "cpn": true,
           "cpn_id": "CPN-0203",
           "cpn_notes": "Credential cloning, RFID/NFC skimming, and electronic lock exploit tools are cyber-enabled defeat methods that bypass physical barriers without direct force. Access control systems that are digitally exploitable change the threat calculus for protected subjects in secured environments.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0203-01",
@@ -6040,7 +6029,6 @@
           "cpn": true,
           "cpn_id": "CPN-0204",
           "cpn_notes": "Electronic lock bypass and elevator system manipulation extend the actor's reach through security-tiered environments. Physical security systems with digital control planes are vulnerable to zone penetration via cyber methods without physical force.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0204-01",
@@ -6574,7 +6562,6 @@
           "cpn": true,
           "cpn_id": "CPN-0205",
           "cpn_notes": "Cloned access credentials, spoofed caller ID, and fabricated digital authorization documents enable access elevation without physical contact. Attackers may use digitally-generated fake work orders or appointment confirmations to pass social engineering checkpoints.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0205-01",
@@ -7081,7 +7068,6 @@
           "notes": "Achieving and holding the physical position required to execute the planned action against the subject. Position establishment may be brief (a sniper position held for minutes) or sustained (a surveillance position maintained over days). The position is the final precondition before Phase 3 can begin.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0206-01",
@@ -7577,7 +7563,6 @@
           "notes": "Deliberate stand-down to allow counter-surveillance conditions to clear, security posture to relax, an environmental opportunity to materialize, or to adapt to changes such as shifts in resource availability or information gathered during Target Development becoming no longer viable. Operational pause is a risk management decision — the actor may choose to wait due to internal or external factors that may not surface until later. Generates cold trails that complicate later investigation.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0207-01",
@@ -8041,7 +8026,6 @@
           "cpn": true,
           "cpn_id": "CPN-0208",
           "cpn_notes": "Live event feeds, venue capacity trackers, real-time traffic monitoring, and social media location tagging allow precise execution timing without physical pre-positioning. An actor can confirm the subject's real-time location and security context remotely before committing to approach.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0208-01",
@@ -8573,7 +8557,6 @@
           "notes": "Actor executes a partial approach sequence with pre-set abort triggers — approaching the target's location, observing response, then withdrawing without completing the action. Repeated across multiple days or occasions before committing to full execution. Distinct from Operational Rehearsal (TM0201), which is a controlled dry run at a surrogate location. Partial Approach Rehearsal uses the live target environment and generates observable forensic signatures: access log anomalies, CCTV appearances near the subject's location, and witness sightings that establish a pre-attack timeline.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0209-01",
@@ -9046,7 +9029,6 @@
           "notes": "The deliberate use of violence, coercion, or seizure against the subject. The mechanism of harm. Sub-techniques capture the full range of force methods: lethal ranged attack, lethal contact attack, area or mass lethal attack, non-lethal incapacitation, abduction or seizure, coercive display, property destruction, and area denial. Force Application was the critical missing tactic in early framework versions — it is the apex behavior that all preceding phases build toward.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0301-01",
@@ -9531,7 +9513,6 @@
           "notes": "Physically defeating access controls or protective barriers through force — forced entry, vehicle ramming, physical overpowering of a bodyguard. Distinct from Access Elevation (TM0205), which uses deception. Barrier Defeat occurs when deception-based access has failed or when the actor chooses force as the primary method.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0302-01",
@@ -10016,7 +9997,6 @@
           "notes": "Securing the operational target — the person, the information they carry, the asset they control, or the location they occupy. In kidnapping operations, Objective Seizure is the physical act of taking control of the subject. In intelligence operations, it may be the acquisition of a device or document the subject possesses.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0303-01",
@@ -10488,7 +10468,6 @@
           "notes": "Controlling one or more persons during kidnapping, barricade, or hostage scenarios. Includes physical restraint, psychological management, and ongoing compliance maintenance. Captive Control is unique to the Person matrix — there is no structural analog in the other three matrices. The duration and quality of captive control directly determines the operational leverage in Phase 4.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0304-01",
@@ -10930,7 +10909,6 @@
           "cpn": true,
           "cpn_id": "CPN-0305",
           "cpn_notes": "Radio frequency jamming blocks security communications. Spoofed emergency calls create diversionary response commitments. Cyber-enabled disabling of security systems — cameras, communications, access controls — can suppress response without physical presence at the response suppression point.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0305-01",
@@ -11366,7 +11344,6 @@
           "notes": "Controlling, dispersing, or neutralizing non-target individuals who are present during execution and who could interfere, report, or serve as witnesses. In person-targeted operations, bystander management ranges from verbal control of witnesses to physical neutralization of protective personnel. The presence of bystanders forces a tactical decision: neutralize, manage, or accept the exposure.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0306-01",
@@ -11823,7 +11800,6 @@
           "cpn": true,
           "cpn_id": "CPN-0307",
           "cpn_notes": "Monitoring live camera feeds, checking police scanner apps, and using drone overwatch are cyber-enabled counter-surveillance methods increasingly used during execution. Real-time tracking of security force locations via their own digital signals is an emerging technique for sophisticated actors.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0307-01",
@@ -12307,7 +12283,6 @@
           "cpn": true,
           "cpn_id": "CPN-0308",
           "cpn_notes": "Encrypted communications apps, pre-arranged signal codes via SMS, and covert earpiece systems are standard operational communications infrastructure. Radio systems can be jammed by adversaries; encrypted data communications provide more resilient coordination.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0308-01",
@@ -12775,7 +12750,6 @@
           "notes": "Physical extraction from the operational area following the action on objective. Withdrawal is planned in Phase 1 as an integral component of the operation — not improvised after execution. Route, timing, cover, and transport method are all pre-selected. The window between action completion and security perimeter establishment is the critical variable.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0401-01",
@@ -13255,7 +13229,6 @@
           "notes": "Counter-forensics actions to reduce the traceability of the operation — physical evidence destruction, digital cleanup, biological material management, scene staging. The sophistication of evidence management is a reliable actor classification signal: lone actors rarely execute systematic counter-forensics; state actors plan it as a Phase 1 requirement.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0402-01",
@@ -13758,7 +13731,6 @@
           "notes": "Returning to a normal behavioral envelope after the operation — reestablishing the appearance that the actor was not involved. Includes alibi establishment, contact normalization with colleagues and associates, and behavioral management to avoid post-incident detection.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0403-01",
@@ -14226,7 +14198,6 @@
           "notes": "Protecting remaining members of the operational network — communication shutdown, personnel dispersal, infrastructure removal, and cutout management. For organized actors, network protection determines whether a single operation exposure becomes a network-wide compromise. For lone actors, this tactic is absent.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0404-01",
@@ -14721,7 +14692,6 @@
           "cpn": true,
           "cpn_id": "CPN-0405",
           "cpn_notes": "Cryptocurrency is the primary post-operation payment mechanism for both ransom and contract operations. Mixing services, chain hopping, and privacy coins are the standard obfuscation chain. Financial forensics on blockchain transactions have become a primary investigative tool — sophistication of financial disposition directly determines investigative success.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0405-01",
@@ -15177,7 +15147,6 @@
           "notes": "Adversary evaluation of what worked, what failed, and what must change for future operations. After-Action Assessment is present only for persistent, organized actors with intent to operate again. It closes the Operational Feedback Loop — the output of this tactic feeds directly into Phase 1 Target Development for the next operation. Lone actors and opportunity-based actors typically do not execute this tactic.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0406-01",
@@ -15628,7 +15597,6 @@
           "notes": "Actor claims responsibility for the operation — communiqué, propaganda release, manifesto delivery, media contact, or direct communication to authorities. Attribution declaration is the defining behavior of terrorists, ideologically motivated actors, and extortionists. The claim is the communicative act that converts physical violence into political or social leverage.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0407-01",
@@ -16090,7 +16058,6 @@
           "cpn": true,
           "cpn_id": "CPN-0408",
           "cpn_notes": "Social media platforms, video hosting sites, and encrypted broadcast channels have displaced traditional media as the primary audience amplification channel. Actors with media production capabilities can release high-quality content that drives algorithmic amplification without press contact.",
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0408-01",
@@ -16549,7 +16516,6 @@
           "notes": "Actor makes direct contact with the victim or victims, their families, or relevant decision-makers to assert leverage — ransom demand, negotiation, proof-of-life, threat escalation, and deadline management. Coercive Leverage requires the actor to have achieved a position of power (captive, stolen asset, credible threat) and now converts that position into a demand.",
           "cpn": false,
           "cpn_notes": null,
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-0409-01",
@@ -17036,7 +17002,6 @@
           "threshold_guidance": "Findings correlating with staging-class facility behaviors elsewhere \u2014 accelerant or explosive-precursor acquisition, observed dry runs against the site, emplacement of materiel, or alignment with an occupancy or anniversary window \u2014 warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility indicator with an available legitimate explanation sits at the monitoring tier.\n\nA single high-credibility indicator with operational specificity about the facility sits at the investigation tier.\n\nCross-modal corroboration \u2014 grievance plus research plus proximity against the same site \u2014 sits at the elevation tier and warrants treating as coordinated facility target development.\n\nIndicators persisting despite implemented countermeasures sit at the committed-actor tier, suggesting potential entry into mobilization.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification and a facility-vulnerability assessment; elevation triggers countermeasure activation appropriate to the site's posture; the committed-actor tier triggers a defensive-posture upgrade; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
           "escalation_priority": "Priority"
          },
-         "techniques": [],
          "indicators": [
           {
            "id": "IND-F0101-01",
@@ -17513,7 +17478,6 @@
             "threshold_guidance": "Findings correlating with later-phase facility behaviors elsewhere — physical reconnaissance against the profiled site, acquisition of an attack means, observed dry runs, or alignment of collected symbolic dates with an occupancy window — warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility lookup with an available legitimate explanation sits at the monitoring tier.\n\nA single high-credibility indicator showing operational-detail collection about the facility's occupancy or staffing sits at the investigation tier.\n\nCross-modal corroboration — grievance plus systematic remote collection plus retention against the same site — sits at the elevation tier and warrants treating as coordinated facility target development.\n\nIndicators persisting despite reduced public exposure sit at the committed-actor tier, suggesting potential progression toward physical reconnaissance.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification and a facility open-source exposure assessment; elevation triggers exposure-reduction and a briefing to facility security leadership; the committed-actor tier triggers a defensive-posture review anticipating on-site reconnaissance; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0102-01",
@@ -17997,7 +17961,6 @@
             "threshold_guidance": "Findings correlating with staging-class facility behaviors elsewhere — accelerant or explosive-precursor acquisition, observed dry runs against the site, emplacement of materiel, or alignment with an occupancy or anniversary window — warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the observation, breadth across modalities, and persistence across repeat visits.\n\nA single low-credibility sighting with an available legitimate explanation sits at the monitoring tier.\n\nA single high-credibility observation with operational specificity — timing patrols, probing entrances, concealed capture of access detail — sits at the investigation tier.\n\nCross-modal corroboration — grievance plus prior research plus a witnessed casing visit against the same site — sits at the elevation tier and warrants treating as coordinated facility target development.\n\nObservation persisting despite implemented countermeasures, or active access probing, sits at the committed-actor tier, suggesting potential entry into mobilization.\n\nMultiple lower-priority sightings correlating temporally or by vantage may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging, CCTV retention, and pattern-detection; investigation triggers actor-identification and a facility-vulnerability assessment focused on the observed access; elevation triggers countermeasure activation appropriate to the site's posture; the committed-actor tier triggers a defensive-posture upgrade; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0103-01",
@@ -18485,7 +18448,6 @@
             "threshold_guidance": "Findings correlating with staging-class facility behaviors elsewhere — accelerant or explosive-precursor acquisition, observed dry runs against the site, emplacement of materiel, or alignment with an occupancy or anniversary window — warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility indicator with an available legitimate explanation — a public permit pulled once — sits at the monitoring tier.\n\nA single high-credibility indicator with operational specificity about the structure — acquisition of non-public structural drawings paired with weak-point inquiry — sits at the investigation tier.\n\nCross-modal corroboration — grievance plus document acquisition plus technical study against the same site — sits at the elevation tier and warrants treating as coordinated facility target development.\n\nIndicators persisting despite implemented document controls sit at the committed-actor tier, suggesting potential entry into mobilization.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification and a structural-vulnerability review of the exposed elements; elevation triggers countermeasure activation appropriate to the building's posture; the committed-actor tier triggers a defensive-posture and structural-hardening review; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0104-01",
@@ -18977,7 +18939,6 @@
             "threshold_guidance": "Findings correlating with staging-class facility behaviors elsewhere — accelerant or explosive-precursor acquisition, observed dry runs against the site, emplacement of materiel, or alignment with an occupancy or anniversary window — warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility indicator with an available legitimate explanation — one door glance, one camera photograph — sits at the monitoring tier.\n\nA single high-credibility indicator with operational specificity about the facility's detection gaps or response timing sits at the investigation tier.\n\nCross-modal corroboration — grievance plus probing plus insider elicitation against the same site — sits at the elevation tier and warrants treating as coordinated facility target development.\n\nProbing that persists despite implemented countermeasures, or that adapts to posture changes, sits at the committed-actor tier, suggesting potential entry into mobilization.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection across security incidents; investigation triggers actor-identification and a facility-vulnerability assessment; elevation triggers countermeasure activation and PPS hardening appropriate to the probed gaps; the committed-actor tier triggers a defensive-posture upgrade; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0105-01",
@@ -19472,7 +19433,6 @@
             "threshold_guidance": "Findings correlating with staging-class facility behaviors elsewhere — observed dry runs against the site, emplacement or staging of materiel, alignment with an occupancy or anniversary window, or leakage naming the target — warrant immediate activation of response protocols regardless of this tactic's internal tier, because acquisition places a deliverable method within reach.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility indicator with an available legitimate explanation sits at the monitoring tier.\n\nA single high-credibility indicator — acquisition of a mass method, or a combination and quantity inconsistent with any stated use — sits at the investigation tier.\n\nCross-modal corroboration — grievance plus facility research plus materiel acquisition against the same site — sits at the elevation tier and warrants treating as coordinated facility target development approaching mobilization.\n\nAcquisition persisting despite interdiction attempts, or completed acquisition of an attack method, sits at the committed-actor tier.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification, financial and supply-record review, and a facility-vulnerability assessment matched to the acquired method; elevation triggers countermeasure activation and supplier liaison; the committed-actor tier triggers a defensive-posture upgrade and law-enforcement coordination.\n\nA confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0106-01",
@@ -19943,7 +19903,6 @@
             "threshold_guidance": "Findings correlating with staging-class facility behaviors elsewhere — insider provision of access credentials or non-public site information, accelerant or explosive-precursor acquisition by a network member, observed dry runs against the site, or alignment with an occupancy or anniversary window — warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility indicator with an available legitimate explanation (an association that admits a benign reading) sits at the monitoring tier.\n\nA single high-credibility indicator with operational specificity — a named insider being tasked, a solicited participant given a role against the facility — sits at the investigation tier.\n\nCross-modal corroboration — grievance plus recruitment plus financial or logistical support against the same site — sits at the elevation tier and warrants treating as coordinated facility network development.\n\nIndicators persisting despite implemented countermeasures sit at the committed-actor tier, suggesting potential entry into mobilization.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-and-associate identification, an insider-access review, and a facility-vulnerability assessment; elevation triggers countermeasure activation appropriate to the site's posture; the committed-actor tier triggers a personnel-security and defensive-posture upgrade; a confirmed network matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0107-01",
@@ -20415,7 +20374,6 @@
             "threshold_guidance": "Findings correlating with staging-class facility behaviors elsewhere — accelerant or explosive-precursor acquisition, observed dry runs against the site, exploitation of the cover for unescorted access to restricted spaces, or alignment with an occupancy or anniversary window — warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility indicator with an available legitimate explanation — a plausible vendor with checkable paperwork — sits at the monitoring tier.\n\nA single high-credibility indicator with a facility-specific fabricated role and matching credentials sits at the investigation tier.\n\nCross-modal corroboration — a false identity plus acquired credentials plus proximity against the same site — sits at the elevation tier and warrants treating as coordinated facility target development.\n\nA cover that persists or is upgraded despite implemented verification countermeasures sits at the committed-actor tier, suggesting potential entry into mobilization.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and vendor-claim pattern-detection; investigation triggers actor-identification and vendor-verification of the claimed role; elevation triggers credentialing and escort-posture activation appropriate to the site; the committed-actor tier triggers an access-control-posture upgrade; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0108-01",
@@ -20909,7 +20867,6 @@
             "threshold_guidance": "This tactic sits closest to mobilization of any target-development behavior, so its findings carry a lower activation threshold than earlier-phase tactics.\n\nLeakage that names or unmistakably alludes to a specific facility and attaches to a near-term horizon — a countdown, a date-certain window, an occupancy or anniversary alignment — warrants immediate activation of response protocols regardless of internal tier, particularly where it correlates with staging-class behaviors elsewhere (means acquired, dry runs observed, materiel emplaced).\n\nTier-determination depends on three factors: credibility of the leakage, convergence across warning behaviors, and progression over time.\n\nA single low-credibility statement with an available non-mobilization explanation sits at the monitoring tier.\n\nA single high-credibility leakage with site specificity and imminence sits at the investigation tier.\n\nConvergence — leakage plus last-resort framing plus farewell behavior plus acceleration against the same place — sits at the elevation tier and should be treated as a mobilization-imminent pathway rather than as isolated remarks.\n\nWarning behaviors that persist or sharpen despite implemented countermeasures sit at the committed-actor tier and indicate probable entry into mobilization.\n\nMultiple lower-priority signals correlating temporally or modally compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit, because the diagnostic value of this tactic is precisely in the aggregation of the pathway, not in any one behavior.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification and a facility-vulnerability assessment; elevation triggers countermeasure activation and protective coordination appropriate to the site's posture; the committed-actor tier triggers a defensive-posture upgrade and interdiction planning; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0109-01",
@@ -21394,7 +21351,6 @@
             "threshold_guidance": "Findings correlating with staging-class facility behaviors elsewhere — accelerant or explosive-precursor acquisition, observed dry runs against the site, emplacement of materiel, or alignment with an occupancy or anniversary window — warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility indicator with an available legitimate explanation (privacy-conscious member of the public) sits at the monitoring tier.\n\nA single high-credibility indicator with operational specificity — a measured guard-reaction test or a deliberate route to defeat following coverage of this facility — sits at the investigation tier.\n\nBecause counter-surveillance is deliberately covert, its low detectability should raise, not lower, analytic weight: absence of an obvious signal is consistent with disciplined tradecraft, not with absence of threat.\n\nCross-modal corroboration — grievance plus coverage-mapping plus reaction-testing against the same site — sits at the elevation tier and warrants treating as coordinated facility target development by a disciplined actor.\n\nIndicators persisting despite implemented countermeasures, or evidence the actor has detected and adapted to covert coverage, sit at the committed-actor tier, suggesting potential entry into mobilization.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers discreet logging and pattern-detection; investigation triggers actor-identification and a facility coverage-gap review; elevation triggers covert-coverage reinforcement and countermeasure activation appropriate to the site's posture; the committed-actor tier triggers a defensive-posture upgrade held as close-hold to avoid confirming coverage to the actor; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0110-01",
@@ -21878,7 +21834,6 @@
             "threshold_guidance": "Rehearsal is a mobilization behavior: it presumes a formed plan and signals a shortening runway to execution, so its findings weight higher than target-development signals and warrant faster action.\n\nFindings correlating with other staging-class behaviors — accelerant or device emplacement, materiel caching near the site, a stated or observed date-certain, or alignment with an occupancy or anniversary window — warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and repetition over time.\n\nA single low-credibility pass with an available legitimate explanation sits at the monitoring tier.\n\nA single high-credibility run with measured timing or a response probe against the facility sits at the investigation tier.\n\nCross-modal corroboration — grievance plus repeated timed approaches plus a defender-response probe against the same site — sits at the elevation tier and warrants treating as active preparation for attack.\n\nRehearsal persisting despite implemented countermeasures, or tightening toward a specific window, sits at the committed-actor tier and suggests imminence.\n\nMultiple lower-priority observations correlating temporally or modally may compose to a higher aggregate tier than any single run warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection across CCTV and access data; investigation triggers actor-identification and a facility-vulnerability reassessment against the observed practice; elevation triggers countermeasure activation and pattern randomization appropriate to the site's posture; the committed-actor tier triggers a defensive-posture upgrade and law-enforcement notification; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0201-01",
@@ -22368,7 +22323,6 @@
             "threshold_guidance": "Findings correlating with staging- or execution-class facility behaviors — a located materiel cache, a disguised device recovered at an approach, observed emplacement, or alignment with an occupancy or anniversary window — warrant immediate activation of response protocols, and where a device or accelerant is suspected, EOD and law-enforcement rendering-safe, regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility 'suspicious package' report with an available legitimate explanation sits at the monitoring tier.\n\nA single high-credibility indicator with operational specificity — a cache matched to an attack means, or cover matched to the facility's process — sits at the investigation tier.\n\nCross-modal corroboration — grievance plus caching plus OPSEC against the same site — sits at the elevation tier and warrants treating as coordinated mobilization concealment.\n\nConcealment persisting despite implemented countermeasures sits at the committed-actor tier, indicating potential imminent action.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification, a search for cached materiel, and a facility-screening review; elevation triggers screening and access-control activation plus law-enforcement notification; the committed-actor tier triggers a defensive-posture upgrade and EOD/law-enforcement coordination; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0202-01",
@@ -22853,7 +22807,6 @@
             "threshold_guidance": "A confirmed perimeter breach is a mobilization-phase event and is treated as presumptively urgent until resolved — it sits far closer to execution than any target-development indicator.\n\nTier-determination depends on three factors: confirmation of the breach, its directionality, and what the defeat exposes.\n\nAn unconfirmed single-sensor alarm with an available benign cause sits at the monitoring tier pending verification.\n\nA confirmed boundary defeat with inward progression sits at the response tier and triggers immediate interdiction and actor-identification.\n\nA breach that applies force to a guard, or one timed to occupied hours, sits at the critical tier — treat it as an attack in progress, activate active-threat and mass-notification protocols, and request emergency law-enforcement response regardless of this tactic's computed weight. Breaches recurring against the same boundary segment despite implemented countermeasures indicate a committed actor and warrant a defensive-posture upgrade and law-enforcement coordination.\n\nMultiple lower-confidence perimeter indicators correlating in time or against the same segment may compose to a higher aggregate tier than any single alarm warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers verification and logging; response triggers interdiction, actor-identification, and a boundary-integrity assessment; the critical tier triggers active-threat protocols, medical readiness, and emergency response.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0203-01",
@@ -23345,7 +23298,6 @@
             "threshold_guidance": "Interior penetration is a mobilization-stage behavior: the actor is already inside the envelope, so findings here carry less tolerance for delay than target-development signals.\n\nInterior movement correlating with staging-class behaviors elsewhere — materiel carried inward, a device or accelerant emplaced, a fixed attack position taken, or alignment with an occupancy or anniversary window — warrants immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and the depth and direction of penetration.\n\nA single low-credibility report of someone in a semi-public interior area with an available legitimate explanation sits at the monitoring tier.\n\nA single high-credibility indicator of controlled-boundary defeat with purposeful direction of travel sits at the investigation tier.\n\nCross-modal corroboration — access-control defeat plus camera capture plus objective-specific movement toward the same interior space — sits at the elevation tier and warrants treating as an active interior intrusion in progress.\n\nMovement that overpowers or forces past interior staff, or that continues toward a populated interior space during occupied hours, sits at the committed-actor tier and warrants immediate physical intervention and law-enforcement coordination.\n\nMultiple lower-priority indicators correlating temporally or spatially may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification and an interior-access review; elevation triggers zone lockdown and security dispatch; the committed-actor tier triggers building lockdown, occupant protection, and urgent law-enforcement response.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0204-01",
@@ -23854,7 +23806,6 @@
             "threshold_guidance": "Emplacement is among the last observable acts before initiation; a credible indicator that an attack means has been positioned at or near the site is treated as an imminent-threat condition, not a monitoring matter.\n\nTier-determination rests on three factors: credibility that an actual means was placed, the specificity of the placement against the site's structural or occupancy-critical points, and evidence of a plan to return and initiate.\n\nA suspected unattended item with an available legitimate account and no corroboration sits at the investigation tier pending render-safe assessment.\n\nA corroborated placement at a structural, standoff, or occupied point — or a sensor or canine confirmation — sits at the imminent tier and triggers isolation, standoff evacuation, and EOD and law-enforcement notification without delay; the object is not to be handled.\n\nCross-signal correlation — a positioned means together with staging, rehearsal, or an occupancy-window alignment for the same site — sits at the committed-actor tier and warrants treating the site as under active attack preparation.\n\nTier-triggered actions: investigation triggers area isolation, CCTV reconstruction of the placement, and screening of the object by qualified personnel; the imminent tier triggers evacuation to standoff, EOD and fire coordination, and law-enforcement response; the committed-actor tier triggers full protective activation and a search for additional emplaced means.\n\nA confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0205-01",
@@ -24339,7 +24290,6 @@
             "threshold_guidance": "A person or platform established in an attack-consistent position against an occupied site is a late-mobilization signal and should be treated as time-critical, not queued.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the observation, whether the position genuinely commands the site's people or function, and correlation with other mobilization signals.\n\nA single low-credibility sighting with an available legitimate explanation sits at the monitoring tier.\n\nA single high-credibility position that clearly commands an occupied entrance or line of fire sits at the investigation tier and warrants immediate on-site verification.\n\nA held or repeated attack position, especially one paired with a staged vehicle, staged materiel, prior rehearsal, or grievance against the site, sits at the elevation tier and should be treated as an imminent-attack indicator warranting emergency response coordination.\n\nPositions occupied during the site's occupancy window, or oriented to a crowd, choke point, or standoff line of fire, escalate the tier regardless of other factors because the collateral geometry is revealed.\n\nMultiple lower-priority positioning observations correlating temporally or spatially may compose to a higher aggregate tier than any single finding; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers on-site verification and actor-identification; elevation triggers protective action for occupants (relocation away from the commanded ground, controlled lockdown) and urgent law-enforcement coordination; a confirmed actor matching a known threat-actor profile at any tier warrants emergency response activation.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0206-01",
@@ -24817,7 +24767,6 @@
             "threshold_guidance": "A timing-exploitation finding that coincides with staging-class facility behaviors elsewhere — accelerant or explosive-precursor readiness, observed dry runs paced to the same window, materiel emplacement, or a final-approach rehearsal timed to an occupancy or anniversary date — warrants immediate activation of response protocols regardless of this tactic's internal tier, because the window is the trigger the other preparations are waiting on.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time, with one calibration specific to timing — a window fixed on a peak-occupancy or crowded period is treated as more urgent than one fixed on a low-security or closed period, because the former reveals a population target.\n\nA single low-credibility timing remark with an available legitimate explanation sits at the monitoring tier.\n\nA single high-credibility indicator with a specific window and operational detail sits at the investigation tier.\n\nCross-modal corroboration — grievance plus schedule research plus presence during the window against the same site — sits at the elevation tier and warrants treating as coordinated mobilization.\n\nTiming fixation persisting despite a randomized or hardened posture sits at the committed-actor tier, suggesting the actor is re-solving the schedule and approaching execution.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection across candidate windows; investigation triggers actor-identification and a window-specific vulnerability assessment; elevation triggers posture activation for the identified window; the committed-actor tier triggers a defensive-rhythm upgrade and pre-positioning for the window; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination ahead of the window.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0207-01",
@@ -25298,7 +25247,6 @@
             "threshold_guidance": "Systems access findings that correlate with staging-class facility behaviors elsewhere — accelerant or precursor acquisition, a defeated fire-suppression or alarm system, materiel emplaced near an air intake or plant space, or reach timed to an occupancy or anniversary window — warrant immediate activation of response protocols regardless of this tactic's internal tier, because reaching a harm-capable system is a late-mobilization step with little remaining lead time.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility indicator with an available maintenance explanation sits at the monitoring tier.\n\nA single high-credibility indicator showing operationally specific reach into a weaponizable or life-safety system sits at the investigation tier.\n\nCross-modal corroboration — grievance plus plant-space entry plus a building-automation network alert against the same site — sits at the elevation tier and warrants treating as active enabling of a facility attack.\n\nReach that persists despite implemented countermeasures sits at the committed-actor tier, indicating an actor working to command the site's systems for an imminent act.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification and a systems-vulnerability assessment; elevation triggers safeguard hardening and supervised monitoring of the affected systems; the committed-actor tier triggers a defensive-posture upgrade and preparation to isolate or fail-safe critical systems; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0208-01",
@@ -25781,7 +25729,6 @@
             "threshold_guidance": "Approach-class findings are inherently imminent — by definition they place a possible actor on the final leg to the site — so tier determination compresses and the bias runs toward protective action.\n\nA single credible approach indicator paired with carried attack means, a staged vehicle at a run-up angle, or final-act signaling warrants immediate interdiction and access denial regardless of this tactic's internal tier; there is little time to develop the picture further.\n\nAbsent a revealed means, tier depends on three factors: credibility of the observation, deviation from normal public flow, and correlation with earlier mobilization behavior against the same site.\n\nA single low-credibility sighting of movement toward the building with an available benign explanation sits at the heightened-observation tier — controlled challenge and screening, hold entry.\n\nA high-credibility, objective-directed approach that breaks from public flow sits at the interdiction tier.\n\nAn approach that matches a previously observed rehearsal, or that correlates with staging, emplacement, or timing indicators for the same actor, sits at the imminent-threat tier and warrants immediate protective intervention and law-enforcement engagement.\n\nBecause the window is short, consumer triage tooling should treat any corroborated approach indicator as time-critical and escalate on correlation rather than waiting for a single decisive finding.\n\nTier-triggered actions: heightened-observation triggers controlled challenge, screening, and an entry hold; interdiction triggers on-scene stop, access denial, and lockdown initiation; the imminent-threat tier triggers full protective response, evacuation or shelter as appropriate, and urgent law-enforcement coordination.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0209-01",
@@ -26267,7 +26214,6 @@
             "threshold_guidance": "An incendiary act observed against an occupied facility is a life-safety emergency and triggers immediate response protocols regardless of this tactic's internal tier — occupancy makes it a mass-casualty method by default.\n\nTier-determination for this tactic's findings depends on three factors: whether ignition is in progress or imminent versus a precursor being staged, whether the site is occupied, and the credibility that the fire is deliberate rather than accidental.\n\nActive ignition against an occupied site sits at the highest tier and warrants immediate evacuation, suppression, and emergency-service activation.\n\nStaged accelerant or a readied ignition source at the site — a precursor before force is applied — sits at the elevation tier and warrants interception and hardening.\n\nA fire against an unoccupied structure sits at the investigation-and-response tier as a property attack unless occupancy or egress facts change the picture.\n\nA single ambiguous fire with a plausible accidental origin sits at the investigation tier pending origin determination.\n\nMultiple points of origin, accelerant-consistent spread, blocked egress, or a matching pre-attack announcement each elevate the finding and should be treated as intentional until excluded.\n\nTier-triggered actions: precursor detection triggers interception and posture upgrade; active ignition triggers life-safety response and law-enforcement coordination; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination and treatment as an ongoing attack.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0301-01",
@@ -26753,7 +26699,6 @@
             "threshold_guidance": "Explosive execution collapses the assessment timeline: an emplaced or suspected device, an observed initiation behavior, or a detonation warrants immediate protective action — evacuation or shelter, standoff, and EOD and law-enforcement activation — without waiting to resolve every credibility question.\n\nTier-determination here turns on immediacy and confirmation.\n\nAn uncorroborated claim of a device with no physical or sensor signal sits at the assessment tier but still triggers a search-and-clear protocol.\n\nA confirmed suspected device or credible emplacement sits at the interdiction tier: isolate, evacuate to safe distance, and call EOD.\n\nAn observed initiation behavior or a vehicle-borne emplacement in a no-standoff position sits at the imminent tier and drives immediate life-safety action.\n\nA detonation, or a placed device timed to occupancy, sits at the active-attack tier: mass-casualty response, secondary-device sweep of evacuation and responder routes, and treatment of any emplaced item as live. Any indicator that applies direct physical force to people — a detonation with occupants present — carries a critical severity floor regardless of computed weight. Secondary-device patterns targeting responders and evacuees must be assumed until cleared.\n\nA confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0302-01",
@@ -27251,7 +27196,6 @@
             "threshold_guidance": "A structural finding on an OCCUPIED structure — a severed or partially cut load-bearing member, an undermined footing, a defeated support system, or tampering an engineer attributes to deliberate action — is a potential mass-casualty condition and warrants immediate activation of response protocols regardless of this tactic's internal tier: evacuate, cordon, and obtain emergency structural assessment before anything else.\n\nTier-determination for less acute findings depends on three factors: credibility of the finding, whether the compromised element is structurally decisive, and whether people are or will be present.\n\nA single low-credibility report of unexplained 'damage' with an available ordinary-cause explanation sits at the monitoring tier.\n\nA single high-credibility finding of deliberate compromise on a non-critical member, site unoccupied, sits at the investigation tier.\n\nDeliberate compromise of a decisive load-bearing member, or covert tampering staged to defer failure to an occupancy window, sits at the elevation tier and warrants treating the structure as under active attack.\n\nAny indicator confirming a compromised primary member with occupancy present sits at the committed-actor tier and triggers evacuation and structural cordon.\n\nMultiple lower-tier findings correlating temporally or spatially — access anomalies plus fresh tool marks plus a stated grievance — may compose to a higher aggregate tier than any single finding warrants.\n\nTier-triggered actions: monitoring triggers logging, inspection tasking, and access review; investigation triggers actor-identification and a forensic structural assessment; elevation triggers occupancy restriction and structural monitoring of the member; the committed-actor tier triggers evacuation, cordon, and law-enforcement coordination.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0303-01",
@@ -27750,7 +27694,6 @@
             "threshold_guidance": "Systems sabotage is an execution-phase act, and any credible indication that a life-safety or protective system has been deliberately disabled or misused warrants immediate response regardless of this tactic's internal tier — the interval between disabling a safeguard and exploiting its absence can be minutes. Findings that reveal a mass-casualty objective — air handling manipulated to move a substance through an occupied building, fire-suppression disabled while the site is occupied or immediately before an incendiary act, or contamination of a domestic water supply — warrant treating occupants as at imminent risk and activating protective evacuation or shelter alongside response protocols.\n\nTier-determination for lower-signal findings depends on three factors: credibility that the failure is deliberate rather than a fault, the criticality of the system touched, and occupancy at the time.\n\nA single anomalous reading with an available maintenance explanation sits at the monitoring tier.\n\nConfirmed deliberate manipulation of a non-life-safety system at an empty site sits at the investigation tier.\n\nDeliberate manipulation of a life-safety system, or any manipulation while the facility is occupied, sits at the elevation tier.\n\nManipulation sequenced with preparation for another attack, or persisting despite countermeasures, sits at the committed-actor tier and should be treated as an attack in progress.\n\nMultiple lower-priority indicators correlating temporally or across systems may compose to a higher aggregate tier than any single finding; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and technician adjudication of the fault; investigation triggers actor-identification and a systems-vulnerability review; elevation triggers system isolation, physical response, and a protective-action decision; the committed-actor tier triggers evacuation or shelter and law-enforcement and HAZMAT coordination as the system implicates.",
             "escalation_priority": "Urgent"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0304-01",
@@ -28253,7 +28196,6 @@
             "threshold_guidance": "At execution altitude the presumption inverts from the pre-attack phases: a confirmed deliberate ram or forced breach is a life-safety emergency and triggers immediate response protocols regardless of any internal tier.\n\nTier-determination applies only while the deliberate-versus-benign question is genuinely open.\n\nA low-speed contact or a forced door with a plausible benign cause and no target-tracking behavior sits at the assessment tier pending confirmation.\n\nA hostile approach vector — deliberate acceleration toward an occupied frontage, a heavy vehicle staged for a run-up, or breaching tools deployed against a controlled entry during occupied hours — sits at the interdiction tier and warrants active barrier deployment, denial of access, and law-enforcement notification before impact. Any impact into occupants, or a forced entry that overpowers staff, is the attack itself: activate lockdown, life-safety, and mass-casualty response, and treat a ram-then-dismount or breach-then-advance as an ongoing complex attack until cleared.\n\nMultiple lower-signal precursors correlating in time — a flagged approach plus a defeated barrier plus tools in view — compose to the interdiction tier even when no single observation confirms the act; consumer triage tooling should make this composition explicit so the response is not delayed to certainty.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0305-01",
@@ -28745,7 +28687,6 @@
             "threshold_guidance": "An occupation or blockade in progress is a life-safety event whenever occupants or bystanders are present: obstruction of egress, barricading of a crowded space, or any move to physically seize, confine, or harm an occupant warrants immediate activation of response protocols regardless of this tactic's internal tier, and captive-taking warrants immediate law-enforcement and crisis-negotiation coordination.\n\nTier-determination for this tactic's findings depends on three factors: whether egress and life-safety are compromised, the group's holding capability, and its refusal of lawful dispersal.\n\nA lawful assembly keeping access open sits at the monitoring tier.\n\nA forming blockade that begins to obstruct ingress sits at the investigation tier.\n\nAn active occupation denying use with occupants present sits at the elevation tier and warrants treating as an in-progress facility attack.\n\nAn occupation that has barricaded egress, fortified against extraction, or moved to control occupants sits at the committed-actor tier and warrants an immediate life-safety response.\n\nMultiple lower-tier signals correlating in time — a mobilization call plus staged lock-on materiel plus massing at a chokepoint — may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and liaison; investigation triggers on-site assessment and access control review; elevation triggers civil-disturbance response activation and law-enforcement coordination; the committed-actor tier triggers a life-safety response with priority on protecting and extracting occupants.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0306-01",
@@ -29233,7 +29174,6 @@
             "threshold_guidance": "Defacement findings correlating with heavier facility execution behaviors — accelerant staging, forced-entry attempts, threat messaging naming a date or method, or marks that function as target designation for a later attack — warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: the credibility of the attribution, the symbolic or threat weight of the content, and persistence against the same site.\n\nA single low-credibility, generic mark with an available benign explanation sits at the monitoring tier.\n\nA single high-credibility incident with targeted hate or threat content sits at the investigation tier.\n\nCross-modal corroboration — grievance plus repeated targeted marking plus a claim against the same site — sits at the elevation tier and warrants treating as a coordinated campaign against the facility.\n\nDefacement persisting despite implemented countermeasures, or escalating in permanence and severity, sits at the committed-actor tier and suggests progression toward heavier damage.\n\nMultiple lower-priority incidents correlating temporally or by content may compose to a higher aggregate tier than any single mark warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers documentation, preservation, and pattern-detection; investigation triggers actor-identification and a surface-vulnerability review; elevation triggers hardening and surveillance of the targeted surfaces plus community notification where hate-motivated; the committed-actor tier triggers a defensive-posture upgrade; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination and hate-crime reporting where the content applies.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0307-01",
@@ -29711,7 +29651,6 @@
             "threshold_guidance": "Any indicator that a hazardous substance has been introduced into an occupied facility's air, water, or consumables warrants immediate activation of response protocols regardless of this tactic's internal tier — contamination applies force to everyone the system serves, and the exposure window closes only when the pathway is isolated.\n\nTier-determination for this tactic's findings depends on three factors: whether an exposure pathway to occupants is established, the credibility of the tampering or release signal, and confirmation of the substance.\n\nA vague report near a mechanical space with no established pathway sits at the monitoring tier.\n\nObserved tampering at a served system's access point without confirmed release sits at the investigation-and-precaution tier and warrants isolating and sampling the pathway.\n\nA confirmed foreign substance at a water intake, air handler, or consumables line, or downstream sensor or symptom indications, sits at the immediate-response tier: isolate the system, shut down or divert the pathway, protect and evacuate or shelter occupants, and coordinate hazmat, EMS, and public health.\n\nMultiple lower-priority indicators correlating temporally or modally — a grievance about the facility's occupants, an actor placed at an intake, and an unexplained odor — may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pathway review; investigation triggers actor-identification, access-point inspection, and precautionary sampling; immediate-response triggers system isolation, occupant protection, and integrated hazmat and public-health coordination; a confirmed release in an occupied facility warrants urgent law-enforcement and public-health notification at any tier.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0308-01",
@@ -30213,7 +30152,6 @@
             "threshold_guidance": "Response suppression is an execution-phase, life-safety tactic: any credible indication that egress is being blocked, that life-safety systems are being disabled, that a secondary hazard is staged for responders, or that on-site security is being neutralized during a concurrent attack warrants immediate activation of response protocols regardless of this tactic's internal tier — because the harm it enables is measured in occupant lives and responder lives.\n\nTier-determination for pre-incident findings depends on three factors: credibility of the indicator, breadth across modalities, and pairing with a concurrent attack method.\n\nA single low-credibility indicator with an available legitimate explanation (contractor, drill, facilities work) sits at the monitoring tier.\n\nA single high-credibility indicator with operational specificity about the site's exits, systems, or response sits at the investigation tier.\n\nResponse-defeat interest paired with accelerant, explosive, weapon, or breaching preparation against the same site sits at the elevation tier and warrants treating as an imminent mass-casualty plot.\n\nIndicators persisting despite implemented countermeasures sit at the committed-actor tier. In-progress indicators — exits found chained during an incident, alarms or suppression confirmed disabled, a secondary device reported, communications jammed — are not assessment findings but active mass-casualty conditions and trigger the full emergency response immediately.\n\nA confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0309-01",
@@ -30707,7 +30645,6 @@
             "threshold_guidance": "Withdrawal findings that correlate with staging-class or force-class behaviors elsewhere — a recovered secondary device or re-attack positioning along the egress route, evidence destruction at the site, or a switch vehicle staged in advance — warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence of a reconstructable escape pattern.\n\nA single low-credibility departure sighting with an available legitimate explanation sits at the monitoring tier.\n\nA single high-credibility indicator with operational specificity about the egress — a switch vehicle, a reconnoitered route — sits at the investigation tier.\n\nCross-modal corroboration — camera, witness, and transportation records converging on the same vector — sits at the elevation tier and warrants treating as a planned withdrawal from a premeditated attack.\n\nIndicators showing the actor continuing to break the trail despite pursuit sit at the committed-actor tier, indicating an at-large actor retaining freedom of action.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification and egress-route reconstruction; elevation triggers pursuit and containment coordination with law enforcement; the committed-actor tier triggers cross-jurisdiction interdiction and an at-large-actor advisory; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0401-01",
@@ -31189,7 +31126,6 @@
             "threshold_guidance": "Evidence management is an aftermath tactic: by the time it is observed the primary harm is usually done, and its significance is what it protects and what it may presage.\n\nFindings correlating with re-attack positioning — a secondary device, return with materiel, or staging against responders and returning occupants — warrant immediate activation of response protocols regardless of this tactic's internal tier, because sanitizing behavior can accompany a renewed attack.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility observation with an available legitimate explanation (responder overhaul, owner cleanup) sits at the monitoring tier.\n\nA single high-credibility indicator with operational specificity — selective destruction of probative items, staged false evidence, or a controlled off-site dump — sits at the investigation tier.\n\nCross-modal corroboration — witnessed handling plus recovered disposal materials plus a return to the scene against the same event — sits at the elevation tier and warrants treating as deliberate attribution-defeat by a disciplined actor.\n\nHandling that persists across a return visit or that names a false party sits at the committed-actor tier, indicating an actor investing in impunity and possibly preparing to reoffend.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers scene-integrity logging and pattern-detection; investigation triggers actor-identification, chain-of-custody protection, and a canvass of disposal routes; elevation triggers evidence-preservation and forensic escalation appropriate to the method; the committed-actor tier triggers re-attack-aware posture and offender-focused coordination; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0402-01",
@@ -31677,7 +31613,6 @@
             "threshold_guidance": "Cover Reestablishment is an evasion tactic, so its findings gain weight chiefly by correlation — with a person who had access, presence, or grievance tied to the site, and with staging- or execution-class facility indicators observed elsewhere.\n\nFindings correlating with such evidence warrant immediate activation of response protocols, including evidence preservation and alibi verification, regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and how tightly the behavior is anchored to the incident window.\n\nA single low-credibility read of demeanor with an available innocent explanation sits at the monitoring tier.\n\nA single high-credibility signal — a shed operational persona or a failed alibi for a person with site access — sits at the investigation tier.\n\nCross-modal corroboration — discarded operational identity plus an unverifiable whereabouts account plus digital scrubbing for the same person — sits at the elevation tier and warrants treating as deliberate attribution evasion.\n\nSignals persisting once the person is aware of scrutiny, or accelerating as the inquiry begins, sit at the committed-actor tier.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification, alibi verification, and a legal hold on relevant records and devices; elevation triggers coordinated evidence preservation and law-enforcement referral; the committed-actor tier triggers protection of investigative integrity against active counter-attribution; a person matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0403-01",
@@ -32162,7 +32097,6 @@
             "threshold_guidance": "Findings correlating with active silencing of a witness, destruction of coordination records, or warnings that preserve a network's capacity for a follow-on act warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility indicator with an available legitimate explanation (privacy reaction, ordinary records churn) sits at the monitoring tier.\n\nA single high-credibility indicator with operational specificity — a directed silence instruction, a synchronized wipe, a concrete witness threat — sits at the investigation tier.\n\nCross-modal corroboration — device destruction plus associate warnings plus witness pressure tied to the same operation — sits at the elevation tier and warrants treating as coordinated network protection by an organized group.\n\nIndicators persisting after preservation orders and protective measures are in place sit at the committed-actor tier, indicating a disciplined network.\n\nMultiple lower-priority indicators correlating temporally or by association may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification, rapid evidence preservation, and witness safeguarding; elevation triggers protected-witness handling and law-enforcement referral; the committed-actor tier triggers treatment as an organized network with follow-on potential; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0404-01",
@@ -32640,7 +32574,6 @@
             "threshold_guidance": "Financial-disposition findings gain priority when they correlate with a facility attack in fact and in time — proceeds or reimbursements moving in the wake of an arson, bombing, sabotage, or extortion against the site — and correlation with claim-of-responsibility or network-protection behavior for the same actor warrants treating the money trail as part of a single operation regardless of this tactic's internal tier.\n\nTier-determination depends on three factors: credibility of the financial indicator, breadth across institutions and instruments, and persistence over time.\n\nA single low-credibility flag with an available ordinary-finance explanation sits at the monitoring tier.\n\nA single high-credibility indicator with attribution-defeating structure time-linked to the operation sits at the investigation tier.\n\nCorroboration across institutions — structuring plus crypto obfuscation plus participant disbursement tied to the same event — sits at the elevation tier and warrants coordinated financial-intelligence action.\n\nMovement persisting despite flags, freezes, or reviews sits at the committed-actor tier, indicating a facilitated laundering capability rather than a one-time act.\n\nMultiple lower-priority financial indicators correlating temporally or across instruments may compose to a higher aggregate tier than any single transaction warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers transaction logging and pattern-detection; investigation triggers actor-identification, account mapping, and a suspicious-activity referral; elevation triggers financial-intelligence-unit and law-enforcement coordination and preservation of records; the committed-actor tier triggers pursuit of freeze or seizure authority; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement and financial-crimes coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0405-01",
@@ -33106,7 +33039,6 @@
             "threshold_guidance": "Findings correlating with renewed target-development or staging behaviors elsewhere — assessment lessons feeding fresh site profiling, accelerant or precursor re-acquisition, or a stated next-target selection — warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility indicator with an available legitimate explanation sits at the monitoring tier.\n\nA single high-credibility indicator with operational specificity — a structured critique of the defender response aimed at a next operation — sits at the investigation tier.\n\nCross-modal corroboration — archived coverage plus recorded critique plus network dissemination against the same completed attack — sits at the elevation tier and warrants treating as active preparation for renewed operations.\n\nIndicators persisting despite implemented countermeasures sit at the committed-actor tier, suggesting a learning adversary re-entering the planning cycle.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification and a re-attack risk assessment; elevation triggers countermeasure activation and defender-gap remediation identified in the actor's own critique; the committed-actor tier triggers a defensive-posture upgrade across the facility class; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0406-01",
@@ -33571,7 +33503,6 @@
             "threshold_guidance": "Counter-forensic findings are most decisive when read together with the attack they follow and with any pre-attack forensic-defeat footprint, not in isolation.\n\nTier-determination for this tactic's findings depends on three factors: the credibility of the defeat reading across examiners, its breadth across evidence vectors, and whether a pre-planned intent footprint exists.\n\nA single-vector negative with an available ordinary-cause explanation sits at the monitoring tier.\n\nA documented absence-against-expectation confirmed by a certified examiner, or recovered anti-forensic tooling, sits at the investigation tier.\n\nMulti-vector defeat corroborated across residue, biological, latent, and digital examiners — or defeat paired with pre-attack forensic research and acquisition — sits at the elevation tier and warrants treating the case as a deliberate attribution-defeat operation.\n\nCounter-forensic activity continuing to frustrate a worked case despite specialized examiner tasking sits at the committed-actor tier and argues for expanded collection aperture, third-party record preservation, and inter-agency lab coordination.\n\nBecause counter-forensics is designed to shrink the evidentiary picture, multiple weak or single-vector findings that correlate temporally or by method may compose to a higher aggregate tier than any one warrants; triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers documentation and preservation; investigation triggers specialized-examiner tasking and a scene- and device-preservation order; elevation triggers expanded multi-vector collection and third-party record preservation; the committed-actor tier triggers inter-agency forensic coordination; an identified actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0407-01",
@@ -34060,7 +33991,6 @@
             "threshold_guidance": "Any indication of a secondary device or a re-positioned actor at a scene under response is treated as an active, imminent threat to life and warrants immediate activation of response protocols regardless of this tactic's internal tier — the standing assumption for a post-attack scene is that a second threat may be present.\n\nTier-determination for this tactic's findings depends on three factors: the credibility of the secondary-threat indicator, its reach to where responders and occupants will mass, and its timing to the arrival of the response.\n\nA single low-credibility signal with an available lost-property or bystander explanation and no reach to persons sits at the monitoring tier.\n\nA single high-credibility indicator — an emplaced object at a staging point, or an actor in overwatch over the assembly — sits immediately at the elevation tier because force-on-person is imminent, not at a lower investigative tier.\n\nCross-modal corroboration — an emplaced object, an actor observed re-positioning, and second-wave leakage against the same response — sits at the committed-actor tier and warrants treating the scene as an ongoing coordinated attack.\n\nMultiple lower-confidence signals correlating temporally at the points where persons converge may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers a secondary-device sweep and logging; elevation triggers a halt to responder ingress, standoff cordon, and relocation of casualty-collection and command elements beyond blast radius; the committed-actor tier triggers a defensive-posture upgrade across the response and urgent law-enforcement and EOD coordination; a confirmed device or a confirmed re-positioned actor at any tier warrants urgent law-enforcement action to protect the response.",
             "escalation_priority": "Immediate"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0408-01",
@@ -34548,7 +34478,6 @@
             "threshold_guidance": "An attribution claim is triaged first on credibility, then on what the claim signals forward.\n\nA claim reciting only public facts, offered anonymously with no proof, sits at the monitoring tier pending verification and should not drive attribution decisions on its own.\n\nA claim carrying non-public hold-back detail, forensic corroboration, or signature continuity with a known actor sits at the investigation tier and warrants formal attribution analysis and law-enforcement coordination.\n\nA verified claim that frames the attack as part of a campaign, names or categorizes further targets, or issues a call to emulate sits at the elevation tier — it indicates continuing intent and elevated copycat and re-attack risk, and should trigger a follow-on-threat assessment and protective-posture review for the facility class.\n\nA claim routed through an established organizational channel or media wing, or corroborated by recovered pre-staged attribution materials, sits at the committed-actor tier and warrants urgent law-enforcement and fusion-center coordination for cross-incident linkage.\n\nMultiple weak or competing claims for the same act may still compose to an actionable picture when signature or forensic threads converge on one authorship; consumer triage tooling should make this composition explicit.\n\nTier-triggered actions: monitoring triggers claim logging and channel watch; investigation triggers attribution analysis and evidence preservation; elevation triggers a follow-on-threat and copycat assessment plus responsible-reporting coordination; the committed-actor tier triggers law-enforcement referral and cross-incident linkage.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0409-01",
@@ -35023,7 +34952,6 @@
             "threshold_guidance": "Findings correlating with an active or renewed threat — a secondary-device or re-attack signal, an explicit call to imitate naming a facility or class, or an amplification surge timed to an anniversary or ongoing campaign — warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the amplification signal, breadth across platforms and networks, and persistence over time.\n\nA single low-credibility viral moment with an available organic explanation sits at the monitoring tier.\n\nA single high-credibility, actor-attributable release with reach-maximizing framing sits at the investigation tier.\n\nCross-platform corroboration — coordinated re-uploads, mirroring, and network re-circulation of the same package — sits at the elevation tier and warrants treating as an organized amplification campaign.\n\nAmplification persisting despite coordinated takedowns sits at the committed-network tier, suggesting durable propaganda capability and elevated copycat risk.\n\nMultiple lower-priority signals correlating temporally or across platforms may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and reach tracking; investigation triggers network-identification and copycat-risk assessment; elevation triggers coordinated takedown and counter-messaging appropriate to the audience; the committed-network tier triggers referral for network disruption; a confirmed actor or network matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0410-01",
@@ -35488,7 +35416,6 @@
             "threshold_guidance": "Symbolic messaging that pairs with any live operational signal — a community-directed threat of further action, secondary-device or re-attack positioning, or an active emulation call drawing responses — warrants immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility that the symbolism originates with the actor, whether the message is directed at an identifiable community, and the reach the message has attained.\n\nA single ambiguous artifact with an available benign explanation sits at the monitoring tier.\n\nAuthor-originated symbolism with specific encoding but no directed audience sits at the investigation tier.\n\nSymbolic messaging directed at a named community to intimidate, or framed to invite emulation, sits at the elevation tier and warrants coordinated community-protection and narrative response.\n\nMessaging that continues to circulate and draw aligned responses despite removal efforts sits at the committed-movement tier, suggesting the act is being adopted as a template.\n\nMultiple lower-priority indicators correlating temporally or across artifacts may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and cross-incident pattern-detection; investigation triggers attribution analysis and actor-identification; elevation triggers community-protection liaison and a coordinated counter-narrative; the committed-movement tier triggers cross-jurisdictional coordination against emulation; a confirmed actor or movement matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0411-01",
@@ -35956,7 +35883,6 @@
             "threshold_guidance": "A coercive demand tied to a completed facility attack is treated as an active-threat matter, not a routine claim, because it asserts continuing leverage over the site and its people.\n\nTier-determination depends on three factors: the credibility of the link between claimant and perpetrator, the credibility and specificity of any follow-on threat, and the actor's demonstrated willingness to execute consequences.\n\nA demand reciting only public facts with an unbacked follow-on sits at the monitoring tier pending authentication.\n\nA demand carrying hold-back knowledge or a concrete ultimatum sits at the investigation tier and warrants immediate law-enforcement referral and forensic preservation.\n\nA demand backed by a credible follow-on — a claimed or recovered secondary device, an acquisition trail, or a positioning consistent with re-attack — sits at the elevation tier and triggers active-threat response including sweep and protective measures for occupants and responders, coordinated with the Secondary Device / Re-attack Positioning protocols.\n\nA demand where a prior deadline lapsed and the actor executed the threatened consequence sits at the committed-actor tier.\n\nNever negotiate or concede unilaterally; route all demand communications to counsel and law enforcement, preserve them without alteration, and deny the actor the coercive leverage of public panic through pre-planned crisis communications.",
             "escalation_priority": "Priority"
           },
-          "techniques": [],
           "indicators": [
             {
               "id": "IND-F0412-01",
