@@ -1315,7 +1315,8 @@
               ],
               "correlates_with": [
                 "IND-0101-01",
-                "IND-0103-02"
+                "IND-0103-02",
+                "IND-F0103-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -1354,7 +1355,8 @@
               ],
               "correlates_with": [
                 "IND-0103-01",
-                "IND-0102-01"
+                "IND-0102-01",
+                "IND-F0102-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -1394,7 +1396,8 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0103-01"
+                "IND-0103-01",
+                "IND-F0103-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -2538,7 +2541,8 @@
               ],
               "correlates_with": [
                 "IND-0102-04",
-                "IND-0104-04"
+                "IND-0104-04",
+                "IND-F0107-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -2989,7 +2993,8 @@
               ],
               "correlates_with": [
                 "IND-0103-04",
-                "IND-0104-03"
+                "IND-0104-03",
+                "IND-F0108-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -3557,7 +3562,8 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-0101-04"
+                "IND-0101-04",
+                "IND-F0109-04"
               ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
@@ -3655,7 +3661,8 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-0103-01"
+                "IND-0103-01",
+                "IND-F0109-05"
               ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
@@ -3993,7 +4000,8 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0103-01"
+                "IND-0103-01",
+                "IND-F0110-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -5612,7 +5620,9 @@
                 "mobilization",
                 "execution"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-F0203-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
@@ -6078,7 +6088,8 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-0203-02"
+                "IND-0203-02",
+                "IND-F0204-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -7083,7 +7094,8 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-0103-01"
+                "IND-0103-01",
+                "IND-F0206-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -9076,7 +9088,8 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-0104-02"
+                "IND-0104-02",
+                "IND-F0305-02"
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
@@ -10012,7 +10025,8 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-0301-04"
+                "IND-0301-04",
+                "IND-F0306-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -10134,7 +10148,9 @@
               "phase_relevance": [
                 "execution"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-F0306-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
@@ -12763,7 +12779,9 @@
               "phase_relevance": [
                 "aftermath"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-F0401-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
@@ -12792,7 +12810,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0108-01"
+                "IND-0108-01",
+                "IND-F0401-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -13244,7 +13263,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0202-03"
+                "IND-0202-03",
+                "IND-F0404-01"
               ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
@@ -13275,7 +13295,9 @@
               "phase_relevance": [
                 "aftermath"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-F0402-05"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
@@ -13331,7 +13353,9 @@
               "phase_relevance": [
                 "aftermath"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-F0402-03"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
@@ -13747,7 +13771,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0202-01"
+                "IND-0202-01",
+                "IND-F0403-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -13804,7 +13829,9 @@
               "phase_relevance": [
                 "aftermath"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-F0403-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
@@ -14308,7 +14335,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0105-04"
+                "IND-0105-04",
+                "IND-F0404-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -14736,7 +14764,9 @@
               "phase_relevance": [
                 "aftermath"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-F0405-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
