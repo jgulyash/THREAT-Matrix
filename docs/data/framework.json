@@ -37421,7 +37421,93 @@
           "notes": "Dry-runs of the operation, including test commands in lab, simulator, or digital-twin environments.",
           "cpn": true,
           "cpn_id": "CPN-I0201",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0201-01",
+              "behavior": "Threat actor rehearses the intrusion sequence against a lab-built replica of the target control system, repeating command steps until the manipulation executes reliably",
+              "category": "planning",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0201-02",
+              "behavior": "Threat actor stages a digital-twin simulation of the facility process to model how a specific setpoint or safety-instrumented function will respond to unauthorized changes",
+              "category": "planning",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "target_development"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "IND-I0201-03",
+              "behavior": "Threat actor tests attack tooling against procured controllers, RTUs, or PLCs matching the target vendor and firmware version on an isolated bench setup",
+              "category": "planning",
+              "detection_sources": [
+                "it_logs",
+                "vendor_reporting",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0201-04",
+              "behavior": "Threat actor dry-runs the physical approach and timing of the operation during off-hours, walking the intended route and rehearsing the manipulation sequence without triggering the effect",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-I0201-05",
+              "behavior": "Threat actor validates a captured operator workstation image or HMI configuration in a sandbox to confirm the intended process change produces the desired hazardous state before acting",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Rehearsal in infrastructure can be virtual: malicious logic is validated against a replica environment before production is touched.",
@@ -37445,7 +37531,95 @@
           "notes": "Building a vendor, inspector, or contractor persona, physical or credentialed, to enable approach.",
           "cpn": true,
           "cpn_id": "CPN-I0202",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0202-01",
+              "behavior": "Threat actor fabricates a utility or telecom contractor persona, complete with branded vehicle markings and a high-visibility uniform, to justify presence at dispersed field assets",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0202-02",
+              "behavior": "Threat actor poses as a regulatory or safety inspector and requests a facility walkthrough, using the pretext to reach restricted control rooms and process areas",
+              "category": "access",
+              "detection_sources": [
+                "peer_report",
+                "physical_observation",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0202-03",
+              "behavior": "Threat actor forges vendor credentials and a maintenance work order to gain scheduled physical entry to a substation, pump station, or remote SCADA cabinet",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "vendor_reporting",
+                "public_records"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0202-04",
+              "behavior": "Threat actor registers a shell company mirroring a legitimate service provider to bid on or subcontract facility work and obtain insider access to dispersed sites",
+              "category": "acquisition",
+              "detection_sources": [
+                "public_records",
+                "financial_records",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "target_development"
+              ],
+              "source_refs": [
+                "GAO-24-106744-2024",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "IND-I0202-05",
+              "behavior": "Threat actor impersonates a delivery or logistics driver to conduct repeated authorized-looking approaches to a perimeter, building familiarity with guard rotation and gate procedures",
+              "category": "access",
+              "detection_sources": [
+                "cctv",
+                "physical_observation",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Cover for infrastructure access frequently impersonates the maintenance and integration roles that legitimately reach remote assets.",
@@ -37469,7 +37643,89 @@
           "notes": "Actions to detect and evade both physical monitoring and network defenses before acting.",
           "cpn": true,
           "cpn_id": "CPN-I0203",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0203-01",
+              "behavior": "Threat actor deactivates audit logging and event forwarding on an ICS engineering workstation to erase traces of reconnaissance before acting",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0203-02",
+              "behavior": "Threat actor paces the facility perimeter on multiple occasions to chart camera fields of view and note surveillance blind spots",
+              "category": "surveillance",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0203-03",
+              "behavior": "Threat actor sweeps the site with a handheld RF scanner to locate motion sensors, alarm transmitters, and wireless camera links",
+              "category": "surveillance",
+              "detection_sources": [
+                "rf_detection",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0203-04",
+              "behavior": "Threat actor masks vehicle plates and cycles through rental vehicles across successive visits to defeat automated license-plate recognition",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "target_development"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0203-05",
+              "behavior": "Threat actor trips a minor perimeter alarm and times the guard response to gauge detection and reaction windows",
+              "category": "surveillance",
+              "detection_sources": [
+                "access_logs",
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Counter-detection spans physical observation of guard patterns and technical evasion of OT monitoring.",
@@ -37493,7 +37749,92 @@
           "notes": "Defeating the fence, gate, or enclosure protecting a dispersed physical asset.",
           "cpn": true,
           "cpn_id": "CPN-I0204",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0204-01",
+              "behavior": "Threat actor cuts through the perimeter chain-link fence of an unmanned substation to reach the equipment yard",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0204-02",
+              "behavior": "Threat actor forces the padlocked gate of a remote pump station with bolt cutters to gain vehicle access",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "source_refs": [
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0204-03",
+              "behavior": "Threat actor scales the security fence at a dispersed telemetry site after confirming the absence of on-site personnel",
+              "category": "access",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "source_refs": [
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "IND-I0204-04",
+              "behavior": "Threat actor defeats the enclosure lock on a field control cabinet to expose the internal wiring and remote terminal unit",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "ot_telemetry",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0204-05",
+              "behavior": "Threat actor pries open a vault cover to enter the buried conduit protecting a pipeline's fiber and control lines",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "source_refs": [
+                "GAO-24-106744-2024",
+                "CTC-INFRATERROR-2026"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Perimeter breach at infrastructure sites often targets unmanned remote enclosures rather than staffed buildings.",
@@ -37517,7 +37858,94 @@
           "notes": "Obtaining a logical path onto the control network through a VPN, exposed HMI, or remote-access tool.",
           "cpn": true,
           "cpn_id": "CPN-I0205",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0205-01",
+              "behavior": "Threat actor logs into an internet-exposed VPN concentrator using operator credentials harvested from an earlier phishing run against plant staff",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "network_monitoring",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "target_development"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0205-02",
+              "behavior": "Threat actor connects to an unauthenticated HMI web panel reachable directly from the public internet and loads the live process display",
+              "category": "access",
+              "detection_sources": [
+                "network_monitoring",
+                "ot_telemetry",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0205-03",
+              "behavior": "Threat actor installs a commercial remote-access tool on an operator station to hold a persistent path onto the control network",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0205-04",
+              "behavior": "Threat actor tunnels traffic through a vendor maintenance link left enabled after a field service visit to bridge into the OT segment",
+              "category": "access",
+              "detection_sources": [
+                "network_monitoring",
+                "vendor_reporting",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0205-05",
+              "behavior": "Threat actor authenticates to a remote-desktop service exposed on the control-system perimeter using reused vendor default passwords",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "it_logs",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Remote access acquisition is effect-at-distance: the threat actor obtains a path to the control plane without being physically present.",
@@ -37542,7 +37970,93 @@
           "notes": "Reaching the PLC, RTU, HMI, or engineering workstation that governs the process.",
           "cpn": true,
           "cpn_id": "CPN-I0206",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0206-01",
+              "behavior": "Threat actor opens an engineering-software session to a PLC and enumerates its running ladder logic and I/O configuration",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "target_development"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0206-02",
+              "behavior": "Threat actor pivots from a compromised business workstation onto the engineering workstation that programs the site safety controllers",
+              "category": "access",
+              "detection_sources": [
+                "network_monitoring",
+                "it_logs",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0206-03",
+              "behavior": "Threat actor establishes a Modbus session directly with an RTU and reads live process register values from the field device",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "IND-I0206-04",
+              "behavior": "Threat actor hijacks an active HMI operator session to view and drive the process control screens as a logged-in user",
+              "category": "access",
+              "detection_sources": [
+                "ot_telemetry",
+                "access_logs",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0206-05",
+              "behavior": "Threat actor exploits an unpatched engineering workstation to gain code execution on the host that stores the controller project files",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Control-system access is the point at which a threat actor can read or issue process commands, whether reached physically or logically.",
@@ -37566,7 +38080,85 @@
           "notes": "Pivoting from IT to OT, crossing a safety zone, or elevating to an engineering role.",
           "cpn": true,
           "cpn_id": "CPN-I0207",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0207-01",
+              "behavior": "Threat actor pivots from the compromised corporate IT network into the OT environment by reusing a single domain credential that spans both zones",
+              "category": "access",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0207-02",
+              "behavior": "Threat actor escalates a routine operator login to engineering-station privileges, unlocking the ability to alter controller programming",
+              "category": "digital",
+              "detection_sources": [
+                "access_logs",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0207-03",
+              "behavior": "Threat actor crosses the industrial DMZ into the safety-instrumented-system network through a jump host left in bridging mode",
+              "category": "access",
+              "detection_sources": [
+                "network_monitoring",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0207-04",
+              "behavior": "Threat actor elevates a temporary contractor account into a standing engineering role that grants persistent access to control-system consoles",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0207-05",
+              "behavior": "Threat actor bridges an isolated control segment by relaying traffic through an engineer's dual-homed laptop moved between safety zones",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Zone escalation is the IT-to-OT boundary crossing that turns a business-network foothold into control-plane reach.",
@@ -37591,7 +38183,86 @@
           "notes": "Using an operator's own credentials or console as the access path.",
           "cpn": true,
           "cpn_id": "CPN-I0208",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0208-01",
+              "behavior": "Threat actor leverages an operator's actively authenticated HMI session, left unlocked at shift change, to issue process commands under the operator's identity",
+              "category": "access",
+              "detection_sources": [
+                "cctv",
+                "ot_telemetry",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0208-02",
+              "behavior": "Threat actor co-opts an engineer into entering their own control-console credentials on the actor's behalf",
+              "category": "access",
+              "detection_sources": [
+                "peer_report",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0208-03",
+              "behavior": "Threat actor exploits an insider's legitimate remote-access token to reach the plant network without tripping new-account alerts",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0208-04",
+              "behavior": "Threat actor rides an employee's badge-and-login sequence into a restricted control room where the insider authenticates normally",
+              "category": "access",
+              "detection_sources": [
+                "cctv",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0208-05",
+              "behavior": "Threat actor directs a disaffected operator to execute prepared control changes during the operator's sanctioned session",
+              "category": "access",
+              "detection_sources": [
+                "ot_telemetry",
+                "peer_report",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Insider-enabled access is a primary infrastructure pathway because the insider's legitimate console session is the attack.",
@@ -37615,7 +38286,92 @@
           "notes": "Placing a rogue device, malicious firmware, or physical tap on the process.",
           "cpn": true,
           "cpn_id": "CPN-I0209",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0209-01",
+              "behavior": "Threat actor installs a rogue cellular gateway inside a process control cabinet to open an attacker-controlled path into the operational network",
+              "category": "access",
+              "detection_sources": [
+                "ot_telemetry",
+                "physical_observation",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0209-02",
+              "behavior": "Threat actor implants unauthorized firmware onto a programmable logic controller so manipulated logic executes beneath legitimate process monitoring",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "it_logs",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0209-03",
+              "behavior": "Threat actor splices a hardware tap onto the serial link between the human-machine interface and field devices to intercept and alter process signals",
+              "category": "access",
+              "detection_sources": [
+                "ot_telemetry",
+                "physical_observation",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0209-04",
+              "behavior": "Threat actor conceals a rogue wireless access point within a substation enclosure to hold covert radio reach into segmented control systems",
+              "category": "access",
+              "detection_sources": [
+                "rf_detection",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "IND-I0209-05",
+              "behavior": "Threat actor affixes a malicious USB-borne implant to an engineering workstation to seat attacker-controlled code directly in the control path",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Implant emplacement introduces attacker-controlled hardware or firmware into the control path, physically or via the supply chain.",
@@ -37640,7 +38396,90 @@
           "notes": "Establishing an intra-operation foothold and staging position, physical or logical, prior to execution.",
           "cpn": true,
           "cpn_id": "CPN-I0210",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0210-01",
+              "behavior": "Threat actor establishes a foothold on an internet-facing operational jump host by repurposing legitimate administrative credentials",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0210-02",
+              "behavior": "Threat actor stages tooling and stolen credentials on a compromised network appliance to preserve a launch position inside the target environment",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0210-03",
+              "behavior": "Threat actor blends into normal operations using built-in system utilities so lateral movement mimics routine administrative activity",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0210-04",
+              "behavior": "Threat actor positions a physical staging cache of tools and access hardware within an unmonitored area of the facility ahead of execution",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "IND-I0210-05",
+              "behavior": "Threat actor occupies a low-visibility service account and dormant remote-access session to hold a foothold between operational phases",
+              "category": "access",
+              "detection_sources": [
+                "it_logs",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Foothold establishment is the pre-execution staging a threat actor holds during the operation, distinct from the strategic leave-behind assessed in the Aftermath phase.",
@@ -37665,7 +38504,84 @@
           "notes": "A malicious setpoint or control-logic change that drives the physical process to an unsafe or degraded state.",
           "cpn": true,
           "cpn_id": "CPN-I0301",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0301-01",
+              "behavior": "Threat actor writes an out-of-range setpoint to a programmable logic controller that drives a rotating asset beyond its rated operating envelope",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0301-02",
+              "behavior": "Threat actor injects modified control logic into a PLC that gradually biases a process variable to induce slow damaging drift while masking the deviation from operators",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0301-03",
+              "behavior": "Threat actor overrides operator-entered process limits at the human-machine interface to force actuators into positions that degrade product quality or equipment integrity",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0301-04",
+              "behavior": "Threat actor spoofs sensor feedback on the process network so control loops respond to falsified readings and drive the real physical state toward unsafe conditions",
+              "category": "digital",
+              "detection_sources": [
+                "network_monitoring",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "IND-I0301-05",
+              "behavior": "Threat actor commands actuators through unauthorized access to controller memory registers, forcing valves and drives outside their commissioned sequence",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Process manipulation is the signature cyber-physical execution behavior, ranging from abrupt commands to deliberately gradual drift that evades operator attention.",
@@ -37689,7 +38605,85 @@
           "notes": "Disabling or spoofing safety instrumented systems, interlocks, and protective relays.",
           "cpn": true,
           "cpn_id": "CPN-I0302",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0302-01",
+              "behavior": "Threat actor reprograms a safety instrumented system controller to prevent its logic from tripping the process to a safe state during an abnormal event",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0302-02",
+              "behavior": "Threat actor disables hardwired interlocks that normally halt equipment when process conditions exceed protective thresholds",
+              "category": "access",
+              "detection_sources": [
+                "ot_telemetry",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "IND-I0302-03",
+              "behavior": "Threat actor alters protective relay settings on electrical equipment to raise trip thresholds so faults are not cleared before physical damage occurs",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0302-04",
+              "behavior": "Threat actor forges safety-system status back to the control room so operators see healthy protective functions while the interlocks are covertly defeated",
+              "category": "digital",
+              "detection_sources": [
+                "network_monitoring",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0302-05",
+              "behavior": "Threat actor forces the safety controller into a maintenance or program mode that bypasses shutdown voting logic during live process operation",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Safety-system defeat removes the automatic protection that would arrest an unsafe condition, the step that turns disruption into potential catastrophe.",
@@ -37713,7 +38707,85 @@
           "notes": "Spoofing HMI displays or telemetry so operators do not perceive the anomaly, including denial of view.",
           "cpn": true,
           "cpn_id": "CPN-I0303",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0303-01",
+              "behavior": "Threat actor spoofs HMI displays to present nominal process readings while actual values drift beyond safe limits",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0303-02",
+              "behavior": "Threat actor replays previously recorded telemetry to operator consoles to mask an active manipulation of the physical process",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0303-03",
+              "behavior": "Threat actor suppresses alarm annunciation on the operator interface so out-of-range conditions never surface to staff",
+              "category": "digital",
+              "detection_sources": [
+                "network_monitoring",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0303-04",
+              "behavior": "Threat actor falsifies sensor values written to the process historian to conceal the true operating state from operators",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0303-05",
+              "behavior": "Threat actor injects forged setpoint feedback into the SCADA view to deny operators an accurate operational picture during the attack",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "View falsification blinds or misleads the operator, and the ICS doctrine distinguishes manipulating the view from denying it entirely.",
@@ -37737,7 +38809,85 @@
           "notes": "Physical destruction of a transformer, pump, valve, line, or tower.",
           "cpn": true,
           "cpn_id": "CPN-I0304",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0304-01",
+              "behavior": "Threat actor destroys a distribution transformer by directing rifle fire at it to induce catastrophic oil loss",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0304-02",
+              "behavior": "Threat actor severs a high-voltage transmission line by felling its support tower with cutting charges",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0304-03",
+              "behavior": "Threat actor detonates an improvised explosive charge against a pump station to disable water delivery",
+              "category": "access",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0304-04",
+              "behavior": "Threat actor disables a substation by breaching the perimeter fence and smashing control relays and breaker mechanisms",
+              "category": "access",
+              "detection_sources": [
+                "cctv",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0304-05",
+              "behavior": "Threat actor sabotages a pipeline valve assembly to trigger an uncontrolled release of the transported product",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Physical sabotage attacks the asset directly and is often the lowest-tradecraft path to a service outage.",
@@ -37762,7 +38912,88 @@
           "notes": "Forcing an outage, triggering load-shed, jamming communications, or stopping flow.",
           "cpn": true,
           "cpn_id": "CPN-I0305",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0305-01",
+              "behavior": "Threat actor trips remote circuit breakers to de-energize distribution feeders and cut power to downstream substations",
+              "category": "access",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0305-02",
+              "behavior": "Threat actor jams radio and cellular links to sever operator communications during a coordinated disruption",
+              "category": "access",
+              "detection_sources": [
+                "rf_detection",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0305-03",
+              "behavior": "Threat actor issues load-shed commands that force rolling outages across the service area",
+              "category": "access",
+              "detection_sources": [
+                "ot_telemetry",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0305-04",
+              "behavior": "Threat actor halts pipeline flow by closing remote isolation valves and stranding delivery downstream",
+              "category": "access",
+              "detection_sources": [
+                "ot_telemetry",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0305-05",
+              "behavior": "Threat actor floods the control network with malformed traffic to stall SCADA polling and stop dispatch",
+              "category": "digital",
+              "detection_sources": [
+                "network_monitoring",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Service denial stops or degrades delivery without necessarily destroying equipment, including communications jamming.",
@@ -37787,7 +39018,88 @@
           "notes": "Contaminating or adulterating a water, fuel, or chemical process.",
           "cpn": true,
           "cpn_id": "CPN-I0306",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0306-01",
+              "behavior": "Threat actor raises the sodium hydroxide dosing setpoint on the treatment SCADA to push finished water out of safe range",
+              "category": "access",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0306-02",
+              "behavior": "Threat actor contaminates the raw water intake with an unapproved chemical batch ahead of treatment",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0306-03",
+              "behavior": "Threat actor shuts off the chlorination feed to let untreated water enter the distribution system",
+              "category": "access",
+              "detection_sources": [
+                "ot_telemetry",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0306-04",
+              "behavior": "Threat actor doses a fuel storage tank with a contaminant through the transfer manifold before delivery",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0306-05",
+              "behavior": "Threat actor falsifies treatment sensor readings to mask a poisoned dosing sequence while contaminants accumulate",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Contamination manipulates the delivered product itself, frequently by altering dosing or treatment setpoints.",
@@ -37812,7 +39124,83 @@
           "notes": "Destabilizing a service from the demand edge, such as synchronized high-wattage IoT loads or compromised distributed energy resources, without touching the operator's control plane.",
           "cpn": true,
           "cpn_id": "CPN-I0307",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0307-01",
+              "behavior": "Threat actor synchronizes a botnet of high-wattage IoT appliances to toggle on and off in unison, driving abrupt demand swings across a distribution feeder",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0307-02",
+              "behavior": "Threat actor commands compromised smart inverters to abruptly curtail distributed generation output, forcing a sudden real-power imbalance on the local grid segment",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0307-03",
+              "behavior": "Threat actor times coordinated load spikes to coincide with peak-demand periods, amplifying frequency deviation without touching the operator's control plane",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0307-04",
+              "behavior": "Threat actor reflashes firmware on aggregated distributed energy resources to reverse power flow on command, pushing unexpected backfeed onto feeders during an attack window",
+              "category": "access",
+              "detection_sources": [
+                "ot_telemetry",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0307-05",
+              "behavior": "Threat actor oscillates pooled smart-thermostat and EV-charger loads at frequencies tuned to excite inter-area grid oscillations",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Demand-side manipulation reaches the system through consumer and edge devices, a path the control-plane-centric access model does not require.",
@@ -37837,7 +39225,83 @@
           "notes": "Spoofing or jamming the shared timing and positioning reference (GNSS/GPS) that grid synchrophasors, telecom sync, and rail signaling depend on.",
           "cpn": true,
           "cpn_id": "CPN-I0308",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0308-01",
+              "behavior": "Threat actor spoofs the GNSS signal feeding grid phasor measurement units, injecting false time stamps that corrupt synchrophasor angle estimates",
+              "category": "digital",
+              "detection_sources": [
+                "rf_detection",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0308-02",
+              "behavior": "Threat actor jams the GPS timing reference at a telecom aggregation site, degrading network synchronization across dependent base stations",
+              "category": "digital",
+              "detection_sources": [
+                "rf_detection",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0308-03",
+              "behavior": "Threat actor desynchronizes rail signaling clocks by broadcasting counterfeit satellite timing signals near a track control zone",
+              "category": "access",
+              "detection_sources": [
+                "rf_detection",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0308-04",
+              "behavior": "Threat actor positions a concealed transmitter to overpower authentic GNSS signals, forcing dependent infrastructure timing sources into holdover drift",
+              "category": "access",
+              "detection_sources": [
+                "rf_detection",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0308-05",
+              "behavior": "Threat actor manipulates GNSS position solutions at a substation timing receiver, skewing time-of-day alignment used for protective relay coordination",
+              "category": "digital",
+              "detection_sources": [
+                "rf_detection",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Timing-reference manipulation attacks the substrate many services trust rather than any single asset, degrading synchronization across sectors at once.",
@@ -37862,7 +39326,85 @@
           "notes": "Defeating failover, alarms, backups, and restoration capability to prolong the effect.",
           "cpn": true,
           "cpn_id": "CPN-I0309",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0309-01",
+              "behavior": "Threat actor disables the automatic failover controls that would reroute load away from the targeted substation during the disruption",
+              "category": "access",
+              "detection_sources": [
+                "ot_telemetry",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0309-02",
+              "behavior": "Threat actor wipes engineering workstation firmware to prevent operators from reloading protection relay configurations",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0309-03",
+              "behavior": "Threat actor corrupts backup archives so restoration teams cannot recover the last known-good control logic",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0309-04",
+              "behavior": "Threat actor floods relay communication channels to hinder remote restoration of tripped breakers",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0309-05",
+              "behavior": "Threat actor severs redundant power feeds to alarm and annunciation systems so the ongoing incident goes unannounced",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Recovery suppression attacks the organization's ability to respond, distinct from the automatic protection defeated during execution.",
@@ -37886,7 +39428,84 @@
           "notes": "Physical egress from the site or termination of the intrusion session.",
           "cpn": true,
           "cpn_id": "CPN-I0401",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0401-01",
+              "behavior": "Threat actor exits the facility perimeter through a pre-scouted service gate immediately after the payload executes",
+              "category": "access",
+              "detection_sources": [
+                "cctv",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0401-02",
+              "behavior": "Threat actor terminates the remote session and deletes command history to close out the intrusion cleanly",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0401-03",
+              "behavior": "Threat actor retreats along a rehearsed egress route while discarding tools and disguise items in transit",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-I0401-04",
+              "behavior": "Threat actor withdraws to a staged vehicle positioned outside camera coverage to avoid post-incident identification",
+              "category": "access",
+              "detection_sources": [
+                "cctv",
+                "physical_observation"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0401-05",
+              "behavior": "Threat actor disconnects the remote access infrastructure and abandons the staging server to sever attribution",
+              "category": "digital",
+              "detection_sources": [
+                "network_monitoring",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Withdrawal is the threat actor's exit, which in infrastructure may be a logical disconnect rather than a physical departure.",
@@ -37910,7 +39529,89 @@
           "notes": "Retaining a foothold or backdoor to enable re-attack, distinct from the intra-operation foothold.",
           "cpn": true,
           "cpn_id": "CPN-I0402",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0402-01",
+              "behavior": "Threat actor retains valid operator credentials harvested during the operation to enable later re-entry without renewed reconnaissance",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0402-02",
+              "behavior": "Threat actor plants a dormant implant in control-system firmware timed to activate for a future disruptive event",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0402-03",
+              "behavior": "Threat actor preserves an undocumented physical entry path such as a defeated maintenance door lock or duplicated key for subsequent return visits",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "IND-I0402-04",
+              "behavior": "Threat actor backdoors a remote maintenance account on OT equipment so the foothold survives password resets and preserves a re-entry channel",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0402-05",
+              "behavior": "Threat actor caches pre-positioned tooling and staged materials near the facility perimeter to shorten preparation for a later strike",
+              "category": "planning",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Re-entry positioning is the strategic leave-behind: access held for future action after the current operation ends.",
@@ -37934,7 +39635,89 @@
           "notes": "Wiping or forging control-system and physical logs to impede investigation.",
           "cpn": true,
           "cpn_id": "CPN-I0403",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0403-01",
+              "behavior": "Threat actor wipes control-system event logs to erase traces of the unauthorized commands issued during the operation",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0403-02",
+              "behavior": "Threat actor forges entries in the computerized maintenance management system to attribute the incident to routine equipment failure",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0403-03",
+              "behavior": "Threat actor deletes CCTV footage and overwrites surveillance recordings covering the approach and access window",
+              "category": "digital",
+              "detection_sources": [
+                "cctv",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0403-04",
+              "behavior": "Threat actor tampers with SCADA historian timestamps to obscure the true sequence of manipulated setpoints",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0403-05",
+              "behavior": "Threat actor circulates falsified incident reports to responders to misdirect the investigation toward a benign cause",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "peer_report",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Log manipulation in OT spans engineering-workstation records and physical maintenance logs.",
@@ -37958,7 +39741,91 @@
           "notes": "Planting false-flag artifacts or third-party-looking tradecraft to misdirect attribution.",
           "cpn": true,
           "cpn_id": "CPN-I0404",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0404-01",
+              "behavior": "Threat actor plants foreign-language leaflets and staged artifacts at the scene to steer investigators toward an unaffiliated group",
+              "category": "planning",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0404-02",
+              "behavior": "Threat actor fabricates a claim of responsibility falsely branded to a rival faction to redirect attribution",
+              "category": "communication",
+              "detection_sources": [
+                "social_media",
+                "communications_intercept",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-I0404-03",
+              "behavior": "Threat actor mimics the signature tradecraft and tooling of a different actor to make the operation read as someone else's work",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "peer_report",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0404-04",
+              "behavior": "Threat actor misattributes online messaging by posting from spoofed accounts that reference a decoy organization",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "social_media",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0404-05",
+              "behavior": "Threat actor seeds planted device metadata and file artifacts pointing at an innocent third party across compromised systems",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Attribution obfuscation seeds misleading indicators so responders mis-assign responsibility.",
@@ -37982,7 +39849,89 @@
           "notes": "Protecting co-conspirators and insiders after the operation.",
           "cpn": true,
           "cpn_id": "CPN-I0405",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0405-01",
+              "behavior": "Threat actor warns co-conspirators to go dark and destroy their communications before investigators close in",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0405-02",
+              "behavior": "Threat actor shields an insider engineer by scrubbing the access records that would expose their facilitation",
+              "category": "access",
+              "detection_sources": [
+                "access_logs",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0405-03",
+              "behavior": "Threat actor severs traceable financial links to collaborators to obscure the wider support network",
+              "category": "financial",
+              "detection_sources": [
+                "financial_records",
+                "public_records"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "GAO-24-106744-2024",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0405-04",
+              "behavior": "Threat actor disperses the cell and relocates members to break observable associations between operators",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0405-05",
+              "behavior": "Threat actor protects an employee accomplice by circulating a rehearsed cover story among coworkers",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Network protection shields the collaborators and insiders who enabled the operation from exposure.",
@@ -38006,7 +39955,86 @@
           "notes": "Battle-damage assessment of whether the process actually failed as intended.",
           "cpn": true,
           "cpn_id": "CPN-I0406",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0406-01",
+              "behavior": "Threat actor monitors utility outage maps and public status dashboards to confirm whether the targeted facility lost service",
+              "category": "surveillance",
+              "detection_sources": [
+                "open_source",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0406-02",
+              "behavior": "Threat actor reviews local news coverage and emergency broadcasts to gauge the scale and duration of the resulting disruption",
+              "category": "surveillance",
+              "detection_sources": [
+                "open_source",
+                "social_media"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0406-03",
+              "behavior": "Threat actor tracks social media posts from affected residents to verify that the intended physical effect occurred on the ground",
+              "category": "surveillance",
+              "detection_sources": [
+                "social_media",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0406-04",
+              "behavior": "Threat actor examines publicly exposed SCADA telemetry and grid frequency readings to measure the operational impact of the disruption",
+              "category": "surveillance",
+              "detection_sources": [
+                "ot_telemetry",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0406-05",
+              "behavior": "Threat actor compares pre-attack reconnaissance notes against post-incident reporting to assess whether the operation met its stated objectives",
+              "category": "surveillance",
+              "detection_sources": [
+                "open_source",
+                "public_records"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CTC-INFRATERROR-2026"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "After-action assessment is the threat actor confirming effect, which for infrastructure means verifying the physical consequence.",
@@ -38031,7 +40059,88 @@
           "notes": "A claim of responsibility for the attack.",
           "cpn": true,
           "cpn_id": "CPN-I0407",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0407-01",
+              "behavior": "Threat actor publishes a claim of responsibility for the attack on an extremist forum or encrypted channel",
+              "category": "communication",
+              "detection_sources": [
+                "social_media",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0407-02",
+              "behavior": "Threat actor posts a manifesto framing the infrastructure disruption as retaliation against the operating organization",
+              "category": "communication",
+              "detection_sources": [
+                "social_media",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0407-03",
+              "behavior": "Threat actor declares affiliation with a known movement while taking public credit for the incident",
+              "category": "communication",
+              "detection_sources": [
+                "social_media",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0407-04",
+              "behavior": "Threat actor boasts about the operation to associates and urges sympathizers to replicate the method against similar targets",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0407-05",
+              "behavior": "Threat actor releases photographs or video of the damaged infrastructure to substantiate the claim of responsibility",
+              "category": "communication",
+              "detection_sources": [
+                "social_media",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Attribution declaration is a voluntary claim of responsibility issued after the effect.",
@@ -38055,7 +40164,93 @@
           "notes": "Extortion, ransom, or political demand tied to the affected service.",
           "cpn": true,
           "cpn_id": "CPN-I0408",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0408-01",
+              "behavior": "Threat actor demands a ransom payment explicitly conditioned on restoring the disrupted service, tying decryption keys or system release to the affected operation's recovery timeline",
+              "category": "financial",
+              "detection_sources": [
+                "communications_intercept",
+                "it_logs",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0408-02",
+              "behavior": "Threat actor threatens to repeat or extend the disruption against the same infrastructure unless a political or policy concession is granted before the affected service is brought back online",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "social_media",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0408-03",
+              "behavior": "Threat actor publishes an extortion note claiming responsibility for the outage and setting a deadline for payment, warning that stolen operational data will be released if the demand tied to restoration goes unmet",
+              "category": "communication",
+              "detection_sources": [
+                "social_media",
+                "open_source",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0408-04",
+              "behavior": "Threat actor conditions the return of control over affected control systems on the operator meeting stated financial terms, framing continued downtime as the direct cost of non-compliance",
+              "category": "financial",
+              "detection_sources": [
+                "communications_intercept",
+                "ot_telemetry",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0408-05",
+              "behavior": "Threat actor leverages the ongoing service outage as bargaining pressure in negotiations, escalating demands and signaling further sabotage against dependent facilities to force a faster settlement",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "peer_report",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Coercive demand converts the disruption into leverage, tying a ransom or political condition to service restoration.",
