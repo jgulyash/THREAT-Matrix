@@ -19,7 +19,7 @@ export const STUB: Record<
   { phases: Record<number, number>; flight: number; claim: number }
 > = {
   organization: { phases: { 1: 9, 2: 10, 3: 10 }, flight: 9, claim: 4 },
-  infrastructure: { phases: { 1: 8, 2: 9, 3: 9 }, flight: 8, claim: 4 },
+  infrastructure: { phases: { 1: 10, 2: 10, 3: 9 }, flight: 6, claim: 2 },
 };
 
 // The single ordered descriptor for the four target matrices — drives column

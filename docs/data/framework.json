@@ -36302,7 +36302,914 @@
       "scope": "Tactics centered on an institution, mission, brand, or operational continuity as the primary target. The adversary's primary objective is disruption, delegitimization, infiltration, or coercion of what the organization does or represents, distinct from its facilities or its individuals."
     },
     "infrastructure": {
-      "tactics": [],
+      "tactics": [
+        {
+          "id": "TI0101",
+          "name": "Infrastructure Target Selection",
+          "tactic_families": [
+            "target_selection"
+          ],
+          "matrix": "infrastructure",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Selection of a specific infrastructure asset or service function as the objective, weighted by dependency and cascade value rather than physical proximity.",
+          "cpn": true,
+          "cpn_id": "CPN-I0101",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Target selection is usually inferred backward from the asset a threat actor cased or enumerated, and infrastructure choices track downstream impact more than accessibility.",
+          "observed_contexts": [
+            "the 2015 Ukraine grid attack, where threat actors selected regional distribution operators whose loss darkened wide service areas"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "GAO-24-106744-2024",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TI0102",
+          "name": "Service & Dependency Mapping",
+          "tactic_families": [
+            "target_development"
+          ],
+          "matrix": "infrastructure",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Mapping of the downstream dependents and single points of failure a service supports, establishing where an action propagates.",
+          "cpn": true,
+          "cpn_id": "CPN-I0102",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Dependency mapping shows up as a threat actor collecting one-line diagrams, interconnection data, or service-territory maps that reveal what fails when a node fails.",
+          "observed_contexts": [
+            "Colonial Pipeline (2021), where a single pipeline outage cascaded into fuel shortages across the US Southeast"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "GAO-24-106744-2024",
+            "CISA-CONVERGE-2021"
+          ]
+        },
+        {
+          "id": "TI0103",
+          "name": "Physical Site Reconnaissance",
+          "tactic_families": [
+            "target_development"
+          ],
+          "matrix": "infrastructure",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "On-the-ground observation of dispersed physical assets such as substations, pump stations, cell sites, and rail signaling equipment.",
+          "cpn": true,
+          "cpn_id": "CPN-I0103",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Physical reconnaissance of infrastructure often targets unmanned, fenced remote sites where a threat actor can observe at length without challenge.",
+          "observed_contexts": [
+            "the 2013 Metcalf substation attack, preceded by reconnaissance of fence lines and fiber vaults"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CTC-INFRATERROR-2026",
+            "GAO-24-106744-2024"
+          ]
+        },
+        {
+          "id": "TI0104",
+          "name": "Process & Engineering Reconnaissance",
+          "tactic_families": [
+            "target_development"
+          ],
+          "matrix": "infrastructure",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Learning the engineering of the process itself: setpoints, interlocks, safety limits, and what normal telemetry looks like.",
+          "cpn": true,
+          "cpn_id": "CPN-I0104",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Process reconnaissance is distinctive to infrastructure and appears as a threat actor acquiring engineering documentation, control narratives, or historian data rather than site imagery.",
+          "observed_contexts": [
+            "Stuxnet, whose operators modeled Natanz centrifuge process parameters precisely enough to damage rotors while masking the fault"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0105",
+          "name": "Control-Network Enumeration",
+          "tactic_families": [
+            "target_development"
+          ],
+          "matrix": "infrastructure",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Discovery of the control-system network: SCADA servers, PLCs, RTUs, HMIs, protocols, and remote-access paths.",
+          "cpn": true,
+          "cpn_id": "CPN-I0105",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Network enumeration of an OT environment surfaces as scanning or credential collection aimed at engineering workstations and industrial protocols rather than office IT.",
+          "observed_contexts": [
+            "Industroyer/CRASHOVERRIDE, which mapped substation protocols (IEC 101/104, 61850) before issuing malicious commands"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023",
+            "CISA-CONVERGE-2021"
+          ]
+        },
+        {
+          "id": "TI0106",
+          "name": "Capability Acquisition",
+          "tactic_families": [
+            "acquisition"
+          ],
+          "matrix": "infrastructure",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Obtaining the tools, malware, protocol libraries, engineering credentials, or physical means required to act on the target.",
+          "cpn": true,
+          "cpn_id": "CPN-I0106",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Capability acquisition for infrastructure spans ICS-specific malware and protocol tooling as readily as physical breaching or destructive means.",
+          "observed_contexts": [
+            "Triton/Trisis, purpose-built to communicate with Triconex safety controllers, evidencing dedicated ICS capability development"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0107",
+          "name": "Network Development",
+          "tactic_families": [
+            "network_development"
+          ],
+          "matrix": "infrastructure",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Recruitment of co-conspirators and material support for the operation.",
+          "cpn": true,
+          "cpn_id": "CPN-I0107",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Network development covers the collaborators, funding, and logistics assembled to support the operation.",
+          "observed_contexts": [
+            "documented infrastructure-sabotage conspiracies involving multiple actors coordinating roles and materials"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TI0108",
+          "name": "Insider & Operator Cultivation",
+          "tactic_families": [
+            "network_development"
+          ],
+          "matrix": "infrastructure",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Recruitment or coercion of operators, engineers, and integrators whose legitimate access reaches the control plane.",
+          "cpn": true,
+          "cpn_id": "CPN-I0108",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Operator cultivation is elevated in infrastructure because a privileged insider's routine actions are indistinguishable at the wire from sabotage.",
+          "observed_contexts": [
+            "CISA insider-threat reporting on privileged OT staff whose access materially shortens an attack path"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CISA-DIT-2023",
+            "CISA-CONVERGE-2021"
+          ]
+        },
+        {
+          "id": "TI0109",
+          "name": "Supply-Chain & Third-Party Vectoring",
+          "tactic_families": [
+            "target_development"
+          ],
+          "matrix": "infrastructure",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Reaching the target through a trusted vendor, integrator, firmware supplier, or remote-maintenance channel.",
+          "cpn": true,
+          "cpn_id": "CPN-I0109",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Supply-chain vectoring is an access path with no People or Facilities analog, established well before the threat actor touches the target directly.",
+          "observed_contexts": [
+            "the 2020 SolarWinds compromise, which reached operational networks through a trusted software update channel"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CISA-CONVERGE-2021",
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0110",
+          "name": "Pathway / Escalation Indicators",
+          "tactic_families": [
+            "pathway_warning"
+          ],
+          "matrix": "infrastructure",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Actor-level markers that a threat actor is progressing along the pathway toward an infrastructure attack.",
+          "cpn": true,
+          "cpn_id": "CPN-I0110",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Pathway indicators are behavioral escalation signals that precede a specific tactic, marking a threat actor's movement along the pathway toward action.",
+          "observed_contexts": [
+            "grievance-to-mobilization progressions documented in critical-infrastructure threat cases"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CTC-INFRATERROR-2026",
+            "GAO-24-106744-2024"
+          ]
+        },
+        {
+          "id": "TI0201",
+          "name": "Operational Rehearsal",
+          "tactic_families": [
+            "mobilization"
+          ],
+          "matrix": "infrastructure",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Dry-runs of the operation, including test commands in lab, simulator, or digital-twin environments.",
+          "cpn": true,
+          "cpn_id": "CPN-I0201",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Rehearsal in infrastructure can be virtual: malicious logic is validated against a replica environment before production is touched.",
+          "observed_contexts": [
+            "Stuxnet's development against test centrifuge cascades before deployment to Natanz"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0202",
+          "name": "Cover Construction",
+          "tactic_families": [
+            "cover_development"
+          ],
+          "matrix": "infrastructure",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Building a vendor, inspector, or contractor persona, physical or credentialed, to enable approach.",
+          "cpn": true,
+          "cpn_id": "CPN-I0202",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Cover for infrastructure access frequently impersonates the maintenance and integration roles that legitimately reach remote assets.",
+          "observed_contexts": [
+            "utility-impersonation cases where threat actors presented as contractors to reach restricted equipment"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CISA-CONVERGE-2021"
+          ]
+        },
+        {
+          "id": "TI0203",
+          "name": "Surveillance Detection & Counter-Detection",
+          "tactic_families": [
+            "counter_surveillance"
+          ],
+          "matrix": "infrastructure",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Actions to detect and evade both physical monitoring and network defenses before acting.",
+          "cpn": true,
+          "cpn_id": "CPN-I0203",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Counter-detection spans physical observation of guard patterns and technical evasion of OT monitoring.",
+          "observed_contexts": [
+            "ICS intrusions in which threat actors disabled or evaded logging on engineering workstations before acting"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0204",
+          "name": "Physical Perimeter Breach",
+          "tactic_families": [
+            "mobilization"
+          ],
+          "matrix": "infrastructure",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Defeating the fence, gate, or enclosure protecting a dispersed physical asset.",
+          "cpn": true,
+          "cpn_id": "CPN-I0204",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Perimeter breach at infrastructure sites often targets unmanned remote enclosures rather than staffed buildings.",
+          "observed_contexts": [
+            "the 2013 Metcalf substation attack, where threat actors cut fiber and fired on transformers after breaching the site approach"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TI0205",
+          "name": "Remote Access Acquisition",
+          "tactic_families": [
+            "mobilization"
+          ],
+          "matrix": "infrastructure",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Obtaining a logical path onto the control network through a VPN, exposed HMI, or remote-access tool.",
+          "cpn": true,
+          "cpn_id": "CPN-I0205",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Remote access acquisition is effect-at-distance: the threat actor obtains a path to the control plane without being physically present.",
+          "observed_contexts": [
+            "Oldsmar (2021), where an intruder reached a water-treatment HMI over a remote-access tool"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CISA-CONVERGE-2021",
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0206",
+          "name": "Control-System Access",
+          "tactic_families": [
+            "mobilization"
+          ],
+          "matrix": "infrastructure",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Reaching the PLC, RTU, HMI, or engineering workstation that governs the process.",
+          "cpn": true,
+          "cpn_id": "CPN-I0206",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Control-system access is the point at which a threat actor can read or issue process commands, whether reached physically or logically.",
+          "observed_contexts": [
+            "Industroyer operators reaching substation control devices to issue unauthorized breaker commands"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0207",
+          "name": "Privilege & Zone Escalation",
+          "tactic_families": [
+            "mobilization"
+          ],
+          "matrix": "infrastructure",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Pivoting from IT to OT, crossing a safety zone, or elevating to an engineering role.",
+          "cpn": true,
+          "cpn_id": "CPN-I0207",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Zone escalation is the IT-to-OT boundary crossing that turns a business-network foothold into control-plane reach.",
+          "observed_contexts": [
+            "Ukraine 2015, where threat actors pivoted from corporate networks into SCADA to open breakers"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023",
+            "CISA-CONVERGE-2021"
+          ]
+        },
+        {
+          "id": "TI0208",
+          "name": "Insider-Enabled Access",
+          "tactic_families": [
+            "mobilization"
+          ],
+          "matrix": "infrastructure",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Using an operator's own credentials or console as the access path.",
+          "cpn": true,
+          "cpn_id": "CPN-I0208",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Insider-enabled access is a primary infrastructure pathway because the insider's legitimate console session is the attack.",
+          "observed_contexts": [
+            "CISA insider cases where authorized OT credentials provided the decisive access to the control environment"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CISA-DIT-2023"
+          ]
+        },
+        {
+          "id": "TI0209",
+          "name": "Device / Implant Emplacement",
+          "tactic_families": [
+            "mobilization"
+          ],
+          "matrix": "infrastructure",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Placing a rogue device, malicious firmware, or physical tap on the process.",
+          "cpn": true,
+          "cpn_id": "CPN-I0209",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Implant emplacement introduces attacker-controlled hardware or firmware into the control path, physically or via the supply chain.",
+          "observed_contexts": [
+            "malicious-firmware and rogue-device findings in OT environments reported by CISA advisories"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023",
+            "CISA-CONVERGE-2021"
+          ]
+        },
+        {
+          "id": "TI0210",
+          "name": "Foothold & Position Establishment",
+          "tactic_families": [
+            "mobilization"
+          ],
+          "matrix": "infrastructure",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Establishing an intra-operation foothold and staging position, physical or logical, prior to execution.",
+          "cpn": true,
+          "cpn_id": "CPN-I0210",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Foothold establishment is the pre-execution staging a threat actor holds during the operation, distinct from the strategic leave-behind assessed in the Aftermath phase.",
+          "observed_contexts": [
+            "living-off-the-land footholds in US critical infrastructure attributed to Volt Typhoon"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CISA-CONVERGE-2021",
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0301",
+          "name": "Process Manipulation",
+          "tactic_families": [
+            "execution"
+          ],
+          "matrix": "infrastructure",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "A malicious setpoint or control-logic change that drives the physical process to an unsafe or degraded state.",
+          "cpn": true,
+          "cpn_id": "CPN-I0301",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Process manipulation is the signature cyber-physical execution behavior, ranging from abrupt commands to deliberately gradual drift that evades operator attention.",
+          "observed_contexts": [
+            "Stuxnet's over-speed and over-pressure manipulation of centrifuges while reporting normal values"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0302",
+          "name": "Protection & Safety-System Defeat",
+          "tactic_families": [
+            "execution"
+          ],
+          "matrix": "infrastructure",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Disabling or spoofing safety instrumented systems, interlocks, and protective relays.",
+          "cpn": true,
+          "cpn_id": "CPN-I0302",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Safety-system defeat removes the automatic protection that would arrest an unsafe condition, the step that turns disruption into potential catastrophe.",
+          "observed_contexts": [
+            "Triton/Trisis, which targeted a petrochemical plant's Triconex safety controllers"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0303",
+          "name": "Operational View Falsification",
+          "tactic_families": [
+            "execution"
+          ],
+          "matrix": "infrastructure",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Spoofing HMI displays or telemetry so operators do not perceive the anomaly, including denial of view.",
+          "cpn": true,
+          "cpn_id": "CPN-I0303",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "View falsification blinds or misleads the operator, and the ICS doctrine distinguishes manipulating the view from denying it entirely.",
+          "observed_contexts": [
+            "Stuxnet's replay of normal sensor readings to the control room during the attack"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0304",
+          "name": "Physical Sabotage",
+          "tactic_families": [
+            "execution"
+          ],
+          "matrix": "infrastructure",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Physical destruction of a transformer, pump, valve, line, or tower.",
+          "cpn": true,
+          "cpn_id": "CPN-I0304",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Physical sabotage attacks the asset directly and is often the lowest-tradecraft path to a service outage.",
+          "observed_contexts": [
+            "the 2022 attacks on North Carolina substations that caused prolonged regional outages"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CTC-INFRATERROR-2026",
+            "GAO-24-106744-2024"
+          ]
+        },
+        {
+          "id": "TI0305",
+          "name": "Service Denial / Disruption",
+          "tactic_families": [
+            "execution"
+          ],
+          "matrix": "infrastructure",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Forcing an outage, triggering load-shed, jamming communications, or stopping flow.",
+          "cpn": true,
+          "cpn_id": "CPN-I0305",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Service denial stops or degrades delivery without necessarily destroying equipment, including communications jamming.",
+          "observed_contexts": [
+            "Ukraine 2015, where remote breaker operations denied electricity to roughly 225,000 customers"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023",
+            "GAO-24-106744-2024"
+          ]
+        },
+        {
+          "id": "TI0306",
+          "name": "Contamination / Adulteration",
+          "tactic_families": [
+            "execution"
+          ],
+          "matrix": "infrastructure",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Contaminating or adulterating a water, fuel, or chemical process.",
+          "cpn": true,
+          "cpn_id": "CPN-I0306",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Contamination manipulates the delivered product itself, frequently by altering dosing or treatment setpoints.",
+          "observed_contexts": [
+            "Oldsmar (2021), where an intruder raised the sodium-hydroxide setpoint in a water-treatment process"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CISA-CFATS-2023",
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0307",
+          "name": "Demand-Side / Edge Manipulation",
+          "tactic_families": [
+            "execution"
+          ],
+          "matrix": "infrastructure",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Destabilizing a service from the demand edge, such as synchronized high-wattage IoT loads or compromised distributed energy resources, without touching the operator's control plane.",
+          "cpn": true,
+          "cpn_id": "CPN-I0307",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Demand-side manipulation reaches the system through consumer and edge devices, a path the control-plane-centric access model does not require.",
+          "observed_contexts": [
+            "the MadIoT research demonstrating that botnets of high-wattage loads can induce grid frequency instability"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "GAO-24-106744-2024",
+            "CISA-CONVERGE-2021"
+          ]
+        },
+        {
+          "id": "TI0308",
+          "name": "Timing & Positioning-Reference Manipulation",
+          "tactic_families": [
+            "execution"
+          ],
+          "matrix": "infrastructure",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Spoofing or jamming the shared timing and positioning reference (GNSS/GPS) that grid synchrophasors, telecom sync, and rail signaling depend on.",
+          "cpn": true,
+          "cpn_id": "CPN-I0308",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Timing-reference manipulation attacks the substrate many services trust rather than any single asset, degrading synchronization across sectors at once.",
+          "observed_contexts": [
+            "documented GPS timing anomalies that disrupted synchronized grid and communications equipment"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023",
+            "GAO-24-106744-2024"
+          ]
+        },
+        {
+          "id": "TI0309",
+          "name": "Response & Recovery Suppression",
+          "tactic_families": [
+            "execution"
+          ],
+          "matrix": "infrastructure",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Defeating failover, alarms, backups, and restoration capability to prolong the effect.",
+          "cpn": true,
+          "cpn_id": "CPN-I0309",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Recovery suppression attacks the organization's ability to respond, distinct from the automatic protection defeated during execution.",
+          "observed_contexts": [
+            "Industroyer's wiper and protective-relay denial-of-service module, designed to hinder restoration"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0401",
+          "name": "Withdrawal",
+          "tactic_families": [
+            "aftermath"
+          ],
+          "matrix": "infrastructure",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "notes": "Physical egress from the site or termination of the intrusion session.",
+          "cpn": true,
+          "cpn_id": "CPN-I0401",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Withdrawal is the threat actor's exit, which in infrastructure may be a logical disconnect rather than a physical departure.",
+          "observed_contexts": [
+            "ICS intrusions in which operators disconnected access after achieving the intended process effect"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0402",
+          "name": "Access Persistence & Re-entry Positioning",
+          "tactic_families": [
+            "aftermath"
+          ],
+          "matrix": "infrastructure",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "notes": "Retaining a foothold or backdoor to enable re-attack, distinct from the intra-operation foothold.",
+          "cpn": true,
+          "cpn_id": "CPN-I0402",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Re-entry positioning is the strategic leave-behind: access held for future action after the current operation ends.",
+          "observed_contexts": [
+            "Volt Typhoon's persistent pre-positioning in US critical infrastructure for potential later disruption"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CISA-CONVERGE-2021"
+          ]
+        },
+        {
+          "id": "TI0403",
+          "name": "Evidence & Log Manipulation",
+          "tactic_families": [
+            "aftermath"
+          ],
+          "matrix": "infrastructure",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "notes": "Wiping or forging control-system and physical logs to impede investigation.",
+          "cpn": true,
+          "cpn_id": "CPN-I0403",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Log manipulation in OT spans engineering-workstation records and physical maintenance logs.",
+          "observed_contexts": [
+            "ICS incidents involving deletion of controller and workstation logs to frustrate forensics"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "NIST-SP800-82-2023"
+          ]
+        },
+        {
+          "id": "TI0404",
+          "name": "Attribution Obfuscation",
+          "tactic_families": [
+            "aftermath"
+          ],
+          "matrix": "infrastructure",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "notes": "Planting false-flag artifacts or third-party-looking tradecraft to misdirect attribution.",
+          "cpn": true,
+          "cpn_id": "CPN-I0404",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Attribution obfuscation seeds misleading indicators so responders mis-assign responsibility.",
+          "observed_contexts": [
+            "ICS attacks featuring deliberately misleading artifacts intended to complicate attribution"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TI0405",
+          "name": "Network Protection",
+          "tactic_families": [
+            "aftermath"
+          ],
+          "matrix": "infrastructure",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "notes": "Protecting co-conspirators and insiders after the operation.",
+          "cpn": true,
+          "cpn_id": "CPN-I0405",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Network protection shields the collaborators and insiders who enabled the operation from exposure.",
+          "observed_contexts": [
+            "conspiracy cases where infrastructure-attack participants acted to shield insiders from exposure"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TI0406",
+          "name": "After-Action Assessment",
+          "tactic_families": [
+            "aftermath"
+          ],
+          "matrix": "infrastructure",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "notes": "Battle-damage assessment of whether the process actually failed as intended.",
+          "cpn": true,
+          "cpn_id": "CPN-I0406",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "After-action assessment is the threat actor confirming effect, which for infrastructure means verifying the physical consequence.",
+          "observed_contexts": [
+            "adversary use of public outage reporting and media coverage to confirm infrastructure impact"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "GAO-24-106744-2024",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TI0407",
+          "name": "Attribution Declaration",
+          "tactic_families": [
+            "aftermath"
+          ],
+          "matrix": "infrastructure",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "notes": "A claim of responsibility for the attack.",
+          "cpn": true,
+          "cpn_id": "CPN-I0407",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Attribution declaration is a voluntary claim of responsibility issued after the effect.",
+          "observed_contexts": [
+            "public claims of responsibility issued after physical attacks on energy infrastructure"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TI0408",
+          "name": "Coercive Demand / Leverage",
+          "tactic_families": [
+            "aftermath"
+          ],
+          "matrix": "infrastructure",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "notes": "Extortion, ransom, or political demand tied to the affected service.",
+          "cpn": true,
+          "cpn_id": "CPN-I0408",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Coercive demand converts the disruption into leverage, tying a ransom or political condition to service restoration.",
+          "observed_contexts": [
+            "ransomware operations against pipeline and utility operators pairing service disruption with extortion"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CISA-CONVERGE-2021",
+            "CTC-INFRATERROR-2026"
+          ]
+        }
+      ],
       "scope": "Tactics centered on infrastructure or technical systems as the primary target. The adversary's primary objective is disruption, degradation, or compromise of the system's function — physical infrastructure, cyber-physical systems, or critical service delivery. Cyber-Physical Nexus tactics are tagged via the cpn field on tactic."
     }
   },
