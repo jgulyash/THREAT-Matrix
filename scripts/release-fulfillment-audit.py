@@ -7,9 +7,9 @@ Run before every release:  python3 scripts/release-fulfillment-audit.py
 WHY THIS EXISTS: a pure emptiness check ("is this array empty?") misses the more
 important class of gap — where a structure is POPULATED but the framework's own
 stated doctrine/description/contract claims something the data does not deliver
-(e.g. the Detection Mesh names cross_matrix/cross_domain axes but has 0 such links;
-the instance-conditioning contract says a bare type score is "non-renderable" while
-the SPA renders it). This audit applies the DOCTRINE-VS-DATA lens mechanically.
+(e.g. the Detection Mesh named cross_matrix/cross_domain axes while having 0 such
+links — the V1.3-era gap that motivated this script). This audit applies the
+DOCTRINE-VS-DATA lens mechanically.
 
 It reports; it does not gate. Review each FLAG against the V1.4 backlog — some
 partials are by-design (revealed-reading target fields, direct-force severity_floor).
@@ -105,10 +105,11 @@ for k, v in FW.items():
 rule('4. DOCTRINE CLAIMS — verify by hand each release (data cannot self-check these)')
 consumer_refs = len(re.findall(r'consumer|downstream|triage tooling',
                     json.dumps(FW), flags=re.I))
-print(f"""  [ ] instance_conditioning binding_contract says a bare type score is
-      "non-renderable / not an assessment" — does the SPA still render bare
-      severity_band / escalation_weight with no instance record? (grep
-      src/components/IndicatorDetail.tsx). Contract vs showcase must agree.
+print(f"""  [ ] instance_conditioning binding_contract scopes the norm to CASE
+      OPERATIONS (queue ranking, dashboards, handoffs, API triage) and carves
+      out the reference SPA as Layer-1 display — does any case-operations
+      surface ship a bare type score with no instance record joined?
+      Contract vs consumers must agree.
   [ ] detection_mesh.principle prose ("any matrix ... anywhere else",
       "countermeasures from any domain") — matches the axis-delivery numbers in
       section 2 above?

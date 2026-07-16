@@ -62,7 +62,7 @@
 **Delivers (Person Detection & Response):**
 - Behavioral indicators for all 34 Person tactics (observable behaviors with detection sources, phase relevance, mesh links, and source citations)
 - Countermeasures for all 34 Person tactics (actionable measures with cost, complexity, time-to-implement, phase relevance, and limitations)
-- Response protocols for all 34 Person tactics (stakeholder-assigned actions with escalation triggers, parallel-execution coordination links, and legal/compliance notes)
+- Response protocols for all 34 Person tactics (stakeholder-assigned actions with escalation triggers, co-activation coordination links (`coordinates_with`), and legal/compliance notes)
 - Three mandatory practitioner-grounding fields per tactic: `field_notes`, `observed_contexts`, `evidence_basis`
 - TM0103 Environmental Survey pilot fully authored as the canonical exemplar
 - GitHub issue templates for community contribution (New Tactic Suggestion, Framework Issue, Use Case Proposal)

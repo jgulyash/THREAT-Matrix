@@ -6,37 +6,42 @@ Stable identifiers are the load-bearing surface of THREAT Matrix. Vector databas
 
 | Namespace | Format | Example | Refers to |
 |---|---|---|---|
-| **Tactic** | `TM####` | `TM0103` | A behavioral category — what the adversary is trying to accomplish |
+| **Tactic** | `T<X>####` | `TM0103`, `TF0102` | A behavioral category — what the adversary is trying to accomplish |
 | **Actor profile** | `AP###` | `AP005` | A category of threat actor (e.g., insider, lone actor, nation-state) |
-| **Indicator** | `IND-####-##` | `IND-0103-01` | An observable behavior tied to a specific tactic |
-| **Countermeasure** | `CM-####-##` | `CM-0103-01` | A defensive measure tied to a specific tactic |
-| **Response protocol** | `RP-####-##` | `RP-0103-01` | An operational response sequence tied to a specific tactic |
-| **Cyber-Physical Nexus marker** | `CPN-####` | `CPN-0103` | A flag that a tactic has cyber-physical convergence |
+| **Indicator** | `IND-<x>####-##` | `IND-0103-01`, `IND-F0102-03` | An observable behavior tied to a specific tactic |
+| **Countermeasure** | `CM-<x>####-##` | `CM-0103-01`, `CM-F0102-03` | A defensive measure tied to a specific tactic |
+| **Response protocol** | `RP-<x>####-##` | `RP-0103-01`, `RP-F0101-01` | An operational response sequence tied to a specific tactic |
+| **Cyber-Physical Nexus marker** | `CPN-<x>####` | `CPN-0103`, `CPN-F0101` | A flag that a tactic has cyber-physical convergence |
 | **Bibliography reference** | `<ORG>-<SLUG>-<YEAR>[-<YEAR>]` | `NTAC-MASS-2021` | A cited source in `framework.json` `bibliography` |
+
+### The matrix letter
+
+Tactic IDs carry a matrix letter after the `T`: `M` (People), `F` (Facilities), `O` (Organizations), `I` (Infrastructure) — `TM0103`, `TF0102`, `TO####`, `TI####`. Compound IDs and CPN markers carry the same letter after their prefix hyphen for every matrix except People, whose IDs predate the letter and carry none: `IND-0103-01` (People) vs. `IND-F0102-03` (Facilities). The People letterless form is permanent — retrofitting a letter would violate the no-rename guarantee below.
 
 ### Anatomy of compound IDs
 
 Indicator, countermeasure, and response-protocol IDs encode their parent tactic in their structure:
 
 ```
-IND-0103-01
-    ^^^^ ^^
-    │    └── sequence within the tactic (zero-padded, two digits)
-    └─────── parent tactic number (matches TM0103, zero-padded, four digits)
+IND-F0102-03
+    ^^^^^ ^^
+    ││    └── sequence within the tactic (zero-padded, two digits)
+    │└─────── parent tactic number (zero-padded, four digits)
+    └──────── matrix letter (matches TF0102; absent on People-matrix IDs)
 ```
 
-This is intentional. A consumer that sees `IND-0103-01` knows without dereferencing the schema that this indicator belongs to tactic `TM0103`. The structural redundancy with the `tactic_id` field on the indicator object is a feature: it enables flat consumption (a consumer that flattens the document does not lose parent-child information).
+This is intentional. A consumer that sees `IND-F0102-03` knows without dereferencing the schema that this indicator belongs to tactic `TF0102` (and `IND-0103-01` to `TM0103`). The structural redundancy with the `tactic_id` field on the indicator object is a feature: it enables flat consumption (a consumer that flattens the document does not lose parent-child information).
 
 ### Tactic numbering scheme
 
-Tactic IDs are four-digit zero-padded numbers organized by Threat Lifecycle phase:
+Tactic IDs are four-digit zero-padded numbers organized by Threat Lifecycle phase, within each matrix's letter:
 
 | Phase | Range |
 |---|---|
-| Phase 1 — Target Development | `TA01##` |
-| Phase 2 — Mobilization | `TA02##` |
-| Phase 3 — Execution | `TA03##` |
-| Phase 4 — Aftermath | `TA04##` |
+| Phase 1 — Target Development | `T<X>01##` |
+| Phase 2 — Mobilization | `T<X>02##` |
+| Phase 3 — Execution | `T<X>03##` |
+| Phase 4 — Aftermath | `T<X>04##` |
 
 Within a phase, tactic numbers are assigned in authoring order, not in any semantic priority. New tactics added to a phase get the next available number.
 

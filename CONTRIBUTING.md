@@ -58,8 +58,8 @@ Detection indicators map observable behaviors to tactics. V1.1 populated all 34 
 The Detection Mesh weaves the framework's indicators, countermeasures, and response protocols into a single traversable graph across the four matrices and the four threat-lifecycle phases. Three fields carry the mesh:
 
 - `correlates_with` on indicators — other indicator IDs that this indicator typically co-occurs with or precedes (cross-phase, cross-matrix, or within-tactic)
-- `compensates_for` on countermeasures — other countermeasure IDs whose coverage gap this countermeasure addresses
-- `coordinates_with` on response protocols — other response protocol IDs that fire in parallel on the same indicator set across stakeholder authorities
+- `compensates_for` on countermeasures — the indicator IDs this countermeasure detects or mitigates (coverage at indicator grain, the current authoring standard; earlier entries reference countermeasure IDs, a transitional dyadic form — do not author new ones)
+- `coordinates_with` on response protocols — other response protocol IDs that co-activate on the same indicator set across stakeholder authorities, in parallel where no dependency binds them
 
 **What counts as a mesh link worth noting:**
 

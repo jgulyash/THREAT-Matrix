@@ -67,7 +67,7 @@ Cyber capabilities enable and accelerate physical operations across virtually ev
  
 ### Detection Mesh
  
-THREAT Matrix treats detection and response as a mesh, not a chain. Indicators from any phase, any matrix, and any detection domain can correlate with indicators from anywhere else in the framework. Countermeasures from any domain can compensate for gaps in another. Response protocols from any stakeholder — threat management teams, HR, legal, law enforcement, protective operations, EAP — fire in parallel on the same indicator set, each acting within their own authority.
+THREAT Matrix treats detection and response as a mesh, not a chain. Indicators from any phase, any matrix, and any detection domain can correlate with indicators from anywhere else in the framework. Countermeasures from any domain can compensate for gaps in another. Response protocols from any stakeholder — threat management teams, HR, legal, law enforcement, protective operations, EAP — activate on the same indicator set, each acting within their own authority: in parallel where no dependency binds them, and in directed order where one protocol gates, precedes, or deconflicts with another.
  
 The mesh is machine-walkable. Three graph link fields make it traversable by AI agents, correlation engines, and coverage-gap analysis tools:
  
@@ -75,7 +75,7 @@ The mesh is machine-walkable. Three graph link fields make it traversable by AI 
 |---|---|---|
 | `correlates_with` | Indicators | Cross-phase, cross-matrix indicator correlation |
 | `compensates_for` | Countermeasures | Coverage-gap analysis across countermeasure domains |
-| `coordinates_with` | Response Protocols | Parallel-execution links across stakeholder authorities |
+| `coordinates_with` | Response Protocols | Co-activation links across stakeholder authorities |
  
 Full architectural rationale is in the `detection_mesh` block in `docs/data/framework.json`.
 
