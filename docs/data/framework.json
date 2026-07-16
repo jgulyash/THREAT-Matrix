@@ -37262,7 +37262,7 @@
     "layer": "Layer 2 (instance) of the type/instance split \u2014 CVSS Base-vs-Environmental. Layer 1 (escalation_axes / escalation_weight / severity_band and informs_axes) scores the indicator CLASS; Layer 2 conditions that type score for a specific case (this actor, this target, now). The framework DEFINES this layer (schema $defs instance_assessment + conditioned_assessment) and ships NO instances; consumers hold the per-case records.",
     "factors": ["target_focus", "pathway_stage", "means_in_hand", "tempo_trajectory", "source_credibility"],
     "escalate_only_rule": "Instance conditioning may RAISE a case's priority above the type band \u2014 to catch the false-LOW, a mild-looking type with a screaming instance, which is the deadliest error \u2014 but may NEVER lower it below the type band. There is no computed capability discount: means_in_hand='unknown' is the safe default and does not demote a case. Encoded in the schema by conditioning_effect having no 'lowered' value and conditioned_priority being floored at type_severity_band.",
-    "binding_contract": "A type score is non-renderable and non-rankable without its instance record. The conditioned_assessment object requires both; wherever a score travels (queue, dashboard, handoff, API) it must carry, or be joined to, its instance record. A bare type number with no instance record is a Layer-1 datum, not an assessment.",
+    "binding_contract": "A type score becomes a case assessment only when joined to its instance record — the conditioned_assessment object requires both. Wherever a score drives case operations (queue ranking, dashboards, handoffs, API triage) it must carry, or be joined to, its instance record. A bare type number rendered without one — including in the reference SPA, which displays Layer-1 taxonomy — is a Layer-1 datum, not an assessment of any case.",
     "conditioning_hints": "Indicators may carry optional type-level instance_conditioning_hints (which informs_axes tend to lift at instance time), seeded from the V1.3 sealed-blind IRR leans. Pilot coverage (chunk-2B seed); full population is a follow-on.",
     "status": "Contract defined V1.3 (2026-07-09). The consumer/UI instance-entry surface is deferred to a later cycle.",
     "provenance": "Scoring review B-03 (structured instance record) and B-04 (display-binding contract); F12 (false-LOW is deadliest) and F13 (no computed capability discount)."
@@ -37378,7 +37378,7 @@
     }
   },
   "detection_mesh": {
-    "principle": "THREAT Matrix treats detection and response as a mesh, not a chain. Indicators from any phase, any matrix, and any detection domain can correlate with indicators from anywhere else in the framework. Countermeasures from any domain can compensate for gaps in another. Response protocols from any stakeholder (threat management teams, HR, legal, law enforcement, protective operations, EAP) can fire in parallel on the same indicator set, each acting within their own authority.",
+    "principle": "THREAT Matrix treats detection and response as a mesh, not a chain. Indicators from any phase, any matrix, and any detection domain can correlate with indicators from anywhere else in the framework. Countermeasures from any domain can compensate for gaps in another. Response protocols from any stakeholder (threat management teams, HR, legal, law enforcement, protective operations, EAP) can activate on the same indicator set, each acting within their own authority — in parallel where no dependency binds them, and in directed order where one protocol gates, precedes, or deconflicts with another (legal review before adverse action; covert investigative steps before overt protective measures).",
     "axes": [
       {
         "name": "cross_phase",
@@ -37386,7 +37386,7 @@
       },
       {
         "name": "cross_matrix",
-        "description": "Adversaries do not respect matrix boundaries. The mesh weaves the four matrices (People, Facilities, Organizations, Infrastructure) into one coherent detection space. An indicator in any matrix can pull context from any other matrix."
+        "description": "Adversaries do not respect matrix boundaries. The mesh weaves the matrices into one coherent detection space as each is built: inter-rater-validated People–Facility links shipped first, and every new matrix extends the weave across all four (People, Facilities, Organizations, Infrastructure)."
       },
       {
         "name": "cross_domain",
@@ -37394,11 +37394,11 @@
       },
       {
         "name": "cross_countermeasure",
-        "description": "Countermeasures from any domain can compensate for gaps in another. Defense-in-depth is structural in the framework via the compensates_for links."
+        "description": "Countermeasures from any domain can compensate for gaps in another — the shipped compensates_for links make that defense-in-depth structural, recorded per countermeasure. The committed evolution of this axis is a scored indicator-level coverage relation from which compensation — including joint, multi-countermeasure compensation — is computed per case."
       },
       {
         "name": "cross_stakeholder",
-        "description": "Response protocols fire in parallel, not sequentially. Multiple stakeholders engage the same indicator set from their respective authorities, coordinated via the coordinates_with links."
+        "description": "Multiple stakeholders engage the same indicator set from their respective authorities — in parallel by default, and under directed dependencies (gates, precedence, deconfliction) where one protocol's action is conditioned on another. The shipped coordinates_with links record co-activation; the directed dependency layer is the framework's committed next step for this axis."
       }
     ],
     "doctrinal_antecedent": "The structural antecedent is the Kill Web concept in modern military doctrine; THREAT Matrix adapts the principle to physical adversary detection in organizational contexts.",

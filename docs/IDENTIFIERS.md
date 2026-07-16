@@ -65,6 +65,18 @@ The `name` field on every object is a human-readable label that may evolve — f
 
 The `notes`, `field_notes`, `cpn_notes`, `description`, and `behavior` (etc.) fields are subject to revision. Consumers must not depend on exact text matching.
 
+### Items never change parents
+
+Compound IDs encode their parent tactic (`IND-0103-01` belongs to `TM0103`), and that encoding is permanent. An item is never moved to a different parent tactic with its identifier intact — the identifier would then misreport its own structure to every flat consumer.
+
+When reorganization calls for an indicator, countermeasure, or response protocol to live under a different tactic, the move is modeled as **supersession, not mutation**:
+
+1. A new identifier is issued under the destination tactic (next available sequence number).
+2. The original item transitions to `superseded`, with `superseded_by` pointing at the new identifier — same-namespace, per [DEPRECATION.md](./DEPRECATION.md).
+3. A one-to-many reorganization (one item split across several tactics) uses `deprecated` instead, following the split pattern documented in [DEPRECATION.md](./DEPRECATION.md).
+
+The no-reuse guarantee covers the rest: the original identifier remains permanently reserved to its original content, and consumers walk the `superseded_by` chain to the current item.
+
 ### Cross-framework mappings preserve source IDs verbatim
 
 `phase_mappings` and any future cross-walk fields preserve the source framework's identifier exactly. THREAT Matrix does not transliterate, normalize, or alias mapped IDs — `mitre_attack: ["reconnaissance", "resource_development"]` uses the exact tactic-name keys MITRE publishes.
