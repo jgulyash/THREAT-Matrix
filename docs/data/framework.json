@@ -36315,7 +36315,91 @@
           "notes": "Selection of a specific infrastructure asset or service function as the objective, weighted by dependency and cascade value rather than physical proximity.",
           "cpn": true,
           "cpn_id": "CPN-I0101",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0101-01",
+              "behavior": "Threat actor researches grid topology and interconnection diagrams to identify a specific substation or transmission node whose loss cascades across many downstream loads (a 500kV switching station feeding several distribution circuits)",
+              "category": "planning",
+              "detection_sources": [
+                "open_source",
+                "public_records"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "GAO-24-106744-2024",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0101-02",
+              "behavior": "Threat actor acquires restricted utility planning documents, FERC filings, or engineering load studies that rank assets by served demand in order to select a pipeline compressor station or pump station whose failure starves many downstream dependents",
+              "category": "acquisition",
+              "detection_sources": [
+                "public_records",
+                "open_source",
+                "financial_records"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0101-03",
+              "behavior": "Threat actor debates in closed forums or encrypted channels which of several candidate facilities would darken or disrupt the greatest number of dependents, comparing a water treatment plant against a telecom central office by downstream reach",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "social_media",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0101-04",
+              "behavior": "Threat actor conducts comparative reconnaissance across multiple candidate sites and ranks each by single-point-of-failure value rather than accessibility (choosing a rail interlocking or signal bungalow that governs many track segments over an easier but lower-consequence target)",
+              "category": "surveillance",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "rf_detection"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0101-05",
+              "behavior": "Threat actor queries public ICS asset databases, internet-exposed device scans, or reachable SCADA interfaces to select an OT controller whose loss propagates across many downstream processes (a master station or RTU aggregating multiple substations)",
+              "category": "digital",
+              "detection_sources": [
+                "network_monitoring",
+                "it_logs",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Target selection is usually inferred backward from the asset a threat actor cased or enumerated, and infrastructure choices track downstream impact more than accessibility.",
@@ -36340,7 +36424,89 @@
           "notes": "Mapping of the downstream dependents and single points of failure a service supports, establishing where an action propagates.",
           "cpn": true,
           "cpn_id": "CPN-I0102",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0102-01",
+              "behavior": "Threat actor compiles a dependency map of the customers, facilities, and services a single feeder or substation supports, using outage maps, service-territory data, and load studies to trace where an action propagates",
+              "category": "planning",
+              "detection_sources": [
+                "open_source",
+                "public_records"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "GAO-24-106744-2024",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0102-02",
+              "behavior": "Threat actor traces physical interconnections between facilities on foot or by vehicle, following transmission corridors, pipeline rights-of-way, or fiber routes to locate the single point where multiple services converge",
+              "category": "surveillance",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0102-03",
+              "behavior": "Threat actor elicits from utility employees, contractors, or public regulatory meetings which assets carry no redundancy and which downstream dependents (hospitals, data centers, lift stations) rely on a given service",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "IND-I0102-04",
+              "behavior": "Threat actor maps OT network dependencies through scanning, passive traffic capture, or review of exposed HMI and historian data to determine which controllers, if lost, cascade across interdependent processes",
+              "category": "digital",
+              "detection_sources": [
+                "network_monitoring",
+                "ot_telemetry",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0102-05",
+              "behavior": "Threat actor obtains interdependency and criticality assessments, GIS utility layers, or emergency-planning annexes that enumerate single points of failure and the sectors each service underpins",
+              "category": "acquisition",
+              "detection_sources": [
+                "public_records",
+                "open_source",
+                "financial_records"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Dependency mapping shows up as a threat actor collecting one-line diagrams, interconnection data, or service-territory maps that reveal what fails when a node fails.",
@@ -36365,7 +36531,89 @@
           "notes": "On-the-ground observation of dispersed physical assets such as substations, pump stations, cell sites, and rail signaling equipment.",
           "cpn": true,
           "cpn_id": "CPN-I0103",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0103-01",
+              "behavior": "Threat actor conducts repeated slow-drive or loiter passes along the access roads of unmanned fenced remote sites (substation perimeters, pump station gates, cell site compounds), photographing fence lines, gate hardware, and camera placement",
+              "category": "surveillance",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0103-02",
+              "behavior": "Threat actor flies a small unmanned aircraft over remote fenced infrastructure to survey internal equipment layout, transformer banks, and approach corridors not visible from public roads",
+              "category": "surveillance",
+              "detection_sources": [
+                "anti_drone_systems",
+                "rf_detection"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0103-03",
+              "behavior": "Threat actor compiles publicly available imagery and mapping data (satellite views, utility easement maps, permitting and siting records) to catalog the locations and access points of dispersed unmanned sites",
+              "category": "planning",
+              "detection_sources": [
+                "open_source",
+                "public_records"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0103-04",
+              "behavior": "Threat actor probes a site perimeter after dark, testing gate locks, fence integrity, and the response timing of any remote monitoring at unmanned substations and rail signaling cabinets without entering",
+              "category": "access",
+              "detection_sources": [
+                "cctv",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0103-05",
+              "behavior": "Threat actor solicits or purchases detailed site information (guard patrol schedules, camera blind spots, keys or badges) from insiders or through online forums focused on a specific facility category",
+              "category": "acquisition",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept",
+                "social_media"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CTC-INFRATERROR-2026"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Physical reconnaissance of infrastructure often targets unmanned, fenced remote sites where a threat actor can observe at length without challenge.",
@@ -36390,7 +36638,93 @@
           "notes": "Learning the engineering of the process itself: setpoints, interlocks, safety limits, and what normal telemetry looks like.",
           "cpn": true,
           "cpn_id": "CPN-I0104",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0104-01",
+              "behavior": "Threat actor collects control narratives, P&IDs, and functional design specifications for a target process (via public records requests, contractor document leaks, or engineering repositories) to reconstruct setpoints and interlock logic",
+              "category": "acquisition",
+              "detection_sources": [
+                "public_records",
+                "vendor_reporting",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0104-02",
+              "behavior": "Threat actor queries or exfiltrates process historian data to learn baseline telemetry, normal operating ranges, and the cyclic behavior of the physical process",
+              "category": "digital",
+              "detection_sources": [
+                "ot_telemetry",
+                "network_monitoring",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0104-03",
+              "behavior": "Threat actor enumerates OT/ICS devices and reads controller configuration, tag databases, and safety instrumented system setpoints over engineering protocols to map interlocks and enforced safety limits",
+              "category": "digital",
+              "detection_sources": [
+                "network_monitoring",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0104-04",
+              "behavior": "Threat actor cultivates relationships with process engineers, integrators, or former operators to elicit undocumented knowledge about failure modes, bypass procedures, and which safety limits are enforced in practice",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "social_media",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0104-05",
+              "behavior": "Threat actor builds a physical or simulated replica of the target process (test rig, digital twin, or purchased identical equipment) to model pump, valve, or centrifuge parameters and validate an attack sequence before execution",
+              "category": "planning",
+              "detection_sources": [
+                "financial_records",
+                "vendor_reporting",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Process reconnaissance is distinctive to infrastructure and appears as a threat actor acquiring engineering documentation, control narratives, or historian data rather than site imagery.",
@@ -36414,7 +36748,92 @@
           "notes": "Discovery of the control-system network: SCADA servers, PLCs, RTUs, HMIs, protocols, and remote-access paths.",
           "cpn": true,
           "cpn_id": "CPN-I0105",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0105-01",
+              "behavior": "Threat actor runs passive and active network reconnaissance against an industrial control environment, enumerating SCADA servers, PLCs, RTUs, and HMIs and fingerprinting reachable Modbus, DNP3, and IEC 61850 endpoints",
+              "category": "digital",
+              "detection_sources": [
+                "network_monitoring",
+                "ot_telemetry",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0105-02",
+              "behavior": "Threat actor queries internet-exposure and device-search databases to inventory an operator's externally reachable HMIs, historians, and remote-access gateways before selecting an entry path into the control network",
+              "category": "surveillance",
+              "detection_sources": [
+                "open_source",
+                "network_monitoring",
+                "public_records"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0105-03",
+              "behavior": "Threat actor probes remote-access paths into the operational environment, testing exposed VPN concentrators, jump hosts, and vendor engineering-support portals for reachable ICS segments",
+              "category": "access",
+              "detection_sources": [
+                "it_logs",
+                "access_logs",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0105-04",
+              "behavior": "Threat actor captures and analyzes control-system network traffic to map protocol structures, station addressing, and command sequences used between engineering workstations and field devices",
+              "category": "digital",
+              "detection_sources": [
+                "network_monitoring",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0105-05",
+              "behavior": "Threat actor harvests operator technical documentation, single-line diagrams, and equipment procurement records from public filings and vendor sites to reconstruct the target's control architecture and device inventory",
+              "category": "surveillance",
+              "detection_sources": [
+                "open_source",
+                "public_records",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Network enumeration of an OT environment surfaces as scanning or credential collection aimed at engineering workstations and industrial protocols rather than office IT.",
@@ -36439,7 +36858,98 @@
           "notes": "Obtaining the tools, malware, protocol libraries, engineering credentials, or physical means required to act on the target.",
           "cpn": true,
           "cpn_id": "CPN-I0106",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0106-01",
+              "behavior": "Threat actor develops or adapts protocol-specific malware tailored to a particular controller family, encoding logic to issue native commands over Modbus, DNP3, or IEC 61850 against the identified field devices",
+              "category": "acquisition",
+              "detection_sources": [
+                "network_monitoring",
+                "ot_telemetry",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "IND-I0106-02",
+              "behavior": "Threat actor licenses or pirates the vendor engineering software and programming toolchain for the target's safety and process controllers to build and validate malicious logic before deployment",
+              "category": "acquisition",
+              "detection_sources": [
+                "vendor_reporting",
+                "financial_records",
+                "public_records"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "IND-I0106-03",
+              "behavior": "Threat actor obtains legitimate engineering credentials, remote-access accounts, or vendor support logins through purchase, phishing, or insider recruitment to reach the control network with trusted authority",
+              "category": "acquisition",
+              "detection_sources": [
+                "communications_intercept",
+                "peer_report",
+                "access_logs"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0106-04",
+              "behavior": "Threat actor assembles protocol libraries, open-source ICS exploitation frameworks, and controller documentation into a working toolkit and rehearses commands against a bench replica of the target hardware",
+              "category": "acquisition",
+              "detection_sources": [
+                "open_source",
+                "financial_records",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "IND-I0106-05",
+              "behavior": "Threat actor procures matching field devices, controllers, or process equipment through legitimate suppliers or secondary markets to build a test environment for developing and validating a control-manipulation capability",
+              "category": "acquisition",
+              "detection_sources": [
+                "financial_records",
+                "vendor_reporting",
+                "public_records"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Capability acquisition for infrastructure spans ICS-specific malware and protocol tooling as readily as physical breaching or destructive means.",
@@ -36463,7 +36973,94 @@
           "notes": "Recruitment of co-conspirators and material support for the operation.",
           "cpn": true,
           "cpn_id": "CPN-I0107",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0107-01",
+              "behavior": "Threat actor recruits co-conspirators through closed messaging channels and encrypted group chats, assigning discrete operational roles such as reconnaissance, transport, and breach for a coordinated action against a utility or pipeline asset",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "social_media",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0107-02",
+              "behavior": "Threat actor solicits and pools funds through informal transfers, cryptocurrency wallets, or crowdfunding appeals earmarked for materials, travel, and equipment tied to a specific infrastructure objective",
+              "category": "financial",
+              "detection_sources": [
+                "financial_records",
+                "open_source",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0107-03",
+              "behavior": "Threat actor arranges logistics support such as staging locations, vehicles, and safe storage for equipment among a network of associates preparing to converge on a substation or pumping station",
+              "category": "planning",
+              "detection_sources": [
+                "peer_report",
+                "physical_observation",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "IND-I0107-04",
+              "behavior": "Threat actor vets prospective collaborators by probing their ideological commitment, prior arrests, and willingness to accept legal risk before disclosing details of an infrastructure operation",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept",
+                "social_media"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0107-05",
+              "behavior": "Threat actor divides an operation into compartmented cells and designates a coordinator to relay instructions, limiting each recruit's knowledge to their assigned task against a designated energy or water facility",
+              "category": "planning",
+              "detection_sources": [
+                "communications_intercept",
+                "peer_report",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Network development covers the collaborators, funding, and logistics assembled to support the operation.",
@@ -36487,7 +37084,93 @@
           "notes": "Recruitment or coercion of operators, engineers, and integrators whose legitimate access reaches the control plane.",
           "cpn": true,
           "cpn_id": "CPN-I0108",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0108-01",
+              "behavior": "Threat actor cultivates an operator or engineer with legitimate control-plane access through repeated social contact, appeals to shared grievance, and gradual requests for facility details",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept",
+                "social_media"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0108-02",
+              "behavior": "Threat actor offers an employee money, debt relief, or other inducements in exchange for credentials, badge access, or a window of unsupervised access to operational technology systems",
+              "category": "financial",
+              "detection_sources": [
+                "financial_records",
+                "peer_report",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "IND-I0108-03",
+              "behavior": "Threat actor coerces an integrator or contractor by leveraging compromising information, immigration status, or threats to family, pressuring privileged access to a control system",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "peer_report",
+                "communications_intercept",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "IND-I0108-04",
+              "behavior": "Threat actor identifies and targets a disgruntled operator by monitoring public complaints about the employer and then initiating private contact to test receptiveness to collaboration",
+              "category": "surveillance",
+              "detection_sources": [
+                "social_media",
+                "open_source",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-I0108-05",
+              "behavior": "Threat actor tasks a cultivated engineer to map network segmentation, safety interlocks, and maintenance windows, framing the requests as routine professional curiosity to avoid suspicion",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "communications_intercept",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Operator cultivation is elevated in infrastructure because a privileged insider's routine actions are indistinguishable at the wire from sabotage.",
@@ -36512,7 +37195,93 @@
           "notes": "Reaching the target through a trusted vendor, integrator, firmware supplier, or remote-maintenance channel.",
           "cpn": true,
           "cpn_id": "CPN-I0109",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0109-01",
+              "behavior": "Threat actor obtains employment, contractor status, or partner credentials with a trusted vendor, systems integrator, or managed-service provider that holds standing remote access to the target's operational technology environment",
+              "category": "access",
+              "detection_sources": [
+                "vendor_reporting",
+                "access_logs",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0109-02",
+              "behavior": "Threat actor compromises or purchases access to a software update or firmware distribution channel that the target trusts, positioning to deliver malicious code through a signed, legitimate supply path",
+              "category": "digital",
+              "detection_sources": [
+                "it_logs",
+                "network_monitoring",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0109-03",
+              "behavior": "Threat actor acquires or invests in a supplier of control-system hardware, sensors, or components destined for the target facility in order to introduce a covert modification before delivery",
+              "category": "acquisition",
+              "detection_sources": [
+                "vendor_reporting",
+                "financial_records",
+                "public_records"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "IND-I0109-04",
+              "behavior": "Threat actor solicits or coerces an employee at a third-party maintenance or remote-monitoring firm to enable, share, or expand privileged access into the target's environment",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "vendor_reporting",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "IND-I0109-05",
+              "behavior": "Threat actor maps the target's vendor ecosystem and trust relationships to identify the weakest third-party access path before attempting any direct approach to the target",
+              "category": "surveillance",
+              "detection_sources": [
+                "open_source",
+                "public_records",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Supply-chain vectoring is an access path with no People or Facilities analog, established well before the threat actor touches the target directly.",
@@ -36537,7 +37306,97 @@
           "notes": "Actor-level markers that a threat actor is progressing along the pathway toward an infrastructure attack.",
           "cpn": true,
           "cpn_id": "CPN-I0110",
-          "indicators": [],
+          "indicators": [
+            {
+              "id": "IND-I0110-01",
+              "behavior": "Threat actor escalates from expressing a generalized grievance to naming a specific infrastructure asset, operator, or site as the intended object of a planned attack",
+              "category": "communication",
+              "detection_sources": [
+                "social_media",
+                "communications_intercept",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-I0110-02",
+              "behavior": "Threat actor studies a prior attacker against critical infrastructure, seeks that actor's tactics or materials, and signals identification with the earlier attack as a model to emulate",
+              "category": "planning",
+              "detection_sources": [
+                "open_source",
+                "social_media",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "target_development"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-I0110-03",
+              "behavior": "Threat actor communicates a fixed deadline, countdown, or triggering condition that ties an anticipated grievance event to imminent action against an infrastructure target",
+              "category": "communication",
+              "detection_sources": [
+                "communications_intercept",
+                "peer_report",
+                "social_media"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "IND-I0110-04",
+              "behavior": "Threat actor withdraws from prior social ties and reorients daily routine, spending, and attention around preparation for an attack on a critical facility",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "peer_report",
+                "physical_observation",
+                "social_media"
+              ],
+              "phase_relevance": [
+                "target_development",
+                "mobilization"
+              ],
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "IND-I0110-05",
+              "behavior": "Threat actor issues a last-resort statement of intent or leaks plans to a third party disclosing a decision to strike a named infrastructure target",
+              "category": "communication",
+              "detection_sources": [
+                "peer_report",
+                "social_media",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "mobilization",
+                "target_development"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
           "countermeasures": [],
           "response_protocols": [],
           "field_notes": "Pathway indicators are behavioral escalation signals that precede a specific tactic, marking a threat actor's movement along the pathway toward action.",

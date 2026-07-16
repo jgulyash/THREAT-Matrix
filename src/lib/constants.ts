@@ -179,6 +179,11 @@ export const DETECTION_SOURCE_LABELS: Record<string, string> = {
   public_records: 'Public Records',
   communications_intercept: 'Comms Intercept',
   open_source: 'OSINT',
+  rf_detection: 'RF Detection',
+  anti_drone_systems: 'Anti-Drone',
+  ot_telemetry: 'OT Telemetry',
+  network_monitoring: 'Network Mon.',
+  vendor_reporting: 'Vendor Report',
 };
 
 export const STAKEHOLDER_LABELS: Record<string, string> = {
