@@ -38357,7 +38357,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0201-01",
+              "measure": "Monitor procurement records and supplier channels for acquisition of controlled equipment, spare components, or software matching deployed facility control systems, and flag purchases that correlate with no authorized project of record",
+              "category": "detective",
+              "domain": "supply_chain_assurance",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Adversaries can source matching gear through resellers, secondhand markets, or gray channels that fall outside monitored supplier relationships.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0201-02",
+              "measure": "Maintain visible uniformed patrol and monitored surveillance coverage of perimeter approaches and standoff observation points so that repeated route walks or timed rehearsals carry a high likelihood of being seen and challenged",
+              "category": "deterrent",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Determined actors rehearse from public vantage points or vary timing to blend with normal foot traffic, reducing patrol effectiveness.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "CM-I0201-03",
+              "measure": "Establish an anonymous internal reporting channel and train staff and contractors to report suspected dry-run behavior such as test commands on isolated benches, unexplained equipment staging, or coworkers pacing physical routes",
+              "category": "detective",
+              "domain": "personnel_security",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Reporting depends on staff recognizing rehearsal indicators and trusting that reports are acted on without retaliation.",
+              "compensates_for": [],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "CM-I0201-04",
+              "measure": "Deploy decoy control system assets and honeypot network segments that mimic production systems, and alert on any interaction since legitimate operations never touch them",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "A rehearsal conducted entirely on an offline twin or bench the actor owns never contacts the decoy and produces no alert.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Rehearsal in infrastructure can be virtual: malicious logic is validated against a replica environment before production is touched.",
           "observed_contexts": [
@@ -38479,7 +38552,80 @@
               "human_social": true
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0202-01",
+              "measure": "Require all visitors, vendors, and contractors to pre-register, present government issued identification, and receive a time limited visitor badge validated against the appointment record before being granted entry",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Skilled social engineers can present convincing forged identification and fabricated appointment references that pass a visual desk check.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0202-02",
+              "measure": "Enforce a mandatory continuous escort policy for every non employee inside controlled areas so that no vendor, inspector, or contractor persona operates unaccompanied near sensitive equipment",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Escort discipline erodes under staffing pressure and familiarity, and a trusted-looking visitor may be left briefly unattended.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "CM-I0202-03",
+              "measure": "Validate vendor and inspector legitimacy by calling the servicing company through an independently sourced number and confirming the named individual and work order before authorizing site access",
+              "category": "detective",
+              "domain": "supply_chain_assurance",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "immediate",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Callback verification fails when the actor supplies a spoofed number or has compromised a real vendor account to corroborate the cover.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0202-04",
+              "measure": "Train reception and security personnel to recognize pretext entry indicators such as urgency, credential inconsistencies, and reluctance to be escorted, and to verify identity independently before overriding standard entry controls",
+              "category": "detective",
+              "domain": "personnel_security",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Behavioral cues are probabilistic and a well rehearsed, calm impersonator may display none of the trained warning signs.",
+              "compensates_for": [],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Cover for infrastructure access frequently impersonates the maintenance and integration roles that legitimately reach remote assets.",
           "observed_contexts": [
@@ -38596,7 +38742,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0203-01",
+              "measure": "Deploy write-once tamper-evident logging on ICS workstations and safety controllers so any attempt to disable or clear event logs generates an immutable record forwarded off-device",
+              "category": "preventive",
+              "domain": "system_hardening",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Cannot prevent logging gaps on legacy controllers that lack remote log-forwarding capability.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0203-02",
+              "measure": "Monitor log integrity continuously with automated alerting on audit-service stoppage, log-source silence, and sequence-number gaps to detect an actor suppressing telemetry before an operation",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Alert fatigue can bury genuine suppression events when baseline log-source availability is unstable.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0203-03",
+              "measure": "Conduct scheduled camera coverage audits that map fields of view against known blind spots and approach corridors, then reposition or add sensors to close gaps an actor could chart and exploit",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Point-in-time audits miss coverage degradation from later vegetation growth, lens fouling, or equipment relocation.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "CM-I0203-04",
+              "measure": "Enable alarm supervision with end-to-end line and sensor health monitoring so cut circuits, masked detectors, and tamper events trigger a supervised fault rather than failing silently",
+              "category": "corrective",
+              "domain": "safety_system_integrity",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Supervision confirms sensor health but does not defeat an actor who defeats detectors within their normal operating tolerance.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Counter-detection spans physical observation of guard patterns and technical evasion of OT monitoring.",
           "observed_contexts": [
@@ -38715,7 +38934,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0204-01",
+              "measure": "Install perimeter intrusion detection combining fence-line vibration sensors and volumetric detection at dispersed assets to flag fence, gate, or enclosure defeat in real time to a monitoring center",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Remote unstaffed sites depend on reliable backhaul and generate nuisance alarms from wildlife and weather.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0204-02",
+              "measure": "Harden enclosures and equipment cabinets with attack-resistant materials, anti-pry hinges, and high-security locking hardware to increase the time and tooling an actor needs to breach the barrier",
+              "category": "preventive",
+              "domain": "physical_barriers",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Hardening delays but cannot indefinitely stop a determined actor equipped with power tools at an isolated site.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0204-03",
+              "measure": "Establish remote lockdown capability that lets a monitoring center electronically secure gates, doors, and equipment interlocks on breach detection to deny access before responders arrive",
+              "category": "corrective",
+              "domain": "access_control",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Effectiveness collapses if the actor first severs communications or power to the affected asset.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0204-04",
+              "measure": "Publish and exercise a rapid armed-response posture with defined response-time standards and conspicuous signage so the credible threat of timely interdiction raises the risk an actor accepts by breaching",
+              "category": "deterrent",
+              "domain": "policy_procedure",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Response-time standards are difficult to meet at geographically remote dispersed assets far from responder staging.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Perimeter breach at infrastructure sites often targets unmanned remote enclosures rather than staffed buildings.",
           "observed_contexts": [
@@ -38839,7 +39131,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0205-01",
+              "measure": "Enforce phishing-resistant multifactor authentication on every remote-access pathway into the OT environment, including vendor VPNs and remote engineering portals, so that stolen single-factor credentials cannot by themselves establish a logical path onto the control network",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "MFA does not stop an adversary who hijacks an already-authenticated session or compromises the remote endpoint itself.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0205-02",
+              "measure": "Identify and remove internet-exposed HMIs, PLC web servers, and remote-access services from public IP space, relocating them behind the OT demilitarized zone so that no control-system interface is directly reachable from the internet",
+              "category": "corrective",
+              "domain": "network_segmentation",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Asset inventories are often incomplete, so shadow or forgotten exposed interfaces can persist after the primary remediation.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0205-03",
+              "measure": "Route all authorized remote access through a monitored jump host or access broker in the OT demilitarized zone, terminating external sessions there and re-originating brokered connections into the control network rather than permitting direct tunnels to control assets",
+              "category": "preventive",
+              "domain": "system_hardening",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "A compromised or misconfigured jump host becomes a single high-value pivot point into the control network.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0205-04",
+              "measure": "Continuously monitor and record remote-access sessions to the OT environment, alerting on off-hours logins, unfamiliar source geolocations, and anomalous session behavior so that unauthorized remote acquisition is detected while the actor is still establishing access",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Detection depends on an accurate behavioral baseline and staffed review, so novel or slow low-and-slow access can evade alerting.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Remote access acquisition is effect-at-distance: the threat actor obtains a path to the control plane without being physically present.",
           "observed_contexts": [
@@ -38965,7 +39330,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0206-01",
+              "measure": "Require individual role-based authentication on PLCs, RTUs, HMIs, and engineering workstations, replacing shared or default control-device credentials so that reaching a control interface still demands a verified operator identity",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Many legacy controllers lack native authentication and must rely on compensating network controls until replaced.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0206-02",
+              "measure": "Deploy passive anomaly detection on control-system network sessions to baseline normal engineering and operator traffic and alert on unexpected write commands, firmware transfers, or protocol misuse directed at controllers",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Anomaly models can miss malicious commands that mimic legitimate engineering operations within normal parameters.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0206-03",
+              "measure": "Keep controllers in RUN mode using physical mode keyswitches and enable logic write-protection so that unauthorized changes to control logic and setpoints cannot be downloaded without a deliberate physical and procedural action at the device",
+              "category": "preventive",
+              "domain": "safety_system_integrity",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Write-protection can be bypassed by an actor with physical access to the controller or the keyswitch.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "CM-I0206-04",
+              "measure": "Harden engineering workstations with application allowlisting, removable-media control, and maintained golden images, and preserve the capability to rapidly re-image a workstation to a known-good hardened baseline after suspected compromise",
+              "category": "corrective",
+              "domain": "system_hardening",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Re-imaging restores the baseline but does not remove persistence residing in controller logic or field-device firmware already altered by the actor.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Control-system access is the point at which a threat actor can read or issue process commands, whether reached physically or logically.",
           "observed_contexts": [
@@ -39082,7 +39520,78 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0207-01",
+              "measure": "Enforce network segmentation between IT and OT with a demilitarized zone and tightly controlled conduits so no direct routable path lets an actor pivot from the corporate network into safety-critical control zones",
+              "category": "preventive",
+              "domain": "network_segmentation",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Segmentation alone does not stop escalation through a shared jump server that is legitimately trusted across both zones and becomes compromised.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0207-02",
+              "measure": "Implement privileged access management with just-in-time elevation and prohibit dual-zone credentials so a single account cannot hold both corporate and engineering-role privileges across a safety boundary",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Just-in-time controls depend on an accurate role inventory and can be bypassed if standing emergency accounts are left provisioned.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0207-03",
+              "measure": "Generate zone-crossing alerts when authentication events or network flows cross the IT to OT boundary or invoke engineering-role privileges, and route them to security monitoring for immediate review",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Alerting is only effective if monitoring staff can distinguish routine authorized boundary crossings from malicious ones quickly enough to act.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0207-04",
+              "measure": "Automatically isolate the offending host and revoke elevated engineering credentials when a zone-boundary escalation is detected, returning the control environment to a known-good privilege state",
+              "category": "corrective",
+              "domain": "system_hardening",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Automated isolation risks disrupting a live safety process, so containment logic must exclude systems whose sudden loss would itself create hazard.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Zone escalation is the IT-to-OT boundary crossing that turns a business-network foothold into control-plane reach.",
           "observed_contexts": [
@@ -39199,7 +39708,77 @@
               "human_social": true
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0208-01",
+              "measure": "Require dual authorization for safety-critical and configuration-changing actions so no single operator credential or console can execute a high-consequence command without a second authorized approver",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Dual authorization can be defeated when both approvers are colluding or when one approver rubber-stamps requests under production pressure.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0208-02",
+              "measure": "Deploy user and entity behavioral analytics that baseline normal operator activity and flag deviations such as off-shift logins, abnormal command sequences, or console use outside established patterns",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Behavioral models produce false positives during legitimate shift changes and process upsets, requiring tuning before analysts trust the alerts.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0208-03",
+              "measure": "Supervise and record privileged operator sessions with visible real-time oversight of console activity so that an employee who considers misusing their own credentials knows the activity is observed and attributable",
+              "category": "deterrent",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Visible monitoring deters opportunistic misuse but has limited effect on a determined insider who accepts the risk of being recorded.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0208-04",
+              "measure": "Enforce automatic workstation and console session locking after inactivity and require re-authentication so an unattended operator terminal cannot be used as an access path by another person",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Lock timers set long enough to avoid interrupting active control tasks still leave a window in which an attended-then-abandoned console is exposed.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Insider-enabled access is a primary infrastructure pathway because the insider's legitimate console session is the attack.",
           "observed_contexts": [
@@ -39323,7 +39902,79 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0209-01",
+              "measure": "Maintain an authoritative hardware asset inventory with baseline configuration records for every field-deployed process device, and reconcile physical counts against the register on a defined cadence",
+              "category": "preventive",
+              "domain": "supply_chain_assurance",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Inventory accuracy degrades quickly when field change control is weak, allowing an unregistered device to blend in between audits.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0209-02",
+              "measure": "Validate cryptographic firmware signatures and known-good hashes on process controllers and field devices before commissioning and at scheduled intervals to detect malicious or altered firmware",
+              "category": "detective",
+              "domain": "system_hardening",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Legacy devices without signed-firmware support cannot be verified this way and require compensating physical controls.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0209-03",
+              "measure": "Apply serialized tamper-evident seals to device enclosures, cabinets, and port covers, and inspect seal integrity during routine rounds to signal unauthorized physical access",
+              "category": "deterrent",
+              "domain": "physical_barriers",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "immediate",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Seals only reveal tampering after the fact and depend on disciplined inspection routines to be meaningful.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0209-04",
+              "measure": "Quarantine and remove unauthorized devices, taps, or implants identified during audits and RF sweeps, then restore the affected node from a validated hardware and firmware baseline",
+              "category": "corrective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Effective removal depends on prior detection, so a well-concealed implant may persist until the next verification cycle.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Implant emplacement introduces attacker-controlled hardware or firmware into the control path, physically or via the supply chain.",
           "observed_contexts": [
@@ -39441,7 +40092,78 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0210-01",
+              "measure": "Enforce least-functionality baselines on operational hosts and jump systems by disabling unused services, ports, scripting interpreters, and default accounts to shrink the surface an actor can use to stage a foothold",
+              "category": "preventive",
+              "domain": "system_hardening",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Overly aggressive lockdown can break legitimate operational tooling and drive teams to create unmanaged exceptions.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0210-02",
+              "measure": "Deploy behavioral monitoring that baselines normal operator activity and flags living-off-the-land abuse of native administrative utilities, anomalous remote sessions, and unexpected lateral movement between control zones",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Living-off-the-land techniques mimic sanctioned administration, so tuning is required to keep false positives from masking real intrusions.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0210-03",
+              "measure": "Rotate credentials, keys, and shared operational secrets on a fixed schedule and immediately after any suspected compromise to invalidate footholds that depend on captured or reused authentication material",
+              "category": "corrective",
+              "domain": "access_control",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Rotation closes only credential-based footholds and does nothing against an actor who has established persistence through firmware or physical means.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0210-04",
+              "measure": "Conduct physical inspection and surveillance of staging areas, equipment rooms, and cache-prone spaces to identify pre-positioned tools, unauthorized equipment, or concealed physical footholds before they are used",
+              "category": "deterrent",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "Inspection coverage is bounded by staffing and camera placement, leaving infrequently accessed spaces as viable cache locations.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "CTC-INFRATERROR-2026"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Foothold establishment is the pre-execution staging a threat actor holds during the operation, distinct from the strategic leave-behind assessed in the Aftermath phase.",
           "observed_contexts": [
@@ -39558,7 +40280,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0301-01",
+              "measure": "Deploy independent physical safety limits such as mechanical relief valves, hardwired high and low trip switches, and non-bypassable overpressure devices that constrain the process within safe bounds regardless of any setpoint or logic value the controller issues",
+              "category": "preventive",
+              "domain": "safety_system_integrity",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Physical limits protect only the specific parameters they are engineered for and cannot cover every unsafe state a manipulated control scheme might reach.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "CM-I0301-02",
+              "measure": "Enforce command validation and rate-limiting at the controller so setpoint and logic changes are bounds-checked against engineered operating envelopes and rejected when they exceed safe ranges or arrive faster than legitimate operations require",
+              "category": "preventive",
+              "domain": "system_hardening",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Validation logic is only as sound as the envelopes it encodes and an attacker with valid credentials operating within bounds can still cause harm.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0301-03",
+              "measure": "Operate out-of-band process anomaly detection that monitors sensor and actuator telemetry on a separate observation path and alarms on deviations between commanded state and observed physical behavior indicating a manipulated process",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Detection produces alerts rather than intervention and slow or stealthy manipulation tuned below alarm thresholds may evade notice until damage occurs.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0301-04",
+              "measure": "Institute controller change management requiring authorized work orders, dual authorization, and logged approval before any setpoint or logic modification, so that unsanctioned changes are recognized and reversed under a documented rollback procedure",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Change management governs sanctioned workflows and offers little protection against an attacker who bypasses the process by directly writing to the controller.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Process manipulation is the signature cyber-physical execution behavior, ranging from abrupt commands to deliberately gradual drift that evades operator attention.",
           "observed_contexts": [
@@ -39674,7 +40469,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0302-01",
+              "measure": "Maintain physical separation and air-gapping of the safety instrumented system from the basic process control network so that a compromise of control functions cannot reach or reconfigure the independent protection layer",
+              "category": "preventive",
+              "domain": "network_segmentation",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Separation is undermined by shared engineering workstations, removable media, or temporary maintenance connections that bridge the isolated safety domain.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0302-02",
+              "measure": "Implement hardwired non-programmable safety functions and mechanical interlocks for the highest-consequence trips so that final protective action does not depend on software an attacker could disable or spoof",
+              "category": "preventive",
+              "domain": "safety_system_integrity",
+              "cost": "high",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Hardwired functions are fixed and inflexible and address only a limited set of the most critical trip conditions rather than the full protection scheme.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "CM-I0302-03",
+              "measure": "Continuously monitor protective relay and interlock setting integrity by comparing live configuration and setpoint values against a trusted baseline, alarming when settings, firmware, or logic are altered from the approved reference",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Baseline comparison detects deviations after they occur and cannot prevent a defeat that acts faster than the monitoring and alerting interval.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0302-04",
+              "measure": "Configure safety-system change alarms that annunciate to operators and security monitoring whenever an interlock is bypassed, a trip is inhibited, or a maintenance override is engaged, requiring documented acknowledgment and time-bounded restoration",
+              "category": "detective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Alarms depend on operators recognizing and acting on them and an attacker who suppresses the annunciation path can defeat the safety function unobserved.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Safety-system defeat removes the automatic protection that would arrest an unsafe condition, the step that turns disruption into potential catastrophe.",
           "observed_contexts": [
@@ -39791,7 +40659,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0303-01",
+              "measure": "Deploy independent out-of-band instrumentation that samples process values on a separate acquisition path from the primary HMI and historian, giving operators a reference view that a compromised control network cannot rewrite",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Independent sensors add capital and maintenance cost and only cover the specific process points instrumented.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0303-02",
+              "measure": "Apply cryptographic signing and sequence integrity checks to telemetry and historian records so operators can detect when reported values have been altered, replayed, or frozen in place",
+              "category": "preventive",
+              "domain": "system_hardening",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Integrity checks require field devices and protocols that support authentication, which many legacy OT assets lack.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0303-03",
+              "measure": "Maintain analog physical gauges and scheduled manual verification rounds independent of the digital control view so operators confirm true process state when displayed telemetry is suspect",
+              "category": "corrective",
+              "domain": "safety_system_integrity",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Manual rounds provide only periodic spot checks and depend on staffing and disciplined procedure adherence.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0303-04",
+              "measure": "Enforce strong per-operator authentication and tamper-evident logging on all HMI, historian, and engineering workstation changes so falsification actions are attributable and reviewable, discouraging manipulation",
+              "category": "deterrent",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Attribution deters insiders and traceable actors but does little against an adversary who has fully compromised the logging path.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "View falsification blinds or misleads the operator, and the ICS doctrine distinguishes manipulating the view from denying it entirely.",
           "observed_contexts": [
@@ -39903,7 +40844,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0304-01",
+              "measure": "Install ballistic-resistant barriers and hardened enclosures around critical transformers, pumps, and control equipment to defeat standoff small-arms fire and direct physical attack on high-value assets",
+              "category": "preventive",
+              "domain": "physical_barriers",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Ballistic barriers protect only the specific assets enclosed and do not stop large-vehicle, explosive, or insider attacks.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0304-02",
+              "measure": "Establish a spare-equipment reserve of long-lead components such as spare transformers paired with mutual-aid agreements to compress restoration time after an asset is destroyed",
+              "category": "corrective",
+              "domain": "supply_chain_assurance",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Spare programs carry high inventory and logistics cost and cannot fully offset simultaneous multi-site sabotage.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0304-03",
+              "measure": "Deploy perimeter intrusion-detection sensors and surveillance coverage on unmanned substations and pump stations tied to rapid law enforcement dispatch to detect and interrupt sabotage before an asset is disabled",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Detection value depends on response time and monitoring staffing, and remote sites may still be reached before responders arrive.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "CM-I0304-04",
+              "measure": "Distribute and physically separate redundant critical assets and apply crime-prevention-through-environmental-design hardening with lighting, sightlines, and signage so no single accessible point carries the whole load and the target appears defended",
+              "category": "deterrent",
+              "domain": "environmental_design",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Redundant siting raises construction cost and cannot be retrofitted quickly onto existing single-point facilities.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Physical sabotage attacks the asset directly and is often the lowest-tradecraft path to a service outage.",
           "observed_contexts": [
@@ -40024,7 +41038,79 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0305-01",
+              "measure": "Maintain hardwired manual and local control fallback for critical processes so operators can safely operate or trip equipment when supervisory control, telemetry, or the control network is lost or spoofed",
+              "category": "corrective",
+              "domain": "safety_system_integrity",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Manual operation reduces throughput and situational awareness and depends on trained staff being physically present at the affected site.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0305-02",
+              "measure": "Coordinate protective relay and safety interlock settings across the system so fault isolation trips only the smallest necessary zone and prevents an induced fault or malicious command from cascading into a wide-area outage",
+              "category": "preventive",
+              "domain": "system_hardening",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Coordination studies degrade as loads and topology change and must be revalidated after any configuration modification.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0305-03",
+              "measure": "Provision diverse and redundant communication paths with automated failover and continuously monitor path health to detect and alert on jamming, link loss, or degradation before it disrupts monitoring and control",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Diverse paths add recurring cost and may still share physical chokepoints or a single upstream provider that undermines true independence.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0305-04",
+              "measure": "Establish and regularly drill documented black-start and islanding procedures so the facility can restore critical service from a de-energized state without reliance on external power or the wide-area grid",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Black-start restoration is slow and sequence-dependent and can fail if reference generation or cranking assets are also affected by the disruption.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Service denial stops or degrades delivery without necessarily destroying equipment, including communications jamming.",
           "observed_contexts": [
@@ -40143,7 +41229,78 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0306-01",
+              "measure": "Deploy independent, redundant water-quality instrumentation for parameters such as turbidity, chlorine residual, pH, and conductivity on separate telemetry so contamination is detected even if the primary process control readings are manipulated",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Standard sensors detect only measured surrogate parameters and may miss agents that do not shift those readings.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0306-02",
+              "measure": "Enforce hard chemical dosing and feed-rate limits through independent high-integrity interlocks that clamp or halt injection when setpoints exceed safe bounds, preventing an operator command or compromised controller from adulterating the process stream",
+              "category": "preventive",
+              "domain": "safety_system_integrity",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Interlock limits protect only against overdose of authorized chemicals and do not stop introduction of an unmonitored contaminant.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "CM-I0306-03",
+              "measure": "Control physical access to chemical storage, feed, and injection points with badged, monitored, and screened entry and personnel surety measures, creating accountability that deters insider tampering and delays unauthorized introduction of contaminants",
+              "category": "deterrent",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Access controls and screening reduce but do not eliminate risk from a trusted, cleared insider acting within authorized access.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "CM-I0306-04",
+              "measure": "Install alarmed automatic sampling stations at intake, treatment, and distribution points that trigger immediate notification and can capture a retained sample on anomaly, enabling rapid confirmation and source isolation of an adulteration event",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Discrete sampling can miss short-duration or intermittent injection between sample intervals unless sampling frequency is tuned to system residence time.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Contamination manipulates the delivered product itself, frequently by altering dosing or treatment setpoints.",
           "observed_contexts": [
@@ -40259,7 +41416,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0307-01",
+              "measure": "Enforce cryptographic authentication and IEEE 1547 grid-code compliance for all distributed energy resources and smart inverters before they are permitted to interconnect or respond to grid signals",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Legacy inverters and third-party aggregator platforms may lack the firmware to support strong device authentication.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0307-02",
+              "measure": "Deploy load-anomaly and demand-signature detection at distribution feeders to flag synchronized abnormal load switching consistent with MadIoT-style botnet manipulation of high-wattage consumer devices",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Distinguishing coordinated malicious load swings from legitimate demand volatility requires tuned baselines and may generate false positives during weather events.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0307-03",
+              "measure": "Configure under-frequency load shedding and rate-of-change-of-frequency protection relays so the grid automatically isolates and rebalances when demand-edge manipulation drives frequency excursions beyond safe thresholds",
+              "category": "corrective",
+              "domain": "safety_system_integrity",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Aggressive protection settings risk nuisance tripping and can worsen instability if not coordinated across interconnected operators.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0307-04",
+              "measure": "Require signed firmware, secure boot, and verified supply-chain provenance for grid-edge devices and inverter controllers so tampered or counterfeit demand-side equipment cannot be enrolled into the distribution network",
+              "category": "preventive",
+              "domain": "supply_chain_assurance",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Firmware assurance depends on vendor cooperation and does not remediate devices already fielded without secure boot support.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Demand-side manipulation reaches the system through consumer and edge devices, a path the control-plane-centric access model does not require.",
           "observed_contexts": [
@@ -40375,7 +41605,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0308-01",
+              "measure": "Deploy hardened GNSS receivers with anti-spoofing signal-authentication and high-stability holdover oscillators so grid PMUs, telecom, and rail timing survive spoofing or jamming without losing synchronization",
+              "category": "preventive",
+              "domain": "system_hardening",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Holdover clocks drift over extended outages and high-grade oscillators add significant per-site cost.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0308-02",
+              "measure": "Operate GNSS jamming and spoofing detection with continuous timing-integrity monitoring that cross-checks signal power, satellite geometry, and clock offset to alert operators when the positioning-reference is being manipulated",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Detection reveals that timing is compromised but does not by itself restore an accurate reference.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0308-03",
+              "measure": "Provision alternate timing sources and automatic failover, such as terrestrial eLORAN, fiber-delivered precision time protocol, and network time distribution, so critical systems switch away from a corrupted GNSS reference",
+              "category": "corrective",
+              "domain": "safety_system_integrity",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Alternate sources vary in accuracy and coverage, and failover logic must be tested to avoid selecting an already-compromised reference.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0308-04",
+              "measure": "Isolate and harden the timing-distribution network with dedicated segmentation and redundant diverse references so a single spoofed or jammed clock cannot propagate corrupted time across dependent PMU, telecom, and rail systems",
+              "category": "preventive",
+              "domain": "network_segmentation",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Segmentation limits blast radius but adds architectural complexity and does not protect the reference sources themselves from interference.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Timing-reference manipulation attacks the substrate many services trust rather than any single asset, degrading synchronization across sectors at once.",
           "observed_contexts": [
@@ -40491,7 +41794,79 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0309-01",
+              "measure": "Maintain offline, immutable backups of critical control system configurations, logic, and data, air-gapped from production networks so an actor cannot alter, encrypt, or delete restoration media while suppressing recovery during the attack",
+              "category": "preventive",
+              "domain": "safety_system_integrity",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Air-gapped media requires disciplined rotation and periodic restore testing or it silently drifts out of date.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0309-02",
+              "measure": "Provision out-of-band alarm and notification paths over independent cellular, radio, or dedicated circuits so duress signals and system faults still report even when primary networks are disabled, jammed, or saturated",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Independent channels add recurring carrier cost and can themselves be targeted if their routing is publicly discoverable.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0309-03",
+              "measure": "Exercise documented recovery and failover runbooks on a recurring schedule, validating each restoration step against realistic denial scenarios rather than assuming the procedures work as written",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Tabletop exercises only surface gaps that planners think to script and may miss novel suppression tactics.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0309-04",
+              "measure": "Maintain geographically diverse, redundant restoration capability and demonstrate it during audits so adversaries cannot expect that suppressing failover, alarms, and backups will produce lasting denial of service",
+              "category": "deterrent",
+              "domain": "system_hardening",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "execution"
+              ],
+              "limitations": "Full geographic redundancy is capital intensive and may be infeasible for smaller or single-site operators.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Recovery suppression attacks the organization's ability to respond, distinct from the automatic protection defeated during execution.",
           "observed_contexts": [
@@ -40602,7 +41977,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0401-01",
+              "measure": "Monitor designated egress routes and site perimeters with surveillance coverage that captures departing persons and vehicles, closing the observation gap that commonly exists during the withdrawal phase of an attack",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Camera coverage of exit routes is only useful if footage is actively reviewed or fed to analytics rather than merely recorded.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "CM-I0401-02",
+              "measure": "Retain session forensics including access logs, badge events, sensor telemetry, and camera footage under a defined retention policy so investigators can reconstruct the actor's movements after they egress",
+              "category": "corrective",
+              "domain": "technical_monitoring",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Retention value depends on synchronized timestamps and storage that outlives the delay before an incident is recognized.",
+              "compensates_for": [],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0401-03",
+              "measure": "Deploy visible automatic number plate recognition and gate access logging at vehicle entry and exit points, signaling that departures are recorded and raising the perceived risk of identification for anyone withdrawing from the site",
+              "category": "deterrent",
+              "domain": "access_control",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Plate readers are defeated by obscured, false, or stolen plates and by egress on foot outside vehicle lanes.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0401-04",
+              "measure": "Establish a rapid perimeter alerting protocol that pushes real-time notifications to security staff and law enforcement upon detection of unauthorized egress or forced departure, shortening the response gap after an actor leaves",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Alert value collapses if notification thresholds are poorly tuned and responders are desensitized by false positives.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Withdrawal is the threat actor's exit, which in infrastructure may be a logical disconnect rather than a physical departure.",
           "observed_contexts": [
@@ -40720,7 +42168,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0402-01",
+              "measure": "Force enterprise-wide reset of all credentials, cryptographic keys, and shared secrets touched during the incident, and reflash affected controller and field-device firmware from verified vendor images before returning assets to service",
+              "category": "corrective",
+              "domain": "access_control",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Credential and firmware resets that miss out-of-band or vendor maintenance accounts leave a re-entry path intact.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0402-02",
+              "measure": "Conduct structured threat hunting across control-system and enterprise networks for implants, unauthorized remote-access tooling, rogue accounts, and anomalous outbound connections that indicate a retained foothold",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Hunting effectiveness depends on baseline telemetry that many legacy OT environments do not retain.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0402-03",
+              "measure": "Restore compromised engineering workstations, HMIs, and servers from validated golden images rather than in-place cleaning to eliminate persistence mechanisms that survive selective remediation",
+              "category": "corrective",
+              "domain": "system_hardening",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Golden-image restoration is ineffective if the master images were themselves compromised before capture.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0402-04",
+              "measure": "Establish continuous integrity monitoring of controller logic, firmware checksums, and safety-system configuration so that any unauthorized re-modification after recovery generates an immediate alert",
+              "category": "detective",
+              "domain": "safety_system_integrity",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Integrity baselines set after an incident can inadvertently canonicalize an attacker's persistent changes as trusted.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Re-entry positioning is the strategic leave-behind: access held for future action after the current operation ends.",
           "observed_contexts": [
@@ -40838,7 +42359,80 @@
               "human_social": true
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0403-01",
+              "measure": "Replicate control-system logs, historian records, and physical-security event data in real time to an immutable off-site repository that the operational environment cannot reach or overwrite",
+              "category": "preventive",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Real-time replication can propagate forged entries off-site if tampering occurs before the log leaves the source system.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0403-02",
+              "measure": "Apply cryptographic hashing and write-once-read-many storage to retained logs so any deletion or alteration of control-system and access-control records is mathematically detectable",
+              "category": "detective",
+              "domain": "system_hardening",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Hash-chain verification detects tampering only for records already committed, not for events an actor prevented from being logged.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0403-03",
+              "measure": "Deploy tamper-detection controls on the process historian that flag out-of-sequence timestamps, value gaps, and record deletions indicating manipulation of stored process data",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Anomaly thresholds tuned for normal process variability may miss sophisticated forgeries crafted to mimic valid data.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0403-04",
+              "measure": "Institute a forensic readiness program that predefines log-retention scope, evidence chain-of-custody, and preservation procedures so control-system and physical records remain admissible after an incident",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Readiness procedures preserve only the evidence sources identified in advance and cannot recover data never collected.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Log manipulation in OT spans engineering-workstation records and physical maintenance logs.",
           "observed_contexts": [
@@ -40956,7 +42550,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0404-01",
+              "measure": "Conduct multi-source forensic attribution that fuses digital artifacts, physical evidence, and human intelligence before assigning responsibility, treating any single-source indicator as unverified until corroborated by independent evidence streams",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Sophisticated actors can seed multiple correlated false-flag streams that survive cross-source checks if collection breadth is limited.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "CM-I0404-02",
+              "measure": "Establish artifact provenance analysis that reconstructs the chain of custody, creation metadata, and toolmarks of recovered items to distinguish authentically produced tradecraft from deliberately planted misdirection",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Provenance signals can be forged or stripped, and gaps in custody records may be indistinguishable from tampering.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0404-03",
+              "measure": "Commission an independent investigation team walled off from the primary case unit to test attribution hypotheses against alternative explanations, reducing the risk that confirmation bias locks onto an actor-planted narrative",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Independent review adds time and cost and cannot overcome shared evidentiary blind spots if both teams draw from the same tainted collection.",
+              "compensates_for": [],
+              "source_refs": [
+                "GAO-24-106744-2024",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "CM-I0404-04",
+              "measure": "Corroborate working attribution against external intelligence holdings and interagency reporting so that a false third-party signature must contradict independently held knowledge of actor capability, intent, and pattern of life to be accepted",
+              "category": "detective",
+              "domain": "personnel_security",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Corroboration depends on the quality and timeliness of partner reporting, which may itself be seeded with the same deception.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Attribution obfuscation seeds misleading indicators so responders mis-assign responsibility.",
           "observed_contexts": [
@@ -41072,7 +42739,80 @@
               "human_social": true
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0405-01",
+              "measure": "Perform financial-trail analysis that maps funding flows, procurement, and material transfers around the operation to expose co-conspirators and support networks the primary actor attempts to shield after the event",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Cash economies, informal value transfer, and layered intermediaries can obscure links that financial analysis cannot resolve alone.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "CM-I0405-02",
+              "measure": "Preserve communications records through immediate legal preservation requests and forensic imaging so that messages coordinating the concealment of insiders and support cells remain available before actors can direct their deletion",
+              "category": "corrective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "immediate",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Ephemeral and end-to-end encrypted channels may leave no recoverable content even when preservation is timely.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "CM-I0405-03",
+              "measure": "Implement witness protection and confidential reporting channels that let operators, engineers, and employees disclose knowledge of a concealed network without fear of retaliation, countering the intimidation used to keep co-conspirators silent",
+              "category": "deterrent",
+              "domain": "behavioral_intervention",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Protection resources are finite and reluctant witnesses may still decline to come forward despite assurances.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "CM-I0405-04",
+              "measure": "Coordinate cross-agency case management through a unified investigative structure that shares evidence, deconflicts leads, and prevents a protected network from exploiting jurisdictional seams between separate investigations",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Interagency coordination can stall on data-sharing restrictions and competing operational priorities.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Network protection shields the collaborators and insiders who enabled the operation from exposure.",
           "observed_contexts": [
@@ -41185,7 +42925,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0406-01",
+              "measure": "Establish a public communications policy that limits released outage information to service status and restoration timelines, withholding affected node locations, load figures, and restoration sequencing that would let an adversary confirm the operational effect of the attack",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Regulatory disclosure requirements and public-safety obligations may compel release of some outage detail.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0406-02",
+              "measure": "Monitor news comment sections, social platforms, and forums after an incident for outage-map interest, imagery requests, and effect-confirmation queries that indicate an actor is conducting battle-damage assessment of the attack",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "High volumes of legitimate public interest can mask genuine adversary assessment activity.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "CM-I0406-03",
+              "measure": "Remove or authenticate public-facing operational dashboards, status pages, and real-time telemetry feeds so restoration progress and residual capacity are not observable to an adversary assessing the damage inflicted",
+              "category": "corrective",
+              "domain": "system_hardening",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Some grid transparency feeds are mandated or shared with interconnection partners and cannot be fully withdrawn.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "CM-I0406-04",
+              "measure": "Introduce controlled ambiguity into public incident reporting so released impact and restoration figures do not confirm the precision or success of the adversary's targeting to observers conducting after-action assessment",
+              "category": "deterrent",
+              "domain": "environmental_design",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "immediate",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Deceptive messaging risks eroding public trust and conflicts with accuracy obligations if it is discovered.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "After-action assessment is the threat actor confirming effect, which for infrastructure means verifying the physical consequence.",
           "observed_contexts": [
@@ -41301,7 +43114,80 @@
               "human_social": true
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0407-01",
+              "measure": "Maintain continuous collection on extremist forums, encrypted channels, manifesto-hosting sites, and media tip lines where actors post claims of responsibility, so any responsibility declaration is captured and preserved as it appears",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Claims posted on closed or ephemeral channels may be inaccessible without prior access or platform cooperation.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "CM-I0407-02",
+              "measure": "Run a rapid claim-verification process that correlates asserted responsibility against forensic evidence and known actor tactics before any attribution is treated as credible, preventing false or opportunistic claims from driving the response",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Forensic confirmation can lag well behind a public claim, creating an interim period of attribution uncertainty.",
+              "compensates_for": [],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "CM-I0407-03",
+              "measure": "Pre-establish and rehearse a coordinated crisis communications plan with law enforcement and public affairs so a single validated message governs the public response whenever an actor claims responsibility",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Inter-agency coordination can slow message release during fast-moving media cycles.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "CM-I0407-04",
+              "measure": "Adopt a no-notoriety posture in official statements that withholds the actor's name, imagery, and manifesto content to avoid amplifying propaganda and reduce the notoriety incentive that motivates responsibility claims and follow-on attacks",
+              "category": "deterrent",
+              "domain": "behavioral_intervention",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "immediate",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Media outlets and third parties may publish the actor's material regardless of official restraint.",
+              "compensates_for": [],
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Attribution declaration is a voluntary claim of responsibility issued after the effect.",
           "observed_contexts": [
@@ -41421,7 +43307,80 @@
               "human_social": true
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0408-01",
+              "measure": "Maintain offline, immutable backups of operational and business-critical data and test full restoration procedures on a recurring schedule so service can be recovered without meeting extortion or ransom demands",
+              "category": "corrective",
+              "domain": "system_hardening",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Recovery speed depends on backup scope and restoration testing, and data created after the last verified backup is still lost.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0408-02",
+              "measure": "Adopt and publish a documented no-concession decision policy that governs how the organization responds to extortion, ransom, or coercive political demands, signaling that disruption will not yield payment or policy change and removing the incentive that motivates leverage-driven attacks",
+              "category": "deterrent",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "A no-concession stance does not stop the underlying disruption and may prolong an incident if recovery capacity is weak.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0408-03",
+              "measure": "Establish standing law enforcement liaison and coordinated incident reporting so that extortion communications, ransom notes, and exfiltration indicators are preserved as forensic evidence and reported promptly, enabling attribution and investigative response after an incident",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Investigative outcomes are outside organizational control and evidence value depends on timely, uncontaminated preservation.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "CM-I0408-04",
+              "measure": "Develop and exercise crisis communications and negotiation contingency plans that predefine spokesperson roles, stakeholder messaging, and demand-handling protocols, so the organization responds to coercive demands in a disciplined manner rather than under improvised pressure",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "limitations": "Plans lose effectiveness if not rehearsed and updated, and cannot anticipate every demand or public pressure scenario.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Coercive demand converts the disruption into leverage, tying a ransom or political condition to service restoration.",
           "observed_contexts": [
