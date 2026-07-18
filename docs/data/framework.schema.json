@@ -587,6 +587,20 @@
             "type": "string"
           }
         },
+        "crossing": {
+          "type": "string",
+          "enum": ["physical", "cyber", "cyber_physical"],
+          "description": "Intrinsic modality of the behavior on the cyber-physical continuum, decided by the behavior's own mechanism and the zone its access reaches (not its effect or target importance). physical = kinetic/on-site/hand act; cyber = digital signature on IT/open-source/non-control assets; cyber_physical = the behavior itself crosses the seam (a cyber action reaching/reading/writing the OT control plane, a physical implant gaining cyber reach, or a technical digital-or-electromagnetic means producing a physical-infrastructure effect). CPN is NOT stored; it is computed over the Detection Mesh from these crossings plus same-operation kill-chain membership."
+        },
+        "crossing_mechanism": {
+          "type": "string",
+          "enum": ["digital", "electromagnetic", "physical_implant"],
+          "description": "For crossing=cyber_physical only: how the seam is crossed. digital = IT/network/software action reaches the OT control plane; electromagnetic = RF/GNSS/EW (jamming or spoofing of a signal a physical system depends on); physical_implant = a physical device placed to gain cyber reach."
+        },
+        "human_social": {
+          "type": "boolean",
+          "description": "Independent facet: true when the behavior's essence is influencing, recruiting, cultivating, coercing, deceiving, or negotiating with people, or is human warning-behavior leakage (grievance escalation, statements of intent, behavioral withdrawal), regardless of medium. Orthogonal to crossing: a behavior may be human_social AND carry any crossing value."
+        },
         "temporal_signature": {
           "type": "string",
           "enum": [
