@@ -36485,7 +36485,44 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0101-01",
+              "trigger": "One or more Infrastructure Target Selection indicators are reported, such as observed surveillance of a facility, unusual open-source interest in a specific asset, or acquisition of internal site diagrams or asset lists.",
+              "action": "Open or update the infrastructure threat case. Conduct a 24-hour preliminary assessment: (a) identify which asset, facility, or dependency appears to be under selection and map it to its criticality tier, (b) correlate the reporting against known reconnaissance patterns and any prior indicators for the same site, (c) validate whether the interest is attributable to a specific actor or remains anonymous. Confirm current physical and cyber protective posture at the named asset. Document all sourcing and chain of custody.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations",
+                "protective_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Selection activity resolves to a specific asset paired with an identifiable actor showing apparent intent or capability against it.",
+              "coordinates_with": [],
+              "legal_notes": "Base collection on the facility's lawful monitoring authority and retain only mission-relevant records; coordinate with legal before attributing selection activity to a named individual.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0101-02",
+              "trigger": "Indicators suggest an actor is comparing or ranking multiple candidate targets, such as repeated public-records requests across several sites, probing of relative security postures, or solicitation of insider knowledge about which asset is least defended.",
+              "action": "Update the infrastructure threat case with the candidate-set finding. Within 24 hours: (a) enumerate the assets under comparison and rank them by consequence-of-loss, (b) cross-reference the pattern against sector advisories and any convergence between physical and cyber probing, (c) task security operations to raise monitoring at the highest-consequence candidates. Preserve all source material and note assessment confidence.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations",
+                "operations_control"
+              ],
+              "priority": "routine",
+              "escalation_trigger": "The candidate set narrows to a single primary target or the actor demonstrates means to act against any candidate on the list.",
+              "coordinates_with": [],
+              "legal_notes": "Ensure records collection stays within the operator's authority and applicable critical-infrastructure protection rules; avoid retaining personal data on requesters beyond what the assessment requires.",
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            }
+          ],
           "field_notes": "Target selection is usually inferred backward from the asset a threat actor cased or enumerated, and infrastructure choices track downstream impact more than accessibility.",
           "observed_contexts": [
             "the 2015 Ukraine grid attack, where threat actors selected regional distribution operators whose loss darkened wide service areas"
@@ -36676,7 +36713,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0102-01",
+              "trigger": "One or more Service and Dependency Mapping indicators are reported, such as external enumeration of upstream utilities, single points of failure, or the vendors and control systems a facility relies on.",
+              "action": "Open or update the infrastructure threat case for dependency mapping. Conduct a 24-hour preliminary assessment: (a) identify which dependency or interconnection is being mapped and confirm whether it is a single point of failure, (b) review whether the enumerated relationships expose IT and OT boundaries or third-party access paths, (c) validate the sourcing of the actor's information against what is publicly discoverable versus what would require insider or intrusive access. Notify the affected dependency owner. Document all sourcing.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations",
+                "ot_security",
+                "engineering"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Mapping activity targets a confirmed single point of failure or reveals knowledge obtainable only through unauthorized access.",
+              "coordinates_with": [],
+              "legal_notes": "Coordinate dependency-owner notification under existing information-sharing agreements and preserve records consistent with critical-infrastructure reporting obligations.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0102-02",
+              "trigger": "Indicators show interest in the supply chain, service providers, or interdependencies supporting an asset, such as probing of vendor remote-access arrangements, delivery schedules, or shared services across co-located tenants.",
+              "action": "Update the infrastructure threat case with the supply-chain finding. Within 24 hours: (a) map the identified vendor or service relationship and the access it grants to the protected asset, (b) assess whether the interest indicates preparation to exploit a trusted-access path, (c) review current third-party access controls and delivery-verification procedures for the named dependency. Engage the relevant vendor security or operations contact. Record sourcing and confidence.",
+              "stakeholders": [
+                "threat_management_team",
+                "it_security",
+                "ot_security",
+                "operations_control"
+              ],
+              "priority": "routine",
+              "escalation_trigger": "The activity indicates intent to compromise or impersonate a trusted vendor or service pathway into the asset.",
+              "coordinates_with": [],
+              "legal_notes": "Handle vendor and third-party information under the governing contracts and non-disclosure terms, and limit sharing to parties with a legitimate protective need.",
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "field_notes": "Dependency mapping shows up as a threat actor collecting one-line diagrams, interconnection data, or service-territory maps that reveal what fails when a node fails.",
           "observed_contexts": [
             "Colonial Pipeline (2021), where a single pipeline outage cascaded into fuel shortages across the US Southeast"
@@ -36866,7 +36942,44 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0103-01",
+              "trigger": "One or more Physical Site Reconnaissance indicators are reported, such as observed presence near perimeters, photography of access points, testing of gates or barriers, or loitering consistent with pattern-of-life observation.",
+              "action": "Open or update the infrastructure threat case for physical reconnaissance. Conduct a 24-hour preliminary assessment: (a) fix the time, location, and behavior observed and map it to specific vulnerable access points, (b) pull and review available camera, badge, and visitor-log data covering the reported window, (c) determine whether the activity is isolated or part of a repeated pattern against the same site. Brief protective operations on posture at the affected points. Document all sourcing and evidence handling.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "security_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Reconnaissance is repeated, targets a confirmed vulnerable access point, or is tied to an identified actor showing hostile intent.",
+              "coordinates_with": [],
+              "legal_notes": "Retain surveillance and access-control footage under the facility's records policy and lawful monitoring authority, and consult legal before sharing imagery of identifiable individuals.",
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0103-02",
+              "trigger": "Indicators suggest attempted or opportunistic physical access probing, such as tailgating attempts, testing of unattended entrances, questioning of staff about security routines, or discovery of dropped credentials or reconnaissance notes.",
+              "action": "Update the infrastructure threat case with the access-probing finding. Within 24 hours: (a) identify which entry controls or procedures were tested and any gap exposed, (b) interview involved staff and preserve their accounts along with physical evidence, (c) review whether social-engineering questioning correlates with the observed physical probing. Coordinate a corrective posture adjustment with protective operations. Note sourcing and confidence, and preserve chain of custody on any recovered items.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "human_resources"
+              ],
+              "priority": "routine",
+              "escalation_trigger": "Probing succeeds in defeating an access control, or the same actor combines physical and social-engineering approaches against the site.",
+              "coordinates_with": [],
+              "legal_notes": "Conduct staff interviews consistent with workplace and privacy policy, and coordinate with law enforcement before treating recovered items as evidence in a criminal matter.",
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
           "field_notes": "Physical reconnaissance of infrastructure often targets unmanned, fenced remote sites where a threat actor can observe at length without challenge.",
           "observed_contexts": [
             "the 2013 Metcalf substation attack, preceded by reconnaissance of fence lines and fiber vaults"
@@ -37062,7 +37175,45 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0104-01",
+              "trigger": "One or more Process and Engineering Reconnaissance indicators reported (records requests or leaked contractor documents exposing control narratives and P&IDs, anomalous historian queries revealing baseline telemetry, or engineering-protocol reads of controller configuration and safety instrumented system setpoints).",
+              "action": "Open or update the case. Conduct a preliminary assessment: (a) corroborate the observation and determine which engineering documents or historian datasets were exposed and through what channel, (b) review public-records and permitting-portal logs and process historian access records for the target process, (c) validate that safety instrumented system setpoints and interlock logic remain unaltered against a known-good baseline, (d) brief process engineering and OT security leadership on which setpoints, interlocks, and safety limits are now known to the actor. Document all sourcing.",
+              "stakeholders": [
+                "threat_management_team",
+                "ot_security",
+                "engineering",
+                "security_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Actor is identified acquiring non-public engineering documentation or historian exports, or reconnaissance is followed by control-network enumeration or capability-acquisition indicators for the same actor.",
+              "coordinates_with": [],
+              "legal_notes": "Auditing public-records requests and monitoring an identified actor may implicate privacy, public-records, and anti-stalking statutes that vary by jurisdiction; consult counsel and document the investigative basis before active monitoring.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "RP-I0104-02",
+              "trigger": "Sector or vendor reporting indicates process-engineering documentation for the operator's control-system class is circulating (a disclosed contractor leak, an exposed engineering repository, or historian data of unclear provenance) without a named individual actor.",
+              "action": "Review the operator's exposure for the reporting window: inventory which control narratives, P&IDs, and historian datasets are externally reachable or were disclosed, restrict and re-permission engineering document repositories and historian access, and coordinate with engineering to confirm safety limits and interlock logic against a known-good configuration baseline. Document all sourcing.",
+              "stakeholders": [
+                "ot_security",
+                "engineering",
+                "operations_control"
+              ],
+              "priority": "routine",
+              "escalation_trigger": "An individual actor is tied to the disclosed material, or the exposed documentation maps to a specific reachable process for which enumeration activity is subsequently observed.",
+              "coordinates_with": [],
+              "legal_notes": "Handling of leaked or third-party documents and any provider notifications may carry disclosure and contractual obligations that vary by jurisdiction; consult counsel before retention or outreach.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "field_notes": "Process reconnaissance is distinctive to infrastructure and appears as a threat actor acquiring engineering documentation, control narratives, or historian data rather than site imagery.",
           "observed_contexts": [
             "Stuxnet, whose operators modeled Natanz centrifuge process parameters precisely enough to damage rotors while masking the fault"
@@ -37258,7 +37409,45 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0105-01",
+              "trigger": "One or more Control-Network Enumeration indicators reported (passive or active reconnaissance enumerating SCADA servers, PLCs, RTUs, and HMIs, fingerprinting of Modbus, DNP3, or IEC 61850 endpoints, or probing of VPN concentrators, jump hosts, and vendor engineering-support portals).",
+              "action": "Open or update the case. Conduct a preliminary assessment: (a) preserve network-monitoring and OT telemetry covering the enumeration window and identify the source and the assets and protocols touched, (b) determine whether the activity reached the control network or only externally exposed HMIs, historians, and remote-access gateways, (c) verify segmentation between the IT and OT networks and confirm no unauthorized session gained authority on control assets, (d) brief OT security and operations leadership and tighten remote-access exposure at the probed paths. Document all sourcing.",
+              "stakeholders": [
+                "threat_management_team",
+                "ot_security",
+                "security_operations",
+                "operations_control"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Enumeration reaches control-network assets or establishes a session on a PLC, RTU, or HMI, or the same actor follows with capability-acquisition or access indicators.",
+              "coordinates_with": [],
+              "legal_notes": "Attribution and monitoring of scanning sources may implicate privacy and computer-misuse statutes that vary by jurisdiction; consult counsel and document the investigative basis before active monitoring or blocking that affects third parties.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0105-02",
+              "trigger": "Internet-exposure or device-search database activity indicates the operator's externally reachable HMIs, historians, and remote-access gateways are being inventoried, without a named individual actor.",
+              "action": "Review the operator's external control-system exposure for the window: enumerate internet-reachable HMIs, historians, and remote-access gateways from the operator's own perspective, remove or place behind brokered access any that need not be exposed, and confirm that remaining remote-access paths enforce multi-factor authentication and are logged. Document all sourcing.",
+              "stakeholders": [
+                "ot_security",
+                "operations_control",
+                "it_security"
+              ],
+              "priority": "routine",
+              "escalation_trigger": "A specific reachable asset draws repeated targeted probing, or an individual actor is tied to the inventory activity.",
+              "coordinates_with": [],
+              "legal_notes": "Passive collection from public device-search databases is generally lawful; document the basis for any active response that may affect external hosts and consult counsel where the activity is cross-jurisdictional.",
+              "source_refs": [
+                "CISA-DIT-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "field_notes": "Network enumeration of an OT environment surfaces as scanning or credential collection aimed at engineering workstations and industrial protocols rather than office IT.",
           "observed_contexts": [
             "Industroyer/CRASHOVERRIDE, which mapped substation protocols (IEC 101/104, 61850) before issuing malicious commands"
@@ -37457,7 +37646,45 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0106-01",
+              "trigger": "One or more Capability Acquisition indicators reported (development or adaptation of protocol-specific malware for the operator's controller family, licensing or piracy of the vendor engineering toolchain for the target's controllers, or acquisition of legitimate engineering credentials or vendor remote-access accounts through purchase, phishing, or insider recruitment).",
+              "action": "Open or update the case. Conduct a preliminary assessment: (a) corroborate the reporting and determine which controller family, toolchain, or credentials are implicated, (b) audit engineering and vendor remote-access accounts for the target controllers and disable or re-credential any that may be compromised, (c) confirm application allow-listing and integrity controls on the engineering workstations that program the safety and process controllers, (d) brief OT security, engineering, and IT security leadership on the acquired capability and its match to the operator's field devices. Document all sourcing.",
+              "stakeholders": [
+                "threat_management_team",
+                "ot_security",
+                "engineering",
+                "it_security"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Acquired credentials or tooling are confirmed valid against the operator's control network, or acquisition is followed by access or staging indicators for the same actor.",
+              "coordinates_with": [],
+              "legal_notes": "Credential audits and any investigation of purchase, phishing, or insider recruitment may implicate employment, privacy, and computer-misuse statutes that vary by jurisdiction; consult counsel before active monitoring and coordinate with human resources on any employee nexus.",
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "RP-I0106-02",
+              "trigger": "Vendor or sector reporting indicates ICS attack tooling, protocol libraries, or engineering credentials for the operator's controller class are being offered or traded, without a confirmed link to the operator's own environment.",
+              "action": "Review the operator's exposure to the reported capability: identify which of the operator's controllers, toolchains, or credential types match the offering, rotate or harden the affected credential and remote-access classes, and confirm detection coverage for native Modbus, DNP3, or IEC 61850 command activity against the field devices. Document all sourcing.",
+              "stakeholders": [
+                "ot_security",
+                "engineering",
+                "it_security"
+              ],
+              "priority": "routine",
+              "escalation_trigger": "The traded capability or credentials are matched to the operator's specific devices or accounts, or an actor acquiring them shows targeting of the operator.",
+              "coordinates_with": [],
+              "legal_notes": "Monitoring illicit markets and handling offered credentials may implicate computer-misuse and evidence-handling rules that vary by jurisdiction; consult counsel before any acquisition or engagement.",
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "field_notes": "Capability acquisition for infrastructure spans ICS-specific malware and protocol tooling as readily as physical breaching or destructive means.",
           "observed_contexts": [
             "Triton/Trisis, purpose-built to communicate with Triconex safety controllers, evidencing dedicated ICS capability development"
@@ -37651,7 +37878,44 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0107-01",
+              "trigger": "One or more indicators of adversary network development are reported, including active solicitation of co-conspirators, requests for material support, or coordinated interest in access to a critical asset.",
+              "action": "Open or update the case. Conduct a preliminary assessment: (a) identify the individuals or online personas soliciting support and the specific asset, access, or capability they seek, (b) determine whether any employee, operator, or authorized contact has been approached or has responded. Corroborate reporting against access logs and established threat streams. Document all sourcing.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations",
+                "protective_operations",
+                "law_enforcement"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Escalate if recruitment targets a named employee or specific access point, or if material support appears to have already been provided.",
+              "coordinates_with": [],
+              "legal_notes": "Coordinate with legal before collecting on identified individuals so that protected expressive activity is distinguished from criminal solicitation.",
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "RP-I0107-02",
+              "trigger": "One or more low-level indicators of network development are reported, such as generalized online solicitation or stated intent without a named target, asset, or timeline.",
+              "action": "Open or update the case at a monitoring posture. Conduct a preliminary assessment: (a) catalog the personas, forums, and language observed, (b) establish a baseline and set collection triggers keyed to escalation toward a specific asset or person. Document all sourcing.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations"
+              ],
+              "priority": "routine",
+              "escalation_trigger": "Escalate if solicitation narrows to a specific facility, employee, or category of privileged access.",
+              "coordinates_with": [],
+              "legal_notes": "Limit collection to publicly available information and retain only material with an articulable nexus to a threat.",
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
           "field_notes": "Network development covers the collaborators, funding, and logistics assembled to support the operation.",
           "observed_contexts": [
             "documented infrastructure-sabotage conspiracies involving multiple actors coordinating roles and materials"
@@ -37844,7 +38108,45 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0108-01",
+              "trigger": "One or more indicators are reported that an external actor is cultivating, recruiting, or coercing an operator or engineer who holds privileged access.",
+              "action": "Open or update the case. Conduct a preliminary assessment: (a) identify the employee approached and the nature of the inducement or coercion, (b) review that person's access rights, recent activity, and any anomalous behavior against an established baseline. Coordinate a discreet, non-accusatory review with human resources and legal before any employee contact. Document all sourcing.",
+              "stakeholders": [
+                "threat_management_team",
+                "human_resources",
+                "legal",
+                "security_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Escalate if the operator has acted on the inducement, moved or exfiltrated data, or if coercion involves a credible threat to the employee or their family.",
+              "coordinates_with": [],
+              "legal_notes": "Any action affecting the employee must comply with employment law, privacy protections, and due-process obligations, so involve legal and human resources before any investigative or adverse step.",
+              "source_refs": [
+                "CISA-DIT-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0108-02",
+              "trigger": "One or more early behavioral or contextual indicators of operator cultivation are reported, such as unexplained affluence, undisclosed outside contact, or minor policy deviations, without evidence of malicious action.",
+              "action": "Open or update the case at a monitoring posture. Conduct a preliminary assessment: (a) document the reported behaviors and corroborating sources, (b) confirm whether the concern meets the program threshold for a coordinated insider-threat inquiry. Route to the insider threat working group and consider a supportive employee assistance referral where appropriate. Document all sourcing.",
+              "stakeholders": [
+                "threat_management_team",
+                "human_resources",
+                "employee_assistance"
+              ],
+              "priority": "routine",
+              "escalation_trigger": "Escalate if the indicators aggregate into a pattern of concern or if privileged access is misused.",
+              "coordinates_with": [],
+              "legal_notes": "Handle personnel information under privacy and employment-law safeguards and avoid adverse action based on lawful off-duty conduct alone.",
+              "source_refs": [
+                "CISA-DIT-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "field_notes": "Operator cultivation is elevated in infrastructure because a privileged insider's routine actions are indistinguishable at the wire from sabotage.",
           "observed_contexts": [
             "CISA insider-threat reporting on privileged OT staff whose access materially shortens an attack path"
@@ -38039,7 +38341,45 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0109-01",
+              "trigger": "One or more indicators are reported that an adversary is reaching the target through a vendor, firmware, or remote-maintenance channel, such as a compromised update package or anomalous third-party remote access.",
+              "action": "Open or update the case. Conduct a preliminary assessment: (a) identify the affected vendor, component, or maintenance pathway and the systems it touches, (b) determine whether the channel reaches operational technology or safety-critical functions. Coordinate with engineering and OT security to isolate or restrict the pathway pending verification. Document all sourcing.",
+              "stakeholders": [
+                "threat_management_team",
+                "it_security",
+                "engineering",
+                "ot_security"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Escalate if the vector reaches operational technology or safety systems, or if unauthorized code or access is confirmed.",
+              "coordinates_with": [],
+              "legal_notes": "Preserve vendor contracts and logs for potential liability and breach-notification obligations and coordinate any disclosure with legal.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "RP-I0109-02",
+              "trigger": "One or more lower-severity supply-chain indicators are reported, such as a vendor advisory, a third-party access request outside normal windows, or unverified firmware provenance, without confirmed compromise.",
+              "action": "Open or update the case at a monitoring posture. Conduct a preliminary assessment: (a) inventory the affected components and their exposure, (b) validate patch provenance and confirm least-privilege controls on remote-maintenance accounts with engineering. Document all sourcing.",
+              "stakeholders": [
+                "threat_management_team",
+                "it_security",
+                "engineering"
+              ],
+              "priority": "routine",
+              "escalation_trigger": "Escalate if the vendor advisory is confirmed to affect deployed systems or if remote-access anomalies recur.",
+              "coordinates_with": [],
+              "legal_notes": "Verify vendor obligations under existing agreements before requesting remediation and retain advisories for the record.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "field_notes": "Supply-chain vectoring is an access path with no People or Facilities analog, established well before the threat actor touches the target directly.",
           "observed_contexts": [
             "the 2020 SolarWinds compromise, which reached operational networks through a trusted software update channel"
@@ -38237,7 +38577,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0110-01",
+              "trigger": "An actor associated with the infrastructure asset displays pathway warning behaviors: articulated grievance against the operator, research or planning activity directed at the site, or leakage of intent to a third party.",
+              "action": "Open or update the case and initiate a structured behavioral threat assessment. Conduct assessment: (a) corroborate the reported behaviors against original sources and rule out benign explanations, (b) map the actor's position on the pathway to violence from ideation through research, planning, and preparation, (c) evaluate fixation and identification indicators and any grievance narrative targeting the asset, (d) determine the actor's access, proximity, and knowledge of the infrastructure. Document sourcing.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations",
+                "human_resources",
+                "legal"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Behaviors advance from grievance and research toward concrete planning, capability acquisition, or a narrowing focus on a specific asset or date.",
+              "coordinates_with": [],
+              "legal_notes": "Behavioral assessment of an identified actor may implicate privacy, employment, and anti-stalking statutes; consult counsel and document the investigative basis before active monitoring.",
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "RP-I0110-02",
+              "trigger": "Late-stage escalation indicators emerge for a known actor: energy burst of activity, final-act or last-resort language, novel aggression, or probing directed at the infrastructure asset.",
+              "action": "Open or update the case and convene the threat management team for an urgency review. Conduct assessment: (a) reassess time-imperative and last-resort signals against the actor's baseline, (b) identify any breach of the attack pathway such as weapons access, reconnaissance, or rehearsal, (c) determine protective needs for named targets and the asset, (d) prepare a coordinated intervention or law enforcement referral. Document sourcing.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "security_operations",
+                "law_enforcement"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Indicators of imminent action appear, including final preparations, stated timelines, or loss of protective factors that previously constrained the actor.",
+              "coordinates_with": [],
+              "legal_notes": "Escalation to law enforcement referral should be documented with the articulable facts supporting concern; preserve records consistent with duty-to-warn and evidentiary requirements.",
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
           "field_notes": "Pathway indicators are behavioral escalation signals that precede a specific tactic, marking a threat actor's movement along the pathway toward action.",
           "observed_contexts": [
             "grievance-to-mobilization progressions documented in critical-infrastructure threat cases"
@@ -38431,7 +38810,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0201-01",
+              "trigger": "Indicators suggest an adversary is dry-running the operation against the asset: staged approach or timing runs, repeated probing of access controls, or test interactions with security or safety systems that mimic the anticipated attack sequence.",
+              "action": "Open or update the case and treat the activity as pre-operational rehearsal. Conduct assessment: (a) reconstruct the observed sequence and compare it against plausible attack scenarios for the asset, (b) correlate the activity with prior surveillance, access, or targeting indicators for the same actor, (c) validate that physical and cyber-physical controls covered in the rehearsal are hardened per NIST SP 800-82, (d) increase monitoring at the tested access points and brief operations and control-system staff. Document sourcing.",
+              "stakeholders": [
+                "security_operations",
+                "operations_control",
+                "ot_security",
+                "protective_operations"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Rehearsal activity recurs, expands to additional systems, or aligns with a credible timeline indicating transition from mobilization toward execution.",
+              "coordinates_with": [],
+              "legal_notes": "Coordinate evidence handling and any interdiction with counsel and law enforcement to preserve chain of custody and support prosecution.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0201-02",
+              "trigger": "An actor is observed testing the operational plan end to end: timed movements matching shift changes or patrol gaps, trial runs of an entry or egress route, or simulated delivery or intrusion against the infrastructure asset.",
+              "action": "Open or update the case and elevate to an active mobilization posture. Conduct assessment: (a) identify which attack vector the rehearsal validates and the controls it is designed to defeat, (b) close or compensate for the specific gaps exercised, including patrol timing and access windows, (c) coordinate with OT security to detect rehearsal touching control or safety systems, (d) prepare a law enforcement notification package with the rehearsal timeline and sourcing. Document sourcing.",
+              "stakeholders": [
+                "security_operations",
+                "ot_security",
+                "law_enforcement",
+                "operations_control"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "The actor demonstrates operational readiness, stages materials near the asset, or completes a full rehearsal without a benign explanation.",
+              "coordinates_with": [],
+              "legal_notes": "Preserve surveillance and access-log records under the organization's retention policy and consult counsel before any confrontation or detention.",
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "field_notes": "Rehearsal in infrastructure can be virtual: malicious logic is validated against a replica environment before production is touched.",
           "observed_contexts": [
             "Stuxnet's development against test centrifuge cascades before deployment to Natanz"
@@ -38626,7 +39044,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0202-01",
+              "trigger": "An individual presents a vendor, contractor, or inspector persona to gain access to the asset, and the credentials, work order, or sponsoring organization cannot be verified against known records.",
+              "action": "Open or update the case and treat the persona as an unverified access attempt. Conduct assessment: (a) verify identity, credentials, and the work order directly with the purported employer and the internal sponsor of record, (b) reconcile the claimed visit against scheduled maintenance, inspection, or delivery activity, (c) evaluate whether the persona is being used to conduct reconnaissance or emplace access, (d) restrict access pending verification and preserve badge, sign-in, and camera records. Document sourcing.",
+              "stakeholders": [
+                "security_operations",
+                "operations_control",
+                "it_security",
+                "legal"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Verification fails, the individual resists identity checks, or the same persona or organization is linked to prior probing or surveillance of the asset.",
+              "coordinates_with": [],
+              "legal_notes": "Detention and search of a suspected impostor carry liability; follow trespass and use-of-force policy and involve law enforcement for identity resolution.",
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "RP-I0202-02",
+              "trigger": "A constructed vendor or inspector persona shows signs of deliberate fabrication: forged or mismatched credentials, a shell or spoofed sponsoring company, or a cover story that unravels under routine verification questions.",
+              "action": "Open or update the case and treat cover construction as a pre-attack enabling activity. Conduct assessment: (a) document the fabricated elements and how the cover was intended to defeat access controls, (b) trace the persona and any supporting infrastructure such as spoofed domains, phone numbers, or paperwork with IT security, (c) determine what areas or systems the persona would have reached and assess exposure, (d) issue a be-on-the-lookout to guard staff and coordinate a law enforcement referral. Document sourcing.",
+              "stakeholders": [
+                "security_operations",
+                "it_security",
+                "law_enforcement",
+                "protective_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "The persona is tied to a broader targeting effort, reuses cover across multiple sites, or successfully reached sensitive areas before detection.",
+              "coordinates_with": [],
+              "legal_notes": "Fabricated credentials may constitute criminal impersonation or fraud; preserve the fraudulent materials as evidence and coordinate charging decisions with counsel and law enforcement.",
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "CISA-CFATS-2023"
+              ]
+            }
+          ],
           "field_notes": "Cover for infrastructure access frequently impersonates the maintenance and integration roles that legitimately reach remote assets.",
           "observed_contexts": [
             "utility-impersonation cases where threat actors presented as contractors to reach restricted equipment"
@@ -38816,7 +39273,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0203-01",
+              "trigger": "Personnel report repeated fixed-position observers, staged vehicles conducting timed approaches, or photography of gates, cameras, and patrol patterns at a dispersed asset consistent with pre-attack surveillance.",
+              "action": "Activate the case. Take these steps: (a) direct protective operations to conduct discreet counter-surveillance and record vehicle descriptions, plates, timing, and observer positions without alerting the subjects, (b) task security operations to pull and preserve camera, access-control, and gate-sensor logs covering the reported window before any overwrite, (c) increase overt patrol presence and randomize patrol timing across the asset perimeter to degrade the adversary's pattern-of-life collection, (d) open a surveillance-detection log and correlate reported sightings against prior incidents to establish whether a campaign is underway.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "security_operations",
+                "law_enforcement"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Surveillance activity resolves into a probing attempt on the perimeter, or the same actors are observed at a second dispersed asset.",
+              "coordinates_with": [],
+              "legal_notes": "Counter-surveillance observation and license-plate capture must stay on company property or public vantage points and be documented to support a later law enforcement referral.",
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "RP-I0203-02",
+              "trigger": "Monitoring infrastructure shows sensor or camera feeds going dark, logging services stopped, or time gaps in access-control and monitoring records that do not match any scheduled maintenance at a dispersed site.",
+              "action": "Activate the case. Take these steps: (a) treat the logging gap as adversary counter-detection and immediately preserve surviving logs, sensor state, and configuration backups on write-protected media, (b) task IT security and security operations to determine whether feeds were physically disabled, network-isolated, or reconfigured, and restore monitoring from a known-good baseline, (c) fail over affected zones to redundant or manual observation, including on-site guard coverage, until automated monitoring is verified, (d) hunt for concurrent activity in the blind window using upstream network and physical records that the adversary could not reach.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations",
+                "it_security",
+                "operations_control"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "The monitoring outage coincides with a perimeter alarm, access anomaly, or confirmed intrusion at the affected asset.",
+              "coordinates_with": [],
+              "legal_notes": "Preserve tampered log evidence under chain of custody, as disabling of monitoring may constitute a chargeable offense and support attribution.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "field_notes": "Counter-detection spans physical observation of guard patterns and technical evasion of OT monitoring.",
           "observed_contexts": [
             "ICS intrusions in which threat actors disabled or evaded logging on engineering workstations before acting"
@@ -39008,7 +39504,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0204-01",
+              "trigger": "An intrusion alarm, camera, or field report confirms an in-progress breach of a fence, gate, or equipment enclosure at a dispersed, normally unmanned asset.",
+              "action": "Activate the case. Take these steps: (a) dispatch protective operations and request law enforcement response to the confirmed location while maintaining live camera observation of the intruder, (b) direct operations control to assess whether the breached enclosure houses safety-critical or control equipment and place affected systems in a safe, monitored state per response procedures, (c) task security operations to preserve alarm, access, and video records and to establish the intruder's entry point and direction of travel, (d) lock down adjacent dispersed sites and alert their on-call responders in case of a coordinated multi-site action.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "security_operations",
+                "law_enforcement"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "The intruder reaches control, safety, or hazardous-material equipment, or a coordinated breach is reported at another asset.",
+              "coordinates_with": [],
+              "legal_notes": "Coordinate scene handling with responding law enforcement so the trespass site is preserved as a crime scene and company evidence is admissible.",
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "RP-I0204-02",
+              "trigger": "A patrol or routine inspection discovers a defeated fence, cut lock, forced gate, or opened enclosure at a dispersed asset with no active alarm and unknown time of entry.",
+              "action": "Activate the case. Take these steps: (a) treat the site as a potential crime scene, restrict approach, and photograph the defeated barrier and surroundings before any repair, (b) task engineering and operations control to inspect the enclosed equipment for tampering, foreign devices, or altered settings before returning it to normal service, (c) direct security operations to reconstruct the entry window from camera, alarm, and log data and identify why the breach was not detected in real time, (d) implement compensating measures, including temporary guarding or portable sensors, until the barrier and detection gap are remediated.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations",
+                "engineering",
+                "operations_control"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Inspection reveals equipment tampering, a foreign device, or evidence that the intrusion was targeted rather than opportunistic.",
+              "coordinates_with": [],
+              "legal_notes": "Document the defeated barrier and any tampering under chain of custody before repairs, since remediation destroys physical evidence needed for prosecution.",
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "field_notes": "Perimeter breach at infrastructure sites often targets unmanned remote enclosures rather than staffed buildings.",
           "observed_contexts": [
             "the 2013 Metcalf substation attack, where threat actors cut fiber and fired on transformers after breaching the site approach"
@@ -39205,7 +39740,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0205-01",
+              "trigger": "Security monitoring detects an unauthorized logical connection into the control network, such as an unexpected remote session, rogue VPN tunnel, or new access path bridging IT and OT zones.",
+              "action": "Activate the case. Take these steps: (a) task OT security and IT security to isolate the affected control-network segment at the boundary firewall or conduit while preserving volatile session and connection data, (b) direct operations control to shift impacted processes to manual or safe control and confirm no unauthorized commands have altered set points or logic, (c) revoke and reissue credentials, keys, and remote-access tokens associated with the intrusion path per NIST SP 800-82 access-control guidance, (d) preserve firewall, authentication, and historian logs and begin scoping how the adversary obtained the path.",
+              "stakeholders": [
+                "threat_management_team",
+                "ot_security",
+                "it_security",
+                "operations_control"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Evidence shows the adversary issued control commands, modified logic, or moved laterally toward safety instrumented systems.",
+              "coordinates_with": [],
+              "legal_notes": "Preserve authentication and session logs under chain of custody and coordinate with legal before disconnecting, as an unauthorized control-network intrusion is a reportable cyber event.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "RP-I0205-02",
+              "trigger": "Investigation finds a compromised vendor, remote-maintenance, or VPN account being used to reach the control network, or exposed control-network credentials confirmed in adversary hands.",
+              "action": "Activate the case. Take these steps: (a) immediately disable the implicated vendor and remote-access accounts and terminate active sessions at the OT boundary, (b) task OT security and IT security to audit all standing remote-access paths, third-party connections, and dormant accounts for further misuse and enforce least-privilege and multifactor controls, (c) direct operations control to verify integrity of controller configurations and set points reachable from the compromised path, (d) notify the affected vendor and require credential reset and confirmation of remediation before restoring any external access.",
+              "stakeholders": [
+                "threat_management_team",
+                "ot_security",
+                "it_security",
+                "legal"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "The compromised path is confirmed to have reached live controllers, or the same vendor credentials provide access to additional dispersed assets.",
+              "coordinates_with": [],
+              "legal_notes": "Document the credential compromise for breach-notification and contractual obligations, and coordinate vendor communications through legal to preserve claims.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "field_notes": "Remote access acquisition is effect-at-distance: the threat actor obtains a path to the control plane without being physically present.",
           "observed_contexts": [
             "Oldsmar (2021), where an intruder reached a water-treatment HMI over a remote-access tool"
@@ -39404,7 +39978,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0206-01",
+              "trigger": "Unauthorized logon, engineering session, or logic download is observed against a PLC, RTU, or HMI from an unrecognized host or outside a maintenance window.",
+              "action": "Activate incident response. Take these steps: (a) isolate the affected controller and engineering workstation from the control network while confirming the process remains in a verified safe state, (b) preserve controller logs, project files, and engineering workstation images before any restore, (c) revoke and rotate the credentials and keys used to reach the device, and (d) notify OT security and operations control to validate setpoints against the last known-good baseline.",
+              "stakeholders": [
+                "ot_security",
+                "operations_control",
+                "engineering",
+                "security_operations"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Escalate if the adversary retains an active session, altered control logic is confirmed, or the process cannot be verified in a safe state.",
+              "coordinates_with": [],
+              "legal_notes": "Preserve device images and logs under chain of custody, as unauthorized control-system access may constitute a reportable cyber incident.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0206-02",
+              "trigger": "Anomalous commands, unexpected setpoint changes, or malicious tooling are detected on an HMI or engineering workstation with reach into control-system devices.",
+              "action": "Activate incident response. Take these steps: (a) isolate the compromised HMI or engineering workstation and place affected process segments under manual or local control, (b) preserve volatile memory, host artifacts, and command histories for forensics, (c) verify field devices against expected states and revert unauthorized changes through validated procedures, and (d) notify engineering and OT security to confirm no safety instrumented function was affected.",
+              "stakeholders": [
+                "ot_security",
+                "engineering",
+                "operations_control",
+                "it_security"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Escalate if issued commands affected physical process outputs or a safety instrumented system.",
+              "coordinates_with": [],
+              "legal_notes": "Document all changes and containment actions to support regulatory incident reporting obligations.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "field_notes": "Control-system access is the point at which a threat actor can read or issue process commands, whether reached physically or logically.",
           "observed_contexts": [
             "Industroyer operators reaching substation control devices to issue unauthorized breaker commands"
@@ -39592,7 +40205,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0207-01",
+              "trigger": "Lateral movement or new authenticated connections are observed crossing from the IT environment into the OT network across the industrial demilitarized zone.",
+              "action": "Activate incident response. Take these steps: (a) isolate the conduit by blocking the IT-to-OT path and disabling the compromised accounts used to traverse the zone boundary, (b) preserve firewall, jump-host, and authentication logs spanning the crossing, (c) revoke and rotate credentials and revalidate access controls at the zone boundary, and (d) notify OT security and security operations to hunt for additional footholds inside the control network.",
+              "stakeholders": [
+                "ot_security",
+                "security_operations",
+                "it_security",
+                "operations_control"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Escalate if the adversary reached any control-system device or a Level 1 or Level 0 safety zone.",
+              "coordinates_with": [],
+              "legal_notes": "Retain cross-zone authentication and network records as evidence for potential law enforcement referral.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0207-02",
+              "trigger": "An account or host gains elevated privileges or crosses into a higher-integrity safety zone beyond its authorized segment inside the OT environment.",
+              "action": "Activate incident response. Take these steps: (a) isolate the elevated account and originating host and enforce zone segmentation to contain the affected cell, (b) preserve privileged access logs, session records, and configuration changes, (c) verify safety-critical functions remain in a safe state and revert unauthorized privilege or configuration changes, and (d) notify engineering and OT security to reassess least-privilege and conduit rules at the crossed boundary.",
+              "stakeholders": [
+                "ot_security",
+                "engineering",
+                "operations_control",
+                "security_operations"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Escalate if elevated access enabled modification of safety instrumented systems or protective controls.",
+              "coordinates_with": [],
+              "legal_notes": "Preserve privilege-change records under chain of custody to support incident attribution and reporting.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "field_notes": "Zone escalation is the IT-to-OT boundary crossing that turns a business-network foothold into control-plane reach.",
           "observed_contexts": [
             "Ukraine 2015, where threat actors pivoted from corporate networks into SCADA to open breakers"
@@ -39779,7 +40431,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0208-01",
+              "trigger": "An operator or engineer uses their own valid credentials or console to perform control-system actions outside their authorized role, shift, or change window.",
+              "action": "Activate incident response. Take these steps: (a) suspend the involved account and revoke console and remote access while placing affected process segments under supervised control, (b) preserve badge, console session, and control-action logs before the employee can alter them, (c) verify affected devices against known-good baselines and confirm a safe state, and (d) notify human resources, legal, and OT security to coordinate a discreet, evidence-preserving response.",
+              "stakeholders": [
+                "ot_security",
+                "human_resources",
+                "legal",
+                "operations_control"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Escalate if the insider altered control logic, disabled safety functions, or attempted to conceal their actions.",
+              "coordinates_with": [],
+              "legal_notes": "Coordinate with legal and human resources before any interview to protect employee rights and preserve admissibility of evidence.",
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "RP-I0208-02",
+              "trigger": "An employee shares credentials, grants console access, or facilitates another party's access to control systems in a manner inconsistent with sanctioned procedures.",
+              "action": "Activate incident response. Take these steps: (a) disable the shared and affected credentials and isolate the consoles and devices that were accessed, (b) preserve authentication, session, and physical access records that document who accessed what and when, (c) verify control-system integrity and revert any unauthorized changes through validated procedures, and (d) notify legal, human resources, and OT security, engaging law enforcement if an external actor was enabled.",
+              "stakeholders": [
+                "ot_security",
+                "human_resources",
+                "legal",
+                "security_operations"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Escalate if an external party gained control-system access or if the facilitation appears deliberate and coordinated.",
+              "coordinates_with": [],
+              "legal_notes": "Consult legal before evidence collection and any law enforcement referral to preserve chain of custody and comply with employment law.",
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "field_notes": "Insider-enabled access is a primary infrastructure pathway because the insider's legitimate console session is the attack.",
           "observed_contexts": [
             "CISA insider cases where authorized OT credentials provided the decisive access to the control environment"
@@ -39975,7 +40666,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0209-01",
+              "trigger": "An unrecognized device, rogue wireless transmitter, or unauthorized hardware tap is discovered attached to control-system cabling, a network switch, or an OT asset inside a restricted area.",
+              "action": "Activate incident response. Take these steps: (a) verify the affected process remains in a safe and known state before touching the suspect hardware, (b) photograph and log the device in place, then isolate it by disconnecting the compromised network segment or port rather than powering down live control equipment, (c) preserve the device, cabling, and surrounding physical evidence for forensic and law-enforcement examination without altering memory or storage, (d) sweep adjacent cabinets, network drops, and OT assets for additional emplaced hardware or firmware tampering, (e) notify facility and control-room personnel of the compromise and enforce elevated physical access controls at the affected location.",
+              "stakeholders": [
+                "ot_security",
+                "engineering",
+                "operations_control",
+                "law_enforcement"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "The device is found actively transmitting, bridged to external networks, or connected to a safety-instrumented system, indicating an in-progress intrusion into process control.",
+              "coordinates_with": [],
+              "legal_notes": "Preserve chain of custody for the seized hardware and coordinate with legal before analysis, as the device is potential evidence in a criminal intrusion investigation.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0209-02",
+              "trigger": "Firmware integrity monitoring, asset inventory, or physical inspection reveals a malicious or unauthorized firmware image, implant, or inline tap on a PLC, RTU, sensor, or field device.",
+              "action": "Activate incident response. Take these steps: (a) confirm the process controlled by the affected device is holding a safe state and place operators on heightened manual monitoring, (b) isolate the compromised device from the control network and, where safe, transfer its function to a verified redundant or manual control path, (c) capture the running firmware image, device configuration, and logs before any reflash to preserve evidence of the implant, (d) validate golden firmware against a trusted baseline before restoring any device to service, (e) inspect physically and cross-check inventory for other devices sharing the same supply-chain or maintenance vector.",
+              "stakeholders": [
+                "ot_security",
+                "engineering",
+                "operations_control",
+                "it_security"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Malicious firmware is confirmed on multiple devices or on equipment governing critical process safety functions, indicating a coordinated emplacement campaign.",
+              "coordinates_with": [],
+              "legal_notes": "Retain original firmware images and device state under documented chain of custody to support mandatory breach notification and any subsequent supply-chain or criminal inquiry.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "field_notes": "Implant emplacement introduces attacker-controlled hardware or firmware into the control path, physically or via the supply chain.",
           "observed_contexts": [
             "malicious-firmware and rogue-device findings in OT environments reported by CISA advisories"
@@ -40164,7 +40894,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0210-01",
+              "trigger": "Detection of an established intra-operation foothold, such as unauthorized persistence, staged tooling, or lateral movement from a compromised host toward the control-system network during an active intrusion.",
+              "action": "Activate incident response. Take these steps: (a) verify the physical process is stable and shift operations to a monitored safe posture before defensive changes, (b) contain the foothold by isolating the compromised host or segment and blocking the identified lateral movement paths at the IT/OT boundary, (c) preserve volatile memory, host artifacts, staging directories, and network flow records for forensic attribution, (d) reset or disable the credentials, accounts, and access tokens implicated in the foothold, (e) hunt across adjacent hosts and control-network segments for additional staged positions or persistence mechanisms.",
+              "stakeholders": [
+                "ot_security",
+                "security_operations",
+                "operations_control",
+                "it_security"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "The adversary foothold is confirmed to have reached the process control or safety network, or lateral movement continues despite initial containment.",
+              "coordinates_with": [],
+              "legal_notes": "Document containment actions and preserved artifacts to support incident reporting obligations and potential law-enforcement referral for the unauthorized access.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0210-02",
+              "trigger": "Discovery of staging infrastructure inside the facility perimeter, such as a hidden access point, pre-positioned tooling, or an established beachhead being prepared to enable a follow-on attack on operations.",
+              "action": "Activate incident response. Take these steps: (a) confirm no operational process has yet been affected and maintain operators on elevated alert, (b) isolate the staging asset by severing its network and physical connectivity while leaving it intact for examination, (c) preserve the staging materials, configurations, and logs, and correlate them with badge, camera, and access records to identify the emplacement vector, (d) revoke physical and logical access associated with the staging location and enforce tighter perimeter controls, (e) coordinate a joint physical and cyber sweep for related positions before clearing the area.",
+              "stakeholders": [
+                "ot_security",
+                "protective_operations",
+                "security_operations",
+                "law_enforcement"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Evidence indicates the staging position is nearly operational or is linked to a broader plan to disrupt physical operations.",
+              "coordinates_with": [],
+              "legal_notes": "Maintain chain of custody over staged materials and access records, as they constitute evidence of intent supporting a criminal trespass or intrusion case.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
           "field_notes": "Foothold establishment is the pre-execution staging a threat actor holds during the operation, distinct from the strategic leave-behind assessed in the Aftermath phase.",
           "observed_contexts": [
             "living-off-the-land footholds in US critical infrastructure attributed to Volt Typhoon"
@@ -40354,7 +41123,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0301-01",
+              "trigger": "A malicious or unauthorized setpoint, logic change, or command is observed driving a physical process toward an unsafe condition, such as overpressure, overspeed, or bypassed interlocks.",
+              "action": "Activate incident response. Take these steps: (a) verify the true physical state of the process from independent instrumentation and immediately restore a safe operating condition, invoking the safety-instrumented system or emergency shutdown if the process is trending unsafe, (b) transfer to manual or local control and take the compromised control logic, HMI, or engineering workstation offline from the automation path, (c) restore validated setpoints and control logic from a trusted golden baseline before returning to automatic control, (d) isolate the source of the manipulation and preserve controller logs, HMI records, and command history for forensics, (e) keep operators and safety personnel on heightened monitoring until process stability is independently confirmed.",
+              "stakeholders": [
+                "operations_control",
+                "engineering",
+                "ot_security",
+                "regulatory_agency"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "The process cannot be returned to a safe state through manual control, or the manipulation defeats or disables safety-instrumented functions.",
+              "coordinates_with": [],
+              "legal_notes": "This event triggers mandatory incident reporting to the applicable regulatory agency and requires evidence preservation of all control-system records.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "RP-I0301-02",
+              "trigger": "Control-system monitoring detects manipulated process parameters or spoofed sensor values causing controllers to act on false readings and push equipment beyond safe limits.",
+              "action": "Activate incident response. Take these steps: (a) cross-check suspect readings against independent field instrumentation and place the process in a verified safe state, using manual intervention or shutdown where sensor trust is lost, (b) isolate the affected controllers and sensor networks from the manipulation source while preserving continuity of safety functions, (c) revert to trusted control configurations and validated sensor calibration before resuming automatic operation, (d) capture and preserve historian data, controller logic, and network captures documenting the spoofed values for forensic analysis, (e) maintain engineering and operations staff on manual oversight until sensor integrity is restored and verified.",
+              "stakeholders": [
+                "operations_control",
+                "engineering",
+                "ot_security",
+                "regulatory_agency"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Sensor manipulation spreads to redundant instrumentation or safety systems, removing the ability to independently confirm a safe process state.",
+              "coordinates_with": [],
+              "legal_notes": "Mandatory incident reporting to the relevant regulatory authority applies, and all historian and control records must be preserved as evidence of the safety-affecting intrusion.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "field_notes": "Process manipulation is the signature cyber-physical execution behavior, ranging from abrupt commands to deliberately gradual drift that evades operator attention.",
           "observed_contexts": [
             "Stuxnet's over-speed and over-pressure manipulation of centrifuges while reporting normal values"
@@ -40543,7 +41351,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0302-01",
+              "trigger": "Safety instrumented system, interlock, or protective relay logic shows unauthorized disabling, bypass, or forced-value states while the underlying process approaches or exceeds design safety limits.",
+              "action": "Activate emergency response. Take these steps: (a) treat the process as unprotected and independently verify true conditions using hardwired gauges, local field instruments, and physical operator observation rather than the compromised control system, (b) execute a manual, procedurally driven safe shutdown to a de-energized or vented safe state, staffing local manual controls where automated protection can no longer be trusted, (c) physically isolate the safety instrumented system and affected controllers from the network and restore protective functions only from verified-good configuration, (d) dispatch engineering and OT security to the affected asset and stage protective operations for on-site personnel safety, (e) preserve controller logic, relay settings, event logs, and forced-value records as evidence before any restoration.",
+              "stakeholders": [
+                "operations_control",
+                "engineering",
+                "ot_security",
+                "law_enforcement"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Manual safe shutdown cannot be achieved or a runaway condition such as overpressure, overtemperature, or loss of containment develops before protective functions are restored.",
+              "coordinates_with": [],
+              "legal_notes": "Defeat of safety systems is a reportable safety and security incident that likely triggers mandatory notification to the sector regulator and, for covered chemical facilities, CFATS reporting obligations.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "RP-I0302-02",
+              "trigger": "Emergency shutdown or trip commands fail to actuate, or protective devices report healthy while field verification shows interlocks spoofed, giving operators false assurance that safety functions remain active.",
+              "action": "Activate emergency response. Take these steps: (a) assume no automated protection exists and independently confirm true process state through hardwired instrumentation and direct physical inspection at the asset, (b) bring the process to a safe state by manual field operation of valves, breakers, or trip mechanisms, positioning personnel to actuate protection locally, (c) place the facility in a controlled hold and reduce throughput or load to lower the consequence of a loss of protection, (d) isolate compromised safety controllers, dispatch engineering and OT security, and alert law enforcement to a deliberate attack on life-safety systems, (e) preserve all controller, historian, and relay records governing protective logic.",
+              "stakeholders": [
+                "operations_control",
+                "engineering",
+                "ot_security",
+                "regulatory_agency"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Spoofing extends across multiple protective layers or independent verification confirms an active hazard with no functioning automated safeguard.",
+              "coordinates_with": [],
+              "legal_notes": "Compromise of interlock and trip functions is a mandatory-reporting cyber-physical safety incident to the governing regulatory agency under applicable critical infrastructure reporting rules.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "field_notes": "Safety-system defeat removes the automatic protection that would arrest an unsafe condition, the step that turns disruption into potential catastrophe.",
           "observed_contexts": [
             "Triton/Trisis, which targeted a petrochemical plant's Triconex safety controllers"
@@ -40733,7 +41580,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0303-01",
+              "trigger": "HMI, telemetry, or historian displays show static, replayed, or physically implausible values that diverge from independent field readings, indicating operators are being blinded to true process conditions.",
+              "action": "Activate emergency response. Take these steps: (a) declare the control-room view untrusted and establish ground truth through hardwired local gauges, field walkdowns, and manual operator reports at each critical asset, (b) bring the process to a conservative safe state based on verified field data, not screen values, reducing load or throughput to widen safety margins while blinded, (c) staff affected units with local operators in direct voice contact with the control room to run the process on manual field indication, (d) isolate the compromised HMI, historian, and telemetry paths from control networks, dispatch OT security and engineering, and notify law enforcement of a deliberate falsification of operational awareness, (e) preserve historian archives, HMI images, and network captures before rebuilding from verified-good sources.",
+              "stakeholders": [
+                "operations_control",
+                "engineering",
+                "ot_security",
+                "law_enforcement"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Field verification confirms an actual excursion that the falsified view concealed, or the true process state cannot be established for one or more critical assets.",
+              "coordinates_with": [],
+              "legal_notes": "Deliberate falsification of operational monitoring is a reportable control-system security incident requiring mandatory notification to the sector regulator and preservation of records for investigation.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0303-02",
+              "trigger": "Alarms are suppressed or values frozen while independent sensors, downstream conditions, or physical symptoms indicate the process is drifting outside normal bounds unseen by operators.",
+              "action": "Activate emergency response. Take these steps: (a) treat all screen-based indication and alarms as unreliable and reconstruct true conditions from independent instrumentation, local panels, and physical inspection, (b) move the process to a known safe state under manual control, prioritizing assets where concealed drift carries the highest consequence, (c) restore situational awareness by cross-checking redundant or out-of-band data sources and posting personnel at critical points for direct reporting, (d) isolate the affected HMI and historian, dispatch engineering and OT security, and engage regulatory and law enforcement channels for a confirmed manipulation of monitoring integrity, (e) preserve alarm logs, historian data, and configuration records as evidence.",
+              "stakeholders": [
+                "operations_control",
+                "ot_security",
+                "engineering",
+                "regulatory_agency"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Suppressed alarms masked a developing hazard or the manipulation spreads to redundant and out-of-band monitoring paths.",
+              "coordinates_with": [],
+              "legal_notes": "Alarm suppression and monitoring manipulation constitute a mandatory-reportable safety-significant cyber incident to the applicable regulatory agency.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "field_notes": "View falsification blinds or misleads the operator, and the ICS doctrine distinguishes manipulating the view from denying it entirely.",
           "observed_contexts": [
             "Stuxnet's replay of normal sensor readings to the control room during the attack"
@@ -40918,7 +41804,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0304-01",
+              "trigger": "A transformer, pump, valve, transmission line, or tower shows confirmed physical destruction or attack, such as ballistic damage, forced entry with equipment damage, fire, or structural sabotage.",
+              "action": "Activate emergency response. Take these steps: (a) bring affected equipment to a safe state by de-energizing, isolating, and depressurizing damaged assets and rerouting or shedding load to protect the wider system and prevent cascading failure, (b) dispatch protective operations and fire or hazmat response to secure the site, protect responders and the public, and address active hazards from released energy or product, (c) treat the location as a crime scene, restrict access, and coordinate law enforcement response for an ongoing or repeat physical attack, (d) account for personnel, establish a safety perimeter, and stage engineering for damage assessment and controlled restoration, (e) preserve physical evidence, surveillance footage, and site access records for investigators.",
+              "stakeholders": [
+                "operations_control",
+                "protective_operations",
+                "law_enforcement",
+                "engineering"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "The attack is ongoing, targets multiple assets, or produces a public-safety hazard or loss of an essential service to customers.",
+              "coordinates_with": [],
+              "legal_notes": "Physical destruction of critical infrastructure assets requires mandatory incident reporting to the sector regulatory agency and referral to law enforcement for criminal investigation.",
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "RP-I0304-02",
+              "trigger": "Coordinated physical sabotage disables or destroys infrastructure across multiple sites or components, indicating a deliberate campaign against the facility or grid segment.",
+              "action": "Activate emergency response. Take these steps: (a) bring surviving assets to a safe and defensible operating state, isolating destroyed equipment and reconfiguring the system to sustain critical service and prevent cascading loss, (b) dispatch protective operations to harden and guard remaining high-value assets that fit the observed targeting pattern, (c) coordinate law enforcement for an active, coordinated attack and share the targeting pattern to anticipate follow-on strikes, (d) stage engineering and mutual-aid resources for rapid damage assessment and restoration while maintaining scene integrity, (e) preserve all physical, video, and access evidence and document the sequence of attacks for attribution.",
+              "stakeholders": [
+                "operations_control",
+                "protective_operations",
+                "law_enforcement",
+                "regulatory_agency"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Attacks continue against additional assets or the combined damage threatens sustained loss of an essential service to the served population.",
+              "coordinates_with": [],
+              "legal_notes": "A coordinated attack on critical infrastructure triggers mandatory reporting to the regulatory agency and immediate law enforcement referral under critical infrastructure protection statutes.",
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "CISA-CFATS-2023"
+              ]
+            }
+          ],
           "field_notes": "Physical sabotage attacks the asset directly and is often the lowest-tradecraft path to a service outage.",
           "observed_contexts": [
             "the 2022 attacks on North Carolina substations that caused prolonged regional outages"
@@ -41111,7 +42036,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0305-01",
+              "trigger": "Multiple substations or feeders report simultaneous unexplained trips and load-shed with matching timestamps, and field crews confirm deliberate switching or physical interference rather than equipment fault.",
+              "action": "Activate emergency response. Take these steps: (a) protect public safety by verifying critical loads such as hospitals, water, and emergency services remain energized and dispatching backup generation or manual restoration crews to life-safety sites first, (b) restore service by isolating the affected segment, transferring load to healthy feeders, and executing black-start or reconfiguration procedures from the operations control center, (c) preserve evidence by capturing SCADA event logs, relay records, and switching sequences before any reset, and documenting the physical scene for law enforcement.",
+              "stakeholders": [
+                "operations_control",
+                "engineering",
+                "security_operations",
+                "executive_leadership"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Outage spreads beyond the initial segment or threatens cascading loss of a critical load such as a hospital or water system.",
+              "coordinates_with": [],
+              "legal_notes": "Notify the sector regulatory agency and file mandatory reliability-event and incident reports within the required reporting window.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0305-02",
+              "trigger": "Operators lose voice and telemetry contact with remote sites during radio-frequency jamming or a flow-stoppage event that halts pipeline, water, or feeder throughput with no matching process fault.",
+              "action": "Activate emergency response. Take these steps: (a) protect public safety by placing affected processes into a safe fail state and warning downstream and adjacent facilities of the stoppage, (b) restore service by switching to backup and out-of-band communications, dispatching crews for manual local control, and clearing the flow blockage once the site is confirmed safe, (c) preserve evidence by logging jam signatures, communication-loss timestamps, and control-system state for law enforcement and spectrum authorities.",
+              "stakeholders": [
+                "operations_control",
+                "engineering",
+                "communications",
+                "law_enforcement"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Communications denial persists long enough to prevent safe remote control of a hazardous process.",
+              "coordinates_with": [],
+              "legal_notes": "Report the radio-frequency interference and service disruption to the FCC and sector regulatory agency as required by mandatory-reporting rules.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            }
+          ],
           "field_notes": "Service denial stops or degrades delivery without necessarily destroying equipment, including communications jamming.",
           "observed_contexts": [
             "Ukraine 2015, where remote breaker operations denied electricity to roughly 225,000 customers"
@@ -41301,7 +42265,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0306-01",
+              "trigger": "Water quality sensors or customer reports indicate abnormal turbidity, chemical, or biological readings consistent with deliberate contaminant introduction into the distribution system.",
+              "action": "Activate emergency response. Take these steps: (a) protect public safety by isolating the affected distribution zone, closing valves to stop further spread, and issuing a do-not-use or boil-water notification to the public through the communications team, (b) restore service by flushing and treating the contaminated segment and standing up alternate supply only after confirmatory clearance, (c) preserve evidence by collecting chain-of-custody water samples at multiple points, logging sensor data, and coordinating laboratory analysis with public-health authorities.",
+              "stakeholders": [
+                "operations_control",
+                "regulatory_agency",
+                "communications",
+                "law_enforcement"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Contaminated water reaches consumers or confirmatory sampling identifies a toxic or infectious agent.",
+              "coordinates_with": [],
+              "legal_notes": "Mandatory public notification and reporting to the public-health regulatory agency under Safe Drinking Water Act and CFATS requirements are triggered immediately.",
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "RP-I0306-02",
+              "trigger": "Fuel or chemical process monitoring shows off-specification composition, unauthorized additive injection, or tampering at a storage or dosing point indicating deliberate adulteration.",
+              "action": "Activate emergency response. Take these steps: (a) protect public safety by isolating the affected tank, line, or dosing system, halting distribution of the suspect product, and notifying the public and downstream users where exposure is possible, (b) restore service by quarantining and remediating the adulterated material and resuming supply only after independent sampling confirms it is within specification, (c) preserve evidence by securing the tampered equipment, capturing process-historian and access-control logs, and maintaining chain of custody for regulatory and law-enforcement analysis.",
+              "stakeholders": [
+                "engineering",
+                "regulatory_agency",
+                "ot_security",
+                "law_enforcement"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Adulterated product has already entered distribution or the contaminant poses an acute health or explosion hazard.",
+              "coordinates_with": [],
+              "legal_notes": "Mandatory reporting to the chemical-sector regulatory agency and public notification of potentially exposed users are required under CFATS and applicable environmental statutes.",
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            }
+          ],
           "field_notes": "Contamination manipulates the delivered product itself, frequently by altering dosing or treatment setpoints.",
           "observed_contexts": [
             "Oldsmar (2021), where an intruder raised the sodium-hydroxide setpoint in a water-treatment process"
@@ -41490,7 +42493,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0307-01",
+              "trigger": "Grid frequency and voltage oscillate abnormally while telemetry shows large synchronized on-off cycling of smart thermostats, EV chargers, or other high-wattage IoT loads consistent with a coordinated demand-edge attack.",
+              "action": "Activate emergency response. Take these steps: (a) protect public safety by arming automatic under-frequency load-shedding and protective relaying to keep the grid within stable limits, (b) restore service by curtailing or islanding the manipulated demand clusters, dispatching fast-responding generation and reserves, and coordinating with aggregators to disable compromised control channels, (c) preserve evidence by capturing frequency, load, and command-and-control telemetry that shows the synchronized switching pattern for security operations and law enforcement.",
+              "stakeholders": [
+                "operations_control",
+                "ot_security",
+                "engineering",
+                "security_operations"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Oscillations approach protective trip thresholds or threaten to cascade into wide-area instability.",
+              "coordinates_with": [],
+              "legal_notes": "Report the coordinated demand-manipulation event to the reliability and sector regulatory agency under mandatory grid-security incident reporting.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "RP-I0307-02",
+              "trigger": "Distributed energy resources such as rooftop inverters or battery systems abruptly change output or trip in a synchronized pattern following anomalous commands to their edge controllers, destabilizing local voltage.",
+              "action": "Activate emergency response. Take these steps: (a) protect public safety by enforcing inverter ride-through and voltage-regulation settings and shedding unstable feeders to prevent equipment damage or backfeed hazards to crews, (b) restore service by isolating the compromised distributed-energy aggregation platform, reverting affected devices to safe default settings, and rebalancing feeder voltage from the control center, (c) preserve evidence by logging inverter command histories, aggregator access records, and telemetry showing the synchronized manipulation for forensic and law-enforcement review.",
+              "stakeholders": [
+                "ot_security",
+                "engineering",
+                "operations_control",
+                "security_operations"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Manipulated distributed-energy output causes sustained overvoltage, backfeed, or feeder instability endangering personnel or equipment.",
+              "coordinates_with": [],
+              "legal_notes": "Notify the sector regulatory agency and file the mandatory cyber-physical grid incident report within the required window.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "field_notes": "Demand-side manipulation reaches the system through consumer and edge devices, a path the control-plane-centric access model does not require.",
           "observed_contexts": [
             "the MadIoT research demonstrating that botnets of high-wattage loads can induce grid frequency instability"
@@ -41679,7 +42721,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0308-01",
+              "trigger": "Grid, telecom, or rail synchronization systems report drifting, degraded, or lost GNSS time references consistent with spoofing or jamming across multiple dependent sites.",
+              "action": "Take these steps: (a) fail affected systems over to alternate timing sources such as holdover oscillators, atomic clocks, or hardened precision time protocol references, (b) isolate suspect GNSS receivers and validate current time integrity against a trusted terrestrial reference, (c) notify dependent grid, telecommunications, and rail operators of the degraded timing condition and expected holdover window, (d) capture radio-frequency signal characteristics and receiver logs for attribution, (e) escalate to sector coordinating agencies and OT engineering for stability monitoring.",
+              "stakeholders": [
+                "operations_control",
+                "ot_security",
+                "engineering",
+                "security_operations"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Holdover timing approaches drift tolerance limits or a dependent sector reports cascading synchronization faults.",
+              "coordinates_with": [],
+              "legal_notes": "Preserve receiver logs and radio-frequency captures under evidentiary handling and coordinate GNSS interference reporting with regulatory and law enforcement channels.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "RP-I0308-02",
+              "trigger": "Positioning or timing anomalies coincide with unexplained relay, switching, or scheduling faults suggesting deliberate manipulation of the timing reference underlying operational control.",
+              "action": "Take these steps: (a) fail synchronization-dependent controllers over to independent local timing and confirm phase alignment before resuming automated operation, (b) place affected automated processes into manual or safe-state supervision while integrity is confirmed, (c) notify interdependent utilities and transport operators of the manipulation and coordinate mutual holdover support, (d) correlate timing anomalies with control-system events to confirm attack versus equipment failure, (e) document indicators and report the interference event to sector and federal authorities.",
+              "stakeholders": [
+                "ot_security",
+                "operations_control",
+                "engineering",
+                "regulatory_agency"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Timing manipulation produces protective-relay misoperation or safety-system actuation affecting physical processes.",
+              "coordinates_with": [],
+              "legal_notes": "Manipulation of positioning or timing references implicates critical infrastructure protection statutes; preserve control-system and timing evidence for regulatory and criminal review.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "field_notes": "Timing-reference manipulation attacks the substrate many services trust rather than any single asset, degrading synchronization across sectors at once.",
           "observed_contexts": [
             "documented GPS timing anomalies that disrupted synchronized grid and communications equipment"
@@ -41867,7 +42948,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0309-01",
+              "trigger": "Failover mechanisms, alarms, or backup systems fail to activate as designed during an incident, indicating deliberate suppression of response and recovery capabilities.",
+              "action": "Take these steps: (a) manually invoke redundant and failover systems and verify actuation independent of the suppressed automation, (b) restore alarm and monitoring visibility using out-of-band channels and confirm alert integrity, (c) validate backup availability against known-good offline copies before relying on them for restoration, (d) preserve logs showing the suppression to distinguish sabotage from failure, (e) escalate to incident command and coordinate manual continuity of critical processes.",
+              "stakeholders": [
+                "security_operations",
+                "operations_control",
+                "it_security",
+                "engineering"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "Backups are confirmed altered or unavailable, or manual failover cannot sustain critical process continuity.",
+              "coordinates_with": [],
+              "legal_notes": "Deliberate defeat of safety and recovery systems may constitute infrastructure sabotage; preserve suppression evidence under chain of custody for law enforcement.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0309-02",
+              "trigger": "Restoration attempts stall because recovery tooling, credentials, or backup integrity have been tampered with to prevent return to normal operation.",
+              "action": "Take these steps: (a) switch to isolated recovery infrastructure and pre-staged offline backups validated against integrity hashes, (b) rotate and re-provision recovery credentials suspected of compromise before continuing restoration, (c) rebuild affected systems from trusted baselines rather than in-place repair where tampering is confirmed, (d) maintain manual operation of critical functions and notify leadership of extended recovery timelines, (e) document defeated recovery controls for post-incident review and attribution.",
+              "stakeholders": [
+                "it_security",
+                "security_operations",
+                "engineering",
+                "executive_leadership"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "No trusted backup or recovery path remains viable, forcing prolonged manual operation of critical services.",
+              "coordinates_with": [],
+              "legal_notes": "Tampering with recovery systems and backups is preservable evidence of intent; coordinate disclosure with legal before external notification.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            }
+          ],
           "field_notes": "Recovery suppression attacks the organization's ability to respond, distinct from the automatic protection defeated during execution.",
           "observed_contexts": [
             "Industroyer's wiper and protective-relay denial-of-service module, designed to hinder restoration"
@@ -42051,7 +43171,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0401-01",
+              "trigger": "The adversary is observed egressing the site, disconnecting access, or terminating the session after completing or abandoning the operation.",
+              "action": "Take these steps: (a) capture and preserve egress evidence including camera footage, access logs, session and network artifacts, and any abandoned devices or materials, (b) secure the affected area and equipment to prevent contamination while awaiting law enforcement, (c) reconcile access records and account activity to scope what was reached during the intrusion, (d) initiate attribution by correlating egress indicators with entry and dwell-time evidence, (e) notify law enforcement and executive leadership and hand off preserved evidence.",
+              "stakeholders": [
+                "protective_operations",
+                "security_operations",
+                "law_enforcement",
+                "threat_management_team"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Egress evidence indicates data exfiltration, planted devices, or intent to return.",
+              "coordinates_with": [],
+              "legal_notes": "Maintain strict chain of custody over all egress evidence to support prosecution and attribution.",
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "RP-I0401-02",
+              "trigger": "A session or physical presence is terminated abruptly with signs of cleanup, log deletion, or removal of tools consistent with an adversary covering withdrawal.",
+              "action": "Take these steps: (a) preserve volatile and residual evidence immediately by imaging affected systems and capturing surviving logs before automated rotation, (b) inventory the environment for altered, planted, or removed assets and flag anti-forensic indicators, (c) reconstruct the withdrawal timeline from correlated physical and digital telemetry to support attribution, (d) restrict re-entry paths and monitor for return or follow-on access, (e) brief threat management and law enforcement and transfer findings for investigation.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations",
+                "law_enforcement",
+                "executive_leadership"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Anti-forensic activity or asset tampering suggests continued threat or destruction of attributable evidence.",
+              "coordinates_with": [],
+              "legal_notes": "Anti-forensic cleanup is itself evidentiary; document and preserve it intact for criminal and civil proceedings.",
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "field_notes": "Withdrawal is the threat actor's exit, which in infrastructure may be a logical disconnect rather than a physical departure.",
           "observed_contexts": [
             "ICS intrusions in which operators disconnected access after achieving the intended process effect"
@@ -42242,7 +43401,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0402-01",
+              "trigger": "Post-incident sweeps reveal unauthorized local accounts, unexplained scheduled tasks, rogue VPN sessions, or modified engineering-workstation firmware that survived the initial eradication.",
+              "action": "Take these steps: (a) launch a structured threat hunt across control-system and IT hosts for persistence mechanisms including new accounts, autostart entries, implanted services, and web shells per NIST SP 800-82 incident response guidance, (b) force a full credential reset covering all operator, vendor, and service accounts and rotate shared secrets, certificates, and keys, (c) reimage or reflash affected PLCs, RTUs, HMIs, and engineering workstations to a known-good baseline and validate firmware integrity against signed vendor hashes, (d) restore remote access only through rebuilt, monitored jump hosts with enforced multifactor authentication.",
+              "stakeholders": [
+                "security_operations",
+                "ot_security",
+                "it_security",
+                "engineering"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Any hunted persistence artifact reactivates or new unauthorized access recurs after eradication, indicating an undiscovered foothold.",
+              "coordinates_with": [],
+              "legal_notes": "Preserve forensic images and account-provisioning records under documented chain of custody before reimaging so persistence evidence survives host rebuilds.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0402-02",
+              "trigger": "Network monitoring detects beaconing to previously unseen external infrastructure, dormant implants awakening on control-system segments, or vendor maintenance channels being used outside authorized windows.",
+              "action": "Take these steps: (a) isolate the affected segments and capture volatile memory and network flow data before disruption, (b) hunt for staged re-entry positioning such as backdoored maintenance accounts, tampered remote-access appliances, and unauthorized firewall rules, (c) rebuild trust by fully resetting credentials and revoking then reissuing device certificates and firmware for every implicated asset, (d) deploy detection signatures for the identified command-and-control indicators across all similar OT zones to catch reuse.",
+              "stakeholders": [
+                "threat_management_team",
+                "ot_security",
+                "security_operations",
+                "operations_control"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Beaconing resumes to alternate infrastructure or a second implant is found after containment, signaling adversary re-entry through an unremediated channel.",
+              "coordinates_with": [],
+              "legal_notes": "Log every containment and reset action with timestamps and operator identity to maintain an unbroken evidentiary chain for later attribution and prosecution.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
           "field_notes": "Re-entry positioning is the strategic leave-behind: access held for future action after the current operation ends.",
           "observed_contexts": [
             "Volt Typhoon's persistent pre-positioning in US critical infrastructure for potential later disruption"
@@ -42433,7 +43631,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0403-01",
+              "trigger": "Investigators find control-system historian entries, SCADA event logs, or physical access records showing gaps, altered timestamps, or deletions inconsistent with the known incident timeline.",
+              "action": "Take these steps: (a) immediately preserve and export all surviving logs to write-once off-site storage isolated from the compromised environment before any further tampering can occur, (b) collect corroborating records from independent sources including badge readers, camera systems, upstream log collectors, and vendor telemetry to reconstruct the true sequence, (c) forensically image affected logging hosts and hash all evidence to detect further alteration, (d) restore logging integrity by rebuilding collectors and enforcing centralized, append-only aggregation per NIST SP 800-82 monitoring guidance.",
+              "stakeholders": [
+                "security_operations",
+                "ot_security",
+                "legal",
+                "operations_control"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "Additional log sources are found altered or purged after preservation, indicating the manipulation is ongoing or automated.",
+              "coordinates_with": [],
+              "legal_notes": "Establish and document chain of custody for every exported log set with cryptographic hashes so the records remain admissible despite the tampering.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "RP-I0403-02",
+              "trigger": "Forged or backdated maintenance records, falsified operator action logs, or manipulated alarm histories surface that appear crafted to conceal the adversary's activity or misdirect the investigation.",
+              "action": "Take these steps: (a) quarantine the suspect records and preserve original off-site log copies alongside the forgeries for comparative analysis, (b) validate authenticity by cross-referencing independent, adversary-inaccessible sources such as physical logbooks, redundant historians, and third-party monitoring feeds, (c) document each discrepancy between the manipulated and authoritative records with supporting evidence, (d) reset and harden the logging pipeline so future entries are signed and centrally mirrored beyond reach of local tampering.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations",
+                "legal",
+                "law_enforcement"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Forged records are found to have already influenced operational or regulatory decisions, requiring immediate correction and notification.",
+              "coordinates_with": [],
+              "legal_notes": "Retain both original and manipulated records under strict chain of custody, since the forgery itself is evidence of intent and consciousness of guilt.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "field_notes": "Log manipulation in OT spans engineering-workstation records and physical maintenance logs.",
           "observed_contexts": [
             "ICS incidents involving deletion of controller and workstation logs to frustrate forensics"
@@ -42624,7 +43861,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0404-01",
+              "trigger": "Recovered artifacts contain conspicuous foreign-language strings, planted actor signatures, or tooling deliberately mimicking a known group, and these indicators appear inconsistent with the observed operational tradecraft.",
+              "action": "Take these steps: (a) treat all single-source indicators as unverified and withhold any attribution judgment until corroborated, (b) apply multi-source attribution discipline by weighing infrastructure, behavioral, temporal, and victimology evidence together rather than relying on planted artifacts, (c) explicitly test the false-flag hypothesis and document indicators that contradict the surface attribution, (d) preserve all artifacts and analytic reasoning for independent review before any external statement of responsibility.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations",
+                "legal",
+                "law_enforcement"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Internal or external parties begin acting on the planted attribution before corroboration, risking a misdirected response.",
+              "coordinates_with": [],
+              "legal_notes": "Preserve every attribution artifact under chain of custody with analytic notes intact so the reasoning withstands scrutiny in legal or interagency proceedings.",
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "RP-I0404-02",
+              "trigger": "Analysis uncovers deliberately misleading tradecraft such as reused public exploit code, spoofed source infrastructure, or timestamp manipulation engineered to steer blame toward an unrelated actor or nation.",
+              "action": "Take these steps: (a) catalog each obfuscation technique and flag it as a potential deception rather than authentic sourcing, (b) corroborate origin through independent lines including passive DNS history, malware development artifacts, and behavioral pattern-of-life analysis before assigning responsibility, (c) coordinate with law enforcement and trusted intelligence partners to validate findings against external holdings, (d) frame all interim assessments with confidence levels and documented alternative explanations to prevent premature or false attribution.",
+              "stakeholders": [
+                "threat_management_team",
+                "law_enforcement",
+                "legal",
+                "executive_leadership"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Deception evidence points toward a specific third party whose wrongful implication could trigger diplomatic, legal, or safety consequences.",
+              "coordinates_with": [],
+              "legal_notes": "Maintain a documented chain of custody linking each deceptive artifact to its analytic disposition so attribution conclusions are defensible and reversible if later disproven.",
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CTC-INFRATERROR-2026"
+              ]
+            }
+          ],
           "field_notes": "Attribution obfuscation seeds misleading indicators so responders mis-assign responsibility.",
           "observed_contexts": [
             "ICS attacks featuring deliberately misleading artifacts intended to complicate attribution"
@@ -42813,7 +44089,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0405-01",
+              "trigger": "After the operation, associated operators, engineers, or employees coordinate to align their accounts, destroy shared records, or shield named co-conspirators from identification.",
+              "action": "Take these steps: (a) map the network of individuals showing coordinated post-event behavior and document their relationships to the primary actor, (b) preserve access logs, badge records, communications metadata, and shared file activity before they can be altered or purged, (c) coordinate with human resources and legal to place a litigation hold on relevant systems and restrict the involved accounts pending review, (d) task security operations to monitor for continued coordination or destruction of evidence across internal channels.",
+              "stakeholders": [
+                "threat_management_team",
+                "human_resources",
+                "legal",
+                "security_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Evidence of an organized insider cell or active destruction of records escalates the matter to law enforcement referral.",
+              "coordinates_with": [],
+              "legal_notes": "Preservation actions and account restrictions must follow counsel-approved litigation hold and employee-monitoring policy to protect evidentiary integrity and worker rights.",
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "RP-I0405-02",
+              "trigger": "Indicators show the primary actor moving to conceal or relocate co-conspirators, such as coaching insiders on responses, funding their departure, or scrubbing links between operators and the operation.",
+              "action": "Take these steps: (a) map the concealment network by tracing financial, travel, and communication ties between the actor and the individuals being protected, (b) preserve system access and physical entry records for every implicated operator or employee and freeze relevant credentials, (c) coordinate with protective operations and law enforcement to prevent flight and to secure witness safety, (d) brief executive leadership on scope so containment and personnel decisions stay aligned with the investigation.",
+              "stakeholders": [
+                "threat_management_team",
+                "protective_operations",
+                "law_enforcement",
+                "executive_leadership"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Confirmed facilitation of a co-conspirator's flight or funded relocation triggers immediate law enforcement engagement.",
+              "coordinates_with": [],
+              "legal_notes": "Coordinate any surveillance, detainment support, or asset actions through legal counsel and law enforcement to avoid unlawful restraint and preserve chain of custody.",
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "field_notes": "Network protection shields the collaborators and insiders who enabled the operation from exposure.",
           "observed_contexts": [
             "conspiracy cases where infrastructure-attack participants acted to shield insiders from exposure"
@@ -42999,7 +44314,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0406-01",
+              "trigger": "The actor or affiliates query public sources, media coverage, outage maps, or exposed telemetry to measure the operation's impact and confirm damage.",
+              "action": "Take these steps: (a) map which public channels, dashboards, and telemetry feeds are exposing impact detail an adversary could use for battle-damage assessment, (b) restrict public disclosure of operational status, restoration timelines, and system-level detail to the minimum required for safety and compliance, (c) coordinate with communications to route all external statements through a single approved spokesperson, (d) task security operations to monitor for reconnaissance interest, anomalous status-page traffic, and probing that indicates adversary damage assessment.",
+              "stakeholders": [
+                "security_operations",
+                "communications",
+                "operations_control",
+                "it_security"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Detection of targeted adversary reconnaissance against restoration systems escalates to heightened monitoring and law enforcement notification.",
+              "coordinates_with": [],
+              "legal_notes": "Balance disclosure restrictions against mandatory regulatory and public-safety reporting obligations with counsel review before withholding operational detail.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "RP-I0406-02",
+              "trigger": "Post-event telemetry shows external actors correlating sensor data, service metrics, or third-party monitoring to assess residual damage and identify surviving capability.",
+              "action": "Take these steps: (a) map internal and vendor telemetry that is externally visible and could feed an adversary's after-action assessment, (b) restrict public-facing detail on affected assets and reduce metric granularity on exposed dashboards until restoration is complete, (c) coordinate with IT security and OT security to harden and monitor the systems the adversary appears most interested in, (d) preserve a record of observed assessment activity to inform attribution and future defensive posture.",
+              "stakeholders": [
+                "security_operations",
+                "it_security",
+                "ot_security",
+                "communications"
+              ],
+              "priority": "ongoing",
+              "escalation_trigger": "Repeated or automated collection against operational telemetry escalates to a formal counter-reconnaissance and law enforcement referral.",
+              "coordinates_with": [],
+              "legal_notes": "Ensure telemetry reduction and monitoring comply with data-retention, privacy, and sector reporting requirements under counsel guidance.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            }
+          ],
           "field_notes": "After-action assessment is the threat actor confirming effect, which for infrastructure means verifying the physical consequence.",
           "observed_contexts": [
             "adversary use of public outage reporting and media coverage to confirm infrastructure impact"
@@ -43188,7 +44542,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0407-01",
+              "trigger": "An individual or group publicly claims responsibility for the operation through media, social platforms, or direct statements to the organization.",
+              "action": "Take these steps: (a) verify the claim by comparing asserted details against non-public facts of the incident to distinguish a genuine actor from an opportunistic false claim, (b) preserve the original claim content, timestamps, and distribution channels as evidence before it is deleted or edited, (c) coordinate with communications on a no-notoriety response that withholds the actor's name, avoids amplifying the message, and denies the sought publicity, (d) refer the verified claim and preserved artifacts to law enforcement for attribution and prosecution.",
+              "stakeholders": [
+                "communications",
+                "legal",
+                "law_enforcement",
+                "threat_management_team"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "A credible claim signaling intent to conduct follow-on attacks escalates to immediate protective and law enforcement action.",
+              "coordinates_with": [],
+              "legal_notes": "Coordinate all public messaging and evidence handling with counsel and law enforcement to avoid prejudicing prosecution or defaming a falsely implicated party.",
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "RP-I0407-02",
+              "trigger": "The actor releases a manifesto, communique, or media package asserting motive and ownership of the attack and seeking recognition or ideological amplification.",
+              "action": "Take these steps: (a) verify authorship and authenticity of the material against known incident facts and prior actor communications before treating the claim as valid, (b) preserve the full communique and its dissemination path for investigative and attribution use, (c) coordinate with communications and law enforcement on no-notoriety messaging that refuses to publish the actor's name or ideology and limits contagion risk to potential copycats, (d) brief executive leadership on the claim's implications for ongoing threat and reputational posture.",
+              "stakeholders": [
+                "communications",
+                "law_enforcement",
+                "legal",
+                "executive_leadership"
+              ],
+              "priority": "ongoing",
+              "escalation_trigger": "Signs the communique is inspiring copycat interest or coordinated follow-on threats escalate to law enforcement and heightened protective operations.",
+              "coordinates_with": [],
+              "legal_notes": "Manage release and characterization of the material with counsel and law enforcement to protect the investigation and comply with restrictions on republishing extremist content.",
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            }
+          ],
           "field_notes": "Attribution declaration is a voluntary claim of responsibility issued after the effect.",
           "observed_contexts": [
             "public claims of responsibility issued after physical attacks on energy infrastructure"
@@ -43381,7 +44774,46 @@
               ]
             }
           ],
-          "response_protocols": [],
+          "response_protocols": [
+            {
+              "id": "RP-I0408-01",
+              "trigger": "A communication demanding payment, concession, or political action arrives referencing the ongoing service disruption and threatens to prolong or worsen it absent compliance.",
+              "action": "Activate crisis response. Take these steps: (a) preserve the demand communication and all associated metadata in original form as evidence, restricting handling to a minimal chain-of-custody team, (b) engage the FBI and relevant law enforcement immediately and route all contact through trained crisis negotiators rather than operational or executive staff, (c) enforce the no-concession policy while executing resilient recovery from validated offline backups so operations restore without meeting the demand, (d) convene executive leadership, legal, and communications under a single incident commander to govern decision authority and external messaging.",
+              "stakeholders": [
+                "executive_leadership",
+                "legal",
+                "law_enforcement",
+                "communications"
+              ],
+              "priority": "immediate",
+              "escalation_trigger": "The adversary imposes a deadline, escalates the disruption, or demonstrates capability to inflict additional harm.",
+              "coordinates_with": [],
+              "legal_notes": "Counsel must review before any payment is considered because ransom transfers may violate sanctions and federal law when the actor is a designated or sanctioned entity.",
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "RP-I0408-02",
+              "trigger": "The adversary escalates the coercion by publicizing the demand, imposing a hard deadline, or conditioning restoration of the service on a political or ideological concession.",
+              "action": "Activate crisis response. Take these steps: (a) preserve every new demand, deadline notice, and public statement as timestamped evidence and forward it to law enforcement liaisons, (b) coordinate with the FBI and, where the impact reaches national infrastructure, CISA to attribute the actor and assess demonstrated capability, (c) hold the no-concession line and accelerate continuity and recovery plans so restoration strips the demand of leverage, (d) align legal, executive leadership, and communications on a single approved public position that denies the adversary a coercion or propaganda win.",
+              "stakeholders": [
+                "executive_leadership",
+                "legal",
+                "law_enforcement",
+                "communications"
+              ],
+              "priority": "urgent",
+              "escalation_trigger": "The deadline passes without resolution or the adversary acts on a threatened escalation against life-safety or critical service.",
+              "coordinates_with": [],
+              "legal_notes": "Payment to a politically motivated or sanctioned actor may constitute material support or a sanctions violation, so legal review is required before any concession is contemplated.",
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
           "field_notes": "Coercive demand converts the disruption into leverage, tying a ransom or political condition to service restoration.",
           "observed_contexts": [
             "ransomware operations against pipeline and utility operators pairing service disruption with extortion"
