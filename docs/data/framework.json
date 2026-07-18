@@ -36411,7 +36411,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0101-01",
+              "measure": "Classify and restrict public disclosure of facility criticality data, including capacity ratings, downstream service areas, and interdependency documentation, treating aggregated operational detail as protected critical infrastructure information",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Regulatory filings, permits, and environmental disclosures often mandate public release of exactly the data that reveals criticality.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0101-02",
+              "measure": "Establish monitoring of open-source channels, extremist forums, and grievance platforms for expressions of targeting interest in the facility, its output dependencies, or its role in regional service continuity",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Coverage is incomplete because encrypted and closed channels remain invisible and threat actors may conduct selection with no observable public footprint.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "CM-I0101-03",
+              "measure": "Harden high-consequence nodes identified through internal consequence analysis by adding physical protection, layered access controls, and enhanced surveillance proportional to each asset's cascade potential",
+              "category": "preventive",
+              "domain": "physical_barriers",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Hardening a known high-value node can confirm to an observing adversary that the asset is in fact critical, and cannot cover every consequential asset within budget.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0101-04",
+              "measure": "Publicize the facility's protective posture, coordination with law enforcement, and prosecution outcomes for prior intrusion attempts to raise the perceived cost and risk of selecting the site as a target",
+              "category": "deterrent",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Deterrence messaging has limited effect on ideologically committed or suicidal actors and may inadvertently draw attention to the site.",
+              "compensates_for": [],
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "CTC-INFRATERROR-2026"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Target selection is usually inferred backward from the asset a threat actor cased or enumerated, and infrastructure choices track downstream impact more than accessibility.",
           "observed_contexts": [
@@ -36529,7 +36602,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0102-01",
+              "measure": "Minimize public exposure of dependency and topology data by removing detailed network diagrams, SCADA architecture, and interconnection maps from websites, vendor case studies, permit filings, and conference presentations",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Data already indexed or archived externally cannot be fully recalled, and interconnection filings to regulators may still expose dependency structure.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0102-02",
+              "measure": "Engineer redundancy and diversity into single points of failure so that mapped dependencies no longer resolve to one indispensable node, using alternate feeds, N+1 provisioning, and geographic separation of critical functions",
+              "category": "corrective",
+              "domain": "safety_system_integrity",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Redundancy is capital-intensive and some dependencies, such as a sole regional transmission path, cannot be economically duplicated.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0102-03",
+              "measure": "Instrument externally reachable systems to detect reconnaissance behavior such as sequential scanning, enumeration of interconnected assets, and repeated queries against public asset registries, and alert on patterns consistent with dependency mapping",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Distributed or slow reconnaissance blends into normal traffic, and mapping conducted through third-party data brokers produces no signal on facility systems.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0102-04",
+              "measure": "Segment operational technology networks from corporate and internet-facing environments so that a compromise or query of one zone does not reveal the dependency structure of downstream control systems",
+              "category": "preventive",
+              "domain": "network_segmentation",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Segmentation constrains only digital mapping and does nothing against open-source or physical-observation reconnaissance of dependencies.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Dependency mapping shows up as a threat actor collecting one-line diagrams, interconnection data, or service-territory maps that reveal what fails when a node fails.",
           "observed_contexts": [
@@ -36646,7 +36792,80 @@
               "human_social": true
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0103-01",
+              "measure": "Deploy fixed and pan-tilt-zoom cameras with video analytics tuned for loitering, fence-line crossing, and repeat vehicle detection at unmanned substations, pump stations, and cell sites, with alerts routed to a monitored operations center",
+              "category": "detective",
+              "domain": "surveillance_systems",
+              "cost": "high",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Camera coverage at widely dispersed remote sites leaves gaps and depends on reliable backhaul and staffed monitoring to be useful.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0103-02",
+              "measure": "Install radio-frequency drone detection and airspace awareness sensors at critical unmanned sites to flag overflights consistent with aerial casing and cue ground response",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Detection is degraded by autonomous or pre-programmed drones that emit no control-link signal and by dense RF environments near urban sites.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0103-03",
+              "measure": "Post clear no-trespassing, monitored-surveillance, and prosecution-warning signage combined with hardened fencing and defensible-space clearing to signal that the site is watched and increase the perceived cost of approach",
+              "category": "deterrent",
+              "domain": "environmental_design",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Signage and visible hardening deter opportunistic observers but do little against a determined actor already committed to reconnaissance.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CFATS-2023",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "CM-I0103-04",
+              "measure": "Establish a suspicious-activity reporting program that trains field crews, contractors, and neighboring landowners to recognize and report casing indicators such as photography, note-taking, and repeat vehicle presence through a single intake channel",
+              "category": "detective",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Reporting depends on human vigilance and willingness to report, and coverage is uneven across remote sites with little routine foot traffic.",
+              "compensates_for": [],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Physical reconnaissance of infrastructure often targets unmanned, fenced remote sites where a threat actor can observe at length without challenge.",
           "observed_contexts": [
@@ -36769,7 +36988,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0104-01",
+              "measure": "Restrict access to piping and instrumentation diagrams, control narratives, setpoint tables, and safety-limit documentation through a need-to-know repository with role-based permissions and access logging",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Access controls protect the managed repository but cannot recover copies already distributed to vendors, integrators, or personal devices.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0104-02",
+              "measure": "Segment the process historian and engineering workstations from enterprise and internet-facing networks using a demilitarized zone and unidirectional or tightly filtered data flows so telemetry and setpoints cannot be harvested from outside the control environment",
+              "category": "preventive",
+              "domain": "network_segmentation",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Segmentation reduces external exposure but does not stop reconnaissance by insiders or compromised credentials operating inside the control network.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0104-03",
+              "measure": "Monitor historian and engineering-document access for abnormal patterns such as bulk exports, off-hours queries, and access to tags outside a user's normal role, and alert on deviations from baseline",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Behavioral baselines produce false positives during legitimate engineering campaigns and can be evaded by slow, low-volume collection.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0104-04",
+              "measure": "Classify and mark engineering and process documentation by sensitivity and enforce handling rules through data-loss-prevention controls that block or flag unauthorized transfer of setpoint, interlock, and safety-limit content",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Classification and data-loss-prevention depend on accurate labeling and are weak against content that is paraphrased, screenshotted, or exfiltrated through unmanaged channels.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Process reconnaissance is distinctive to infrastructure and appears as a threat actor acquiring engineering documentation, control narratives, or historian data rather than site imagery.",
           "observed_contexts": [
@@ -36892,7 +37184,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0105-01",
+              "measure": "Segment control-system networks from enterprise IT and the internet using demilitarized zones, unidirectional gateways, and firewalls that enforce allow-listed protocols and destinations between OT zones and conduits per the ISA/IEC 62443 zone-and-conduit model",
+              "category": "preventive",
+              "domain": "network_segmentation",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Segmentation constrains but does not eliminate lateral discovery once an actor gains a foothold inside a trusted zone.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0105-02",
+              "measure": "Inventory and remove or place behind VPN and multifactor authentication every SCADA, PLC, RTU, and HMI asset directly reachable from the public internet, validating exposure with periodic external attack-surface scans",
+              "category": "corrective",
+              "domain": "system_hardening",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "External scans capture a point-in-time view and can miss transient or vendor-managed remote connections.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0105-03",
+              "measure": "Deploy passive OT network monitoring with ICS-aware deep packet inspection to detect enumeration behavior such as protocol scanning, function-code sweeps, and unauthorized device discovery on control-system segments",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Low-and-slow reconnaissance blended into normal polling traffic can evade threshold-based scan detection.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0105-04",
+              "measure": "Harden remote-access paths by disabling default and unused services, enforcing least-privilege jump-host access, and applying vendor security advisories to internet-facing engineering interfaces and VPN concentrators",
+              "category": "preventive",
+              "domain": "system_hardening",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Hardening depends on complete asset visibility and cannot secure undocumented or shadow remote-access channels.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "GAO-24-106744-2024"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Network enumeration of an OT environment surfaces as scanning or credential collection aimed at engineering workstations and industrial protocols rather than office IT.",
           "observed_contexts": [
@@ -37018,7 +37383,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0106-01",
+              "measure": "Enforce vendor engineering-software licensing controls that restrict acquisition and activation to authorized personnel, and monitor license servers and asset inventories for unauthorized installations of ICS engineering tooling",
+              "category": "preventive",
+              "domain": "supply_chain_assurance",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Licensing controls do not prevent acquisition of pirated, trial, or open-source protocol tooling obtained outside vendor channels.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0106-02",
+              "measure": "Apply strict credential hygiene for engineering workstations and control accounts by rotating default and shared credentials, enforcing multifactor authentication, and vaulting privileged engineering-software credentials in a managed secrets store",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Credential controls are undermined when engineers reuse passwords or store secrets in unmanaged local files.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            },
+            {
+              "id": "CM-I0106-03",
+              "measure": "Establish threat-intelligence monitoring of underground markets, code repositories, and disclosure feeds for emerging ICS malware, protocol exploitation frameworks, and leaked engineering software affecting deployed control-system products",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Intelligence coverage is incomplete for closed forums and privately traded tooling that never surfaces publicly.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "CM-I0106-04",
+              "measure": "Deploy ICS honeypots and decoy engineering assets that emulate PLCs, HMIs, and protocol services to detect adversaries testing or validating acquired ICS capabilities against realistic targets",
+              "category": "deterrent",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Sophisticated actors may fingerprint and avoid decoys, and honeypots yield no coverage of capability acquired entirely offline.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Capability acquisition for infrastructure spans ICS-specific malware and protocol tooling as readily as physical breaching or destructive means.",
           "observed_contexts": [
@@ -37139,7 +37577,80 @@
               "human_social": true
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0107-01",
+              "measure": "Establish a personnel reporting program that trains staff and community members to recognize and report solicitation, recruitment overtures, or requests for material support tied to the facility",
+              "category": "detective",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Depends on voluntary reporting and cannot detect recruitment that occurs entirely outside the workforce or reporting channels.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "CM-I0107-02",
+              "measure": "Maintain a financial-intelligence liaison with banking partners and suspicious-activity reporting channels to flag fundraising, procurement, or material-support transactions associated with the facility or its assets",
+              "category": "detective",
+              "domain": "policy_procedure",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Cash transactions and informal value-transfer networks may evade financial monitoring entirely.",
+              "compensates_for": [],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0107-03",
+              "measure": "Coordinate with local law enforcement and fusion centers to share indicators of co-conspirator recruitment and to receive threat bulletins before network development matures into operational planning",
+              "category": "corrective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Information sharing is constrained by jurisdictional boundaries and the pace at which agencies exchange sensitive intelligence.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "CM-I0107-04",
+              "measure": "Deliver recurring awareness training that teaches employees and contractors how adversaries approach potential co-conspirators and how to decline, document, and escalate suspicious contacts",
+              "category": "preventive",
+              "domain": "training_awareness",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Training raises vigilance but does not prevent a motivated recruiter from finding willing participants elsewhere.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Network development covers the collaborators, funding, and logistics assembled to support the operation.",
           "observed_contexts": [
@@ -37259,7 +37770,80 @@
               "human_social": true
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0108-01",
+              "measure": "Establish a formal insider-threat program with a multidisciplinary hub that evaluates concerning behaviors among operators, engineers, and integrators against defined risk indicators",
+              "category": "preventive",
+              "domain": "personnel_security",
+              "cost": "high",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Program effectiveness depends on consistent reporting and cannot resolve every ambiguous behavior into a reliable risk determination.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NIST-SP800-82-2023"
+              ]
+            },
+            {
+              "id": "CM-I0108-02",
+              "measure": "Implement behavioral monitoring of privileged operators and engineers that correlates anomalous access, workflow deviations, and policy violations against baselines to surface early cultivation or coercion",
+              "category": "detective",
+              "domain": "behavioral_intervention",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Behavioral analytics generate false positives and may miss a trusted operator who deliberately avoids detectable pattern changes.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "GAO-24-106744-2024"
+              ]
+            },
+            {
+              "id": "CM-I0108-03",
+              "measure": "Conduct periodic access reviews that reconcile each engineer and integrator against least-privilege requirements and revoke standing access that no longer maps to a current job function",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Access reviews reduce excess privilege but do not stop an employee who abuses access that is legitimately required for their role.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0108-04",
+              "measure": "Provide an employee assistance and confidential reporting mechanism that lets operators disclose grievances, financial distress, or coercion attempts and connects them to support before escalation",
+              "category": "deterrent",
+              "domain": "behavioral_intervention",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "An employee under active coercion may distrust internal channels and decline to self-report despite the resource being available.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-DIT-2023",
+                "NTAC-MASS-2021"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Operator cultivation is elevated in infrastructure because a privileged insider's routine actions are indistinguishable at the wire from sabotage.",
           "observed_contexts": [
@@ -37381,7 +37965,80 @@
               "human_social": false
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0109-01",
+              "measure": "Maintain a supply-chain risk management program that inventories every vendor, integrator, and firmware supplier with physical or logical access to critical infrastructure and assigns each a documented criticality and risk tier",
+              "category": "preventive",
+              "domain": "supply_chain_assurance",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "The inventory reduces risk only if kept current, and shadow procurement or undisclosed subcontractors can still introduce untracked access paths.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0109-02",
+              "measure": "Verify the integrity of firmware and software updates through cryptographic signature validation and hash comparison against vendor-published references before installing them on control systems",
+              "category": "detective",
+              "domain": "system_hardening",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Integrity checks do not catch malicious code signed with a legitimately compromised vendor key or a trojanized update delivered through the authentic channel.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-I0109-03",
+              "measure": "Enforce least-privilege third-party access controls that time-box remote-maintenance sessions, require unique credentials per vendor technician, and log every action taken on infrastructure assets",
+              "category": "preventive",
+              "domain": "access_control",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Access controls do not stop abuse by a trusted vendor insider operating within legitimately granted permissions.",
+              "compensates_for": [],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-CFATS-2023"
+              ]
+            },
+            {
+              "id": "CM-I0109-04",
+              "measure": "Conduct documented vendor vetting and supplier assurance reviews before onboarding, covering ownership verification, security posture assessment, and contractual security requirements for any party touching sensitive systems",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Point-in-time vetting can miss ownership changes, acquisitions, or compromise that occur after the vendor relationship is established.",
+              "compensates_for": [],
+              "source_refs": [
+                "GAO-24-106744-2024",
+                "NIST-SP800-82-2023"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Supply-chain vectoring is an access path with no People or Facilities analog, established well before the threat actor touches the target directly.",
           "observed_contexts": [
@@ -37506,7 +38163,80 @@
               "human_social": true
             }
           ],
-          "countermeasures": [],
+          "countermeasures": [
+            {
+              "id": "CM-I0110-01",
+              "measure": "Operate a behavioral threat assessment and management team that evaluates reported concerning behaviors against validated warning-behavior typologies and manages cases through documented escalation and intervention pathways",
+              "category": "detective",
+              "domain": "behavioral_intervention",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Assessment depends on behaviors being observed and reported, so a subject who leaks no pre-attack indicators may still progress undetected.",
+              "compensates_for": [],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "CM-I0110-02",
+              "measure": "Establish an anonymous tip line and reporting mechanism that lets employees, contractors, and community members flag threatening statements, grievances, or attack-planning behavior directed at infrastructure",
+              "category": "detective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "low",
+              "time_to_implement": "days",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Tip lines surface only the concerns observers choose to report and can generate unactionable or malicious submissions that dilute analyst attention.",
+              "compensates_for": [],
+              "source_refs": [
+                "NTAC-MASS-2021",
+                "FBI-PREATTACK-2018"
+              ]
+            },
+            {
+              "id": "CM-I0110-03",
+              "measure": "Participate in cross-sector information-sharing forums and fusion-center channels to correlate pathway indicators such as surveillance, threats, and probing across facilities and jurisdictions",
+              "category": "detective",
+              "domain": "policy_procedure",
+              "cost": "low",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Shared indicators are only as useful as partner participation and timeliness, and privacy or classification constraints can slow the flow of actionable information.",
+              "compensates_for": [],
+              "source_refs": [
+                "CISA-CONVERGE-2021",
+                "NTAC-MASS-2021"
+              ]
+            },
+            {
+              "id": "CM-I0110-04",
+              "measure": "Integrate cross-team case management that links security, human resources, legal, and mental-health resources so escalation indicators identified in one function trigger coordinated review rather than siloed handling",
+              "category": "corrective",
+              "domain": "behavioral_intervention",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "months",
+              "phase_relevance": [
+                "target_development"
+              ],
+              "limitations": "Coordination can stall on unclear ownership, data-sharing restrictions, and inconsistent thresholds for what warrants joint intervention.",
+              "compensates_for": [],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CISA-CONVERGE-2021"
+              ]
+            }
+          ],
           "response_protocols": [],
           "field_notes": "Pathway indicators are behavioral escalation signals that precede a specific tactic, marking a threat actor's movement along the pathway toward action.",
           "observed_contexts": [
