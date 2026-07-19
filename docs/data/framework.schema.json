@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://jgulyash.github.io/THREAT-Matrix/docs/data/framework.schema.json",
+  "$id": "https://jgulyash.github.io/THREAT-Matrix/data/framework.schema.json",
   "title": "THREAT Matrix Framework Schema",
   "description": "JSON Schema for the THREAT Matrix framework.json canonical artifact. THREAT Matrix is an AI-native operational ontology for physical adversary behavior. The schema is the public contract for consumers (RAG systems, AI agents, downstream security tooling). Field values must describe a property of the indicator/tactic type, not of any specific case or assessment. See CONTRIBUTING.md \"Schema design principles\" for the full rule.",
   "type": "object",
@@ -232,8 +232,13 @@
           }
         }
       }
+    },
+    "instance_conditioning": {
+      "type": "object",
+      "description": "Instance-conditioning layer (type-level record): declares the layer, factors, escalate-only rule, binding contract, conditioning hints, status, and provenance. Deep field typing deferred to the conformance-hardening release."
     }
   },
+  "additionalProperties": false,
   "$defs": {
     "tactic": {
       "type": "object",
@@ -625,7 +630,7 @@
           "type": "number",
           "minimum": 0.0,
           "maximum": 10.0,
-          "description": "Type-level composite over escalation_axes (0.0–10.0, one-decimal precision). Recommended derivation is published in escalation_rubric.composite_math; consumers may follow the recommendation or override with documented rationale. Type-level inherent property of the indicator class, not a case-specific score. See CONTRIBUTING.md \"Schema design principles\"."
+          "description": "Type-level composite over escalation_axes (0.0–10.0, two-decimal precision). Recommended derivation is published in escalation_rubric.composite_math; consumers may follow the recommendation or override with documented rationale. Type-level inherent property of the indicator class, not a case-specific score. See CONTRIBUTING.md \"Schema design principles\"."
         },
         "escalation_axes": {
           "type": "object",

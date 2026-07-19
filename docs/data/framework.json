@@ -25305,7 +25305,7 @@
                 "recoverability_inverse": 6.5,
                 "detectability": 3.0
               },
-              "escalation_weight": 5.63,
+              "escalation_weight": 5.62,
               "severity_band": "high",
               "informs_axes": {
                 "actor_capability": "moderate",
@@ -29792,7 +29792,7 @@
                 "recoverability_inverse": 7.0,
                 "detectability": 4.0
               },
-              "escalation_weight": 6.73,
+              "escalation_weight": 6.74,
               "severity_band": "critical",
               "informs_axes": {
                 "actor_capability": "moderate",
@@ -31259,7 +31259,7 @@
                 "recoverability_inverse": 7.0,
                 "detectability": 4.5
               },
-              "escalation_weight": 5.40,
+              "escalation_weight": 5.39,
               "severity_band": "high",
               "informs_axes": {
                 "actor_capability": "moderate",
@@ -52437,6 +52437,23 @@
     "v2_roadmap": "V2 will add per-tactic AI capability annotations, expand ai_enabled_risks with tactic-level associations, and introduce the Operations/scenario composer with AI-assisted behavioral pattern generation."
   },
   "bibliography": {
+    "CALHOUN-WESTON-2003": {
+      "type": "book",
+      "title": "Contemporary Threat Management: A Practical Guide for Identifying, Assessing, and Managing Individuals of Violent Intent",
+      "author": "Calhoun, Frederick S.; Weston, Stephen W.",
+      "date": "2003",
+      "url": null,
+      "doi": null,
+      "relevance_summary": "Foundational protective-intelligence text on structured threat assessment and the hunter-vs-howler distinction; underpins warning-behavior and environmental-survey framing.",
+      "matrices": [
+        "person"
+      ],
+      "topics": [
+        "threat_assessment",
+        "protective_intelligence",
+        "warning_behaviors"
+      ]
+    },
     "GULYASH-FIELD-OPS-2004-2026": {
       "type": "field_observation",
       "title": "Operational observations: protective intelligence, insider threat, and physical security casework",

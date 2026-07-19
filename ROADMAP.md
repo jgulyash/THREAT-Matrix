@@ -246,9 +246,9 @@ The THREAT Matrix is designed to plug into existing and future AI-native case ma
  
 **WARDEN integration:** Reserved in V1 schema at zero build cost. V3 activation: WARDEN alert schema maps to THREAT taxonomy via agentic ingestion pipeline. Both tools more powerful together.
  
-**Tactic families:** 56 families enable cross-matrix grouping. Stable identifiers — not renamed after framework.json build. Powers Operations composer in V2+.
+**Tactic families:** 41 families enable cross-matrix grouping. Stable identifiers — not renamed after framework.json build. Powers Operations composer in V2+.
  
-**Technique content:** V1 ships with `techniques: []` on all 34 Person tactics. V1.3 delivers full technique decomposition for Person. Each subsequent matrix version (V2 Facility, V3 Organization, V4 Infrastructure) delivers its own techniques alongside the taxonomy. Person is the reference implementation — fully complete before V2 begins.
+**Technique content:** The `techniques` layer was retired in V1.3 (removed from data, schema, and types) after the type-versus-instance review determined tactics are the terminal taxonomy level for this framework. Case-varying method detail belongs to the instance-conditioning layer, not a type-level techniques array.
  
 ---
  

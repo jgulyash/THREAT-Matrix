@@ -68,6 +68,8 @@ def all_tactics(framework: dict) -> list[dict]:
     """Return every tactic across every matrix as a flat list."""
     out: list[dict] = []
     for matrix_key, matrix in framework.get("matrices", {}).items():
+        if not isinstance(matrix, dict):
+            continue  # skip non-matrix siblings (e.g. matrices.boundary_rule)
         for tactic in matrix.get("tactics", []):
             tactic_with_matrix = dict(tactic)
             tactic_with_matrix.setdefault("matrix", matrix_key)
@@ -98,7 +100,7 @@ def print_summary(framework: dict) -> None:
     name = framework.get("full_name") or framework.get("name", "(unnamed)")
     version = framework.get("version", "?")
     schema_version = framework.get("schema_version", "?")
-    matrices = framework.get("matrices", {})
+    matrices = {k: v for k, v in framework.get("matrices", {}).items() if isinstance(v, dict)}
     profiles = framework.get("actor_profiles", [])
     bib = framework.get("bibliography", {})
 

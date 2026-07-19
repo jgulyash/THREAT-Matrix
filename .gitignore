@@ -11,6 +11,10 @@ dist/
 vite.config.d.ts
 vite.config.js
 
+# Compiled Python caches (never track build artifacts)
+__pycache__/
+*.pyc
+
 # Internal research / working docs — never commit (may contain proprietary-instrument references)
 _Private/
 _Internal/

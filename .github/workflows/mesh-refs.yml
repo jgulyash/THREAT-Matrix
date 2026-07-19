@@ -15,6 +15,7 @@ on:
       - main
   push:
     branches:
+      - main
       - v1-build
 
 concurrency:
