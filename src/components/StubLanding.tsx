@@ -1,7 +1,7 @@
 import { STUB, MATRIX_LABELS } from '../lib/constants';
 
 interface Props {
-  matrix: 'organization' | 'infrastructure';
+  matrix: 'organization';
   version: string;
 }
 

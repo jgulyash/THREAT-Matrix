@@ -117,7 +117,7 @@ export default function App() {
   const isReferences = route.view === 'references';
   const isIndicator = route.view === 'indicator';
   const sv = Object.fromEntries(STUB_MATRICES.map((m) => [m.key, m.version])) as Record<
-    'organization' | 'infrastructure',
+    'organization',
     string
   >;
 

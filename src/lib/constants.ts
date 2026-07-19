@@ -32,7 +32,7 @@ export const MATRICES = [
   { key: 'person', label: 'People', color: 'amber', version: null },
   { key: 'facility', label: 'Facilities', color: 'teal', version: null },
   { key: 'organization', label: 'Organizations', color: 'red', version: 'V1.5' },
-  { key: 'infrastructure', label: 'Infrastructure', color: 'blue', version: 'V1.4' },
+  { key: 'infrastructure', label: 'Infrastructure', color: 'blue', version: null },
 ] as const;
 
 export const MATRIX_LABELS: Record<string, string> = Object.fromEntries(
