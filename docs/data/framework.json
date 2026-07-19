@@ -38564,7 +38564,8 @@
                 "threat_method": "weak"
               },
               "correlates_with": [
-                "IND-F0108-01"
+                "IND-F0108-01",
+                "IND-0104-03"
               ]
             },
             {
@@ -38903,7 +38904,8 @@
                 "threat_method": "none"
               },
               "correlates_with": [
-                "IND-F0107-01"
+                "IND-F0107-01",
+                "IND-0105-04"
               ]
             },
             {
@@ -38980,7 +38982,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "weak",
                 "threat_method": "none"
-              }
+              },
+              "correlates_with": [
+                "IND-0105-02"
+              ]
             },
             {
               "id": "IND-I0107-04",
@@ -39016,7 +39021,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
-              }
+              },
+              "correlates_with": [
+                "IND-0105-01"
+              ]
             },
             {
               "id": "IND-I0107-05",
@@ -39355,7 +39363,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
-              }
+              },
+              "correlates_with": [
+                "IND-0105-04"
+              ]
             },
             {
               "id": "IND-I0108-03",
@@ -40140,7 +40151,8 @@
                 "threat_method": "none"
               },
               "correlates_with": [
-                "IND-F0109-01"
+                "IND-F0109-01",
+                "IND-0107-02"
               ]
             },
             {
@@ -40177,7 +40189,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "moderate"
-              }
+              },
+              "correlates_with": [
+                "IND-0107-05"
+              ]
             },
             {
               "id": "IND-I0110-03",
@@ -40256,7 +40271,8 @@
                 "threat_method": "none"
               },
               "correlates_with": [
-                "IND-F0109-04"
+                "IND-F0109-04",
+                "IND-0107-07"
               ]
             },
             {
@@ -40296,7 +40312,8 @@
                 "threat_method": "none"
               },
               "correlates_with": [
-                "IND-F0109-03"
+                "IND-F0109-03",
+                "IND-0107-04"
               ]
             }
           ],
@@ -40974,7 +40991,8 @@
                 "threat_method": "none"
               },
               "correlates_with": [
-                "IND-F0202-04"
+                "IND-F0202-04",
+                "IND-0106-01"
               ]
             },
             {
@@ -41012,7 +41030,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "none"
-              }
+              },
+              "correlates_with": [
+                "IND-0106-04"
+              ]
             },
             {
               "id": "IND-I0202-03",
@@ -41048,7 +41069,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "none"
-              }
+              },
+              "correlates_with": [
+                "IND-0106-02"
+              ]
             },
             {
               "id": "IND-I0202-04",
@@ -41085,7 +41109,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
-              }
+              },
+              "correlates_with": [
+                "IND-0106-03"
+              ]
             },
             {
               "id": "IND-I0202-05",
@@ -41489,7 +41516,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
-              }
+              },
+              "correlates_with": [
+                "IND-0108-01"
+              ]
             },
             {
               "id": "IND-I0203-05",
@@ -48358,7 +48388,8 @@
                 "threat_method": "none"
               },
               "correlates_with": [
-                "IND-F0401-01"
+                "IND-F0401-01",
+                "IND-0401-01"
               ]
             },
             {
@@ -48428,7 +48459,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
-              }
+              },
+              "correlates_with": [
+                "IND-0401-02"
+              ]
             },
             {
               "id": "IND-I0401-04",
@@ -48464,7 +48498,8 @@
                 "threat_method": "none"
               },
               "correlates_with": [
-                "IND-F0401-03"
+                "IND-F0401-03",
+                "IND-0401-05"
               ]
             },
             {
@@ -49576,7 +49611,8 @@
                 "threat_method": "none"
               },
               "correlates_with": [
-                "IND-F0402-03"
+                "IND-F0402-03",
+                "IND-0402-04"
               ]
             },
             {
@@ -49984,7 +50020,8 @@
                 "threat_method": "none"
               },
               "correlates_with": [
-                "IND-F0404-02"
+                "IND-F0404-02",
+                "IND-0404-01"
               ]
             },
             {
@@ -50022,7 +50059,8 @@
                 "threat_method": "none"
               },
               "correlates_with": [
-                "IND-F0404-05"
+                "IND-F0404-05",
+                "IND-0404-04"
               ]
             },
             {
@@ -50094,7 +50132,10 @@
                 "threat_timing": "weak",
                 "threat_target": "none",
                 "threat_method": "none"
-              }
+              },
+              "correlates_with": [
+                "IND-0404-02"
+              ]
             },
             {
               "id": "IND-I0405-05",
@@ -50129,7 +50170,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
-              }
+              },
+              "correlates_with": [
+                "IND-0404-06"
+              ]
             }
           ],
           "countermeasures": [
@@ -50797,7 +50841,8 @@
                 "threat_method": "none"
               },
               "correlates_with": [
-                "IND-F0409-01"
+                "IND-F0409-01",
+                "IND-0407-01"
               ]
             },
             {
@@ -50940,7 +50985,8 @@
                 "threat_method": "moderate"
               },
               "correlates_with": [
-                "IND-F0410-01"
+                "IND-F0410-01",
+                "IND-0407-03"
               ]
             }
           ],
@@ -51206,7 +51252,8 @@
                 "threat_method": "none"
               },
               "correlates_with": [
-                "IND-F0412-01"
+                "IND-F0412-01",
+                "IND-0405-01"
               ]
             },
             {
@@ -51243,7 +51290,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
-              }
+              },
+              "correlates_with": [
+                "IND-0409-03"
+              ]
             },
             {
               "id": "IND-I0408-03",
