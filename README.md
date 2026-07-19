@@ -169,7 +169,7 @@ Standards talk to platforms. The contract is what makes integrations with RAG sy
 | **V1.2** | People-matrix scope broadening (one or more human beings; `target_identity`) + Detection Mesh with indicator detail page + escalation scoring & `informs_axes` (experimental pilots, chunk-1) + assessment guidance | Shipped |
 | **V1.3** | Facilities matrix complete (40 tactics) + escalation scoring on the full People matrix | Shipped |
 | **V1.4** | Infrastructure matrix complete (37 tactics) + cross-domain Detection Mesh (People–Facility–Infrastructure) | Shipped |
-| **V1.5** | Organizations matrix complete (~42 tactics) | Planned |
+| **V1.5** | Organizations matrix complete (~42 tactics) | In Progress |
 | **V2** | Platform release: custom domain, Python and TypeScript SDKs, MCP server, RAG embeddings, change feed | Planned |
 | **V3** | Real-world case library | Planned |
 | **V4** | AI integration and vector embeddings | Planned |
