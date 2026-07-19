@@ -4,7 +4,28 @@ All notable changes to THREAT Matrix are documented here, per [VERSIONING.md](do
 
 This project adheres to [Semantic Versioning](https://semver.org). Framework
 content and JSON Schema are versioned independently; the framework content
-and JSON Schema currently advance together (latest: `1.4.0`).
+and JSON Schema are versioned independently (latest — content: `1.4.1`, schema: `1.4.0`).
+
+## [1.4.1] — 2026-07-19
+
+Patch release. Fixes two rendering bugs exposed when the Infrastructure matrix went live
+in 1.4.0. Framework content only (schema unchanged at 1.4.0).
+
+### Fixed
+
+- **Heat map column misalignment.** The header rendered all four matrix columns
+  (`MATRICES`) while the body rendered live cells then stub cells (`LIVE_MATRICES` then
+  `STUB_MATRICES`). Because Organizations (stub) sits between Facilities and Infrastructure
+  in the column order, Infrastructure's live cells rendered under the **Organizations**
+  header and the Infrastructure column showed the Organizations stub. The body now renders
+  in `MATRICES` order, branching live-vs-stub per column, so header and body always align.
+  (Latent since the two-stub layout; surfaced by the 1.4.0 go-live.)
+- **Empty Aftermath "Evade" wing for Infrastructure.** All eight Infrastructure aftermath
+  tactics were missing the `phase_4_track` field, so they defaulted to the Claim wing and
+  the Evade (evasion) wing showed zero. Added `phase_4_track`: TI0401–TI0406 = `evasion`
+  (Withdrawal, Access Persistence, Evidence/Log Manipulation, Attribution Obfuscation,
+  Network Protection, After-Action Assessment); TI0407–TI0408 = `attribution` (Attribution
+  Declaration, Coercive Demand) — the 6/2 split the stub plan already anticipated.
 
 ## [1.4.0] — 2026-07-19
 

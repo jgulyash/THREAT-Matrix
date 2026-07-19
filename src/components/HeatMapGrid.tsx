@@ -1,5 +1,5 @@
 import type { Tactic } from '../types/framework';
-import { PHASE_SHORT, STUB, MATRICES, MATRIX_LABELS, STUB_MATRICES, tacticMatchesFilters } from '../lib/constants';
+import { PHASE_SHORT, STUB, MATRICES, MATRIX_LABELS, tacticMatchesFilters } from '../lib/constants';
 import { LIVE_MATRICES, type LiveMatrix } from '../lib/route';
 import type { TacticsByMatrix } from '../App';
 
@@ -166,20 +166,25 @@ export function HeatMapGrid({
             <div className="hm-phase-cell">
               <div className="hm-phase-name">{PHASE_SHORT[phase]}</div>
             </div>
-            {LIVE_MATRICES.map((m) => (
-              <HeatMapCell
-                key={m}
-                tactics={tacticsByMatrix[m][phase]}
-                col={MATRIX_COL[m]}
-                isSelected={phaseSelected(m, phase)}
-                onClick={() => navigate(`/${m}/phase/${phase}`)}
-                cpnFilter={cpnFilter}
-                actorFilter={actorFilter}
-              />
-            ))}
-            {STUB_MATRICES.map((m) => (
-              <StubCell key={m.key} count={STUB[m.key].phases[phase]} version={m.version} />
-            ))}
+            {MATRICES.map((m) =>
+              m.version === null ? (
+                <HeatMapCell
+                  key={m.key}
+                  tactics={tacticsByMatrix[m.key as LiveMatrix][phase]}
+                  col={MATRIX_COL[m.key as LiveMatrix]}
+                  isSelected={phaseSelected(m.key as LiveMatrix, phase)}
+                  onClick={() => navigate(`/${m.key}/phase/${phase}`)}
+                  cpnFilter={cpnFilter}
+                  actorFilter={actorFilter}
+                />
+              ) : (
+                <StubCell
+                  key={m.key}
+                  count={STUB[m.key as keyof typeof STUB].phases[phase]}
+                  version={m.version}
+                />
+              )
+            )}
           </div>
         ))}
         <div className="phase4-row">
@@ -188,39 +193,51 @@ export function HeatMapGrid({
           </div>
           <div className="phase4-content">
             <div className="phase4-sub-row">
-              {LIVE_MATRICES.map((m) => (
-                <HeatMapCell
-                  key={m}
-                  tactics={tacticsByMatrix[m][4].flight}
-                  col={MATRIX_COL[m]}
-                  track="flight"
-                  isSelected={trackSelected(m, 'flight')}
-                  onClick={() => navigate(`/${m}/phase/4/flight`)}
-                  cpnFilter={cpnFilter}
-                  actorFilter={actorFilter}
-                />
-              ))}
-              {STUB_MATRICES.map((m) => (
-                <StubCell key={m.key} count={STUB[m.key].flight} version={m.version} track="flight" />
-              ))}
+              {MATRICES.map((m) =>
+                m.version === null ? (
+                  <HeatMapCell
+                    key={m.key}
+                    tactics={tacticsByMatrix[m.key as LiveMatrix][4].flight}
+                    col={MATRIX_COL[m.key as LiveMatrix]}
+                    track="flight"
+                    isSelected={trackSelected(m.key as LiveMatrix, 'flight')}
+                    onClick={() => navigate(`/${m.key}/phase/4/flight`)}
+                    cpnFilter={cpnFilter}
+                    actorFilter={actorFilter}
+                  />
+                ) : (
+                  <StubCell
+                    key={m.key}
+                    count={STUB[m.key as keyof typeof STUB].flight}
+                    version={m.version}
+                    track="flight"
+                  />
+                )
+              )}
             </div>
             <div className="phase4-divider" />
             <div className="phase4-sub-row">
-              {LIVE_MATRICES.map((m) => (
-                <HeatMapCell
-                  key={m}
-                  tactics={tacticsByMatrix[m][4].claim}
-                  col={MATRIX_COL[m]}
-                  track="claim"
-                  isSelected={trackSelected(m, 'claim')}
-                  onClick={() => navigate(`/${m}/phase/4/claim`)}
-                  cpnFilter={cpnFilter}
-                  actorFilter={actorFilter}
-                />
-              ))}
-              {STUB_MATRICES.map((m) => (
-                <StubCell key={m.key} count={STUB[m.key].claim} version={m.version} track="claim" />
-              ))}
+              {MATRICES.map((m) =>
+                m.version === null ? (
+                  <HeatMapCell
+                    key={m.key}
+                    tactics={tacticsByMatrix[m.key as LiveMatrix][4].claim}
+                    col={MATRIX_COL[m.key as LiveMatrix]}
+                    track="claim"
+                    isSelected={trackSelected(m.key as LiveMatrix, 'claim')}
+                    onClick={() => navigate(`/${m.key}/phase/4/claim`)}
+                    cpnFilter={cpnFilter}
+                    actorFilter={actorFilter}
+                  />
+                ) : (
+                  <StubCell
+                    key={m.key}
+                    count={STUB[m.key as keyof typeof STUB].claim}
+                    version={m.version}
+                    track="claim"
+                  />
+                )
+              )}
             </div>
           </div>
         </div>
