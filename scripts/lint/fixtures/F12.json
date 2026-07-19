@@ -1,0 +1,10 @@
+{
+  "id": "F12",
+  "category": "contradictory scoring",
+  "description": "Push escalation_weight off its axes composite by about 2.0 while keeping severity_band consistent with the new weight, isolating the composite deviation.",
+  "expected_check": "V14",
+  "mutations": [
+    {"op": "set", "path": "matrices.person.tactics.0.indicators.0.escalation_weight", "value": 6.49},
+    {"op": "set", "path": "matrices.person.tactics.0.indicators.0.severity_band", "value": "high"}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "F14",
+  "category": "conditioned-priority lowering",
+  "description": "Attach conditioned_priority low to an indicator whose type severity_band is high, violating the escalate-only rule.",
+  "expected_check": "V18",
+  "mutations": [
+    {"op": "set", "path": "matrices.person.tactics.0.indicators.1.conditioned_priority", "value": "low"}
+  ]
+}

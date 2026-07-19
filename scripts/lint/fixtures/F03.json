@@ -1,0 +1,9 @@
+{
+  "id": "F03",
+  "category": "dangling refs",
+  "description": "Add a same-matrix correlates_with reference that resolves to no indicator, so V06 fires and V10 does not.",
+  "expected_check": "V06",
+  "mutations": [
+    {"op": "append", "path": "matrices.person.tactics.0.indicators.0.correlates_with", "value": "IND-9999-99"}
+  ]
+}

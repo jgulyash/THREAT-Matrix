@@ -1,0 +1,9 @@
+{
+  "id": "F09",
+  "category": "typo'd keys",
+  "description": "Duplicate the id key inside the first person tactic in the raw text so V05 catches a repeated JSON object key that json.load would silently collapse.",
+  "expected_check": "V05",
+  "mutations": [
+    {"op": "raw_replace", "find": "\"id\": \"TM0101\",", "replace": "\"id\": \"TM0101\", \"id\": \"TM0101\",", "count": 1}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "F06",
+  "category": "dangling refs",
+  "description": "Add a cross-matrix correlates_with reference (letter I on a person indicator) that resolves to no indicator, so V10 fires separately from V06.",
+  "expected_check": "V10",
+  "mutations": [
+    {"op": "append", "path": "matrices.person.tactics.0.indicators.0.correlates_with", "value": "IND-I9999-99"}
+  ]
+}

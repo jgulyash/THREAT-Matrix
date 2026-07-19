@@ -1,0 +1,9 @@
+{
+  "id": "F07",
+  "category": "wrong matrix placement",
+  "description": "Give a person tactic a facility-style TF prefix so its id prefix contradicts its matrix key.",
+  "expected_check": "V11",
+  "mutations": [
+    {"op": "set", "path": "matrices.person.tactics.5.id", "value": "TF9901"}
+  ]
+}

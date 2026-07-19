@@ -1,0 +1,9 @@
+{
+  "id": "F02",
+  "category": "duplicate IDs",
+  "description": "Reassign a second indicator to an existing indicator id within the same tactic so a duplicate indicator id exists.",
+  "expected_check": "V02",
+  "mutations": [
+    {"op": "set", "path": "matrices.infrastructure.tactics.0.indicators.1.id", "value": "IND-I0101-01"}
+  ]
+}

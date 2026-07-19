@@ -1,0 +1,9 @@
+{
+  "id": "F04",
+  "category": "dangling refs",
+  "description": "Add a compensates_for reference that resolves to no countermeasure or indicator.",
+  "expected_check": "V07",
+  "mutations": [
+    {"op": "append", "path": "matrices.person.tactics.0.countermeasures.0.compensates_for", "value": "CM-9999-99"}
+  ]
+}

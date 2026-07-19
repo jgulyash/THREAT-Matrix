@@ -1,0 +1,9 @@
+{
+  "id": "F08",
+  "category": "wrong matrix placement",
+  "description": "Set a person tactic's matrix field to facility so it contradicts the matrix key that contains it.",
+  "expected_check": "V19",
+  "mutations": [
+    {"op": "set", "path": "matrices.person.tactics.0.matrix", "value": "facility"}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "F01",
+  "category": "duplicate IDs",
+  "description": "Reassign a second infrastructure tactic to an existing tactic id so a duplicate tactic id exists globally.",
+  "expected_check": "V01",
+  "mutations": [
+    {"op": "set", "path": "matrices.infrastructure.tactics.1.id", "value": "TI0101"}
+  ]
+}

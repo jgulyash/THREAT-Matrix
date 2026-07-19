@@ -1,0 +1,50 @@
+name: Framework Validator
+
+# Enforces the data invariants that JSON Schema structurally cannot:
+#   - ID uniqueness (tactics, indicators, countermeasures, response
+#     protocols, bibliography keys, raw duplicate JSON keys)
+#   - referential integrity (correlates_with, compensates_for,
+#     coordinates_with, source_refs, cross-matrix edges)
+#   - cross-field consistency (severity_band vs escalation_weight,
+#     id prefix vs matrix, phase_4_track, conditioned-priority
+#     escalate-only rule)
+# The negative-fixture harness proves the validator catches the 14
+# adversarial invalid states reconstructed from the 2026-07-18
+# Principal Architecture Review. Runs alongside Mesh Refs and Bundle
+# Freshness on the same trigger surface.
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+      - v1-build
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate framework invariants
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run framework validator
+        run: python3 scripts/lint/validate.py docs/data/framework.json
+
+      - name: Run negative-fixture harness
+        run: python3 scripts/lint/validate.py docs/data/framework.json --fixtures scripts/lint/fixtures

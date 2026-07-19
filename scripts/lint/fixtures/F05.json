@@ -1,0 +1,9 @@
+{
+  "id": "F05",
+  "category": "dangling refs",
+  "description": "Add a source_refs entry that is not a bibliography key.",
+  "expected_check": "V09",
+  "mutations": [
+    {"op": "append", "path": "matrices.person.tactics.0.source_refs", "value": "NONEXISTENT-2099"}
+  ]
+}

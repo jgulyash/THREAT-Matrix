@@ -1,0 +1,10 @@
+{
+  "id": "F11",
+  "category": "contradictory scoring",
+  "description": "Force an indicator to escalation_weight 8.0 while labeling severity_band low, a band that contradicts the weight-implied critical band.",
+  "expected_check": "V13",
+  "mutations": [
+    {"op": "set", "path": "matrices.person.tactics.0.indicators.0.escalation_weight", "value": 8.0},
+    {"op": "set", "path": "matrices.person.tactics.0.indicators.0.severity_band", "value": "low"}
+  ]
+}
