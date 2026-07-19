@@ -1,8 +1,8 @@
 {
   "name": "THREAT Matrix",
   "full_name": "Tactical Human Risk Enumeration and Adversary Taxonomy Matrix",
-  "version": "1.3.0",
-  "schema_version": "1.3.0",
+  "version": "1.4.0",
+  "schema_version": "1.4.0",
   "license": "MIT",
   "matrices": {
     "boundary_rule": "Each tactic in this catalog is placed in exactly one matrix at authoring time, determined by the adversary's primary objective. The WHAT/WHY/WHERE separation is the disambiguation tool for the People matrix specifically; for Facility, Organization, and Infrastructure, WHERE collapses into WHAT and the boundary is set by what the adversary's primary objective targets. Motivation lives in actor profiles, not in matrix placement. Real-world incidents may legitimately invoke tactics from multiple matrices simultaneously; cross-matrix coverage is expressed through the Detection Mesh via indicator correlates_with references. When a downstream consumer requires a single primary-matrix call per incident, default to the matrix containing the tactic that achieved the adversary's terminal objective; ties broken by precedence People > Facilities > Organizations > Infrastructure. Where the adversary's primary objective is uncertain or unknown, primary-matrix placement defaults to the matrix containing the tactic that produced the most observable consequence; the incident-level confidence of this inference is annotated separately via primary_objective_evidence_tier. Consumers may override.",

@@ -31,7 +31,7 @@ In 2023, a Lawrence Livermore National Laboratory study, sponsored by DOE/NNSA a
  
 ## Framework Architecture
  
-**Four target matrices — People, Facilities, Organizations, Infrastructure. A four-phase Threat Lifecycle: Target Development → Mobilization → Execution → Aftermath. 111 tactics authored** (74 live: People 34, Facilities 40; Infrastructure 37 staged for release; Organizations planned).
+**Four target matrices — People, Facilities, Organizations, Infrastructure. A four-phase Threat Lifecycle: Target Development → Mobilization → Execution → Aftermath. 111 tactics live** (People 34, Facilities 40, Infrastructure 37; Organizations planned), woven by a cross-domain Detection Mesh.
  
 ### Threat Lifecycle
  
@@ -150,7 +150,7 @@ V1.1 establishes THREAT Matrix as a headless-first open standard. The contract h
 | Property | Where it lives |
 |---|---|
 | **Canonical artifact** | [`docs/data/framework.json`](docs/data/framework.json) — single source of truth. The SPA is one consumer of this file, not its primary expression. |
-| **Formal schema** | [`docs/data/framework.schema.json`](docs/data/framework.schema.json) — JSON Schema (draft 2020-12) that every consumer validates against. Current schema version: 1.3.0. |
+| **Formal schema** | [`docs/data/framework.schema.json`](docs/data/framework.schema.json) — JSON Schema (draft 2020-12) that every consumer validates against. Current schema version: 1.4.0. |
 | **Versioning + stability policy** | Semver applied independently to the framework artifact (`version`) and the schema (`schema_version`) — see [VERSIONING.md](docs/VERSIONING.md). Stable identifier contract (`TA####`, `AP###`, `IND-*`, `CM-*`, `RP-*`) defined in [IDENTIFIERS.md](docs/IDENTIFIERS.md) — IDs are never reused, even after deprecation. Lifecycle states and sunset rules in [DEPRECATION.md](docs/DEPRECATION.md). |
 | **Reference consumers** | The React SPA at jgulyash.github.io/THREAT-Matrix; the reference Python consumer at [`examples/python_consumer.py`](examples/python_consumer.py) (with [`examples/README.md`](examples/README.md) as a starting-point guide); community consumers welcome. |
  
@@ -167,9 +167,9 @@ Standards talk to platforms. The contract is what makes integrations with RAG sy
 | **V1** | People matrix taxonomy (34 tactics) | Shipped |
 | **V1.1** | Standard contract (JSON Schema, versioning policy, stable IDs, reference consumer) + People Detection & Response + AI-native foundations (`phase_mappings`, `detection_mesh`, `evidence_basis`) | Shipped |
 | **V1.2** | People-matrix scope broadening (one or more human beings; `target_identity`) + Detection Mesh with indicator detail page + escalation scoring & `informs_axes` (experimental pilots, chunk-1) + assessment guidance | Shipped |
-| **V1.3** | Facilities matrix complete (~40 tactics) | In Progress |
-| **V1.4** | Organizations matrix complete (~42 tactics) | In Progress |
-| **V1.5** | Infrastructure matrix complete (~38 tactics) | In Progress |
+| **V1.3** | Facilities matrix complete (40 tactics) + escalation scoring on the full People matrix | Shipped |
+| **V1.4** | Infrastructure matrix complete (37 tactics) + cross-domain Detection Mesh (People–Facility–Infrastructure) | Shipped |
+| **V1.5** | Organizations matrix complete (~42 tactics) | Planned |
 | **V2** | Platform release: custom domain, Python and TypeScript SDKs, MCP server, RAG embeddings, change feed | Planned |
 | **V3** | Real-world case library | Planned |
 | **V4** | AI integration and vector embeddings | Planned |

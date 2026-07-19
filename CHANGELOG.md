@@ -4,7 +4,63 @@ All notable changes to THREAT Matrix are documented here, per [VERSIONING.md](do
 
 This project adheres to [Semantic Versioning](https://semver.org). Framework
 content and JSON Schema are versioned independently; the framework content
-and JSON Schema both advance to `1.3.0` with this release.
+and JSON Schema currently advance together (latest: `1.4.0`).
+
+## [1.4.0] — 2026-07-19
+
+Feature release. Completes the **Infrastructure matrix** (37 tactics across all four
+phases — critical-infrastructure and OT attack behaviors: grid, water, pipeline, rail,
+telecom) and lands the **cross-domain Detection Mesh** — the first cross-matrix edges in
+the framework, weaving People, Facilities, and Infrastructure into one operation-scoped
+graph. Infrastructure is promoted from stub to full browser rendering. Schema additions
+are additive except a deliberate root-level closed-world tightening (below); existing
+content validates unchanged.
+
+### Added
+
+- **Infrastructure matrix — complete.** 37 tactics · 185 indicators · 148 countermeasures
+  (4/tactic) · 74 response protocols (2/tactic) · per-tactic `assessment_guidance`
+  (four-factor) · per-indicator escalation scoring (`escalation_axes`, computed
+  `escalation_weight`, `severity_band`, `severity_floor`) · per-indicator `informs_axes`.
+- **Facet modality for cyber-physical behaviors.** Each infrastructure indicator carries
+  `crossing` {physical | cyber | cyber_physical}, `crossing_mechanism`
+  {digital | electromagnetic | physical_implant} on cyber_physical behaviors, and an
+  independent `human_social` boolean — the substrate for computed Cyber-Physical-Nexus (CPN).
+- **Cross-domain Detection Mesh.** 89 new cross-matrix `correlates_with` edges
+  (63 Facility↔Infrastructure, 26 People↔Infrastructure) authored under a same-operation
+  participation predicate and validated by a sealed-blind two-rater inter-rater process
+  (Cohen κ = 1.000 on both pairs). Cross-matrix edges total 112.
+- **OT vocabulary extensions** (additive enums): indicator `detection_sources`
+  (+`ot_telemetry`, `network_monitoring`, `vendor_reporting`); countermeasure `domain`
+  (+`network_segmentation`, `system_hardening`, `safety_system_integrity`,
+  `supply_chain_assurance`); response-protocol `stakeholders` (+`operations_control`,
+  `engineering`, `ot_security`, `regulatory_agency`).
+- **`CALHOUN-WESTON-2003`** added to the bibliography (Calhoun & Weston, *Contemporary
+  Threat Management*), resolving the previously unresolved reference at TM0103.
+
+### Changed
+
+- **Schema is closed-world at the root.** Added `additionalProperties: false` at the top
+  level and declared `instance_conditioning` as a typed property; unknown/typo'd top-level
+  keys now fail validation (previously silently accepted). Object-level closed-world
+  discipline and a referential-integrity CI validator are scoped for a later
+  conformance-hardening release.
+- **Infrastructure promoted to live rendering** (SPA): `version` flipped from stub to null;
+  routing, heat map, and detail views render the matrix and its mesh. Organizations remains
+  a stub (V1.5).
+- Roadmap corrected: Infrastructure is V1.4 (this release); Organizations is V1.5.
+
+### Fixed
+
+- Reference Python consumer no longer crashes on `matrices.boundary_rule` (guards non-matrix
+  siblings before validation).
+- Schema `$id` resolves (dropped the nonexistent `/docs` path segment).
+- Three stored `escalation_weight` values reconciled to the geometric-mean formula
+  (facility `IND-F0208-01`, `IND-F0308-03`, `IND-F0402-03`).
+- `escalation_weight` precision prose corrected (one-decimal → two-decimal) to match data and UI.
+- Version drift reconciled (`package.json`, README, framework/schema all at 1.4.0); README
+  tactic counts, consumer framing, and family count corrected; the retired `techniques` layer
+  documented; CI now also triggers on direct pushes to `main`; compiled `.pyc` untracked.
 
 ## [1.3.0] — 2026-07-12
 
