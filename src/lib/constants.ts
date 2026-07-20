@@ -18,7 +18,7 @@ export const STUB: Record<
   'organization' | 'infrastructure',
   { phases: Record<number, number>; flight: number; claim: number }
 > = {
-  organization: { phases: { 1: 9, 2: 10, 3: 10 }, flight: 9, claim: 4 },
+  organization: { phases: { 1: 9, 2: 11, 3: 15 }, flight: 9, claim: 4 },
   infrastructure: { phases: { 1: 10, 2: 10, 3: 9 }, flight: 6, claim: 2 },
 };
 

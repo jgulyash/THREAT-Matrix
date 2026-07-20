@@ -36298,7 +36298,1172 @@
       "scope": "Tactics centered on a physical venue, structure, or built environment as the primary target. The adversary's primary objective is damage, destruction, denial, or symbolic action against the place itself. Incidental human harm in an unoccupied facility does not move the tactic to People."
     },
     "organization": {
-      "tactics": [],
+      "tactics": [
+        {
+          "id": "TO0101",
+          "name": "Organization Target Selection",
+          "tactic_families": [
+            "target_selection"
+          ],
+          "matrix": "organization",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Selection of a specific institution as the primary target, weighted by its mission, symbolic standing, legitimacy, or ideological opposition rather than by any single site or person it comprises. The threat actor decides which organization to move against and why.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "An analyst reads target selection backward from what the threat actor bothers to study, because effort concentrates on the institution whose mission or legitimacy carries symbolic weight, and a named organization recurring across grievance material signals the target long before any operational move.",
+          "observed_contexts": [
+            "campaigns where an ideologically motivated group singles out one institution among many peers because its mission or public standing embodies the value the group opposes, then treats every site and officer merely as a way into that institution"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CALHOUN-WESTON-2003",
+            "START-GTD-2020"
+          ]
+        },
+        {
+          "id": "TO0102",
+          "name": "Governance & Leadership Mapping",
+          "tactic_families": [
+            "target_development"
+          ],
+          "matrix": "organization",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Study of how the organization is governed and led, mapping its decision structure, chain of authority, board, key officers, and the internal processes through which the institution acts. This locates where control and continuity concentrate.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Governance mapping tells an analyst the threat actor is hunting for where authority and continuity concentrate, so watch for outside interest in board rosters, bylaws, succession, and signing authority that exceeds what a member or applicant would ever need.",
+          "observed_contexts": [
+            "campaigns against member-governed or board-led institutions where a hostile party reconstructs the decision chain and identifies which few officers can bind or halt the organization before contesting its mandate"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NTAC-SYSTEMS-2020"
+          ]
+        },
+        {
+          "id": "TO0103",
+          "name": "Mission & Narrative Reconnaissance",
+          "tactic_families": [
+            "target_development",
+            "narrative_mapping"
+          ],
+          "matrix": "organization",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Open-source study of the organization's public mission, brand, messaging, reputation, and existing controversy to locate the narratives and legitimacy claims a campaign can contest or exploit. The threat actor learns what the institution says it stands for so its standing can be undermined.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Narrative reconnaissance shows the threat actor is looking for the gap between what the institution claims and what it can defend, so an analyst treats concentrated interest in old controversy, mission language, and reputational soft spots as scoping for a legitimacy attack.",
+          "observed_contexts": [
+            "campaigns where a hostile group studies an institution's public messaging and prior controversies to find the legitimacy claim it can most credibly contest, then builds a narrative that turns the institution's own stated values against it"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TO0104",
+          "name": "Dependency & Resource Mapping",
+          "tactic_families": [
+            "target_development"
+          ],
+          "matrix": "organization",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Mapping of the funders, partners, members, vendors, regulators, and revenue streams the organization depends on for continuity, identifying single points of failure in its support base. This establishes where pressure on the institution propagates.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Dependency mapping reveals that the threat actor understands the institution survives on funders, partners, and vendors rather than on itself, so an analyst looks for interest in the support base and treats a concentrated funding or vendor chokepoint as the likely pressure point.",
+          "observed_contexts": [
+            "campaigns where a hostile party maps the funders, regulators, and vendors an institution depends on for continuity, then plans pressure against a single load-bearing relationship whose loss cascades through the whole organization"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CISA-CONVERGE-2021"
+          ]
+        },
+        {
+          "id": "TO0105",
+          "name": "Membership & Cohesion Assessment",
+          "tactic_families": [
+            "target_development"
+          ],
+          "matrix": "organization",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Assessment of the organization's membership, internal factions, morale, and fault lines to locate where the institution can be fractured, split, or turned against itself. The threat actor studies cohesion as an attack surface.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Cohesion assessment signals the threat actor intends to fracture the institution from inside rather than confront it directly, so an analyst treats probing of factions, morale, and internal disputes as reconnaissance for a splitting or discrediting campaign, not idle interest.",
+          "observed_contexts": [
+            "campaigns where a hostile group studies internal factions and morale fault lines within a membership organization to find where it can seed division and turn members against leadership or against one another"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CERT-CSG-7-2022"
+          ]
+        },
+        {
+          "id": "TO0106",
+          "name": "Insider Vulnerability Identification",
+          "tactic_families": [
+            "target_development",
+            "network_development"
+          ],
+          "matrix": "organization",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Identification of employees, members, or affiliates whose access, grievance, ideology, or personal circumstance makes them candidates for later recruitment or coercion against the institution. This is candidate spotting, not yet recruitment.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Insider spotting differs from recruitment in that the threat actor is still cataloging candidates, so an analyst watches for outside interest in disgruntled staff, ideological affiliates, or people with sensitive access, and reads it as a shortlist being built rather than an approach already underway.",
+          "observed_contexts": [
+            "campaigns where a hostile party surveys an institution's workforce and affiliates for individuals whose grievance, ideology, or privileged access marks them as future recruitment or coercion candidates against the organization"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CERT-CSG-7-2022",
+            "CISA-DIT-2023",
+            "NITTF-GUIDE-2017"
+          ]
+        },
+        {
+          "id": "TO0107",
+          "name": "Information Position Reconnaissance",
+          "tactic_families": [
+            "target_development"
+          ],
+          "matrix": "organization",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Study of the information the organization holds, controls, publishes, or communicates internally, including member rolls, records, intellectual property, and internal channels, to map what can be exposed, stolen, forged, or exploited. The threat actor maps the institution's information environment.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Information-position reconnaissance tells an analyst the threat actor is mapping what the institution holds that can be exposed, stolen, or forged, so interest in member rolls, records, internal channels, and proprietary material signals scoping of the institution's information environment as an attack surface.",
+          "observed_contexts": [
+            "campaigns where a hostile group inventories the records, member data, and internal communications an institution controls to identify what can be leaked, altered, or counterfeited to damage its standing or operations"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CISA-CONVERGE-2021"
+          ]
+        },
+        {
+          "id": "TO0108",
+          "name": "Institutional Probing",
+          "tactic_families": [
+            "target_development"
+          ],
+          "matrix": "organization",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Low-level active probing of the organization's responsiveness and controls, such as pretext inquiries, membership or vendor applications, complaint and intake channel tests, and elicitation, to reveal how the institution reacts before a campaign commits. Unlike passive study, the threat actor interacts to measure response.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Probing separates itself from passive study because the threat actor interacts to measure response, so an analyst treats pretext inquiries, test applications, and intake or complaint channel tests as deliberate soundings of the institution's controls and reaction time before a campaign commits.",
+          "observed_contexts": [
+            "campaigns where a hostile party sends pretext inquiries or trial applications through an institution's intake and complaint channels to learn how it screens, escalates, and responds before committing to the main operation"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CALHOUN-WESTON-2003"
+          ]
+        },
+        {
+          "id": "TO0109",
+          "name": "Pathway / Escalation Indicators",
+          "tactic_families": [
+            "pathway_warning"
+          ],
+          "matrix": "organization",
+          "phase": 1,
+          "phase_name": "Target Development",
+          "notes": "Actor-level behavioral markers that a threat actor is progressing from grievance and planning toward an active campaign against a specific organization, including leakage, fixation on the institution, and mobilization signals. This tactic captures pathway warning rather than a discrete operational act.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Pathway indicators are actor-level rather than act-level, so an analyst reads leakage, fixation on a named institution, and mobilization signals together as evidence that a threat actor is progressing from grievance toward an active campaign, not as isolated statements.",
+          "observed_contexts": [
+            "cases where an individual moves from generalized grievance against an institution toward an active campaign, showing fixation on that specific organization, leakage of intent, and steps that convert planning into mobilization"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CALHOUN-WESTON-2003",
+            "MELOY-TRAP18-2016",
+            "FBI-PREATTACK-2018"
+          ]
+        },
+        {
+          "id": "TO0201",
+          "name": "Operational Rehearsal",
+          "tactic_families": [
+            "mobilization"
+          ],
+          "matrix": "organization",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Practice execution of the planned campaign short of the act itself, such as test messaging runs, rehearsed infiltration approaches, dry-run disruptions, or trial pressure actions, to validate the plan against the institution. The threat actor confirms the operation will work before committing.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Rehearsal tells an analyst the plan is nearly committed, because the threat actor practices against the institution to validate it, so test messaging runs, trial infiltration approaches, and dry-run disruptions read as late-stage confirmation rather than continued reconnaissance.",
+          "observed_contexts": [
+            "campaigns where a hostile group runs trial infiltration approaches or test disruptions against an institution to confirm the operation works before executing the full campaign against it"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CALHOUN-WESTON-2003"
+          ]
+        },
+        {
+          "id": "TO0202",
+          "name": "Insider Recruitment & Cultivation",
+          "tactic_families": [
+            "mobilization",
+            "network_development"
+          ],
+          "matrix": "organization",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Recruiting, cultivating, or coercing an existing employee, member, or affiliate to act against the organization from within, converting identified candidates into active insiders. The threat actor turns a person the institution trusts into a vector.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Recruitment converts a spotted candidate into an active insider, so an analyst distinguishes it from earlier spotting by looking for the approach itself, such as cultivation, inducement, or coercion of a trusted employee or member into acting against the institution.",
+          "observed_contexts": [
+            "campaigns where a hostile party cultivates, induces, or coerces a trusted employee or member into acting against the institution from within, converting a previously identified candidate into an operating insider"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CERT-CSG-7-2022",
+            "CISA-DIT-2023",
+            "NITTF-GUIDE-2017"
+          ]
+        },
+        {
+          "id": "TO0203",
+          "name": "Front Organization Construction",
+          "tactic_families": [
+            "cover_development",
+            "mobilization"
+          ],
+          "matrix": "organization",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Building a front group, shell entity, false affiliate, or parallel structure that carries borrowed legitimacy, giving the campaign a credible face from which to approach, mimic, or operate against the target institution. The threat actor manufactures institutional cover.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Front construction signals the threat actor needs borrowed legitimacy to approach or mimic the institution, so an analyst treats a newly built affiliate, shell, or parallel structure with a credible institutional face as manufactured cover for operating against the target.",
+          "observed_contexts": [
+            "campaigns where a hostile group builds a front group or false affiliate that borrows institutional legitimacy, giving the operation a credible face from which to approach, impersonate, or maneuver against the target institution"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TO0204",
+          "name": "Narrative & Disinformation Staging",
+          "tactic_families": [
+            "mobilization",
+            "narrative_mapping"
+          ],
+          "matrix": "organization",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Constructing and pre-positioning the delegitimizing narrative, fabricated content, forged documents, and coordinated messaging assets that the campaign will deploy to erode the institution's standing. The threat actor stages the information payload before release.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Staging shows up as content and forged assets that are too polished and too internally consistent to be organic, so an analyst reads the coordination fingerprints, the pre-loaded talking points, and the timing gap before release as evidence the narrative was manufactured rather than surfaced.",
+          "observed_contexts": [
+            "coercion campaigns where a hostile group fabricates and pre-positions a delegitimizing narrative and forged records before it publicly pressures an institution to change a policy or stand down"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TO0205",
+          "name": "Legitimacy Infiltration",
+          "tactic_families": [
+            "mobilization"
+          ],
+          "matrix": "organization",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Gaining bona fide standing inside the organization by joining, volunteering, seeking employment, becoming a vendor, or securing an affiliate or board position, so the threat actor operates from a position the institution recognizes as legitimate. This obtains organizational presence, not yet elevated authority.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Legitimacy infiltration is easy to miss because the threat actor does everything the institution asks of a genuine joiner, so an analyst watches for entrants whose stated interest does not match their behavior and whose real aim is proximity to a sensitive function.",
+          "observed_contexts": [
+            "entryist patterns where a hostile actor joins, volunteers for, or contracts with an institution through legitimate channels in order to operate from a position the institution already trusts"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "CISA-DIT-2023",
+            "NITTF-GUIDE-2017",
+            "GULYASH-FIELD-OPS-2004-2026"
+          ]
+        },
+        {
+          "id": "TO0206",
+          "name": "Internal Access & Authority Acquisition",
+          "tactic_families": [
+            "mobilization"
+          ],
+          "matrix": "organization",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Elevating from mere presence to the internal privileges the institution grants, such as signatory or financial authority, access to member rolls and internal communications, governance votes, or administrative control. The threat actor accumulates the institutional authority needed to act.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Authority acquisition shows in the gap between a member's tenure and the reach they seek, so an analyst tracks fast pursuit of signatory rights, roster access, or governance votes, and treats privilege that exceeds any legitimate need as the warning signal.",
+          "observed_contexts": [
+            "capture patterns where an actor who has gained legitimate presence then escalates into financial, administrative, or governance authority disproportionate to any genuine organizational role"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CERT-CSG-7-2022",
+            "CISA-CONVERGE-2021"
+          ]
+        },
+        {
+          "id": "TO0207",
+          "name": "Leverage & Coercive Material Acquisition",
+          "tactic_families": [
+            "mobilization",
+            "acquisition"
+          ],
+          "matrix": "organization",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Acquiring the leverage a campaign uses to bend the institution's decisions, including leaked or stolen internal records, financial exposure, legal pressure points, and compromising material held over the institution as a body. The threat actor assembles the means to compel the organization to act against its own interest.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Leverage acquisition is inferred from what an institution suddenly begins to protect, so an analyst reads defensive behavior, quiet settlements, and shifts in posture as signs that compromising records or financial and legal exposure are being assembled and held over the organization as a body.",
+          "observed_contexts": [
+            "coercion buildups where a hostile actor collects leaked records, financial exposure, or compromising material to be held over an institution and used to bend its decisions"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CALHOUN-WESTON-2003"
+          ]
+        },
+        {
+          "id": "TO0208",
+          "name": "Resource & Financing Staging",
+          "tactic_families": [
+            "mobilization",
+            "acquisition"
+          ],
+          "matrix": "organization",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Assembling the funds, personnel, platforms, and operational infrastructure required to sustain the campaign against the organization, staging resources ahead of action. The threat actor builds the material base for the operation.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Resource staging precedes visible action, so an analyst reads the assembly of funding, personnel, platforms, and infrastructure ahead of any overt move as a sizing signal, where the scale of what is staged forecasts the intended duration and reach of the campaign against the institution.",
+          "observed_contexts": [
+            "pre-operational buildups where a hostile group assembles funding, staff, platforms, and infrastructure to sustain a prolonged campaign against an institution before any public action begins"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CHAINALYSIS-CCR-2024"
+          ]
+        },
+        {
+          "id": "TO0209",
+          "name": "Coalition & Proxy Assembly",
+          "tactic_families": [
+            "mobilization",
+            "network_development"
+          ],
+          "matrix": "organization",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Assembling allied groups, proxies, astroturfed networks, and sympathetic third parties to amplify pressure, manufacture apparent consensus, and multiply force against the institution. The threat actor builds the external network the campaign will mobilize.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Coalition assembly manufactures the look of broad consensus, so an analyst tests apparent grassroots opposition for shared funding, synchronized messaging, and reused personnel across supposedly independent groups, treating manufactured breadth rather than genuine constituency as the tell of a proxy network.",
+          "observed_contexts": [
+            "astroturf pressure campaigns where a hostile actor assembles proxies, front groups, and sympathetic third parties to simulate widespread consensus and multiply force against an institution"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "START-GTD-2020"
+          ]
+        },
+        {
+          "id": "TO0210",
+          "name": "Surveillance Detection & Operational Security",
+          "tactic_families": [
+            "counter_surveillance",
+            "mobilization"
+          ],
+          "matrix": "organization",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Actions to detect and evade the organization's own security, counterintelligence, legal, and monitoring functions while the campaign is being built, protecting infiltrators, fronts, and insiders from exposure. The threat actor shields the developing operation from institutional detection.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Operational security against an institution is visible in its own blind spots, so an analyst looks for insiders and fronts that route around monitoring, avoid audit triggers, and time activity to oversight gaps, reading deliberate evasion of internal controls as a developing operation.",
+          "observed_contexts": [
+            "concealment patterns where a hostile actor actively detects and evades an institution's own security, audit, and counterintelligence functions to protect embedded insiders and fronts while an operation is being built"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NITTF-GUIDE-2017"
+          ]
+        },
+        {
+          "id": "TO0211",
+          "name": "Supply-Chain-Of-Trust Subversion",
+          "tactic_families": [
+            "mobilization",
+            "network_development"
+          ],
+          "matrix": "organization",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Compromising or co-opting a trusted vendor, partner, accreditor, auditor, or platform to reach or discredit the target institution through a relationship it relies on. The threat actor turns a trusted third party into a vector against the organization.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Supply-chain-of-trust subversion exploits the institution's least scrutinized relationships, so an analyst maps which vendors, auditors, accreditors, and platforms the target relies on and treats a compromise or co-option of one of those trusted intermediaries as a path to reach or discredit the institution indirectly.",
+          "observed_contexts": [
+            "trusted-intermediary attacks where a hostile actor compromises or co-opts a vendor, auditor, accreditor, or platform an institution depends on in order to reach or discredit it through a relationship it trusts"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "CISA-CONVERGE-2021",
+            "CERT-CSG-7-2022",
+            "GULYASH-FIELD-OPS-2004-2026"
+          ]
+        },
+        {
+          "id": "TO0301",
+          "name": "Institutional Extortion",
+          "tactic_families": [
+            "institutional_coercion",
+            "execution"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "The threat actor coerces the institution itself by threatening harm to its mission, continuity, brand, or membership unless it pays, changes policy, or submits. The target of value is the organization's freedom to decide and operate, not any single individual.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Institutional extortion targets the organization's freedom to decide rather than any one person, so an analyst distinguishes it from individual coercion by whether the demand seeks policy change, payment, or submission from the institution and whether the threatened harm falls on mission or continuity.",
+          "observed_contexts": [
+            "extortion campaigns where a hostile actor threatens an institution's mission, continuity, or standing unless it pays, changes policy, or submits, targeting the organization's freedom to decide rather than any single individual"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "CALHOUN-WESTON-2003",
+            "GULYASH-FIELD-OPS-2004-2026"
+          ]
+        },
+        {
+          "id": "TO0302",
+          "name": "Delegitimization Campaign",
+          "tactic_families": [
+            "delegitimization",
+            "execution"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "A sustained campaign to strip the institution of its perceived authority, mandate, and right to exist in the eyes of stakeholders and the public. The mechanism is public contestation of the institution's legitimacy and standing to operate, distinct from severing the trust relationships that sustain it.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "A delegitimization campaign attacks the institution's right to exist rather than its conduct, so an analyst separates it from ordinary scandal by whether the messaging contests the organization's mandate and standing to operate at all, aiming to make stakeholders question why it should be recognized.",
+          "observed_contexts": [
+            "legitimacy-contestation campaigns where a hostile actor works to strip an institution of its perceived mandate and right to exist in the eyes of stakeholders and the public"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TO0303",
+          "name": "Trust Destruction Operation",
+          "tactic_families": [
+            "trust_destruction",
+            "delegitimization"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Manufacturing or amplifying scandal, doubt, and controversy to collapse the confidence that donors, members, partners, and funders place in the institution. The mechanism is degradation of specific trust relationships that sustain the organization, distinct from a public challenge to its authority to exist.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Trust destruction targets specific relationships rather than the institution's mandate, so an analyst watches for engineered scandal aimed precisely at donors, funders, members, or partners, reading the collapse of a particular confidence relationship as distinct from a public challenge to the institution's authority.",
+          "observed_contexts": [
+            "confidence-collapse operations where a hostile actor manufactures or amplifies scandal to sever the trust that donors, members, partners, or funders place in an institution"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TO0304",
+          "name": "Insider-Enabled Disruption",
+          "tactic_families": [
+            "insider_enabled",
+            "execution"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "The threat actor uses a cultivated or coerced insider to sabotage, leak, or degrade the institution's operations and information position from within. The insider is the vector, but the target of value is the organization's function and continuity.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Insider-enabled disruption uses a person as the vector while the institution's function is the target, so an analyst correlates operational degradation, leaks, or sabotage with the access held by cultivated or coerced insiders, treating the pattern of damage rather than identity as the diagnostic.",
+          "observed_contexts": [
+            "insider-vector campaigns where a hostile actor cultivates or coerces someone inside an institution to leak, sabotage, or degrade its operations and information position from within"
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CERT-CSG-7-2022",
+            "CISA-DIT-2023",
+            "NITTF-GUIDE-2017"
+          ]
+        },
+        {
+          "id": "TO0305",
+          "name": "Governance Capture",
+          "tactic_families": [
+            "governance_capture",
+            "insider_enabled"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "The threat actor infiltrates and gains control over the institution's decision-making bodies, boards, committees, or leadership to redirect what the organization does. The target is the organization's governance and control, not the individuals who occupy the seats.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "An analyst distinguishes governance capture from ordinary leadership turnover by tracking whether new occupants of board or committee seats arrive coordinated, share an outside sponsor, and move in concert to redirect mandate rather than compete on the merits of institutional direction.",
+          "observed_contexts": [
+            "Coordinated slates of aligned candidates advancing into an institution's boards, standing committees, or executive posts until a threat actor controls enough decision seats to redirect the organization's mission from within governance rather than from outside pressure."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "CERT-CSG-7-2022",
+            "GULYASH-FIELD-OPS-2004-2026"
+          ]
+        },
+        {
+          "id": "TO0306",
+          "name": "Defection Engineering",
+          "tactic_families": [
+            "membership_attrition",
+            "execution"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "The threat actor induces members, staff, donors, or affiliates to abandon the institution in numbers sufficient to hollow out its capacity. The target is the organization's membership base and human capital as an institutional resource.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "An analyst reads defection engineering in the timing and clustering of departures, watching for staff, donors, or affiliates leaving in coordinated waves after a shared inducement rather than through the scattered, individually motivated attrition an institution normally absorbs.",
+          "observed_contexts": [
+            "Organized campaigns that court an institution's members, staff, donors, or affiliates toward a competing destination in synchronized waves, draining the human capital and institutional knowledge the organization needs to sustain its mission."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CERT-CSG-7-2022"
+          ]
+        },
+        {
+          "id": "TO0307",
+          "name": "Funding Strangulation",
+          "tactic_families": [
+            "financial_strangulation",
+            "execution"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "The threat actor severs the institution's financial lifelines by pressuring donors, banks, payment processors, grantmakers, or sponsors to cut ties. The target is the organization's financial continuity, achieved without touching its facilities or systems.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "An analyst recognizes funding strangulation when pressure lands not on the institution but on its financial intermediaries, where a threat actor works to make banks, processors, grantmakers, or sponsors treat the organization as a reputational liability worth dropping.",
+          "observed_contexts": [
+            "Pressure campaigns directed at an institution's donors, banks, payment processors, grantmakers, or sponsors that persuade those intermediaries to sever ties, cutting financial continuity without any contact with the organization's own facilities or systems."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CHAINALYSIS-CCR-2024"
+          ]
+        },
+        {
+          "id": "TO0308",
+          "name": "Forced Exposure",
+          "tactic_families": [
+            "forced_disclosure",
+            "execution"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Compelling or executing the public release of the institution's confidential records, internal deliberations, or governance communications to damage its standing and position. The disclosure is weaponized against the institution as a body, distinct from exposing an individual for personal harm.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "An analyst separates forced exposure from personal doxxing by asking who the disclosure is aimed to damage, looking for release of governance records, internal deliberations, or confidential files timed and framed to injure the institution's standing as a body.",
+          "observed_contexts": [
+            "Compelled or executed release of an institution's confidential records, internal deliberations, or governance communications, timed and framed to damage the organization's public standing and negotiating position rather than to harm any single individual."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "CISA-CONVERGE-2021",
+            "GULYASH-FIELD-OPS-2004-2026"
+          ]
+        },
+        {
+          "id": "TO0309",
+          "name": "Cohesion Fracturing",
+          "tactic_families": [
+            "cohesion_attack",
+            "execution"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "The threat actor seeds division, factionalism, and schism inside the institution to fracture its internal cohesion and split it apart. The target is the organization's unity and coherence as a single body.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "An analyst detects cohesion fracturing in amplified internal grievance, where a threat actor invests in widening existing seams between factions, generations, or chapters so that ordinary organizational friction hardens into schism the institution cannot reconcile.",
+          "observed_contexts": [
+            "Efforts that seed and inflame factional division, generational grievance, or chapter-versus-leadership conflict inside an institution, converting normal internal disagreement into durable schism that splits the organization's unity as a single body."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TO0310",
+          "name": "Operational Paralysis",
+          "tactic_families": [
+            "operational_disruption",
+            "execution"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Flooding, swarming, or overloading the institution's administrative and social channels, such as complaint floods, mass fake applications, bureaucratic overload, and intake saturation, to deny it the capacity to conduct its mission. The mechanism is administrative and process paralysis, explicitly excluding technical denial of service and physical occupation.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "An analyst identifies operational paralysis by the volume and inauthenticity of legitimate-looking demand, watching for complaint floods, mass fake applications, or intake saturation that overwhelm administrative capacity through process rather than through technical or physical means.",
+          "observed_contexts": [
+            "Coordinated flooding of an institution's administrative and intake channels with complaint volleys, mass fabricated applications, or bureaucratic overload that saturates staff capacity and denies the organization the throughput to conduct its mission."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CALHOUN-WESTON-2003"
+          ]
+        },
+        {
+          "id": "TO0311",
+          "name": "Lawfare Weaponization",
+          "tactic_families": [
+            "institutional_coercion",
+            "execution"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Weaponizing the legal and regulatory system against the institution through vexatious litigation, mass regulatory complaints, licensing and permit challenges, and pressure campaigns designed to bleed cost and paralyze it through legal-administrative means. The threat actor uses lawful processes as an instrument of attrition.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "An analyst reads lawfare weaponization in the pattern of legal action rather than any single filing, watching for serial vexatious suits, mass regulatory complaints, and licensing challenges whose aim is attrition and cost rather than a good-faith remedy the institution could satisfy.",
+          "observed_contexts": [
+            "Sustained use of litigation, regulatory complaints, and licensing or permit challenges filed in volume against an institution, engineered to bleed legal cost and staff attention and paralyze the organization through lawful process rather than to win on merits."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CALHOUN-WESTON-2003"
+          ]
+        },
+        {
+          "id": "TO0312",
+          "name": "Hostile Control Acquisition",
+          "tactic_families": [
+            "governance_capture",
+            "execution"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Seizing control of the institution through a controlling ownership stake, creditor and debt leverage, or a proxy fight, taking the organization by economic and legal ownership rather than by infiltrating its board. The threat actor acquires the institution's control apparatus outright.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "An analyst distinguishes hostile control acquisition from governance capture by the instrument of takeover, watching for controlling ownership stakes, creditor leverage, or proxy fights that seize the institution's control apparatus through economic and legal ownership rather than by placing allies in seats.",
+          "observed_contexts": [
+            "Acquisition of an institution's control through a controlling ownership stake, accumulated debt and creditor leverage, or a proxy contest, taking the organization outright by economic and legal ownership rather than by infiltrating its board from within."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CHAINALYSIS-CCR-2024"
+          ]
+        },
+        {
+          "id": "TO0313",
+          "name": "Institution Impersonation",
+          "tactic_families": [
+            "delegitimization",
+            "execution"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Spoofing the target institution's own identity by forging its official communications, cloning its brand, or standing up fake official channels to redirect its resources, deceive its stakeholders, or destroy its credibility. The threat actor wears the institution's identity against it.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "An analyst recognizes institution impersonation when the threat actor speaks as the institution rather than about it, watching for forged official communications, cloned branding, or fake channels that borrow the organization's own identity to redirect its resources or destroy its credibility.",
+          "observed_contexts": [
+            "Forged official communications, cloned branding, and fraudulent channels that impersonate a target institution's own identity to redirect its resources, deceive its stakeholders, or corrode the credibility the organization depends on to operate."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TO0314",
+          "name": "Boycott And Market Coercion",
+          "tactic_families": [
+            "financial_strangulation",
+            "execution"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Mobilizing an organized boycott, divestment drive, or advertiser and sponsor pressure campaign that turns a market or public constituency against the institution to coerce or degrade it. The mechanism is demand-side mobilization rather than directly severing individual funding ties.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "An analyst separates boycott and market coercion from funding strangulation by the mechanism of pressure, watching for organized demand-side mobilization of a market or public constituency against the institution rather than direct approaches to individual funders or intermediaries.",
+          "observed_contexts": [
+            "Organized boycott, divestment, or advertiser and sponsor pressure campaigns that mobilize a market or public constituency to turn against an institution, coercing or degrading the organization through withdrawn demand rather than by severing individual funding ties."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "START-GTD-2020"
+          ]
+        },
+        {
+          "id": "TO0315",
+          "name": "Forced De-platforming",
+          "tactic_families": [
+            "delegitimization",
+            "execution"
+          ],
+          "matrix": "organization",
+          "phase": 3,
+          "phase_name": "Execution",
+          "notes": "Coercing a gatekeeper such as a platform, payment processor, accreditor, or charity-status authority into stripping the institution's ability to operate, revoking its access, certification, or standing. The threat actor compels a third-party gatekeeper to disable the organization.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "An analyst reads forced de-platforming in pressure aimed at a chokepoint gatekeeper, watching for campaigns that push a platform, processor, accreditor, or charity-status authority to revoke the institution's access, certification, or standing and disable it from the outside.",
+          "observed_contexts": [
+            "Campaigns that pressure a third-party gatekeeper such as a hosting platform, payment processor, accreditor, or charity-status authority into revoking an institution's access, certification, or operating standing, disabling the organization through a controlled chokepoint."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TO0401",
+          "name": "Front Dissolution",
+          "tactic_families": [
+            "front_dissolution",
+            "aftermath"
+          ],
+          "matrix": "organization",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "phase_4_track": "evasion",
+          "notes": "The threat actor winds down the shell entities, front groups, and cutout organizations used to act against the institution so the campaign cannot be traced to its sponsor. Dissolution removes the organizational vectors once the act is complete.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "An analyst spots front dissolution in the orderly, timed wind-down of shell entities and cutouts after a campaign concludes, watching for coordinated closures that erase the organizational vectors and sever the trail back to the sponsor once the act against the institution is complete.",
+          "observed_contexts": [
+            "Deliberate wind-down and closure of the shell entities, front groups, and cutout organizations used to act against an institution, timed to remove the organizational vectors and break attribution back to the campaign's sponsor after the operation concludes."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TO0402",
+          "name": "Attribution Obfuscation",
+          "tactic_families": [
+            "attribution_obfuscation",
+            "aftermath"
+          ],
+          "matrix": "organization",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "phase_4_track": "evasion",
+          "notes": "The threat actor plants false-flag artifacts and routes the campaign through proxies and cutouts so responsibility for the institutional attack points elsewhere. The aim is to sever the link between the sponsor and the act against the organization.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Read attribution obfuscation as a signal of sponsor sophistication rather than absence of one, since convenient false-flag artifacts and layered cutouts that all point neatly at a rival institution usually indicate a threat actor deliberately engineering the narrative an investigator is expected to accept.",
+          "observed_contexts": [
+            "Campaigns against an institution in which a threat actor seeds planted artifacts, borrowed tooling, and proxy intermediaries so that early responsibility appears to rest with a rival organization or a generic criminal element rather than the sponsoring actor."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "START-GTD-2020"
+          ]
+        },
+        {
+          "id": "TO0403",
+          "name": "Narrative Laundering",
+          "tactic_families": [
+            "narrative_laundering",
+            "aftermath"
+          ],
+          "matrix": "organization",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "phase_4_track": "evasion",
+          "notes": "The threat actor moves the hostile narrative through seemingly independent media, influencers, and civil-society intermediaries so it reads as organic and its origin stays hidden. Laundering conceals that the delegitimization was sponsored.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Narrative laundering is recognizable less by any single message than by the suspiciously clean chain of custody, where a hostile claim about an institution surfaces near-simultaneously across nominally independent outlets and voices that share phrasing, framing, and timing but no disclosed common origin.",
+          "observed_contexts": [
+            "Delegitimization efforts against an institution in which a threat actor routes a sponsored narrative through seemingly organic media, commentators, and civil-society intermediaries so the framing appears to arise independently rather than from a coordinated source."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TO0404",
+          "name": "Evidence Destruction",
+          "tactic_families": [
+            "evidence_destruction",
+            "aftermath"
+          ],
+          "matrix": "organization",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "phase_4_track": "evasion",
+          "notes": "The threat actor destroys the records, communications, and financial trails that tie the operation to the institutional target. The act frustrates reconstruction of the campaign against the organization.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Evidence destruction against an institutional target often reveals itself through the shape of what is missing, since selectively purged records, gaps aligned precisely to the operational window, and communications deleted just before scrutiny tell an analyst where the threat actor believed the incriminating trail lived.",
+          "observed_contexts": [
+            "Post-operation cleanup in which a threat actor destroys or selectively purges the records, communications, and financial trails that would let an institution reconstruct how a campaign against it was mounted and by whom."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "NITTF-GUIDE-2017"
+          ]
+        },
+        {
+          "id": "TO0405",
+          "name": "Network Protection",
+          "tactic_families": [
+            "network_protection",
+            "aftermath"
+          ],
+          "matrix": "organization",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "phase_4_track": "evasion",
+          "notes": "The threat actor shields the cultivated insiders, co-conspirators, and cutouts embedded in or around the institution after the operation. Protection preserves the human network for future use.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Network protection is visible when the people best positioned to explain an institutional breach are abruptly reassigned, relocated, financially cushioned, or shielded from inquiry, signaling that a threat actor values the human network around the institution enough to preserve it for reuse.",
+          "observed_contexts": [
+            "Aftermath of an institutional operation in which a threat actor insulates cultivated insiders, co-conspirators, and cutouts from exposure or consequence in order to keep the human network available for future campaigns."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "CERT-CSG-7-2022",
+            "GULYASH-FIELD-OPS-2004-2026"
+          ]
+        },
+        {
+          "id": "TO0406",
+          "name": "Influence Persistence",
+          "tactic_families": [
+            "influence_persistence",
+            "aftermath"
+          ],
+          "matrix": "organization",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "phase_4_track": "evasion",
+          "notes": "The threat actor retains dormant insiders, latent influence positions, or residual footholds inside the institution to enable a renewed campaign. Persistence keeps the organization penetrable after the current act.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Influence persistence is the hardest post-act behavior to see because success looks like nothing happening, so an analyst should treat dormant accesses, unexplained retained privileges, and quietly maintained relationships inside a recovered institution as a threat actor holding the door open.",
+          "observed_contexts": [
+            "Situations where a threat actor leaves dormant insiders, latent influence positions, or residual footholds inside an institution after an operation concludes, keeping the organization penetrable for a renewed campaign."
+          ],
+          "evidence_basis": "literature_only",
+          "source_refs": [
+            "CERT-CSG-7-2022",
+            "CISA-DIT-2023"
+          ]
+        },
+        {
+          "id": "TO0407",
+          "name": "Financial Disposition",
+          "tactic_families": [
+            "financial_disposition",
+            "aftermath"
+          ],
+          "matrix": "organization",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "phase_4_track": "evasion",
+          "notes": "The threat actor moves, layers, or launders the funds tied to the campaign, whether extortion proceeds or operational financing, to obscure their origin. The disposition covers the money behind the institutional attack.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Financial disposition tied to an institutional campaign shows up as movement that makes no commercial sense, where extortion proceeds or operational financing are layered through shells, intermediaries, and rapid conversions whose only coherent purpose is to sever the money from the act against the organization.",
+          "observed_contexts": [
+            "Post-campaign money handling in which a threat actor moves, layers, or launders extortion proceeds or operational financing through intermediaries and conversions to obscure the origin of funds behind an attack on an institution."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "CHAINALYSIS-CCR-2024",
+            "GULYASH-FIELD-OPS-2004-2026"
+          ]
+        },
+        {
+          "id": "TO0408",
+          "name": "After-Action Assessment",
+          "tactic_families": [
+            "after_action_assessment",
+            "aftermath"
+          ],
+          "matrix": "organization",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "phase_4_track": "evasion",
+          "notes": "The threat actor reviews whether the institution was actually degraded, delegitimized, or coerced as intended and what to change next time. The assessment measures effect against the organizational objective.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "After-action assessment is inferable from the next iteration rather than observed directly, so an analyst who sees a follow-on operation against a similar institution correct exactly the weaknesses that blunted the prior effort is reading the fingerprint of a deliberate effect review.",
+          "observed_contexts": [
+            "Patterns in which a threat actor evaluates whether an institution was actually degraded, delegitimized, or coerced as intended and refines tradecraft, with the learning visible in the tightened design of subsequent campaigns against comparable organizations."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CALHOUN-WESTON-2003"
+          ]
+        },
+        {
+          "id": "TO0409",
+          "name": "Rebranding And Repositioning",
+          "tactic_families": [
+            "repositioning",
+            "aftermath"
+          ],
+          "matrix": "organization",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "phase_4_track": "evasion",
+          "notes": "The threat actor's own movement or front rebrands, relocates, or repositions to evade sanction and keep operating against institutions. The behavior reestablishes a clean posture for the sponsoring actor.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Rebranding and repositioning is recognizable when a sanctioned or exposed movement dissolves and a fresh entity appears with new naming and geography but the same personnel, funding rhythms, and institutional targets, indicating a threat actor buying a clean posture rather than genuinely standing down.",
+          "observed_contexts": [
+            "Cases where a threat actor's movement or front rebrands, relocates, or restructures after exposure or sanction while preserving the same leadership, financing, and hostility toward institutions in order to keep operating under a cleaner identity."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TO0410",
+          "name": "Attribution Declaration",
+          "tactic_families": [
+            "attribution_declaration",
+            "aftermath"
+          ],
+          "matrix": "organization",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "phase_4_track": "attribution",
+          "notes": "The threat actor publicly claims responsibility for the campaign against the institution through a statement, manifesto, or media contact. The claim signs the act as a deliberate strike on the organization.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Attribution declaration should be weighed against the operational facts rather than accepted at face value, since a threat actor claiming an institutional strike may be signing genuine work, exaggerating capability, or claiming an act it did not commit.",
+          "observed_contexts": [
+            "Instances where a threat actor publicly claims responsibility for a campaign against an institution through a statement, manifesto, or media contact in order to frame the act as a deliberate and attributable strike."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "START-GTD-2020",
+            "CTC-INFRATERROR-2026",
+            "GULYASH-FIELD-OPS-2004-2026"
+          ]
+        },
+        {
+          "id": "TO0411",
+          "name": "Audience Amplification",
+          "tactic_families": [
+            "audience_amplification",
+            "aftermath"
+          ],
+          "matrix": "organization",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "phase_4_track": "attribution",
+          "notes": "The threat actor publicizes and spreads the institution's degradation, defection, or exposure to maximize reach, reaction, and downstream pressure. Amplification turns the institutional damage into a public spectacle.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Audience amplification turns an analyst's attention to reach mechanics, because a threat actor that engineers coordinated resharing, staged media handoffs, and timed re-releases of an institution's degradation is treating the reaction itself as the payload and extending harm well past the original act.",
+          "observed_contexts": [
+            "Efforts in which a threat actor deliberately publicizes and spreads an institution's degradation, defection, or exposure across channels to maximize reach and reaction, converting the institutional damage into a public spectacle."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
+          "id": "TO0412",
+          "name": "Coercive Follow-Through",
+          "tactic_families": [
+            "coercive_leverage",
+            "aftermath"
+          ],
+          "matrix": "organization",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "phase_4_track": "attribution",
+          "notes": "The threat actor leverages the completed act to press further demands on the institution, extending extortion, ultimatums, or conditional threats for policy change or submission. Follow-through converts the demonstrated harm into ongoing coercion.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Coercive follow-through is distinguishable from the original act by its forward-looking demands, where a threat actor cites the harm already inflicted on an institution as proof of capability while attaching fresh ultimatums, extortion terms, or conditions for policy change or submission.",
+          "observed_contexts": [
+            "Scenarios in which a threat actor leverages a completed act against an institution to press further demands, extending extortion, ultimatums, or conditional threats aimed at policy change or organizational submission."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "CALHOUN-WESTON-2003",
+            "GULYASH-FIELD-OPS-2004-2026"
+          ]
+        },
+        {
+          "id": "TO0413",
+          "name": "Recruitment And Momentum Exploitation",
+          "tactic_families": [
+            "recruitment_exploitation",
+            "aftermath"
+          ],
+          "matrix": "organization",
+          "phase": 4,
+          "phase_name": "Aftermath",
+          "phase_4_track": "attribution",
+          "notes": "The threat actor uses the demonstrated success against the institution to recruit followers, inspire copycats, and build momentum for further campaigns. The completed act becomes a mobilization tool.",
+          "indicators": [],
+          "countermeasures": [],
+          "response_protocols": [],
+          "field_notes": "Recruitment and momentum exploitation is detectable when a completed strike against an institution is repackaged as proof of viability, with a threat actor foregrounding the outcome in outreach, celebration, and how-it-was-done framing to draw followers, inspire imitators, and build pressure for further campaigns.",
+          "observed_contexts": [
+            "Patterns where a threat actor uses a demonstrated success against an institution as a mobilization tool to recruit followers, inspire copycats, and build momentum for additional operations against similar organizations."
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "CTC-INFRATERROR-2026",
+            "START-GTD-2020",
+            "GULYASH-FIELD-OPS-2004-2026"
+          ]
+        }
+      ],
       "scope": "Tactics centered on an institution, mission, brand, or operational continuity as the primary target. The adversary's primary objective is disruption, delegitimization, infiltration, or coercion of what the organization does or represents, distinct from its facilities or its individuals."
     },
     "infrastructure": {
