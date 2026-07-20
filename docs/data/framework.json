@@ -36415,7 +36415,15 @@
               "source_refs": [
                 "CTC-INFRATERROR-2026",
                 "RAND-ELECTIONS-RRA704-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 2.5,
+                "detectability": 8.0
+              },
+              "escalation_weight": 3.08,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0101-02",
@@ -36431,7 +36439,15 @@
               "source_refs": [
                 "FBI-PREATTACK-2018",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.0,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 2.0,
+                "detectability": 6.0
+              },
+              "escalation_weight": 2.78,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0101-03",
@@ -36447,7 +36463,15 @@
               "source_refs": [
                 "START-GTD-2020",
                 "CTC-INFRATERROR-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 2.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 3.68,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0101-04",
@@ -36463,7 +36487,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 2.5,
+                "blast_radius_potential": 2.0,
+                "recoverability_inverse": 2.0,
+                "detectability": 3.0
+              },
+              "escalation_weight": 2.89,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0101-05",
@@ -36479,7 +36511,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 3.5,
+                "detectability": 8.5
+              },
+              "escalation_weight": 3.38,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -36740,7 +36780,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.0,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 2.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 3.14,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0102-02",
@@ -36754,7 +36802,15 @@
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.0,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 2.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 3.38,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0102-03",
@@ -36770,7 +36826,15 @@
               "source_refs": [
                 "GISF-SECURITYTOGO-2017",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 2.5,
+                "detectability": 3.5
+              },
+              "escalation_weight": 3.61,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0102-04",
@@ -36786,7 +36850,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.0,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 2.0,
+                "detectability": 3.0
+              },
+              "escalation_weight": 3.2,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0102-05",
@@ -36802,7 +36874,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 3.0,
+                "detectability": 5.5
+              },
+              "escalation_weight": 3.82,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -37062,7 +37142,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 3.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 3.85,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0103-02",
@@ -37078,7 +37166,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 3.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 3.85,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0103-03",
@@ -37095,7 +37191,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "RAND-ELECTIONS-RRA704-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 4.0,
+                "detectability": 5.0
+              },
+              "escalation_weight": 4.61,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0103-04",
@@ -37111,7 +37215,15 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001",
                 "RAND-ELECTIONS-RRA704-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.0,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 3.5,
+                "detectability": 6.5
+              },
+              "escalation_weight": 3.74,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0103-05",
@@ -37127,7 +37239,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 3.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 4.41,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -37387,7 +37507,15 @@
               "source_refs": [
                 "GISF-SECURITYTOGO-2017",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 4.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 4.88,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0104-02",
@@ -37402,7 +37530,15 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.0,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 3.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 4.3,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0104-03",
@@ -37418,7 +37554,15 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001",
                 "GISF-SECURITYTOGO-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.0,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 3.5,
+                "detectability": 3.5
+              },
+              "escalation_weight": 4.37,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0104-04",
@@ -37434,7 +37578,15 @@
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2023",
                 "GISF-SECURITYTOGO-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 3.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 4.17,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0104-05",
@@ -37450,7 +37602,15 @@
               "source_refs": [
                 "GISF-SECURITYTOGO-2017",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 5.0,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.14,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -37711,7 +37871,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 3.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 3.78,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0105-02",
@@ -37727,7 +37895,15 @@
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2023",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 3.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 4.0,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0105-03",
@@ -37744,7 +37920,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 4.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 4.74,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0105-04",
@@ -37760,7 +37944,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 4.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 4.31,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0105-05",
@@ -37776,7 +37968,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.0,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 4.0,
+                "detectability": 3.0
+              },
+              "escalation_weight": 4.6,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -38038,7 +38238,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 4.5,
+                "detectability": 3.5
+              },
+              "escalation_weight": 4.63,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0106-02",
@@ -38054,7 +38262,15 @@
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 4.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 4.85,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0106-03",
@@ -38071,7 +38287,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 4.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 4.15,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0106-04",
@@ -38087,7 +38311,15 @@
               "source_refs": [
                 "CISA-DIT-2023",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 2.5
+              },
+              "escalation_weight": 5.18,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0106-05",
@@ -38103,7 +38335,15 @@
               "source_refs": [
                 "NITTF-GUIDE-2017",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 4.0,
+                "detectability": 5.5
+              },
+              "escalation_weight": 4.1,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -38366,7 +38606,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.0,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 3.0,
+                "detectability": 2.5
+              },
+              "escalation_weight": 4.21,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0107-02",
@@ -38382,7 +38630,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "RAND-ELECTIONS-RRA704-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.0,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 2.0,
+                "detectability": 6.5
+              },
+              "escalation_weight": 2.69,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0107-03",
@@ -38398,7 +38654,15 @@
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 3.0,
+                "detectability": 2.0
+              },
+              "escalation_weight": 4.41,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0107-04",
@@ -38414,7 +38678,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 3.0,
+                "detectability": 2.5
+              },
+              "escalation_weight": 3.92,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0107-05",
@@ -38430,7 +38702,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 3.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 3.91,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -38682,7 +38962,15 @@
               "source_refs": [
                 "GISF-SECURITYTOGO-2017",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 3.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 4.07,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0108-02",
@@ -38698,7 +38986,15 @@
               "source_refs": [
                 "GISF-SECURITYTOGO-2017",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 2.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 3.3,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0108-03",
@@ -38714,7 +39010,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 3.0,
+                "detectability": 5.0
+              },
+              "escalation_weight": 3.66,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0108-04",
@@ -38730,7 +39034,15 @@
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 3.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 4.21,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0108-05",
@@ -38746,7 +39058,15 @@
               "source_refs": [
                 "GISF-SECURITYTOGO-2017",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 3.5,
+                "detectability": 7.5
+              },
+              "escalation_weight": 3.52,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -38988,7 +39308,15 @@
               "source_refs": [
                 "FBI-PREATTACK-2018",
                 "MELOY-TRAP18-2016"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 4.0,
+                "detectability": 7.5
+              },
+              "escalation_weight": 3.97,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0109-02",
@@ -39005,7 +39333,15 @@
               "source_refs": [
                 "FBI-PREATTACK-2018",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 4.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.08,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0109-03",
@@ -39022,7 +39358,15 @@
               "source_refs": [
                 "MELOY-TRAP18-2016",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 4.0,
+                "detectability": 6.5
+              },
+              "escalation_weight": 4.19,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0109-04",
@@ -39039,7 +39383,15 @@
               "source_refs": [
                 "MELOY-TRAP18-2016",
                 "CTC-INFRATERROR-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 4.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 4.96,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0109-05",
@@ -39056,7 +39408,15 @@
               "source_refs": [
                 "FBI-PREATTACK-2018",
                 "MELOY-TRAP18-2016"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 5.0,
+                "detectability": 5.0
+              },
+              "escalation_weight": 5.44,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -39306,7 +39666,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 4.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.07,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0201-02",
@@ -39322,7 +39690,15 @@
               "source_refs": [
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 4.0,
+                "detectability": 5.0
+              },
+              "escalation_weight": 4.47,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0201-03",
@@ -39338,7 +39714,15 @@
               "source_refs": [
                 "START-GTD-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 3.5,
+                "detectability": 6.5
+              },
+              "escalation_weight": 4.07,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0201-04",
@@ -39355,7 +39739,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 6.0
+              },
+              "escalation_weight": 4.92,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0201-05",
@@ -39371,7 +39763,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.72,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -39615,7 +40015,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.79,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0202-02",
@@ -39631,7 +40039,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0202-03",
@@ -39648,7 +40064,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.45,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0202-04",
@@ -39664,7 +40088,15 @@
               "source_refs": [
                 "CISA-DIT-2023",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0202-05",
@@ -39681,7 +40113,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 6.0,
+                "detectability": 5.5
+              },
+              "escalation_weight": 5.54,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -39930,7 +40370,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 5.57,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0203-02",
@@ -39946,7 +40394,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 5.72,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0203-03",
@@ -39962,7 +40418,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 5.0,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.57,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0203-04",
@@ -39979,7 +40443,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 7.0,
+                "recoverability_inverse": 6.0,
+                "detectability": 5.5
+              },
+              "escalation_weight": 5.92,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0203-05",
@@ -39995,7 +40467,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 5.5
+              },
+              "escalation_weight": 5.81,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -40253,7 +40733,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 3.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 4.54,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0204-02",
@@ -40270,7 +40758,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 2.5
+              },
+              "escalation_weight": 6.6,
+              "severity_band": "critical"
             },
             {
               "id": "IND-O0204-03",
@@ -40287,7 +40783,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 4.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.39,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0204-04",
@@ -40303,7 +40807,15 @@
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2023",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 4.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.54,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0204-05",
@@ -40320,7 +40832,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 4.0,
+                "detectability": 2.5
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -40572,7 +41092,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 3.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 3.63,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0205-02",
@@ -40589,7 +41117,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 4.5,
+                "detectability": 3.5
+              },
+              "escalation_weight": 4.92,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0205-03",
@@ -40606,7 +41142,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 4.0,
+                "detectability": 6.0
+              },
+              "escalation_weight": 4.12,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0205-04",
@@ -40622,7 +41166,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 4.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 4.88,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0205-05",
@@ -40639,7 +41191,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.99,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -40890,7 +41450,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 5.5
+              },
+              "escalation_weight": 5.68,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0206-02",
@@ -40907,7 +41475,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 5.0
+              },
+              "escalation_weight": 5.36,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0206-03",
@@ -40924,7 +41500,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 6.46,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0206-04",
@@ -40942,7 +41526,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 6.5
+              },
+              "escalation_weight": 4.9,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0206-05",
@@ -40958,7 +41550,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 6.11,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -41209,7 +41809,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 6.49,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0207-02",
@@ -41226,7 +41834,15 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 3.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 4.85,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0207-03",
@@ -41242,7 +41858,15 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 6.5
+              },
+              "escalation_weight": 4.9,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0207-04",
@@ -41259,7 +41883,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 2.5
+              },
+              "escalation_weight": 6.58,
+              "severity_band": "critical"
             },
             {
               "id": "IND-O0207-05",
@@ -41275,7 +41907,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 6.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.83,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -41519,7 +42159,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 3.5,
+                "detectability": 3.5
+              },
+              "escalation_weight": 4.63,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0208-02",
@@ -41536,7 +42184,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 3.5,
+                "detectability": 3.5
+              },
+              "escalation_weight": 4.63,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0208-03",
@@ -41553,7 +42209,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CHAINALYSIS-CCR-2024"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 3.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 4.85,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0208-04",
@@ -41570,7 +42234,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CHAINALYSIS-CCR-2024"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 4.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.1,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0208-05",
@@ -41587,7 +42259,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "START-GTD-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 3.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 4.53,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -41830,7 +42510,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 4.5,
+                "detectability": 2.5
+              },
+              "escalation_weight": 5.75,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0209-02",
@@ -41847,7 +42535,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 4.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.07,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0209-03",
@@ -41864,7 +42560,15 @@
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2023",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 4.5,
+                "detectability": 2.5
+              },
+              "escalation_weight": 5.52,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0209-04",
@@ -41881,7 +42585,15 @@
               "source_refs": [
                 "START-GTD-2020",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 3.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 4.96,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0209-05",
@@ -41897,7 +42609,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.97,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -42142,7 +42862,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 2.0,
+                "detectability": 6.0
+              },
+              "escalation_weight": 2.89,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0210-02",
@@ -42158,7 +42886,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 4.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 4.94,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0210-03",
@@ -42174,7 +42910,15 @@
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.0,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 3.0,
+                "detectability": 3.0
+              },
+              "escalation_weight": 3.54,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0210-04",
@@ -42191,7 +42935,15 @@
               "source_refs": [
                 "MELOY-TRAP18-2016",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 2.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 3.3,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0210-05",
@@ -42207,7 +42959,15 @@
               "source_refs": [
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.0,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 2.5,
+                "detectability": 2.5
+              },
+              "escalation_weight": 3.44,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -42450,7 +43210,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.72,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0211-02",
@@ -42467,7 +43235,15 @@
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 4.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 4.99,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0211-03",
@@ -42483,7 +43259,15 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 3.0
+              },
+              "escalation_weight": 6.49,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0211-04",
@@ -42500,7 +43284,15 @@
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.99,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0211-05",
@@ -42517,7 +43309,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.0,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 3.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 3.98,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -42769,7 +43569,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 5.0,
+                "detectability": 6.5
+              },
+              "escalation_weight": 5.21,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0301-02",
@@ -42785,7 +43593,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 7.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 5.0
+              },
+              "escalation_weight": 6.55,
+              "severity_band": "critical"
             },
             {
               "id": "IND-O0301-03",
@@ -42801,7 +43617,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 4.0,
+                "detectability": 3.0
+              },
+              "escalation_weight": 4.58,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0301-04",
@@ -42818,7 +43642,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 7.0
+              },
+              "escalation_weight": 4.81,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0301-05",
@@ -42834,7 +43666,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 7.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 7.0
+              },
+              "escalation_weight": 5.54,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -43085,7 +43925,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 6.0
+              },
+              "escalation_weight": 5.41,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0302-02",
@@ -43101,7 +43949,15 @@
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2023",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 7.5
+              },
+              "escalation_weight": 5.02,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0302-03",
@@ -43118,7 +43974,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.87,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0302-04",
@@ -43134,7 +43998,15 @@
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2023",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 6.0
+              },
+              "escalation_weight": 5.52,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0302-05",
@@ -43150,7 +44022,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 4.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 5.08,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -43400,7 +44280,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.86,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0303-02",
@@ -43416,7 +44304,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.74,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0303-03",
@@ -43433,7 +44329,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 6.11,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0303-04",
@@ -43449,7 +44353,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 5.57,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0303-05",
@@ -43466,7 +44378,15 @@
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2023",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 6.0
+              },
+              "escalation_weight": 5.75,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -43717,7 +44637,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 4.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 4.86,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0304-02",
@@ -43733,7 +44661,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 5.0
+              },
+              "escalation_weight": 6.3,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0304-03",
@@ -43750,7 +44686,15 @@
               "source_refs": [
                 "CISA-DIT-2023",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 3.0,
+                "detectability": 6.0
+              },
+              "escalation_weight": 3.46,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0304-04",
@@ -43767,7 +44711,15 @@
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.84,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0304-05",
@@ -43784,7 +44736,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "CHAINALYSIS-CCR-2024"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -44037,7 +44997,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 8.5,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 7.5,
+                "detectability": 6.0
+              },
+              "escalation_weight": 6.38,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0305-02",
@@ -44054,7 +45022,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 6.7,
+              "severity_band": "critical"
             },
             {
               "id": "IND-O0305-03",
@@ -44070,7 +45046,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GISF-SECURITYTOGO-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 8.0,
+                "detectability": 5.5
+              },
+              "escalation_weight": 6.21,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0305-04",
@@ -44086,7 +45070,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 7.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 6.51,
+              "severity_band": "critical"
             },
             {
               "id": "IND-O0305-05",
@@ -44103,7 +45095,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GISF-SECURITYTOGO-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 9.0,
+                "blast_radius_potential": 7.5,
+                "recoverability_inverse": 8.5,
+                "detectability": 6.5
+              },
+              "escalation_weight": 6.69,
+              "severity_band": "critical"
             }
           ],
           "countermeasures": [
@@ -44356,7 +45356,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 5.36,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0306-02",
@@ -44373,7 +45381,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GISF-SECURITYTOGO-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 7.5
+              },
+              "escalation_weight": 5.0,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0306-03",
@@ -44390,7 +45406,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 8.0,
+                "detectability": 6.0
+              },
+              "escalation_weight": 5.89,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0306-04",
@@ -44407,7 +45431,15 @@
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2023",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 7.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 8.0
+              },
+              "escalation_weight": 4.73,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0306-05",
@@ -44423,7 +45455,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 6.34,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -44676,7 +45716,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "RAND-ELECTIONS-RRA704-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 6.0
+              },
+              "escalation_weight": 5.72,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0307-02",
@@ -44693,7 +45741,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GISF-SECURITYTOGO-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 8.5,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 7.5,
+                "detectability": 8.0
+              },
+              "escalation_weight": 5.26,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0307-03",
@@ -44709,7 +45765,15 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 6.5
+              },
+              "escalation_weight": 5.53,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0307-04",
@@ -44726,7 +45790,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 7.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 8.5
+              },
+              "escalation_weight": 4.66,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0307-05",
@@ -44743,7 +45815,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 7.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 6.41,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -44996,7 +46076,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 5.5
+              },
+              "escalation_weight": 6.0,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0308-02",
@@ -45012,7 +46100,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 7.5,
+                "detectability": 8.5
+              },
+              "escalation_weight": 4.92,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0308-03",
@@ -45029,7 +46125,15 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 8.0
+              },
+              "escalation_weight": 4.64,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0308-04",
@@ -45046,7 +46150,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 8.5,
+                "blast_radius_potential": 7.5,
+                "recoverability_inverse": 8.0,
+                "detectability": 8.5
+              },
+              "escalation_weight": 5.26,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0308-05",
@@ -45062,7 +46174,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -45315,7 +46435,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 6.0,
+                "detectability": 5.5
+              },
+              "escalation_weight": 5.7,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0309-02",
@@ -45331,7 +46459,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 6.5
+              },
+              "escalation_weight": 5.23,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0309-03",
@@ -45348,7 +46484,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 7.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 6.42,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0309-04",
@@ -45364,7 +46508,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 6.22,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0309-05",
@@ -45381,7 +46533,15 @@
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2023",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 7.0
+              },
+              "escalation_weight": 5.25,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -45633,7 +46793,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GISF-SECURITYTOGO-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 4.5,
+                "detectability": 7.5
+              },
+              "escalation_weight": 4.29,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0310-02",
@@ -45649,7 +46817,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GISF-SECURITYTOGO-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 4.5,
+                "detectability": 7.0
+              },
+              "escalation_weight": 4.37,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0310-03",
@@ -45665,7 +46841,15 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 6.5
+              },
+              "escalation_weight": 5.0,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0310-04",
@@ -45682,7 +46866,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 4.0,
+                "detectability": 8.0
+              },
+              "escalation_weight": 3.75,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0310-05",
@@ -45698,7 +46890,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GISF-SECURITYTOGO-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 5.5
+              },
+              "escalation_weight": 4.96,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -45950,7 +47150,15 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 4.5,
+                "detectability": 7.5
+              },
+              "escalation_weight": 3.84,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0311-02",
@@ -45966,7 +47174,15 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001",
                 "RAND-ELECTIONS-RRA704-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 4.0,
+                "detectability": 6.5
+              },
+              "escalation_weight": 4.31,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0311-03",
@@ -45982,7 +47198,15 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001",
                 "GISF-SECURITYTOGO-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 4.5,
+                "detectability": 6.5
+              },
+              "escalation_weight": 4.07,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0311-04",
@@ -45998,7 +47222,15 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 4.5,
+                "detectability": 6.0
+              },
+              "escalation_weight": 4.72,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0311-05",
@@ -46015,7 +47247,15 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001",
                 "RAND-ELECTIONS-RRA704-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 7.5
+              },
+              "escalation_weight": 4.71,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -46266,7 +47506,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 7.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 6.93,
+              "severity_band": "critical"
             },
             {
               "id": "IND-O0312-02",
@@ -46282,7 +47530,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 6.45,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0312-03",
@@ -46298,7 +47554,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 8.0
+              },
+              "escalation_weight": 4.81,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0312-04",
@@ -46314,7 +47578,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CHAINALYSIS-CCR-2024"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 7.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 6.53,
+              "severity_band": "critical"
             },
             {
               "id": "IND-O0312-05",
@@ -46330,7 +47602,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 3.0,
+                "detectability": 2.5
+              },
+              "escalation_weight": 4.17,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -46580,7 +47860,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 4.0,
+                "detectability": 5.5
+              },
+              "escalation_weight": 4.83,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0313-02",
@@ -46596,7 +47884,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.6,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0313-03",
@@ -46612,7 +47908,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 5.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.47,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0313-04",
@@ -46628,7 +47932,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 4.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.3,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0313-05",
@@ -46644,7 +47956,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 5.0,
+                "detectability": 6.0
+              },
+              "escalation_weight": 5.18,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -46895,7 +48215,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 4.5,
+                "detectability": 8.0
+              },
+              "escalation_weight": 4.24,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0314-02",
@@ -46911,7 +48239,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "RAND-ELECTIONS-RRA704-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 5.0,
+                "detectability": 6.0
+              },
+              "escalation_weight": 5.18,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0314-03",
@@ -46927,7 +48263,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 4.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 4.96,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0314-04",
@@ -46943,7 +48287,15 @@
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2023",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 6.5
+              },
+              "escalation_weight": 5.13,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0314-05",
@@ -46959,7 +48311,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "START-GTD-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 4.0,
+                "detectability": 8.5
+              },
+              "escalation_weight": 3.41,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -47209,7 +48569,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 6.0
+              },
+              "escalation_weight": 4.82,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0315-02",
@@ -47225,7 +48593,15 @@
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2023",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 6.31,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0315-03",
@@ -47241,7 +48617,15 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001",
                 "GISF-SECURITYTOGO-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 7.5,
+                "detectability": 6.0
+              },
+              "escalation_weight": 6.16,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0315-04",
@@ -47257,7 +48641,15 @@
               "source_refs": [
                 "GISF-SECURITYTOGO-2017",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 6.0,
+                "detectability": 6.5
+              },
+              "escalation_weight": 5.11,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0315-05",
@@ -47274,7 +48666,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "RAND-ELECTIONS-RRA704-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 6.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.72,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -47525,7 +48925,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 4.83,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0401-02",
@@ -47541,7 +48949,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 2.5
+              },
+              "escalation_weight": 4.93,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0401-03",
@@ -47557,7 +48973,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 4.3,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0401-04",
@@ -47573,7 +48997,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 4.28,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0401-05",
@@ -47589,7 +49021,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NITTF-GUIDE-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 2.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 2.5
+              },
+              "escalation_weight": 4.93,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -47840,7 +49280,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 6.49,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0402-02",
@@ -47856,7 +49304,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 5.0,
+                "detectability": 6.0
+              },
+              "escalation_weight": 5.18,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0402-03",
@@ -47872,7 +49328,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.92,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0402-04",
@@ -47888,7 +49352,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 7.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 6.09,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0402-05",
@@ -47904,7 +49376,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 6.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.41,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -48162,7 +49642,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 7.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 6.43,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0403-02",
@@ -48178,7 +49666,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 6.11,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0403-03",
@@ -48194,7 +49690,15 @@
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2023",
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 6.22,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0403-04",
@@ -48210,7 +49714,15 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 4.5,
+                "detectability": 6.5
+              },
+              "escalation_weight": 4.77,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0403-05",
@@ -48226,7 +49738,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "RAND-ELECTIONS-RRA704-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 7.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 3.5
+              },
+              "escalation_weight": 6.22,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -48482,7 +50002,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 7.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 6.02,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0404-02",
@@ -48498,7 +50026,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 7.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.85,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0404-03",
@@ -48515,7 +50051,15 @@
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 5.5
+              },
+              "escalation_weight": 6.0,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0404-04",
@@ -48531,7 +50075,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.79,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0404-05",
@@ -48547,7 +50099,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 6.2,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -48806,7 +50366,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.79,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0405-02",
@@ -48822,7 +50390,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.81,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0405-03",
@@ -48838,7 +50414,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 7.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 6.43,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0405-04",
@@ -48854,7 +50438,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 5.79,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0405-05",
@@ -48870,7 +50462,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.92,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -49127,7 +50727,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 7.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 6.67,
+              "severity_band": "critical"
             },
             {
               "id": "IND-O0406-02",
@@ -49143,7 +50751,15 @@
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 6.31,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0406-03",
@@ -49159,7 +50775,15 @@
               "source_refs": [
                 "NITTF-GUIDE-2017",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 8.5,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 8.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 7.32,
+              "severity_band": "critical"
             },
             {
               "id": "IND-O0406-04",
@@ -49175,7 +50799,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 2.5
+              },
+              "escalation_weight": 6.15,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0406-05",
@@ -49191,7 +50823,15 @@
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 7.0,
+                "detectability": 4.0
+              },
+              "escalation_weight": 6.48,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -49448,7 +51088,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.7,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0407-02",
@@ -49464,7 +51112,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 7.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.92,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0407-03",
@@ -49479,7 +51135,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 4.96,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0407-04",
@@ -49495,7 +51159,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 6.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.61,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0407-05",
@@ -49511,7 +51183,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.41,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -49769,7 +51449,15 @@
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 3.5,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 2.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 3.47,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0408-02",
@@ -49784,7 +51472,15 @@
               ],
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.0,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 3.0,
+                "detectability": 2.5
+              },
+              "escalation_weight": 4.21,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0408-03",
@@ -49800,7 +51496,15 @@
               ],
               "source_refs": [
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 3.5,
+                "recoverability_inverse": 3.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 3.97,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0408-04",
@@ -49816,7 +51520,15 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 3.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 4.58,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0408-05",
@@ -49831,7 +51543,15 @@
               ],
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 4.0,
+                "detectability": 6.5
+              },
+              "escalation_weight": 4.54,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -50087,7 +51807,15 @@
               ],
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 5.22,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0409-02",
@@ -50102,7 +51830,15 @@
               ],
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 4.86,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0409-03",
@@ -50117,7 +51853,15 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2017"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.95,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0409-04",
@@ -50132,7 +51876,15 @@
               ],
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 4.5,
+                "recoverability_inverse": 4.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 4.62,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0409-05",
@@ -50147,7 +51899,15 @@
               ],
               "source_refs": [
                 "CHAINALYSIS-CCR-2024"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 4.0,
+                "recoverability_inverse": 6.0,
+                "detectability": 2.5
+              },
+              "escalation_weight": 5.48,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -50402,7 +52162,15 @@
               ],
               "source_refs": [
                 "START-GTD-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 8.0
+              },
+              "escalation_weight": 4.64,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0410-02",
@@ -50417,7 +52185,15 @@
               ],
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 5.69,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0410-03",
@@ -50432,7 +52208,15 @@
               ],
               "source_refs": [
                 "CTC-INFRATERROR-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 7.0
+              },
+              "escalation_weight": 4.94,
+              "severity_band": "medium"
             },
             {
               "id": "IND-O0410-04",
@@ -50448,7 +52232,15 @@
               "source_refs": [
                 "START-GTD-2020",
                 "CTC-INFRATERROR-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 7.0
+              },
+              "escalation_weight": 5.35,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0410-05",
@@ -50463,7 +52255,15 @@
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 5.0,
+                "detectability": 6.5
+              },
+              "escalation_weight": 5.01,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
@@ -50720,7 +52520,15 @@
               ],
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 7.0,
+                "recoverability_inverse": 5.0,
+                "detectability": 7.0
+              },
+              "escalation_weight": 5.01,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0411-02",
@@ -50735,7 +52543,15 @@
               ],
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 7.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 6.05,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0411-03",
@@ -50750,7 +52566,15 @@
               ],
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 7.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 6.5
+              },
+              "escalation_weight": 5.53,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0411-04",
@@ -50765,7 +52589,15 @@
               ],
               "source_refs": [
                 "RAND-DISINFO-RR4373-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 7.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 5.5
+              },
+              "escalation_weight": 5.79,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0411-05",
@@ -50781,7 +52613,15 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS-2022",
                 "RAND-ELECTIONS-RRA704-2023"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 8.0
+              },
+              "escalation_weight": 4.64,
+              "severity_band": "medium"
             }
           ],
           "countermeasures": [
@@ -51037,7 +52877,15 @@
               ],
               "source_refs": [
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 6.18,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0412-02",
@@ -51052,7 +52900,15 @@
               ],
               "source_refs": [
                 "CHAINALYSIS-CCR-2024"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 6.44,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0412-03",
@@ -51068,7 +52924,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 7.5,
+                "detectability": 4.5
+              },
+              "escalation_weight": 6.81,
+              "severity_band": "critical"
             },
             {
               "id": "IND-O0412-04",
@@ -51083,7 +52947,15 @@
               ],
               "source_refs": [
                 "DUNLAP-LAWFARE-2001"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.0,
+                "blast_radius_potential": 7.0,
+                "recoverability_inverse": 6.0,
+                "detectability": 6.0
+              },
+              "escalation_weight": 5.86,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0412-05",
@@ -51099,7 +52971,15 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 7.5,
+                "blast_radius_potential": 8.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 5.0
+              },
+              "escalation_weight": 6.65,
+              "severity_band": "critical"
             }
           ],
           "countermeasures": [
@@ -51356,7 +53236,15 @@
               ],
               "source_refs": [
                 "CTC-INFRATERROR-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 6.5
+              },
+              "escalation_weight": 5.11,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0413-02",
@@ -51372,7 +53260,15 @@
               "source_refs": [
                 "CTC-INFRATERROR-2026",
                 "START-GTD-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.5,
+                "blast_radius_potential": 7.5,
+                "recoverability_inverse": 6.5,
+                "detectability": 6.0
+              },
+              "escalation_weight": 5.97,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0413-03",
@@ -51388,7 +53284,15 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
                 "CTC-INFRATERROR-2026"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 4.5
+              },
+              "escalation_weight": 5.37,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0413-04",
@@ -51404,7 +53308,15 @@
               ],
               "source_refs": [
                 "START-GTD-2020"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 5.0
+              },
+              "escalation_weight": 5.24,
+              "severity_band": "high"
             },
             {
               "id": "IND-O0413-05",
@@ -51420,7 +53332,15 @@
               "source_refs": [
                 "CTC-INFRATERROR-2026",
                 "CISA-DISINFO-TACTICS-2022"
-              ]
+              ],
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 7.5,
+                "recoverability_inverse": 6.0,
+                "detectability": 6.5
+              },
+              "escalation_weight": 5.54,
+              "severity_band": "high"
             }
           ],
           "countermeasures": [
