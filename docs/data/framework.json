@@ -54621,6 +54621,91 @@
         "symbolic_ideological",
         "incident_data"
       ]
+    },
+    "CISA-DISINFO-TACTICS-2022": {
+      "type": "government_report",
+      "title": "Tactics of Disinformation",
+      "author": "Cybersecurity and Infrastructure Security Agency (CISA), Federal Bureau of Investigation (FBI), and Office of the Director of National Intelligence (ODNI)",
+      "date": "2022",
+      "url": "https://www.cisa.gov/resources-tools/resources/tactics-disinformation",
+      "doi": null,
+      "relevance_summary": "Catalogs the tactics of disinformation and foreign malign influence campaigns, including narrative seeding, exploitation of information gaps, synthetic media and impersonation, and amplification through inauthentic networks, that a threat actor uses to delegitimize an institution and collapse stakeholder trust.",
+      "matrices": [
+        "organization"
+      ],
+      "topics": [
+        "disinformation",
+        "influence_operations",
+        "delegitimization"
+      ]
+    },
+    "RAND-DISINFO-RR4373-2020": {
+      "type": "academic_paper",
+      "title": "Combating Foreign Disinformation on Social Media: Study Overview and Conclusions",
+      "author": "RAND Corporation",
+      "date": "2020",
+      "url": "https://www.rand.org/pubs/research_reports/RR4373z1.html",
+      "doi": null,
+      "relevance_summary": "Analyzes how state and proxy actors run coordinated disinformation and inauthentic-amplification operations across social media, and how government, industry, and civil society respond, informing organization-targeting narrative staging, front construction, and narrative laundering.",
+      "matrices": [
+        "organization"
+      ],
+      "topics": [
+        "disinformation",
+        "influence_operations",
+        "coordinated_inauthentic_behavior"
+      ]
+    },
+    "RAND-ELECTIONS-RRA704-2023": {
+      "type": "academic_paper",
+      "title": "From Consensus to Conflict: Understanding Foreign Measures Targeting U.S. Elections",
+      "author": "RAND Corporation",
+      "date": "2023",
+      "url": "https://www.rand.org/pubs/research_reports/RRA704-1.html",
+      "doi": null,
+      "relevance_summary": "Examines foreign measures that undermine trust between the public and institutions, informing the organization-matrix delegitimization and trust-destruction tactics that contest an institution's legitimacy and stakeholder confidence.",
+      "matrices": [
+        "organization"
+      ],
+      "topics": [
+        "delegitimization",
+        "influence_operations",
+        "trust_attack"
+      ]
+    },
+    "GISF-SECURITYTOGO-2017": {
+      "type": "practitioner_guide",
+      "title": "Security to Go: A Risk Management Toolkit for Humanitarian Aid Agencies",
+      "author": "Global Interagency Security Forum (GISF)",
+      "date": "2017",
+      "url": "https://gisf.ngo/",
+      "doi": null,
+      "relevance_summary": "Practitioner toolkit for security risk management in humanitarian and civil-society organizations, covering threats to institutional continuity, access, and operations that inform organization-as-target tactics distinct from harm to individuals or sites.",
+      "matrices": [
+        "organization"
+      ],
+      "topics": [
+        "organizational_security",
+        "risk_management",
+        "ngo_security"
+      ]
+    },
+    "DUNLAP-LAWFARE-2001": {
+      "type": "academic_paper",
+      "title": "Law and Military Interventions: Preserving Humanitarian Values in 21st Century Conflicts",
+      "author": "Dunlap, Charles J., Jr.",
+      "date": "2001",
+      "url": null,
+      "doi": null,
+      "relevance_summary": "Foundational articulation of lawfare, the strategic use of legal process as an instrument of conflict, underpinning the organization-matrix lawfare-weaponization tactic in which a threat actor turns litigation and regulatory process into an attrition tool against an institution.",
+      "matrices": [
+        "organization"
+      ],
+      "topics": [
+        "lawfare",
+        "legal_coercion",
+        "institutional_attrition"
+      ]
     }
   }
 }
