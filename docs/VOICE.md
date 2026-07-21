@@ -1,6 +1,7 @@
 # THREAT Matrix Voice Guidelines
 
 **Date:** 2026-04-30
+**Amended:** 2026-07-20 (V1.5 review) — Rule 4 literature register clarified (no first-person disclaimer); Rule 5 third-party "adversary" carve-out added.
 **Status:** LOCKED for V1.1+ content authoring
 **Audience:** Maintainers and contributors authoring tactic content (`field_notes`, indicators, countermeasures, response protocols)
 
@@ -68,7 +69,9 @@ The framework supports BOTH registers. The schema declares which is which. The p
 
 **For `operational_primary` content** — practitioner voice throughout. `field_notes` describes what the maintainer or contributor has actually seen. `observed_contexts` lists generic context archetypes from practice.
 
-**For `literature_only` content** — `field_notes` explicitly says so. Example pattern: *"I haven't worked a case involving this tactic directly. The pattern documented in NTAC-MASS-2021 and FEIN-VOSSEKUIL-HOLDEN-1995 is that the actor..."* Honesty is first-class. The `observed_contexts` are tagged `[literature: <source-id>]` so the reader sees the provenance.
+**For `literature_only` content** — the `field_notes` signal the documented grounding through an ANALYTIC register attributed to the sources, not a first-person disclaimer. The framework is not personal narration about any individual maintainer, so do not write "I haven't worked a case involving this directly." Instead attribute the pattern to the documented record. Example pattern: *"The documented pattern is that a threat actor... The literature describes... The analytic marker is..."* Honesty is first-class, carried by the documented-register attribution rather than a personal confession. The `observed_contexts` may be tagged `[literature: <source-id>]` so the reader sees the provenance.
+
+*(Amendment 2026-07-20: the prior example used a first-person "I haven't worked this directly" disclaimer. That was retired because the framework's voice is analyst-general, not personal memoir; the honesty signal is the documented-register attribution.)*
 
 **For `hybrid` content** — practitioner voice frames the observable detail; academic citation supports. The schema and prose work together.
 
@@ -89,6 +92,8 @@ The framework supports BOTH registers. The schema declares which is which. The p
 **Variety carve-out.** When the protectee has just been referenced as `targeted subject` and the next reference would create local redundancy, `named individual` or `individual` is an acceptable alternative — particularly in extended prose like `field_notes`. Do not introduce new alternatives (`subject`, `victim`, `mark`, etc.); the rotation is `targeted subject` / `the target's <noun>` / `named individual` / `individual`.
 
 **Latinate label carve-out.** Tactic names, phase names, and field names that are Latinate labels stay as-is — `Subject Profiling` (the tactic), `Target Selection` (the tactic), `Subject Description` (the field). Body prose still uses `Threat actor` and `targeted subject`.
+
+**Third-party "adversary" carve-out (Amendment 2026-07-20).** "Adversary" is banned only as a label for the threat actor; the canonical term for the actor is "threat actor." When "adversary" refers to a THIRD PARTY, for example a rival institution the threat actor frames in an attribution-obfuscation tactic ("the trail terminates at a convenient adversary"), "adversary" is acceptable and is often stronger than "rival." Do NOT blanket grep-ban "adversary" in voice audits; surface it for judgment and keep it only where it means a party other than the threat actor. The hard bans (em and en dashes, smart quotes, "attacker", "practitioner" in body prose) are unaffected.
 
 **Right (canonical):**
 > "Threat actor appears at locations associated with the targeted subject on multiple occasions with no apparent legitimate reason."
