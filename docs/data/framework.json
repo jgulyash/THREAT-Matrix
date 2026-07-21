@@ -36653,7 +36653,7 @@
               ]
             }
           ],
-          "field_notes": "An analyst reads target selection backward from what the threat actor bothers to study, because effort concentrates on the institution whose mission or legitimacy carries symbolic weight, and a named organization recurring across grievance material signals the target long before any operational move.",
+          "field_notes": "The first thing that reaches an analyst is usually a single institution that keeps surfacing across a threat actor's grievance material, statements, and browsing. Taxonomically that recurrence is target selection: the threat actor has weighted one organization above every site or person inside it, chosen for its mission, symbolic standing, or the legitimacy it represents. In casework the tell is concentration of effort, since study clusters on the body whose meaning carries weight rather than the easiest door. When the same named organization anchors the grievance long before any operational move, that is the target declaring itself.",
           "observed_contexts": [
             "campaigns where an ideologically motivated group singles out one institution among many peers because its mission or public standing embodies the value the group opposes, then treats every site and officer merely as a way into that institution"
           ],
@@ -37015,7 +37015,7 @@
               ]
             }
           ],
-          "field_notes": "Governance mapping tells an analyst the threat actor is hunting for where authority and continuity concentrate, so watch for outside interest in board rosters, bylaws, succession, and signing authority that exceeds what a member or applicant would ever need.",
+          "field_notes": "What an investigator tends to catch first is outside interest in board rosters, bylaws, succession plans, and signing authority from someone with no member or applicant reason to want them. That pattern is governance and leadership mapping: the threat actor is charting the decision structure and chain of authority to find where control and continuity concentrate. In practice the requests run past ordinary curiosity, reaching into who can act for the institution and who replaces whom. Read that depth as an effort to locate the seams where the organization actually holds together.",
           "observed_contexts": [
             "campaigns against member-governed or board-led institutions where a hostile party reconstructs the decision chain and identifies which few officers can bind or halt the organization before contesting its mandate"
           ],
@@ -37381,7 +37381,7 @@
               ]
             }
           ],
-          "field_notes": "Narrative reconnaissance shows the threat actor is looking for the gap between what the institution claims and what it can defend, so an analyst treats concentrated interest in old controversy, mission language, and reputational soft spots as scoping for a legitimacy attack.",
+          "field_notes": "For a threat management team the early signal is repeated pulling at old controversy, mission statements, and reputational sore spots that no ordinary supporter revisits. That interest is narrative reconnaissance: the threat actor is learning what the institution claims to stand for so those claims can be contested or turned against it. The work in the field looks like someone mapping the gap between the public mission and what the organization can actually defend. When that gap becomes the focus, treat it as scoping for a legitimacy attack rather than research.",
           "observed_contexts": [
             "campaigns where a hostile group studies an institution's public messaging and prior controversies to find the legitimacy claim it can most credibly contest, then builds a narrative that turns the institution's own stated values against it"
           ],
@@ -37745,7 +37745,7 @@
               ]
             }
           ],
-          "field_notes": "Dependency mapping reveals that the threat actor understands the institution survives on funders, partners, and vendors rather than on itself, so an analyst looks for interest in the support base and treats a concentrated funding or vendor chokepoint as the likely pressure point.",
+          "field_notes": "A threat assessment team usually notices it as attention drifting off the institution itself and onto its funders, partners, vendors, and revenue streams. That shift is dependency and resource mapping: the threat actor grasps that the organization survives on its support base and is hunting the single points where pressure propagates. In casework the interest concentrates on one chokepoint, a major donor or a sole vendor, whose loss would ripple through everything downstream. When the mapping narrows to that node, read it as the pressure point being chosen.",
           "observed_contexts": [
             "campaigns where a hostile party maps the funders, regulators, and vendors an institution depends on for continuity, then plans pressure against a single load-bearing relationship whose loss cascades through the whole organization"
           ],
@@ -38111,7 +38111,7 @@
               ]
             }
           ],
-          "field_notes": "Cohesion assessment signals the threat actor intends to fracture the institution from inside rather than confront it directly, so an analyst treats probing of factions, morale, and internal disputes as reconnaissance for a splitting or discrediting campaign, not idle interest.",
+          "field_notes": "What a security professional tends to see first is probing of internal factions, morale, and unresolved disputes, the kind of interest an outsider has no standing to hold. That probing is cohesion assessment: the threat actor is studying the membership as an attack surface, looking for the fault lines along which the institution can be split or turned against itself. In the field this reads as reconnaissance for a fracturing or discrediting campaign, not idle gossip. When the focus lands on where the body is already strained, treat cohesion as the intended target.",
           "observed_contexts": [
             "campaigns where a hostile group studies internal factions and morale fault lines within a membership organization to find where it can seed division and turn members against leadership or against one another"
           ],
@@ -38479,7 +38479,7 @@
               ]
             }
           ],
-          "field_notes": "Insider spotting differs from recruitment in that the threat actor is still cataloging candidates, so an analyst watches for outside interest in disgruntled staff, ideological affiliates, or people with sensitive access, and reads it as a shortlist being built rather than an approach already underway.",
+          "field_notes": "Early on this surfaces to an analyst as outside interest in specific staff: the disgruntled, the ideologically aligned, the ones with sensitive access. That interest is insider vulnerability identification, and it is still cataloging rather than recruitment, the threat actor building a shortlist of people whose access, grievance, or circumstance makes them candidates against the institution. The distinction matters in casework, since no approach has yet been made. Read the spotting as a list being assembled, not an insider already turned.",
           "observed_contexts": [
             "campaigns where a hostile party surveys an institution's workforce and affiliates for individuals whose grievance, ideology, or privileged access marks them as future recruitment or coercion candidates against the organization"
           ],
@@ -38837,7 +38837,7 @@
               ]
             }
           ],
-          "field_notes": "Information-position reconnaissance tells an analyst the threat actor is mapping what the institution holds that can be exposed, stolen, or forged, so interest in member rolls, records, internal channels, and proprietary material signals scoping of the institution's information environment as an attack surface.",
+          "field_notes": "An investigator working this tactic usually surfaces interest in what the institution holds before any move against it: member rolls pulled, records requested, internal channels probed, proprietary material collected. Read together, those touches map the threat actor's information environment as an attack surface rather than idle curiosity. The pattern in casework is scoping of what can be exposed, stolen, or forged, and it tends to precede a decision about which asset to go after.",
           "observed_contexts": [
             "campaigns where a hostile group inventories the records, member data, and internal communications an institution controls to identify what can be leaked, altered, or counterfeited to damage its standing or operations"
           ],
@@ -39190,7 +39190,7 @@
               ]
             }
           ],
-          "field_notes": "Probing separates itself from passive study because the threat actor interacts to measure response, so an analyst treats pretext inquiries, test applications, and intake or complaint channel tests as deliberate soundings of the institution's controls and reaction time before a campaign commits.",
+          "field_notes": "A threat management team tends to catch this as a cluster of small, deliberate interactions rather than a single event: pretext inquiries, a test membership or vendor application, a complaint or intake channel poked to see who responds and how quickly. What separates these from passive study is that the threat actor is interacting to measure the institution's controls and reaction time. In casework those soundings read as a campaign taking the institution's temperature before it commits.",
           "observed_contexts": [
             "campaigns where a hostile party sends pretext inquiries or trial applications through an institution's intake and complaint channels to learn how it screens, escalates, and responds before committing to the main operation"
           ],
@@ -39547,7 +39547,7 @@
               ]
             }
           ],
-          "field_notes": "Pathway indicators are actor-level rather than act-level, so an analyst reads leakage, fixation on a named institution, and mobilization signals together as evidence that a threat actor is progressing from grievance toward an active campaign, not as isolated statements.",
+          "field_notes": "A threat assessment team most often meets this as scattered signal rather than one clean act: a leaked intent here, a hardening fixation on a named institution there, steps that start to look like mobilization. These are actor-level markers, and the value comes from reading them together as a trajectory rather than as isolated statements. In casework that trajectory is what shows a threat actor moving from grievance and planning toward an active campaign against a specific organization.",
           "observed_contexts": [
             "cases where an individual moves from generalized grievance against an institution toward an active campaign, showing fixation on that specific organization, leakage of intent, and steps that convert planning into mobilization"
           ],
@@ -39898,7 +39898,7 @@
               ]
             }
           ],
-          "field_notes": "Rehearsal tells an analyst the plan is nearly committed, because the threat actor practices against the institution to validate it, so test messaging runs, trial infiltration approaches, and dry-run disruptions read as late-stage confirmation rather than continued reconnaissance.",
+          "field_notes": "A security professional usually recognizes this by how close to real the activity runs: a test messaging run, a rehearsed infiltration approach, a dry-run disruption staged against the institution but stopped short of the act. What marks it as rehearsal rather than more reconnaissance is that the threat actor is validating a plan already built. In casework this reads as late-stage confirmation, and it means the operation is close to committed.",
           "observed_contexts": [
             "campaigns where a hostile group runs trial infiltration approaches or test disruptions against an institution to confirm the operation works before executing the full campaign against it"
           ],
@@ -40252,7 +40252,7 @@
               ]
             }
           ],
-          "field_notes": "Recruitment converts a spotted candidate into an active insider, so an analyst distinguishes it from earlier spotting by looking for the approach itself, such as cultivation, inducement, or coercion of a trusted employee or member into acting against the institution.",
+          "field_notes": "What an analyst keys on here is the approach itself, not the earlier spotting: a trusted employee, member, or affiliate being cultivated, induced, or in some cases coerced toward acting against the institution from within. That approach is the line between a candidate and an active insider. In casework the tell is contact and pressure aimed at a person the institution trusts, converting that trust into a vector.",
           "observed_contexts": [
             "campaigns where a hostile party cultivates, induces, or coerces a trusted employee or member into acting against the institution from within, converting a previously identified candidate into an operating insider"
           ],
@@ -40607,7 +40607,7 @@
               ]
             }
           ],
-          "field_notes": "Front construction signals the threat actor needs borrowed legitimacy to approach or mimic the institution, so an analyst treats a newly built affiliate, shell, or parallel structure with a credible institutional face as manufactured cover for operating against the target.",
+          "field_notes": "An investigator often runs into this as an entity that arrives carrying more legitimacy than its history supports: a freshly built affiliate, a shell, a false partner, or a parallel structure wearing a credible institutional face. The build signals that the threat actor needs borrowed legitimacy to approach or mimic the target. In casework such a structure functions as manufactured cover for operating against the institution from a position it did not earn.",
           "observed_contexts": [
             "campaigns where a hostile group builds a front group or false affiliate that borrows institutional legitimacy, giving the operation a credible face from which to approach, impersonate, or maneuver against the target institution"
           ],
@@ -40967,7 +40967,7 @@
               ]
             }
           ],
-          "field_notes": "Staging shows up as content and forged assets that are too polished and too internally consistent to be organic, so an analyst reads the coordination fingerprints, the pre-loaded talking points, and the timing gap before release as evidence the narrative was manufactured rather than surfaced.",
+          "field_notes": "What lands on my threat management team's desk first is a body of content that reads too clean to be organic: talking points that arrive fully formed, forged documents with matching letterhead, and messaging that repeats across accounts with no natural variation. We treat that internal consistency as the tell that a payload was assembled and pre-positioned rather than surfaced by real grievance. The staged narrative, the fabricated content, and the coordinated messaging assets are the taxonomy we sort the material into, and the timing gap before release usually confirms it. When the delegitimizing story is ready before any triggering event, the threat actor has staged the campaign in advance.",
           "observed_contexts": [
             "coercion campaigns where a hostile group fabricates and pre-positions a delegitimizing narrative and forged records before it publicly pressures an institution to change a policy or stand down"
           ],
@@ -41325,7 +41325,7 @@
               ]
             }
           ],
-          "field_notes": "Legitimacy infiltration is easy to miss because the threat actor does everything the institution asks of a genuine joiner, so an analyst watches for entrants whose stated interest does not match their behavior and whose real aim is proximity to a sensitive function.",
+          "field_notes": "The people my threat assessment team flags first are the ones who do everything a genuine joiner does and nothing wrong: they apply, volunteer, sit for vendor onboarding, and accept the affiliate seat without friction. What we watch for underneath that clean record is a mismatch between the stated interest and the actual behavior, where the real aim is proximity to a sensitive function rather than the mission. We sort these entries as joining, volunteering, employment, vendor status, or a board or affiliate position, all of them bona fide standing the institution itself grants. The threat actor gains presence the organization recognizes as legitimate, not yet elevated authority.",
           "observed_contexts": [
             "entryist patterns where a hostile actor joins, volunteers for, or contracts with an institution through legitimate channels in order to operate from a position the institution already trusts"
           ],
@@ -41684,7 +41684,7 @@
               ]
             }
           ],
-          "field_notes": "Authority acquisition shows in the gap between a member's tenure and the reach they seek, so an analyst tracks fast pursuit of signatory rights, roster access, or governance votes, and treats privilege that exceeds any legitimate need as the warning signal.",
+          "field_notes": "The pattern a security professional catches first is the gap between a member's short tenure and the reach they are already chasing: signatory or financial authority, access to member rolls and internal communications, governance votes, or administrative control. We track how fast that pursuit moves and weigh it against any legitimate need the role actually carries. When the privilege being sought exceeds what the function requires, we treat the excess itself as the warning signal. The threat actor is elevating from mere presence to the institutional authority needed to act, and the speed of the climb usually gives it away.",
           "observed_contexts": [
             "capture patterns where an actor who has gained legitimate presence then escalates into financial, administrative, or governance authority disproportionate to any genuine organizational role"
           ],
@@ -42043,7 +42043,7 @@
               ]
             }
           ],
-          "field_notes": "Leverage acquisition is inferred from what an institution suddenly begins to protect, so an analyst reads defensive behavior, quiet settlements, and shifts in posture as signs that compromising records or financial and legal exposure are being assembled and held over the organization as a body.",
+          "field_notes": "What an analyst usually sees first is not the leverage itself but the institution's reaction to it: sudden defensiveness, a quiet settlement, a board that shifts posture on a decision it seemed settled on. We read those behaviors backward toward the material being held, which we sort as leaked or stolen internal records, financial exposure, legal pressure points, and compromising information kept over the organization as a body. The acquisition stays hidden, so the shift in institutional behavior becomes the evidence that someone is assembling the means to compel a decision. The threat actor is stockpiling what it takes to bend the institution against its own interest.",
           "observed_contexts": [
             "coercion buildups where a hostile actor collects leaked records, financial exposure, or compromising material to be held over an institution and used to bend its decisions"
           ],
@@ -42394,7 +42394,7 @@
               ]
             }
           ],
-          "field_notes": "Resource staging precedes visible action, so an analyst reads the assembly of funding, personnel, platforms, and infrastructure ahead of any overt move as a sizing signal, where the scale of what is staged forecasts the intended duration and reach of the campaign against the institution.",
+          "field_notes": "As an investigator, the first thing I pick up is assembly that runs ahead of any visible move: money coming together, personnel being recruited, platforms provisioned, and operational infrastructure stood up before a single overt action. We read that build-out as a sizing signal and sort it into funds, personnel, platforms, and infrastructure, because the scale of each forecasts how long and how far the campaign against the institution intends to run. A modest stockpile reads as a short push, and a heavy one reads as a sustained operation. The threat actor is building the material base for the operation before it shows its hand.",
           "observed_contexts": [
             "pre-operational buildups where a hostile group assembles funding, staff, platforms, and infrastructure to sustain a prolonged campaign against an institution before any public action begins"
           ],
@@ -42745,7 +42745,7 @@
               ]
             }
           ],
-          "field_notes": "Coalition assembly manufactures the look of broad consensus, so an analyst tests apparent grassroots opposition for shared funding, synchronized messaging, and reused personnel across supposedly independent groups, treating manufactured breadth rather than genuine constituency as the tell of a proxy network.",
+          "field_notes": "What my threat management team runs into first is opposition that looks broad and grassroots but does not hold up under scrutiny: separate groups sharing one funding source, messaging that moves in lockstep, and the same organizers reused across supposedly independent fronts. We test that apparent consensus rather than take it at face value, sorting the pieces into allied groups, proxies, astroturfed networks, and sympathetic third parties. The tell is manufactured breadth standing in for a genuine constituency. The threat actor is building the external network the campaign will mobilize to multiply force against the institution.",
           "observed_contexts": [
             "astroturf pressure campaigns where a hostile actor assembles proxies, front groups, and sympathetic third parties to simulate widespread consensus and multiply force against an institution"
           ],
@@ -43094,7 +43094,7 @@
               ]
             }
           ],
-          "field_notes": "Operational security against an institution is visible in its own blind spots, so an analyst looks for insiders and fronts that route around monitoring, avoid audit triggers, and time activity to oversight gaps, reading deliberate evasion of internal controls as a developing operation.",
+          "field_notes": "In casework the threat assessment team first notices activity that hugs the seams of internal monitoring: insiders and front entities that route around audit triggers and time their moves to oversight gaps. That deliberate evasion of the institution's own security, counterintelligence, and legal functions is what marks surveillance detection and operational security. The threat actor shields a developing operation by shaping conduct to the organization's blind spots, so the team reads the pattern of avoidance itself, not any single flagged event, as the signal a campaign is being built under cover.",
           "observed_contexts": [
             "concealment patterns where a hostile actor actively detects and evades an institution's own security, audit, and counterintelligence functions to protect embedded insiders and fronts while an operation is being built"
           ],
@@ -43445,7 +43445,7 @@
               ]
             }
           ],
-          "field_notes": "Supply-chain-of-trust subversion exploits the institution's least scrutinized relationships, so an analyst maps which vendors, auditors, accreditors, and platforms the target relies on and treats a compromise or co-option of one of those trusted intermediaries as a path to reach or discredit the institution indirectly.",
+          "field_notes": "The security professional usually meets this tactic through a trusted third party first: a vendor, auditor, accreditor, or platform that suddenly carries traffic or vouches for conduct outside its normal role. That co-option of a relied-upon intermediary is what defines supply-chain-of-trust subversion. Rather than strike the institution head-on, the threat actor turns one of its least scrutinized relationships into a vector to reach or discredit it. The security professional therefore maps which outside parties the organization depends on and treats a compromise of any of them as an indirect path to the target.",
           "observed_contexts": [
             "trusted-intermediary attacks where a hostile actor compromises or co-opts a vendor, auditor, accreditor, or platform an institution depends on in order to reach or discredit it through a relationship it trusts"
           ],
@@ -43802,7 +43802,7 @@
               ]
             }
           ],
-          "field_notes": "Institutional extortion targets the organization's freedom to decide rather than any one person, so an analyst distinguishes it from individual coercion by whether the demand seeks policy change, payment, or submission from the institution and whether the threatened harm falls on mission or continuity.",
+          "field_notes": "What the analyst encounters first is a demand: pay, change policy, or submit, backed by a threat to the institution's mission, continuity, brand, or membership. Reading it as institutional extortion turns on where the coercion lands, on the organization's freedom to decide and operate rather than on any one person. The threat actor holds the institution's ability to function hostage, so the analyst separates this from individual coercion by asking whether the demand seeks concession from the institution itself and whether the threatened harm falls on mission or continuity.",
           "observed_contexts": [
             "extortion campaigns where a hostile actor threatens an institution's mission, continuity, or standing unless it pays, changes policy, or submits, targeting the organization's freedom to decide rather than any single individual"
           ],
@@ -44157,7 +44157,7 @@
               ]
             }
           ],
-          "field_notes": "A delegitimization campaign attacks the institution's right to exist rather than its conduct, so an analyst separates it from ordinary scandal by whether the messaging contests the organization's mandate and standing to operate at all, aiming to make stakeholders question why it should be recognized.",
+          "field_notes": "In practice the investigator first sees sustained messaging that questions not what the institution did but whether it should exist at all. That contest over mandate and standing, aimed at stakeholders and the public, is what separates a delegitimization campaign from ordinary scandal. The threat actor works to strip the organization of its perceived authority and right to operate, so the investigator gauges whether the narrative attacks conduct or the institution's very recognition, and treats an assault on standing as the diagnostic.",
           "observed_contexts": [
             "legitimacy-contestation campaigns where a hostile actor works to strip an institution of its perceived mandate and right to exist in the eyes of stakeholders and the public"
           ],
@@ -44513,7 +44513,7 @@
               ]
             }
           ],
-          "field_notes": "Trust destruction targets specific relationships rather than the institution's mandate, so an analyst watches for engineered scandal aimed precisely at donors, funders, members, or partners, reading the collapse of a particular confidence relationship as distinct from a public challenge to the institution's authority.",
+          "field_notes": "The threat management team tends to catch this as engineered scandal aimed with precision at donors, funders, members, or partners rather than at the institution's mandate. That targeting of specific confidence relationships is what marks a trust destruction operation. The threat actor manufactures or amplifies doubt to collapse the trust that sustains the organization, so the team reads the failure of one particular relationship, distinct from a public challenge to the institution's authority to exist, as the shape of the attack.",
           "observed_contexts": [
             "confidence-collapse operations where a hostile actor manufactures or amplifies scandal to sever the trust that donors, members, partners, or funders place in an institution"
           ],
@@ -44872,7 +44872,7 @@
               ]
             }
           ],
-          "field_notes": "Insider-enabled disruption uses a person as the vector while the institution's function is the target, so an analyst correlates operational degradation, leaks, or sabotage with the access held by cultivated or coerced insiders, treating the pattern of damage rather than identity as the diagnostic.",
+          "field_notes": "Here the threat assessment team usually starts from the damage: leaks, sabotage, or degraded operations that trace back to someone holding legitimate access. Recognizing insider-enabled disruption means seeing the person as the vector while the institution's function and continuity are the target of value. The threat actor cultivates or coerces an insider to work harm from within, so the team correlates the pattern of degradation with the access held rather than fixating on identity, letting the shape of the damage drive the assessment.",
           "observed_contexts": [
             "insider-vector campaigns where a hostile actor cultivates or coerces someone inside an institution to leak, sabotage, or degrade its operations and information position from within"
           ],
@@ -45233,7 +45233,7 @@
               ]
             }
           ],
-          "field_notes": "An analyst distinguishes governance capture from ordinary leadership turnover by tracking whether new occupants of board or committee seats arrive coordinated, share an outside sponsor, and move in concert to redirect mandate rather than compete on the merits of institutional direction.",
+          "field_notes": "What a security professional first notices is a slate of new board or committee members arriving together rather than one at a time, often tracing back to a single outside sponsor. In casework the tell is coordination: the new occupants move in concert to redirect the organization's mandate instead of competing on the merits of institutional direction. That coordination is what separates governance capture from ordinary leadership turnover, where seats change hands but no shared hand steers them. The target is the institution's decision-making machinery, not the people who happen to hold the seats.",
           "observed_contexts": [
             "Coordinated slates of aligned candidates advancing into an institution's boards, standing committees, or executive posts until a threat actor controls enough decision seats to redirect the organization's mission from within governance rather than from outside pressure."
           ],
@@ -45593,7 +45593,7 @@
               ]
             }
           ],
-          "field_notes": "An analyst reads defection engineering in the timing and clustering of departures, watching for staff, donors, or affiliates leaving in coordinated waves after a shared inducement rather than through the scattered, individually motivated attrition an institution normally absorbs.",
+          "field_notes": "The first signal an analyst catches is timing: staff, donors, or affiliates leaving in clustered waves rather than the scattered, individually motivated attrition an institution normally absorbs. In casework those departures trace back to a shared inducement offered by a threat actor, which is what marks the pattern as engineered rather than organic. The taxonomy question is whether the exits are coordinated enough to hollow out the organization's capacity, since the target here is its membership base and human capital as an institutional resource. Isolated resignations do not qualify; the coordination and the numbers do.",
           "observed_contexts": [
             "Organized campaigns that court an institution's members, staff, donors, or affiliates toward a competing destination in synchronized waves, draining the human capital and institutional knowledge the organization needs to sustain its mission."
           ],
@@ -45953,7 +45953,7 @@
               ]
             }
           ],
-          "field_notes": "An analyst recognizes funding strangulation when pressure lands not on the institution but on its financial intermediaries, where a threat actor works to make banks, processors, grantmakers, or sponsors treat the organization as a reputational liability worth dropping.",
+          "field_notes": "An investigator's first read is where the pressure lands: not on the institution itself but on the banks, processors, grantmakers, and sponsors that keep it solvent. In casework the threat actor works to make those intermediaries treat the organization as a reputational liability worth dropping, which severs its financial lifelines without ever touching its facilities or systems. That indirection is the taxonomic marker, separating funding strangulation from a direct attack on the institution's operations. The target is financial continuity, achieved by turning the money supply against the body it sustains.",
           "observed_contexts": [
             "Pressure campaigns directed at an institution's donors, banks, payment processors, grantmakers, or sponsors that persuade those intermediaries to sever ties, cutting financial continuity without any contact with the organization's own facilities or systems."
           ],
@@ -46312,7 +46312,7 @@
               ]
             }
           ],
-          "field_notes": "An analyst separates forced exposure from personal doxxing by asking who the disclosure is aimed to damage, looking for release of governance records, internal deliberations, or confidential files timed and framed to injure the institution's standing as a body.",
+          "field_notes": "A threat management team first asks who a disclosure is aimed to damage. In casework the answer points to the institution when the material released is governance records, internal deliberations, or confidential files, timed and framed to injure its standing as a body. That framing is what separates forced exposure from personal doxxing, where the same leak would be pointed at an individual for private harm. The target is the organization's reputation and position, and the disclosure is the weapon a threat actor turns against it.",
           "observed_contexts": [
             "Compelled or executed release of an institution's confidential records, internal deliberations, or governance communications, timed and framed to damage the organization's public standing and negotiating position rather than to harm any single individual."
           ],
@@ -46671,7 +46671,7 @@
               ]
             }
           ],
-          "field_notes": "An analyst detects cohesion fracturing in amplified internal grievance, where a threat actor invests in widening existing seams between factions, generations, or chapters so that ordinary organizational friction hardens into schism the institution cannot reconcile.",
+          "field_notes": "What a threat assessment team registers first is a sudden amplification of internal grievance. In casework a threat actor invests in widening seams that already exist between factions, generations, or chapters, so that ordinary organizational friction hardens into schism. The taxonomic distinction is intent and investment: normal disagreement resolves, while engineered fracturing is fed until the institution can no longer reconcile it. The target is the organization's unity and coherence as a single body.",
           "observed_contexts": [
             "Efforts that seed and inflame factional division, generational grievance, or chapter-versus-leadership conflict inside an institution, converting normal internal disagreement into durable schism that splits the organization's unity as a single body."
           ],
@@ -47028,7 +47028,7 @@
               ]
             }
           ],
-          "field_notes": "An analyst identifies operational paralysis by the volume and inauthenticity of legitimate-looking demand, watching for complaint floods, mass fake applications, or intake saturation that overwhelm administrative capacity through process rather than through technical or physical means.",
+          "field_notes": "The first tell a security professional picks up is a surge of legitimate-looking demand that the organization is obligated to process. In casework that surge takes the form of complaint floods, mass fake applications, or intake saturation, each item plausible enough to require a response yet inauthentic in aggregate. The taxonomy hinges on mechanism: this is administrative and process paralysis, which excludes technical denial of service and physical occupation. The target is the institution's capacity to conduct its mission, denied by drowning its channels rather than breaching them.",
           "observed_contexts": [
             "Coordinated flooding of an institution's administrative and intake channels with complaint volleys, mass fabricated applications, or bureaucratic overload that saturates staff capacity and denies the organization the throughput to conduct its mission."
           ],
@@ -47382,7 +47382,7 @@
               ]
             }
           ],
-          "field_notes": "An analyst reads lawfare weaponization in the pattern of legal action rather than any single filing, watching for serial vexatious suits, mass regulatory complaints, and licensing challenges whose aim is attrition and cost rather than a good-faith remedy the institution could satisfy.",
+          "field_notes": "What reaches the analyst first is usually a single filing or complaint that looks legitimate on its face, and the documented pattern is that the tell lives in the aggregate rather than in any one instrument. The literature describes serial vexatious suits, mass regulatory complaints, and licensing or permit challenges whose object is attrition and cost rather than any remedy the institution could actually satisfy. The analytic read turns on cadence and intent: filings timed to bleed budget and staff hours, coordinated across venues, with no good-faith settlement path on offer. The documented signature is lawful process wielded as an instrument of exhaustion against the institution.",
           "observed_contexts": [
             "Sustained use of litigation, regulatory complaints, and licensing or permit challenges filed in volume against an institution, engineered to bleed legal cost and staff attention and paralyze the organization through lawful process rather than to win on merits."
           ],
@@ -47736,7 +47736,7 @@
               ]
             }
           ],
-          "field_notes": "An analyst distinguishes hostile control acquisition from governance capture by the instrument of takeover, watching for controlling ownership stakes, creditor leverage, or proxy fights that seize the institution's control apparatus through economic and legal ownership rather than by placing allies in seats.",
+          "field_notes": "In casework the investigator meets this one as a shift in the institution's ownership or debt records rather than as any move on its board, and that is the distinction that carries the case. I watch for controlling ownership stakes assembled quietly, creditor and debt leverage engineered into a lever, or a proxy fight staged to seize the control apparatus outright. The threat actor here takes the organization by economic and legal ownership, not by placing allies in seats, so the evidence sits in cap tables, loan covenants, and voting agreements rather than in personnel files. When those instruments converge on control, I read hostile control acquisition.",
           "observed_contexts": [
             "Acquisition of an institution's control through a controlling ownership stake, accumulated debt and creditor leverage, or a proxy contest, taking the organization outright by economic and legal ownership rather than by infiltrating its board from within."
           ],
@@ -48091,7 +48091,7 @@
               ]
             }
           ],
-          "field_notes": "An analyst recognizes institution impersonation when the threat actor speaks as the institution rather than about it, watching for forged official communications, cloned branding, or fake channels that borrow the organization's own identity to redirect its resources or destroy its credibility.",
+          "field_notes": "The first thing the threat management team notices is the institution appearing to speak in a place it never authorized, and the signal is that the voice is wearing the organization's identity rather than commenting on it. In our casework this surfaces as forged official communications, cloned branding, or fake channels stood up to pass as sanctioned ones. The threat actor uses that borrowed identity to redirect the institution's resources, deceive its stakeholders, or hollow out its credibility from behind its own name. When the impersonation carries the weight of official standing, the team logs it as institution impersonation.",
           "observed_contexts": [
             "Forged official communications, cloned branding, and fraudulent channels that impersonate a target institution's own identity to redirect its resources, deceive its stakeholders, or corrode the credibility the organization depends on to operate."
           ],
@@ -48445,7 +48445,7 @@
               ]
             }
           ],
-          "field_notes": "An analyst separates boycott and market coercion from funding strangulation by the mechanism of pressure, watching for organized demand-side mobilization of a market or public constituency against the institution rather than direct approaches to individual funders or intermediaries.",
+          "field_notes": "What the threat assessment team sees first is pressure arriving through a crowd rather than through the institution's funders, and the mechanism is what separates this from strangling funding directly. In our reviews the shape is an organized boycott, a divestment drive, or an advertiser and sponsor pressure campaign that mobilizes a market or public constituency against the organization. The threat actor works the demand side, turning customers, members, or the wider public into the instrument of coercion rather than approaching individual backers one at a time. When the coercion runs through mobilized demand, the team scores it as boycott and market coercion.",
           "observed_contexts": [
             "Organized boycott, divestment, or advertiser and sponsor pressure campaigns that mobilize a market or public constituency to turn against an institution, coercing or degrading the organization through withdrawn demand rather than by severing individual funding ties."
           ],
@@ -48797,7 +48797,7 @@
               ]
             }
           ],
-          "field_notes": "An analyst reads forced de-platforming in pressure aimed at a chokepoint gatekeeper, watching for campaigns that push a platform, processor, accreditor, or charity-status authority to revoke the institution's access, certification, or standing and disable it from the outside.",
+          "field_notes": "What the security professional encounters first is rarely an attack on the institution itself but pressure landing on a gatekeeper that stands between it and its ability to operate. The documented pattern is a campaign that pushes a platform, payment processor, accreditor, or charity-status authority to revoke the institution's access, certification, or standing. In the reporting the leverage is indirect: the threat actor compels a third-party chokepoint to disable the organization from the outside rather than confronting it head on. The analytic marker is a gatekeeper decision, engineered by outside pressure, that strips the institution of something it needs to function.",
           "observed_contexts": [
             "Campaigns that pressure a third-party gatekeeper such as a hosting platform, payment processor, accreditor, or charity-status authority into revoking an institution's access, certification, or operating standing, disabling the organization through a controlled chokepoint."
           ],
@@ -49152,7 +49152,7 @@
               ]
             }
           ],
-          "field_notes": "An analyst spots front dissolution in the orderly, timed wind-down of shell entities and cutouts after a campaign concludes, watching for coordinated closures that erase the organizational vectors and sever the trail back to the sponsor once the act against the institution is complete.",
+          "field_notes": "After a campaign winds down, what the analyst notices is a cluster of shell entities and cutouts closing in an orderly, timed sequence rather than drifting dormant. In casework these coordinated wind-downs read as cleanup: the front groups and shell organizations that carried the action against the institution are dissolved to erase the vectors and cut the trail back to their sponsor. The threat actor treats dissolution as the closing move, removing the organizational cover once the act is complete. When closures cluster tightly around a campaign's end, I read front dissolution.",
           "observed_contexts": [
             "Deliberate wind-down and closure of the shell entities, front groups, and cutout organizations used to act against an institution, timed to remove the organizational vectors and break attribution back to the campaign's sponsor after the operation concludes."
           ],
@@ -49514,7 +49514,7 @@
               ]
             }
           ],
-          "field_notes": "Read attribution obfuscation as a signal of sponsor sophistication rather than absence of one, since convenient false-flag artifacts and layered cutouts that all point neatly at a rival institution usually indicate a threat actor deliberately engineering the narrative an investigator is expected to accept.",
+          "field_notes": "In casework the first thing an investigator meets is a set of artifacts that point a little too cleanly at a rival institution, complete with the proxies and cutouts that seem to close the question. That neatness is the tell. Attribution obfuscation reads as evidence of a sophisticated sponsor, not the absence of one, because a threat actor is engineering the narrative you are expected to accept. When the false flags arrive pre-packaged and the trail terminates at a convenient adversary, treat the convenience itself as the finding and keep working the layers behind it.",
           "observed_contexts": [
             "Campaigns against an institution in which a threat actor seeds planted artifacts, borrowed tooling, and proxy intermediaries so that early responsibility appears to rest with a rival organization or a generic criminal element rather than the sponsoring actor."
           ],
@@ -49874,7 +49874,7 @@
               ]
             }
           ],
-          "field_notes": "Narrative laundering is recognizable less by any single message than by the suspiciously clean chain of custody, where a hostile claim about an institution surfaces near-simultaneously across nominally independent outlets and voices that share phrasing, framing, and timing but no disclosed common origin.",
+          "field_notes": "What a threat management team notices first is not the message but the chain of custody around it: a hostile claim about the institution appearing near-simultaneously across nominally independent outlets, influencers, and civil-society voices that share phrasing, framing, and timing yet disclose no common origin. That suspiciously clean synchronization is the signature. Narrative laundering exists to make a sponsored delegitimization read as organic, so the origin stays hidden while the story spreads. When independent sources move in lockstep on framing they have no shared reason to hold, the coordination itself is what the team is looking at.",
           "observed_contexts": [
             "Delegitimization efforts against an institution in which a threat actor routes a sponsored narrative through seemingly organic media, commentators, and civil-society intermediaries so the framing appears to arise independently rather than from a coordinated source."
           ],
@@ -50238,7 +50238,7 @@
               ]
             }
           ],
-          "field_notes": "Evidence destruction against an institutional target often reveals itself through the shape of what is missing, since selectively purged records, gaps aligned precisely to the operational window, and communications deleted just before scrutiny tell an analyst where the threat actor believed the incriminating trail lived.",
+          "field_notes": "A threat assessment team usually sees this one through the shape of what is missing rather than anything present: records selectively purged, gaps aligned precisely to the operational window, and communications deleted just before scrutiny arrives. Those absences map the trail. Evidence destruction removes the records, messages, and financial links that tie an operation to the institution it targeted, and the pattern of removal shows where the threat actor believed the incriminating material lived. When the holes in the record line up with the timeline instead of scattering at random, the gaps are the evidence.",
           "observed_contexts": [
             "Post-operation cleanup in which a threat actor destroys or selectively purges the records, communications, and financial trails that would let an institution reconstruct how a campaign against it was mounted and by whom."
           ],
@@ -50599,7 +50599,7 @@
               ]
             }
           ],
-          "field_notes": "Network protection is visible when the people best positioned to explain an institutional breach are abruptly reassigned, relocated, financially cushioned, or shielded from inquiry, signaling that a threat actor values the human network around the institution enough to preserve it for reuse.",
+          "field_notes": "A security professional tends to catch this when the people best positioned to explain an institutional breach are suddenly reassigned, relocated, financially cushioned, or walled off from inquiry. The care taken with those individuals is the signal. Network protection shields the cultivated insiders, co-conspirators, and cutouts embedded in and around the institution so the human network survives the operation intact. When a threat actor spends effort keeping its people insulated rather than cutting them loose, it is preserving that network for reuse.",
           "observed_contexts": [
             "Aftermath of an institutional operation in which a threat actor insulates cultivated insiders, co-conspirators, and cutouts from exposure or consequence in order to keep the human network available for future campaigns."
           ],
@@ -50960,7 +50960,7 @@
               ]
             }
           ],
-          "field_notes": "Influence persistence is the hardest post-act behavior to see because success looks like nothing happening, so an analyst should treat dormant accesses, unexplained retained privileges, and quietly maintained relationships inside a recovered institution as a threat actor holding the door open.",
+          "field_notes": "What draws an analyst's eye here is the small residue that outlives the recovery: a dormant account still valid, privileges retained with no current justification, a relationship inside the institution quietly kept warm. This behavior is hard to see because success looks like nothing happening. Influence persistence keeps latent insiders, footholds, and influence positions in place so a renewed campaign stays cheap, leaving the organization penetrable after the current act closes. Treat those retained accesses and maintained ties inside a recovered institution as a threat actor holding the door open.",
           "observed_contexts": [
             "Situations where a threat actor leaves dormant insiders, latent influence positions, or residual footholds inside an institution after an operation concludes, keeping the organization penetrable for a renewed campaign."
           ],
@@ -51323,7 +51323,7 @@
               ]
             }
           ],
-          "field_notes": "Financial disposition tied to an institutional campaign shows up as movement that makes no commercial sense, where extortion proceeds or operational financing are layered through shells, intermediaries, and rapid conversions whose only coherent purpose is to sever the money from the act against the organization.",
+          "field_notes": "The entry point for an investigator is money that moves in ways no commercial rationale explains: extortion proceeds or operational funds layered through shells, run through intermediaries, and pushed through rapid conversions that serve no business purpose. That incoherence is the lead. Financial disposition moves, layers, and launders the funds behind an institutional campaign to sever them from their origin. When the only consistent logic in the transactions is distance from the act against the organization, the movement itself is what a threat actor is trying to hide.",
           "observed_contexts": [
             "Post-campaign money handling in which a threat actor moves, layers, or launders extortion proceeds or operational financing through intermediaries and conversions to obscure the origin of funds behind an attack on an institution."
           ],
@@ -51681,7 +51681,7 @@
               ]
             }
           ],
-          "field_notes": "After-action assessment is inferable from the next iteration rather than observed directly, so an analyst who sees a follow-on operation against a similar institution correct exactly the weaknesses that blunted the prior effort is reading the fingerprint of a deliberate effect review.",
+          "field_notes": "In casework the threat management team rarely watches an after-action assessment happen; what it notices is the next operation against a similar institution correcting the exact weaknesses that blunted the prior effort. That correction is the fingerprint of a deliberate effect review, where the threat actor measures whether the institution was actually degraded, delegitimized, or coerced and adjusts accordingly. The team reads the pattern backward from the second attempt, since the review itself leaves no direct trace.",
           "observed_contexts": [
             "Patterns in which a threat actor evaluates whether an institution was actually degraded, delegitimized, or coerced as intended and refines tradecraft, with the learning visible in the tightened design of subsequent campaigns against comparable organizations."
           ],
@@ -52036,7 +52036,7 @@
               ]
             }
           ],
-          "field_notes": "Rebranding and repositioning is recognizable when a sanctioned or exposed movement dissolves and a fresh entity appears with new naming and geography but the same personnel, funding rhythms, and institutional targets, indicating a threat actor buying a clean posture rather than genuinely standing down.",
+          "field_notes": "What the threat assessment team encounters first is a sanctioned or exposed movement dissolving while a fresh entity surfaces under new naming and geography. On inspection the personnel, funding rhythms, and institutional targets carry over unchanged, marking a threat actor that is buying a clean posture rather than genuinely standing down. The team treats the continuity of people and money as the tell, not the new label.",
           "observed_contexts": [
             "Cases where a threat actor's movement or front rebrands, relocates, or restructures after exposure or sanction while preserving the same leadership, financing, and hostility toward institutions in order to keep operating under a cleaner identity."
           ],
@@ -52393,7 +52393,7 @@
               ]
             }
           ],
-          "field_notes": "Attribution declaration should be weighed against the operational facts rather than accepted at face value, since a threat actor claiming an institutional strike may be signing genuine work, exaggerating capability, or claiming an act it did not commit.",
+          "field_notes": "The security professional first meets this as a public claim of responsibility arriving through a statement, manifesto, or media contact. The claim signs the act as a deliberate strike on the institution, but a threat actor may be signing genuine work, inflating its capability, or claiming an act it never committed. The professional weighs the declaration against the operational facts before crediting it.",
           "observed_contexts": [
             "Instances where a threat actor publicly claims responsibility for a campaign against an institution through a statement, manifesto, or media contact in order to frame the act as a deliberate and attributable strike."
           ],
@@ -52751,7 +52751,7 @@
               ]
             }
           ],
-          "field_notes": "Audience amplification turns an analyst's attention to reach mechanics, because a threat actor that engineers coordinated resharing, staged media handoffs, and timed re-releases of an institution's degradation is treating the reaction itself as the payload and extending harm well past the original act.",
+          "field_notes": "What draws the analyst's eye is the reach machinery around an institution's degradation: coordinated resharing, staged media handoffs, and timed re-releases. This marks a threat actor treating the reaction itself as the payload, extending the harm well past the original act into a public spectacle. The analyst tracks the amplification apparatus rather than the initial damage alone.",
           "observed_contexts": [
             "Efforts in which a threat actor deliberately publicizes and spreads an institution's degradation, defection, or exposure across channels to maximize reach and reaction, converting the institutional damage into a public spectacle."
           ],
@@ -53110,7 +53110,7 @@
               ]
             }
           ],
-          "field_notes": "Coercive follow-through is distinguishable from the original act by its forward-looking demands, where a threat actor cites the harm already inflicted on an institution as proof of capability while attaching fresh ultimatums, extortion terms, or conditions for policy change or submission.",
+          "field_notes": "The investigator first notices fresh demands attached to harm the institution has already suffered. Where the original act is finished, the threat actor now cites that demonstrated damage as proof of capability while pressing ultimatums, extortion terms, or conditions for policy change or submission. The forward-looking ask is what separates this from the completed strike and marks ongoing coercion.",
           "observed_contexts": [
             "Scenarios in which a threat actor leverages a completed act against an institution to press further demands, extending extortion, ultimatums, or conditional threats aimed at policy change or organizational submission."
           ],
@@ -53475,7 +53475,7 @@
               ]
             }
           ],
-          "field_notes": "Recruitment and momentum exploitation is detectable when a completed strike against an institution is repackaged as proof of viability, with a threat actor foregrounding the outcome in outreach, celebration, and how-it-was-done framing to draw followers, inspire imitators, and build pressure for further campaigns.",
+          "field_notes": "In practice the threat management team encounters the completed strike repackaged as proof of viability. The threat actor foregrounds the outcome in outreach, celebration, and how-it-was-done framing, turning the act against the institution into a tool to draw followers, inspire imitators, and build pressure for further campaigns. The team reads the mobilization use of the result as the behavior, not the strike alone.",
           "observed_contexts": [
             "Patterns where a threat actor uses a demonstrated success against an institution as a mobilization tool to recruit followers, inspire copycats, and build momentum for additional operations against similar organizations."
           ],
