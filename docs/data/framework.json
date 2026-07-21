@@ -39047,7 +39047,7 @@
             },
             {
               "id": "IND-O0108-05",
-              "behavior": "A threat actor conducts tailgating and badge challenge probes at the institution's facilities, testing whether staff enforce access policy or wave through an unrecognized person claiming affiliation.",
+              "behavior": "A threat actor tests the institution's affiliation and access controls through its administrative channels, submitting membership, vendor, or credential requests under a thin or unverified claim of affiliation to see whether staff challenge it or grant standing by default.",
               "category": "access",
               "detection_sources": [
                 "physical_observation",
@@ -42250,7 +42250,7 @@
             },
             {
               "id": "IND-O0208-05",
-              "behavior": "The threat actor stockpiles operational materials, whether supplies, equipment, or prepaid services, ahead of a planned action, acquiring quantities disproportionate to any ordinary activity and timed to a coming campaign.",
+              "behavior": "The threat actor assembles the operational resources for a campaign against the institution, whether pooled funds, retained personnel and services, or messaging and platform infrastructure, staging capacity disproportionate to any ordinary activity and timed to a coming campaign.",
               "category": "acquisition",
               "detection_sources": [
                 "financial_records",
@@ -46909,7 +46909,7 @@
           "countermeasures": [
             {
               "id": "CM-O0310-01",
-              "measure": "Apply rate limits, verification steps, and CAPTCHA-style friction on intake, application, and complaint channels so mass automated or fake submissions cannot saturate staff capacity.",
+              "measure": "The institution establishes identity and eligibility verification at intake, tiered staffed triage that prioritizes verified matters, and per-submitter caps enforced by policy on application and complaint channels, so a flood of fake or duplicate submissions cannot saturate staff capacity.",
               "category": "preventive",
               "domain": "policy_procedure",
               "cost": "low",
@@ -53273,7 +53273,7 @@
             },
             {
               "id": "IND-O0413-03",
-              "behavior": "The threat actor observes a surge of new applicants, donations, and channel subscriptions immediately after publicizing the win, and directs the influx toward operational roles.",
+              "behavior": "Immediately after a threat actor publicizes the act against the institution, its movement shows a visible recruitment surge in new followers, donations, and channel subscriptions, which it channels into operational roles for the next campaign.",
               "category": "behavioral_change",
               "detection_sources": [
                 "social_media",
