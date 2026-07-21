@@ -17880,7 +17880,7 @@
               ]
             }
           ],
-          "field_notes": "Site profiling is the quiet, mostly invisible phase: the actor is building a functional picture of a place they have already picked, and almost all of it happens at a keyboard. The tell is not any single lookup but the assembly: hours, tenants, who works there, when deliveries come, when the building is fullest, what dates matter. Modern OSINT makes this cheap and low-exposure, so it rarely touches the facility's own systems and rarely leaves a mark you can catch in the act. The strongest signal is when remote collection pairs with a grievance already fixed on the place, or when it organizes around occupancy and symbolic dates in a way that only makes sense if the goal is to be there when it counts. The defensive leverage is mostly on the exposure side, knowing what a stranger can learn about your rhythm, and deciding how much of it needs to be public.",
+          "field_notes": "Site profiling is the quiet, mostly invisible phase: the actor is building a functional picture of a place they have already picked, and almost all of it happens at a keyboard. The tell is not any single lookup but the assembly: hours, tenants, who works there, when deliveries come, when the building is fullest, what dates matter. Modern OSINT makes this cheap and low-exposure, so it rarely touches the facility's own systems and rarely leaves a mark security can catch in the act. The strongest signal is when remote collection pairs with a grievance already fixed on the place, or when it organizes around occupancy and symbolic dates in a way that only makes sense if the goal is to be there when it counts. The defensive leverage is mostly on the exposure side, knowing what a stranger can learn about the site's rhythm, and deciding how much of it needs to be public.",
           "observed_contexts": [
             "actor who compiled a place of worship's service times, congregation size, and holiday calendar from its public website and social feeds before any visit",
             "arson case where the subject reconstructed a clinic's staffing and after-hours schedule from employee posts and review sites",
@@ -19822,7 +19822,7 @@
               ]
             }
           ],
-          "field_notes": "Acquisition is where a plan against a place becomes a method you can point at. The tell is rarely a single flagged purchase, it is combination and quantity that no stated use explains: accelerants beyond any household need, components bought a few at a time across vendors, breaching tools matched to a specific door, a van bought cash by someone with no evident use for it. The method reveals itself in the cart, which is why an incendiary or explosive acquisition carries more weight than words alone. The hard part is that almost every item is dual-use and lawful in isolation; the signal lives in the pattern, the pairing with a named site, and the money moving to pay for it. Financial and purchase records raise detectability sharply once you have legal basis to look, but cash, crypto, and third-party sourcing pull it back down.",
+          "field_notes": "Acquisition is where a plan against a place becomes a method that can be pointed at. The tell is rarely a single flagged purchase, it is combination and quantity that no stated use explains: accelerants beyond any household need, components bought a few at a time across vendors, breaching tools matched to a specific door, a van bought cash by someone with no evident use for it. The method reveals itself in the cart, which is why an incendiary or explosive acquisition carries more weight than words alone. The hard part is that almost every item is dual-use and lawful in isolation; the signal lives in the pattern, the pairing with a named site, and the money moving to pay for it. Financial and purchase records raise detectability sharply once there is legal basis to look, but cash, crypto, and third-party sourcing pull it back down.",
           "observed_contexts": [
             "arson case in which the actor accumulated accelerants and ignition sources over several weeks before an incendiary attack on a targeted clinic",
             "plot in which explosive precursors were sourced in split purchases across multiple vendors to stay below any single reporting threshold",
@@ -21270,7 +21270,7 @@
               ]
             }
           ],
-          "field_notes": "Pathway and escalation indicators are the closest read to 'this is about to happen' that target development offers, and they are almost never a single line. The diagnostic value is in the aggregation: leakage that names the place, a countdown that fixes it to a window, last-resort framing that forecloses alternatives, farewell behaviors that presuppose an endpoint, and an energy burst where deliberate planning suddenly compresses into action tempo. Any one of these has an innocent twin, venting, dark humor, a mental-health crisis, a life transition, activist hyperbole, so the work is watching for convergence and progression against the same site rather than reacting to one alarming sentence. Leakage now lives mostly online, and the final phase often gets telegraphed there in the hours to days before action, which is both the opportunity and the trap: it is where you get warning, and where you get flooded with performative noise. When the signals converge on a place and a near horizon, treat it as mobilization-imminent, and remember the off-ramp, the same grievance driving the countdown is sometimes the thing an intervention can still defuse.",
+          "field_notes": "Pathway and escalation indicators are the closest read to 'this is about to happen' that target development offers, and they are almost never a single line. The diagnostic value is in the aggregation: leakage that names the place, a countdown that fixes it to a window, last-resort framing that forecloses alternatives, farewell behaviors that presuppose an endpoint, and an energy burst where deliberate planning suddenly compresses into action tempo. Any one of these has an innocent twin, venting, dark humor, a mental-health crisis, a life transition, activist hyperbole, so the work is watching for convergence and progression against the same site rather than reacting to one alarming sentence. Leakage now lives mostly online, and the final phase often gets telegraphed there in the hours to days before action, which is both the opportunity and the trap: it is where warning appears, and where performative noise floods in. When the signals converge on a place and a near horizon, treat it as mobilization-imminent, and remember the off-ramp, the same grievance driving the countdown is sometimes the thing an intervention can still defuse.",
           "observed_contexts": [
             "fixated actor posting a countdown and a farewell message naming a corporate headquarters in the days before an attempted attack",
             "aggrieved former employee giving away possessions and telling a coworker 'they'll be sorry Monday' about the plant, an acceleration caught by a peer report",
@@ -21753,7 +21753,7 @@
               ]
             }
           ],
-          "field_notes": "Surveillance detection is the actor turning the lens around: not watching the building, but watching whether the building is watching the actor. The clearest tells are small and easy to dismiss one at a time: a package dropped near an entrance to see how fast a guard moves, a first pass that seems to accomplish nothing but flushes a plainclothes officer into view, the same person arriving three times looking different each time. Because good counter-surveillance is designed to be invisible, the absence of an obvious signal is not reassurance, it is consistent with discipline. The practitioner error is reacting visibly to a probe, which hands the actor exactly the reaction they staged the test to measure. The right posture is discreet: log it, preserve it, keep covert coverage covert, and let the pattern assemble before the actor knows they have been seen.",
+          "field_notes": "Surveillance detection is the actor turning the lens around: not watching the building, but watching whether the building is watching the actor. The clearest tells are small and easy to dismiss one at a time: a package dropped near an entrance to see how fast a guard moves, a first pass that seems to accomplish nothing but flushes a plainclothes officer into view, the same person arriving three times looking different each time. Because good counter-surveillance is designed to be invisible, the absence of an obvious signal is not reassurance, it is consistent with discipline. The error is reacting visibly to a probe, which hands the actor exactly the reaction they staged the test to measure. The right posture is discreet: log it, preserve it, keep covert coverage covert, and let the pattern assemble before the actor knows they have been seen.",
           "observed_contexts": [
             "actor who dropped a bag near a lobby entrance and timed the guard response on two separate visits before withdrawing each time",
             "repeat visitor who changed vehicles and clothing across approaches, defeating the guard force's ability to recognize a pattern until CCTV review connected the visits",
@@ -27612,7 +27612,7 @@
               ]
             }
           ],
-          "field_notes": "Structural sabotage is the quietest of the execution tactics and the one most likely to be mistaken for an accident. The decisive move is often small, a few bolts removed from a moment connection, a footing undermined, fireproofing scraped from a column, and its consequence is deferred to whenever the structure is fullest. That deferral is the tell: an actor who conceals the work and times it to occupancy has revealed a casualty objective, not merely a property one. The hardest part for a defender is that most structural distress is ordinary (buildings crack, deflect, and corrode) so the signal only separates from the noise when an engineer can attribute the condition to deliberate action, or when tampering pairs with access anomalies and a grievance against the site. Occupancy is the severity hinge: the same cut member is a mass-casualty event with people inside and a destructive property attack with the building empty. When in doubt on an occupied structure, evacuate first and assess second.",
+          "field_notes": "Structural sabotage is the deliberate weakening of a building's load-bearing elements, the quietest of the execution tactics and the one most likely to be mistaken for an accident. The decisive move is often small, a few bolts removed from a moment connection, a footing undermined, fireproofing scraped from a column, and its consequence is deferred to whenever the structure is fullest. That deferral is the tell: an actor who conceals the work and times it to occupancy has revealed a casualty objective, not merely a property one. The hardest part for a defender is that most structural distress is ordinary (buildings crack, deflect, and corrode) so the signal only separates from the noise when an engineer can attribute the condition to deliberate action, or when tampering pairs with access anomalies and a grievance against the site. Occupancy is the severity hinge: the same cut member is a mass-casualty event with people inside and a destructive property attack with the building empty. When in doubt on an occupied structure, evacuate first and assess second.",
           "observed_contexts": [
             "insider with maintenance access to a mechanical penthouse found to have loosened anchor bolts on a transfer connection, concealed and timed to a high-occupancy period",
             "sabotage case where a footing was progressively undermined from an adjacent excavation framed as legitimate site work",
@@ -29093,7 +29093,7 @@
               ]
             }
           ],
-          "field_notes": "Occupation and blockade is the one execution tactic where the point is to hold rather than destroy, and that changes the whole response calculus. Most occupations are disruptive and non-lethal (a sit-in, a chained door, a human chain across a driveway) and the pressure is to treat them as a public-order problem. The line that matters for a threat program is egress: the moment a barricaded door or a massed crowd means occupants cannot freely leave, a denial-of-use event has become a life-safety event, and blocked exits turn deadly the instant anything else goes wrong inside. The other line is the person, an occupation that moves from holding space to holding people is a hostage situation and belongs to law enforcement immediately. The hard part is that lawful assembly and unlawful occupation look identical until the group refuses to clear or blocks a way out, so the assessment hinges on holding capability, egress status, and response to a lawful dispersal order, not on the presence of a crowd.",
+          "field_notes": "The decision an occupation forces is whether holding space has become holding people, because this is the one execution tactic where the point is to hold rather than destroy, and that changes the whole response calculus. Most occupations are disruptive and non-lethal (a sit-in, a chained door, a human chain across a driveway) and the pressure is to treat them as a public-order problem. The line that matters for a threat program is egress: the moment a barricaded door or a massed crowd means occupants cannot freely leave, a denial-of-use event has become a life-safety event, and blocked exits turn deadly the instant anything else goes wrong inside. The other line is the person, an occupation that moves from holding space to holding people is a hostage situation and belongs to law enforcement immediately. The hard part is that lawful assembly and unlawful occupation look identical until the group refuses to clear or blocks a way out, so the assessment hinges on holding capability, egress status, and response to a lawful dispersal order, not on the presence of a crowd.",
           "observed_contexts": [
             "clinic occupation where activists chained themselves across the entrance and blocked patient and staff access during operating hours",
             "corporate-lobby sit-in where a group barricaded the doors and refused dispersal orders, holding the space over multiple days with staged supplies",
@@ -29569,7 +29569,7 @@
               ]
             }
           ],
-          "field_notes": "Vandalism reads as the lowest-consequence facility attack until you weigh what the mark says and whether it repeats. A generic tag on a loading dock is a maintenance ticket; a slur or extremist symbol on a house of worship is community terror with a repair cost attached, and the two demand very different responses. The diagnostic questions are content, targeting, and persistence: does the mark aim at what the place represents, does it name the site or its people, and does it come back after cleanup? Repeat targeted defacement is the tell that matters most, it signals fixation on the site and frequently precedes heavier damage, so the same wall marked three times deserves more concern than three different walls marked once. Rapid removal is the right instinct for denying the actor a publicized result, but photograph and preserve first: fast cleanup that destroys the evidence trades a short-term win for a lost case. The act itself is usually overt and discoverable, the challenge is attribution and reading which marks are noise and which are a campaign opening.",
+          "field_notes": "Vandalism reads as the lowest-consequence facility attack until security weighs what the mark says and whether it repeats. A generic tag on a loading dock is a maintenance ticket; a slur or extremist symbol on a house of worship is community terror with a repair cost attached, and the two demand very different responses. The diagnostic questions are content, targeting, and persistence: does the mark aim at what the place represents, does it name the site or its people, and does it come back after cleanup? Repeat targeted defacement is the tell that matters most, it signals fixation on the site and frequently precedes heavier damage, so the same wall marked three times deserves more concern than three different walls marked once. Rapid removal is the right instinct for denying the actor a publicized result, but photograph and preserve first: fast cleanup that destroys the evidence trades a short-term win for a lost case. The act itself is usually overt and discoverable, the challenge is attribution and reading which marks are noise and which are a campaign opening.",
           "observed_contexts": [
             "house of worship repeatedly marked with extremist symbols over successive weekends before an attempted arson against the same site",
             "cultural-center signage defaced with threatening messaging that was photographed and posted by the actor to claim the act",
@@ -30563,7 +30563,7 @@
               ]
             }
           ],
-          "field_notes": "Response suppression is what turns a bad day into a massacre, and it is usually the most premeditated part of an attack: you do not chain a fire exit or silence a sprinkler panel on impulse. The clearest tells are physical and in-the-moment: an exit that will not open, an alarm that never sounded, a security officer down before the shooting started, radios that go to static. Backward from the act, the diagnostic signal is interest in the response rather than the target, an actor who asks about how people get out, how fast the fire department arrives, where the panels are, and who is on the desk at night. Blocking exits on an occupied building and staging hazards for responders are the two behaviors that most reliably signal an intent to maximize casualties, and both should be treated as critical the instant they appear. The hard part for defenders is that the same actions look identical to legitimate life-safety work (a contractor takes suppression offline every week under a work order) so the discriminators are accountability, authorization, and whether the activity pairs with any concurrent attack preparation.",
+          "field_notes": "Response suppression is what turns a bad day into a massacre, and it is usually the most premeditated part of an attack: no one chains a fire exit or silences a sprinkler panel on impulse. The clearest tells are physical and in-the-moment: an exit that will not open, an alarm that never sounded, a security officer down before the shooting started, radios that go to static. Backward from the act, the diagnostic signal is interest in the response rather than the target, an actor who asks about how people get out, how fast the fire department arrives, where the panels are, and who is on the desk at night. Blocking exits on an occupied building and staging hazards for responders are the two behaviors that most reliably signal an intent to maximize casualties, and both should be treated as critical the instant they appear. The hard part for defenders is that the same actions look identical to legitimate life-safety work (a contractor takes suppression offline every week under a work order) so the discriminators are accountability, authorization, and whether the activity pairs with any concurrent attack preparation.",
           "observed_contexts": [
             "arson case at an occupied premises where the actor chained a rear fire exit before igniting near the only other egress",
             "plot in which an actor mapped the site's alarm-monitoring service and planned to silence the panel so an off-site responder would not be dispatched",
@@ -31043,7 +31043,7 @@
               ]
             }
           ],
-          "field_notes": "Withdrawal is where premeditation shows most clearly after the fact: a planned attacker gets off the X along a line they already know, and an improviser runs in whatever direction is open. The clearest tells are separation of transportation (a switch vehicle staged a few blocks out), an appearance change, and timing that rides the evacuation and response chaos rather than fighting it. Most of the signal is reconstructed backward from cameras, plate readers, and witness vectors, so evidence-retention windows and prompt canvassing decide how much you recover. Containment almost always trails a fast, prepared egress, which is why the durable value is pattern reconstruction: the route the actor chose, the seams they used, and how to close them before the next one. Panic flight and ordinary evacuation are the dominant false positives, what separates them is a consistent vector, preparation artifacts, and counter-tracking discipline.",
+          "field_notes": "Withdrawal is where premeditation shows most clearly after the fact: a planned attacker gets off the X along a line they already know, and an improviser runs in whatever direction is open. The clearest tells are separation of transportation (a switch vehicle staged a few blocks out), an appearance change, and timing that rides the evacuation and response chaos rather than fighting it. Most of the signal is reconstructed backward from cameras, plate readers, and witness vectors, so evidence-retention windows and prompt canvassing decide how much is recovered. Containment almost always trails a fast, prepared egress, which is why the durable value is pattern reconstruction: the route the actor chose, the seams they used, and how to close them before the next one. Panic flight and ordinary evacuation are the dominant false positives, what separates them is a consistent vector, preparation artifacts, and counter-tracking discipline.",
           "observed_contexts": [
             "arson case where the actor left along a pre-driven route and switched to a second vehicle two blocks from the site, breaking the camera trail before a perimeter formed",
             "active-assailant incident where the assailant blended into the evacuating crowd and exited the area before responders established containment",
@@ -32492,7 +32492,7 @@
               ]
             }
           ],
-          "field_notes": "Network protection is what tells you a facility attack was a group effort rather than a lone act, and it usually shows up as an absence: accounts that go dark together, a witness who suddenly will not talk, an insider whose story tightens. The clearest tells are synchronization and direction: multiple participants wiping or going quiet in the same window, or one person visibly telling the others what to say and delete. The window is short and it is a race, the same coordination surface that ran the operation is the first thing scrubbed, so preservation has to move in hours, not days. The hardest part is separating deliberate protection from ordinary post-incident fear: people delete accounts and decline interviews after any newsworthy event, and communities close ranks for reasons that are not conspiratorial. What resolves it is specificity and coercion, a directed instruction, a concrete threat, a facilitation role being actively hidden, not the mere fact that the group got quiet.",
+          "field_notes": "Network protection is what tells the team a facility attack was a group effort rather than a lone act, and it usually shows up as an absence: accounts that go dark together, a witness who suddenly will not talk, an insider whose story tightens. The clearest tells are synchronization and direction: multiple participants wiping or going quiet in the same window, or one person visibly telling the others what to say and delete. The window is short and it is a race, the same coordination surface that ran the operation is the first thing scrubbed, so preservation has to move in hours, not days. The hardest part is separating deliberate protection from ordinary post-incident fear: people delete accounts and decline interviews after any newsworthy event, and communities close ranks for reasons that are not conspiratorial. What resolves it is specificity and coercion, a directed instruction, a concrete threat, a facilitation role being actively hidden, not the mere fact that the group got quiet.",
           "observed_contexts": [
             "cell members deleting a shared coordination channel in a synchronized window within hours of a facility attack, warning each other to go dark",
             "witness to an arson who initially cooperated then withdrew after being contacted and threatened by an associate of the offender",
@@ -34395,7 +34395,7 @@
               ]
             }
           ],
-          "field_notes": "Secondary devices and re-attack positioning are aimed at the response itself: the people the first attack pulls into the open: responders on a predictable approach, a command post at the usual spot, families at the reunification point. The clearest tell is anything that seems designed to invite a crowd into a fixed location, or an actor who does not behave like someone escaping, who withdraws to a vantage over the scene, delays leaving, or re-approaches as responders arrive. The hardest problem is the disorder of the scene: dropped bags, onlookers, returning occupants, and press all look like the thing you fear, so the discipline is to assume a second threat is present until a sweep clears the ground the response will occupy, and to vary the staging so there is no predictable crowd to strike.",
+          "field_notes": "Secondary devices and re-attack positioning are aimed at the response itself: the people the first attack pulls into the open: responders on a predictable approach, a command post at the usual spot, families at the reunification point. The clearest tell is anything that seems designed to invite a crowd into a fixed location, or an actor who does not behave like someone escaping, who withdraws to a vantage over the scene, delays leaving, or re-approaches as responders arrive. The hardest problem is the disorder of the scene: dropped bags, onlookers, returning occupants, and press all look like the thing feared, so the discipline is to assume a second threat is present until a sweep clears the ground the response will occupy, and to vary the staging so there is no predictable crowd to strike.",
           "observed_contexts": [
             "bombing case in which a second device was placed along the expected first-responder approach and near the command-post location to strike arriving personnel",
             "attack where the actor withdrew to an elevated overwatch and re-engaged responders and evacuees as they assembled at the muster point",
@@ -36285,7 +36285,7 @@
               ]
             }
           ],
-          "field_notes": "Coercive demand is where an attack stops being an end and becomes leverage. The tell is instrumental structure: a concrete ask, a deadline, and a consequence, rather than the venting or triumphalism of a bare claim. The first authentication question is always whether the claimant is the perpetrator, hold-back detail settles it faster than anything, which is why investigators guard a few facts from public release specifically to test post-incident communications. The dangerous variant is the demand backed by a live follow-on: 'there is a second device, and there will be more.' That claim has to be treated as true until a sweep clears it, because the whole point of a secondary is to catch responders and returning occupants. Do not let the actor's deadline set the tempo of your response. The counterintuitive part is that many coercive demands are working from a spent hand (the attack consumed the capability) but you cannot assume that from the message alone, and the cost of guessing wrong is measured in lives.",
+          "field_notes": "Coercive demand is where an attack stops being an end and becomes leverage. The tell is instrumental structure: a concrete ask, a deadline, and a consequence, rather than the venting or triumphalism of a bare claim. The first authentication question is always whether the claimant is the perpetrator, hold-back detail settles it faster than anything, which is why investigators guard a few facts from public release specifically to test post-incident communications. The dangerous variant is the demand backed by a live follow-on: 'there is a second device, and there will be more.' That claim has to be treated as true until a sweep clears it, because the whole point of a secondary is to catch responders and returning occupants. The actor's deadline cannot be allowed to set the tempo of the response. The counterintuitive part is that many coercive demands are working from a spent hand (the attack consumed the capability) but that cannot be assumed from the message alone, and the cost of guessing wrong is measured in lives.",
           "observed_contexts": [
             "extortion note left after an arson attack demanding payment to a cryptocurrency wallet with a threat of a second fire",
             "ideologically motivated actor broadcasting a demand to reverse a facility's function, claiming a further device was already emplaced",
@@ -55119,7 +55119,7 @@
               ]
             }
           ],
-          "field_notes": "Process reconnaissance is distinctive to infrastructure and appears as a threat actor acquiring engineering documentation, control narratives, or historian data rather than site imagery.",
+          "field_notes": "Process reconnaissance appears as a threat actor acquiring engineering documentation, control narratives, or historian data rather than site imagery, a mechanism distinctive to infrastructure.",
           "observed_contexts": [
             "Stuxnet, whose operators modeled Natanz centrifuge process parameters precisely enough to damage rotors while masking the fault"
           ],
@@ -55944,7 +55944,7 @@
               ]
             }
           ],
-          "field_notes": "Capability acquisition for infrastructure spans ICS-specific malware and protocol tooling as readily as physical breaching or destructive means.",
+          "field_notes": "Before an infrastructure attack, capability acquisition spans ICS-specific malware and protocol tooling as readily as physical breaching or destructive means.",
           "observed_contexts": [
             "Triton/Trisis, purpose-built to communicate with Triconex safety controllers, evidencing dedicated ICS capability development"
           ],
@@ -56366,7 +56366,7 @@
               ]
             }
           ],
-          "field_notes": "Network development covers the collaborators, funding, and logistics assembled to support the operation.",
+          "field_notes": "An operator almost never watches network development happen; it plays out off-site as a threat actor assembles the collaborators, funding, and logistics to support the operation.",
           "observed_contexts": [
             "documented infrastructure-sabotage conspiracies involving multiple actors coordinating roles and materials"
           ],
@@ -56778,7 +56778,7 @@
               ]
             }
           ],
-          "field_notes": "Operator cultivation is elevated in infrastructure because a privileged insider's routine actions are indistinguishable at the wire from sabotage.",
+          "field_notes": "A control-room operator with legitimate privileges is exactly what a threat actor cultivates, because that insider's routine actions are indistinguishable at the wire from sabotage.",
           "observed_contexts": [
             "CISA insider-threat reporting on privileged OT staff whose access materially shortens an attack path"
           ],
@@ -57189,7 +57189,7 @@
               ]
             }
           ],
-          "field_notes": "Supply-chain vectoring is an access path with no People or Facilities analog, established well before the threat actor touches the target directly.",
+          "field_notes": "When an engineer accepts a vendor component or update, that decision is where supply-chain vectoring lands: an access path with no People or Facilities analog, established well before the threat actor touches the target directly.",
           "observed_contexts": [
             "the 2020 SolarWinds compromise, which reached operational networks through a trusted software update channel"
           ],
@@ -57619,7 +57619,7 @@
               ]
             }
           ],
-          "field_notes": "Pathway indicators are behavioral escalation signals that precede a specific tactic, marking a threat actor's movement along the pathway toward action.",
+          "field_notes": "An operator tends to watch for the attack itself, but pathway indicators arrive earlier: behavioral escalation signals that precede a specific tactic and mark a threat actor's movement along the pathway toward action.",
           "observed_contexts": [
             "grievance-to-mobilization progressions documented in critical-infrastructure threat cases"
           ],
@@ -58863,7 +58863,7 @@
               ]
             }
           ],
-          "field_notes": "Counter-detection spans physical observation of guard patterns and technical evasion of OT monitoring.",
+          "field_notes": "A guard encounters counter-detection in two forms: physical observation of guard patterns and technical evasion of OT monitoring.",
           "observed_contexts": [
             "ICS intrusions in which threat actors disabled or evaded logging on engineering workstations before acting"
           ],
@@ -59695,7 +59695,7 @@
               ]
             }
           ],
-          "field_notes": "Remote access acquisition is effect-at-distance: the threat actor obtains a path to the control plane without being physically present.",
+          "field_notes": "By the time an operator notices anything, remote access acquisition has already happened at a distance: a threat actor has obtained a path to the control plane without being physically present.",
           "observed_contexts": [
             "Oldsmar (2021), where an intruder reached a water-treatment HMI over a remote-access tool"
           ],
@@ -60111,7 +60111,7 @@
               ]
             }
           ],
-          "field_notes": "Control-system access is the point at which a threat actor can read or issue process commands, whether reached physically or logically.",
+          "field_notes": "A control-room operator reads control-system access as the moment a threat actor can read or issue process commands, whether reached physically or logically.",
           "observed_contexts": [
             "Industroyer operators reaching substation control devices to issue unauthorized breaker commands"
           ],
@@ -60513,7 +60513,7 @@
               ]
             }
           ],
-          "field_notes": "Zone escalation is the IT-to-OT boundary crossing that turns a business-network foothold into control-plane reach.",
+          "field_notes": "The operator meets zone escalation as the IT-to-OT boundary crossing that turns a business-network foothold into control-plane reach.",
           "observed_contexts": [
             "Ukraine 2015, where threat actors pivoted from corporate networks into SCADA to open breakers"
           ],
@@ -60920,7 +60920,7 @@
               ]
             }
           ],
-          "field_notes": "Insider-enabled access is a primary infrastructure pathway because the insider's legitimate console session is the attack.",
+          "field_notes": "The control-room operator confronts insider-enabled access as a primary infrastructure pathway, because the insider's legitimate console session is the attack.",
           "observed_contexts": [
             "CISA insider cases where authorized OT credentials provided the decisive access to the control environment"
           ],
@@ -61754,7 +61754,7 @@
               ]
             }
           ],
-          "field_notes": "Foothold establishment is the pre-execution staging a threat actor holds during the operation, distinct from the strategic leave-behind assessed in the Aftermath phase.",
+          "field_notes": "The operator encounters foothold establishment as the pre-execution staging a threat actor holds during the operation, distinct from the strategic leave-behind assessed in the Aftermath phase.",
           "observed_contexts": [
             "living-off-the-land footholds in US critical infrastructure attributed to Volt Typhoon"
           ],
@@ -62158,7 +62158,7 @@
               ]
             }
           ],
-          "field_notes": "Process manipulation is the signature cyber-physical execution behavior, ranging from abrupt commands to deliberately gradual drift that evades operator attention.",
+          "field_notes": "The operator meets process manipulation as the signature cyber-physical execution behavior, ranging from abrupt commands to deliberately gradual drift that evades operator attention.",
           "observed_contexts": [
             "Stuxnet's over-speed and over-pressure manipulation of centrifuges while reporting normal values"
           ],
@@ -62975,7 +62975,7 @@
               ]
             }
           ],
-          "field_notes": "View falsification blinds or misleads the operator, and the ICS doctrine distinguishes manipulating the view from denying it entirely.",
+          "field_notes": "View falsification blinds or misleads the operator, manipulating what the control room sees rather than denying the view outright.",
           "observed_contexts": [
             "Stuxnet's replay of normal sensor readings to the control room during the attack"
           ],
