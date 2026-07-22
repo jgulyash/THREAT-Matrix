@@ -17,7 +17,7 @@ That's how I approach every problem: find the gap, build the thing that closes i
  
 ## What the THREAT Matrix Design and Build Demonstrates
  
-**Operational Depth and Analytical Methodology:** The tactic taxonomy was built using behavioral analysis methodology — function-first naming, actor-goal framing, phase conditionality — drawn from law enforcement and intelligence community standards for threat characterization. Every tactic name describes what an adversary *does* and each response protocol *assists* analysts and investigators mitigate threat activity with source-based claims.
+**Operational Depth and Analytical Methodology:** The tactic taxonomy was built using behavioral analysis methodology — function-first naming, actor-goal framing, phase conditionality — drawn from law enforcement and intelligence community standards for threat characterization. Every tactic name describes what a threat actor *does* and each response protocol *assists* analysts and investigators mitigate threat activity with source-based claims.
  
 **Cross-Domain Synthesis:** Each tactic is accompanied by behavioral descriptions, actor applicability, phase placement, and Cyber-Physical Nexus (CPN) and AI-Initiated-Physical (AIP) tagging. The CPN and AIP tagging and four-vector AI architecture reflect sustained analysis of where physical and cyber threat intelligence converge and diverge, allowing for mapping to cyber and AI-focused frameworks.
  

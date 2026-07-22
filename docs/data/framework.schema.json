@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jgulyash.github.io/THREAT-Matrix/data/framework.schema.json",
   "title": "THREAT Matrix Framework Schema",
-  "description": "JSON Schema for the THREAT Matrix framework.json canonical artifact. THREAT Matrix is an AI-native operational ontology for physical adversary behavior. The schema is the public contract for consumers (RAG systems, AI agents, downstream security tooling). Field values must describe a property of the indicator/tactic type, not of any specific case or assessment. See CONTRIBUTING.md \"Schema design principles\" for the full rule.",
+  "description": "JSON Schema for the THREAT Matrix framework.json canonical artifact. THREAT Matrix is an AI-native operational ontology for physical threat actor behavior. The schema is the public contract for consumers (RAG systems, AI agents, downstream security tooling). Field values must describe a property of the indicator/tactic type, not of any specific case or assessment. See CONTRIBUTING.md \"Schema design principles\" for the full rule.",
   "type": "object",
   "required": [
     "name",
@@ -37,11 +37,11 @@
     },
     "matrices": {
       "type": "object",
-      "description": "Four target matrices: person, facility, organization, infrastructure. Each matrix contains tactics, an optional scope sentence describing the primary adversary objective that places a tactic in that matrix. The matrices container also carries an optional boundary_rule describing the framework-vs-operational partition principle. boundary_rule and scope are type-level statements; they do not affect schema validity for matrices that omit them.",
+      "description": "Four target matrices: person, facility, organization, infrastructure. Each matrix contains tactics, an optional scope sentence describing the primary threat actor objective that places a tactic in that matrix. The matrices container also carries an optional boundary_rule describing the framework-vs-operational partition principle. boundary_rule and scope are type-level statements; they do not affect schema validity for matrices that omit them.",
       "properties": {
         "boundary_rule": {
           "type": "string",
-          "description": "Framework-vs-operational boundary principle governing matrix placement. Authoring-time: one matrix per tactic, set by the adversary's primary objective. Operational-time: real incidents may invoke tactics from multiple matrices via Detection Mesh cross-references (correlates_with at the indicator level). Type-level statement of the framework's organizing principle."
+          "description": "Framework-vs-operational boundary principle governing matrix placement. Authoring-time: one matrix per tactic, set by the threat actor's primary objective. Operational-time: real incidents may invoke tactics from multiple matrices via Detection Mesh cross-references (correlates_with at the indicator level). Type-level statement of the framework's organizing principle."
         }
       },
       "patternProperties": {
@@ -56,7 +56,7 @@
             },
             "scope": {
               "type": "string",
-              "description": "Canonical scope sentence for this matrix, expressed in WHAT/WHY/WHERE terms. Defines the primary adversary objective that places a tactic in this matrix at authoring time. Type-level field; not case-specific. See matrices.boundary_rule for the framework-vs-operational distinction."
+              "description": "Canonical scope sentence for this matrix, expressed in WHAT/WHY/WHERE terms. Defines the primary threat actor objective that places a tactic in this matrix at authoring time. Type-level field; not case-specific. See matrices.boundary_rule for the framework-vs-operational distinction."
             }
           }
         }
@@ -128,7 +128,7 @@
     },
     "phase_mappings": {
       "type": "object",
-      "description": "Cross-walk from THREAT Matrix phases to NTAC, Calhoun-Weston, CERT, Cyber Kill Chain, MITRE ATT&CK, and MITRE ATLAS stages. Enables AI/RAG cross-framework interoperability across physical, cyber, and AI-systems adversary models.",
+      "description": "Cross-walk from THREAT Matrix phases to NTAC, Calhoun-Weston, CERT, Cyber Kill Chain, MITRE ATT&CK, and MITRE ATLAS stages. Enables AI/RAG cross-framework interoperability across physical, cyber, and AI-systems threat actor models.",
       "patternProperties": {
         "^phase_[1-4]_(target_development|mobilization|execution|aftermath)$": {
           "type": "object",
@@ -796,7 +796,7 @@
             "weakly_inferred",
             "unknown"
           ],
-          "description": "Optional. Incident-level annotation of the confidence with which the adversary's primary objective (which sets matrix placement per matrices.boundary_rule) is established. stated = claimed responsibility or manifested intent. strongly_inferred = operational evidence overwhelming. weakly_inferred = operational evidence ambiguous. unknown = no basis for inference; matrix placement defaults to the matrix containing the tactic that produced the most observable consequence (see matrices.boundary_rule). Full IRR protocol for this field deferred to V1.3."
+          "description": "Optional. Incident-level annotation of the confidence with which the threat actor's primary objective (which sets matrix placement per matrices.boundary_rule) is established. stated = claimed responsibility or manifested intent. strongly_inferred = operational evidence overwhelming. weakly_inferred = operational evidence ambiguous. unknown = no basis for inference; matrix placement defaults to the matrix containing the tactic that produced the most observable consequence (see matrices.boundary_rule). Full IRR protocol for this field deferred to V1.3."
         },
         "instance_conditioning_hints": {
           "type": "object",

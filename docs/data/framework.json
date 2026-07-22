@@ -5,7 +5,7 @@
   "schema_version": "1.4.0",
   "license": "MIT",
   "matrices": {
-    "boundary_rule": "Each tactic in this catalog is placed in exactly one matrix at authoring time, determined by the adversary's primary objective. The WHAT/WHY/WHERE separation is the disambiguation tool for the People matrix specifically; for Facility, Organization, and Infrastructure, WHERE collapses into WHAT and the boundary is set by what the adversary's primary objective targets. Motivation lives in actor profiles, not in matrix placement. Real-world incidents may legitimately invoke tactics from multiple matrices simultaneously; cross-matrix coverage is expressed through the Detection Mesh via indicator correlates_with references. When a downstream consumer requires a single primary-matrix call per incident, default to the matrix containing the tactic that achieved the adversary's terminal objective; ties broken by precedence People > Facilities > Organizations > Infrastructure. Where the adversary's primary objective is uncertain or unknown, primary-matrix placement defaults to the matrix containing the tactic that produced the most observable consequence; the incident-level confidence of this inference is annotated separately via primary_objective_evidence_tier. Consumers may override.",
+    "boundary_rule": "Each tactic in this catalog is placed in exactly one matrix at authoring time, determined by the threat actor's primary objective. The WHAT/WHY/WHERE separation is the disambiguation tool for the People matrix specifically; for Facility, Organization, and Infrastructure, WHERE collapses into WHAT and the boundary is set by what the threat actor's primary objective targets. Motivation lives in actor profiles, not in matrix placement. Real-world incidents may legitimately invoke tactics from multiple matrices simultaneously; cross-matrix coverage is expressed through the Detection Mesh via indicator correlates_with references. When a downstream consumer requires a single primary-matrix call per incident, default to the matrix containing the tactic that achieved the threat actor's terminal objective; ties broken by precedence People > Facilities > Organizations > Infrastructure. Where the threat actor's primary objective is uncertain or unknown, primary-matrix placement defaults to the matrix containing the tactic that produced the most observable consequence; the incident-level confidence of this inference is annotated separately via primary_objective_evidence_tier. Consumers may override.",
     "person": {
       "tactics": [
         {
@@ -268,7 +268,7 @@
               "cost": "low",
               "complexity": "low",
               "time_to_implement": "days",
-              "limitations": "Cannot eliminate all public records. Determined adversary can still aggregate partial information from multiple sources.",
+              "limitations": "Cannot eliminate all public records. Determined threat actor can still aggregate partial information from multiple sources.",
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -886,7 +886,7 @@
               "phase_relevance": [
                 "target_development"
               ],
-              "limitations": "Public records (court filings, property records, voter registration) cannot be fully removed; partial reduction raises adversary effort but does not eliminate the surface",
+              "limitations": "Public records (court filings, property records, voter registration) cannot be fully removed; partial reduction raises threat actor effort but does not eliminate the surface",
               "compensates_for": [
                 "CM-0103-04"
               ],
@@ -1535,7 +1535,7 @@
                 "target_development",
                 "mobilization"
               ],
-              "limitations": "Detection success depends on operator skill and adversary tradecraft; sophisticated subjects rotate observation positions to defeat surveillance detection",
+              "limitations": "Detection success depends on operator skill and threat actor tradecraft; sophisticated subjects rotate observation positions to defeat surveillance detection",
               "compensates_for": [
                 "CM-0103-03"
               ],
@@ -1576,7 +1576,7 @@
               "phase_relevance": [
                 "target_development"
               ],
-              "limitations": "Public records (court filings, property records, voter registration) cannot be fully removed; partial reduction raises adversary effort but does not eliminate the surface",
+              "limitations": "Public records (court filings, property records, voter registration) cannot be fully removed; partial reduction raises threat actor effort but does not eliminate the surface",
               "compensates_for": [
                 "CM-0103-01"
               ],
@@ -6572,7 +6572,7 @@
           "notes": "Gaining higher-tier physical access through deception, social engineering, or credential abuse rather than force. Actor obtains access rights or physical proximity that their actual status does not authorize, vendor badge, escort manipulation, insider assistance. Distinct from Barrier Defeat (TM0302), which uses force.",
           "cpn": true,
           "cpn_id": "CPN-0205",
-          "cpn_notes": "Cloned access credentials, spoofed caller ID, and fabricated digital authorization documents enable access elevation without physical contact. Attackers may use digitally-generated fake work orders or appointment confirmations to pass social engineering checkpoints.",
+          "cpn_notes": "Cloned access credentials, spoofed caller ID, and fabricated digital authorization documents enable access elevation without physical contact. Threat actors may use digitally-generated fake work orders or appointment confirmations to pass social engineering checkpoints.",
           "indicators": [
             {
               "id": "IND-0205-01",
@@ -11115,7 +11115,7 @@
               "cost": "medium",
               "complexity": "high",
               "time_to_implement": "months",
-              "limitations": "Sophisticated adversary can disable tamper detection as part of the suppression. Alerts are only useful if monitored in real time by personnel who can act.",
+              "limitations": "Sophisticated threat actor can disable tamper detection as part of the suppression. Alerts are only useful if monitored in real time by personnel who can act.",
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "LLNL-TR-858139",
@@ -11294,7 +11294,7 @@
                 "Failed control attempt: actor issued instructions bystanders ignored, or lost crowd control, and had to abandon the management effort.",
                 "Clumsy protector engagement: struggle with security personnel that was prolonged, indecisive, or produced unintended lethal outcome rather than clean neutralization.",
                 "Deception collapse: pretext immediately disbelieved; bystanders recognized the incident and fled or intervened.",
-                "Exposure by default: actor accepted full bystander visibility because no containment or deception capability was available, consistent with an unsophisticated high-tempo attacker.",
+                "Exposure by default: actor accepted full bystander visibility because no containment or deception capability was available, consistent with an unsophisticated high-tempo threat actor.",
                 "Single-mode rigidity: actor could only shout threats; no capacity to disperse, deceive, or neutralize when that one mode failed.",
                 "Management-versus-action tradeoff: actor had to stop advancing on the target to deal with bystanders, indicating no bandwidth to do both."
               ]
@@ -12167,7 +12167,7 @@
             {
               "id": "RP-0307-02",
               "trigger": "Post-incident counter-surveillance forensic recovery: recovered devices, drone wreckage, spotter identification, digital infrastructure traces",
-              "action": "Coordinate forensic recovery with law enforcement under chain-of-custody discipline. Document the counter-surveillance signature for inclusion in adversary tradecraft database. Brief the threat assessment team on observed methodology. Coordinate with information-sharing partners on signature recognition.",
+              "action": "Coordinate forensic recovery with law enforcement under chain-of-custody discipline. Document the counter-surveillance signature for inclusion in threat actor tradecraft database. Brief the threat assessment team on observed methodology. Coordinate with information-sharing partners on signature recognition.",
               "stakeholders": [
                 "threat_management_team",
                 "law_enforcement",
@@ -12175,7 +12175,7 @@
                 "legal"
               ],
               "priority": "priority",
-              "escalation_trigger": "Forensic findings reveal connection to known organized adversary or expanded operational network.",
+              "escalation_trigger": "Forensic findings reveal connection to known organized threat actor or expanded operational network.",
               "coordinates_with": [
                 "RP-0402-01"
               ],
@@ -12298,7 +12298,7 @@
           "notes": "Real-time coordination among operation members during execution: signaling timing, position, role completion, and abort/continue decisions. For solo actors this tactic is absent. For multi-actor operations, operational communication is the nervous system of execution; its failure cascades across all other Phase 3 tactics.",
           "cpn": true,
           "cpn_id": "CPN-0308",
-          "cpn_notes": "Encrypted communications apps, pre-arranged signal codes via SMS, and covert earpiece systems are standard operational communications infrastructure. Radio systems can be jammed by adversaries; encrypted data communications provide more resilient coordination.",
+          "cpn_notes": "Encrypted communications apps, pre-arranged signal codes via SMS, and covert earpiece systems are standard operational communications infrastructure. Radio systems can be jammed by threat actors; encrypted data communications provide more resilient coordination.",
           "indicators": [
             {
               "id": "IND-0308-01",
@@ -12474,7 +12474,7 @@
             },
             {
               "id": "CM-0308-02",
-              "measure": "Maintain organizational counter-jamming infrastructure including redundant communications, RF surveillance, and rapid degradation reporting that may also detect adversary communications activity",
+              "measure": "Maintain organizational counter-jamming infrastructure including redundant communications, RF surveillance, and rapid degradation reporting that may also detect threat actor communications activity",
               "category": "preventive",
               "domain": "technical_monitoring",
               "cost": "medium",
@@ -12483,7 +12483,7 @@
               "phase_relevance": [
                 "execution"
               ],
-              "limitations": "Counter-jamming infrastructure has high recurring cost and requires sustained operational tempo; sophisticated adversaries rotate frequencies and modulation to defeat detection",
+              "limitations": "Counter-jamming infrastructure has high recurring cost and requires sustained operational tempo; sophisticated threat actors rotate frequencies and modulation to defeat detection",
               "compensates_for": [
                 "CM-0305-01"
               ],
@@ -12494,7 +12494,7 @@
             },
             {
               "id": "CM-0308-03",
-              "measure": "Conduct after-action communications analysis on incident timelines to reconstruct accomplice coordination patterns, refine future detection methodology, and inform adversary tradecraft documentation",
+              "measure": "Conduct after-action communications analysis on incident timelines to reconstruct accomplice coordination patterns, refine future detection methodology, and inform threat actor tradecraft documentation",
               "category": "corrective",
               "domain": "policy_procedure",
               "cost": "medium",
@@ -12503,7 +12503,7 @@
               "phase_relevance": [
                 "aftermath"
               ],
-              "limitations": "Reconstruction depends on preserved evidence: recovered devices, CCTV footage, witness accounts; adversary anti-forensic discipline can erase the communications signature entirely",
+              "limitations": "Reconstruction depends on preserved evidence: recovered devices, CCTV footage, witness accounts; threat actor anti-forensic discipline can erase the communications signature entirely",
               "compensates_for": [],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -12512,7 +12512,7 @@
             },
             {
               "id": "CM-0308-04",
-              "measure": "Establish information sharing with law enforcement and intelligence partners on adversary communications signatures observed in similar prior cases to support pattern recognition",
+              "measure": "Establish information sharing with law enforcement and intelligence partners on threat actor communications signatures observed in similar prior cases to support pattern recognition",
               "category": "preventive",
               "domain": "policy_procedure",
               "cost": "low",
@@ -12523,7 +12523,7 @@
                 "mobilization",
                 "execution"
               ],
-              "limitations": "Information-sharing depth depends on jurisdiction, classification, and partner relationships; signatures evolve as adversaries adapt to known detection methods",
+              "limitations": "Information-sharing depth depends on jurisdiction, classification, and partner relationships; signatures evolve as threat actors adapt to known detection methods",
               "compensates_for": [],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -12618,7 +12618,7 @@
                 "executive_leadership"
               ],
               "priority": "urgent",
-              "escalation_trigger": "Communications pattern suggests broader network involvement OR signal traces tie to known adversary group.",
+              "escalation_trigger": "Communications pattern suggests broader network involvement OR signal traces tie to known threat actor group.",
               "coordinates_with": [
                 "RP-0301-01",
                 "RP-0305-01"
@@ -12633,7 +12633,7 @@
             {
               "id": "RP-0308-02",
               "trigger": "Post-incident communications forensic analysis: recovered devices, network logs, intercepted exchanges, witness accounts of observed signaling",
-              "action": "Coordinate forensic recovery with law enforcement under chain-of-custody discipline. Reconstruct the operational communications timeline. Identify accomplice nodes and signal patterns. Brief the threat assessment team on adversary methodology. Update detection methodology and information-sharing posture based on findings.",
+              "action": "Coordinate forensic recovery with law enforcement under chain-of-custody discipline. Reconstruct the operational communications timeline. Identify accomplice nodes and signal patterns. Brief the threat assessment team on threat actor methodology. Update detection methodology and information-sharing posture based on findings.",
               "stakeholders": [
                 "threat_management_team",
                 "law_enforcement",
@@ -13977,7 +13977,7 @@
               "phase_relevance": [
                 "aftermath"
               ],
-              "limitations": "Pattern documentation lags adversary behavior; signatures characteristic of one threat actor class may not generalize to others",
+              "limitations": "Pattern documentation lags threat actor behavior; signatures characteristic of one threat actor class may not generalize to others",
               "compensates_for": [],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -14572,7 +14572,7 @@
                 "executive_leadership"
               ],
               "priority": "priority",
-              "escalation_trigger": "Network protection signature ties to known organized adversary OR cross-border movement initiated.",
+              "escalation_trigger": "Network protection signature ties to known organized threat actor OR cross-border movement initiated.",
               "coordinates_with": [
                 "RP-0402-01",
                 "RP-0401-02"
@@ -14587,7 +14587,7 @@
             {
               "id": "RP-0404-02",
               "trigger": "Sustained network-protection discipline detected during ongoing investigation indicating organized operational sophistication and broader network involvement",
-              "action": "Treat the network-protection pattern as diagnostic input to threat actor profile and adjust investigative posture accordingly. Coordinate with intelligence-sharing partners on signature recognition. Document the network's discipline pattern for inclusion in adversary tradecraft database. Consider expanded legal process where evidentiary support permits.",
+              "action": "Treat the network-protection pattern as diagnostic input to threat actor profile and adjust investigative posture accordingly. Coordinate with intelligence-sharing partners on signature recognition. Document the network's discipline pattern for inclusion in threat actor tradecraft database. Consider expanded legal process where evidentiary support permits.",
               "stakeholders": [
                 "threat_management_team",
                 "law_enforcement",
@@ -15174,7 +15174,7 @@
           "phase": 4,
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
-          "notes": "Adversary evaluation of what worked, what failed, and what must change for future operations. After-Action Assessment is present only for persistent, organized actors with intent to operate again. It closes the Operational Feedback Loop, the output of this tactic feeds directly into Phase 1 Target Development for the next operation. Lone actors and opportunity-based actors typically do not execute this tactic.",
+          "notes": "Threat actor evaluation of what worked, what failed, and what must change for future operations. After-Action Assessment is present only for persistent, organized actors with intent to operate again. It closes the Operational Feedback Loop, the output of this tactic feeds directly into Phase 1 Target Development for the next operation. Lone actors and opportunity-based actors typically do not execute this tactic.",
           "cpn": false,
           "cpn_notes": null,
           "indicators": [
@@ -15362,7 +15362,7 @@
             },
             {
               "id": "CM-0406-03",
-              "measure": "Establish information-sharing with law enforcement and intelligence partners on adversary methodology evolution to enable detection of post-AAR refinements before they are operationally deployed",
+              "measure": "Establish information-sharing with law enforcement and intelligence partners on threat actor methodology evolution to enable detection of post-AAR refinements before they are operationally deployed",
               "category": "preventive",
               "domain": "policy_procedure",
               "cost": "low",
@@ -15380,7 +15380,7 @@
             },
             {
               "id": "CM-0406-04",
-              "measure": "Maintain detection methodology evolution at a tempo that matches or exceeds adversary AAR cycles: defensive learning must not lag offensive learning",
+              "measure": "Maintain detection methodology evolution at a tempo that matches or exceeds threat actor AAR cycles: defensive learning must not lag offensive learning",
               "category": "preventive",
               "domain": "policy_procedure",
               "cost": "medium",
@@ -16926,7 +16926,7 @@
           "evidence_basis": "hybrid"
         }
       ],
-      "scope": "Tactics centered on one or more human beings as the primary target. The adversary's primary objective is harm, control, coercion, or surveillance directed at people. Setting and motivation are separate dimensions and do not change matrix placement."
+      "scope": "Tactics centered on one or more human beings as the primary target. The threat actor's primary objective is harm, control, coercion, or surveillance directed at people. Setting and motivation are separate dimensions and do not change matrix placement."
     },
     "facility": {
       "tactics": [
@@ -18741,7 +18741,7 @@
             },
             {
               "id": "CM-F0104-04",
-              "measure": "Conduct a structural vulnerability and progressive-collapse assessment of the facility, hardening standoff, load paths, and utility- and fire-system access to reduce the value of acquired drawings to an attacker",
+              "measure": "Conduct a structural vulnerability and progressive-collapse assessment of the facility, hardening standoff, load paths, and utility- and fire-system access to reduce the value of acquired drawings to a threat actor",
               "category": "preventive",
               "domain": "environmental_design",
               "cost": "high",
@@ -20786,7 +20786,7 @@
               ]
             }
           ],
-          "field_notes": "Cover construction is rarely caught in the building of it; it is inferred when a role claim does not survive a call-back or when a badge, uniform, or work order is a shade wrong. The clearest early tell is a pretext that maps too neatly onto the exact access an attacker would want, the after-hours HVAC tech, the courier with dock access, the inspector who needs the mechanical room, paired with questions that run past the claimed job. Good cover is cheap to fake at the prop level (a vest and a clipboard) and expensive to fake at the verification level (a live dispatcher and a matching ticket), so the single most productive defense is a habit of call-back verification against the facility's own records rather than face-value acceptance. The hard case is cover employment: an actor in a genuine role has legitimate standing, and the tell shifts from credential-checking to scope-of-behavior, access sought beyond the job.",
+          "field_notes": "Cover construction is rarely caught in the building of it; it is inferred when a role claim does not survive a call-back or when a badge, uniform, or work order is a shade wrong. The clearest early tell is a pretext that maps too neatly onto the exact access a threat actor would want, the after-hours HVAC tech, the courier with dock access, the inspector who needs the mechanical room, paired with questions that run past the claimed job. Good cover is cheap to fake at the prop level (a vest and a clipboard) and expensive to fake at the verification level (a live dispatcher and a matching ticket), so the single most productive defense is a habit of call-back verification against the facility's own records rather than face-value acceptance. The hard case is cover employment: an actor in a genuine role has legitimate standing, and the tell shifts from credential-checking to scope-of-behavior, access sought beyond the job.",
           "observed_contexts": [
             "actor presenting as a utility or fire-inspection technician with a plausible clipboard and hi-vis vest to gain unescorted interior access to a facility",
             "registration of a shell contracting entity with a thin web presence used to solicit a walkthrough of a targeted site",
@@ -27115,7 +27115,7 @@
               ]
             }
           ],
-          "field_notes": "Explosive execution against a facility usually shows its hand only in the final window: an item or vehicle left where it should not be, an actor taking cover, a claim posted minutes out. Because the method is a mass method, the default assumption for an occupied or public site is a population target, and the casualty floor applies the moment a device is initiated with people present. The two hardest problems are the short interdiction window and the secondary device: attackers who intend a high toll set a second device for the people who evacuate and the responders who arrive, so evacuation routes and assembly areas are treated as part of the threat space, not the safe space. Standoff is the single most protective control against the vehicle-borne case, and unattended-item discipline is the most protective against the emplaced-package case, but both fail against a credentialed insider who carries a device inside the envelope.",
+          "field_notes": "Explosive execution against a facility usually shows its hand only in the final window: an item or vehicle left where it should not be, an actor taking cover, a claim posted minutes out. Because the method is a mass method, the default assumption for an occupied or public site is a population target, and the casualty floor applies the moment a device is initiated with people present. The two hardest problems are the short interdiction window and the secondary device: threat actors who intend a high toll set a second device for the people who evacuate and the responders who arrive, so evacuation routes and assembly areas are treated as part of the threat space, not the safe space. Standoff is the single most protective control against the vehicle-borne case, and unattended-item discipline is the most protective against the emplaced-package case, but both fail against a credentialed insider who carries a device inside the envelope.",
           "observed_contexts": [
             "vehicle left in a loading zone against a no-standoff wall of an occupied building and abandoned on foot, captured on CCTV minutes before a blast",
             "unattended package placed inside an occupied lobby near an entrance flow, recognized by trained staff who initiated evacuation before EOD arrival",
@@ -28163,7 +28163,7 @@
                 "Breaching means matched to the target: pry bars, cutting tools, a hydraulic ram, or a battering implement selected for the specific doors, locks, or glazing in place.",
                 "Force sufficient to overpower staff: numbers, weapons, or physical dominance adequate to defeat the guard force or reception controls at the entry point.",
                 "Standoff-gap exploitation: the actor's approach uses a known barrier gap, an unprotected pedestrian entrance, or an unhardened glazed frontage.",
-                "Coordinated breach: a ram or forced entry paired with a second element (dismounted attackers, a follow-on device, or diversion) indicating rehearsed capability.",
+                "Coordinated breach: a ram or forced entry paired with a second element (dismounted threat actors, a follow-on device, or diversion) indicating rehearsed capability.",
                 "Speed and commitment through the barrier: the actor maintains momentum through an initial obstacle rather than stalling, showing the method was sized to the defense."
               ],
               "low_signal_anchors": [
@@ -28574,7 +28574,7 @@
                 "communications"
               ],
               "priority": "immediate",
-              "escalation_trigger": "Casualties present, the actor dismounts to continue on foot, a follow-on device or second attacker appears, or the breach opens the way to the occupied interior",
+              "escalation_trigger": "Casualties present, the actor dismounts to continue on foot, a follow-on device or second threat actor appears, or the breach opens the way to the occupied interior",
               "coordinates_with": [
                 "RP-F0305-02",
                 "RP-F0302-01"
@@ -28610,7 +28610,7 @@
           "observed_contexts": [
             "vehicle deliberately accelerated into a pedestrian queue at an occupied entrance during peak hours, tracking the crowd with no braking before impact",
             "forced entry in which the actor overpowered a lone reception guard to breach a controlled lobby and advance into the occupied interior",
-            "heavy vehicle rammed a perimeter gate and bollard line to defeat standoff, followed by dismounted attackers moving toward the building",
+            "heavy vehicle rammed a perimeter gate and bollard line to defeat standoff, followed by dismounted threat actors moving toward the building",
             "[literature: CISA-HVM-2024 / ASTM-F2656-2020 pattern: hostile-vehicle attacks on unprotected pedestrian frontages defeating inadequate or absent standoff barriers]"
           ],
           "evidence_basis": "hybrid"
@@ -31043,7 +31043,7 @@
               ]
             }
           ],
-          "field_notes": "Withdrawal is where premeditation shows most clearly after the fact: a planned attacker gets off the X along a line they already know, and an improviser runs in whatever direction is open. The clearest tells are separation of transportation (a switch vehicle staged a few blocks out), an appearance change, and timing that rides the evacuation and response chaos rather than fighting it. Most of the signal is reconstructed backward from cameras, plate readers, and witness vectors, so evidence-retention windows and prompt canvassing decide how much is recovered. Containment almost always trails a fast, prepared egress, which is why the durable value is pattern reconstruction: the route the actor chose, the seams they used, and how to close them before the next one. Panic flight and ordinary evacuation are the dominant false positives, what separates them is a consistent vector, preparation artifacts, and counter-tracking discipline.",
+          "field_notes": "Withdrawal is where premeditation shows most clearly after the fact: a planned threat actor gets off the X along a line they already know, and an improviser runs in whatever direction is open. The clearest tells are separation of transportation (a switch vehicle staged a few blocks out), an appearance change, and timing that rides the evacuation and response chaos rather than fighting it. Most of the signal is reconstructed backward from cameras, plate readers, and witness vectors, so evidence-retention windows and prompt canvassing decide how much is recovered. Containment almost always trails a fast, prepared egress, which is why the durable value is pattern reconstruction: the route the actor chose, the seams they used, and how to close them before the next one. Panic flight and ordinary evacuation are the dominant false positives, what separates them is a consistent vector, preparation artifacts, and counter-tracking discipline.",
           "observed_contexts": [
             "arson case where the actor left along a pre-driven route and switched to a second vehicle two blocks from the site, breaking the camera trail before a perimeter formed",
             "active-assailant incident where the assailant blended into the evacuating crowd and exited the area before responders established containment",
@@ -32976,7 +32976,7 @@
           "phase": 4,
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
-          "notes": "The threat actor's own lessons-learned review of a completed facility attack, conducted to improve future operations. The actor studies what worked and what failed, the effectiveness of the method against the structure, the defender's response timeline, the media reach and framing of the event, and the tradecraft errors that created exposure. Distinct from Attribution Declaration (claiming the act publicly) and from Audience Amplification (spreading it for effect): after-action assessment is inward-facing and instrumental, a critique aimed at the next operation rather than at an audience. The signal is the actor treating the completed attack as a case study (collecting coverage, timing the response, and recording what to change) which marks a persistent, learning adversary rather than a spent one.",
+          "notes": "The threat actor's own lessons-learned review of a completed facility attack, conducted to improve future operations. The actor studies what worked and what failed, the effectiveness of the method against the structure, the defender's response timeline, the media reach and framing of the event, and the tradecraft errors that created exposure. Distinct from Attribution Declaration (claiming the act publicly) and from Audience Amplification (spreading it for effect): after-action assessment is inward-facing and instrumental, a critique aimed at the next operation rather than at an audience. The signal is the actor treating the completed attack as a case study (collecting coverage, timing the response, and recording what to change) which marks a persistent, learning threat actor rather than a spent one.",
           "cpn": true,
           "cpn_id": "CPN-F0406",
           "cpn_notes": "After-action assessment is increasingly conducted through open-source channels: the actor mines published news coverage, released incident timelines, official after-action reports, court filings, and social-media footage of the aftermath to reconstruct the defender response and validate targeting effectiveness without returning to the site.",
@@ -33066,7 +33066,7 @@
                 "Academic and research purpose: students and researchers of terrorism, emergency response, or security studying the attack as a case for prevention."
               ]
             },
-            "threshold_guidance": "Findings correlating with renewed target-development or staging behaviors elsewhere: assessment lessons feeding fresh site profiling, accelerant or precursor re-acquisition, or a stated next-target selection: warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility indicator with an available legitimate explanation sits at the monitoring tier.\n\nA single high-credibility indicator with operational specificity (a structured critique of the defender response aimed at a next operation) sits at the investigation tier.\n\nCross-modal corroboration: archived coverage plus recorded critique plus network dissemination against the same completed attack: sits at the elevation tier and warrants treating as active preparation for renewed operations.\n\nIndicators persisting despite implemented countermeasures sit at the committed-actor tier, suggesting a learning adversary re-entering the planning cycle.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification and a re-attack risk assessment; elevation triggers countermeasure activation and defender-gap remediation identified in the actor's own critique; the committed-actor tier triggers a defensive-posture upgrade across the facility class; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
+            "threshold_guidance": "Findings correlating with renewed target-development or staging behaviors elsewhere: assessment lessons feeding fresh site profiling, accelerant or precursor re-acquisition, or a stated next-target selection: warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the indicator, breadth across modalities, and persistence over time.\n\nA single low-credibility indicator with an available legitimate explanation sits at the monitoring tier.\n\nA single high-credibility indicator with operational specificity (a structured critique of the defender response aimed at a next operation) sits at the investigation tier.\n\nCross-modal corroboration: archived coverage plus recorded critique plus network dissemination against the same completed attack: sits at the elevation tier and warrants treating as active preparation for renewed operations.\n\nIndicators persisting despite implemented countermeasures sit at the committed-actor tier, suggesting a learning threat actor re-entering the planning cycle.\n\nMultiple lower-priority indicators correlating temporally or modally may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and pattern-detection; investigation triggers actor-identification and a re-attack risk assessment; elevation triggers countermeasure activation and defender-gap remediation identified in the actor's own critique; the committed-actor tier triggers a defensive-posture upgrade across the facility class; a confirmed actor matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
             "escalation_priority": "Priority"
           },
           "indicators": [
@@ -33274,7 +33274,7 @@
             },
             {
               "id": "CM-F0406-02",
-              "measure": "Discipline the public release of after-action detail (response timelines, countermeasure specifics, and forensic methods) so official reporting does not hand a learning adversary a defender-gap roadmap",
+              "measure": "Discipline the public release of after-action detail (response timelines, countermeasure specifics, and forensic methods) so official reporting does not hand a learning threat actor a defender-gap roadmap",
               "category": "preventive",
               "domain": "policy_procedure",
               "cost": "low",
@@ -33310,7 +33310,7 @@
             },
             {
               "id": "CM-F0406-04",
-              "measure": "Maintain liaison with fusion centers and peer facilities to share observed post-incident learning behavior and lessons-dissemination patterns, flagging a persistent adversary re-entering the planning cycle",
+              "measure": "Maintain liaison with fusion centers and peer facilities to share observed post-incident learning behavior and lessons-dissemination patterns, flagging a persistent threat actor re-entering the planning cycle",
               "category": "detective",
               "domain": "policy_procedure",
               "cost": "low",
@@ -34873,7 +34873,7 @@
           "field_notes": "The claim is where an anonymous act becomes an attributable one, and the actor trades operational cover for the payoff of authorship: intimidation, recruitment, standing within a movement. The strongest early signal is not the loudest claim but the one carrying detail no one outside the act could know; opportunistic and hoax claims cluster around high-profile attacks and recite only what the press already published. Pre-staged material matters disproportionately: a manifesto scheduled to auto-publish, or a recorded statement recovered from a device, ties an actor to the act independent of the public claim and often reveals campaign intent before investigators would otherwise see it. Treat the forward-looking content of a verified claim (campaign framing, named next targets, calls to emulate) as the operational half of the signal; that is where a finished attack turns into a warning about the next one.",
           "observed_contexts": [
             "extremist actor posting a communique to a movement forum within hours of an arson at a clinic, claiming the act and framing it ideologically",
-            "attacker's pre-recorded manifesto auto-published to social platforms at the moment of a facility attack, recovered later from the actor's devices",
+            "threat actor's pre-recorded manifesto auto-published to social platforms at the moment of a facility attack, recovered later from the actor's devices",
             "spray-painted organizational symbol and slogan left at a firebombed site to signal authorship and movement affiliation",
             "[literature: CTC-INFRATERROR-2026 / FBI-HATECRIME-2024 pattern: post-attack claims and manifestos used to attribute, intimidate, and inspire emulation]"
           ],
@@ -34976,7 +34976,7 @@
                 "Legal and evidentiary authority: law enforcement, courts, and litigants preserving or circulating content for investigation or prosecution; platform trust-and-safety preserving evidence.",
                 "Academic and research purpose: terrorism researchers, archivists, and analysts collecting and studying propaganda under institutional review.",
                 "Counter-speech and prevention: civil-society groups, survivors, and P/CVE practitioners resharing to rebut or contextualize, not to amplify the actor's aims.",
-                "Bystander and community reaction: ordinary users sharing news, expressing shock, or checking on others without intent to extend the attacker's reach."
+                "Bystander and community reaction: ordinary users sharing news, expressing shock, or checking on others without intent to extend the threat actor's reach."
               ]
             },
             "threshold_guidance": "Findings correlating with an active or renewed threat: a secondary-device or re-attack signal, an explicit call to imitate naming a facility or class, or an amplification surge timed to an anniversary or ongoing campaign: warrant immediate activation of response protocols regardless of this tactic's internal tier.\n\nTier-determination for this tactic's findings depends on three factors: credibility of the amplification signal, breadth across platforms and networks, and persistence over time.\n\nA single low-credibility viral moment with an available organic explanation sits at the monitoring tier.\n\nA single high-credibility, actor-attributable release with reach-maximizing framing sits at the investigation tier.\n\nCross-platform corroboration: coordinated re-uploads, mirroring, and network re-circulation of the same package: sits at the elevation tier and warrants treating as an organized amplification campaign.\n\nAmplification persisting despite coordinated takedowns sits at the committed-network tier, suggesting durable propaganda capability and elevated copycat risk.\n\nMultiple lower-priority signals correlating temporally or across platforms may compose to a higher aggregate tier than any single finding warrants; consumer triage tooling should make this composition rule explicit.\n\nTier-triggered actions: monitoring triggers logging and reach tracking; investigation triggers network-identification and copycat-risk assessment; elevation triggers coordinated takedown and counter-messaging appropriate to the audience; the committed-network tier triggers referral for network disruption; a confirmed actor or network matching a known threat-actor profile at any tier warrants urgent law-enforcement coordination.",
@@ -35191,7 +35191,7 @@
             },
             {
               "id": "CM-F0410-02",
-              "measure": "Adopt a responsible-communication protocol with news media and staff: withhold the attacker's produced media, name, and manifesto, and deny the reach the amplification seeks (no-notoriety framing)",
+              "measure": "Adopt a responsible-communication protocol with news media and staff: withhold the threat actor's produced media, name, and manifesto, and deny the reach the amplification seeks (no-notoriety framing)",
               "category": "preventive",
               "domain": "policy_procedure",
               "cost": "low",
@@ -35335,7 +35335,7 @@
           ],
           "field_notes": "Amplification is where a single facility attack becomes a template. The tell is not that the attack was recorded, it is that the recording was engineered to travel: pre-staged media, a manifesto packaged for release, hashtags and re-uploads that keep it alive after the first takedown. The copycat effect is the real harm; a widely circulated attack lowers the threshold for the next actor and terrorizes a population far larger than the people in the building. The hard part for defenders is that most of the amplification looks like ordinary sharing and protected speech until it pairs with reach-maximizing tradecraft or an explicit call to imitate, and every takedown, counter-message, or news story risks handing the actor more of exactly the reach they wanted. No-notoriety discipline and fast, coordinated hashing beat arguing with the content.",
           "observed_contexts": [
-            "extremist attacker livestreaming an assault on a facility and releasing a pre-written manifesto packaged for immediate distribution across multiple platforms",
+            "extremist threat actor livestreaming an assault on a facility and releasing a pre-written manifesto packaged for immediate distribution across multiple platforms",
             "sympathizer network re-uploading and translating banned attack footage faster than platforms could hash and remove it",
             "arson case where the actor filmed the fire and pushed the clip with grievance hashtags to seed imitation against similar clinics",
             "[literature: CTC-INFRATERROR-2026 / FBI-HATECRIME-2024 pattern: post-attack propaganda circulation and copycat contagion following facility attacks]"
@@ -35434,7 +35434,7 @@
               ]
             },
             "false_positive_context": {
-              "criteria": "Many legitimate activities resemble symbolic messaging in the aftermath of an attack: a community memorial reproduces the very symbols the attacker used; journalism reporting the event reproduces its iconography; a date coincidence looks chosen when it was opportunistic. What distinguishes a false positive is whether the symbolic content originates with the actor and is directed at a community, versus originating with observers, mourners, or reporters processing the event.",
+              "criteria": "Many legitimate activities resemble symbolic messaging in the aftermath of an attack: a community memorial reproduces the very symbols the threat actor used; journalism reporting the event reproduces its iconography; a date coincidence looks chosen when it was opportunistic. What distinguishes a false positive is whether the symbolic content originates with the actor and is directed at a community, versus originating with observers, mourners, or reporters processing the event.",
               "contexts": [
                 "Memorial and mourning expression: vigils, tributes, and community responses that reproduce or reclaim symbols associated with the attack.",
                 "Journalistic and academic reproduction: reporters, researchers, and analysts documenting and interpreting the act's iconography and timing.",
@@ -35804,7 +35804,7 @@
           "observed_contexts": [
             "attack on a place of worship timed to a movement's anniversary, with an emblem left at the entrance and a manifesto released to aligned online channels within the hour",
             "clinic arson followed by messaging addressed directly to the community the facility served, framed as a warning that more would follow",
-            "attacker's released materials presenting the act as a template: instructional framing and coded references inviting emulation against similar sites",
+            "threat actor's released materials presenting the act as a template: instructional framing and coded references inviting emulation against similar sites",
             "[literature: FBI-HATECRIME-2024 / CTC-INFRATERROR-2026 pattern: ideological iconography and community-directed intimidation encoded into facility attacks and their communications]"
           ],
           "evidence_basis": "hybrid"
@@ -36295,7 +36295,7 @@
           "evidence_basis": "hybrid"
         }
       ],
-      "scope": "Tactics centered on a physical venue, structure, or built environment as the primary target. The adversary's primary objective is damage, destruction, denial, or symbolic action against the place itself. Incidental human harm in an unoccupied facility does not move the tactic to People."
+      "scope": "Tactics centered on a physical venue, structure, or built environment as the primary target. The threat actor's primary objective is damage, destruction, denial, or symbolic action against the place itself. Incidental human harm in an unoccupied facility does not move the tactic to People."
     },
     "organization": {
       "tactics": [
@@ -53487,7 +53487,7 @@
           ]
         }
       ],
-      "scope": "Tactics centered on an institution, mission, brand, or operational continuity as the primary target. The adversary's primary objective is disruption, delegitimization, infiltration, or coercion of what the organization does or represents, distinct from its facilities or its individuals."
+      "scope": "Tactics centered on an institution, mission, brand, or operational continuity as the primary target. The threat actor's primary objective is disruption, delegitimization, infiltration, or coercion of what the organization does or represents, distinct from its facilities or its individuals."
     },
     "infrastructure": {
       "tactics": [
@@ -53822,7 +53822,7 @@
               "phase_relevance": [
                 "target_development"
               ],
-              "limitations": "Hardening a known high-value node can confirm to an observing adversary that the asset is in fact critical, and cannot cover every consequential asset within budget.",
+              "limitations": "Hardening a known high-value node can confirm to an observing threat actor that the asset is in fact critical, and cannot cover every consequential asset within budget.",
               "compensates_for": [],
               "source_refs": [
                 "CISA-CFATS-2023",
@@ -55888,7 +55888,7 @@
             },
             {
               "id": "CM-I0106-04",
-              "measure": "Deploy ICS honeypots and decoy engineering assets that emulate PLCs, HMIs, and protocol services to detect adversaries testing or validating acquired ICS capabilities against realistic targets",
+              "measure": "Deploy ICS honeypots and decoy engineering assets that emulate PLCs, HMIs, and protocol services to detect threat actors testing or validating acquired ICS capabilities against realistic targets",
               "category": "deterrent",
               "domain": "technical_monitoring",
               "cost": "medium",
@@ -56311,7 +56311,7 @@
             },
             {
               "id": "CM-I0107-04",
-              "measure": "Deliver recurring awareness training that teaches employees and contractors how adversaries approach potential co-conspirators and how to decline, document, and escalate suspicious contacts",
+              "measure": "Deliver recurring awareness training that teaches employees and contractors how threat actors approach potential co-conspirators and how to decline, document, and escalate suspicious contacts",
               "category": "preventive",
               "domain": "training_awareness",
               "cost": "low",
@@ -56331,7 +56331,7 @@
           "response_protocols": [
             {
               "id": "RP-I0107-01",
-              "trigger": "One or more indicators of adversary network development are reported, including active solicitation of co-conspirators, requests for material support, or coordinated interest in access to a critical asset.",
+              "trigger": "One or more indicators of threat actor network development are reported, including active solicitation of co-conspirators, requests for material support, or coordinated interest in access to a critical asset.",
               "action": "Open or update the case. Conduct a preliminary assessment: (a) identify the individuals or online personas soliciting support and the specific asset, access, or capability they seek, (b) determine whether any employee, operator, or authorized contact has been approached or has responded. Corroborate reporting against access logs and established threat streams. Document all sourcing.",
               "stakeholders": [
                 "threat_management_team",
@@ -57153,7 +57153,7 @@
           "response_protocols": [
             {
               "id": "RP-I0109-01",
-              "trigger": "One or more indicators are reported that an adversary is reaching the target through a vendor, firmware, or remote-maintenance channel, such as a compromised update package or anomalous third-party remote access.",
+              "trigger": "One or more indicators are reported that a threat actor is reaching the target through a vendor, firmware, or remote-maintenance channel, such as a compromised update package or anomalous third-party remote access.",
               "action": "Open or update the case. Conduct a preliminary assessment: (a) identify the affected vendor, component, or maintenance pathway and the systems it touches, (b) determine whether the channel reaches operational technology or safety-critical functions. Coordinate with engineering and OT security to isolate or restrict the pathway pending verification. Document all sourcing.",
               "stakeholders": [
                 "threat_management_team",
@@ -57929,7 +57929,7 @@
               "phase_relevance": [
                 "mobilization"
               ],
-              "limitations": "Adversaries can source matching gear through resellers, secondhand markets, or gray channels that fall outside monitored supplier relationships.",
+              "limitations": "Threat actors can source matching gear through resellers, secondhand markets, or gray channels that fall outside monitored supplier relationships.",
               "compensates_for": [],
               "source_refs": [
                 "CISA-CFATS-2023",
@@ -57994,7 +57994,7 @@
           "response_protocols": [
             {
               "id": "RP-I0201-01",
-              "trigger": "Indicators suggest an adversary is dry-running the operation against the asset: staged approach or timing runs, repeated probing of access controls, or test interactions with security or safety systems that mimic the anticipated attack sequence.",
+              "trigger": "Indicators suggest a threat actor is dry-running the operation against the asset: staged approach or timing runs, repeated probing of access controls, or test interactions with security or safety systems that mimic the anticipated attack sequence.",
               "action": "Open or update the case and treat the activity as pre-operational rehearsal. Conduct assessment: (a) reconstruct the observed sequence and compare it against plausible attack scenarios for the asset, (b) correlate the activity with prior surveillance, access, or targeting indicators for the same actor, (c) validate that physical and cyber-physical controls covered in the rehearsal are hardened per NIST SP 800-82, (d) increase monitoring at the tested access points and brief operations and control-system staff. Document sourcing.",
               "stakeholders": [
                 "security_operations",
@@ -58827,7 +58827,7 @@
             {
               "id": "RP-I0203-01",
               "trigger": "Personnel report repeated fixed-position observers, staged vehicles conducting timed approaches, or photography of gates, cameras, and patrol patterns at a dispersed asset consistent with pre-attack surveillance.",
-              "action": "Activate the case. Take these steps: (a) direct protective operations to conduct discreet counter-surveillance and record vehicle descriptions, plates, timing, and observer positions without alerting the subjects, (b) task security operations to pull and preserve camera, access-control, and gate-sensor logs covering the reported window before any overwrite, (c) increase overt patrol presence and randomize patrol timing across the asset perimeter to degrade the adversary's pattern-of-life collection, (d) open a surveillance-detection log and correlate reported sightings against prior incidents to establish whether a campaign is underway.",
+              "action": "Activate the case. Take these steps: (a) direct protective operations to conduct discreet counter-surveillance and record vehicle descriptions, plates, timing, and observer positions without alerting the subjects, (b) task security operations to pull and preserve camera, access-control, and gate-sensor logs covering the reported window before any overwrite, (c) increase overt patrol presence and randomize patrol timing across the asset perimeter to degrade the threat actor's pattern-of-life collection, (d) open a surveillance-detection log and correlate reported sightings against prior incidents to establish whether a campaign is underway.",
               "stakeholders": [
                 "threat_management_team",
                 "protective_operations",
@@ -58846,7 +58846,7 @@
             {
               "id": "RP-I0203-02",
               "trigger": "Monitoring infrastructure shows sensor or camera feeds going dark, logging services stopped, or time gaps in access-control and monitoring records that do not match any scheduled maintenance at a dispersed site.",
-              "action": "Activate the case. Take these steps: (a) treat the logging gap as adversary counter-detection and immediately preserve surviving logs, sensor state, and configuration backups on write-protected media, (b) task IT security and security operations to determine whether feeds were physically disabled, network-isolated, or reconfigured, and restore monitoring from a known-good baseline, (c) fail over affected zones to redundant or manual observation, including on-site guard coverage, until automated monitoring is verified, (d) hunt for concurrent activity in the blind window using upstream network and physical records that the adversary could not reach.",
+              "action": "Activate the case. Take these steps: (a) treat the logging gap as threat actor counter-detection and immediately preserve surviving logs, sensor state, and configuration backups on write-protected media, (b) task IT security and security operations to determine whether feeds were physically disabled, network-isolated, or reconfigured, and restore monitoring from a known-good baseline, (c) fail over affected zones to redundant or manual observation, including on-site guard coverage, until automated monitoring is verified, (d) hunt for concurrent activity in the blind window using upstream network and physical records that the threat actor could not reach.",
               "stakeholders": [
                 "threat_management_team",
                 "security_operations",
@@ -59593,7 +59593,7 @@
               "phase_relevance": [
                 "mobilization"
               ],
-              "limitations": "MFA does not stop an adversary who hijacks an already-authenticated session or compromises the remote endpoint itself.",
+              "limitations": "MFA does not stop a threat actor who hijacks an already-authenticated session or compromises the remote endpoint itself.",
               "compensates_for": [],
               "source_refs": [
                 "NIST-SP800-82-2023",
@@ -59659,7 +59659,7 @@
             {
               "id": "RP-I0205-01",
               "trigger": "Security monitoring detects an unauthorized logical connection into the control network, such as an unexpected remote session, rogue VPN tunnel, or new access path bridging IT and OT zones.",
-              "action": "Activate the case. Take these steps: (a) task OT security and IT security to isolate the affected control-network segment at the boundary firewall or conduit while preserving volatile session and connection data, (b) direct operations control to shift impacted processes to manual or safe control and confirm no unauthorized commands have altered set points or logic, (c) revoke and reissue credentials, keys, and remote-access tokens associated with the intrusion path per NIST SP 800-82 access-control guidance, (d) preserve firewall, authentication, and historian logs and begin scoping how the adversary obtained the path.",
+              "action": "Activate the case. Take these steps: (a) task OT security and IT security to isolate the affected control-network segment at the boundary firewall or conduit while preserving volatile session and connection data, (b) direct operations control to shift impacted processes to manual or safe control and confirm no unauthorized commands have altered set points or logic, (c) revoke and reissue credentials, keys, and remote-access tokens associated with the intrusion path per NIST SP 800-82 access-control guidance, (d) preserve firewall, authentication, and historian logs and begin scoping how the threat actor obtained the path.",
               "stakeholders": [
                 "threat_management_team",
                 "ot_security",
@@ -59667,7 +59667,7 @@
                 "operations_control"
               ],
               "priority": "immediate",
-              "escalation_trigger": "Evidence shows the adversary issued control commands, modified logic, or moved laterally toward safety instrumented systems.",
+              "escalation_trigger": "Evidence shows the threat actor issued control commands, modified logic, or moved laterally toward safety instrumented systems.",
               "coordinates_with": [],
               "legal_notes": "Preserve authentication and session logs under chain of custody and coordinate with legal before disconnecting, as an unauthorized control-network intrusion is a reportable cyber event.",
               "source_refs": [
@@ -59677,7 +59677,7 @@
             },
             {
               "id": "RP-I0205-02",
-              "trigger": "Investigation finds a compromised vendor, remote-maintenance, or VPN account being used to reach the control network, or exposed control-network credentials confirmed in adversary hands.",
+              "trigger": "Investigation finds a compromised vendor, remote-maintenance, or VPN account being used to reach the control network, or exposed control-network credentials confirmed in threat actor hands.",
               "action": "Activate the case. Take these steps: (a) immediately disable the implicated vendor and remote-access accounts and terminate active sessions at the OT boundary, (b) task OT security and IT security to audit all standing remote-access paths, third-party connections, and dormant accounts for further misuse and enforce least-privilege and multifactor controls, (c) direct operations control to verify integrity of controller configurations and set points reachable from the compromised path, (d) notify the affected vendor and require credential reset and confirmation of remediation before restoring any external access.",
               "stakeholders": [
                 "threat_management_team",
@@ -60083,7 +60083,7 @@
                 "security_operations"
               ],
               "priority": "immediate",
-              "escalation_trigger": "Escalate if the adversary retains an active session, altered control logic is confirmed, or the process cannot be verified in a safe state.",
+              "escalation_trigger": "Escalate if the threat actor retains an active session, altered control logic is confirmed, or the process cannot be verified in a safe state.",
               "coordinates_with": [],
               "legal_notes": "Preserve device images and logs under chain of custody, as unauthorized control-system access may constitute a reportable cyber incident.",
               "source_refs": [
@@ -60485,7 +60485,7 @@
                 "operations_control"
               ],
               "priority": "immediate",
-              "escalation_trigger": "Escalate if the adversary reached any control-system device or a Level 1 or Level 0 safety zone.",
+              "escalation_trigger": "Escalate if the threat actor reached any control-system device or a Level 1 or Level 0 safety zone.",
               "coordinates_with": [],
               "legal_notes": "Retain cross-zone authentication and network records as evidence for potential law enforcement referral.",
               "source_refs": [
@@ -61726,7 +61726,7 @@
                 "it_security"
               ],
               "priority": "immediate",
-              "escalation_trigger": "The adversary foothold is confirmed to have reached the process control or safety network, or lateral movement continues despite initial containment.",
+              "escalation_trigger": "The threat actor foothold is confirmed to have reached the process control or safety network, or lateral movement continues despite initial containment.",
               "coordinates_with": [],
               "legal_notes": "Document containment actions and preserved artifacts to support incident reporting obligations and potential law-enforcement referral for the unauthorized access.",
               "source_refs": [
@@ -62074,7 +62074,7 @@
               "phase_relevance": [
                 "execution"
               ],
-              "limitations": "Validation logic is only as sound as the envelopes it encodes and an attacker with valid credentials operating within bounds can still cause harm.",
+              "limitations": "Validation logic is only as sound as the envelopes it encodes and a threat actor with valid credentials operating within bounds can still cause harm.",
               "compensates_for": [],
               "source_refs": [
                 "NIST-SP800-82-2023",
@@ -62110,7 +62110,7 @@
               "phase_relevance": [
                 "execution"
               ],
-              "limitations": "Change management governs sanctioned workflows and offers little protection against an attacker who bypasses the process by directly writing to the controller.",
+              "limitations": "Change management governs sanctioned workflows and offers little protection against a threat actor who bypasses the process by directly writing to the controller.",
               "compensates_for": [],
               "source_refs": [
                 "NIST-SP800-82-2023",
@@ -62478,7 +62478,7 @@
             },
             {
               "id": "CM-I0302-02",
-              "measure": "Implement hardwired non-programmable safety functions and mechanical interlocks for the highest-consequence trips so that final protective action does not depend on software an attacker could disable or spoof",
+              "measure": "Implement hardwired non-programmable safety functions and mechanical interlocks for the highest-consequence trips so that final protective action does not depend on software a threat actor could disable or spoof",
               "category": "preventive",
               "domain": "safety_system_integrity",
               "cost": "high",
@@ -62523,7 +62523,7 @@
               "phase_relevance": [
                 "execution"
               ],
-              "limitations": "Alarms depend on operators recognizing and acting on them and an attacker who suppresses the annunciation path can defeat the safety function unobserved.",
+              "limitations": "Alarms depend on operators recognizing and acting on them and a threat actor who suppresses the annunciation path can defeat the safety function unobserved.",
               "compensates_for": [],
               "source_refs": [
                 "NIST-SP800-82-2023",
@@ -62927,7 +62927,7 @@
               "phase_relevance": [
                 "execution"
               ],
-              "limitations": "Attribution deters insiders and traceable actors but does little against an adversary who has fully compromised the logging path.",
+              "limitations": "Attribution deters insiders and traceable actors but does little against a threat actor who has fully compromised the logging path.",
               "compensates_for": [],
               "source_refs": [
                 "NIST-SP800-82-2023",
@@ -65373,7 +65373,7 @@
             },
             {
               "id": "CM-I0309-04",
-              "measure": "Maintain geographically diverse, redundant restoration capability and demonstrate it during audits so adversaries cannot expect that suppressing failover, alarms, and backups will produce lasting denial of service",
+              "measure": "Maintain geographically diverse, redundant restoration capability and demonstrate it during audits so threat actors cannot expect that suppressing failover, alarms, and backups will produce lasting denial of service",
               "category": "deterrent",
               "domain": "system_hardening",
               "cost": "high",
@@ -65803,7 +65803,7 @@
           "response_protocols": [
             {
               "id": "RP-I0401-01",
-              "trigger": "The adversary is observed egressing the site, disconnecting access, or terminating the session after completing or abandoning the operation.",
+              "trigger": "The threat actor is observed egressing the site, disconnecting access, or terminating the session after completing or abandoning the operation.",
               "action": "Take these steps: (a) capture and preserve egress evidence including camera footage, access logs, session and network artifacts, and any abandoned devices or materials, (b) secure the affected area and equipment to prevent contamination while awaiting law enforcement, (c) reconcile access records and account activity to scope what was reached during the intrusion, (d) initiate attribution by correlating egress indicators with entry and dwell-time evidence, (e) notify law enforcement and executive leadership and hand off preserved evidence.",
               "stakeholders": [
                 "protective_operations",
@@ -65822,7 +65822,7 @@
             },
             {
               "id": "RP-I0401-02",
-              "trigger": "A session or physical presence is terminated abruptly with signs of cleanup, log deletion, or removal of tools consistent with an adversary covering withdrawal.",
+              "trigger": "A session or physical presence is terminated abruptly with signs of cleanup, log deletion, or removal of tools consistent with a threat actor covering withdrawal.",
               "action": "Take these steps: (a) preserve volatile and residual evidence immediately by imaging affected systems and capturing surviving logs before automated rotation, (b) inventory the environment for altered, planted, or removed assets and flag anti-forensic indicators, (c) reconstruct the withdrawal timeline from correlated physical and digital telemetry to support attribution, (d) restrict re-entry paths and monitor for return or follow-on access, (e) brief threat management and law enforcement and transfer findings for investigation.",
               "stakeholders": [
                 "threat_management_team",
@@ -66198,7 +66198,7 @@
               "phase_relevance": [
                 "aftermath"
               ],
-              "limitations": "Integrity baselines set after an incident can inadvertently canonicalize an attacker's persistent changes as trusted.",
+              "limitations": "Integrity baselines set after an incident can inadvertently canonicalize a threat actor's persistent changes as trusted.",
               "compensates_for": [],
               "source_refs": [
                 "NIST-SP800-82-2023",
@@ -66237,7 +66237,7 @@
                 "operations_control"
               ],
               "priority": "immediate",
-              "escalation_trigger": "Beaconing resumes to alternate infrastructure or a second implant is found after containment, signaling adversary re-entry through an unremediated channel.",
+              "escalation_trigger": "Beaconing resumes to alternate infrastructure or a second implant is found after containment, signaling threat actor re-entry through an unremediated channel.",
               "coordinates_with": [],
               "legal_notes": "Log every containment and reset action with timestamps and operator identity to maintain an unbroken evidentiary chain for later attribution and prosecution.",
               "source_refs": [
@@ -66637,8 +66637,8 @@
             },
             {
               "id": "RP-I0403-02",
-              "trigger": "Forged or backdated maintenance records, falsified operator action logs, or manipulated alarm histories surface that appear crafted to conceal the adversary's activity or misdirect the investigation.",
-              "action": "Take these steps: (a) quarantine the suspect records and preserve original off-site log copies alongside the forgeries for comparative analysis, (b) validate authenticity by cross-referencing independent, adversary-inaccessible sources such as physical logbooks, redundant historians, and third-party monitoring feeds, (c) document each discrepancy between the manipulated and authoritative records with supporting evidence, (d) reset and harden the logging pipeline so future entries are signed and centrally mirrored beyond reach of local tampering.",
+              "trigger": "Forged or backdated maintenance records, falsified operator action logs, or manipulated alarm histories surface that appear crafted to conceal the threat actor's activity or misdirect the investigation.",
+              "action": "Take these steps: (a) quarantine the suspect records and preserve original off-site log copies alongside the forgeries for comparative analysis, (b) validate authenticity by cross-referencing independent, threat actor-inaccessible sources such as physical logbooks, redundant historians, and third-party monitoring feeds, (c) document each discrepancy between the manipulated and authoritative records with supporting evidence, (d) reset and harden the logging pipeline so future entries are signed and centrally mirrored beyond reach of local tampering.",
               "stakeholders": [
                 "threat_management_team",
                 "security_operations",
@@ -67776,7 +67776,7 @@
           "countermeasures": [
             {
               "id": "CM-I0406-01",
-              "measure": "Establish a public communications policy that limits released outage information to service status and restoration timelines, withholding affected node locations, load figures, and restoration sequencing that would let an adversary confirm the operational effect of the attack",
+              "measure": "Establish a public communications policy that limits released outage information to service status and restoration timelines, withholding affected node locations, load figures, and restoration sequencing that would let a threat actor confirm the operational effect of the attack",
               "category": "preventive",
               "domain": "policy_procedure",
               "cost": "low",
@@ -67803,7 +67803,7 @@
               "phase_relevance": [
                 "aftermath"
               ],
-              "limitations": "High volumes of legitimate public interest can mask genuine adversary assessment activity.",
+              "limitations": "High volumes of legitimate public interest can mask genuine threat actor assessment activity.",
               "compensates_for": [],
               "source_refs": [
                 "CTC-INFRATERROR-2026",
@@ -67812,7 +67812,7 @@
             },
             {
               "id": "CM-I0406-03",
-              "measure": "Remove or authenticate public-facing operational dashboards, status pages, and real-time telemetry feeds so restoration progress and residual capacity are not observable to an adversary assessing the damage inflicted",
+              "measure": "Remove or authenticate public-facing operational dashboards, status pages, and real-time telemetry feeds so restoration progress and residual capacity are not observable to a threat actor assessing the damage inflicted",
               "category": "corrective",
               "domain": "system_hardening",
               "cost": "medium",
@@ -67830,7 +67830,7 @@
             },
             {
               "id": "CM-I0406-04",
-              "measure": "Introduce controlled ambiguity into public incident reporting so released impact and restoration figures do not confirm the precision or success of the adversary's targeting to observers conducting after-action assessment",
+              "measure": "Introduce controlled ambiguity into public incident reporting so released impact and restoration figures do not confirm the precision or success of the threat actor's targeting to observers conducting after-action assessment",
               "category": "deterrent",
               "domain": "environmental_design",
               "cost": "low",
@@ -67851,7 +67851,7 @@
             {
               "id": "RP-I0406-01",
               "trigger": "The actor or affiliates query public sources, media coverage, outage maps, or exposed telemetry to measure the operation's impact and confirm damage.",
-              "action": "Take these steps: (a) map which public channels, dashboards, and telemetry feeds are exposing impact detail an adversary could use for battle-damage assessment, (b) restrict public disclosure of operational status, restoration timelines, and system-level detail to the minimum required for safety and compliance, (c) coordinate with communications to route all external statements through a single approved spokesperson, (d) task security operations to monitor for reconnaissance interest, anomalous status-page traffic, and probing that indicates adversary damage assessment.",
+              "action": "Take these steps: (a) map which public channels, dashboards, and telemetry feeds are exposing impact detail a threat actor could use for battle-damage assessment, (b) restrict public disclosure of operational status, restoration timelines, and system-level detail to the minimum required for safety and compliance, (c) coordinate with communications to route all external statements through a single approved spokesperson, (d) task security operations to monitor for reconnaissance interest, anomalous status-page traffic, and probing that indicates threat actor damage assessment.",
               "stakeholders": [
                 "security_operations",
                 "communications",
@@ -67859,7 +67859,7 @@
                 "it_security"
               ],
               "priority": "priority",
-              "escalation_trigger": "Detection of targeted adversary reconnaissance against restoration systems escalates to heightened monitoring and law enforcement notification.",
+              "escalation_trigger": "Detection of targeted threat actor reconnaissance against restoration systems escalates to heightened monitoring and law enforcement notification.",
               "coordinates_with": [],
               "legal_notes": "Balance disclosure restrictions against mandatory regulatory and public-safety reporting obligations with counsel review before withholding operational detail.",
               "source_refs": [
@@ -67870,7 +67870,7 @@
             {
               "id": "RP-I0406-02",
               "trigger": "Post-event telemetry shows external actors correlating sensor data, service metrics, or third-party monitoring to assess residual damage and identify surviving capability.",
-              "action": "Take these steps: (a) map internal and vendor telemetry that is externally visible and could feed an adversary's after-action assessment, (b) restrict public-facing detail on affected assets and reduce metric granularity on exposed dashboards until restoration is complete, (c) coordinate with IT security and OT security to harden and monitor the systems the adversary appears most interested in, (d) preserve a record of observed assessment activity to inform attribution and future defensive posture.",
+              "action": "Take these steps: (a) map internal and vendor telemetry that is externally visible and could feed a threat actor's after-action assessment, (b) restrict public-facing detail on affected assets and reduce metric granularity on exposed dashboards until restoration is complete, (c) coordinate with IT security and OT security to harden and monitor the systems the threat actor appears most interested in, (d) preserve a record of observed assessment activity to inform attribution and future defensive posture.",
               "stakeholders": [
                 "security_operations",
                 "it_security",
@@ -67889,7 +67889,7 @@
           ],
           "field_notes": "After-action assessment is the threat actor confirming effect, which for infrastructure means verifying the physical consequence.",
           "observed_contexts": [
-            "adversary use of public outage reporting and media coverage to confirm infrastructure impact"
+            "threat actor use of public outage reporting and media coverage to confirm infrastructure impact"
           ],
           "evidence_basis": "literature_only",
           "source_refs": [
@@ -68686,7 +68686,7 @@
                 "communications"
               ],
               "priority": "immediate",
-              "escalation_trigger": "The adversary imposes a deadline, escalates the disruption, or demonstrates capability to inflict additional harm.",
+              "escalation_trigger": "The threat actor imposes a deadline, escalates the disruption, or demonstrates capability to inflict additional harm.",
               "coordinates_with": [],
               "legal_notes": "Counsel must review before any payment is considered because ransom transfers may violate sanctions and federal law when the actor is a designated or sanctioned entity.",
               "source_refs": [
@@ -68696,8 +68696,8 @@
             },
             {
               "id": "RP-I0408-02",
-              "trigger": "The adversary escalates the coercion by publicizing the demand, imposing a hard deadline, or conditioning restoration of the service on a political or ideological concession.",
-              "action": "Activate crisis response. Take these steps: (a) preserve every new demand, deadline notice, and public statement as timestamped evidence and forward it to law enforcement liaisons, (b) coordinate with the FBI and, where the impact reaches national infrastructure, CISA to attribute the actor and assess demonstrated capability, (c) hold the no-concession line and accelerate continuity and recovery plans so restoration strips the demand of leverage, (d) align legal, executive leadership, and communications on a single approved public position that denies the adversary a coercion or propaganda win.",
+              "trigger": "The threat actor escalates the coercion by publicizing the demand, imposing a hard deadline, or conditioning restoration of the service on a political or ideological concession.",
+              "action": "Activate crisis response. Take these steps: (a) preserve every new demand, deadline notice, and public statement as timestamped evidence and forward it to law enforcement liaisons, (b) coordinate with the FBI and, where the impact reaches national infrastructure, CISA to attribute the actor and assess demonstrated capability, (c) hold the no-concession line and accelerate continuity and recovery plans so restoration strips the demand of leverage, (d) align legal, executive leadership, and communications on a single approved public position that denies the threat actor a coercion or propaganda win.",
               "stakeholders": [
                 "executive_leadership",
                 "legal",
@@ -68705,7 +68705,7 @@
                 "communications"
               ],
               "priority": "urgent",
-              "escalation_trigger": "The deadline passes without resolution or the adversary acts on a threatened escalation against life-safety or critical service.",
+              "escalation_trigger": "The deadline passes without resolution or the threat actor acts on a threatened escalation against life-safety or critical service.",
               "coordinates_with": [],
               "legal_notes": "Payment to a politically motivated or sanctioned actor may constitute material support or a sanctions violation, so legal review is required before any concession is contemplated.",
               "source_refs": [
@@ -68725,7 +68725,7 @@
           ]
         }
       ],
-      "scope": "Tactics centered on infrastructure or technical systems as the primary target. The adversary's primary objective is disruption, degradation, or compromise of the system's function, physical infrastructure, cyber-physical systems, or critical service delivery. Cyber-Physical Nexus tactics are tagged via the cpn field on tactic."
+      "scope": "Tactics centered on infrastructure or technical systems as the primary target. The threat actor's primary objective is disruption, degradation, or compromise of the system's function, physical infrastructure, cyber-physical systems, or critical service delivery. Cyber-Physical Nexus tactics are tagged via the cpn field on tactic."
     }
   },
   "actor_profiles": [
@@ -69309,7 +69309,7 @@
         "organization",
         "infrastructure"
       ],
-      "description": "Nation-state directed, sponsored, or sanctioned adversary operating with the full intelligence apparatus of a state: collection, planning support, logistics, and exfiltration infrastructure. Deniability architecture is a Phase 1 planning input, not an afterthought. Highest capability across all matrices. May use proxy actors. Operations span all four matrices simultaneously for complex targets. Full phase completion is the norm; Phase 1 may extend over months with parallel Phase 2 preparation.",
+      "description": "Nation-state directed, sponsored, or sanctioned threat actor operating with the full intelligence apparatus of a state: collection, planning support, logistics, and exfiltration infrastructure. Deniability architecture is a Phase 1 planning input, not an afterthought. Highest capability across all matrices. May use proxy actors. Operations span all four matrices simultaneously for complex targets. Full phase completion is the norm; Phase 1 may extend over months with parallel Phase 2 preparation.",
       "behavioral_markers": [
         "Professional counter-surveillance and surveillance detection routines throughout all phases",
         "Multi-actor team with compartmented roles and need-to-know discipline",
@@ -69808,7 +69808,7 @@
       },
       {
         "name": "cross_matrix",
-        "description": "Adversaries do not respect matrix boundaries. The mesh weaves the matrices into one coherent detection space as each is built: inter-rater-validated People-Facility links shipped first, and every new matrix extends the weave across all four (People, Facilities, Organizations, Infrastructure)."
+        "description": "Threat actors do not respect matrix boundaries. The mesh weaves the matrices into one coherent detection space as each is built: inter-rater-validated People-Facility links shipped first, and every new matrix extends the weave across all four (People, Facilities, Organizations, Infrastructure)."
       },
       {
         "name": "cross_domain",
@@ -69823,7 +69823,7 @@
         "description": "Multiple stakeholders engage the same indicator set from their respective authorities: in parallel by default, and under directed dependencies (gates, precedence, deconfliction) where one protocol's action is conditioned on another. The shipped coordinates_with links record co-activation; the directed dependency layer is the framework's committed next step for this axis."
       }
     ],
-    "doctrinal_antecedent": "The structural antecedent is the Kill Web concept in modern military doctrine; THREAT Matrix adapts the principle to physical adversary detection in organizational contexts.",
+    "doctrinal_antecedent": "The structural antecedent is the Kill Web concept in modern military doctrine; THREAT Matrix adapts the principle to physical threat actor detection in organizational contexts.",
     "schema_links": {
       "indicators": "correlates_with",
       "countermeasures": "compensates_for",

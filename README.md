@@ -8,7 +8,7 @@ Four target matrices — **People, Facilities, Organizations, Infrastructure** �
 
 Cyber-Physical Nexus and AI-Initiated-Physical tags surface online-to-physical mobilization pathways and AI-enabled reconnaissance across tactics.
 
-From V1, the THREAT Matrix is structured as a headless, machine-consumable threat signal library, built for RAG systems, AI agents, MCP clients, and downstream detection and investigation platforms. It cross-walks to established cyber and AI-systems adversary frameworks for interoperability with existing programs. MIT-licensed, it ships with a UI and a reference Python consumer that demonstrate the contract end-to-end.
+From V1, the THREAT Matrix is structured as a headless, machine-consumable threat signal library, built for RAG systems, AI agents, MCP clients, and downstream detection and investigation platforms. It cross-walks to established cyber and AI-systems threat actor frameworks for interoperability with existing programs. MIT-licensed, it ships with a UI and a reference Python consumer that demonstrate the contract end-to-end.
 
 Built for the analysts, investigators, field teams, and engineers across corporate security, law enforcement, and the Intelligence Community — and for the leaders who rely on their work, and the educators and researchers shaping the discipline. Drawn from 15+ years of experience leading high-stakes threat investigations with more than 70 domestic and international partners.
  
@@ -22,7 +22,7 @@ Built for the analysts, investigators, field teams, and engineers across corpora
  
 ## The Problem
  
-The same pattern surfaced across most partner relationships: each organization had its own vocabulary for physical threat behavior. Some had mature processes and detection methodology. Others had not yet identified adversary tactics, techniques, or behavior that recurred across cases the field had been seeing for years. There was no shared language, no common reference standard, wasted time syncing incidents across teams, and no shared framework to build tooling against a stable taxonomy.
+The same pattern surfaced across most partner relationships: each organization had its own vocabulary for physical threat behavior. Some had mature processes and detection methodology. Others had not yet identified threat actor tactics, techniques, or behavior that recurred across cases the field had been seeing for years. There was no shared language, no common reference standard, wasted time syncing incidents across teams, and no shared framework to build tooling against a stable taxonomy.
  
 In 2023, a Lawrence Livermore National Laboratory study, sponsored by DOE/NNSA and prepared for DHS/CISA examined whether any existing methodology could serve as a structured framework for characterizing physical adversary action across critical infrastructure sectors. The conclusion: existing frameworks are inadequate. Most are sector- or facility-specific, focus on security assessment rather than adversary behavior, and fail to address cyber-physical risks. The THREAT Matrix addresses both the documented institutional gap and the operational reality that produced it.
 > McGrath, J.K., Scott, H.R., & Slone, L.R. (2023). *Requirements and Recommendations
@@ -37,13 +37,13 @@ In 2023, a Lawrence Livermore National Laboratory study, sponsored by DOE/NNSA a
  
 ![THREAT Matrix Threat Lifecycle](docs/images/threat-lifecycle-diagram.svg)
  
-The Threat Lifecycle is descriptive, not prescriptive — adversaries compress, skip, and reorder phases based on opportunity and capability. The framework makes behavioral patterns visible; it doesn't assert they are inevitable or sequential. Detection and response operate as a Detection Mesh across the lifecycle (see below), not as a linear chain. The result is a unified threat picture security professionals can use for investigation, prioritization, and physical-threat mitigation. Escalation scoring backs that prioritization with a per-indicator severity signal.
+The Threat Lifecycle is descriptive, not prescriptive — threat actors compress, skip, and reorder phases based on opportunity and capability. The framework makes behavioral patterns visible; it doesn't assert they are inevitable or sequential. Detection and response operate as a Detection Mesh across the lifecycle (see below), not as a linear chain. The result is a unified threat picture security professionals can use for investigation, prioritization, and physical-threat mitigation. Escalation scoring backs that prioritization with a per-indicator severity signal.
  
 ### Target Matrices
  
 ![THREAT Matrix Target Matrices](docs/images/matrix-overview.svg)
  
-Each tactic in the catalog lives in exactly one matrix, determined by the adversary's primary objective. The People matrix covers harm, control, coercion, or surveillance directed at one or more human beings — V1.2.2 broadened this scope from V1's named-individual focus to include mass-casualty events and group-targeted attacks (see `target_identity` sub-dimension). The Facilities, Organizations, and Infrastructure matrices cover physical venues, institutions, and critical systems respectively. Real-world incidents may legitimately invoke tactics from multiple matrices simultaneously; cross-matrix coverage is expressed through the Detection Mesh (`correlates_with`) rather than by re-classifying tactics. Full scope sentences and the framework-vs-operational boundary rule live in the `matrices.{name}.scope` and `matrices.boundary_rule` fields of `framework.json`.
+Each tactic in the catalog lives in exactly one matrix, determined by the threat actor's primary objective. The People matrix covers harm, control, coercion, or surveillance directed at one or more human beings — V1.2.2 broadened this scope from V1's named-individual focus to include mass-casualty events and group-targeted attacks (see `target_identity` sub-dimension). The Facilities, Organizations, and Infrastructure matrices cover physical venues, institutions, and critical systems respectively. Real-world incidents may legitimately invoke tactics from multiple matrices simultaneously; cross-matrix coverage is expressed through the Detection Mesh (`correlates_with`) rather than by re-classifying tactics. Full scope sentences and the framework-vs-operational boundary rule live in the `matrices.{name}.scope` and `matrices.boundary_rule` fields of `framework.json`.
  
 ### Actor Profiles
  
@@ -51,7 +51,7 @@ Each tactic in the catalog lives in exactly one matrix, determined by the advers
  
 | Category | Profiles | Examples |
 |----------|---------:|----------|
-| Lone Actor | 3 | Fixated individuals, public-figure stalkers, grievance-driven attackers |
+| Lone Actor | 3 | Fixated individuals, public-figure stalkers, grievance-driven threat actors |
 | Insider | 5 | Malicious, negligent, and compromised insiders (coerced, recruited, unwitting) |
 | Criminal | 7 | Organized crime, kidnap-for-ransom, contract violence |
 | Corporate Espionage | 2 | Trade secret theft, competitive intelligence operations |
@@ -106,9 +106,9 @@ Full scoring rationale, the axis rubric, and band thresholds live in the `escala
 
 ### Cross-Framework Interoperability
  
-THREAT Matrix's four-phase Threat Lifecycle is cross-walked to established adversary threat frameworks via the `phase_mappings` block in `docs/data/framework.json`
+THREAT Matrix's four-phase Threat Lifecycle is cross-walked to established threat frameworks via the `phase_mappings` block in `docs/data/framework.json`
  
-A query against THREAT Matrix Phase 2 (Mobilization) can retrieve documents tagged to the other frameworks mapped phase because the mapping is machine-readable. THREAT Matrix is the physical-adversary lane. Other frameworks address the cyber-adversary and AI-systems-adversarial lanes, while others cover aspects of an insider threat adversary. The frameworks meet at the cross-walk; they do not compete.
+A query against THREAT Matrix Phase 2 (Mobilization) can retrieve documents tagged to the other frameworks mapped phase because the mapping is machine-readable. THREAT Matrix is the physical-threat actor lane. Other frameworks address the cyber-threat actor and AI-systems-adversarial lanes, while others cover aspects of an insider threat threat actor. The frameworks meet at the cross-walk; they do not compete.
  
 ### AI Integration Architecture
  
@@ -131,9 +131,9 @@ The `ai_initiated_physical` vector is architecturally distinct: the attack does 
 
 **Audience.** THREAT Matrix is built for the analysts, investigators, field teams, and engineers across corporate security, law enforcement, and the Intelligence Community — and for the leaders who rely on their work, and the educators and researchers shaping the discipline. The framework supports the work of recognizing patterns of physical-threat behavior, characterizing activity in motion, and mitigating outcomes across the threat lifecycle. It covers four target matrices — People, Facilities, Organizations, and Infrastructure — with Cyber-Physical Nexus tagging where digital and physical threat intelligence converge.
 
-**What this provides.** THREAT Matrix maps what adversaries do, when, and why, so analysts and investigators can recognize patterns in their casework and respond with context. It supports the workflow of analysts, investigators, and security teams across the threat lifecycle — from recognizing pre-attack indicators, to characterizing activity already in motion, to mapping completed cases against a shared structure. The taxonomy is published as machine-readable JSON (`framework.json`); security professionals work with it through the published viewer, custom integrations their team builds, or AI agents that read the framework directly.
+**What this provides.** THREAT Matrix maps what threat actors do, when, and why, so analysts and investigators can recognize patterns in their casework and respond with context. It supports the workflow of analysts, investigators, and security teams across the threat lifecycle — from recognizing pre-attack indicators, to characterizing activity already in motion, to mapping completed cases against a shared structure. The taxonomy is published as machine-readable JSON (`framework.json`); security professionals work with it through the published viewer, custom integrations their team builds, or AI agents that read the framework directly.
 
-**Scope.** What's in scope: adversary behavior at the tactic and indicator level — what adversaries do, when in the threat lifecycle, in what patterns, with what observable signals, and against what countermeasures and response protocols. What's out of scope: operational-execution detail — exploit code, weapon construction, step-by-step attack tradecraft, and targeting information for specific persons or organizations.
+**Scope.** What's in scope: threat actor behavior at the tactic and indicator level — what threat actors do, when in the threat lifecycle, in what patterns, with what observable signals, and against what countermeasures and response protocols. What's out of scope: operational-execution detail — exploit code, weapon construction, step-by-step attack tradecraft, and targeting information for specific persons or organizations.
 
 **Acceptable use.** Case mapping. Investigation and threat-assessment workflow support. Detection-rule and alert development. Threat-hunting workflow design. Security-program planning. Analyst and investigator training. Intelligence analysis. Academic research. Tooling and AI agents that consume the `framework.json` contract for legitimate threat-assessment, protective intelligence, investigative, and security-operations work.
 
@@ -202,7 +202,7 @@ The SPA is one consumer of the standard. Other consumers shipped or planned:
  
 The THREAT Matrix grows through practitioner contribution. You don't need to be a developer.
  
-- **Suggest a tactic** — open an issue describing an adversary behavior not yet in the framework
+- **Suggest a tactic** — open an issue describing a threat actor behavior not yet in the framework
 - **Flag an inconsistency** — terminology, scope, or classification issues
 - **Propose a use case** — real-world scenarios help validate the framework against operational reality
 - **Developer contributions** — schema work, React SPA features, V1.3–V1.5 matrix tooling, alternative consumers (CLIs, language SDKs, MCP integrations, visualizations)

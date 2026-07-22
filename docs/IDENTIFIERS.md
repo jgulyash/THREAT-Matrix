@@ -6,7 +6,7 @@ Stable identifiers are the load-bearing surface of THREAT Matrix. Vector databas
 
 | Namespace | Format | Example | Refers to |
 |---|---|---|---|
-| **Tactic** | `T<X>####` | `TM0103`, `TF0102` | A behavioral category — what the adversary is trying to accomplish |
+| **Tactic** | `T<X>####` | `TM0103`, `TF0102` | A behavioral category — what the threat actor is trying to accomplish |
 | **Actor profile** | `AP###` | `AP005` | A category of threat actor (e.g., insider, lone actor, nation-state) |
 | **Indicator** | `IND-<x>####-##` | `IND-0103-01`, `IND-F0102-03` | An observable behavior tied to a specific tactic |
 | **Countermeasure** | `CM-<x>####-##` | `CM-0103-01`, `CM-F0102-03` | A defensive measure tied to a specific tactic |
@@ -102,7 +102,7 @@ THREAT Matrix has five operational namespaces with different rates of change. Th
 
 | Namespace | Expected churn | Rationale |
 |---|---|---|
-| `TM####` (tactics) | Very low | Tactics are behavioral categories. A new tactic represents a recognized adversary behavior that was not previously captured. |
+| `TM####` (tactics) | Very low | Tactics are behavioral categories. A new tactic represents a recognized threat actor behavior that was not previously captured. |
 | `AP###` (actor profiles) | Low | Actor profiles are taxonomic groupings. They evolve as the taxonomy matures. |
 | `IND-*` (indicators) | Higher | Indicators evolve with detection practice and emerging attack patterns. |
 | `CM-*` (countermeasures) | Higher | Countermeasures evolve with defensive technology and operational practice. |
