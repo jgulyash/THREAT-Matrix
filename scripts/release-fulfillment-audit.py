@@ -55,10 +55,11 @@ field_pop(aps, {k: None for k in apkeys}, 'ACTOR_PROFILE fields')
 
 # ---- 2. Detection Mesh axis delivery ----
 rule('2. DETECTION MESH — each named axis vs actual delivered links')
-meta = {i['id']: (n, t['phase']) for n in ('person','facility')
+MATRICES = ('person', 'facility', 'organization', 'infrastructure')
+meta = {i['id']: (n, t['phase']) for n in MATRICES
         for t in FW['matrices'][n]['tactics'] for i in t['indicators']}
 xphase = xmatrix = same = 0
-for n in ('person','facility'):
+for n in MATRICES:
     for t in FW['matrices'][n]['tactics']:
         for i in t['indicators']:
             for r in i.get('correlates_with', []):
@@ -68,14 +69,14 @@ for n in ('person','facility'):
                     else: same += 1
 def cross_matrix_count(container, field, idmap):
     c = 0
-    for n in ('person','facility'):
+    for n in MATRICES:
         for t in FW['matrices'][n]['tactics']:
             for it in t.get(container, []):
                 for r in it.get(field, []):
                     if idmap.get(r) and idmap[r] != n: c += 1
     return c
-cm_map = {cm['id']: n for n in ('person','facility') for t in FW['matrices'][n]['tactics'] for cm in t.get('countermeasures',[])}
-rp_map = {rp['id']: n for n in ('person','facility') for t in FW['matrices'][n]['tactics'] for rp in t.get('response_protocols',[])}
+cm_map = {cm['id']: n for n in MATRICES for t in FW['matrices'][n]['tactics'] for cm in t.get('countermeasures',[])}
+rp_map = {rp['id']: n for n in MATRICES for t in FW['matrices'][n]['tactics'] for rp in t.get('response_protocols',[])}
 axes = [a['name'] for a in FW['detection_mesh']['axes']]
 delivered = {
     'cross_phase': xphase,
