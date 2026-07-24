@@ -354,7 +354,10 @@
               "phase_relevance": [
                 "target_development"
               ],
-              "compensates_for": []
+              "compensates_for": [
+                "CM-O0202-01",
+                "CM-O0202-03"
+              ]
             }
           ],
           "related_tactics": [],
@@ -485,7 +488,10 @@
                 "ASIS-WVPI-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
-              "priority": "priority"
+              "priority": "priority",
+              "coordinates_with": [
+                "RP-O0202-01"
+              ]
             },
             {
               "id": "RP-0101-02",
@@ -505,7 +511,10 @@
                 "FEIN-VOSSEKUIL-HOLDEN-1995",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
-              "priority": "immediate"
+              "priority": "immediate",
+              "coordinates_with": [
+                "RP-O0202-02"
+              ]
             },
             {
               "id": "RP-0101-03",
@@ -1537,7 +1546,8 @@
               ],
               "limitations": "Detection success depends on operator skill and threat actor tradecraft; sophisticated subjects rotate observation positions to defeat surveillance detection",
               "compensates_for": [
-                "CM-0103-03"
+                "CM-0103-03",
+                "CM-F0103-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -1997,7 +2007,9 @@
                 "mobilization"
               ],
               "limitations": "Background checks are point-in-time; continuous evaluation requires sustained funding and workforce buy-in. Family-member acquisition pathways are not addressed by personnel programs",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0106-03"
+              ],
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017",
@@ -2038,7 +2050,8 @@
               ],
               "limitations": "Insiders with legitimate access may not trigger alerts. Inventory baselines must be accurate before anomalies can be detected",
               "compensates_for": [
-                "CM-0101-05"
+                "CM-0101-05",
+                "CM-I0106-04"
               ],
               "source_refs": [
                 "CERT-CSG-7-2022",
@@ -2636,7 +2649,9 @@
                 "mobilization"
               ],
               "limitations": "Personal associations are protected information; programs must be scoped to job-relevant context. False-positive rate is high without behavioral baseline",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0108-03"
+              ],
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017",
@@ -2657,7 +2672,8 @@
               ],
               "limitations": "Recruitment requests may be subtle or framed as personal favors. Effectiveness depends on the associate's ability to recognize the pattern in retrospect",
               "compensates_for": [
-                "CM-0101-03"
+                "CM-0101-03",
+                "CM-F0107-01"
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
@@ -2678,7 +2694,14 @@
                 "mobilization"
               ],
               "limitations": "Most participants in such forums are not operationally relevant; analyst time is the binding constraint. Privacy and platform-policy considerations require careful scoping",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0107-01",
+                "CM-I0108-02",
+                "CM-O0202-03",
+                "CM-O0202-04",
+                "CM-O0304-01",
+                "CM-O0304-03"
+              ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "FBI-PREATTACK-2018",
@@ -2698,7 +2721,9 @@
                 "mobilization"
               ],
               "limitations": "Reporting culture matures slowly; many concerning requests are dismissed as harmless when received",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0107-02"
+              ],
               "source_refs": [
                 "CERT-CSG-7-2022",
                 "ASIS-WVPI-2021",
@@ -2796,7 +2821,9 @@
               "priority": "priority",
               "escalation_trigger": "Association determined operationally relevant OR concurrent indicators surface from another Phase 1 tactic.",
               "coordinates_with": [
-                "RP-0101-01"
+                "RP-0101-01",
+                "RP-O0202-01",
+                "RP-O0304-01"
               ],
               "legal_notes": "Investigation of personal associations carries privacy implications; coordinate with legal before any inquiry beyond the immediate observation. Document factually. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -2820,7 +2847,9 @@
               "escalation_trigger": "Multi-node coordination demonstrates means and proximity to targeted subject OR confirmed planning across the network.",
               "coordinates_with": [
                 "RP-0101-02",
-                "RP-0107-02"
+                "RP-0107-02",
+                "RP-O0202-02",
+                "RP-O0304-02"
               ],
               "legal_notes": "Conspiracy thresholds and reporting obligations vary materially by jurisdiction. Document the indicator constellation that drove escalation including evidence of coordination beyond mere association. Preserve evidence. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -3146,7 +3175,9 @@
                 "execution"
               ],
               "limitations": "Verification fatigue erodes effectiveness during high-traffic periods; sophisticated threat actors pre-stage sponsoring contacts that withstand basic verification",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0205-01"
+              ],
               "source_refs": [
                 "ASIS-WVPI-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -3166,7 +3197,9 @@
               ],
               "limitations": "Personnel may default to politeness over challenge; effectiveness depends on culture that empowers reception staff to question",
               "compensates_for": [
-                "CM-0103-02"
+                "CM-0103-02",
+                "CM-F0108-01",
+                "CM-I0202-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -3205,7 +3238,10 @@
                 "execution"
               ],
               "limitations": "Cost and friction grow with sensitivity tier; insider sponsors can defeat callback verification if not separately validated",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0108-02",
+                "CM-O0205-02"
+              ],
               "source_refs": [
                 "ASIS-WVPI-2021",
                 "CERT-CSG-7-2022",
@@ -3298,7 +3334,8 @@
               "priority": "priority",
               "escalation_trigger": "Identity cannot be corroborated OR cover artifact connects to other concerning context (prior surveillance reports, prior access attempts).",
               "coordinates_with": [
-                "RP-0103-01"
+                "RP-0103-01",
+                "RP-O0205-01"
               ],
               "legal_notes": "Detention or extended challenge of an individual carries legal implications that vary by jurisdiction. Coordinate with legal before any action beyond polite verification. Document factually; do not characterize the individual's intent. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -3322,7 +3359,8 @@
               "escalation_trigger": "Cover construction breaches a sensitive perimeter OR threat actor flees on challenge OR identity ties to prior threat case.",
               "coordinates_with": [
                 "RP-0103-02",
-                "RP-0101-02"
+                "RP-0101-02",
+                "RP-O0205-02"
               ],
               "legal_notes": "Pretexting and trespass laws vary; some jurisdictions criminalize cover construction at protected sites independently of intent. Preserve evidence carefully. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -3695,7 +3733,9 @@
                 "mobilization"
               ],
               "limitations": "Pathway literacy fades without periodic refresh; novel aggression and energy burst signals are particularly difficult to distinguish from baseline at low frequency",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0109-01"
+              ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
                 "FEIN-VOSSEKUIL-HOLDEN-1995",
@@ -3716,7 +3756,8 @@
               ],
               "limitations": "Stage assignment requires trained judgment; pathway progression is not strictly linear and can compress under pressure or skip stages entirely in some case typologies",
               "compensates_for": [
-                "CM-0101-03"
+                "CM-0101-03",
+                "CM-I0110-04"
               ],
               "source_refs": [
                 "FEIN-VOSSEKUIL-HOLDEN-1995",
@@ -3737,7 +3778,9 @@
                 "mobilization"
               ],
               "limitations": "Effectiveness depends on organizational trust and reporting maturity; many pre-attack signals are dismissed by associates as 'just talk' until corroborated by other indicators",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0109-02"
+              ],
               "source_refs": [
                 "NTAC-MASS-2021",
                 "ASIS-WVPI-2021",
@@ -3837,7 +3880,8 @@
               "escalation_trigger": "Pathway progresses from ideation to planning OR concurrent indicators surface from another Phase 1 tactic for the same threat actor.",
               "coordinates_with": [
                 "RP-0101-01",
-                "RP-0103-01"
+                "RP-0103-01",
+                "RP-O0109-01"
               ],
               "legal_notes": "Pathway-stage determinations are protective intelligence assessments, not clinical or psychiatric findings: document them as observable behavior patterns, not mental health characterizations. If the threat actor is an employee, coordinate with HR before any direct engagement. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -3861,7 +3905,8 @@
               "escalation_trigger": "Threat actor demonstrates means and proximity to the targeted subject OR direct or indirect threat communicated OR breach attempt observed.",
               "coordinates_with": [
                 "RP-0101-02",
-                "RP-0103-02"
+                "RP-0103-02",
+                "RP-O0109-02"
               ],
               "legal_notes": "At preparation stage and beyond, parallel notifications to legal and (when applicable) law enforcement become standard. Document the indicator constellation that drove escalation (particularly the pathway-stage rationale) and preserve evidence of the original observations. Consult counsel on jurisdiction-specific reporting obligations and on privileged-communication scope for the threat management team. This guidance does not constitute legal advice.",
               "source_refs": [
@@ -4208,7 +4253,9 @@
               ],
               "limitations": "Cross-camera correlation requires coverage density and either operator time or analytics support; privacy considerations apply outside controlled environments",
               "compensates_for": [
-                "CM-0103-03"
+                "CM-0103-03",
+                "CM-F0110-01",
+                "CM-I0203-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -4228,7 +4275,11 @@
                 "mobilization"
               ],
               "limitations": "Anonymizing services have legitimate uses; alerting must be tuned to context to avoid noise. Sophisticated threat actors will rotate anonymizing infrastructure",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0110-02",
+                "CM-O0210-01",
+                "CM-O0210-04"
+              ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "CERT-CSG-7-2022",
@@ -4340,7 +4391,8 @@
               "priority": "priority",
               "escalation_trigger": "SD-CM activity confirmed across multiple observation points OR concurrent with other Phase 1 indicators.",
               "coordinates_with": [
-                "RP-0103-01"
+                "RP-0103-01",
+                "RP-O0210-01"
               ],
               "legal_notes": "Detection of SD-CM behavior raises the inferred sophistication of the threat actor and may justify enhanced monitoring within legal scope. Document the basis for any escalation. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -4362,7 +4414,8 @@
               "escalation_trigger": "Threat actor demonstrates sophistication consistent with prior coordinated cases OR signature ties to a known threat actor or affiliated network.",
               "coordinates_with": [
                 "RP-0103-02",
-                "RP-0101-02"
+                "RP-0101-02",
+                "RP-O0210-02"
               ],
               "legal_notes": "Sharing surveillance signatures with law enforcement may carry information-sharing obligations or restrictions depending on jurisdiction and case context. Document the indicator constellation and observation conditions. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -5184,7 +5237,8 @@
               ],
               "limitations": "Behavioral changes have many benign explanations (personal stress, depression, life events); reporting culture must encourage flagging without requiring certainty",
               "compensates_for": [
-                "CM-0101-03"
+                "CM-0101-03",
+                "CM-O0210-02"
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
@@ -5246,7 +5300,9 @@
                 "mobilization"
               ],
               "limitations": "Financial monitoring of identified individuals carries jurisdiction-specific legal constraints; cash transactions have many lawful uses",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0210-02"
+              ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
                 "CERT-CSG-7-2022",
@@ -5364,7 +5420,8 @@
               "priority": "priority",
               "escalation_trigger": "Concealment pattern coupled with concurrent indicators from another Phase 1 or Phase 2 tactic.",
               "coordinates_with": [
-                "RP-0107-01"
+                "RP-0107-01",
+                "RP-O0210-01"
               ],
               "legal_notes": "Behavioral observations of associates and family members are protected information; consult legal before any inquiry beyond the immediate report. Document factually. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -5387,7 +5444,8 @@
               "escalation_trigger": "Concealment pattern persists or intensifies OR pathway indicators progress through preparation stage.",
               "coordinates_with": [
                 "RP-0107-02",
-                "RP-0104-02"
+                "RP-0104-02",
+                "RP-O0210-02"
               ],
               "legal_notes": "Concealment is rarely unlawful in itself; the response posture is preventive intelligence, not criminal investigation, until concrete operational indicators surface. Document the indicator constellation thoroughly. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -5716,7 +5774,9 @@
                 "execution"
               ],
               "limitations": "Layered controls add cost and friction to legitimate operations. Insider sponsors with multi-tier access can defeat layering",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0203-02"
+              ],
               "source_refs": [
                 "ASIS-WVPI-2021",
                 "LLNL-TR-858139",
@@ -5736,7 +5796,9 @@
                 "execution"
               ],
               "limitations": "Random-interval checks have coverage gaps; sophisticated threat actors may infer the inspection cadence given enough observations",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0203-02"
+              ],
               "source_refs": [
                 "ASIS-WVPI-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -6291,7 +6353,8 @@
               ],
               "limitations": "Two-factor friction can erode legitimate operations during high-traffic periods; biometric capture has privacy and regulatory implications",
               "compensates_for": [
-                "CM-0203-03"
+                "CM-0203-03",
+                "CM-F0204-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -6312,7 +6375,9 @@
                 "execution"
               ],
               "limitations": "Escort discipline degrades during sustained operations and across shift changes; staff with established relationships may relax verification under social pressure",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0204-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
@@ -7254,7 +7319,8 @@
               ],
               "limitations": "Sweep schedules may themselves become observable to the threat actor; trained operators are required to distinguish operational alertness from routine waiting",
               "compensates_for": [
-                "CM-0103-02"
+                "CM-0103-02",
+                "CM-F0206-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -7295,7 +7361,9 @@
                 "execution"
               ],
               "limitations": "Awareness fades without reinforcement; adjacent business cooperation requires established relationships and may be subject to staff turnover",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0206-03"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
@@ -8762,7 +8830,9 @@
               ],
               "limitations": "Multi-day correlation requires retention beyond standard CCTV policy and either operator time or analytics support; sophisticated threat actors rotate vehicles and clothing to defeat correlation",
               "compensates_for": [
-                "CM-0201-02"
+                "CM-0201-02",
+                "CM-O0201-01",
+                "CM-O0201-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -8895,7 +8965,8 @@
               "escalation_trigger": "Partial approach pattern confirmed across multiple incidents OR threat actor identity ties to prior threat case OR concurrent indicators surface from another tactic.",
               "coordinates_with": [
                 "RP-0103-01",
-                "RP-0201-01"
+                "RP-0201-01",
+                "RP-O0201-01"
               ],
               "legal_notes": "Visitor logs and access records are accessible under standard security policy; coordinate with legal before any investigative escalation beyond observation. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -8919,7 +8990,8 @@
               "coordinates_with": [
                 "RP-0201-02",
                 "RP-0107-02",
-                "RP-0206-02"
+                "RP-0206-02",
+                "RP-O0201-02"
               ],
               "legal_notes": "Pre-execution interruption at Partial Approach Rehearsal carries the highest preventive leverage in the late mobilization window because the threat actor is generating observable evidence of intent. Document the indicator constellation thoroughly. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -9217,7 +9289,8 @@
               ],
               "limitations": "On-site response capability has high recurring cost and may not be feasible for all protected environments. Trained personnel attrition is constant",
               "compensates_for": [
-                "CM-0305-02"
+                "CM-0305-02",
+                "CM-F0305-04"
               ],
               "source_refs": [
                 "ASIS-WVPI-2021",
@@ -10201,7 +10274,8 @@
               ],
               "limitations": "Pre-positioning assumes accurate threat prediction; assets staffed for low-probability events have high recurring cost and may degrade in readiness over time",
               "compensates_for": [
-                "CM-0301-01"
+                "CM-0301-01",
+                "CM-F0306-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -12989,7 +13063,10 @@
                 "aftermath"
               ],
               "limitations": "Engagement decisions during withdrawal carry use-of-force and bystander-safety implications. Recording fidelity under stress is variable",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0401-01",
+                "CM-I0401-03"
+              ],
               "source_refs": [
                 "ASIS-WVPI-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -13448,7 +13525,9 @@
                 "aftermath"
               ],
               "limitations": "Scene control depends on trained personnel and may be impractical during ongoing kinetic activity. Chain-of-custody integrity is fragile and easily compromised under stress",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0404-02"
+              ],
               "source_refs": [
                 "ASIS-WVPI-2021",
                 "NTAC-SYSTEMS-2020",
@@ -13468,7 +13547,8 @@
               ],
               "limitations": "Digital forensic readiness requires specialized expertise that may not be available in-house; jurisdictional admissibility standards vary",
               "compensates_for": [
-                "CM-0305-03"
+                "CM-0305-03",
+                "CM-O0404-01"
               ],
               "source_refs": [
                 "CERT-CSG-7-2022",
@@ -13488,7 +13568,10 @@
                 "aftermath"
               ],
               "limitations": "Monitoring of post-incident behavior carries legal scope and authorization constraints; closed platforms are not visible without legal process",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0404-01",
+                "CM-O0404-03"
+              ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "FBI-PREATTACK-2018",
@@ -13507,7 +13590,10 @@
                 "aftermath"
               ],
               "limitations": "Awareness training cannot substitute for trained forensic personnel during actual incident response. Detection of evidence-absence requires baseline knowledge of what should be present",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0402-01",
+                "CM-F0404-01"
+              ],
               "source_refs": [
                 "ASIS-WVPI-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -13610,7 +13696,9 @@
               "escalation_trigger": "Evidence management discipline indicates organized threat actor or expanded network requiring broader investigation.",
               "coordinates_with": [
                 "RP-0401-01",
-                "RP-0401-02"
+                "RP-0401-02",
+                "RP-I0404-01",
+                "RP-O0404-01"
               ],
               "legal_notes": "Chain-of-custody integrity is critical for any subsequent prosecution. Post-incident monitoring of the threat actor and associates carries jurisdiction-specific authorization requirements. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -13632,7 +13720,8 @@
               "priority": "priority",
               "escalation_trigger": "Anti-forensic pattern reveals connection to known organized threat group or expanded operational network.",
               "coordinates_with": [
-                "RP-0401-02"
+                "RP-0401-02",
+                "RP-I0404-02"
               ],
               "legal_notes": "Expanded searches under legal process require probable cause supported by documented evidence-management indicators. Coordinate with prosecutors before any covert action. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -13922,7 +14011,8 @@
               ],
               "limitations": "Many associates of a successful threat actor are themselves disinclined to suspect; reporting threshold is high in close personal relationships",
               "compensates_for": [
-                "CM-0202-01"
+                "CM-0202-01",
+                "CM-F0403-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -14427,7 +14517,10 @@
               ],
               "limitations": "Rapid interview depends on accomplice identification within the post-incident window; sophisticated networks pre-coordinate dispersal that places accomplices outside reach",
               "compensates_for": [
-                "CM-0402-01"
+                "CM-0402-01",
+                "CM-F0404-02",
+                "CM-I0405-02",
+                "CM-O0405-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -14447,7 +14540,10 @@
                 "aftermath"
               ],
               "limitations": "Tracking carries jurisdiction-specific authorization requirements; cross-border movement requires international coordination that may lag the threat actor's dispersal speed",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0404-02",
+                "CM-O0405-03"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
@@ -14465,7 +14561,9 @@
                 "aftermath"
               ],
               "limitations": "Compelled testimony depends on prosecutor judgment and witness reliability; pre-coordinated network discipline may resist immunity offers when leadership is at risk",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0405-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-SYSTEMS-2020"
@@ -14575,7 +14673,9 @@
               "escalation_trigger": "Network protection signature ties to known organized threat actor OR cross-border movement initiated.",
               "coordinates_with": [
                 "RP-0402-01",
-                "RP-0401-02"
+                "RP-0401-02",
+                "RP-O0404-01",
+                "RP-O0405-01"
               ],
               "legal_notes": "Investigation of multi-actor networks requires coordination across jurisdictional and prosecutorial authority; chain-of-custody integrity for any artifact recovered is critical for downstream prosecution. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -14597,7 +14697,9 @@
               "priority": "priority",
               "escalation_trigger": "Network-protection pattern reveals connection to known organized threat group or expanded operational network.",
               "coordinates_with": [
-                "RP-0402-02"
+                "RP-0402-02",
+                "RP-O0404-02",
+                "RP-O0405-02"
               ],
               "legal_notes": "Expanded legal process requires evidentiary threshold; coordinate with prosecutors before any covert investigative step. Information-sharing with intelligence partners may carry classification or jurisdictional restrictions. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -14903,7 +15005,8 @@
               ],
               "limitations": "Privacy coins (Monero, Zcash) substantially defeat current blockchain forensics; sophisticated threat actors layer mixing across multiple chains and protocols to extend the analytical timeline",
               "compensates_for": [
-                "CM-0402-02"
+                "CM-0402-02",
+                "CM-O0407-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -14923,7 +15026,9 @@
                 "aftermath"
               ],
               "limitations": "International cooperation is constrained by treaty and political considerations; some jurisdictions actively shield operational beneficiaries",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0407-04"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NITTF-GUIDE-2017"
@@ -14941,7 +15046,9 @@
                 "aftermath"
               ],
               "limitations": "Lifestyle-change detection requires longitudinal observation and benchmark income data that may not be available; signal-to-noise is low without other tying evidence",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0405-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
@@ -15034,7 +15141,8 @@
               "priority": "priority",
               "escalation_trigger": "Disposition pattern ties to known organized network OR cross-border movement of proceeds initiated.",
               "coordinates_with": [
-                "RP-0402-01"
+                "RP-0402-01",
+                "RP-O0407-01"
               ],
               "legal_notes": "Financial investigation requires legal-process authorization; coordinate with prosecutors and financial intelligence units before any active investigative step. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -15055,7 +15163,8 @@
               "priority": "priority",
               "escalation_trigger": "Disposition pattern reveals connection to known organized financial network or broader criminal enterprise.",
               "coordinates_with": [
-                "RP-0402-02"
+                "RP-0402-02",
+                "RP-O0407-02"
               ],
               "legal_notes": "Cross-border financial investigation depends on treaty cooperation and foreign jurisdiction policy; coordinate with international enforcement partners early. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -15336,7 +15445,9 @@
                 "aftermath"
               ],
               "limitations": "Longitudinal tracking requires sustained analyst attention, jurisdictional authority for cross-case investigation, and sufficient case volume to detect evolution patterns",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0408-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-SYSTEMS-2020"
@@ -15372,7 +15483,9 @@
                 "aftermath"
               ],
               "limitations": "Information-sharing depth depends on classification, jurisdictional authority, and partner relationships; methodology evolution may outpace sharing cycles",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0408-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NITTF-GUIDE-2017"
@@ -15485,7 +15598,8 @@
               "escalation_trigger": "Evolution pattern indicates capability or organizational expansion OR ties to other open investigations.",
               "coordinates_with": [
                 "RP-0107-01",
-                "RP-0402-02"
+                "RP-0402-02",
+                "RP-O0408-01"
               ],
               "legal_notes": "Cross-case methodology analysis requires investigative authority across the linked operations; coordinate with prosecutors on case-linking thresholds. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -15505,7 +15619,8 @@
               "priority": "priority",
               "escalation_trigger": "AAR materials reveal capability or organizational scope beyond the immediate operation.",
               "coordinates_with": [
-                "RP-0402-01"
+                "RP-0402-01",
+                "RP-O0408-02"
               ],
               "legal_notes": "Recovered documents are evidence subject to chain-of-custody; coordinate with prosecutors before any analysis or sharing that may prejudice prosecution. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -15818,7 +15933,9 @@
                 "aftermath"
               ],
               "limitations": "Takedown is reactive and slower than initial reach; sophisticated threat actors pre-distribute material across multiple platforms to defeat single-platform takedown",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0407-04"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
@@ -15836,7 +15953,9 @@
                 "aftermath"
               ],
               "limitations": "Attribution forensics requires specialized expertise; sophisticated threat actors can produce material designed to defeat current authentication methods",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0410-03"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-SYSTEMS-2020"
@@ -15872,7 +15991,9 @@
                 "aftermath"
               ],
               "limitations": "Attribution analysis depends on cross-case data and signature recognition; novel attribution methods may not match prior patterns",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0410-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NITTF-GUIDE-2017"
@@ -15944,7 +16065,8 @@
               "priority": "urgent",
               "escalation_trigger": "Attribution is authenticated AND ties to known threat group OR contains additional threats requiring protective response.",
               "coordinates_with": [
-                "RP-0408-01"
+                "RP-0408-01",
+                "RP-O0410-01"
               ],
               "legal_notes": "Attribution material may be evidence subject to chain-of-custody; coordinate with prosecutors before any analysis or sharing. Platform takedown decisions may carry First Amendment or jurisdictional implications. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -15965,7 +16087,8 @@
               "priority": "priority",
               "escalation_trigger": "Authenticated attribution reveals expanded organizational involvement OR ties to other open investigations.",
               "coordinates_with": [
-                "RP-0408-02"
+                "RP-0408-02",
+                "RP-O0410-02"
               ],
               "legal_notes": "Third-party attribution claims must be authenticated before being treated as accurate; affiliated-group claims may not reflect actual operational responsibility. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -16299,7 +16422,9 @@
                 "aftermath"
               ],
               "limitations": "Secondary-platform monitoring requires sustained analyst attention; encrypted channels may not be visible without legal process or insider access",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0411-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
@@ -16404,7 +16529,8 @@
               "priority": "urgent",
               "escalation_trigger": "Distribution scale exceeds rapid takedown capacity OR material includes additional threats requiring protective response.",
               "coordinates_with": [
-                "RP-0407-01"
+                "RP-0407-01",
+                "RP-O0411-01"
               ],
               "legal_notes": "Platform takedown decisions may carry First Amendment or jurisdictional implications; coordinate with legal before any unilateral action. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -16424,7 +16550,8 @@
               "priority": "priority",
               "escalation_trigger": "Amplification pattern reveals connection to known organized network or ongoing operational activity.",
               "coordinates_with": [
-                "RP-0407-02"
+                "RP-0407-02",
+                "RP-O0411-02"
               ],
               "legal_notes": "Closed-platform investigation requires legal-process authorization; coordinate with prosecutors and platform legal teams before any active investigative step. This guidance does not constitute legal advice. Consult qualified legal counsel for jurisdiction-specific requirements.",
               "source_refs": [
@@ -16735,7 +16862,8 @@
               ],
               "limitations": "Crisis-negotiation effectiveness varies by jurisdiction and case type; some leverage scenarios resolve only through tactical intervention rather than negotiation",
               "compensates_for": [
-                "CM-0304-01"
+                "CM-0304-01",
+                "CM-I0408-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -17720,7 +17848,9 @@
                 "target_development"
               ],
               "limitations": "Much facility information is public by law (permits, assessor records, corporate filings) and cannot be withdrawn; assessment raises the cost of profiling without eliminating it",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0103-03"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-SOFTTARGETS-2019"
@@ -17738,7 +17868,10 @@
                 "target_development"
               ],
               "limitations": "Remote collection largely leaves no trace on facility systems; monitoring catches only the fraction of profiling that surfaces publicly or touches facility-controlled properties",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0103-03",
+                "CM-I0103-03"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "DHS-STCP-2018"
@@ -17758,7 +17891,8 @@
               "limitations": "Depends on voluntary compliance across tenants and employees; some occupancy and event detail is operationally necessary to publish and cannot be suppressed",
               "compensates_for": [
                 "IND-F0102-02",
-                "IND-F0102-03"
+                "IND-F0102-03",
+                "CM-0103-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -17853,7 +17987,9 @@
               "escalation_trigger": "Actor identified with apparent means and proximity to the facility, OR profiling followed by physical-reconnaissance or acquisition indicators for the same actor",
               "coordinates_with": [
                 "RP-F0101-01",
-                "RP-F0103-01"
+                "RP-F0103-01",
+                "RP-0103-01",
+                "RP-I0103-01"
               ],
               "legal_notes": "Monitoring of an identified actor may implicate privacy and anti-stalking statutes that vary by jurisdiction. Collection of a subject's own open-source activity has its own limits. Consult counsel before active monitoring; document the investigative basis for any action.",
               "source_refs": [
@@ -17872,7 +18008,8 @@
               "priority": "routine",
               "escalation_trigger": "Profiling resolves to a specific actor, or a specific date-certain concern emerges",
               "coordinates_with": [
-                "RP-F0102-01"
+                "RP-F0102-01",
+                "RP-0103-02"
               ],
               "legal_notes": "Posture changes are within facility authority; document the threat basis to support any resource requests and to defend proportionality.",
               "source_refs": [
@@ -18200,7 +18337,10 @@
                 "target_development"
               ],
               "limitations": "Depends on staff attentiveness and reporting discipline; skilled actors observe from concealed vantage or vehicles and blend into legitimate foot and delivery traffic, and much casing is legally protected until it pairs with access probing",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0103-03",
+                "CM-I0103-04"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-SOFTTARGETS-2019"
@@ -18262,7 +18402,8 @@
               ],
               "limitations": "Access instrumentation catches probing at controlled points but not observation from public ground; alarm and log review depend on staffing and tuning, and gentle handle-testing may not register as a forced-door event",
               "compensates_for": [
-                "IND-F0103-04"
+                "IND-F0103-04",
+                "CM-0103-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -18340,7 +18481,9 @@
               "escalation_trigger": "Actor returns for a repeat casing visit, is observed probing access, OR indicators across other facility tactics surface for the same actor",
               "coordinates_with": [
                 "RP-F0101-01",
-                "RP-F0103-02"
+                "RP-F0103-02",
+                "RP-0103-01",
+                "RP-I0103-01"
               ],
               "legal_notes": "Photography and observation from public space are frequently lawful; base any action on articulable behavior, not presence alone. Identification and monitoring of an individual may implicate privacy and anti-stalking statutes that vary by jurisdiction. Consult counsel before active monitoring and document the investigative basis.",
               "source_refs": [
@@ -18359,7 +18502,8 @@
               "priority": "immediate",
               "escalation_trigger": "Probing succeeds in gaining or testing entry, the actor aligns observation with an occupancy or anniversary window, or staging-class behaviors surface elsewhere for the same actor",
               "coordinates_with": [
-                "RP-F0103-01"
+                "RP-F0103-01",
+                "RP-0103-02"
               ],
               "legal_notes": "Posture changes and access hardening are within facility authority; document the threat basis to support resource requests and to defend proportionality. Coordinate any law-enforcement field contact on articulable suspicious activity, not presence alone.",
               "source_refs": [
@@ -18695,7 +18839,9 @@
                 "target_development"
               ],
               "limitations": "Much permit and assessor material is public by law and cannot be withdrawn; redaction raises the cost of research without eliminating access to structural information",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0104-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GAO-15-6-2014"
@@ -18714,7 +18860,8 @@
               ],
               "limitations": "Requesters may use cut-outs or public terminals; anonymized and third-party requests defeat attribution, and public-portal downloads may leave no reviewable log",
               "compensates_for": [
-                "CM-F0104-01"
+                "CM-F0104-01",
+                "CM-I0104-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -18828,7 +18975,8 @@
               "escalation_trigger": "Actor identified acquiring non-public engineering documents, OR indicators across other facility tactics surface for the same actor",
               "coordinates_with": [
                 "RP-F0104-02",
-                "RP-F0103-01"
+                "RP-F0103-01",
+                "RP-I0104-01"
               ],
               "legal_notes": "Monitoring of an identified actor and records-request auditing may implicate privacy, public-records, and anti-stalking statutes that vary by jurisdiction. Consult counsel before active monitoring; document the investigative basis for any action.",
               "source_refs": [
@@ -19205,7 +19353,9 @@
               ],
               "limitations": "Low-level probes are individually mundane and easily dismissed as nuisance alarms; correlation depends on retention, disciplined logging, and analysts empowered to connect events across shifts",
               "compensates_for": [
-                "IND-F0105-05"
+                "IND-F0105-05",
+                "CM-I0103-04",
+                "CM-O0210-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -19226,7 +19376,8 @@
               "limitations": "Randomization raises the cost of pattern mapping but cannot conceal fixed infrastructure (camera mounts, door hardware, standoff); determined observation over time still recovers averages",
               "compensates_for": [
                 "IND-F0105-02",
-                "IND-F0105-04"
+                "IND-F0105-04",
+                "CM-O0210-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -19248,7 +19399,8 @@
               "limitations": "Coverage upgrades are capital-intensive and slow to field; new equipment introduces its own configuration gaps and requires trained monitoring to convert detection into response",
               "compensates_for": [
                 "IND-F0105-01",
-                "IND-F0105-03"
+                "IND-F0105-03",
+                "CM-I0103-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -19323,7 +19475,9 @@
               "escalation_trigger": "Probing persists or adapts after a countermeasure change, OR the actor is identified with apparent means and proximity, OR indicators across other facility tactics surface for the same actor",
               "coordinates_with": [
                 "RP-F0105-02",
-                "RP-F0103-01"
+                "RP-F0103-01",
+                "RP-I0103-01",
+                "RP-O0210-01"
               ],
               "legal_notes": "Monitoring of an identified actor may implicate privacy and anti-stalking statutes that vary by jurisdiction. Detaining or questioning a suspected prober raises trespass and false-imprisonment exposure; consult counsel and document the investigative basis before action.",
               "source_refs": [
@@ -19343,7 +19497,8 @@
               "priority": "priority",
               "escalation_trigger": "Probing resolves to a specific actor, or the tested gap aligns with an occupancy or anniversary window",
               "coordinates_with": [
-                "RP-F0105-01"
+                "RP-F0105-01",
+                "RP-O0210-02"
               ],
               "legal_notes": "Posture changes are within facility authority; document the threat basis to support resource requests and to defend proportionality. Preserve access logs and footage of probes as potential evidence per retention policy.",
               "source_refs": [
@@ -19664,7 +19819,9 @@
                 "target_development"
               ],
               "limitations": "Depends on merchant participation and recall; online and out-of-area sourcing bypasses local liaison, and split purchases below thresholds may draw no attention",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0107-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ATF-EIR-2024"
@@ -19684,7 +19841,8 @@
               ],
               "limitations": "Financial and purchase records are access-restricted and require legal basis; cash, cryptocurrency, and third-party procurement reduce visibility",
               "compensates_for": [
-                "CM-F0106-01"
+                "CM-F0106-01",
+                "CM-I0107-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -19791,7 +19949,8 @@
               "escalation_trigger": "Acquisition of a mass method (incendiary or explosive means) confirmed, OR acquisition indicators surface alongside reconnaissance, grievance, or staging signals for the same actor and site",
               "coordinates_with": [
                 "RP-F0106-02",
-                "RP-F0104-01"
+                "RP-F0104-01",
+                "RP-I0107-01"
               ],
               "legal_notes": "Access to financial, purchase, and shipping records is governed by privacy statutes and typically requires legal process; regulated-precursor reporting regimes vary by jurisdiction. Consult counsel before records review; document the investigative basis for any action.",
               "source_refs": [
@@ -20158,7 +20317,12 @@
                 "target_development"
               ],
               "limitations": "Encrypted and closed channels are not visible; recruitment and tasking often migrate to private messaging before a facility is named, limiting coverage",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0107-01",
+                "CM-I0108-04",
+                "CM-O0106-04",
+                "CM-O0202-03"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
@@ -20177,7 +20341,9 @@
               ],
               "limitations": "Vetting screens at onboarding but may miss cultivation that occurs after access is granted; determined coercion of an already-cleared insider is not prevented by initial screening",
               "compensates_for": [
-                "CM-F0107-01"
+                "CM-F0107-01",
+                "CM-0105-01",
+                "CM-O0106-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -20196,7 +20362,10 @@
                 "mobilization"
               ],
               "limitations": "Depends on reporting discipline and fusion-center throughput; category-level warning may not identify the specific network or facility, and referral thresholds are legally constrained",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0105-03",
+                "CM-I0108-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ]
@@ -20263,7 +20432,11 @@
               "escalation_trigger": "A named insider is confirmed to be cooperating, OR the network shows means and proximity to the facility, OR indicators across other facility tactics surface for the same network",
               "coordinates_with": [
                 "RP-F0107-02",
-                "RP-F0106-01"
+                "RP-F0106-01",
+                "RP-0105-01",
+                "RP-I0107-01",
+                "RP-O0106-01",
+                "RP-O0202-01"
               ],
               "legal_notes": "Investigating associations implicates freedom-of-association and privacy protections; lawful collective activity must not be treated as conspiracy. Consult counsel before mapping networks or monitoring an identified insider, and document the investigative basis for any action.",
               "source_refs": [
@@ -20283,7 +20456,11 @@
               "priority": "immediate",
               "escalation_trigger": "The insider has provided access, credentials, or non-public site information, OR staging-class behaviors by the network are observed",
               "coordinates_with": [
-                "RP-F0107-01"
+                "RP-F0107-01",
+                "RP-0105-02",
+                "RP-I0108-01",
+                "RP-O0106-02",
+                "RP-O0202-02"
               ],
               "legal_notes": "Employment action against a suspected insider implicates labor law, due-process, and defamation exposure; access restriction and investigation must follow established policy and counsel guidance. Preserve evidence lawfully and document proportionality.",
               "source_refs": [
@@ -20613,7 +20790,10 @@
               "limitations": "Effective only if staff follow the process under time pressure; a well-built legend with a live callback number and matching paperwork can still pass, and social pressure at a busy dock erodes discipline",
               "compensates_for": [
                 "IND-F0108-01",
-                "IND-F0108-02"
+                "IND-F0108-02",
+                "CM-I0106-03",
+                "CM-I0109-03",
+                "CM-O0205-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -20656,7 +20836,8 @@
               "limitations": "Depends on staff confidence and turnover; awareness fades without reinforcement, and a durable, well-rehearsed legend is specifically designed to survive a routine challenge",
               "compensates_for": [
                 "IND-F0108-01",
-                "IND-F0108-04"
+                "IND-F0108-04",
+                "CM-O0108-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -20677,7 +20858,10 @@
               "limitations": "Screening reduces but does not eliminate cover employment; seeded histories and shell entities can pass a check, and screening reaches employees and prime vendors more reliably than subcontractors and temporary labor",
               "compensates_for": [
                 "IND-F0108-03",
-                "IND-F0108-05"
+                "IND-F0108-05",
+                "CM-0106-01",
+                "CM-I0106-02",
+                "CM-I0109-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -20758,7 +20942,12 @@
               "escalation_trigger": "The cover is confirmed fabricated and tied to an identified actor with apparent means and proximity, OR indicators across other facility tactics surface for the same actor or identity",
               "coordinates_with": [
                 "RP-F0103-01",
-                "RP-F0107-01"
+                "RP-F0107-01",
+                "RP-0106-01",
+                "RP-I0106-01",
+                "RP-I0109-01",
+                "RP-O0108-01",
+                "RP-O0205-01"
               ],
               "legal_notes": "Verifying a vendor claim and denying access are within facility authority; investigation of an identified actor may implicate privacy and employment statutes that vary by jurisdiction. Consult counsel before adverse action against a cover employee; document the investigative basis.",
               "source_refs": [
@@ -20778,7 +20967,10 @@
               "priority": "priority",
               "escalation_trigger": "The cover resolves to a known threat-actor profile or is paired with staging behaviors from other facility tactics",
               "coordinates_with": [
-                "RP-F0108-01"
+                "RP-F0108-01",
+                "RP-0106-02",
+                "RP-O0108-02",
+                "RP-O0205-02"
               ],
               "legal_notes": "Adverse action against a cover employee or vendor should be counsel-reviewed to manage wrongful-termination and defamation exposure; preserve evidence and document the threat basis to support proportionality.",
               "source_refs": [
@@ -21113,7 +21305,11 @@
                 "mobilization"
               ],
               "limitations": "Encrypted and closed channels are not visible; leakage may be oblique or private, and performative or crisis language generates false positives that require human triage before action",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0107-03",
+                "CM-I0110-01",
+                "CM-O0109-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "MELOY-TRAP18-2016"
@@ -21177,7 +21373,8 @@
               ],
               "limitations": "Off-ramps depend on identifying and reaching the actor in time and on the grievance being addressable; a committed actor may not accept diversion, and premature contact can accelerate an ambivalent one",
               "compensates_for": [
-                "CM-F0109-03"
+                "CM-F0109-03",
+                "CM-O0109-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -21240,7 +21437,10 @@
               "escalation_trigger": "Countdown attaches to a date-certain or occupancy window, means or staging appear for the same actor, or warning behaviors converge and sharpen despite intervention",
               "coordinates_with": [
                 "RP-F0109-02",
-                "RP-F0101-01"
+                "RP-F0101-01",
+                "RP-0107-01",
+                "RP-I0110-01",
+                "RP-O0109-01"
               ],
               "legal_notes": "Monitoring and contact of an identified actor may implicate privacy, anti-stalking, and mental-health-privacy statutes that vary by jurisdiction; some interventions (welfare checks, emergency holds, protective orders) carry their own thresholds. Consult counsel before active monitoring or contact and document the investigative and safety basis for any action.",
               "source_refs": [
@@ -21261,7 +21461,10 @@
               "priority": "immediate",
               "escalation_trigger": "Actor is located in proximity to the site within the named window, or interdiction contact indicates a committed rather than ambivalent actor",
               "coordinates_with": [
-                "RP-F0109-01"
+                "RP-F0109-01",
+                "RP-0107-02",
+                "RP-I0110-02",
+                "RP-O0109-02"
               ],
               "legal_notes": "Posture changes are within facility authority; interdiction and welfare contacts should be led by law enforcement or qualified clinicians within their authorities. Document the threat basis to support resource requests, defend proportionality, and protect the actor's rights during any intervention.",
               "source_refs": [
@@ -21651,7 +21854,8 @@
               ],
               "limitations": "Test events individually resemble routine nuisance incidents; correlation requires disciplined logging and analytic capacity many facilities lack, and closed or oblique probing may never enter the pipeline",
               "compensates_for": [
-                "IND-F0110-01"
+                "IND-F0110-01",
+                "CM-0108-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -21724,7 +21928,8 @@
               "escalation_trigger": "Actor identified with apparent means and proximity, OR the actor is observed detecting and adapting to covert coverage, OR indicators across other facility tactics surface for the same actor",
               "coordinates_with": [
                 "RP-F0110-02",
-                "RP-F0103-01"
+                "RP-F0103-01",
+                "RP-0108-01"
               ],
               "legal_notes": "Covert observation and any monitoring of an identified actor may implicate privacy, anti-stalking, and wiretap statutes that vary by jurisdiction. Consult counsel before active or covert monitoring; document the investigative basis for any action.",
               "source_refs": [
@@ -21744,7 +21949,8 @@
               "priority": "priority",
               "escalation_trigger": "Counter-surveillance resolves to a specific actor with staging-class behavior elsewhere, or a date-certain threat emerges",
               "coordinates_with": [
-                "RP-F0110-01"
+                "RP-F0110-01",
+                "RP-0108-02"
               ],
               "legal_notes": "Coordinated covert surveillance and law-enforcement follow raise heightened legal exposure; document the threat basis, defend proportionality, and keep counsel engaged throughout.",
               "source_refs": [
@@ -22070,7 +22276,9 @@
                 "mobilization"
               ],
               "limitations": "Rehearsal blends into ordinary movement; disciplined actors vary vehicles and appearance to defeat pattern-matching, and analytics generate false positives on legitimate repeat traffic that must be triaged",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0201-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "SANDIA-GARCIA-VAPPS-2006"
@@ -22091,7 +22299,8 @@
               "limitations": "Randomization raises the cost of a rehearsed plan but does not detect the actor; sustaining true unpredictability strains staffing, and a determined actor may re-rehearse against the new pattern",
               "compensates_for": [
                 "IND-F0201-01",
-                "IND-F0201-05"
+                "IND-F0201-05",
+                "CM-I0201-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -22111,7 +22320,8 @@
               ],
               "limitations": "Depends on staff reporting discipline and the tendency to dismiss repeated false alarms as faults; a single probe is easy to rationalize, and neighbor reporting is uneven",
               "compensates_for": [
-                "IND-F0201-03"
+                "IND-F0201-03",
+                "CM-I0203-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -22131,7 +22341,8 @@
               ],
               "limitations": "Reactive by design: it acts only after a probe is noticed, and it cannot resolve intent from a single event; posture elevation is temporary and resource-limited",
               "compensates_for": [
-                "IND-F0201-03"
+                "IND-F0201-03",
+                "CM-I0203-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -22214,7 +22425,8 @@
               "escalation_trigger": "Rehearsal tightens toward a specific window or date, correlates with materiel/emplacement indicators, OR the actor matches a known threat-actor profile",
               "coordinates_with": [
                 "RP-F0201-02",
-                "RP-F0103-01"
+                "RP-F0103-01",
+                "RP-I0201-01"
               ],
               "legal_notes": "Rehearsal often occurs on public routes and rights-of-way where expectation of privacy is limited, but targeted monitoring of an identified actor may implicate privacy and anti-stalking statutes that vary by jurisdiction. Consult counsel before active monitoring; document the investigative basis and chain of custody for any evidence.",
               "source_refs": [
@@ -22234,7 +22446,8 @@
               "priority": "priority",
               "escalation_trigger": "Probe resolves to an identified actor, recurs, or correlates with other rehearsal or staging indicators for the same site",
               "coordinates_with": [
-                "RP-F0201-01"
+                "RP-F0201-01",
+                "RP-I0203-01"
               ],
               "legal_notes": "Posture changes and pattern randomization are within facility authority; document the threat basis to support resource requests and to defend proportionality. Coordinate evidence handling with law enforcement if a probe is charged as trespass, tampering, or a false-alarm offense.",
               "source_refs": [
@@ -22561,7 +22774,10 @@
                 "mobilization"
               ],
               "limitations": "Caching off the actor's known footprint, using cash or cut-outs, is difficult to attribute; coverage of off-site storage is limited and much of it is lawful and private",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0210-04",
+                "CM-O0210-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ATF-EIR-2024"
@@ -22580,7 +22796,9 @@
                 "execution"
               ],
               "limitations": "Screening is bounded by throughput and coverage; a well-disguised device calibrated to the specific screening posture may pass, and unscreened delivery or service paths remain a gap",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0202-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-BOMBTHREAT-2023"
@@ -22598,7 +22816,9 @@
                 "mobilization"
               ],
               "limitations": "Insider facilitation or a validated but compromised vendor relationship can defeat verification; enforcement depends on staff discipline under time pressure at busy access points",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0202-03"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "DHS-STCP-2018"
@@ -22617,7 +22837,9 @@
                 "execution"
               ],
               "limitations": "Reporting quality varies and produces false positives from ordinary activity; effective concealment is designed precisely to look unremarkable to staff",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0210-04"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-SOFTTARGETS-2019"
@@ -22697,7 +22919,8 @@
               "escalation_trigger": "Confirmed device or accelerant cache, OR an identified actor observed in a staging posture with means and proximity to the facility",
               "coordinates_with": [
                 "RP-F0205-01",
-                "RP-F0203-01"
+                "RP-F0203-01",
+                "RP-O0210-02"
               ],
               "legal_notes": "Handling of suspected devices is a law-enforcement and EOD function; do not disturb. Search of cached materiel and any actor property implicates warrant requirements and chain-of-custody rules, coordinate with counsel and law enforcement before action.",
               "source_refs": [
@@ -22717,7 +22940,10 @@
               "priority": "priority",
               "escalation_trigger": "Concealment resolves to a located cache, a disguised device, or a date-certain or occupancy-window signal against the site",
               "coordinates_with": [
-                "RP-F0202-01"
+                "RP-F0202-01",
+                "RP-I0202-01",
+                "RP-I0210-02",
+                "RP-O0210-01"
               ],
               "legal_notes": "Monitoring of an identified actor may implicate privacy and anti-stalking statutes that vary by jurisdiction. Consult counsel before active monitoring; document the investigative basis for any action.",
               "source_refs": [
@@ -23067,7 +23293,9 @@
               "limitations": "Nuisance alarms from wildlife, weather, and vegetation degrade trust in the system; coverage gaps and blind spots persist on long perimeters, and detection without a response force only documents the breach",
               "compensates_for": [
                 "IND-F0203-01",
-                "IND-F0203-05"
+                "IND-F0203-05",
+                "CM-0203-02",
+                "CM-I0209-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -23089,7 +23317,9 @@
               "limitations": "Guard response cannot prevent a determined, coordinated, or armed breach at the point of contact; officer safety and use-of-force constraints limit interdiction, and staffing costs recur",
               "compensates_for": [
                 "IND-F0203-03",
-                "IND-F0203-04"
+                "IND-F0203-04",
+                "CM-I0204-04",
+                "CM-I0209-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -23110,7 +23340,8 @@
               "limitations": "Clear zones and layered standoff require land and sightlines many sites lack; the approach slows an actor and improves detection but does not stop a breach on its own",
               "compensates_for": [
                 "IND-F0203-02",
-                "IND-F0203-05"
+                "IND-F0203-05",
+                "CM-I0204-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -23188,7 +23419,10 @@
               "escalation_trigger": "Breach confirmed with inward progression, carried materiel, force applied to a person, or timing to occupied hours",
               "coordinates_with": [
                 "RP-F0203-02",
-                "RP-F0204-01"
+                "RP-F0204-01",
+                "RP-0203-01",
+                "RP-I0204-01",
+                "RP-I0209-01"
               ],
               "legal_notes": "Detention and use of force by guard personnel are constrained by state law and duty-of-care standards; document the observed breach and the basis for any response. Preserve the scene for law-enforcement evidentiary use.",
               "source_refs": [
@@ -23209,7 +23443,8 @@
               "priority": "urgent",
               "escalation_trigger": "Actor reaches interior spaces, materiel or a weapon is confirmed, or casualties occur",
               "coordinates_with": [
-                "RP-F0203-01"
+                "RP-F0203-01",
+                "RP-0203-02"
               ],
               "legal_notes": "Mass-notification and lockdown decisions carry liability in both directions; act on the confirmed breach and document the decision timeline. Coordinate public messaging with counsel and law enforcement to avoid compromising the response.",
               "source_refs": [
@@ -23547,7 +23782,9 @@
               "limitations": "Costly to retrofit into existing floor plans; tailgating and held-open doors defeat readers behaviorally, and legitimate high-traffic interior flow limits how tightly zones can be locked during operating hours",
               "compensates_for": [
                 "IND-F0204-01",
-                "IND-F0204-03"
+                "IND-F0204-03",
+                "CM-I0208-04",
+                "CM-I0209-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -23569,7 +23806,9 @@
               "limitations": "Interior blind spots persist in stairwells and service areas; analytics generate false positives in high-traffic interiors, and detection alone does not stop a fast-moving actor without a paired response capability",
               "compensates_for": [
                 "IND-F0204-02",
-                "IND-F0204-04"
+                "IND-F0204-04",
+                "CM-I0208-01",
+                "CM-I0209-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -23591,7 +23830,8 @@
               "limitations": "Effectiveness depends on staff willingness to challenge and on consistent enforcement; social-engineering pretexts and authority intimidation suppress challenge, and challenge itself can trigger a violent response from a committed actor",
               "compensates_for": [
                 "IND-F0204-03",
-                "IND-F0204-05"
+                "IND-F0204-05",
+                "CM-0204-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -23696,7 +23936,8 @@
               "escalation_trigger": "Actor applies force to a person, is armed, carries materiel inward, or continues toward a populated interior space despite lockdown",
               "coordinates_with": [
                 "RP-F0204-02",
-                "RP-F0203-01"
+                "RP-F0203-01",
+                "RP-0204-01"
               ],
               "legal_notes": "Use-of-force and detention by facility staff or contract security is governed by jurisdiction-specific law; lockdown must preserve protected egress under life-safety codes. Document the threat basis and the decision timeline to support proportionality.",
               "source_refs": [
@@ -23716,7 +23957,10 @@
               "priority": "priority",
               "escalation_trigger": "Insider facilitation is confirmed, or the same interior route or credential surfaces in another facility indicator",
               "coordinates_with": [
-                "RP-F0204-01"
+                "RP-F0204-01",
+                "RP-0204-02",
+                "RP-I0208-02",
+                "RP-I0209-01"
               ],
               "legal_notes": "Investigation of an identified employee or contractor implicates employment and privacy protections that vary by jurisdiction; consult counsel and HR before adverse action and document the investigative basis.",
               "source_refs": [
@@ -24042,7 +24286,8 @@
               "limitations": "Screening covers defined entry paths; materiel introduced through unscreened routes, insider facilitation, or perimeter placement can bypass it, and canine and trace coverage is intermittent rather than continuous",
               "compensates_for": [
                 "IND-F0205-01",
-                "IND-F0205-03"
+                "IND-F0205-03",
+                "CM-I0209-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -24062,7 +24307,8 @@
               ],
               "limitations": "Standoff is constrained by site geometry, streetscape, and access needs; achievable distance may be limited, and barriers must be rated to the credible vehicle threat to be effective",
               "compensates_for": [
-                "IND-F0205-04"
+                "IND-F0205-04",
+                "CM-I0308-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -24084,7 +24330,9 @@
               "limitations": "Depends on staff vigilance and reporting discipline; high false-positive volume can dull response, and concealed or disguised placements may defeat visual sweeps",
               "compensates_for": [
                 "IND-F0205-02",
-                "IND-F0205-04"
+                "IND-F0205-04",
+                "CM-I0209-03",
+                "CM-I0308-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -24181,7 +24429,8 @@
               "escalation_trigger": "Sensor, canine, or EOD confirmation of a live device; an identified actor with retained return access; or emplacement correlating with rehearsal, staging, or an occupancy-window alignment for the same site",
               "coordinates_with": [
                 "RP-F0205-02",
-                "RP-F0204-01"
+                "RP-F0204-01",
+                "RP-I0209-01"
               ],
               "legal_notes": "Evacuation, cordon, and render-safe actions engage law-enforcement and EOD authority; preserve the scene and chain of custody for any recovered materiel, and document the threat basis for evacuation decisions.",
               "source_refs": [
@@ -24201,7 +24450,8 @@
               "priority": "priority",
               "escalation_trigger": "Screening or investigation confirms an attack means, the object's presence cannot be legitimately accounted for, or the actor returns to the cache",
               "coordinates_with": [
-                "RP-F0205-01"
+                "RP-F0205-01",
+                "RP-I0308-01"
               ],
               "legal_notes": "Detaining an object or reviewing logs must rest on articulable suspicion; document the investigative basis, and involve law enforcement before any interdiction of a suspected actor.",
               "source_refs": [
@@ -24527,7 +24777,9 @@
                 "mobilization"
               ],
               "limitations": "Depends on staff vigilance and reporting discipline; a well-concealed or standoff position may never enter staff view, and legitimate waiting behavior generates false positives",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0206-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
@@ -24656,7 +24908,8 @@
               "escalation_trigger": "Position is held or repeated, correlates with staged materiel, a staged vehicle, prior rehearsal, or grievance against the site, OR the subject displays a weapon or readiness posture",
               "coordinates_with": [
                 "RP-F0206-02",
-                "RP-F0205-01"
+                "RP-F0205-01",
+                "RP-0206-01"
               ],
               "legal_notes": "Detention and use-of-force decisions rest with law enforcement; facility staff should observe, report, and protect occupants rather than intervene. Document the behavioral basis for protective action to support proportionality.",
               "source_refs": [
@@ -24677,7 +24930,8 @@
               "priority": "urgent",
               "escalation_trigger": "Confirmation of a weapon, device, or an actor matching a known threat-actor profile, OR movement from the position toward the site",
               "coordinates_with": [
-                "RP-F0206-01"
+                "RP-F0206-01",
+                "RP-0206-02"
               ],
               "legal_notes": "Emergency protective actions are within facility authority; document the threat basis and the correlating indicators to support the response and defend proportionality.",
               "source_refs": [
@@ -25485,7 +25739,13 @@
                 "mobilization"
               ],
               "limitations": "Legitimate maintenance and emergency access must remain workable, so propped doors and shared credentials recur; external utility service points often sit outside the controllable envelope",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0204-02",
+                "CM-I0206-03",
+                "CM-I0209-03",
+                "CM-I0302-01",
+                "CM-I0308-04"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CFATS-2023"
@@ -25505,7 +25765,8 @@
               ],
               "limitations": "Legacy controllers may not support authentication or logging; vendor maintenance requirements pressure teams to keep remote paths open, and OT monitoring needs specialized skills to interpret",
               "compensates_for": [
-                "CM-F0208-01"
+                "CM-F0208-01",
+                "CM-I0209-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -25524,7 +25785,9 @@
                 "mobilization"
               ],
               "limitations": "Frequent legitimate testing generates trouble signals that dull attention; a knowledgeable insider may know how to defeat annunciation, and alarm fatigue erodes response discipline",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0302-04"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NIOSH-BLDG-CBR-2002"
@@ -25544,7 +25807,8 @@
               ],
               "limitations": "Escort burden is resisted operationally, small facilities lack staff to enforce it, and a trusted insider with legitimate systems access defeats the control by definition",
               "compensates_for": [
-                "CM-F0208-02"
+                "CM-F0208-02",
+                "CM-I0206-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -25618,7 +25882,10 @@
               "escalation_trigger": "Evidence the system was left in an unsafe or defeated state, materiel is found at a systems location, or the same actor shows indicators across other mobilization tactics",
               "coordinates_with": [
                 "RP-F0205-01",
-                "RP-F0304-01"
+                "RP-F0304-01",
+                "RP-I0204-02",
+                "RP-I0209-01",
+                "RP-I0308-01"
               ],
               "legal_notes": "Life-safety systems are regulated; any disablement or restoration must be coordinated with the AHJ and documented. Preserve evidence for potential prosecution; consult counsel before monitoring an identified insider or vendor.",
               "source_refs": [
@@ -25638,7 +25905,9 @@
               "priority": "immediate",
               "escalation_trigger": "Controller changes affect life-safety or environmental protection, the intrusion path remains open after containment, or attribution points to a capable insider, vendor, or state-linked actor",
               "coordinates_with": [
-                "RP-F0208-01"
+                "RP-F0208-01",
+                "RP-I0206-01",
+                "RP-I0302-01"
               ],
               "legal_notes": "Network monitoring and credential revocation of employees or vendors may implicate employment and privacy terms; document the investigative basis and preserve OT logs under chain of custody for law-enforcement referral.",
               "source_refs": [
@@ -26946,7 +27215,8 @@
               "limitations": "Fixed standoff is costly and constrained by site geometry; interior and pedestrian-accessible spaces may still be reachable, and insiders with credentialed access can bypass perimeter screening",
               "compensates_for": [
                 "IND-F0302-01",
-                "IND-F0302-03"
+                "IND-F0302-03",
+                "CM-I0304-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -27008,7 +27278,8 @@
               ],
               "limitations": "Structural hardening is expensive, most feasible in new construction, and reduces but does not eliminate casualties from an interior or close-in device",
               "compensates_for": [
-                "IND-F0302-02"
+                "IND-F0302-02",
+                "CM-I0304-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -27084,7 +27355,8 @@
               "escalation_trigger": "Initiation behavior observed, a second suspected device found, or a detonation occurs",
               "coordinates_with": [
                 "RP-F0302-02",
-                "RP-F0301-01"
+                "RP-F0301-01",
+                "RP-I0304-01"
               ],
               "legal_notes": "Evacuation and cordon are within facility authority; preserve scene evidence for law enforcement and document the basis for protective actions. Do not interfere with EOD or investigative jurisdiction.",
               "source_refs": [
@@ -27941,7 +28213,8 @@
               ],
               "limitations": "Supervision reports the impairment but does not physically prevent it, and an insider who controls the impairment-permit process or the monitoring path can suppress the very signals meant to catch the act",
               "compensates_for": [
-                "IND-F0304-01"
+                "IND-F0304-01",
+                "CM-I0309-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -27985,7 +28258,9 @@
               "limitations": "Raises the effort and exposure required to reach a control point but does not stop an insider or vendor with authorized access to these spaces, and cannot be applied uniformly to intakes and infrastructure that must remain functionally accessible",
               "compensates_for": [
                 "IND-F0304-02",
-                "IND-F0304-05"
+                "IND-F0304-05",
+                "CM-I0304-01",
+                "CM-I0309-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -28008,7 +28283,8 @@
               "limitations": "Redundancy and fail-safe design are capital-intensive and constrained by existing building infrastructure; a determined actor with system knowledge may target the redundancy or the sensing itself, and rapid-shutdown capability depends on correct human decision under time pressure",
               "compensates_for": [
                 "IND-F0304-02",
-                "IND-F0304-03"
+                "IND-F0304-03",
+                "CM-I0304-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -28084,7 +28360,9 @@
               "escalation_trigger": "Manipulation confirmed on a life-safety system, occupancy at risk, or indicators of a sequenced attack against the same site",
               "coordinates_with": [
                 "RP-F0304-02",
-                "RP-F0309-01"
+                "RP-F0309-01",
+                "RP-I0304-01",
+                "RP-I0309-01"
               ],
               "legal_notes": "Preserve controller logs, access records, and the physical scene for potential prosecution; sabotage of life-safety systems implicates specific criminal statutes. Coordinate any OT forensic action with counsel and system owners to avoid destroying evidence or safety functions.",
               "source_refs": [
@@ -28438,7 +28716,8 @@
               "compensates_for": [
                 "IND-F0305-01",
                 "IND-F0305-02",
-                "IND-F0305-05"
+                "IND-F0305-05",
+                "CM-0301-02"
               ],
               "source_refs": [
                 "ASTM-F2656-2020",
@@ -28482,7 +28761,8 @@
               "limitations": "Hardening buys delay, not denial: a sufficiently equipped or numerous actor can defeat a single portal given time; effectiveness depends on guard vigilance and on lockdown being triggered before the breach completes",
               "compensates_for": [
                 "IND-F0305-03",
-                "IND-F0305-04"
+                "IND-F0305-04",
+                "CM-0301-01"
               ],
               "source_refs": [
                 "DOD-UFC4022-2017",
@@ -28577,7 +28857,8 @@
               "escalation_trigger": "Casualties present, the actor dismounts to continue on foot, a follow-on device or second threat actor appears, or the breach opens the way to the occupied interior",
               "coordinates_with": [
                 "RP-F0305-02",
-                "RP-F0302-01"
+                "RP-F0302-01",
+                "RP-0301-01"
               ],
               "legal_notes": "Life-safety response is within facility authority; use-of-force by the guard force must remain within lawful defense-of-others limits, and scene preservation should support the subsequent criminal investigation. Document decisions and timings contemporaneously.",
               "source_refs": [
@@ -28597,7 +28878,8 @@
               "priority": "urgent",
               "escalation_trigger": "The vehicle continues past initial barriers, the forced entry defeats the controlled point, or occupants come within the approach path",
               "coordinates_with": [
-                "RP-F0305-01"
+                "RP-F0305-01",
+                "RP-0301-02"
               ],
               "legal_notes": "Barrier activation and access denial are within facility authority; ensure emergency egress remains available to occupants during lockdown to avoid entrapment, and document the threat basis for the interdiction.",
               "source_refs": [
@@ -28934,7 +29216,8 @@
               "limitations": "Controlled ingress slows a seizure but cannot stop a large coordinated crowd at a public-facing lobby; balances against legitimate visitor and patron access",
               "compensates_for": [
                 "IND-F0306-01",
-                "IND-F0306-03"
+                "IND-F0306-03",
+                "CM-0303-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -28954,7 +29237,8 @@
               ],
               "limitations": "Protects life-safety egress but does not by itself end the occupation; determined actors may still barricade primary entrances even where fire exits are held clear",
               "compensates_for": [
-                "IND-F0306-02"
+                "IND-F0306-02",
+                "CM-0303-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -28995,7 +29279,8 @@
               ],
               "limitations": "Provides early warning but not intervention; value depends on a staffed response that can act on the alert before the group reaches a holdable chokepoint",
               "compensates_for": [
-                "IND-F0306-03"
+                "IND-F0306-03",
+                "CM-O0314-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -29061,7 +29346,9 @@
               "escalation_trigger": "Egress becomes fully obstructed with occupants inside, the group fortifies against extraction, or actors move to seize or confine occupants",
               "coordinates_with": [
                 "RP-F0306-02",
-                "RP-F0305-01"
+                "RP-F0305-01",
+                "RP-0303-01",
+                "RP-O0314-01"
               ],
               "legal_notes": "Response must respect lawful-assembly and free-speech protections until conduct crosses into unlawful obstruction or confinement; coordinate use-of-force and dispersal decisions with law enforcement and counsel, and document the basis for each escalation.",
               "source_refs": [
@@ -29084,7 +29371,8 @@
               "escalation_trigger": "Weapons are displayed, injury occurs, or negotiation breaks down",
               "coordinates_with": [
                 "RP-F0306-01",
-                "RP-F0309-01"
+                "RP-F0309-01",
+                "RP-0303-02"
               ],
               "legal_notes": "Captive-taking is a criminal act triggering law-enforcement primacy; facility personnel support but do not lead tactical response. Preserve evidence and document all decisions and communications for subsequent investigation and prosecution.",
               "source_refs": [
@@ -29902,7 +30190,8 @@
               ],
               "limitations": "Sensors cover known contaminants and sampling points; a novel agent or an injection downstream of the monitored point may reach occupants before detection, and alarms require a staffed response to be actionable",
               "compensates_for": [
-                "IND-F0308-01"
+                "IND-F0308-01",
+                "CM-I0306-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -29923,7 +30212,8 @@
               ],
               "limitations": "Raises the effort to reach a delivery point but does not stop a credentialed insider or authorized contractor; roof and grounds intakes are difficult to fully enclose without impairing operation",
               "compensates_for": [
-                "IND-F0308-03"
+                "IND-F0308-03",
+                "CM-I0306-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -30041,7 +30331,8 @@
               "escalation_trigger": "Confirmation of a genuinely hazardous agent, multiple exposed occupants, or a second distribution point implicated",
               "coordinates_with": [
                 "RP-F0308-02",
-                "RP-F0304-01"
+                "RP-F0304-01",
+                "RP-I0306-01"
               ],
               "legal_notes": "A contaminant release is a mass-casualty and public-health emergency; public-health and law-enforcement notification obligations attach. Preserve evidence and chain of custody while prioritizing life safety; document decontamination and exposure records for responder and occupant health follow-up.",
               "source_refs": [
@@ -30458,7 +30749,8 @@
               ],
               "limitations": "Redundant paths add cost and maintenance and can drift out of readiness if not exercised; a sufficiently broad jamming or infrastructure attack can degrade several paths at once, leaving only the manual fallback",
               "compensates_for": [
-                "IND-F0309-04"
+                "IND-F0309-04",
+                "CM-I0305-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -30532,7 +30824,8 @@
               "escalation_trigger": "Occupants confirmed trapped, secondary hazard suspected, or the concurrent attack method (fire, explosive, armed assault) confirmed in progress",
               "coordinates_with": [
                 "RP-F0309-02",
-                "RP-F0301-01"
+                "RP-F0301-01",
+                "RP-I0305-02"
               ],
               "legal_notes": "Overriding locked or secured egress and directing evacuation are within emergency authority; document the life-safety basis and system state observed. Preservation of tampered systems supports later arson, terrorism, or reckless-endangerment prosecution.",
               "source_refs": [
@@ -30884,7 +31177,9 @@
                 "execution"
               ],
               "limitations": "Coverage gaps and camera blind spots along secondary corridors remain exploitable; a determined actor who switches vehicles or transits unmonitored routes can still break continuous tracking",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0401-04"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-ACTIVESHOOTER-2024"
@@ -30903,7 +31198,8 @@
               ],
               "limitations": "Containment latency almost always trails a fast, pre-planned departure; effectiveness depends on response time, jurisdiction coordination, and the actor not having already cleared the cordon area",
               "compensates_for": [
-                "CM-F0401-01"
+                "CM-F0401-01",
+                "CM-I0401-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -30922,7 +31218,9 @@
                 "aftermath"
               ],
               "limitations": "Reconstruction is retrospective and cannot recover a departure already completed; value depends on evidence retention windows, prompt canvassing, and cross-jurisdiction data-sharing speed",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0401-03"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "START-GTD-2020"
@@ -30941,7 +31239,9 @@
                 "execution"
               ],
               "limitations": "Cannot eliminate egress through public rights-of-way adjacent to the site; hardening back-of-house paths may displace the actor to routes outside facility control",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0401-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ]
@@ -31016,7 +31316,9 @@
               "escalation_trigger": "Indications of a transportation switch, cross-jurisdiction flight, an exploited facilitation network, or a secondary device on the egress route",
               "coordinates_with": [
                 "RP-F0402-01",
-                "RP-F0408-01"
+                "RP-F0408-01",
+                "RP-0401-01",
+                "RP-I0401-01"
               ],
               "legal_notes": "Pursuit, interdiction, and cross-jurisdiction data requests must rest on a documented investigative basis and follow chain-of-custody for egress evidence. Coordinate authority and jurisdiction with law-enforcement partners before acting; preserve records to support prosecution.",
               "source_refs": [
@@ -31035,7 +31337,8 @@
               "priority": "priority",
               "escalation_trigger": "Withdrawal pattern matches a known actor or cell TTP, recurs against peer sites, or the at-large actor shows signs of preparing a further act",
               "coordinates_with": [
-                "RP-F0401-01"
+                "RP-F0401-01",
+                "RP-0401-02"
               ],
               "legal_notes": "Advisories and intelligence-sharing should convey attributable facts and the confidence basis, avoiding premature identification. Document the reconstruction methodology to support proportionate posture changes and any resource requests.",
               "source_refs": [
@@ -31382,7 +31685,9 @@
               "limitations": "Coverage has blind spots and finite retention; a disciplined actor identifies gaps and disposes off-camera, and third-party footage may be overwritten before it is requested",
               "compensates_for": [
                 "IND-F0402-04",
-                "IND-F0402-05"
+                "IND-F0402-05",
+                "CM-0402-04",
+                "CM-I0404-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -31401,7 +31706,8 @@
               ],
               "limitations": "Cannot fully bar personnel with legitimate recovery roles; an insider with a plausible reason to return may sanitize under cover of authorized activity, and enforcement competes with restoration pressure",
               "compensates_for": [
-                "IND-F0402-04"
+                "IND-F0402-04",
+                "CM-I0404-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -31422,7 +31728,8 @@
               "limitations": "Waste and water disposal channels move and destroy material quickly; canvassing is resource-intensive and may not reach a distant or well-chosen dump site in time",
               "compensates_for": [
                 "IND-F0402-05",
-                "IND-F0402-03"
+                "IND-F0402-03",
+                "CM-0402-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -31503,7 +31810,9 @@
               "escalation_trigger": "Staged evidence names or implicates a specific party, OR removal/destruction is paired with indicators of re-attack positioning or a return to the scene",
               "coordinates_with": [
                 "RP-F0401-01",
-                "RP-F0407-01"
+                "RP-F0407-01",
+                "RP-0402-01",
+                "RP-I0404-01"
               ],
               "legal_notes": "Chain-of-custody integrity and lawful evidence handling are dispositive for later prosecution; tampering, planting, and destruction may be chargeable offenses in themselves. Coordinate closely with law enforcement and counsel, and do not let restoration or insurance activity compromise the evidentiary record.",
               "source_refs": [
@@ -31523,7 +31832,8 @@
               "escalation_trigger": "Return-to-scene resolves to a specific actor, OR misdirection is sophisticated enough to have redirected the investigation",
               "coordinates_with": [
                 "RP-F0402-01",
-                "RP-F0408-01"
+                "RP-F0408-01",
+                "RP-0402-02"
               ],
               "legal_notes": "Acting on planted evidence risks a wrongful accusation and downstream liability; document the basis for discounting misleading evidence. Posture upgrades are within facility authority, record the threat basis to support resourcing and proportionality.",
               "source_refs": [
@@ -31864,7 +32174,8 @@
               ],
               "limitations": "A rehearsed, well-backstopped alibi can survive verification; corroborating records may be incomplete or the person may have a legitimate reason to have been elsewhere",
               "compensates_for": [
-                "IND-F0403-02"
+                "IND-F0403-02",
+                "CM-0403-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -31884,7 +32195,8 @@
               ],
               "limitations": "Effective only where credentials and vendor identities were tracked at issue; disposable or fully fabricated personas may never have entered the reconciliation system",
               "compensates_for": [
-                "IND-F0403-05"
+                "IND-F0403-05",
+                "CM-0403-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -31986,7 +32298,8 @@
               "escalation_trigger": "Alibi fails verification, an operational persona is confirmed shed, OR indicators across other facility tactics link the same person to the attack",
               "coordinates_with": [
                 "RP-F0402-01",
-                "RP-F0407-01"
+                "RP-F0407-01",
+                "RP-0403-01"
               ],
               "legal_notes": "Preservation and monitoring of an identified person implicate privacy, evidence-handling, and due-process requirements that vary by jurisdiction. Coordinate with counsel and investigators before acting; document the investigative basis to support any legal hold or referral.",
               "source_refs": [
@@ -32006,7 +32319,8 @@
               "priority": "routine",
               "escalation_trigger": "Performative behavior resolves into a verifiable evasion signal (failed alibi, shed persona, or digital scrubbing) tied to the person",
               "coordinates_with": [
-                "RP-F0403-01"
+                "RP-F0403-01",
+                "RP-0403-02"
               ],
               "legal_notes": "Discreet observation must stay within lawful bounds and avoid prejudicing any future prosecution; document the basis and keep the circle of knowledge minimal to protect both the inquiry and the person's rights pending evidence.",
               "source_refs": [
@@ -32334,7 +32648,8 @@
               "limitations": "Ephemeral and encrypted platforms may leave little to preserve; holds reach only records within institutional or legal custody and cannot recover what a determined actor destroyed first",
               "compensates_for": [
                 "IND-F0404-01",
-                "IND-F0404-04"
+                "IND-F0404-04",
+                "CM-0402-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -32353,7 +32668,8 @@
               ],
               "limitations": "Protection depends on identifying witnesses before the actor reaches them; trauma and fear can suppress cooperation even absent direct coercion, and resource limits constrain durable protection",
               "compensates_for": [
-                "IND-F0404-03"
+                "IND-F0404-03",
+                "CM-0404-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -32372,7 +32688,9 @@
               ],
               "limitations": "Encrypted and closed channels are not visible; monitoring an identified network implicates privacy and surveillance law and requires a documented legal basis before activation",
               "compensates_for": [
-                "IND-F0404-02"
+                "IND-F0404-02",
+                "CM-O0404-04",
+                "CM-O0405-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -32391,7 +32709,12 @@
               ],
               "limitations": "Coached insiders may present clean records; the review surfaces anomalies but cannot by itself prove intent, and depends on log integrity that the insider may have influenced",
               "compensates_for": [
-                "IND-F0404-05"
+                "IND-F0404-05",
+                "CM-0402-02",
+                "CM-0404-01",
+                "CM-I0405-02",
+                "CM-O0404-03",
+                "CM-O0405-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -32464,7 +32787,11 @@
               "escalation_trigger": "Credible witness intimidation, evidence that the network is preserved for a follow-on act, or indicators across other aftermath tactics surface for the same network",
               "coordinates_with": [
                 "RP-F0403-01",
-                "RP-F0407-01"
+                "RP-F0407-01",
+                "RP-0402-01",
+                "RP-0404-01",
+                "RP-O0404-01",
+                "RP-O0405-01"
               ],
               "legal_notes": "Monitoring an identified network implicates privacy, surveillance, and witness-tampering statutes that vary by jurisdiction. Consult counsel before active monitoring; preserve chain of custody on any evidence and document the investigative basis for each action.",
               "source_refs": [
@@ -32484,7 +32811,12 @@
               "priority": "immediate",
               "escalation_trigger": "Intimidation escalates toward physical harm, or the concealed insider retains active access to sensitive systems or the site",
               "coordinates_with": [
-                "RP-F0404-01"
+                "RP-F0404-01",
+                "RP-0402-02",
+                "RP-0404-02",
+                "RP-I0405-01",
+                "RP-O0404-02",
+                "RP-O0405-02"
               ],
               "legal_notes": "Witness protection and tampering referrals must preserve the witness's safety and the evidentiary record; adverse action against an implicated insider should be coordinated with counsel and HR to withstand review and avoid compromising the criminal case.",
               "source_refs": [
@@ -32803,7 +33135,11 @@
                 "aftermath"
               ],
               "limitations": "Depends on regulated institutions filing and on lawful access to their records; cash, informal value-transfer, and non-cooperative jurisdictions stay largely invisible, and filings lag the movement",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0405-02",
+                "CM-O0405-03",
+                "CM-O0407-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CHAINALYSIS-CCR-2024"
@@ -32822,7 +33158,8 @@
               ],
               "limitations": "Privacy coins, well-run mixers, and off-chain peer-to-peer transfers degrade attribution; tracing establishes flow but still requires exchange cooperation and legal process to reach identity",
               "compensates_for": [
-                "CM-F0405-01"
+                "CM-F0405-01",
+                "CM-O0407-01"
               ],
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
@@ -32841,7 +33178,9 @@
                 "aftermath"
               ],
               "limitations": "Freeze and seizure require legal predicate and move slower than digital transfers; funds already layered offshore or into crypto may be beyond reach by the time authority is obtained",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0407-04"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ]
@@ -32859,7 +33198,10 @@
                 "target_development"
               ],
               "limitations": "Anomaly review catches only movement that touches facility systems; well-separated external laundering leaves no internal trace, and audits can be defeated by falsified documentation",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0405-02",
+                "CM-O0405-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ]
@@ -32930,7 +33272,10 @@
               "escalation_trigger": "Funds actively dispersing toward crypto, offshore, or nominee channels, OR financial activity corroborates other aftermath tactics for the same actor",
               "coordinates_with": [
                 "RP-F0404-01",
-                "RP-F0406-01"
+                "RP-F0406-01",
+                "RP-0405-01",
+                "RP-O0405-01",
+                "RP-O0407-01"
               ],
               "legal_notes": "Access to financial records requires appropriate legal process (subpoena, court order, or regulatory authority) and implicates financial-privacy statutes that vary by jurisdiction. Engage counsel and law enforcement before compelling records; document the investigative predicate for every request.",
               "source_refs": [
@@ -32949,7 +33294,10 @@
               "priority": "priority",
               "escalation_trigger": "Analytics resolve funds to an identifiable holder or a cooperating exchange, OR proceeds appear to be reseeding new operational capability",
               "coordinates_with": [
-                "RP-F0405-01"
+                "RP-F0405-01",
+                "RP-0405-02",
+                "RP-O0405-02",
+                "RP-O0407-02"
               ],
               "legal_notes": "Freeze and seizure require a legal predicate; act on documented probable cause and coordinate cross-border requests through mutual-legal-assistance channels. Preserve chain of custody for any records to support later proceedings.",
               "source_refs": [
@@ -33267,7 +33615,9 @@
                 "aftermath"
               ],
               "limitations": "Coverage is incomplete; encrypted and closed channels are not visible, and instrumental critique aimed at a next operation may be indistinguishable from ordinary post-event commentary",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0406-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ]
@@ -33321,7 +33671,9 @@
                 "target_development"
               ],
               "limitations": "Depends on peer reporting discipline and fusion-center throughput; dissemination in closed communities may not surface until a lesson is already in reuse",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0408-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ]
@@ -33392,7 +33744,9 @@
               "escalation_trigger": "Assessment product shows forward-looking target selection or renewed acquisition, OR indicators across other facility tactics surface for the same actor",
               "coordinates_with": [
                 "RP-F0406-02",
-                "RP-F0101-01"
+                "RP-F0101-01",
+                "RP-I0406-01",
+                "RP-O0408-01"
               ],
               "legal_notes": "Monitoring an identified actor's post-incident communications may implicate privacy, First Amendment, and anti-stalking statutes that vary by jurisdiction. Consult counsel before active monitoring; document the investigative basis tying the review behavior to a completed act.",
               "source_refs": [
@@ -33412,7 +33766,8 @@
               "priority": "priority",
               "escalation_trigger": "Gap-focused critique resolves to a specific next target, date, or renewed staging behavior",
               "coordinates_with": [
-                "RP-F0406-01"
+                "RP-F0406-01",
+                "RP-O0408-02"
               ],
               "legal_notes": "Posture and remediation decisions are within facility authority; document the threat basis to support resource requests and to defend proportionality of any heightened measures.",
               "source_refs": [
@@ -33734,7 +34089,8 @@
               "limitations": "Specialized examiner capacity is limited and often external; high-intensity fire or collapse can destroy residue independent of any obfuscation, and negatives remain ambiguous without corroboration",
               "compensates_for": [
                 "IND-F0407-01",
-                "IND-F0407-02"
+                "IND-F0407-02",
+                "CM-I0403-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -33755,7 +34111,9 @@
               ],
               "limitations": "Off-site logging preserves only what was already captured; gaps in coverage, short retention windows, and encrypted actor-owned devices outside the facility remain beyond reach",
               "compensates_for": [
-                "IND-F0407-03"
+                "IND-F0407-03",
+                "CM-I0403-01",
+                "CM-O0404-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -33776,7 +34134,9 @@
               "limitations": "Cash purchases, common dual-use materials, and third-party or cut-out acquisition defeat record-matching; results require legal process and are retrospective",
               "compensates_for": [
                 "IND-F0407-02",
-                "IND-F0407-04"
+                "IND-F0407-04",
+                "CM-I0403-04",
+                "CM-O0404-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -33879,7 +34239,8 @@
               "escalation_trigger": "Multi-vector defeat corroborated across examiners, OR discovery of pre-attack forensic research or anti-forensic tooling tied to an identified actor",
               "coordinates_with": [
                 "RP-F0402-01",
-                "RP-F0407-02"
+                "RP-F0407-02",
+                "RP-O0404-02"
               ],
               "legal_notes": "Scene preservation, sampling, and any device seizure must follow warrant and chain-of-custody requirements; an arson-versus-accident determination carries insurance and liability implications, so document the forensic basis carefully. Consult counsel before compelled record production.",
               "source_refs": [
@@ -33899,7 +34260,9 @@
               "priority": "priority",
               "escalation_trigger": "Recovered evidence establishes a pre-planned, multi-vector attribution-defeat effort, OR the actor matches a known threat-actor profile",
               "coordinates_with": [
-                "RP-F0407-01"
+                "RP-F0407-01",
+                "RP-I0403-01",
+                "RP-O0404-01"
               ],
               "legal_notes": "Digital imaging, account preservation, and third-party subpoenas require proper legal authority and documented investigative basis; anti-forensic tools have lawful uses, so tie possession to the operation before drawing conclusions. Preserve original media integrity to withstand challenge.",
               "source_refs": [
@@ -34716,7 +35079,9 @@
                 "aftermath"
               ],
               "limitations": "Coverage is incomplete; claims on closed or encrypted channels are not visible, and genuine claims may be indistinguishable from opportunistic ones without corroboration",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0407-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
@@ -34734,7 +35099,9 @@
                 "aftermath"
               ],
               "limitations": "Verification depends on preserved hold-back detail and forensic quality; sophisticated false claims and deliberate misdirection can defeat rapid authentication",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0410-03"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-HATECRIME-2024"
@@ -34752,7 +35119,9 @@
                 "aftermath"
               ],
               "limitations": "No-amplification depends on voluntary media and platform cooperation; a determined claim can still propagate through sympathetic or uncontrolled channels",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0410-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
@@ -34770,7 +35139,10 @@
                 "aftermath"
               ],
               "limitations": "Linkage value depends on shared repositories and reporting discipline across jurisdictions; novel actors with no prior signature yield no immediate match",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0407-02",
+                "CM-O0410-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "START-GTD-2020"
@@ -34839,7 +35211,9 @@
               "escalation_trigger": "Claim authenticates against hold-back detail or forensic corroboration, OR the claim is routed through a known organizational channel, OR pre-staged attribution materials are recovered",
               "coordinates_with": [
                 "RP-F0410-01",
-                "RP-F0411-01"
+                "RP-F0411-01",
+                "RP-I0407-01",
+                "RP-O0410-01"
               ],
               "legal_notes": "Public attribution carries defamation, prejudicial-publicity, and investigative-integrity risks; make no formal attribution before authentication and coordinate messaging with counsel and law enforcement.",
               "source_refs": [
@@ -34861,7 +35235,8 @@
               "priority": "priority",
               "escalation_trigger": "Campaign framing resolves to a specific named next target or a date-certain follow-on threat",
               "coordinates_with": [
-                "RP-F0409-01"
+                "RP-F0409-01",
+                "RP-O0410-02"
               ],
               "legal_notes": "Posture changes and public communications must be documented against the threat basis to support proportionality; coordinate cross-jurisdiction sharing consistent with information-handling rules.",
               "source_refs": [
@@ -35183,7 +35558,10 @@
                 "aftermath"
               ],
               "limitations": "Re-uploads with altered hashes, translation, and re-cutting defeat automated matching; encrypted and closed channels are not visible, and takedown on one platform can drive spread to less-cooperative hosts",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0407-01",
+                "CM-O0411-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
@@ -35240,7 +35618,10 @@
                 "target_development"
               ],
               "limitations": "Depends on platform responsiveness and cross-jurisdiction information-sharing discipline; network-level indicators may not resolve to a specific next target",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-I0407-04",
+                "CM-O0411-01"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
@@ -35305,7 +35686,9 @@
               "escalation_trigger": "Content contains an explicit call to imitate naming a facility or class, resolves to an organized amplifying network, OR correlates with a secondary-device or renewed-threat signal",
               "coordinates_with": [
                 "RP-F0409-01",
-                "RP-F0411-01"
+                "RP-F0411-01",
+                "RP-I0407-02",
+                "RP-O0411-01"
               ],
               "legal_notes": "Preservation and referral must follow evidence-handling and platform legal-process requirements; counter-messaging must avoid re-publishing the actor's produced media. Consult counsel on takedown demands and cross-jurisdiction requests.",
               "source_refs": [
@@ -35325,7 +35708,8 @@
               "priority": "priority",
               "escalation_trigger": "Amplification is linked to an active mobilization or a specific date-certain follow-on threat",
               "coordinates_with": [
-                "RP-F0410-01"
+                "RP-F0410-01",
+                "RP-O0411-02"
               ],
               "legal_notes": "Warnings and posture changes are within facility and law-enforcement authority; document the threat basis to support resource requests and defend proportionality. Coordinate public statements with counsel and investigators.",
               "source_refs": [
@@ -36159,7 +36543,8 @@
               ],
               "limitations": "Tracing depends on the actor using a traceable path; sophisticated laundering, mixers, or off-ramp discipline can defeat attribution and recovery",
               "compensates_for": [
-                "IND-F0412-04"
+                "IND-F0412-04",
+                "CM-I0408-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -36179,7 +36564,8 @@
               ],
               "limitations": "Messaging discipline reduces the actor's psychological leverage but cannot address a genuine follow-on capability, which requires operational response",
               "compensates_for": [
-                "IND-F0412-05"
+                "IND-F0412-05",
+                "CM-O0412-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -36255,7 +36641,9 @@
               "escalation_trigger": "The demand carries a credible follow-on threat: claimed secondary device, evidenced renewed-attack capability, or a lapsed-deadline consequence executed",
               "coordinates_with": [
                 "RP-F0412-02",
-                "RP-F0409-01"
+                "RP-F0409-01",
+                "RP-I0408-01",
+                "RP-O0412-01"
               ],
               "legal_notes": "Extortion and terroristic-threat communications are evidence; preserve chain of custody and avoid altering originals. Any decision touching payment, concession, or negotiation must involve counsel and law enforcement. Ransom or payment may carry independent legal exposure under sanctions and anti-terrorism-financing regimes.",
               "source_refs": [
@@ -36277,7 +36665,8 @@
               "escalation_trigger": "Physical confirmation of a secondary device or an in-progress renewed attack",
               "coordinates_with": [
                 "RP-F0408-01",
-                "RP-F0412-01"
+                "RP-F0412-01",
+                "RP-O0412-02"
               ],
               "legal_notes": "Protective and evacuation decisions are within facility authority; document the threat basis to defend proportionality. Coordinate closely with EOD and law enforcement, who hold primacy over any confirmed device.",
               "source_refs": [
@@ -38703,7 +39092,9 @@
               "limitations": "Falls short when the approach is subtle, external, and never disclosed by the targeted employee.",
               "compensates_for": [
                 "IND-O0106-04",
-                "IND-O0106-05"
+                "IND-O0106-05",
+                "CM-F0107-01",
+                "CM-I0108-02"
               ],
               "source_refs": [
                 "NITTF-GUIDE-2017",
@@ -38746,7 +39137,8 @@
               "priority": "urgent",
               "escalation_trigger": "Data theft, sabotage, or facilitation of an external threat actor is confirmed.",
               "coordinates_with": [
-                "RP-O0106-01"
+                "RP-O0106-01",
+                "RP-I0108-01"
               ],
               "legal_notes": "Access restriction, evidence handling, and referral follow counsel review of employment and criminal-process limits.",
               "source_refs": [
@@ -39474,7 +39866,8 @@
               "limitations": "requires channels to feed a common system and misses probing conducted through channels that are not instrumented",
               "compensates_for": [
                 "IND-O0108-03",
-                "IND-O0108-05"
+                "IND-O0108-05",
+                "CM-F0108-03"
               ],
               "source_refs": [
                 "NTAC-SYSTEMS-2020"
@@ -39881,7 +40274,8 @@
               "limitations": "reporting quality varies and the channel captures only behavior that is externally visible",
               "compensates_for": [
                 "IND-O0109-01",
-                "IND-O0109-03"
+                "IND-O0109-03",
+                "CM-0107-03"
               ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
@@ -39902,7 +40296,8 @@
               "limitations": "requires trained assessors and reliable information and does not predict timing of an act with certainty",
               "compensates_for": [
                 "IND-O0109-04",
-                "IND-O0109-05"
+                "IND-O0109-05",
+                "CM-I0110-02"
               ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
@@ -39923,7 +40318,8 @@
               "limitations": "requires the subject to be reachable and cooperative and does not fit a fully committed external threat actor",
               "compensates_for": [
                 "IND-O0109-02",
-                "IND-O0109-04"
+                "IND-O0109-04",
+                "CM-F0109-04"
               ],
               "source_refs": [
                 "NTAC-SYSTEMS-2020"
@@ -40323,7 +40719,8 @@
               "limitations": "only fires when the threat actor touches the planted asset and requires maintenance to stay credible",
               "compensates_for": [
                 "IND-O0201-01",
-                "IND-O0201-04"
+                "IND-O0201-04",
+                "CM-0209-01"
               ],
               "source_refs": [
                 "CERT-CSG-7-2022"
@@ -40695,7 +41092,11 @@
               "limitations": "raises privacy and morale concerns and produces false positives requiring careful, governed adjudication",
               "compensates_for": [
                 "IND-O0202-01",
-                "IND-O0202-05"
+                "IND-O0202-05",
+                "CM-0101-05",
+                "CM-0105-01",
+                "CM-F0107-01",
+                "CM-I0108-04"
               ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
@@ -40736,7 +41137,8 @@
               "limitations": "resource intensive and captures only disclosable or discoverable information at the time of review",
               "compensates_for": [
                 "IND-O0202-04",
-                "IND-O0202-05"
+                "IND-O0202-05",
+                "CM-F0107-03"
               ],
               "source_refs": [
                 "NITTF-GUIDE-2017"
@@ -40776,7 +41178,8 @@
               "priority": "urgent",
               "escalation_trigger": "if the insider attempts exfiltration, sabotage, or coordinated action with the external threat actor",
               "coordinates_with": [
-                "RP-O0202-01"
+                "RP-O0202-01",
+                "RP-I0108-01"
               ],
               "legal_notes": "preserve chain of custody, follow due process, and time access removal with counsel to avoid destruction of evidence",
               "source_refs": [
@@ -41917,7 +42320,8 @@
               ],
               "limitations": "relies on the quality of watchlists and shell identities evade matching",
               "compensates_for": [
-                "IND-O0205-03"
+                "IND-O0205-03",
+                "CM-0106-01"
               ],
               "source_refs": [
                 "CISA-DIT-2023"
@@ -41936,7 +42340,8 @@
               ],
               "limitations": "slows legitimate onboarding and can be bypassed by an internal sponsor who is complicit",
               "compensates_for": [
-                "IND-O0205-04"
+                "IND-O0205-04",
+                "CM-F0108-02"
               ],
               "source_refs": [
                 "NITTF-GUIDE-2017"
@@ -41955,7 +42360,8 @@
               ],
               "limitations": "depends on reporting culture and subtle actors avoid early tells",
               "compensates_for": [
-                "IND-O0205-05"
+                "IND-O0205-05",
+                "CM-F0108-04"
               ],
               "source_refs": [
                 "NTAC-SYSTEMS-2020"
@@ -43901,7 +44307,8 @@
               ],
               "limitations": "depends on staff reporting probing behavior they may not recognize as hostile",
               "compensates_for": [
-                "IND-O0210-01"
+                "IND-O0210-01",
+                "CM-0202-03"
               ],
               "source_refs": [
                 "NITTF-GUIDE-2017"
@@ -43921,7 +44328,10 @@
               "limitations": "a sophisticated threat actor may operate below alerting thresholds",
               "compensates_for": [
                 "IND-O0210-02",
-                "IND-O0210-03"
+                "IND-O0210-03",
+                "CM-0108-03",
+                "CM-F0105-01",
+                "CM-F0202-03"
               ],
               "source_refs": [
                 "CERT-CSG-7-2022"
@@ -44341,7 +44751,8 @@
               "limitations": "high alert volume and dependence on partner telemetry that the institution does not control",
               "compensates_for": [
                 "IND-O0211-03",
-                "IND-O0211-04"
+                "IND-O0211-04",
+                "CM-I0109-02"
               ],
               "source_refs": [
                 "CISA-CONVERGE-2021"
@@ -44771,7 +45182,8 @@
               ],
               "limitations": "resilience investment cannot cover every reputational or membership pressure point",
               "compensates_for": [
-                "IND-O0301-05"
+                "IND-O0301-05",
+                "CM-I0408-02"
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
@@ -45924,7 +46336,8 @@
               ],
               "limitations": "risk of false positives and privacy and labor constraints on monitoring",
               "compensates_for": [
-                "IND-O0304-01"
+                "IND-O0304-01",
+                "CM-I0208-02"
               ],
               "source_refs": [
                 "CERT-CSG-7-2022"
@@ -45963,7 +46376,8 @@
               "limitations": "a skilled insider can operate within authorized bounds to evade detection",
               "compensates_for": [
                 "IND-O0304-03",
-                "IND-O0304-04"
+                "IND-O0304-04",
+                "CM-0105-01"
               ],
               "source_refs": [
                 "CERT-CSG-7-2022"
@@ -46003,7 +46417,8 @@
               "priority": "immediate",
               "escalation_trigger": "evidence shows active sabotage or exfiltration in progress",
               "coordinates_with": [
-                "RP-O0304-02"
+                "RP-O0304-02",
+                "RP-I0208-01"
               ],
               "legal_notes": "coordinate monitoring and access changes with legal and human resources to protect due-process and privacy rights",
               "source_refs": [
@@ -51980,7 +52395,12 @@
               "limitations": "protects only systems already under the logging regime at time of the act",
               "compensates_for": [
                 "IND-O0404-01",
-                "IND-O0404-02"
+                "IND-O0404-02",
+                "CM-0402-01",
+                "CM-0404-01",
+                "CM-0404-02",
+                "CM-F0404-01",
+                "CM-I0405-02"
               ],
               "source_refs": [
                 "CERT-CSG-7-2022",
@@ -52001,7 +52421,8 @@
               "limitations": "cannot recover records already destroyed before the hold engages",
               "compensates_for": [
                 "IND-O0404-03",
-                "IND-O0404-04"
+                "IND-O0404-04",
+                "CM-I0403-04"
               ],
               "source_refs": [
                 "NITTF-GUIDE-2017",
@@ -52023,7 +52444,9 @@
               "limitations": "high-privilege insiders may destroy records within their normal authority",
               "compensates_for": [
                 "IND-O0404-02",
-                "IND-O0404-05"
+                "IND-O0404-05",
+                "CM-F0407-04",
+                "CM-I0405-01"
               ],
               "source_refs": [
                 "CERT-CSG-7-2022",
@@ -52045,7 +52468,8 @@
               "limitations": "adds operational friction and can be undermined by collusion",
               "compensates_for": [
                 "IND-O0404-01",
-                "IND-O0404-04"
+                "IND-O0404-04",
+                "CM-I0403-01"
               ],
               "source_refs": [
                 "CERT-CSG-7-2022"
@@ -52065,7 +52489,8 @@
               "priority": "urgent",
               "escalation_trigger": "if destruction targets records material to law enforcement or regulatory obligations",
               "coordinates_with": [
-                "RP-O0404-02"
+                "RP-O0404-02",
+                "RP-I0405-02"
               ],
               "legal_notes": "document spoliation to preserve adverse-inference remedies and reporting duties",
               "source_refs": [
@@ -52084,7 +52509,8 @@
               "priority": "immediate",
               "escalation_trigger": "if destruction implicates a current employee retaining system access",
               "coordinates_with": [
-                "RP-O0404-01"
+                "RP-O0404-01",
+                "RP-0402-02"
               ],
               "legal_notes": "obstruction and evidence-tampering statutes may apply and warrant early counsel involvement",
               "source_refs": [
@@ -52403,7 +52829,8 @@
               "limitations": "well-cultivated insiders may present no overt behavioral change",
               "compensates_for": [
                 "IND-O0405-01",
-                "IND-O0405-02"
+                "IND-O0405-02",
+                "CM-I0405-03"
               ],
               "source_refs": [
                 "CERT-CSG-7-2022",
@@ -52424,7 +52851,8 @@
               "limitations": "fear of exposure can still deter reporting despite protections",
               "compensates_for": [
                 "IND-O0405-03",
-                "IND-O0405-04"
+                "IND-O0405-04",
+                "CM-F0405-01"
               ],
               "source_refs": [
                 "NITTF-GUIDE-2017",
@@ -52445,7 +52873,9 @@
               "limitations": "external cutouts outside institutional data remain partially invisible",
               "compensates_for": [
                 "IND-O0405-02",
-                "IND-O0405-05"
+                "IND-O0405-05",
+                "CM-0404-01",
+                "CM-F0404-04"
               ],
               "source_refs": [
                 "CALHOUN-WESTON-2003",
@@ -53270,7 +53700,8 @@
               "limitations": "layered ownership structures can defeat verification",
               "compensates_for": [
                 "IND-O0407-03",
-                "IND-O0407-04"
+                "IND-O0407-04",
+                "CM-0405-04"
               ],
               "source_refs": [
                 "CHAINALYSIS-CCR-2024"
@@ -53638,7 +54069,8 @@
               "limitations": "depends on the threat actor communicating assessment openly rather than in closed channels",
               "compensates_for": [
                 "IND-O0408-01",
-                "IND-O0408-02"
+                "IND-O0408-02",
+                "CM-0406-01"
               ],
               "source_refs": [
                 "CISA-DISINFO-TACTICS",
@@ -53680,7 +54112,8 @@
               "limitations": "disclosure duties or media pressure can force release of some impact data",
               "compensates_for": [
                 "IND-O0408-02",
-                "IND-O0408-05"
+                "IND-O0408-05",
+                "CM-F0406-03"
               ],
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
@@ -54452,7 +54885,8 @@
               "limitations": "claims made in closed forums or to select journalists can escape monitoring",
               "compensates_for": [
                 "IND-O0410-01",
-                "IND-O0410-02"
+                "IND-O0410-02",
+                "CM-0407-04"
               ],
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
@@ -54513,7 +54947,8 @@
               "limitations": "cannot prevent a determined threat actor from reaching media directly",
               "compensates_for": [
                 "IND-O0410-01",
-                "IND-O0410-03"
+                "IND-O0410-03",
+                "CM-I0407-01"
               ],
               "source_refs": [
                 "CALHOUN-WESTON-2003"
@@ -54859,7 +55294,8 @@
               "limitations": "cross-platform and closed-channel spread limits full visibility",
               "compensates_for": [
                 "IND-O0411-01",
-                "IND-O0411-02"
+                "IND-O0411-02",
+                "CM-0408-04"
               ],
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
@@ -54899,7 +55335,9 @@
               "limitations": "correction rarely reaches the same audience as the original amplification",
               "compensates_for": [
                 "IND-O0411-04",
-                "IND-O0411-05"
+                "IND-O0411-05",
+                "CM-0408-03",
+                "CM-F0410-03"
               ],
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2020",
@@ -55286,7 +55724,8 @@
               "limitations": "demands delivered privately to individuals may bypass institutional monitoring",
               "compensates_for": [
                 "IND-O0412-02",
-                "IND-O0412-03"
+                "IND-O0412-03",
+                "CM-F0412-01"
               ],
               "source_refs": [
                 "CHAINALYSIS-CCR-2024"
@@ -56917,7 +57356,10 @@
                 "target_development"
               ],
               "limitations": "Camera coverage at widely dispersed remote sites leaves gaps and depends on reliable backhaul and staffed monitoring to be useful.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0102-02",
+                "CM-F0103-02"
+              ],
               "source_refs": [
                 "CISA-CFATS-2023",
                 "CISA-CONVERGE-2021"
@@ -56935,7 +57377,9 @@
                 "target_development"
               ],
               "limitations": "Detection is degraded by autonomous or pre-programmed drones that emit no control-link signal and by dense RF environments near urban sites.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0103-04"
+              ],
               "source_refs": [
                 "CTC-INFRATERROR-2026",
                 "GAO-24-106744-2024"
@@ -57385,7 +57829,9 @@
                 "target_development"
               ],
               "limitations": "Classification and data-loss-prevention depend on accurate labeling and are weak against content that is paraphrased, screenshotted, or exfiltrated through unmanaged channels.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0104-03"
+              ],
               "source_refs": [
                 "CISA-DIT-2023",
                 "NIST-SP800-82-2023"
@@ -58174,7 +58620,10 @@
                 "target_development"
               ],
               "limitations": "Credential controls are undermined when engineers reuse passwords or store secrets in unmanaged local files.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0104-01",
+                "CM-F0108-01"
+              ],
               "source_refs": [
                 "NIST-SP800-82-2023",
                 "CISA-CONVERGE-2021"
@@ -58230,7 +58679,9 @@
               ],
               "priority": "priority",
               "escalation_trigger": "Acquired credentials or tooling are confirmed valid against the operator's control network, or acquisition is followed by access or staging indicators for the same actor.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0104-01"
+              ],
               "legal_notes": "Credential audits and any investigation of purchase, phishing, or insider recruitment may implicate employment, privacy, and computer-misuse statutes that vary by jurisdiction; consult counsel before active monitoring and coordinate with human resources on any employee nexus.",
               "source_refs": [
                 "CTC-INFRATERROR-2026",
@@ -58248,7 +58699,9 @@
               ],
               "priority": "routine",
               "escalation_trigger": "The traded capability or credentials are matched to the operator's specific devices or accounts, or an actor acquiring them shows targeting of the operator.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0104-02"
+              ],
               "legal_notes": "Monitoring illicit markets and handling offered credentials may implicate computer-misuse and evidence-handling rules that vary by jurisdiction; consult counsel before any acquisition or engagement.",
               "source_refs": [
                 "CISA-CFATS-2023",
@@ -58597,7 +59050,11 @@
                 "target_development"
               ],
               "limitations": "Cash transactions and informal value-transfer networks may evade financial monitoring entirely.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0105-01",
+                "CM-F0106-02",
+                "CM-F0107-01"
+              ],
               "source_refs": [
                 "CTC-INFRATERROR-2026",
                 "GAO-24-106744-2024"
@@ -58653,7 +59110,9 @@
               ],
               "priority": "priority",
               "escalation_trigger": "Escalate if recruitment targets a named employee or specific access point, or if material support appears to have already been provided.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0105-02"
+              ],
               "legal_notes": "Coordinate with legal before collecting on identified individuals so that protected expressive activity is distinguished from criminal solicitation.",
               "source_refs": [
                 "CTC-INFRATERROR-2026",
@@ -58670,7 +59129,9 @@
               ],
               "priority": "routine",
               "escalation_trigger": "Escalate if solicitation narrows to a specific facility, employee, or category of privileged access.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0105-01"
+              ],
               "legal_notes": "Limit collection to publicly available information and retain only material with an articulable nexus to a threat.",
               "source_refs": [
                 "CTC-INFRATERROR-2026",
@@ -58990,7 +59451,9 @@
                 "target_development"
               ],
               "limitations": "Program effectiveness depends on consistent reporting and cannot resolve every ambiguous behavior into a reliable risk determination.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0106-01"
+              ],
               "source_refs": [
                 "CISA-DIT-2023",
                 "NIST-SP800-82-2023"
@@ -59008,7 +59471,11 @@
                 "target_development"
               ],
               "limitations": "Behavioral analytics generate false positives and may miss a trusted operator who deliberately avoids detectable pattern changes.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0105-01",
+                "CM-O0106-04",
+                "CM-O0202-03"
+              ],
               "source_refs": [
                 "CISA-DIT-2023",
                 "GAO-24-106744-2024"
@@ -59026,7 +59493,9 @@
                 "target_development"
               ],
               "limitations": "Access reviews reduce excess privilege but do not stop an employee who abuses access that is legitimately required for their role.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0202-01"
+              ],
               "source_refs": [
                 "NIST-SP800-82-2023",
                 "CISA-DIT-2023"
@@ -59064,7 +59533,11 @@
               ],
               "priority": "priority",
               "escalation_trigger": "Escalate if the operator has acted on the inducement, moved or exfiltrated data, or if coercion involves a credible threat to the employee or their family.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0105-02",
+                "RP-O0106-01",
+                "RP-O0202-01"
+              ],
               "legal_notes": "Any action affecting the employee must comply with employment law, privacy protections, and due-process obligations, so involve legal and human resources before any investigative or adverse step.",
               "source_refs": [
                 "CISA-DIT-2023",
@@ -59082,7 +59555,9 @@
               ],
               "priority": "routine",
               "escalation_trigger": "Escalate if the indicators aggregate into a pattern of concern or if privileged access is misused.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0105-01"
+              ],
               "legal_notes": "Handle personnel information under privacy and employment-law safeguards and avoid adverse action based on lawful off-duty conduct alone.",
               "source_refs": [
                 "CISA-DIT-2023",
@@ -59419,7 +59894,9 @@
                 "target_development"
               ],
               "limitations": "Integrity checks do not catch malicious code signed with a legitimately compromised vendor key or a trojanized update delivered through the authentic channel.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0211-03"
+              ],
               "source_refs": [
                 "NIST-SP800-82-2023",
                 "CISA-DIT-2023"
@@ -59437,7 +59914,10 @@
                 "target_development"
               ],
               "limitations": "Access controls do not stop abuse by a trusted vendor insider operating within legitimately granted permissions.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0108-01",
+                "CM-O0211-02"
+              ],
               "source_refs": [
                 "NIST-SP800-82-2023",
                 "CISA-CFATS-2023"
@@ -59475,7 +59955,10 @@
               ],
               "priority": "priority",
               "escalation_trigger": "Escalate if the vector reaches operational technology or safety systems, or if unauthorized code or access is confirmed.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-O0211-01",
+                "RP-O0211-02"
+              ],
               "legal_notes": "Preserve vendor contracts and logs for potential liability and breach-notification obligations and coordinate any disclosure with legal.",
               "source_refs": [
                 "NIST-SP800-82-2023",
@@ -59866,7 +60349,12 @@
                 "target_development"
               ],
               "limitations": "Shared indicators are only as useful as partner participation and timeliness, and privacy or classification constraints can slow the flow of actionable information.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0107-01",
+                "CM-0107-03",
+                "CM-F0109-03",
+                "CM-O0109-01"
+              ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "NTAC-MASS-2021"
@@ -59904,7 +60392,10 @@
               ],
               "priority": "priority",
               "escalation_trigger": "Behaviors advance from grievance and research toward concrete planning, capability acquisition, or a narrowing focus on a specific asset or date.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0107-01",
+                "RP-O0109-01"
+              ],
               "legal_notes": "Behavioral assessment of an identified actor may implicate privacy, employment, and anti-stalking statutes; consult counsel and document the investigative basis before active monitoring.",
               "source_refs": [
                 "FBI-PREATTACK-2018",
@@ -59923,7 +60414,10 @@
               ],
               "priority": "priority",
               "escalation_trigger": "Indicators of imminent action appear, including final preparations, stated timelines, or loss of protective factors that previously constrained the actor.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0107-02",
+                "RP-O0109-02"
+              ],
               "legal_notes": "Escalation to law enforcement referral should be documented with the articulable facts supporting concern; preserve records consistent with duty-to-warn and evidentiary requirements.",
               "source_refs": [
                 "NTAC-MASS-2021",
@@ -60242,7 +60736,9 @@
                 "mobilization"
               ],
               "limitations": "Threat actors can source matching gear through resellers, secondhand markets, or gray channels that fall outside monitored supplier relationships.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0201-01"
+              ],
               "source_refs": [
                 "CISA-CFATS-2023",
                 "NIST-SP800-82-2023"
@@ -60682,7 +61178,10 @@
                 "mobilization"
               ],
               "limitations": "Escort discipline erodes under staffing pressure and familiarity, and a trusted-looking visitor may be left briefly unattended.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0106-03",
+                "CM-F0202-04"
+              ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "CISA-CFATS-2023"
@@ -60700,7 +61199,9 @@
                 "mobilization"
               ],
               "limitations": "Callback verification fails when the actor supplies a spoofed number or has compromised a real vendor account to corroborate the cover.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0106-01"
+              ],
               "source_refs": [
                 "CISA-DIT-2023",
                 "NIST-SP800-82-2023"
@@ -60738,7 +61239,9 @@
               ],
               "priority": "immediate",
               "escalation_trigger": "Verification fails, the individual resists identity checks, or the same persona or organization is linked to prior probing or surveillance of the asset.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0106-01"
+              ],
               "legal_notes": "Detention and search of a suspected impostor carry liability; follow trespass and use-of-force policy and involve law enforcement for identity resolution.",
               "source_refs": [
                 "CISA-CONVERGE-2021",
@@ -60757,7 +61260,9 @@
               ],
               "priority": "priority",
               "escalation_trigger": "The persona is tied to a broader targeting effort, reuses cover across multiple sites, or successfully reached sensitive areas before detection.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0106-02"
+              ],
               "legal_notes": "Fabricated credentials may constitute criminal impersonation or fraud; preserve the fraudulent materials as evidence and coordinate charging decisions with counsel and law enforcement.",
               "source_refs": [
                 "CISA-CONVERGE-2021",
@@ -61110,7 +61615,9 @@
                 "mobilization"
               ],
               "limitations": "Point-in-time audits miss coverage degradation from later vegetation growth, lens fouling, or equipment relocation.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0108-02"
+              ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "CTC-INFRATERROR-2026"
@@ -61128,7 +61635,9 @@
                 "mobilization"
               ],
               "limitations": "Supervision confirms sensor health but does not defeat an actor who defeats detectors within their normal operating tolerance.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0108-04"
+              ],
               "source_refs": [
                 "CISA-CFATS-2023",
                 "NIST-SP800-82-2023"
@@ -61148,7 +61657,9 @@
               ],
               "priority": "immediate",
               "escalation_trigger": "Surveillance activity resolves into a probing attempt on the perimeter, or the same actors are observed at a second dispersed asset.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0108-01"
+              ],
               "legal_notes": "Counter-surveillance observation and license-plate capture must stay on company property or public vantage points and be documented to support a later law enforcement referral.",
               "source_refs": [
                 "FBI-PREATTACK-2018",
@@ -61167,7 +61678,9 @@
               ],
               "priority": "immediate",
               "escalation_trigger": "The monitoring outage coincides with a perimeter alarm, access anomaly, or confirmed intrusion at the affected asset.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0108-02"
+              ],
               "legal_notes": "Preserve tampered log evidence under chain of custody, as disabling of monitoring may constitute a chargeable offense and support attribution.",
               "source_refs": [
                 "NIST-SP800-82-2023",
@@ -61495,7 +62008,9 @@
                 "mobilization"
               ],
               "limitations": "Remote unstaffed sites depend on reliable backhaul and generate nuisance alarms from wildlife and weather.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0208-01"
+              ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "NIST-SP800-82-2023"
@@ -63134,7 +63649,9 @@
                 "mobilization"
               ],
               "limitations": "Dual authorization can be defeated when both approvers are colluding or when one approver rubber-stamps requests under production pressure.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0304-02"
+              ],
               "source_refs": [
                 "CISA-DIT-2023",
                 "NIST-SP800-82-2023"
@@ -63169,7 +63686,9 @@
                 "mobilization"
               ],
               "limitations": "Visible monitoring deters opportunistic misuse but has limited effect on a determined insider who accepts the risk of being recorded.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0304-03"
+              ],
               "source_refs": [
                 "CISA-DIT-2023"
               ]
@@ -63205,7 +63724,9 @@
               ],
               "priority": "immediate",
               "escalation_trigger": "Escalate if the insider altered control logic, disabled safety functions, or attempted to conceal their actions.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-O0304-02"
+              ],
               "legal_notes": "Coordinate with legal and human resources before any interview to protect employee rights and preserve admissibility of evidence.",
               "source_refs": [
                 "CISA-DIT-2023",
@@ -63595,7 +64116,9 @@
                 "mobilization"
               ],
               "limitations": "Seals only reveal tampering after the fact and depend on disciplined inspection routines to be meaningful.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0205-03"
+              ],
               "source_refs": [
                 "CISA-CFATS-2023",
                 "CISA-CONVERGE-2021"
@@ -65628,7 +66151,9 @@
                 "execution"
               ],
               "limitations": "Detection value depends on response time and monitoring staffing, and remote sites may still be reached before responders arrive.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0304-01"
+              ],
               "source_refs": [
                 "CTC-INFRATERROR-2026",
                 "CISA-CFATS-2023"
@@ -66003,7 +66528,9 @@
                 "execution"
               ],
               "limitations": "Manual operation reduces throughput and situational awareness and depends on trained staff being physically present at the affected site.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0301-01"
+              ],
               "source_refs": [
                 "NIST-SP800-82-2023",
                 "CISA-CONVERGE-2021"
@@ -66038,7 +66565,9 @@
                 "execution"
               ],
               "limitations": "Diverse paths add recurring cost and may still share physical chokepoints or a single upstream provider that undermines true independence.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0309-04"
+              ],
               "source_refs": [
                 "NIST-SP800-82-2023",
                 "CISA-CONVERGE-2021"
@@ -66056,7 +66585,9 @@
                 "execution"
               ],
               "limitations": "Black-start restoration is slow and sequence-dependent and can fail if reference generation or cranking assets are also affected by the disruption.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0301-04"
+              ],
               "source_refs": [
                 "NIST-SP800-82-2023",
                 "GAO-24-106744-2024"
@@ -66076,7 +66607,9 @@
               ],
               "priority": "urgent",
               "escalation_trigger": "Outage spreads beyond the initial segment or threatens cascading loss of a critical load such as a hospital or water system.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-O0301-02"
+              ],
               "legal_notes": "Notify the sector regulatory agency and file mandatory reliability-event and incident reports within the required reporting window.",
               "source_refs": [
                 "NIST-SP800-82-2023",
@@ -66095,7 +66628,9 @@
               ],
               "priority": "urgent",
               "escalation_trigger": "Communications denial persists long enough to prevent safe remote control of a hazardous process.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-O0301-01"
+              ],
               "legal_notes": "Report the radio-frequency interference and service disruption to the FCC and sector regulatory agency as required by mandatory-reporting rules.",
               "source_refs": [
                 "NIST-SP800-82-2023",
@@ -66417,7 +66952,9 @@
                 "execution"
               ],
               "limitations": "Standard sensors detect only measured surrogate parameters and may miss agents that do not shift those readings.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0308-01"
+              ],
               "source_refs": [
                 "CISA-CFATS-2023",
                 "NIST-SP800-82-2023"
@@ -67236,7 +67773,9 @@
                 "execution"
               ],
               "limitations": "Holdover clocks drift over extended outages and high-grade oscillators add significant per-site cost.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0208-01"
+              ],
               "source_refs": [
                 "NIST-SP800-82-2023",
                 "GAO-24-106744-2024"
@@ -68069,7 +68608,9 @@
                 "aftermath"
               ],
               "limitations": "Retention value depends on synchronized timestamps and storage that outlives the delay before an incident is recognized.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-F0401-01"
+              ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
                 "CISA-DIT-2023"
@@ -68105,7 +68646,10 @@
                 "aftermath"
               ],
               "limitations": "Alert value collapses if notification thresholds are poorly tuned and responders are desensitized by false positives.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0401-02",
+                "CM-0401-03"
+              ],
               "source_refs": [
                 "CISA-DIT-2023",
                 "GAO-24-106744-2024"
@@ -68125,7 +68669,9 @@
               ],
               "priority": "immediate",
               "escalation_trigger": "Egress evidence indicates data exfiltration, planted devices, or intent to return.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0401-01"
+              ],
               "legal_notes": "Maintain strict chain of custody over all egress evidence to support prosecution and attribution.",
               "source_refs": [
                 "FBI-PREATTACK-2018",
@@ -68144,7 +68690,9 @@
               ],
               "priority": "immediate",
               "escalation_trigger": "Anti-forensic activity or asset tampering suggests continued threat or destruction of attributable evidence.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0401-02"
+              ],
               "legal_notes": "Anti-forensic cleanup is itself evidentiary; document and preserve it intact for criminal and civil proceedings.",
               "source_refs": [
                 "FBI-PREATTACK-2018",
@@ -68884,7 +69432,9 @@
                 "aftermath"
               ],
               "limitations": "Hash-chain verification detects tampering only for records already committed, not for events an actor prevented from being logged.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0404-03"
+              ],
               "source_refs": [
                 "NIST-SP800-82-2023",
                 "CISA-CONVERGE-2021"
@@ -68940,7 +69490,9 @@
               ],
               "priority": "immediate",
               "escalation_trigger": "Additional log sources are found altered or purged after preservation, indicating the manipulation is ongoing or automated.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-O0404-01"
+              ],
               "legal_notes": "Establish and document chain of custody for every exported log set with cryptographic hashes so the records remain admissible despite the tampering.",
               "source_refs": [
                 "NIST-SP800-82-2023",
@@ -68959,7 +69511,9 @@
               ],
               "priority": "priority",
               "escalation_trigger": "Forged records are found to have already influenced operational or regulatory decisions, requiring immediate correction and notification.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-O0404-02"
+              ],
               "legal_notes": "Retain both original and manipulated records under strict chain of custody, since the forgery itself is evidence of intent and consciousness of guilt.",
               "source_refs": [
                 "NIST-SP800-82-2023",
@@ -69294,7 +69848,9 @@
                 "aftermath"
               ],
               "limitations": "Provenance signals can be forged or stripped, and gaps in custody records may be indistinguishable from tampering.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0402-04"
+              ],
               "source_refs": [
                 "CTC-INFRATERROR-2026",
                 "NIST-SP800-82-2023"
@@ -69694,7 +70250,12 @@
                 "aftermath"
               ],
               "limitations": "Cash economies, informal value transfer, and layered intermediaries can obscure links that financial analysis cannot resolve alone.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0404-01",
+                "CM-F0404-04",
+                "CM-O0404-02",
+                "CM-O0405-03"
+              ],
               "source_refs": [
                 "CTC-INFRATERROR-2026",
                 "FBI-PREATTACK-2018"
@@ -69748,7 +70309,9 @@
                 "aftermath"
               ],
               "limitations": "Interagency coordination can stall on data-sharing restrictions and competing operational priorities.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-O0405-04"
+              ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "GAO-24-106744-2024"
@@ -69768,7 +70331,11 @@
               ],
               "priority": "priority",
               "escalation_trigger": "Evidence of an organized insider cell or active destruction of records escalates the matter to law enforcement referral.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0404-01",
+                "RP-O0404-02",
+                "RP-O0405-01"
+              ],
               "legal_notes": "Preservation actions and account restrictions must follow counsel-approved litigation hold and employee-monitoring policy to protect evidentiary integrity and worker rights.",
               "source_refs": [
                 "CISA-CONVERGE-2021",
@@ -69787,7 +70354,10 @@
               ],
               "priority": "priority",
               "escalation_trigger": "Confirmed facilitation of a co-conspirator's flight or funded relocation triggers immediate law enforcement engagement.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0404-02",
+                "RP-O0405-02"
+              ],
               "legal_notes": "Coordinate any surveillance, detainment support, or asset actions through legal counsel and law enforcement to avoid unlawful restraint and preserve chain of custody.",
               "source_refs": [
                 "CISA-CONVERGE-2021",
@@ -70510,7 +71080,10 @@
                 "aftermath"
               ],
               "limitations": "Claims posted on closed or ephemeral channels may be inaccessible without prior access or platform cooperation.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0407-01",
+                "CM-O0410-01"
+              ],
               "source_refs": [
                 "CTC-INFRATERROR-2026",
                 "FBI-PREATTACK-2018"
@@ -70528,7 +71101,10 @@
                 "aftermath"
               ],
               "limitations": "Forensic confirmation can lag well behind a public claim, creating an interim period of attribution uncertainty.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0407-04",
+                "CM-O0410-03"
+              ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
                 "CTC-INFRATERROR-2026"
@@ -70584,7 +71160,10 @@
               ],
               "priority": "priority",
               "escalation_trigger": "A credible claim signaling intent to conduct follow-on attacks escalates to immediate protective and law enforcement action.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0407-01",
+                "RP-O0410-01"
+              ],
               "legal_notes": "Coordinate all public messaging and evidence handling with counsel and law enforcement to avoid prejudicing prosecution or defaming a falsely implicated party.",
               "source_refs": [
                 "FBI-PREATTACK-2018",
@@ -70603,7 +71182,10 @@
               ],
               "priority": "ongoing",
               "escalation_trigger": "Signs the communique is inspiring copycat interest or coordinated follow-on threats escalate to law enforcement and heightened protective operations.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0407-02",
+                "RP-O0410-02"
+              ],
               "legal_notes": "Manage release and characterization of the material with counsel and law enforcement to protect the investigation and comply with restrictions on republishing extremist content.",
               "source_refs": [
                 "CTC-INFRATERROR-2026",
@@ -70925,7 +71507,11 @@
                 "aftermath"
               ],
               "limitations": "Recovery speed depends on backup scope and restoration testing, and data created after the last verified backup is still lost.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0409-01",
+                "CM-F0412-04",
+                "CM-O0301-01"
+              ],
               "source_refs": [
                 "NIST-SP800-82-2023",
                 "CISA-DIT-2023"
@@ -70961,7 +71547,10 @@
                 "aftermath"
               ],
               "limitations": "Investigative outcomes are outside organizational control and evidence value depends on timely, uncontaminated preservation.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0405-01",
+                "CM-0405-02"
+              ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
                 "FBI-PREATTACK-2018"
@@ -70979,7 +71568,9 @@
                 "aftermath"
               ],
               "limitations": "Plans lose effectiveness if not rehearsed and updated, and cannot anticipate every demand or public pressure scenario.",
-              "compensates_for": [],
+              "compensates_for": [
+                "CM-0409-03"
+              ],
               "source_refs": [
                 "CISA-DIT-2023",
                 "NIST-SP800-82-2023"
@@ -70999,7 +71590,11 @@
               ],
               "priority": "immediate",
               "escalation_trigger": "The threat actor imposes a deadline, escalates the disruption, or demonstrates capability to inflict additional harm.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0405-01",
+                "RP-0409-01",
+                "RP-O0301-01"
+              ],
               "legal_notes": "Counsel must review before any payment is considered because ransom transfers may violate sanctions and federal law when the actor is a designated or sanctioned entity.",
               "source_refs": [
                 "CISA-DIT-2023",
@@ -71018,7 +71613,11 @@
               ],
               "priority": "urgent",
               "escalation_trigger": "The deadline passes without resolution or the threat actor acts on a threatened escalation against life-safety or critical service.",
-              "coordinates_with": [],
+              "coordinates_with": [
+                "RP-0405-02",
+                "RP-0409-02",
+                "RP-O0301-02"
+              ],
               "legal_notes": "Payment to a politically motivated or sanctioned actor may constitute material support or a sanctions violation, so legal review is required before any concession is contemplated.",
               "source_refs": [
                 "CTC-INFRATERROR-2026",
