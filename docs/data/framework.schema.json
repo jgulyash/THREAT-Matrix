@@ -796,7 +796,7 @@
             "weakly_inferred",
             "unknown"
           ],
-          "description": "Optional. Incident-level annotation of the confidence with which the threat actor's primary objective (which sets matrix placement per matrices.boundary_rule) is established. stated = claimed responsibility or manifested intent. strongly_inferred = operational evidence overwhelming. weakly_inferred = operational evidence ambiguous. unknown = no basis for inference; matrix placement defaults to the matrix containing the tactic that produced the most observable consequence (see matrices.boundary_rule). Full IRR protocol for this field deferred to V1.3."
+          "description": "Optional. Incident-level annotation of the confidence with which the threat actor's primary objective (which sets matrix placement per matrices.boundary_rule) is established. stated = claimed responsibility or manifested intent. strongly_inferred = operational evidence overwhelming. weakly_inferred = operational evidence ambiguous. unknown = no basis for inference; matrix placement defaults to the matrix containing the tactic that produced the most observable consequence (see matrices.boundary_rule). Full IRR protocol for this field is deferred to a future release."
         },
         "instance_conditioning_hints": {
           "type": "object",

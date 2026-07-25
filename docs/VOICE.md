@@ -93,7 +93,14 @@ The framework supports BOTH registers. The schema declares which is which. The p
 
 **Latinate label carve-out.** Tactic names, phase names, and field names that are Latinate labels stay as-is — `Subject Profiling` (the tactic), `Target Selection` (the tactic), `Subject Description` (the field). Body prose still uses `Threat actor` and `targeted subject`.
 
-**Third-party "adversary" carve-out (Amendment 2026-07-20).** "Adversary" is banned only as a label for the threat actor; the canonical term for the actor is "threat actor." When "adversary" refers to a THIRD PARTY, for example a rival institution the threat actor frames in an attribution-obfuscation tactic ("the trail terminates at a convenient adversary"), "adversary" is acceptable and is often stronger than "rival." Do NOT blanket grep-ban "adversary" in voice audits; surface it for judgment and keep it only where it means a party other than the threat actor. The hard bans (em and en dashes, smart quotes, "attacker", "practitioner" in body prose) are unaffected.
+**Third-party "adversary" / historical "attacker" carve-outs (Amendment 2026-07-20, extended 2026-07-23).** "Adversary" and "attacker" are banned only as a label for THE threat actor executing the tactic; the canonical term for that actor is "threat actor." Five carve-outs are documented and must NOT be grep-banned in voice audits; surface each for judgment and keep it only in the sense below:
+> 1. **Third-party "adversary."** When "adversary" names a party OTHER than the threat actor, for example a rival institution the threat actor frames in an attribution-obfuscation tactic ("the trail terminates at a convenient adversary"), it is acceptable and often stronger than "rival."
+> 2. **Historical "prior attackers."** When "attacker(s)" names a prior/historical class the CURRENT threat actor references, models on, or studies ("identification with prior attackers", "studying prior attackers' methods"), it is acceptable; the acting label stays "threat actor."
+> 3. **Adjective "adversarial."** The adjective ("adversarial affiliation", "adversarial tone") is not an actor label and is acceptable.
+> 4. **Literature term-of-art.** "Adversary-path" / "adversary-sequence" analysis and bibliography titles reproduce cited-source terminology and stay as written (see Rule 4 literature register).
+> 5. **Compound "attacker-controlled."** The industry compound ("attacker-controlled path/code") is a standard term and is acceptable.
+
+The remaining hard bans (em and en dashes, smart quotes, "practitioner" in body prose) are unaffected.
 
 **Right (canonical):**
 > "Threat actor appears at locations associated with the targeted subject on multiple occasions with no apparent legitimate reason."
