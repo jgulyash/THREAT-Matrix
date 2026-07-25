@@ -1,7 +1,7 @@
 import { MATRICES } from './constants';
 
-// Matrices with full browser rendering; organization remains a stub.
-export type LiveMatrix = 'person' | 'facility' | 'infrastructure';
+// Matrices with full browser rendering. All four are live as of V1.5.0.
+export type LiveMatrix = 'person' | 'facility' | 'organization' | 'infrastructure';
 export const LIVE_MATRICES = MATRICES.filter((m) => m.version === null).map(
   (m) => m.key
 ) as LiveMatrix[];
@@ -13,7 +13,6 @@ export type Route =
   | { view: 'indicator'; matrix: LiveMatrix; indicatorId: string }
   | { view: 'actors' }
   | { view: 'actorDetail'; actorId: string }
-  | { view: 'stub'; matrix: 'organization' }
   | { view: 'references' };
 
 export function parseRoute(): Route {
@@ -23,7 +22,12 @@ export function parseRoute(): Route {
   if (p[0] === 'references') return { view: 'references' };
   if (p[0] === 'actors' && p.length === 1) return { view: 'actors' };
   if (p[0] === 'actors') return { view: 'actorDetail', actorId: p[1] };
-  if (p[0] === 'person' || p[0] === 'facility' || p[0] === 'infrastructure') {
+  if (
+    p[0] === 'person' ||
+    p[0] === 'facility' ||
+    p[0] === 'organization' ||
+    p[0] === 'infrastructure'
+  ) {
     const matrix = p[0];
     if (p[1] === 'phase') {
       return { view: 'phase', matrix, phase: parseInt(p[2], 10), track: p[3] || null };
@@ -31,9 +35,6 @@ export function parseRoute(): Route {
     if (p[1] === 'indicator') return { view: 'indicator', matrix, indicatorId: p[2] };
     if (p[1] === 'tactic') return { view: 'tactic', matrix, tacticId: p[2] };
     return { view: 'heatmap', matrix };
-  }
-  if (p[0] === 'organization') {
-    return { view: 'stub', matrix: p[0] };
   }
   return { view: 'heatmap', matrix: 'person' };
 }

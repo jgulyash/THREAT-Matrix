@@ -1,5 +1,5 @@
 import { LIVE_MATRICES, type Route } from '../lib/route';
-import { MATRIX_LABELS, STUB_MATRICES } from '../lib/constants';
+import { MATRIX_LABELS } from '../lib/constants';
 import frameworkData from '../../docs/data/framework.json';
 
 interface Props {
@@ -19,6 +19,16 @@ export function TopNav({ route, navigate, theme, setTheme }: Props) {
     route.view === 'indicator'
       ? route.matrix
       : null;
+  // Totals computed from the live matrices so the header never goes stale as
+  // matrices are promoted (was hardcoded through V1.4).
+  const matrices = frameworkData.matrices as unknown as Record<
+    string,
+    { tactics?: { indicators?: unknown[] }[] }
+  >;
+  const liveTactics = LIVE_MATRICES.flatMap((m) => matrices[m]?.tactics || []);
+  const nTactics = liveTactics.length;
+  const nIndicators = liveTactics.reduce((n, t) => n + (t.indicators?.length || 0), 0);
+  const nProfiles = frameworkData.actor_profiles?.length || 0;
   return (
     <nav className="topbar">
       <a
@@ -39,16 +49,6 @@ export function TopNav({ route, navigate, theme, setTheme }: Props) {
             {MATRIX_LABELS[m]}
           </a>
         ))}
-        {STUB_MATRICES.map((m) => (
-          <a
-            key={m.key}
-            className={`mtab stub${route.view === 'stub' && route.matrix === m.key ? ' active' : ''}`}
-            href={`#/${m.key}`}
-            onClick={(e) => { e.preventDefault(); navigate(`/${m.key}`); }}
-          >
-            {m.label}
-          </a>
-        ))}
         <a
           className={`mtab${isActors ? ' active' : ''}`}
           href="#/actors"
@@ -65,7 +65,7 @@ export function TopNav({ route, navigate, theme, setTheme }: Props) {
         </a>
       </div>
       <div className="topbar-spacer" />
-      <span className="topbar-meta">74 tactics · 390 indicators · 27 profiles · MIT</span>
+      <span className="topbar-meta">{nTactics} tactics · {nIndicators} indicators · {nProfiles} profiles · MIT</span>
       <span className="badge-v1">v{frameworkData.version}</span>
       <button
         className="theme-toggle"

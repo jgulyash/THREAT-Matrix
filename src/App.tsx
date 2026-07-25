@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { FrameworkData, Tactic, ActorProfile } from './types/framework';
 import { parseRoute, LIVE_MATRICES, type LiveMatrix } from './lib/route';
-import { resolveTrack, tacticMatchesFilters, STUB_MATRICES } from './lib/constants';
+import { resolveTrack, tacticMatchesFilters } from './lib/constants';
 import { TopNav } from './components/TopNav';
 import { FilterBar } from './components/FilterBar';
 import { HeatMapGrid } from './components/HeatMapGrid';
@@ -9,7 +9,6 @@ import { SplitView } from './components/SplitView';
 import { ActorProfilesView } from './components/ActorProfilesView';
 import { ActorDetailView } from './components/ActorDetailView';
 import { IndicatorDetail, type IndicatorEntry } from './components/IndicatorDetail';
-import { StubLanding } from './components/StubLanding';
 import { BibliographyView } from './components/BibliographyView';
 import frameworkData from '../docs/data/framework.json';
 
@@ -116,10 +115,6 @@ export default function App() {
   const isActors = route.view === 'actors' || route.view === 'actorDetail';
   const isReferences = route.view === 'references';
   const isIndicator = route.view === 'indicator';
-  const sv = Object.fromEntries(STUB_MATRICES.map((m) => [m.key, m.version])) as Record<
-    'organization',
-    string
-  >;
 
   return (
     <div className="app-root">
@@ -174,9 +169,6 @@ export default function App() {
             navigate={navigate}
             getActorTactics={getActorTactics}
           />
-        )}
-        {route.view === 'stub' && (
-          <StubLanding matrix={route.matrix} version={sv[route.matrix]} />
         )}
         {route.view === 'references' && (
           <BibliographyView

@@ -31,7 +31,7 @@ export const STUB: Record<
 export const MATRICES = [
   { key: 'person', label: 'People', color: 'amber', version: null },
   { key: 'facility', label: 'Facilities', color: 'teal', version: null },
-  { key: 'organization', label: 'Organizations', color: 'red', version: 'V1.5' },
+  { key: 'organization', label: 'Organizations', color: 'red', version: null },
   { key: 'infrastructure', label: 'Infrastructure', color: 'blue', version: null },
 ] as const;
 
@@ -120,12 +120,20 @@ export const SEVERITY_BAND_LABELS: Record<string, string> = {
 
 // V1.2 temporal signature ({tempo}_{stage})
 export const TEMPORAL_SIGNATURE_LABELS: Record<string, string> = {
+  horizon: 'Horizon',
   horizon_early: 'Horizon · Early',
   horizon_late: 'Horizon · Late',
+  advancing: 'Advancing',
   advancing_early: 'Advancing · Early',
   advancing_late: 'Advancing · Late',
+  imminent: 'Imminent',
   imminent_early: 'Imminent · Early',
   imminent_late: 'Imminent · Late',
+  staging: 'Staging',
+  in_progress: 'In Progress',
+  aftermath: 'Aftermath',
+  aftermath_early: 'Aftermath · Early',
+  aftermath_late: 'Aftermath · Late',
 };
 
 // V1.2.2 primary-objective evidence tier
