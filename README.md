@@ -4,7 +4,7 @@
  
 The physical threat domain lacks a shared, open, standardized vocabulary. The **THREAT Matrix** is built to be that standard, one that not only catalogs threat behavior but scores it to support operational decisions.
 
-Four target matrices — **People, Facilities, Organizations, Infrastructure** — span a four-phase Threat Lifecycle: **Target Development → Mobilization → Execution → Aftermath**. It documents 111 tactics and 27 actor profiles across seven threat categories, with a behavioral Detection Mesh, escalation scoring, and response protocols layered on top. The THREAT Matrix names the behavior, weighs the threat, and drives the response.
+Four target matrices — **People, Facilities, Organizations, Infrastructure** — span a four-phase Threat Lifecycle: **Target Development → Mobilization → Execution → Aftermath**. It documents 159 tactics and 27 actor profiles across seven threat categories, with a behavioral Detection Mesh, escalation scoring, and response protocols layered on top. The THREAT Matrix names the behavior, weighs the threat, and drives the response.
 
 Cyber-Physical Nexus and AI-Initiated-Physical tags surface online-to-physical mobilization pathways and AI-enabled reconnaissance across tactics.
 
@@ -31,7 +31,7 @@ In 2023, a Lawrence Livermore National Laboratory study, sponsored by DOE/NNSA a
  
 ## Framework Architecture
  
-**Four target matrices — People, Facilities, Organizations, Infrastructure. A four-phase Threat Lifecycle: Target Development → Mobilization → Execution → Aftermath. 111 tactics live** (People 34, Facilities 40, Infrastructure 37; Organizations planned), woven by a cross-domain Detection Mesh.
+**Four target matrices — People, Facilities, Organizations, Infrastructure. A four-phase Threat Lifecycle: Target Development → Mobilization → Execution → Aftermath. 159 tactics live** (People 34, Facilities 40, Organizations 48, Infrastructure 37), woven by a cross-domain Detection Mesh.
  
 ### Threat Lifecycle
  
@@ -169,7 +169,7 @@ Standards talk to platforms. The contract is what makes integrations with RAG sy
 | **V1.2** | People-matrix scope broadening (one or more human beings; `target_identity`) + Detection Mesh with indicator detail page + escalation scoring & `informs_axes` (experimental pilots, chunk-1) + assessment guidance | Shipped |
 | **V1.3** | Facilities matrix complete (40 tactics) + escalation scoring on the full People matrix | Shipped |
 | **V1.4** | Infrastructure matrix complete (37 tactics) + cross-domain Detection Mesh (People–Facility–Infrastructure) | Shipped |
-| **V1.5** | Organizations matrix complete (~42 tactics) | In Progress |
+| **V1.5** | Organizations matrix complete (48 tactics) + `informs_axes` on all indicators + full cross-domain Detection Mesh (indicator, countermeasure-compensation, and stakeholder-coordination links across all four matrices) | Shipped |
 | **V2** | Platform release: custom domain, Python and TypeScript SDKs, MCP server, RAG embeddings, change feed | Planned |
 | **V3** | Real-world case library | Planned |
 | **V4** | AI integration and vector embeddings | Planned |

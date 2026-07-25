@@ -4,7 +4,42 @@ All notable changes to THREAT Matrix are documented here, per [VERSIONING.md](do
 
 This project adheres to [Semantic Versioning](https://semver.org). Framework
 content and JSON Schema are versioned independently; the framework content
-and JSON Schema are versioned independently (latest — content: `1.4.1`, schema: `1.4.0`).
+and JSON Schema are versioned independently (latest — content: `1.5.0`, schema: `1.4.0`).
+
+## [1.5.0] — 2026-07-24
+
+Minor release. Adds the **Organizations matrix** (the fourth and final target matrix)
+and completes the cross-domain Detection Mesh across all four matrices. Framework content
+only; JSON Schema unchanged at `1.4.0` (all new content uses existing schema fields).
+
+### Added
+
+- **Organizations matrix — 48 tactics, live.** Full behavioral taxonomy for attacks on an
+  institution's function, legitimacy, governance, and what it does or represents (distinct
+  from its people, facilities, or systems). 48 tactics across the four-phase Threat Lifecycle
+  (Target Development 9, Mobilization 11, Execution 15, Aftermath 13), each with 5 behavioral
+  indicators (240 total), 4 countermeasures (192), 2 response protocols (96), per-tactic
+  assessment guidance, and matrix-wide escalation scoring. Promoted from stub to live; the
+  browser now renders `#/organization`.
+- **B6 `informs_axes` on all 240 Organizations indicators.** Six-axis resolution ratings
+  (actor capability/intent/opportunity, threat timing/target/method) from a sealed-blind
+  two-rater inter-rater reliability pass, reconciled against the rubric. Every indicator in
+  the framework now carries `informs_axes` and `temporal_signature`.
+- **Organizations cross-domain Detection Mesh — 64 indicator edges** (Organization↔People 21,
+  ↔Facility 25, ↔Infrastructure 18), authored via the sealed-blind IRR (`correlates_with`).
+- **Cross-domain countermeasure and stakeholder mesh — framework-wide.** 291 cross-matrix
+  `compensates_for` links (a countermeasure closing a gap another domain's countermeasure
+  leaves) and 182 cross-matrix `coordinates_with` links (stakeholder co-activation with
+  parallel/gates/precedes/deconflicts relations), grounded on the validated indicator edges.
+  Completes the Detection Mesh doctrine: all five mesh axes now deliver.
+
+### Changed
+
+- **Corpus-wide voice normalization.** Actor-word normalization to the canonical "threat
+  actor" (117 replacements, carve-outs preserved); em/en-dash purge across framework content;
+  VOICE.md Rule 5 carve-outs enumerated.
+- **Header stat is now computed** from the live matrices (was hardcoded): 159 tactics ·
+  815 indicators · 27 profiles.
 
 ## [1.4.1] — 2026-07-19
 
