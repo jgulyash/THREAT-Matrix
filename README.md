@@ -170,7 +170,8 @@ Standards talk to platforms. The contract is what makes integrations with RAG sy
 | **V1.3** | Facilities matrix complete (40 tactics) + escalation scoring on the full People matrix | Shipped |
 | **V1.4** | Infrastructure matrix complete (37 tactics) + cross-domain Detection Mesh (People–Facility–Infrastructure) | Shipped |
 | **V1.5** | Organizations matrix complete (48 tactics) + `informs_axes` on all indicators + full cross-domain Detection Mesh (indicator, countermeasure-compensation, and stakeholder-coordination links across all four matrices) | Shipped |
-| **V2** | Platform release: custom domain, Python and TypeScript SDKs, MCP server, RAG embeddings, change feed | Planned |
+| **V1.6** | Contract Hardening — full JSON Schema closure (object-level `additionalProperties`, complete field typing, `required`/`minItems`/`uniqueItems` constraints). The pre-platform gate that lets external consumers trust the contract against malformed input. | Next |
+| **V2** | Platform release: MCP server, Python and TypeScript SDKs, ingestion contract, pre-built RAG embeddings, custom domain, change feed | Planned |
 | **V3** | Real-world case library | Planned |
 | **V4** | AI integration and vector embeddings | Planned |
 | **V5** | Continuous learning loop | Future |

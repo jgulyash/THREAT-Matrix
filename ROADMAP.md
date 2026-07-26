@@ -1,6 +1,6 @@
 # THREAT Matrix — Development Roadmap
  
-**Current Version:** V1 (THREAT/Person — 34 tactics)
+**Current Version:** V1.5 (Organizations — 159 tactics across four matrices)
 **Product:** THREAT Matrix
  
 ---
@@ -10,15 +10,16 @@
 | Version | Scope | Tactics | Status |
 |---------|-------|---------|--------|
 | **V1** | Person matrix taxonomy | 34 | Shipped |
-| **V1.1** | Standard contract + Person D&R + AI-native foundations | — | In Progress |
-| **V1.2** | Phase Lens UI + assessment guidance | — | In Progress |
-| **V1.3** | Facility matrix complete | 40 | In Progress |
-| **V1.4** | Organization matrix complete | 42 | In Progress |
-| **V1.5** | Infrastructure matrix complete | 38 | In Progress |
-| **V2** | Headless build / AI consumption layer | — | Planned |
+| **V1.1** | Standard contract + Person D&R + AI-native foundations | — | Shipped |
+| **V1.2** | Phase Lens UI + assessment guidance + escalation scoring | — | Shipped |
+| **V1.3** | Facility matrix complete + escalation scoring on the full People matrix | 40 | Shipped |
+| **V1.4** | Infrastructure matrix complete + cross-domain Detection Mesh (People–Facility–Infrastructure) | 37 | Shipped |
+| **V1.5** | Organizations matrix complete + `informs_axes` matrix-wide + full cross-domain Detection Mesh (indicator, countermeasure, stakeholder links) | 48 | Shipped |
+| **V1.6** | Contract Hardening — full JSON Schema closure (pre-platform gate) | — | Next |
+| **V2** | Platform release — MCP server, SDKs, ingestion contract, RAG embeddings, custom domain, change feed | — | Planned |
 | **V3** | Case Library | — | Planned |
 | **V4** | AI Integration & Vector Embeddings | — | Planned |
-| **V5** | Continuous Learning Loop| — | Future |
+| **V5** | Continuous Learning Loop | — | Future |
  
 **Each minor (V1.3–V1.5) ships a complete matrix.** Each release includes the full behavioral indicators, countermeasures, response protocols, evidence_basis declarations, and Detection Mesh links for that matrix's tactics. Operational guidance is built into every matrix release alongside the taxonomy.
  
@@ -49,7 +50,7 @@
 ---
  
 ## V1.1 — Standard Contract + Person D&R + AI-Native Foundations
-**Status:** In Progress
+**Status:** Shipped
 **Theme:** Promote THREAT Matrix from framework to open standard. V1.1 publishes the contract — formal JSON Schema, versioning policy, stable identifier guarantees — and ships the first non-SPA reference consumer that proves the contract works end-to-end. The Person Detection & Response slice and the AI-native architecture additions ship under that contract.
  
 **Delivers (standard contract):**
@@ -91,7 +92,7 @@ The contract has to be in writing before the platform is built on top of it. Sch
 ---
  
 ## V1.2 — Phase Lens UI + Assessment Guidance
-**Status:** In Progress (after V1.1 content authoring completes)
+**Status:** Shipped
  
 **Delivers (UI experience):**
 - Phase Mode UI as a peer to Tactic Mode — cross-tactic rollup of all indicators relevant to a chosen phase, across the entire framework
@@ -115,7 +116,7 @@ The contract has to be in writing before the platform is built on top of it. Sch
 ---
  
 ## V1.3 — THREAT/Facility Matrix Complete
-**Status:** In Progress (after V1.2 ships)
+**Status:** Shipped
  
 **Delivers:**
 - Complete Facility matrix taxonomy (~40 tactics)
@@ -126,49 +127,61 @@ The contract has to be in writing before the platform is built on top of it. Sch
  
 ---
  
-## V1.4 — THREAT/Organization Matrix Complete
-**Status:** In Progress (after V1.3 ships)
- 
+## V1.4 — THREAT/Infrastructure Matrix Complete
+**Status:** Shipped
+
 **Delivers:**
-- Complete Organization matrix taxonomy (~42 tactics)
-- Full V1.1 schema applied to every Organization tactic
-- Cross-matrix links populated where Organization tactics interact with Person and Facility tactics
-- Insider actor profiles deepened
- 
+- Complete Infrastructure matrix taxonomy (37 tactics) — control systems, OT/ICS, and critical service delivery
+- Full schema applied to every Infrastructure tactic: indicators, countermeasures, response protocols, escalation scoring, `field_notes`, `observed_contexts`, `evidence_basis`, and Detection Mesh links
+- Cross-domain Detection Mesh woven across People, Facility, and Infrastructure (112 inter-rater-validated cross-matrix indicator edges) — closes the "zero cross-matrix links" gap for the three shipped matrices
+- Per-indicator cyber-physical facets (`crossing` + `human_social`) replacing the earlier tactic-level CPN flag; CPN computed over the mesh rather than stored
+- Rendering fixes (1.4.1): heat-map column alignment and the Aftermath evade/claim track split
+
+---
+
+## V1.5 — THREAT/Organization Matrix Complete
+**Status:** Shipped
+
+**Delivers:**
+- Complete Organization matrix taxonomy (48 tactics) — attacks on an institution's function, legitimacy, governance, and what it does or represents, distinct from its people, facilities, or systems
+- Full schema applied to every Organization tactic: 240 indicators, 192 countermeasures, 96 response protocols, per-tactic assessment guidance, and escalation scoring
+- `informs_axes` completed matrix-wide — all 815 indicators across all four matrices now carry the six-axis resolution signal, authored per matrix through sealed-blind inter-rater reliability (weighted κ ≥ 0.60)
+- Full cross-domain Detection Mesh: 176 cross-matrix indicator edges, 291 cross-matrix countermeasure-compensation links, and 182 cross-matrix stakeholder-coordination links — all five mesh axes now deliver
+- Organizations promoted from stub to live in the browser; four live matrices
+
+---
+
+## V1.6 — Contract Hardening
+**Status:** Next
+
+**Theme:** Close the JSON Schema so external consumers can trust the contract against malformed input. The content surface is complete across all four matrices as of V1.5; V1.6 hardens the boundary. This is the deliberate pre-platform gate — the V2 platform (MCP server, SDKs, embeddings) is built on a frozen, fully-typed schema, so the schema must stop churning first.
+
+**Delivers:**
+- Object-level `additionalProperties: false` on every schema definition (root-level closure already shipped in 1.4.x)
+- Complete field typing for the currently loose fields (actor-profile fields, the `escalation_rubric` block, the `ai_architecture`/`warden` objects)
+- Structural constraints: `required`, `minItems`, `uniqueItems` where the contract implies them
+- Closes the invalid-input mutations the reference validator flags but the schema still tolerates
+- Bundled schema-bump housekeeping: retire the legacy tactic-level `cpn` flag in favor of the per-indicator facets, and author the CPN facets for Organizations
+
+**Schema bump:** the first `schema_version` change since 1.1.0 — a breaking bump, since `additionalProperties: false` rejects previously-tolerated input.
+
 ---
  
-## V1.5 — THREAT/Infrastructure Matrix Complete
-**Status:** In Progress (after V1.4 ships)
+## V2 — Platform Release / AI Consumption Layer
+**Status:** Planned (after V1.6 schema freeze)
  
-**Delivers:**
-- Complete Infrastructure matrix taxonomy (~38 tactics)
-- Full V1.1 schema applied to every Infrastructure tactic
-- Cross-matrix links across all four matrices populated
-- Infrastructure -domain CPN editorial review (cyber-physical nexus at infrastructure scale)
-- Operations / scenario composer foundations
- 
-**Source coverage at launch:** 50–60% (power/water/pipeline deep; dam/telecom stubs)
-- NERC reliability reports
-- EPA Water Security Initiative
-- NTSB transportation security database
-- Metcalf sniper attack analysis
-- ICS-CERT advisory database
- 
----
- 
-## V2 — Headless Build / AI Consumption Layer
-**Status:** Planned (after V1.5 content-complete state)
- 
-**Delivers:**
-- Custom domain (e.g., `threatmatrix.dev`) with versioned URL pattern (`/api/v1/`, `/api/v2/`)
-- Python SDK (thin wrapper around schema-validated framework.json fetch)
-- TypeScript SDK (same)
-- MCP server — AI agents query the framework natively over the Model Context Protocol
-- Pre-built vector embeddings for RAG against framework content (tactics, indicators, countermeasures, field_notes)
+**Front of V2 (the adoption-critical layer):**
+- **MCP server** — AI agents query the framework natively over the Model Context Protocol; a transport layer over a pinned released `framework.json`, additive as matrices already shipped. Its one precondition is the V1.6 schema freeze.
+- **Ingestion contract** — the minimal observation schema (source, timestamp, subject, behavior, evidence pointer) that defines what an observation must look like to be mappable to an indicator; makes every "how do I integrate" conversation concrete.
+- **Python SDK / TypeScript SDK** — thin wrappers around schema-validated `framework.json` fetch.
+- **Pre-built vector embeddings** for RAG against framework content (tactics, indicators, countermeasures, field_notes).
+
+**Rest of V2:**
+- Custom domain with a versioned URL pattern
 - Webhooks / change feed for dependent tools to subscribe to framework updates
 - Countermeasure severity / criticality / effectiveness ratings (research problem; "minimum CM set to reduce risk by X%")
  
-**Strategic position:** V1.1 establishes the standard (contract, schema, reference consumer). V1.3–V1.5 fill out the content surface across all four matrices under that contract. V2 ships the platform that turns the standard into an ecosystem — versioned API endpoints, language SDKs, MCP server for native AI-agent access, pre-built RAG embeddings, and a change feed for dependent tools to subscribe against. The standard is fully defended from V1.1 forward; V2 is the amplifier, not a precondition.
+**Strategic position:** V1.1 established the standard (contract, schema, reference consumer); V1.3–V1.5 filled the content surface across all four matrices; V1.6 freezes and hardens the schema. V2 ships the platform that turns the standard into an ecosystem — MCP server and SDKs for native AI-agent and application access, an ingestion contract that makes integration concrete, pre-built RAG embeddings, and a change feed. The standard is defended from V1.1 forward; V2 is the amplifier, gated only on the V1.6 freeze.
  
 ---
  
@@ -221,7 +234,7 @@ The THREAT Matrix is designed to plug into existing and future AI-native case ma
  
 ## Detection & Response Guide — Per-Matrix Delivery
  
-**The defender mirror to the adversary taxonomy ships with each matrix release.** There is no separate companion version. Each matrix (V1 Person, V2 Facility, V3 Organization, V4 Infrastructure) delivers its own slice of the Detection & Response Guide alongside the taxonomy itself.
+**The defender mirror to the adversary taxonomy ships with each matrix release.** There is no separate companion version. Each matrix (V1 Person, V1.3 Facility, V1.4 Infrastructure, V1.5 Organization) delivers its own slice of the Detection & Response Guide alongside the taxonomy itself.
  
 **Per-matrix deliverables (each version):**
 - Detection methodology for every tactic in that matrix
