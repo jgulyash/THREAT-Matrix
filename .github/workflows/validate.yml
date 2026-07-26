@@ -48,3 +48,9 @@ jobs:
 
       - name: Run negative-fixture harness
         run: python3 scripts/lint/validate.py docs/data/framework.json --fixtures scripts/lint/fixtures
+
+      - name: Install reference-consumer dependency
+        run: pip install jsonschema
+
+      - name: Run reference-consumer smoke test
+        run: python3 scripts/lint/consumer-smoke.py
