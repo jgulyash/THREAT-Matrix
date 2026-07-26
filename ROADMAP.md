@@ -16,6 +16,7 @@
 | **V1.4** | Infrastructure matrix complete + cross-domain Detection Mesh (People–Facility–Infrastructure) | 37 | Shipped |
 | **V1.5** | Organizations matrix complete + `informs_axes` matrix-wide + full cross-domain Detection Mesh (indicator, countermeasure, stakeholder links) | 48 | Shipped |
 | **V1.6** | Contract Hardening — full JSON Schema closure (pre-platform gate) | — | Next |
+| **V1.7** | Consequence Layer — target-impact scoring (`risk = threat × vulnerability × consequence`) | — | Planned |
 | **V2** | Platform release — MCP server, SDKs, ingestion contract, RAG embeddings, custom domain, change feed | — | Planned |
 | **V3** | Case Library | — | Planned |
 | **V4** | AI Integration & Vector Embeddings | — | Planned |
@@ -167,6 +168,20 @@ The contract has to be in writing before the platform is built on top of it. Sch
 
 ---
  
+## V1.7 — Consequence Layer
+**Status:** Planned
+
+**Theme:** The third scoring layer. Where the taxonomy names a behavior (Layer 1) and escalation scoring weighs the threat it signals (Layer 2), the Consequence Layer scores target impact — the harm realized if an operation succeeds. It completes the operational risk model: `risk = threat × vulnerability × consequence`.
+
+**Delivers:**
+- Outcome-class taxonomy — a framework-defined vocabulary of consequence classes, authored per matrix and never inherited across matrices
+- Consequence rubric — the structured method for characterizing an outcome's severity, parallel to the escalation rubric
+- Instance-conditioning pattern — the framework defines the classes and rubric at the type level; specific target-value records live consumer-side, so the framework stays type-level and consumers hold their own case data
+
+**Sequencing:** developable in parallel (spec-first, person-matrix outcome classes as the pilot). Additive to the hardened schema; the V2 platform surfaces it additively as it lands.
+
+---
+
 ## V2 — Platform Release / AI Consumption Layer
 **Status:** Planned (after V1.6 schema freeze)
  
