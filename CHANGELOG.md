@@ -6,6 +6,20 @@ This project adheres to [Semantic Versioning](https://semver.org). Framework
 content and JSON Schema are versioned independently; the framework content
 and JSON Schema are versioned independently (latest — content: `1.5.0`, schema: `1.4.0`).
 
+## [Unreleased]
+
+### Added
+
+- **Organizations escalation-axis re-derivation documented (Ruling 1, Option A).**
+  `docs/methodology/DESIGN-b5-org-escalation-scoring.md` — the written re-derivation the
+  escalation_rubric's "other matrices re-derive" note requires, authored post-hoc for the
+  Organizations matrix (scored at V1.5 without a preserved written convention).
+  Elects stakeholder/population scope of institutional harm as the matrix's
+  `blast_radius_potential` semantics, re-anchors all four axes to the institutional harm
+  model, records the no-severity_floor rule, and validates the anchors against the shipped
+  240-indicator population. Framework data unchanged; the Phase-4 trace-behavior seam is
+  explicitly routed to the pending aftermath blast reconciliation rather than ratified.
+
 ## [1.5.0] — 2026-07-24
 
 Minor release. Adds the **Organizations matrix** (the fourth and final target matrix)
