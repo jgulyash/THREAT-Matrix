@@ -36698,6 +36698,9 @@
           "phase": 1,
           "phase_name": "Target Development",
           "notes": "Selection of a specific institution as the primary target, weighted by its mission, symbolic standing, legitimacy, or ideological opposition rather than by any single site or person it comprises. The threat actor decides which organization to move against and why.",
+          "cpn": true,
+          "cpn_id": "CPN-O0101",
+          "cpn_notes": "Public filings, news archives, social media, and OSINT databases let a threat actor weigh an institution's mission, symbolic standing, and legitimacy before committing to it as a target. Digital research establishes the campaign's rationale before any offline contact.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether the reporting shows the threat actor naming and fixing on this specific institution rather than venting about a category of organizations. Credibility rises when the same institution is named repeatedly across time, when the stated reason for choosing it is coherent and personal to the threat actor, and when independent sources capture the selection. A single anonymous claim that an institution is being targeted carries little weight without corroboration.",
@@ -37108,6 +37111,9 @@
           "phase": 1,
           "phase_name": "Target Development",
           "notes": "Study of how the organization is governed and led, mapping its decision structure, chain of authority, board, key officers, and the internal processes through which the institution acts. This locates where control and continuity concentrate.",
+          "cpn": true,
+          "cpn_id": "CPN-O0102",
+          "cpn_notes": "Corporate registries, regulatory filings, IRS Form 990s, LinkedIn, and organizational websites expose board composition, officers, and chains of authority. A threat actor can map an institution's decision structure entirely from online sources.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Assess whether the reporting genuinely shows study of how the institution is governed rather than casual awareness of who leads it. Credibility rises when the mapping is detailed, structured, and goes beyond publicly celebrated figures to the mechanisms of control and succession. A vague reference to disliking the institution's leaders is weaker than an organized picture of its decision structure.",
@@ -37515,6 +37521,9 @@
           "phase": 1,
           "phase_name": "Target Development",
           "notes": "Open-source study of the organization's public mission, brand, messaging, reputation, and existing controversy to locate the narratives and legitimacy claims a campaign can contest or exploit. The threat actor learns what the institution says it stands for so its standing can be undermined.",
+          "cpn": true,
+          "cpn_id": "CPN-O0103",
+          "cpn_notes": "The organization's public mission, brand messaging, and existing controversy are studied through its website, social media, press coverage, and archived content. Online reconnaissance locates the legitimacy claims a campaign can later contest.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Assess whether the reporting shows deliberate study of the institution's mission, brand, and reputation aimed at finding narratives to contest, rather than ordinary consumption of its public messaging. Credibility rises when the threat actor catalogs the institution's legitimacy claims, weak points, and past controversies with an eye toward exploitation. A passing critical comment about the institution's image carries little weight on its own.",
@@ -37925,6 +37934,9 @@
           "phase": 1,
           "phase_name": "Target Development",
           "notes": "Mapping of the funders, partners, members, vendors, regulators, and revenue streams the organization depends on for continuity, identifying single points of failure in its support base. This establishes where pressure on the institution propagates.",
+          "cpn": true,
+          "cpn_id": "CPN-O0104",
+          "cpn_notes": "Funders, partners, vendors, and revenue streams are traced through public filings, grant databases, donor disclosures, and business-intelligence platforms. Digital records reveal single points of failure in an institution's support base.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Assess whether the reporting shows deliberate mapping of the funders, partners, members, vendors, and regulators the institution depends on, aimed at finding single points of failure. Credibility rises when the threat actor identifies specific dependencies and reasons about how pressure on them propagates to the institution. A general awareness that the institution has donors or partners is far weaker than a mapped picture of its support base.",
@@ -38334,6 +38346,9 @@
           "phase": 1,
           "phase_name": "Target Development",
           "notes": "Assessment of the organization's membership, internal factions, morale, and fault lines to locate where the institution can be fractured, split, or turned against itself. The threat actor studies cohesion as an attack surface.",
+          "cpn": true,
+          "cpn_id": "CPN-O0105",
+          "cpn_notes": "Social media activity, member forums, employee review sites, and leaked internal discussion expose factions, morale, and fault lines. Online sentiment analysis lets a threat actor read institutional cohesion as an attack surface.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Judge how believable it is that a threat actor is systematically studying the institution's membership, factions, and morale as an attack surface rather than following the organization out of ordinary interest. Weight corroboration across independent observations, persistence over time, and whether the interest concentrates on internal fault lines rather than public-facing programs. Anonymized or laundered inquiries into who is unhappy, who is leaving, and where the leadership rifts sit raise credibility.",
@@ -38746,6 +38761,9 @@
           "phase": 1,
           "phase_name": "Target Development",
           "notes": "Identification of employees, members, or affiliates whose access, grievance, ideology, or personal circumstance makes them candidates for later recruitment or coercion against the institution. This is candidate spotting, not yet recruitment.",
+          "cpn": true,
+          "cpn_id": "CPN-O0106",
+          "cpn_notes": "LinkedIn, social media grievance mining, and public footprint analysis identify employees or members whose access, ideology, or circumstance mark them as later recruitment candidates. Digital footprints support candidate spotting before any approach.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Judge how believable it is that a threat actor is identifying specific employees, members, or affiliates as candidates for later recruitment or coercion against the institution. Weight whether the interest concentrates on individuals' access, grievances, ideology, or personal vulnerabilities rather than their public roles. Corroborated, persistent focus on a named person's leverage points raises credibility that this is candidate spotting, not ordinary contact.",
@@ -39169,6 +39187,9 @@
           "phase": 1,
           "phase_name": "Target Development",
           "notes": "Study of the information the organization holds, controls, publishes, or communicates internally, including member rolls, records, intellectual property, and internal channels, to map what can be exposed, stolen, forged, or exploited. The threat actor maps the institution's information environment.",
+          "cpn": true,
+          "cpn_id": "CPN-O0107",
+          "cpn_notes": "The records, member rolls, intellectual property, and internal channels an institution holds are mapped through its digital footprint, public disclosures, and exposed systems. A threat actor characterizes the information environment before deciding what to steal, forge, or expose.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Judge how believable it is that a threat actor is mapping the information the institution holds, controls, or communicates in order to expose, steal, forge, or exploit it. Weight persistence, breadth across information types such as member rolls, records, intellectual property, and internal channels, and whether the interest exceeds any legitimate need. Systematic cataloging of where sensitive information lives raises credibility.",
@@ -39570,6 +39591,9 @@
           "phase": 1,
           "phase_name": "Target Development",
           "notes": "Low-level active probing of the organization's responsiveness and controls, such as pretext inquiries, membership or vendor applications, complaint and intake channel tests, and elicitation, to reveal how the institution reacts before a campaign commits. Unlike passive study, the threat actor interacts to measure response.",
+          "cpn": true,
+          "cpn_id": "CPN-O0108",
+          "cpn_notes": "Pretext inquiries, membership and vendor applications, and complaint or intake channel tests are frequently submitted through web forms, email, and online portals to measure institutional response. Digital intake channels let a threat actor probe controls with low exposure.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Judge how believable it is that a threat actor is actively probing the institution's responsiveness and controls rather than making ordinary inquiries. Unlike passive study, this tactic involves interaction: pretext inquiries, membership or vendor applications, intake and complaint tests, and elicitation designed to measure how the institution reacts. Weight patterns of repeated, varied probes that test boundaries rather than seek a genuine outcome.",
@@ -39972,6 +39996,9 @@
           "phase": 1,
           "phase_name": "Target Development",
           "notes": "Actor-level behavioral markers that a threat actor is progressing from grievance and planning toward an active campaign against a specific organization, including leakage, fixation on the institution, and mobilization signals. This tactic captures pathway warning rather than a discrete operational act.",
+          "cpn": true,
+          "cpn_id": "CPN-O0109",
+          "cpn_notes": "Leakage, fixation, and mobilization markers manifest most detectably through social media posts, forum activity, and messaging content. Online behavioral leakage is now the primary pre-campaign warning channel.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh how believable the reporting is that a threat actor is moving along a pathway toward acting against this institution, rather than venting generic grievance. Credibility rises when leakage, fixation, and mobilization signals come from independent observers or from the threat actor's own durable record across platforms. Discount single-source secondhand claims, especially where a reporter has a grudge against the subject.",
@@ -40390,6 +40417,9 @@
           "phase": 2,
           "phase_name": "Mobilization",
           "notes": "Practice execution of the planned campaign short of the act itself, such as test messaging runs, rehearsed infiltration approaches, dry-run disruptions, or trial pressure actions, to validate the plan against the institution. The threat actor confirms the operation will work before committing.",
+          "cpn": true,
+          "cpn_id": "CPN-O0201",
+          "cpn_notes": "Test messaging runs, dry-run disruptions, and trial pressure actions are staged on social platforms and messaging services to validate a campaign before full release. Online rehearsal confirms reach and reaction without committing the operation.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh how believable it is that observed activity is a rehearsal of a planned campaign against the institution rather than ordinary testing or error. Credibility rises when the rehearsal maps onto a known grievance or plan, repeats with refinement, or is corroborated by more than one detection surface. A one-off anomaly with an innocent explanation stays low.",
@@ -40789,6 +40819,9 @@
           "phase": 2,
           "phase_name": "Mobilization",
           "notes": "Recruiting, cultivating, or coercing an existing employee, member, or affiliate to act against the organization from within, converting identified candidates into active insiders. The threat actor turns a person the institution trusts into a vector.",
+          "cpn": true,
+          "cpn_id": "CPN-O0202",
+          "cpn_notes": "Initial spotting and approach of a target insider frequently run through LinkedIn, social media, and encrypted messaging before any in-person cultivation. Digital channels open and coordinate the recruitment relationship.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh how believable it is that a threat actor is recruiting, cultivating, or coercing an insider to act against the institution. Credibility rises with documentary traces of the approach, corroboration from the targeted insider or peers, and consistency with a known external threat actor's interest in the institution. Vague suspicion about a disgruntled colleague, absent any approach evidence, stays low.",
@@ -41211,6 +41244,9 @@
           "phase": 2,
           "phase_name": "Mobilization",
           "notes": "Building a front group, shell entity, false affiliate, or parallel structure that carries borrowed legitimacy, giving the campaign a credible face from which to approach, mimic, or operate against the target institution. The threat actor manufactures institutional cover.",
+          "cpn": true,
+          "cpn_id": "CPN-O0203",
+          "cpn_notes": "A credible front requires registered domains, a website, social media presence, and fake email and phone infrastructure. A threat actor builds the front's digital footprint to give the shell borrowed legitimacy.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh how believable it is that an entity is a purpose-built front constructed to operate against the institution, rather than a genuine organization. Credibility rises with registration and ownership traces, timing tied to a campaign against the institution, and links back to a known threat actor. A merely unfamiliar or aggressive counterparty is not by itself a front.",
@@ -41609,6 +41645,9 @@
           "phase": 2,
           "phase_name": "Mobilization",
           "notes": "Constructing and pre-positioning the delegitimizing narrative, fabricated content, forged documents, and coordinated messaging assets that the campaign will deploy to erode the institution's standing. The threat actor stages the information payload before release.",
+          "cpn": true,
+          "cpn_id": "CPN-O0204",
+          "cpn_notes": "Fabricated content, forged documents, sock-puppet accounts, and coordinated messaging assets are produced and pre-positioned across social platforms and content-hosting services. The information payload is staged online before release.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh how believable the reporting is that a threat actor is building and pre-positioning delegitimizing content aimed at this institution, rather than expressing ordinary criticism. Credibility rises when staging assets are recovered or observed directly, when the same fabricated framing recurs across accounts that predate any public release, and when independent sources corroborate the buildout. Persistence of a staged narrative over weeks, with drafts, forged artifacts, and seeded placeholder accounts, is more believable than a single anonymous claim that a smear is coming.",
@@ -42013,6 +42052,8 @@
           "phase": 2,
           "phase_name": "Mobilization",
           "notes": "Gaining bona fide standing inside the organization by joining, volunteering, seeking employment, becoming a vendor, or securing an affiliate or board position, so the threat actor operates from a position the institution recognizes as legitimate. This obtains organizational presence, not yet elevated authority.",
+          "cpn": false,
+          "cpn_notes": "",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh how believable the evidence is that a threat actor is seeking bona fide standing inside the institution as a step in a campaign, rather than joining for the legitimate purpose the role implies. Credibility rises when application or affiliation activity connects to the threat actor's prior hostile conduct, when identity or background details prove falsified, and when the same actor or aligned actors pursue multiple points of entry at once. A verified false pretext used to gain membership or employment is far more believable than an unease that a new joiner has bad motives.",
@@ -42430,6 +42471,8 @@
           "phase": 2,
           "phase_name": "Mobilization",
           "notes": "Elevating from mere presence to the internal privileges the institution grants, such as signatory or financial authority, access to member rolls and internal communications, governance votes, or administrative control. The threat actor accumulates the institutional authority needed to act.",
+          "cpn": false,
+          "cpn_notes": "",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh how believable the evidence is that a threat actor is elevating from mere presence to the internal privileges the institution grants, in order to act against it. Credibility rises when the accumulation of authority is documented in records, when the pace or pattern of privilege-seeking is anomalous for the role, and when it connects to the actor's concealed adversarial ties. A traceable sequence of moves toward signatory, financial, or administrative control is more believable than a suspicion that an insider wants more power.",
@@ -42835,6 +42878,9 @@
           "phase": 2,
           "phase_name": "Mobilization",
           "notes": "Acquiring the leverage a campaign uses to bend the institution's decisions, including leaked or stolen internal records, financial exposure, legal pressure points, and compromising material held over the institution as a body. The threat actor assembles the means to compel the organization to act against its own interest.",
+          "cpn": true,
+          "cpn_id": "CPN-O0207",
+          "cpn_notes": "Internal records, financial exposure, and compromising material are frequently obtained through data theft, leaks, and exfiltration of the institution's systems. Digital acquisition supplies the leverage a campaign later applies.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh how believable the evidence is that a threat actor is assembling leverage to compel the institution as a body, rather than pursuing an ordinary dispute or lawful claim. Credibility rises when leaked or stolen records are confirmed in the actor's hands, when demands or threats reference specific internal exposures, and when the leverage-building connects to prior hostile conduct. Possession of authentic internal material paired with a coercive posture is far more believable than a vague warning that the institution will be pressured.",
@@ -43238,6 +43284,9 @@
           "phase": 2,
           "phase_name": "Mobilization",
           "notes": "Assembling the funds, personnel, platforms, and operational infrastructure required to sustain the campaign against the organization, staging resources ahead of action. The threat actor builds the material base for the operation.",
+          "cpn": true,
+          "cpn_id": "CPN-O0208",
+          "cpn_notes": "Campaign financing, platform accounts, and operational infrastructure are assembled through online payment channels, cryptocurrency, and cloud and hosting services. A threat actor stages the material base largely through digital means.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether reporting of financing and resource staging reflects a real operational buildup against this institution rather than routine fundraising or speculation. Credibility rises when funding movements, procurement, and personnel recruitment are documented across independent sources and tied to stated hostility toward the organization. A single rumor of a war chest, absent transaction records or corroborating logistics, carries low weight.",
@@ -43634,6 +43683,9 @@
           "phase": 2,
           "phase_name": "Mobilization",
           "notes": "Assembling allied groups, proxies, astroturfed networks, and sympathetic third parties to amplify pressure, manufacture apparent consensus, and multiply force against the institution. The threat actor builds the external network the campaign will mobilize.",
+          "cpn": true,
+          "cpn_id": "CPN-O0209",
+          "cpn_notes": "Allied groups, astroturfed networks, and sympathetic third parties are recruited and coordinated through social platforms, forums, and messaging services. Online organizing manufactures apparent consensus and multiplies pressure.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether reported coalition or proxy building reflects a real orchestrated network mobilizing against the institution rather than organic sympathy or coincidental alignment. Credibility rises when coordination, shared funding, or common control is documented across the allied groups and traces back to the threat actor. Claims of a vast alliance, absent evidence of coordination behind apparently independent voices, carry low weight.",
@@ -44030,6 +44082,9 @@
           "phase": 2,
           "phase_name": "Mobilization",
           "notes": "Actions to detect and evade the organization's own security, counterintelligence, legal, and monitoring functions while the campaign is being built, protecting infiltrators, fronts, and insiders from exposure. The threat actor shields the developing operation from institutional detection.",
+          "cpn": true,
+          "cpn_id": "CPN-O0210",
+          "cpn_notes": "Encrypted communications, anonymization tools, and monitoring of the institution's public channels shield infiltrators, fronts, and insiders while the campaign is built. Digital operational security is central to concealing a developing operation.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether reported surveillance detection and operational security by the threat actor reflects deliberate evasion of the institution's security and counterintelligence functions rather than ordinary privacy practice. Credibility rises when concrete counter-surveillance behaviors are observed and tie to a threat actor already building an operation against the organization. Isolated use of encryption or anonymity tools, common to lawful actors, carries low weight on its own.",
@@ -44438,6 +44493,9 @@
           "phase": 2,
           "phase_name": "Mobilization",
           "notes": "Compromising or co-opting a trusted vendor, partner, accreditor, auditor, or platform to reach or discredit the target institution through a relationship it relies on. The threat actor turns a trusted third party into a vector against the organization.",
+          "cpn": true,
+          "cpn_id": "CPN-O0211",
+          "cpn_notes": "A trusted vendor, partner, or platform is frequently compromised or co-opted through its digital systems and access relationships to reach the target institution. Cyber-enabled supply-chain access turns a relied-upon third party into a vector.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether reporting that a trusted vendor, partner, accreditor, auditor, or platform is compromised or co-opted reflects a real subversion aimed at the institution rather than an ordinary business dispute or coincidence. Credibility rises when concrete evidence shows a trusted third party being turned into a vector, corroborated across sources. A single unverified claim that a supplier is compromised, absent evidence of manipulation or intent toward the organization, carries low weight.",
@@ -44842,6 +44900,8 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "The threat actor coerces the institution itself by threatening harm to its mission, continuity, brand, or membership unless it pays, changes policy, or submits. The target of value is the organization's freedom to decide and operate, not any single individual.",
+          "cpn": false,
+          "cpn_notes": "",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether the reported coercion is a genuine demand backed by leverage against the institution or an isolated angry message. Credible extortion carries a specific demand, a stated consequence, and evidence the threat actor can act on it. Corroboration across the demand channel, proof-of-access, and prior conduct raises confidence.",
@@ -45253,6 +45313,9 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "A sustained campaign to strip the institution of its perceived authority, mandate, and right to exist in the eyes of stakeholders and the public. The mechanism is public contestation of the institution's legitimacy and standing to operate, distinct from severing the trust relationships that sustain it.",
+          "cpn": true,
+          "cpn_id": "CPN-O0302",
+          "cpn_notes": "Public contestation of the institution's authority is carried through social platforms, coordinated posting, and online and hybrid media. Digital distribution is the primary channel that erodes perceived legitimacy at scale.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether observed messaging is a sustained, coordinated effort to strip the institution of its perceived authority or a burst of ordinary criticism. Credible delegitimization shows durability, message discipline, and coordination across accounts or outlets. Corroboration comes from consistent framing, synchronized timing, and traceable amplification infrastructure.",
@@ -45653,6 +45716,9 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "Manufacturing or amplifying scandal, doubt, and controversy to collapse the confidence that donors, members, partners, and funders place in the institution. The mechanism is degradation of specific trust relationships that sustain the organization, distinct from a public challenge to its authority to exist.",
+          "cpn": true,
+          "cpn_id": "CPN-O0303",
+          "cpn_notes": "Scandal, doubt, and controversy are manufactured and amplified across social platforms, forums, and online media to collapse donor and partner confidence. Digital amplification drives the reputational damage.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether reporting shows a deliberate operation to collapse specific trust relationships or ordinary reputational friction. Credible trust destruction shows manufactured or amplified scandal aimed at named relationships such as donors, funders, or partners. Corroboration comes from fabricated or distorted material, coordinated seeding, and traceable targeting of trust-holders.",
@@ -46054,6 +46120,9 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "The threat actor uses a cultivated or coerced insider to sabotage, leak, or degrade the institution's operations and information position from within. The insider is the vector, but the target of value is the organization's function and continuity.",
+          "cpn": true,
+          "cpn_id": "CPN-O0304",
+          "cpn_notes": "A cultivated insider leaks records, degrades the information position, or sabotages operations, frequently through the institution's own systems and communications. Digital access converts insider trust into operational damage.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether indicators point to a cultivated or coerced insider acting against the institution or to ordinary workplace friction and error. Credible insider-enabled disruption shows a person with access engaging in sabotage, leak, or degradation aligned with an external interest. Corroboration comes from access logs, anomalous behavior, and contact between the insider and an outside threat actor.",
@@ -46469,6 +46538,8 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "The threat actor infiltrates and gains control over the institution's decision-making bodies, boards, committees, or leadership to redirect what the organization does. The target is the organization's governance and control, not the individuals who occupy the seats.",
+          "cpn": false,
+          "cpn_notes": "",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether the reported push to seize the institution's governance bodies is documented rather than inferred from ordinary disagreement. Credible reporting shows a coordinated pattern across multiple board or committee cycles, corroborated by internal records such as membership rolls, proxy filings, or slate communications. Discount single-source claims from an aggrieved faction that lost a lawful vote.",
@@ -46873,6 +46944,9 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "The threat actor induces members, staff, donors, or affiliates to abandon the institution in numbers sufficient to hollow out its capacity. The target is the organization's membership base and human capital as an institutional resource.",
+          "cpn": true,
+          "cpn_id": "CPN-O0306",
+          "cpn_notes": "Members, staff, and donors are induced to abandon the institution through targeted messaging, social pressure, and online mobilization at a scale sufficient to hollow out capacity. Digital reach makes mass defection engineering feasible.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether the reported effort to drive members, staff, donors, or affiliates out of the institution is organized and directed rather than a spontaneous reaction to the institution's own conduct. Credible reporting shows coordinated outreach to defect, corroborated by recovered messaging, defection scripts, or a traceable spike tied to a single source. Discount claims that attrition following a genuine scandal or policy change proves an external campaign.",
@@ -47278,6 +47352,8 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "The threat actor severs the institution's financial lifelines by pressuring donors, banks, payment processors, grantmakers, or sponsors to cut ties. The target is the organization's financial continuity, achieved without touching its facilities or systems.",
+          "cpn": false,
+          "cpn_notes": "",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether the reported effort to cut the institution's financial lifelines is a directed pressure campaign against its funders rather than independent decisions by those funders. Credible reporting shows coordinated outreach to donors, banks, processors, or grantmakers, corroborated by recovered demands, deplatforming letters, or a synchronized withdrawal traceable to a single organizing source. Discount claims that a lawful, independently reached funding decision proves an external strangulation campaign.",
@@ -47683,6 +47759,9 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "Compelling or executing the public release of the institution's confidential records, internal deliberations, or governance communications to damage its standing and position. The disclosure is weaponized against the institution as a body, distinct from exposing an individual for personal harm.",
+          "cpn": true,
+          "cpn_id": "CPN-O0308",
+          "cpn_notes": "Confidential records, internal deliberations, and governance communications are released through leak sites, social platforms, and online media to damage the institution. Digital publication is the mechanism of weaponized exposure.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether the reported drive to force the release of the institution's confidential records is real and aimed at the institution as a body, not routine transparency or a leak about an individual. Credible reporting shows a specific threat, demand, or staged disclosure of governance communications or internal deliberations, corroborated by recovered messaging, extortion demands, or samples of the material. Discount vague claims of a coming leak with no specimen, no demand, and no channel.",
@@ -48087,6 +48166,9 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "The threat actor seeds division, factionalism, and schism inside the institution to fracture its internal cohesion and split it apart. The target is the organization's unity and coherence as a single body.",
+          "cpn": true,
+          "cpn_id": "CPN-O0309",
+          "cpn_notes": "Division, factionalism, and schism are seeded inside the institution through infiltrated online channels, targeted messaging, and coordinated inauthentic activity. Online information operations drive the internal fracture.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether reporting of engineered internal division reflects a deliberate external campaign rather than ordinary institutional disagreement. Look for corroboration across multiple factions, departments, or membership tiers reporting the same divisive narratives arriving from a common outside source. Persistence over weeks and the appearance of identical framing in unconnected internal channels raise credibility.",
@@ -48491,6 +48573,9 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "Flooding, swarming, or overloading the institution's administrative and social channels, such as complaint floods, mass fake applications, bureaucratic overload, and intake saturation, to deny it the capacity to conduct its mission. The mechanism is administrative and process paralysis, explicitly excluding technical denial of service and physical occupation.",
+          "cpn": true,
+          "cpn_id": "CPN-O0310",
+          "cpn_notes": "Complaint floods, mass fake applications, and intake saturation are frequently submitted through web forms, email, and social channels to overload administrative capacity. Coordinated online submission drives the process paralysis, distinct from technical denial of service.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether an observed surge in administrative load reflects deliberate saturation rather than an organic spike in legitimate demand. Credibility rises when the volume, timing, and content of complaints, applications, or requests show coordination signatures such as templated language, synchronized arrival, or implausible identical patterns. Corroboration across multiple intake channels experiencing the same anomaly strengthens the finding.",
@@ -48893,6 +48978,8 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "Weaponizing the legal and regulatory system against the institution through vexatious litigation, mass regulatory complaints, licensing and permit challenges, and pressure campaigns designed to bleed cost and paralyze it through legal-administrative means. The threat actor uses lawful processes as an instrument of attrition.",
+          "cpn": false,
+          "cpn_notes": "",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether a pattern of legal and regulatory actions reflects a deliberate attrition campaign rather than legitimate claims pursued in good faith. Credibility rises when filings are numerous, repetitive, meritless, and traceable to a common backer despite nominally separate complainants. Persistence after dismissals and coordination across venues strengthen the finding.",
@@ -49292,6 +49379,8 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "Seizing control of the institution through a controlling ownership stake, creditor and debt leverage, or a proxy fight, taking the organization by economic and legal ownership rather than by infiltrating its board. The threat actor acquires the institution's control apparatus outright.",
+          "cpn": false,
+          "cpn_notes": "",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether reporting of an attempt to seize institutional control through ownership, debt, or a proxy fight reflects a genuine takeover effort rather than routine investment or governance activity. Credibility rises when stake accumulation, creditor positioning, or proxy solicitation is documented, persistent, and aimed at control rather than return. Corroboration from filings, board members, or financial records strengthens the finding.",
@@ -49691,6 +49780,9 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "Spoofing the target institution's own identity by forging its official communications, cloning its brand, or standing up fake official channels to redirect its resources, deceive its stakeholders, or destroy its credibility. The threat actor wears the institution's identity against it.",
+          "cpn": true,
+          "cpn_id": "CPN-O0313",
+          "cpn_notes": "Spoofed websites, cloned brand assets, forged official communications, and fake social accounts let a threat actor wear the institution's identity. Digital impersonation redirects resources and deceives stakeholders.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh how believable the reporting is that a threat actor forges the institution's official identity, clones its brand, or stands up fake official channels. Corroboration from the institution's own domain and brand teams, registrar records, and independent stakeholder reports raises credibility. A single unverified screenshot of a lookalike message is weak until artifacts are captured and preserved.",
@@ -50091,6 +50183,9 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "Mobilizing an organized boycott, divestment drive, or advertiser and sponsor pressure campaign that turns a market or public constituency against the institution to coerce or degrade it. The mechanism is demand-side mobilization rather than directly severing individual funding ties.",
+          "cpn": true,
+          "cpn_id": "CPN-O0314",
+          "cpn_notes": "Boycotts, divestment drives, and advertiser and sponsor pressure are organized and amplified through social platforms, hashtag campaigns, and coordinated online mobilization. Digital coordination turns a market or constituency against the institution.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh how believable the reporting is that a threat actor is organizing a boycott, divestment drive, or advertiser and sponsor pressure campaign against the institution. Documented organizing infrastructure, coordinated messaging, and confirmed outreach to the institution's sponsors raise credibility. Isolated angry posts or a hashtag with no organizing behind it are weak signals.",
@@ -50493,6 +50588,9 @@
           "phase": 3,
           "phase_name": "Execution",
           "notes": "Coercing a gatekeeper such as a platform, payment processor, accreditor, or charity-status authority into stripping the institution's ability to operate, revoking its access, certification, or standing. The threat actor compels a third-party gatekeeper to disable the organization.",
+          "cpn": true,
+          "cpn_id": "CPN-O0315",
+          "cpn_notes": "Coercion of platforms, payment processors, and accreditors to revoke an institution's access targets digital gatekeepers directly. Online reporting campaigns and pressure on service providers strip the organization's ability to operate.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh how believable the reporting is that a threat actor is pressuring a gatekeeper such as a platform, payment processor, accreditor, or charity-status authority to strip the institution's ability to operate. Documented complaints filed with the gatekeeper, confirmed contact from the gatekeeper, and coordinated reporting campaigns raise credibility. Speculation that a suspension was hostile, absent evidence of external pressure, is weak.",
@@ -50891,6 +50989,9 @@
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
           "notes": "The threat actor winds down the shell entities, front groups, and cutout organizations used to act against the institution so the campaign cannot be traced to its sponsor. Dissolution removes the organizational vectors once the act is complete.",
+          "cpn": true,
+          "cpn_id": "CPN-O0401",
+          "cpn_notes": "Winding down a front commonly includes taking down its websites, domains, and social accounts, so the digital dissolution footprint is a primary observable channel.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh how believable the reporting is that a threat actor is winding down the shell entities, front groups, and cutouts used against the institution to break the trail to its sponsor. Registry dissolution filings, abandoned infrastructure, and synchronized shutdown of related fronts raise credibility. A single dormant account proves little on its own.",
@@ -51291,6 +51392,9 @@
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
           "notes": "The threat actor plants false-flag artifacts and routes the campaign through proxies and cutouts so responsibility for the institutional attack points elsewhere. The aim is to sever the link between the sponsor and the act against the organization.",
+          "cpn": true,
+          "cpn_id": "CPN-O0402",
+          "cpn_notes": "False-flag artifacts, fabricated personas, and proxy and cutout routing through anonymization services misdirect responsibility for the campaign. Digital tradecraft severs the link between sponsor and act.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether the evidence that responsibility for the institutional attack is being deliberately misdirected comes from more than the false-flag artifacts themselves, since those artifacts are engineered to deceive. Credibility rises when technical forensics, infrastructure overlap, or a cooperating source contradict the surface attribution and point back to a concealed sponsor. Treat a single tidy claim of responsibility or one conveniently discovered artifact as low credibility until it is corroborated. Persistence of the same misdirection pattern across multiple incidents against the institution strengthens the reporting.",
@@ -51698,6 +51802,9 @@
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
           "notes": "The threat actor moves the hostile narrative through seemingly independent media, influencers, and civil-society intermediaries so it reads as organic and its origin stays hidden. Laundering conceals that the delegitimization was sponsored.",
+          "cpn": true,
+          "cpn_id": "CPN-O0403",
+          "cpn_notes": "The hostile narrative is routed through seemingly independent media, influencers, and civil-society intermediaries across online channels so it reads as organic. Digital intermediation conceals the sponsored origin.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Assess whether the hostile narrative moving through independent-looking outlets can be traced to a coordinating origin, rather than reflecting genuine organic concern about the institution. Credibility rises when message timing, identical phrasing, funding trails, or shared coordination surfaces link the intermediaries. A single aligned article or influencer post is weak; synchronized amplification across unrelated-seeming channels is strong. Weigh whether the laundering pattern persists and whether an inside source or leaked plan confirms sponsorship.",
@@ -52103,6 +52210,8 @@
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
           "notes": "The threat actor destroys the records, communications, and financial trails that tie the operation to the institutional target. The act frustrates reconstruction of the campaign against the organization.",
+          "cpn": false,
+          "cpn_notes": "",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Assess whether reporting that records tying an operation to the institution were destroyed rests on more than absence alone, since records go missing for mundane reasons. Credibility rises when destruction is selective, timed to an investigation, and confirmed by logs, backups, witnesses, or recovery of partial trails. A single missing file is weak; a coordinated purge of exactly the incriminating material is strong. Weigh whether the destruction pattern targets the specific evidence that would link the sponsor to the act against the institution.",
@@ -52540,6 +52649,8 @@
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
           "notes": "The threat actor shields the cultivated insiders, co-conspirators, and cutouts embedded in or around the institution after the operation. Protection preserves the human network for future use.",
+          "cpn": false,
+          "cpn_notes": "",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Assess whether reporting that the threat actor is shielding insiders, co-conspirators, and cutouts embedded around the institution rests on observed protective action, not just suspicion of connection. Credibility rises when protection is concrete: legal cover, funded relocation, silencing, or coordinated cover stories confirmed by records or a source. A single friendly relationship is weak; a pattern of active protection tied to the operation is strong. Weigh whether the protection preserves people specifically positioned to act against the institution again.",
@@ -52966,6 +53077,8 @@
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
           "notes": "The threat actor retains dormant insiders, latent influence positions, or residual footholds inside the institution to enable a renewed campaign. Persistence keeps the organization penetrable after the current act.",
+          "cpn": false,
+          "cpn_notes": "",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Assess whether the evidence that the threat actor retains a dormant foothold inside the institution is corroborated across independent signals rather than inferred from a single lapsed account. Persistence claims gain credibility when a specific insider, credential, or influence position is named and its continued live status is verified. Weigh whether the reporting distinguishes a genuine retained asset from ordinary post-incident access that was simply never revoked.",
@@ -53373,6 +53486,9 @@
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
           "notes": "The threat actor moves, layers, or launders the funds tied to the campaign, whether extortion proceeds or operational financing, to obscure their origin. The disposition covers the money behind the institutional attack.",
+          "cpn": true,
+          "cpn_id": "CPN-O0407",
+          "cpn_notes": "Extortion proceeds and operational financing are moved and layered through cryptocurrency, mixing services, and chain hopping to obscure origin. Blockchain forensics has become a primary investigative counter to this disposition.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Assess whether the movement of funds tied to the campaign is traceable to the institutional attack rather than assumed from generic financial activity. Credibility rises when specific transactions, accounts, or instruments connect the money to the extortion demand or operational financing of the campaign. Weigh whether financial-intelligence reporting names the flow and its origin rather than flagging ordinary volume.",
@@ -53792,6 +53908,8 @@
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
           "notes": "The threat actor reviews whether the institution was actually degraded, delegitimized, or coerced as intended and what to change next time. The assessment measures effect against the organizational objective.",
+          "cpn": false,
+          "cpn_notes": "",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Assess whether evidence that the threat actor is reviewing the campaign's effect against the institution is genuine reporting rather than routine commentary. Credibility rises when the assessment is tied to the specific organizational objective and shows internal measurement of what worked. Weigh whether the source captures the threat actor's own evaluation rather than third-party analysis of the attack.",
@@ -54204,6 +54322,8 @@
           "phase_name": "Aftermath",
           "phase_4_track": "evasion",
           "notes": "The threat actor's own movement or front rebrands, relocates, or repositions to evade sanction and keep operating against institutions. The behavior reestablishes a clean posture for the sponsoring actor.",
+          "cpn": false,
+          "cpn_notes": "",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Assess whether evidence that the threat actor's movement or front is rebranding to evade sanction is grounded in verified continuity rather than surface resemblance. Credibility rises when infrastructure, personnel, funding, or messaging tie the new entity to the sanctioned one. Weigh whether analysts have established a real link rather than noting a coincidental similarity.",
@@ -54604,6 +54724,8 @@
           "phase_name": "Aftermath",
           "phase_4_track": "attribution",
           "notes": "The threat actor publicly claims responsibility for the campaign against the institution through a statement, manifesto, or media contact. The claim signs the act as a deliberate strike on the organization.",
+          "cpn": false,
+          "cpn_notes": "",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether the claim of responsibility genuinely ties the threat actor to a real act against the institution, not to an unrelated or fabricated event. Corroboration comes from non-public operational details that only the threat actor or an insider knows, consistent signing across channels, and independent confirmation that the claimed harm actually occurred. Discount claims that recycle press coverage, contain no verifiable specifics, or surface from throwaway accounts with no prior footprint.",
@@ -55021,6 +55143,9 @@
           "phase_name": "Aftermath",
           "phase_4_track": "attribution",
           "notes": "The threat actor publicizes and spreads the institution's degradation, defection, or exposure to maximize reach, reaction, and downstream pressure. Amplification turns the institutional damage into a public spectacle.",
+          "cpn": true,
+          "cpn_id": "CPN-O0411",
+          "cpn_notes": "The institution's degradation or exposure is publicized across social platforms, video-hosting services, and encrypted broadcast channels to maximize reach. Algorithmic amplification extends the spectacle without traditional press contact.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether the amplification is a deliberate campaign by the threat actor to spread the institution's degradation, versus organic reaction to a public event. Corroboration comes from coordinated timing, repeated messaging from linked accounts, and traceable seeding from the same source that caused or claimed the harm. Discount ordinary viral spread, one-off critical posts, or coverage that any newsworthy event would naturally attract.",
@@ -55430,6 +55555,8 @@
           "phase_name": "Aftermath",
           "phase_4_track": "attribution",
           "notes": "The threat actor leverages the completed act to press further demands on the institution, extending extortion, ultimatums, or conditional threats for policy change or submission. Follow-through converts the demonstrated harm into ongoing coercion.",
+          "cpn": false,
+          "cpn_notes": "",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether the threat actor genuinely holds leverage from a completed act and is pressing real further demands on the institution, versus empty threats trading on someone else's incident. Corroboration comes from proof that the actor controls the leverage, continuity with the original act, and specific conditional demands delivered through a channel that reaches decision-makers. Discount vague menace, recycled breach data, or demands from parties with no demonstrated connection to the harm.",
@@ -55838,6 +55965,9 @@
           "phase_name": "Aftermath",
           "phase_4_track": "attribution",
           "notes": "The threat actor uses the demonstrated success against the institution to recruit followers, inspire copycats, and build momentum for further campaigns. The completed act becomes a mobilization tool.",
+          "cpn": true,
+          "cpn_id": "CPN-O0413",
+          "cpn_notes": "Demonstrated success is used to recruit followers, inspire copycats, and build momentum through propaganda content, social platforms, and online communities. Digital distribution converts the completed act into a mobilization tool.",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Weigh whether the threat actor is genuinely using a demonstrated success against the institution to recruit and mobilize, versus isolated praise or unrelated organizing. Corroboration comes from explicit references to the act as a model, measurable inflows of new followers or imitators, and coordinated calls to replicate it. Discount generic ideological posting, one-off admiration, or recruitment drives that predate and do not reference the act.",
