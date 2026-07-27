@@ -360,7 +360,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0102",
+            "TM0103",
+            "TM0107"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -965,7 +969,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0101",
+            "TM0103",
+            "TM0208"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -1595,7 +1603,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0102",
+            "TM0206",
+            "TM0208"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -2081,7 +2093,10 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0301",
+            "TM0105"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -2731,7 +2746,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0104",
+            "TM0308",
+            "TM0404"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -3249,7 +3268,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0205",
+            "TM0202",
+            "TM0403"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -3809,7 +3832,10 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0101",
+            "TM0104"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -4305,7 +4331,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0103",
+            "TM0102",
+            "TM0307"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -4803,7 +4833,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0209",
+            "TM0301",
+            "TM0206"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -5310,7 +5344,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0106",
+            "TM0206",
+            "TM0307"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -5846,7 +5884,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0204",
+            "TM0205",
+            "TM0302"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -6384,7 +6426,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0203",
+            "TM0206",
+            "TM0205"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -6915,7 +6961,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0106",
+            "TM0204",
+            "TM0302"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP004",
@@ -7390,7 +7440,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0204",
+            "TM0301",
+            "TM0208"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -7877,7 +7931,10 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0208",
+            "TM0108"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP004",
@@ -8383,7 +8440,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0102",
+            "TM0103",
+            "TM0301"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -8878,7 +8939,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0201",
+            "TM0301",
+            "TM0206"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -9356,7 +9421,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0206",
+            "TM0104",
+            "TM0401"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -9835,7 +9904,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0203",
+            "TM0301",
+            "TM0205"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -10321,7 +10394,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0301",
+            "TM0304",
+            "TM0409"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -10788,7 +10865,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0303",
+            "TM0409",
+            "TM0405"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP002",
@@ -11222,7 +11303,11 @@
               "compensates_for": []
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0301",
+            "TM0306",
+            "TM0401"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP004",
@@ -11661,7 +11746,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0301",
+            "TM0305",
+            "TM0307"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP002",
@@ -12148,7 +12237,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0108",
+            "TM0202",
+            "TM0306"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP004",
@@ -12606,7 +12699,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0105",
+            "TM0301",
+            "TM0404"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP005",
@@ -13073,7 +13170,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0402",
+            "TM0305",
+            "TM0403"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -13600,7 +13701,10 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0401",
+            "TM0403"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP004",
@@ -14075,7 +14179,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0106",
+            "TM0402",
+            "TM0404"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -14588,7 +14696,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0105",
+            "TM0403",
+            "TM0405"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP005",
@@ -15055,7 +15167,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0409",
+            "TM0304",
+            "TM0404"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP004",
@@ -15510,7 +15626,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0101",
+            "TM0407",
+            "TM0408"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP004",
@@ -16000,7 +16120,10 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0408",
+            "TM0409"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -16469,7 +16592,10 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0407",
+            "TM0409"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP010",
@@ -16926,7 +17052,11 @@
               ]
             }
           ],
-          "related_tactics": [],
+          "related_tactics": [
+            "TM0304",
+            "TM0405",
+            "TM0407"
+          ],
           "actor_associations": [
             {
               "actor_id": "AP001",
@@ -37047,6 +37177,77 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0102",
+            "TO0103",
+            "TO0104"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0101-01",
@@ -37455,6 +37656,69 @@
                 "NTAC-SYSTEMS-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0101",
+            "TO0104",
+            "TO0106"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP012",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "medium"
             }
           ],
           "response_protocols": [
@@ -37871,6 +38135,69 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0204",
+            "TO0101",
+            "TO0302"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0103-01",
@@ -38280,6 +38607,69 @@
                 "RAND-DISINFO-RR4373-2021",
                 "DUNLAP-LAWFARE-2001"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0307",
+            "TO0211",
+            "TO0102"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -38694,6 +39084,57 @@
                 "CISA-DISINFO-TACTICS",
                 "GULYASH-FIELD-OPS-2004-2026"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0309",
+            "TO0306",
+            "TO0106"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -39120,6 +39561,53 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0202",
+            "TO0105",
+            "TO0304"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0106-01",
@@ -39531,6 +40019,77 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0207",
+            "TO0308",
+            "TO0204"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP012",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP008",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0107-01",
@@ -39935,6 +40494,61 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0201",
+            "TO0210",
+            "TO0102"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP012",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -40353,6 +40967,49 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0101",
+            "TO0201",
+            "TO0208"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0109-01",
@@ -40755,6 +41412,53 @@
               "source_refs": [
                 "CERT-CSG-7-2022"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0108",
+            "TO0210",
+            "TO0205"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -41178,6 +41882,53 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0106",
+            "TO0304",
+            "TO0206"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP008",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0202-01",
@@ -41580,6 +42331,57 @@
                 "CHAINALYSIS-CCR-2024",
                 "RAND-DISINFO-RR4373-2021"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0205",
+            "TO0209",
+            "TO0401"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -41990,6 +42792,65 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0302",
+            "TO0103",
+            "TO0303"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -42409,6 +43270,61 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0206",
+            "TO0203",
+            "TO0305"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP012",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0205-01",
@@ -42813,6 +43729,57 @@
               "source_refs": [
                 "CISA-DIT-2023"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0205",
+            "TO0305",
+            "TO0304"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP012",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -43221,6 +44188,77 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0301",
+            "TO0107",
+            "TO0308"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP012",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "medium"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0207-01",
@@ -43621,6 +44659,61 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0209",
+            "TO0203",
+            "TO0407"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0208-01",
@@ -44017,6 +45110,61 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0203",
+            "TO0314",
+            "TO0310"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -44431,6 +45579,57 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0205",
+            "TO0202",
+            "TO0201"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0210-01",
@@ -44834,6 +46033,53 @@
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0104",
+            "TO0315",
+            "TO0308"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -45250,6 +46496,61 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0207",
+            "TO0412",
+            "TO0308"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP026",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0301-01",
@@ -45654,6 +46955,65 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0204",
+            "TO0303",
+            "TO0315"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0302-01",
@@ -46056,6 +47416,65 @@
               "source_refs": [
                 "NITTF-GUIDE-2017"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0302",
+            "TO0307",
+            "TO0306"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -46472,6 +47891,57 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0202",
+            "TO0206",
+            "TO0308"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP004",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP008",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0304-01",
@@ -46883,6 +48353,57 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0206",
+            "TO0312",
+            "TO0205"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0305-01",
@@ -47289,6 +48810,45 @@
               "source_refs": [
                 "NITTF-GUIDE-2017"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0303",
+            "TO0309",
+            "TO0105"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -47698,6 +49258,53 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0104",
+            "TO0314",
+            "TO0303"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0307-01",
@@ -48103,6 +49710,69 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0207",
+            "TO0304",
+            "TO0411"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "medium"
             }
           ],
           "response_protocols": [
@@ -48512,6 +50182,49 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0105",
+            "TO0306",
+            "TO0302"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0309-01",
@@ -48917,6 +50630,53 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0209",
+            "TO0311",
+            "TO0314"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0310-01",
@@ -49317,6 +51077,57 @@
                 "GISF-SECURITYTOGO-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0310",
+            "TO0315",
+            "TO0301"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -49720,6 +51531,49 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0305",
+            "TO0207",
+            "TO0208"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0312-01",
@@ -50120,6 +51974,61 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0203",
+            "TO0302",
+            "TO0107"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -50528,6 +52437,45 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0209",
+            "TO0307",
+            "TO0302"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0314-01",
@@ -50925,6 +52873,53 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0211",
+            "TO0307",
+            "TO0302"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -51329,6 +53324,45 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0203",
+            "TO0402",
+            "TO0404"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -51739,6 +53773,57 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0404",
+            "TO0401",
+            "TO0403"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0402-01",
@@ -52145,6 +54230,45 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0204",
+            "TO0402",
+            "TO0411"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -52585,6 +54709,61 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0402",
+            "TO0407",
+            "TO0401"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0404-01",
@@ -53014,6 +55193,49 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0406",
+            "TO0202",
+            "TO0401"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0405-01",
@@ -53420,6 +55642,49 @@
                 "RAND-ELECTIONS-RRA704-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0405",
+            "TO0202",
+            "TO0413"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -53845,6 +56110,49 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0208",
+            "TO0404",
+            "TO0402"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0407-01",
@@ -54258,6 +56566,53 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0410",
+            "TO0413",
+            "TO0411"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0408-01",
@@ -54658,6 +57013,49 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0401",
+            "TO0402",
+            "TO0406"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -55077,6 +57475,41 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0411",
+            "TO0413",
+            "TO0412"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0410-01",
@@ -55490,6 +57923,57 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TO0410",
+            "TO0413",
+            "TO0403"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP030",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP031",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-O0411-01",
@@ -55898,6 +58382,49 @@
                 "NTAC-SYSTEMS-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0301",
+            "TO0410",
+            "TO0308"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP026",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP032",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -56310,6 +58837,45 @@
                 "CERT-CSG-7-2022",
                 "MELOY-TRAP18-2016"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TO0411",
+            "TO0410",
+            "TO0406"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -56729,6 +59295,65 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0102",
+            "TI0104",
+            "TI0110"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0101-01",
@@ -57130,6 +59755,65 @@
                 "NIST-SP800-82-2023",
                 "CISA-CONVERGE-2021"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0101",
+            "TI0104",
+            "TI0105"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -57552,6 +60236,53 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0204",
+            "TI0304",
+            "TI0203"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP009",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0103-01",
@@ -57968,6 +60699,57 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0301",
+            "TI0302",
+            "TI0105"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP008",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0104-01",
@@ -58375,6 +61157,61 @@
                 "NIST-SP800-82-2023",
                 "GAO-24-106744-2024"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0205",
+            "TI0206",
+            "TI0104"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP008",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -58794,6 +61631,61 @@
                 "NIST-SP800-82-2023",
                 "CISA-CONVERGE-2021"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0107",
+            "TI0201",
+            "TI0110"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -59227,6 +62119,61 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0108",
+            "TI0106",
+            "TI0110"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0107-01",
@@ -59650,6 +62597,57 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0208",
+            "TI0107",
+            "TI0109"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0108-01",
@@ -60070,6 +63068,61 @@
                 "GAO-24-106744-2024",
                 "NIST-SP800-82-2023"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0205",
+            "TI0209",
+            "TI0108"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP021",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -60509,6 +63562,52 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0101",
+            "TI0106"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP003",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0110-01",
@@ -60927,6 +64026,57 @@
                 "NIST-SP800-82-2023",
                 "CISA-DIT-2023"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0301",
+            "TI0106",
+            "TI0104"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -61356,6 +64506,53 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0204",
+            "TI0205",
+            "TI0109"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP010",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP009",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0202-01",
@@ -61772,6 +64969,60 @@
                 "CISA-CFATS-2023",
                 "NIST-SP800-82-2023"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0103",
+            "TI0205"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP010",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -62201,6 +65452,53 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0209",
+            "TI0304",
+            "TI0206"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP009",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP010",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0204-01",
@@ -62610,6 +65908,61 @@
                 "NIST-SP800-82-2023",
                 "CISA-DIT-2023"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0206",
+            "TI0207",
+            "TI0105"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP008",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -63028,6 +66381,61 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0301",
+            "TI0207",
+            "TI0205"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP008",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0206-01",
@@ -63428,6 +66836,57 @@
                 "NIST-SP800-82-2023",
                 "CISA-CONVERGE-2021"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0301",
+            "TI0302",
+            "TI0206"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP008",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -63839,6 +67298,57 @@
               "source_refs": [
                 "CISA-DIT-2023"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0108",
+            "TI0206",
+            "TI0301"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP008",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -64273,6 +67783,57 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0204",
+            "TI0301",
+            "TI0402"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP008",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0209-01",
@@ -64679,6 +68240,61 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0206",
+            "TI0301",
+            "TI0207"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0210-01",
@@ -65081,6 +68697,61 @@
                 "NIST-SP800-82-2023",
                 "GAO-24-106744-2024"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0302",
+            "TI0303",
+            "TI0309"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP008",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -65496,6 +69167,45 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0301",
+            "TI0303",
+            "TI0309"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0302-01",
@@ -65898,6 +69608,53 @@
                 "NIST-SP800-82-2023",
                 "CISA-CFATS-2023"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0301",
+            "TI0302",
+            "TI0309"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -66306,6 +70063,53 @@
                 "CTC-INFRATERROR-2026",
                 "NIST-SP800-82-2023"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0305",
+            "TI0204",
+            "TI0309"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP009",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -66722,6 +70526,61 @@
                 "NIST-SP800-82-2023",
                 "GAO-24-106744-2024"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0301",
+            "TI0304",
+            "TI0309"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -67143,6 +71002,53 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0301",
+            "TI0302",
+            "TI0303"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP004",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0306-01",
@@ -67544,6 +71450,41 @@
                 "NIST-SP800-82-2023",
                 "CISA-DIT-2023"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0305",
+            "TI0106",
+            "TI0309"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -67966,6 +71907,37 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0305",
+            "TI0106",
+            "TI0303"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0308-01",
@@ -68369,6 +72341,53 @@
                 "NIST-SP800-82-2023",
                 "CISA-CONVERGE-2021"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0305",
+            "TI0301",
+            "TI0302"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -68786,6 +72805,60 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0403",
+            "TI0402"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP010",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0401-01",
@@ -69194,6 +73267,53 @@
                 "NIST-SP800-82-2023",
                 "GAO-24-106744-2024"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0403",
+            "TI0209",
+            "TI0401"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -69605,6 +73725,57 @@
                 "NIST-SP800-82-2023",
                 "CISA-DIT-2023"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0404",
+            "TI0401",
+            "TI0402"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP010",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP005",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -70021,6 +74192,49 @@
                 "CISA-CONVERGE-2021",
                 "FBI-PREATTACK-2018"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0403",
+            "TI0407",
+            "TI0405"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP012",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -70448,6 +74662,57 @@
               ]
             }
           ],
+          "related_tactics": [
+            "TI0404",
+            "TI0403",
+            "TI0108"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "low"
+            }
+          ],
           "response_protocols": [
             {
               "id": "RP-I0405-01",
@@ -70857,6 +75122,53 @@
                 "CISA-DIT-2023",
                 "CTC-INFRATERROR-2026"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0408",
+            "TI0407",
+            "TI0402"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -71275,6 +75587,57 @@
                 "NTAC-MASS-2021",
                 "FBI-PREATTACK-2018"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0408",
+            "TI0406",
+            "TI0404"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP017",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP018",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP026",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "low"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -71705,6 +76068,61 @@
                 "CISA-DIT-2023",
                 "NIST-SP800-82-2023"
               ]
+            }
+          ],
+          "related_tactics": [
+            "TI0407",
+            "TI0402",
+            "TI0406"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP026",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP011",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP023",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP033",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP019",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP017",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP015",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP029",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP034",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP006",
+              "relevance": "low"
             }
           ],
           "response_protocols": [
@@ -72668,6 +77086,165 @@
         "synthetic_identity",
         "automated_surveillance"
       ]
+    },
+    {
+      "id": "AP030",
+      "name": "Commercial Rival / Competitor Business",
+      "category": "corporate_espionage",
+      "category_label": "Corporate Espionage",
+      "awareness": "witting",
+      "direction": "self_directed",
+      "access_relationship": "external",
+      "phase_compression_risk": "low",
+      "attack_vectors": [
+        "physical_primary",
+        "cyber_enabled_physical"
+      ],
+      "primary_matrices": [
+        "organization"
+      ],
+      "description": "A for-profit competitor that treats a rival institution as an obstacle to be degraded rather than merely outcompeted, turning ordinarily lawful business instruments into a coordinated campaign against the rival's standing, revenue, and freedom to operate. The actor works through litigation, regulatory complaints, market and advertiser pressure, and reputational operations, often routing the most aggressive moves through proxies, trade groups, or sympathetic media so its own hand stays hidden. Detection depends on tracing the pattern and sponsorship behind seemingly independent legal, market, and narrative pressure rather than on any single overtly hostile act, because each individual move can appear to be legitimate competition.",
+      "behavioral_markers": [
+        "Pattern of legal, regulatory, and market actions concentrated on a single competitor beyond what ordinary rivalry explains",
+        "Funding or coordination of third-party complainants, trade groups, or astroturfed campaigns that trace back to the actor",
+        "Commissioned opposition research and reputational material timed to the rival's funding rounds, deals, or public moments",
+        "Pressure applied to the rival's shared vendors, funders, advertisers, or payment processors to sever those relationships",
+        "Public messaging that contests the rival's legitimacy, safety, or trustworthiness rather than competing on its own merits"
+      ],
+      "v2_tactic_associations": [],
+      "ai_enabled_risks": [
+        "accelerated_target_research",
+        "synthetic_identity",
+        "deepfake_manipulation"
+      ],
+      "actor_level": "organization"
+    },
+    {
+      "id": "AP031",
+      "name": "Hostile Acquirer / Activist Investor",
+      "category": "corporate_espionage",
+      "category_label": "Corporate Espionage",
+      "awareness": "witting",
+      "direction": "self_directed",
+      "access_relationship": "external",
+      "phase_compression_risk": "low",
+      "attack_vectors": [
+        "physical_primary",
+        "cyber_enabled_physical"
+      ],
+      "primary_matrices": [
+        "organization"
+      ],
+      "description": "An actor that seeks to seize or redirect control of a target institution through ownership and financial leverage rather than infiltration, using a controlling or influential equity stake, creditor and debt positions, and proxy contests to bend the organization's governance to its will. The campaign is typically public and framed as shareholder value or corporate reform, but its object is control: board seats, decision rights, or outright takeover, sometimes against the express opposition of incumbent leadership. Detection is rarely covert; the analytic task is distinguishing a genuine governance dispute from a coercive campaign to capture the institution and repurpose or dismantle it.",
+      "behavioral_markers": [
+        "Accumulation of a controlling or influential equity stake, or debt and creditor positions, ahead of any public demand",
+        "Detailed mapping of the board, bylaws, voting structure, and shareholder base to plan a proxy contest",
+        "Public campaign materials, white papers, or open letters attacking incumbent management and building a case for change",
+        "Coordination with other shareholders, proxy advisors, or activist allies to assemble a controlling vote",
+        "Use of creditor leverage, litigation, or bylaw challenges to pressure the board toward concession or resignation"
+      ],
+      "v2_tactic_associations": [],
+      "ai_enabled_risks": [
+        "accelerated_target_research",
+        "synthetic_identity"
+      ],
+      "actor_level": "organization"
+    },
+    {
+      "id": "AP032",
+      "name": "Vexatious Litigant / Legal-Pressure Actor",
+      "category": "customer_aggressor",
+      "category_label": "Customer/Client Aggressor",
+      "awareness": "witting",
+      "direction": "self_directed",
+      "access_relationship": "external",
+      "phase_compression_risk": "low",
+      "attack_vectors": [
+        "physical_primary",
+        "cyber_enabled_physical"
+      ],
+      "primary_matrices": [
+        "organization"
+      ],
+      "description": "An actor who weaponizes the legal and regulatory system against an institution as an instrument of attrition, filing serial lawsuits, regulatory complaints, records demands, and licensing challenges whose purpose is to exhaust, distract, and coerce the target rather than to obtain a just remedy. The motive is personal grievance, financial advantage, or a demand for policy change, situated outside the ideological and state framings that describe other institutional threat actors. Because each filing is individually lawful, detection depends on the volume, timing, and coordination of the actions and on the mismatch between the legal effort expended and any plausible remedy sought.",
+      "behavioral_markers": [
+        "High volume of filings, complaints, and records demands directed at a single institution over a sustained period",
+        "Legal actions timed to the target's deadlines, funding cycles, or public events to maximize disruption and cost",
+        "Claims and demands disproportionate to any plausible remedy, indicating attrition rather than resolution as the goal",
+        "Parallel complaints filed across multiple courts, regulators, and licensing bodies to multiply the institution's burden",
+        "Escalating or renewed filings after dismissals, and recruitment of co-complainants to sustain the pressure"
+      ],
+      "v2_tactic_associations": [],
+      "ai_enabled_risks": [
+        "accelerated_target_research",
+        "synthetic_identity"
+      ],
+      "actor_level": "individual"
+    },
+    {
+      "id": "AP033",
+      "name": "Cyber-Extortion / OT-Ransomware Crew",
+      "category": "criminal",
+      "category_label": "Criminal",
+      "awareness": "witting",
+      "direction": "criminal_directed",
+      "access_relationship": "external",
+      "phase_compression_risk": "high",
+      "attack_vectors": [
+        "cyber_initiated_physical"
+      ],
+      "primary_matrices": [
+        "infrastructure",
+        "organization"
+      ],
+      "description": "A financially motivated cyber-criminal group that compromises an operator's IT and operational-technology environments to encrypt systems, disrupt physical processes, and steal data, then extorts payment under threat of prolonged outage and public leak. The crew is organized with specialized roles, often buys initial access from brokers or insiders, and reaches operational networks through remote-access paths, exposed control interfaces, and trusted vendor channels. Its defining move is coupling a service-disrupting or data-encrypting action against critical processes with a ransom demand, and it typically deletes backups and defeats recovery to force payment while retaining a foothold for renewed extortion.",
+      "behavioral_markers": [
+        "Acquisition of initial access through brokers, insiders, exposed remote-access services, or a compromised vendor channel",
+        "Reconnaissance and lateral movement from IT into the operational-technology network before any disruptive action",
+        "Exfiltration of sensitive records staged as leverage for double-extortion ahead of encryption or disruption",
+        "Deletion or encryption of backups and defeat of failover to prolong the outage and force payment",
+        "Ransom demand tied to the affected service, delivered through anonymized channels and cryptocurrency",
+        "Retention of a backdoor or persistent access to enable renewed extortion after payment"
+      ],
+      "v2_tactic_associations": [],
+      "ai_enabled_risks": [
+        "accelerated_target_research",
+        "autonomous_targeting",
+        "synthetic_identity"
+      ],
+      "actor_level": "group"
+    },
+    {
+      "id": "AP034",
+      "name": "Cyber-Hacktivist Collective",
+      "category": "ideological",
+      "category_label": "Ideological",
+      "awareness": "witting",
+      "direction": "ideological_directed",
+      "access_relationship": "external",
+      "phase_compression_risk": "medium",
+      "attack_vectors": [
+        "cyber_initiated_physical"
+      ],
+      "primary_matrices": [
+        "infrastructure",
+        "organization"
+      ],
+      "description": "An ideologically motivated collective that conducts disruptive cyber operations against infrastructure and institutions to make a political statement, punish a perceived wrongdoer, or draw attention to a cause. Loosely organized and often assembled ad hoc around a campaign, the collective favors visible, attributable effects: denial-of-service outages, website and interface defacement, and the theft and public dumping of records, with occasional opportunistic tampering against exposed control systems. Attribution to the collective is sought as the point of the action, even as individual members protect their own identities, and detection benefits from the actor's need to publicize and claim the operation.",
+      "behavioral_markers": [
+        "Public organizing, recruitment, and target announcements on social and messaging platforms before the operation",
+        "Selection of infrastructure or institutional targets for symbolic and reputational value rather than financial gain",
+        "Use of denial-of-service, defacement, and data-leak operations that produce visible, claimable effects",
+        "Coordinated claim of responsibility, manifestos, and amplification of the operation across public channels",
+        "Operational security to protect individual members while the collective's identity is deliberately advertised"
+      ],
+      "v2_tactic_associations": [],
+      "ai_enabled_risks": [
+        "accelerated_target_research",
+        "synthetic_identity",
+        "deepfake_manipulation"
+      ],
+      "actor_level": "group"
     }
   ],
   "escalation_rubric": {
