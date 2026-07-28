@@ -4,7 +4,39 @@ All notable changes to THREAT Matrix are documented here, per [VERSIONING.md](do
 
 This project adheres to [Semantic Versioning](https://semver.org). Framework
 content and JSON Schema are versioned independently; the framework content
-and JSON Schema are versioned independently (latest — content: `1.5.0`, schema: `1.4.0`).
+and JSON Schema are versioned independently (latest — content: `1.5.1`, schema: `1.4.0`).
+
+## [1.5.1] — 2026-07-27
+
+Patch release. Completeness pass bringing **Organizations and Infrastructure to full
+field parity** with the People and Facility "complete matrix" standard, and closing the
+two live filters those gaps had silently broken. Framework content only; JSON Schema
+unchanged at `1.4.0` (all fields already existed in the schema).
+
+### Added
+
+- **Tactic-level CPN on Organizations.** All 48 org tactics now carry `cpn` (34 cyber-physical
+  / 14 not), with `cpn_id` and `cpn_notes` on the cyber-physical set. The CPN filter no longer
+  hides the Organizations column.
+- **`actor_associations` on Organizations (48) and Infrastructure (37).** Tactic-side actor
+  mappings matching the People/Facility model. The actor-profile filter no longer hides the
+  Organizations and Infrastructure columns.
+- **`related_tactics` across all four matrices.** Authored for Organizations (48) and
+  Infrastructure (37); backfilled for People (34). Now universal.
+- **5 new actor profiles (AP030–AP034)** closing flagged roster gaps: Commercial Rival,
+  Hostile Acquirer / Activist Investor, Vexatious Litigant, OT-Ransomware Crew, and
+  Cyber-Hacktivist Collective.
+- **Within-matrix indicator correlation mesh for Organizations (123 edges) and Infrastructure
+  (126 edges).** The cross-phase "anticipate / what-next" layer People and Facility already
+  carried, authored via a sealed-blind two-rater inter-rater-reliability pass (Cohen kappa:
+  infrastructure 0.83; organization 0.93 after a rubric-tightening re-rate). Only
+  mutual-accept edges shipped.
+
+### Changed
+
+- **Field-parity CI gate** (`scripts/lint/field-parity.py`) added to the validator workflow.
+  Flags any field universal in one matrix but absent from another, and requires a within-matrix
+  mesh in every live matrix, so "matrix complete" is now enforced rather than judged.
 
 ## [1.5.0] — 2026-07-24
 
