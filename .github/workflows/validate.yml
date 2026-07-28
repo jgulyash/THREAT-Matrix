@@ -49,6 +49,9 @@ jobs:
       - name: Run negative-fixture harness
         run: python3 scripts/lint/validate.py docs/data/framework.json --fixtures scripts/lint/fixtures
 
+      - name: Run field-parity gate
+        run: python3 scripts/lint/field-parity.py docs/data/framework.json
+
       - name: Install reference-consumer dependency
         run: pip install jsonschema
 
