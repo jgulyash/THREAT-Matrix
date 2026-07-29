@@ -20,6 +20,7 @@ evidence of method rather than as polished documentation.
 | [cross-domain-mesh-scope.md](cross-domain-mesh-scope.md) | Scope decision record for the cross-domain Detection Mesh |
 | [DESIGN-b5-infra-escalation-scoring.md](DESIGN-b5-infra-escalation-scoring.md) | Escalation scoring design with transparent computed weights |
 | [DESIGN-b5-org-escalation-scoring.md](DESIGN-b5-org-escalation-scoring.md) | Organizations axis re-derivation — stakeholder-scope blast semantics (post-hoc, Ruling 1) |
+| [aftermath-seam-reconciliation.md](aftermath-seam-reconciliation.md) | Phase-4 blast/impact forward-looking reconciliation (rulings 2-B/3/4-A/5-A/6-A) |
 | [mesh-link-rubric-v2.md](mesh-link-rubric-v2.md) | Criteria for cross-domain mesh edges |
 | [RATIONALE-cpn-modality-and-mesh.md](RATIONALE-cpn-modality-and-mesh.md) | Design rationale for computed facet modality |
 | [KAPPA-RESULTS.md](KAPPA-RESULTS.md) | Inter-rater reliability (kappa) results from sealed-blind IRR |
