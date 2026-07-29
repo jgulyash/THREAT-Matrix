@@ -6,6 +6,14 @@ This project adheres to [Semantic Versioning](https://semver.org). Framework
 content and JSON Schema are versioned independently; the framework content
 and JSON Schema are versioned independently (latest — content: `1.5.1`, schema: `1.4.0`).
 
+## [Unreleased]
+
+Scoring remediation — the aftermath seam reconciliation (rulings, 2026-07-27/28 session). Entries below are fragments of one content release, not separate releases.
+
+### Added
+
+- **Organizations escalation re-derivation doc** (`docs/methodology/DESIGN-b5-org-escalation-scoring.md`). Organizations was the only matrix scored without a preserved written re-derivation (Infrastructure has `DESIGN-b5-infra-escalation-scoring.md`; Facility has a V1.3 CHANGELOG calibration paragraph; People is the rubric base). Authored post-hoc per Ruling 1, Option A: `blast_radius_potential` in the Organizations matrix means stakeholder/population scope of institutional harm, not physical-casualty count or raw audience reach. States the institutional harm model, re-anchors the four axes and the blast base-rate tiers, records that no `severity_floor` applies, and validates against all 240 authored indicators (weight range 2.69–7.32; bands 105 medium / 123 high / 12 critical; phase medians confirmed). The Phase-4 trace seam is explicitly routed to the aftermath blast reconciliation, not ratified here. Framework data unchanged (docs-only).
+
 ## [1.5.1] — 2026-07-27
 
 Patch release. Completeness pass bringing **Organizations and Infrastructure to full
