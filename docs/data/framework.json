@@ -10278,7 +10278,8 @@
                 "detectability": 5.5
               },
               "escalation_weight": 4.86,
-              "severity_band": "medium",
+              "severity_band": "critical",
+              "severity_floor": "critical",
               "target_identity": ["named_individual"]
             },
             {
@@ -77787,7 +77788,7 @@
     },
     "severity_floor_rule": {
       "definition": "A triage floor layered on the severity math: an indicator whose behavior applies DIRECT PHYSICAL FORCE to a person's body carries severity_band = critical at minimum, regardless of its computed escalation_weight. escalation_weight is unchanged, it remains the true severity computation, so the gradient between a single assault (~4.6) and a mass bombing (~8.7) is preserved, but the triage band for any force against a person is critical. Such indicators carry a `severity_floor` field set to \"critical\". Rationale: a casualty is critical regardless of scale. The severity math gates the top band on blast_radius (population scope), which would place a single-victim killing at high and reserve critical for mass-casualty events; but for triage, any application of force to a person is a top-priority event. Count is a severity GRADIENT (in escalation_weight), not the critical THRESHOLD. This is a values/triage rule, not a change to the weight formula.",
-      "applies_to": "Behaviors that directly apply physical force to a person: weapon discharge, vehicle ramming, explosive detonation, physical assault, overpowering or incapacitating personnel, taking physical custody by restraint, forcible extraction, and physical restraint or force against a captive.",
+      "applies_to": "Behaviors that directly apply physical force to a person: weapon discharge, vehicle ramming, explosive detonation, physical assault, overpowering or incapacitating personnel, taking physical custody by restraint, forcible extraction, and physical restraint or force against a captive. Also included (Ruling 8-A, 2026-07-28): taking or maintaining custody or control of a person by weapon threat or credible threat of immediate force during in-progress execution, where a weapon is displayed at the victim and control is being established or maintained. SCOPE GUARD: threatened force WITHOUT the custody or control context does not floor: a weapon brandished during a dispute, or a communicated or conditional threat made outside an in-progress seizure, is carried by the type-level escalation_weight and instance conditioning, not by the floor. This narrow extension follows the precedent discipline of the V1.4 infrastructure severity_floor extension (narrow, mechanism-specific; Jay, 2026-07-18).",
       "added": "V1.3 (2026-07-05)"
     },
     "detectability_guidance": {
