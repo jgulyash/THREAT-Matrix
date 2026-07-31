@@ -30,17 +30,25 @@ signal) is the deadliest miss, so the cut minimizes false-lows and accepts the
 safe direction of error (trace behaviors over-triaged at medium). Verified zero
 interaction with the severity_floor (lowest floored weight 4.16, far above 3.0).
 
-## Weight-review flag (open follow-on)
-Two organization target-development warning behaviors band low at the 3.0 cut and
-are flagged for a **targeted weight review**, because the formula under-scores
-early-phase fixation and leakage signals whose type-level blast and impact read
-as diffuse:
-- **IND-O0101-02** (2.78) - grievance narrows to repeated fixation on one named
-  organization with rising hostility (a fixation/leakage warning behavior).
-- **IND-O0101-04** (2.89) - collects identifying details of a candidate
-  institution across sessions before committing to it as the target.
-These are genuine pathway signals; their low band reflects an under-weighting to
-be corrected in a scoped weight-review pass, not the cut.
+## Weight review (resolved 2026-07-28)
+Two organization target-development signals banded low at the 3.0 cut and were
+reviewed:
+- **IND-O0101-02** (fixation escalation) - **re-tiered.** Its `informs_axes`
+  already read `actor_intent: strong / threat_target: strong` (identical to its
+  medium-banded manifesto and ultimatum siblings), so its warning value was
+  captured; the defect was the impact tier. Fixation narrows to a specific
+  target with escalating hostility - a commitment signal that *presages* a
+  targeted campaign - which the Organizations re-derivation places in the
+  presages tier (impact 3.5-4.5), not the earliest-diffuse tier (2.5-3.0).
+  `impact_potential` 3.0 -> 4.5 (blast/recoverability/detectability unchanged);
+  weight 2.78 -> 3.08, band low -> medium. Conservative against the person-matrix
+  fixation anchor (impact 5.0).
+- **IND-O0101-04** (pre-commitment identifier collection) - **confirmed low.**
+  "Collects basic identifying details of a candidate institution before
+  committing to it as the target" is verbatim the adopted low-band definition's
+  "ambient pre-operational recon"; correctly low, no change.
+
+Net effect on the low band: 15 -> 14 (medium 431 -> 432).
 
 ## Regression guard
 `scripts/lint/validate.py` now emits a non-failing **W-BAND** warning for any
