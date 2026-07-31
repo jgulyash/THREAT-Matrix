@@ -22,6 +22,7 @@ evidence of method rather than as polished documentation.
 | [DESIGN-b5-org-escalation-scoring.md](DESIGN-b5-org-escalation-scoring.md) | Organizations axis re-derivation — stakeholder-scope blast semantics (post-hoc, Ruling 1) |
 | [aftermath-seam-reconciliation.md](aftermath-seam-reconciliation.md) | Phase-4 blast/impact forward-looking reconciliation (rulings 2-B/3/4-A/5-A/6-A) |
 | [severity-floor-clarifications.md](severity-floor-clarifications.md) | Severity-floor extension lineage (V1.3 base, V1.4 infra, Ruling 8-A weapon-threat) |
+| [bottom-cut-recalibration.md](bottom-cut-recalibration.md) | Low-band cut recalibration — medium threshold 2.5 → 3.0 (Ruling 7) |
 | [mesh-link-rubric-v2.md](mesh-link-rubric-v2.md) | Criteria for cross-domain mesh edges |
 | [RATIONALE-cpn-modality-and-mesh.md](RATIONALE-cpn-modality-and-mesh.md) | Design rationale for computed facet modality |
 | [KAPPA-RESULTS.md](KAPPA-RESULTS.md) | Inter-rater reliability (kappa) results from sealed-blind IRR |

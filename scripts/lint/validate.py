@@ -95,15 +95,21 @@ CHECK_TITLES = {
 CHECK_IDS = [f"V{n:02d}" for n in range(1, 20)]
 
 
-def band_for_weight(weight: float) -> str:
-    """Return the severity band implied by an escalation weight."""
-    if weight < 2.5:
-        return "low"
-    if weight < 5.0:
-        return "medium"
-    if weight < 6.5:
+# Fallback thresholds if escalation_rubric.severity_thresholds is absent.
+DEFAULT_THRESHOLDS = {"low": 0.0, "medium": 2.5, "high": 5.0, "critical": 6.5}
+
+
+def band_for_weight(weight: float, thresholds: dict = DEFAULT_THRESHOLDS) -> str:
+    """Return the severity band implied by an escalation weight, read against
+    the framework's own severity_thresholds so a threshold recalibration does
+    not require editing this validator."""
+    if weight >= thresholds["critical"]:
+        return "critical"
+    if weight >= thresholds["high"]:
         return "high"
-    return "critical"
+    if weight >= thresholds["medium"]:
+        return "medium"
+    return "low"
 
 
 def id_letter(id_str: str) -> str | None:
@@ -187,6 +193,9 @@ def run_all_checks(raw_text: str, data: dict) -> dict[str, list[str]]:
 
     tactic_ids, ind_ids, cm_ids, rp_ids = collect_ids(data)
     bibliography = set((data.get("bibliography") or {}).keys())
+    thresholds = (data.get("escalation_rubric") or {}).get(
+        "severity_thresholds", DEFAULT_THRESHOLDS
+    )
 
     # V05 duplicate JSON object key, anywhere in the raw document.
     for key in find_duplicate_keys(raw_text):
@@ -277,7 +286,7 @@ def run_all_checks(raw_text: str, data: dict) -> dict[str, list[str]]:
             _check_child_id(fail, "IND", iid, letter, digits, tid)
             _check_source_refs(fail, iid, ind, bibliography)
             _check_correlates(fail, iid, ind, ind_ids)
-            _check_scoring(fail, iid, ind)
+            _check_scoring(fail, iid, ind, thresholds)
 
         for cm in tactic.get("countermeasures", []) or []:
             if not isinstance(cm, dict):
@@ -381,7 +390,7 @@ def _check_correlates(fail, ind_id, ind, ind_ids):
             )
 
 
-def _check_scoring(fail, ind_id, ind):
+def _check_scoring(fail, ind_id, ind, thresholds=DEFAULT_THRESHOLDS):
     """V13, V14, V15 escalation scoring consistency.
 
     Indicators without escalation fields are skipped; later build stages
@@ -434,7 +443,7 @@ def _check_scoring(fail, ind_id, ind):
     # weight-implied band and the floor, so a floor can legitimately push
     # the band above what the weight alone implies.
     if isinstance(weight, (int, float)) and band in BAND_RANK:
-        implied = band_for_weight(weight)
+        implied = band_for_weight(weight, thresholds)
         expected = implied
         if floor in BAND_RANK and BAND_RANK[floor] > BAND_RANK[implied]:
             expected = floor
@@ -471,6 +480,32 @@ def _walk_conditioned_priority(fail, node, path="framework"):
     elif isinstance(node, list):
         for index, value in enumerate(node):
             _walk_conditioned_priority(fail, value, f"{path}.{index}")
+
+
+# Bands that are allowed to hold zero indicators by explicit design decision.
+# Empty by default is a silent-dead-band smell (the pre-v1.3 low band held 0
+# of 815 because an equal-quartile cut was never recalibrated at the bottom).
+INTENTIONALLY_EMPTY_BANDS: set[str] = set()
+
+
+def band_population_warnings(data: dict) -> list[str]:
+    """W-BAND (advisory, non-failing): flag any severity band whose realized
+    population is zero and that is not documented as intentionally empty.
+    Regression guard against the next silent dead band."""
+    counts = {b: 0 for b in BAND_RANK}
+    for _mk, _mv, tactic in iter_tactics(data):
+        for ind in tactic.get("indicators", []):
+            band = ind.get("severity_band")
+            if band in counts:
+                counts[band] += 1
+    warnings = []
+    for band in ("low", "medium", "high", "critical"):
+        if counts[band] == 0 and band not in INTENTIONALLY_EMPTY_BANDS:
+            warnings.append(
+                f"  ⚠ [W-BAND] severity_band '{band}' has zero indicators "
+                f"and is not documented as intentionally empty"
+            )
+    return warnings
 
 
 def print_report(results: dict[str, list[str]]) -> bool:
@@ -660,6 +695,8 @@ def main() -> int:
     data = json.loads(raw_text)
     results = run_all_checks(raw_text, data)
     all_green = print_report(results)
+    for warning in band_population_warnings(data):
+        print(warning)
     return 0 if all_green else 1
 
 
