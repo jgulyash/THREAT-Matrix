@@ -4,11 +4,11 @@ All notable changes to THREAT Matrix are documented here, per [VERSIONING.md](do
 
 This project adheres to [Semantic Versioning](https://semver.org). Framework
 content and JSON Schema are versioned independently; the framework content
-and JSON Schema are versioned independently (latest — content: `1.5.1`, schema: `1.4.0`).
+and JSON Schema are versioned independently (latest — content: `1.5.2`, schema: `1.4.0`).
 
-## [Unreleased]
+## [1.5.2] — 2026-07-31
 
-Scoring remediation — the aftermath seam reconciliation (rulings, 2026-07-27/28 session). Entries below are fragments of one content release, not separate releases.
+Content release — the **aftermath seam reconciliation** (scoring-methodology rulings, 2026-07-27/28 session). A scoring recalibration across the escalation layer: aftermath severity now reads forward-looking scope, the severity floor covers weapon-threat custody, and the low band is restored. `escalation_rubric` `rubric_version` 1.2.0 → 1.3.0. **No schema change** (schema stays 1.4.0); consumers re-read the recomputed `escalation_weight` / `severity_band` values. Framework-wide band distribution moves 381 medium / 348 high / 86 critical → 14 low / 432 medium / 282 high / 87 critical.
 
 ### Added
 
