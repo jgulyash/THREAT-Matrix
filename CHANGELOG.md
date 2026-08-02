@@ -6,6 +6,14 @@ This project adheres to [Semantic Versioning](https://semver.org). Framework
 content and JSON Schema are versioned independently; the framework content
 and JSON Schema are versioned independently (latest — content: `1.5.2`, schema: `1.4.0`).
 
+## [Unreleased]
+
+V1.6 Contract Hardening (in progress on `v1-build`) — the first breaking schema bump since 1.1.0. Fragments below merge into a single release narrative at the cut; schema → 2.0.0, content → 1.6.0.
+
+### Added
+
+- **Instance-conditioning contract completed** (rulings Q1–Q4 + Q3a, 2026-07-28 session; prompt-series P5). `$defs.instance_assessment` gains a required sixth factor `proximity_access` (`no_known_access / seeking_access / has_access / at_or_near_target / unknown`, unknown-safe like `means_in_hand`; access is a state, not a stage — **breaking**). The `instance_conditioning` block gains `demotion_doctrine` (de-prioritization is case management, never written back into the score), advisory `raise_guidance` (five patterns, explicitly not a formula), and `inhibitors_exclusion` (deliberate asymmetry; SPJ-tradition note). `source_credibility` articulated as a brake on raising, never a scaler down. New methodology note `docs/methodology/instance-conditioning-contract-completion.md`.
+
 ## [1.5.2] — 2026-07-31
 
 Content release — the **aftermath seam reconciliation** (scoring-methodology rulings, 2026-07-27/28 session). A scoring recalibration across the escalation layer: aftermath severity now reads forward-looking scope, the severity floor covers weapon-threat custody, and the low band is restored. `escalation_rubric` `rubric_version` 1.2.0 → 1.3.0. **No schema change** (schema stays 1.4.0); consumers re-read the recomputed `escalation_weight` / `severity_band` values. Framework-wide band distribution moves 381 medium / 348 high / 86 critical → 14 low / 432 medium / 282 high / 87 critical.

@@ -77840,12 +77840,31 @@
   },
   "instance_conditioning": {
     "layer": "Layer 2 (instance) of the type/instance split: CVSS Base-vs-Environmental. Layer 1 (escalation_axes / escalation_weight / severity_band and informs_axes) scores the indicator CLASS; Layer 2 conditions that type score for a specific case (this actor, this target, now). The framework DEFINES this layer (schema $defs instance_assessment + conditioned_assessment) and ships NO instances; consumers hold the per-case records.",
-    "factors": ["target_focus", "pathway_stage", "means_in_hand", "tempo_trajectory", "source_credibility"],
+    "factors": [
+      "target_focus",
+      "pathway_stage",
+      "means_in_hand",
+      "tempo_trajectory",
+      "proximity_access",
+      "source_credibility"
+    ],
     "escalate_only_rule": "Instance conditioning may RAISE a case's priority above the type band: to catch the false-LOW, a mild-looking type with a screaming instance, which is the deadliest error: but may NEVER lower it below the type band. There is no computed capability discount: means_in_hand='unknown' is the safe default and does not demote a case. Encoded in the schema by conditioning_effect having no 'lowered' value and conditioned_priority being floored at type_severity_band.",
+    "demotion_doctrine": "The conditioned priority is an escalation detector, not a queue-ranking model; de-prioritization is a case-management decision that must never be written back into the score. This answers the volume objection: at scale, cases leave the queue by DISPOSITION (closure, monitoring tiers), never by score demotion. A demotion path becomes a laundering machine for capability discounts (F13).",
+    "raise_guidance": {
+      "purpose": "Advisory patterns for inter-analyst consistency, NOT a formula. Nothing here is computed and the escalate-only invariant is unchanged: these patterns describe when analysts typically raise, and a raise is always a human call.",
+      "patterns": [
+        "specific_target with means_in_hand assessed_present or confirmed_present: raise at least one band.",
+        "The preceding pattern with tempo_trajectory accelerating: consider critical.",
+        "proximity_access has_access or at_or_near_target with specific_target: strong raise signal.",
+        "pathway_stage at or beyond preparation with target_focus narrowing: consider a raise.",
+        "source_credibility low: hold pending corroboration; the band still floors at type."
+      ]
+    },
+    "inhibitors_exclusion": "Protective factors and inhibitors (stabilizers, stake in conformity) are DELIBERATELY absent from the instance record. Under escalate-only they have no mechanical role: they only argue a case down, and they are the field's most misjudged, most gameable variable. Readers from SPJ traditions (WAVR-21, HCR-20) should read the record as deliberately asymmetric, not incomplete. Inhibitors inform case management, which sits outside the score.",
     "binding_contract": "A type score becomes a case assessment only when joined to its instance record: the conditioned_assessment object requires both. Wherever a score drives case operations (queue ranking, dashboards, handoffs, API triage) it must carry, or be joined to, its instance record. A bare type number rendered without one (including in the reference SPA, which displays Layer-1 taxonomy) is a Layer-1 datum, not an assessment of any case.",
     "conditioning_hints": "Indicators may carry optional type-level instance_conditioning_hints (which informs_axes tend to lift at instance time), seeded from the V1.3 sealed-blind IRR leans. Pilot coverage (chunk-2B seed); full population is a follow-on.",
-    "status": "Contract defined V1.3 (2026-07-09). The consumer/UI instance-entry surface is deferred to a later cycle.",
-    "provenance": "Scoring review B-03 (structured instance record) and B-04 (display-binding contract); F12 (false-LOW is deadliest) and F13 (no computed capability discount)."
+    "status": "Contract defined V1.3 (2026-07-09); completed V1.6: sixth factor proximity_access added, demotion doctrine, raise guidance, inhibitors exclusion, and credibility articulation recorded (rulings Q1, Q2, Q3a, Q3b, Q4; 2026-07-28 session). The consumer/UI instance-entry surface remains deferred to V2 (SDK ship trigger).",
+    "provenance": "Scoring review B-03 (structured instance record) and B-04 (display-binding contract); F12 (false-LOW is deadliest) and F13 (no computed capability discount). Contract completion: rulings Q1 (demotion doctrine), Q2 (raise guidance), Q3a (proximity_access), Q3b (inhibitors exclusion), Q4 (credibility articulation), 2026-07-28 session; see docs/methodology/instance-conditioning-contract-completion.md."
   },
   "phase_mappings": {
     "phase_1_target_development": {
