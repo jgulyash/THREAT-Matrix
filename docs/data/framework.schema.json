@@ -520,6 +520,12 @@
         "phase_relevance",
         "source_refs"
       ],
+      "allOf": [
+        {
+          "if": { "properties": { "modality": { "const": "human_social" } }, "required": ["modality"] },
+          "then": { "properties": { "human_social": { "const": true } }, "required": ["human_social"] }
+        }
+      ],
       "properties": {
         "id": {
           "type": "string",
@@ -592,19 +598,19 @@
             "type": "string"
           }
         },
-        "crossing": {
+        "modality": {
           "type": "string",
-          "enum": ["physical", "cyber", "cyber_physical"],
-          "description": "Intrinsic modality of the behavior on the cyber-physical continuum, decided by the behavior's own mechanism and the zone its access reaches (not its effect or target importance). physical = kinetic/on-site/hand act; cyber = digital signature on IT/open-source/non-control assets; cyber_physical = the behavior itself crosses the seam (a cyber action reaching/reading/writing the OT control plane, a physical implant gaining cyber reach, or a technical digital-or-electromagnetic means producing a physical-infrastructure effect). CPN is NOT stored; it is computed over the Detection Mesh from these crossings plus same-operation kill-chain membership."
+          "enum": ["physical", "cyber", "cyber_physical", "human_social"],
+          "description": "Intrinsic modality of the behavior (V1.6 rename of 'crossing', restoring the locked S32 vocabulary), decided by the behavior's own mechanism, its INSTRUMENT, and the zone its access reaches; never its effect, target importance, or the venue it travels through. physical = matter, force, or presence is the instrument (kinetic/on-site/hand act); cyber = the instrument operates on a computing system's access, code, data, or machinery (a platform used merely as a communication channel does NOT qualify); cyber_physical = the behavior itself crosses the seam (a cyber action reaching/reading/writing the OT control plane, a physical implant gaining cyber reach, or a technical digital-or-electromagnetic means producing a physical-infrastructure effect); human_social = the instrument operates on people or institutions (persuasion, coercion, recruitment, legal or financial process) with no technical instrument, in which case the human_social boolean facet is necessarily true. CPN is NOT stored; it is computed over the Detection Mesh from crossings plus same-operation kill-chain membership."
         },
         "crossing_mechanism": {
           "type": "string",
           "enum": ["digital", "electromagnetic", "physical_implant"],
-          "description": "For crossing=cyber_physical only: how the seam is crossed. digital = IT/network/software action reaches the OT control plane; electromagnetic = RF/GNSS/EW (jamming or spoofing of a signal a physical system depends on); physical_implant = a physical device placed to gain cyber reach."
+          "description": "For modality=cyber_physical only: how the seam is crossed. digital = IT/network/software action reaches the OT control plane; electromagnetic = RF/GNSS/EW (jamming or spoofing of a signal a physical system depends on); physical_implant = a physical device placed to gain cyber reach."
         },
         "human_social": {
           "type": "boolean",
-          "description": "Independent facet: true when the behavior's essence is influencing, recruiting, cultivating, coercing, deceiving, or negotiating with people, or is human warning-behavior leakage (grievance escalation, statements of intent, behavioral withdrawal), regardless of medium. Orthogonal to crossing: a behavior may be human_social AND carry any crossing value."
+          "description": "Independent facet: true when the behavior's essence is influencing, recruiting, cultivating, coercing, deceiving, or negotiating with people, or is human warning-behavior leakage (grievance escalation, statements of intent, behavioral withdrawal), regardless of medium. Orthogonal to modality: a behavior may be human_social AND carry any modality value; a behavior whose modality IS human_social must carry human_social=true (schema-enforced)."
         },
         "temporal_signature": {
           "type": "string",

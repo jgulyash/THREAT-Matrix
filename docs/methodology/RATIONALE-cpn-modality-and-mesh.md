@@ -105,3 +105,17 @@ four of the five boundary cases below.
   differ, so several rulings above carry an explicit "consumer may diverge" note.
 - CPN participation is only as complete as the authored mesh; until the cross-domain mesh is dense,
   computed CPN under-reports.
+
+## 7. V1.6 implementation note (2026-08-02)
+
+The stored facet's field name changes `crossing` → **`modality`** in the V1.6 schema 2.0.0 bump,
+restoring this document's own vocabulary (the infra implementation had flattened the locked
+four-value modality to a three-value field named `crossing`, and the fourth value was lost because
+Infrastructure never needed it). The enum gains the fourth value **`human_social`** for behaviors
+whose only instrument operates on people or institutions (persuasion, coercion, recruitment,
+legal/financial process) — the instrument-vs-venue test decides the cyber/human_social line, and a
+platform used as mere carriage is not `cyber`. The independent `human_social` boolean stays as the
+co-occurrence axis; `modality: human_social` schema-enforces the boolean true (a behavior with
+neither a technical instrument nor human tradecraft is an unsplit ambiguous bundle).
+`crossing_mechanism` keeps its name — it attaches only to `cyber_physical`, which is a crossing.
+The facet goes matrix-wide in V1.6 (630 newly authored assignments; tactic-level `cpn` retired).

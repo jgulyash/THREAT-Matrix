@@ -33,10 +33,10 @@ ALLOWLIST = {
     ("person", "within_site_focus"),
     ("organization", "within_site_focus"),
     ("infrastructure", "within_site_focus"),
-    # infra-only CPN facet model (S32 decision; matrix-wide facet migration is V1.6)
-    ("person", "crossing"),
-    ("facility", "crossing"),
-    ("organization", "crossing"),
+    # infra-only CPN facet model (S32 decision; matrix-wide facet migration in progress, V1.6 window)
+    ("person", "modality"),
+    ("facility", "modality"),
+    ("organization", "modality"),
     ("person", "crossing_mechanism"),
     ("facility", "crossing_mechanism"),
     ("organization", "crossing_mechanism"),
