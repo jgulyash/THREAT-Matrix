@@ -43,6 +43,8 @@
                 "NTAC-MASS-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -83,6 +85,8 @@
                 "MELOY-TRAP18-2016",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -123,6 +127,8 @@
                 "MELOY-TRAP18-2016",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -165,6 +171,8 @@
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -205,6 +213,8 @@
                 "NTAC-AVERTED-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -244,6 +254,8 @@
                 "CISA-DIT-2023",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -680,6 +692,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "MELOY-TRAP18-2016"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -721,6 +735,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -760,6 +776,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -798,6 +816,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "MELOY-TRAP18-2016"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -839,6 +859,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -878,6 +900,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FEIN-VOSSEKUIL-1999"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -1351,6 +1375,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -1392,6 +1418,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -1434,6 +1462,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -1476,6 +1506,8 @@
                 "NTAC-MASS-2021",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -1515,6 +1547,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -1806,6 +1840,8 @@
                 "NTAC-MASS-2021",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -1845,6 +1881,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -1886,6 +1924,8 @@
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -1925,6 +1965,8 @@
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -1965,6 +2007,8 @@
                 "NTAC-AVERTED-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -2007,6 +2051,8 @@
                 "NITTF-GUIDE-2017",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -2503,6 +2549,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -2535,6 +2583,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -2569,6 +2619,8 @@
                 "NTAC-MASS-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -2603,6 +2655,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -2636,6 +2690,8 @@
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -2667,6 +2723,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NITTF-GUIDE-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -3044,6 +3102,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -3079,6 +3139,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -3112,6 +3174,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -3143,6 +3207,8 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -3173,6 +3239,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -3203,6 +3271,8 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -3565,6 +3635,8 @@
                 "FEIN-VOSSEKUIL-1999",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -3600,6 +3672,8 @@
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -3636,6 +3710,8 @@
                 "MELOY-TRAP18-2016",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -3670,6 +3746,8 @@
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_late",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -3704,6 +3782,8 @@
                 "NTAC-SCHOOLS-2019",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -3737,6 +3817,8 @@
                 "MELOY-TRAP18-2016",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -3772,6 +3854,8 @@
                 "NTAC-MASS-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -4121,6 +4205,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -4152,6 +4238,8 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -4184,6 +4272,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -4217,6 +4307,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -4249,6 +4341,8 @@
                 "CISA-CONVERGE-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -4280,6 +4374,8 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -4637,6 +4733,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -4669,6 +4767,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -4702,6 +4802,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -4736,6 +4838,8 @@
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -4765,6 +4869,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -4798,6 +4904,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-AVERTED-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -5146,6 +5254,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -5180,6 +5290,8 @@
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -5212,6 +5324,8 @@
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -5242,6 +5356,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -5272,6 +5388,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -5304,6 +5422,8 @@
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -5690,6 +5810,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -5721,6 +5843,8 @@
                 "ASIS-WVPI-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -5754,6 +5878,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -5787,6 +5913,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -5817,6 +5945,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -5852,6 +5982,8 @@
                 "NITTF-GUIDE-2017",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -6233,6 +6365,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -6267,6 +6401,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -6298,6 +6434,9 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "cyber_physical",
+              "crossing_mechanism": "digital",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -6330,6 +6469,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -6363,6 +6504,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -6396,6 +6539,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -6780,6 +6925,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -6813,6 +6960,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -6846,6 +6995,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -6879,6 +7030,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -6912,6 +7065,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -6943,6 +7098,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -7295,6 +7452,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_late",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -7326,6 +7485,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_late",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -7360,6 +7521,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -7393,6 +7556,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_late",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -7425,6 +7590,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_late",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -7804,6 +7971,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -7835,6 +8004,8 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -7867,6 +8038,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -7901,6 +8074,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -7932,6 +8107,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-SYSTEMS-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -8275,6 +8452,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -8307,6 +8486,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -8338,6 +8519,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -8371,6 +8554,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -8405,6 +8590,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "imminent_late",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -8439,6 +8626,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -8816,6 +9005,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -8848,6 +9039,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -8881,6 +9074,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -8913,6 +9108,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -8944,6 +9141,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -9300,6 +9499,8 @@
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 9.5,
@@ -9334,6 +9535,8 @@
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -9367,6 +9570,8 @@
                 "LLNL-TR-858139",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 9.5,
@@ -9398,6 +9603,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -9432,6 +9639,8 @@
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -9794,6 +10003,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -9825,6 +10036,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -9857,6 +10070,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -9889,6 +10104,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -9920,6 +10137,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -10288,6 +10507,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -10318,6 +10539,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -10350,6 +10573,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -10383,6 +10608,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -10416,6 +10643,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -10771,6 +11000,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -10801,6 +11032,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -10832,6 +11065,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -10865,6 +11100,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -10896,6 +11133,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-SYSTEMS-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -11221,6 +11460,8 @@
                 "CISA-CONVERGE-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -11251,6 +11492,8 @@
                 "NTAC-MASS-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -11279,6 +11522,8 @@
                 "NTAC-MASS-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -11310,6 +11555,8 @@
                 "LLNL-TR-858139",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -11338,6 +11585,8 @@
                 "NTAC-MASS-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -11664,6 +11913,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -11695,6 +11946,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -11725,6 +11978,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -11757,6 +12012,8 @@
                 "ASIS-WVPI-2021",
                 "KIM-JONGNAM-KUL-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -11786,6 +12043,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -12130,6 +12389,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -12161,6 +12422,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -12193,6 +12456,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -12224,6 +12489,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -12256,6 +12523,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -12285,6 +12554,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -12626,6 +12897,8 @@
                 "CISA-CONVERGE-2021",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -12656,6 +12929,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -12688,6 +12963,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -12717,6 +12994,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -12749,6 +13028,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -13099,6 +13380,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -13131,6 +13414,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -13163,6 +13448,8 @@
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -13193,6 +13480,8 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -13225,6 +13514,8 @@
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -13596,6 +13887,8 @@
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -13628,6 +13921,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -13658,6 +13953,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -13687,6 +13984,8 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -13721,6 +14020,8 @@
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -13753,6 +14054,8 @@
                 "CISA-CONVERGE-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -14124,6 +14427,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -14153,6 +14458,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -14184,6 +14491,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -14217,6 +14526,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -14246,6 +14557,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -14603,6 +14916,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -14635,6 +14950,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -14668,6 +14985,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -14702,6 +15021,8 @@
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -14733,6 +15054,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -14762,6 +15085,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NITTF-GUIDE-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -15118,6 +15443,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -15150,6 +15477,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -15180,6 +15509,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -15211,6 +15542,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -15241,6 +15574,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -15591,6 +15926,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "MELOY-TRAP18-2016"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -15620,6 +15957,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -15649,6 +15988,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-SYSTEMS-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -15680,6 +16021,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -15709,6 +16052,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-SYSTEMS-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -16057,6 +16402,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -16087,6 +16434,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -16119,6 +16468,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -16150,6 +16501,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -16179,6 +16532,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-SYSTEMS-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -16209,6 +16564,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -16537,6 +16894,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -16567,6 +16926,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -16596,6 +16957,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -16625,6 +16988,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -16657,6 +17022,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -16687,6 +17054,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -17007,6 +17376,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -17038,6 +17409,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -17067,6 +17440,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-SYSTEMS-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -17096,6 +17471,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -17126,6 +17503,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-SYSTEMS-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -17155,6 +17534,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 6.5,
