@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """THREAT Matrix framework.json structural and scoring validator.
 
-Runs nineteen checks (V01 through V19) over docs/data/framework.json and
+Runs twenty checks (V01 through V20) over docs/data/framework.json and
 reports a per-check pass/fail summary. The checks reconstruct the defect
 categories a Principal Architecture Review would hunt for: duplicate IDs,
 dangling Detection Mesh references, wrong matrix placement, typo'd keys,
@@ -91,8 +91,9 @@ CHECK_TITLES = {
     "V17": "phase_4_track presence and value",
     "V18": "conditioned_priority lowered below band",
     "V19": "tactic matrix field vs containing key",
+    "V20": "axis_confidence enum values and axis names",
 }
-CHECK_IDS = [f"V{n:02d}" for n in range(1, 20)]
+CHECK_IDS = [f"V{n:02d}" for n in range(1, 21)]
 
 
 # Fallback thresholds if escalation_rubric.severity_thresholds is absent.
@@ -287,6 +288,7 @@ def run_all_checks(raw_text: str, data: dict) -> dict[str, list[str]]:
             _check_source_refs(fail, iid, ind, bibliography)
             _check_correlates(fail, iid, ind, ind_ids)
             _check_scoring(fail, iid, ind, thresholds)
+            _check_axis_confidence(fail, iid, ind)
 
         for cm in tactic.get("countermeasures", []) or []:
             if not isinstance(cm, dict):
@@ -387,6 +389,42 @@ def _check_correlates(fail, ind_id, ind, ind_ids):
                 "V06",
                 ind_id,
                 f"correlates_with '{ref}' resolves to no indicator",
+            )
+
+
+AXIS_CONFIDENCE_AXES = {
+    "impact_potential",
+    "blast_radius_potential",
+    "recoverability_inverse",
+    "detectability",
+}
+AXIS_CONFIDENCE_LEVELS = {"established", "inferred", "thin"}
+
+
+def _check_axis_confidence(fail, ind_id, ind):
+    """V20 axis_confidence shape: keys must be real escalation axis names and
+    values must be one of the three categorical levels. The field is optional
+    (absence is legal); this guards a present field against typo'd axis names
+    and invented confidence vocabularies (Ruling 10-A: categorical only)."""
+    conf = ind.get("axis_confidence")
+    if conf is None:
+        return
+    if not isinstance(conf, dict):
+        fail("V20", ind_id, "axis_confidence must be an object")
+        return
+    for axis, level in conf.items():
+        if axis not in AXIS_CONFIDENCE_AXES:
+            fail(
+                "V20",
+                ind_id,
+                f"axis_confidence key '{axis}' is not an escalation axis",
+            )
+        if level not in AXIS_CONFIDENCE_LEVELS:
+            fail(
+                "V20",
+                ind_id,
+                f"axis_confidence value '{level}' is not one of "
+                f"established/inferred/thin",
             )
 
 
@@ -523,7 +561,7 @@ def print_report(results: dict[str, list[str]]) -> bool:
             print(f"✓ [{check_id}] {title}")
     print("")
     if all_green:
-        print("✓ validate PASSED — all 19 checks are green.")
+        print(f"✓ validate PASSED — all {len(CHECK_IDS)} checks are green.")
     else:
         failed = sum(1 for cid in CHECK_IDS if results[cid])
         print(f"✗ validate FAILED — {failed} check(s) reported problems.")

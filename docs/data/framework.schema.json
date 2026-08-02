@@ -680,6 +680,17 @@
           ],
           "description": "V1.3 triage floor. Present on indicators whose behavior applies direct physical force to a person; forces severity_band to at least this value regardless of the computed escalation_weight (which is left unchanged). Currently 'critical' for all such behaviors — a casualty is critical at any scale. See escalation_rubric.severity_floor_rule."
         },
+        "axis_confidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Optional per-axis evidence-basis marker (Ruling 10-A, V1.6): rule-derived by scripts/analysis/derive-axis-confidence.py, categorical only (numeric confidence is banned for the same false-precision reason informs_axes bans numbers). Confidence is evidence basis, NOT severity: a thin axis is a wider error bar and a candidate for earlier human review, NEVER an automatic demotion (a computed discount by the back door is banned per instance_conditioning). See escalation_rubric.axis_confidence_rubric for the derivation rules.",
+          "properties": {
+            "impact_potential": { "type": "string", "enum": ["established", "inferred", "thin"] },
+            "blast_radius_potential": { "type": "string", "enum": ["established", "inferred", "thin"] },
+            "recoverability_inverse": { "type": "string", "enum": ["established", "inferred", "thin"] },
+            "detectability": { "type": "string", "enum": ["established", "inferred", "thin"] }
+          }
+        },
         "informs_axes": {
           "type": "object",
           "description": "Type-level metadata describing which axes of the larger threat picture this indicator class typically informs, and how finely. Universal resolution scale (resolution, not severity — severity lives in escalation_axes): none = no signal on the axis; weak = resolves only the axis's coarsest grain (the axis-relevant fact exists); moderate = one grain finer (the coarse fact plus one narrowing); strong = resolves to a specific value. Rate the indicator class as written, type-level — never a vivid case instance. Six axes covering actor (capability / intent / opportunity) and the postulated event (timing / target / method). Categorical scale {strong, moderate, weak, none} — not numeric. The framework's collective judgment about how strongly an indicator class informs an axis is itself categorical at root; numeric values would be false precision. For AI/ML consumers needing continuous features, the documented mapping is strong=0.9, moderate=0.6, weak=0.3, none=0.0; this mapping is a downstream-consumer convention only, not framework-level scoring. Coverage: authored across all 190 People-matrix indicator classes (V1.3) via a sealed-blind two-rater inter-rater process gated at weighted κ ≥ 0.60 per chunk; per-axis level semantics are formalized in each axis description (V1.3 refinements #1–#4). Extension to the other matrices is an explicit deferred decision (B-09). Field remains optional on any indicator. See CONTRIBUTING.md \"Schema design principles\".",
