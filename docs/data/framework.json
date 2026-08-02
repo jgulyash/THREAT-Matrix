@@ -61794,7 +61794,7 @@
                 "FBI-PREATTACK-2018",
                 "CISA-CFATS-2023"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
@@ -62358,7 +62358,7 @@
                 "FBI-PREATTACK-2018",
                 "CTC-INFRATERROR-2026"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
@@ -62805,7 +62805,7 @@
                 "FBI-PREATTACK-2018",
                 "CISA-DIT-2023"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
@@ -64148,7 +64148,7 @@
                 "CTC-INFRATERROR-2026",
                 "FBI-PREATTACK-2018"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
@@ -64191,8 +64191,8 @@
                 "CTC-INFRATERROR-2026",
                 "GAO-24-106744-2024"
               ],
-              "modality": "cyber",
-              "human_social": false,
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 1.5,
@@ -64233,8 +64233,8 @@
                 "CTC-INFRATERROR-2026",
                 "CISA-CFATS-2023"
               ],
-              "modality": "cyber",
-              "human_social": false,
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -64274,7 +64274,7 @@
                 "FBI-PREATTACK-2018",
                 "CTC-INFRATERROR-2026"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
@@ -64314,7 +64314,7 @@
                 "CTC-INFRATERROR-2026",
                 "GAO-24-106744-2024"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
@@ -64643,7 +64643,7 @@
                 "CISA-DIT-2023",
                 "FBI-PREATTACK-2018"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
@@ -64685,7 +64685,7 @@
                 "CISA-DIT-2023",
                 "CISA-CFATS-2023"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
@@ -64726,7 +64726,7 @@
                 "CISA-DIT-2023",
                 "CTC-INFRATERROR-2026"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
@@ -64766,7 +64766,7 @@
                 "CISA-DIT-2023",
                 "NTAC-MASS-2021"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
@@ -64806,7 +64806,7 @@
                 "CISA-DIT-2023",
                 "NIST-SP800-82-2023"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
@@ -65258,7 +65258,7 @@
                 "CISA-CONVERGE-2021",
                 "CISA-DIT-2023"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
@@ -65626,7 +65626,7 @@
                 "FBI-PREATTACK-2018",
                 "NTAC-MASS-2021"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing",
               "escalation_axes": {
@@ -65668,7 +65668,7 @@
                 "FBI-PREATTACK-2018",
                 "NTAC-MASS-2021"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
@@ -65710,7 +65710,7 @@
                 "FBI-PREATTACK-2018",
                 "NTAC-MASS-2021"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
@@ -65752,7 +65752,7 @@
                 "NTAC-MASS-2021",
                 "FBI-PREATTACK-2018"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing",
               "escalation_axes": {
@@ -65794,7 +65794,7 @@
                 "FBI-PREATTACK-2018",
                 "NTAC-MASS-2021"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
@@ -66724,7 +66724,7 @@
                 "GAO-24-106744-2024",
                 "CISA-CFATS-2023"
               ],
-              "modality": "physical",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
@@ -76102,7 +76102,7 @@
                 "CTC-INFRATERROR-2026"
               ],
               "modality": "cyber",
-              "human_social": false,
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.0,
@@ -76214,7 +76214,7 @@
                 "FBI-PREATTACK-2018",
                 "CISA-DIT-2023"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
@@ -76536,7 +76536,7 @@
                 "FBI-PREATTACK-2018"
               ],
               "modality": "physical",
-              "human_social": false,
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.0,
@@ -76576,7 +76576,7 @@
                 "FBI-PREATTACK-2018",
                 "NTAC-MASS-2021"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
@@ -76613,7 +76613,7 @@
                 "CTC-INFRATERROR-2026"
               ],
               "modality": "cyber",
-              "human_social": false,
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -76649,7 +76649,7 @@
                 "CISA-DIT-2023",
                 "CTC-INFRATERROR-2026"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
@@ -76687,7 +76687,7 @@
                 "NIST-SP800-82-2023"
               ],
               "modality": "cyber",
-              "human_social": false,
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -76995,7 +76995,7 @@
                 "FBI-PREATTACK-2018",
                 "CTC-INFRATERROR-2026"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
@@ -77036,7 +77036,7 @@
                 "NIST-SP800-82-2023"
               ],
               "modality": "cyber",
-              "human_social": false,
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.0,
@@ -77076,7 +77076,7 @@
                 "CTC-INFRATERROR-2026"
               ],
               "modality": "cyber",
-              "human_social": false,
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 1.5,
@@ -77112,7 +77112,7 @@
                 "CTC-INFRATERROR-2026",
                 "FBI-PREATTACK-2018"
               ],
-              "modality": "physical",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
@@ -77151,7 +77151,7 @@
                 "NTAC-MASS-2021",
                 "CISA-CONVERGE-2021"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
@@ -77940,7 +77940,7 @@
                 "FBI-PREATTACK-2018",
                 "CTC-INFRATERROR-2026"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
@@ -77980,7 +77980,7 @@
                 "NTAC-MASS-2021",
                 "FBI-PREATTACK-2018"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
@@ -78016,7 +78016,7 @@
                 "CTC-INFRATERROR-2026",
                 "FBI-PREATTACK-2018"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
@@ -78052,7 +78052,7 @@
                 "FBI-PREATTACK-2018",
                 "CTC-INFRATERROR-2026"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
@@ -78088,7 +78088,7 @@
                 "CTC-INFRATERROR-2026",
                 "NTAC-MASS-2021"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
@@ -78420,7 +78420,7 @@
                 "NIST-SP800-82-2023",
                 "CTC-INFRATERROR-2026"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
@@ -78461,7 +78461,7 @@
                 "CTC-INFRATERROR-2026",
                 "FBI-PREATTACK-2018"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
@@ -78501,7 +78501,7 @@
                 "NIST-SP800-82-2023",
                 "CISA-DIT-2023"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
@@ -78538,7 +78538,7 @@
                 "NIST-SP800-82-2023",
                 "CISA-CONVERGE-2021"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
@@ -78575,7 +78575,7 @@
                 "CTC-INFRATERROR-2026",
                 "GAO-24-106744-2024"
               ],
-              "modality": "cyber",
+              "modality": "human_social",
               "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
