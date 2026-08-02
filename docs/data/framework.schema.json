@@ -318,23 +318,6 @@
           ],
           "description": "Declares the tactic's grounding (V1.1 mandatory). Machine-readable provenance."
         },
-        "cpn": {
-          "type": "boolean",
-          "description": "Cyber-Physical Nexus relevance."
-        },
-        "cpn_id": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "cpn_notes": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Cyber-Physical Nexus annotation. Null when cpn=false."
-        },
         "indicators": {
           "type": "array",
           "items": {
@@ -518,7 +501,9 @@
         "category",
         "detection_sources",
         "phase_relevance",
-        "source_refs"
+        "source_refs",
+        "modality",
+        "human_social"
       ],
       "allOf": [
         {

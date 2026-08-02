@@ -33,16 +33,7 @@ ALLOWLIST = {
     ("person", "within_site_focus"),
     ("organization", "within_site_focus"),
     ("infrastructure", "within_site_focus"),
-    # infra-only CPN facet model (S32 decision; matrix-wide facet migration in progress, V1.6 window)
-    ("person", "modality"),
-    ("facility", "modality"),
-    ("organization", "modality"),
-    ("person", "crossing_mechanism"),
-    ("facility", "crossing_mechanism"),
-    ("organization", "crossing_mechanism"),
-    ("person", "human_social"),
-    ("facility", "human_social"),
-    ("organization", "human_social"),
+    # (modality / human_social facet migration COMPLETE V1.6: now universal, no carve-out)
     # infra cpn_notes skipped by ruling (S36): superseded at the V1.6 facet
     # migration; infra CPN detail lives in the per-indicator facets.
     ("infrastructure", "cpn_notes"),
