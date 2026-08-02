@@ -38115,6 +38115,8 @@
                 "CTC-INFRATERROR-2026",
                 "RAND-ELECTIONS-RRA704-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.0,
@@ -38153,6 +38155,8 @@
                 "FBI-PREATTACK-2018",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -38187,6 +38191,8 @@
                 "START-GTD-2020",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -38221,6 +38227,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -38255,6 +38263,8 @@
                 "CALHOUN-WESTON-2003",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -38608,6 +38618,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -38644,6 +38656,8 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -38682,6 +38696,8 @@
                 "GISF-SECURITYTOGO-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -38720,6 +38736,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -38757,6 +38775,8 @@
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -39101,6 +39121,8 @@
                 "CISA-DISINFO-TACTICS",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -39138,6 +39160,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -39177,6 +39201,8 @@
                 "CISA-DISINFO-TACTICS",
                 "RAND-ELECTIONS-RRA704-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -39214,6 +39240,8 @@
                 "DUNLAP-LAWFARE-2001",
                 "RAND-ELECTIONS-RRA704-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.0,
@@ -39251,6 +39279,8 @@
                 "CISA-DISINFO-TACTICS",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.0,
@@ -39599,6 +39629,8 @@
                 "GISF-SECURITYTOGO-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -39636,6 +39668,8 @@
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.0,
@@ -39674,6 +39708,8 @@
                 "DUNLAP-LAWFARE-2001",
                 "GISF-SECURITYTOGO-2020"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.0,
@@ -39713,6 +39749,8 @@
                 "RAND-ELECTIONS-RRA704-2020",
                 "GISF-SECURITYTOGO-2020"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -39750,6 +39788,8 @@
                 "GISF-SECURITYTOGO-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -40098,6 +40138,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -40136,6 +40178,8 @@
                 "RAND-ELECTIONS-RRA704-2020",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -40175,6 +40219,8 @@
                 "CISA-DISINFO-TACTICS",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -40209,6 +40255,8 @@
                 "CALHOUN-WESTON-2003",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -40247,6 +40295,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.0,
@@ -40584,6 +40634,8 @@
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -40622,6 +40674,8 @@
                 "CISA-CONVERGE-2021",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -40662,6 +40716,8 @@
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -40699,6 +40755,8 @@
                 "CISA-DIT-2023",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -40736,6 +40794,8 @@
                 "NITTF-GUIDE-2017",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -41074,6 +41134,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.0,
@@ -41112,6 +41174,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "RAND-ELECTIONS-RRA704-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -41149,6 +41213,8 @@
                 "CISA-CONVERGE-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -41187,6 +41253,8 @@
                 "CISA-DISINFO-TACTICS",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -41225,6 +41293,8 @@
                 "CISA-DISINFO-TACTICS",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.0,
@@ -41572,6 +41642,8 @@
                 "GISF-SECURITYTOGO-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -41611,6 +41683,8 @@
                 "GISF-SECURITYTOGO-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -41648,6 +41722,8 @@
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 4.0,
@@ -41686,6 +41762,8 @@
                 "CISA-CONVERGE-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -41723,6 +41801,8 @@
                 "GISF-SECURITYTOGO-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -42045,6 +42125,8 @@
                 "FBI-PREATTACK-2018",
                 "MELOY-TRAP18-2016"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -42080,6 +42162,8 @@
                 "FBI-PREATTACK-2018",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -42119,6 +42203,8 @@
                 "MELOY-TRAP18-2016",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -42154,6 +42240,8 @@
                 "MELOY-TRAP18-2016",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -42193,6 +42281,8 @@
                 "FBI-PREATTACK-2018",
                 "MELOY-TRAP18-2016"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -42516,6 +42606,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -42553,6 +42645,8 @@
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -42590,6 +42684,8 @@
                 "START-GTD-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -42628,6 +42724,8 @@
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -42665,6 +42763,8 @@
                 "CISA-DISINFO-TACTICS",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -42978,6 +43078,8 @@
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -43018,6 +43120,8 @@
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -43056,6 +43160,8 @@
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -43093,6 +43199,8 @@
                 "CISA-DIT-2023",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -43131,6 +43239,8 @@
                 "CERT-CSG-7-2022",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -43460,6 +43570,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -43499,6 +43611,8 @@
                 "CISA-DISINFO-TACTICS",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -43536,6 +43650,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -43575,6 +43691,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -43612,6 +43730,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -43942,6 +44062,8 @@
                 "CISA-DISINFO-TACTICS",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -43981,6 +44103,8 @@
                 "CISA-DISINFO-TACTICS",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -44019,6 +44143,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -44053,6 +44179,8 @@
                 "RAND-ELECTIONS-RRA704-2020",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -44092,6 +44220,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -44427,6 +44557,8 @@
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -44465,6 +44597,8 @@
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -44504,6 +44638,8 @@
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -44542,6 +44678,8 @@
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -44580,6 +44718,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -44912,6 +45052,8 @@
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -44947,6 +45089,8 @@
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -44986,6 +45130,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -45025,6 +45171,8 @@
                 "CERT-CSG-7-2022",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -45059,6 +45207,8 @@
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -45386,6 +45536,8 @@
                 "CERT-CSG-7-2022",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -45425,6 +45577,8 @@
                 "DUNLAP-LAWFARE-2001",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -45462,6 +45616,8 @@
                 "DUNLAP-LAWFARE-2001",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -45500,6 +45656,8 @@
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -45537,6 +45695,8 @@
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -45876,6 +46036,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -45914,6 +46076,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -45952,6 +46116,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CHAINALYSIS-CCR-2024"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -45990,6 +46156,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CHAINALYSIS-CCR-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -46030,6 +46198,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "START-GTD-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -46349,6 +46519,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -46387,6 +46559,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -46425,6 +46599,8 @@
                 "RAND-ELECTIONS-RRA704-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -46463,6 +46639,8 @@
                 "START-GTD-2020",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -46500,6 +46678,8 @@
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -46824,6 +47004,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -46861,6 +47043,8 @@
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -46898,6 +47082,8 @@
                 "CISA-CONVERGE-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -46936,6 +47122,8 @@
                 "MELOY-TRAP18-2016",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -46973,6 +47161,8 @@
                 "FBI-PREATTACK-2018",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -47296,6 +47486,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -47331,6 +47523,8 @@
                 "CISA-CONVERGE-2021",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -47368,6 +47562,8 @@
                 "DUNLAP-LAWFARE-2001",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -47406,6 +47602,8 @@
                 "CISA-CONVERGE-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -47444,6 +47642,8 @@
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 4.0,
@@ -47764,6 +47964,8 @@
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -47802,6 +48004,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -47841,6 +48045,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -47880,6 +48086,8 @@
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -47917,6 +48125,8 @@
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -48248,6 +48458,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -48285,6 +48497,8 @@
                 "RAND-ELECTIONS-RRA704-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -48320,6 +48534,8 @@
                 "CISA-DISINFO-TACTICS",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -48354,6 +48570,8 @@
                 "RAND-ELECTIONS-RRA704-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -48388,6 +48606,8 @@
                 "CISA-DISINFO-TACTICS",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -48718,6 +48938,8 @@
                 "CISA-DISINFO-TACTICS",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -48755,6 +48977,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -48790,6 +49014,8 @@
                 "CISA-DISINFO-TACTICS",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -48824,6 +49050,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -48859,6 +49087,8 @@
                 "RAND-ELECTIONS-RRA704-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -49190,6 +49420,8 @@
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -49228,6 +49460,8 @@
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -49266,6 +49500,8 @@
                 "CISA-DIT-2023",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 4.0,
@@ -49301,6 +49537,8 @@
                 "CISA-CONVERGE-2021",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -49340,6 +49578,8 @@
                 "CERT-CSG-7-2022",
                 "CHAINALYSIS-CCR-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -49668,6 +49908,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 8.5,
@@ -49706,6 +49948,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -49740,6 +49984,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GISF-SECURITYTOGO-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -49777,6 +50023,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -49812,6 +50060,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GISF-SECURITYTOGO-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -50140,6 +50390,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -50175,6 +50427,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GISF-SECURITYTOGO-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -50210,6 +50464,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -50245,6 +50501,8 @@
                 "RAND-ELECTIONS-RRA704-2020",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -50279,6 +50537,8 @@
                 "CERT-CSG-7-2022",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -50591,6 +50851,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "RAND-ELECTIONS-RRA704-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -50626,6 +50888,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GISF-SECURITYTOGO-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 8.5,
@@ -50660,6 +50924,8 @@
                 "DUNLAP-LAWFARE-2001",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -50695,6 +50961,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -50730,6 +50998,8 @@
                 "CISA-DISINFO-TACTICS",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -51051,6 +51321,8 @@
                 "CERT-CSG-7-2022",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -51085,6 +51357,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -51123,6 +51397,8 @@
                 "DUNLAP-LAWFARE-2001",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -51158,6 +51434,8 @@
                 "CISA-DISINFO-TACTICS",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 8.5,
@@ -51196,6 +51474,8 @@
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -51533,6 +51813,8 @@
                 "CISA-DISINFO-TACTICS",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -51567,6 +51849,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -51602,6 +51886,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -51636,6 +51922,8 @@
                 "CISA-DISINFO-TACTICS",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -51671,6 +51959,8 @@
                 "RAND-ELECTIONS-RRA704-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -51987,6 +52277,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GISF-SECURITYTOGO-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -52021,6 +52313,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GISF-SECURITYTOGO-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -52055,6 +52349,8 @@
                 "DUNLAP-LAWFARE-2001",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -52090,6 +52386,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -52124,6 +52422,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GISF-SECURITYTOGO-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -52442,6 +52742,8 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -52476,6 +52778,8 @@
                 "DUNLAP-LAWFARE-2001",
                 "RAND-ELECTIONS-RRA704-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -52510,6 +52814,8 @@
                 "DUNLAP-LAWFARE-2001",
                 "GISF-SECURITYTOGO-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -52543,6 +52849,8 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -52578,6 +52886,8 @@
                 "DUNLAP-LAWFARE-2001",
                 "RAND-ELECTIONS-RRA704-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -52900,6 +53210,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -52937,6 +53249,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -52971,6 +53285,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -53005,6 +53321,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CHAINALYSIS-CCR-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -53039,6 +53357,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -53353,6 +53673,8 @@
                 "CISA-DISINFO-TACTICS",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -53390,6 +53712,8 @@
                 "CISA-DISINFO-TACTICS",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -53424,6 +53748,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -53458,6 +53784,8 @@
                 "CISA-DISINFO-TACTICS",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -53492,6 +53820,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -53819,6 +54149,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -53853,6 +54185,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "RAND-ELECTIONS-RRA704-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -53887,6 +54221,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -53921,6 +54257,8 @@
                 "RAND-ELECTIONS-RRA704-2020",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -53955,6 +54293,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "START-GTD-2020"
               ],
+              "modality": "physical",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -54267,6 +54607,8 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -54300,6 +54642,8 @@
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -54334,6 +54678,8 @@
                 "DUNLAP-LAWFARE-2001",
                 "GISF-SECURITYTOGO-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -54367,6 +54713,8 @@
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -54402,6 +54750,8 @@
                 "CISA-DISINFO-TACTICS",
                 "RAND-ELECTIONS-RRA704-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -54721,6 +55071,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -54755,6 +55107,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -54789,6 +55143,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -54823,6 +55179,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -54857,6 +55215,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NITTF-GUIDE-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -55168,6 +55528,8 @@
                 "CISA-DISINFO-TACTICS",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -55202,6 +55564,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -55236,6 +55600,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -55270,6 +55636,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -55304,6 +55672,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -55634,6 +56004,8 @@
                 "CISA-DISINFO-TACTICS",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -55668,6 +56040,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -55702,6 +56076,8 @@
                 "RAND-ELECTIONS-RRA704-2020",
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -55736,6 +56112,8 @@
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -55770,6 +56148,8 @@
                 "CISA-DISINFO-TACTICS",
                 "RAND-ELECTIONS-RRA704-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -56085,6 +56465,8 @@
                 "CERT-CSG-7-2022",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -56123,6 +56505,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -56162,6 +56546,8 @@
                 "CISA-CONVERGE-2021",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -56199,6 +56585,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -56236,6 +56624,8 @@
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -56584,6 +56974,8 @@
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -56623,6 +57015,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -56660,6 +57054,8 @@
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -56699,6 +57095,8 @@
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -56733,6 +57131,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -57060,6 +57460,8 @@
                 "CERT-CSG-7-2022",
                 "CISA-DIT-2023"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -57097,6 +57499,8 @@
                 "CISA-CONVERGE-2021",
                 "CERT-CSG-7-2022"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -57131,6 +57535,8 @@
                 "NITTF-GUIDE-2017",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 8.5,
@@ -57165,6 +57571,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -57202,6 +57610,8 @@
                 "CERT-CSG-7-2022",
                 "NITTF-GUIDE-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -57524,6 +57934,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -57562,6 +57974,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -57599,6 +58013,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -57636,6 +58052,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -57670,6 +58088,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -57992,6 +58412,8 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -58028,6 +58450,8 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -58066,6 +58490,8 @@
               "source_refs": [
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -58100,6 +58526,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -58133,6 +58561,8 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -58458,6 +58888,8 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -58491,6 +58923,8 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -58524,6 +58958,8 @@
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -58557,6 +58993,8 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -58590,6 +59028,8 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -58908,6 +59348,8 @@
               "source_refs": [
                 "START-GTD-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -58946,6 +59388,8 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -58982,6 +59426,8 @@
               "source_refs": [
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -59021,6 +59467,8 @@
                 "START-GTD-2020",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -59054,6 +59502,8 @@
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.5,
@@ -59369,6 +59819,8 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -59406,6 +59858,8 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -59439,6 +59893,8 @@
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -59472,6 +59928,8 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -59506,6 +59964,8 @@
                 "CISA-DISINFO-TACTICS",
                 "RAND-ELECTIONS-RRA704-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -59836,6 +60296,8 @@
               "source_refs": [
                 "CALHOUN-WESTON-2003"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -59872,6 +60334,8 @@
               "source_refs": [
                 "CHAINALYSIS-CCR-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -59906,6 +60370,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "CISA-CONVERGE-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -59939,6 +60405,8 @@
               "source_refs": [
                 "DUNLAP-LAWFARE-2001"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -59973,6 +60441,8 @@
                 "CALHOUN-WESTON-2003",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -60295,6 +60765,8 @@
               "source_refs": [
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -60329,6 +60801,8 @@
                 "CTC-INFRATERROR-2026",
                 "START-GTD-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -60363,6 +60837,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -60397,6 +60873,8 @@
               "source_refs": [
                 "START-GTD-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -60431,6 +60909,8 @@
                 "CTC-INFRATERROR-2026",
                 "CISA-DISINFO-TACTICS"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
