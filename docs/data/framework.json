@@ -17504,6 +17504,8 @@
             "GULYASH-FIELD-OPS-2004-2026",
             "FBI-PREATTACK-2018"
            ],
+           "modality": "human_social",
+           "human_social": true,
            "temporal_signature": "horizon_late",
            "escalation_axes": {
             "impact_potential": 5.0,
@@ -17543,6 +17545,8 @@
             "GULYASH-FIELD-OPS-2004-2026",
             "NTAC-MASS-2021"
            ],
+           "modality": "cyber",
+           "human_social": false,
            "temporal_signature": "advancing_early",
            "escalation_axes": {
             "impact_potential": 5.0,
@@ -17581,6 +17585,8 @@
             "GULYASH-FIELD-OPS-2004-2026",
             "FBI-PREATTACK-2018"
            ],
+           "modality": "human_social",
+           "human_social": true,
            "temporal_signature": "horizon_late",
            "escalation_axes": {
             "impact_potential": 5.5,
@@ -17620,6 +17626,8 @@
             "GULYASH-FIELD-OPS-2004-2026",
             "NTAC-MASS-2021"
            ],
+           "modality": "cyber",
+           "human_social": false,
            "temporal_signature": "advancing_early",
            "escalation_axes": {
             "impact_potential": 5.5,
@@ -17660,6 +17668,8 @@
             "GULYASH-FIELD-OPS-2004-2026",
             "FBI-PREATTACK-2018"
            ],
+           "modality": "human_social",
+           "human_social": true,
            "temporal_signature": "advancing_early",
            "escalation_axes": {
             "impact_potential": 5.5,
@@ -17986,6 +17996,8 @@
                 "CISA-SOFTTARGETS-2019",
                 "DHS-STCP-2018"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -18027,6 +18039,8 @@
                 "RAND-SOFTTARGETS-2024",
                 "NTAC-MASS-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -18067,6 +18081,8 @@
                 "NTAC-MASS-2021",
                 "START-GTD-2020"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -18107,6 +18123,8 @@
                 "CISA-SOFTTARGETS-2019",
                 "DHS-STCP-2018"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -18147,6 +18165,8 @@
                 "RAND-SOFTTARGETS-2024",
                 "CISA-SOFTTARGETS-2019"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -18482,6 +18502,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-SOFTTARGETS-2019"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -18521,6 +18543,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -18561,6 +18585,8 @@
                 "SANDIA-GARCIA-VAPPS-2006",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -18602,6 +18628,8 @@
                 "DHS-ISC-RMP-2021",
                 "SANDIA-GARCIA-VAPPS-2006"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -18641,6 +18669,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "DHS-ISC-RMP-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -18982,6 +19012,8 @@
                 "GAO-15-6-2014",
                 "FEMA-426-2011"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -19022,6 +19054,8 @@
                 "SANDIA-GARCIA-DEPPS-2007",
                 "GAO-15-6-2014"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -19063,6 +19097,8 @@
                 "FEMA-426-2011",
                 "DOD-UFC4010-2018"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -19105,6 +19141,8 @@
                 "FEMA-426-2011",
                 "DOD-UFC4010-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -19147,6 +19185,8 @@
                 "SANDIA-GARCIA-DEPPS-2007",
                 "FEMA-426-2011"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -19482,6 +19522,8 @@
                 "SANDIA-GARCIA-VAPPS-2006",
                 "DHS-ISC-RMP-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -19523,6 +19565,8 @@
                 "SANDIA-RAM-2008",
                 "DHS-ISC-RMP-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -19564,6 +19608,8 @@
                 "SANDIA-GARCIA-VAPPS-2006",
                 "DOD-UFC4022-2017"
               ],
+              "modality": "physical",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -19605,6 +19651,8 @@
                 "SANDIA-RAM-2008",
                 "DOD-UFC4022-2017"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -19646,6 +19694,8 @@
                 "SANDIA-GARCIA-VAPPS-2006",
                 "SANDIA-RAM-2008"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -19987,6 +20037,8 @@
                 "NFPA-INTENTIONAL-2021",
                 "ATF-AIR-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -20026,6 +20078,8 @@
                 "ATF-EIR-2024",
                 "CISA-BOMBTHREAT-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -20063,6 +20117,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ATF-AIR-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -20101,6 +20157,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ATF-AIR-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -20139,6 +20197,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ATF-EIR-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -20466,6 +20526,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -20505,6 +20567,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NITTF-GUIDE-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -20545,6 +20609,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-HATECRIME-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -20584,6 +20650,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -20623,6 +20691,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NAF-CLINICVIOLENCE-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -20960,6 +21030,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-SOFTTARGETS-2019"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -20999,6 +21071,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "DOD-UFC4022-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -21039,6 +21113,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "DHS-STCP-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -21077,6 +21153,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-SOFTTARGETS-2019"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -21116,6 +21194,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NITTF-GUIDE-2017"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -21475,6 +21555,8 @@
                 "MELOY-TRAP18-2016",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -21516,6 +21598,8 @@
                 "NTAC-MASS-2021",
                 "MELOY-TRAP18-2016"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -21557,6 +21641,8 @@
                 "FEIN-VOSSEKUIL-1999",
                 "NTAC-AVERTED-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -21598,6 +21684,8 @@
                 "MELOY-TRAP18-2016",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -21639,6 +21727,8 @@
                 "FBI-PREATTACK-2018",
                 "NTAC-MASS-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -21973,6 +22063,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "SANDIA-GARCIA-VAPPS-2006"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -22012,6 +22104,8 @@
                 "SANDIA-GARCIA-VAPPS-2006",
                 "DHS-ISC-RMP-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -22052,6 +22146,8 @@
                 "DHS-ISC-RMP-2021",
                 "CISA-SOFTTARGETS-2019"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "horizon_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -22091,6 +22187,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -22132,6 +22230,8 @@
                 "FBI-PREATTACK-2018",
                 "SANDIA-GARCIA-VAPPS-2006"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -22464,6 +22564,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -22504,6 +22606,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -22543,6 +22647,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "SANDIA-GARCIA-VAPPS-2006"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -22582,6 +22688,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -22620,6 +22728,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -22966,6 +23076,8 @@
                 "ATF-EIR-2024",
                 "FEMA-426-2011"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -23006,6 +23118,8 @@
                 "ATF-EIR-2024",
                 "CISA-BOMBTHREAT-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -23044,6 +23158,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -23083,6 +23199,8 @@
                 "SANDIA-GARCIA-VAPPS-2006",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -23124,6 +23242,8 @@
                 "FBI-PREATTACK-2018",
                 "NTAC-MASS-2021"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -23466,6 +23586,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "DOD-UFC4022-2017"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -23506,6 +23628,8 @@
                 "DOD-UFC4010-2018",
                 "SANDIA-GARCIA-VAPPS-2006"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -23545,6 +23669,8 @@
                 "DOD-UFC4010-2018",
                 "GAO-19-138-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -23584,6 +23710,8 @@
                 "GAO-19-138-2018",
                 "DOD-UFC4022-2017"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -23624,6 +23752,8 @@
                 "SANDIA-GARCIA-VAPPS-2006",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -23973,6 +24103,8 @@
                 "DOD-UFC4022-2017",
                 "SANDIA-GARCIA-VAPPS-2006"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -24014,6 +24146,8 @@
                 "SANDIA-GARCIA-VAPPS-2006",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -24055,6 +24189,8 @@
                 "DOD-UFC4022-2017",
                 "GAO-19-138-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -24096,6 +24232,8 @@
                 "DOD-UFC4010-2018",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -24138,6 +24276,8 @@
                 "DOD-UFC4022-2017",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -24493,6 +24633,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ATF-EIR-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -24531,6 +24673,8 @@
                 "FEMA-426-2011",
                 "ATF-EIR-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -24571,6 +24715,8 @@
                 "NFPA-INTENTIONAL-2021",
                 "ATF-AIR-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -24610,6 +24756,8 @@
                 "CISA-HVM-2024",
                 "ASTM-F2656-2020"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -24649,6 +24797,8 @@
                 "CISA-BOMBTHREAT-2023",
                 "ATF-EIR-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -24989,6 +25139,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -25027,6 +25179,8 @@
                 "FBI-ACTIVESHOOTER-2024",
                 "SANDIA-GARCIA-VAPPS-2006"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -25067,6 +25221,8 @@
                 "CISA-HVM-2024",
                 "RAND-SOFTTARGETS-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -25108,6 +25264,8 @@
                 "FBI-ACTIVESHOOTER-2024",
                 "CISA-SOFTTARGETS-2019"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -25147,6 +25305,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -25477,6 +25637,8 @@
                 "NTAC-MASS-2021",
                 "RAND-SOFTTARGETS-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -25517,6 +25679,8 @@
                 "FBI-PREATTACK-2018",
                 "NTAC-MASS-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -25556,6 +25720,8 @@
                 "SANDIA-GARCIA-VAPPS-2006",
                 "DHS-ISC-RMP-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -25596,6 +25762,8 @@
                 "RAND-SOFTTARGETS-2024",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -25637,6 +25805,8 @@
                 "FBI-PREATTACK-2018",
                 "NTAC-MASS-2021"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -25960,6 +26130,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CFATS-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -26000,6 +26172,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NIOSH-BLDG-CBR-2002"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -26039,6 +26213,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-CFATS-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -26079,6 +26255,9 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NIST-SP800-82-2023"
               ],
+              "modality": "cyber_physical",
+              "crossing_mechanism": "digital",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -26118,6 +26297,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "GAO-24-106744-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "advancing_late",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -26464,6 +26645,8 @@
                 "FBI-PREATTACK-2018",
                 "SANDIA-GARCIA-VAPPS-2006"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -26505,6 +26688,8 @@
                 "ATF-EIR-2024",
                 "CISA-BOMBTHREAT-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -26546,6 +26731,8 @@
                 "CISA-HVM-2024",
                 "ASTM-F2656-2020"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -26588,6 +26775,8 @@
                 "FBI-PREATTACK-2018",
                 "MELOY-TRAP18-2016"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -26629,6 +26818,8 @@
                 "DOD-UFC4022-2017",
                 "NTAC-MASS-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -26952,6 +27143,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ATF-AIR-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -26993,6 +27186,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NFPA-INTENTIONAL-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -27032,6 +27227,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "USFA-ARSON-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -27072,6 +27269,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ATF-AIR-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -27112,6 +27311,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NFPA-INTENTIONAL-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 9.5,
@@ -27443,6 +27644,8 @@
                 "CISA-BOMBTHREAT-2023",
                 "FEMA-426-2011"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -27485,6 +27688,8 @@
                 "ATF-EIR-2024",
                 "FEMA-426-2011"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 9.5,
@@ -27527,6 +27732,8 @@
                 "CISA-BOMBTHREAT-2023",
                 "FEMA-426-2011"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -27566,6 +27773,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-BOMBTHREAT-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent_late",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -27607,6 +27816,8 @@
                 "ATF-EIR-2024",
                 "FEMA-426-2011"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 8.5,
@@ -27948,6 +28159,8 @@
                 "FEMA-426-2011",
                 "DOD-UFC4010-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 9.5,
@@ -27989,6 +28202,8 @@
                 "FEMA-426-2011",
                 "DOD-UFC4010-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -28030,6 +28245,8 @@
                 "DOD-UFC4010-2018",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -28070,6 +28287,8 @@
                 "FEMA-426-2011",
                 "DOD-UFC4010-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 8.5,
@@ -28111,6 +28330,8 @@
                 "FEMA-426-2011",
                 "DOD-UFC4010-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -28452,6 +28673,8 @@
                 "NFPA-INTENTIONAL-2021",
                 "FEMA-426-2011"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -28492,6 +28715,8 @@
                 "NIOSH-BLDG-CBR-2002",
                 "CISA-CFATS-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -28533,6 +28758,8 @@
                 "NIST-SP800-82-2023",
                 "GAO-24-106744-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -28575,6 +28802,9 @@
                 "NIST-SP800-82-2023",
                 "GAO-24-106744-2024"
               ],
+              "modality": "cyber_physical",
+              "crossing_mechanism": "digital",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -28615,6 +28845,8 @@
                 "CISA-CFATS-2023",
                 "NIOSH-BLDG-CBR-2002"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -28963,6 +29195,8 @@
                 "CISA-HVM-2024",
                 "ASTM-F2656-2020"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -29004,6 +29238,8 @@
                 "CISA-HVM-2024",
                 "ASTM-F2656-2020"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -29043,6 +29279,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "DOD-UFC4022-2017"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -29083,6 +29321,8 @@
                 "DOD-UFC4022-2017",
                 "DOD-UFC4010-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -29123,6 +29363,8 @@
                 "CISA-HVM-2024",
                 "DOD-UFC4010-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -29464,6 +29706,8 @@
                 "FBI-HOBAS-2024",
                 "NAF-CLINICVIOLENCE-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -29505,6 +29749,8 @@
                 "FBI-HOBAS-2024",
                 "FEMA-426-2011"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -29545,6 +29791,8 @@
                 "NAF-CLINICVIOLENCE-2024",
                 "CISA-SOFTTARGETS-2019"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -29586,6 +29834,8 @@
                 "FBI-HOBAS-2024",
                 "NAF-CLINICVIOLENCE-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -29628,6 +29878,8 @@
                 "FBI-HOBAS-2024",
                 "RAND-SOFTTARGETS-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -29961,6 +30213,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-HATECRIME-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -30002,6 +30256,8 @@
                 "FBI-HATECRIME-2024",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "physical",
+              "human_social": true,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -30042,6 +30298,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-HOBAS-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -30082,6 +30340,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -30121,6 +30381,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-HATECRIME-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -30444,6 +30706,8 @@
                 "NIOSH-BLDG-CBR-2002",
                 "CISA-CFATS-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -30486,6 +30750,8 @@
                 "NIOSH-BLDG-CBR-2002",
                 "FEMA-426-2011"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -30528,6 +30794,8 @@
                 "CISA-CFATS-2023",
                 "GAO-24-106744-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 7.0,
@@ -30569,6 +30837,8 @@
                 "NIOSH-BLDG-CBR-2002",
                 "CISA-CFATS-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -30612,6 +30882,8 @@
                 "NIOSH-BLDG-CBR-2002",
                 "FEMA-426-2011"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -30953,6 +31225,8 @@
                 "FEMA-426-2011",
                 "NFPA-INTENTIONAL-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -30994,6 +31268,8 @@
                 "NFPA-INTENTIONAL-2021",
                 "FEMA-426-2011"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 8.5,
@@ -31033,6 +31309,8 @@
                 "CISA-BOMBTHREAT-2023",
                 "FEMA-426-2011"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 9.0,
@@ -31073,6 +31351,9 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FEMA-426-2011"
               ],
+              "modality": "cyber_physical",
+              "crossing_mechanism": "electromagnetic",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -31114,6 +31395,8 @@
                 "FEMA-426-2011",
                 "FBI-ACTIVESHOOTER-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "in_progress",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -31452,6 +31735,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-ACTIVESHOOTER-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -31492,6 +31777,8 @@
                 "FBI-ACTIVESHOOTER-2024",
                 "START-GTD-2020"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -31532,6 +31819,8 @@
                 "START-GTD-2020",
                 "RAND-SOFTTARGETS-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -31571,6 +31860,8 @@
                 "FBI-ACTIVESHOOTER-2024",
                 "RAND-SOFTTARGETS-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -31611,6 +31902,8 @@
                 "START-GTD-2020",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -31947,6 +32240,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "START-GTD-2020"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -31986,6 +32281,8 @@
                 "USFA-ARSON-2021",
                 "NFPA-INTENTIONAL-2021"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -32025,6 +32322,8 @@
                 "START-GTD-2020",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "physical",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -32064,6 +32363,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -32103,6 +32404,8 @@
                 "USFA-ARSON-2021",
                 "ATF-EIR-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -32447,6 +32750,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -32485,6 +32790,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -32524,6 +32831,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -32562,6 +32871,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -32600,6 +32911,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "DOD-UFC4022-2017"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -32940,6 +33253,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -32979,6 +33294,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -33018,6 +33335,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NAF-CLINICVIOLENCE-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -33057,6 +33376,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -33096,6 +33417,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "START-GTD-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -33438,6 +33761,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CHAINALYSIS-CCR-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -33476,6 +33801,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
+              "modality": "cyber",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -33514,6 +33841,8 @@
                 "CHAINALYSIS-CCR-2024",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -33551,6 +33880,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -33590,6 +33921,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -33925,6 +34258,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "START-GTD-2020"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -33963,6 +34298,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -34000,6 +34337,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -34038,6 +34377,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -34075,6 +34416,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "RAND-SOFTTARGETS-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -34401,6 +34744,8 @@
                 "USFA-ARSON-2021",
                 "ATF-EIR-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -34438,6 +34783,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ATF-AIR-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -34476,6 +34823,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NIST-SP800-82-2023"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -34515,6 +34864,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NFPA-INTENTIONAL-2021"
               ],
+              "modality": "cyber",
+              "human_social": false,
               "temporal_signature": "advancing",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -34552,6 +34903,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FEMA-426-2011"
               ],
+              "modality": "physical",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 2.5,
@@ -34904,6 +35257,8 @@
                 "ATF-EIR-2024",
                 "CISA-BOMBTHREAT-2023"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 8.5,
@@ -34945,6 +35300,8 @@
                 "FBI-PREATTACK-2018",
                 "RAND-SOFTTARGETS-2024"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 8.0,
@@ -34987,6 +35344,8 @@
                 "FBI-PREATTACK-2018",
                 "CISA-BOMBTHREAT-2023"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -35027,6 +35386,8 @@
                 "ATF-EIR-2024",
                 "FEMA-426-2011"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "staging",
               "escalation_axes": {
                 "impact_potential": 7.5,
@@ -35068,6 +35429,8 @@
                 "START-GTD-2020",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "physical",
+              "human_social": false,
               "temporal_signature": "imminent",
               "escalation_axes": {
                 "impact_potential": 6.5,
@@ -35396,6 +35759,8 @@
                 "CTC-INFRATERROR-2026",
                 "FBI-HATECRIME-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -35435,6 +35800,8 @@
                 "CTC-INFRATERROR-2026",
                 "FBI-HATECRIME-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -35474,6 +35841,8 @@
                 "FBI-HATECRIME-2024",
                 "START-GTD-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -35514,6 +35883,8 @@
                 "CTC-INFRATERROR-2026",
                 "START-GTD-2020"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -35554,6 +35925,8 @@
                 "NAF-CLINICVIOLENCE-2024",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -35886,6 +36259,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -35923,6 +36298,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-HATECRIME-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -35961,6 +36338,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 4.0,
@@ -36000,6 +36379,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -36038,6 +36419,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-HATECRIME-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -36364,6 +36747,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -36403,6 +36788,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-HATECRIME-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -36442,6 +36829,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NAF-CLINICVIOLENCE-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -36480,6 +36869,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CTC-INFRATERROR-2026"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_late",
               "escalation_axes": {
                 "impact_potential": 4.0,
@@ -36520,6 +36911,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-HATECRIME-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 3.0,
@@ -36837,6 +37230,8 @@
                 "CTC-INFRATERROR-2026",
                 "CISA-BOMBTHREAT-2023"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 5.5,
@@ -36875,6 +37270,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CISA-BOMBTHREAT-2023"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 5.0,
@@ -36916,6 +37313,8 @@
                 "CTC-INFRATERROR-2026",
                 "ATF-EIR-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath_early",
               "escalation_axes": {
                 "impact_potential": 6.0,
@@ -36954,6 +37353,8 @@
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CHAINALYSIS-CCR-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 4.5,
@@ -36994,6 +37395,8 @@
                 "FBI-HATECRIME-2024",
                 "NAF-CLINICVIOLENCE-2024"
               ],
+              "modality": "human_social",
+              "human_social": true,
               "temporal_signature": "aftermath",
               "escalation_axes": {
                 "impact_potential": 5.0,
