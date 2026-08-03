@@ -24,6 +24,8 @@ evidence of method rather than as polished documentation.
 | [severity-floor-clarifications.md](severity-floor-clarifications.md) | Severity-floor extension lineage (V1.3 base, V1.4 infra, Ruling 8-A weapon-threat) |
 | [bottom-cut-recalibration.md](bottom-cut-recalibration.md) | Low-band cut recalibration — medium threshold 2.5 → 3.0 (Ruling 7) |
 | [instance-conditioning-contract-completion.md](instance-conditioning-contract-completion.md) | Layer-2 contract completion — demotion doctrine, raise guidance, proximity_access, inhibitors exclusion (rulings Q1–Q4) |
+| [modality-authoring-rubric.md](modality-authoring-rubric.md) | Instrument-vs-venue rubric governing the per-indicator modality facet (physical / cyber / cyber_physical / human_social) + concealment-class rule |
+| [v2-design-constraints.md](v2-design-constraints.md) | Constraints ledger for the V2 platform — computed CPN, AI overlay, raise trace, warning-behavior filter, ingestion contract |
 | [mesh-link-rubric-v2.md](mesh-link-rubric-v2.md) | Criteria for cross-domain mesh edges |
 | [RATIONALE-cpn-modality-and-mesh.md](RATIONALE-cpn-modality-and-mesh.md) | Design rationale for computed facet modality |
 | [KAPPA-RESULTS.md](KAPPA-RESULTS.md) | Inter-rater reliability (kappa) results from sealed-blind IRR |
