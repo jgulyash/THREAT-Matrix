@@ -75,23 +75,10 @@ export function TacticDetail({ tactic, actorMap, navigate, fromPhase, fromTrack 
         <div className="dp-header-title">{tactic.name}</div>
       </div>
       <div className="dp-content">
-        {tactic.cpn && tactic.cpn_id && (
-          <div className="det-cpn-badge">
-            <span className="det-cpn-mark">⌖</span> {tactic.cpn_id}
-          </div>
-        )}
-
         <div className="det-section">
           <div className="det-section-label">Description</div>
           <div className="det-body">{tactic.notes}</div>
         </div>
-
-        {tactic.cpn && tactic.cpn_notes && (
-          <div className="det-section">
-            <div className="det-section-label">Cyber-Physical Nexus</div>
-            <div className="det-cpn-section">{tactic.cpn_notes}</div>
-          </div>
-        )}
 
         {cats.length > 0 && (
           <div className="det-section">

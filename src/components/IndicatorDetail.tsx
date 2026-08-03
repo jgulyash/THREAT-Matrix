@@ -11,6 +11,9 @@ import {
   ESCALATION_AXIS_LABELS,
   INFORMS_AXIS_LABELS,
   PHASE_RELEVANCE_LABELS,
+  MODALITY_LABELS,
+  MODALITY_DEFS,
+  CROSSING_MECHANISM_LABELS,
 } from '../lib/constants';
 import { SourceRefLink } from './detection-response/SourceRefLink';
 
@@ -149,6 +152,31 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
                 <div className="adv-attr-key">Category</div>
                 <div className="adv-attr-val">{catLabel}</div>
               </div>
+              <div className="adv-attr-row-new">
+                <div className="adv-attr-key">Behavioral Mode</div>
+                <div className="adv-attr-val">
+                  <span
+                    className={`dr-tag modality mod-${ind.modality}`}
+                    title={MODALITY_DEFS[ind.modality]}
+                  >
+                    {MODALITY_LABELS[ind.modality] || ind.modality}
+                  </span>
+                  {ind.crossing_mechanism && (
+                    <span className="dr-tag modality-mech">
+                      {CROSSING_MECHANISM_LABELS[ind.crossing_mechanism] ||
+                        ind.crossing_mechanism}
+                    </span>
+                  )}
+                  {ind.human_social && ind.modality !== 'human_social' && (
+                    <span
+                      className="dr-tag modality-hs"
+                      title="Human tradecraft or warning behavior co-occurs with this behavior's primary mode."
+                    >
+                      Human &amp; Social
+                    </span>
+                  )}
+                </div>
+              </div>
               {ind.phase_relevance && ind.phase_relevance.length > 0 && (
                 <div className="adv-attr-row-new">
                   <div className="adv-attr-key">Phase Relevance</div>
@@ -264,6 +292,14 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
                       <div key={k} className="ind-axis">
                         <div className="ind-axis-label">
                           {ESCALATION_AXIS_LABELS[k] || k}
+                          {ind.axis_confidence?.[k as keyof typeof ind.axis_confidence] === 'thin' && (
+                            <span
+                              className="ind-axis-thin"
+                              title="Thin evidence basis: this axis carries a wider error bar and is a candidate for earlier human review. It is not a lower score."
+                            >
+                              {' '}◦ thin
+                            </span>
+                          )}
                         </div>
                         <div className="ind-axis-bar">
                           <div

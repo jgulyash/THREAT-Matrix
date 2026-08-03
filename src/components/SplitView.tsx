@@ -12,7 +12,7 @@ interface Props {
   navigate: (path: string) => void;
   tacticMap: Record<string, Tactic>;
   actorMap: Record<string, ActorProfile>;
-  cpnFilter: boolean;
+  modalityFilter: string;
   actorFilter: string;
 }
 
@@ -22,7 +22,7 @@ export function SplitView({
   navigate,
   tacticMap,
   actorMap,
-  cpnFilter,
+  modalityFilter,
   actorFilter,
 }: Props) {
   const matrix = route.matrix;
@@ -62,7 +62,7 @@ export function SplitView({
         <HeatMapGrid
           tacticsByMatrix={tacticsByMatrix}
           navigate={navigate}
-          cpnFilter={cpnFilter}
+          modalityFilter={modalityFilter}
           actorFilter={actorFilter}
           compact={true}
           selectedMatrix={matrix}
@@ -87,7 +87,7 @@ export function SplitView({
             phase={pp}
             track={pt}
             navigate={navigate}
-            cpnFilter={cpnFilter}
+            modalityFilter={modalityFilter}
             actorFilter={actorFilter}
           />
         )}

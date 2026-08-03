@@ -80,6 +80,11 @@ export interface AssessmentGuidance {
   escalation_priority?: AssessmentEscalationPriority;
 }
 
+export type Modality = 'physical' | 'cyber' | 'cyber_physical' | 'human_social';
+export type CrossingMechanism = 'digital' | 'electromagnetic' | 'physical_implant';
+export type AxisConfidenceLevel = 'established' | 'inferred' | 'thin';
+export type AxisConfidence = Partial<Record<keyof EscalationAxes, AxisConfidenceLevel>>;
+
 export interface Indicator {
   id: string;
   behavior: string;
@@ -87,6 +92,11 @@ export interface Indicator {
   detection_sources: string[];
   phase_relevance?: string[];
   source_refs: string[];
+  // V1.6 modality facets
+  modality: Modality;
+  human_social: boolean;
+  crossing_mechanism?: CrossingMechanism;
+  axis_confidence?: AxisConfidence;
   // V1.1 Detection Mesh
   correlates_with?: string[];
   // V1.2 escalation scoring
@@ -148,9 +158,6 @@ export interface Tactic {
   field_notes?: string;
   observed_contexts?: string[];
   evidence_basis?: EvidenceBasis;
-  cpn: boolean;
-  cpn_id?: string;
-  cpn_notes?: string;
   indicators: Indicator[];
   countermeasures: Countermeasure[];
   related_tactics?: string[];

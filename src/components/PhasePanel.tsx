@@ -7,13 +7,13 @@ interface Props {
   phase: number;
   track: string | null;
   navigate: (path: string) => void;
-  cpnFilter: boolean;
+  modalityFilter: string;
   actorFilter: string;
 }
 
-export function PhasePanel({ tactics, matrix, phase, track, navigate, cpnFilter, actorFilter }: Props) {
-  const disp = tactics.filter((t) => tacticMatchesFilters(t, cpnFilter, actorFilter));
-  const filtered = cpnFilter || !!actorFilter;
+export function PhasePanel({ tactics, matrix, phase, track, navigate, modalityFilter, actorFilter }: Props) {
+  const disp = tactics.filter((t) => tacticMatchesFilters(t, modalityFilter, actorFilter));
+  const filtered = !!modalityFilter || !!actorFilter;
   const tl = track === 'flight' ? 'Evade' : track === 'claim' ? 'Claim' : null;
   return (
     <>
@@ -55,7 +55,6 @@ export function PhasePanel({ tactics, matrix, phase, track, navigate, cpnFilter,
             <div className="dp-card-tags">
               {t.phase_4_track === 'evasion' && <span className="dp-ctag flight">Evade</span>}
               {t.phase_4_track === 'attribution' && <span className="dp-ctag claim">Claim</span>}
-              {t.cpn && <span className="dp-ctag cpn">⌖ CPN</span>}
             </div>
           </div>
         ))}

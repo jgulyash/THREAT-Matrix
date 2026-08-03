@@ -57,10 +57,6 @@ body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;lin
 .filterbar{flex-shrink:0;height:40px;background:var(--bg-lift);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.15)}
 .fb-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);white-space:nowrap}
 .fb-sep{width:1px;height:14px;background:var(--border);margin:0 4px;flex-shrink:0}
-.fb-chip{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-left:2px solid;cursor:pointer;white-space:nowrap;transition:background .12s;user-select:none}
-.fb-chip.dim{border-color:var(--border-act);color:var(--text-dim)}
-.fb-chip.dim:hover{color:var(--text-muted)}
-.fb-chip.amber-active{border-color:var(--amber);color:var(--amber);background:var(--amber-dim)}
 .fb-select{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border:none;border-left:2px solid var(--border-act);background:transparent;color:var(--text-dim);cursor:pointer;max-width:280px;font-family:inherit;transition:background .12s}
 .fb-select:hover{color:var(--text-muted)}
 .fb-select.amber-active{border-left-color:var(--amber);color:var(--amber);background:var(--amber-dim)}
@@ -102,7 +98,6 @@ body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;lin
 .hm-name{font-size:14px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3;flex-shrink:0}
 .hm-overflow{font-size:12px;color:var(--text-muted);line-height:1.3;flex-shrink:0}
 .stub-planned{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim)}
-.cpn-strip{margin-top:auto;font-size:12px;font-weight:600;color:var(--teal);letter-spacing:.04em;display:flex;align-items:center;gap:6px;flex-shrink:0;border-left:2px solid var(--teal);padding:2px 0 2px 8px;line-height:1.3;white-space:nowrap}
 /* Phase 4 */
 .phase4-row{flex:0 0 360px;display:flex;gap:5px;min-height:0}
 .phase4-phase-cell{width:140px;flex-shrink:0;display:flex;align-items:center;padding:0 8px}
@@ -134,15 +129,13 @@ body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;lin
 .dp-card-body{font-size:15px;line-height:1.55;color:var(--text-muted)}
 .dp-card-tags{display:flex;gap:4px;margin-top:7px;flex-wrap:wrap}
 .dp-ctag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-left:1.5px solid}
-.dp-ctag.flight{border-color:var(--slate);color:var(--slate)}.dp-ctag.claim{border-color:var(--slate);color:var(--slate)}.dp-ctag.cpn{border-color:var(--teal);color:var(--teal)}
+.dp-ctag.flight{border-color:var(--slate);color:var(--slate)}.dp-ctag.claim{border-color:var(--slate);color:var(--slate)}
 /* Tactic detail */
 .det-id-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
 .det-id{font-size:12px;letter-spacing:.06em;color:var(--text-dim);font-family:'IBM Plex Sans',monospace;background:rgba(244,247,247,.06);padding:3px 8px;border-radius:3px}
 .det-track-badge{font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;padding:3px 8px;border-left:2px solid}
 .det-track-badge.flight{border-color:var(--slate);color:var(--slate);background:var(--slate-dim)}
 .det-track-badge.claim{border-color:var(--slate);color:var(--slate);background:var(--slate-dim)}
-.det-cpn-badge{display:inline-flex;align-self:flex-start;width:auto;align-items:center;gap:5px;font-size:13px;font-weight:700;letter-spacing:.04em;padding:5px 12px;border-radius:3px;margin-bottom:4px;background:var(--teal-dim);border:1px solid rgba(2,127,147,.35);color:var(--teal)}
-.det-cpn-mark{font-size:13px;line-height:1}
 .det-section{flex-shrink:0}
 /* Major section headers — unified treatment with a left accent bar so they read
    as clear section starts, distinct from the muted sub-labels inside them. */
@@ -150,7 +143,6 @@ body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;lin
 .det-section-label::before,.dr-section-header::before{content:"";position:absolute;left:0;top:1px;bottom:4px;width:3px;background:var(--amber);border-radius:2px}
 .det-section-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid rgba(247,139,4,.18);display:block;width:100%}
 .det-body{font-size:16px;line-height:1.7;color:var(--text-muted)}
-.det-cpn-section{border-left:2px solid var(--teal);padding-left:10px;font-size:16px;line-height:1.65;color:var(--text-muted)}
 .det-actor-groups{display:flex;flex-direction:column;gap:8px}
 .det-actor-cat-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
 .det-actor-chips{display:flex;gap:4px;flex-wrap:wrap}
@@ -249,6 +241,14 @@ body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;lin
 .dr-tag.stakeholder{border-color:var(--text-muted);color:var(--text-muted);background:rgba(244,247,247,.05)}
 .dr-tag.phase{border-color:var(--slate);color:var(--slate);background:var(--slate-dim)}
 .dr-tag.mesh{border-color:var(--blue);color:var(--blue);background:var(--blue-dim)}
+.dr-tag.modality{border-left-color:var(--slate);color:var(--text);background:rgba(244,247,247,.05)}
+.dr-tag.modality.mod-physical{border-left-color:var(--red);color:var(--red);background:var(--red-dim)}
+.dr-tag.modality.mod-cyber{border-left-color:var(--blue);color:var(--blue);background:var(--blue-dim)}
+.dr-tag.modality.mod-cyber_physical{border-left-color:var(--amber);color:var(--amber);background:var(--amber-dim)}
+.dr-tag.modality.mod-human_social{border-left-color:var(--teal);color:var(--teal);background:var(--teal-dim)}
+.dr-tag.modality-mech{border-left-color:var(--amber);color:var(--amber);background:var(--amber-dim)}
+.dr-tag.modality-hs{border-left-color:var(--teal);color:var(--teal);background:var(--teal-dim)}
+.ind-axis-thin{font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);opacity:.85}
 .dr-mesh-label{font-size:10px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--text-dim);align-self:center;margin-right:2px}
 .dr-badge-row{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 6px}
 .dr-badge{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;display:inline-flex;align-items:baseline;gap:4px}

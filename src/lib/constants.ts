@@ -243,12 +243,37 @@ export const orderedActorCategories = (
 
 export const tacticMatchesFilters = (
   t: Tactic,
-  cpnFilter: boolean,
+  modalityFilter: string,
   actorFilter: string
 ): boolean =>
-  (!cpnFilter || !!t.cpn) &&
+  (!modalityFilter ||
+    (t.indicators || []).some((i) => i.modality === modalityFilter)) &&
   (!actorFilter ||
     (t.actor_associations || []).some((a) => a.actor_id === actorFilter));
+
+// V1.6 Behavioral Mode (modality) — display labels + one-line definitions.
+// Data field stays `modality`; the UI reads "Behavioral Mode".
+export const MODALITY_LABELS: Record<string, string> = {
+  physical: 'Physical',
+  cyber: 'Cyber',
+  cyber_physical: 'Cyber-Physical',
+  human_social: 'Human & Social',
+};
+
+export const MODALITY_DEFS: Record<string, string> = {
+  physical: 'Instrument is matter, force, or presence (on-site acts, breaching, weapons).',
+  cyber: "Instrument operates on a computing system's access, code, or data. A platform used only to carry a message does not count.",
+  cyber_physical: 'The behavior crosses the seam between digital systems and physical machinery (CPN, Cyber-Physical Nexus).',
+  human_social: 'Instrument operates on people or institutions (persuasion, coercion, legal or financial process), or is a human warning behavior.',
+};
+
+export const MODALITY_ORDER = ['physical', 'cyber', 'cyber_physical', 'human_social'];
+
+export const CROSSING_MECHANISM_LABELS: Record<string, string> = {
+  digital: 'Digital',
+  electromagnetic: 'Electromagnetic',
+  physical_implant: 'Physical Implant',
+};
 
 export const resolveTrack = (t: Tactic): 'flight' | 'claim' | null =>
   t.phase_4_track === 'evasion'

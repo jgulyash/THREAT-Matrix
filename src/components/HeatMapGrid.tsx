@@ -1,5 +1,5 @@
 import type { Tactic } from '../types/framework';
-import { PHASE_SHORT, STUB, MATRICES, MATRIX_LABELS, tacticMatchesFilters } from '../lib/constants';
+import { PHASE_SHORT, STUB, MATRICES, MATRIX_LABELS, MODALITY_LABELS, tacticMatchesFilters } from '../lib/constants';
 import { LIVE_MATRICES, type LiveMatrix } from '../lib/route';
 import type { TacticsByMatrix } from '../App';
 
@@ -14,14 +14,13 @@ interface HeatMapCellProps {
   track?: 'flight' | 'claim';
   isSelected: boolean;
   onClick: () => void;
-  cpnFilter: boolean;
+  modalityFilter: string;
   actorFilter: string;
 }
 
-function HeatMapCell({ tactics, col, track, isSelected, onClick, cpnFilter, actorFilter }: HeatMapCellProps) {
-  const displayed = tactics.filter((t) => tacticMatchesFilters(t, cpnFilter, actorFilter));
+function HeatMapCell({ tactics, col, track, isSelected, onClick, modalityFilter, actorFilter }: HeatMapCellProps) {
+  const displayed = tactics.filter((t) => tacticMatchesFilters(t, modalityFilter, actorFilter));
   const count = displayed.length;
-  const cpnCount = displayed.filter((t) => t.cpn).length;
   const cls = track === 'flight' ? 'flight-cell' : track === 'claim' ? 'claim-cell' : '';
   const limit = track ? 2 : 3;
   return (
@@ -42,9 +41,6 @@ function HeatMapCell({ tactics, col, track, isSelected, onClick, cpnFilter, acto
           ))}
           {count > limit && <div className="hm-overflow">+{count - limit} more</div>}
         </div>
-      )}
-      {cpnCount > 0 && !cpnFilter && (
-        <div className="cpn-strip">⌖ {cpnCount} cyber-enabled</div>
       )}
     </div>
   );
@@ -75,7 +71,7 @@ function StubCell({ count, version, track }: StubCellProps) {
 interface GridProps {
   tacticsByMatrix: TacticsByMatrix;
   navigate: (path: string) => void;
-  cpnFilter: boolean;
+  modalityFilter: string;
   actorFilter: string;
   compact: boolean;
   selectedMatrix: LiveMatrix | null;
@@ -87,7 +83,7 @@ interface GridProps {
 export function HeatMapGrid({
   tacticsByMatrix,
   navigate,
-  cpnFilter,
+  modalityFilter,
   actorFilter,
   compact,
   selectedMatrix,
@@ -108,13 +104,13 @@ export function HeatMapGrid({
 
   // Filter transparency: when a filter is active, show how much is hidden so a
   // reduced heat map never reads as missing/deleted data.
-  const filterActive = cpnFilter || !!actorFilter;
+  const filterActive = !!modalityFilter || !!actorFilter;
   const shownCount = (m: LiveMatrix) => {
     const tbp = tacticsByMatrix[m];
     const all = [...tbp[1], ...tbp[2], ...tbp[3], ...tbp[4].flight, ...tbp[4].claim];
-    return all.filter((t) => tacticMatchesFilters(t, cpnFilter, actorFilter)).length;
+    return all.filter((t) => tacticMatchesFilters(t, modalityFilter, actorFilter)).length;
   };
-  const filterLabel = [cpnFilter ? 'CPN' : null, actorFilter || null]
+  const filterLabel = [modalityFilter ? MODALITY_LABELS[modalityFilter] : null, actorFilter || null]
     .filter(Boolean)
     .join(' + ');
 
@@ -174,7 +170,7 @@ export function HeatMapGrid({
                   col={MATRIX_COL[m.key as LiveMatrix]}
                   isSelected={phaseSelected(m.key as LiveMatrix, phase)}
                   onClick={() => navigate(`/${m.key}/phase/${phase}`)}
-                  cpnFilter={cpnFilter}
+                  modalityFilter={modalityFilter}
                   actorFilter={actorFilter}
                 />
               ) : (
@@ -202,7 +198,7 @@ export function HeatMapGrid({
                     track="flight"
                     isSelected={trackSelected(m.key as LiveMatrix, 'flight')}
                     onClick={() => navigate(`/${m.key}/phase/4/flight`)}
-                    cpnFilter={cpnFilter}
+                    modalityFilter={modalityFilter}
                     actorFilter={actorFilter}
                   />
                 ) : (
@@ -226,7 +222,7 @@ export function HeatMapGrid({
                     track="claim"
                     isSelected={trackSelected(m.key as LiveMatrix, 'claim')}
                     onClick={() => navigate(`/${m.key}/phase/4/claim`)}
-                    cpnFilter={cpnFilter}
+                    modalityFilter={modalityFilter}
                     actorFilter={actorFilter}
                   />
                 ) : (

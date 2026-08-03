@@ -25,7 +25,7 @@ export default function App() {
   const data = frameworkData as unknown as FrameworkData;
 
   const [route, setRoute] = useState(() => parseRoute());
-  const [cpnFilter, setCpnFilter] = useState(false);
+  const [modalityFilter, setModalityFilter] = useState('');
   const [actorFilter, setActorFilter] = useState('');
   const [theme, setThemeState] = useState<'dark' | 'light'>(() =>
     (localStorage.getItem('threat-matrix-theme') as 'dark' | 'light' | null) || 'dark'
@@ -92,7 +92,7 @@ export default function App() {
     });
 
     const getActorTactics = (id: string) =>
-      allTactics.filter((t) => tacticMatchesFilters(t, false, id));
+      allTactics.filter((t) => tacticMatchesFilters(t, '', id));
 
     // Reverse lookup: which tactics cite each bibliography entry
     const bibReverseMap: Record<string, Tactic[]> = {};
@@ -121,8 +121,8 @@ export default function App() {
       <TopNav route={route} navigate={navigate} theme={theme} setTheme={setTheme} />
       {!isActors && !isReferences && !isIndicator && (
         <FilterBar
-          cpnFilter={cpnFilter}
-          setCpnFilter={setCpnFilter}
+          modalityFilter={modalityFilter}
+          setModalityFilter={setModalityFilter}
           actorFilter={actorFilter}
           setActorFilter={setActorFilter}
           actorsByCategory={abc}
@@ -133,7 +133,7 @@ export default function App() {
           <HeatMapGrid
             tacticsByMatrix={tbm}
             navigate={navigate}
-            cpnFilter={cpnFilter}
+            modalityFilter={modalityFilter}
             actorFilter={actorFilter}
             compact={false}
             selectedMatrix={null}
@@ -149,7 +149,7 @@ export default function App() {
             navigate={navigate}
             tacticMap={tacticMap}
             actorMap={actorMap}
-            cpnFilter={cpnFilter}
+            modalityFilter={modalityFilter}
             actorFilter={actorFilter}
           />
         )}

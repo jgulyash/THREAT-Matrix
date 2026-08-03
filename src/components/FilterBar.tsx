@@ -1,17 +1,17 @@
 import type { ActorProfile } from '../types/framework';
-import { orderedActorCategories } from '../lib/constants';
+import { orderedActorCategories, MODALITY_ORDER, MODALITY_LABELS, MODALITY_DEFS } from '../lib/constants';
 
 interface Props {
-  cpnFilter: boolean;
-  setCpnFilter: (fn: (v: boolean) => boolean) => void;
+  modalityFilter: string;
+  setModalityFilter: (v: string) => void;
   actorFilter: string;
   setActorFilter: (v: string) => void;
   actorsByCategory: Record<string, ActorProfile[]>;
 }
 
 export function FilterBar({
-  cpnFilter,
-  setCpnFilter,
+  modalityFilter,
+  setModalityFilter,
   actorFilter,
   setActorFilter,
   actorsByCategory,
@@ -20,13 +20,23 @@ export function FilterBar({
     <div className="filterbar">
       <span className="fb-label">Filter</span>
       <div className="fb-sep" />
-      <span
-        className={`fb-chip${cpnFilter ? ' amber-active' : ' dim'}`}
-        onClick={() => setCpnFilter((v) => !v)}
-        title="Show only Cyber-Physical Nexus tactics"
+      <select
+        className={`fb-select${modalityFilter ? ' amber-active' : ''}`}
+        value={modalityFilter}
+        onChange={(e) => setModalityFilter(e.target.value)}
+        title={
+          modalityFilter
+            ? MODALITY_DEFS[modalityFilter]
+            : 'Behavioral Mode: the mechanism a behavior operates through. Show only tactics with an indicator of the selected mode.'
+        }
       >
-        ⌖ CPN
-      </span>
+        <option value="">Behavioral Mode · All</option>
+        {MODALITY_ORDER.map((m) => (
+          <option key={m} value={m} title={MODALITY_DEFS[m]}>
+            {MODALITY_LABELS[m]}
+          </option>
+        ))}
+      </select>
       <div className="fb-sep" />
       <select
         className={`fb-select${actorFilter ? ' amber-active' : ''}`}
