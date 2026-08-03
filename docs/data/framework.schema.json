@@ -37,27 +37,70 @@
     },
     "matrices": {
       "type": "object",
-      "description": "Four target matrices: person, facility, organization, infrastructure. Each matrix contains tactics, an optional scope sentence describing the primary threat actor objective that places a tactic in that matrix. The matrices container also carries an optional boundary_rule describing the framework-vs-operational partition principle. boundary_rule and scope are type-level statements; they do not affect schema validity for matrices that omit them.",
+      "description": "Four target matrices: person, facility, organization, infrastructure. Each matrix contains tactics and a scope sentence describing the primary threat actor objective that places a tactic in that matrix. The matrices container also carries a boundary_rule describing the framework-vs-operational partition principle. Since V1.6 each matrix is validated by its own per-matrix subschema: a matrix's tactics must carry that matrix's id prefix (TM/TF/TO/TI) AND a matrix field const-equal to the containing key, so a person tactic given a TF id or a matrix:'facility' field is rejected by schema alone.",
+      "additionalProperties": false,
+      "required": [
+        "boundary_rule",
+        "person",
+        "facility",
+        "organization",
+        "infrastructure"
+      ],
       "properties": {
         "boundary_rule": {
           "type": "string",
           "description": "Framework-vs-operational boundary principle governing matrix placement. Authoring-time: one matrix per tactic, set by the threat actor's primary objective. Operational-time: real incidents may invoke tactics from multiple matrices via Detection Mesh cross-references (correlates_with at the indicator level). Type-level statement of the framework's organizing principle."
-        }
-      },
-      "patternProperties": {
-        "^(person|facility|organization|infrastructure)$": {
+        },
+        "person": {
           "type": "object",
+          "additionalProperties": false,
+          "required": ["tactics", "scope"],
           "properties": {
             "tactics": {
               "type": "array",
-              "items": {
-                "$ref": "#/$defs/tactic"
-              }
+              "minItems": 1,
+              "items": { "$ref": "#/$defs/tactic_person" }
             },
-            "scope": {
-              "type": "string",
-              "description": "Canonical scope sentence for this matrix, expressed in WHAT/WHY/WHERE terms. Defines the primary threat actor objective that places a tactic in this matrix at authoring time. Type-level field; not case-specific. See matrices.boundary_rule for the framework-vs-operational distinction."
-            }
+            "scope": { "$ref": "#/$defs/matrix_scope" }
+          }
+        },
+        "facility": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tactics", "scope"],
+          "properties": {
+            "tactics": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "$ref": "#/$defs/tactic_facility" }
+            },
+            "scope": { "$ref": "#/$defs/matrix_scope" }
+          }
+        },
+        "organization": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tactics", "scope"],
+          "properties": {
+            "tactics": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "$ref": "#/$defs/tactic_organization" }
+            },
+            "scope": { "$ref": "#/$defs/matrix_scope" }
+          }
+        },
+        "infrastructure": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tactics", "scope"],
+          "properties": {
+            "tactics": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "$ref": "#/$defs/tactic_infrastructure" }
+            },
+            "scope": { "$ref": "#/$defs/matrix_scope" }
           }
         }
       }
@@ -71,6 +114,17 @@
     "escalation_rubric": {
       "type": "object",
       "description": "Framework-published recommendation for deriving escalation_weight from escalation_axes and mapping to severity_band. Type-level reference; consumers may follow or override with documented rationale. See CONTRIBUTING.md \"Schema design principles\".",
+      "additionalProperties": false,
+      "required": [
+        "composite_math",
+        "severity_thresholds",
+        "severity_floor_rule",
+        "detectability_guidance",
+        "blast_radius_guidance",
+        "axis_confidence_rubric",
+        "rubric_version",
+        "calibration_guidance"
+      ],
       "properties": {
         "composite_math": {
           "type": "string",
@@ -79,19 +133,155 @@
         "severity_thresholds": {
           "type": "object",
           "description": "Numeric thresholds mapping escalation_weight to severity_band buckets.",
+          "additionalProperties": false,
+          "required": ["low", "medium", "high", "critical"],
           "properties": {
-            "low": {
-              "type": "number"
+            "low": { "type": "number" },
+            "medium": { "type": "number" },
+            "high": { "type": "number" },
+            "critical": { "type": "number" }
+          }
+        },
+        "severity_floor_rule": {
+          "type": "object",
+          "description": "V1.3 triage-floor rule: behaviors applying direct physical force to a person carry a severity_floor that forces severity_band to at least that value regardless of computed weight.",
+          "additionalProperties": false,
+          "required": ["definition", "applies_to", "added"],
+          "properties": {
+            "definition": { "type": "string" },
+            "applies_to": { "type": "string" },
+            "added": { "type": "string" }
+          }
+        },
+        "detectability_guidance": {
+          "type": "object",
+          "description": "Reading guidance for the detectability axis (rubric v1.2.0 flip and aftermath handling).",
+          "additionalProperties": false,
+          "required": [
+            "flip_rationale",
+            "misread_guard",
+            "self_censoring_caveat",
+            "added",
+            "aftermath_note"
+          ],
+          "properties": {
+            "flip_rationale": { "type": "string" },
+            "misread_guard": { "type": "string" },
+            "self_censoring_caveat": { "type": "string" },
+            "added": { "type": "string" },
+            "aftermath_note": { "type": "string" }
+          }
+        },
+        "blast_radius_guidance": {
+          "type": "object",
+          "description": "Reading guidance and method-collateral base rates for the blast_radius_potential axis.",
+          "additionalProperties": false,
+          "required": [
+            "definition",
+            "method_collateral_base_rates",
+            "authoring_notes",
+            "collateral_reveal_guidance",
+            "authoring_status",
+            "aftermath_rule"
+          ],
+          "properties": {
+            "definition": { "type": "string" },
+            "method_collateral_base_rates": {
+              "type": "object",
+              "description": "Per-method typical collateral base rates (0.0-10.0). note is prose; the remaining keys are numeric base rates.",
+              "additionalProperties": false,
+              "required": [
+                "note",
+                "explosive_incendiary_chemical",
+                "vehicle_ramming",
+                "firearm_public_or_crowded",
+                "firearm_isolated_or_precise",
+                "edged_or_blunt_weapon",
+                "hands_on_assault",
+                "abduction_or_seizure",
+                "captive_control",
+                "covert_or_poison_targeted"
+              ],
+              "properties": {
+                "note": { "type": "string" },
+                "explosive_incendiary_chemical": { "type": "number" },
+                "vehicle_ramming": { "type": "number" },
+                "firearm_public_or_crowded": { "type": "number" },
+                "firearm_isolated_or_precise": { "type": "number" },
+                "edged_or_blunt_weapon": { "type": "number" },
+                "hands_on_assault": { "type": "number" },
+                "abduction_or_seizure": { "type": "number" },
+                "captive_control": { "type": "number" },
+                "covert_or_poison_targeted": { "type": "number" }
+              }
             },
-            "medium": {
-              "type": "number"
+            "authoring_notes": { "type": "string" },
+            "collateral_reveal_guidance": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "principle",
+                "tiers",
+                "instance_deferral",
+                "computed_critical_requires_both"
+              ],
+              "properties": {
+                "principle": { "type": "string" },
+                "tiers": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "indiscriminate_or_population_target_revealed",
+                    "public_or_crowd_venue_revealed",
+                    "bystanders_present_or_managed",
+                    "cohesive_group_or_affinity_target_revealed",
+                    "single_individual_or_venue_unrevealed"
+                  ],
+                  "properties": {
+                    "indiscriminate_or_population_target_revealed": { "type": "string" },
+                    "public_or_crowd_venue_revealed": { "type": "string" },
+                    "bystanders_present_or_managed": { "type": "string" },
+                    "cohesive_group_or_affinity_target_revealed": { "type": "string" },
+                    "single_individual_or_venue_unrevealed": { "type": "string" }
+                  }
+                },
+                "instance_deferral": { "type": "string" },
+                "computed_critical_requires_both": { "type": "string" }
+              }
             },
-            "high": {
-              "type": "number"
-            },
-            "critical": {
-              "type": "number"
+            "authoring_status": { "type": "string" },
+            "aftermath_rule": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "rule",
+                "facility_floor_scope",
+                "copycat_tier",
+                "claims_rule",
+                "audience_vs_victims_guard",
+                "anti_harmonization_guard"
+              ],
+              "properties": {
+                "rule": { "type": "string" },
+                "facility_floor_scope": { "type": "string" },
+                "copycat_tier": { "type": "string" },
+                "claims_rule": { "type": "string" },
+                "audience_vs_victims_guard": { "type": "string" },
+                "anti_harmonization_guard": { "type": "string" }
+              }
             }
+          }
+        },
+        "axis_confidence_rubric": {
+          "type": "object",
+          "description": "Derivation rules and level semantics for the per-axis axis_confidence marker (Ruling 10-A).",
+          "additionalProperties": false,
+          "required": ["levels", "derivation_rules", "misread_guard", "provenance"],
+          "properties": {
+            "levels": { "type": "string" },
+            "derivation_rules": { "type": "string" },
+            "misread_guard": { "type": "string" },
+            "provenance": { "type": "string" }
           }
         },
         "rubric_version": {
@@ -105,19 +295,65 @@
       }
     },
     "operations": {
-      "type": [
-        "object",
-        "array"
-      ],
-      "description": "Operations / scenarios composer (V5+). Currently empty array; will become object in V5."
+      "type": "array",
+      "description": "Operations / scenarios composer (V5+). Real data is an empty array; will become a populated structure in V5 (the type will widen to object then)."
     },
     "warden_integration": {
       "type": "object",
-      "description": "WARDEN framework integration metadata."
+      "description": "WARDEN framework integration metadata.",
+      "additionalProperties": false,
+      "required": ["status", "version_target", "notes"],
+      "properties": {
+        "status": { "type": "string" },
+        "version_target": { "type": "string" },
+        "notes": { "type": "string" }
+      }
     },
     "ai_architecture": {
       "type": "object",
-      "description": "AI capability vectors and amplification risk metadata."
+      "description": "AI capability vectors and amplification risk metadata.",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "philosophy",
+        "vectors",
+        "capability_taxonomy",
+        "cpn_impact",
+        "v2_roadmap"
+      ],
+      "properties": {
+        "version": { "type": "string" },
+        "philosophy": { "type": "string" },
+        "vectors": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ai_initiated_physical", "ai_enabled_risks"],
+          "properties": {
+            "ai_initiated_physical": { "type": "string" },
+            "ai_enabled_risks": { "type": "string" }
+          }
+        },
+        "capability_taxonomy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "accelerated_target_research",
+            "synthetic_identity",
+            "deepfake_manipulation",
+            "automated_surveillance",
+            "autonomous_targeting"
+          ],
+          "properties": {
+            "accelerated_target_research": { "type": "string" },
+            "synthetic_identity": { "type": "string" },
+            "deepfake_manipulation": { "type": "string" },
+            "automated_surveillance": { "type": "string" },
+            "autonomous_targeting": { "type": "string" }
+          }
+        },
+        "cpn_impact": { "type": "string" },
+        "v2_roadmap": { "type": "string" }
+      }
     },
     "bibliography": {
       "type": "object",
@@ -129,45 +365,43 @@
     "phase_mappings": {
       "type": "object",
       "description": "Cross-walk from THREAT Matrix phases to NTAC, Calhoun-Weston, CERT, Cyber Kill Chain, MITRE ATT&CK, and MITRE ATLAS stages. Enables AI/RAG cross-framework interoperability across physical, cyber, and AI-systems threat actor models.",
+      "additionalProperties": false,
       "patternProperties": {
         "^phase_[1-4]_(target_development|mobilization|execution|aftermath)$": {
           "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "ntac_pathway",
+            "calhoun_weston",
+            "cert_insider",
+            "cyber_kill_chain",
+            "mitre_attack",
+            "mitre_atlas"
+          ],
           "properties": {
             "ntac_pathway": {
               "type": "array",
-              "items": {
-                "type": "string"
-              }
+              "items": { "type": "string" }
             },
             "calhoun_weston": {
               "type": "array",
-              "items": {
-                "type": "string"
-              }
+              "items": { "type": "string" }
             },
             "cert_insider": {
               "type": "array",
-              "items": {
-                "type": "string"
-              }
+              "items": { "type": "string" }
             },
             "cyber_kill_chain": {
               "type": "array",
-              "items": {
-                "type": "string"
-              }
+              "items": { "type": "string" }
             },
             "mitre_attack": {
               "type": "array",
-              "items": {
-                "type": "string"
-              }
+              "items": { "type": "string" }
             },
             "mitre_atlas": {
               "type": "array",
-              "items": {
-                "type": "string"
-              }
+              "items": { "type": "string" }
             }
           }
         }
@@ -235,13 +469,59 @@
     },
     "instance_conditioning": {
       "type": "object",
-      "description": "Instance-conditioning layer (type-level record): declares the layer, factors, escalate-only rule, binding contract, conditioning hints, status, and provenance. Deep field typing deferred to the conformance-hardening release."
+      "description": "Instance-conditioning layer (type-level record): declares the layer, factors, escalate-only rule, demotion doctrine, raise guidance, inhibitors exclusion, binding contract, conditioning hints, status, and provenance. Fully typed in V1.6.",
+      "additionalProperties": false,
+      "required": [
+        "layer",
+        "factors",
+        "escalate_only_rule",
+        "demotion_doctrine",
+        "raise_guidance",
+        "inhibitors_exclusion",
+        "binding_contract",
+        "conditioning_hints",
+        "status",
+        "provenance"
+      ],
+      "properties": {
+        "layer": { "type": "string" },
+        "factors": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "escalate_only_rule": { "type": "string" },
+        "demotion_doctrine": { "type": "string" },
+        "raise_guidance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["purpose", "patterns"],
+          "properties": {
+            "purpose": { "type": "string" },
+            "patterns": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "inhibitors_exclusion": { "type": "string" },
+        "binding_contract": { "type": "string" },
+        "conditioning_hints": { "type": "string" },
+        "status": { "type": "string" },
+        "provenance": { "type": "string" }
+      }
     }
   },
   "additionalProperties": false,
   "$defs": {
+    "matrix_scope": {
+      "type": "string",
+      "description": "Canonical scope sentence for a matrix, expressed in WHAT/WHY/WHERE terms. Defines the primary threat actor objective that places a tactic in this matrix at authoring time. Type-level field; not case-specific. See matrices.boundary_rule for the framework-vs-operational distinction."
+    },
     "tactic": {
       "type": "object",
+      "additionalProperties": false,
       "required": [
         "id",
         "name",
@@ -252,7 +532,13 @@
         "field_notes",
         "observed_contexts",
         "evidence_basis",
-        "source_refs"
+        "source_refs",
+        "tactic_families",
+        "related_tactics",
+        "indicators",
+        "countermeasures",
+        "response_protocols",
+        "actor_associations"
       ],
       "properties": {
         "id": {
@@ -264,6 +550,8 @@
         },
         "tactic_families": {
           "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
           "items": {
             "type": "string"
           }
@@ -303,6 +591,7 @@
         "observed_contexts": {
           "type": "array",
           "minItems": 1,
+          "uniqueItems": true,
           "items": {
             "type": "string"
           },
@@ -338,6 +627,7 @@
         },
         "related_tactics": {
           "type": "array",
+          "uniqueItems": true,
           "items": {
             "type": "string"
           }
@@ -351,6 +641,7 @@
         "source_refs": {
           "type": "array",
           "minItems": 1,
+          "uniqueItems": true,
           "items": {
             "type": "string"
           },
@@ -493,8 +784,57 @@
         }
       }
     },
+    "tactic_person": {
+      "description": "A tactic in the person matrix: the base tactic plus a matrix-specific id prefix and matrix const. Closes the wrong-matrix-placement class (F07/F08) in schema alone.",
+      "allOf": [
+        { "$ref": "#/$defs/tactic" },
+        {
+          "properties": {
+            "id": { "type": "string", "pattern": "^TM[0-9]{4}$" },
+            "matrix": { "const": "person" }
+          }
+        }
+      ]
+    },
+    "tactic_facility": {
+      "description": "A tactic in the facility matrix: base tactic plus TF id prefix and matrix const 'facility'.",
+      "allOf": [
+        { "$ref": "#/$defs/tactic" },
+        {
+          "properties": {
+            "id": { "type": "string", "pattern": "^TF[0-9]{4}$" },
+            "matrix": { "const": "facility" }
+          }
+        }
+      ]
+    },
+    "tactic_organization": {
+      "description": "A tactic in the organization matrix: base tactic plus TO id prefix and matrix const 'organization'.",
+      "allOf": [
+        { "$ref": "#/$defs/tactic" },
+        {
+          "properties": {
+            "id": { "type": "string", "pattern": "^TO[0-9]{4}$" },
+            "matrix": { "const": "organization" }
+          }
+        }
+      ]
+    },
+    "tactic_infrastructure": {
+      "description": "A tactic in the infrastructure matrix: base tactic plus TI id prefix and matrix const 'infrastructure'.",
+      "allOf": [
+        { "$ref": "#/$defs/tactic" },
+        {
+          "properties": {
+            "id": { "type": "string", "pattern": "^TI[0-9]{4}$" },
+            "matrix": { "const": "infrastructure" }
+          }
+        }
+      ]
+    },
     "indicator": {
       "type": "object",
+      "additionalProperties": false,
       "required": [
         "id",
         "behavior",
@@ -503,7 +843,10 @@
         "phase_relevance",
         "source_refs",
         "modality",
-        "human_social"
+        "human_social",
+        "temporal_signature",
+        "escalation_weight",
+        "escalation_axes"
       ],
       "allOf": [
         {
@@ -534,6 +877,8 @@
         },
         "detection_sources": {
           "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
           "items": {
             "type": "string",
             "enum": [
@@ -558,6 +903,7 @@
         "phase_relevance": {
           "type": "array",
           "minItems": 1,
+          "uniqueItems": true,
           "items": {
             "type": "string",
             "enum": [
@@ -570,6 +916,7 @@
         },
         "correlates_with": {
           "type": "array",
+          "uniqueItems": true,
           "items": {
             "type": "string",
             "pattern": "^IND-[FOI]?[0-9]{4}-[0-9]{2}$"
@@ -579,6 +926,7 @@
         "source_refs": {
           "type": "array",
           "minItems": 1,
+          "uniqueItems": true,
           "items": {
             "type": "string"
           }
@@ -817,6 +1165,7 @@
     },
     "countermeasure": {
       "type": "object",
+      "additionalProperties": false,
       "required": [
         "id",
         "measure",
@@ -827,6 +1176,7 @@
         "time_to_implement",
         "phase_relevance",
         "limitations",
+        "compensates_for",
         "source_refs"
       ],
       "properties": {
@@ -893,6 +1243,7 @@
         "phase_relevance": {
           "type": "array",
           "minItems": 1,
+          "uniqueItems": true,
           "items": {
             "type": "string",
             "enum": [
@@ -908,15 +1259,31 @@
         },
         "compensates_for": {
           "type": "array",
+          "uniqueItems": true,
           "items": {
             "type": "string",
             "pattern": "^(CM|IND)-[FOI]?[0-9]{4}-[0-9]{2}$"
           },
           "description": "Detection Mesh compensation records (transitional). CM- referents record dyadic countermeasure-to-countermeasure compensation (the earlier authoring form, present in the People and Facilities matrices); IND- referents record per-indicator coverage (the forward authoring standard). New authoring records coverage at indicator grain (IND- referents); the committed successor is a scored indicator-level coverage relation from which case compensation is computed."
         },
+        "target_identity": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "named_individual",
+              "role_or_identity_category",
+              "affinity_group",
+              "indiscriminate"
+            ]
+          },
+          "description": "Optional. Mirror of indicator target_identity for the small set of person-matrix countermeasures whose coverage is scoped by victim identity-class. Present on 4 countermeasures; same enum and multi-select semantics as indicator.target_identity."
+        },
         "source_refs": {
           "type": "array",
           "minItems": 1,
+          "uniqueItems": true,
           "items": {
             "type": "string"
           }
@@ -925,6 +1292,7 @@
     },
     "response_protocol": {
       "type": "object",
+      "additionalProperties": false,
       "required": [
         "id",
         "trigger",
@@ -948,6 +1316,8 @@
         },
         "stakeholders": {
           "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
           "items": {
             "type": "string",
             "enum": [
@@ -983,6 +1353,7 @@
         },
         "coordinates_with": {
           "type": "array",
+          "uniqueItems": true,
           "items": {
             "type": "string",
             "pattern": "^RP-[FOI]?[0-9]{4}-[0-9]{2}$"
@@ -995,6 +1366,7 @@
         "source_refs": {
           "type": "array",
           "minItems": 1,
+          "uniqueItems": true,
           "items": {
             "type": "string"
           }
@@ -1003,6 +1375,7 @@
     },
     "actor_association": {
       "type": "object",
+      "additionalProperties": false,
       "required": [
         "actor_id",
         "relevance"
@@ -1031,10 +1404,23 @@
     },
     "actor_profile": {
       "type": "object",
+      "additionalProperties": false,
       "required": [
         "id",
         "name",
-        "category"
+        "category",
+        "category_label",
+        "description",
+        "awareness",
+        "direction",
+        "access_relationship",
+        "phase_compression_risk",
+        "actor_level",
+        "attack_vectors",
+        "primary_matrices",
+        "behavioral_markers",
+        "ai_enabled_risks",
+        "v2_tactic_associations"
       ],
       "properties": {
         "id": {
@@ -1047,19 +1433,99 @@
         "category": {
           "type": "string"
         },
+        "category_label": {
+          "type": "string",
+          "description": "Human-readable label for the actor category."
+        },
         "description": {
           "type": "string"
+        },
+        "awareness": {
+          "type": "string",
+          "description": "Whether the actor is aware of / intends the threat activity (e.g. witting vs unwitting)."
+        },
+        "direction": {
+          "type": "string",
+          "description": "Directionality of the actor relative to the protected entity (e.g. internal vs external)."
+        },
+        "access_relationship": {
+          "type": "string",
+          "description": "The actor's access relationship to the target (insider access, trusted third party, outsider, etc.)."
+        },
+        "phase_compression_risk": {
+          "type": "string",
+          "description": "Type-level note on this actor class's tendency to compress the attack lifecycle phases."
+        },
+        "actor_level": {
+          "type": "string",
+          "description": "Sophistication / resourcing tier of the actor class."
+        },
+        "attack_vectors": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string" },
+          "description": "Attack vectors typically available to this actor class."
+        },
+        "primary_matrices": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": ["person", "facility", "organization", "infrastructure"]
+          },
+          "description": "Target matrices this actor class primarily operates against."
+        },
+        "behavioral_markers": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string" },
+          "description": "Observable behavioral markers characteristic of this actor class."
+        },
+        "ai_enabled_risks": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string" },
+          "description": "AI-specific risk amplifiers applicable to this actor class (may be empty). See ai_architecture.vectors.ai_enabled_risks."
+        },
+        "v2_tactic_associations": {
+          "type": "array",
+          "items": {},
+          "description": "Reserved for V2 tactic associations; currently an empty array on every profile."
+        },
+        "insider_type": {
+          "type": "string",
+          "description": "Optional. Present on insider actor classes (e.g. malicious / negligent / compromised)."
+        },
+        "insider_subtype": {
+          "type": "string",
+          "description": "Optional. Finer insider classification (e.g. recruited / coerced / unwitting)."
+        },
+        "employment_status": {
+          "type": "string",
+          "description": "Optional. Employment status of the insider actor class (e.g. current)."
+        },
+        "state_actor_type": {
+          "type": "string",
+          "description": "Optional. Present on state-actor classes (e.g. direct / proxy / front / sponsored)."
         }
       }
     },
     "bibliography_entry": {
       "type": "object",
+      "additionalProperties": false,
       "required": [
         "type",
         "title",
         "author",
         "date",
-        "relevance_summary"
+        "url",
+        "doi",
+        "relevance_summary",
+        "matrices",
+        "topics"
       ],
       "properties": {
         "type": {
