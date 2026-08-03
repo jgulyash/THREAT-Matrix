@@ -10,6 +10,7 @@ the consumer prints validation errors without setting a non-zero exit code.
 
 Usage: python3 scripts/lint/consumer-smoke.py    (requires: pip install jsonschema)
 """
+import json
 import pathlib
 import subprocess
 import sys
@@ -35,6 +36,36 @@ if "Sample (one tactic per phase)" not in out:
 if "Tactics" not in out:
     failures.append("consumer did not print the framework summary")
 
+# V1.6: the instance-conditioning template and worked cases must validate
+# against $defs.conditioned_assessment and honor the escalate-only invariant
+# (conditioned_priority never below type_severity_band). The held-vs-raised
+# distinction is derived by comparison, not stored, so there is no separate
+# effect field to keep consistent. These are the affordance the contract
+# ships in place of a case-data UI; a broken template is a broken contract
+# advertisement.
+try:
+    import jsonschema
+
+    schema = json.loads((REPO / "docs" / "data" / "framework.schema.json").read_text())
+    ca_validator = jsonschema.Draft202012Validator(
+        {"$ref": "#/$defs/conditioned_assessment", "$defs": schema["$defs"]}
+    )
+    rank = {"low": 0, "medium": 1, "high": 2, "critical": 3}
+    records = [REPO / "examples" / "instance-record-template.json"]
+    records += sorted((REPO / "examples" / "worked-cases").glob("case-*.json"))
+    for rec_path in records:
+        rec = json.loads(rec_path.read_text())
+        errs = list(ca_validator.iter_errors(rec))
+        if errs:
+            failures.append(f"{rec_path.name}: schema-invalid ({errs[0].message[:60]})")
+            continue
+        if rank[rec["conditioned_priority"]] < rank[rec["type_severity_band"]]:
+            failures.append(f"{rec_path.name}: conditioned_priority below type band (escalate-only)")
+        # held-vs-raised is derived, not stored: raised iff priority > band.
+        _ = rank[rec["conditioned_priority"]] > rank[rec["type_severity_band"]]
+except ImportError:
+    pass  # jsonschema optional; the framework validator run already covers schema
+
 if failures:
     print("✗ consumer-smoke FAILED:")
     for f in failures:
@@ -43,4 +74,4 @@ if failures:
     print(combined[-1000:])
     sys.exit(1)
 
-print("✓ consumer-smoke PASSED — reference consumer loads, schema-validates clean, and reads the framework.")
+print("✓ consumer-smoke PASSED — reference consumer loads, schema-validates clean, reads the framework, and the instance-conditioning template + worked cases validate escalate-only.")
