@@ -249,6 +249,13 @@ body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;lin
 .dr-tag.modality-mech{border-left-color:var(--amber);color:var(--amber);background:var(--amber-dim)}
 .dr-tag.modality-hs{border-left-color:var(--teal);color:var(--teal);background:var(--teal-dim)}
 .ind-axis-thin{font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);opacity:.85}
+.type-level-tag{margin-left:8px;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:1px 6px;border-left:2px solid var(--slate);color:var(--slate);background:var(--slate-dim);vertical-align:middle}
+.type-level-note{margin:6px 0 10px;font-size:13px;line-height:1.55;color:var(--text-muted)}
+.type-level-note summary{cursor:pointer;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);user-select:none}
+.type-level-note summary:hover{color:var(--text-muted)}
+.type-level-note[open] summary{margin-bottom:5px}
+.type-level-note a{color:var(--amber);text-decoration:none}
+.type-level-note a:hover{text-decoration:underline}
 .dr-mesh-label{font-size:10px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--text-dim);align-self:center;margin-right:2px}
 .dr-badge-row{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 6px}
 .dr-badge{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;display:inline-flex;align-items:baseline;gap:4px}

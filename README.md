@@ -102,6 +102,8 @@ Escalation scoring covers **all 815 indicator classes across all four matrices a
 
 **assessment_guidance** — tactic-level prose that sits alongside the computed score: credibility / capability / intent / opportunity anchors, false-positive context, threshold guidance, and an escalation priority. Where the weight is the quantitative signal, `assessment_guidance` is the structured human-judgment layer — what raises or lowers confidence in a finding, and what looks like the tactic but isn't.
 
+The severity band is a **type-level** score for the indicator class; it becomes a case priority only when joined to an instance record (target focus, pathway stage, means in hand, tempo, source credibility, proximity/access), and that join may only *raise* the priority above the type band, never lower it. The reference SPA displays the type-level taxonomy; case triage requires the instance join — see the [instance-record worksheet](examples/instance-record-worksheet.md) and [worked cases](examples/worked-cases/).
+
 Full scoring rationale, the axis rubric, and band thresholds live in the `escalation_rubric` block in `docs/data/framework.json`.
 
 ### Cross-Framework Interoperability

@@ -256,7 +256,34 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
             typeof ind.escalation_weight === 'number' ||
             escalationAxes.length > 0) && (
             <div className="adv-section">
-              <div className="adv-section-label">Escalation Profile</div>
+              <div className="adv-section-label">
+                Escalation Profile
+                <span className="type-level-tag">Type-level</span>
+              </div>
+              <details className="type-level-note">
+                <summary>Class score, not a case assessment</summary>
+                This is the score for the indicator <em>class</em>, not an assessment of any
+                specific case. Case priority requires an instance record — target focus,
+                pathway stage, means in hand, tempo, source credibility, and proximity/access —
+                joined to this score, and it may only be <strong>raised</strong> above the type
+                band, never lowered below it. See the{' '}
+                <a
+                  href="https://github.com/jgulyash/THREAT-Matrix/blob/main/examples/instance-record-worksheet.md"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  instance-record worksheet
+                </a>{' '}
+                and{' '}
+                <a
+                  href="https://github.com/jgulyash/THREAT-Matrix/tree/main/examples/worked-cases"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  worked cases
+                </a>
+                .
+              </details>
               <div className="adv-attrs-list">
                 {ind.temporal_signature && (
                   <div className="adv-attr-row-new">

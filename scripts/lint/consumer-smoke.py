@@ -35,6 +35,10 @@ if "Sample (one tactic per phase)" not in out:
     failures.append("consumer did not print the per-phase sample")
 if "Tactics" not in out:
     failures.append("consumer did not print the framework summary")
+if "Instance-conditioning join" not in out:
+    failures.append("consumer did not exercise the instance-conditioning join")
+if "escalate-only max" not in out:
+    failures.append("consumer join did not report the escalate-only computation")
 
 # V1.6: the instance-conditioning template and worked cases must validate
 # against $defs.conditioned_assessment and honor the escalate-only invariant

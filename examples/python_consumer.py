@@ -122,6 +122,47 @@ def print_tactic_brief(tactic: dict) -> None:
     print(f"  {tactic['id']:>8}  ({tactic.get('matrix', '?')}/phase-{tactic.get('phase', '?')})  {tactic.get('name', '')}")
 
 
+BAND_RANK = {"low": 0, "medium": 1, "high": 2, "critical": 3}
+BAND_BY_RANK = {v: k for k, v in BAND_RANK.items()}
+
+
+def conditioned_priority(type_band: str, instance_raise_to: str) -> str:
+    """Escalate-only join: the case priority is the MAX of the indicator's
+    type-level band and the raise the instance evidence argues for. There is
+    deliberately no lowering path — the false-LOW (a mild type with a screaming
+    instance) is the deadliest miss, so an instance can only raise the floor,
+    never sink below it. The held-vs-raised label is derived by comparing the
+    result to the type band, not stored (see $defs.conditioned_assessment)."""
+    return BAND_BY_RANK[max(BAND_RANK[type_band], BAND_RANK[instance_raise_to])]
+
+
+def demo_instance_join(framework: dict) -> None:
+    """Illustrative only: the framework ships NO instances. This joins one
+    indicator's type-level score to a fictional instance record to show the
+    escalate-only conditioned_priority computation a consumer performs."""
+    # Find a real indicator with a severity_band to condition.
+    example = None
+    for t in all_tactics(framework):
+        for ind in t.get("indicators", []):
+            if ind.get("severity_band"):
+                example = ind
+                break
+        if example:
+            break
+    if not example:
+        return
+    type_band = example["severity_band"]
+    # Fictional instance: a specific, capable, accelerating, proximate case.
+    # The framework does not ship this; a consumer holds it case-side.
+    fictional_instance_argues_for = "critical"
+    result = conditioned_priority(type_band, fictional_instance_argues_for)
+    effect = "raised" if BAND_RANK[result] > BAND_RANK[type_band] else "held"
+    print("\nInstance-conditioning join (illustrative; framework ships no instances):")
+    print(f"  Indicator            : {example['id']} (type band: {type_band})")
+    print(f"  Fictional instance   : argues for {fictional_instance_argues_for}")
+    print(f"  Conditioned priority : {result}  [{effect}, escalate-only max]")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="THREAT Matrix reference consumer.")
     parser.add_argument("--framework", type=Path, default=DEFAULT_FRAMEWORK,
@@ -171,6 +212,7 @@ def main() -> int:
             phase_tactics = filter_by_phase(tactics, phase)
             if phase_tactics:
                 print_tactic_brief(phase_tactics[0])
+        demo_instance_join(framework)
 
     return 0
 
