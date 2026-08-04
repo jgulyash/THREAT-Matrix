@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """THREAT Matrix framework.json structural and scoring validator.
 
-Runs twenty-one checks (V01 through V21) over docs/data/framework.json and
+Runs twenty-two checks (V01 through V22) over docs/data/framework.json and
 reports a per-check pass/fail summary. The checks reconstruct the defect
 categories a Principal Architecture Review would hunt for: duplicate IDs,
 dangling Detection Mesh references, wrong matrix placement, typo'd keys,
@@ -93,8 +93,9 @@ CHECK_TITLES = {
     "V19": "tactic matrix field vs containing key",
     "V20": "axis_confidence enum values and axis names",
     "V21": "modality facet presence, enum, and cross-field invariants",
+    "V22": "conditioning_guidance shape, factor enum, and voice constraints",
 }
-CHECK_IDS = [f"V{n:02d}" for n in range(1, 22)]
+CHECK_IDS = [f"V{n:02d}" for n in range(1, 23)]
 
 
 # Fallback thresholds if escalation_rubric.severity_thresholds is absent.
@@ -291,6 +292,7 @@ def run_all_checks(raw_text: str, data: dict) -> dict[str, list[str]]:
             _check_scoring(fail, iid, ind, thresholds)
             _check_axis_confidence(fail, iid, ind)
             _check_modality(fail, iid, ind)
+            _check_conditioning_guidance(fail, iid, ind)
 
         for cm in tactic.get("countermeasures", []) or []:
             if not isinstance(cm, dict):
@@ -428,6 +430,62 @@ def _check_axis_confidence(fail, ind_id, ind):
                 f"axis_confidence value '{level}' is not one of "
                 f"established/inferred/thin",
             )
+
+
+INSTANCE_FACTORS = {
+    "target_focus",
+    "pathway_stage",
+    "means_in_hand",
+    "tempo_trajectory",
+    "proximity_access",
+    "source_credibility",
+}
+
+
+def _check_conditioning_guidance(fail, ind_id, ind):
+    """V22 conditioning_guidance contract. Optional field; when present it
+    must carry exactly probe_factors (1..6 unique instance-factor enum
+    names) and guidance (a non-empty string, max 240 chars, no em or en
+    dashes per the field's voice rubric). Mirrors the schema so the
+    contract stays gated without jsonschema."""
+    cg = ind.get("conditioning_guidance")
+    if cg is None:
+        return
+    if not isinstance(cg, dict):
+        fail("V22", ind_id, "conditioning_guidance must be an object")
+        return
+    if set(cg) != {"probe_factors", "guidance"}:
+        fail(
+            "V22",
+            ind_id,
+            "conditioning_guidance requires exactly probe_factors + guidance",
+        )
+        return
+    pf = cg["probe_factors"]
+    if not isinstance(pf, list) or not 1 <= len(pf) <= 6:
+        fail("V22", ind_id, "probe_factors must be a list of 1 to 6 names")
+    else:
+        for name in pf:
+            if name not in INSTANCE_FACTORS:
+                fail(
+                    "V22",
+                    ind_id,
+                    f"probe_factors '{name}' is not an instance factor",
+                )
+        if len(pf) != len(set(map(str, pf))):
+            fail("V22", ind_id, "probe_factors entries must be unique")
+    guidance = cg["guidance"]
+    if not isinstance(guidance, str) or not guidance.strip():
+        fail("V22", ind_id, "guidance must be a non-empty string")
+    else:
+        if len(guidance) > 240:
+            fail(
+                "V22",
+                ind_id,
+                f"guidance is {len(guidance)} chars; max is 240",
+            )
+        if "—" in guidance or "–" in guidance:
+            fail("V22", ind_id, "guidance contains an em or en dash")
 
 
 MODALITY_VALUES = {"physical", "cyber", "cyber_physical", "human_social"}

@@ -410,6 +410,7 @@
     "detection_mesh": {
       "type": "object",
       "description": "Architectural prose object describing the cross-cutting Detection Mesh property along five axes.",
+      "additionalProperties": false,
       "required": [
         "principle",
         "axes",
@@ -424,6 +425,7 @@
           "type": "array",
           "items": {
             "type": "object",
+            "additionalProperties": false,
             "required": [
               "name",
               "description"
@@ -450,6 +452,7 @@
         },
         "schema_links": {
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "indicators": {
               "type": "string",
@@ -479,7 +482,7 @@
         "raise_guidance",
         "inhibitors_exclusion",
         "binding_contract",
-        "conditioning_hints",
+        "conditioning_guidance",
         "status",
         "provenance"
       ],
@@ -507,7 +510,7 @@
         },
         "inhibitors_exclusion": { "type": "string" },
         "binding_contract": { "type": "string" },
-        "conditioning_hints": { "type": "string" },
+        "conditioning_guidance": { "type": "string" },
         "status": { "type": "string" },
         "provenance": { "type": "string" }
       }
@@ -649,10 +652,12 @@
         },
         "assessment_guidance": {
           "type": "object",
+          "additionalProperties": false,
           "description": "Optional structured per-tactic scoring guidance. Type-level inherent property of the tactic class; consumers cite the criteria preambles, high/low signal anchors, false-positive contexts, and threshold guidance to inform their own assessments. The criteria field on each of credibility/capability/intent/opportunity articulates the underlying judgment rule (e.g., 'Credibility rises with X, Y, Z; falls with A, B, C'); the high_signal_anchors and low_signal_anchors arrays illustrate the criteria with specific patterns and are indicative rather than exhaustive. Not a case-specific score. See CONTRIBUTING.md \"Schema design principles\".",
           "properties": {
             "credibility": {
               "type": "object",
+              "additionalProperties": false,
               "properties": {
                 "criteria": {
                   "type": "string",
@@ -675,6 +680,7 @@
             "capability": {
               "description": "Per-tactic aid for READING a specific actor's capability from evidence — the third of three deliberately distinct capability constructs: impact_potential presumes the class's capability ceiling; informs_axes.actor_capability scores what observing the class reveals about capability; this block guides the evidence reading. The per-case instance judgment is the future instance-conditioning record (B-03).",
               "type": "object",
+              "additionalProperties": false,
               "properties": {
                 "criteria": {
                   "type": "string",
@@ -696,6 +702,7 @@
             },
             "intent": {
               "type": "object",
+              "additionalProperties": false,
               "properties": {
                 "criteria": {
                   "type": "string",
@@ -717,6 +724,7 @@
             },
             "opportunity": {
               "type": "object",
+              "additionalProperties": false,
               "properties": {
                 "criteria": {
                   "type": "string",
@@ -738,6 +746,7 @@
             },
             "false_positive_context": {
               "type": "object",
+              "additionalProperties": false,
               "description": "Patterns where surface behavior matches the tactic's indicators but the underlying activity is legitimate. Criteria + contexts shape mirrors the credibility/capability/intent/opportunity sub-fields.",
               "properties": {
                 "criteria": {
@@ -973,6 +982,7 @@
         },
         "escalation_axes": {
           "type": "object",
+          "additionalProperties": false,
           "description": "Type-level inherent properties of the indicator class along four axes. Sub-fields use _potential and _inverse suffixes deliberately, signalling that these describe the behavior class's typical implications, not case-level realizations at any specific facility or assessment. See CONTRIBUTING.md \"Schema design principles\".",
           "properties": {
             "impact_potential": {
@@ -1032,7 +1042,8 @@
         },
         "informs_axes": {
           "type": "object",
-          "description": "Type-level metadata describing which axes of the larger threat picture this indicator class typically informs, and how finely. Universal resolution scale (resolution, not severity — severity lives in escalation_axes): none = no signal on the axis; weak = resolves only the axis's coarsest grain (the axis-relevant fact exists); moderate = one grain finer (the coarse fact plus one narrowing); strong = resolves to a specific value. Rate the indicator class as written, type-level — never a vivid case instance. Six axes covering actor (capability / intent / opportunity) and the postulated event (timing / target / method). Categorical scale {strong, moderate, weak, none} — not numeric. The framework's collective judgment about how strongly an indicator class informs an axis is itself categorical at root; numeric values would be false precision. For AI/ML consumers needing continuous features, the documented mapping is strong=0.9, moderate=0.6, weak=0.3, none=0.0; this mapping is a downstream-consumer convention only, not framework-level scoring. Coverage: authored across all 190 People-matrix indicator classes (V1.3) via a sealed-blind two-rater inter-rater process gated at weighted κ ≥ 0.60 per chunk; per-axis level semantics are formalized in each axis description (V1.3 refinements #1–#4). Extension to the other matrices is an explicit deferred decision (B-09). Field remains optional on any indicator. See CONTRIBUTING.md \"Schema design principles\".",
+          "additionalProperties": false,
+          "description": "Type-level metadata describing which axes of the larger threat picture this indicator class typically informs, and how finely. Universal resolution scale (resolution, not severity — severity lives in escalation_axes): none = no signal on the axis; weak = resolves only the axis's coarsest grain (the axis-relevant fact exists); moderate = one grain finer (the coarse fact plus one narrowing); strong = resolves to a specific value. Rate the indicator class as written, type-level — never a vivid case instance. Six axes covering actor (capability / intent / opportunity) and the postulated event (timing / target / method). Categorical scale {strong, moderate, weak, none} — not numeric. The framework's collective judgment about how strongly an indicator class informs an axis is itself categorical at root; numeric values would be false precision. For AI/ML consumers needing continuous features, the documented mapping is strong=0.9, moderate=0.6, weak=0.3, none=0.0; this mapping is a downstream-consumer convention only, not framework-level scoring. Coverage: authored across all 815 indicator classes in all four matrices (People in V1.3; Facility, Infrastructure, and Organizations in V1.4–V1.5), each via a sealed-blind two-rater inter-rater process gated at weighted κ ≥ 0.60 per chunk; per-axis level semantics are formalized in each axis description (V1.3 refinements #1–#4). Field remains optional on any indicator. See CONTRIBUTING.md \"Schema design principles\".",
           "properties": {
             "actor_capability": {
               "description": "What observing the class REVEALS about the actor's skill, tradecraft, and operational sophistication — distinct from impact_potential (which presumes the class's capability ceiling) and from assessment_guidance.capability (a per-tactic aid for reading a specific actor's capability from evidence). Grains: none = purely passive/ambient behavior achievable with zero skill and zero deliberate effort (rare); weak = a deliberate action with no tradecraft visible; moderate = a real competence demonstrated (pretext durability, multi-modal coordination, concealed-imaging tradecraft, counter-surveillance); strong = advanced or specialized tradecraft (productive analysis of restricted artifacts, credential fabrication, manufacturing, regulatory-control defeat).",
@@ -1148,17 +1159,40 @@
           ],
           "description": "Optional. Incident-level annotation of the confidence with which the threat actor's primary objective (which sets matrix placement per matrices.boundary_rule) is established. stated = claimed responsibility or manifested intent. strongly_inferred = operational evidence overwhelming. weakly_inferred = operational evidence ambiguous. unknown = no basis for inference; matrix placement defaults to the matrix containing the tactic that produced the most observable consequence (see matrices.boundary_rule). Full IRR protocol for this field is deferred to a future release."
         },
-        "instance_conditioning_hints": {
+        "conditioning_guidance": {
           "type": "object",
           "additionalProperties": false,
-          "description": "Optional TYPE-level guidance (not a per-case record): for this indicator class, which informs_axes tend to lift under instance conditioning and to what level \u2014 the directionality an analyst should probe at assessment time. Seeded from the V1.3 sealed-blind IRR leans (see instance_conditioning). Pilot coverage; full population is a follow-on. Does not affect the type score.",
+          "description": "Framework-provided default investigative-tasking guidance for conditioning this indicator at instance time: which instance factors to probe (probe_factors, machine-filterable) and a natural-language directive (guidance). A starting point, NOT a complete or prescriptive instruction: consumers may follow, extend, or override it with their own playbooks (as with escalation_rubric). Intended for composition across combinations of observed indicators (see detection_mesh / correlates_with), not single-indicator reading. Type-level; does not affect the score.",
+          "required": [
+            "probe_factors",
+            "guidance"
+          ],
           "properties": {
-            "actor_capability": { "type": "string", "enum": ["weak", "moderate", "strong"] },
-            "actor_intent": { "type": "string", "enum": ["weak", "moderate", "strong"] },
-            "actor_opportunity": { "type": "string", "enum": ["weak", "moderate", "strong"] },
-            "threat_timing": { "type": "string", "enum": ["weak", "moderate", "strong"] },
-            "threat_target": { "type": "string", "enum": ["weak", "moderate", "strong"] },
-            "threat_method": { "type": "string", "enum": ["weak", "moderate", "strong"] }
+            "probe_factors": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 6,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "target_focus",
+                  "pathway_stage",
+                  "means_in_hand",
+                  "tempo_trajectory",
+                  "proximity_access",
+                  "source_credibility"
+                ]
+              },
+              "description": "Machine-readable index of the instance factors this indicator's guidance points at. Enum names match $defs.instance_assessment's six factors."
+            },
+            "guidance": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240,
+              "pattern": "^[^—–]*$",
+              "description": "Natural-language practitioner directive: what to go collect and why it decides how dangerous the case is. No em or en dashes (enforced by pattern)."
+            }
           }
         }
       }

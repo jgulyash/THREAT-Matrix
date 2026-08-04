@@ -1,0 +1,9 @@
+{
+  "id": "F16",
+  "category": "cross-field consistency",
+  "description": "Attach a conditioning_guidance whose probe_factors names an invented factor and whose guidance carries an em dash, violating the factor enum and the field's voice constraint.",
+  "expected_check": "V22",
+  "mutations": [
+    {"op": "set", "path": "matrices.person.tactics.0.indicators.0.conditioning_guidance", "value": {"probe_factors": ["momentum_index"], "guidance": "Assess the actor's momentum — the index will show it."}}
+  ]
+}

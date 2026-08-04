@@ -6939,7 +6939,6 @@
               "id": "IND-0205-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"threat_timing": "moderate"},
               "behavior": "Threat actor uses social engineering (pretexted phone calls, urgent-need framing, name-dropping a senior) to convince personnel to grant access not normally extended",
               "category": "communication",
               "detection_sources": [
@@ -6974,7 +6973,6 @@
               "id": "IND-0205-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_capability": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate"},
               "behavior": "Threat actor's claimed sponsoring contact does not exist, is uncontactable, or denies the engagement when verified",
               "category": "communication",
               "detection_sources": [
@@ -7009,7 +7007,6 @@
               "id": "IND-0205-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_intent": "strong"},
               "behavior": "Threat actor uses a cloned access credential, fabricated work order, or spoofed appointment confirmation to pass automated or human verification at an access point",
               "category": "access",
               "detection_sources": [
@@ -7044,7 +7041,6 @@
               "id": "IND-0205-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "strong", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_capability": "moderate", "actor_intent": "moderate", "threat_timing": "moderate", "threat_target": "moderate"},
               "behavior": "Threat actor's access elevation creates an audit anomaly: a badge holder appearing at a tier inconsistent with role, a visitor with no sponsoring record, a contractor with no work-order match",
               "category": "access",
               "detection_sources": [
@@ -7429,7 +7425,6 @@
               "id": "IND-0206-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"threat_target": "moderate"},
               "behavior": "Threat actor has positioned a vehicle, equipment, or staging materials at the position consistent with sustained occupation rather than transient presence",
               "category": "surveillance",
               "detection_sources": [
@@ -7462,7 +7457,6 @@
               "id": "IND-0206-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_capability": "moderate", "actor_intent": "moderate", "threat_timing": "moderate"},
               "behavior": "Threat actor's position is held over a duration inconsistent with normal routine activity at that location: a person at a coffee shop window for three hours, a vehicle in a parking spot with no occupants for an extended period",
               "category": "surveillance",
               "detection_sources": [
@@ -7498,7 +7492,6 @@
               "id": "IND-0206-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_intent": "strong"},
               "behavior": "Threat actor's position is selected for line-of-sight to a known route, residence, vehicle, or appointment of the targeted subject, or to a targeted site, venue, or gathering, with the position itself offering concealment or visual cover",
               "category": "surveillance",
               "detection_sources": [
@@ -7533,7 +7526,6 @@
               "id": "IND-0206-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_capability": "moderate", "threat_target": "moderate"},
               "behavior": "Threat actor's position behavior shows operational alertness: repeated horizon scanning, watch-checking, repeated phone glances, or device-monitoring behavior: inconsistent with passive presence",
               "category": "behavioral_change",
               "detection_sources": [
@@ -7910,7 +7902,6 @@
               "id": "IND-0207-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_capability": "moderate", "actor_intent": "moderate", "threat_target": "moderate"},
               "behavior": "Threat actor maintains observable presence near the target environment over multiple days or weeks without apparent purpose and without proceeding to action",
               "category": "surveillance",
               "detection_sources": [
@@ -7946,7 +7937,6 @@
               "id": "IND-0207-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"threat_timing": "moderate", "threat_target": "moderate"},
               "behavior": "Threat actor's presence pattern shows return-after-withdrawal behavior: leaving the area, then returning at a later time matching changed conditions (different shift, different day-of-week, different security posture)",
               "category": "surveillance",
               "detection_sources": [
@@ -7979,7 +7969,6 @@
               "id": "IND-0207-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "weak"},
-              "instance_conditioning_hints": {"actor_capability": "strong", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "moderate"},
               "behavior": "Threat actor maintains operational artifacts (vehicle staged, equipment cached, cover identity active) over a duration that suggests sustained pause rather than abandonment",
               "category": "surveillance",
               "detection_sources": [
@@ -8013,7 +8002,6 @@
               "id": "IND-0207-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "weak"},
-              "instance_conditioning_hints": {"actor_intent": "strong"},
               "behavior": "Threat actor's communications, financial activity, or online behavior shows continued operational tempo (research on the target, operationally-relevant procurement) inconsistent with a routine waiting period",
               "category": "behavioral_change",
               "detection_sources": [
@@ -8049,7 +8037,6 @@
               "id": "IND-0207-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"threat_timing": "moderate", "threat_target": "moderate"},
               "behavior": "Threat actor's pause coincides with observable environmental triggers: increased security posture, public attention to the target, news of an unrelated similar attack: indicating tactical patience rather than abandonment",
               "category": "behavioral_change",
               "detection_sources": [
@@ -8388,7 +8375,6 @@
               "id": "IND-0208-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_intent": "strong"},
               "behavior": "Threat actor's approach or operational presence aligns with a security shift change, patrol gap, or response posture rotation at the protected environment",
               "category": "surveillance",
               "detection_sources": [
@@ -8424,7 +8410,6 @@
               "id": "IND-0208-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_capability": "moderate", "threat_timing": "strong", "threat_target": "moderate"},
               "behavior": "Threat actor's approach coincides with a recurring crowd event (concert, sporting event, holiday gathering) that creates ambient activity at the protected environment",
               "category": "behavioral_change",
               "detection_sources": [
@@ -8458,7 +8443,6 @@
               "id": "IND-0208-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate"},
               "behavior": "Threat actor's approach uses an environmental condition (weather, low-light, fog) that degrades observation, response time, or evidence collection",
               "category": "surveillance",
               "detection_sources": [
@@ -8526,7 +8510,6 @@
               "id": "IND-0208-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_capability": "strong"},
               "behavior": "Threat actor uses real-time location feeds (social media check-in, live event cameras, public traffic data) to confirm the target's presence and security context immediately before approach",
               "category": "digital",
               "detection_sources": [
@@ -8562,7 +8545,6 @@
               "id": "IND-0208-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"threat_target": "strong"},
               "behavior": "Threat actor's pre-approach activity shows monitoring of the targeted subject's schedule, calendar, or routine (or the operating schedule of a targeted venue or event) through digital surveillance consistent with timing-window selection",
               "category": "digital",
               "detection_sources": [
@@ -8939,7 +8921,6 @@
               "id": "IND-0209-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_intent": "strong", "actor_opportunity": "strong"},
               "behavior": "Threat actor approaches the target's actual environment, observes security response or absence of response, and withdraws without completing any other operational action",
               "category": "surveillance",
               "detection_sources": [
@@ -8975,7 +8956,6 @@
               "id": "IND-0209-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_capability": "strong", "actor_opportunity": "strong"},
               "behavior": "Threat actor's approach pattern repeats across multiple days, occasions, or environmental conditions, with each approach resembling a partial dry run rather than a sustained presence",
               "category": "surveillance",
               "detection_sources": [
@@ -9009,7 +8989,6 @@
               "id": "IND-0209-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_capability": "moderate"},
               "behavior": "Threat actor's approach generates an access log anomaly, CCTV appearance, or reception-staff sighting at the target environment that does not correspond to a verifiable visit purpose",
               "category": "surveillance",
               "detection_sources": [
@@ -9044,7 +9023,6 @@
               "id": "IND-0209-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_opportunity": "strong"},
               "behavior": "Threat actor's approach is timed at recognizably different operational windows across multiple visits (different shift change one day, different day-of-week another, different crowd event a third) consistent with rehearsal of multiple approach variants rather than commitment to a single timing window",
               "category": "surveillance",
               "detection_sources": [
@@ -9078,7 +9056,6 @@
               "id": "IND-0209-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
-              "instance_conditioning_hints": {"actor_capability": "strong"},
               "behavior": "Threat actor abandons or aborts the approach mid-sequence in response to observable security posture or to the threat actor's own assessment of conditions, rather than completing the action",
               "category": "behavioral_change",
               "detection_sources": [
@@ -79535,7 +79512,7 @@
     },
     "inhibitors_exclusion": "Protective factors and inhibitors (stabilizers, stake in conformity) are DELIBERATELY absent from the instance record. Under escalate-only they have no mechanical role: they only argue a case down, and they are the field's most misjudged, most gameable variable. Readers from SPJ traditions (WAVR-21, HCR-20) should read the record as deliberately asymmetric, not incomplete. Inhibitors inform case management, which sits outside the score.",
     "binding_contract": "A type score becomes a case assessment only when joined to its instance record: the conditioned_assessment object requires both. Wherever a score drives case operations (queue ranking, dashboards, handoffs, API triage) it must carry, or be joined to, its instance record. A bare type number rendered without one (including in the reference SPA, which displays Layer-1 taxonomy) is a Layer-1 datum, not an assessment of any case.",
-    "conditioning_hints": "Indicators may carry optional type-level instance_conditioning_hints (which informs_axes tend to lift at instance time), seeded from the V1.3 sealed-blind IRR leans. Pilot coverage (chunk-2B seed); full population is a follow-on.",
+    "conditioning_guidance": "Indicators carry conditioning_guidance: framework-provided default investigative tasking naming the instance factors that are the hidden drivers of danger for that behavior (probe_factors, machine-filterable) with a practitioner directive (guidance). A starting point for consumer playbooks, intended for composition across combinations of observed indicators; consumers may follow, extend, or override it with their own procedures. Authored across all 815 indicators in V1.6; replaces the retired informs-keyed instance_conditioning_hints pilot.",
     "status": "Contract defined V1.3 (2026-07-09); completed V1.6: sixth factor proximity_access added, demotion doctrine, raise guidance, inhibitors exclusion, and credibility articulation recorded (rulings Q1, Q2, Q3a, Q3b, Q4; 2026-07-28 session). The consumer/UI instance-entry surface remains deferred to V2 (SDK ship trigger).",
     "provenance": "Scoring review B-03 (structured instance record) and B-04 (display-binding contract); F12 (false-LOW is deadliest) and F13 (no computed capability discount). Contract completion: rulings Q1 (demotion doctrine), Q2 (raise guidance), Q3a (proximity_access), Q3b (inhibitors exclusion), Q4 (credibility articulation), 2026-07-28 session; see docs/methodology/instance-conditioning-contract-completion.md."
   },
