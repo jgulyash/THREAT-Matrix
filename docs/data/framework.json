@@ -62862,8 +62862,7 @@
                 "CISA-DIT-2023",
                 "GAO-24-106744-2024"
               ],
-              "modality": "cyber_physical",
-              "crossing_mechanism": "digital",
+              "modality": "cyber",
               "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
@@ -62904,8 +62903,7 @@
                 "NIST-SP800-82-2023",
                 "CISA-DIT-2023"
               ],
-              "modality": "cyber_physical",
-              "crossing_mechanism": "digital",
+              "modality": "cyber",
               "human_social": false,
               "temporal_signature": "advancing_early",
               "escalation_axes": {
