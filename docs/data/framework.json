@@ -17793,6 +17793,10 @@
              "threat_target": "weak",
              "threat_method": "none"
            },
+           "conditioning_guidance": {
+             "probe_factors": ["target_focus", "means_in_hand", "tempo_trajectory"],
+             "guidance": "Determine whether the grievance fixes on one site or a class of them, and weigh the capability and pace behind it. The words broadcast intent while revealing little of which place the actor will move on or how ready they are to attack."
+           },
            "facility_target_scope": ["specific_site", "site_class", "symbolic_category"]
           },
           {
@@ -17834,6 +17838,10 @@
              "threat_target": "strong",
              "threat_method": "weak"
            },
+           "conditioning_guidance": {
+             "probe_factors": ["means_in_hand", "tempo_trajectory"],
+             "guidance": "Establish the means behind the research and how fast the actor is moving. Sustained study of one site's schedule fixes the target and the timing windows, but says little about whether the actor can mount an attack on the site."
+           },
            "facility_target_scope": ["specific_site"]
           },
           {
@@ -17873,6 +17881,10 @@
              "threat_timing": "weak",
              "threat_target": "strong",
              "threat_method": "none"
+           },
+           "conditioning_guidance": {
+             "probe_factors": ["means_in_hand", "proximity_access", "tempo_trajectory"],
+             "guidance": "Assess capability, access, and pace. Framing the place as the objective settles intent and target, but whether it becomes an attack on the site rests on means and movement the framing may not reveal."
            },
            "facility_target_scope": ["specific_site"],
            "within_site_focus": ["whole_site"]
@@ -17915,6 +17927,10 @@
              "threat_target": "weak",
              "threat_method": "moderate"
            },
+           "conditioning_guidance": {
+             "probe_factors": ["target_focus", "means_in_hand"],
+             "guidance": "Identify whether a specific site sits behind the study and what the actor can actually field. Reading prior attacks shows method interest and a template, but not the target it will be aimed at or the means to carry it out."
+           },
            "facility_target_scope": ["site_class"]
           },
           {
@@ -17956,6 +17972,10 @@
              "threat_timing": "weak",
              "threat_target": "moderate",
              "threat_method": "moderate"
+           },
+           "conditioning_guidance": {
+             "probe_factors": ["means_in_hand", "tempo_trajectory"],
+             "guidance": "Assess the capability and pace behind the statement. Telling a third party they want to burn or bomb the place makes intent and method plain, but an empty boast and a real plan can read alike until means and movement are checked."
            },
            "facility_target_scope": ["specific_site", "site_class"],
            "within_site_focus": ["structure", "whole_site"]
@@ -18282,6 +18302,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh what the actor can field and how far along they are. Mining public directories and hours confirms the site and its exposure windows, yet says little about the means for an attack or how close the actor is to one."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -18325,6 +18349,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine what the actor can field and how far along they are. Modeling when the site is most crowded shows an intent to maximize harm and points at the timing, but not whether the actor can mount an attack or how soon."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -18366,6 +18394,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess whether the actor can act on the window they have found. Mapping symbolic dates to the site's crowded hours fixes both target and timing, but a chosen date means nothing without the means to strike it."
               },
               "facility_target_scope": ["specific_site"]
             },
@@ -18409,6 +18441,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify which occupant the actor is fixing on and what capability sits behind the interest. Profiling who is inside can mean the building is the target or a group within it, and the profile alone will not tell you which."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -18450,6 +18486,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access", "tempo_trajectory"],
+                "guidance": "Assess capability, access, and pace. Remote imagery study resolves the target but shows nothing of the means, the access, or how fast the actor is moving."
               },
               "facility_target_scope": ["specific_site"]
             }
@@ -18785,6 +18825,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine the means behind the visits and how fast the actor is moving. Casing a site on foot confirms the target and a live interest, but a walk-by can hide the weapon or method and how close an attack has come."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -18825,6 +18869,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "means_in_hand"],
+                "guidance": "Weigh the actor's means and pace. Detailed imagery of entrances and cameras already shows intent, access, and a fixed target, so what is left to learn is whether the actor can carry out an attack on the site and how soon."
               },
               "facility_target_scope": ["specific_site"]
             },
@@ -18867,6 +18915,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Establish the method the actor is timing toward and how near they are. Clocking shift changes and occupancy peaks pins the target and the intent, but the pattern-of-life work can leave the weapon and the day of an attack unshown."
               },
               "facility_target_scope": ["specific_site"]
             },
@@ -18911,6 +18963,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Determine what the actor intends to bring through the opening they are finding. Trying doors and fence lines shows a fixed target and a plan in motion, but not the weapon that would turn an unlocked gate into an attack."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -18951,6 +19007,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the means and pace behind the route study. Mapping standoff, choke points, and parking hints at a vehicle or standoff method against a fixed site, yet stops short of showing what the actor can field or when."
               },
               "facility_target_scope": ["specific_site"]
             }
@@ -19292,6 +19352,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "proximity_access"],
+                "guidance": "Weigh how close the actor is and what access they hold. Pulling floor plans shows real capability, a fixed target, and method thinking, but the paperwork carries no sense of timing or of whether the actor can get inside the site."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -19333,6 +19397,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "source_credibility"],
+                "guidance": "Establish how far along the actor is and how solid the account is. Getting non-public structural drawings through an insider shows capability, access, and a settled target, so the open questions are the timing and whether the report holds."
               },
               "facility_target_scope": ["specific_site"],
               "within_site_focus": ["structure"]
@@ -19376,6 +19444,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "tempo_trajectory"],
+                "guidance": "Determine whether the actor can reach the chokepoints they are studying and how soon. Studying risers and suppression schematics shows a capable actor set on defeating the site's systems, but says nothing of physical access or of when."
               },
               "facility_target_scope": ["specific_site"],
               "within_site_focus": ["systems"]
@@ -19421,6 +19493,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh whether the actor can act on what they understand, and how soon. Reasoning fluently about collapse points shows method knowledge and a fixed target, but knowing where a building fails is not holding the means to bring it down."
+              },
               "facility_target_scope": ["specific_site"],
               "within_site_focus": ["structure"]
             },
@@ -19464,6 +19540,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Assess the means behind the talk and how solid the report is. Describing where the building is weakest shows method thinking against a fixed site, but talk of collapse is cheap until the actor holds the means and the account is confirmed."
               },
               "facility_target_scope": ["specific_site"],
               "within_site_focus": ["structure"]
@@ -19799,6 +19879,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh what the actor plans to bring and how near the act is. Charting camera blind spots shows a fixed target and a plan to defeat detection, yet the coverage map itself carries nothing of the weapon or the timing."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -19841,6 +19925,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the actor's means and pace. Logging guard headcount, armament, and shift changes shows a target and intent to beat the security response, but not the weapon the actor holds or how soon they will use it."
               },
               "facility_target_scope": ["specific_site"]
             },
@@ -19885,6 +19973,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Determine whether the actor can defeat the systems catalogued and what they would use. Cataloguing badge types and alarm zones shows a fixed target and methodical planning, but knowing a lock is not being able to beat it."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -19928,6 +20020,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh the method the standoff work points to and how soon the actor may move. Timing the response force shows a target and a plan built around reaction gaps, but not the weapon that would exploit them or the day it comes."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -19970,6 +20066,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess what the actor is equipped to carry out. Probing detection with a tailgate or a tripped alarm reveals a plan in motion and a fixed target, yet not the weapon or method that would turn the gap into an attack on the site."
               },
               "facility_target_scope": ["specific_site"]
             }
@@ -20310,6 +20410,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Identify which site the actor means to burn and how close they are. Stockpiling accelerants beyond any lawful use makes the method and the intent plain, but the purchase alone does not name the target or the day."
               }
             },
             {
@@ -20351,6 +20455,10 @@
                 "threat_timing": "weak",
                 "threat_target": "none",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify the intended target and whether the actor can build what the parts imply. Split purchases of precursor materials show a settled method and real intent, but components on a bench are not a working device, and they name no site."
               }
             },
             {
@@ -20390,6 +20498,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess what the actor intends once inside and how soon. Buying breaching tools matched to the site's barriers shows a fixed target and a plan to get in, but getting through a door is not the attack, and the tools say nothing of the timing."
               }
             },
             {
@@ -20430,6 +20542,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Determine which site is in the actor's sights and how near the act is. A ramming-ready vehicle or body armor shows intent and a probable method, yet the acquisition points to no particular target and gives no timing."
               }
             },
             {
@@ -20470,6 +20586,10 @@
                 "threat_timing": "weak",
                 "threat_target": "none",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh what the money is meant to buy, which site it serves, and how soon. Liquidating assets to fund procurement shows commitment, but financing is a step removed from a weapon, a target, or a date."
               }
             }
           ],
@@ -20797,6 +20917,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess how much the recruiting adds to the actor's means and how soon it matters. Seeking co-conspirators against a named site shows intent and a fixed target, but a call for help is not yet a capable cell, and it carries no timing."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -20837,6 +20961,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine what the actor plans to do with the access and how near they are. Grooming an insider at the site shows a fixed target and a path in, but an open door is not an attack, and the cultivation says nothing of the weapon or the day."
               },
               "facility_target_scope": ["specific_site"]
             },
@@ -20880,6 +21008,10 @@
                 "threat_target": "weak",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify which venue the group is converging on and what it can field. Turning shared grievance into tasking with a mass objective shows lethal intent, but a public-venue aim is not yet a chosen site, and a group's talk outruns its means."
+              },
               "within_site_focus": ["occupants"]
             },
             {
@@ -20920,6 +21052,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh which site is meant, what the support would buy, and how soon. Asking supporters for funds, transport, or safe houses shows intent and a network forming, but solicitation names no firm target, no means in hand, and no date."
               }
             },
             {
@@ -20961,6 +21097,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Determine which site the cell has settled on and how close the operation is. Assigning finance, access, and action roles shows a maturing plan, but the division of labor may not yet fix a target or reveal how soon they move."
               }
             }
           ],
@@ -21298,6 +21438,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess what the actor plans to carry through the pretext and how soon. A fabricated vendor identity built for the site shows capability, intent, and a fixed target, but the cover story shows nothing of the weapon or the timing."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -21338,6 +21482,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh the actor's means and pace. Forged badges and vendor markings imitating the site's providers show capability and a settled target, yet the disguise is a way in, not the attack, and it carries no timing."
               },
               "facility_target_scope": ["specific_site"]
             },
@@ -21380,6 +21528,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify which site the cover is being built to reach and what the actor can field. Standing up a shell company and a fabricated work history shows patient tradecraft, but points to no fixed target yet and says nothing of the means to act."
               }
             },
             {
@@ -21421,6 +21573,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Verify what the actor is equipped to do once the pretext works. Testing the cover story on staff and probing for keys shows a fixed target, access within reach, and a near-term plan, so what stays hidden is the weapon and method."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -21461,6 +21617,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess what the actor intends to bring and how long the plan runs. A real job granting recurring unescorted access shows capability and a fixed target, but employment is patient positioning, not the attack, and fixes no method or date."
               },
               "facility_target_scope": ["specific_site"]
             }
@@ -21819,6 +21979,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Assess the means behind the leak and how solid the account is. A statement naming the site as the object of a coming act settles intent and target, but leaked words can outrun any real capability, and the report has to hold up first."
               }
             },
             {
@@ -21862,6 +22026,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Weigh whether the actor can act on the deadline and how solid the report is. A 'before Friday' warning tied to the site fixes target, intent, and a clock, but a countdown is only as dangerous as the means behind it."
               }
             },
             {
@@ -21905,6 +22073,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Weigh the capability behind the resolve and how solid the reporting is. 'Nothing left to lose' framing about the place shows an actor who has decided, but decision is not capacity, and second-hand talk needs to be stood up."
               }
             },
             {
@@ -21948,6 +22120,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Establish whether the actor can act and how close the endpoint is. Drafting a manifesto or giving away possessions presupposes a final act against the place, but legacy behavior signals resolve, not the means or the exact hour."
               }
             },
             {
@@ -21991,6 +22167,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess whether capability matches the tempo. A surge from deliberate planning into compressed, action-directed activity shows the actor closing on an attack, but acceleration is not arming, and reveals nothing of what they can field."
               }
             }
           ],
@@ -22324,6 +22504,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess what the actor is equipped to carry out. Staging a dropped package to clock the guard response reveals a rehearsing actor and a fixed target, but the test shows nothing of the weapon or method waiting behind it."
               }
             },
             {
@@ -22365,6 +22549,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Weigh the means behind the rehearsal. Dry-approach passes meant to flush plainclothes security show a methodical actor closing on the site, yet flushing a guard is not an attack, and the pass carries no sign of the weapon."
               }
             },
             {
@@ -22407,6 +22595,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh what the actor plans to do and how soon. Working out which cameras and watchers can see them shows counter-surveillance discipline against a fixed site, but concealment is preparation, and it reveals neither the method nor the timing."
               }
             },
             {
@@ -22448,6 +22640,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the actor's means and pace. Changing appearance, vehicle, and timing across visits shows a disciplined effort to deny security a baseline, but tradecraft is not an attack, and it shows nothing of the weapon or the day."
               }
             },
             {
@@ -22491,6 +22687,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh what the actor can field and how near the act is. Running surveillance-detection routes and cut-outs shows advanced tradecraft protecting a fixed target, but evading a tail is not the means to attack the site, and gives no timing."
               }
             }
           ],
@@ -22823,6 +23023,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the actor's capability and how close the rehearsals are to the real approach. Timing the run shows a fixed target and window, but not what the actor will bring or when practice becomes the act."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -22865,6 +23069,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the actor's means and how close the dry run sits to execution. A full rehearsal of approach, entry, and egress can make the plan and target plain, but not the weapon the actor will carry or whether the next run is live."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -22906,6 +23114,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess the actor's capability and intended method. Probing guard reaction reveals a plan and a target, but not what the actor is equipped to carry out."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -22946,6 +23158,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "proximity_access"],
+                "guidance": "Identify which real site the practice points to and whether the actor can reach it. Rehearsing a method against a stand-in makes the intended attack plain, but the mock layout may not name the true target or the access to it."
               }
             },
             {
@@ -22986,6 +23202,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the actor's means and pace. Casing crowd density at peak hours can fix the target and the moment, but a reconnaissance pass shows nothing of the weapon or how soon the actor intends to act."
               },
               "facility_target_scope": ["specific_site"]
             }
@@ -23332,6 +23552,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Establish what the cache holds and how soon it is meant for use. Pre-positioning materiel near the site fixes the target, but accelerant, explosives, and breaching tools carry very different danger, and the cache does not show which."
+              },
               "facility_target_scope": ["specific_site"]
             },
             {
@@ -23373,6 +23597,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine what the disguised means actually is and when it is meant to arrive. Concealing a device as ordinary cargo shows a plan to defeat screening at a known target, but not the payload's reach or the delivery window."
               }
             },
             {
@@ -23413,6 +23641,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage", "tempo_trajectory"],
+                "guidance": "Establish target candidates, how far along the actor is, and the pace. Going dark and compartmenting the plan can signal a decision to act, but operational security is built to hide the target, the stage, and the timing all at once."
               }
             },
             {
@@ -23454,6 +23686,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh what the actor intends to carry in and how soon. A vendor or delivery disguise buys unremarked access to a known site, but the cover itself shows nothing of the weapon or the moment chosen to use it."
               },
               "facility_target_scope": ["specific_site"]
             },
@@ -23497,6 +23733,10 @@
                 "threat_timing": "weak",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify target candidates and where the actor sits on the pathway. Scrubbing accounts and staging an alibi can mark the final stretch before action, but sanitizing the trail is meant to leave the target and the plan unreadable."
               }
             }
           ],
@@ -23838,6 +24078,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess what the actor is equipped to do once inside. Pre-cutting a fence or defeating a sensor readies a way in at a fixed site, but preparing the breach reveals nothing of the weapon or method meant to follow it."
               }
             },
             {
@@ -23880,6 +24124,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Determine what the actor is carrying across the breach. Cutting through the perimeter shows a committed crossing at a known site, but whether it precedes an attack turns on means the fence line does not reveal."
               }
             },
             {
@@ -23921,6 +24169,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess whether the vehicle is the weapon or the delivery for one. Ramming the barrier forces open a known target under a committed timeline, but the breach alone does not show what the actor brings through it."
               }
             },
             {
@@ -23963,6 +24215,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm the report and assess what the actor is armed to do past the guard. Forcing a manned entry point by assault shows commitment and a fixed target, but not the weapon or the scope of what follows the breach."
+              },
               "severity_floor": "critical"
             },
             {
@@ -24004,6 +24260,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Establish what the actor carries over the boundary. Scaling the wall during occupied hours shows a deliberate entry aimed at a populated site, but the climb itself reveals nothing of the method meant to follow."
               }
             }
           ],
@@ -24352,6 +24612,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess what the actor carries and which interior space they are converging on. Defeating a badge-controlled door shows a committed push past the public areas of a known building, but not the weapon or the specific objective inside."
               }
             },
             {
@@ -24395,6 +24659,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify the interior objective and what the actor brings to it. Moving through back-of-house routes to dodge cameras shows practiced interior knowledge of the site, but not the specific space being converged on or the means meant for it."
               }
             },
             {
@@ -24438,6 +24706,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Weigh what the actor is carrying deeper into occupied space. Slipping through a controlled door behind an authorized person shows a low-profile advance into a known building, but the entry method shows nothing of the weapon or intended act."
               }
             },
             {
@@ -24482,6 +24754,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess what the actor is equipped to do on reaching the crowd. Advancing on a packed sanctuary or trading floor during operating hours makes the objective and moment plain, but not the weapon that would turn presence into an attack."
+              },
               "within_site_focus": ["occupants"]
             },
             {
@@ -24525,6 +24801,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm the report and assess what the actor is armed with past the desk. Applying force to interior staff shows a committed push toward an objective inside a known building, but not the weapon or the full scope of the intended act."
               },
               "severity_floor": "critical"
             }
@@ -24879,6 +25159,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Establish what the means in transit actually is and how close delivery is. Moving a device or vehicle-borne load toward the site fixes the target and a near-term window, but its destructive reach and the arrival time remain to be judged."
               }
             },
             {
@@ -24919,6 +25203,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess the actual yield of the emplaced device. Siting it against a load-bearing element or a high-throughput node shows an intent to maximize harm at a known site, but placement alone does not reveal how much damage the means can do."
               },
               "within_site_focus": ["structure", "occupants"]
             },
@@ -24961,6 +25249,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine the quantity staged and how soon it is meant to be used. Caching accelerant near the site makes the method and target plain, but a small stash and a mass-casualty load can look alike, and the cache does not set the timeline."
               }
             },
             {
@@ -25003,6 +25295,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Assess whether the vehicle carries a device and how solid the read is. Parking it at a standoff-critical spot outside any delivery window fits a vehicle-borne attack, but an abandoned car and a loaded one look alike from outside."
+              },
               "within_site_focus": ["structure"]
             },
             {
@@ -25043,6 +25339,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm the report and gauge the device's yield. Returning to arm or connect an emplaced means marks the last step before initiation, but an arming act seen from outside leaves whether it is real and how large in question."
               }
             }
           ],
@@ -25382,6 +25682,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh what the actor commands from the position and whether this is the day. Holding an overwatch on the entrance shows a target and a readiness posture, but the vantage does not show the weapon or whether watching has become acting."
               }
             },
             {
@@ -25422,6 +25726,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm the position is what it appears and assess the weapon behind it. A standoff firing point with a line into occupied areas shows method, target, and moment together, so what remains is verification and the reach of the arm."
               },
               "within_site_focus": ["occupants"]
             },
@@ -25464,6 +25772,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine whether the staged vehicle is the whole weapon and how near the run is. Orienting it toward a crowded approach shows a ramming plan at the site, but staging hides a possible device aboard and the moment chosen to launch."
               },
               "within_site_focus": ["occupants"]
             },
@@ -25508,6 +25820,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess what the actor holds and whether this position is the whole plan. Covering the egress at a choke point during occupied hours fits an intent to trap people, but blocking a way out often supports a primary act the position hides."
+              },
               "within_site_focus": ["occupants"]
             },
             {
@@ -25548,6 +25864,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Assess what the actor is equipped for and how firm the read is. Ranging distances and checking sightlines during occupied hours fits pre-attack readiness, but a lingering figure can be misjudged, and the posture shows no weapon."
               }
             }
           ],
@@ -25878,6 +26198,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish what the actor intends to use and how far along the planning has run. Fixing on the peak-occupancy window shows a target and a hunt for harm, but the schedule study reveals nothing of the method or the stage the actor has reached."
+              },
               "within_site_focus": ["occupants"]
             },
             {
@@ -25919,6 +26243,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify the target candidates and what the actor can bring to the date. Building toward a symbolic anniversary fixes the moment and shows conviction, but the calendar says little about which site is chosen or the means to strike it."
               }
             },
             {
@@ -25960,6 +26288,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess what the actor intends to carry through the gap. Testing when coverage is thinnest shows a target and a search for the softest moment, but probing the schedule reveals nothing of the weapon or the act it enables."
               }
             },
             {
@@ -26003,6 +26335,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine the actor's means and how close the rehearsal sits to the event. Casing the crowd's peak fixes the target and moment, but measuring conditions shows neither the weapon nor whether the next visit is the attack."
+              },
               "within_site_focus": ["occupants"]
             },
             {
@@ -26045,6 +26381,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Weigh how solid the reporting is and what the actor can field. A stated window and 'when they're all there' framing name the target and moment, but a third-hand account and a real countdown can read alike, and talk is not capability."
               },
               "within_site_focus": ["occupants"]
             }
@@ -26368,6 +26708,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess what the actor can do to the controls and which system is the objective. Breaking into a mechanical or life-safety space shows access to the building's guts, but not the sabotage intended or which utility matters most."
+              },
               "within_site_focus": ["systems"]
             },
             {
@@ -26410,6 +26754,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm the manipulation and establish what the actor means to disperse. Reaching the air-handling controls to open a dispersal path shows method and target, so what remains is whether it is real and what would go into the system."
+              },
               "within_site_focus": ["systems", "occupants"]
             },
             {
@@ -26450,6 +26798,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Establish what primary act the tampering clears the way for and how near it is. Degrading fire suppression shows a move to defeat the life-safety response, but that is rarely the whole plan, and it does not show what follows or when."
               },
               "within_site_focus": ["systems"]
             },
@@ -26494,6 +26846,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "means_in_hand"],
+                "guidance": "Confirm the access reaches live control systems and assess what the actor can command. Reaching the automation network shows capability and intent, but an IT-side foothold proves nothing about reach into the systems that run the building."
+              },
               "within_site_focus": ["systems"]
             },
             {
@@ -26534,6 +26890,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Determine which utility is the objective and whether the actor can act on it. Reaching a power feed, water main, or gas line shows positioning against the lifelines, but the service point is not the tooling to cut or contaminate it."
               },
               "within_site_focus": ["systems"]
             }
@@ -26879,6 +27239,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess what the actor carries and whether this approach is the live one. A final approach matching an earlier rehearsal shows a fixed target and movement, but the route hides the weapon and whether practice has become the act."
               }
             },
             {
@@ -26922,6 +27286,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Confirm the approach and assess what the concealed means can do. Covering the last leg with a weapon or device handled to beat casual observation shows a committed run at the site, but not the reach of what is being carried in."
               }
             },
             {
@@ -26966,6 +27334,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Assess whether the vehicle carries a device and how firm the read is. Lining it up at a run-up angle toward a crowded entrance fits a ramming or vehicle-borne attack now, but from outside a loaded vehicle and an empty one look the same."
+              },
               "within_site_focus": ["occupants"]
             },
             {
@@ -27009,6 +27381,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm the sighting and establish what the actor is armed with. Tactical dress, a last-resort demeanor, and a live-stream set for the walk-up point to an attack underway, but the markers do not show the weapon or the scope intended."
               }
             },
             {
@@ -27052,6 +27428,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Identify the objective the actor is driving toward and what they carry to it. Breaking from public flow to bypass screening shows a committed move inside a known site, but the deviation shows neither the weapon nor the point converged on."
               }
             }
           ],
@@ -27375,6 +27755,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility"],
+                "guidance": "Confirm the report and the scope. An active incendiary attack on an occupied structure leaves nothing about the actor to weigh; what changes the response is whether it is real and how far it reaches."
+              },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
             },
@@ -27418,6 +27802,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the attack and gauge its reach. An incendiary thrown into an occupied interior during operating hours leaves little about the actor in doubt; what shapes the response is whether the report holds and how far the fire will run."
+              },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
             },
@@ -27458,6 +27846,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Verify the fire and weigh whether it is an end or a step toward a worse one. Setting an empty structure alight shows method and target with no one exposed, but an unoccupied burn can be a warning or a rehearsal for an attack on people."
               },
               "within_site_focus": ["structure"]
             },
@@ -27501,6 +27893,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm the report and assess how much is staged. Readying accelerant and an ignition source against an occupied building marks the last moment before a fire, so the response turns on whether it is real and how large the blaze it would set."
+              },
               "within_site_focus": ["structure", "occupants"]
             },
             {
@@ -27542,6 +27938,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the attack and track how fast it is spreading. Multiple accelerant-fed points of origin in an occupied building show a plan built to overwhelm egress, so what drives the response is confirmation and how far the fire has already run."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -27873,6 +28273,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm the report and assess whether the device is viable. An abandoned package positioned against an occupied facility can be a working charge or a hoax, and the placement alone will not tell you which or what it can do."
+              },
               "within_site_focus": ["structure", "occupants"]
             },
             {
@@ -27916,6 +28320,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the report and gauge the scope. A detonation inside an occupied structure leaves little about the actor to weigh; what shapes the response is whether it is real and whether a follow-on or secondary blast is coming."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -27961,6 +28369,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Verify the report and assess the device's viability. A vehicle left in a no-standoff position can carry a working charge or nothing, and whether it endangers the occupied site rests on what is actually aboard, not the parking."
+              },
               "within_site_focus": ["structure", "occupants"]
             },
             {
@@ -28001,6 +28413,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Establish whether this is genuine initiation and that a real device backs it. Cover-taking and a hand-held control can precede a blast or mean nothing, and the actor's motion alone will not show whether the means to attack the site exists."
               },
               "within_site_focus": ["structure", "occupants"]
             },
@@ -28044,6 +28460,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the second device is real and determine how many more may be set. A charge placed on the evacuation route is a layered attack on responders, and whether the sequence continues is what shapes how the site is approached."
               },
               "within_site_focus": ["occupants"]
             }
@@ -28385,6 +28805,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the report and gauge how far the compromise has gone. Cutting a load-bearing member of an occupied structure can bring it down, and how close it is to failure, not the act itself, decides how fast the building must be cleared."
+              },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
             },
@@ -28427,6 +28851,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the activity and assess how near collapse the structure is. Undermining the foundation of an occupied building is an attack in progress, and the trajectory toward failure sets the window to evacuate, not the digging on its own."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -28471,6 +28899,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "pathway_stage"],
+                "guidance": "Establish how far the tampering has progressed and whether the actor is done. Loosened bolts and cut welds can leave a structure one load event from failure, and discovery captures a moment, not whether more members are already compromised."
+              },
               "within_site_focus": ["structure"]
             },
             {
@@ -28512,6 +28944,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the sabotage and weigh how close the structure is to giving way. Deliberately overloading an occupied floor is an active attack, and what governs the response is the margin left before failure, which the act alone does not reveal."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -28555,6 +28991,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "pathway_stage"],
+                "guidance": "Determine how much protection has been stripped and whether a fire attack is being set up. Bare load-bearing steel fails fast under heat, so the danger turns on the extent and whether an incendiary act is meant to follow."
               },
               "within_site_focus": ["structure"]
             }
@@ -28896,6 +29336,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Identify what attack the disabled suppression is meant to enable and whether the actor is equipped for it. Closing a sprinkler valve often precedes an incendiary attack, and the sabotage shows preparation, not what the follow-on will bring."
+              },
               "within_site_focus": ["systems", "occupants"]
             },
             {
@@ -28937,6 +29381,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm a release is underway and gauge how far it has spread. Driving a hazardous substance through the air handling of an occupied building exposes every zone on the circuit, and the reach, not the act, sizes the response."
               },
               "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
@@ -28980,6 +29428,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Establish whether the blackout is the attack or the setup for one, and confirm the sabotage. Killing power to an occupied site disables egress lighting and life-safety, and the outage often clears the way for a larger act it conceals."
               },
               "within_site_focus": ["systems", "occupants"]
             },
@@ -29026,6 +29478,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine what attack the blinded defenses are meant to cover and what the actor can bring. Defeating access control and surveillance at the head-end suppresses warning, but leaves the method and the reach into the site unshown."
+              },
               "within_site_focus": ["systems"]
             },
             {
@@ -29067,6 +29523,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the contamination is real and gauge how widely it has distributed. Introducing an agent through a cross-connection reaches everyone the building's supply serves, and how far it has traveled is what shapes the response."
               },
               "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
@@ -29415,6 +29875,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Confirm this is a deliberate attack and watch for a dismounted assault to follow. A vehicle driven into a crowded frontage can be the whole act or the opening of one, and the ram will not show whether an armed attacker is about to emerge."
+              },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
             },
@@ -29458,6 +29922,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify hostile intent and judge how immediate the impact is. A vehicle accelerating toward the site can be an attack run or an erratic driver, and seconds separate the two, so the vector and closing speed carry the decision."
+              },
               "within_site_focus": ["occupants"]
             },
             {
@@ -29498,6 +29966,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Establish what the actor intends once inside and whether they are armed. Overpowering reception to force entry is the breach, not the attack it opens, and what happens past the door turns on method and capability the entry does not show."
               },
               "severity_floor": "critical"
             },
@@ -29540,6 +30012,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine what follows the breach and what the actor carries. Working doors and glazing with breaching tools resolves entry to the occupied site, but says nothing of the intended act inside or the means to carry it out."
               }
             },
             {
@@ -29582,6 +30058,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Assess what the defeated standoff opens for and what the actor can deliver. Ramming the bollard line clears a path, and the danger lies in the act it enables, a vehicle, a charge, or an assault, which the ram does not reveal."
               }
             }
           ],
@@ -29923,6 +30403,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "means_in_hand"],
+                "guidance": "Weigh whether the occupation is escalating and what the group could turn to. A sit-in that halts operations reads as disruption, and the live question is whether it hardens toward violence and whether the means for that are present."
+              },
               "within_site_focus": ["whole_site"]
             },
             {
@@ -29966,6 +30450,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Establish whether the blocked egress accompanies another attack and how hard it is to clear. Chaining exits endangers those inside most if paired with a further act, and lock-on hardware sets how long occupants stay trapped."
+              },
               "within_site_focus": ["occupants"]
             },
             {
@@ -30007,6 +30495,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "pathway_stage"],
+                "guidance": "Determine how long the blockade can hold and whether it is a prelude to more. Sealing the perimeter denies ingress and egress, and what matters is whether the group escalates and how entrenched they are, which the blockade does not show."
               },
               "within_site_focus": ["whole_site"]
             },
@@ -30051,6 +30543,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm the report and assess the capacity to harm those held. Seizing occupants inside the facility leaves little doubt about intent, and what shapes the response is whether the account holds and whether the actors are armed."
+              },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
             },
@@ -30094,6 +30590,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess the materiel behind the siege and where the actors mean to take it. Fortifying the position shows commitment, and the supplies and weapons on hand, and whether harm to occupants is next, decide how the standoff is worked."
               },
               "within_site_focus": ["whole_site"]
             }
@@ -30427,6 +30927,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Establish whether this defacement is a one-off or the leading edge of something worse. Graffiti and broken glass read as low-level, and what matters is whether the actor's targeting is escalating toward an attack."
+              },
               "within_site_focus": ["structure"]
             },
             {
@@ -30470,6 +30974,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Determine whether the threat message points toward coming violence and how the actor's conduct is trending. A slur or extremist mark carries intent plainly, but whether it precedes an attack the marking does not reveal."
+              },
               "within_site_focus": ["structure"]
             },
             {
@@ -30511,6 +31019,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Assess whether this is random damage or one incident in a hardening campaign against the site. Damage found after the fact can be opportunistic or targeted, and whether it escalates toward a direct attack is what it leaves open."
               },
               "within_site_focus": ["structure"]
             },
@@ -30554,6 +31066,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine where the campaign is heading and whether the actor can act beyond property. Marking that intensifies after each cleanup shows fixation, and the danger is whether that fixation reaches violence and whether the means exist."
+              },
               "within_site_focus": ["structure"]
             },
             {
@@ -30594,6 +31110,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify what the destroyed symbol represents and who else stands in the actor's sights. Toppling a monument strikes what it stands for, and whether the grievance behind it points toward people or a broader attack is not settled by the act."
               },
               "within_site_focus": ["structure"]
             }
@@ -30917,6 +31437,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm a release has occurred and gauge how far the supply has carried it. Dosing the potable system exposes everyone the occupied site serves, and the distribution already reached, not the act, sizes the exposure."
+              },
               "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
             },
@@ -30960,6 +31484,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the release and determine which zones it has reached. Feeding a contaminant into the air handling spreads it through every occupied space on the circuit, and the extent of that spread is what governs the response."
               },
               "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
@@ -31005,6 +31533,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Establish whether a release is underway and whether the substance is hazardous. Tampering at an intake with an unexplained container may be an attack in progress or an empty scare, and the sighting confirms neither the danger nor a release."
+              },
               "within_site_focus": ["systems", "occupants"]
             },
             {
@@ -31047,6 +31579,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the contamination and determine how much has been served or consumed. Introducing an agent into the cafeteria line exposes everyone who eats there, and how far the tainted stock has moved is what shapes the response."
               },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
@@ -31092,6 +31628,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the symptoms trace to a deliberate release and gauge how widely it has spread. Acute illness and an unexplained odor can mark a contaminant attack or a natural cause, and the source and reach set the response, not the symptoms."
               },
               "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
@@ -31433,6 +31973,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Establish what attack the trapped occupants are being held for and what harm they face. Chaining the emergency exits is a force multiplier for a concurrent act, and the danger turns on that paired attack and the means behind it."
+              },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
             },
@@ -31476,6 +32020,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine what act the silenced alarms are meant to precede and whether the actor is equipped for it. Defeating detection and suppression removes the site's warning, and the sabotage shows setup, not the capability the follow-on will carry."
+              },
               "within_site_focus": ["systems", "occupants"]
             },
             {
@@ -31516,6 +32064,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the secondary hazard is real and determine whether more are placed. A device set on the responder approach is a deliberate attack on the response itself, and how many are staged is what shapes how the scene is worked."
               },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
@@ -31560,6 +32112,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Assess what attack the severed communications are covering and how soon it lands. Jamming radio and duress alarms delays notification during an act, and the outage points to a concurrent attack whose method and timing it deliberately hides."
+              },
               "within_site_focus": ["systems"]
             },
             {
@@ -31602,6 +32158,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Establish what the removed guards were standing between and the actor's next move. Neutralizing on-site security strips the first line of response, and the danger lies in the attack that follows and the capability behind it."
               },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
@@ -31939,6 +32499,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Establish the line and destination of the withdrawal. A purposeful move away from the site while occupants shelter can close the attack or set up a second, and the flight itself does not say which."
               }
             },
             {
@@ -31981,6 +32545,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Determine whether the trail-breaking ends the operation or screens a move to a next target, and how far interdiction can reach. Switching vehicles and appearance defeats pursuit but hides whether the actor is escaping or repositioning."
               }
             },
             {
@@ -32023,6 +32591,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Assess whether the staged escape marks a planner who may strike again and what the caches hold. Vehicles and supplies laid in before the act show preparation, and whether they also support a follow-on is what the discovery leaves open."
               }
             },
             {
@@ -32064,6 +32636,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "pathway_stage"],
+                "guidance": "Establish whether the actor is truly clear of the site or still among the evacuees, and whether this ends the attack. Blending with the crowd can leave the actor on scene, and the confusion that aids escape hides whether more is intended."
               }
             },
             {
@@ -32106,6 +32682,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Determine how far the actor has gone and whether the ground they take is a stop or a base for another attempt. Distance and a prepared safe location defeat interdiction reach, and whether the operation is over is not answered by the flight."
               }
             }
           ],
@@ -32441,6 +33021,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Weigh whether the sanitized scene points to an actor who means to strike again and how solid attribution can be. Carrying off tools and remnants thins the record, and whether enough remains to tie the act to the actor is the open question."
               }
             },
             {
@@ -32482,6 +33066,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Assess whether the counter-forensic effort marks a repeat actor and what remains to build a case on. Burning and crushing items shows deliberateness, and how far it degrades attribution shapes what can be established."
               }
             },
             {
@@ -32523,6 +33111,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Assess the staged evidence as deliberate misdirection and press toward the real actor still at large. Planting items to implicate another party is meant to mislead, and taking it at face value hides who acted and whether they act again."
               }
             },
             {
@@ -32564,6 +33156,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Establish whether the return signals a still-active operation and whether the actor or a proxy is back on scene. Coming back to sanitize items accepts fresh exposure, and that renewed presence can mean the case is not as closed as it seems."
               }
             },
             {
@@ -32605,6 +33201,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Determine whether the disposal marks an actor preparing to reoffend and what the broken chain costs attribution. Routing items through third parties severs the link between item and actor, and how solid a case remains is left in doubt."
               }
             }
           ],
@@ -32948,6 +33548,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Assess whether the return to routine closes the actor out or masks a pause before another attempt. A sudden reversion can confirm involvement or mean nothing, and the changed appearance alone will not tell you which."
               }
             },
             {
@@ -32988,6 +33592,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Weigh how firmly the evidence ties this actor to the attack against the rehearsed alibi. Coached corroboration can bury a real link or shield an innocent party, and who else was recruited can reveal a network still in play."
               }
             },
             {
@@ -33029,6 +33637,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Establish what still ties the actor to the attack once the operational identity is gone. Reactivating a dormant clean profile can backstop an innocent narrative or a fresh operation, and the deletions can hide either."
               }
             },
             {
@@ -33069,6 +33681,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility"],
+                "guidance": "Determine whether the displayed grief marks a genuinely affected party or the actor blending into the response. Performed normalcy can read identically to real distress, so the case rests on what independently ties the actor to the attack."
               }
             },
             {
@@ -33109,6 +33725,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "pathway_stage"],
+                "guidance": "Identify whether reverting to an ordinary role near the site preserves the access used once and leaves it open for a return. Shedding the persona can end the operation or set up a second approach, and the ordinary cover masks which."
               }
             }
           ],
@@ -33448,6 +34068,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Assemble what surviving records still connect the network before the trail closes. Bulk destruction can mean an operation shutting down or a group protecting itself to strike again, and the wipe alone will not separate the two."
               }
             },
             {
@@ -33489,6 +34113,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage"],
+                "guidance": "Identify who the actor reaches out to and what the instructions direct. Coordinating cover and go-dark orders can reveal a network still intact and able to act again, though the contact alone will not show its full reach."
               }
             },
             {
@@ -33530,6 +34158,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Assess what the witness can attest to and whether the intimidation signals an actor still willing to act. Silencing pressure can mean the account is damaging enough to tie the attack home, and the threat marks continued intent."
               }
             },
             {
@@ -33571,6 +34203,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage"],
+                "guidance": "Establish whether the dispersal winds the network down or preserves it in pieces to reassemble. Pre-arranged silence and cell separation can protect a group that intends to operate again, and the breakup can look like collapse."
               }
             },
             {
@@ -33612,6 +34248,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "pathway_stage"],
+                "guidance": "Determine the insider's access and whether it remains open after the concealment. Coaching a facilitator to survive internal review can protect a channel available for a second attack, and the audit may show nothing wrong."
               }
             }
           ],
@@ -33953,6 +34593,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Assemble the flow of the structured deposits and where they land. Sub-threshold movement can launder operation proceeds or reflect ordinary cash handling, and where the money settles can show funding held for another attempt."
               }
             },
             {
@@ -33993,6 +34637,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Establish whether the laundered funds dead-end or resurface as usable capital. Mixing and chain-hopping can break attribution while preserving money to finance a follow-on, and the obfuscation points to a capable, resourced actor."
               }
             },
             {
@@ -34033,6 +34681,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Determine whether moving assets offshore signals flight or repositioning of resources for continued activity. Opaque ownership can hide the money's link to the attack, and the destination can hint at where the actor intends to operate next."
               }
             },
             {
@@ -34072,6 +34724,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Identify who receives the disbursements and how firmly each ties a recipient to the attack. Payouts can expose funders and facilitators, and the same network can back another, though the transfers will not name everyone."
               }
             },
             {
@@ -34113,6 +34769,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Assess whether the front is laundering proceeds or rebuilding a war chest for the next operation. Routing money through a shell can both hide the source and reseed capability, and the vehicle can read as an ordinary business."
               }
             }
           ],
@@ -34447,6 +35107,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Assess whether tracking coverage is idle fixation or the actor measuring effect to plan a repeat. Logging casualty figures can mean an operator gauging success against similar sites, and the archive will not show the intent behind it."
               }
             },
             {
@@ -34487,6 +35151,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory", "target_focus"],
+                "guidance": "Determine how far the actor has moved from review toward the next operation. Critiquing response times and countermeasures shows intent to try again and fix what failed, and the debrief will not reveal when or where the next attempt falls."
               }
             },
             {
@@ -34526,6 +35194,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Weigh what the debrief reveals about intent to continue and how firmly it ties the author to the attack. A private after-action record can confirm authorship and a plan to refine and repeat, though a boast is not always a true account."
               }
             },
             {
@@ -34566,6 +35238,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Establish whether sharing lessons is bravado or seeding capability in others who may act. Disseminating what worked can equip future attackers against similar sites, and the audience it reaches matters more than the boast itself."
               }
             },
             {
@@ -34605,6 +35281,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Assess whether returning to the site is damage curiosity or renewed reconnaissance. Reviewing the aftermath can validate one attack or scope a second against the same target, and physical revisits keep the actor's access to the site alive."
               }
             }
           ],
@@ -34930,6 +35610,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Determine what still attributes the fire despite a scrubbed residue signature. The absence of expected accelerant traces can itself point to a capable hand, and that sophistication suggests an actor able to repeat the act cleanly."
               }
             },
             {
@@ -34969,6 +35653,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility"],
+                "guidance": "Assemble the procurement and financial trail behind the cleaning materials. Wiped surfaces can defeat the physical evidence the attack should have left, but the purchase of anti-forensic supplies can tie the actor back to the scene."
               }
             },
             {
@@ -35009,6 +35697,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility"],
+                "guidance": "Establish what recoverable digital evidence survives the wipe and where the link persists. Purged history and reset devices can sever the trail to the facility, though anti-forensic artifacts and cloud copies can still tie the actor in."
               }
             },
             {
@@ -35050,6 +35742,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Weigh whether studying evidence-recovery methods marks a planned operation and which facility it points to. Research into residue thresholds can signal deliberate counter-forensic preparation, and the study alone will not fix the target."
               }
             },
             {
@@ -35089,6 +35785,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Confirm the fire was set despite a scene staged to read as accidental. Disrupted burn patterns and planted ignition sources can steer examiners toward an innocent cause, and defeating origin analysis marks a capable actor able to repeat it."
               }
             }
           ],
@@ -35441,6 +36141,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm the device is real and gauge its reach before responders close in. A secondary on the approach route already shows the intent, the target, and the timing; what remains is whether it will function and how wide the effect runs."
+              },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
             },
@@ -35483,6 +36187,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Verify the overwatch read and establish what the actor is armed with. Taking a vantage over the muster point points to a renewed attack aimed at responders and returning occupants, and the open question is the weapon in hand."
               },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
@@ -35528,6 +36236,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Assess whether the threatened second wave is backed by real capability or a bluff to prolong fear. The claim names responders and returning occupants as targets, but a follow-on that exists and one that does not can sound identical."
+              },
               "within_site_focus": ["occupants"]
             },
             {
@@ -35569,6 +36281,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Establish whether the object is a live device and how far its effect reaches before the area is cleared. Placement at the reunification point already marks the target and the intent; the render-safe outcome and the yield are what remain."
               },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
@@ -35612,6 +36328,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Determine whether the actor's timing to responder arrival marks a trigger-man or a hesitant escape. Re-approaching as the response builds can mean a secondary effect about to fire, and what they carry decides how bad a re-engagement gets."
               },
               "within_site_focus": ["occupants"]
             }
@@ -35939,6 +36659,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Assess whether the claim is genuine or opportunistic. Groups and individuals claim attacks they did not carry out, and a true claim can also announce a campaign meant to continue, so weigh what corroborates authorship."
               }
             },
             {
@@ -35980,6 +36704,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify the other targets the stated ideology implicates. A manifesto framing this facility as symbolic can mark it as one of several like it, and the reasoning can point past the attack to the actor's next objective."
               }
             },
             {
@@ -36021,6 +36749,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Verify whether the signature genuinely attributes the act or borrows another group's mark. A tag or organizational name can pin authorship and imply a wider network, but symbols are easy to copy to misdirect."
               }
             },
             {
@@ -36063,6 +36795,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Establish whether an organization stands behind the claim or an individual borrows its authority. Routing through a formal communique channel can point to a structured group able to strike again, and the path itself is evidence."
               }
             },
             {
@@ -36105,6 +36841,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Weigh what pre-staged claim materials reveal about premeditation and authorship. A statement prepared before the attack can firmly tie the actor to it and mark disciplined planning, and the same discipline can extend to a next operation."
               }
             }
           ],
@@ -36436,6 +37176,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Assess whether releasing attack footage is a closing flourish or fuel for imitation. Self-recorded media pushed to a mass audience can seed copycat attacks against similar sites, and the reach it gains matters more than the posting itself."
               }
             },
             {
@@ -36475,6 +37219,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Determine whether the trending push is organic reaction or a coordinated network at work. A run hashtag campaign can reveal an organized sympathizer base able to amplify or mount a next act, and the coordination is the tell."
               }
             },
             {
@@ -36516,6 +37264,10 @@
                 "threat_target": "none",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify which facilities the propaganda package steers imitators toward. Packaging a manifesto with attack media is built to inspire copycats, and the framing can name the kind of site the actor wants struck next."
+              },
               "facility_target_scope": ["site_class"]
             },
             {
@@ -36556,6 +37308,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage"],
+                "guidance": "Weigh what a pre-staged media kit shows about planning and organizational depth. Release channels positioned before the attack mark deliberate amplification and a structure that can support another, though the kit will not size the network."
               }
             },
             {
@@ -36596,6 +37352,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage"],
+                "guidance": "Establish the size and coordination of the network re-uploading the content. Mirroring and re-cutting to beat takedowns can sustain reach long after the attack and keep inspiring imitators, and the persistence marks committed supporters."
               }
             }
           ],
@@ -36921,6 +37681,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify the symbolic logic behind the date and place and what it implicates next. Anchoring the attack to an anniversary can encode a movement's meaning and flag the next significant date or site, though symbolism can be over-read."
               }
             },
             {
@@ -36962,6 +37726,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Verify whether the iconography genuinely marks the actor's affiliation or is planted to misdirect. Emblems left at the scene can tie the act to a movement and its other members, but borrowed symbols can frame a rival."
               }
             },
             {
@@ -37003,6 +37771,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify the community singled out and whether the warning presages more against it. Framing the attack as a message to a congregation marks that population as the target, and intimidation can precede a sustained campaign, not a single act."
               }
             },
             {
@@ -37043,6 +37815,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Assess how effectively the instructional framing could move others to act. Presenting the attack as a model invites emulation against similar facilities, and the danger shifts to who takes it up, which the message alone will not reveal."
               },
               "facility_target_scope": ["site_class"]
             },
@@ -37085,6 +37861,10 @@
                 "threat_timing": "none",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Determine what the coded references decode to and which subculture they place the actor in. In-group numerology can confirm a movement affiliation, though outsiders can mimic the grammar to borrow its legitimacy."
               }
             }
           ],
@@ -37401,6 +38181,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Assess whether the actor can deliver the threatened consequence behind the demand. A completed attack lends the threat weight, but an empty follow-on and a real one can read the same, and capability is what separates them."
               }
             },
             {
@@ -37441,6 +38225,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Weigh whether a real follow-on backs the deadline or the countdown is pressure without teeth. The clock fixes when the consequence is said to fall, but an empty warning and a real one can read the same, and capability tells them apart."
               }
             },
             {
@@ -37484,6 +38272,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Confirm whether the claimed follow-on device actually exists. The demand asserts a live capability against the facility to force compliance, and treating it as real is prudent, but the threat's teeth rest on a capability still unverified."
               }
             },
             {
@@ -37524,6 +38316,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess the capability behind the follow-on threat this payment channel is built to collect on. Specifying a wallet or drop shows the actor expects a concession, not that they can carry out the renewed strike they warn of."
               }
             },
             {
@@ -37566,6 +38362,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Weigh whether broadcasting the demand signals real leverage or theater to force the target's hand. Going public amplifies pressure, but a threat with capability behind it and a hollow one both play the same to an audience."
               }
             }
           ],
