@@ -35,9 +35,7 @@ ALLOWLIST = {
     ("infrastructure", "within_site_focus"),
     # (modality / human_social facet migration COMPLETE V1.6: now universal, no carve-out)
     # (cpn_notes retired everywhere at the V1.6 facet migration; carve-out removed)
-    # conditioning_guidance authoring in progress (S38): carve-outs removed
-    # per matrix as each authoring splice lands; all gone at 815/815.
-    ("infrastructure", "conditioning_guidance"),
+    # (conditioning_guidance authored 815/815 in V1.6: universal, no carve-out)
 }
 
 MATRIX_IND_PREFIX = {

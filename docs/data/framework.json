@@ -63414,6 +63414,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Assess the actor's capability and access to the node they have singled out. Choosing a cascade point by downstream reach shows what an attack would hit, not whether the actor can reach it or take it down."
+              },
               "correlates_with": [
                 "IND-I0406-04",
                 "IND-I0305-01"
@@ -63454,6 +63458,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "tempo_trajectory"],
+                "guidance": "Establish the actor's access to the station and the pace of the effort. Obtaining restricted load studies fixes the target and shows resourcefulness, but neither the reach to act nor how soon shows in the paperwork."
               }
             },
             {
@@ -63491,6 +63499,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify which facility the actor is settling on and what they could bring against it. Weighing candidates by downstream reach shows a shortlist and intent, but the target stays open while the comparison runs and the means are unseen."
               }
             },
             {
@@ -63528,6 +63540,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "proximity_access", "means_in_hand"],
+                "guidance": "Identify which site the actor is converging on and whether they can reach it. Ranking by single-point-of-failure value shows intent, not the access or capability to act on any of them."
               },
               "correlates_with": [
                 "IND-I0308-03",
@@ -63569,6 +63585,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess whether the actor can command the controller they have singled out and how fast they are moving. Querying exposed ICS databases resolves a high-value target and hints at a path in, but reachability is not the ability to act."
               },
               "correlates_with": [
                 "IND-I0301-02"
@@ -63892,6 +63912,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Assess the actor's means and access to the assets this map singles out. Tracing where one feeder's loss propagates shows what an attack would achieve, not whether the actor can reach or disable any node on it."
+              },
               "correlates_with": [
                 "IND-I0305-03"
               ]
@@ -63929,6 +63953,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Determine what the actor could bring against the convergence point and which traced route matters most. Walking rights-of-way to find where services meet narrows the target, but the means to act and the final choice stay open."
               },
               "correlates_with": [
                 "IND-I0204-05",
@@ -63970,6 +63998,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify which single points of failure the actor now prizes and what they could do with the knowledge. Eliciting no-redundancy assets from staff sharpens target candidates, but capability to act on them is not in the questions asked."
               }
             },
             {
@@ -64007,6 +64039,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh the actor's capability to act on the mapped controllers and the pace of the mapping. Scanning to find which nodes cascade shows a target taking shape, but a dependency map is not a demonstrated ability to trip any of them."
               },
               "correlates_with": [
                 "IND-I0301-02"
@@ -64047,6 +64083,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "means_in_hand"],
+                "guidance": "Establish whether the actor can reach and act on the single points of failure these assessments enumerate. Obtaining criticality annexes shows which services underpin the most dependents, not the access or capability to strike."
               }
             }
           ],
@@ -64369,6 +64409,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess what the actor is equipped to do and how far the reconnaissance has progressed. Photographing fence lines and camera placement fixes a site and its weak points, but the means to breach it, and how soon, stay out of frame."
+              },
               "correlates_with": [
                 "IND-F0103-01",
                 "IND-F0105-01",
@@ -64410,6 +64454,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Determine the actor's means to act and their route to physical access. Overflying a fenced site maps equipment and approach corridors the road cannot show, but surveying a layout is not the tools to do harm or a way inside."
+              },
               "correlates_with": [
                 "IND-I0304-01",
                 "IND-I0204-03"
@@ -64450,6 +64498,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify which of the cataloged sites the actor is prioritizing and what they could bring to bear. Assembling public imagery of dispersed locations shows breadth of interest, not a settled target or the means to strike one."
+              },
               "correlates_with": [
                 "IND-F0102-05",
                 "IND-I0204-01"
@@ -64489,6 +64541,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Confirm the actor's capability and the specific site in view. Testing locks and monitoring response after dark shows a plan near action, but rehearsing entry is not proof of what the actor can do inside, or which site is real."
               },
               "correlates_with": [
                 "IND-F0103-04",
@@ -64532,6 +64588,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess what the actor will do with purchased access and which facility it serves. Buying patrol schedules, blind spots, or badges secures a way in, but a key in hand is not the means to cause harm, and the target may be one of several."
               },
               "correlates_with": [
                 "IND-I0204-04"
@@ -64849,6 +64909,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "tempo_trajectory"],
+                "guidance": "Establish the actor's access to the control environment and the pace of the effort. Reconstructing setpoints and interlock logic from stolen design docs shows knowledge to manipulate the process, not a path in or how close the actor is."
+              },
               "correlates_with": [
                 "IND-F0104-01",
                 "IND-I0201-02",
@@ -64892,6 +64956,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess whether the actor's foothold reaches the controls and how fast they are working. Pulling historian data teaches the normal rhythm a manipulation would hide inside, but reading telemetry is not the ability to change it."
+              },
               "correlates_with": [
                 "IND-I0201-05",
                 "IND-I0303-04",
@@ -64933,6 +65001,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine the actor's capability to act on what they read and how soon. Reading controller configs and safety setpoints maps the interlocks an attack must defeat, but knowing the limits is not the ability to override them."
               },
               "correlates_with": [
                 "IND-F0104-03",
@@ -64978,6 +65050,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Weigh the actor's access to the process and what they could do with insider knowledge of its failure modes. Cultivating engineers for undocumented bypass procedures deepens capability, but talk of weaknesses is not a hand on the controls."
+              },
               "correlates_with": [
                 "IND-I0302-05"
               ]
@@ -65018,6 +65094,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access"],
+                "guidance": "Confirm whether the actor has reached the live process this replica models. Rehearsing an attack sequence on a digital twin or bench rig shows method, capability, and intent, but a test rig proves nothing about access to the real plant."
               },
               "correlates_with": [
                 "IND-I0201-01"
@@ -65337,6 +65417,10 @@
                 "threat_target": "moderate",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess what the actor can do with the fingerprinted devices and which one matters. Enumerating reachable PLCs and control protocols shows an OT foothold, but an inventory is not a chosen target or the means to command any of it."
+              },
               "correlates_with": [
                 "IND-I0206-03",
                 "IND-I0206-01",
@@ -65379,6 +65463,10 @@
                 "threat_target": "moderate",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "means_in_hand"],
+                "guidance": "Establish whether the actor can reach the interfaces they catalogued and what they could do with them. Inventorying externally facing HMIs from a search engine marks candidate entry points, not a foothold or a capability to act."
+              },
               "correlates_with": [
                 "IND-I0205-02",
                 "IND-I0205-05"
@@ -65419,6 +65507,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "means_in_hand"],
+                "guidance": "Assess whether the probes are yielding real access and what the actor could do with it. Testing VPNs, jump hosts, and vendor portals shows a hard search for a way into the control network, but a probed path is not an achieved foothold."
               },
               "correlates_with": [
                 "IND-I0205-01",
@@ -65461,6 +65553,10 @@
                 "threat_target": "moderate",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh what the actor can build from captured command sequences and the pace of the work. Analyzing control traffic teaches the exact commands an attack would replay, but knowing the syntax is not a working capability to issue it."
+              },
               "correlates_with": [
                 "IND-I0206-03"
               ]
@@ -65500,6 +65596,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "means_in_hand"],
+                "guidance": "Establish the actor's access to the environment these documents describe and what they could do inside it. Reconstructing control architecture from public filings builds a picture of the target, not a path into it or a capability to act."
               },
               "correlates_with": [
                 "IND-I0206-02"
@@ -65822,6 +65922,10 @@
                 "threat_target": "moderate",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "target_focus"],
+                "guidance": "Assess the actor's access to deliver the malware and the asset it is meant for. Building protocol-native code for a controller family is real capability, but a weapon without a path or a chosen victim is potential, not reach."
+              },
               "correlates_with": [
                 "IND-I0201-03",
                 "IND-I0301-05"
@@ -65864,6 +65968,10 @@
                 "threat_target": "moderate",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "tempo_trajectory"],
+                "guidance": "Establish whether the actor has a way onto the target controllers and how close they are to using it. Standing up the vendor toolchain lets them build and test malicious logic, but authoring it is not access to load it or a sign of when."
+              },
               "correlates_with": [
                 "IND-I0206-01"
               ]
@@ -65904,6 +66012,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine what the actor can do with trusted access and how soon they will act. Acquiring engineering credentials puts them inside with legitimate authority, but a valid login is not the means to manipulate the process."
               },
               "correlates_with": [
                 "IND-F0108-01",
@@ -65948,6 +66060,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "target_focus"],
+                "guidance": "Confirm whether the actor has reached the real system and which asset the toolkit targets. Rehearsing commands against a bench replica shows mature capability and a near plan, but a toolkit is not access to the production network."
               }
             },
             {
@@ -65986,6 +66102,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "tempo_trajectory"],
+                "guidance": "Assess the actor's access to the live target and the pace of preparation. Buying identical controllers to build a test bench shows commitment to a manipulation capability, but a lab is not a foothold in the real plant."
               },
               "correlates_with": [
                 "IND-I0201-03"
@@ -66313,6 +66433,10 @@
                 "threat_target": "weak",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify the asset the group is forming to attack and what it can collectively bring. Assigning reconnaissance, transport, and breach roles shows organization and intent, but the specific target and the crew's real capability stay unseen."
+              },
               "correlates_with": [
                 "IND-F0107-01",
                 "IND-0105-04",
@@ -66356,6 +66480,10 @@
                 "threat_target": "weak",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Establish what the pooled funds are meant to buy and which objective they serve. Earmarking money for materials, travel, and equipment shows a resourced, serious effort, but a war chest names neither the target nor how near the action is."
+              },
               "correlates_with": [
                 "IND-F0106-05",
                 "IND-I0405-03"
@@ -66398,6 +66526,10 @@
                 "threat_target": "weak",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Determine which facility the staging points toward and what the group can do on arrival. Arranging vehicles, storage, and staging shows preparation converging toward action, but names neither the exact target nor the means in hand."
+              },
               "correlates_with": [
                 "IND-0105-02",
                 "IND-I0210-04"
@@ -66439,6 +66571,10 @@
                 "threat_target": "weak",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Assess what the vetting is ultimately aimed at and how near the operation is to acting. Screening recruits for commitment and legal risk shows a plot forming under discipline, but security checks reveal neither the target nor the timeline."
+              },
               "correlates_with": [
                 "IND-0105-01"
               ]
@@ -66478,6 +66614,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify the facility the cells are organized against and how far along the operation is. Compartmenting roles under a coordinator shows a disciplined structure built to survive scrutiny, but hides both the target and the pathway."
               },
               "correlates_with": [
                 "IND-F0107-05",
@@ -66806,6 +66946,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "tempo_trajectory"],
+                "guidance": "Assess whether the cultivation is yielding real access and how fast it is moving. Working an operator with control-plane privileges through grievance and gradual requests aims at a trusted path in, but courtship is not access secured."
+              },
               "correlates_with": [
                 "IND-F0107-02",
                 "IND-I0405-02",
@@ -66848,6 +66992,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "means_in_hand"],
+                "guidance": "Determine whether the inducement is accepted and what the actor could do with the access it buys. Offering money for credentials or an unsupervised window targets a way in, but an offer made is not access gained, or the means to act."
+              },
               "correlates_with": [
                 "IND-0105-04",
                 "IND-I0208-03"
@@ -66889,6 +67037,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "tempo_trajectory"],
+                "guidance": "Establish whether the coercion is producing access and how soon it could be used. Forcing privileged access through blackmail or threats to family shows the actor committing to a foothold, but the access may not have changed hands."
+              },
               "correlates_with": [
                 "IND-I0208-02"
               ]
@@ -66929,6 +67081,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Assess whether the approach is developing into real collaboration and which facility it concerns. Cold-contacting a disgruntled operator to test receptiveness is an early move, revealing neither a committed insider nor the site in view."
+              },
               "correlates_with": [
                 "IND-I0208-05"
               ]
@@ -66968,6 +67124,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine what the actor will do with the mapped defenses and when. Tasking a cultivated engineer to chart segmentation, interlocks, and maintenance windows shows an insider collecting for an attack, but is not yet a method to act."
               },
               "correlates_with": [
                 "IND-I0206-02"
@@ -67299,6 +67459,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess what the actor can do with vendor access and which client is the target. Gaining a trusted third party's standing remote access opens a path into many OT environments, but a seat is not the means to act or a single victim named."
+              },
               "correlates_with": [
                 "IND-F0108-05",
                 "IND-I0205-04",
@@ -67341,6 +67505,10 @@
                 "threat_target": "moderate",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Identify which downstream operators the actor means to reach and how close delivery is. Seizing a trusted update channel positions malicious code to arrive through a signed path, but names neither the victims among many nor when it ships."
+              },
               "correlates_with": [
                 "IND-I0209-02"
               ]
@@ -67381,6 +67549,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Establish which facility the tampered components are bound for and the timeline to delivery. Taking control of a hardware supplier to plant a covert modification builds a patient path to the target, but names neither the end site nor when."
               }
             },
             {
@@ -67418,6 +67590,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "means_in_hand"],
+                "guidance": "Determine whether the third-party employee is granting access and what the actor could do with it. Pressuring a maintenance firm's staff to widen privileged access targets a route in, but a request is not access held or the means to use it."
               },
               "correlates_with": [
                 "IND-I0205-04"
@@ -67458,6 +67634,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "means_in_hand"],
+                "guidance": "Assess which third-party path the actor will exploit and whether it can be reached. Mapping vendor trust relationships to find the weakest access route shows planning toward an indirect approach, not a foothold secured or the means to act."
               }
             }
           ],
@@ -67785,6 +67965,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access", "tempo_trajectory"],
+                "guidance": "Assess capability, access, and pace. Naming a specific asset as the object of attack makes the target plain, but whether the threat becomes an attack on the system rests on means and movement the words do not show."
+              },
               "correlates_with": [
                 "IND-F0109-01",
                 "IND-0107-02",
@@ -67826,6 +68010,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify whether the actor is moving from admiration toward action and which asset is in view. Studying and emulating a prior infrastructure attacker adopts a method and signals intent, but shows neither a chosen target nor real progress."
               },
               "correlates_with": [
                 "IND-0107-05",
@@ -67869,6 +68057,10 @@
                 "threat_target": "weak",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Assess capability and access. The deadline fixes intent and timing, but whether the actor can reach the infrastructure target and carry out an attack rests on means and access a countdown can hide."
+              },
               "correlates_with": [
                 "IND-F0109-02",
                 "IND-I0408-02"
@@ -67911,6 +68103,10 @@
                 "threat_target": "weak",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine the target, the means, and the pace. Cutting ties and reorganizing life around preparation shows commitment to an attack, but which facility, with what, and how fast can stay hidden."
+              },
               "correlates_with": [
                 "IND-F0109-04",
                 "IND-0107-07"
@@ -67952,6 +68148,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Weigh how solid the reporting is and what the actor can actually bring. A leaked decision to strike a named target makes intent and target plain, but a secondhand account can inflate or invent, and the words show no capability."
               },
               "correlates_with": [
                 "IND-F0109-03",
@@ -68278,6 +68478,10 @@
                 "threat_target": "moderate",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access"],
+                "guidance": "Confirm whether the actor has live access to the real control system. Drilling the intrusion against a lab replica shows capability and intent, but a rehearsal proves nothing about reach into the production network."
+              },
               "correlates_with": [
                 "IND-I0301-02"
               ]
@@ -68318,6 +68522,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "tempo_trajectory"],
+                "guidance": "Verify reach into the live process and how fast the actor is moving. Modeling how a setpoint or safety function reacts shows the target and method are understood, but a digital twin says nothing about access or timing."
+              },
               "correlates_with": [
                 "IND-I0302-01"
               ]
@@ -68357,6 +68565,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "target_focus"],
+                "guidance": "Identify which live site the actor can actually reach. Bench-testing tooling against matching controllers proves the method works, but the vendor match alone does not fix the target or confirm access to it."
               }
             },
             {
@@ -68394,6 +68606,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess what the actor is equipped to do at the end of the run. Walking the route and rehearsing the sequence off-hours resolves target, access, and timing, but the dry run can hide the capability the actor will bring on the day."
               },
               "correlates_with": [
                 "IND-F0201-01",
@@ -68436,6 +68652,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access"],
+                "guidance": "Confirm whether the actor has live access to the production system. Validating a captured configuration shows capability and intent, but a sandbox proves nothing about reach into the real network."
               },
               "correlates_with": [
                 "IND-I0301-03"
@@ -68755,6 +68975,10 @@
                 "threat_target": "weak",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Determine which assets the persona is meant to reach and how soon. A branded contractor cover can put the actor next to many dispersed field sites, but it points at no single target and sets no clock on an attack."
+              },
               "correlates_with": [
                 "IND-F0202-04",
                 "IND-0106-01"
@@ -68797,6 +69021,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Confirm what the actor intends to do once inside and against what. The inspector pretext buys access to control rooms and process areas, but it can conceal both the capability in hand and the specific target."
+              },
               "correlates_with": [
                 "IND-0106-04",
                 "IND-I0306-01"
@@ -68837,6 +69065,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Identify the capability behind the entry and the site it is aimed at. Forged credentials and a work order secure scheduled access, but paperwork alone shows neither what the actor can do nor which asset an attack will fall on."
               },
               "correlates_with": [
                 "IND-0106-02"
@@ -68879,6 +69111,10 @@
                 "threat_target": "weak",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Establish which site the shell company is built to reach and on what horizon. Mirroring a real provider to win subcontract work opens insider access broadly, but the cover fixes no single target and no timeline for an attack."
+              },
               "correlates_with": [
                 "IND-0106-03"
               ]
@@ -68918,6 +69154,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Verify what the actor will bring and how close the plan is. Repeated delivery-driver approaches map guard rotation and gate routine, but the reconnaissance can hide the means and the pace of an attack."
               }
             }
           ],
@@ -69237,6 +69477,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine what manipulation is coming and how soon. Wiping audit logs before acting signals the actor is closing in, but the cleanup shows neither the method in hand nor exactly when an attack will land."
+              },
               "correlates_with": [
                 "IND-I0301-02",
                 "IND-I0403-01"
@@ -69277,6 +69521,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the means and the pace behind the watching. Repeatedly charting camera fields and blind spots resolves how the actor sees the site, but says nothing of what they can bring or how fast they are moving toward an attack."
               }
             },
             {
@@ -69312,6 +69560,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Identify what the actor is equipped with and how far along they are. Scanning for sensors and alarm links maps the site's defenses, but the sweep can hide the capability and the tempo of an attack."
               }
             },
             {
@@ -69348,6 +69600,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Establish which site the actor keeps returning to and how close they are. Swapping plates and rotating rentals to beat plate readers shows careful, sustained intent, but can hide both the target and the pace of an attack."
               },
               "correlates_with": [
                 "IND-0108-01"
@@ -69388,6 +69644,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess what the actor is equipped to carry out. Tripping a minor alarm to time the guard response reveals a plan, a target, and the reaction window, but not the capability the actor will bring to an attack."
               },
               "correlates_with": [
                 "IND-F0201-03"
@@ -69716,6 +69976,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Determine what the actor is equipped to do at the equipment yard. Cutting the fence of an unmanned substation puts them on target with clear intent, but the breach itself shows nothing of the capability behind an attack."
+              },
               "correlates_with": [
                 "IND-F0203-02",
                 "IND-I0403-03"
@@ -69756,6 +70020,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess the means the actor arrives with. Forcing the gate for vehicle access shows determination and reach into a remote pump station, but what rides in with them, and what an attack would involve, can stay unshown."
+              },
               "correlates_with": [
                 "IND-F0203-03",
                 "IND-I0304-03"
@@ -69795,6 +70063,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Identify the capability the actor brings past the fence. Scaling in after confirming the site is empty shows intent and opportunity, but climbing the fence reveals nothing of what an attack on the telemetry site would use."
               },
               "correlates_with": [
                 "IND-F0203-05"
@@ -69837,6 +70109,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Confirm what the actor can do to the exposed equipment. Defeating the cabinet lock lays bare the wiring and the remote terminal unit, but access to the internals does not show the method an attack will take."
+              },
               "correlates_with": [
                 "IND-F0208-01",
                 "IND-I0304-04"
@@ -69877,6 +70153,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Determine the capability behind the entry into the conduit. Prying the vault cover reaches a pipeline's fiber and control lines, but standing over the lines shows nothing of what an attack on them would require."
               },
               "correlates_with": [
                 "IND-F0208-05"
@@ -70193,6 +70473,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess what the actor can do past the login and which system they are after. Phished operator credentials on the VPN secure a foothold, but the access alone shows neither capability against the process nor the target."
+              },
               "correlates_with": [
                 "IND-I0402-01"
               ]
@@ -70233,6 +70517,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Weigh whether the actor can move from watching to changing the process. Reaching an exposed HMI panel and loading the live display fixes the target and proves reach, but viewing it is not the capability to manipulate it."
               },
               "correlates_with": [
                 "IND-I0301-03"
@@ -70275,6 +70563,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine what the actor will do with the foothold and when. A remote-access tool on an operator station holds a persistent path into the control network, but persistence leaves both the method and the timing of an attack open."
+              },
               "correlates_with": [
                 "IND-I0303-02",
                 "IND-I0402-04"
@@ -70316,6 +70608,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Identify the capability behind the tunnel and the system it reaches for. Riding a still-enabled vendor maintenance link into the OT segment secures reach, but the bridge alone leaves both the method and the target of an attack open."
               }
             },
             {
@@ -70353,6 +70649,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess what the actor can act on past the login and which system they are after. A remote-desktop login with reused default passwords is easy entry, but cheap access shows neither the target nor the capability to harm the process."
               }
             }
           ],
@@ -70674,6 +70974,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Determine the specific change the actor means to push. Reading a PLC's ladder logic and I/O shows capability, intent, target, and reach all at once, but enumeration still hides the manipulation an attack would carry out."
+              },
               "correlates_with": [
                 "IND-I0301-02"
               ]
@@ -70715,6 +71019,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Verify what the actor intends to do to the safety controllers. Reaching the workstation that programs them confirms the target and the access, but the pivot itself shows nothing of the change an attack would make."
+              },
               "correlates_with": [
                 "IND-I0302-01"
               ]
@@ -70754,6 +71062,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Identify whether the actor can move from reading to writing. A Modbus session pulling live register values proves reconnaissance in place, but reading the RTU shows no capability to force the harmful change an attack needs."
               },
               "correlates_with": [
                 "IND-I0301-05"
@@ -70795,6 +71107,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Establish the change the actor will drive and how close it is. Hijacking a live HMI session puts hands on the control screens, but seizing the display shows neither the specific manipulation nor when an attack lands."
               },
               "correlates_with": [
                 "IND-F0208-04",
@@ -70838,6 +71154,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine what the actor will alter in the controller logic and when. Code execution on the host holding the project files enables changing them, but the foothold points to neither the method nor when an attack lands."
               },
               "correlates_with": [
                 "IND-I0403-04",
@@ -71160,6 +71480,10 @@
                 "threat_target": "moderate",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess what the actor can act on in the OT zone and which system. Reusing a domain credential that spans both zones carries them across the boundary, but the crossing leaves the target and the capability an attack needs unresolved."
+              },
               "correlates_with": [
                 "IND-I0305-05"
               ]
@@ -71198,6 +71522,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Identify the target and the change the new rights unlock. Escalating an operator login to engineering privileges grants power to alter controller programming, but the privilege alone fixes neither the site nor an attack's method."
               },
               "correlates_with": [
                 "IND-I0301-01"
@@ -71239,6 +71567,10 @@
                 "threat_target": "moderate",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Weigh what an attack on the safety systems would take and against what. Crossing the DMZ into the safety-instrumented network via a bridging jump host raises the stakes, but reach into that zone shows neither the method nor the target."
+              },
               "correlates_with": [
                 "IND-I0302-01",
                 "IND-I0302-05"
@@ -71278,6 +71610,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine what the standing access is for and on what horizon. Elevating a contractor account into a persistent engineering role secures reach to control consoles, but the persistence says nothing of the method or the pace of an attack."
               }
             },
             {
@@ -71314,6 +71650,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess the capability and the target behind the bridge. Relaying traffic through an engineer's dual-homed laptop links an isolated segment, but the improvised path shows neither what an attack would do nor which system it aims at."
               }
             }
           ],
@@ -71627,6 +71967,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine what commands the actor will issue and how close it is. Working an operator's unlocked session at shift change lets them drive the process under a real identity, but the borrowed access leaves both the action and its timing open."
+              },
               "correlates_with": [
                 "IND-F0204-03",
                 "IND-I0301-03"
@@ -71667,6 +72011,10 @@
                 "threat_target": "moderate",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Weigh whether the insider is truly complicit and what the actor can then do. Getting an engineer to key in their own console credentials grants access, but a secondhand report can misread coercion, and the login shows no capability."
+              },
               "correlates_with": [
                 "IND-I0405-02"
               ]
@@ -71706,6 +72054,10 @@
                 "threat_target": "moderate",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Confirm what the quiet access enables and which system it reaches. Using an insider's legitimate token to enter the plant network avoids new-account alerts, but valid-looking access gives up neither the target nor what an attack would do."
+              },
               "correlates_with": [
                 "IND-I0301-02"
               ]
@@ -71743,6 +72095,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Identify what the actor is equipped to do inside the control room. Riding an employee's badge-and-login sequence past the door secures presence, but tailgating in reveals nothing of the capability an attack would use."
               },
               "correlates_with": [
                 "IND-F0204-03"
@@ -71783,6 +72139,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Weigh whether the operator will really act and how imminent it is. Directing a disaffected insider to run prepared control changes puts the method in place, but whether they follow through, and when, stays open."
               },
               "correlates_with": [
                 "IND-I0301-01",
@@ -72105,6 +72465,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine what the actor will push through the path and when. Planting a rogue cellular gateway in a control cabinet opens an attacker-controlled way into the network, but the implant points to neither the method nor the timing."
+              },
               "correlates_with": [
                 "IND-F0205-02",
                 "IND-F0208-01",
@@ -72148,6 +72512,10 @@
                 "threat_target": "moderate",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "target_focus"],
+                "guidance": "Establish when the hidden logic is meant to fire and against what. Implanting unauthorized firmware that runs beneath monitoring already shows capability and method, but dormant logic can hide its trigger and its target until it acts."
+              },
               "correlates_with": [
                 "IND-I0301-01"
               ]
@@ -72188,6 +72556,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess what the tap will alter and how soon. Splicing onto the serial link between the HMI and field devices lets the actor intercept and change process signals, but the hardware alone shows neither the specific alteration nor its timing."
               },
               "correlates_with": [
                 "IND-F0205-02",
@@ -72231,6 +72603,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Identify what the covert reach is for and on what horizon. Concealing a rogue access point in a substation holds radio access into segmented controls, but the hidden device gives up neither the method nor the pace of an attack."
+              },
               "correlates_with": [
                 "IND-F0203-02",
                 "IND-F0205-02",
@@ -72273,6 +72649,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Determine what the implant can drive and which asset it is aimed at. Seating code in the control path shows access and intent, but the eventual method and the precise target can stay hidden until the actor acts."
               },
               "correlates_with": [
                 "IND-F0204-01",
@@ -72595,6 +72975,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Establish where this foothold sits on the path to an attack and what it targets. Repurposing valid credentials to hold a jump host shows position and intent, but the target system and the next move may not yet be visible."
+              },
               "correlates_with": [
                 "IND-I0305-05"
               ]
@@ -72634,6 +73018,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess what the staged tooling equips the actor to do and which system it is aimed at. Caching tools and stolen credentials on a compromised appliance readies a launch position, but the capability and target can stay concealed."
+              },
               "correlates_with": [
                 "IND-I0301-02"
               ]
@@ -72672,6 +73060,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Determine where the lateral movement is headed and how far the intrusion has progressed. Mimicking routine administration with built-in utilities blurs both the destination and the stage, so target and pathway are hard to read."
               }
             },
             {
@@ -72709,6 +73101,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assemble a picture of what the cache holds and how soon it is meant to be used. Pre-positioning tools and access hardware inside the facility shows advanced preparation, but the staged capability and timing may not be evident."
               },
               "correlates_with": [
                 "IND-F0202-01"
@@ -72748,6 +73144,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Establish where in the operation this dormant foothold sits and when it may reactivate. Holding a quiet service account and an idle remote session keeps the actor in place between phases, but the stage and timing stay hidden."
               }
             }
           ],
@@ -73064,6 +73464,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the command is genuine and gauge how far the asset has been driven past its limits. An out-of-range setpoint on a live controller leaves little about the actor to weigh; the report and the current damage drive the response."
+              },
               "correlates_with": [
                 "IND-I0401-05"
               ]
@@ -73102,6 +73506,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the deviation is real and establish how long the drift has run. Logic that biases a variable while hiding it from operators makes the true state hard to trust, so ground truth and how far the damage has progressed come first."
               },
               "correlates_with": [
                 "IND-I0403-01",
@@ -73145,6 +73553,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Establish whether the override is genuine and how far the actuators have been pushed. Forcing actuators past operator limits leaves little about the actor to assess; the report and the scope of the excursion shape the response."
+              },
               "correlates_with": [
                 "IND-I0403-02"
               ]
@@ -73184,6 +73596,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the spoofing is real and gauge how far the true process state has drifted. Falsified feedback drives the loops toward unsafe conditions while masking it, so the real readings and the extent of the deviation matter most."
               }
             },
             {
@@ -73220,6 +73636,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the manipulation is real and gauge how far it has spread. An active command to the controllers leaves little about the actor to assess; the priority is the report and the scope."
               },
               "correlates_with": [
                 "IND-I0403-04"
@@ -73541,6 +73961,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the safety controller was truly altered and establish whether a damaging excursion is underway. Disabling the last-resort trip removes the protective net, so the report and how near the now-unstoppable event is are what matter."
+              },
               "correlates_with": [
                 "IND-F0208-01",
                 "IND-I0402-02"
@@ -73581,6 +74005,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the interlocks are genuinely defeated and gauge how soon an excursion could exploit the gap. Pulling the protection that halts equipment at unsafe thresholds leaves intent clear; the report and how imminent the event is remain open."
               }
             },
             {
@@ -73617,6 +74045,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Establish whether the relay settings were changed and how soon a fault could go uncleared. Raising the trip thresholds lets damage build before protection acts, so the change and how near the exploiting fault is drive the response."
               }
             },
             {
@@ -73655,6 +74087,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the true state of the safety functions independently and gauge how far the covert defeat has gone. A healthy picture shown while the interlocks are down makes the displayed status untrustworthy, so ground truth and scope come first."
               }
             },
             {
@@ -73692,6 +74128,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the controller was forced out of protective mode and whether a manipulation is exploiting the window. Bypassing shutdown voting during live operation strips the safeguard, so the report and how far the exposure has run matter."
               },
               "correlates_with": [
                 "IND-F0208-01"
@@ -73996,6 +74436,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Establish the real process values independently of the display and gauge how far they have drifted. Nominal readings shown over a genuine excursion make the interface untrustworthy, so ground truth and the extent of the drift come first."
+              },
               "correlates_with": [
                 "IND-I0403-01"
               ]
@@ -74036,6 +74480,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the live process state against something other than the console and establish how long the replay has masked it. Played-back telemetry hides an active manipulation, so trustworthy readings and the concealed deviation matter."
+              },
               "correlates_with": [
                 "IND-I0403-02"
               ]
@@ -74074,6 +74522,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Determine whether out-of-range conditions are actually being suppressed and gauge how far the hidden excursion has gone. Silenced alarms keep operators blind to the real state, so independent ground truth and the scope of it come first."
               }
             },
             {
@@ -74111,6 +74563,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Establish the true operating state outside the historian and determine how long the record has been falsified. Corrupted historian values conceal real conditions, so ground truth and how far the deception reaches drive the response."
               }
             },
             {
@@ -74147,6 +74603,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the actual setpoints at the controllers rather than the SCADA view and gauge how far the process has been pushed. Forged feedback denies operators an accurate picture, so ground truth and the extent of it count most."
               }
             }
           ],
@@ -74455,6 +74915,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "target_focus"],
+                "guidance": "Confirm the attack and identify whether other sites are being hit. Rifle fire into a distribution transformer is unambiguous once verified; what changes the response is whether this is isolated or one node in a coordinated set of targets."
+              },
               "correlates_with": [
                 "IND-I0403-03",
                 "IND-I0401-04"
@@ -74493,6 +74957,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the report and gauge how much of the line is down beyond the felled tower. Dropping a transmission tower with cutting charges leaves little about the actor to weigh, so the report and the reach of the outage govern the response."
               },
               "correlates_with": [
                 "IND-I0407-05"
@@ -74533,6 +75001,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the detonation and gauge how far the loss of the pump station cascades downstream. An explosive charge against the station makes method and intent plain, so the report and the reach of the disruption drive the response."
+              },
               "correlates_with": [
                 "IND-F0302-02",
                 "IND-I0406-02"
@@ -74571,6 +75043,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Establish that the substation damage is genuine and gauge how widely the loss propagates. Smashing relays and breakers after breaching the fence is overt once confirmed, so the report and how far downstream the outage reaches remain open."
               },
               "correlates_with": [
                 "IND-F0304-03",
@@ -74615,6 +75091,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the release and gauge how far the escaping product is spreading. Sabotaging the valve to force an uncontrolled release leaves little about the actor in doubt; whether it is real and how far the release has spread drive the response."
               },
               "correlates_with": [
                 "IND-I0407-02"
@@ -74931,6 +75411,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the breaker trips are hostile rather than a fault and gauge how far the loss of power spreads. De-energizing downstream substations is an overt disruption, so confirming the cause and the reach of the outage are the priority."
+              },
               "correlates_with": [
                 "IND-I0408-01",
                 "IND-I0406-01"
@@ -74972,6 +75456,10 @@
                 "threat_target": "weak",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Confirm the jamming is real and establish what larger action it screens. Jamming operator communications rarely stands alone, so verifying the interference and the primary disruption it enables drive the response."
+              },
               "correlates_with": [
                 "IND-F0309-04"
               ]
@@ -75011,6 +75499,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Establish whether the load-shed commands are unauthorized and gauge how wide the rolling outages run. Forcing outages across the service area is plainly disruptive, so confirming the source and the scope of the shed are the priority."
               },
               "correlates_with": [
                 "IND-I0406-02"
@@ -75052,6 +75544,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the valve closures are hostile and gauge how far downstream the stranded delivery is felt. Halting pipeline flow by closing remote isolation valves is overt, so the report and the reach of the shortfall remain the open questions."
+              },
               "correlates_with": [
                 "IND-I0408-04"
               ]
@@ -75091,6 +75587,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the traffic flood is deliberate and gauge how much of dispatch it has stalled. Malformed traffic that stops SCADA polling denies control, so verifying the cause and the extent of the lost visibility are the priority."
               },
               "correlates_with": [
                 "IND-I0408-03"
@@ -75423,6 +75923,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the dosing change is real and gauge how much out-of-range water has entered distribution. Driving the caustic setpoint past safe range threatens everyone downstream, so ground truth and how far the water has traveled come first."
+              },
               "correlates_with": [
                 "IND-F0308-01",
                 "IND-I0406-03"
@@ -75462,6 +75966,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the contamination and establish how much of the batch has moved past the intake. Introducing an unapproved chemical at the raw intake is serious, so the report and how far the contaminant has advanced govern the response."
               },
               "correlates_with": [
                 "IND-F0308-03"
@@ -75503,6 +76011,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the chlorination feed is actually off and gauge how much untreated water has reached distribution. Cutting disinfection sends unsafe water downstream, so verifying the report and the volume already in the mains are the priority."
               }
             },
             {
@@ -75539,6 +76051,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the fuel was dosed and establish how much contaminated stock has moved toward delivery. Adulterating a storage tank through the manifold threatens everything downstream, so the report and the reach of the tainted product count most."
               }
             },
             {
@@ -75577,6 +76093,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Establish the true treatment readings independently and gauge how long the poisoned sequence has run unseen. Falsified sensor values hide accumulating contaminants, so ground truth and how much tainted water has passed come first."
               }
             }
           ],
@@ -75887,6 +76407,10 @@
                 "threat_target": "moderate",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the demand swings are an attack rather than a fault and gauge how far the instability reaches. Synchronized high-wattage loads driving abrupt swings are disruptive, so the cause and the spread of the imbalance are the priority."
+              },
               "correlates_with": [
                 "IND-I0406-04"
               ]
@@ -75925,6 +76449,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the inverter commands are hostile and gauge how far the power imbalance propagates. Abruptly curtailing distributed generation forces a sudden imbalance, so confirming the source and the reach of the disturbance are what matter."
               }
             },
             {
@@ -75961,6 +76489,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Assess whether the spikes are coordinated or coincident with peak and gauge how far the frequency deviation carries. Timing loads to peak amplifies the effect without touching the control plane, so intent and spread come first."
               }
             },
             {
@@ -75997,6 +76529,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the backfeed is deliberate and gauge how many resources were reflashed and how far the reverse flow reaches. Firmware that reverses power on command pushes backfeed onto feeders, so the report and the compromised fleet count."
               }
             },
             {
@@ -76033,6 +76569,10 @@
                 "threat_timing": "strong",
                 "threat_target": "weak",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the oscillation is driven deliberately and gauge how widely the inter-area modes are excited. Tuning pooled loads to grid oscillation frequencies can destabilize well beyond the local segment, so cause and reach come first."
               }
             }
           ],
@@ -76331,6 +76871,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the timing signal is spoofed and gauge how far the corrupted angle estimates have propagated into monitoring. False time stamps at the phasor units distort the wide-area picture, so the spoof and its spread are the priority."
+              },
               "correlates_with": [
                 "IND-F0205-02",
                 "IND-I0406-04"
@@ -76371,6 +76915,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the timing loss is jamming rather than a fault and gauge how many dependent base stations are degrading. Jamming the reference at an aggregation site desynchronizes the network, so verifying the interference and its reach matter."
+              },
               "correlates_with": [
                 "IND-F0208-01"
               ]
@@ -76409,6 +76957,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the counterfeit timing broadcast and gauge how far the signaling desynchronization extends. Skewing rail signaling clocks threatens safe train separation, so confirming the interference and the scope of the affected zone come first."
               },
               "correlates_with": [
                 "IND-F0205-02"
@@ -76449,6 +77001,10 @@
                 "threat_target": "weak",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "target_focus"],
+                "guidance": "Confirm the overpowering transmission and identify which dependent systems are drifting into holdover. Forcing timing sources into holdover can cascade well beyond the transmitter, so the interference and the affected dependents come first."
+              },
               "correlates_with": [
                 "IND-F0205-02"
               ]
@@ -76487,6 +77043,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the position solution is being manipulated and gauge how far the timing skew has degraded protective coordination. Misaligned time-of-day at the receiver undermines relay coordination, so confirming the attack and its extent count."
               },
               "correlates_with": [
                 "IND-F0208-01"
@@ -76786,6 +77346,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the failover controls are disabled and whether the primary disruption they would answer is underway. Removing automatic reroute pins load on the targeted substation, so the report and how far the coupled attack has run matter."
+              },
               "correlates_with": [
                 "IND-I0406-04"
               ]
@@ -76826,6 +77390,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the wipe is real and gauge how far it has spread across the relays. Destroying the reload path during a live incident shows capability and intent; what remains is the scope and whether recovery is lost."
+              },
               "correlates_with": [
                 "IND-I0403-01"
               ]
@@ -76863,6 +77431,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "source_credibility"],
+                "guidance": "Assess how far the actor's reach extends across the backup estate and whether the corruption holds. Hitting the archives shows intent to deny recovery, but offsite or immutable copies can survive access the intrusion never had."
               }
             },
             {
@@ -76899,6 +77471,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "proximity_access"],
+                "guidance": "Determine whether the flood can be sustained and whether crews retain a local path to the breakers. Choking the remote channel delays restoration, but the pressure only holds as long as the actor keeps the channel saturated."
               }
             },
             {
@@ -76935,6 +77511,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Establish what the blinding is meant to cover and confirm the outage is deliberate. Killing the annunciation feeds lets an ongoing attack run unseen, so the priority is the act it conceals and how much else has gone dark."
               },
               "correlates_with": [
                 "IND-F0304-04"
@@ -77246,6 +77826,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "pathway_stage"],
+                "guidance": "Establish whether the exit closes the operation or clears the way for a follow-on. A rehearsed egress right after a payload can precede a second attempt, and the route out will not show it."
+              },
               "correlates_with": [
                 "IND-F0401-01",
                 "IND-0401-01"
@@ -77284,6 +77868,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Determine whether closing the session ends the actor's access or just tidies one entry point. A clean logout can mean the operation is finished or that a quieter foothold remains, and the exit will not tell you which."
               }
             },
             {
@@ -77320,6 +77908,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Track where the rehearsed route leads and what the discarded items leave behind. Shedding tools in transit can mark a finished operation or a withdrawal to a safe position for the next, and the route alone will not separate them."
               },
               "correlates_with": [
                 "IND-0401-02"
@@ -77359,6 +77951,10 @@
                 "threat_target": "weak",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Assess whether the staged vehicle ends the operation or holds mobility for another. Positioning transport beyond the cameras shows discipline, but whether it carries the actor home or toward a second target it will not reveal."
+              },
               "correlates_with": [
                 "IND-F0401-03",
                 "IND-0401-05"
@@ -77397,6 +77993,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine whether abandoning the staging server ends the campaign or clears ground to rebuild. Burning the access path cuts one attribution thread, but the same operator can stand the capability up again untraced."
               }
             }
           ],
@@ -77722,6 +78322,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "tempo_trajectory"],
+                "guidance": "Assess what the retained credentials still reach and when the actor may return. Keeping valid operator logins preserves a re-entry path for a later disruption, and nothing in the withdrawal fixes how soon that comes."
               }
             },
             {
@@ -77759,6 +78363,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine what the dormant implant is built to do and what triggers it. Firmware timed to fire during a future event is a second attack already staged, so the assessment turns on the payload's reach and the condition that wakes it."
               }
             },
             {
@@ -77796,6 +78404,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "tempo_trajectory"],
+                "guidance": "Identify what the preserved entry path opens onto and how soon the actor may use it again. A defeated lock or duplicated key holds the door for a return, and the withdrawal gives no sign of when that return comes."
               }
             },
             {
@@ -77833,6 +78445,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "means_in_hand"],
+                "guidance": "Assess what the backdoored account commands and how deeply it is embedded. Surviving password resets shows the foothold is built to persist into OT for a later strike, and eviction depends on reach the credential change does not touch."
               }
             },
             {
@@ -77869,6 +78485,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Establish what the cache contains and how far it shortens the next preparation. Staging tools near the perimeter is a down payment on a second strike, and the materials themselves gauge the method and the speed of a return."
               }
             }
           ],
@@ -78179,6 +78799,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Assess whether the actor is truly gone and what a residual foothold still reaches. Wiping the command record hides the scope of what was done and can mask access that outlives the cleanup."
               }
             },
             {
@@ -78215,6 +78839,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Verify whether the failure the records describe is genuine or manufactured. Dressing an attack as routine breakdown can steer responders from an actor still in position, and only the physical evidence separates the two."
               }
             },
             {
@@ -78251,6 +78879,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "source_credibility"],
+                "guidance": "Determine what the missing footage covered and reconstruct the approach from adjacent sources. Overwriting the recordings across the access window erases the actor's face and route, but the gap itself marks where to look elsewhere."
               },
               "correlates_with": [
                 "IND-F0407-03"
@@ -78291,6 +78923,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Establish which setpoint changes actually occurred and in what order, independent of the historian. Falsifying the timestamps hides the method and can leave the process in a state read as normal but unsafe."
               }
             },
             {
@@ -78328,6 +78964,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Weigh the incident reports against independent readings before acting on them. Feeding responders a benign cause buys the actor time and can hide a disruption still underway, so check the account before it drives the response."
               }
             }
           ],
@@ -78648,6 +79288,10 @@
                 "threat_target": "weak",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Establish whether the planted artifacts are genuine or staged to point elsewhere. Leaflets at the scene can send an investigation after an unaffiliated group while the real actor stays free, so the provenance of every item has to be tested."
+              },
               "correlates_with": [
                 "IND-F0402-03",
                 "IND-0402-04"
@@ -78688,6 +79332,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility"],
+                "guidance": "Determine whether the claim of responsibility is authentic or a frame. A confession branded to a rival redirects attribution from the real actor, and a fabricated claim and a genuine one read alike until the specifics are checked."
               }
             },
             {
@@ -78724,6 +79372,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Assess which tradecraft is native to the actor and which is borrowed to mislead. Wearing another group's signature can pin the operation on the wrong party and hide the real capability behind it."
               }
             },
             {
@@ -78761,6 +79413,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility"],
+                "guidance": "Verify whether the accounts and the organization they name are real or spoofed. Messaging routed through decoy identities can steer blame onto an uninvolved group, and the surface attribution is exactly what the actor built to be believed."
               }
             },
             {
@@ -78798,6 +79454,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility"],
+                "guidance": "Identify whether the incriminating artifacts were planted or genuinely belong to the named party. Salting systems with metadata that points at a third party can misdirect the forensic account, so trace each to how it was written."
               }
             }
           ],
@@ -79106,6 +79766,10 @@
                 "threat_target": "none",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Assemble what is known about the network before the trail closes. An order to go dark and destroy communications preserves a cell that can regroup and act again, and the warning itself is the last window into who received it."
+              },
               "correlates_with": [
                 "IND-F0404-02",
                 "IND-0404-01"
@@ -79146,6 +79810,10 @@
                 "threat_target": "moderate",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "pathway_stage"],
+                "guidance": "Identify the insider the scrub is protecting and what access they still hold. Erasing the records that expose facilitation keeps an accomplice in place inside the operation, and that standing access is what makes a second event easy."
+              },
               "correlates_with": [
                 "IND-F0404-05",
                 "IND-0404-04"
@@ -79185,6 +79853,10 @@
                 "threat_timing": "weak",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assemble the financial trail before the links are fully severed. Cutting the money ties hides the backers and logistics that make a repeat possible, so the residual transactions are the way into the support network."
               }
             },
             {
@@ -79222,6 +79894,10 @@
                 "threat_timing": "weak",
                 "threat_target": "none",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Determine whether the dispersal is disbandment or preservation. Scattering and relocating members breaks visible associations while keeping a trained cell intact, so map the movement before the links go cold."
               },
               "correlates_with": [
                 "IND-0404-02"
@@ -79261,6 +79937,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "proximity_access"],
+                "guidance": "Assess whether the cover story holds and what the protected employee can still reach. A rehearsed account among coworkers keeps an insider in place and credible, so test the story and scope the access it shields."
               },
               "correlates_with": [
                 "IND-0404-06"
@@ -79591,6 +80271,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Identify whether the actor is confirming a hit to close out or to plan the next. Watching outage maps for the targeted facility shows deliberation and points at what they value, but not whether a repeat follows."
               }
             },
             {
@@ -79626,6 +80310,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Determine whether gauging the disruption's scale is idle interest or preparation to strike again. Tracking news and broadcasts measures the effect achieved, but tying the watcher to the actor takes more than the viewing."
               },
               "correlates_with": [
                 "IND-F0406-01"
@@ -79665,6 +80353,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Weigh whether confirming the ground effect closes the operation or validates the target set for another. Following residents' posts confirms the disruption reached people, and that can feed a decision to hit a similar target."
               }
             },
             {
@@ -79700,6 +80392,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess what the actor's grasp of the telemetry says about a follow-on. Reading grid frequency and SCADA data to measure impact shows the depth to refine the method, which turns a one-off into a repeatable operation."
               }
             },
             {
@@ -79736,6 +80432,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish what the actor's self-assessment signals about intent to continue. Measuring the outcome against pre-attack notes is the mark of a disciplined operator refining tradecraft, pointing at a campaign not a single event."
               }
             }
           ],
@@ -80047,6 +80747,10 @@
                 "threat_target": "weak",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Verify whether the claimant is the actual actor or an opportunist. A claim of responsibility on an extremist channel can mark a genuine campaign or someone else adopting the attack, and the post's provenance is what separates them."
+              },
               "correlates_with": [
                 "IND-F0409-01",
                 "IND-0407-01"
@@ -80086,6 +80790,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Assess what the manifesto's grievance says about further targets. Framing the disruption as retaliation names the actor's motive and the institution they blame, and a grievance that broad can point past this incident to the next."
               }
             },
             {
@@ -80122,6 +80830,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Determine whether the declared affiliation is real or borrowed for stature. Claiming a known movement can mean organizational backing behind the actor or a lone party dressing up a solo act, and only the movement confirms the tie."
               }
             },
             {
@@ -80158,6 +80870,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Weigh how far the call to replicate can travel and who might answer it. Urging sympathizers to copy the method against similar targets turns one incident into a template, and the reach of that audience matters more than the boast."
               }
             },
             {
@@ -80194,6 +80910,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Establish what the released imagery proves about the claimant and how it was obtained. Photographs of the damage can authenticate a real actor over a bystander, and footage from inside can betray the method and vantage held."
               },
               "correlates_with": [
                 "IND-F0410-01",
@@ -80525,6 +81245,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Assess whether the actor can actually restore what they are holding hostage. A ransom tied to bringing the service back assumes the damage is reversible on command, and a bluff and genuine control read the same."
+              },
               "correlates_with": [
                 "IND-F0412-01",
                 "IND-0405-01"
@@ -80566,6 +81290,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Determine whether the actor still holds the access to make good on a repeat. A threat to extend the disruption bites only if the foothold survived the first event, so measure the standing capability behind the demand."
+              },
               "correlates_with": [
                 "IND-0409-03"
               ]
@@ -80605,6 +81333,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Establish whether the actor truly holds the stolen data and can act on the deadline. An extortion note pairing the outage with a threatened leak raises the stakes, but a real claim and an empty one read alike until the sample is tested."
               }
             },
             {
@@ -80642,6 +81374,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Identify how much of the control system the actor actually commands. Framing continued downtime as the price of non-compliance claims live leverage, and the real extent of that control decides whether the threat is survivable."
               }
             },
             {
@@ -80679,6 +81415,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Weigh whether the actor can reach the dependent facilities they are threatening. Escalating demands and pointing at connected sites widens the target set, but the pressure is only as real as the access beyond the system already down."
               }
             }
           ],
