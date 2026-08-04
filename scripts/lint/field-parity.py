@@ -37,7 +37,6 @@ ALLOWLIST = {
     # (cpn_notes retired everywhere at the V1.6 facet migration; carve-out removed)
     # conditioning_guidance authoring in progress (S38): carve-outs removed
     # per matrix as each authoring splice lands; all gone at 815/815.
-    ("organization", "conditioning_guidance"),
     ("infrastructure", "conditioning_guidance"),
 }
 

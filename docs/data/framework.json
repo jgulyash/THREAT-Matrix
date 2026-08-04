@@ -39463,6 +39463,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access", "tempo_trajectory"],
+                "guidance": "Assess capability, access, and pace. The manifesto names the institution plainly, but whether the actor can act against it, and how soon, rests on means and movement the words alone may not carry."
+              },
               "correlates_with": [
                 "IND-O0410-01",
                 "IND-O0302-02"
@@ -39502,6 +39506,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh the actor's capability and how fast the fixation is hardening. A shift from broad grievance to one named institution can show intent and target, but a narrowing focus can leave the means to act against it unseen."
               }
             },
             {
@@ -39538,6 +39546,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify which institution the actor is converging on. A ranked list shows deliberation, but the target is not fixed until the comparison stops."
               }
             },
             {
@@ -39574,6 +39586,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Determine which candidate the actor is settling on and whether the choice is final. Collecting identifying details across sessions can show an institution under consideration, but the target is not locked while the actor is still comparing."
               }
             },
             {
@@ -39610,6 +39626,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess whether the actor can act against the institution and how soon. The ultimatum ties intent and target to the organization's mission, but a threat framed that way can be pure declaration or backed by real capability."
               }
             }
           ],
@@ -39963,6 +39983,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish the actor's capability and how far the planning has run. An org chart shows where authority concentrates and that the institution is under study, but assembling one is not the same as being equipped to act against it."
+              },
               "correlates_with": [
                 "IND-O0312-03",
                 "IND-O0205-05"
@@ -40000,6 +40024,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine whether the actor can act on the institution's formal control points and how far the plan has run. Identifying who can legally bind the organization shows study, but signatory mapping shows nothing of the means or stage behind it."
               },
               "correlates_with": [
                 "IND-O0305-04",
@@ -40041,6 +40069,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "means_in_hand"],
+                "guidance": "Weigh whether the actor is pacing a move against the institution to a transition and what they could bring. Tracking succession and votes shows a hunt for the window of maximum exposure, but the timing interest can leave the means unseen."
+              },
               "correlates_with": [
                 "IND-O0206-03",
                 "IND-O0305-01"
@@ -40081,6 +40113,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify which decision-makers the actor is converging on and how far the effort has moved. Mapping reporting lines can reveal who sits at the institution's center, but the graph will not show whether they have moved past study."
+              },
               "correlates_with": [
                 "IND-O0205-02"
               ]
@@ -40119,6 +40155,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Assess how far the actor has moved and what capability sits behind the questions. Eliciting internal approval chains from staff shows a shift from passive study to direct contact, but the approach may reveal nothing of the means to act."
               }
             }
           ],
@@ -40463,6 +40503,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Establish how far the actor has progressed and what they could bring to bear. Archiving the institution's contradictions builds a case for delegitimization, but a dossier shows neither the capability nor the stage of a move against it."
+              },
               "correlates_with": [
                 "IND-O0302-02"
               ]
@@ -40501,6 +40545,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine what the actor plans to do with the institution's weak points and whether they can act. Sentiment analysis locating exploitable grievances shows target study, but the map shows nothing of the means or how far the plan has run."
               },
               "correlates_with": [
                 "IND-O0302-01",
@@ -40543,6 +40591,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the actor's reach and how fast the framing is gaining ground. Testing draft narratives shows intent, target, and method, but a message only endangers the institution once it can travel and scale."
+              },
               "correlates_with": [
                 "IND-O0204-03"
               ]
@@ -40582,6 +40634,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Weigh how far the actor has moved and what they can do with what they surface. Filing records requests to mine narrative ammunition shows target study and method, but the paperwork may not reveal the capability or stage behind it."
+              },
               "correlates_with": [
                 "IND-O0308-03"
               ]
@@ -40620,6 +40676,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Establish how far the actor has moved toward impersonation and what they can execute. Cataloging the institution's brand assets signals preparation to counterfeit its voice, but collecting style is not carrying the deception off."
               },
               "correlates_with": [
                 "IND-O0204-01",
@@ -40968,6 +41028,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Identify what the actor can do to the institution's revenue chokepoints and how far the plan has run. A donor list locates where lost funding would threaten continuity, but naming a chokepoint is not the same as being able to sever it."
+              },
               "correlates_with": [
                 "IND-O0303-02",
                 "IND-O0307-01"
@@ -41006,6 +41070,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine whether the actor can act on the institution's key dependencies and how far the effort has run. Mapping vendors locates the relationships whose loss would degrade it, but the map shows nothing of the means to break them."
               },
               "correlates_with": [
                 "IND-O0211-01",
@@ -41046,6 +41114,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess what the actor can bring against the institution's regulators and how far the plan has run. Identifying the bodies with authority over it shows a hunt for leverage, but locating a pressure point is not being able to trigger it."
               },
               "correlates_with": [
                 "IND-O0311-02",
@@ -41088,6 +41160,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish whether the actor can act on the institution's coalition ties and how far the effort has moved. Tracking partners locates the bonds a campaign could sever to isolate it, but the map may show nothing of the means to cut them."
+              },
               "correlates_with": [
                 "IND-O0314-02"
               ]
@@ -41126,6 +41202,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Weigh what the actor can do to push the institution toward failure and how far the plan has run. Probing financial health locates where lost revenue would collapse it, but finding the breaking point is not being able to force it."
               },
               "correlates_with": [
                 "IND-O0312-02"
@@ -41474,6 +41554,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Identify what the actor can do with the institution's weak seams and how far the effort has moved. Mapping factions and morale problems locates where cohesion is thin, but spotting a fracture is not the same as being able to widen it."
+              },
               "correlates_with": [
                 "IND-O0209-05",
                 "IND-O0309-01"
@@ -41513,6 +41597,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assemble a read on the actor's capability and stage. Cataloging public disputes and dissent inventories the fault lines a wedge campaign could later widen, but it shows nothing of the means to act or how far the plan has run."
               },
               "correlates_with": [
                 "IND-O0209-05",
@@ -41554,6 +41642,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the actor's reach and how fast the wedge is taking hold. Seeding divisive content to measure reaction shows intent and target, but a fracture only endangers the institution once the actor can drive it at scale and speed."
               }
             },
             {
@@ -41590,6 +41682,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Determine how far the actor has moved toward organized splintering and how fast it is building. Engaging disaffected members to gauge willingness to break shows target and intent, but individual testing is not yet a fracture."
               },
               "correlates_with": [
                 "IND-O0202-01",
@@ -41630,6 +41726,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Identify what the actor can do with the institution's weakest segment and how far the plan has run. Analyzing membership data to find the group most open to a splintering appeal shows target study, but not the means to act on it."
               },
               "correlates_with": [
                 "IND-O0306-01"
@@ -41967,6 +42067,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish what the actor can do with a candidate insider and how far the effort has moved. Scanning staff for grievance or distress flags people who might be turned against the institution, but spotting a candidate is not recruiting one."
+              },
               "correlates_with": [
                 "IND-I0108-04",
                 "IND-O0202-01"
@@ -42006,6 +42110,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "pathway_stage"],
+                "guidance": "Identify whether the actor can turn an insider's access into their own reach and how far the effort has moved. Finding privileged staff narrows the pool to those whose access matters most, but locating them is not the same as reaching them."
               },
               "correlates_with": [
                 "IND-F0107-02",
@@ -42049,6 +42157,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Assess how far the actor has moved toward recruitment and whether the insider holds real access. A benign first contact tests an employee's openness before any offer, but responsiveness will not show what access the actor stands to gain."
+              },
               "correlates_with": [
                 "IND-O0202-02"
               ]
@@ -42088,6 +42200,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "pathway_stage"],
+                "guidance": "Determine whether the pressured insider holds access worth having and how far the actor has moved. Mining breach data for leverage finds affiliates who can be forced, but exposure only helps if the insider can reach what matters."
+              },
               "correlates_with": [
                 "IND-O0202-04"
               ]
@@ -42126,6 +42242,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "pathway_stage"],
+                "guidance": "Weigh whether a self-surfaced insider holds access that matters and how far the actor has moved. Watching complaint boards spots affiliates voicing willingness to harm the institution, but a public grievance is not proof of access."
               },
               "correlates_with": [
                 "IND-O0209-05"
@@ -42464,6 +42584,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish what the actor can do with the institution's information map and how far the effort has run. Cross-referencing staff against breach data shows who holds which internal knowledge, but knowing where it sits is not taking it."
+              },
               "correlates_with": [
                 "IND-O0301-02",
                 "IND-O0207-01"
@@ -42504,6 +42628,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine what the actor can do with what the institution holds and how far the plan has run. A burst of records requests probes what data the organization keeps or must disclose, but the probing shows nothing of the capability behind it."
+              },
               "correlates_with": [
                 "IND-O0207-03"
               ]
@@ -42542,6 +42670,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess the actor's capability and how far the operation has run. Enumerating email domains and portal endpoints maps which channels could be intercepted or spoofed, but a footprint scan may not show whether the actor can act on it."
               },
               "correlates_with": [
                 "IND-O0313-04",
@@ -42583,6 +42715,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish what the actor can produce from the institution's material and how far the plan has run. Cataloging letterhead marks documents that could later be forged, but collecting formats is not the same as counterfeiting them well."
+              },
               "correlates_with": [
                 "IND-O0313-02",
                 "IND-O0204-02"
@@ -42622,6 +42758,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Assess how far the actor has moved and what capability sits behind the questions. Cultivating members to learn how records are stored shows a shift to direct elicitation, but may not reveal the means to act on what is learned."
               },
               "correlates_with": [
                 "IND-O0207-04"
@@ -42969,6 +43109,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine what the actor is equipped to do once inside and how far they have moved. Pretext applications probe how deeply the institution vets and where it grants access, a sign they are close, but may not reveal the capability behind it."
+              },
               "correlates_with": [
                 "IND-F0108-04",
                 "IND-O0205-03",
@@ -43010,6 +43154,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess the actor's capability and how far the campaign has advanced. Test complaints time how the institution triages and escalates reports before a move, but knowing the process is not the same as being equipped to exploit it."
+              },
               "correlates_with": [
                 "IND-O0310-01"
               ]
@@ -43048,6 +43196,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish what the actor can do with what they extract and how far they have moved. Pretext calls to help desks pull out structure, schedules, and escalation paths, a sign of active preparation, but not of the capability behind it."
               },
               "correlates_with": [
                 "IND-O0313-04",
@@ -43089,6 +43241,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "pathway_stage"],
+                "guidance": "Determine whether the actor can get into the institution's systems and how far they have moved. Low-volume login attempts probe lockout limits and whether failed access is watched, but will not show what they can reach if it works."
+              },
               "correlates_with": [
                 "IND-O0201-05"
               ]
@@ -43127,6 +43283,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "pathway_stage"],
+                "guidance": "Assess whether the actor can gain standing inside the institution and how far the effort has run. Thin affiliation claims test whether staff challenge them or grant access by default, but a working bluff is a foothold, not a read on stage."
               },
               "correlates_with": [
                 "IND-O0310-02"
@@ -43448,6 +43608,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh the actor's capability and pace. Escalating grievance narratives name the institution and frame an intent to make it answer, but whether that becomes a move against it rests on means and movement the posts do not carry."
               }
             },
             {
@@ -43485,6 +43649,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Assess how solid the account is and what the actor can bring. Intent leaked to associates or family is a serious warning, but it reaches you secondhand, and venting can sound like real resolve to act against the institution."
               },
               "correlates_with": [
                 "IND-F0109-01",
@@ -43526,6 +43694,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh the actor's capability and how fast the fixation is intensifying. Repeated filings and communications rising in frequency show a hardening focus on the institution, but intensity of contact is not the same as the means to act."
               }
             },
             {
@@ -43563,6 +43735,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess the actor's capability and how far they have moved. Adopting prior attackers' symbols and casting a move against the institution as continuing that lineage shows identification, but not the means or readiness to act."
               },
               "correlates_with": [
                 "IND-0107-05",
@@ -43604,6 +43780,10 @@
                 "threat_timing": "strong",
                 "threat_target": "moderate",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Determine what the actor has actually acquired and which institution it targets. A burst of preparation and last-resort language signals movement from planning toward action, but shows urgency more clearly than means or final target."
               },
               "correlates_with": [
                 "IND-0107-07",
@@ -43927,6 +44107,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the actor's reach and when the full push comes. Test batches through inauthentic accounts measure how fast the institution responds before a real influence campaign, but a rehearsal shows the plan more than the scale or timing."
+              },
               "correlates_with": [
                 "IND-O0302-01"
               ]
@@ -43966,6 +44150,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish what the actor can carry out and how close the real attempt is. A dry-run approach at the institution's events times entry and reads staff reaction, showing access and intent but not the means the actor will bring when it counts."
+              },
               "correlates_with": [
                 "IND-0209-01"
               ]
@@ -44004,6 +44192,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine the scale the actor can reach and how soon the real disruption comes. A mock filing or staged walkout tests how the institution recovers from interference, but a trial run shows the method more than the capability or timing."
               },
               "correlates_with": [
                 "IND-O0301-04"
@@ -44045,6 +44237,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess whether the actor can act on the threats being rehearsed. A graduated probe of the institution's nerve can reveal intent and timing while masking whether the means to deliver the harm exist."
+              },
               "correlates_with": [
                 "IND-O0301-01"
               ]
@@ -44083,6 +44279,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine the actor's reach and how close deployment is. A successful test against a few members confirms the deception works, but the danger to the institution rests on the scale the actor can push it to."
               }
             }
           ],
@@ -44396,6 +44596,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Determine whether the approach took hold and what access the employee holds. An opening offer shows intent and the target, but a recruitment pitch is only as dangerous as the cooperation it wins and the reach it opens."
+              },
               "correlates_with": [
                 "IND-0105-04",
                 "IND-F0107-02",
@@ -44438,6 +44642,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Establish how far the escalation has run and how fast. Broadening access requests show intent and a growing foothold, but where the actor sits on the path and their pace decide how close harm to the institution is."
+              },
               "correlates_with": [
                 "IND-O0304-02"
               ]
@@ -44478,6 +44686,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "proximity_access"],
+                "guidance": "Weigh how solidly the payments tie to the access and what that access reaches. Money that tracks with sensitive-system entry suggests inducement, but affluence has innocent explanations."
+              },
               "correlates_with": [
                 "IND-I0108-02"
               ]
@@ -44516,6 +44728,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "proximity_access"],
+                "guidance": "Weigh how firmly the behavior points to coercion and what the insider could be compelled to give up. Stress and withdrawal after outside contact can signal blackmail, but the same signs have private causes."
               },
               "correlates_with": [
                 "IND-I0108-03"
@@ -44556,6 +44772,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess what the staged access is meant to enable and how far the operation has advanced. Off-hours entry outside the insider's duties marks a foothold, but the harm depends on what the external actor is equipped to do with it."
               },
               "correlates_with": [
                 "IND-0101-06",
@@ -44885,6 +45105,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine how far the front has been built out and what it is being positioned to do. A lookalike registration borrows the institution's legitimacy, but a shell on paper reveals little about the campaign it will front for."
+              },
               "correlates_with": [
                 "IND-O0409-01",
                 "IND-O0401-01",
@@ -44926,6 +45150,10 @@
                 "threat_target": "moderate",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Determine how complete the front is and how soon it goes live. Fabricated history and staff personas make a manufactured body look real, but the threat turns on when it acts and the audience it can convince."
+              },
               "correlates_with": [
                 "IND-O0401-03"
               ]
@@ -44964,6 +45192,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the scale of funds moving through the channel and how fast it is building. Layered accounts under a front confirm the actor expects to spend, but the danger scales with the resources actually behind the campaign."
               },
               "correlates_with": [
                 "IND-O0305-02",
@@ -45006,6 +45238,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "pathway_stage"],
+                "guidance": "Establish how much traction the outreach is gaining inside the institution's network. Approaches to partners and funders show the target, but the harm depends on the introductions and standing the front actually secures."
+              },
               "correlates_with": [
                 "IND-O0303-02"
               ]
@@ -45044,6 +45280,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "moderate",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Determine how far the front's credibility has been built and which institution it is aimed at. Recruiting genuine advisors gives a manufactured structure a real face, but the standing it gathers matters only once its target is clear."
               }
             }
           ],
@@ -45374,6 +45614,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish the reach behind the coming campaign and how far preparations have run. Quiet lookalike domains mark early staging against the institution, but placeholder pages can hide the amplification that would make a narrative bite."
+              },
               "correlates_with": [
                 "IND-O0302-05",
                 "IND-O0313-01"
@@ -45415,6 +45659,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess the actor's reach to push the forged material and how close release is. Fabricated memos and doctored images are potent, but a forgery only harms the institution once it can be placed where it will be believed."
+              },
               "correlates_with": [
                 "IND-O0303-01"
               ]
@@ -45454,6 +45702,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess the amplification actually behind the dormant network. A scripted calendar and synchronized launch date lay out the plan, the timing, and the framing, so what remains is the reach the accounts can command once they wake."
               }
             },
             {
@@ -45490,6 +45742,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the actor's reach and how fast the narrative is spreading. The seeding shows intent and framing, but a narrative only endangers the institution once it can travel."
               },
               "correlates_with": [
                 "IND-O0302-03",
@@ -45531,6 +45787,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "moderate",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Establish the true scale of the account network and which institution it is aimed at. Aged profiles and purchased followers pre-position amplification, but a bot farm's danger depends on how far it can actually push and at whom."
               },
               "correlates_with": [
                 "IND-O0303-04",
@@ -45867,6 +46127,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "proximity_access"],
+                "guidance": "Verify the curated identity and establish what internal access the applicant is really after. Interest weighted toward internal spaces over the mission suggests infiltration, but eager newcomers can look the same."
+              },
               "correlates_with": [
                 "IND-0106-03"
               ]
@@ -45906,6 +46170,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "source_credibility"],
+                "guidance": "Assess what the sought position actually reaches and how solid the applicant's background proves. Trading pay for proximity to sensitive functions is a tell, but the access and the true record stay hidden."
               },
               "correlates_with": [
                 "IND-F0108-05",
@@ -45948,6 +46216,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "proximity_access"],
+                "guidance": "Confirm the vendor's credentials against public records and establish what access the relationship would grant. References that fail routine checks mark a shell, but the exposure depends on what the contract opens."
+              },
               "correlates_with": [
                 "IND-0106-02",
                 "IND-F0108-03"
@@ -45988,6 +46260,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Weigh how genuine the investment is against the pace of the trust being built. Social credibility that outruns any real stake can signal a cultivated cover, but ordinary enthusiasm reads the same."
+              },
               "correlates_with": [
                 "IND-O0309-01"
               ]
@@ -46027,6 +46303,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "proximity_access"],
+                "guidance": "Verify the professional record and establish what authority the sought position confers. A governance seat won on an inflated resume gives real standing, but the danger depends on the control that standing carries."
               },
               "correlates_with": [
                 "IND-O0305-03"
@@ -46359,6 +46639,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine whether the authority is actually being granted and what it would put in the actor's hands. Requests for wire approval beyond the role show clear intent, but the harm turns on the control the actor secures."
               }
             },
             {
@@ -46396,6 +46680,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Establish what the requested credentials would reach and whether the grant goes through. A pretextual demand for admin access or member rolls shows intent plainly, but the exposure depends on what those permissions open."
               },
               "correlates_with": [
                 "IND-O0308-01",
@@ -46438,6 +46726,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Confirm the read on the maneuvering and how close it stands to a controlling majority. Packing a committee and timing bylaw motions make the play, target, and method plain; what remains is whether the account holds."
+              },
               "correlates_with": [
                 "IND-O0305-01"
               ]
@@ -46478,6 +46770,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Assess what the downloaded records equip the actor to do and whether the collection is still running. Off-hours pulls far beyond the role's needs show a foothold, but member and financial data harm the institution only through later use."
               }
             },
             {
@@ -46514,6 +46810,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Determine how far control has consolidated and how firmly the campaign against rivals is coordinated. Quiet moves to discredit competing officials show intent, but ordinary institutional politics can look the same."
               },
               "correlates_with": [
                 "IND-O0305-04"
@@ -46841,6 +47141,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Weigh how damaging the assembled material is and how complete the dossier has become. Acquiring leaked donor lists and correspondence shows leverage building, but the hold depends on what the collection actually contains."
+              },
               "correlates_with": [
                 "IND-O0301-02",
                 "IND-O0308-04"
@@ -46882,6 +47186,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish whether the actor holds the means to act on the mapped pressure points and how far planning has run. Studying the institution's liabilities shows where leverage would bite, but a target map is not the material to force a decision."
+              },
               "correlates_with": [
                 "IND-O0307-03"
               ]
@@ -46920,6 +47228,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Weigh how firmly the filings read as coercion rather than grievance, and gauge the pace. Calibrated lawsuits and records demands can burden the institution, but litigation rarely shows whether the intent is pressure or principle."
               },
               "correlates_with": [
                 "IND-O0311-01"
@@ -46961,6 +47273,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "pathway_stage"],
+                "guidance": "Establish what sustained access the insider can provide and whether the cooperation has taken hold. Paying for damaging documents shows the actor wants a durable hold, but the threat rests on the reach the insider grants."
+              },
               "correlates_with": [
                 "IND-O0308-01"
               ]
@@ -46999,6 +47315,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess whether the actor actually holds the material being hinted at. A private signal to leadership makes the demand and the target plain, but a bluff and a real threat can read the same until the leverage is shown."
               },
               "correlates_with": [
                 "IND-O0301-01"
@@ -47338,6 +47658,10 @@
                 "threat_target": "weak",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify what the pooled funds are aimed at and the scale being raised. Layered crowdfunding and crypto wallets show a campaign is financed, but money alone points to no target, and reach depends on the amount gathered."
+              },
               "correlates_with": [
                 "IND-O0407-01"
               ]
@@ -47377,6 +47701,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "weak",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify which institution the assembled team is meant to act against and how ready it is. Retaining operators ahead of any public move shows a campaign is coming, but who it will move against, and how soon, stays open."
               },
               "correlates_with": [
                 "IND-O0310-04"
@@ -47418,6 +47746,10 @@
                 "threat_target": "weak",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Establish what the staged infrastructure is aimed at and the operational scale it represents. Bulk hosting and bot services beyond any stated need show capacity being marshaled, but hardware carries no target."
+              },
               "correlates_with": [
                 "IND-O0314-03"
               ]
@@ -47457,6 +47789,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "source_credibility"],
+                "guidance": "Identify the target behind the funding shell and the true backer it conceals. A nonprofit conduit gives the resources a clean cover, but a financing front hides both who is paying and which institution the money will move against."
               },
               "correlates_with": [
                 "IND-O0305-02",
@@ -47499,6 +47835,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify what the marshaled resources are aimed at and the true scale of the buildup. Pooled funds, retained staff, and platform capacity beyond ordinary activity mark a coming campaign, but name neither its target nor its full weight."
               }
             }
           ],
@@ -47818,6 +48158,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Assess how firm the coalition is and the combined weight it would bring. Private coordination among allied groups shows a joint posture forming against the institution, but early outreach hides whether the alliance holds."
+              },
               "correlates_with": [
                 "IND-O0314-01"
               ]
@@ -47857,6 +48201,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "moderate",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Establish the real weight behind the manufactured support and how firmly it traces to one source. Astroturfed groups and templated petitions can look like a movement, but the pressure rests on genuine reach they may not command."
               },
               "correlates_with": [
                 "IND-O0302-02"
@@ -47898,6 +48246,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Assess who stands behind the proxies and the reach they collectively bring. Intermediaries absorbing attribution keep the originator hidden, but the danger depends on the concealed actor's resources, not the front voices."
+              },
               "correlates_with": [
                 "IND-O0307-04"
               ]
@@ -47938,6 +48290,10 @@
                 "threat_target": "moderate",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Establish how close the coalition is to launch and the combined force it can field. Coordinated rehearsals and synchronized tests mark final alignment before a unified push, but a dry run does not show how many will turn out."
+              },
               "correlates_with": [
                 "IND-O0310-01"
               ]
@@ -47976,6 +48332,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "proximity_access"],
+                "guidance": "Weigh whether the courting is a genuine bridge into the institution and what the recruited insiders would bring. Converting disaffected members lends reach, but internal grumbling is common, and the value turns on the access they carry."
               },
               "correlates_with": [
                 "IND-O0306-01"
@@ -48300,6 +48660,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess what the actor is equipped to carry out and how far the operation has advanced. Mapping badge readers and guard rotations resolves the target, but probing the perimeter shows nothing of the means the actor would bring."
+              },
               "correlates_with": [
                 "IND-F0105-01"
               ]
@@ -48339,6 +48703,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Weigh whether the new secrecy ties to a developing operation and how advanced it is. An insider moving to encrypted channels and killing logs can mark concealment, but privacy habits have benign causes."
+              },
               "correlates_with": [
                 "IND-O0404-03"
               ]
@@ -48377,6 +48745,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Establish how far the campaign has developed behind the anonymizing layers. Routing through Tor and rotating VPNs defeats attribution and hides the actor, but the concealment does not show whether the operation is near ready."
               },
               "correlates_with": [
                 "IND-0108-05"
@@ -48418,6 +48790,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess what the actor is preparing to carry out and how far the operation has run. Feeding test information to see what triggers a response reveals a plan, but counter-probing does not show the capability behind it."
+              },
               "correlates_with": [
                 "IND-O0405-03"
               ]
@@ -48456,6 +48832,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Weigh whether the shift off monitored channels reflects a real developing operation and how far it has progressed. Coded language and offline meetings can hide coordination, but discretion has ordinary explanations."
               },
               "correlates_with": [
                 "IND-0202-02",
@@ -48778,6 +49158,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "pathway_stage"],
+                "guidance": "Establish what the trusted vendor relationship reaches inside the institution and how the acquisition is used. Taking over a vendor with standing access grants legitimate entry, but the exposure depends on what that trust opens."
               }
             },
             {
@@ -48815,6 +49199,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Assess what the intrusion can reach and do. Access through a trusted supplier account shows a foothold, but not how deep it runs or what the actor is equipped to carry out against the institution."
               },
               "correlates_with": [
                 "IND-I0109-04"
@@ -48854,6 +49242,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Determine whether the gatekeeper has accepted and how far the corruption has moved. The offer makes intent and target plain, but a rebuffed bribe and a consummated one look alike until you trace whether the certification actually turns."
               },
               "correlates_with": [
                 "IND-O0315-03"
@@ -48895,6 +49287,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Determine what the implanted code can do and how many systems the update has already reached. The tampered update shows method and target, but its footprint and payload capability decide how much harm the actor can deliver."
+              },
               "correlates_with": [
                 "IND-I0109-02"
               ]
@@ -48934,6 +49330,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Establish how close the cultivation has brought the actor to the institution's decision-makers, and what they intend once there. Borrowed-trust approaches reveal a target, but not the endgame or whether the referrals have opened the door."
               }
             }
           ],
@@ -49255,6 +49655,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess whether the actor can actually deliver the threatened harm. The demand makes intent and target plain, but an empty threat and a real one can read the same on paper."
+              },
               "correlates_with": [
                 "IND-I0408-01",
                 "IND-O0412-01"
@@ -49294,6 +49698,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Assess whether the actor truly holds the data and how damaging its release would be. Exfiltration paired with a threat shows intent and leverage, but a bluff and a genuine breach can read alike until possession is proven."
               },
               "correlates_with": [
                 "IND-I0408-03",
@@ -49336,6 +49744,10 @@
                 "threat_target": "moderate",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess the capability behind the threat this channel is built to collect on. Standing up laundering shows the actor expects payment, not that they can carry out what they threaten."
+              },
               "correlates_with": [
                 "IND-O0407-02",
                 "IND-O0407-03"
@@ -49377,6 +49789,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh whether the demonstrated capability represents the actor's full reach or only a rehearsed sliver. A proof-of-capability sample shows the threat is not idle, but not whether the primary act would match it, or how soon it lands."
+              },
               "correlates_with": [
                 "IND-I0305-01"
               ]
@@ -49415,6 +49831,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess whether the widening pressure is backed by real capability or is pure coercion. Rising threat frequency shows resolve and a deadline dynamic, but escalation on paper does not prove the actor can deliver the harm it warns of."
               },
               "correlates_with": [
                 "IND-O0412-04"
@@ -49746,6 +50166,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the network's real reach and how fast the delegitimizing message is spreading. Coordinated messaging shows intent and framing, but a claim only threatens the institution's standing once it travels beyond the accounts that seed it."
+              },
               "correlates_with": [
                 "IND-O0411-02"
               ]
@@ -49784,6 +50208,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine how much genuine backing stands behind the campaign and whether it can reach a body able to defund the institution. A petition stages the demand, but bought signatures and a real constituency threaten it very differently."
               }
             },
             {
@@ -49821,6 +50249,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "means_in_hand"],
+                "guidance": "Weigh how far the narrative has climbed toward mainstream venues and the reach behind the push. Seeding in the fringe shows the design, but whether it breaks through, and how fast, decides the threat to the institution's standing."
               }
             },
             {
@@ -49857,6 +50289,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine how many credible insiders the actor has turned and how fast their renunciations reach the institution's audiences. Recruiting defectors shows intent, but the damage rests on the weight of the voices and their spread."
               }
             },
             {
@@ -49893,6 +50329,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh the reach of the impersonation and how fast it spreads before the institution can disavow it. A spoofed channel shows method and intent, but its damage rests on how far the false statements travel and how many take them as real."
               }
             }
           ],
@@ -50223,6 +50663,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Weigh how convincing the forgeries are and how many funders have received them. Fabricated misconduct documents show intent and a delivery path, but their power to shake confidence rests on whether donors take them as genuine."
+              },
               "correlates_with": [
                 "IND-O0403-03"
               ]
@@ -50261,6 +50705,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify which donors the actor is working and how many are already wavering. Direct approaches to funders show the method, but the threat to the institution turns on which relationships are targeted and how far the persuasion has moved."
               }
             },
             {
@@ -50298,6 +50746,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess what the actor actually holds and pin the moment the disclosure is timed to land. Aligning a release to a board vote shows deliberate leverage, but the harm depends on the substance behind it and the window it targets."
               }
             },
             {
@@ -50334,6 +50786,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine how close the manufactured scandal is to crossing into press the institution's funders monitor, and the reach sustaining it. Inauthentic amplification shows the design, but the damage lands only once it breaks past the bots."
               }
             },
             {
@@ -50371,6 +50827,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Establish whether the clustered withdrawals trace to the rumor campaign and whether the exodus is still spreading. A sharp cancellation pattern can mark a strangulation or an ordinary giving dip, and timing alone will not separate them."
               }
             }
           ],
@@ -50702,6 +51162,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine how far the insider has moved toward sabotage and what the out-of-role access lets them damage. Abnormal access stages position, but not whether the actor is a step from acting or merely roaming the systems."
+              },
               "correlates_with": [
                 "IND-I0208-04",
                 "IND-O0406-01"
@@ -50742,6 +51206,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine what more the insider is equipped to destroy and how close the disruptive event it precedes stands. Bulk deletion shows method and intent plainly; the scope the actor can still reach is what remains."
+              },
               "correlates_with": [
                 "IND-O0404-03"
               ]
@@ -50781,6 +51249,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Assess whether the outside contact truly signals cultivation and how far the insider has been turned. Disgruntlement and boundary-probing can mark coercion or ordinary friction, and the behavior alone will not tell you which."
               }
             },
             {
@@ -50818,6 +51290,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh what the external actor gains from the relayed intelligence and how close the disruption stands. Covert insider contact shows a channel and a target, but not what the outsider can do with schedules and credentials, nor when they move."
               },
               "correlates_with": [
                 "IND-0105-05",
@@ -50859,6 +51335,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Establish whether the payments trace to cooperation with an outside actor and what that access opens. Transfers alongside degraded controls suggest a bought insider, but a coincidence reads the same until money and access are tied together."
               }
             }
           ],
@@ -51188,6 +51668,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Assess whether the bloc commands the votes to win and whether the nominees are truly coordinated or independent. Filing for a majority of seats shows the aim and the timing, but not the strength behind the slate or the hand directing it."
+              },
               "correlates_with": [
                 "IND-O0406-03"
               ]
@@ -51227,6 +51711,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine how many votes the sponsored admissions manufacture and how near the vote stands. Funding aligned members shows intent to seize a majority, but whether the bought bloc reaches a winning count, and in time, decides the danger."
               }
             },
             {
@@ -51263,6 +51751,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Assess how close the amendments are to passing and whether the actor commands the votes to carry them. Rewriting quorum and removal rules shows the play, but a stalled motion and one about to clear the board differ sharply."
               },
               "correlates_with": [
                 "IND-O0406-03"
@@ -51302,6 +51794,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine how many gatekeeping roles the faction has secured and whether it controls the process to fill the rest. Moving loyalists into counsel or the nominating chair shows the capture, but its reach depends on how far it has gone."
               }
             },
             {
@@ -51339,6 +51835,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine how much the seated majority has already redirected and how far the stripping of oversight has gone. Once controls are removed the redirection reads as ordinary governance, so the danger turns on the extent of the capture."
               },
               "correlates_with": [
                 "IND-O0406-03"
@@ -51666,6 +52166,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess how broad the outreach runs and how many recipients are leaning toward leaving. Private invitations to defect show intent and a target base, but the threat rests on the campaign's reach and how many members it has moved."
               }
             },
             {
@@ -51703,6 +52207,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Establish whether the departures trace to an outside effort and whether the exodus is still building. Resignations echoing the same talking points can mark engineered defection or a real rift, and the pattern alone will not separate them."
               }
             },
             {
@@ -51740,6 +52248,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify which of the targeted staff are genuinely irreplaceable and how close they are to accepting. Open poaching shows the rival's aim, but the operational damage depends on whose exit the institution cannot absorb."
               }
             },
             {
@@ -51777,6 +52289,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the narrative's reach and how fast it is driving members out. Framing departure as the moral choice shows the tactic, but a message only threatens the institution once it spreads widely enough to move the base."
               }
             },
             {
@@ -51813,6 +52329,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine how much of the base the exported lists expose and how far the solicitation has already reached. Taking rosters on the way out shows intent and method, but the harm depends on what was taken and how many the insider has contacted."
               }
             }
           ],
@@ -52125,6 +52645,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify which donors the campaign is pressuring and how many pledges have already been pulled. A coordinated push to funders shows the method and the aim, but the threat to the institution's finances turns on which backers give way."
               }
             },
             {
@@ -52162,6 +52686,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Establish whether the complaints behind the closure are a coordinated effort and whether other processors will follow. An account freeze can flow from a real risk flag or an engineered campaign, and the notice alone will not tell you which."
               }
             },
             {
@@ -52198,6 +52726,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Assess whether the allegations carry any substance and how much grant funding a suspension would freeze. Filing complaints to trigger a review shows the method, but an empty claim and a founded one can both halt disbursements."
               }
             },
             {
@@ -52235,6 +52767,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Weigh the boycott's weight and how close the named sponsors are to walking. Naming corporate backers shows the pressure play, but a loud campaign and one that genuinely moves sponsors differ, and the danger turns on which waver."
               }
             },
             {
@@ -52272,6 +52808,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Assess whether the fabricated claims can move a watchdog rating and how much funding it gates. Seeding the reports shows intent, but the damage lands only if the listing body acts, and only as deep as the streams it controls."
               }
             }
           ],
@@ -52592,6 +53132,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine how damaging the staged material is and how close the insider stands to releasing it. Bulk copying of governance records to outside storage shows intent and method, but the threat depends on the sensitivity of what was taken."
               }
             },
             {
@@ -52628,6 +53172,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Assess whether the actor truly holds the records they claim and how damaging their release would be. A public possession claim with a deadline shows intent and leverage, but a bluff and a genuine cache read alike until possession is shown."
               },
               "correlates_with": [
                 "IND-O0412-02"
@@ -52668,6 +53216,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Assess whether the demand can force disclosure and what sensitive deliberations it would surface. Sweeping records requests show the aim of dragging internal material into the open, but the threat depends on whether the motion has teeth."
               }
             },
             {
@@ -52705,6 +53257,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the surfaced documents are authentic and gauge how widely they have already spread. A leak packaged as proof of wrongdoing shows the framing, but whether the records are genuine or doctored, and how far they travel, decides the harm."
               },
               "correlates_with": [
                 "IND-O0411-01",
@@ -52745,6 +53301,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Establish whether any staff have given up privileged material and what the actor means to do with it. Pretext probing for governance records shows the intent to weaponize them, but not how much has leaked or how close a usable cache is."
               }
             }
           ],
@@ -53081,6 +53641,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess how deeply the narratives have penetrated the membership and how divided the factions are. Wedge content in internal channels shows the intent to fracture, but the danger depends on the actor's reach and whether the split is set."
               }
             },
             {
@@ -53117,6 +53681,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Weigh how convincingly the impersonations pass as real members and the scale of the network behind them. Sockpuppets posing as opposing factions show the manufactured-split design, but the harm rests on whether members take the bait."
               }
             },
             {
@@ -53154,6 +53722,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine how far the breakaway caucus has organized and how many members it has drawn in. Cultivation around betrayal claims shows the aim of splitting the institution, but the threat turns on whether it is an idea or a forming body."
               }
             },
             {
@@ -53190,6 +53762,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Assess which circulated communications are genuine and which are doctored, and how deep the mistrust runs. Feeding each faction a tailored version shows the intent to divide, but the damage depends on how convincing the distortions are."
               }
             },
             {
@@ -53227,6 +53803,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Assess whether the discord is orchestrated and how far the split can spread. Coordinated actors can fracture an institution from within, but organic infighting can read the same, and the danger is how deep it runs."
               }
             }
           ],
@@ -53542,6 +54122,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine the actor's real reach and whether the flood can be sustained. Mass submissions bury the institution's legitimate work only if the volume holds, and a burst from a few hands can look like a movement before it fades."
               }
             },
             {
@@ -53578,6 +54162,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Establish the true source and scale behind the surge. A flood that traces to one automated hand is a different threat from a genuine crowd, and only its scale tells you how long real applicants stay shut out."
               }
             },
             {
@@ -53614,6 +54202,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assemble a picture of the actor's resources and how long the barrage can run. Perpetual response work paralyzes the institution only if the filings keep coming, which the paperwork itself says nothing about."
               }
             },
             {
@@ -53651,6 +54243,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Weigh how large the mobilized base really is and whether the call will translate into volume. The scripts show the method and timing, but a template saturates the institution's intake only if enough people actually answer it."
               }
             },
             {
@@ -53687,6 +54283,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Identify the scale of the actor's booking activity and whether it can be sustained. Denying real users access bites only while the fake reservations outpace the institution's ability to reclaim the slots."
               }
             }
           ],
@@ -54005,6 +54605,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the resources funding the litigation and how long the actor can keep filing. A wave of thin suits bleeds the institution only while the actor can sustain the costs, which the complaints on file reveal nothing about."
               }
             },
             {
@@ -54041,6 +54645,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Establish whether the complainants are truly separate or one coordinated hand, and the reach behind them. Simultaneous filings strain the institution only if the numbers are real, and identical language can point either way."
               }
             },
             {
@@ -54077,6 +54685,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "means_in_hand"],
+                "guidance": "Determine the actor's staying power and how long the objections can drag on. Serial appeals stall the institution's operations only while the actor keeps lodging them, and the filings show intent, not the endurance funding it."
               }
             },
             {
@@ -54112,6 +54724,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh the actor's capacity to sustain the demands and how far the campaign will run. The records requests consume the institution's legal staff only as long as they keep arriving, which their volume alone will not show."
               }
             },
             {
@@ -54149,6 +54765,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Verify how deep the litigation fund runs and how long it can sustain the pressure. The fundraising material makes the intent to exhaust the institution plain, but a goal to bankrupt it and the means to do so differ."
               }
             }
           ],
@@ -54472,6 +55092,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Determine how much of the institution the actor already controls and how fast the bloc is growing. The nominee accounts hide the true position, and by the time disclosure triggers the actor may be close to a controlling stake."
+              },
               "correlates_with": [
                 "IND-O0406-03"
               ]
@@ -54510,6 +55134,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess how much of the institution's debt the actor holds and how soon a default can be forced. The purchase signals intent to dictate terms, but the leverage to seize control depends on the position's size."
               }
             },
             {
@@ -54546,6 +55174,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Weigh whether the actor has the votes and how close the slate is to winning. The dissident ballot makes the bid for the institution's governance plain, but a solicitation is not the same as the support to carry it."
               }
             },
             {
@@ -54582,6 +55214,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "means_in_hand"],
+                "guidance": "Establish how much time the institution has before it must accept and whether the actor can fund the rescue. The covenants show intent to seize control through the crisis, and the leverage grows as the liquidity gap widens."
               }
             },
             {
@@ -54618,6 +55254,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Identify whether the actor can act on the opening this mapping uncovers and how soon a bid might follow. Commissioning valuations and lien searches resolves the cheapest route to control, but not the capital or timing behind a move."
               }
             }
           ],
@@ -54932,6 +55572,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Identify which stakeholders the cloned identity is reaching and how far the deception has spread. Look-alike domains make the method plain, but the harm turns on who acts on the false announcements before it is caught."
+              },
               "correlates_with": [
                 "IND-O0409-02"
               ]
@@ -54970,6 +55614,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "means_in_hand"],
+                "guidance": "Determine how widely the forged communications have circulated and the actor's reach into the institution's contacts. The fabrications show the method, but the damage depends on how many recipients act before the forgery surfaces."
               }
             },
             {
@@ -55006,6 +55654,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "means_in_hand"],
+                "guidance": "Determine how long the fake portal has been live and how many donors it has reached. The cloned branding shows the method, but the funds diverted from the institution mount with every day it stays up and undetected."
               }
             },
             {
@@ -55042,6 +55694,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Establish how far the fraud has progressed and which staff or vendors are being worked. Impersonating officials shows the method, but whether funds or credentials have already moved separates an attempt from a loss to the institution."
               }
             },
             {
@@ -55078,6 +55734,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "target_focus"],
+                "guidance": "Weigh how far the fabricated statements have traveled and which constituents are seeing them. The cloned channels show the method, but a false statement discredits the organization only once it reaches the audience that matters."
               }
             }
           ],
@@ -55404,6 +56064,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess whether the boycott has real mass behind it and whether it is gaining momentum. The pledge drive shows intent and target, but a call to withhold business pressures the institution only once enough people answer and keep it up."
               }
             },
             {
@@ -55440,6 +56104,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine how close the sponsors are to pulling out and how much leverage the actor holds over them. Targeting the institution's advertisers shows the method, but the financial harm lands only if the pressure actually moves them."
               }
             },
             {
@@ -55476,6 +56144,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Establish how much of the participation is genuine and how much is manufactured. Bot amplification inflates the numbers, so the question is whether an actual constituency is turning on the institution or a few accounts simulate one."
               }
             },
             {
@@ -55512,6 +56184,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify which funding ties are genuinely exposed and whether the holders are moving toward divesting. The scorecards show the method and the target, but the institution is only hurt when real money actually leaves."
               }
             },
             {
@@ -55548,6 +56224,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "pathway_stage"],
+                "guidance": "Weigh how sustained the demonstrations are becoming and whether they risk escalating past lawful protest. Pickets timed to peak business depress patronage, but the graver concern is whether the recurring presence hardens into more."
               },
               "correlates_with": [
                 "IND-F0306-01"
@@ -55859,6 +56539,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess the actor's reach and how close the reporting is to tripping an automated suspension. Coordinated abuse reports strip the institution's channel only if the volume crosses the platform's threshold, and few can file many."
               }
             },
             {
@@ -55894,6 +56578,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine how much leverage the actor holds over the provider and how close it is to cutting the institution off. Reputational-risk complaints threaten the organization's funds only if the provider will act on them."
               }
             },
             {
@@ -55930,6 +56618,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Verify whether the complaint package has real merit with the authority and how close it is to revocation. A curated filing threatens the institution's legitimacy only if the standing body takes it up."
               }
             },
             {
@@ -55965,6 +56657,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify which of the institution's dependencies are most exposed and whether the providers will walk. Naming campaigns aim to cut the organization off from what it needs, but the damage depends on which vendors actually refuse service."
               }
             },
             {
@@ -56002,6 +56698,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Weigh how solid the dossier's allegations are and how the timing aligns with the public pressure. A gatekeeper severs access to avoid controversy, so the danger rises as a credible-looking complaint meets peak attention."
               }
             }
           ],
@@ -56320,6 +57020,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Assess whether the dissolution is a genuine wind-down or a rebrand. The same actor can stand up fresh fronts to continue against the institution, and the paperwork reads as ordinary closure."
               }
             },
             {
@@ -56356,6 +57060,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Establish whether closing the accounts ends the operation or funds the next, and whether the money still traces to a sponsor. Layered transfers are built to go cold, but residual balances can still tie the fronts to one hand."
               }
             },
             {
@@ -56392,6 +57100,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "source_credibility"],
+                "guidance": "Determine how much of the footprint can still be captured before it is gone. Mass takedowns race the investigation, but archived and cached copies can still tie the campaign to the institution it targeted."
               }
             },
             {
@@ -56428,6 +57140,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "proximity_access"],
+                "guidance": "Assess whether the shared addresses can still place a common controller before the records lapse. Closing the mail drops erases where the fronts overlapped, but leases and filings may still tie them to one hand if pulled quickly."
               }
             },
             {
@@ -56464,6 +57180,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Identify whether the human network can still be reconstructed and whether it is dispersing to regroup. Silencing the named officers cuts the links investigators follow, but communications held by others can still tie them to the sponsor."
               }
             }
           ],
@@ -56774,6 +57494,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Weigh whether the planted markers are authentic and what the actor's own tradecraft beneath them can reveal. Foreign strings and a rival's toolmarks aim to misdirect attribution, and the forgery's sophistication can point to a capable hand."
               }
             },
             {
@@ -56810,6 +57534,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Determine whether the claiming group is a real movement or a manufactured banner, and whether it signals more to come. Presenting the attack as grassroots action breaks the link to the sponsor, and a fabricated front can be reused."
               }
             },
             {
@@ -56846,6 +57574,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Establish whether attribution can still be built before the disposable infrastructure is torn down. Layered proxies and cutouts aim to break the trail to the sponsor, but registration and hosting seams can still surface if pursued fast."
               }
             },
             {
@@ -56882,6 +57614,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "source_credibility"],
+                "guidance": "Weigh how far the alternate-suspect story has spread and whether it holds against the actor's own traces. Seeding a rival or foreign hand before attribution finishes sets the misdirection first, and an early narrative can outrun the facts."
               }
             },
             {
@@ -56918,6 +57654,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Determine whether the operational fingerprints can still be recovered and whether the cleanup precedes a follow-on. Overwriting metadata aims to sever the act from a known actor, but backups may still hold the original traces."
               }
             }
           ],
@@ -57247,6 +57987,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "source_credibility"],
+                "guidance": "Establish how far up the citation ladder the framing has climbed and whether the sources are truly independent. The delegitimization threatens the institution only on reaching mainstream coverage, and each rung is built to look separate."
               }
             },
             {
@@ -57283,6 +58027,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Establish whether the voices carrying the narrative are truly independent and how wide their reach runs. Recasting the framing in others' words hides the sponsor's hand, and undisclosed coordination turns scattered posts into a campaign."
               }
             },
             {
@@ -57319,6 +58067,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Determine whether the publishing group is truly independent and how far its report's framing is traveling. Dressing the delegitimization as neutral analysis lends it borrowed credibility, and the funding tie is what the packaging hides."
               }
             },
             {
@@ -57355,6 +58107,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Weigh how much of the apparent consensus is manufactured and what real reach sits behind the clustered accounts. Synchronized posting fakes organic agreement against the institution, so the question is whether a genuine audience adopts it."
               }
             },
             {
@@ -57391,6 +58147,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "source_credibility"],
+                "guidance": "Identify how far the reimported coverage has spread and whether its foreign sourcing is truly independent of the campaign. Laundering it through overseas outlets hides its domestic origin and makes it read as outside corroboration."
               }
             }
           ],
@@ -57707,6 +58467,10 @@
                 "threat_target": "weak",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm whether the purged records can still be recovered and how much time remains before they are gone. Deleting the collaboration history within hours races any inquiry, but server-side copies and custodians may still hold it."
+              },
               "correlates_with": [
                 "IND-0404-01",
                 "IND-F0404-01"
@@ -57746,6 +58510,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Assess whether any forensic trace survives the wipe and whether the actor is going dark to regroup. Destroying devices and cycling burner numbers eliminates the endpoints, but carrier records and cloud backups can outlast the hardware."
               },
               "correlates_with": [
                 "IND-0402-01",
@@ -57788,6 +58556,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage"],
+                "guidance": "Establish whether the purge closes the operation or conceals an insider still in place. Wiping the audit trail can hide continued access as easily as a clean exit, and the deletion will not say which."
+              },
               "correlates_with": [
                 "IND-I0403-01"
               ]
@@ -57827,6 +58599,10 @@
                 "threat_target": "weak",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine whether closing the accounts ends the financing or preserves the means to fund another campaign. The severed trail can hide money repositioned for a successor operation, and closure reads the same as reconstitution."
+              },
               "correlates_with": [
                 "IND-I0405-03"
               ]
@@ -57865,6 +58641,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess how many co-conspirators the coaching reaches and whether the network stays intact to act again. Coordinated deletion shows an organized group, but not its full size or whether it is standing down."
               },
               "correlates_with": [
                 "IND-F0404-02"
@@ -58214,6 +58994,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Weigh whether extracting the insider preserves the asset for a renewed campaign or only puts them beyond an internal review. Moving the human asset can keep a proven capability in reserve, and the transfer itself will not reveal the intent."
+              },
               "correlates_with": [
                 "IND-0404-04",
                 "IND-F0404-05",
@@ -58255,6 +59039,10 @@
                 "threat_target": "weak",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Weigh the reach behind the money keeping exposed operatives loyal and silent. Funding defense and relocation through intermediaries shows resources and organization, but not whether the same hand is staging another campaign."
+              },
               "correlates_with": [
                 "IND-F0405-04"
               ]
@@ -58293,6 +59081,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish how far the network extends beyond the members already visible and whether it survives to reassemble. Pre-arranged silence shows planning and discipline, but keeps the rest of the cell out of view."
               },
               "correlates_with": [
                 "IND-0404-06",
@@ -58334,6 +59126,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify which witnesses are being pressured and what their testimony would expose. Silencing them shows the network fears specific disclosures, and who is targeted can map the parts of it still operating."
               }
             },
             {
@@ -58370,6 +59166,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Determine whether rotating the cutouts closes the operation or rebuilds the links to insiders still in place. Fresh identities and infrastructure show the network means to persist, but hide which connections are being preserved."
               },
               "correlates_with": [
                 "IND-0404-05"
@@ -58698,6 +59498,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Confirm whether the dormant credentials still grant live access and how many other assets are held in reserve. Leaving an insider untouched shows a foothold kept for a renewed campaign, but not how usable it remains."
+              },
               "correlates_with": [
                 "IND-O0304-02"
               ]
@@ -58736,6 +59540,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Verify that the hidden account is the actor's implant, not a legitimate service, and whether it is the only one. Standing persistence shows the network means to return, but one account rarely maps the full foothold."
               }
             },
             {
@@ -58772,6 +59580,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine how much the influence seat can actually steer and whether other seats are held the same way. Holding the board member in place shows intent to shape the institution from within, not the reach the seat commands."
               }
             },
             {
@@ -58808,6 +59620,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Determine whether the innocuous check-ins are a live operational channel and what sits on the other end. Low-frequency contact can keep a sleeper warm or mean nothing at all, and the messages themselves stay deliberately empty."
               },
               "correlates_with": [
                 "IND-O0202-02"
@@ -58847,6 +59663,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify which applicants and vendors are seeded and how far each has advanced. Feeding fresh assets into hiring and procurement shows the penetration is being rebuilt, and each candidate marks where a new foothold is forming."
               }
             }
           ],
@@ -59169,6 +59989,10 @@
                 "threat_target": "weak",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assemble the chain of shells and pass-throughs behind the money. Layering the proceeds shows resources and tradecraft, but not whether the funds are being staged to bankroll the next campaign against the institution."
+              },
               "correlates_with": [
                 "IND-0405-04",
                 "IND-F0405-05"
@@ -59209,6 +60033,10 @@
                 "threat_target": "weak",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage"],
+                "guidance": "Establish whether the laundered value is being cashed out or staged to fund a successor operation. Routing through mixers and chain-hopping shows capability and breaks the ledger trail, but not what the money is being kept for."
+              },
               "correlates_with": [
                 "IND-0405-02",
                 "IND-F0405-02"
@@ -59248,6 +60076,10 @@
                 "threat_target": "weak",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine whether the structured movement drains the operation or provisions the next one. Keeping deposits below reporting thresholds shows patience and method, but the slow drip can equally close the books or fund what follows."
+              },
               "correlates_with": [
                 "IND-F0405-01"
               ]
@@ -59286,6 +60118,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify the front entities behind the fabricated invoices and consulting contracts. Dressing the transfers as ordinary business shows an organized support structure, and the same fronts can surface the successor operation the money feeds."
               }
             },
             {
@@ -59322,6 +60158,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish what value is being parked in metals, art, or property and through which nominees. Moving proceeds into portable assets shows the funds are being preserved, not spent, which can hold a war chest for a later campaign."
               }
             }
           ],
@@ -59645,6 +60485,10 @@
                 "threat_target": "strong",
                 "threat_method": "none"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Determine whether the actor is scoring past damage or preparing a follow-on, and which institution the next strike would hit. Harvesting the public response shows the campaign's objective, but not where the actor turns next."
+              },
               "correlates_with": [
                 "IND-F0406-01"
               ]
@@ -59682,6 +60526,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Weigh what the review resolves to change and whether a next campaign is being planned. Tallying which controls held shows the actor is learning from the act, not the capability they will bring to the follow-on."
               },
               "correlates_with": [
                 "IND-0406-03",
@@ -59722,6 +60570,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Establish whether the probing is idle or reconnaissance for a re-attack, and whether the actor can reach the weakness it finds. Repeated traffic against restored services shows intent to test, not the access to exploit what surfaces."
               }
             },
             {
@@ -59758,6 +60610,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Determine whether the solicited feedback fuels a follow-on and whether the insiders supplying it are genuine. Asking how leadership responded shows intent to learn, but such accounts may be planted or embellished."
               }
             },
             {
@@ -59793,6 +60649,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "none"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Weigh whether meeting the objective closes the campaign or sets up the next, and how soon another move might follow. A scorecard grading share price and churn shows how the actor defines success, not what hitting the mark triggers."
               }
             }
           ],
@@ -60118,6 +60978,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Assess whether the re-registration is a true dissolution or the same operation renamed. Fresh officers and a new brand can carry the old personnel, funding, and targeting forward, and the filings read as ordinary closure."
               }
             },
             {
@@ -60153,6 +61017,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Assemble the redirect trail from the old presence to the fresh domains, and whether the audience carries across. Continuity behind the takedown shows the operation persisting, and who follows marks the targeting that survives."
               }
             },
             {
@@ -60188,6 +61056,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage"],
+                "guidance": "Establish whether relocating to weaker oversight ends the exposure or reconstitutes the operation beyond reach. The new paperwork shows intent to continue, only from ground the institution's remedies cannot reach."
               }
             },
             {
@@ -60223,6 +61095,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Verify whether the public disavowal is genuine or cover for a quiet handoff to a successor group. Denouncing the old name while steering donors elsewhere shows the operation may be continuing under clean colors, not shutting down."
               }
             },
             {
@@ -60258,6 +61134,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assemble the money trail from the sanctioned entity into the rebranded one. New wallets and shell accounts show the funds surviving the takedown, and following them can reveal the capability the successor operation carries forward."
               }
             }
           ],
@@ -60577,6 +61457,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Verify that the claim of responsibility is authentic before it shapes the response. A signed manifesto names the actor and the target plainly, but false credit and real credit read alike, and either can precede a further strike."
+              },
               "correlates_with": [
                 "IND-0407-01",
                 "IND-F0409-02",
@@ -60617,6 +61501,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Confirm whether the offered proof actually authenticates the claim. Pre-release timestamps and internal artifacts can establish authorship or be fabricated to borrow it, and the answer changes whether a continuing campaign is real."
+              },
               "correlates_with": [
                 "IND-0407-02"
               ]
@@ -60654,6 +61542,10 @@
                 "threat_timing": "weak",
                 "threat_target": "moderate",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Assess whether the signed communique places this act in a genuine campaign or appropriates it. Embedded symbols and prior work can mark a continuing series or dress up an opportunistic claim, setting how much more may follow."
               },
               "correlates_with": [
                 "IND-F0409-03",
@@ -60695,6 +61587,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Verify that the released sample proves the breach it claims and gauge how much more the actor holds. A data drop tied to a named persona can establish attribution, but a small sample shows leverage, not its full extent."
               }
             },
             {
@@ -60730,6 +61626,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Verify whether the timed claim is authentic and whether the chosen date foreshadows more. Anchoring it to a symbolic occasion shows the actor courting association, and the same calendar can mark when a follow-on is set."
               }
             }
           ],
@@ -61045,6 +61945,10 @@
                 "threat_target": "strong",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess the actor's reach across the platforms carrying the exposure and whether the push sets up more. Hashtags timed to peak hours show organization, not how far the content travels or what the amplification is building toward."
+              },
               "correlates_with": [
                 "IND-0408-01",
                 "IND-F0410-02"
@@ -61083,6 +61987,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Determine how much of the outrage is manufactured and how large the network behind it runs. Inauthentic accounts resharing at volume can fake broad reaction, and separating real anger from bots gauges the reach the actor commands."
               }
             },
             {
@@ -61118,6 +62026,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Weigh how far the packaged content can travel beyond the original audience and whether mainstream pickup is the goal. Memes and supercuts engineered to spread show intent to widen the damage, not yet the reach to carry it there."
               }
             },
             {
@@ -61153,6 +62065,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Establish whether the influencer coverage is independent or seeded, and how far the seeding runs. Framing amplified as outside validation can manufacture consensus, and tracing it back gauges the network the actor can mobilize."
               }
             },
             {
@@ -61189,6 +62105,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine whether flooding the institution's channels is a closing spectacle or pressure toward a next demand. Hijacking its remediation messaging shows reach and coordination, not how long the actor can hold the campaign there."
               }
             }
           ],
@@ -61520,6 +62440,10 @@
                 "threat_target": "strong",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess whether the actor can actually deliver the further action the demand threatens, and how soon. Citing the completed harm proves capability once, but a repeat threat and a bluff read alike until the means are weighed."
+              },
               "correlates_with": [
                 "IND-F0412-01"
               ]
@@ -61557,6 +62481,10 @@
                 "threat_timing": "strong",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm whether the threatened second release is real and within the actor's reach. A stated deadline shows resolve and a schedule, but the ultimatum may rest on data or capability the actor does not actually hold."
               }
             },
             {
@@ -61593,6 +62521,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Verify that the withheld data exists as claimed and gauge how damaging the rest is. Confirming more remains sustains the pressure, but staged partial disclosure can bluff depth the actor cannot back."
               }
             },
             {
@@ -61628,6 +62560,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the reach of the parallel pressure campaign and how fast it is building. Filing complaints and coordinating outrage alongside private demands shows organization, and its pace sets how much cost refusing the ultimatum carries."
               }
             },
             {
@@ -61664,6 +62600,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify the additional institutions named in the demand and whether the actor can reach them. Naming peers as the price of one organization's compliance widens the target set, but is not proof of the means to strike each."
               }
             }
           ],
@@ -61985,6 +62925,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Weigh whether the recruitment drive is translating into operational strength for a next campaign. Pairing the completed act with calls to join shows intent to build, but not how many answer or what capability they add."
               }
             },
             {
@@ -62021,6 +62965,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify which peer organizations the published method exposes and whether copycats are already moving. Broadcasting the tactics shows intent to spread the harm, and similar institutions become the target set others are invited to hit."
               }
             },
             {
@@ -62057,6 +63005,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess how much of the surge in followers and donations converts into operational strength. A spike after the act shows momentum, but the numbers grow dangerous only as they are channeled into roles for the next campaign."
               }
             },
             {
@@ -62093,6 +63045,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine whether the onboarding is converting sympathizers into committed operatives for a next operation. Live sessions framed on the victory show intent to consolidate the momentum, but not how many cross from supporter to actor."
               }
             },
             {
@@ -62129,6 +63085,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify the peer institutions drawing copycat attempts and whether the actor steers or only cheers them. Amplifying imitators as a movement shows the targeting spreading, and each elevated attempt marks where the next may land."
               }
             }
           ],
