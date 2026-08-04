@@ -478,11 +478,11 @@ def _check_conditioning_guidance(fail, ind_id, ind):
     if not isinstance(guidance, str) or not guidance.strip():
         fail("V22", ind_id, "guidance must be a non-empty string")
     else:
-        if len(guidance) > 240:
+        if len(guidance) > 420:
             fail(
                 "V22",
                 ind_id,
-                f"guidance is {len(guidance)} chars; max is 240",
+                f"guidance is {len(guidance)} chars; max is 420",
             )
         if "—" in guidance or "–" in guidance:
             fail("V22", ind_id, "guidance contains an em or en dash")

@@ -1189,7 +1189,7 @@
             "guidance": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 240,
+              "maxLength": 420,
               "pattern": "^[^—–]*$",
               "description": "Natural-language practitioner directive: what to go collect and why it decides how dangerous the case is. No em or en dashes (enforced by pattern)."
             }

@@ -1,6 +1,6 @@
 # conditioning_guidance — per-indicator investigative tasking (V1.6)
 
-Every indicator carries a `conditioning_guidance` object: `probe_factors` (a machine-filterable array of instance-factor enum names) and `guidance` (a natural-language practitioner directive, max 240 characters). The field answers one question for each behavior class: **which instance factors are the hidden drivers of danger — the things the behavior does not surface but that decide how dangerous the case is — and what should the analyst go collect?**
+Every indicator carries a `conditioning_guidance` object: `probe_factors` (a machine-filterable array of instance-factor enum names) and `guidance` (a natural-language practitioner directive, max 420 characters). The field answers one question for each behavior class: **which instance factors are the hidden drivers of danger — the things the behavior does not surface but that decide how dangerous the case is — and what should the analyst go collect?**
 
 It is the third member of a deliberately distinct trio:
 
