@@ -6,6 +6,7 @@ import {
   FACILITY_TARGET_SCOPE_LABELS,
   WITHIN_SITE_FOCUS_LABELS,
   SEVERITY_BAND_LABELS,
+  PROBE_FACTOR_LABELS,
   TEMPORAL_SIGNATURE_LABELS,
   EVIDENCE_TIER_LABELS,
   ESCALATION_AXIS_LABELS,
@@ -284,6 +285,19 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
                 </a>
                 .
               </details>
+              {ind.conditioning_guidance && (
+                <div className="cond-guidance">
+                  <div className="ind-subhead">Conditioning Guidance</div>
+                  <p className="cond-guidance-text">{ind.conditioning_guidance.guidance}</p>
+                  <div className="dr-tag-row">
+                    {ind.conditioning_guidance.probe_factors.map((f) => (
+                      <span key={f} className="dr-tag probe" title="Instance factor to probe at assessment time">
+                        {PROBE_FACTOR_LABELS[f] || f}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
               <div className="adv-attrs-list">
                 {ind.temporal_signature && (
                   <div className="adv-attr-row-new">

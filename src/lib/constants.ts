@@ -269,6 +269,16 @@ export const MODALITY_DEFS: Record<string, string> = {
 
 export const MODALITY_ORDER = ['physical', 'cyber', 'cyber_physical', 'human_social'];
 
+// V1.6 conditioning_guidance probe-factor labels (instance-factor enum names).
+export const PROBE_FACTOR_LABELS: Record<string, string> = {
+  target_focus: 'Target Focus',
+  pathway_stage: 'Pathway Stage',
+  means_in_hand: 'Means in Hand',
+  tempo_trajectory: 'Tempo Trajectory',
+  proximity_access: 'Proximity / Access',
+  source_credibility: 'Source Credibility',
+};
+
 export const CROSSING_MECHANISM_LABELS: Record<string, string> = {
   digital: 'Digital',
   electromagnetic: 'Electromagnetic',

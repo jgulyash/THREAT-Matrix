@@ -85,6 +85,20 @@ export type CrossingMechanism = 'digital' | 'electromagnetic' | 'physical_implan
 export type AxisConfidenceLevel = 'established' | 'inferred' | 'thin';
 export type AxisConfidence = Partial<Record<keyof EscalationAxes, AxisConfidenceLevel>>;
 
+// V1.6 conditioning_guidance — per-indicator investigative tasking (type-level).
+export type ProbeFactor =
+  | 'target_focus'
+  | 'pathway_stage'
+  | 'means_in_hand'
+  | 'tempo_trajectory'
+  | 'proximity_access'
+  | 'source_credibility';
+
+export interface ConditioningGuidance {
+  probe_factors: ProbeFactor[];
+  guidance: string;
+}
+
 export interface Indicator {
   id: string;
   behavior: string;
@@ -97,6 +111,7 @@ export interface Indicator {
   human_social: boolean;
   crossing_mechanism?: CrossingMechanism;
   axis_confidence?: AxisConfidence;
+  conditioning_guidance?: ConditioningGuidance;
   // V1.1 Detection Mesh
   correlates_with?: string[];
   // V1.2 escalation scoring
