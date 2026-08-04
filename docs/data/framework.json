@@ -60,6 +60,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access", "tempo_trajectory"],
+                "guidance": "Assess capability, access, and pace. The grievance names a target plainly, but whether it turns into an attack rests on means and movement the words do not show."
+              },
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             },
             {
@@ -102,6 +106,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Establish what the actor is equipped to do and how fast they are moving. Sustained research into a person's routine can fix the target while hiding whether an attack is being built and how soon it could come."
+              },
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             },
             {
@@ -143,6 +151,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine where the actor sits on the pathway and what capability stands behind the words. Intensifying grievance talk shows a hardening fixation, not whether it has turned into preparation or an ability to attack."
               },
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             },
@@ -188,6 +200,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Weigh how solid the third-party account is and whether the actor can act on it. A stated wish to 'make them pay' names intent and target, but a vented grievance and a real plan can sound the same when relayed by someone else."
+              },
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             },
             {
@@ -230,6 +246,10 @@
                 "threat_target": "weak",
                 "threat_method": "moderate"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify the target and what the actor is equipped to do. Studying past attacks on similar victims shows an interest in method, but not who this actor has settled on or whether they can carry an attack out."
+              },
               "target_identity": []
             },
             {
@@ -270,6 +290,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess what the actor could do with what they are pulling and how far along they are. Reaching into personnel files and travel schedules names a target and grants access, but not whether this is snooping or a pathway toward an attack."
               },
               "target_identity": ["named_individual", "role_or_identity_category"]
             }
@@ -706,6 +730,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine the actor's capability and pace. A dossier of home address, family, and routine fixes the target, but the compilation itself cannot tell you whether the actor is equipped to attack or how close that attack is."
+              },
               "target_identity": ["named_individual"]
             },
             {
@@ -749,6 +777,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish whether the fixation is progressing and what stands behind it. Long-term archiving of a subject's posts shows sustained focus on the target, but not whether the actor has moved toward action or holds any means to act."
+              },
               "target_identity": ["named_individual"]
             },
             {
@@ -790,6 +822,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the actor's capability and how fast they are moving. Pulling financial and medical records deepens the picture of the target, but the collection shows nothing of whether the actor can mount an attack or how soon."
+              },
               "target_identity": ["named_individual"]
             },
             {
@@ -829,6 +865,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Weigh what the actor can carry out and how far the plan has advanced. Cultivating the subject's coworkers and neighbors under cover builds access and confirms the target, but leaves open capability and whether preparation has begun."
               },
               "target_identity": ["named_individual"]
             },
@@ -873,6 +913,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Establish the actor's capability and how close the attack is. Profiling a subject's vehicles and arrival times marks a predictable opening on the target, but not whether the actor can strike it or when they intend to."
+              },
               "target_identity": ["named_individual"]
             },
             {
@@ -913,6 +957,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "means_in_hand"],
+                "guidance": "Assess whether the actor can reach these soft points and act there. Mapping a subject's gym, worship, and hobby venues surfaces where the target is exposed outside protected space, but not the actor's real access or the means to use it."
               },
               "target_identity": ["named_individual"]
             }
@@ -1385,6 +1433,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine how far the actor has progressed and what capability stands behind it. Repeated unexplained appearances at the target's locations confirm the target and show fixation, not whether this is early watching or the edge of an attack."
               }
             },
             {
@@ -1428,6 +1480,10 @@
                 "threat_timing": "weak",
                 "threat_target": "strong",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access", "tempo_trajectory"],
+                "guidance": "Assess capability, reach, and pace. Reverse-image and street-view study of the target's locations resolves where they are, but shows nothing of the means the actor holds, the access they have, or how fast they are moving."
               }
             },
             {
@@ -1472,6 +1528,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Establish what the actor is equipped to do and how soon. Photographing a location's exteriors, checkpoints, and interior layout marks advanced recon on a fixed target, but not the means to act or the nearness of an attack."
               }
             },
             {
@@ -1516,6 +1576,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "tempo_trajectory"],
+                "guidance": "Weigh the actor's access and how close the attack is. Studying floor plans, camera diagrams, and exit routes already shows capability and a fixed target; what remains hidden is whether the actor can get in and how soon they will try."
               }
             },
             {
@@ -1557,6 +1621,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "strong",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine what the actor can carry out and whether preparation is underway. Questioning staff about access procedures and routines shows a target and intent, but not the means to act or how far the plan has gone."
               }
             }
           ],
@@ -1848,6 +1916,10 @@
                 "threat_target": "weak",
                 "threat_method": "strong"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Identify the target candidates and how fast the actor is moving. Buying weapons and ammunition in odd quantities on a compressed timeline shows means and method, but not who the actor has in mind or how near an attack is."
+              },
               "target_identity": []
             },
             {
@@ -1888,6 +1960,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "weak",
                 "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Determine target candidates and the actor's pace. Acquiring tools and vehicles whose only coherent use is harmful shows a method taking shape, but the purchase alone cannot point to who the actor means to harm or when."
               },
               "target_identity": []
             },
@@ -1932,6 +2008,10 @@
                 "threat_target": "strong",
                 "threat_method": "weak"
               },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess what harm the actor could do once inside and how soon. Obtaining credentials, uniforms, or keys outside their role grants access to a known target, but the access itself leaves open the means to attack and the timing."
+              },
               "target_identity": []
             },
             {
@@ -1972,6 +2052,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "weak",
                 "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Determine what was acquired and who it is meant for. Using a third party to obtain what the actor cannot get directly hides both the capability being assembled and the target it points to."
               },
               "target_identity": []
             },
@@ -2014,6 +2098,10 @@
                 "threat_timing": "weak",
                 "threat_target": "weak",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess whether the research has become real capability and who it aims at. Studying 3D-printed firearms or IED precursors shows dangerous method interest, but not whether the actor has built anything or settled on a target."
               },
               "target_identity": []
             },
@@ -2058,6 +2146,10 @@
                 "threat_timing": "moderate",
                 "threat_target": "weak",
                 "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify what the actor took and the target behind it. Pulling harmful items from workplace stores outside their duties uses insider access, but the theft alone shows neither the capability assembled nor who it is aimed at."
               },
               "target_identity": []
             }
@@ -2516,6 +2608,10 @@
               "id": "IND-0105-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Weigh whether this has turned operational and what it adds in capability. Drawing another person into the grievance shows the narrative spreading, but not whether the pair is moving toward an attack or gaining the means to mount one."
+              },
               "behavior": "Threat actor introduces another individual to the grievance narrative through shared communications, joint research, or coordinated complaint",
               "category": "communication",
               "detection_sources": [
@@ -2551,6 +2647,10 @@
               "id": "IND-0105-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify the target and the capability the group brings. Coordinating lookout roles, task division, and synchronized movement shows an operation forming, but not who it is aimed at or what the cell can actually carry out."
+              },
               "behavior": "Threat actor begins coordinating logistics, schedules, or transportation with another individual whose role is functional rather than social: task division, lookout positioning, synchronized movement, or logistics the relationship itself does not explain",
               "category": "planning",
               "detection_sources": [
@@ -2585,6 +2685,10 @@
               "id": "IND-0105-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "weak", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Determine whether the actor is moving toward action and against whom. Trading messages in a forum that endorses violence shows sympathy and exposure to method, but many who post never advance and no target is fixed."
+              },
               "behavior": "Threat actor communicates with peers, online associates, or co-ideologues in a forum or platform that openly endorses violence or targeted harm",
               "category": "communication",
               "detection_sources": [
@@ -2621,6 +2725,10 @@
               "id": "IND-0105-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess what the recruited network can carry out and how soon. Bringing in family or employees for access, transport, or capability confirms a target and intent, but not the means the group now holds or how near an attack has come."
+              },
               "behavior": "Threat actor recruits or attempts to recruit family members, employees, or social connections to provide access, transportation, capability, or information about the target or target environment",
               "category": "communication",
               "detection_sources": [
@@ -2657,6 +2765,10 @@
               "id": "IND-0105-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Establish where the operation stands and what the recipient can do. Handing another the target's schedule and environmental detail can mean the actor is enabling someone better placed to attack, and the transfer hides their capability."
+              },
               "behavior": "Threat actor transfers targeting information (target details, schedule, environmental data, capability) to another individual via written or verbal communication",
               "category": "communication",
               "detection_sources": [
@@ -2692,6 +2804,10 @@
               "id": "IND-0105-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "moderate", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Determine whether the new ties are operational and where they point. A contact pattern that suddenly fills with associates who have no clear basis shows change, but not a target, a plan, or whether any attack is being built."
+              },
               "behavior": "Threat actor's pattern of contact shifts to include new associates whose connection has no clear social or professional basis, particularly in a compressed time window",
               "category": "behavioral_change",
               "detection_sources": [
@@ -3066,6 +3182,10 @@
               "id": "IND-0106-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "moderate", "threat_target": "weak", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "proximity_access"],
+                "guidance": "Identify the target and the access the disguise is meant to open. Adopting a uniform or vehicle marking that does not fit the actor points to an approach, but not who it is aimed at or what doors it is built to get through."
+              },
               "behavior": "Threat actor adopts an identity, uniform, or vehicle marking inconsistent with their actual employment, education, or background",
               "category": "behavioral_change",
               "detection_sources": [
@@ -3101,6 +3221,10 @@
               "id": "IND-0106-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess what the actor intends to do once inside and how soon. Presenting fabricated credentials at a restricted entrance is an active bid for access, but the badge shows neither the means the actor carries nor the nearness of an attack."
+              },
               "behavior": "Threat actor presents fabricated credentials (employer ID, contractor badge, business cards, vendor identification) when seeking access to restricted environments",
               "category": "access",
               "detection_sources": [
@@ -3138,6 +3262,10 @@
               "id": "IND-0106-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "moderate", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Weigh who the approach is aimed at and how far it has advanced. Standing up shell profiles to support a cover identity prepares for approach or surveillance, but the personas alone leave the target and the stage of the plan unsettled."
+              },
               "behavior": "Threat actor establishes shell social media profiles, online personas, or business presence to support a cover identity used for approach or surveillance",
               "category": "digital",
               "detection_sources": [
@@ -3173,6 +3301,10 @@
               "id": "IND-0106-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "moderate", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Determine whether this is a hostile approach and against what. A person on-site whose stated reason matches no work order may be probing the environment or may be nothing, and the weak account leaves the target and the stage unclear."
+              },
               "behavior": "Threat actor's stated reason for being at a location does not align with verifiable activity: no work order, no scheduled appointment, no destination, no sponsoring contact",
               "category": "behavioral_change",
               "detection_sources": [
@@ -3206,6 +3338,10 @@
               "id": "IND-0106-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "weak", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess whether the deception covers an attack and who it serves. An account riddled with gaps someone in that role would not have suggests cover, but not the capability behind it or the target it protects."
+              },
               "behavior": "Threat actor's verbal account of their role contains gaps inconsistent with someone actually in that role: wrong jargon, missing routine knowledge, cannot answer basic procedural questions someone working that job day-to-day would know",
               "category": "communication",
               "detection_sources": [
@@ -3238,6 +3374,10 @@
               "id": "IND-0106-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "weak", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Establish whether an uncorroborated identity marks a threat and what stands behind it. Details that fail normal verification can signal a constructed cover, but not whether the actor is on a pathway to attack or holds the means to act."
+              },
               "behavior": "Threat actor's identifying details (name, employer, license plate, business name) cannot be corroborated through normal verification channels",
               "category": "communication",
               "detection_sources": [
@@ -3595,6 +3735,10 @@
               "id": "IND-0107-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "none", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "moderate", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess whether capability stands behind the ideation and how far it has moved. Framing violence as the only answer and admiring past attackers shows hardening intent, but ideation without means or forward motion often stays talk."
+              },
               "behavior": "Threat actor exhibits ideation behavior: referencing violent solutions to grievance, romanticizing prior attackers, or framing harm to the target (a person, group, or population) as the only viable path forward",
               "category": "behavioral_change",
               "detection_sources": [
@@ -3631,6 +3775,10 @@
               "id": "IND-0107-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Determine what the actor can execute and who it is aimed at. Shifting from general threats to choosing a method, timing, and access shows a plan and its schedule, but not whether the means are in hand or the target is fixed."
+              },
               "behavior": "Threat actor moves from generalized statements of harm to specific planning behavior: selecting a method, identifying timing, evaluating opportunities for access to the target or target environment",
               "category": "planning",
               "detection_sources": [
@@ -3668,6 +3816,10 @@
               "id": "IND-0107-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "source_credibility"],
+                "guidance": "Confirm the target and how solid the reporting is. Preparation this advanced already shows capability and intent, so what remains is who it is aimed at and whether the account holds."
+              },
               "behavior": "Threat actor engages in preparation behavior: acquiring weapons, conducting dry runs, surveilling locations, or making logistical arrangements that converge on a specific time, place, or person",
               "category": "acquisition",
               "detection_sources": [
@@ -3706,6 +3858,10 @@
               "id": "IND-0107-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "none", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "strong", "threat_target": "weak", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Confirm the actor holds the means and who they intend to reach. Giving away possessions, writing a manifesto, or saying goodbye signals a final act may be near, but not whether the actor can carry it out or against whom."
+              },
               "behavior": "Threat actor exhibits a final-act behavioral signature: distributing personal possessions, writing a manifesto, recording a final statement, or saying goodbye to a confidant",
               "category": "behavioral_change",
               "detection_sources": [
@@ -3742,6 +3898,10 @@
               "id": "IND-0107-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "weak", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Weigh whether admiration has moved toward action and against whom. Collecting attack coverage and studying tradecraft shows identification with past attackers and interest in method, but not a fixed target or how far the actor has gone."
+              },
               "behavior": "Threat actor exhibits identification with prior attackers: collecting media coverage of past incidents, studying tradecraft details, or expressing admiration for individuals who have committed targeted violence",
               "category": "behavioral_change",
               "detection_sources": [
@@ -3778,6 +3938,10 @@
               "id": "IND-0107-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "moderate", "threat_target": "weak", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Determine whether the escalation is heading toward an attack and at whom. A discrete jump in violent imagery or low-level acts above the actor's baseline marks a shift, but not the target it points to or the stage the actor has reached."
+              },
               "behavior": "Threat actor exhibits a discrete escalation in the kind or intensity of violent imagery, statement, or low-level act distinct from the threat actor's prior behavioral baseline",
               "category": "behavioral_change",
               "detection_sources": [
@@ -3813,6 +3977,10 @@
               "id": "IND-0107-07",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "strong", "threat_target": "weak", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify what the surge is aimed at and whether the actor can act on it. A sudden spike in research, movement, and spending fits imminent action and shows tempo, but not the target or the means behind the rush."
+              },
               "behavior": "Threat actor exhibits a sudden visible increase in goal-directed activity such as research, communication, movement, or expenditure consistent with imminent action",
               "category": "behavioral_change",
               "detection_sources": [
@@ -4163,6 +4331,10 @@
               "id": "IND-0108-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Weigh who the actor is working and how far the operation has gone. Varying route, vehicle, and arrival time across visits shows trained countersurveillance and commitment, but not the target it protects or the stage now reached."
+              },
               "behavior": "Threat actor varies vehicle, route, or arrival time across repeated visits to a targeted-subject-associated location in a pattern consistent with deliberate surveillance detection",
               "category": "surveillance",
               "detection_sources": [
@@ -4198,6 +4370,10 @@
               "id": "IND-0108-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "target_focus"],
+                "guidance": "Identify the true location of interest and the access it offers. Dismounting and switching to foot before the real destination is meant to hide where the actor is going, masking both the target and the approach they are studying."
+              },
               "behavior": "Threat actor performs vehicle dismounts and walking transitions at non-destination points (parking-lot-to-walking pattern, ride-share-then-walk) before arriving at the actual location of interest",
               "category": "surveillance",
               "detection_sources": [
@@ -4231,6 +4407,10 @@
               "id": "IND-0108-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess what the actor can carry out and how far the plan has progressed. Routing tasks through cutouts keeps the actor off known ground and confirms a target, but hides the true scope and the means now in play."
+              },
               "behavior": "Threat actor uses cutouts, intermediaries, or third parties for tasks that would normally be performed directly: calling, visiting, or asking questions about the targeted subject's environment",
               "category": "communication",
               "detection_sources": [
@@ -4265,6 +4445,10 @@
               "id": "IND-0108-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "thin" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "moderate", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Determine the actor's reach and what they can do with it. Trading physical recon for satellite, drone, and camera feeds avoids exposure and studies a target, but shows nothing of whether the actor can get close or act once there."
+              },
               "behavior": "Threat actor substitutes physical reconnaissance with technical surrogates (satellite imagery, Street View, public live cameras, drone overflight) to avoid being physically observed at the location",
               "category": "digital",
               "detection_sources": [
@@ -4300,6 +4484,10 @@
               "id": "IND-0108-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "thin" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "moderate", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify what the reconnaissance is aimed at and the capability behind it. Masking activity with VPNs, Tor, and burner accounts hides the target the actor is studying and gives no sign of what they are equipped to do."
+              },
               "behavior": "Threat actor uses VPN, Tor, burner devices, anonymous accounts, or pseudonymous social media to mask digital reconnaissance activity directed at the targeted subject or environment",
               "category": "digital",
               "detection_sources": [
@@ -4334,6 +4522,10 @@
               "id": "IND-0108-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "pathway_stage"],
+                "guidance": "Establish whether the actor is positioned to act and how far along they are. A thin cover story held in reserve for challenges lets the actor linger near the target environment, but leaves open their access to strike and the stage reached."
+              },
               "behavior": "Threat actor maintains a thin cover story for proximity to the target environment that they activate only when challenged or observed, distinct from the routine cover used for active access attempts",
               "category": "behavioral_change",
               "detection_sources": [
@@ -4689,6 +4881,10 @@
               "id": "IND-0201-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess what the actor is equipped to carry out. The repeated visits fix a target and a window, but they can leave the weapon or method for an attack unseen."
+              },
               "behavior": "Threat actor performs repeated visits to the target site at consistent times concentrated on one recurring window rather than varied across the day, without legitimate purpose",
               "category": "surveillance",
               "detection_sources": [
@@ -4723,6 +4919,10 @@
               "id": "IND-0201-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Determine the means and the likeliest target candidates. Route-testing with stand-in vehicles shows an actor drilling an approach, but which target it serves and what it would deliver stay open."
+              },
               "behavior": "Threat actor drives or walks the same route to or past the target on multiple occasions, sometimes with stand-in vehicles or alternative timing to test variants",
               "category": "surveillance",
               "detection_sources": [
@@ -4757,6 +4957,10 @@
               "id": "IND-0201-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Establish the actor's capability and reach to the target. Timing shift changes and lockups validates a plan, but the rehearsal does not show what the actor can bring to bear or how near an attack it puts them."
+              },
               "behavior": "Threat actor times specific high-uncertainty operational segments (security shift change, building lockup, route arrival) repeatedly to validate planning assumptions",
               "category": "surveillance",
               "detection_sources": [
@@ -4792,6 +4996,10 @@
               "id": "IND-0201-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "strong", "threat_target": "weak", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "proximity_access"],
+                "guidance": "Identify the target candidates and whether the actor can reach them. Remote weapon checks make the means plain; what an attack still turns on is who it is aimed at and access to them."
+              },
               "behavior": "Threat actor conducts partial rehearsal of equipment or capability: weapon function checks at remote locations, vehicle handling tests, breach-tool practice: outside any legitimate context (organized sport, licensed range use, professional training)",
               "category": "planning",
               "detection_sources": [
@@ -4828,6 +5036,10 @@
               "id": "IND-0201-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access"],
+                "guidance": "Confirm whether the actor has access to the real target. Rehearsing against a stand-in shows the method and the intended target, but practice on a prop proves nothing about reach to the actual person."
+              },
               "behavior": "Threat actor uses stand-in targets: a comparable building or vehicle, a sim prop, or a role-player mimicking the individual: to rehearse execution without prematurely revealing intent",
               "category": "planning",
               "detection_sources": [
@@ -4859,6 +5071,10 @@
               "id": "IND-0201-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess what the actor intends to carry the attack out with. The shift to action-rehearsal at the site makes target, access, and timing plain; what it can leave unshown is the weapon or method."
+              },
               "behavior": "Threat actor's behavior at the target environment shifts from observation to action-rehearsal: testing entry timing, identifying response gaps, walking the egress route",
               "category": "behavioral_change",
               "detection_sources": [
@@ -5209,6 +5425,10 @@
               "id": "IND-0202-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Establish what the unaccounted time conceals and how far along the actor is. Gaps in the pattern signal something hidden, but not the target of an attack or how near it stands."
+              },
               "behavior": "Threat actor's stated activity pattern develops gaps inconsistent with normal life: unaccounted-for time, unexplained absences, missing receipts or location data",
               "category": "behavioral_change",
               "detection_sources": [
@@ -5242,6 +5462,10 @@
               "id": "IND-0202-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "thin" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Determine who the compartmented contacts are and where the plan stands. Separate encrypted channels show deliberate operational secrecy, but they can hide both the target and how close an attack has come."
+              },
               "behavior": "Threat actor maintains compartmentalized communications (separate device, encrypted application, anonymous account) for a compartmented set of contacts kept separate from normal life",
               "category": "digital",
               "detection_sources": [
@@ -5278,6 +5502,10 @@
               "id": "IND-0202-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Assemble what was scrubbed and how near the actor is to acting. Deleting grievance posts often comes late in the pathway, yet the cleanup itself masks the target and how close an attack sits."
+              },
               "behavior": "Threat actor's online presence becomes selectively curated: deletion of grievance posts, suppression of identifiable statements of intent, removal of evidence from social media",
               "category": "digital",
               "detection_sources": [
@@ -5312,6 +5540,10 @@
               "id": "IND-0202-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Weigh what the untraceable spending is buying and against whom. Cash and anonymized payments point to operational purchases, but the ledger can hide the capability being assembled and the target of an attack."
+              },
               "behavior": "Threat actor's financial pattern shows withdrawals or transfers consistent with cash or anonymized-payment operational expenses, with no corresponding documented purpose",
               "category": "acquisition",
               "detection_sources": [
@@ -5344,6 +5576,10 @@
               "id": "IND-0202-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Weigh what the actor's cover story is meant to hide. Location and meeting claims that fail against the record show deception, but not the target of an attack or how far preparation has run."
+              },
               "behavior": "Threat actor introduces inconsistencies between stated activities and physical or digital evidence: claimed locations not matching cell-tower data, claimed meetings with no corresponding records",
               "category": "communication",
               "detection_sources": [
@@ -5376,6 +5612,10 @@
               "id": "IND-0202-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Establish whether the withdrawal marks preparation for an attack and against whom. Guarded, secretive behavior toward family can precede action, but on its own it fixes neither the target nor how close an attack stands."
+              },
               "behavior": "Threat actor's behavior toward family members or peers becomes guarded: withdrawal from normal sharing, requests for privacy that exceed ordinary, irritability at routine questions about plans or whereabouts",
               "category": "behavioral_change",
               "detection_sources": [
@@ -5759,6 +5999,10 @@
               "id": "IND-0203-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess what the actor is carrying and able to do. An off-hours approach with no valid appointment puts them at the target with clear intent, but what an attack would take is not yet in view."
+              },
               "behavior": "Threat actor presents at a perimeter access point at off-hours or with timing inconsistent with verified visitor schedules, claimed appointments, or sponsoring contact",
               "category": "access",
               "detection_sources": [
@@ -5795,6 +6039,10 @@
               "id": "IND-0203-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Determine what the actor brought through the line. Tailgating an authorized person puts them inside against a known target, so what now decides the harm is the weapon or method in hand."
+              },
               "behavior": "Threat actor attempts to bypass perimeter controls by tailgating an authorized individual through a secured access point",
               "category": "access",
               "detection_sources": [
@@ -5828,6 +6076,10 @@
               "id": "IND-0203-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess what the actor means to use once inside. A forged or stolen credential carries them past the perimeter toward the target, but the pass shows nothing of the weapon behind it."
+              },
               "behavior": "Threat actor uses a fabricated or stolen credential to attempt authorized passage through a perimeter access point",
               "category": "access",
               "detection_sources": [
@@ -5863,6 +6115,10 @@
               "id": "IND-0203-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Establish the actor's capability now that the perimeter is defeated. Forcing a door or fence away from observation puts them inside against the target; what an attack turns on next is the means they carry."
+              },
               "behavior": "Threat actor defeats a physical perimeter control (climbing a fence, forcing a door, defeating an electronic lock) at a location not under active observation",
               "category": "access",
               "detection_sources": [
@@ -5898,6 +6154,10 @@
               "id": "IND-0203-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Assess the means the actor carries and how far the entry point lets them reach. Breaching at an uncovered dock or gap opens the interior, but the breach itself shows neither the weapon nor how deep an attack can press."
+              },
               "behavior": "Threat actor breaches the perimeter at a non-standard entry point: loading dock, service entrance, perimeter gap not under camera coverage",
               "category": "access",
               "detection_sources": [
@@ -5930,6 +6190,10 @@
               "id": "IND-0203-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Verify the mismatch is a real impostor and assess what they carry. A badge whose holder fails the biometric can be a genuine intrusion or a records error, and the anomaly alone shows neither the means nor an attack."
+              },
               "behavior": "Threat actor's badge or credential is presented at the perimeter but the holder's biometric, photo, or behavioral profile does not match the credential's registered owner",
               "category": "access",
               "detection_sources": [
@@ -6311,6 +6575,10 @@
               "id": "IND-0204-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Determine what the actor is equipped to do at this depth. A badge cloned to a tier above authorization puts them deep inside against the target; what remains unseen is the weapon or method an attack would use."
+              },
               "behavior": "Threat actor's badge is swiped at an access point above the tier authorized for the credential holder, with the holder either physically present or credentials cloned",
               "category": "access",
               "detection_sources": [
@@ -6347,6 +6615,10 @@
               "id": "IND-0204-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess the actor's means and which interior target they are converging on. Tailgating and talking through each tier shows a practiced infiltrator, but not the weapon carried or the person or space at risk."
+              },
               "behavior": "Threat actor moves through interior security tiers via tailgating, escort manipulation, or social engineering of personnel staffing each tier",
               "category": "access",
               "detection_sources": [
@@ -6383,6 +6655,10 @@
               "id": "IND-0204-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Establish what the actor can carry out and against which interior target. Defeating locks and door controls without force clears the way inward, yet the bypass masks both the means and the final target of an attack."
+              },
               "behavior": "Threat actor uses elevator system manipulation, electronic lock bypass, or door-control system manipulation to defeat tier-internal access controls without force",
               "category": "access",
               "detection_sources": [
@@ -6417,6 +6693,10 @@
               "id": "IND-0204-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify where the actor is actually headed and what they carry. A path that diverges from the claimed destination points to the real target candidates, but the route alone shows nothing of the means an attack would need."
+              },
               "behavior": "Threat actor's path through the protected environment matches a pre-determined route inconsistent with the destination claimed at perimeter or in visitor logs",
               "category": "behavioral_change",
               "detection_sources": [
@@ -6451,6 +6731,10 @@
               "id": "IND-0204-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess the actor's means and how near execution this puts them. Reaching cameras and alarm panels mid-transit is clearing the path for an attack; what stays open is the weapon and how imminent the act has become."
+              },
               "behavior": "Threat actor accesses interior security infrastructure (camera systems, alarm panels, communication systems) at any point during transit through tiered zones",
               "category": "access",
               "detection_sources": [
@@ -6486,6 +6770,10 @@
               "id": "IND-0204-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Determine how the actor gained inside knowledge and where it points. Movement showing tier topology and shift timing suggests reconnaissance or a helper, but not the means of an attack or the exact target."
+              },
               "behavior": "Threat actor's interior access pattern shows pre-planning artifacts (knowledge of tier topology, badge zone boundaries, supervisory shift changes) inconsistent with a first-time visitor",
               "category": "behavioral_change",
               "detection_sources": [
@@ -6868,6 +7156,10 @@
               "id": "IND-0205-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand"],
+                "guidance": "Assess what the actor is equipped to do once elevated. A borrowed or forged credential presented to a guard fixes a target and a foothold, but the pass shows nothing of the weapon or method an attack would take."
+              },
               "behavior": "Threat actor presents a fabricated or borrowed credential to a guard, receptionist, or escort to gain access above the tier their actual status authorizes",
               "category": "access",
               "detection_sources": [
@@ -6904,6 +7196,10 @@
               "id": "IND-0205-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh the actor's means and how fast they are moving. Riding an escort into a restricted tier grants opportunity against a clear target, yet the access shows neither the weapon nor how soon an attack could come."
+              },
               "behavior": "Threat actor exploits an authorized escort relationship to access a tier the threat actor cannot enter independently: vendor escorted into an executive area, contractor accompanied to a restricted server room",
               "category": "access",
               "detection_sources": [
@@ -6939,6 +7235,10 @@
               "id": "IND-0205-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory"],
+                "guidance": "Assemble a working timeline. The actor's pace can tell you how close they are to an attack, and the pretext won't show it."
+              },
               "behavior": "Threat actor uses social engineering (pretexted phone calls, urgent-need framing, name-dropping a senior) to convince personnel to grant access not normally extended",
               "category": "communication",
               "detection_sources": [
@@ -6973,6 +7273,10 @@
               "id": "IND-0205-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access", "tempo_trajectory"],
+                "guidance": "Assess capability, opportunity, and tempo. The fabrication could hide all three, and they determine whether the actor is able to carry out an attack, and how soon."
+              },
               "behavior": "Threat actor's claimed sponsoring contact does not exist, is uncontactable, or denies the engagement when verified",
               "category": "communication",
               "detection_sources": [
@@ -7007,6 +7311,10 @@
               "id": "IND-0205-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Establish where the actor stands on the pathway and how fast they move. A cloned credential and spoofed work order clear the way to a known target, but access alone does not show whether an attack is next or weeks off."
+              },
               "behavior": "Threat actor uses a cloned access credential, fabricated work order, or spoofed appointment confirmation to pass automated or human verification at an access point",
               "category": "access",
               "detection_sources": [
@@ -7041,6 +7349,10 @@
               "id": "IND-0205-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "strong", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Verify the anomaly is a real intrusion, then assess the means behind it. A badge at the wrong tier with no sponsoring record can be an attacker or a records gap, and the flag alone shows nothing of an attack."
+              },
               "behavior": "Threat actor's access elevation creates an audit anomaly: a badge holder appearing at a tier inconsistent with role, a visitor with no sponsoring record, a contractor with no work-order match",
               "category": "access",
               "detection_sources": [
@@ -7390,6 +7702,10 @@
               "id": "IND-0206-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess what the actor can do from the position and how soon. A static hold with line-of-sight to the target marks an operational post, but the vantage alone shows neither the weapon nor how near an attack stands."
+              },
               "behavior": "Threat actor is observed in a static position at a location offering line-of-sight, approach angle, or proximity to the target: a subject's anticipated arrival, departure, or routine location, or a targeted venue, gathering, or crowd",
               "category": "surveillance",
               "detection_sources": [
@@ -7425,6 +7741,10 @@
               "id": "IND-0206-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus"],
+                "guidance": "Identify target candidates. What the staging is positioned against can reveal how much is at stake, and its placement already points to some of them."
+              },
               "behavior": "Threat actor has positioned a vehicle, equipment, or staging materials at the position consistent with sustained occupation rather than transient presence",
               "category": "surveillance",
               "detection_sources": [
@@ -7457,6 +7777,10 @@
               "id": "IND-0206-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm the hold is operational rather than ordinary loitering, then weigh the means. A person fixed at a window for hours can be surveillance or nothing, and the duration alone says nothing of an attack."
+              },
               "behavior": "Threat actor's position is held over a duration inconsistent with normal routine activity at that location: a person at a coffee shop window for three hours, a vehicle in a parking spot with no occupants for an extended period",
               "category": "surveillance",
               "detection_sources": [
@@ -7492,6 +7816,10 @@
               "id": "IND-0206-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "strong", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Establish the actor's means and how close an attack has come. A concealed position chosen for line-of-sight to the target reads as deliberate, but the vantage does not show the weapon or the moment of an attack."
+              },
               "behavior": "Threat actor's position is selected for line-of-sight to a known route, residence, vehicle, or appointment of the targeted subject, or to a targeted site, venue, or gathering, with the position itself offering concealment or visual cover",
               "category": "surveillance",
               "detection_sources": [
@@ -7526,6 +7854,10 @@
               "id": "IND-0206-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Determine what the actor carries and which target the alertness serves. Scanning and watch-checking mark an operational mindset, yet the behavior shows neither the means nor the specific target of an attack."
+              },
               "behavior": "Threat actor's position behavior shows operational alertness: repeated horizon scanning, watch-checking, repeated phone glances, or device-monitoring behavior: inconsistent with passive presence",
               "category": "behavioral_change",
               "detection_sources": [
@@ -7902,6 +8234,10 @@
               "id": "IND-0207-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "source_credibility"],
+                "guidance": "Establish whether the presence is a paused operation or a benign fixture. Weeks of loitering near the site with no action can be tactical patience or nothing, and the pattern alone will not say which precedes an attack."
+              },
               "behavior": "Threat actor maintains observable presence near the target environment over multiple days or weeks without apparent purpose and without proceeding to action",
               "category": "surveillance",
               "detection_sources": [
@@ -7937,6 +8273,10 @@
               "id": "IND-0207-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "means_in_hand"],
+                "guidance": "Assess how the actor's pace is trending and what they hold. Leaving and returning as conditions change reads as continued probing, but the cycle shows neither the tempo toward an attack nor the means in hand."
+              },
               "behavior": "Threat actor's presence pattern shows return-after-withdrawal behavior: leaving the area, then returning at a later time matching changed conditions (different shift, different day-of-week, different security posture)",
               "category": "surveillance",
               "detection_sources": [
@@ -7969,6 +8309,10 @@
               "id": "IND-0207-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine what is cached and whether the operation is paused or dead. Staged vehicles and equipment held over time suggest sustained readiness, but the artifacts alone show neither the means nor how near an attack stands."
+              },
               "behavior": "Threat actor maintains operational artifacts (vehicle staged, equipment cached, cover identity active) over a duration that suggests sustained pause rather than abandonment",
               "category": "surveillance",
               "detection_sources": [
@@ -8002,6 +8346,10 @@
               "id": "IND-0207-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Establish what the procurement buys and how fast the tempo runs. Continued research and buying during a lull point to preparation, not a wait, yet the activity masks the capability and the pace toward an attack."
+              },
               "behavior": "Threat actor's communications, financial activity, or online behavior shows continued operational tempo (research on the target, operationally-relevant procurement) inconsistent with a routine waiting period",
               "category": "behavioral_change",
               "detection_sources": [
@@ -8037,6 +8385,10 @@
               "id": "IND-0207-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "pathway_stage"],
+                "guidance": "Weigh whether the pause is patience awaiting a window and how near the actor is. Holding while security tightens reads as tactical, but the pause alone shows neither the pace nor how close an attack has come."
+              },
               "behavior": "Threat actor's pause coincides with observable environmental triggers: increased security posture, public attention to the target, news of an unrelated similar attack: indicating tactical patience rather than abandonment",
               "category": "behavioral_change",
               "detection_sources": [
@@ -8375,6 +8727,10 @@
               "id": "IND-0208-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the actor's means and how soon they will move. Aligning presence to a shift change or patrol gap shows a chosen window against a known target, but the timing shows nothing of the weapon or the moment of an attack."
+              },
               "behavior": "Threat actor's approach or operational presence aligns with a security shift change, patrol gap, or response posture rotation at the protected environment",
               "category": "surveillance",
               "detection_sources": [
@@ -8410,6 +8766,10 @@
               "id": "IND-0208-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Determine what the actor carries and whether the crowd timing is deliberate. Arriving with a gathering can mask an approach or be coincidence, and a mass setting raises what an attack could reach without showing the means."
+              },
               "behavior": "Threat actor's approach coincides with a recurring crowd event (concert, sporting event, holiday gathering) that creates ambient activity at the protected environment",
               "category": "behavioral_change",
               "detection_sources": [
@@ -8443,6 +8803,10 @@
               "id": "IND-0208-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Establish the actor's means and pace. Using weather or darkness to blunt observation marks a chosen window against the target, but the cover shows neither the weapon nor how soon an attack comes."
+              },
               "behavior": "Threat actor's approach uses an environmental condition (weather, low-light, fog) that degrades observation, response time, or evidence collection",
               "category": "surveillance",
               "detection_sources": [
@@ -8475,6 +8839,10 @@
               "id": "IND-0208-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh what the actor brings and how near the act is. Timing an approach to a delivery for cover grants opportunity against a known target, yet the ambient presence hides the weapon and the moment of an attack."
+              },
               "behavior": "Threat actor's approach is timed to a delivery, contractor visit, or scheduled access event that creates legitimate-appearing ambient presence at perimeter or interior tiers",
               "category": "access",
               "detection_sources": [
@@ -8510,6 +8878,10 @@
               "id": "IND-0208-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine the actor's means with an attack now close. Live location feeds confirming the target's presence just before approach point to imminence, but the check shows nothing of the weapon an attack would use."
+              },
               "behavior": "Threat actor uses real-time location feeds (social media check-in, live event cameras, public traffic data) to confirm the target's presence and security context immediately before approach",
               "category": "digital",
               "detection_sources": [
@@ -8545,6 +8917,10 @@
               "id": "IND-0208-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the means and how soon the actor will strike. Digital monitoring of the target's calendar and routine marks timing-window selection, but the surveillance shows neither the weapon nor the pace toward an attack."
+              },
               "behavior": "Threat actor's pre-approach activity shows monitoring of the targeted subject's schedule, calendar, or routine (or the operating schedule of a targeted venue or event) through digital surveillance consistent with timing-window selection",
               "category": "digital",
               "detection_sources": [
@@ -8921,6 +9297,10 @@
               "id": "IND-0209-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Establish what the actor carries and how near the real thing is. Approaching, testing the response, and withdrawing is a dry run against a fixed target, but the probe shows neither the weapon nor how soon an attack follows."
+              },
               "behavior": "Threat actor approaches the target's actual environment, observes security response or absence of response, and withdraws without completing any other operational action",
               "category": "surveillance",
               "detection_sources": [
@@ -8956,6 +9336,10 @@
               "id": "IND-0209-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine the actor's means and how fast they are converging. Repeated partial approaches across days read as drills sharpening an attack, yet each pass shows neither the weapon in hand nor the moment of the act."
+              },
               "behavior": "Threat actor's approach pattern repeats across multiple days, occasions, or environmental conditions, with each approach resembling a partial dry run rather than a sustained presence",
               "category": "surveillance",
               "detection_sources": [
@@ -8989,6 +9373,10 @@
               "id": "IND-0209-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Assess whether the presence is genuinely the actor's rehearsal and what capability sits behind it. A sighting at the target can mark an approach trial or an innocent anomaly, and it shows nothing of the means an attack would need."
+              },
               "behavior": "Threat actor's approach generates an access log anomaly, CCTV appearance, or reception-staff sighting at the target environment that does not correspond to a verifiable visit purpose",
               "category": "surveillance",
               "detection_sources": [
@@ -9023,6 +9411,10 @@
               "id": "IND-0209-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "means_in_hand"],
+                "guidance": "Assemble a timeline across the visits. Rehearsing several timing windows shows intent and a fixed target, but which one the actor commits to, and the means brought, can tell you how soon an attack lands."
+              },
               "behavior": "Threat actor's approach is timed at recognizably different operational windows across multiple visits (different shift change one day, different day-of-week another, different crowd event a third) consistent with rehearsal of multiple approach variants rather than commitment to a single timing window",
               "category": "surveillance",
               "detection_sources": [
@@ -9056,6 +9448,10 @@
               "id": "IND-0209-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Determine whether the abort signals deterrence or a rehearsal the actor will refine and return to run. Backing off at a security cue can end the approach or sharpen the next attempt, and the retreat will not show how soon that comes."
+              },
               "behavior": "Threat actor abandons or aborts the approach mid-sequence in response to observable security posture or to the threat actor's own assessment of conditions, rather than completing the action",
               "category": "behavioral_change",
               "detection_sources": [
@@ -9409,6 +9805,10 @@
               "id": "IND-0301-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm the report and the weapon in play. An active weapon directed at the subject leaves little about the actor's intent to weigh; what shapes the response is whether it is real and how much harm the means can do."
+              },
               "behavior": "Threat actor produces, discharges, or directs a weapon (firearm, edged weapon, blunt-force implement) toward the targeted subject or the protected environment",
               "category": "behavioral_change",
               "detection_sources": [
@@ -9445,6 +9845,10 @@
               "id": "IND-0301-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "target_focus"],
+                "guidance": "Confirm the attack is real and establish its reach. A vehicle driven into the target can strike one person or a crowd, and what changes the response is whether the report holds and how many stand in its path."
+              },
               "behavior": "Threat actor accelerates, rams, or directs a vehicle into the targeted subject or subjects, a crowd or gathering, a protective formation, or a protected structure",
               "category": "behavioral_change",
               "detection_sources": [
@@ -9481,6 +9885,10 @@
               "id": "IND-0301-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Verify the release and gauge its spread. An active explosive, incendiary, or chemical device leaves little about intent to weigh; what shapes the response is whether the report holds and how far the agent or secondary devices reach."
+              },
               "behavior": "Threat actor activates, deploys, or attempts to deploy an improvised or commercial explosive device, incendiary, or chemical agent at the protected environment",
               "category": "behavioral_change",
               "detection_sources": [
@@ -9516,6 +9924,10 @@
               "id": "IND-0301-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "source_credibility"],
+                "guidance": "Assess whether the assault is escalating and confirm the report. Hands-on force against the subject can stay a beating or turn toward a weapon, and the report alone may not show how fast it is moving or whether others are involved."
+              },
               "behavior": "Threat actor uses physical assault (striking, grappling, restraining) to coerce or harm the targeted subject or subjects directly",
               "category": "behavioral_change",
               "detection_sources": [
@@ -9549,6 +9961,10 @@
               "id": "IND-0301-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh the actor's capability and how imminent the attack is. Tactical gear, a declared intent, and a presented weapon at the site signal commitment, but the display alone may overstate or understate what the actor can actually carry out."
+              },
               "behavior": "Threat actor displays announced or visible commitment markers: verbal declaration of intent to harm, operationally appropriate clothing (tactical gear, body armor, concealment apparel), weapon presentation: at the target location",
               "category": "behavioral_change",
               "detection_sources": [
@@ -9912,6 +10328,10 @@
               "id": "IND-0302-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Assess what the actor brings past the barrier and how close it puts them to the subject. Forcing a door or fence shows commitment and target, but the breach itself may not reveal the weapon or the reach into occupied space."
+              },
               "behavior": "Threat actor uses force, prying tools, cutting tools, or impact methods to defeat a perimeter barrier: door, gate, fence, window, or wall",
               "category": "access",
               "detection_sources": [
@@ -9946,6 +10366,10 @@
               "id": "IND-0302-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Determine whether the vehicle is the weapon or only the way in. Ramming a gate or bollards shows force and a fixed target, but whether an attack follows on foot, and how fast, the breach alone may not tell you."
+              },
               "behavior": "Threat actor uses a vehicle as a battering tool to defeat a fixed barrier (gate, bollards, glass entry) at the protected environment",
               "category": "access",
               "detection_sources": [
@@ -9979,6 +10403,10 @@
               "id": "IND-0302-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify the primary target now that the actor is through the guard, and assess the means they carry. Overpowering security shows capability and access, but the guard put down may be an obstacle, not the objective."
+              },
               "behavior": "Threat actor physically overpowers, restrains, or incapacitates a security guard, escort, bodyguard, or other personnel staffing an access point or barrier",
               "category": "access",
               "detection_sources": [
@@ -10014,6 +10442,10 @@
               "id": "IND-0302-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess the means the actor carries and what they are converging on inside. Bypass tools show a planned, capable entry, but defeating a lock reveals access, not the weapon or the target waiting past it."
+              },
               "behavior": "Threat actor deploys mechanical bypass tools (bolt cutters, breaching tools, lock picks, hydraulic spreaders) to defeat access controls or barriers",
               "category": "access",
               "detection_sources": [
@@ -10047,6 +10479,10 @@
               "id": "IND-0302-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Weigh the means the actor brings and how fast they move once inside. Timing the breach to a coverage gap shows planning and a fixed target, but the chosen window may not reveal the method or how far the actor intends to push."
+              },
               "behavior": "Threat actor times the force application to a moment when alarm response, on-site security, or surveillance coverage is degraded or absent",
               "category": "access",
               "detection_sources": [
@@ -10413,6 +10849,10 @@
               "id": "IND-0303-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "proximity_access"],
+                "guidance": "Confirm the seizure and track where the actor is taking the subject. Custody taken by restraint or team action leaves little about intent to weigh; what shapes the response is whether the report holds and how far the captive is moving."
+              },
               "behavior": "Threat actor takes physical custody of the targeted subject or subjects through restraint, threat of harm, or coordinated team action, removing them from the protected environment",
               "category": "behavioral_change",
               "detection_sources": [
@@ -10449,6 +10889,10 @@
               "id": "IND-0303-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Weigh what the seized items let the actor do next. Taking devices, credentials, or biometric material can arm a later intrusion, and the theft shows the actor's reach but not the attack it is meant to enable."
+              },
               "behavior": "Threat actor seizes operationally relevant assets carried by the targeted subject: devices, documents, identity media, sensitive equipment, or biometric materials (fingerprints, blood, or other biological samples used to bypass biometric access controls or fabricate forensic attribution)",
               "category": "acquisition",
               "detection_sources": [
@@ -10480,6 +10924,10 @@
               "id": "IND-0303-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "tempo_trajectory"],
+                "guidance": "Establish the extraction route and how fast the actor is moving the subject. A coordinated removal by vehicle or transit shows capability and commitment, and the direction and speed can reveal the holding site the operation is heading for."
+              },
               "behavior": "Threat actor extracts the targeted subject or subjects from the protected environment via vehicle, foot, or transit, sometimes using coordinated multi-actor extraction",
               "category": "behavioral_change",
               "detection_sources": [
@@ -10515,6 +10963,10 @@
               "id": "IND-0303-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Assess whether the actor can deliver the harm behind the threat. A weapon shown or a threat to harm compels surrender, but a bluff and a genuine capability can read the same in the moment, and the words alone will not separate them."
+              },
               "behavior": "Threat actor uses coercive threats: display of weapon, threat to harm the targeted subject or others, threat to destroy property: to compel surrender of a person, asset, or location",
               "category": "communication",
               "detection_sources": [
@@ -10550,6 +11002,10 @@
               "id": "IND-0303-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Determine whether the target is inside the occupied site and what the actor is equipped to do there. Seizing a location and blocking access shows control and intent, but the standoff may hide whether a person is held and how it ends."
+              },
               "behavior": "Threat actor occupies a location associated with the target (office, residence, vehicle, or a public site) and prevents access, denying the target's protective network the ability to intervene",
               "category": "access",
               "detection_sources": [
@@ -10906,6 +11362,10 @@
               "id": "IND-0304-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "tempo_trajectory"],
+                "guidance": "Establish where the captive is held and how the situation is trending. Sustained restraint shows the operation is set and ongoing, but the holding site and the actor's stamina shape whether it ends in release or harm."
+              },
               "behavior": "Threat actor maintains physical restraint of the captive or captives (handcuffs, rope, zip ties, lockable container, locked room) over an extended duration consistent with sustained captive control",
               "category": "behavioral_change",
               "detection_sources": [
@@ -10940,6 +11400,10 @@
               "id": "IND-0304-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "pathway_stage"],
+                "guidance": "Assess where the actor's handling of the captive is heading. Psychological pressure to keep compliance can hold steady or turn toward harm, and the treatment observed may not show which way the operation breaks."
+              },
               "behavior": "Threat actor employs psychological management of the captive or captives including threats, deprivation, isolation, sensory manipulation, or alternation of treatment to maintain compliance",
               "category": "behavioral_change",
               "detection_sources": [
@@ -10971,6 +11435,10 @@
               "id": "IND-0304-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "means_in_hand"],
+                "guidance": "Weigh how far the coercion is escalating and what the actor is willing to use. Force and deprivation to keep a captive compliant can hold or tip toward lethal harm, and the pattern so far may not reveal the actor's limit."
+              },
               "behavior": "Threat actor uses force, threats of force, or coercive deprivation (food, water, sleep, medical access) to maintain captive compliance over time",
               "category": "behavioral_change",
               "detection_sources": [
@@ -11005,6 +11473,10 @@
               "id": "IND-0304-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["proximity_access", "means_in_hand"],
+                "guidance": "Determine the current holding location from the pattern of moves. Shuttling the captive between sites shows a capable, adaptive operation, and the sequence of moves can expose the support network the last known location cannot."
+              },
               "behavior": "In sustained kidnapping operations, threat actor moves the captive or captives between holding locations to defeat search efforts, evade tactical response, or adapt to the operational situation",
               "category": "behavioral_change",
               "detection_sources": [
@@ -11039,6 +11511,10 @@
               "id": "IND-0304-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Assess whether the actor's demands and threats reflect real intent or deception toward responders. Negotiation framing during captivity can mask the captive's true condition and whether the threatened harm is one the actor can carry out."
+              },
               "behavior": "Threat actor's communications during Captive Control reflect ongoing operational decision-making: negotiation framing, demand articulation, threat language, or deception toward responders",
               "category": "communication",
               "detection_sources": [
@@ -11363,6 +11839,10 @@
               "id": "IND-0305-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "weak", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Identify the target and the attack this equipment is meant to enable. Acquiring jammers shows preparation to blind a response, but the purchase alone shows neither where the actor will strike nor how far along the plan runs."
+              },
               "behavior": "Threat actor acquires or researches radio frequency jamming equipment, signal blockers, or communications disruption devices",
               "category": "acquisition",
               "detection_sources": [
@@ -11396,6 +11876,10 @@
               "id": "IND-0305-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Establish the actor's capability and how close the plan is to execution. Studying guard shifts and response routes shows a target and intent to defeat the reaction, but not the means the attack needs or when it comes."
+              },
               "behavior": "Threat actor conducts surveillance of security response patterns, guard shift changes, patrol routes, or emergency response staging areas at or near the target location",
               "category": "surveillance",
               "detection_sources": [
@@ -11428,6 +11912,10 @@
               "id": "IND-0305-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Identify the real target the diversion draws response away from and how imminent the strike is. A staged incident elsewhere signals an attack is close, but the decoy points away from where it will land, not toward it."
+              },
               "behavior": "Threat actor places false emergency calls or reports diversionary incidents at locations away from the intended target location to draw response resources",
               "category": "planning",
               "detection_sources": [
@@ -11458,6 +11946,10 @@
               "id": "IND-0305-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess what physical attack this reconnaissance is preparing and the means behind it. Probing alarms and camera networks resolves the target and an intent to suppress defenses, but not the weapon or how far the plan has run."
+              },
               "behavior": "Threat actor researches or probes building security systems, alarm panels, camera networks, or emergency communication infrastructure",
               "category": "digital",
               "detection_sources": [
@@ -11491,6 +11983,10 @@
               "id": "IND-0305-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "means_in_hand"],
+                "guidance": "Weigh how imminent the attack is and the means the actor will bring. Blocking exits and response staging shows a set target and an operation underway, but the barricades themselves may not reveal the weapon or the moment of the strike."
+              },
               "behavior": "Threat actor positions obstacles, vehicles, or barriers near facility entry points, emergency exits, or response force staging areas prior to or during an attack",
               "category": "planning",
               "detection_sources": [
@@ -11815,6 +12311,10 @@
               "id": "IND-0306-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Identify the primary target and the means in play beyond the crowd control. Verbally corralling witnesses shows an operation underway, but bystander control is not the objective, and it reveals little of the weapon or who it is meant for."
+              },
               "behavior": "Threat actor verbally controls witnesses or bystanders through threat of harm, instruction to comply, or instruction to leave the area, without applying physical force",
               "category": "communication",
               "detection_sources": [
@@ -11847,6 +12347,10 @@
               "id": "IND-0306-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "source_credibility"],
+                "guidance": "Confirm the report and the primary target past the neutralized guards. Taking out interference-capable bystanders shows capability and a committed operation, but the people put down may be obstacles, not the objective."
+              },
               "behavior": "Threat actor physically neutralizes (incapacitates without killing) security personnel, bodyguards, or other interference-capable bystanders to remove their ability to interfere with the operation",
               "category": "behavioral_change",
               "detection_sources": [
@@ -11881,6 +12385,10 @@
               "id": "IND-0306-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Determine what the actor is clearing the crowd to do and how near that act is. Emptying the space with a false alarm shows a planned, target-focused move, but the dispersal shows the setup, not the strike it precedes or its timing."
+              },
               "behavior": "Threat actor disperses or directs a crowd through staged events, false alarm activation, or controlled communication to clear the operational environment of bystanders",
               "category": "behavioral_change",
               "detection_sources": [
@@ -11912,6 +12420,10 @@
               "id": "IND-0306-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Assess what the deception is buying time for and the means behind it. Passing the incident off as a drill delays recognition that an attack is underway, and the cover story can hide how capable the actor is and how far the plan has run."
+              },
               "behavior": "Threat actor deceives bystanders about the nature of the incident (claiming a drill, a medical event, or a media production) to delay recognition that the operation is underway, or recruits unwitting bystanders into the operation through misrepresentation of its purpose",
               "category": "communication",
               "detection_sources": [
@@ -11946,6 +12458,10 @@
               "id": "IND-0306-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Weigh the actor's means and how wide the target set is. Accepting open exposure marks a high-tempo attacker unconcerned with witnesses, which can point to a mass-casualty aim the disregard for bystanders alone will not size."
+              },
               "behavior": "Threat actor accepts visible bystander exposure as operational cost when containment, neutralization, or deception is judged infeasible: typical of high-tempo ideologically-driven attacks",
               "category": "behavioral_change",
               "detection_sources": [
@@ -12287,6 +12803,10 @@
               "id": "IND-0307-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the means and how near the act is behind the scanning. Real-time watching for guards and cameras shows an operation in motion against a fixed target, but the sweep for observers shows nothing of the weapon or the moment it commits."
+              },
               "behavior": "Threat actor scans the operational environment in real time during execution for security personnel, law enforcement, witnesses with cameras, or other observers capable of interrupting the action",
               "category": "surveillance",
               "detection_sources": [
@@ -12320,6 +12840,10 @@
               "id": "IND-0307-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Identify the target and how the actor times the act to the response feed. Listening to police and fire dispatch shows an operation keyed to arrival times, but the monitoring points at the reaction, not the strike it is meant to beat."
+              },
               "behavior": "Threat actor monitors public safety communications (police scanner applications, fire dispatch feeds, public alert systems) during execution to detect response activation and approach timing",
               "category": "digital",
               "detection_sources": [
@@ -12353,6 +12877,10 @@
               "id": "IND-0307-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Determine the ground attack this overwatch supports and the means behind it. Live access to facility cameras shows a cyber-enabled operation, but the feeds reveal surveillance reach, not the weapon or how close the actor already is."
+              },
               "behavior": "Threat actor monitors live CCTV or video feeds of the protected environment or its approaches during execution, sometimes via cyber access to facility systems",
               "category": "digital",
               "detection_sources": [
@@ -12387,6 +12915,10 @@
               "id": "IND-0307-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Determine what ground action the aerial overwatch is guiding and the means behind it. Drone observation shows a resourced, capable operation, but eyes overhead reveal the actor's reach, not the weapon or the target on the ground."
+              },
               "behavior": "Threat actor uses drone overwatch or aerial surveillance during execution to extend observation capability beyond ground-level scan",
               "category": "surveillance",
               "detection_sources": [
@@ -12420,6 +12952,10 @@
               "id": "IND-0307-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Weigh the size of the team and the attack their coordination supports. Spotters relaying updates show a capable, multi-actor operation, but the counter-surveillance net reveals structure, not the weapon or how far the plan has run."
+              },
               "behavior": "Threat actor coordinates with pre-positioned spotters or counter-surveillance team members who relay real-time updates on response activation and observer behavior",
               "category": "communication",
               "detection_sources": [
@@ -12454,6 +12990,10 @@
               "id": "IND-0307-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "tempo_trajectory"],
+                "guidance": "Determine whether the shift means the actor is aborting or pressing the attack faster. Reacting to a spotted observer with a route change or a burst of speed can end the operation or bring it forward, and the move will not tell you which."
+              },
               "behavior": "Threat actor's behavior changes mid-execution in response to observed counter-surveillance signals: pace acceleration, route change, abort initiation, engagement of an observer",
               "category": "behavioral_change",
               "detection_sources": [
@@ -12789,6 +13329,10 @@
               "id": "IND-0308-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Assess how many actors are coordinating and the target they converge on. Encrypted messaging during execution shows a team operation in motion, but the encryption hides the content, so the means and the objective stay unread."
+              },
               "behavior": "Threat actor uses encrypted communications applications (signal-rich messaging, voice-over-IP, custom protocols) for coordination among accomplices during execution",
               "category": "communication",
               "detection_sources": [
@@ -12825,6 +13369,10 @@
               "id": "IND-0308-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Determine what operational stage the coded signals mark and the means behind the coordination. Prearranged codes show a rehearsed, multi-actor plan, but signaling state without content leaves the trigger and the weapon unread."
+              },
               "behavior": "Threat actor uses pre-arranged signal codes (SMS strings, phone-call ring patterns, physical signals) to communicate operational state without revealing content to interceptors",
               "category": "communication",
               "detection_sources": [
@@ -12857,6 +13405,10 @@
               "id": "IND-0308-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "tempo_trajectory"],
+                "guidance": "Identify the target and how close the operation is from what the radio net carries. Radio coordination accepts intercept risk for speed and reach, and the traffic can expose the team's plan, its timing, and where it is heading."
+              },
               "behavior": "Threat actor uses radio communications (handheld, vehicle-mounted) for accomplice coordination, accepting the jamming and intercept risk in exchange for low latency and team reach",
               "category": "communication",
               "detection_sources": [
@@ -12891,6 +13443,10 @@
               "id": "IND-0308-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "proximity_access"],
+                "guidance": "Establish the actor's sophistication and how many operators blend into the crowd. Covert earpieces and body-worn mics let a team coordinate unseen, and the concealment can hide the number of accomplices and where they are positioned."
+              },
               "behavior": "Threat actor uses covert wearable communications (earpieces, body-worn microphones, pulse signaling devices) to coordinate without visible cue to bystanders or observers",
               "category": "communication",
               "detection_sources": [
@@ -12922,6 +13478,10 @@
               "id": "IND-0308-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish the network the shared timing exposes and the attack it serves. Accomplices acting on information only a transmission could carry shows coordination, but the footprint reveals structure, not the weapon or how far the plan has run."
+              },
               "behavior": "Threat actor's signal exchange across the operation creates an observable coordination footprint: multiple accomplices acting on shared information they could only have received via transmission",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13273,6 +13833,10 @@
               "id": "IND-0401-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Track the direction and destination of the withdrawal. It can mean the attack is over or that the actor is repositioning for another, and the flight alone will not tell you which."
+              },
               "behavior": "Threat actor moves directly away from the scene at sustained speed via vehicle, foot, or mass transit, in a direction inconsistent with normal post-incident movement around the location",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13306,6 +13870,10 @@
               "id": "IND-0401-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Assemble the actor's route through the pre-staged change point. Swapping vehicle and clothing shows a planned egress and a support network, and where it leads can reveal a safehouse or the staging for a follow-on the switch hides."
+              },
               "behavior": "Threat actor changes vehicle, clothing, or other identifying features at a pre-staged location during withdrawal",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13340,6 +13908,10 @@
               "id": "IND-0401-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Assess whether the terminal commitment closes the operation or leaves others still in the field. Making no attempt to escape can mark a lone actor's endpoint or one node of a cell whose remaining members keep moving."
+              },
               "behavior": "Threat actor surrenders or makes no withdrawal attempt, indicating a planned terminal commitment to the operation",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13374,6 +13946,10 @@
               "id": "IND-0401-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "proximity_access"],
+                "guidance": "Determine where the practiced route leads, not only that it evades. Avoiding cameras, patrols, and arterial roads shows a rehearsed egress, and the destination can reveal a safehouse, a support network, or the staging for another act."
+              },
               "behavior": "Threat actor's withdrawal route avoids known CCTV coverage, intersections with security patrols, or arterial roads with rapid emergency response",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13406,6 +13982,10 @@
               "id": "IND-0401-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "means_in_hand"],
+                "guidance": "Assemble the withdrawal picture and the support network behind it. An accomplice extraction can mean the operation is closing or a standing network repositioning the actor for another, and the ride out will not say which."
+              },
               "behavior": "Threat actor uses an accomplice (witting or unwitting) to provide transportation or extraction support during withdrawal",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13775,6 +14355,10 @@
               "id": "IND-0402-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess the sophistication behind the wipe and where it leaves the operation. Thorough device destruction can mark a one-off cleanup or the tradecraft of an actor who intends to operate again, and the erased media will not show which."
+              },
               "behavior": "Threat actor wipes or destroys electronic devices (phones, computers, storage media) before, during, or after the operation",
               "category": "digital",
               "detection_sources": [
@@ -13811,6 +14395,10 @@
               "id": "IND-0402-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine what the actor keeps versus discards. Routing weapons and gear beyond recovery can mean genuine disarmament or shedding only traceable items while capability for another act is held back."
+              },
               "behavior": "Threat actor disposes of operationally relevant clothing, weapons, vehicles, or equipment in locations or via methods designed to prevent recovery",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13845,6 +14433,10 @@
               "id": "IND-0402-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Recover the relocated materials and read them for what comes next. Preserving planning documents in storage rather than destroying them can mean a follow-on is intended, and target candidates for it may sit in the cache."
+              },
               "behavior": "Threat actor relocates artifacts (manifestos, planning materials, documentation) from operationally relevant locations (residence, vehicle) to dead-drop or third-party storage",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13877,6 +14469,10 @@
               "id": "IND-0402-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "target_focus"],
+                "guidance": "Weigh how solid the on-scene evidence is before it steers the investigation. Staged artifacts are built to point at an unrelated party, motive, or method, so the apparent actor or motive can be what the real actor wants believed."
+              },
               "behavior": "Threat actor stages artifacts at the scene or related locations to misdirect investigation toward an unrelated party, motive, or method",
               "category": "behavioral_change",
               "detection_sources": [
@@ -13908,6 +14504,10 @@
               "id": "IND-0402-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess the tradecraft the absence of evidence reveals. Sustained discipline, cash, no paper, minimal contact, can mark an actor practiced enough to operate again cleanly, and the very lack of a trail is the signal to weigh."
+              },
               "behavior": "Threat actor maintains operational discipline that prevents accumulation of evidence in the first place: minimal communications, cash transactions, no documentation of planning steps",
               "category": "planning",
               "detection_sources": [
@@ -13944,6 +14544,10 @@
               "id": "IND-0402-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage"],
+                "guidance": "Establish whether the scrub closes the actor's footprint or clears the way to regroup. Deleting accounts and content can mark a final withdrawal or the first step toward operating again, and the emptied profile reads the same either way."
+              },
               "behavior": "Threat actor's online presence is reduced or curated post-incident (account deletion, content removal, identity scrubbing) consistent with anti-forensic post-action behavior",
               "category": "digital",
               "detection_sources": [
@@ -14313,6 +14917,10 @@
               "id": "IND-0403-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility"],
+                "guidance": "Weigh how solid the alibi actually is. A documented presence elsewhere during the operational window can be genuine or manufactured to place the actor away from the act, and a well-built alibi is meant to survive exactly this scrutiny."
+              },
               "behavior": "Threat actor establishes a documented alibi for the operational window: credit card use at distant location, confirmed social media activity, witnessed presence at a venue inconsistent with operational location",
               "category": "behavioral_change",
               "detection_sources": [
@@ -14349,6 +14957,10 @@
               "id": "IND-0403-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Assess whether the seamless return is innocence or discipline. A contact pattern resuming at baseline with no visible strain can mean the actor was uninvolved or composed enough to show nothing, and the calm itself is what to weigh."
+              },
               "behavior": "Threat actor's contact pattern with colleagues, family, and associates resumes at a cadence and tone matching pre-operation baseline, without deviation that would suggest psychological residue from the operation",
               "category": "behavioral_change",
               "detection_sources": [
@@ -14380,6 +14992,10 @@
               "id": "IND-0403-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility"],
+                "guidance": "Determine what the swift return to routine is worth as evidence. Resuming normal life on schedule can reflect an uninvolved person or an actor showing no break, and an ordinary week is what discipline is meant to produce."
+              },
               "behavior": "Threat actor returns to normal routine activities (workplace attendance, hobbies, social engagements) within a timeframe consistent with pre-operation behavior",
               "category": "behavioral_change",
               "detection_sources": [
@@ -14413,6 +15029,10 @@
               "id": "IND-0403-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility"],
+                "guidance": "Weigh the online calm against the possibility it is staged. Routine posts and no nod to the operation can mean an uninvolved account or an actor curating an unbroken feed, and the normal-looking timeline is the product being sold."
+              },
               "behavior": "Threat actor's online presence shows deliberate normalization: routine posts, no commemoration of the operation, no behavioral break that would draw attention",
               "category": "digital",
               "detection_sources": [
@@ -14448,6 +15068,10 @@
               "id": "IND-0403-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Assess whether the reaction clears the actor or only shows control. Concern matching an uninvolved peer's, with no knowledge beyond the public record, can mean genuine distance or the discipline not to leak."
+              },
               "behavior": "Threat actor's response to the operation in conversation matches the response of an uninvolved peer: appropriate concern, no insider knowledge that wasn't publicly available",
               "category": "communication",
               "detection_sources": [
@@ -14801,6 +15425,10 @@
               "id": "IND-0404-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Map the network the shutdown is protecting. A coordinated blackout across the group shows an organized cell, not a lone actor, and whether it is standing down or going quiet to regroup is what the silence conceals."
+              },
               "behavior": "Threat actor initiates communications shutdown across the operational network: devices destroyed, accounts deleted, channels abandoned, encrypted-app contact lists wiped",
               "category": "digital",
               "detection_sources": [
@@ -14836,6 +15464,10 @@
               "id": "IND-0404-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Establish the size and reach of the dispersed personnel. Scattering operators from the target area shows a network with people to move, and the dispersal can mean the operation is finished or the group preserved intact for another."
+              },
               "behavior": "Threat actor disperses operational personnel away from the protected environment, the target area, or any location associated with the operation",
               "category": "behavioral_change",
               "detection_sources": [
@@ -14870,6 +15502,10 @@
               "id": "IND-0404-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Inventory the infrastructure being taken down before it disappears. Safe houses, staging, caches, and digital assets reveal how well resourced the operation was, and dismantling them can close it out or relocate the capability for reuse."
+              },
               "behavior": "Threat actor removes operational infrastructure including safe houses, vehicle staging, equipment caches, and digital infrastructure used during the operation",
               "category": "behavioral_change",
               "detection_sources": [
@@ -14905,6 +15541,10 @@
               "id": "IND-0404-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Identify the accomplices exposed to silencing and the actor's hold over them. Buying, moving, or threatening witnesses shows a network the actor still controls, and those people can become the next target if silence is not enough."
+              },
               "behavior": "Threat actor manages witting accomplices through payment, reassignment, relocation, or in extreme cases threatened or actual harm to ensure silence under post-incident questioning",
               "category": "communication",
               "detection_sources": [
@@ -14941,6 +15581,10 @@
               "id": "IND-0404-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess how deep the compartmented support structure runs. Handling cutouts who never knew their role shows tradecraft built to survive investigation, and severing them can mean the operation is closing or hardening for the next."
+              },
               "behavior": "Threat actor manages unwitting cutouts (proxy purchasers, transportation providers, document forgers) through compartmentalization, payment, or removal of operational connection: the cutout often not knowing they were operationally relevant",
               "category": "communication",
               "detection_sources": [
@@ -14974,6 +15618,10 @@
               "id": "IND-0404-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Weigh the coordinated story against the discipline that produced it. A network that meets law-enforcement contact with rehearsed silence shows organization built to defeat questioning, so the shared account is least to take at face value."
+              },
               "behavior": "Threat actor's network response to law enforcement contact with any single accomplice shows pre-coordinated discipline: silence, lawyer-up, denial, or pre-arranged story",
               "category": "communication",
               "detection_sources": [
@@ -15327,6 +15975,10 @@
               "id": "IND-0405-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Trace the proceeds and gauge what they enable. Payment landing by crypto, prepaid card, wire, or hawala confirms the operation paid, and money in hand can seed the next one, which the receipt itself does not foreclose."
+              },
               "behavior": "Threat actor receives ransom payment, contract payment, or extortion proceeds via cryptocurrency, prepaid cards, wire transfer, or hawala consistent with the operation's financial scale",
               "category": "financial",
               "detection_sources": [
@@ -15360,6 +16012,10 @@
               "id": "IND-0405-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess the laundering sophistication and where the cleaned funds go. Mixers, chain hopping, privacy coins, and DeFi show an actor able to move money beyond easy tracing, and proceeds preserved this carefully can bankroll another operation."
+              },
               "behavior": "Threat actor uses cryptocurrency mixing services, chain hopping across multiple wallets, privacy coins (Monero, Zcash), or DeFi protocols to obfuscate the link between operational receipt and the threat actor's accessible wallet",
               "category": "financial",
               "detection_sources": [
@@ -15394,6 +16050,10 @@
               "id": "IND-0405-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Follow the conversion of proceeds into durable assets. Turning operational money into property or business stakes hides its origin and builds a resource base, and that base can underwrite future activity as readily as it launders the past."
+              },
               "behavior": "Threat actor converts operational proceeds into legitimate-appearing forms: real estate purchases, business investments, prepaid commercial instruments, physical commodities: within months of the operation",
               "category": "financial",
               "detection_sources": [
@@ -15426,6 +16086,10 @@
               "id": "IND-0405-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Determine how far the layered accounts reach and what they protect. Splitting funds across jurisdictions breaks the audit trail and signals resources the actor can redeploy, and the fragmentation keeps that capability out of view."
+              },
               "behavior": "Threat actor uses layered conventional accounts, often across multiple jurisdictions, to break the audit trail between operational receipt and threat actor's primary financial position",
               "category": "financial",
               "detection_sources": [
@@ -15459,6 +16123,10 @@
               "id": "IND-0405-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "weak", "actor_intent": "weak", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility"],
+                "guidance": "Weigh how firmly the new spending ties back to the operation. Purchases and expanded consumption with no legitimate income to explain them can point at proceeds or an unrelated windfall, and the income gap is suggestive, not proof."
+              },
               "behavior": "Threat actor's lifestyle changes in a manner consistent with operational proceeds (vehicle purchases, real-estate acquisition, expanded household consumption) without a documented legitimate income source supporting the new pattern",
               "category": "financial",
               "detection_sources": [
@@ -15808,6 +16476,10 @@
               "id": "IND-0406-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "weak", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "target_focus"],
+                "guidance": "Project the trajectory and next target from the pattern of refinement. Each operation cleaner than the last marks an actor learning and meaning to continue, but the signature shows growth without naming when or whom the next act hits."
+              },
               "behavior": "Threat actor's operational signature in successive operations shows progressive refinement: surveillance footprint reduced, cover construction more thorough, timing more reliable, evidence management tighter",
               "category": "behavioral_change",
               "detection_sources": [
@@ -15841,6 +16513,10 @@
               "id": "IND-0406-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "weak", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess how the actor's method is evolving and toward what. Folding law-enforcement disclosures into revised tradecraft shows an actor studying the response to operate below it, and each adaptation hides the next attempt better."
+              },
               "behavior": "Threat actor incorporates lessons from law enforcement public statements about prior operations into modified methodology in subsequent operations",
               "category": "behavioral_change",
               "detection_sources": [
@@ -15872,6 +16548,10 @@
               "id": "IND-0406-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["pathway_stage", "target_focus"],
+                "guidance": "Recover the after-action material and read it forward. Critiques and lessons-learned notes show an actor treating operations as a program to improve, and the same documents can point to the intent, and sometimes the target, of the next."
+              },
               "behavior": "Threat actor's communications and document recovery from prior operations show deliberate analytical activity: methodology critique, after-action notes, lessons-learned documents",
               "category": "communication",
               "detection_sources": [
@@ -15903,6 +16583,10 @@
               "id": "IND-0406-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "weak", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Gauge how far the actor propagates capability through training. Teaching refined methodology to new accomplices multiplies the threat beyond one operator, and each recruit widens the network the next act can draw on."
+              },
               "behavior": "Threat actor's training of new accomplices includes deliberate methodology transfer reflecting prior-operation learning, identifiable through accomplice testimony or recovered training materials",
               "category": "communication",
               "detection_sources": [
@@ -15936,6 +16620,10 @@
               "id": "IND-0406-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "pathway_stage"],
+                "guidance": "Establish the planning cadence and where in the cycle the actor now sits. Acceleration and pause tracking deliberate cycles rather than opportunity mark an actor on a schedule, and the rhythm can indicate when the next operation comes."
+              },
               "behavior": "Threat actor's operational tempo accelerates or decelerates in patterns consistent with deliberate planning cycles rather than opportunity-driven operation",
               "category": "behavioral_change",
               "detection_sources": [
@@ -16281,6 +16969,10 @@
               "id": "IND-0407-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "target_focus"],
+                "guidance": "Confirm the claim is genuine before it shapes the response. A manifesto taking responsibility can come from the actor or an opportunist claiming another's act, and it can also name the grievance and the next target in view."
+              },
               "behavior": "Threat actor releases a written communiqué, manifesto, or video statement claiming responsibility for the operation through any public or semi-public channel",
               "category": "communication",
               "detection_sources": [
@@ -16315,6 +17007,10 @@
               "id": "IND-0407-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Verify the operational details the actor volunteers actually track the incident. Direct media contact is meant to prove authorship, but details that confirm insider knowledge also reveal how the operation ran and what the actor can repeat."
+              },
               "behavior": "Threat actor contacts media organizations directly with attribution claims, supporting documentation, or operational details that confirm insider knowledge",
               "category": "communication",
               "detection_sources": [
@@ -16347,6 +17043,10 @@
               "id": "IND-0407-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Assess the distribution capability the simultaneous release shows. Pre-recorded material pushed to many platforms at once to beat takedown shows planning and reach beyond the act, and authorship still has to be confirmed first."
+              },
               "behavior": "Threat actor releases pre-recorded attribution material (manifesto video, statement document) to multiple platforms simultaneously to defeat takedown and maximize reach",
               "category": "digital",
               "detection_sources": [
@@ -16381,6 +17081,10 @@
               "id": "IND-0407-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "weak", "threat_timing": "weak", "threat_target": "moderate", "threat_method": "weak"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Weigh the leverage claim against the capability behind it. Direct attribution carrying demands to a family, institution, or the public asserts a hold the actor may not be able to enforce, and who is contacted marks who remains at risk."
+              },
               "behavior": "Threat actor communicates attribution directly to the targeted individual's or affected group's organization or family, an affected community or institution, the public, or law enforcement with operational demands or leverage assertions",
               "category": "communication",
               "detection_sources": [
@@ -16414,6 +17118,10 @@
               "id": "IND-0407-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "none", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "pathway_stage"],
+                "guidance": "Assess what the silence is protecting. Withholding a claim the actor has every incentive to make can mean network protection or an effort to let attribution fall elsewhere, and the quiet reads the same whether closing or continuing."
+              },
               "behavior": "Threat actor remains silent on attribution despite political incentive to claim responsibility, indicating either operational discipline (network protection priority) or deliberate third-party attribution misdirection",
               "category": "communication",
               "detection_sources": [
@@ -16445,6 +17153,10 @@
               "id": "IND-0407-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm whether the group's claim reflects a real operational link. A parent organization claiming the act while the actor stays silent can signal genuine backing or opportunistic adoption, and either way points to resources worth mapping."
+              },
               "behavior": "Threat actor's affiliated group or parent organization issues the attribution claim rather than the threat actor directly, with the threat actor either confirming through subsequent communication or remaining silent to preserve operational deniability",
               "category": "communication",
               "detection_sources": [
@@ -16770,6 +17482,10 @@
               "id": "IND-0408-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Assess the distribution's reach and how fast the material spreads. Pushing attribution content across platforms at once to beat takedown shows an actor built for propagation, and that reach can carry far enough to inspire the next actor."
+              },
               "behavior": "Threat actor distributes attribution material across multiple social media platforms simultaneously to maximize reach and defeat platform-by-platform takedown",
               "category": "digital",
               "detection_sources": [
@@ -16804,6 +17520,10 @@
               "id": "IND-0408-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "target_focus"],
+                "guidance": "Map the affiliated communities the seeding is meant to activate. Routing material through encrypted channels for re-amplification shows an organized support base, and those communities are where the next actor is often recruited."
+              },
               "behavior": "Threat actor uses encrypted broadcast channels (Telegram, Discord, dark web forums) to seed attribution material to affiliated communities for re-amplification on public platforms",
               "category": "digital",
               "detection_sources": [
@@ -16836,6 +17556,10 @@
               "id": "IND-0408-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "tempo_trajectory"],
+                "guidance": "Gauge the production capability and the spread it earns. Polished propaganda built to ride recommendation algorithms shows skill that outlasts any news cycle, and content engineered to travel can keep radicalizing long after takedown."
+              },
               "behavior": "Threat actor produces high-quality media materials (edited video, narrative documents, propaganda graphics) that drive algorithmic amplification independent of press contact",
               "category": "digital",
               "detection_sources": [
@@ -16867,6 +17591,10 @@
               "id": "IND-0408-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "target_focus"],
+                "guidance": "Track how the actor sustains visibility and whom it keeps reaching. Timing amplification to news cycles, anniversaries, and related events stretches the campaign past the incident, and the audience it holds is where the next actor emerges."
+              },
               "behavior": "Threat actor's amplification strategy exploits ongoing news cycles, anniversary dates, or related events to maintain sustained visibility beyond the immediate post-incident window",
               "category": "behavioral_change",
               "detection_sources": [
@@ -16898,6 +17626,10 @@
               "id": "IND-0408-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "source_credibility"],
+                "guidance": "Determine the true size of the network behind the surge. Coordinating sympathizer accounts to manufacture engagement can make a small cell look like a movement, so the visible reach must be tested against how much of it is genuine."
+              },
               "behavior": "Threat actor coordinates amplification with affiliated networks (sympathizer accounts, shared community pages) to drive engagement metrics that trigger algorithmic recommendation",
               "category": "digital",
               "detection_sources": [
@@ -16932,6 +17664,10 @@
               "id": "IND-0408-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "none", "threat_timing": "weak", "threat_target": "weak", "threat_method": "none"},
+              "conditioning_guidance": {
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Assess how the actor adapts distribution and whether the campaign is closing or entrenching. Moving to fringe platforms, fragmenting content, and using human re-uploads shows a network resilient enough to keep reaching new audiences."
+              },
               "behavior": "Threat actor's amplification pattern shifts in response to platform takedown: moving to less-moderated platforms, fragmenting content to defeat detection, or using human re-uploads to evade automated removal",
               "category": "digital",
               "detection_sources": [
@@ -17251,6 +17987,10 @@
               "id": "IND-0409-01",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm the leverage is real and the actor can act on it. Contact with a family, employer, or agency asserting demands makes intent and target plain, but whether the actor holds what they claim and can deliver the harm decides the danger."
+              },
               "behavior": "Threat actor makes direct contact with the victims' families, employer, government agency, or other decision-maker to assert leverage and articulate demands",
               "category": "communication",
               "detection_sources": [
@@ -17284,6 +18024,10 @@
               "id": "IND-0409-02",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the proof-of-life is current and gauge the clock behind it. Dated video or biometrics is offered to prove the actor holds the captive, but proof can be staged or stale, and the demand's pace sets how little time there is to test it."
+              },
               "behavior": "Threat actor provides proof-of-life: recorded video of the captive or captives with current-event reference, fingerprint or biometric submission, recorded voice with date confirmation: to validate the leverage position",
               "category": "communication",
               "detection_sources": [
@@ -17317,6 +18061,10 @@
               "id": "IND-0409-03",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "means_in_hand"],
+                "guidance": "Assemble the deadline structure and weigh the actor's ability to follow through. Fixed deadlines and stated consequences set a clock, but whether the threatened harm is within reach or bluff separates pressure from genuine danger."
+              },
               "behavior": "Threat actor articulates specific demands with deadlines and consequences for non-compliance: ransom amount, prisoner release, policy change, financial disposition",
               "category": "communication",
               "detection_sources": [
@@ -17348,6 +18096,10 @@
               "id": "IND-0409-04",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["tempo_trajectory", "means_in_hand"],
+                "guidance": "Track the escalation curve and test each capability demonstration. Rising severity and accelerating deadlines can signal an actor moving toward the threat or a bluff turned up, and how real the demonstrated capability is decides which."
+              },
               "behavior": "Threat actor escalates threats over time (increasing severity, accelerating deadlines, demonstrating capability) to pressure decision-makers toward compliance",
               "category": "communication",
               "detection_sources": [
@@ -17379,6 +18131,10 @@
               "id": "IND-0409-05",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["target_focus", "pathway_stage"],
+                "guidance": "Read the shifting demands for the target the actor is converging on. Testing pressure across decision-makers to find the most yielding shows the target is not yet fixed, and the evolution reveals where the actor will press hardest."
+              },
               "behavior": "Threat actor's communications during leverage phase show negotiation framing, demand evolution, and willingness to test various pressure paths to identify the most compliance-likely target",
               "category": "communication",
               "detection_sources": [
@@ -17411,6 +18167,10 @@
               "id": "IND-0409-06",
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
+              "conditioning_guidance": {
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Confirm the demand and the capability behind it past the intermediary. Routing threats through a community figure exploits trusted access while shielding the actor, so neither the leverage nor the means can be taken on the messenger's word."
+              },
               "behavior": "Threat actor uses third-party intermediaries (religious figures, community leaders, or traditional intermediaries) as channels for demand transmission, exploiting their access while constraining direct attribution",
               "category": "communication",
               "detection_sources": [
