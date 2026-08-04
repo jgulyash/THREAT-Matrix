@@ -34,9 +34,7 @@ ALLOWLIST = {
     ("organization", "within_site_focus"),
     ("infrastructure", "within_site_focus"),
     # (modality / human_social facet migration COMPLETE V1.6: now universal, no carve-out)
-    # infra cpn_notes skipped by ruling (S36): superseded at the V1.6 facet
-    # migration; infra CPN detail lives in the per-indicator facets.
-    ("infrastructure", "cpn_notes"),
+    # (cpn_notes retired everywhere at the V1.6 facet migration; carve-out removed)
 }
 
 MATRIX_IND_PREFIX = {

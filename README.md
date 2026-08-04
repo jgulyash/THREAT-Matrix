@@ -63,7 +63,7 @@ Profiles are referenced by stable ID (`AP001`–`AP029`) and connect directly to
  
 ### Cyber-Physical Nexus (CPN)
  
-Cyber capabilities enable and accelerate physical operations across virtually every phase for sophisticated actors. The `[CPN]` tag marks tactics where digital capabilities play a significant or primary enabling role, surfacing online-to-physical mobilization pathways — and showing practitioners where to look for digital indicators alongside physical behaviors.
+Cyber capabilities enable and accelerate physical operations across virtually every phase for sophisticated actors. Every indicator carries a `modality` facet (`physical`, `cyber`, `cyber_physical`, or `human_social`) marking the operational surface the behavior runs on, surfacing online-to-physical mobilization pathways — and showing practitioners where to look for digital indicators alongside physical behaviors. CPN participation itself is computed over the Detection Mesh from those facets rather than stored as a tag.
  
 ### Detection Mesh
  
@@ -185,7 +185,7 @@ Standards talk to platforms. The contract is what makes integrations with RAG sy
  
 ## Using the Framework
  
-**Browse it:** [jgulyash.github.io/THREAT-Matrix](https://jgulyash.github.io/THREAT-Matrix/) — filter by phase, CPN tag, or actor profile. Click any tactic for full detail including notes, CPN analysis, AI risk factors, and Detection Mesh links.
+**Browse it:** [jgulyash.github.io/THREAT-Matrix](https://jgulyash.github.io/THREAT-Matrix/) — filter by phase, behavioral mode, or actor profile. Click any tactic for full detail including notes, behavioral-mode facets, AI risk factors, and Detection Mesh links.
  
 **Build with it:** `docs/data/framework.json` is MIT licensed, semver versioned, schema-validated, and machine-readable. Validate against [`framework.schema.json`](docs/data/framework.schema.json), then use the framework in detection tooling, threat-assessment workflows, training platforms, RAG pipelines, or agentic systems.
  

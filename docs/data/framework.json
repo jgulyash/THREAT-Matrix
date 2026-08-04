@@ -78384,7 +78384,7 @@
           ]
         }
       ],
-      "scope": "Tactics centered on infrastructure or technical systems as the primary target. The threat actor's primary objective is disruption, degradation, or compromise of the system's function, physical infrastructure, cyber-physical systems, or critical service delivery. Cyber-Physical Nexus tactics are tagged via the cpn field on tactic."
+      "scope": "Tactics centered on infrastructure or technical systems as the primary target. The threat actor's primary objective is disruption, degradation, or compromise of the system's function, physical infrastructure, cyber-physical systems, or critical service delivery. Cyber-physical convergence is carried per indicator by the modality facet and computed over the Detection Mesh rather than stored at the tactic level."
     }
   },
   "actor_profiles": [

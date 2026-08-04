@@ -1,0 +1,9 @@
+{
+  "id": "F15",
+  "category": "cross-field consistency",
+  "description": "Flip human_social to false on an indicator whose modality is human_social, breaking the modality cross-field invariant the schema and V21 both guard.",
+  "expected_check": "V21",
+  "mutations": [
+    {"op": "set", "path": "matrices.person.tactics.0.indicators.0.human_social", "value": false}
+  ]
+}

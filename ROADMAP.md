@@ -135,7 +135,7 @@ The contract has to be in writing before the platform is built on top of it. Sch
 - Complete Infrastructure matrix taxonomy (37 tactics) — control systems, OT/ICS, and critical service delivery
 - Full schema applied to every Infrastructure tactic: indicators, countermeasures, response protocols, escalation scoring, `field_notes`, `observed_contexts`, `evidence_basis`, and Detection Mesh links
 - Cross-domain Detection Mesh woven across People, Facility, and Infrastructure (112 inter-rater-validated cross-matrix indicator edges) — closes the "zero cross-matrix links" gap for the three shipped matrices
-- Per-indicator cyber-physical facets (`crossing` + `human_social`) replacing the earlier tactic-level CPN flag; CPN computed over the mesh rather than stored
+- Per-indicator cyber-physical facets (`crossing` + `human_social`, with `crossing` renamed `modality` in V1.6) replacing the earlier tactic-level CPN flag; CPN computed over the mesh rather than stored
 - Rendering fixes (1.4.1): heat-map column alignment and the Aftermath evade/claim track split
 
 ---

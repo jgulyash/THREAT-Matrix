@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """THREAT Matrix framework.json structural and scoring validator.
 
-Runs twenty checks (V01 through V20) over docs/data/framework.json and
+Runs twenty-one checks (V01 through V21) over docs/data/framework.json and
 reports a per-check pass/fail summary. The checks reconstruct the defect
 categories a Principal Architecture Review would hunt for: duplicate IDs,
 dangling Detection Mesh references, wrong matrix placement, typo'd keys,
@@ -92,8 +92,9 @@ CHECK_TITLES = {
     "V18": "conditioned_priority lowered below band",
     "V19": "tactic matrix field vs containing key",
     "V20": "axis_confidence enum values and axis names",
+    "V21": "modality facet presence, enum, and cross-field invariants",
 }
-CHECK_IDS = [f"V{n:02d}" for n in range(1, 21)]
+CHECK_IDS = [f"V{n:02d}" for n in range(1, 22)]
 
 
 # Fallback thresholds if escalation_rubric.severity_thresholds is absent.
@@ -289,6 +290,7 @@ def run_all_checks(raw_text: str, data: dict) -> dict[str, list[str]]:
             _check_correlates(fail, iid, ind, ind_ids)
             _check_scoring(fail, iid, ind, thresholds)
             _check_axis_confidence(fail, iid, ind)
+            _check_modality(fail, iid, ind)
 
         for cm in tactic.get("countermeasures", []) or []:
             if not isinstance(cm, dict):
@@ -426,6 +428,47 @@ def _check_axis_confidence(fail, ind_id, ind):
                 f"axis_confidence value '{level}' is not one of "
                 f"established/inferred/thin",
             )
+
+
+MODALITY_VALUES = {"physical", "cyber", "cyber_physical", "human_social"}
+CROSSING_MECHANISMS = {"digital", "electromagnetic", "physical_implant"}
+
+
+def _check_modality(fail, ind_id, ind):
+    """V21 modality facet contract. Every indicator must carry modality
+    (enum) and human_social (bool). Cross-field invariants: a human_social
+    modality forces human_social true, and crossing_mechanism appears
+    exactly when modality is cyber_physical. The schema enforces the same
+    rules; this native check keeps the invariant continuously gated even
+    where a pipeline skips jsonschema validation."""
+    modality = ind.get("modality")
+    human_social = ind.get("human_social")
+    mechanism = ind.get("crossing_mechanism")
+    if modality is None:
+        fail("V21", ind_id, "modality is missing")
+    elif modality not in MODALITY_VALUES:
+        fail("V21", ind_id, f"modality '{modality}' is not a valid value")
+    if not isinstance(human_social, bool):
+        fail("V21", ind_id, "human_social must be a boolean and present")
+    if modality == "human_social" and human_social is not True:
+        fail(
+            "V21",
+            ind_id,
+            "modality human_social requires human_social true",
+        )
+    if modality == "cyber_physical":
+        if mechanism not in CROSSING_MECHANISMS:
+            fail(
+                "V21",
+                ind_id,
+                "cyber_physical modality requires a valid crossing_mechanism",
+            )
+    elif mechanism is not None:
+        fail(
+            "V21",
+            ind_id,
+            "crossing_mechanism is only legal on cyber_physical modality",
+        )
 
 
 def _check_scoring(fail, ind_id, ind, thresholds=DEFAULT_THRESHOLDS):

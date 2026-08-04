@@ -11,12 +11,12 @@ Stable identifiers are the load-bearing surface of THREAT Matrix. Vector databas
 | **Indicator** | `IND-<x>####-##` | `IND-0103-01`, `IND-F0102-03` | An observable behavior tied to a specific tactic |
 | **Countermeasure** | `CM-<x>####-##` | `CM-0103-01`, `CM-F0102-03` | A defensive measure tied to a specific tactic |
 | **Response protocol** | `RP-<x>####-##` | `RP-0103-01`, `RP-F0101-01` | An operational response sequence tied to a specific tactic |
-| **Cyber-Physical Nexus marker** | `CPN-<x>####` | `CPN-0103`, `CPN-F0101` | A flag that a tactic has cyber-physical convergence |
+| **Cyber-Physical Nexus marker** (retired v1.6) | `CPN-<x>####` | `CPN-0103`, `CPN-F0101` | Retired tactic-level convergence flag; cyber-physical convergence now lives on the per-indicator `modality` facet, and CPN participation is computed over the Detection Mesh |
 | **Bibliography reference** | `<ORG>-<SLUG>-<YEAR>[-<YEAR>]` | `NTAC-MASS-2021` | A cited source in `framework.json` `bibliography` |
 
 ### The matrix letter
 
-Tactic IDs carry a matrix letter after the `T`: `M` (People), `F` (Facilities), `O` (Organizations), `I` (Infrastructure) — `TM0103`, `TF0102`, `TO####`, `TI####`. Compound IDs and CPN markers carry the same letter after their prefix hyphen for every matrix except People, whose IDs predate the letter and carry none: `IND-0103-01` (People) vs. `IND-F0102-03` (Facilities). The People letterless form is permanent — retrofitting a letter would violate the no-rename guarantee below.
+Tactic IDs carry a matrix letter after the `T`: `M` (People), `F` (Facilities), `O` (Organizations), `I` (Infrastructure) — `TM0103`, `TF0102`, `TO####`, `TI####`. Compound IDs (and the retired CPN markers) carry the same letter after their prefix hyphen for every matrix except People, whose IDs predate the letter and carry none: `IND-0103-01` (People) vs. `IND-F0102-03` (Facilities). The People letterless form is permanent — retrofitting a letter would violate the no-rename guarantee below.
 
 ### Anatomy of compound IDs
 
@@ -68,7 +68,7 @@ The `name` field on every object is a human-readable label that may evolve — f
 
 ### Descriptions can change
 
-The `notes`, `field_notes`, `cpn_notes`, `description`, and `behavior` (etc.) fields are subject to revision. Consumers must not depend on exact text matching.
+The `notes`, `field_notes`, `description`, and `behavior` (etc.) fields are subject to revision. Consumers must not depend on exact text matching.
 
 ### Items never change parents
 
