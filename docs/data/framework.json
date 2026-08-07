@@ -9807,7 +9807,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "target_focus"],
-                "guidance": "Confirm the reporting of a weapon in use is real and gauge what it can reach and how many stand in its line. The firing alone may settle little about the actor: one shooter or several may be firing, and the shots may be the whole attack or cover for a second act."
+                "guidance": "Establish that a weapon is actually in use rather than sounds or panic misread in first reports, and gauge what it can reach and how many stand in its line. The firing alone may settle little about the actor: one shooter or several may be firing, and the shots may be the whole attack or cover for a second act."
               },
               "behavior": "Threat actor produces, discharges, or directs a weapon (firearm, edged weapon, blunt-force implement) toward the targeted subject or the protected environment",
               "category": "behavioral_change",
@@ -9847,7 +9847,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "target_focus"],
-                "guidance": "Confirm the ramming is real and gauge how many stand in the vehicle's path and whether it is still driving toward others. The impact alone may reveal little of who is at the wheel, whether one driver acted or a team, or whether this is the whole attack or the opening of one."
+                "guidance": "Establish that the strike is deliberate rather than an accident or a medical event at the wheel, and gauge how many stand in the vehicle's path and whether it is still moving toward others. The impact alone may reveal little of who is at the wheel, whether one driver acted or a team, or whether this is the whole attack or the opening of one."
               },
               "behavior": "Threat actor accelerates, rams, or directs a vehicle into the targeted subject or subjects, a crowd or gathering, a protective formation, or a protected structure",
               "category": "behavioral_change",
@@ -9887,7 +9887,7 @@
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "target_focus"],
-                "guidance": "Confirm the release or detonation is real and gauge how far the agent or any secondary device can reach and who falls inside that zone. The device alone may reveal little of who set it, how many are involved, or whether it is the whole attack or the first move of one."
+                "guidance": "Establish that a device or agent is actually present rather than a hoax or a false alarm, and gauge how far the agent or any secondary device can reach and who falls inside that zone. The device alone may reveal little of who set it, how many are involved, or whether it is the whole attack or the first move of one."
               },
               "behavior": "Threat actor activates, deploys, or attempts to deploy an improvised or commercial explosive device, incendiary, or chemical agent at the protected environment",
               "category": "behavioral_change",
@@ -10330,7 +10330,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "means_in_hand"],
-                "guidance": "Confirm the breach is real and gauge what the actor carries past the barrier and how far into occupied space they can reach. The forced entry alone may show little of any weapon behind it, where the actor is headed, or whether one intruder or several are moving."
+                "guidance": "Establish that the breach is hostile rather than an authorized or benign forced entry, and gauge what the actor carries past the barrier and how far into occupied space they can reach. The forced entry alone may show little of any weapon behind it, where the actor is headed, or whether one intruder or several are moving."
               },
               "behavior": "Threat actor uses force, prying tools, cutting tools, or impact methods to defeat a perimeter barrier: door, gate, fence, window, or wall",
               "category": "access",
@@ -10851,7 +10851,7 @@
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "proximity_access", "tempo_trajectory"],
-                "guidance": "Confirm the seizure is real and how solid the sourcing is, and gauge where the actor is moving the subject and how fast. Custody taken may settle little of who is behind it, where the subject is being held, or whether one captor or a team carried it out."
+                "guidance": "Establish how solid the reporting of the seizure is, and gauge where the actor is moving the subject and how fast. Custody taken may settle little of who is behind it, where the subject is being held, or whether one captor or a team carried it out."
               },
               "behavior": "Threat actor takes physical custody of the targeted subject or subjects through restraint, threat of harm, or coordinated team action, removing them from the protected environment",
               "category": "behavioral_change",
@@ -10926,7 +10926,7 @@
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "proximity_access", "tempo_trajectory"],
-                "guidance": "Confirm the subject is being moved now and gauge the extraction route, its direction and speed, and the holding site it points toward. The removal in motion may settle little of who is behind it, the final destination, or whether one actor or a coordinated team is running it."
+                "guidance": "Establish that the movement is a hostile extraction rather than a voluntary or escorted departure, and gauge the extraction route, its direction and speed, and the holding site it points toward. The removal in motion may settle little of who is behind it, the final destination, or whether one actor or a coordinated team is running it."
               },
               "behavior": "Threat actor extracts the targeted subject or subjects from the protected environment via vehicle, foot, or transit, sometimes using coordinated multi-actor extraction",
               "category": "behavioral_change",
@@ -11003,8 +11003,8 @@
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "conditioning_guidance": {
-                "probe_factors": ["target_focus", "means_in_hand"],
-                "guidance": "Confirm a site is being occupied and access blocked, and gauge whether the target is inside and what the actor is equipped to do there. The standoff may reveal little of whether a person is held, how it ends, or whether one occupier or a group holds it."
+                "probe_factors": ["source_credibility", "target_focus", "means_in_hand"],
+                "guidance": "Establish that the occupation is hostile rather than a dispute or lockout misread in early reporting, and gauge whether the target is inside and what the actor is equipped to do there. The standoff may reveal little of whether a person is held, how it ends, or whether one occupier or a group holds it."
               },
               "behavior": "Threat actor occupies a location associated with the target (office, residence, vehicle, or a public site) and prevents access, denying the target's protective network the ability to intervene",
               "category": "access",
@@ -11364,7 +11364,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Verify the report of a held captive and how solid the sourcing is, and assess whether the situation is trending toward release or harm. Sustained restraint can mean the actor wants leverage rather than immediate harm, but the trajectory can turn without warning, and one captor or a team may be sustaining it."
+                "guidance": "Establish how solid the reporting of a held captive is, and assess whether the situation is trending toward release or harm. Sustained restraint can mean the actor wants leverage rather than immediate harm, but the trajectory can turn without warning, and one captor or a team may be sustaining it."
               },
               "behavior": "Threat actor maintains physical restraint of the captive or captives (handcuffs, rope, zip ties, lockable container, locked room) over an extended duration consistent with sustained captive control",
               "category": "behavioral_change",
@@ -12460,7 +12460,7 @@
               "informs_axes": {"actor_capability": "weak", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "weak"},
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "target_focus"],
-                "guidance": "Confirm an attacker is accepting open exposure, which can signal a high-tempo assault, and gauge what the means can do at scale and how wide the target set runs. Disregard for witnesses can point to a mass-casualty aim yet may not size it, and whether one or several are committed can stay open."
+                "guidance": "Weigh what open, unconcealed action can signal about the assault's tempo and aim, and gauge what the means can do at scale and how wide the target set runs. Disregard for witnesses can point to a mass-casualty aim yet may not size it, and whether one attacker or several are committed can stay open."
               },
               "behavior": "Threat actor accepts visible bystander exposure as operational cost when containment, neutralization, or deception is judged infeasible: typical of high-tempo ideologically-driven attacks",
               "category": "behavioral_change",
@@ -17989,7 +17989,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Confirm the leverage is real and the actor can act on it. Contact with a family, employer, or agency asserting demands can put intent and a target candidate in view, but whether the actor holds what they claim and can deliver the harm decides the danger."
+                "guidance": "Assess whether the actor holds the leverage they claim and can act on it. Contact with a family, employer, or agency asserting demands can put intent and a target candidate in view, but whether the actor holds what they claim and can deliver the harm decides the danger."
               },
               "behavior": "Threat actor makes direct contact with the victims' families, employer, government agency, or other decision-maker to assert leverage and articulate demands",
               "category": "communication",
@@ -24977,7 +24977,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Confirm the report and assess what the actor is armed to do past the guard. Assaulting a manned entry point can indicate commitment to a known target, though it may show little of the weapon or the scope of what follows the breach."
+                "guidance": "Establish how solid the first reports of the assault are, and assess what the actor is armed to do past the guard. Assaulting a manned entry point can indicate commitment to a known target, though it may show little of the weapon or the scope of what follows the breach."
               },
               "severity_floor": "critical"
             },
@@ -25564,7 +25564,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Confirm the report and assess what the actor is armed with past the desk. Applying force to interior staff can indicate a committed push toward an objective inside a known building, though it may show little of the weapon or the full scope of the intended act."
+                "guidance": "Establish how solid the first reports are, and assess what the actor is armed with past the desk. Applying force to interior staff can indicate a committed push toward an objective inside a known building, though it may show little of the weapon or the full scope of the intended act."
               },
               "severity_floor": "critical"
             }
@@ -26102,7 +26102,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Confirm the report and gauge the device's yield. Returning to arm or connect an emplaced means can mark the last step before initiation, though an arming act seen from outside can leave whether it is real and how large it is still in question."
+                "guidance": "Assess whether the emplaced means is live and how large. Returning to arm or connect it can mark the last step before initiation, though an arming act seen from outside may not settle what the device truly is or the yield it could hold."
               }
             }
           ],
@@ -28517,7 +28517,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Confirm the reporting is real and gauge how far the fire reaches. The act itself may settle little about the actor: one person or several may have set it, and the ignition may be the whole attack or cover for a second act."
+                "guidance": "Establish that the fire is hostile rather than accidental, and gauge how far it reaches. The act itself may settle little about the actor: one person or several may have set it, and the ignition may be the whole attack or cover for a second act."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -28564,7 +28564,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Confirm the reporting is real and gauge how far the fire is running and who is exposed. The ignition itself may settle little about the actor: one person or several may have set it, and it may be the whole attack or cover for a second act."
+                "guidance": "Establish that the ignition is hostile rather than an accidental fire misread in early reports, and gauge how far the fire is running and who is exposed. The ignition itself may settle little about the actor: one person or several may have set it, and it may be the whole attack or cover for a second act."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -28609,7 +28609,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "pathway_stage"],
-                "guidance": "Confirm the fire is real and, with no one inside, weigh what the burn means: an end in itself, a warning, a rehearsal, or a prelude to an attack on people. Keep open whether one actor or several set it and whether this closes the matter or is a step toward harm to occupants."
+                "guidance": "Establish that the fire is set rather than accidental and, with no one inside, weigh what the burn means: an end in itself, a warning, a rehearsal, or a prelude to an attack on people. Keep open whether one actor or several set it and whether this closes the matter or is a step toward harm to occupants."
               },
               "within_site_focus": ["structure"]
             },
@@ -28655,7 +28655,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Confirm the report and assess how much is staged. Readying accelerant and an ignition source against an occupied building can mark the last moment before a fire, so what matters is whether it is real and how large a blaze it would set."
+                "guidance": "Establish that the staging is hostile rather than stored fuel or work materials misread in a report, and assess how much is readied. Accelerant and an ignition source against an occupied building can mark the last moment before a fire, and the scale of what is staged can suggest how large a blaze it would set."
               },
               "within_site_focus": ["structure", "occupants"]
             },
@@ -28701,7 +28701,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Verify the attack is real and build a picture of how fast the fire is spreading across the points of origin and whether egress is cut. Keep open whether one actor or a team set it and whether this is the whole act or cover for another; the spread pattern alone may say little of who is behind it."
+                "guidance": "Establish that the spread is set rather than accidental, and build a picture of how fast the fire is moving across the points of origin and whether egress is cut. Keep open whether one actor or a team set it and whether this is the whole act or cover for another; the spread pattern alone may say little of who is behind it."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -29035,7 +29035,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Confirm the report and assess whether the device is viable. An abandoned package positioned against an occupied facility can be a working charge or a hoax, and the placement alone may not reveal which, or what it can do."
+                "guidance": "Assess whether the device is viable. An abandoned package positioned against an occupied facility can be a working charge or a hoax, and the placement alone may not reveal which, or what it can do."
               },
               "within_site_focus": ["structure", "occupants"]
             },
@@ -29083,7 +29083,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Verify the detonation and gauge its scope while staying alert for a follow-on device. The blast alone may reveal little of who set it, how many are involved, or whether this is the whole attack."
+                "guidance": "Establish that the blast was a device rather than an accidental explosion, and gauge its scope while staying alert for a follow-on device. The blast alone may reveal little of who set it, how many are involved, or whether this is the whole attack."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -29131,7 +29131,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Verify the report and assess the device's viability. A vehicle left in a no-standoff position can carry a working charge or nothing, and whether it endangers the occupied site rests on what is actually aboard, which the placement alone may not reveal."
+                "guidance": "Assess the device's viability. A vehicle left in a no-standoff position can carry a working charge or nothing, and whether it endangers the occupied site rests on what is actually aboard, which the placement alone may not reveal."
               },
               "within_site_focus": ["structure", "occupants"]
             },
@@ -29567,7 +29567,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Confirm the report and gauge how near the cut member is to failure and how far the sabotage has run. Keep open whether one actor or several are at work and whether more members are already cut; the act alone may show little of who is behind it."
+                "guidance": "Establish that the cutting is hostile rather than permitted structural work misread from a distance, and gauge how near the cut member is to failure and how far the sabotage has run. Keep open whether one actor or several are at work and whether more members are already cut; the act alone may show little of who is behind it."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -29614,7 +29614,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Verify the activity is real and gauge how close the foundation is to collapse and how far the undermining has run. Keep open whether one actor or several are digging and whether it is further along than it looks; the digging alone may say little of who is behind it."
+                "guidance": "Establish that the digging is hostile rather than permitted excavation misread, and gauge how close the foundation is to collapse and how far the undermining has run. Keep open whether one actor or several are digging and whether it is further along than it looks; the digging alone may say little of who is behind it."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -30286,7 +30286,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Verify a release is real and trace how far the supply has carried the agent and to whom. Keep open whether one actor or several set it and whether this is the whole attack; the tampering alone may say little of who is behind it."
+                "guidance": "Establish that the contamination is deliberate rather than an accidental cross-connection, and trace how far the supply has carried the agent and to whom. Keep open whether one actor or several set it and whether this is the whole attack; the tampering alone may say little of who is behind it."
               },
               "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
@@ -31305,7 +31305,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand", "pathway_stage"],
-                "guidance": "Confirm the report and establish how many occupants are held and where, whether the actors are armed, and whether one actor or several are involved. A seizure this direct still leaves the capacity to harm and the demands open; the act alone may say little of who is behind it or what they intend next."
+                "guidance": "Establish whether occupants are actually held rather than sheltering or blockaded, how many, and where, and whether the actors are armed and acting alone or as a team. A seizure this direct still leaves the capacity to harm and the demands open; the act alone may say little of who is behind it or what they intend next."
               },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
@@ -32199,7 +32199,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Verify a release is real and map how far the potable system has distributed the agent and how many it has reached. Keep open whether one actor or several set it and whether more is coming; the release alone may reveal little of who is behind it."
+                "guidance": "Establish that the release is deliberate rather than an accidental contamination, and map how far the potable system has distributed the agent and how many it has reached. Keep open whether one actor or several set it and whether more is coming; the release alone may reveal little of who is behind it."
               },
               "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
@@ -32827,7 +32827,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Confirm the secondary hazard is real and determine whether more are placed. A device set on the responder approach can read as a deliberate attack on the response itself, and how many are staged is what the find does not settle."
+                "guidance": "Assess whether the emplaced hazard will function or is a decoy meant to slow the response, and determine whether more are placed. A device set on the responder approach can read as a deliberate attack on the response itself, and how many are staged is what the find may not settle."
               },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
@@ -62484,7 +62484,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Confirm whether the threatened second release is real and within the actor's reach. A stated deadline can signal resolve and a schedule, and the ultimatum may rest on data or capability the actor does not actually hold."
+                "guidance": "Assess whether the actor actually holds what the second release requires and can act within the stated schedule. A stated deadline can signal resolve, and the ultimatum may rest on data or capability the actor does not actually hold."
               }
             },
             {
@@ -74917,7 +74917,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "target_focus"],
-                "guidance": "Confirm the report of gunfire against the transformer, and determine whether this node stands alone or is one of a coordinated set of target candidates. Whether one actor or several is behind it, the strike alone may settle little about what comes next."
+                "guidance": "Establish that the gunfire is aimed sabotage rather than stray or random fire, and determine whether this node stands alone or is one of a coordinated set of target candidates. Whether one actor or several is behind it, the strike alone may settle little about what comes next."
               },
               "correlates_with": [
                 "IND-I0403-03",
@@ -75003,7 +75003,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Confirm the detonation is real, and gauge how far the loss of the pump station cascades downstream. Whether one actor or several is behind it, and whether the blast is the whole attack or cover for a second act, the detonation alone may settle little."
+                "guidance": "Establish that the blast is a device rather than a mechanical failure, and gauge how far the loss of the pump station cascades downstream. Whether one actor or several is behind it, and whether the blast is the whole attack or cover for a second act, the detonation alone may settle little."
               },
               "correlates_with": [
                 "IND-F0302-02",
@@ -77392,7 +77392,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Confirm the wipe is real and gauge how far it has spread across the relays. Destroying the reload path during a live incident can point to both capability and intent, though what stays open is the scope and whether recovery is truly lost or a clean image survives elsewhere."
+                "guidance": "Establish that the wipe is hostile rather than a failed update or corruption, and gauge how far it has spread across the relays. Destroying the reload path during a live incident can point to both capability and intent, though what stays open is the scope and whether recovery is truly lost or a clean image survives elsewhere."
               },
               "correlates_with": [
                 "IND-I0403-01"

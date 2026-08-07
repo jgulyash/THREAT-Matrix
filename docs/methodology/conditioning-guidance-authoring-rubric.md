@@ -34,6 +34,16 @@ The deferral must be visible at the moment the instinct fires, on four layers:
 11. **No em/en dashes.** Max 420 chars; use length only when the tasking needs it; do not pad. Vary openers and sentence shapes so 800 entries do not read machine-stamped.
 12. **Tags and prose agree.** target_focus = the target/targeting; pathway_stage = where they are on the pathway; means_in_hand = capability/the means; tempo_trajectory = tempo/pace/trajectory; proximity_access = opportunity/access/reach; source_credibility = how solid the reporting is. No tagged factor the prose never addresses; no addressed factor left untagged.
 
+## Confirmation targeting (owner ruling, 2026-08-07)
+
+A Confirm/Verify/Establish opener must name the actual uncertainty; it never re-asks whether the indicator fired (the indicator having fired IS the observation). Three legitimate targets, and only three:
+
+1. **Classification** when a benign twin produces the same observable: a deliberate ram vs. an accident or medical event at the wheel; a hostile setpoint vs. a controller fault; sabotage cutting vs. permitted structural work; arson vs. accidental fire. The classification call is the hinge that changes everything downstream.
+2. **Report reality** when the source chain is indirect (peer report, intercept, single sensor) and first reports are characteristically unreliable: name what is unconfirmed ("how solid the first reports are", "whether occupants are actually held rather than sheltering").
+3. **Suspicion resolution** when the behavior itself is stated as suspected: a suspected device's viability is genuinely the question ("can be a working charge or a hoax").
+
+If none applies, there is no confirmation opener: the entry opens with its gauge or weigh move. Generic forms ("Confirm the report", "confirm X is real") are banned.
+
 ## probe_factors selection (judgment, not mechanics)
 
 Read the behavior and its informs_axes; weak/none axes suggest hidden factors but are never a formula (mechanical inversion was tried and disproven at ~5% match). Ask: for a real case built on this behavior, what would a threat manager most need to collect next to judge danger? source_credibility surfaces where "is this report even real?" is the live question.
