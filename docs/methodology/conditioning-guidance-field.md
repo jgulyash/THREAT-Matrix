@@ -22,9 +22,14 @@ The field replaces a pilot (`instance_conditioning_hints`, 23 People indicators)
 - **The default is not the full extent of practitioner action.** It is useful to a human reading one indicator; its larger value is as an extensible, composable base a consumer wires into their own procedures, assets, and thresholds.
 - **Openness raises the quality bar; it does not lower it.** A seed everyone inherits propagates its quality. These defaults are authored to be trustworthy enough that a consumer would rather extend them than rewrite them.
 
+## The scope boundary: assessment, never response
+
+`conditioning_guidance` carries **no response tasking**. Alerting, notification, evacuation, mitigation, takedown, and coordination are the province of the tactic's `response_protocols` — a first-class framework object, two per tactic. The boundary was settled on a hard case: for an active incendiary attack on an occupied structure, the practitioner's first moves are response moves, and an early draft of that entry absorbed them ("alert site security and first responders... support mitigation"). That draft was rejected: a per-indicator assessment seed that duplicates response doctrine drifts from the RPs it shadows and bloats the field beyond its design. The ruling: **an act underway is a response moment; this field stays assessment-scoped and the response protocols carry the response.** For a harmful act in progress, an entry does exactly three things: verify the reporting is real, gauge scope and trajectory, and hold open the actor questions the act does not settle (one actor or many, whole attack or cover for a second act, continuation). The deferral is surfaced where practitioners read: a standing caption on every indicator's Conditioning Guidance section in the reference SPA (linking to the tactic's Response Protocols), this document, and the schema field description.
+
 ## Reading rules
 
 - The field is **type-level** and does not affect the score. It points at the instance factors (`$defs.instance_assessment`) whose values decide the conditioned case priority.
+- Every inferential claim is hedged in both directions — what the behavior may reveal and what it may conceal — because a threat actor may telegraph everything or nothing. No entry claims the act settles the actor picture.
 - Phase 4 (Aftermath) entries task **continuation, attribution, and follow-on** rather than proximity to a first attack: the culminating act is past, and the live question is whether it is over.
-- Active-execution entries pivot to **verify-and-scope** (`source_credibility`, tempo): when the behavior is the attack in progress, the assessment payload is whether the report is real and how far it reaches.
+- Acts underway follow the three-move assessment frame above; execution-phase support acts (staging, positioning, comms) keep the standard investigative frame.
 - No behavior reveals everything. Even the highest-reveal behaviors carry a directive, because deeper questions always remain: sophistication, number of actors, continuation, diversion, whether this is the whole picture.

@@ -1162,7 +1162,7 @@
         "conditioning_guidance": {
           "type": "object",
           "additionalProperties": false,
-          "description": "Framework-provided default investigative-tasking guidance for conditioning this indicator at instance time: which instance factors to probe (probe_factors, machine-filterable) and a natural-language directive (guidance). A starting point, NOT a complete or prescriptive instruction: consumers may follow, extend, or override it with their own playbooks (as with escalation_rubric). Intended for composition across combinations of observed indicators (see detection_mesh / correlates_with), not single-indicator reading. Type-level; does not affect the score.",
+          "description": "Framework-provided default investigative-tasking guidance for conditioning this indicator at instance time: which instance factors to probe (probe_factors, machine-filterable) and a natural-language directive (guidance). Assessment-scoped only: immediate response actions (alerting, notification, mitigation) are carried by the tactic's response_protocols, never by this field. A starting point, NOT a complete or prescriptive instruction: consumers may follow, extend, or override it with their own playbooks (as with escalation_rubric). Intended for composition across combinations of observed indicators (see detection_mesh / correlates_with), not single-indicator reading. Type-level; does not affect the score.",
           "required": [
             "probe_factors",
             "guidance"

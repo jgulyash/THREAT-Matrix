@@ -257,6 +257,9 @@ body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;lin
 .type-level-note a{color:var(--amber);text-decoration:none}
 .type-level-note a:hover{text-decoration:underline}
 .cond-guidance{margin:2px 0 12px}
+.cond-guidance-scope{margin:4px 0 2px;font-size:11px;letter-spacing:.02em;color:var(--text-muted)}
+.cond-guidance-rp-link{color:var(--amber);cursor:pointer;text-decoration:none}
+.cond-guidance-rp-link:hover{text-decoration:underline}
 .cond-guidance-text{margin:4px 0 2px;font-size:13px;line-height:1.55;color:var(--text)}
 .dr-tag.probe{border-left-color:var(--amber);color:var(--amber);background:var(--amber-dim)}
 .dr-mesh-label{font-size:10px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--text-dim);align-self:center;margin-right:2px}

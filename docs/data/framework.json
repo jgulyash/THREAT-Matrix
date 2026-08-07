@@ -62,7 +62,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "proximity_access", "tempo_trajectory"],
-                "guidance": "Assess capability, access, and pace. A grievance tied to a named person can point to target candidates and intent, but whether it turns into an attack rests on means and movement the words may not surface."
+                "guidance": "Assess capability, access, and pace. The grievance may name a target plainly, but words alone can reveal little of the means or movement behind them, and whether it turns toward an attack rests on what the actor can reach and how fast they are moving."
               },
               "target_identity": ["named_individual", "role_or_identity_category", "affinity_group"]
             },
@@ -3817,8 +3817,8 @@
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "inferred", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "strong"},
               "conditioning_guidance": {
-                "probe_factors": ["target_focus", "source_credibility"],
-                "guidance": "Confirm the target and how solid the reporting is. Preparation this advanced can already point to capability and intent, so what remains is who it is aimed at and whether the account holds."
+                "probe_factors": ["source_credibility", "target_focus"],
+                "guidance": "Confirm how solid the reporting is and identify who or what the preparation converges on. Weapons, dry runs, and logistics can make capability and intent hard to doubt, yet the apparent focus may not be the final target, and whether one actor or more is preparing can stay open."
               },
               "behavior": "Threat actor engages in preparation behavior: acquiring weapons, conducting dry runs, surveilling locations, or making logistical arrangements that converge on a specific time, place, or person",
               "category": "acquisition",
@@ -7237,7 +7237,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "weak", "threat_target": "strong", "threat_method": "none"},
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory"],
-                "guidance": "Assemble a working timeline of the actor's contacts and movements. Their pace can suggest how close they are to an attack, and the pretext itself may show little of it."
+                "guidance": "Assemble a working timeline of the actor's approaches. Their pace can suggest how close an attack may be, and the pretext itself may show little of it; a single urgent story can also be an opportunist's shortcut rather than an operation in motion."
               },
               "behavior": "Threat actor uses social engineering (pretexted phone calls, urgent-need framing, name-dropping a senior) to convince personnel to grant access not normally extended",
               "category": "communication",
@@ -9806,8 +9806,8 @@
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
-                "probe_factors": ["source_credibility", "means_in_hand", "target_focus"],
-                "guidance": "Alert the protective detail and first responders and confirm the report is real. Build a running picture of what the weapon can reach and how many stand in its line, whether one shooter is firing or several, and whether this is the whole attack or cover for another. Report changes as they develop and support mitigation as your role allows; the act itself may settle little about who is behind it or what follows."
+                "probe_factors": ["source_credibility", "tempo_trajectory", "target_focus"],
+                "guidance": "Confirm the reporting of a weapon in use is real and gauge what it can reach and how many stand in its line. The firing alone may settle little about the actor: one shooter or several may be firing, and the shots may be the whole attack or cover for a second act."
               },
               "behavior": "Threat actor produces, discharges, or directs a weapon (firearm, edged weapon, blunt-force implement) toward the targeted subject or the protected environment",
               "category": "behavioral_change",
@@ -9846,8 +9846,8 @@
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
-                "probe_factors": ["source_credibility", "target_focus", "tempo_trajectory"],
-                "guidance": "Alert the protective detail and first responders and confirm the attack is real. Build a running picture of how many stand in the vehicle's path, whether it is still moving toward others, and whether one driver acted or a team. Report changes as they unfold and support mitigation as your role allows; the ramming itself may settle little about who is behind it or whether more is coming."
+                "probe_factors": ["source_credibility", "tempo_trajectory", "target_focus"],
+                "guidance": "Confirm the ramming is real and gauge how many stand in the vehicle's path and whether it is still driving toward others. The impact alone may reveal little of who is at the wheel, whether one driver acted or a team, or whether this is the whole attack or the opening of one."
               },
               "behavior": "Threat actor accelerates, rams, or directs a vehicle into the targeted subject or subjects, a crowd or gathering, a protective formation, or a protected structure",
               "category": "behavioral_change",
@@ -9886,8 +9886,8 @@
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
-                "probe_factors": ["source_credibility", "means_in_hand", "target_focus"],
-                "guidance": "Alert first responders and the protective detail and confirm the release is real. Build a running picture of how far the agent or any secondary devices can reach, who falls inside that zone, and whether the device is the whole attack or the opening of one. Report changes as they develop and support evacuation and mitigation as your role allows; the release may settle little about who set it or what follows."
+                "probe_factors": ["source_credibility", "tempo_trajectory", "target_focus"],
+                "guidance": "Confirm the release or detonation is real and gauge how far the agent or any secondary device can reach and who falls inside that zone. The device alone may reveal little of who set it, how many are involved, or whether it is the whole attack or the first move of one."
               },
               "behavior": "Threat actor activates, deploys, or attempts to deploy an improvised or commercial explosive device, incendiary, or chemical agent at the protected environment",
               "category": "behavioral_change",
@@ -9926,7 +9926,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "means_in_hand"],
-                "guidance": "Alert the protective detail and first responders and confirm the assault is underway. Build a running picture of whether the hands-on force is escalating toward a weapon or lethal harm, whether others are joining, and how the subject is holding. Report changes as they develop and support intervention as your role allows; the beating in progress may settle little about how far the actor means to take it."
+                "guidance": "Confirm the assault is underway and gauge whether the hands-on force is escalating toward a weapon or lethal harm and how the subject is holding. The beating alone may settle little of how far the actor means to take it or whether others are joining."
               },
               "behavior": "Threat actor uses physical assault (striking, grappling, restraining) to coerce or harm the targeted subject or subjects directly",
               "category": "behavioral_change",
@@ -9963,7 +9963,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Weigh the actor's capability and how imminent an attack could be. Tactical gear, a declared intent, and a presented weapon at the site can signal commitment, but the display alone may overstate or understate what the actor can actually carry out."
+                "guidance": "Weigh what the actor is equipped to do and how imminent an attack could be. Tactical dress, declared intent, and a presented weapon can signal commitment, yet the display may overstate or understate what the actor can actually carry out, and it may be meant to be seen."
               },
               "behavior": "Threat actor displays announced or visible commitment markers: verbal declaration of intent to harm, operationally appropriate clothing (tactical gear, body armor, concealment apparel), weapon presentation: at the target location",
               "category": "behavioral_change",
@@ -10329,8 +10329,8 @@
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "conditioning_guidance": {
-                "probe_factors": ["means_in_hand", "proximity_access"],
-                "guidance": "Alert site security and the protective detail that a breach is in progress. Build a running picture of what the actor carries past the barrier, how far into occupied space they can reach, and whether one intruder is forcing entry or several. Report movement as it develops and support lockdown or evacuation as your role allows; the breach itself may show little of the weapon behind it or where the actor is headed."
+                "probe_factors": ["source_credibility", "tempo_trajectory", "means_in_hand"],
+                "guidance": "Confirm the breach is real and gauge what the actor carries past the barrier and how far into occupied space they can reach. The forced entry alone may show little of any weapon behind it, where the actor is headed, or whether one intruder or several are moving."
               },
               "behavior": "Threat actor uses force, prying tools, cutting tools, or impact methods to defeat a perimeter barrier: door, gate, fence, window, or wall",
               "category": "access",
@@ -10367,8 +10367,8 @@
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
-                "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Alert site security and the protective detail that a vehicle is breaching the barrier now. Build a running picture of whether the vehicle is the weapon or only the way in, how fast an attack on foot may follow, and whether one actor or a team is moving. Report changes as they develop and support lockdown as your role allows; the ramming itself may show little of what comes once the actor is through."
+                "probe_factors": ["source_credibility", "tempo_trajectory", "means_in_hand"],
+                "guidance": "Confirm a vehicle is breaching the barrier now and gauge whether it is the weapon itself or only the way in and how fast an attack on foot may follow. The ramming alone may show little of what comes once the actor is through, or whether one actor or a team is moving."
               },
               "behavior": "Threat actor uses a vehicle as a battering tool to defeat a fixed barrier (gate, bollards, glass entry) at the protected environment",
               "category": "access",
@@ -10404,8 +10404,8 @@
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "established" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
-                "probe_factors": ["target_focus", "means_in_hand"],
-                "guidance": "Alert the protective detail and first responders that security has been overpowered. Build a running picture of the primary target now that the actor is past the guard, what they carry, and whether one attacker or a team broke through. Report changes as they develop and support intervention as your role allows; putting the guard down speaks to the actor's reach and may reveal little of who they are ultimately after."
+                "probe_factors": ["source_credibility", "target_focus", "means_in_hand"],
+                "guidance": "Confirm security has been overpowered and gauge the primary target now that the actor is past the guard and what they carry. Putting the guard down speaks to the actor's reach but may reveal little of who they are ultimately after, or whether one attacker or a team broke through."
               },
               "behavior": "Threat actor physically overpowers, restrains, or incapacitates a security guard, escort, bodyguard, or other personnel staffing an access point or barrier",
               "category": "access",
@@ -10443,8 +10443,8 @@
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "conditioning_guidance": {
-                "probe_factors": ["means_in_hand", "target_focus"],
-                "guidance": "Alert site security that access controls are being defeated now. Build a running picture of what the actor carries, the target candidates waiting past the lock, and whether one intruder or a team is entering. Report movement as it develops and support lockdown as your role allows; a defeated lock speaks to access and may reveal little of the weapon or who the actor is converging on inside."
+                "probe_factors": ["means_in_hand", "target_focus", "proximity_access"],
+                "guidance": "Establish what the actor carries and the target candidates waiting past the lock as access controls fall. A defeated lock speaks to access but may reveal little of a weapon or who the actor is converging on inside, or whether one intruder or a team is entering."
               },
               "behavior": "Threat actor deploys mechanical bypass tools (bolt cutters, breaching tools, lock picks, hydraulic spreaders) to defeat access controls or barriers",
               "category": "access",
@@ -10851,7 +10851,7 @@
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "proximity_access", "tempo_trajectory"],
-                "guidance": "Alert the protective detail and law enforcement and confirm the seizure is real. Build a running picture of where the actor is moving the subject, how far and how fast, and whether one captor or a team carried it out. Report the direction and any change as they develop and support recovery as your role allows; custody taken may settle little about who is behind it or where the subject is being held."
+                "guidance": "Confirm the seizure is real and how solid the sourcing is, and gauge where the actor is moving the subject and how fast. Custody taken may settle little of who is behind it, where the subject is being held, or whether one captor or a team carried it out."
               },
               "behavior": "Threat actor takes physical custody of the targeted subject or subjects through restraint, threat of harm, or coordinated team action, removing them from the protected environment",
               "category": "behavioral_change",
@@ -10925,8 +10925,8 @@
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
-                "probe_factors": ["proximity_access", "tempo_trajectory"],
-                "guidance": "Alert the protective detail and law enforcement that the subject is being moved now. Build a running picture of the extraction route, its direction and speed, the holding site it points toward, and whether one actor or a coordinated team is running it. Report the route as it develops and support interdiction as your role allows; the removal in motion may settle little about who is behind it or the final destination."
+                "probe_factors": ["source_credibility", "proximity_access", "tempo_trajectory"],
+                "guidance": "Confirm the subject is being moved now and gauge the extraction route, its direction and speed, and the holding site it points toward. The removal in motion may settle little of who is behind it, the final destination, or whether one actor or a coordinated team is running it."
               },
               "behavior": "Threat actor extracts the targeted subject or subjects from the protected environment via vehicle, foot, or transit, sometimes using coordinated multi-actor extraction",
               "category": "behavioral_change",
@@ -10964,8 +10964,8 @@
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "conditioning_guidance": {
-                "probe_factors": ["means_in_hand", "source_credibility"],
-                "guidance": "Alert the protective detail and first responders that an armed coercion is underway. Build a running picture of whether the actor can deliver the harm behind the threat or is bluffing, what they hold, and whether one actor or more are in play. Report changes as they develop and support negotiation and mitigation as your role allows; a weapon shown and a real capability can read the same in the moment."
+                "probe_factors": ["source_credibility", "means_in_hand"],
+                "guidance": "Assess whether the actor can deliver the harm behind the threat or is bluffing, and gauge what they hold. A weapon shown and a real capability can read alike in the moment, and whether one actor or more stand behind the coercion can stay open."
               },
               "behavior": "Threat actor uses coercive threats: display of weapon, threat to harm the targeted subject or others, threat to destroy property: to compel surrender of a person, asset, or location",
               "category": "communication",
@@ -11004,7 +11004,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "means_in_hand"],
-                "guidance": "Alert the protective detail and law enforcement that a site is being occupied and access blocked. Build a running picture of whether the target is inside, what the actor is equipped to do there, and whether one occupier or a group holds it. Report changes as they develop and support containment as your role allows; the standoff may reveal little of whether a person is held or how it ends."
+                "guidance": "Confirm a site is being occupied and access blocked, and gauge whether the target is inside and what the actor is equipped to do there. The standoff may reveal little of whether a person is held, how it ends, or whether one occupier or a group holds it."
               },
               "behavior": "Threat actor occupies a location associated with the target (office, residence, vehicle, or a public site) and prevents access, denying the target's protective network the ability to intervene",
               "category": "access",
@@ -11363,8 +11363,8 @@
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
-                "probe_factors": ["proximity_access", "tempo_trajectory"],
-                "guidance": "Alert law enforcement and the protective network that a captive is being held. Build a running picture of the holding site, how the situation is trending toward release or harm, and whether one captor or a team is sustaining it. Report changes as they develop and support recovery and negotiation as your role allows; sustained restraint may settle little about the captive's condition or how it ends."
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the report of a held captive and how solid the sourcing is, and assess whether the situation is trending toward release or harm. Sustained restraint can mean the actor wants leverage rather than immediate harm, but the trajectory can turn without warning, and one captor or a team may be sustaining it."
               },
               "behavior": "Threat actor maintains physical restraint of the captive or captives (handcuffs, rope, zip ties, lockable container, locked room) over an extended duration consistent with sustained captive control",
               "category": "behavioral_change",
@@ -11402,7 +11402,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert law enforcement and the protective network that a captive is under active coercion. Build a running picture of whether the actor's handling is holding steady or turning toward harm, what the captive's condition is, and whether one captor or a team is running it. Report changes as they develop and support negotiation as your role allows; the treatment so far may reveal little of which way the situation breaks."
+                "guidance": "Assess whether the actor's handling is holding steady or turning toward harm, and gauge the captive's condition. Sustained coercion can mean the actor wants leverage rather than immediate harm, yet the trajectory can turn without warning, and one captor or a team may be running it."
               },
               "behavior": "Threat actor employs psychological management of the captive or captives including threats, deprivation, isolation, sensory manipulation, or alternation of treatment to maintain compliance",
               "category": "behavioral_change",
@@ -11437,7 +11437,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "means_in_hand"],
-                "guidance": "Alert law enforcement and the protective network that a captive is held under force and deprivation. Build a running picture of how far the coercion is escalating, what the actor is willing to use, and whether one captor or a team is sustaining it. Report changes as they develop and support recovery as your role allows; the pattern so far may reveal little of where the actor's limit lies."
+                "guidance": "Assess how far the coercion is escalating and what the actor is willing to use, and gauge the captive's condition. The pattern so far can point to where the actor's limit lies, yet it may shift without warning, and whether one captor or a team is sustaining it can stay open."
               },
               "behavior": "Threat actor uses force, threats of force, or coercive deprivation (food, water, sleep, medical access) to maintain captive compliance over time",
               "category": "behavioral_change",
@@ -11475,7 +11475,7 @@
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
                 "probe_factors": ["proximity_access", "means_in_hand"],
-                "guidance": "Alert law enforcement and the protective network that the captive is being moved between sites. Build a running picture of the current holding location from the pattern of moves, the support network the sequence exposes, and whether one captor or a team is running it. Report each move as it develops and support recovery as your role allows; a single last-known site may reveal little of where the captive is now."
+                "guidance": "Assess the current holding location from the pattern of moves and gauge the wider network the sequence exposes. A single last-known site may point one way while the captive is already elsewhere, and whether one captor or a team is running it can stay open."
               },
               "behavior": "In sustained kidnapping operations, threat actor moves the captive or captives between holding locations to defeat search efforts, evade tactical response, or adapt to the operational situation",
               "category": "behavioral_change",
@@ -11513,7 +11513,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Alert law enforcement and the protective network that a captor is communicating demands. Build a running picture of whether the demands and threats reflect real intent or deception, the captive's true condition behind the framing, and whether the actor can deliver the harm threatened. Report changes as they develop and support negotiation as your role allows; the framing may mask as much as it reveals."
+                "guidance": "Assess whether the demands and threats reflect real intent or deception, and gauge the captive's true condition behind the framing. The framing can mask as much as it reveals, and whether the actor can deliver the harm threatened can stay open."
               },
               "behavior": "Threat actor's communications during Captive Control reflect ongoing operational decision-making: negotiation framing, demand articulation, threat language, or deception toward responders",
               "category": "communication",
@@ -12349,7 +12349,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "target_focus", "means_in_hand"],
-                "guidance": "Alert the protective detail and first responders and confirm interference-capable personnel have been taken down. Build a running picture of the primary target past the neutralized guards, what the actor carries, and whether one attacker or a team is moving. Report changes as they develop and support intervention as your role allows; the guards put down may be obstacles rather than the objective."
+                "guidance": "Confirm interference-capable personnel have been taken down and gauge the primary target past them and what the actor carries. The guards put down may be obstacles rather than the objective, and whether one attacker or a team is moving can stay open."
               },
               "behavior": "Threat actor physically neutralizes (incapacitates without killing) security personnel, bodyguards, or other interference-capable bystanders to remove their ability to interfere with the operation",
               "category": "behavioral_change",
@@ -12422,7 +12422,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "moderate", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "means_in_hand"],
-                "guidance": "Assess what the deception is buying time for and the means behind it. Passing the incident off as a drill delays recognition that an attack is underway, and the cover story can keep the actor's capability and how far the plan has run out of view."
+                "guidance": "Assess what the deception is buying time for and the means behind it. Passing the incident off as a drill can show an operation already underway, though the cover story may keep the actor's capability and how far the plan has run out of view."
               },
               "behavior": "Threat actor deceives bystanders about the nature of the incident (claiming a drill, a medical event, or a media production) to delay recognition that the operation is underway, or recruits unwitting bystanders into the operation through misrepresentation of its purpose",
               "category": "communication",
@@ -12460,7 +12460,7 @@
               "informs_axes": {"actor_capability": "weak", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "weak"},
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "target_focus"],
-                "guidance": "Alert first responders and the protective detail that an attacker is accepting open exposure, which can signal a high-tempo assault. Build a running picture of what the means can do at scale, how wide the target set runs, and whether one or several are committed. Report changes as they develop and support evacuation as your role allows; disregard for witnesses may point to a mass-casualty aim it may not size."
+                "guidance": "Confirm an attacker is accepting open exposure, which can signal a high-tempo assault, and gauge what the means can do at scale and how wide the target set runs. Disregard for witnesses can point to a mass-casualty aim yet may not size it, and whether one or several are committed can stay open."
               },
               "behavior": "Threat actor accepts visible bystander exposure as operational cost when containment, neutralization, or deception is judged infeasible: typical of high-tempo ideologically-driven attacks",
               "category": "behavioral_change",
@@ -13407,7 +13407,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "moderate", "threat_method": "none"},
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "tempo_trajectory"],
-                "guidance": "Identify the target candidates and how close the operation is from what the radio net carries. Radio coordination accepts intercept risk for speed and reach, and the traffic can expose the team's plan, its timing, and where it is heading."
+                "guidance": "Identify the target candidates and how close the operation is from what the radio net carries. Radio coordination accepts intercept risk for speed and reach, and the traffic can expose the team's plan, timing, and heading, though the exchanges may be coded and give up less than they seem."
               },
               "behavior": "Threat actor uses radio communications (handheld, vehicle-mounted) for accomplice coordination, accepting the jamming and intercept risk in exchange for low latency and team reach",
               "category": "communication",
@@ -14357,7 +14357,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "none", "threat_timing": "none", "threat_target": "none", "threat_method": "none"},
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
-                "guidance": "Assess the sophistication behind the wipe and where it leaves the operation. Thorough device destruction can mark a one-off cleanup or the tradecraft of an actor who intends to operate again, and the erased media may not reveal which."
+                "guidance": "Assess the tradecraft behind the wipe and where it leaves the operation. Thorough destruction can mark an actor who intends to operate again or a one-time cleanup, and the erased media alone may not show which; what else survives can indicate whether this thread is the whole picture."
               },
               "behavior": "Threat actor wipes or destroys electronic devices (phones, computers, storage media) before, during, or after the operation",
               "category": "digital",
@@ -19249,7 +19249,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "proximity_access", "tempo_trajectory"],
-                "guidance": "Assess capability, access, and pace. Remote imagery study can narrow the pool of target candidates, yet may show little of the means, the access, or how fast the actor is moving toward an attack on the site."
+                "guidance": "Assess capability, access, and pace. Remote imagery study can narrow target candidates, yet may show little of the means, the access, or how fast the actor is moving toward an attack on the site; the same study can also be idle curiosity or lawful planning."
               },
               "facility_target_scope": ["specific_site"]
             }
@@ -23876,7 +23876,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand"],
-                "guidance": "Assess the actor's capability and intended method. Probing guard reaction can reveal a plan and narrow the pool of target candidates, though it may show little of what the actor is equipped to carry out."
+                "guidance": "Assess what the actor may be equipped to carry out and the method the probe supports. Testing guard reaction can reveal planning against the site, but not necessarily what the actor holds, and a stray alarm or accidental tailgate can read the same as a rehearsal."
               },
               "facility_target_scope": ["specific_site"]
             },
@@ -27469,8 +27469,8 @@
                 "threat_method": "moderate"
               },
               "conditioning_guidance": {
-                "probe_factors": ["means_in_hand", "target_focus"],
-                "guidance": "Assess what the actor can do to the controls and which system is the objective. Breaking into a mechanical or life-safety space can reveal access to the building's guts, though it may show little of the sabotage intended or which utility matters most."
+                "probe_factors": ["target_focus", "means_in_hand"],
+                "guidance": "Assess which building system the entry is aimed at and what the actor could do to it. Reaching a mechanical or life-safety space can put the facility's controls within reach, yet the entry alone may not show the intended sabotage, and a lost contractor or curious insider can produce the same door alarm."
               },
               "within_site_focus": ["systems"]
             },
@@ -28516,8 +28516,8 @@
                 "threat_method": "strong"
               },
               "conditioning_guidance": {
-                "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert site security and first responders and confirm the report is real. Build a running picture of how far the fire reaches, whether one actor set it or several, and whether the ignition is the whole attack or cover for a second act. Report changes as they develop and support mitigation as your role allows; the act itself may settle little about who is behind it or what comes next."
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Confirm the reporting is real and gauge how far the fire reaches. The act itself may settle little about the actor: one person or several may have set it, and the ignition may be the whole attack or cover for a second act."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -28564,7 +28564,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert on-site security and first responders and verify the report holds. Track how far the fire is running and who is exposed, and keep open whether one actor or several set it and whether the ignition is the whole attack or cover for a second act. Push updates as the scene develops and support evacuation as your role allows; the act alone may reveal little of who set it or what follows."
+                "guidance": "Confirm the reporting is real and gauge how far the fire is running and who is exposed. The ignition itself may settle little about the actor: one person or several may have set it, and it may be the whole attack or cover for a second act."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -28609,7 +28609,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "pathway_stage"],
-                "guidance": "Alert first responders and confirm the fire is real. With no one inside, the live question is what the burn means: it can be an end in itself, a warning, a rehearsal, or a prelude to an attack on people. Keep open whether one actor or several set it, and weigh whether this closes the matter or is a step on a pathway toward harm to occupants."
+                "guidance": "Confirm the fire is real and, with no one inside, weigh what the burn means: an end in itself, a warning, a rehearsal, or a prelude to an attack on people. Keep open whether one actor or several set it and whether this closes the matter or is a step toward harm to occupants."
               },
               "within_site_focus": ["structure"]
             },
@@ -28655,7 +28655,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Confirm the report and assess how much is staged. Readying accelerant and an ignition source against an occupied building can mark the last moment before a fire, so the response turns on whether it is real and how large a blaze it would set."
+                "guidance": "Confirm the report and assess how much is staged. Readying accelerant and an ignition source against an occupied building can mark the last moment before a fire, so what matters is whether it is real and how large a blaze it would set."
               },
               "within_site_focus": ["structure", "occupants"]
             },
@@ -28701,7 +28701,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert site security and first responders and verify the attack is real. Build a live picture of how fast the fire is spreading across the points of origin and whether egress is cut, and keep open whether one actor or a team set it and whether this is the whole act or cover for another. Support evacuation as your role allows; the spread pattern may say little of who is behind it."
+                "guidance": "Verify the attack is real and build a picture of how fast the fire is spreading across the points of origin and whether egress is cut. Keep open whether one actor or a team set it and whether this is the whole act or cover for another; the spread pattern alone may say little of who is behind it."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -29082,8 +29082,8 @@
                 "threat_method": "strong"
               },
               "conditioning_guidance": {
-                "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert security and first responders and confirm the detonation is real. Build a running picture of the scope and casualties and stay alert for a secondary or follow-on blast, and keep open whether one actor or several are involved and whether this is the whole attack. Support mitigation as your role allows; the blast alone may reveal little of who set it or what comes next."
+                "probe_factors": ["source_credibility", "tempo_trajectory"],
+                "guidance": "Verify the detonation and gauge its scope while staying alert for a follow-on device. The blast alone may reveal little of who set it, how many are involved, or whether this is the whole attack."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -29223,7 +29223,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Confirm the second device is real and determine how many more may be set. A charge placed on the evacuation route reads as a layered attack aimed at responders, and whether the sequence continues is what shapes how the site is approached."
+                "guidance": "Confirm the second device is real and determine how many more may be set. A charge placed on the evacuation route reads as a layered attack aimed at responders, and whether the sequence continues is the question the find leaves open."
               },
               "within_site_focus": ["occupants"]
             }
@@ -29567,7 +29567,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert building security and first responders and confirm the report. Have the structure assessed for how near the cut member is to failure and clear occupants on that basis, and keep open whether one actor or several are at work and whether more members are already cut. Support the evacuation as your role allows; the act alone may show little of who is behind it or how far the sabotage has gone."
+                "guidance": "Confirm the report and gauge how near the cut member is to failure and how far the sabotage has run. Keep open whether one actor or several are at work and whether more members are already cut; the act alone may show little of who is behind it."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -29614,7 +29614,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Notify site security and first responders and verify the activity is real. Get an engineering read on how close the foundation is to collapse and move occupants out on that timeline, and keep open whether one actor or several are digging and whether the undermining is further along than it looks. Support the evacuation as your role allows; the digging alone may say little of who is behind it."
+                "guidance": "Verify the activity is real and gauge how close the foundation is to collapse and how far the undermining has run. Keep open whether one actor or several are digging and whether it is further along than it looks; the digging alone may say little of who is behind it."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -29707,7 +29707,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert building security and first responders and confirm the sabotage. Have the structure assessed for the margin before the floor or support gives way and clear occupants on that basis, and keep open whether one actor or several are acting and whether other supports are already defeated. Support the evacuation as your role allows; the act alone may reveal little of who is behind it."
+                "guidance": "Confirm the sabotage and gauge the margin before the floor or support gives way. Keep open whether one actor or several are acting and whether other supports are already defeated; the act alone may reveal little of who is behind it or how far it has gone."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -30144,7 +30144,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert occupants, site security, and hazmat responders and confirm a release is underway. Build a picture of which zones the air handling has reached and get people clear of the circuit, and keep open whether one actor or several are involved and whether this is paired with another act. Support evacuation as your role allows; the release alone may say little of who is behind it."
+                "guidance": "Confirm a release is underway and build a picture of which zones the air handling has reached. Keep open whether one actor or several are involved and whether this is paired with another act; the release alone may say little of who is behind it or what else is planned."
               },
               "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
@@ -30191,7 +30191,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "pathway_stage"],
-                "guidance": "Alert site security and first responders and confirm the sabotage. Keep open whether the blackout is the whole act or cover for a larger attack it is meant to enable, and whether one actor or several are involved. Account for occupants while egress lighting and life-safety are down and support restoration as your role allows; the outage alone may reveal little of who caused it or what it sets up."
+                "guidance": "Confirm the sabotage and weigh whether the blackout is the whole act or cover for a larger attack it is meant to enable. Keep open whether one actor or several are involved; the outage alone may reveal little of who caused it or what it sets up."
               },
               "within_site_focus": ["systems", "occupants"]
             },
@@ -30286,7 +30286,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Notify occupants to stop using the water, alert site security and hazmat responders, and verify a release is real. Trace how far the supply has carried the agent and to whom, and keep open whether one actor or several set it and whether this is the whole attack. Support the response as your role allows; the tampering alone may say little of who is behind it."
+                "guidance": "Verify a release is real and trace how far the supply has carried the agent and to whom. Keep open whether one actor or several set it and whether this is the whole attack; the tampering alone may say little of who is behind it."
               },
               "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
@@ -30637,7 +30637,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "pathway_stage"],
-                "guidance": "Alert site security and first responders and confirm this is a deliberate attack. Watch for a dismounted assault, as the driver may emerge armed, and keep open whether one actor or several are involved and whether the ram is the whole act or the opening of one. Get casualties help and hold cover as your role allows; the ram alone may reveal little of who is behind it or what follows."
+                "guidance": "Confirm this is a deliberate attack rather than an accident and watch for a dismounted assault, as the driver may emerge armed. Keep open whether one actor or several are involved and whether the ram is the whole act or the opening of one; the ram alone may reveal little of who is behind it."
               },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
@@ -30729,7 +30729,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand", "pathway_stage"],
-                "guidance": "Alert remaining security and first responders and confirm the breach. Keep open what the actor intends past the door, whether they are armed, and whether one attacker or several are entering; the breach opens onto an act it may not itself reveal. Support the response and account for people inside as your role allows; the entry alone may show little of the capability behind it or what follows."
+                "guidance": "Confirm the breach and keep open what the actor intends past the door, whether they are armed, and whether one attacker or several are entering. The breach opens onto an act it may not itself reveal, and the entry alone may show little of the capability behind it or what follows."
               },
               "severity_floor": "critical"
             },
@@ -30775,7 +30775,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "pathway_stage", "means_in_hand"],
-                "guidance": "Alert on-site security and first responders and confirm the breach is underway. Keep open what the actor means to do once through and whether they are armed, and whether one attacker or several are forcing entry. Move people back from the breach point and support the response as your role allows; the forcing of the door may show little of the act intended inside or the means to carry it out."
+                "guidance": "Confirm the breach is underway and keep open what the actor means to do once through, whether they are armed, and whether one attacker or several are forcing entry. The forcing of the door may show little of the act intended inside or the means to carry it out."
               }
             },
             {
@@ -30821,7 +30821,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "pathway_stage", "means_in_hand"],
-                "guidance": "Alert site security and first responders and confirm the ramming is deliberate. Keep open what the defeated standoff is meant to open for, a follow-on vehicle, a charge, or an assault, and whether one actor or several are involved. Account for what the cleared path exposes and support the response as your role allows; the ram alone may reveal little of the act it enables."
+                "guidance": "Confirm the ramming is deliberate and keep open what the defeated standoff is meant to open for, a follow-on vehicle, a charge, or an assault, and whether one actor or several are involved. The ram alone may reveal little of the act it enables or the means behind it."
               }
             }
           ],
@@ -31305,7 +31305,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand", "pathway_stage"],
-                "guidance": "Alert law enforcement and site security and confirm the report. Establish how many occupants are held and where, whether the actors are armed, and whether one actor or several are involved; a seizure this direct still leaves the capacity to harm and the demands open. Support negotiators and hold a safe perimeter as your role allows; the act alone may say little of who is behind it or what they intend next."
+                "guidance": "Confirm the report and establish how many occupants are held and where, whether the actors are armed, and whether one actor or several are involved. A seizure this direct still leaves the capacity to harm and the demands open; the act alone may say little of who is behind it or what they intend next."
               },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
@@ -31353,7 +31353,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
-                "guidance": "Assess the materiel behind the siege and where the actors mean to take it. Fortifying the position can signal commitment, and the supplies and weapons on hand, and whether harm to occupants is next, decide how the standoff is worked."
+                "guidance": "Assess the materiel behind the siege and where the actors mean to take it. Fortifying the position can signal commitment, yet the supplies and weapons on hand and whether harm to occupants is next may stay unresolved."
               },
               "within_site_focus": ["whole_site"]
             }
@@ -32199,7 +32199,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Notify occupants to stop drinking or using the water, alert site security and hazmat responders, and verify a release is real. Map how far the potable system has distributed the agent and how many it has reached, and keep open whether one actor or several set it and whether more is coming. Support the response as your role allows; the release alone may reveal little of who is behind it."
+                "guidance": "Verify a release is real and map how far the potable system has distributed the agent and how many it has reached. Keep open whether one actor or several set it and whether more is coming; the release alone may reveal little of who is behind it."
               },
               "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
@@ -32247,7 +32247,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert occupants, site security, and hazmat responders and confirm the release. Determine which occupied zones the air handling has carried the contaminant to and clear them, and keep open whether one actor or several are involved and whether this is paired with a further act. Support evacuation as your role allows; the act alone may say little of who is behind it or what comes next."
+                "guidance": "Confirm the release and determine which occupied zones the air handling has carried the contaminant to. Keep open whether one actor or several are involved and whether this is paired with a further act; the act alone may say little of who is behind it or what comes next."
               },
               "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
@@ -32342,7 +32342,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert occupants to stop eating from the affected stock, notify site security and medical responders, and confirm the contamination. Determine how much has been served or consumed and who is exposed, and keep open whether one actor or several are involved and whether this is the whole attack. Support the medical response as your role allows; the act alone may reveal little of who is behind it."
+                "guidance": "Confirm the contamination and determine how much has been served or consumed and who is exposed. Keep open whether one actor or several are involved and whether this is the whole attack; the act alone may reveal little of who is behind it."
               },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
@@ -32391,7 +32391,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert medical and hazmat responders and confirm the symptoms trace to a deliberate release rather than a natural cause. Find the source and gauge how widely it has spread and who else is exposed, and keep open whether one actor or several are behind it and whether more is coming. Support the medical response as your role allows; the illness alone may say little of who caused it."
+                "guidance": "Confirm the symptoms trace to a deliberate release rather than a natural cause, find the source, and gauge how widely it has spread and who else is exposed. Keep open whether one actor or several are behind it and whether more is coming; the illness alone may say little of who caused it."
               },
               "within_site_focus": ["systems", "occupants"],
               "severity_floor": "critical"
@@ -32827,7 +32827,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Confirm the secondary hazard is real and determine whether more are placed. A device set on the responder approach can read as a deliberate attack on the response itself, and how many are staged is what shapes how the scene is worked."
+                "guidance": "Confirm the secondary hazard is real and determine whether more are placed. A device set on the responder approach can read as a deliberate attack on the response itself, and how many are staged is what the find does not settle."
               },
               "within_site_focus": ["occupants"],
               "severity_floor": "critical"
@@ -33783,8 +33783,8 @@
                 "threat_method": "none"
               },
               "conditioning_guidance": {
-                "probe_factors": ["pathway_stage", "source_credibility"],
-                "guidance": "Weigh whether the sanitized scene points to an actor who means to strike again and how solid attribution can be. Carrying off tools and remnants thins the record, and whether enough remains to tie the act to the actor is the open question."
+                "probe_factors": ["means_in_hand", "pathway_stage"],
+                "guidance": "Weigh what the removed items could tie the actor to and whether the cleanup signals a plan to strike again. Carrying off tools and remnants can mark preparation for reuse or simple self-protection, and the missing objects themselves may indicate the method better than what was left behind."
               }
             },
             {
@@ -39549,7 +39549,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "pathway_stage"],
-                "guidance": "Identify which institution the actor is converging on. A ranked list can show deliberation and narrow the pool of target candidates, though the target may not be fixed while the comparison is still running."
+                "guidance": "Identify which institutions the actor may be converging on. A ranked list can show deliberation, yet the comparison may still be open, and the list itself may reflect aspiration more than operational choice; where the ranking sits in the actor's planning can matter more than its order."
               }
             },
             {
@@ -45745,7 +45745,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Assess the actor's reach and how fast the narrative is spreading. The seeding can reveal intent and framing, but a narrative only endangers the institution once it can travel."
+                "guidance": "Assess the reach behind the seeding and how fast the narrative could travel. Early placement in fringe venues can show intent and framing taking shape, but a narrative may only endanger the institution once it can cross into channels its audiences trust, and many seeded stories never do."
               },
               "correlates_with": [
                 "IND-O0302-03",
@@ -46683,7 +46683,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "proximity_access"],
-                "guidance": "Establish what the requested credentials would reach and whether the grant goes through. A pretextual demand for admin access or member rolls can signal intent, but the exposure depends on what those permissions open."
+                "guidance": "Establish what the requested permissions would reach and whether the grant goes through. A mismatched access request can show intent taking shape, but the exposure may depend on what those credentials open, and an over-broad but innocent request can read the same until the justification is tested."
               },
               "correlates_with": [
                 "IND-O0308-01",
@@ -49657,7 +49657,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "source_credibility"],
-                "guidance": "Notify leadership, counsel, and law enforcement, and work to establish whether the actor can actually deliver the threatened harm before the deadline forces a decision. Keep open whether one actor or a coordinated group stands behind the demand and whether extortion is the whole aim or cover for another. An empty threat and a real one can read alike, so weigh the capability behind the words."
+                "guidance": "Assess whether the actor can actually deliver the threatened harm before the deadline forces a decision. An empty threat and a real one can read alike on paper, and whether one actor or a coordinated group stands behind the demand can stay open."
               },
               "correlates_with": [
                 "IND-I0408-01",
@@ -49701,7 +49701,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Alert leadership, counsel, and law enforcement, and move to verify whether the actor truly holds the data they claim and how damaging its release would be. Watch for sample leaks that test resolve, and keep open whether one hand or a network is behind the threat and whether the breach is the whole play. A bluff and a real theft can read alike until possession is corroborated."
+                "guidance": "Verify whether the actor truly holds the data they claim and how damaging its release would be. Sample leaks may test resolve, yet whether one hand or a network stands behind the threat, and whether the breach is the whole play, can stay open. A bluff and a real theft can read alike until possession is corroborated."
               },
               "correlates_with": [
                 "IND-I0408-03",
@@ -49834,7 +49834,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Alert leadership and counsel and prepare the institution's messaging as the pressure widens to donors, regulators, and media. Track how fast and how far the threats are spreading, and weigh whether real capability sits behind them or the escalation is coercion with nothing to back it. Keep open whether one actor or a coordinated push drives it; mounting words can signal resolve or may mask an empty hand."
+                "guidance": "Track how fast and how far the threats spread as the pressure widens to donors, regulators, and media, and weigh whether real capability sits behind them or the escalation is coercion with nothing to back it. Whether one actor or a coordinated push drives it can stay open; mounting words can signal resolve or may mask an empty hand."
               },
               "correlates_with": [
                 "IND-O0412-04"
@@ -50168,7 +50168,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "means_in_hand"],
-                "guidance": "Alert leadership and communications and engage the platforms carrying the coordinated accounts. Monitor how fast the message is spreading and how far past the seeding accounts it travels, and pursue takedowns and counter-messaging as your role allows. Keep open whether one operator or a network runs it and whether the claim is gaining real traction or only its appearance."
+                "guidance": "Track how fast the message is spreading and how far past the seeding accounts it travels, and weigh whether the claim is gaining real traction or only its appearance. Whether one operator or a network runs it can stay open; coordinated timing can point to the method, yet the harm may turn on whether real audiences take up the claim."
               },
               "correlates_with": [
                 "IND-O0411-02"
@@ -50211,7 +50211,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
-                "guidance": "Alert leadership and counsel and prepare a response to the funders or authorities the campaign targets. Gauge how much genuine backing stands behind the petitions and whether they can reach a body able to defund or dissolve the institution. Keep open whether the signatures are organic or bought and whether one actor orchestrates it; a staged demand and a real constituency can threaten very differently."
+                "guidance": "Assess how much genuine backing stands behind the petitions and whether they can reach a body able to defund or dissolve the institution. Whether the signatures are organic or bought, and whether one actor orchestrates it, can stay open; a staged demand and a real constituency can threaten the institution very differently."
               }
             },
             {
@@ -50252,7 +50252,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "means_in_hand"],
-                "guidance": "Alert leadership and communications and watch the narrative's climb from fringe venues toward the mainstream outlets the institution's audiences trust. Track how fast it escalates and the reach behind the push, and ready counter-messaging before it breaks through. Keep open whether one coordinated hand drives the schedule; whether it crosses over, and how quickly, may weigh more than the seeding itself."
+                "guidance": "Track how fast the narrative climbs from fringe venues toward the mainstream outlets the institution's audiences trust, and the reach behind the push. Whether one coordinated hand drives the schedule can stay open; whether it crosses over, and how quickly, may weigh more than the seeding, and an organic rise and an engineered climb can read alike."
               }
             },
             {
@@ -50292,7 +50292,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Alert leadership and communications as insiders are turned to publicly renounce the institution's authority. Gauge how many credible defectors the actor has recruited and how fast their statements reach the institution's audiences. Keep open whether one effort or several court them and whether the renunciations are the whole campaign; the damage may rest on the weight of the voices and their spread."
+                "guidance": "Weigh how many credible defectors the actor has recruited and how fast their statements reach the institution's audiences. Whether one effort or several court them, and whether the renunciations are the whole campaign, can stay open; the damage may rest on the weight of the voices and their spread rather than the fact of a defection."
               }
             },
             {
@@ -50332,7 +50332,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "means_in_hand"],
-                "guidance": "Alert leadership, stakeholders, and the spoofed platforms, and issue an authenticated advisory disavowing the false statements. Track how far the impersonation spreads before it can be countered and how many take it as real, and pursue takedowns. Keep open whether one actor or a network runs the channels; a spoofed channel can point to method, but its damage may turn on how far the statements travel."
+                "guidance": "Track how far the impersonation spreads before it can be countered and how many take it as real. Whether one actor or a network runs the channels can stay open; a spoofed channel can point to the method, yet its damage may turn on how far the false statements travel and whether audiences believe them."
               }
             }
           ],
@@ -50665,7 +50665,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "target_focus"],
-                "guidance": "Alert leadership, counsel, and the named funders, and work to verify the documents are forged before donors act on them. Track how many funders received the fabrications and how convincing they are, since a crude forgery can fall flat where a polished one lands. Keep open whether one actor or a coordinated effort delivered them; their power to shake confidence may rest on whether donors take them as genuine."
+                "guidance": "Verify whether the documents are forged and how many named funders received them. Whether one actor or a coordinated effort delivered them can stay open; a crude forgery can fall flat where a polished one lands, and their power to shake confidence may rest on whether donors take them as genuine."
               },
               "correlates_with": [
                 "IND-O0403-03"
@@ -50708,7 +50708,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "pathway_stage"],
-                "guidance": "Alert leadership and the development team and reach the funders the actor is working before doubt sets in. Identify which donors are being approached and how many already waver, and reassure them where your role allows. Keep open whether one actor or several seed the doubt; the threat may turn on which relationships give way and how far the persuasion has moved."
+                "guidance": "Identify which donors the actor is approaching and how many already waver. Whether one actor or several seed the doubt can stay open; the threat may turn on which relationships give way and how far the persuasion has moved, and ordinary donor caution and engineered doubt can look the same early on."
               }
             },
             {
@@ -50749,7 +50749,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Alert leadership and counsel and brace for the disclosure timed to land at the board vote or fundraising drive. Establish what the actor actually holds and pin the window the release targets, and ready a response for that moment. Keep open whether one actor or a coordinated effort set the timing; the harm may rest on the substance behind the disclosure and the window it hits."
+                "guidance": "Establish what the actor actually holds and pin the window the release targets. Whether one actor or a coordinated effort set the timing can stay open; the harm may rest on the substance behind the disclosure and the moment it hits, and a timed bluff and a real cache can read alike until shown."
               }
             },
             {
@@ -50789,7 +50789,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "means_in_hand"],
-                "guidance": "Alert leadership and communications and engage the platforms carrying the amplification. Gauge how close the manufactured scandal is to crossing into press the institution's funders monitor, and pursue takedowns of the inauthentic accounts. Keep open whether one operation or several drive it and whether real concern is forming or only its look; the damage may land once it breaks past the bots into trusted coverage."
+                "guidance": "Assess how close the manufactured scandal is to crossing into press the institution's funders monitor and how much real concern sits behind the amplification. Whether one operation or several drive it can stay open; the damage may land once it breaks past the bots into trusted coverage, and manufactured noise and real concern can read alike."
               }
             },
             {
@@ -51208,7 +51208,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Alert security and leadership and move to limit the insider's access and preserve the logs. Determine what more the actor can still destroy and how near the wider disruptive event this precedes stands. Keep open whether the insider acts alone or with an outside hand and whether the deletion is the whole event or a precursor; the scope still reachable and the timing of what follows are what remain to gauge."
+                "guidance": "Determine what more the insider can still destroy and how near the wider disruptive event this precedes stands. Whether the insider acts alone or with an outside hand, and whether the deletion is the whole event or a precursor, can stay open; the scope still reachable and the timing of what follows are what remain to gauge."
               },
               "correlates_with": [
                 "IND-O0404-03"
@@ -51338,7 +51338,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Alert security and leadership and move to contain the degraded controls while you tie the payments to the access. Establish whether the transfers trace to cooperation with an outside actor and what that access opens. Keep open whether one insider or several are turned; money alongside failing controls can point to a bought insider, though coincidence can read the same until the two are joined."
+                "guidance": "Establish whether the transfers trace to cooperation with an outside actor and what that access opens. Whether one insider or several are turned can stay open; money alongside failing controls can point to a bought insider, though coincidence can read the same until the payments and the access are joined."
               }
             }
           ],
@@ -52169,7 +52169,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
-                "guidance": "Alert leadership as members are privately courted to leave for a breakaway or rival body. Gauge how broad the outreach runs and how many recipients lean toward going, and open retention contact where your role allows. Keep open whether one actor or a coordinated effort drives it; private invitations can point to intent, but the threat may rest on the reach and how many it has actually moved."
+                "guidance": "Assess how broad the outreach runs and how many recipients lean toward going. Whether one actor or a coordinated effort drives it can stay open; private invitations can point to intent, but the threat may rest on the reach and how many it has actually moved, and routine member churn and engineered defection can look alike."
               }
             },
             {
@@ -52251,7 +52251,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "pathway_stage"],
-                "guidance": "Alert leadership as the rival poaches the staff whose exit removes irreplaceable capacity. Identify which of the targeted personnel the institution cannot absorb losing and how close they are to accepting, and move on retention where your role allows. Keep open whether one rival or several court them; the operational damage may depend on whose exit cannot be covered."
+                "guidance": "Identify which of the targeted personnel the institution cannot absorb losing and how close they are to accepting. Whether one rival or several court them can stay open; the operational damage may depend on whose exit cannot be covered rather than the number approached."
               }
             },
             {
@@ -52292,7 +52292,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Alert leadership and communications as the narrative framing departure as the moral choice spreads. Track the message's reach and how fast it drives members out, and ready counter-messaging where your role allows. Keep open whether one actor or a network seeds it; the framing can point to the tactic, but it may threaten the institution only once it spreads widely enough to move the base."
+                "guidance": "Track the message's reach and how fast it drives members out. Whether one actor or a network seeds it can stay open; the framing can point to the tactic, but it may threaten the institution only once it spreads widely enough to move the base, and organic disaffection and a seeded exodus can read alike."
               }
             },
             {
@@ -52332,7 +52332,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
-                "guidance": "Alert leadership, counsel, and law enforcement as the exported rosters are turned against the base. Determine how much of the membership the lists expose and how far the solicitation has already reached, and move to limit further use. Keep open whether the insider acts alone or for an outside body; the harm may depend on what was taken and how many have since been contacted."
+                "guidance": "Determine how much of the membership the exported lists expose and how far the solicitation has already reached. Whether the insider acts alone or for an outside body can stay open; the harm may depend on what was taken and how many have since been contacted, not on the export alone."
               }
             }
           ],
@@ -52648,7 +52648,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "pathway_stage"],
-                "guidance": "Alert leadership and the development team as donors are pressured to withdraw pledges. Identify which funders the campaign works and how many pledges have already been pulled, and reassure exposed backers where your role allows. Keep open whether one actor or a coordinated effort runs it; the threat to finances may turn on which backers give way."
+                "guidance": "Identify which funders the campaign works and how many pledges have already been pulled. Whether one actor or a coordinated effort runs it can stay open; the threat to finances may turn on which backers give way, and ordinary pledge attrition and an engineered campaign can look the same at first."
               }
             },
             {
@@ -52729,7 +52729,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Alert leadership and counsel as the complaints move to freeze grant disbursements during review. Assess whether the allegations carry any substance and how much funding a suspension would halt, and ready the institution's response to the grantmaker. Keep open whether one actor or several filed them; an empty claim and a founded one can both stall funds while the review runs."
+                "guidance": "Assess whether the allegations carry any substance and how much funding a suspension would halt. Whether one actor or several filed them can stay open; an empty claim and a founded one can both stall funds while the review runs, so the freeze alone may settle little about the actor."
               }
             },
             {
@@ -52770,7 +52770,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
-                "guidance": "Alert leadership and communications as the boycott names corporate sponsors and presses them to end support. Weigh the campaign's real weight and how close the named sponsors are to walking, and reassure them where your role allows. Keep open whether one actor or a coordinated effort sustains it; a loud call and one that genuinely moves sponsors differ, and the danger may turn on which waver."
+                "guidance": "Weigh the campaign's real weight and how close the named sponsors are to walking. Whether one actor or a coordinated effort sustains it can stay open; a loud call and one that genuinely moves sponsors differ, and the danger may turn on which waver rather than the volume of the demand."
               }
             },
             {
@@ -52811,7 +52811,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Alert leadership and counsel as fabricated misconduct reports reach the institution's watchdog listings and grant portals. Assess whether the claims can move a rating and how much recurring funding that listing gates, and ready a rebuttal to the body. Keep open whether one actor or several seeded them; the damage may land only if the body acts, and only as deep as the streams it controls."
+                "guidance": "Verify whether the fabricated claims are gaining credence with the body and how much recurring funding that listing gates. Whether one actor or several seeded them can stay open; the damage may land only if the body acts, and only as deep as the streams it controls, so the filing alone may settle little."
               }
             }
           ],
@@ -53175,7 +53175,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Alert leadership, counsel, and law enforcement as the actor claims the institution's records and sets a deadline. Work to establish whether the actor truly holds what they claim and how damaging release would be, and ready a disclosure response. Keep open whether one actor or a group is behind the demand; a bluff and a real cache can read alike until possession is demonstrated."
+                "guidance": "Establish whether the actor truly holds what they claim and how damaging release would be. Whether one actor or a group is behind the demand can stay open; a bluff and a real cache can read alike until possession is demonstrated, and the deadline alone may settle little about the actor."
               },
               "correlates_with": [
                 "IND-O0412-02"
@@ -53219,7 +53219,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "means_in_hand"],
-                "guidance": "Notify counsel and leadership as the records demands and discovery motions press to drag internal deliberations into the open. Assess whether the motion can compel disclosure and what sensitive material it would surface, and coordinate the legal response. Keep open whether one actor or several file them; the threat may depend on whether the motion has teeth."
+                "guidance": "Assess whether the motion can compel disclosure and what sensitive material it would surface. Whether one actor or several file them can stay open; the threat may depend on whether the motion has teeth, and a nuisance filing and one that reaches the deliberations can look alike on paper."
               }
             },
             {
@@ -53260,7 +53260,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert leadership, counsel, and communications as the documents surface framed as institutional wrongdoing. Verify whether the records are genuine or doctored and gauge how widely they have already spread, and ready a rebuttal. Keep open whether one actor or a coordinated effort placed them; authenticity and reach may decide the harm more than the framing."
+                "guidance": "Verify whether the surfaced records are genuine or doctored and gauge how widely they have already spread. Whether one actor or a coordinated effort placed them can stay open; authenticity and reach may decide the harm more than the framing, and a real leak and a fabricated one can read alike until checked."
               },
               "correlates_with": [
                 "IND-O0411-01",
@@ -53644,7 +53644,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
-                "guidance": "Alert leadership and the community moderators as wedge narratives spread through internal forums and member channels. Determine how deeply they have penetrated the membership and how divided the factions are, and counter the content where your role allows. Keep open whether one actor or a network seeds it; the danger may depend on the reach and whether the divide is already set."
+                "guidance": "Determine how deeply the wedge narratives have penetrated the membership and how divided the factions already are. Whether one actor or a network seeds it can stay open; the danger may depend on the reach and whether the divide is already set, and a manufactured wedge and a real grievance can read alike."
               }
             },
             {
@@ -53684,7 +53684,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Alert leadership and the platform as accounts posing as members flood the institution's spaces to fake a split. Establish how convincingly the impersonations pass and the scale of the network behind them, and pursue takedowns. Keep open whether one operation or several run it; the harm may rest on whether real members believe it."
+                "guidance": "Establish how convincingly the impersonations pass and the scale of the network behind them. Whether one operation or several run it can stay open; the harm may rest on whether real members believe it, and a handful of fake accounts and a genuine split can look the same at a glance."
               }
             },
             {
@@ -53725,7 +53725,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "means_in_hand"],
-                "guidance": "Alert leadership as members are cultivated around betrayal claims to organize a breakaway caucus. Determine how far the caucus has actually formed and how many members it has drawn in, and engage the affected group where your role allows. Keep open whether one actor or several are behind it; the threat may turn on whether it is still an idea or a forming body."
+                "guidance": "Determine how far the caucus has actually formed and how many members it has drawn in. Whether one actor or several are behind it can stay open; the threat may turn on whether it is still an idea or a forming body, and organic dissent and cultivated splitting can read alike early."
               }
             },
             {
@@ -53765,7 +53765,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "pathway_stage"],
-                "guidance": "Alert leadership and communications as tailored versions of internal messages are fed to different groups to deepen mistrust. Assess which circulated communications are genuine and which are doctored and how deep the rift already runs, and correct the record where you can. Keep open whether one actor or several drive it; the damage may depend on how convincing the distortions are."
+                "guidance": "Assess which circulated communications are genuine and which are doctored and how deep the rift already runs. Whether one actor or several drive it can stay open; the damage may depend on how convincing the distortions are, and a real disclosure and a tailored fabrication can read alike."
               }
             },
             {
@@ -53806,7 +53806,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert leadership as routine disagreements are pushed into public loyalty tests across the institution. Assess whether the discord is orchestrated or organic infighting and how far the split can spread, and support de-escalation where your role allows. Keep open whether one effort or several drive it; orchestrated fracture and organic conflict can read the same, and the danger is how deep it runs."
+                "guidance": "Assess whether the discord is orchestrated or organic infighting and how far the split can spread. Whether one effort or several drive it can stay open; orchestrated fracture and organic conflict can read the same, and the danger is how deep it runs rather than any single clash."
               }
             }
           ],
@@ -54125,7 +54125,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Alert operations and move to filter or rate-limit the flooded intake channels. Determine the actor's real reach and whether the flood can be sustained, since a burst from a few hands can look like a movement before it fades. Keep open whether one actor or an organized base drives it; mass submissions bury legitimate work only while the volume holds."
+                "guidance": "Determine the actor's real reach and whether the flood can be sustained. Whether one actor or an organized base drives it can stay open; a burst from a few hands can look like a movement before it fades, and mass submissions bury legitimate work only while the volume holds."
               }
             },
             {
@@ -54165,7 +54165,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Alert operations as the intake system takes a surge of fake or duplicate submissions crowding out real applicants. Establish the true source and scale behind the surge and move to filter it, since a flood from one automated hand is a different threat from a genuine crowd. Keep open whether one actor or several drive it; the scale governs how long real applicants stay shut out."
+                "guidance": "Establish the true source and scale behind the surge of fake or duplicate submissions. Whether one actor or several drive it can stay open; a flood from one automated hand and a genuine crowd are different threats, and the scale governs how long real applicants stay shut out."
               }
             },
             {
@@ -54205,7 +54205,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Notify leadership and counsel as the barrage of duplicative requests and grievances consumes staff. Assemble a picture of the actor's resources and how long the filings can keep coming, and coordinate an efficient response. Keep open whether one actor or a coordinated effort is behind them; the paralysis holds only while the filings continue, and the paperwork may show little of the endurance behind it."
+                "guidance": "Assemble a picture of the actor's resources and how long the filings can keep coming. Whether one actor or a coordinated effort is behind them can stay open; the paralysis holds only while the filings continue, and the paperwork may show little of the endurance behind it."
               }
             },
             {
@@ -54246,7 +54246,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "source_credibility"],
-                "guidance": "Alert operations and the front desk as scripts circulate to saturate the institution's phone, email, and message channels. Weigh how large the mobilized base really is and whether the call will translate into volume, and ready surge handling. Keep open whether one organizer or several drive it; a template saturates intake only if enough people answer it."
+                "guidance": "Weigh how large the mobilized base really is and whether the call will translate into volume. Whether one organizer or several drive it can stay open; a template saturates intake only if enough people answer it, and a loud script and a real crowd can look alike before the calls land."
               }
             },
             {
@@ -54286,7 +54286,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Alert operations as appointments and service slots are booked and abandoned at scale to deny real users access. Identify the scale of the booking activity and whether it can be sustained, and tighten booking controls where you can. Keep open whether one actor or a coordinated effort drives it; the denial bites only while the fake reservations outpace the slots reclaimed."
+                "guidance": "Identify the scale of the booking activity and whether it can be sustained. Whether one actor or a coordinated effort drives it can stay open; the denial bites only while the fake reservations outpace the slots reclaimed, and a short burst and a durable campaign can read alike at first."
               }
             }
           ],
@@ -54608,7 +54608,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Notify counsel and leadership and coordinate a unified defense across the jurisdictions. Assess the resources funding the litigation and how long the actor can keep filing. Keep open whether one actor or a coordinated effort brings the near-identical claims; the suits bleed the institution only while the cost can be sustained, and the filings may reveal little of the reserves behind them."
+                "guidance": "Assess the resources funding the litigation and how long the actor can keep filing. Whether one actor or a coordinated effort brings the near-identical claims can stay open; the suits bleed the institution only while the cost can be sustained, and the filings may reveal little of the reserves behind them."
               }
             },
             {
@@ -54648,7 +54648,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Alert counsel and leadership as simultaneous templated complaints force the institution into parallel administrative responses. Establish whether the complainants are truly separate or one coordinated hand and the reach behind them, and coordinate an efficient reply. Keep open whether this is the whole aim; the filings strain the institution only if the numbers are real, and identical language can point either way."
+                "guidance": "Establish whether the complainants are truly separate or one coordinated hand and the reach behind them. Whether this is the whole aim can stay open; the filings strain the institution only if the numbers are real, and identical language can point to a single author or a genuine crowd."
               }
             },
             {
@@ -54688,7 +54688,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "means_in_hand"],
-                "guidance": "Notify counsel and leadership as serial objections and appeals stall the institution's permits and routine operations. Determine the actor's staying power and how long the objections can drag on, and coordinate to keep operations moving. Keep open whether one actor or several lodge them; the stall holds only while the filings keep coming, and the record may show little of the endurance funding it."
+                "guidance": "Determine the actor's staying power and how long the objections can drag on. Whether one actor or several lodge them can stay open; the stall holds only while the filings keep coming, and the record may show little of the endurance funding it."
               }
             },
             {
@@ -54727,7 +54727,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Alert counsel and leadership as the records demands consume staff while the burden itself is spun as proof the institution has something to conceal. Weigh the actor's capacity to sustain the demands and how far the campaign will run, and prepare to counter the framing. Keep open whether one actor or several drive it; the demands bite only while they keep arriving, and their volume may not show how long that lasts."
+                "guidance": "Weigh the actor's capacity to sustain the demands and how far the campaign will run. Whether one actor or several drive it can stay open; the demands bite only while they keep arriving, and their volume may not show how long that lasts or the resources behind it."
               }
             },
             {
@@ -54768,7 +54768,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Notify counsel and leadership as a dedicated legal fund bankrolls the litigation with a stated aim of exhausting the institution. Verify how deep the fund actually runs and how long it can sustain the pressure, and plan the defense for a prolonged campaign. Keep open whether one actor or a coordinated backing stands behind it; the stated goal and the means to reach it are not the same."
+                "guidance": "Verify how deep the fund actually runs and how long it can sustain the pressure. Whether one actor or a coordinated backing stands behind it can stay open; the stated goal and the means to reach it are not the same, and the fundraising claims may overstate or understate the reserves."
               }
             }
           ],
@@ -55217,7 +55217,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "means_in_hand"],
-                "guidance": "Notify leadership and counsel as covenants transferring board seats are pressed on the institution under a live liquidity deadline. Establish how much time remains before it must accept and whether the actor can actually fund the rescue, and pursue alternatives where possible. Keep open whether one actor or a coordinated bid stands behind it; the leverage grows as the liquidity gap widens."
+                "guidance": "Establish how much time remains before the institution must accept and whether the actor can actually fund the rescue. Whether one actor or a coordinated bid stands behind it can stay open; the leverage grows as the liquidity gap widens, and a genuine lifeline and a control grab can wear the same terms."
               }
             },
             {
@@ -55574,7 +55574,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "tempo_trajectory"],
-                "guidance": "Alert leadership, stakeholders, and the hosting platforms as the cloned identity publishes false announcements. Identify which stakeholders the fake channels reach and how far the deception has spread, and pursue takedowns and an authenticated advisory. Keep open whether one actor or several run the clones; the harm may turn on who acts on the false announcements before it is caught."
+                "guidance": "Identify which stakeholders the cloned identity may be reaching and how far the deception has spread. Look-alike domains may make the method clear, yet the harm may turn on who acts on the false announcements first."
               },
               "correlates_with": [
                 "IND-O0409-02"
@@ -55617,7 +55617,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "means_in_hand"],
-                "guidance": "Alert leadership, counsel, and recipients as forged official communications circulate to partners, regulators, and donors. Determine how widely the fabrications have gone and the actor's reach into the institution's contacts, and issue disavowals before recipients act. Keep open whether one actor or several produced them; the damage depends on how many act before the forgery surfaces."
+                "guidance": "Determine how widely the fabrications have gone and the actor's reach into the institution's contacts. Whether one actor or several produced them can stay open; the damage depends on how many act before the forgery surfaces, and a crude fake and a convincing one carry very different risk."
               }
             },
             {
@@ -55657,7 +55657,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "means_in_hand"],
-                "guidance": "Alert leadership, law enforcement, and the payment and hosting providers as a fake donation portal diverts funds meant for the institution. Establish how long the portal has been live and how many donors it has reached, and pursue an immediate takedown. Keep open whether one actor or several run it; the diverted funds mount with every day it stays up and undetected."
+                "guidance": "Establish how long the portal has been live and how many donors it has reached. Whether one actor or several run it can stay open; the diverted funds mount with every day it stays up and undetected, and a low-traffic clone and a widely shared one differ sharply in harm."
               }
             },
             {
@@ -55697,7 +55697,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "target_focus"],
-                "guidance": "Alert leadership, staff, and vendors as impersonated officials issue false directives to move funds or extract credentials. Determine how far the fraud has progressed and which staff or vendors are being worked, and lock down verification of any directive. Keep open whether one actor or several are behind it; whether funds or credentials have already moved separates an attempt from a loss."
+                "guidance": "Determine how far the fraud has progressed and which staff or vendors are being worked. Whether one actor or several are behind it can stay open; whether funds or credentials have already moved separates an attempt from a loss, and a clumsy pretext and a convincing one land very differently."
               }
             },
             {
@@ -55737,7 +55737,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "target_focus"],
-                "guidance": "Alert leadership and communications as fabricated statements are published on the cloned channels to discredit the institution. Weigh how far they have traveled and which constituents are seeing them, and issue disavowals and pursue takedowns. Keep open whether one actor or several run the channels; the statements can wound only once they reach the audience that matters."
+                "guidance": "Weigh how far the fabricated statements have traveled and which constituents are seeing them. Whether one actor or several run the channels can stay open; the statements can wound only once they reach the audience that matters, and a fringe repost and a viral spread differ in harm."
               }
             }
           ],
@@ -56067,7 +56067,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
-                "guidance": "Alert leadership and communications as the boycott mobilizes a constituency to withhold business until the institution capitulates. Assess whether it has real mass behind it and whether it is gaining momentum, and prepare the institution's response. Keep open whether one actor or several run it; the call pressures the institution only once enough people answer and keep it up."
+                "guidance": "Assess whether the boycott has real mass behind it and whether it is gaining momentum. Whether one actor or several run it can stay open; the call pressures the institution only once enough people answer and keep it up, and a branded launch and a genuine movement can look alike early."
               }
             },
             {
@@ -56107,7 +56107,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "means_in_hand"],
-                "guidance": "Alert leadership and communications and reach the advertisers and sponsors being pressured to pull funding. Determine how close they are to walking and how much leverage the actor really holds over them, and reassure them where you can. Keep open whether one actor or several drive it; the harm lands only if the pressure actually moves them."
+                "guidance": "Determine how close the pressured advertisers and sponsors are to walking and how much leverage the actor really holds over them. Whether one actor or several drive it can stay open; the harm lands only if the pressure actually moves them, not on the dossiers alone."
               }
             },
             {
@@ -56147,7 +56147,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
-                "guidance": "Alert leadership and communications and engage the platform as bot networks inflate the boycott's participation and trending metrics. Establish how much of the turnout is genuine and how much is manufactured, and pursue takedowns. Keep open whether one operation or several run it; the question is whether a real constituency is turning or a few accounts simulate one."
+                "guidance": "Establish how much of the turnout is genuine and how much is manufactured by the bot networks. Whether one operation or several run it can stay open; the question is whether a real constituency is turning or a few accounts simulate one, and inflated metrics can read as mass support."
               }
             },
             {
@@ -56187,7 +56187,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "pathway_stage"],
-                "guidance": "Alert leadership and the development team as the divestment drive presses endowments and pension funds to sever ties. Identify which funding ties are genuinely exposed and whether the holders are moving to divest, and engage them where you can. Keep open whether one actor or several run it; the institution is hurt only when real money leaves."
+                "guidance": "Identify which funding ties are genuinely exposed and whether the holders are moving to divest. Whether one actor or several run it can stay open; the institution is hurt only when real money leaves, and a published scorecard and an actual withdrawal are not the same."
               }
             },
             {
@@ -56227,7 +56227,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert site security and leadership as recurring pickets hit the institution's premises during peak business. Weigh how sustained the presence is becoming and whether it risks escalating past lawful protest, and coordinate a measured response. Keep open whether one actor or several drive it; the graver concern is whether the recurring presence hardens into more."
+                "guidance": "Weigh how sustained the picket presence is becoming and whether it risks escalating past lawful protest. Whether one actor or several drive it can stay open; the graver concern is whether the recurring presence hardens into more, and a one-off demonstration and a mounting campaign differ."
               },
               "correlates_with": [
                 "IND-F0306-01"
@@ -56542,7 +56542,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
-                "guidance": "Alert leadership and engage the hosting platform as coordinated abuse reports push to trip an automated suspension of the institution's accounts. Assess the actor's reach and how close the reporting is to the platform's threshold, and file to counter them. Keep open whether one actor or several drive it; the reports strip the channel only if the volume crosses the line."
+                "guidance": "Assess the actor's reach and how close the reporting is to the platform's suspension threshold. Whether one actor or several drive it can stay open; the reports strip the channel only if the volume crosses the line, and a handful of complaints and a coordinated flood look alike until counted."
               }
             },
             {
@@ -56581,7 +56581,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
-                "guidance": "Alert leadership and counsel and engage the payment processor as the actor lobbies it to cut the institution off with reputational-risk claims. Determine how much leverage the actor holds over the provider and how close it is to acting, and give the provider the institution's side. Keep open whether one actor or several drive it; the claims bite only if the provider acts on them."
+                "guidance": "Determine how much leverage the actor holds over the provider and how close it is to acting. Whether one actor or several drive it can stay open; the claims bite only if the provider acts on them, and a noisy complaint and one that genuinely sways the provider differ."
               }
             },
             {
@@ -56621,7 +56621,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "pathway_stage"],
-                "guidance": "Alert leadership and counsel as formal challenges to the institution's accreditation or charity status reach the standing authority. Verify whether the complaint package carries real merit with that body and how close it is to revocation, and prepare the response. Keep open whether one actor or several filed it; the filing threatens the institution's legitimacy only if the authority takes it up."
+                "guidance": "Verify whether the complaint package carries real merit with the standing authority and how close it is to revocation. Whether one actor or several filed it can stay open; the filing threatens the institution's legitimacy only if the authority takes it up, so the challenge alone may settle little."
               }
             },
             {
@@ -56660,7 +56660,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "pathway_stage"],
-                "guidance": "Alert leadership as naming campaigns press the institution's vendors, insurers, and landlords to refuse service. Identify which dependencies are most exposed and whether the providers will actually walk, and engage them where you can. Keep open whether one actor or several drive it; the damage depends on which providers refuse."
+                "guidance": "Identify which dependencies are most exposed and whether the pressured providers will actually walk. Whether one actor or several drive it can stay open; the damage depends on which providers refuse, not on the naming campaign itself, and a public callout and a real cutoff differ."
               }
             },
             {
@@ -56701,7 +56701,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert leadership and counsel and engage the gatekeeper as a dossier alleging a policy violation is timed to peak public pressure. Weigh how solid the allegations are and how the timing aligns, and give the gatekeeper the institution's side before it acts. Keep open whether one actor or several drive it; a gatekeeper may sever access to avoid controversy, the danger rising as a credible complaint meets peak attention."
+                "guidance": "Weigh how solid the allegations are and how the timing aligns with peak public pressure. Whether one actor or several drive it can stay open; a gatekeeper may sever access to avoid controversy, the danger rising as a credible complaint meets peak attention. A thin dossier and a solid one can both land when the timing is right."
               }
             }
           ],
@@ -57023,7 +57023,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "target_focus"],
-                "guidance": "Assess whether the dissolution is a genuine wind-down or a rebrand. The same actor can stand up fresh fronts to continue against the institution, and the paperwork reads as ordinary closure."
+                "guidance": "Assess whether the dissolution is a genuine wind-down or a rebrand in motion. The same hands can stand up fresh fronts to continue against the institution, and paperwork that reads as ordinary closure may be exactly that; which it is may only show in what forms next."
               }
             },
             {
@@ -63543,7 +63543,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "proximity_access", "means_in_hand"],
-                "guidance": "Identify which site the actor is converging on and whether they can reach it. Ranking candidate sites by single-point-of-failure value can reveal intent and narrow the pool of target candidates, but may show little of the access or capability to act on any of them."
+                "guidance": "Identify which site the actor may be converging on and whether they could reach it. Ranking by single-point-of-failure value can show a deliberate mind at work, but may reveal little of the access or capability to act on any candidate, and the final choice may not be made."
               },
               "correlates_with": [
                 "IND-I0308-03",
@@ -68655,7 +68655,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["proximity_access"],
-                "guidance": "Confirm whether the actor has live access to the production system. Validating a captured workstation image or HMI configuration in a sandbox can point to capability and intent, yet a sandbox run cannot by itself establish reach into the operational network, where an attack would have to take effect."
+                "guidance": "Confirm whether the actor holds live access to the production system. Sandbox validation can point to capability and intent, yet a rehearsal against a copied configuration cannot by itself establish reach into the operational network, where an attack would have to take effect."
               },
               "correlates_with": [
                 "IND-I0301-03"
@@ -71065,7 +71065,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand"],
-                "guidance": "Identify whether the actor can move from reading to writing. A Modbus session pulling live register values can point to reconnaissance in place, yet reading an RTU may show little of the capability to force the harmful change an attack needs, and register polling can also be passive monitoring."
+                "guidance": "Identify whether the actor can move from reading to writing. A live Modbus session pulling register values can prove presence on the control network, yet reading alone may not show the capability to force a harmful change, and an engineer's misconfigured poll can look the same."
               },
               "correlates_with": [
                 "IND-I0301-05"
@@ -73466,7 +73466,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert the control room and confirm the setpoint is a hostile command, not a control fault or a mis-keyed value. Track in real time how far past its rated envelope the asset has been driven and support a fail-safe or manual trip as your role allows. The command alone may settle little about whether one actor or several is behind it, or whether this is the whole attack or cover for a second act."
+                "guidance": "Confirm the setpoint is a hostile command rather than a control fault or a mis-keyed value, and gauge how far past its rated envelope the asset has been driven. The command alone may settle little about whether one actor or several is behind it, or whether this is the whole attack or cover for a second act."
               },
               "correlates_with": [
                 "IND-I0401-05"
@@ -73509,7 +73509,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "proximity_access"],
-                "guidance": "Alert operators and establish the true state from independent instrumentation; logic that biases a variable while masking it can make the panel untrustworthy. Gauge how long the drift has run and support reverting to manual control as your role allows. An instrument fault can also mask a slow deviation; whether one actor or several is behind it, and how deep their access runs, the drift alone may reveal little."
+                "guidance": "Confirm the biased logic is hostile rather than an instrument fault, since logic that masks a variable can make the panel untrustworthy, and gauge how long the drift has run. Whether one actor or several is behind it, and how deep their access runs, the drift alone may reveal little of what else is underway."
               },
               "correlates_with": [
                 "IND-I0403-01",
@@ -73555,7 +73555,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert the control room and confirm the override is hostile rather than a legitimate operator action or a control error. Build a running picture of how far the actuators have been forced past their limits and support isolating or reverting the loop as your role allows. Report changes as they develop; the override alone may show little of whether one actor or several is behind it or what comes next."
+                "guidance": "Confirm the override is hostile rather than a legitimate operator action or a control error, and build a running picture of how far the actuators have been forced past their limits. The override alone may show little of whether one actor or several is behind it or what comes next."
               },
               "correlates_with": [
                 "IND-I0403-02"
@@ -73599,7 +73599,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert operators that the loop readings may be falsified and establish the real process state from independent instrumentation. Gauge how far the true state has drifted and support switching affected loops to manual as your role allows. A sensor failure can present the same way; whether this is the whole attack or a screen for a second act, and who is behind it, the spoofing alone may settle little."
+                "guidance": "Confirm the readings are being spoofed rather than a sensor failure presenting the same way, and establish the real process state and how far it has drifted from the falsified picture. Whether this is the whole attack or a screen for a second act, and who is behind it, the spoofing alone may settle little."
               }
             },
             {
@@ -73639,7 +73639,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "proximity_access"],
-                "guidance": "Alert the control room and confirm the actuator commands are hostile rather than a controller fault mimicking the same motion. Track how far the valves and drives have been forced out of sequence and support a fail-safe or manual trip as your role allows. Weigh how deep the actor's reach into the network runs and whether one actor or several is behind it; the commands alone may reveal little of what comes next."
+                "guidance": "Confirm the commands are hostile rather than a controller fault, and gauge how far the process has been forced out of sequence. The commands alone may reveal little of the actor's full reach or what comes next, and one actor or several may be at work."
               },
               "correlates_with": [
                 "IND-I0403-04"
@@ -73963,7 +73963,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert the control room and confirm the safety controller was truly reprogrammed rather than altered by a maintenance change. Assess how near a damaging excursion may be with the last-resort trip gone and support restoring protection or a manual shutdown as your role allows. Whether one actor or several is behind it, the edit alone may settle little about what comes next."
+                "guidance": "Confirm the safety controller was truly reprogrammed rather than altered by a maintenance change, and assess how near a damaging excursion may run with the last-resort trip gone. Whether one actor or several is behind it, the edit alone may settle little about what comes next."
               },
               "correlates_with": [
                 "IND-F0208-01",
@@ -74008,7 +74008,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert the control room and confirm the interlocks are genuinely defeated rather than bypassed for maintenance. Gauge how soon an excursion could exploit the gap and support restoring the interlocks or moving equipment to a safe state as your role allows. Report as it develops; the bypass alone may show little of whether one actor or several is behind it or how much of the protective layer has been touched."
+                "guidance": "Confirm the interlocks are genuinely defeated rather than bypassed for maintenance, and gauge how soon an excursion could exploit the gap. The bypass alone may show little of whether one actor or several is behind it or how much of the protective layer has been touched."
               }
             },
             {
@@ -74048,7 +74048,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert the control room and confirm the relay settings were changed hostilely rather than by a legitimate coordination study. Assess how soon a fault could go uncleared with thresholds raised and support restoring the settings as your role allows. Whether one actor or several is behind it, the change alone may reveal little about what else has been touched or what comes next."
+                "guidance": "Confirm the relay settings were changed hostilely rather than by a legitimate coordination study, and assess how soon a fault could go uncleared with thresholds raised. Whether one actor or several is behind it, the change alone may reveal little about what else has been touched or what comes next."
               }
             },
             {
@@ -74090,7 +74090,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "proximity_access"],
-                "guidance": "Alert operators that the safety-status display may be forged and verify the true state of the protective functions independently. Gauge how far the covert defeat has gone and support restoring protection or a manual shutdown as your role allows. A display fault can mimic the mismatch; whether one actor or several is behind it, and how deep their access runs, the forged picture alone may settle little."
+                "guidance": "Confirm the safety-status display is forged rather than showing a display fault, and verify the true state of the protective functions and how far the covert defeat has gone. Whether one actor or several is behind it, and how deep their access runs, the forged picture alone may settle little."
               }
             },
             {
@@ -74131,7 +74131,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert the control room and confirm the controller was forced out of protective mode rather than left in it by scheduled maintenance. Assess whether a manipulation is already exploiting the open window and how far the exposure has run, and support returning the controller to protective mode as your role allows. The bypass alone may show little of whether one actor or several is behind it or what follows."
+                "guidance": "Confirm the controller was forced out of protective mode rather than left in it by scheduled maintenance, and assess whether a manipulation is already exploiting the open window and how far the exposure has run. The bypass alone may show little of whether one actor or several is behind it or what follows."
               },
               "correlates_with": [
                 "IND-F0208-01"
@@ -74438,7 +74438,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert operators that the HMI may be spoofed and establish the real process values from independent instrumentation. Gauge how far the true state has drifted while nominal readings were shown and support switching to trusted readouts or manual control as your role allows. A display glitch can produce a similar mismatch; whether one actor or several is behind it, the spoof alone may settle little."
+                "guidance": "Confirm the HMI is spoofed rather than showing a display glitch, and establish the real process values and how far the true state has drifted while nominal readings were shown. Whether one actor or several is behind it, the spoof alone may settle little."
               },
               "correlates_with": [
                 "IND-I0403-01"
@@ -74482,7 +74482,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert operators that the consoles may be replaying stale telemetry and verify the live process state from an independent source. Establish how long the replay may have masked an active manipulation and support reverting affected loops to manual as your role allows. A stale data feed can also freeze the display; whether one actor or several is behind it, the replay alone may reveal little of what else is underway."
+                "guidance": "Confirm the consoles are replaying stale telemetry rather than frozen by a stale data feed, and establish the live process state and how long the replay may have masked an active manipulation. Whether one actor or several is behind it, the replay alone may reveal little of what else is underway."
               },
               "correlates_with": [
                 "IND-I0403-02"
@@ -74525,7 +74525,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert operators that alarms may be suppressed and establish independently whether out-of-range conditions are present. Gauge how far a hidden excursion may already have gone and support restoring annunciation or moving to a safe state as your role allows. A misconfigured alarm system can present the same silence; whether one actor or several is behind it, the suppression alone may settle little."
+                "guidance": "Confirm the alarms are suppressed rather than silenced by a misconfigured alarm system, and establish whether out-of-range conditions are present and how far a hidden excursion may already have gone. Whether one actor or several is behind it, the suppression alone may settle little."
               }
             },
             {
@@ -74566,7 +74566,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert operators that the historian may be falsified and establish the true operating state independently. Determine how long the record may have been corrupted and how far the concealed conditions reach, and support cross-checking against trusted sources as your role allows. A database error can also corrupt the record; whether one actor or several is behind it, the falsified log alone may reveal little."
+                "guidance": "Confirm the historian is falsified rather than corrupted by a database error, and establish the true operating state, how long the record may have been altered, and how far the concealed conditions reach. Whether one actor or several is behind it, the falsified log alone may reveal little."
               }
             },
             {
@@ -74606,7 +74606,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert operators that the SCADA view may be forged and verify the actual setpoints at the controllers, not the screen. Gauge how far the process has been pushed and support reverting to trusted control as your role allows. A communications fault can also skew the view; whether this is the whole attack or a screen for a concurrent manipulation, and who is behind it, the forged feedback alone may settle little."
+                "guidance": "Confirm the SCADA view is forged rather than skewed by a communications fault, and verify the actual setpoints at the controllers and how far the process has been pushed. Whether this is the whole attack or a screen for a concurrent manipulation, and who is behind it, the forged feedback alone may settle little."
               }
             }
           ],
@@ -74917,7 +74917,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "target_focus"],
-                "guidance": "Alert site security, first responders, and sector authorities as applicable, and confirm the report of gunfire against the transformer. Determine in real time whether this node stands alone or is one of a coordinated set of target candidates and support isolating the damaged asset as your role allows. Whether one actor or several is behind it, the strike alone may settle little about what comes next."
+                "guidance": "Confirm the report of gunfire against the transformer, and determine whether this node stands alone or is one of a coordinated set of target candidates. Whether one actor or several is behind it, the strike alone may settle little about what comes next."
               },
               "correlates_with": [
                 "IND-I0403-03",
@@ -74960,7 +74960,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "target_focus"],
-                "guidance": "Alert first responders and sector authorities and confirm the tower has been dropped rather than downed by other causes. Build a real-time picture of how much of the line is out beyond the felled tower and support rerouting or isolating as your role allows. Report as it develops; whether one actor or several is behind it, and whether this span is the whole target set, the felling alone may reveal little."
+                "guidance": "Confirm the tower has been dropped rather than downed by other causes, and build a picture of how much of the line is out beyond the felled tower. Whether one actor or several is behind it, and whether this span is the whole target set, the felling alone may reveal little."
               },
               "correlates_with": [
                 "IND-I0407-05"
@@ -75003,7 +75003,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert first responders and site security and confirm the detonation is real. Gauge in real time how far the loss of the pump station cascades downstream and support isolating the station or shifting to backup supply as your role allows. Report changes as they develop; whether one actor or several is behind it, and whether the blast is the whole attack or cover for a second act, the detonation alone may settle little."
+                "guidance": "Confirm the detonation is real, and gauge how far the loss of the pump station cascades downstream. Whether one actor or several is behind it, and whether the blast is the whole attack or cover for a second act, the detonation alone may settle little."
               },
               "correlates_with": [
                 "IND-F0302-02",
@@ -75046,7 +75046,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "target_focus"],
-                "guidance": "Alert site security and first responders and confirm the substation damage is genuine. Determine how widely the loss propagates downstream and support isolating the site or transferring load as your role allows. Report as it develops; whether this substation stands alone or is one of a coordinated set, and who is behind it, the damage alone may reveal little of what comes next."
+                "guidance": "Confirm the substation damage is genuine, and determine how widely the loss propagates downstream. Whether this substation stands alone or is one of a coordinated set, and who is behind it, the damage alone may reveal little of what comes next."
               },
               "correlates_with": [
                 "IND-F0304-03",
@@ -75094,7 +75094,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert first responders and sector authorities and confirm the uncontrolled release rather than an equipment failure at the valve. Gauge in real time how far the escaping product is spreading and support isolating the segment or initiating shutdown as your role allows. Report changes as they develop; whether one actor or several is behind it, the sabotage alone may settle little about what else is underway."
+                "guidance": "Confirm the uncontrolled release rather than an equipment failure at the valve, and gauge how far the escaping product is spreading. Whether one actor or several is behind it, the sabotage alone may settle little about what else is underway."
               },
               "correlates_with": [
                 "IND-I0407-02"
@@ -75413,7 +75413,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert the control room and confirm the breaker trips are hostile rather than a protection misoperation. Gauge how far the loss of power spreads to downstream substations and support reclosing or rerouting as your role allows. Report changes as they develop; whether one actor or several is behind it, and whether the trips are the whole attack or cover for a second act, the outage alone may settle little."
+                "guidance": "Confirm the breaker trips are hostile rather than a protection misoperation, and gauge how far the loss of power spreads to downstream substations. Whether one actor or several is behind it, and whether the trips are the whole attack or cover for a second act, the outage alone may settle little."
               },
               "correlates_with": [
                 "IND-I0408-01",
@@ -75458,7 +75458,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "pathway_stage"],
-                "guidance": "Alert the control room through alternate channels and confirm the interference is deliberate jamming rather than ordinary RF trouble. Since severing operator comms rarely stands alone, work to identify the larger disruption it may screen and support switching to backup communications as your role allows. Whether one actor or several is behind it, the jamming alone may reveal little of what it covers."
+                "guidance": "Confirm the interference is deliberate jamming rather than ordinary RF trouble, and since severing operator comms rarely stands alone, work to identify the larger disruption it may screen. Whether one actor or several is behind it, the jamming alone may reveal little of what it covers."
               },
               "correlates_with": [
                 "IND-F0309-04"
@@ -75502,7 +75502,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert the control room and confirm the load-shed commands are unauthorized rather than a legitimate emergency shed. Gauge how wide the rolling outages run and support restoring feeders or countermanding the shed as your role allows. Report changes as they develop; whether one actor or several is behind it, the forced outages alone may settle little about what comes next."
+                "guidance": "Confirm the load-shed commands are unauthorized rather than a legitimate emergency shed, and gauge how wide the rolling outages run. Whether one actor or several is behind it, the forced outages alone may settle little about what comes next."
               },
               "correlates_with": [
                 "IND-I0406-02"
@@ -75546,7 +75546,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "pathway_stage"],
-                "guidance": "Alert the control room and confirm the valve closures are hostile rather than an operational trip. Gauge how far downstream the stranded delivery is felt and support reopening flow or shifting supply as your role allows. Report as it develops; whether one actor or several is behind it, and whether this is the whole attack or a step toward more, the closures alone may reveal little."
+                "guidance": "Confirm the valve closures are hostile rather than an operational trip, and gauge how far downstream the stranded delivery is felt. Whether one actor or several is behind it, and whether this is the whole attack or a step toward more, the closures alone may reveal little."
               },
               "correlates_with": [
                 "IND-I0408-04"
@@ -75590,7 +75590,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert the control room and confirm the traffic flood is deliberate rather than a network fault. Gauge how much of dispatch it has stalled and how far the lost visibility reaches, and support isolating the segment or failing over as your role allows. Report changes as they develop; whether one actor or several is behind it, the flood alone may settle little about what comes next."
+                "guidance": "Confirm the traffic flood is deliberate rather than a network fault, and gauge how much of dispatch it has stalled and how far the lost visibility reaches. Whether one actor or several is behind it, the flood alone may settle little about what comes next."
               },
               "correlates_with": [
                 "IND-I0408-03"
@@ -75925,7 +75925,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert the control room and public-health authorities as applicable, and confirm the dosing change is hostile rather than a dosing-pump fault. Gauge how much out-of-range water has entered distribution and support correcting the setpoint or isolating the affected mains as your role allows. Whether one actor or several is behind it, the change alone may settle little about what comes next."
+                "guidance": "Confirm the setpoint change is hostile rather than a fault, and gauge how much out-of-range water may have entered distribution. The change alone may settle little about who made it or whether more moves follow."
               },
               "correlates_with": [
                 "IND-F0308-01",
@@ -75969,7 +75969,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert the control room and public-health authorities as applicable, and verify the contamination rather than an accidental spill at the intake. Establish how much of the batch has moved past the intake toward treatment and support diverting or isolating the flow as your role allows. Report as it develops; whether one actor or several is behind it, the contamination alone may reveal little of what else is underway."
+                "guidance": "Verify the contamination rather than an accidental spill at the intake, and establish how much of the batch has moved past the intake toward treatment. Whether one actor or several is behind it, the contamination alone may reveal little of what else is underway."
               },
               "correlates_with": [
                 "IND-F0308-03"
@@ -76014,7 +76014,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert the control room and public-health authorities as applicable, and confirm the chlorination feed is actually off rather than stopped by a feed-pump failure. Gauge how much untreated water has reached the mains and support restoring disinfection or isolating distribution as your role allows. Whether one actor or several is behind it, the outage alone may settle little."
+                "guidance": "Confirm the chlorination feed is actually off rather than stopped by a feed-pump failure, and gauge how much untreated water has reached the mains. Whether one actor or several is behind it, the outage alone may settle little about what follows."
               }
             },
             {
@@ -76054,7 +76054,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert operators and sector authorities as applicable, and verify the tank was dosed rather than cross-contaminated by error at the manifold. Establish how much contaminated stock has moved toward delivery and support quarantining the tank or halting transfer as your role allows. Report as it develops; whether one actor or several is behind it, the adulteration alone may reveal little of what follows."
+                "guidance": "Verify the tank was dosed rather than cross-contaminated by error at the manifold, and establish how much contaminated stock has moved toward delivery. Whether one actor or several is behind it, the adulteration alone may reveal little of what follows."
               }
             },
             {
@@ -76096,7 +76096,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert operators that the treatment readings may be falsified and establish the true chemistry independently. Gauge how long a poisoned sequence may have run unseen and how much tainted water has passed, and support reverting to trusted control or isolating output as your role allows. A sensor fault can also misreport it; whether one actor or several is behind it, the falsified readings alone may settle little."
+                "guidance": "Confirm the treatment readings are falsified rather than misreported by a sensor fault, and establish the true chemistry, how long a poisoned sequence may have run unseen, and how much tainted water has passed. Whether one actor or several is behind it, the falsified readings alone may settle little."
               }
             }
           ],
@@ -76409,7 +76409,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert grid operators and confirm the demand swings are a coordinated attack rather than a fault or ordinary coincident demand. Gauge how far the instability reaches across the feeder and support shedding or islanding the segment as your role allows. Report changes as they develop; whether one actor or several is behind it, the swings alone may reveal little of what comes next."
+                "guidance": "Confirm the demand swings are a coordinated attack rather than a fault or ordinary coincident demand, and gauge how far the instability reaches across the feeder. Whether one actor or several is behind it, the swings alone may reveal little of what comes next."
               },
               "correlates_with": [
                 "IND-I0406-04"
@@ -76452,7 +76452,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "proximity_access"],
-                "guidance": "Alert grid operators and confirm the inverter commands are hostile rather than a firmware or grid fault. Gauge how far the real-power imbalance propagates on the segment and support balancing resources or islanding as your role allows. Report as it develops; whether one actor or several is behind it, and how large the compromised fleet may be, the curtailment alone may settle little."
+                "guidance": "Confirm the inverter commands are hostile rather than a firmware or grid fault, and gauge how far the real-power imbalance propagates on the segment. Whether one actor or several is behind it, and how large the compromised fleet may be, the curtailment alone may settle little."
               }
             },
             {
@@ -76492,7 +76492,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert grid operators and assess whether the spikes are coordinated or merely coincident with peak demand. Gauge how far the frequency deviation carries beyond the segment and support corrective dispatch as your role allows. Report changes as they develop; whether one actor or several is behind it, the timing alone may reveal little of whether more is intended."
+                "guidance": "Assess whether the spikes are coordinated or merely coincident with peak demand, and gauge how far the frequency deviation carries beyond the segment. Whether one actor or several is behind it, the timing alone may reveal little of whether more is intended."
               }
             },
             {
@@ -76532,7 +76532,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "proximity_access"],
-                "guidance": "Alert grid operators and confirm the backfeed is deliberate rather than a misconfiguration. Gauge how many resources were reflashed and how far the reverse flow reaches on the feeders, and support isolating the affected DER as your role allows. Report as it develops; whether one actor or several is behind it, and how deep the fleet compromise runs, the backfeed alone may settle little about what comes next."
+                "guidance": "Confirm the backfeed is deliberate rather than a misconfiguration, and gauge how many resources were reflashed and how far the reverse flow reaches on the feeders. Whether one actor or several is behind it, and how deep the fleet compromise runs, the backfeed alone may settle little about what comes next."
               }
             },
             {
@@ -76572,7 +76572,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert grid operators and confirm the oscillation is driven deliberately rather than a natural resonance. Gauge how widely the inter-area modes are being excited beyond the local segment and support damping or shedding the pooled load as your role allows. Report changes as they develop; whether one actor or several is behind it, the oscillation alone may reveal little of what follows."
+                "guidance": "Confirm the oscillation is driven deliberately rather than a natural resonance, and gauge how widely the inter-area modes are being excited beyond the local segment. Whether one actor or several is behind it, the oscillation alone may reveal little of what follows."
               }
             }
           ],
@@ -76873,7 +76873,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert grid operators that the phasor timing may be spoofed and confirm the corruption rather than a receiver fault or solar interference. Gauge how far the false angle estimates have propagated into wide-area monitoring and support failing over to holdover or alternate timing as your role allows. Report as it develops; whether one actor or several is behind it, the spoof alone may reveal little of what comes next."
+                "guidance": "Confirm the phasor timing is spoofed rather than corrupted by a receiver fault or solar interference, and gauge how far the false angle estimates have propagated into wide-area monitoring. Whether one actor or several is behind it, the spoof alone may reveal little of what comes next."
               },
               "correlates_with": [
                 "IND-F0205-02",
@@ -76917,7 +76917,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert the network operator and confirm the timing loss is jamming rather than a fault or RF congestion. Gauge how many dependent base stations are degrading and support switching to holdover or backup timing as your role allows. Report changes as they develop; whether one actor or several is behind it, the jamming alone may settle little about what comes next."
+                "guidance": "Confirm the timing loss is jamming rather than a fault or RF congestion, and gauge how many dependent base stations are degrading. Whether one actor or several is behind it, the jamming alone may settle little about what comes next."
               },
               "correlates_with": [
                 "IND-F0208-01"
@@ -76960,7 +76960,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert the rail operator and confirm the counterfeit timing broadcast rather than a receiver failure. Gauge how far the signaling desynchronization extends and support reverting to safe manual separation or backup timing as your role allows. Report as it develops; whether one actor or several is behind it, the broadcast alone may reveal little of whether more is intended."
+                "guidance": "Confirm the counterfeit timing broadcast rather than a receiver failure, and gauge how far the signaling desynchronization extends. Whether one actor or several is behind it, the broadcast alone may reveal little of whether more is intended."
               },
               "correlates_with": [
                 "IND-F0205-02"
@@ -77003,7 +77003,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory", "target_focus"],
-                "guidance": "Alert affected operators and confirm the overpowering transmission rather than a natural signal outage forcing holdover. Identify which dependent systems are drifting into holdover and how far the effect cascades, and support alternate timing as your role allows. Report changes as they develop; whether one actor or several is behind it, the interference alone may settle little about what comes next."
+                "guidance": "Confirm the overpowering transmission rather than a natural signal outage forcing holdover, and identify which dependent systems are drifting into holdover and how far the effect cascades. Whether one actor or several is behind it, the interference alone may settle little about what comes next."
               },
               "correlates_with": [
                 "IND-F0205-02"
@@ -77046,7 +77046,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
-                "guidance": "Alert the control room and confirm the position solution is being manipulated rather than skewed by a receiver fault. Gauge how far the timing skew has degraded protective relay coordination and support switching to backup timing as your role allows. Report as it develops; whether one actor or several is behind it, the manipulation alone may reveal little of what follows."
+                "guidance": "Confirm the position solution is being manipulated rather than skewed by a receiver fault, and gauge how far the timing skew has degraded protective relay coordination. Whether one actor or several is behind it, the manipulation alone may reveal little of what follows."
               },
               "correlates_with": [
                 "IND-F0208-01"
@@ -77827,8 +77827,8 @@
                 "threat_method": "none"
               },
               "conditioning_guidance": {
-                "probe_factors": ["tempo_trajectory", "pathway_stage"],
-                "guidance": "Establish whether the exit closes the operation or clears the way for a follow-on. A rehearsed egress right after a payload can precede a second attempt, and the route out may show little of which it is."
+                "probe_factors": ["tempo_trajectory", "pathway_stage", "proximity_access"],
+                "guidance": "Establish whether the exit closes the operation or clears the way for a follow-on. A rehearsed egress right after a payload can precede a second attempt, and the route out may show little of it; whether access survives the departure can matter more than the departure itself."
               },
               "correlates_with": [
                 "IND-F0401-01",

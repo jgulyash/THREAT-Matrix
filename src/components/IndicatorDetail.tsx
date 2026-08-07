@@ -288,6 +288,17 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
               {ind.conditioning_guidance && (
                 <div className="cond-guidance">
                   <div className="ind-subhead">Conditioning Guidance</div>
+                  <div className="cond-guidance-scope">
+                    Assessment tasking only. Immediate response actions live in this
+                    tactic's{' '}
+                    <a
+                      className="cond-guidance-rp-link"
+                      onClick={() => navigate(`/${tactic.matrix}/tactic/${tactic.id}`)}
+                    >
+                      Response Protocols
+                    </a>
+                    .
+                  </div>
                   <p className="cond-guidance-text">{ind.conditioning_guidance.guidance}</p>
                   <div className="dr-tag-row">
                     {ind.conditioning_guidance.probe_factors.map((f) => (
