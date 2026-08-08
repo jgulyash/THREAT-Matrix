@@ -6,6 +6,10 @@ The standard every `conditioning_guidance` entry is authored and reviewed agains
 
 Per-indicator, type-level, assessment-scoped investigative tasking: **which instance factors are the hidden drivers of danger for this behavior class, and what should the analyst go collect.** Machine tags (`probe_factors`, the six instance-factor enum names) + one prose directive (`guidance`, max 420 chars). A framework-provided default consumers may follow, extend, or override; intended for composition across observed-indicator combinations, not single-indicator reading. It does not affect the score.
 
+## The consumer (owner ruling, 2026-08-07)
+
+The entry addresses the analyst, investigator, or threat manager working the case, never the on-scene responder. It tasks only collection reachable from analyst sources: case records, communications, prior indicators, telemetry, logs, platform analytics, report streams, and post-event review. Scene-observable facts on a response timescale (how far a fire reaches, who stands in a vehicle's path, how near a cut member is to failure) are incident-command work and are never tasked here. For an act underway, the analyst's lane is the pathway behind the act (what mobilization preceded it that collection can now surface), the case connection (whether the actor ties to a known subject, grievance, or open case), and the act after this one (follow-on, secondary, re-attack). Scope questions stay only where the answer comes from analyst-accessible data (how far a wipe spread across relays, how widely a narrative traveled), not from eyes on the scene.
+
 ## Scope boundary
 
 **conditioning_guidance carries NO response tasking.** Alerting, notification, mitigation, evacuation, takedown, and coordination live in the tactic's `response_protocols` (a first-class framework object, 2 per tactic). For behaviors that are a harmful act underway, the cg entry stays assessment-scoped: verify the reporting is real, gauge scope and trajectory, and hold open the actor questions the act does not settle (one actor or many, whole attack or cover for a second act, continuation).
@@ -42,7 +46,7 @@ A Confirm/Verify/Establish opener must name the actual uncertainty; it never re-
 2. **Report reality** when the source chain is indirect (peer report, intercept, single sensor) and first reports are characteristically unreliable: name what is unconfirmed ("how solid the first reports are", "whether occupants are actually held rather than sheltering").
 3. **Suspicion resolution** when the behavior itself is stated as suspected: a suspected device's viability is genuinely the question ("can be a working charge or a hoax").
 
-If none applies, there is no confirmation opener: the entry opens with its gauge or weigh move. Generic forms ("Confirm the report", "confirm X is real") are banned.
+If none applies, there is no confirmation opener: the entry opens with its assessment move. Generic forms ("Confirm the report", "confirm X is real") are banned. A verification lead is further reserved for discriminations that are themselves behavior-specific analyst collection (a telemetry twin names what to check; a suspected device names viability); generic report-solidity belongs to the instance record's source_credibility factor and rides, at most, as a subordinate clause.
 
 ## probe_factors selection (judgment, not mechanics)
 
