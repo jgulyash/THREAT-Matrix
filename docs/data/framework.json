@@ -9887,7 +9887,7 @@
               "informs_axes": {"actor_capability": "strong", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "strong"},
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
-                "guidance": "Assemble what the device or agent required: the materials, knowledge, and access behind it can point to who built it and whether more exists. One actor or several may be involved, and the release alone may not settle whether it is the whole attack or the first move of one."
+                "guidance": "Reconstruct the build behind the device or agent: the materials, knowledge, and access it took can point to who made it and whether more exists. One actor or several may be involved, and the release alone may not settle whether it is the whole attack or the first move of one."
               },
               "behavior": "Threat actor activates, deploys, or attempts to deploy an improvised or commercial explosive device, incendiary, or chemical agent at the protected environment",
               "category": "behavioral_change",
@@ -11004,7 +11004,7 @@
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "strong", "actor_opportunity": "strong", "threat_timing": "strong", "threat_target": "strong", "threat_method": "moderate"},
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "means_in_hand", "source_credibility"],
-                "guidance": "Weigh whether the occupation connects to a known grievance or subject and how it may end: leverage, harm, or attention. The standoff may reveal little of whether a person is held inside or what the actor is equipped to do, and a dispute misread in early reporting can look the same at the start."
+                "guidance": "Connect the occupation to a known grievance, subject, or open case if the record supports it, and weigh how it may end: leverage, harm, or attention. The standoff may reveal little of whether a person is held inside or what the actor is equipped to do, and a dispute misread in early reporting can look the same at the start."
               },
               "behavior": "Threat actor occupies a location associated with the target (office, residence, vehicle, or a public site) and prevents access, denying the target's protective network the ability to intervene",
               "category": "access",
@@ -29083,7 +29083,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
-                "guidance": "Trace what the device required: materials, emplacement access, and initiation leave trails that can point to who built it and whether a second exists. The blast alone may reveal little of how many are involved or whether this is the whole attack, and a follow-on device may already be placed."
+                "guidance": "Identify what building and placing the device took: materials, access, and initiation each leave a trail that can point to who made it and whether a second exists. The blast alone may reveal little of how many are involved or whether this is the whole attack, and a follow-on device may already be placed."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
@@ -29614,7 +29614,7 @@
               },
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "source_credibility"],
-                "guidance": "Track how long the undermining has been running and what sustained it: excavation at this scale leaves equipment, spoil, and access trails collection can pull. Weigh whether it could be permitted work misread, and keep open whether one actor or several are digging."
+                "guidance": "Assess how long the undermining has run and what it took to sustain: excavation at this scale leaves equipment, spoil, and access trails collection can pull. Weigh whether it could be permitted work misread, and keep open whether one actor or several are digging."
               },
               "within_site_focus": ["structure", "occupants"],
               "severity_floor": "critical"
