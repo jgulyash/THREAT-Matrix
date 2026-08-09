@@ -1,6 +1,6 @@
 # THREAT Matrix — Development Roadmap
  
-**Current Version:** V1.5 (Organizations — 159 tactics across four matrices)
+**Current Version:** V1.6 (Contract Hardening — 159 tactics, schema 2.0.0, `conditioning_guidance` on all 815 indicators)
 **Product:** THREAT Matrix
  
 ---
@@ -15,7 +15,7 @@
 | **V1.3** | Facility matrix complete + escalation scoring on the full People matrix | 40 | Shipped |
 | **V1.4** | Infrastructure matrix complete + cross-domain Detection Mesh (People–Facility–Infrastructure) | 37 | Shipped |
 | **V1.5** | Organizations matrix complete + `informs_axes` matrix-wide + full cross-domain Detection Mesh (indicator, countermeasure, stakeholder links) | 48 | Shipped |
-| **V1.6** | Contract Hardening — full JSON Schema closure (pre-platform gate) | — | Next |
+| **V1.6** | Contract Hardening — schema closure + instance-conditioning contract + Behavioral Mode facets + `conditioning_guidance` (pre-platform gate) | — | Shipped |
 | **V1.7** | Consequence Layer — target-impact scoring (`risk = threat × vulnerability × consequence`) | — | Planned |
 | **V2** | Platform release — MCP server, SDKs, ingestion contract, RAG embeddings, custom domain, change feed | — | Planned |
 | **V3** | Case Library | — | Planned |
@@ -153,7 +153,7 @@ The contract has to be in writing before the platform is built on top of it. Sch
 ---
 
 ## V1.6 — Contract Hardening
-**Status:** Next
+**Status:** Shipped — 2026-08-08 (`v1.6.0`; schema `2.0.0`)
 
 **Theme:** Close the JSON Schema so external consumers can trust the contract against malformed input. The content surface is complete across all four matrices as of V1.5; V1.6 hardens the boundary. This is the deliberate pre-platform gate — the V2 platform (MCP server, SDKs, embeddings) is built on a frozen, fully-typed schema, so the schema must stop churning first.
 
@@ -165,6 +165,8 @@ The contract has to be in writing before the platform is built on top of it. Sch
 - Bundled schema-bump housekeeping: retire the legacy tactic-level `cpn` flag in favor of the per-indicator facets, and author the CPN facets for Organizations
 
 **Schema bump:** the first `schema_version` change since 1.1.0 — a breaking bump, since `additionalProperties: false` rejects previously-tolerated input.
+
+**Shipped beyond the plan:** the completed instance-conditioning contract (sixth factor `proximity_access`, demotion doctrine, worked cases, escalate-only consumer join); `axis_confidence` evidence-basis markers on all 815 indicators; the `crossing` → `modality` facet migration with the four-value Behavioral Mode model and SPA filter; and `conditioning_guidance` — authored, assessment-scoped investigative tasking on all 815 indicators under a ratified voice rubric. Fast-follow queued for 2.0.x: `compute-cpn.py`, the computed-CPN reference implementation over the Detection Mesh (contract recorded in `docs/methodology/v2-design-constraints.md`).
 
 ---
  
@@ -183,7 +185,7 @@ The contract has to be in writing before the platform is built on top of it. Sch
 ---
 
 ## V2 — Platform Release / AI Consumption Layer
-**Status:** Planned (after V1.6 schema freeze)
+**Status:** Planned (V1.6 schema freeze delivered — gate open)
  
 **Front of V2 (the adoption-critical layer):**
 - **MCP server** — AI agents query the framework natively over the Model Context Protocol; a transport layer over a pinned released `framework.json`, additive as matrices already shipped. Its one precondition is the V1.6 schema freeze.

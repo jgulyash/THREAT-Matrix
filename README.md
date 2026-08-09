@@ -152,7 +152,7 @@ V1.1 establishes THREAT Matrix as a headless-first open standard. The contract h
 | Property | Where it lives |
 |---|---|
 | **Canonical artifact** | [`docs/data/framework.json`](docs/data/framework.json) — single source of truth. The SPA is one consumer of this file, not its primary expression. |
-| **Formal schema** | [`docs/data/framework.schema.json`](docs/data/framework.schema.json) — JSON Schema (draft 2020-12) that every consumer validates against. Current schema version: 1.4.0. |
+| **Formal schema** | [`docs/data/framework.schema.json`](docs/data/framework.schema.json) — JSON Schema (draft 2020-12) that every consumer validates against. Current schema version: 2.0.0. |
 | **Versioning + stability policy** | Semver applied independently to the framework artifact (`version`) and the schema (`schema_version`) — see [VERSIONING.md](docs/VERSIONING.md). Stable identifier contract (`TA####`, `AP###`, `IND-*`, `CM-*`, `RP-*`) defined in [IDENTIFIERS.md](docs/IDENTIFIERS.md) — IDs are never reused, even after deprecation. Lifecycle states and sunset rules in [DEPRECATION.md](docs/DEPRECATION.md). |
 | **Reference consumers** | The React SPA at jgulyash.github.io/THREAT-Matrix; the reference Python consumer at [`examples/python_consumer.py`](examples/python_consumer.py) (with [`examples/README.md`](examples/README.md) as a starting-point guide); community consumers welcome. |
  
@@ -172,7 +172,8 @@ Standards talk to platforms. The contract is what makes integrations with RAG sy
 | **V1.3** | Facilities matrix complete (40 tactics) + escalation scoring on the full People matrix | Shipped |
 | **V1.4** | Infrastructure matrix complete (37 tactics) + cross-domain Detection Mesh (People–Facility–Infrastructure) | Shipped |
 | **V1.5** | Organizations matrix complete (48 tactics) + `informs_axes` on all indicators + full cross-domain Detection Mesh (indicator, countermeasure-compensation, and stakeholder-coordination links across all four matrices) | Shipped |
-| **V1.6** | Contract Hardening — full JSON Schema closure (object-level `additionalProperties`, complete field typing, `required`/`minItems`/`uniqueItems` constraints). The pre-platform gate that lets external consumers trust the contract against malformed input. | Next |
+| **V1.6** | Contract Hardening — full JSON Schema closure (object-level `additionalProperties`, complete field typing, per-matrix subschemas) + completed instance-conditioning contract + Behavioral Mode facets (tactic-level CPN retired; CPN computed over the mesh) + `conditioning_guidance` investigative tasking on all 815 indicators. The pre-platform gate that lets external consumers trust the contract against malformed input. | Shipped |
+| **V1.7** | Consequence Layer — target-impact scoring (`risk = threat × vulnerability × consequence`) | Planned |
 | **V1.7** | Consequence Layer — target-impact scoring (`risk = threat × vulnerability × consequence`): a framework-defined outcome-class taxonomy and consequence rubric, with specific target-value records held consumer-side | Planned |
 | **V2** | Platform release: MCP server, Python and TypeScript SDKs, ingestion contract, pre-built RAG embeddings, custom domain, change feed | Planned |
 | **V3** | Real-world case library | Planned |
