@@ -1,0 +1,14 @@
+{
+  "indicator_id": "IND-F0208-04",
+  "type_severity_band": "high",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "breach_or_probing",
+    "means_in_hand": "confirmed_present",
+    "tempo_trajectory": "steady",
+    "proximity_access": "has_access",
+    "source_credibility": "high",
+    "basis": "FICTIONAL. Network security logs (high-credibility, instrumented source) show a badged HVAC subcontractor's remote account traversing from the corporate IT segment onto the building-automation VLAN of one named campus and issuing after-hours commands to door-control test points. Control-system reach is directly observed, not inferred; the insider holds standing physical and logical access. Cadence across three weeks is regular rather than compressing."
+  },
+  "conditioned_priority": "critical"
+}

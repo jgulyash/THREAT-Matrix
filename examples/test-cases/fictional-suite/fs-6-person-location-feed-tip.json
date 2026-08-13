@@ -1,0 +1,14 @@
+{
+  "indicator_id": "IND-0208-05",
+  "type_severity_band": "high",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "research_planning",
+    "means_in_hand": "unknown",
+    "tempo_trajectory": "unknown",
+    "proximity_access": "no_known_access",
+    "source_credibility": "low",
+    "basis": "FICTIONAL. An anonymous web-form tip (low credibility, no corroboration) claims a former associate is 'watching every move' of a named executive through live event feeds and social check-ins, and 'knows exactly when to catch him alone.' The content is alarming and the claimed target is specific, but nothing beyond the tip itself is established: no capability, no trajectory, no access. Source credibility acts as the brake the contract defines — the raise waits for corroboration while the type-high band still floors the case; the alarming instance cannot be dismissed and cannot stampede the queue."
+  },
+  "conditioned_priority": "high"
+}

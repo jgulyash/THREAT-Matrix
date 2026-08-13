@@ -1,0 +1,14 @@
+{
+  "indicator_id": "IND-I0302-01",
+  "type_severity_band": "critical",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "attack",
+    "means_in_hand": "confirmed_present",
+    "tempo_trajectory": "accelerating",
+    "proximity_access": "at_or_near_target",
+    "source_credibility": "high",
+    "basis": "FICTIONAL. Plant OT monitoring at a named chemical processing site confirms unauthorized logic changes on the safety instrumented system controller, verified against the change-management record (not a maintenance change). Concurrent process alarms show an excursion developing while the last-resort trip is disabled. Every factor converges at the top of its scale; the type band is already critical, so the conditioned priority holds at critical — the escalate-only contract has no band above it. Urgency beyond the band is carried by case management, not by the score."
+  },
+  "conditioned_priority": "critical"
+}

@@ -1,0 +1,14 @@
+{
+  "indicator_id": "IND-I0407-01",
+  "type_severity_band": "low",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "aftermath",
+    "means_in_hand": "assessed_present",
+    "tempo_trajectory": "accelerating",
+    "proximity_access": "unknown",
+    "source_credibility": "high",
+    "basis": "FICTIONAL. Following a confirmed sabotage incident at a regional utility site, a claim of responsibility appears on an extremist channel. Platform-provenance analysis (high credibility) ties the posting account to the same infrastructure used in pre-incident reconnaissance chatter, making the claimant assessed as the actual actor rather than an opportunist. The claim names a second, specific substation as 'next' and the posting cadence is compressing. The type-low trace-layer indicator conditions upward: a credible actor with demonstrated means declaring a resolved next target is a monitoring-to-active-case transition."
+  },
+  "conditioned_priority": "medium"
+}

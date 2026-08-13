@@ -1,0 +1,14 @@
+{
+  "indicator_id": "IND-0307-04",
+  "type_severity_band": "medium",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "attack",
+    "means_in_hand": "confirmed_present",
+    "tempo_trajectory": "accelerating",
+    "proximity_access": "at_or_near_target",
+    "source_credibility": "high",
+    "basis": "FICTIONAL. Protective detail (high credibility, direct observation) reports a small UAS repeatedly holding overwatch positions above the protectee's residence and motorcade staging area, maneuvering to track the detail's counter-surveillance runs — the aerial platform is directly observed (means confirmed). Flight windows have compressed from weekly to daily and now align with the protectee's movement schedule, and a correlated ground vehicle has been logged at or near two consecutive movement sites. Overwatch guiding a present, accelerating ground element against one named protectee conditions the type-medium indicator directly to critical — a two-band raise; the contract requires only that priority never fall below the type band."
+  },
+  "conditioned_priority": "critical"
+}
