@@ -1,0 +1,14 @@
+{
+  "indicator_id": "IND-I0204-05",
+  "type_severity_band": "high",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "breach_or_probing",
+    "means_in_hand": "confirmed_present",
+    "tempo_trajectory": "accelerating",
+    "proximity_access": "at_or_near_target",
+    "source_credibility": "high",
+    "basis": "RETROSPECTIVE — public record. As-of approximately 01:10 on 16 April 2013, minutes after the second underground communications vault was breached near the Metcalf transmission substation (per FERC-docket accounts and subsequent public reporting). Evidence in hand at that moment: two buried telecom vaults opened and their fiber trunks deliberately severed within minutes of each other, disabling 911 and landline/cell service in the area immediately adjacent to a high-value transmission asset. Target focus assessed specific: the cuts were precise, coordinated across two carriers' vaults, and geographically converged on one substation's service area. Means confirmed present: the severing itself demonstrates tools and proficiency in hand. Tempo accelerating: two vaults defeated inside a quarter hour. Proximity at_or_near_target: the actor was physically working the conduit serving the site. Source credibility high: physical evidence and carrier outage telemetry. Raise rationale per raise_guidance: specific_target + confirmed means + accelerating tempo -> consider critical; at_or_near_target + specific_target is an independent strong raise signal. The rifle attack on the transformer bank began at approximately 01:31; this record is what an analyst holding the vault-breach evidence could have written in the roughly 20-minute window before it."
+  },
+  "conditioned_priority": "critical"
+}

@@ -1,0 +1,14 @@
+{
+  "indicator_id": "IND-I0205-05",
+  "type_severity_band": "medium",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "breach_or_probing",
+    "means_in_hand": "assessed_present",
+    "tempo_trajectory": "unknown",
+    "proximity_access": "has_access",
+    "source_credibility": "moderate",
+    "basis": "RETROSPECTIVE — public record. As-of approximately 08:00 on 5 February 2021, when a plant operator at the Oldsmar water treatment facility first observed an unattended remote-desktop session moving the cursor on the treatment HMI and dismissed it as a supervisor checking in (per the Pinellas County Sheriff's account and subsequent advisories). Evidence in hand at that moment: a remote session on the control workstation, reachable through a shared-credential commercial remote-access tool on an internet-connected host — the shared-password, exposed-remote-desktop access class this indicator describes. Target focus specific: the session is on this plant's treatment HMI. Means assessed_present: whoever holds the session holds, by construction, full operator control of dosing functions. Proximity has_access: an authenticated interactive session is attained access. Tempo unknown after a single observation; unknown is the safe default and does not demote. Source credibility moderate: the operator's observation is direct and reliable, but whether the session reflected a hostile actor at all was unresolved — the 2023 public reassessment (former city official and reported FBI findings suggesting probable operator error rather than intrusion; no charges ever filed) shows that ambiguity was real. Under the escalate-only contract that later benign reading does not rewrite this record; it is handled as case disposition. Raise rationale per raise_guidance: has_access + specific_target is a strong raise signal. The setpoint manipulation attributed to a second session was observed at approximately 13:30 the same day."
+  },
+  "conditioned_priority": "high"
+}

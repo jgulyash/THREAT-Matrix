@@ -1,0 +1,14 @@
+{
+  "indicator_id": "IND-0101-01",
+  "type_severity_band": "medium",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "preparation",
+    "means_in_hand": "unknown",
+    "tempo_trajectory": "accelerating",
+    "proximity_access": "seeking_access",
+    "source_credibility": "high",
+    "basis": "RETROSPECTIVE — public record. As-of approximately 02:00 on 3 April 2018, during the Mountain View welfare contact in which officers located the subject sleeping in her car roughly 25 miles from the company's headquarters (per police and family accounts in public reporting). Evidence in hand at that moment: months of public postings articulating a specific, sustained grievance against one named company, framing its content policies as personal persecution — the behavior class of this indicator; a missing-person report filed by family after she left home without notice; family statements to police that she was angry at the company and might travel to its headquarters; and her physical presence, after a roughly 500-mile drive, staged overnight in the target's metropolitan area. Target focus specific: one named organization and, per the family warning, its headquarters. Pathway assessed at preparation: unannounced cross-state travel converging on the target's location. Tempo accelerating: a long-running grievance had turned into goal-directed movement within days. Proximity seeking_access: near the target area but not yet at the site. Means unknown: no weapon was observed or asked about during the contact; unknown is the safe default and does not demote — a records check would have been the corroborating step. Source credibility high: direct family reporting corroborated by police contact. Raise rationale per raise_guidance: pathway at preparation + specific target, with accelerating tempo, supports a raise from the medium type band to high. This is the false-LOW the contract exists to catch: the real-world contact ended with release and no notification to the company; the attack at the headquarters occurred approximately eleven hours later."
+  },
+  "conditioned_priority": "high"
+}
