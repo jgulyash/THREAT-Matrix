@@ -1,0 +1,15 @@
+{
+  "indicator_id": "IND-0101-01",
+  "type_severity_band": "medium",
+  "effect": "raised",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "preparation",
+    "means_in_hand": "assessed_present",
+    "tempo_trajectory": "steady",
+    "proximity_access": "unknown",
+    "source_credibility": "high",
+    "basis": "DOCTRINE FIXTURE. A consumer stores the held-vs-raised distinction as a top-level effect flag. The contract derives held/raised by comparison and deliberately stores no effect flag (state that can drift); the schema must reject it."
+  },
+  "conditioned_priority": "high"
+}

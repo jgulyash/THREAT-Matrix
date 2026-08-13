@@ -1,0 +1,14 @@
+{
+  "indicator_id": "IND-X0301-01",
+  "type_severity_band": "medium",
+  "instance": {
+    "target_focus": "unknown",
+    "pathway_stage": "unknown",
+    "means_in_hand": "unknown",
+    "tempo_trajectory": "unknown",
+    "proximity_access": "unknown",
+    "source_credibility": "unknown",
+    "basis": "MALFORMED FIXTURE. 'X' is not a valid matrix letter in the ID pattern ^IND-[FOI]?[0-9]{4}-[0-9]{2}$ (person carries no letter; F/O/I only)."
+  },
+  "conditioned_priority": "medium"
+}

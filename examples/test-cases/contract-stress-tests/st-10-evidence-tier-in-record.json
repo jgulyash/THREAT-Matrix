@@ -1,0 +1,15 @@
+{
+  "indicator_id": "IND-I0306-01",
+  "type_severity_band": "critical",
+  "primary_objective_evidence_tier": "weakly_inferred",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "attack",
+    "means_in_hand": "confirmed_present",
+    "tempo_trajectory": "unknown",
+    "proximity_access": "has_access",
+    "source_credibility": "moderate",
+    "basis": "GAP-DEMONSTRATION FIXTURE (RG-1). An analyst mapping an Oldsmar-like incident tries to record attribution confidence exactly where the boundary_rule prose says it belongs — on the incident record. The schema defines the enum only on the type-level indicator object, so the one place a consumer needs to write it is rejected. This fixture EXPECTS rejection; the finding is that rejection is the wrong outcome."
+  },
+  "conditioned_priority": "critical"
+}

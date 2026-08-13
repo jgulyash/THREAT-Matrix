@@ -1,0 +1,14 @@
+{
+  "indicator_id": "IND-I0302-01",
+  "type_severity_band": "high",
+  "instance": {
+    "target_focus": "narrowing",
+    "pathway_stage": "unknown",
+    "means_in_hand": "unknown",
+    "tempo_trajectory": "unknown",
+    "proximity_access": "unknown",
+    "source_credibility": "moderate",
+    "basis": "ADVERSARIAL FIXTURE. The laundering pathway st-01 misses: instead of writing conditioned_priority below the band, the consumer misquotes the floored-critical type band itself as 'high'. The record is internally consistent (priority equals its claimed band) so the ordering check alone cannot catch it — only a cross-reference against the authored severity_band in framework.json can."
+  },
+  "conditioned_priority": "high"
+}

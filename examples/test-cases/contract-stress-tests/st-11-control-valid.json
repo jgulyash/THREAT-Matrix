@@ -1,0 +1,14 @@
+{
+  "indicator_id": "IND-0101-01",
+  "type_severity_band": "medium",
+  "instance": {
+    "target_focus": "unknown",
+    "pathway_stage": "unknown",
+    "means_in_hand": "unknown",
+    "tempo_trajectory": "unknown",
+    "proximity_access": "unknown",
+    "source_credibility": "unknown",
+    "basis": "CONTROL FIXTURE. A minimal, fully valid all-unknown record held at type. Guards the harness against a false-always-reject: if this fixture fails any layer, the harness itself is broken."
+  },
+  "conditioned_priority": "medium"
+}

@@ -1,0 +1,13 @@
+{
+  "indicator_id": "IND-0101-01",
+  "type_severity_band": "medium",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "research_planning",
+    "means_in_hand": "unknown",
+    "tempo_trajectory": "steady",
+    "source_credibility": "high",
+    "basis": "MALFORMED FIXTURE. A pre-V1.6 consumer omits proximity_access, the sixth factor added by ruling Q3a. All six factors are required; partial records must not validate."
+  },
+  "conditioned_priority": "medium"
+}

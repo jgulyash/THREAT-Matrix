@@ -1,0 +1,14 @@
+{
+  "indicator_id": "IND-0301-01",
+  "type_severity_band": "critical",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "attack",
+    "means_in_hand": "confirmed_present",
+    "tempo_trajectory": "unknown",
+    "proximity_access": "at_or_near_target",
+    "source_credibility": "moderate",
+    "basis": "ADVERSARIAL FIXTURE. A weapon was directed at a person (severity_floor critical) but a consumer writes the priority down to high because 'only one victim was involved' — attempting below-floor demotion of a floored direct-force indicator."
+  },
+  "conditioned_priority": "high"
+}

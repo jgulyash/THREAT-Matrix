@@ -1,0 +1,14 @@
+{
+  "indicator_id": "IND-0101-01",
+  "type_severity_band": "medium",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "research_planning",
+    "means_in_hand": "unknown",
+    "tempo_trajectory": "rapid",
+    "proximity_access": "unknown",
+    "source_credibility": "high",
+    "basis": "MALFORMED FIXTURE. 'rapid' is not in the tempo_trajectory enum (accelerating|steady|stalling|unknown)."
+  },
+  "conditioned_priority": "medium"
+}

@@ -1,0 +1,15 @@
+{
+  "indicator_id": "IND-0101-01",
+  "type_severity_band": "medium",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "research_planning",
+    "means_in_hand": "unknown",
+    "tempo_trajectory": "steady",
+    "proximity_access": "unknown",
+    "source_credibility": "high",
+    "inhibitors": "strong stabilizers: stable employment, family support",
+    "basis": "DOCTRINE FIXTURE. A consumer from an SPJ tradition adds an inhibitors field to the instance record. The inhibitors exclusion (ruling Q3b) deliberately omits protective factors from the record; additionalProperties:false must reject the field, not merely ignore it."
+  },
+  "conditioned_priority": "medium"
+}

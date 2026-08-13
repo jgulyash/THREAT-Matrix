@@ -1,0 +1,14 @@
+{
+  "indicator_id": "IND-9999-99",
+  "type_severity_band": "medium",
+  "instance": {
+    "target_focus": "unknown",
+    "pathway_stage": "unknown",
+    "means_in_hand": "unknown",
+    "tempo_trajectory": "unknown",
+    "proximity_access": "unknown",
+    "source_credibility": "unknown",
+    "basis": "REFERENTIAL FIXTURE. IND-9999-99 matches the ID pattern but exists nowhere in framework.json. JSON Schema validates shape, not referential integrity — only a cross-reference layer can catch a dangling indicator_id."
+  },
+  "conditioned_priority": "medium"
+}
