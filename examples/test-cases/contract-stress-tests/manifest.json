@@ -1,16 +1,83 @@
 {
-  "description": "Adversarial fixtures for the v1.6.0 conditioned_assessment contract. Each fixture declares which validator layers (C1 schema / C2 cross-ref / C3 escalate-only) must reject it — [] means it must be accepted. A fixture passes only when the fired set exactly matches the expectation.",
+  "description": "Adversarial fixtures for the conditioned_assessment contract, expectations stated against schema 2.1.0 (v1.6.1). Each fixture declares which validator layers (C1 schema / C2 cross-ref / C3 escalate-only) must reject it \u2014 [] means it must be accepted. A fixture passes only when the fired set exactly matches the expectation. st-01, st-02, and st-10 flipped when the v1.6.1 patch landed \u2014 that flip is this suite working as a regression harness.",
   "fixtures": [
-    {"file": "st-01-escalate-only-violation.json", "expect_failures": ["C3"], "title": "capability-discount demotion: schema ACCEPTS it; only the C3 ordering layer catches it"},
-    {"file": "st-02-floor-demotion.json", "expect_failures": ["C3"], "title": "below-floor demotion of a floored direct-force indicator: schema ACCEPTS it"},
-    {"file": "st-03-misquoted-type-band.json", "expect_failures": ["C2"], "title": "floor laundering by misquoting the type band: ordering check passes; only cross-ref catches it"},
-    {"file": "st-04-bad-enum.json", "expect_failures": ["C1"], "title": "invalid enum value rejected by schema"},
-    {"file": "st-05-missing-sixth-factor.json", "expect_failures": ["C1"], "title": "missing proximity_access (Q3a sixth factor) rejected by schema"},
-    {"file": "st-06-inhibitors-property.json", "expect_failures": ["C1"], "title": "inhibitors field rejected by additionalProperties:false (Q3b exclusion holds mechanically)"},
-    {"file": "st-07-stored-effect-flag.json", "expect_failures": ["C1"], "title": "stored held/raised effect flag rejected (derived-state doctrine holds mechanically)"},
-    {"file": "st-08-nonexistent-indicator.json", "expect_failures": ["C2"], "title": "pattern-valid but nonexistent indicator_id: schema ACCEPTS it; only cross-ref catches it"},
-    {"file": "st-09-malformed-id.json", "expect_failures": ["C1"], "title": "invalid matrix letter in indicator_id rejected by pattern"},
-    {"file": "st-10-evidence-tier-in-record.json", "expect_failures": ["C1"], "title": "RG-1 demonstration: incident-level evidence tier has no schema-valid home on the incident record"},
-    {"file": "st-11-control-valid.json", "expect_failures": [], "title": "valid all-unknown control record accepted"}
+    {
+      "file": "st-01-escalate-only-violation.json",
+      "expect_failures": [
+        "C1"
+      ],
+      "title": "capability-discount demotion: REJECTED BY SCHEMA since 2.1.0 conditional subschemas (pre-2.1.0: accepted, caught only by C3)"
+    },
+    {
+      "file": "st-02-floor-demotion.json",
+      "expect_failures": [
+        "C1"
+      ],
+      "title": "below-floor demotion of a floored direct-force indicator: REJECTED BY SCHEMA since 2.1.0 (pre-2.1.0: accepted)"
+    },
+    {
+      "file": "st-03-misquoted-type-band.json",
+      "expect_failures": [
+        "C2"
+      ],
+      "title": "floor laundering by misquoting the type band: ordering check passes; only cross-ref catches it"
+    },
+    {
+      "file": "st-04-bad-enum.json",
+      "expect_failures": [
+        "C1"
+      ],
+      "title": "invalid enum value rejected by schema"
+    },
+    {
+      "file": "st-05-missing-sixth-factor.json",
+      "expect_failures": [
+        "C1"
+      ],
+      "title": "missing proximity_access (Q3a sixth factor) rejected by schema"
+    },
+    {
+      "file": "st-06-inhibitors-property.json",
+      "expect_failures": [
+        "C1"
+      ],
+      "title": "inhibitors field rejected by additionalProperties:false (Q3b exclusion holds mechanically)"
+    },
+    {
+      "file": "st-07-stored-effect-flag.json",
+      "expect_failures": [
+        "C1"
+      ],
+      "title": "stored held/raised effect flag rejected (derived-state doctrine holds mechanically)"
+    },
+    {
+      "file": "st-08-nonexistent-indicator.json",
+      "expect_failures": [
+        "C2"
+      ],
+      "title": "pattern-valid but nonexistent indicator_id: schema ACCEPTS it; only cross-ref catches it"
+    },
+    {
+      "file": "st-09-malformed-id.json",
+      "expect_failures": [
+        "C1"
+      ],
+      "title": "invalid matrix letter in indicator_id rejected by pattern"
+    },
+    {
+      "file": "st-10-evidence-tier-in-record.json",
+      "expect_failures": [],
+      "title": "incident-level evidence tier ACCEPTED since 2.1.0 re-homing (pre-2.1.0: rejected with nowhere legal to write it \u2014 RG-1, fixed)"
+    },
+    {
+      "file": "st-11-control-valid.json",
+      "expect_failures": [],
+      "title": "valid all-unknown control record accepted"
+    },
+    {
+      "file": "st-12-disposition-benign-exit.json",
+      "expect_failures": [],
+      "title": "closed_benign disposition alongside an unlowered score: the Oldsmar-pattern benign exit, representable since 2.1.0"
+    }
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "indicator_id": "IND-I0306-01",
+  "type_severity_band": "critical",
+  "primary_objective_evidence_tier": "contested",
+  "disposition": "closed_benign",
+  "instance": {
+    "target_focus": "specific_target",
+    "pathway_stage": "attack",
+    "means_in_hand": "confirmed_present",
+    "tempo_trajectory": "unknown",
+    "proximity_access": "has_access",
+    "source_credibility": "moderate",
+    "basis": "V1.6.1 FIXTURE. The Oldsmar pattern end-to-end: a critical-band observation whose hostile attribution was later contested and reassessed benign. The record keeps its unlowered conditioned_priority (the raise was right given what was held), carries 'contested' in the evidence tier, and exits by disposition 'closed_benign' — the outcome the demotion doctrine prescribes, now representable in the schema."
+  },
+  "conditioned_priority": "critical"
+}
