@@ -33,7 +33,10 @@
               ],
               "correlates_with": [
                 "IND-0101-04",
-                "IND-0102-01"
+                "IND-0102-01",
+                "IND-0101-03",
+                "IND-0103-01",
+                "IND-0107-01"
               ],
               "source_refs": [
                 "FEIN-VOSSEKUIL-1999",
@@ -79,7 +82,8 @@
               ],
               "correlates_with": [
                 "IND-0102-01",
-                "IND-0102-02"
+                "IND-0102-02",
+                "IND-0107-02"
               ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
@@ -126,7 +130,9 @@
               ],
               "correlates_with": [
                 "IND-0101-01",
-                "IND-0101-04"
+                "IND-0101-04",
+                "IND-0107-01",
+                "IND-0107-06"
               ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
@@ -172,7 +178,8 @@
               ],
               "correlates_with": [
                 "IND-0101-01",
-                "IND-0101-03"
+                "IND-0101-03",
+                "IND-0107-04"
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
@@ -219,7 +226,8 @@
                 "target_development"
               ],
               "correlates_with": [
-                "IND-0104-05"
+                "IND-0104-05",
+                "IND-0107-05"
               ],
               "source_refs": [
                 "NTAC-SCHOOLS-2019",
@@ -264,7 +272,8 @@
                 "target_development"
               ],
               "correlates_with": [
-                "IND-0104-06"
+                "IND-0104-06",
+                "IND-O0202-05"
               ],
               "source_refs": [
                 "CERT-CSG-7-2022",
@@ -704,7 +713,11 @@
               ],
               "correlates_with": [
                 "IND-0103-04",
-                "IND-0101-02"
+                "IND-0101-02",
+                "IND-0101-01",
+                "IND-0103-02",
+                "IND-0105-05",
+                "IND-0208-06"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -751,7 +764,12 @@
               ],
               "correlates_with": [
                 "IND-0103-02",
-                "IND-0101-02"
+                "IND-0101-02",
+                "IND-0103-05",
+                "IND-0106-03",
+                "IND-0108-05",
+                "IND-0207-04",
+                "IND-0208-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -840,7 +858,10 @@
                 "target_development"
               ],
               "correlates_with": [
-                "IND-0103-05"
+                "IND-0103-05",
+                "IND-0105-04",
+                "IND-0108-03",
+                "IND-0205-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -932,7 +953,8 @@
                 "target_development"
               ],
               "correlates_with": [
-                "IND-0103-01"
+                "IND-0103-01",
+                "IND-0208-06"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -1408,7 +1430,25 @@
               "correlates_with": [
                 "IND-0101-01",
                 "IND-0103-02",
-                "IND-F0103-01"
+                "IND-F0103-01",
+                "IND-0102-05",
+                "IND-0102-06",
+                "IND-0103-03",
+                "IND-0106-04",
+                "IND-0107-03",
+                "IND-0107-07",
+                "IND-0108-01",
+                "IND-0108-02",
+                "IND-0201-01",
+                "IND-0201-02",
+                "IND-0201-03",
+                "IND-0201-06",
+                "IND-0206-01",
+                "IND-0206-03",
+                "IND-0207-01",
+                "IND-0207-02",
+                "IND-0209-01",
+                "IND-0209-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -1455,7 +1495,9 @@
               "correlates_with": [
                 "IND-0103-01",
                 "IND-0102-01",
-                "IND-F0102-05"
+                "IND-F0102-05",
+                "IND-0102-02",
+                "IND-0108-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -1503,7 +1545,12 @@
               ],
               "correlates_with": [
                 "IND-0103-01",
-                "IND-F0103-02"
+                "IND-F0103-02",
+                "IND-0102-05",
+                "IND-0103-04",
+                "IND-0107-03",
+                "IND-0201-06",
+                "IND-0206-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -1550,7 +1597,16 @@
               ],
               "correlates_with": [
                 "IND-0103-03",
-                "IND-0203-01"
+                "IND-0203-01",
+                "IND-0102-01",
+                "IND-0102-03",
+                "IND-0106-02",
+                "IND-0107-02",
+                "IND-0201-03",
+                "IND-0204-04",
+                "IND-0204-06",
+                "IND-0208-01",
+                "IND-0401-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -1596,7 +1652,10 @@
               ],
               "correlates_with": [
                 "IND-0102-02",
-                "IND-0105-01"
+                "IND-0105-01",
+                "IND-0102-04",
+                "IND-0106-01",
+                "IND-0108-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -1889,7 +1948,9 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0107-03"
+                "IND-0107-03",
+                "IND-0201-04",
+                "IND-0301-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -1935,7 +1996,9 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0107-03"
+                "IND-0107-03",
+                "IND-0301-02",
+                "IND-0302-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -1981,7 +2044,9 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0106-02"
+                "IND-0106-02",
+                "IND-0203-03",
+                "IND-I0106-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -2026,7 +2091,9 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0105-04"
+                "IND-0105-04",
+                "IND-0202-04",
+                "IND-0404-05"
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
@@ -2072,7 +2139,9 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0101-05"
+                "IND-0101-05",
+                "IND-0201-04",
+                "IND-0301-03"
               ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
@@ -2624,7 +2693,9 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0107-01"
+                "IND-0107-01",
+                "IND-0103-05",
+                "IND-I0107-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -2662,7 +2733,12 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0107-03"
+                "IND-0107-03",
+                "IND-0303-03",
+                "IND-0307-05",
+                "IND-0308-05",
+                "IND-0401-05",
+                "IND-I0107-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -2701,7 +2777,8 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0107-05"
+                "IND-0107-05",
+                "IND-0408-05"
               ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
@@ -2742,7 +2819,12 @@
               "correlates_with": [
                 "IND-0102-04",
                 "IND-0104-04",
-                "IND-F0107-02"
+                "IND-F0107-02",
+                "IND-0404-04",
+                "IND-0406-04",
+                "IND-I0107-01",
+                "IND-I0108-02",
+                "IND-O0202-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -2780,7 +2862,8 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0102-01"
+                "IND-0102-01",
+                "IND-O0304-04"
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
@@ -3198,7 +3281,8 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0103-05"
+                "IND-0103-05",
+                "IND-I0202-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -3239,7 +3323,14 @@
               "correlates_with": [
                 "IND-0103-04",
                 "IND-0104-03",
-                "IND-F0108-01"
+                "IND-F0108-01",
+                "IND-0203-03",
+                "IND-0203-06",
+                "IND-0204-01",
+                "IND-0205-01",
+                "IND-0205-05",
+                "IND-I0202-03",
+                "IND-O0205-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -3278,7 +3369,10 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0102-02"
+                "IND-0102-02",
+                "IND-0202-03",
+                "IND-I0202-04",
+                "IND-O0205-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -3316,7 +3410,13 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-0103-01"
+                "IND-0103-01",
+                "IND-0108-06",
+                "IND-0203-01",
+                "IND-0205-04",
+                "IND-0208-04",
+                "IND-0306-04",
+                "IND-I0202-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -3389,7 +3489,9 @@
                 "target_development",
                 "mobilization"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-0203-06"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
               ],
@@ -3751,7 +3853,8 @@
               ],
               "correlates_with": [
                 "IND-0101-01",
-                "IND-0101-03"
+                "IND-0101-03",
+                "IND-0105-01"
               ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
@@ -3792,7 +3895,8 @@
               ],
               "correlates_with": [
                 "IND-0101-02",
-                "IND-0103-04"
+                "IND-0103-04",
+                "IND-I0110-01"
               ],
               "source_refs": [
                 "FEIN-VOSSEKUIL-1999",
@@ -3833,7 +3937,10 @@
               ],
               "correlates_with": [
                 "IND-0103-01",
-                "IND-0103-03"
+                "IND-0103-03",
+                "IND-0104-01",
+                "IND-0104-02",
+                "IND-0105-02"
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
@@ -3874,7 +3981,12 @@
               ],
               "correlates_with": [
                 "IND-0101-04",
-                "IND-F0109-04"
+                "IND-F0109-04",
+                "IND-0301-05",
+                "IND-0401-03",
+                "IND-0407-01",
+                "IND-0407-03",
+                "IND-I0110-05"
               ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
@@ -3914,7 +4026,11 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0101-05"
+                "IND-0101-05",
+                "IND-0105-03",
+                "IND-0406-01",
+                "IND-I0110-02",
+                "IND-O0109-04"
               ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
@@ -3954,7 +4070,8 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0101-03"
+                "IND-0101-03",
+                "IND-0202-06"
               ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
@@ -3994,7 +4111,10 @@
               ],
               "correlates_with": [
                 "IND-0103-01",
-                "IND-F0109-05"
+                "IND-F0109-05",
+                "IND-0202-01",
+                "IND-I0110-04",
+                "IND-O0109-05"
               ],
               "source_refs": [
                 "MELOY-TRAP18-2016",
@@ -4347,7 +4467,11 @@
               ],
               "correlates_with": [
                 "IND-0103-01",
-                "IND-F0110-04"
+                "IND-F0110-04",
+                "IND-0201-02",
+                "IND-0307-01",
+                "IND-0401-02",
+                "IND-I0203-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -4499,7 +4623,9 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0102-02"
+                "IND-0102-02",
+                "IND-0202-02",
+                "IND-O0210-03"
               ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
@@ -4896,7 +5022,8 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0103-01"
+                "IND-0103-01",
+                "IND-0209-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -5087,7 +5214,8 @@
               ],
               "correlates_with": [
                 "IND-0103-01",
-                "IND-0103-03"
+                "IND-0103-03",
+                "IND-0209-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -5439,7 +5567,8 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0107-07"
+                "IND-0107-07",
+                "IND-0403-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -5478,7 +5607,10 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0108-05"
+                "IND-0108-05",
+                "IND-0308-01",
+                "IND-0404-01",
+                "IND-O0210-05"
               ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
@@ -5517,7 +5649,10 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0106-03"
+                "IND-0106-03",
+                "IND-0402-01",
+                "IND-0402-06",
+                "IND-0403-04"
               ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
@@ -5553,7 +5688,10 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-0104-04"
+                "IND-0104-04",
+                "IND-0207-04",
+                "IND-0402-05",
+                "IND-0405-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -6054,7 +6192,9 @@
                 "mobilization",
                 "execution"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-0204-02"
+              ],
               "source_refs": [
                 "ASIS-WVPI-2021",
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -6092,7 +6232,9 @@
               ],
               "correlates_with": [
                 "IND-0106-02",
-                "IND-0104-03"
+                "IND-0104-03",
+                "IND-0204-01",
+                "IND-0205-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -6131,7 +6273,8 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-F0203-02"
+                "IND-F0203-02",
+                "IND-0302-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -6632,7 +6775,8 @@
               ],
               "correlates_with": [
                 "IND-0203-02",
-                "IND-F0204-03"
+                "IND-F0204-03",
+                "IND-0205-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -6747,7 +6891,8 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-0305-04"
+                "IND-0305-04",
+                "IND-0307-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -7718,7 +7863,8 @@
               ],
               "correlates_with": [
                 "IND-0103-01",
-                "IND-F0206-01"
+                "IND-F0206-01",
+                "IND-0207-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -7755,7 +7901,9 @@
                 "mobilization",
                 "execution"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-0207-03"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
@@ -8743,7 +8891,9 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-0103-04"
+                "IND-0103-04",
+                "IND-0209-04",
+                "IND-0302-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -9313,7 +9463,8 @@
               ],
               "correlates_with": [
                 "IND-0103-01",
-                "IND-0201-01"
+                "IND-0201-01",
+                "IND-O0201-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -9860,7 +10011,8 @@
               ],
               "correlates_with": [
                 "IND-0104-02",
-                "IND-F0305-02"
+                "IND-F0305-02",
+                "IND-0302-02"
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
@@ -9938,7 +10090,11 @@
               "phase_relevance": [
                 "execution"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-0302-03",
+                "IND-0303-01",
+                "IND-0306-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "ASIS-WVPI-2021"
@@ -9976,7 +10132,8 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-0107-04"
+                "IND-0107-04",
+                "IND-0303-04"
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
@@ -10865,7 +11022,8 @@
               ],
               "correlates_with": [
                 "IND-0301-04",
-                "IND-F0306-04"
+                "IND-F0306-04",
+                "IND-0304-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -10902,7 +11060,9 @@
               "phase_relevance": [
                 "execution"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-0409-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "CERT-CSG-7-2022"
@@ -10978,7 +11138,10 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-0301-05"
+                "IND-0301-05",
+                "IND-0304-03",
+                "IND-0405-01",
+                "IND-0409-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -11525,7 +11688,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0308-05"
+                "IND-0308-05",
+                "IND-0409-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -11837,6 +12001,9 @@
           "indicators": [
             {
               "id": "IND-0305-01",
+              "correlates_with": [
+                "IND-0308-03"
+              ],
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "weak", "threat_method": "none"},
               "conditioning_guidance": {
@@ -11944,6 +12111,11 @@
             },
             {
               "id": "IND-0305-04",
+              "correlates_with": [
+                "IND-0204-05",
+                "IND-0307-02",
+                "IND-0307-03"
+              ],
               "axis_confidence": { "impact_potential": "inferred", "blast_radius_potential": "established", "recoverability_inverse": "inferred", "detectability": "inferred" },
               "informs_axes": {"actor_capability": "moderate", "actor_intent": "moderate", "actor_opportunity": "moderate", "threat_timing": "moderate", "threat_target": "strong", "threat_method": "none"},
               "conditioning_guidance": {
@@ -13493,7 +13665,8 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-0105-02"
+                "IND-0105-02",
+                "IND-0304-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -13847,7 +14020,10 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0401-01"
+                "IND-F0401-01",
+                "IND-0303-03",
+                "IND-0304-04",
+                "IND-I0401-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -13885,7 +14061,8 @@
               ],
               "correlates_with": [
                 "IND-0108-01",
-                "IND-F0401-02"
+                "IND-F0401-02",
+                "IND-I0401-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -13997,7 +14174,9 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0105-02"
+                "IND-0105-02",
+                "IND-0404-02",
+                "IND-I0401-04"
               ],
               "source_refs": [
                 "CERT-CSG-7-2022",
@@ -14371,7 +14550,9 @@
               ],
               "correlates_with": [
                 "IND-0202-03",
-                "IND-F0404-01"
+                "IND-F0404-01",
+                "IND-0404-01",
+                "IND-O0404-02"
               ],
               "source_refs": [
                 "FBI-PREATTACK-2018",
@@ -14410,7 +14591,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0402-05"
+                "IND-F0402-05",
+                "IND-0404-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -14447,7 +14629,9 @@
                 "mobilization",
                 "aftermath"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-0404-03"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
@@ -14482,7 +14666,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0402-03"
+                "IND-F0402-03",
+                "IND-I0404-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026"
@@ -14559,7 +14744,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0202-03"
+                "IND-0202-03",
+                "IND-0403-04"
               ],
               "source_refs": [
                 "CISA-CONVERGE-2021",
@@ -15441,7 +15627,9 @@
               ],
               "correlates_with": [
                 "IND-0202-02",
-                "IND-0402-01"
+                "IND-0402-01",
+                "IND-I0405-01",
+                "IND-O0404-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -15479,7 +15667,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0401-05"
+                "IND-0401-05",
+                "IND-I0405-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -15557,7 +15746,9 @@
               ],
               "correlates_with": [
                 "IND-0105-04",
-                "IND-F0404-03"
+                "IND-F0404-03",
+                "IND-I0405-02",
+                "IND-O0405-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -15595,7 +15786,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0104-04"
+                "IND-0104-04",
+                "IND-O0405-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -15631,7 +15823,10 @@
               "phase_relevance": [
                 "aftermath"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-I0405-05",
+                "IND-O0405-03"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NITTF-GUIDE-2017"
@@ -15989,7 +16184,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0303-04"
+                "IND-0303-04",
+                "IND-I0408-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -16027,7 +16223,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0405-02"
+                "IND-F0405-02",
+                "IND-O0407-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -16100,7 +16297,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0202-04"
+                "IND-0202-04",
+                "IND-O0407-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -16561,7 +16759,9 @@
               "phase_relevance": [
                 "aftermath"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-O0408-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-SYSTEMS-2020"
@@ -16984,7 +17184,9 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0107-04"
+                "IND-0107-04",
+                "IND-I0407-01",
+                "IND-O0410-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -17021,7 +17223,9 @@
               "phase_relevance": [
                 "aftermath"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-O0410-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "FBI-PREATTACK-2018"
@@ -17058,7 +17262,9 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0107-04"
+                "IND-0107-04",
+                "IND-0408-01",
+                "IND-I0407-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -17497,7 +17703,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0407-03"
+                "IND-0407-03",
+                "IND-O0411-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -18001,7 +18208,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-0303-04"
+                "IND-0303-04",
+                "IND-0407-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -18074,7 +18282,9 @@
               "phase_relevance": [
                 "aftermath"
               ],
-              "correlates_with": [],
+              "correlates_with": [
+                "IND-I0408-02"
+              ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
                 "NTAC-SYSTEMS-2020"
@@ -18572,7 +18782,8 @@
             "target_development"
            ],
            "correlates_with": [
-            "IND-F0101-03"
+             "IND-F0101-03",
+             "IND-F0101-04"
            ],
            "source_refs": [
             "GULYASH-FIELD-OPS-2004-2026",
@@ -18616,7 +18827,9 @@
             "target_development"
            ],
            "correlates_with": [
-            "IND-F0101-01"
+             "IND-F0101-01",
+             "IND-F0101-02",
+             "IND-F0101-05"
            ],
            "source_refs": [
             "GULYASH-FIELD-OPS-2004-2026",
@@ -19035,7 +19248,8 @@
               ],
               "correlates_with": [
                 "IND-F0102-02",
-                "IND-F0102-04"
+                "IND-F0102-04",
+                "IND-F0102-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -19082,7 +19296,8 @@
               ],
               "correlates_with": [
                 "IND-F0102-01",
-                "IND-F0102-03"
+                "IND-F0102-03",
+                "IND-F0102-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -19220,7 +19435,9 @@
               ],
               "correlates_with": [
                 "IND-F0102-01",
-                "IND-F0102-02"
+                "IND-F0102-02",
+                "IND-0103-02",
+                "IND-I0103-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -19559,7 +19776,10 @@
               ],
               "correlates_with": [
                 "IND-F0103-02",
-                "IND-F0103-03"
+                "IND-F0103-03",
+                "IND-0103-01",
+                "IND-F0103-04",
+                "IND-I0103-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -19604,7 +19824,8 @@
                 "target_development"
               ],
               "correlates_with": [
-                "IND-F0103-01"
+                "IND-F0103-01",
+                "IND-0103-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -19696,7 +19917,8 @@
               ],
               "correlates_with": [
                 "IND-F0103-01",
-                "IND-F0103-05"
+                "IND-F0103-05",
+                "IND-I0103-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -20085,7 +20307,8 @@
               ],
               "correlates_with": [
                 "IND-F0104-03",
-                "IND-F0104-05"
+                "IND-F0104-05",
+                "IND-I0104-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -20178,7 +20401,8 @@
                 "target_development"
               ],
               "correlates_with": [
-                "IND-F0104-01"
+                "IND-F0104-01",
+                "IND-I0104-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -20612,7 +20836,10 @@
               ],
               "correlates_with": [
                 "IND-F0105-03",
-                "IND-F0105-04"
+                "IND-F0105-04",
+                "IND-F0105-02",
+                "IND-I0103-01",
+                "IND-O0210-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -20753,7 +20980,9 @@
               ],
               "correlates_with": [
                 "IND-F0105-02",
-                "IND-F0105-05"
+                "IND-F0105-05",
+                "IND-F0105-01",
+                "IND-I0103-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -21321,7 +21550,8 @@
               ],
               "correlates_with": [
                 "IND-F0106-01",
-                "IND-F0106-02"
+                "IND-F0106-02",
+                "IND-I0107-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -21651,7 +21881,9 @@
               ],
               "correlates_with": [
                 "IND-F0107-03",
-                "IND-F0107-05"
+                "IND-F0107-05",
+                "IND-F0107-04",
+                "IND-I0107-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -21696,7 +21928,11 @@
                 "target_development"
               ],
               "correlates_with": [
-                "IND-F0107-05"
+                "IND-F0107-05",
+                "IND-0105-04",
+                "IND-I0108-01",
+                "IND-O0106-02",
+                "IND-O0202-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -21832,7 +22068,9 @@
               ],
               "correlates_with": [
                 "IND-F0107-01",
-                "IND-F0107-02"
+                "IND-F0107-02",
+                "IND-F0107-03",
+                "IND-I0107-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -22172,7 +22410,10 @@
               ],
               "correlates_with": [
                 "IND-F0108-02",
-                "IND-F0108-04"
+                "IND-F0108-04",
+                "IND-0106-02",
+                "IND-F0108-03",
+                "IND-I0106-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -22263,7 +22504,8 @@
               ],
               "correlates_with": [
                 "IND-F0108-01",
-                "IND-F0108-05"
+                "IND-F0108-05",
+                "IND-O0205-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -22307,7 +22549,8 @@
                 "target_development"
               ],
               "correlates_with": [
-                "IND-F0108-01"
+                "IND-F0108-01",
+                "IND-O0108-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -22352,7 +22595,9 @@
                 "target_development"
               ],
               "correlates_with": [
-                "IND-F0108-03"
+                "IND-F0108-03",
+                "IND-I0109-01",
+                "IND-O0205-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -22713,7 +22958,9 @@
               ],
               "correlates_with": [
                 "IND-F0109-02",
-                "IND-F0109-03"
+                "IND-F0109-03",
+                "IND-I0110-01",
+                "IND-O0109-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -22760,7 +23007,8 @@
               ],
               "correlates_with": [
                 "IND-F0109-01",
-                "IND-F0109-05"
+                "IND-F0109-05",
+                "IND-I0110-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -22807,7 +23055,8 @@
               ],
               "correlates_with": [
                 "IND-F0109-01",
-                "IND-F0109-04"
+                "IND-F0109-04",
+                "IND-I0110-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -22854,7 +23103,9 @@
               ],
               "correlates_with": [
                 "IND-F0109-03",
-                "IND-F0109-05"
+                "IND-F0109-05",
+                "IND-0107-04",
+                "IND-I0110-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -22901,7 +23152,9 @@
               ],
               "correlates_with": [
                 "IND-F0109-02",
-                "IND-F0109-04"
+                "IND-F0109-04",
+                "IND-0107-07",
+                "IND-O0109-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -23283,7 +23536,8 @@
               ],
               "correlates_with": [
                 "IND-F0110-01",
-                "IND-F0110-03"
+                "IND-F0110-03",
+                "IND-F0110-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -23375,7 +23629,9 @@
               ],
               "correlates_with": [
                 "IND-F0110-01",
-                "IND-F0110-03"
+                "IND-F0110-03",
+                "IND-0108-01",
+                "IND-F0110-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -23757,7 +24013,9 @@
               ],
               "correlates_with": [
                 "IND-F0201-02",
-                "IND-F0201-05"
+                "IND-F0201-05",
+                "IND-F0201-03",
+                "IND-I0201-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -23803,7 +24061,9 @@
               ],
               "correlates_with": [
                 "IND-F0201-01",
-                "IND-F0201-04"
+                "IND-F0201-04",
+                "IND-F0201-05",
+                "IND-I0201-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -23848,7 +24108,8 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-F0201-01"
+                "IND-F0201-01",
+                "IND-I0203-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -24285,7 +24546,8 @@
               ],
               "correlates_with": [
                 "IND-F0202-02",
-                "IND-F0202-04"
+                "IND-F0202-04",
+                "IND-I0210-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -24376,7 +24638,8 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-F0202-05"
+                "IND-F0202-05",
+                "IND-O0210-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -24420,7 +24683,8 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-F0202-01"
+                "IND-F0202-01",
+                "IND-I0202-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -24858,7 +25122,10 @@
               ],
               "correlates_with": [
                 "IND-F0203-01",
-                "IND-F0203-05"
+                "IND-F0203-05",
+                "IND-0203-04",
+                "IND-I0204-01",
+                "IND-I0209-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -24903,7 +25170,9 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-F0203-05"
+                "IND-F0203-05",
+                "IND-F0203-04",
+                "IND-I0204-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -24994,7 +25263,9 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-F0203-02"
+                "IND-F0203-02",
+                "IND-F0203-03",
+                "IND-I0204-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -25346,7 +25617,8 @@
               ],
               "correlates_with": [
                 "IND-F0204-02",
-                "IND-F0204-03"
+                "IND-F0204-03",
+                "IND-I0209-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -25440,7 +25712,11 @@
               ],
               "correlates_with": [
                 "IND-F0204-01",
-                "IND-F0204-04"
+                "IND-F0204-04",
+                "IND-0204-02",
+                "IND-F0204-05",
+                "IND-I0208-01",
+                "IND-I0208-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -25487,7 +25763,8 @@
               ],
               "correlates_with": [
                 "IND-F0204-02",
-                "IND-F0204-05"
+                "IND-F0204-05",
+                "IND-F0204-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -25894,7 +26171,8 @@
               ],
               "correlates_with": [
                 "IND-F0205-02",
-                "IND-F0205-03"
+                "IND-F0205-03",
+                "IND-F0205-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -25937,7 +26215,15 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-F0205-05"
+                "IND-F0205-05",
+                "IND-F0205-01",
+                "IND-I0209-01",
+                "IND-I0209-03",
+                "IND-I0209-04",
+                "IND-I0209-05",
+                "IND-I0308-01",
+                "IND-I0308-03",
+                "IND-I0308-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -26073,7 +26359,8 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-F0205-02"
+                "IND-F0205-02",
+                "IND-I0209-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -26417,7 +26704,9 @@
               ],
               "correlates_with": [
                 "IND-F0206-02",
-                "IND-F0206-05"
+                "IND-F0206-05",
+                "IND-0206-01",
+                "IND-F0206-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -26460,7 +26749,8 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-F0206-01"
+                "IND-F0206-01",
+                "IND-F0206-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -26931,7 +27221,8 @@
               ],
               "correlates_with": [
                 "IND-F0207-04",
-                "IND-F0207-05"
+                "IND-F0207-05",
+                "IND-F0207-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -27442,7 +27733,16 @@
               ],
               "correlates_with": [
                 "IND-F0208-03",
-                "IND-F0208-04"
+                "IND-F0208-04",
+                "IND-F0208-02",
+                "IND-I0204-04",
+                "IND-I0209-01",
+                "IND-I0209-03",
+                "IND-I0209-04",
+                "IND-I0302-01",
+                "IND-I0302-05",
+                "IND-I0308-02",
+                "IND-I0308-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -27579,7 +27879,9 @@
               ],
               "correlates_with": [
                 "IND-F0208-02",
-                "IND-F0208-05"
+                "IND-F0208-05",
+                "IND-F0208-01",
+                "IND-I0206-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -27625,7 +27927,8 @@
                 "mobilization"
               ],
               "correlates_with": [
-                "IND-F0208-04"
+                "IND-F0208-04",
+                "IND-I0204-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -27973,7 +28276,8 @@
               ],
               "correlates_with": [
                 "IND-F0209-04",
-                "IND-F0209-05"
+                "IND-F0209-05",
+                "IND-F0209-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -28162,7 +28466,8 @@
               ],
               "correlates_with": [
                 "IND-F0209-01",
-                "IND-F0209-03"
+                "IND-F0209-03",
+                "IND-F0209-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -28489,7 +28794,8 @@
               ],
               "correlates_with": [
                 "IND-F0301-04",
-                "IND-F0301-05"
+                "IND-F0301-05",
+                "IND-F0301-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -29006,7 +29312,8 @@
               ],
               "correlates_with": [
                 "IND-F0302-03",
-                "IND-F0302-04"
+                "IND-F0302-04",
+                "IND-F0302-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -29054,7 +29361,8 @@
               "correlates_with": [
                 "IND-F0302-01",
                 "IND-F0302-04",
-                "IND-F0302-05"
+                "IND-F0302-05",
+                "IND-I0304-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -29148,7 +29456,8 @@
               ],
               "correlates_with": [
                 "IND-F0302-01",
-                "IND-F0302-02"
+                "IND-F0302-02",
+                "IND-F0302-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -30162,7 +30471,9 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-F0304-04"
+                "IND-F0304-04",
+                "IND-F0304-01",
+                "IND-I0304-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -30210,7 +30521,8 @@
               ],
               "correlates_with": [
                 "IND-F0304-01",
-                "IND-F0304-03"
+                "IND-F0304-03",
+                "IND-I0309-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -30655,7 +30967,8 @@
               ],
               "correlates_with": [
                 "IND-F0305-01",
-                "IND-F0305-05"
+                "IND-F0305-05",
+                "IND-0301-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -31136,7 +31449,10 @@
               ],
               "correlates_with": [
                 "IND-F0306-03",
-                "IND-F0306-05"
+                "IND-F0306-05",
+                "IND-0303-05",
+                "IND-F0306-02",
+                "IND-O0314-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -31183,7 +31499,8 @@
               ],
               "correlates_with": [
                 "IND-F0306-01",
-                "IND-F0306-04"
+                "IND-F0306-04",
+                "IND-F0306-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -31276,7 +31593,8 @@
               ],
               "correlates_with": [
                 "IND-F0306-02",
-                "IND-F0306-05"
+                "IND-F0306-05",
+                "IND-0303-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -31324,7 +31642,8 @@
               ],
               "correlates_with": [
                 "IND-F0306-01",
-                "IND-F0306-02"
+                "IND-F0306-02",
+                "IND-F0306-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -31800,7 +32119,8 @@
               ],
               "correlates_with": [
                 "IND-F0307-02",
-                "IND-F0307-03"
+                "IND-F0307-03",
+                "IND-F0307-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -32170,7 +32490,8 @@
               ],
               "correlates_with": [
                 "IND-F0308-03",
-                "IND-F0308-05"
+                "IND-F0308-05",
+                "IND-I0306-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -32266,7 +32587,9 @@
               ],
               "correlates_with": [
                 "IND-F0308-01",
-                "IND-F0308-02"
+                "IND-F0308-02",
+                "IND-F0308-04",
+                "IND-I0306-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -32845,7 +33168,9 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-F0309-03"
+                "IND-F0309-03",
+                "IND-F0309-05",
+                "IND-I0305-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -33234,7 +33559,9 @@
               ],
               "correlates_with": [
                 "IND-F0401-03",
-                "IND-F0401-04"
+                "IND-F0401-04",
+                "IND-0401-01",
+                "IND-I0401-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -33279,7 +33606,8 @@
               ],
               "correlates_with": [
                 "IND-F0401-03",
-                "IND-F0401-05"
+                "IND-F0401-05",
+                "IND-0401-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -33325,7 +33653,9 @@
               ],
               "correlates_with": [
                 "IND-F0401-02",
-                "IND-F0401-05"
+                "IND-F0401-05",
+                "IND-F0401-01",
+                "IND-I0401-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -33756,7 +34086,9 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0402-05"
+                "IND-F0402-05",
+                "IND-F0402-02",
+                "IND-F0402-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -33800,7 +34132,9 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0402-01"
+                "IND-F0402-01",
+                "IND-F0402-03",
+                "IND-F0402-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -33845,7 +34179,9 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0402-02"
+                "IND-F0402-02",
+                "IND-0402-04",
+                "IND-I0404-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -33935,7 +34271,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0402-01"
+                "IND-F0402-01",
+                "IND-0402-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -34283,7 +34620,8 @@
               ],
               "correlates_with": [
                 "IND-F0403-03",
-                "IND-F0403-05"
+                "IND-F0403-05",
+                "IND-0403-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -34327,7 +34665,9 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0403-04"
+                "IND-F0403-04",
+                "IND-0403-01",
+                "IND-F0403-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -34803,7 +35143,9 @@
               ],
               "correlates_with": [
                 "IND-F0404-02",
-                "IND-F0404-04"
+                "IND-F0404-04",
+                "IND-0402-01",
+                "IND-O0404-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -34848,7 +35190,10 @@
               ],
               "correlates_with": [
                 "IND-F0404-01",
-                "IND-F0404-04"
+                "IND-F0404-04",
+                "IND-F0404-03",
+                "IND-I0405-01",
+                "IND-O0404-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -34893,7 +35238,8 @@
               ],
               "correlates_with": [
                 "IND-F0404-02",
-                "IND-F0404-05"
+                "IND-F0404-05",
+                "IND-0404-04"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -34938,7 +35284,9 @@
               ],
               "correlates_with": [
                 "IND-F0404-01",
-                "IND-F0404-02"
+                "IND-F0404-02",
+                "IND-F0404-05",
+                "IND-O0405-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -34983,7 +35331,9 @@
               ],
               "correlates_with": [
                 "IND-F0404-03",
-                "IND-F0404-04"
+                "IND-F0404-04",
+                "IND-I0405-02",
+                "IND-O0405-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -35328,7 +35678,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0405-04"
+                "IND-F0405-04",
+                "IND-O0407-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -35372,7 +35723,9 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0405-03"
+                "IND-F0405-03",
+                "IND-0405-02",
+                "IND-O0407-02"
               ],
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
@@ -35415,7 +35768,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0405-02"
+                "IND-F0405-02",
+                "IND-F0405-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -35459,7 +35813,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0405-01"
+                "IND-F0405-01",
+                "IND-O0405-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -35503,7 +35858,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0405-03"
+                "IND-F0405-03",
+                "IND-O0407-01"
               ],
               "source_refs": [
                 "CHAINALYSIS-CCR-2024",
@@ -35842,7 +36198,10 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0406-04"
+                "IND-F0406-04",
+                "IND-F0406-05",
+                "IND-I0406-02",
+                "IND-O0408-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -35929,7 +36288,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0406-02"
+                "IND-F0406-02",
+                "IND-O0408-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -36432,7 +36792,9 @@
               ],
               "correlates_with": [
                 "IND-F0407-02",
-                "IND-F0407-04"
+                "IND-F0407-04",
+                "IND-I0403-03",
+                "IND-O0404-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -36921,7 +37283,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0408-05"
+                "IND-F0408-05",
+                "IND-F0408-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -37393,7 +37756,8 @@
               ],
               "correlates_with": [
                 "IND-F0409-03",
-                "IND-F0409-04"
+                "IND-F0409-04",
+                "IND-I0407-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -37438,7 +37802,8 @@
               ],
               "correlates_with": [
                 "IND-F0409-04",
-                "IND-F0409-05"
+                "IND-F0409-05",
+                "IND-O0410-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -37483,7 +37848,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0409-01"
+                "IND-F0409-01",
+                "IND-O0410-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -37911,7 +38277,8 @@
               ],
               "correlates_with": [
                 "IND-F0410-03",
-                "IND-F0410-04"
+                "IND-F0410-04",
+                "IND-I0407-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -37954,7 +38321,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0410-05"
+                "IND-F0410-05",
+                "IND-O0411-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -38461,7 +38829,8 @@
               ],
               "correlates_with": [
                 "IND-F0411-01",
-                "IND-F0411-04"
+                "IND-F0411-04",
+                "IND-F0411-05"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -38550,7 +38919,8 @@
                 "aftermath"
               ],
               "correlates_with": [
-                "IND-F0411-03"
+                "IND-F0411-03",
+                "IND-F0411-02"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -38596,7 +38966,8 @@
               ],
               "correlates_with": [
                 "IND-F0411-01",
-                "IND-F0411-02"
+                "IND-F0411-02",
+                "IND-F0411-03"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -38915,7 +39286,11 @@
               ],
               "correlates_with": [
                 "IND-F0412-02",
-                "IND-F0412-03"
+                "IND-F0412-03",
+                "IND-F0412-04",
+                "IND-F0412-05",
+                "IND-I0408-01",
+                "IND-O0412-01"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -44155,7 +44530,8 @@
                 "guidance": "Establish what the actor can carry out and how close the real attempt is. A dry-run approach at the institution's events times entry and reads staff reaction, which can show access and intent, though it may reveal little of the means the actor will bring when it counts."
               },
               "correlates_with": [
-                "IND-0209-01"
+                "IND-0209-01",
+                "IND-O0108-03"
               ]
             },
             {
@@ -44247,6 +44623,10 @@
             },
             {
               "id": "IND-O0201-05",
+              "correlates_with": [
+                "IND-O0107-03",
+                "IND-O0108-04"
+              ],
               "behavior": "A threat actor tests forged credentials or spoofed institutional communications against a small subset of members, confirming the deception passes as authentic before deploying it at scale.",
               "category": "digital",
               "detection_sources": [
@@ -44604,7 +44984,9 @@
                 "IND-0105-04",
                 "IND-F0107-02",
                 "IND-I0108-01",
-                "IND-O0304-04"
+                "IND-O0304-04",
+                "IND-O0105-04",
+                "IND-O0106-01"
               ]
             },
             {
@@ -44647,7 +45029,9 @@
                 "guidance": "Establish how far the escalation has run and how fast. Broadening access requests can signal intent and a growing foothold, but where the actor sits on the path and their pace decide how close harm to the institution is."
               },
               "correlates_with": [
-                "IND-O0304-02"
+                "IND-O0304-02",
+                "IND-O0106-03",
+                "IND-O0406-04"
               ]
             },
             {
@@ -44734,7 +45118,8 @@
                 "guidance": "Weigh how firmly the behavior points to coercion and what the insider could be compelled to give up. Stress and withdrawal after outside contact can signal blackmail, but the same signs have private causes."
               },
               "correlates_with": [
-                "IND-I0108-03"
+                "IND-I0108-03",
+                "IND-O0106-04"
               ]
             },
             {
@@ -44780,7 +45165,8 @@
               "correlates_with": [
                 "IND-0101-06",
                 "IND-I0108-05",
-                "IND-O0308-01"
+                "IND-O0308-01",
+                "IND-O0106-02"
               ]
             }
           ],
@@ -45112,7 +45498,8 @@
               "correlates_with": [
                 "IND-O0409-01",
                 "IND-O0401-01",
-                "IND-O0313-03"
+                "IND-O0313-03",
+                "IND-O0103-05"
               ]
             },
             {
@@ -45620,7 +46007,8 @@
               },
               "correlates_with": [
                 "IND-O0302-05",
-                "IND-O0313-01"
+                "IND-O0313-01",
+                "IND-O0103-05"
               ]
             },
             {
@@ -45664,11 +46052,15 @@
                 "guidance": "Assess the actor's reach to push the forged material and how close release is. Fabricated memos and doctored images are potent, but a forgery only harms the institution once it can be placed where it will be believed."
               },
               "correlates_with": [
-                "IND-O0303-01"
+                "IND-O0303-01",
+                "IND-O0107-04"
               ]
             },
             {
               "id": "IND-O0204-03",
+              "correlates_with": [
+                "IND-O0103-03"
+              ],
               "behavior": "The threat actor scripts a coordinated messaging calendar, drafting identical talking points, hashtags, and hostile framing across many accounts that stay dormant until a synchronized launch date.",
               "category": "planning",
               "detection_sources": [
@@ -45749,7 +46141,8 @@
               },
               "correlates_with": [
                 "IND-O0302-03",
-                "IND-O0403-01"
+                "IND-O0403-01",
+                "IND-O0103-02"
               ]
             },
             {
@@ -46132,7 +46525,8 @@
                 "guidance": "Verify the curated identity and establish what internal access the applicant is really after. Interest weighted toward internal spaces over the mission suggests infiltration, but eager newcomers can look the same."
               },
               "correlates_with": [
-                "IND-0106-03"
+                "IND-0106-03",
+                "IND-O0108-01"
               ]
             },
             {
@@ -46177,7 +46571,8 @@
               },
               "correlates_with": [
                 "IND-F0108-05",
-                "IND-O0304-01"
+                "IND-O0304-01",
+                "IND-O0102-04"
               ]
             },
             {
@@ -46222,7 +46617,8 @@
               },
               "correlates_with": [
                 "IND-0106-02",
-                "IND-F0108-03"
+                "IND-F0108-03",
+                "IND-O0108-01"
               ]
             },
             {
@@ -46309,7 +46705,8 @@
                 "guidance": "Verify the professional record and establish what authority the sought position confers. A governance seat won on an inflated resume gives real standing, but the danger depends on the control that standing carries."
               },
               "correlates_with": [
-                "IND-O0305-03"
+                "IND-O0305-03",
+                "IND-O0102-01"
               ]
             }
           ],
@@ -46606,6 +47003,9 @@
           "indicators": [
             {
               "id": "IND-O0206-01",
+              "correlates_with": [
+                "IND-O0102-02"
+              ],
               "behavior": "The threat actor pushes to obtain signatory or financial authority beyond the role, requesting check-signing, wire approval, or account control that a member at that tenure and position would not normally hold.",
               "category": "financial",
               "detection_sources": [
@@ -46731,7 +47131,8 @@
                 "guidance": "Confirm the read on the maneuvering and how close it stands to a controlling majority. Packing a committee and timing bylaw motions can reveal much of the play, target, and method, so what remains is whether the account holds and whether this is a hostile takeover or ordinary institutional politics."
               },
               "correlates_with": [
-                "IND-O0305-01"
+                "IND-O0305-01",
+                "IND-O0102-03"
               ]
             },
             {
@@ -47147,7 +47548,8 @@
               },
               "correlates_with": [
                 "IND-O0301-02",
-                "IND-O0308-04"
+                "IND-O0308-04",
+                "IND-O0107-01"
               ]
             },
             {
@@ -47234,7 +47636,8 @@
                 "guidance": "Weigh how firmly the filings read as coercion rather than grievance, and gauge the pace. Calibrated lawsuits and records demands can burden the institution, but litigation rarely shows whether the intent is pressure or principle."
               },
               "correlates_with": [
-                "IND-O0311-01"
+                "IND-O0311-01",
+                "IND-O0107-02"
               ]
             },
             {
@@ -47278,7 +47681,8 @@
                 "guidance": "Establish what sustained access the insider can provide and whether the cooperation has taken hold. Paying for damaging documents can show the actor wants a durable hold, but the threat rests on the reach the insider grants."
               },
               "correlates_with": [
-                "IND-O0308-01"
+                "IND-O0308-01",
+                "IND-O0107-05"
               ]
             },
             {
@@ -48338,7 +48742,10 @@
                 "guidance": "Weigh whether the courting is a genuine bridge into the institution and what the recruited insiders would bring. Converting disaffected members lends reach, but internal grumbling is common, and the value turns on the access they carry."
               },
               "correlates_with": [
-                "IND-O0306-01"
+                "IND-O0306-01",
+                "IND-O0105-01",
+                "IND-O0105-02",
+                "IND-O0106-05"
               ]
             }
           ],
@@ -49125,6 +49532,9 @@
           "indicators": [
             {
               "id": "IND-O0211-01",
+              "correlates_with": [
+                "IND-O0104-02"
+              ],
               "behavior": "The threat actor stands up or acquires a small vendor or consultancy that already holds a trusted relationship with the institution, using that standing to obtain legitimate access it would otherwise be denied.",
               "category": "acquisition",
               "detection_sources": [
@@ -49661,7 +50071,9 @@
               },
               "correlates_with": [
                 "IND-I0408-01",
-                "IND-O0412-01"
+                "IND-O0412-01",
+                "IND-O0201-04",
+                "IND-O0207-05"
               ]
             },
             {
@@ -49706,7 +50118,9 @@
               "correlates_with": [
                 "IND-I0408-03",
                 "IND-O0412-03",
-                "IND-O0412-02"
+                "IND-O0412-02",
+                "IND-O0107-01",
+                "IND-O0207-01"
               ]
             },
             {
@@ -49794,7 +50208,8 @@
                 "guidance": "Weigh whether the demonstrated capability is the actor's full reach or only a rehearsed sliver, and how soon the primary act might land. A proof-of-capability sample can show the threat is not idle, yet whether the main event would match it, and its timing, may remain unclear."
               },
               "correlates_with": [
-                "IND-I0305-01"
+                "IND-I0305-01",
+                "IND-O0201-03"
               ]
             },
             {
@@ -50171,11 +50586,19 @@
                 "guidance": "Track how fast the message is spreading and how far past the seeding accounts it travels, and weigh whether the claim is gaining real traction or only its appearance. Whether one operator or a network runs it can stay open; coordinated timing can point to the method, yet the harm may turn on whether real audiences take up the claim."
               },
               "correlates_with": [
-                "IND-O0411-02"
+                "IND-O0411-02",
+                "IND-O0103-02",
+                "IND-O0201-01",
+                "IND-O0204-05"
               ]
             },
             {
               "id": "IND-O0302-02",
+              "correlates_with": [
+                "IND-O0101-01",
+                "IND-O0103-01",
+                "IND-O0209-02"
+              ],
               "behavior": "The threat actor organizes petitions, open letters, or resolutions demanding that the institution be defunded, dissolved, or stripped of its charter, staging a public claim that it should not exist.",
               "category": "communication",
               "detection_sources": [
@@ -50216,6 +50639,9 @@
             },
             {
               "id": "IND-O0302-03",
+              "correlates_with": [
+                "IND-O0204-04"
+              ],
               "behavior": "Narrative themes questioning the institution's legitimacy are seeded in fringe venues, then escalated to mainstream outlets on a coordinated schedule engineered to look like organic growing consensus.",
               "category": "planning",
               "detection_sources": [
@@ -50297,6 +50723,9 @@
             },
             {
               "id": "IND-O0302-05",
+              "correlates_with": [
+                "IND-O0204-01"
+              ],
               "behavior": "The threat actor impersonates the institution's own officials or channels to publish statements that undercut its standing and imply it lacks the authority it claims to hold.",
               "category": "digital",
               "detection_sources": [
@@ -50668,11 +51097,16 @@
                 "guidance": "Verify whether the documents are forged and how many named funders received them. Whether one actor or a coordinated effort delivered them can stay open; a crude forgery can fall flat where a polished one lands, and their power to shake confidence may rest on whether donors take them as genuine."
               },
               "correlates_with": [
-                "IND-O0403-03"
+                "IND-O0403-03",
+                "IND-O0204-02"
               ]
             },
             {
               "id": "IND-O0303-02",
+              "correlates_with": [
+                "IND-O0104-01",
+                "IND-O0203-04"
+              ],
               "behavior": "The threat actor contacts the institution's major donors and partners directly, seeding doubt about its integrity and urging them to withdraw support ahead of any public disclosure.",
               "category": "communication",
               "detection_sources": [
@@ -50754,6 +51188,9 @@
             },
             {
               "id": "IND-O0303-04",
+              "correlates_with": [
+                "IND-O0204-05"
+              ],
               "behavior": "Inauthentic accounts amplify a manufactured scandal until the controversy crosses into press coverage that the institution's members and funders routinely monitor, manufacturing an appearance of broad concern.",
               "category": "digital",
               "detection_sources": [
@@ -51168,7 +51605,9 @@
               },
               "correlates_with": [
                 "IND-I0208-04",
-                "IND-O0406-01"
+                "IND-O0406-01",
+                "IND-O0106-02",
+                "IND-O0205-02"
               ]
             },
             {
@@ -51211,7 +51650,10 @@
                 "guidance": "Determine what more the insider can still destroy and how near the wider disruptive event this precedes stands. Whether the insider acts alone or with an outside hand, and whether the deletion is the whole event or a precursor, can stay open; the scope still reachable and the timing of what follows are what remain to gauge."
               },
               "correlates_with": [
-                "IND-O0404-03"
+                "IND-O0404-03",
+                "IND-O0202-02",
+                "IND-O0206-02",
+                "IND-O0406-01"
               ]
             },
             {
@@ -51297,7 +51739,8 @@
               },
               "correlates_with": [
                 "IND-0105-05",
-                "IND-O0405-01"
+                "IND-O0405-01",
+                "IND-O0202-01"
               ]
             },
             {
@@ -51673,11 +52116,17 @@
                 "guidance": "Weigh whether the bloc commands the votes to win and whether the nominees are genuinely coordinated or independent. Filing for a majority of seats can show the aim and the timing, yet the strength behind the slate and the hand directing it may not be visible on the nomination papers."
               },
               "correlates_with": [
-                "IND-O0406-03"
+                "IND-O0406-03",
+                "IND-O0102-03",
+                "IND-O0206-03"
               ]
             },
             {
               "id": "IND-O0305-02",
+              "correlates_with": [
+                "IND-O0203-03",
+                "IND-O0208-04"
+              ],
               "behavior": "An outside faction quietly funds membership dues or sponsors admission for dozens of aligned individuals in the weeks before a governance vote, manufacturing a voting majority inside the institution.",
               "category": "financial",
               "detection_sources": [
@@ -51757,11 +52206,16 @@
                 "guidance": "Assess how close the amendments are to passing and whether the actor commands the votes to carry them. Rewriting quorum and removal rules can show the play, but a stalled motion and one about to clear the board differ sharply."
               },
               "correlates_with": [
-                "IND-O0406-03"
+                "IND-O0406-03",
+                "IND-O0205-05"
               ]
             },
             {
               "id": "IND-O0305-04",
+              "correlates_with": [
+                "IND-O0102-02",
+                "IND-O0206-05"
+              ],
               "behavior": "Aligned appointees move to replace the institution's counsel, auditor, or nominating chair with individuals loyal to the faction, capturing the gatekeeping roles that control who advances into leadership.",
               "category": "access",
               "detection_sources": [
@@ -52133,6 +52587,10 @@
           "indicators": [
             {
               "id": "IND-O0306-01",
+              "correlates_with": [
+                "IND-O0105-05",
+                "IND-O0209-05"
+              ],
               "behavior": "A threat actor launches a targeted outreach campaign to the institution's members or staff, privately messaging them with grievances and invitations to leave for a competing or breakaway organization.",
               "category": "communication",
               "detection_sources": [
@@ -52174,6 +52632,9 @@
             },
             {
               "id": "IND-O0306-02",
+              "correlates_with": [
+                "IND-O0105-04"
+              ],
               "behavior": "The institution records an abnormal cluster of resignations or membership cancellations within a short window, with departing individuals citing the same talking points that trace to an outside influence effort.",
               "category": "behavioral_change",
               "detection_sources": [
@@ -52612,6 +53073,9 @@
           "indicators": [
             {
               "id": "IND-O0307-01",
+              "correlates_with": [
+                "IND-O0104-01"
+              ],
               "behavior": "A threat actor runs a coordinated pressure campaign contacting the institution's major donors directly, urging them to withdraw pledges and warning of reputational risk if they continue giving.",
               "category": "communication",
               "detection_sources": [
@@ -52694,6 +53158,10 @@
             },
             {
               "id": "IND-O0307-03",
+              "correlates_with": [
+                "IND-O0104-03",
+                "IND-O0207-02"
+              ],
               "behavior": "A threat actor files or threatens complaints with grantmakers and regulators alleging misuse of funds, timed to trigger suspension of grant disbursements while the allegations are reviewed.",
               "category": "financial",
               "detection_sources": [
@@ -52734,6 +53202,9 @@
             },
             {
               "id": "IND-O0307-04",
+              "correlates_with": [
+                "IND-O0209-03"
+              ],
               "behavior": "An organized boycott effort publicly names the institution's corporate sponsors and demands they end support, sustaining the pressure across multiple channels until sponsorships are cancelled.",
               "category": "communication",
               "detection_sources": [
@@ -53099,6 +53570,11 @@
           "indicators": [
             {
               "id": "IND-O0308-01",
+              "correlates_with": [
+                "IND-O0202-05",
+                "IND-O0206-02",
+                "IND-O0207-04"
+              ],
               "behavior": "An insider systematically copies confidential board minutes, internal deliberations, or governance communications to external storage in volumes far exceeding their normal work, staging them for release.",
               "category": "digital",
               "detection_sources": [
@@ -53183,6 +53659,9 @@
             },
             {
               "id": "IND-O0308-03",
+              "correlates_with": [
+                "IND-O0103-04"
+              ],
               "behavior": "A threat actor files sweeping records requests or discovery motions engineered to compel the institution to surrender sensitive internal deliberations into the public record.",
               "category": "planning",
               "detection_sources": [
@@ -53264,7 +53743,8 @@
               },
               "correlates_with": [
                 "IND-O0411-01",
-                "IND-O0402-01"
+                "IND-O0402-01",
+                "IND-O0207-01"
               ]
             },
             {
@@ -53608,6 +54088,10 @@
           "indicators": [
             {
               "id": "IND-O0309-01",
+              "correlates_with": [
+                "IND-O0105-01",
+                "IND-O0205-04"
+              ],
               "behavior": "A threat actor seeds divisive narratives into the institution's internal forums and member channels, amplifying wedge issues designed to pit factions against one another rather than address any real grievance.",
               "category": "communication",
               "detection_sources": [
@@ -53689,6 +54173,9 @@
             },
             {
               "id": "IND-O0309-03",
+              "correlates_with": [
+                "IND-O0105-02"
+              ],
               "behavior": "A threat actor privately cultivates a subset of members with claims that leadership has betrayed them, encouraging them to organize a breakaway caucus that formally splits the institution.",
               "category": "planning",
               "detection_sources": [
@@ -54090,6 +54577,10 @@
           "indicators": [
             {
               "id": "IND-O0310-01",
+              "correlates_with": [
+                "IND-O0108-02",
+                "IND-O0209-04"
+              ],
               "behavior": "A threat actor mobilizes supporters to flood the institution's complaint, ticketing, or feedback channels with mass form submissions calibrated to bury legitimate matters under an unmanageable backlog.",
               "category": "behavioral_change",
               "detection_sources": [
@@ -54130,6 +54621,9 @@
             },
             {
               "id": "IND-O0310-02",
+              "correlates_with": [
+                "IND-O0108-05"
+              ],
               "behavior": "The institution's intake or application system receives a sudden surge of fake or duplicate submissions, consuming staff review capacity while crowding out genuine applicants.",
               "category": "behavioral_change",
               "detection_sources": [
@@ -54210,6 +54704,9 @@
             },
             {
               "id": "IND-O0310-04",
+              "correlates_with": [
+                "IND-O0208-02"
+              ],
               "behavior": "Organizers publicly circulate scripts and templates instructing supporters to phone, email, and message the institution's front desk en masse, coordinating the timing to saturate its human intake channels.",
               "category": "communication",
               "detection_sources": [
@@ -54574,6 +55071,9 @@
           "indicators": [
             {
               "id": "IND-O0311-01",
+              "correlates_with": [
+                "IND-O0207-03"
+              ],
               "behavior": "A threat actor files a rapid succession of near-identical lawsuits against the institution across multiple jurisdictions, each raising thin or duplicative claims that appear engineered to multiply the organization's defense costs rather than to win on merits.",
               "category": "planning",
               "detection_sources": [
@@ -54613,6 +55113,9 @@
             },
             {
               "id": "IND-O0311-02",
+              "correlates_with": [
+                "IND-O0104-03"
+              ],
               "behavior": "A threat actor coordinates a flood of templated regulatory or licensing complaints submitted by many ostensibly separate parties within a short window, each citing the same allegations and forcing the institution into simultaneous administrative responses.",
               "category": "communication",
               "detection_sources": [
@@ -55102,6 +55605,9 @@
             },
             {
               "id": "IND-O0312-02",
+              "correlates_with": [
+                "IND-O0104-05"
+              ],
               "behavior": "A threat actor buys up the institution's distressed debt at a discount and then refuses to restructure, positioning itself as a creditor able to trigger default, force asset sales, or dictate governance terms in exchange for forbearance.",
               "category": "financial",
               "detection_sources": [
@@ -55142,6 +55648,9 @@
             },
             {
               "id": "IND-O0312-03",
+              "correlates_with": [
+                "IND-O0102-01"
+              ],
               "behavior": "A threat actor launches a proxy solicitation urging members or shareholders to replace the sitting board with its own slate, circulating a dissident ballot and voting materials that would hand it control of the institution's governance.",
               "category": "communication",
               "detection_sources": [
@@ -55577,11 +56086,15 @@
                 "guidance": "Identify which stakeholders the cloned identity may be reaching and how far the deception has spread. Look-alike domains may make the method clear, yet the harm may turn on who acts on the false announcements first."
               },
               "correlates_with": [
-                "IND-O0409-02"
+                "IND-O0409-02",
+                "IND-O0204-01"
               ]
             },
             {
               "id": "IND-O0313-02",
+              "correlates_with": [
+                "IND-O0107-04"
+              ],
               "behavior": "A threat actor forges the institution's letterhead, logos, or signatures on fabricated official communications and circulates them to partners, regulators, or donors to trigger actions the organization never authorized.",
               "category": "communication",
               "detection_sources": [
@@ -55622,6 +56135,9 @@
             },
             {
               "id": "IND-O0313-03",
+              "correlates_with": [
+                "IND-O0203-01"
+              ],
               "behavior": "A threat actor stands up a fake payment or donation portal branded as the institution's own, redirecting funds meant for the organization into accounts the threat actor controls.",
               "category": "financial",
               "detection_sources": [
@@ -55662,6 +56178,10 @@
             },
             {
               "id": "IND-O0313-04",
+              "correlates_with": [
+                "IND-O0107-03",
+                "IND-O0108-03"
+              ],
               "behavior": "A threat actor impersonates institution officials on calls, emails, or video to issue false directives to staff and vendors, aiming to move resources or extract credentials while wearing the organization's authority.",
               "category": "communication",
               "detection_sources": [
@@ -56032,6 +56552,9 @@
           "indicators": [
             {
               "id": "IND-O0314-01",
+              "correlates_with": [
+                "IND-O0209-01"
+              ],
               "behavior": "A threat actor launches a coordinated boycott campaign with branded hashtags, pledge drives, and a public target list, calling on a constituency to withhold business from the institution until it capitulates to stated demands.",
               "category": "communication",
               "detection_sources": [
@@ -56072,6 +56595,9 @@
             },
             {
               "id": "IND-O0314-02",
+              "correlates_with": [
+                "IND-O0104-04"
+              ],
               "behavior": "A threat actor directly petitions the institution's advertisers and sponsors with dossiers and threatened counter-boycotts, pressuring them to pull funding and starve the organization of commercial support.",
               "category": "communication",
               "detection_sources": [
@@ -56112,6 +56638,9 @@
             },
             {
               "id": "IND-O0314-03",
+              "correlates_with": [
+                "IND-O0208-03"
+              ],
               "behavior": "A threat actor amplifies the boycott through inauthentic accounts and bot networks that inflate participation numbers and trending metrics, manufacturing the appearance of a mass constituency turning against the institution.",
               "category": "digital",
               "detection_sources": [
@@ -56586,6 +57115,10 @@
             },
             {
               "id": "IND-O0315-03",
+              "correlates_with": [
+                "IND-O0104-03",
+                "IND-O0211-03"
+              ],
               "behavior": "A threat actor files formal challenges to the institution's accreditation, charity status, or professional certification, presenting a curated complaint package to the standing authority to revoke the organization's operating legitimacy.",
               "category": "planning",
               "detection_sources": [
@@ -56626,6 +57159,9 @@
             },
             {
               "id": "IND-O0315-04",
+              "correlates_with": [
+                "IND-O0104-02"
+              ],
               "behavior": "A threat actor pressures the institution's key vendors, insurers, or landlords with public naming campaigns to refuse service, seeking to cut the organization off from the infrastructure it needs to function.",
               "category": "communication",
               "detection_sources": [
@@ -56988,6 +57524,9 @@
           "indicators": [
             {
               "id": "IND-O0401-01",
+              "correlates_with": [
+                "IND-O0203-01"
+              ],
               "behavior": "A threat actor files dissolution or withdrawal paperwork for the shell entities and front groups used against the institution shortly after the campaign concludes, winding them down before any inquiry can link them to a sponsor.",
               "category": "planning",
               "detection_sources": [
@@ -57028,6 +57567,9 @@
             },
             {
               "id": "IND-O0401-02",
+              "correlates_with": [
+                "IND-O0203-03"
+              ],
               "behavior": "A threat actor drains and closes the bank and crypto accounts tied to the front organizations, moving residual funds through layered transfers so the money trail back to the sponsor goes cold.",
               "category": "financial",
               "detection_sources": [
@@ -57068,6 +57610,9 @@
             },
             {
               "id": "IND-O0401-03",
+              "correlates_with": [
+                "IND-O0203-02"
+              ],
               "behavior": "A threat actor takes down the front group's websites, social accounts, and published materials en masse, scrubbing the digital footprint that connected the campaign to its organizational vectors.",
               "category": "digital",
               "detection_sources": [
@@ -57462,6 +58007,9 @@
           "indicators": [
             {
               "id": "IND-O0402-01",
+              "correlates_with": [
+                "IND-O0308-04"
+              ],
               "behavior": "The threat actor plants foreign-language strings, a rival's toolmarks, or forged internal memos inside the leaked material so investigators attribute the institutional breach to an unrelated party.",
               "category": "digital",
               "detection_sources": [
@@ -57955,6 +58503,9 @@
           "indicators": [
             {
               "id": "IND-O0403-01",
+              "correlates_with": [
+                "IND-O0204-04"
+              ],
               "behavior": "The threat actor seeds the hostile framing to a fringe blog, then cites it through progressively larger outlets, building a citation ladder that lets the delegitimization reach mainstream coverage as sourced reporting.",
               "category": "communication",
               "detection_sources": [
@@ -58035,6 +58586,9 @@
             },
             {
               "id": "IND-O0403-03",
+              "correlates_with": [
+                "IND-O0303-01"
+              ],
               "behavior": "The threat actor commissions a front think tank or advocacy group to publish a report that repackages the delegitimization as neutral analysis, lending institutional credibility to the sponsored narrative.",
               "category": "communication",
               "detection_sources": [
@@ -58561,7 +59115,9 @@
                 "guidance": "Establish whether the purge closes the operation or conceals an insider still in place. Wiping the audit trail can cover continued access as readily as a clean exit, and the deletion may not settle which."
               },
               "correlates_with": [
-                "IND-I0403-01"
+                "IND-I0403-01",
+                "IND-O0210-02",
+                "IND-O0304-02"
               ]
             },
             {
@@ -59001,7 +59557,8 @@
               "correlates_with": [
                 "IND-0404-04",
                 "IND-F0404-05",
-                "IND-I0405-02"
+                "IND-I0405-02",
+                "IND-O0304-04"
               ]
             },
             {
@@ -59089,7 +59646,8 @@
               "correlates_with": [
                 "IND-0404-06",
                 "IND-F0404-04",
-                "IND-I0405-01"
+                "IND-I0405-01",
+                "IND-O0210-04"
               ]
             },
             {
@@ -59503,7 +60061,8 @@
                 "guidance": "Confirm whether the dormant credentials still grant live access and how many other assets are held in reserve. Leaving an insider untouched can mark a foothold kept for a renewed campaign, and how usable it remains may not be clear from the access alone."
               },
               "correlates_with": [
-                "IND-O0304-02"
+                "IND-O0304-02",
+                "IND-O0304-01"
               ]
             },
             {
@@ -59548,6 +60107,12 @@
             },
             {
               "id": "IND-O0406-03",
+              "correlates_with": [
+                "IND-O0305-01",
+                "IND-O0305-03",
+                "IND-O0305-05",
+                "IND-O0312-01"
+              ],
               "behavior": "The threat actor keeps a recruited board member, advisor, or vendor in a trusted position inside the institution, holding the influence seat to steer future decisions from within.",
               "category": "access",
               "detection_sources": [
@@ -59995,7 +60560,8 @@
               },
               "correlates_with": [
                 "IND-0405-04",
-                "IND-F0405-05"
+                "IND-F0405-05",
+                "IND-O0208-01"
               ]
             },
             {
@@ -60039,7 +60605,8 @@
               },
               "correlates_with": [
                 "IND-0405-02",
-                "IND-F0405-02"
+                "IND-F0405-02",
+                "IND-O0301-03"
               ]
             },
             {
@@ -60081,11 +60648,15 @@
                 "guidance": "Determine whether the structured movement drains the operation or provisions the next one. Keeping deposits below reporting thresholds can indicate patience and method, and the slow drip may equally close the books or fund what follows."
               },
               "correlates_with": [
-                "IND-F0405-01"
+                "IND-F0405-01",
+                "IND-O0301-03"
               ]
             },
             {
               "id": "IND-O0407-04",
+              "correlates_with": [
+                "IND-O0208-04"
+              ],
               "behavior": "The threat actor funnels the funds through fabricated invoices and consulting contracts tied to front entities, dressing the transfers as legitimate business to launder the operational financing.",
               "category": "financial",
               "detection_sources": [
@@ -60947,6 +61518,9 @@
           "indicators": [
             {
               "id": "IND-O0409-01",
+              "correlates_with": [
+                "IND-O0203-01"
+              ],
               "behavior": "The threat actor's front organization dissolves its registered name and re-registers under a new brand with different officers within weeks, while retaining the same personnel, funding channels, and targeting focus against the institution.",
               "category": "planning",
               "detection_sources": [
@@ -60986,6 +61560,9 @@
             },
             {
               "id": "IND-O0409-02",
+              "correlates_with": [
+                "IND-O0313-01"
+              ],
               "behavior": "The threat actor migrates its online presence to fresh domains, handles, and hosting after sanction or takedown, seeding the new accounts with the prior audience via cross-posted redirect links.",
               "category": "digital",
               "detection_sources": [
@@ -61103,6 +61680,9 @@
             },
             {
               "id": "IND-O0409-05",
+              "correlates_with": [
+                "IND-O0208-04"
+              ],
               "behavior": "The threat actor moves pooled funds through new wallets and shell accounts tied to the rebranded entity, breaking the traceable chain to the sanctioned prior operation.",
               "category": "financial",
               "detection_sources": [
@@ -61464,7 +62044,9 @@
               "correlates_with": [
                 "IND-0407-01",
                 "IND-F0409-02",
-                "IND-I0407-02"
+                "IND-I0407-02",
+                "IND-O0101-01",
+                "IND-O0109-05"
               ]
             },
             {
@@ -61550,7 +62132,8 @@
               "correlates_with": [
                 "IND-F0409-03",
                 "IND-I0407-01",
-                "IND-O0412-01"
+                "IND-O0412-01",
+                "IND-O0109-04"
               ]
             },
             {
@@ -61951,11 +62534,15 @@
               },
               "correlates_with": [
                 "IND-0408-01",
-                "IND-F0410-02"
+                "IND-F0410-02",
+                "IND-O0308-04"
               ]
             },
             {
               "id": "IND-O0411-02",
+              "correlates_with": [
+                "IND-O0302-01"
+              ],
               "behavior": "The threat actor activates a network of inauthentic accounts and bots to reshare the exposure content at volume, manufacturing the appearance of broad organic outrage at the institution.",
               "category": "digital",
               "detection_sources": [
@@ -62445,11 +63032,17 @@
                 "guidance": "Assess whether the actor can actually deliver the further action the demand threatens, and how soon. Citing the completed harm can point to capability, and a repeat threat and a bluff read alike until the means are weighed."
               },
               "correlates_with": [
-                "IND-F0412-01"
+                "IND-F0412-01",
+                "IND-O0301-01",
+                "IND-O0410-03"
               ]
             },
             {
               "id": "IND-O0412-02",
+              "correlates_with": [
+                "IND-O0301-02",
+                "IND-O0308-02"
+              ],
               "behavior": "The threat actor sets an explicit deadline and escalation schedule, warning the institution that a second release or disruption follows unless a ransom or concession is met.",
               "category": "communication",
               "detection_sources": [
@@ -62489,6 +63082,9 @@
             },
             {
               "id": "IND-O0412-03",
+              "correlates_with": [
+                "IND-O0301-02"
+              ],
               "behavior": "The threat actor withholds a portion of exfiltrated institutional data as leverage, publicly confirming more exists to sustain pressure through staged partial disclosures.",
               "category": "digital",
               "detection_sources": [
@@ -62529,6 +63125,9 @@
             },
             {
               "id": "IND-O0412-04",
+              "correlates_with": [
+                "IND-O0301-05"
+              ],
               "behavior": "The threat actor mobilizes public and regulatory pressure on the institution in parallel with private demands, filing complaints or coordinating campaigns to raise the cost of refusing the ultimatum.",
               "category": "communication",
               "detection_sources": [
@@ -66953,7 +67552,8 @@
               "correlates_with": [
                 "IND-F0107-02",
                 "IND-I0405-02",
-                "IND-I0208-05"
+                "IND-I0208-05",
+                "IND-O0202-01"
               ]
             },
             {
@@ -66998,7 +67598,8 @@
               },
               "correlates_with": [
                 "IND-0105-04",
-                "IND-I0208-03"
+                "IND-I0208-03",
+                "IND-O0202-03"
               ]
             },
             {
@@ -67042,7 +67643,8 @@
                 "guidance": "Establish whether the coercion is producing access and how soon it could be used. Forcing privileged access through blackmail or threats to family can show the actor committing to a foothold, though the access may not have changed hands."
               },
               "correlates_with": [
-                "IND-I0208-02"
+                "IND-I0208-02",
+                "IND-O0202-04"
               ]
             },
             {
@@ -67086,7 +67688,8 @@
                 "guidance": "Assess whether the approach is developing into real collaboration and which facility it concerns. Cold-contacting a disgruntled operator to test receptiveness can be an early move, revealing neither a committed insider nor the site in view, and could come to nothing."
               },
               "correlates_with": [
-                "IND-I0208-05"
+                "IND-I0208-05",
+                "IND-O0106-01"
               ]
             },
             {
@@ -67130,7 +67733,8 @@
                 "guidance": "Determine what the actor will do with the mapped defenses and when. Tasking a cultivated engineer to chart segmentation, interlocks, and maintenance windows can point to an insider collecting for an attack, though it may not yet amount to a method to act."
               },
               "correlates_with": [
-                "IND-I0206-02"
+                "IND-I0206-02",
+                "IND-O0202-05"
               ]
             }
           ],
@@ -67510,7 +68114,8 @@
                 "guidance": "Identify which downstream operators the actor means to reach and how close delivery is. Seizing a trusted update channel can position malicious code to arrive through a signed path, though it may name neither the victims among many nor when it ships."
               },
               "correlates_with": [
-                "IND-I0209-02"
+                "IND-I0209-02",
+                "IND-O0211-04"
               ]
             },
             {
@@ -67596,7 +68201,8 @@
                 "guidance": "Determine whether the third-party employee is granting access and what the actor could do with it. Pressuring a maintenance firm's staff to widen privileged access can target a route in, though a request may not amount to access held or the means to use it."
               },
               "correlates_with": [
-                "IND-I0205-04"
+                "IND-I0205-04",
+                "IND-O0211-02"
               ]
             },
             {
@@ -68156,7 +68762,8 @@
               "correlates_with": [
                 "IND-F0109-03",
                 "IND-0107-04",
-                "IND-I0407-01"
+                "IND-I0407-01",
+                "IND-O0109-02"
               ]
             }
           ],
@@ -68483,7 +69090,8 @@
                 "guidance": "Confirm whether the actor has live access to the production control system. Rehearsing the intrusion against a lab replica until it runs reliably can point to real capability and intent, yet a rehearsal on a replica cannot by itself establish reach into the operational network, where an attack would have to land."
               },
               "correlates_with": [
-                "IND-I0301-02"
+                "IND-I0301-02",
+                "IND-I0104-05"
               ]
             },
             {
@@ -68527,11 +69135,17 @@
                 "guidance": "Verify what reach the actor has into the live process and how fast they are moving. Modeling how a setpoint or safety function reacts to unauthorized changes can show the target and method are well understood, yet a digital twin runs apart from the plant, so the access and timing an attack would need may not surface from the simulation."
               },
               "correlates_with": [
-                "IND-I0302-01"
+                "IND-I0302-01",
+                "IND-I0104-01"
               ]
             },
             {
               "id": "IND-I0201-03",
+              "correlates_with": [
+                "IND-I0104-03",
+                "IND-I0106-01",
+                "IND-I0106-05"
+              ],
               "behavior": "Threat actor tests attack tooling against procured controllers, RTUs, or PLCs matching the target vendor and firmware version on an isolated bench setup",
               "category": "planning",
               "detection_sources": [
@@ -68614,7 +69228,8 @@
               "correlates_with": [
                 "IND-F0201-01",
                 "IND-F0201-02",
-                "IND-I0401-03"
+                "IND-I0401-03",
+                "IND-I0101-04"
               ]
             },
             {
@@ -68658,7 +69273,8 @@
                 "guidance": "Confirm whether the actor holds live access to the production system. Sandbox validation can point to capability and intent, yet a rehearsal against a copied configuration cannot by itself establish reach into the operational network, where an attack would have to take effect."
               },
               "correlates_with": [
-                "IND-I0301-03"
+                "IND-I0301-03",
+                "IND-I0104-02"
               ]
             }
           ],
@@ -69982,7 +70598,10 @@
               },
               "correlates_with": [
                 "IND-F0203-02",
-                "IND-I0403-03"
+                "IND-I0403-03",
+                "IND-I0103-01",
+                "IND-I0103-03",
+                "IND-I0107-01"
               ]
             },
             {
@@ -70026,7 +70645,8 @@
               },
               "correlates_with": [
                 "IND-F0203-03",
-                "IND-I0304-03"
+                "IND-I0304-03",
+                "IND-I0103-04"
               ]
             },
             {
@@ -70069,7 +70689,9 @@
                 "guidance": "Identify the capability the actor brings past the fence. Scaling in after confirming the site is empty can point to intent and opportunity, yet climbing the fence may show little of what an attack on the telemetry site would use, and trespass alone can also be reconnaissance or theft."
               },
               "correlates_with": [
-                "IND-F0203-05"
+                "IND-F0203-05",
+                "IND-I0103-02",
+                "IND-I0103-04"
               ]
             },
             {
@@ -70115,7 +70737,8 @@
               },
               "correlates_with": [
                 "IND-F0208-01",
-                "IND-I0304-04"
+                "IND-I0304-04",
+                "IND-I0103-05"
               ]
             },
             {
@@ -70159,7 +70782,8 @@
                 "guidance": "Determine the capability behind the entry into the conduit. Prying the vault cover can reach a pipeline's fiber and control lines, yet standing over the lines may show little of what an attack on them would require, and access to the conduit can also serve cable theft or covert tapping."
               },
               "correlates_with": [
-                "IND-F0208-05"
+                "IND-F0208-05",
+                "IND-I0102-02"
               ]
             }
           ],
@@ -70478,7 +71102,9 @@
                 "guidance": "Assess what the actor can do past the login and which system they are after. Phished operator credentials on the VPN can secure a foothold, yet the access on its own may show little of the capability against the process or the target, and a stolen login can also be sold or used for data theft rather than a strike."
               },
               "correlates_with": [
-                "IND-I0402-01"
+                "IND-I0402-01",
+                "IND-I0105-03",
+                "IND-I0106-03"
               ]
             },
             {
@@ -70523,7 +71149,8 @@
                 "guidance": "Weigh whether the actor can move from watching to changing the process. Reaching an exposed HMI panel and loading the live display can point to the target and to reach, yet viewing a panel is not the same as the capability to manipulate it, and an open panel can also draw a curious scanner with no intent to act."
               },
               "correlates_with": [
-                "IND-I0301-03"
+                "IND-I0301-03",
+                "IND-I0105-02"
               ]
             },
             {
@@ -70574,6 +71201,11 @@
             },
             {
               "id": "IND-I0205-04",
+              "correlates_with": [
+                "IND-I0105-03",
+                "IND-I0109-01",
+                "IND-I0109-04"
+              ],
               "behavior": "Threat actor tunnels traffic through a vendor maintenance link left enabled after a field service visit to bridge into the OT segment",
               "category": "access",
               "detection_sources": [
@@ -70616,6 +71248,9 @@
             },
             {
               "id": "IND-I0205-05",
+              "correlates_with": [
+                "IND-I0105-02"
+              ],
               "behavior": "Threat actor authenticates to a remote-desktop service exposed on the control-system perimeter using reused vendor default passwords",
               "category": "access",
               "detection_sources": [
@@ -70979,7 +71614,10 @@
                 "guidance": "Determine the specific change the actor means to push. Reading a PLC's ladder logic and I/O can point to capability, intent, target, and reach together, yet the enumeration may show little of the manipulation an attack would carry out, and studying logic can also be espionage or preparation the actor never completes."
               },
               "correlates_with": [
-                "IND-I0301-02"
+                "IND-I0301-02",
+                "IND-I0104-03",
+                "IND-I0105-01",
+                "IND-I0106-02"
               ]
             },
             {
@@ -71024,7 +71662,10 @@
                 "guidance": "Verify what the actor intends to do to the safety controllers. Reaching the workstation that programs them can point to the target and the access, yet the pivot itself may show little of the change an attack would make, and landing on that host can also be a foothold for dwell rather than immediate action."
               },
               "correlates_with": [
-                "IND-I0302-01"
+                "IND-I0302-01",
+                "IND-I0105-05",
+                "IND-I0106-03",
+                "IND-I0108-05"
               ]
             },
             {
@@ -71068,7 +71709,9 @@
                 "guidance": "Identify whether the actor can move from reading to writing. A live Modbus session pulling register values can prove presence on the control network, yet reading alone may not show the capability to force a harmful change, and an engineer's misconfigured poll can look the same."
               },
               "correlates_with": [
-                "IND-I0301-05"
+                "IND-I0301-05",
+                "IND-I0105-01",
+                "IND-I0105-04"
               ]
             },
             {
@@ -72016,7 +72659,8 @@
                 "guidance": "Weigh whether the insider is genuinely complicit and what the actor can then do. Getting an engineer to key in their own console credentials can grant access, yet a secondhand report can misread coercion, confusion, or a routine favor, and the login itself may show little of the capability behind an attack."
               },
               "correlates_with": [
-                "IND-I0405-02"
+                "IND-I0405-02",
+                "IND-I0108-03"
               ]
             },
             {
@@ -72059,7 +72703,8 @@
                 "guidance": "Confirm what the quiet access enables and which system it reaches. Using an insider's legitimate token to enter the plant network can avoid new-account alerts, yet valid-looking access may give up neither the target nor what an attack would do, and a borrowed token can also serve data theft rather than disruption."
               },
               "correlates_with": [
-                "IND-I0301-02"
+                "IND-I0301-02",
+                "IND-I0108-02"
               ]
             },
             {
@@ -72101,7 +72746,8 @@
                 "guidance": "Identify what the actor is equipped to do inside the control room. Riding an employee's badge-and-login sequence past the door can secure presence, yet tailgating in may show little of the capability an attack would use, and unauthorized entry can also be theft or a shortcut with no strike intended."
               },
               "correlates_with": [
-                "IND-F0204-03"
+                "IND-F0204-03",
+                "IND-O0304-01"
               ]
             },
             {
@@ -72146,7 +72792,9 @@
               },
               "correlates_with": [
                 "IND-I0301-01",
-                "IND-I0405-05"
+                "IND-I0405-05",
+                "IND-I0108-01",
+                "IND-I0108-04"
               ]
             }
           ],
@@ -72517,7 +73165,8 @@
                 "guidance": "Establish when the hidden logic is meant to fire and against what. Implanting unauthorized firmware that runs beneath monitoring can point to real capability and method, yet dormant logic may not surface its trigger or its target until it acts, and an implant can also lie in wait as leverage rather than a scheduled attack."
               },
               "correlates_with": [
-                "IND-I0301-01"
+                "IND-I0301-01",
+                "IND-I0109-02"
               ]
             },
             {
@@ -72980,7 +73629,8 @@
                 "guidance": "Establish where this foothold sits on the path to an attack on the system and what it is aimed at. Repurposing valid credentials to hold a jump host can signal position and intent, though the target system and the next move may not yet be visible, and legitimate administration can look much the same."
               },
               "correlates_with": [
-                "IND-I0305-05"
+                "IND-I0305-05",
+                "IND-I0109-01"
               ]
             },
             {
@@ -73107,7 +73757,8 @@
                 "guidance": "Assemble a picture of what the cache holds and how soon it is meant to be used. Pre-positioning tools and access hardware inside the facility can point to advanced preparation, but the staged capability and the timing may not be evident from the cache alone."
               },
               "correlates_with": [
-                "IND-F0202-01"
+                "IND-F0202-01",
+                "IND-I0107-03"
               ]
             },
             {
@@ -73469,7 +74120,11 @@
                 "guidance": "Confirm the setpoint is a hostile command rather than a control fault or a mis-keyed value, and gauge how far past its rated envelope the asset has been driven. The command alone may settle little about whether one actor or several is behind it, or whether this is the whole attack or cover for a second act."
               },
               "correlates_with": [
-                "IND-I0401-05"
+                "IND-I0401-05",
+                "IND-I0104-01",
+                "IND-I0207-02",
+                "IND-I0208-05",
+                "IND-I0209-02"
               ]
             },
             {
@@ -73515,7 +74170,16 @@
                 "IND-I0403-01",
                 "IND-I0404-05",
                 "IND-I0402-04",
-                "IND-I0401-02"
+                "IND-I0401-02",
+                "IND-I0101-05",
+                "IND-I0102-04",
+                "IND-I0201-01",
+                "IND-I0203-01",
+                "IND-I0206-01",
+                "IND-I0206-05",
+                "IND-I0208-03",
+                "IND-I0209-05",
+                "IND-I0210-02"
               ]
             },
             {
@@ -73558,7 +74222,11 @@
                 "guidance": "Confirm the override is hostile rather than a legitimate operator action or a control error, and build a running picture of how far the actuators have been forced past their limits. The override alone may show little of whether one actor or several is behind it or what comes next."
               },
               "correlates_with": [
-                "IND-I0403-02"
+                "IND-I0403-02",
+                "IND-I0201-05",
+                "IND-I0205-02",
+                "IND-I0206-04",
+                "IND-I0208-01"
               ]
             },
             {
@@ -73642,7 +74310,11 @@
                 "guidance": "Confirm the commands are hostile rather than a controller fault, and gauge how far the process has been forced out of sequence. The commands alone may reveal little of the actor's full reach or what comes next, and one actor or several may be at work."
               },
               "correlates_with": [
-                "IND-I0403-04"
+                "IND-I0403-04",
+                "IND-I0105-01",
+                "IND-I0106-01",
+                "IND-I0206-03",
+                "IND-I0209-01"
               ]
             }
           ],
@@ -73967,11 +74639,18 @@
               },
               "correlates_with": [
                 "IND-F0208-01",
-                "IND-I0402-02"
+                "IND-I0402-02",
+                "IND-I0104-03",
+                "IND-I0201-02",
+                "IND-I0206-02",
+                "IND-I0207-03"
               ]
             },
             {
               "id": "IND-I0302-02",
+              "correlates_with": [
+                "IND-I0104-03"
+              ],
               "behavior": "Threat actor disables hardwired interlocks that normally halt equipment when process conditions exceed protective thresholds",
               "category": "access",
               "detection_sources": [
@@ -74134,7 +74813,9 @@
                 "guidance": "Confirm the controller was forced out of protective mode rather than left in it by scheduled maintenance, and assess whether a manipulation is already exploiting the open window and how far the exposure has run. The bypass alone may show little of whether one actor or several is behind it or what follows."
               },
               "correlates_with": [
-                "IND-F0208-01"
+                "IND-F0208-01",
+                "IND-I0104-04",
+                "IND-I0207-03"
               ]
             }
           ],
@@ -74441,7 +75122,9 @@
                 "guidance": "Confirm the HMI is spoofed rather than showing a display glitch, and establish the real process values and how far the true state has drifted while nominal readings were shown. Whether one actor or several is behind it, the spoof alone may settle little."
               },
               "correlates_with": [
-                "IND-I0403-01"
+                "IND-I0403-01",
+                "IND-I0206-04",
+                "IND-I0209-03"
               ]
             },
             {
@@ -74485,7 +75168,9 @@
                 "guidance": "Confirm the consoles are replaying stale telemetry rather than frozen by a stale data feed, and establish the live process state and how long the replay may have masked an active manipulation. Whether one actor or several is behind it, the replay alone may reveal little of what else is underway."
               },
               "correlates_with": [
-                "IND-I0403-02"
+                "IND-I0403-02",
+                "IND-I0104-02",
+                "IND-I0205-03"
               ]
             },
             {
@@ -74530,6 +75215,9 @@
             },
             {
               "id": "IND-I0303-04",
+              "correlates_with": [
+                "IND-I0104-02"
+              ],
               "behavior": "Threat actor falsifies sensor values written to the process historian to conceal the true operating state from operators",
               "category": "digital",
               "detection_sources": [
@@ -74921,7 +75609,8 @@
               },
               "correlates_with": [
                 "IND-I0403-03",
-                "IND-I0401-04"
+                "IND-I0401-04",
+                "IND-I0103-02"
               ]
             },
             {
@@ -75007,7 +75696,8 @@
               },
               "correlates_with": [
                 "IND-F0302-02",
-                "IND-I0406-02"
+                "IND-I0406-02",
+                "IND-I0204-02"
               ]
             },
             {
@@ -75053,7 +75743,8 @@
                 "IND-I0405-04",
                 "IND-I0404-01",
                 "IND-I0407-01",
-                "IND-I0401-01"
+                "IND-I0401-01",
+                "IND-I0204-04"
               ]
             },
             {
@@ -75417,7 +76108,9 @@
               },
               "correlates_with": [
                 "IND-I0408-01",
-                "IND-I0406-01"
+                "IND-I0406-01",
+                "IND-I0101-01",
+                "IND-O0301-04"
               ]
             },
             {
@@ -75505,7 +76198,8 @@
                 "guidance": "Confirm the load-shed commands are unauthorized rather than a legitimate emergency shed, and gauge how wide the rolling outages run. Whether one actor or several is behind it, the forced outages alone may settle little about what comes next."
               },
               "correlates_with": [
-                "IND-I0406-02"
+                "IND-I0406-02",
+                "IND-I0102-01"
               ]
             },
             {
@@ -75549,7 +76243,8 @@
                 "guidance": "Confirm the valve closures are hostile rather than an operational trip, and gauge how far downstream the stranded delivery is felt. Whether one actor or several is behind it, and whether this is the whole attack or a step toward more, the closures alone may reveal little."
               },
               "correlates_with": [
-                "IND-I0408-04"
+                "IND-I0408-04",
+                "IND-I0102-02"
               ]
             },
             {
@@ -75593,7 +76288,9 @@
                 "guidance": "Confirm the traffic flood is deliberate rather than a network fault, and gauge how much of dispatch it has stalled and how far the lost visibility reaches. Whether one actor or several is behind it, the flood alone may settle little about what comes next."
               },
               "correlates_with": [
-                "IND-I0408-03"
+                "IND-I0408-03",
+                "IND-I0207-01",
+                "IND-I0210-01"
               ]
             }
           ],
@@ -75929,7 +76626,8 @@
               },
               "correlates_with": [
                 "IND-F0308-01",
-                "IND-I0406-03"
+                "IND-I0406-03",
+                "IND-I0202-02"
               ]
             },
             {
@@ -76963,7 +77661,8 @@
                 "guidance": "Confirm the counterfeit timing broadcast rather than a receiver failure, and gauge how far the signaling desynchronization extends. Whether one actor or several is behind it, the broadcast alone may reveal little of whether more is intended."
               },
               "correlates_with": [
-                "IND-F0205-02"
+                "IND-F0205-02",
+                "IND-I0101-04"
               ]
             },
             {
@@ -77832,11 +78531,15 @@
               },
               "correlates_with": [
                 "IND-F0401-01",
-                "IND-0401-01"
+                "IND-0401-01",
+                "IND-I0304-04"
               ]
             },
             {
               "id": "IND-I0401-02",
+              "correlates_with": [
+                "IND-I0301-02"
+              ],
               "behavior": "Threat actor terminates the remote session and deletes command history to close out the intrusion cleanly",
               "category": "digital",
               "detection_sources": [
@@ -77914,7 +78617,8 @@
                 "guidance": "Track where the rehearsed route leads and what the discarded items leave behind. Shedding tools in transit can mark a finished operation or a withdrawal to a safe position for the next, and the route alone may not separate the two."
               },
               "correlates_with": [
-                "IND-0401-02"
+                "IND-0401-02",
+                "IND-I0201-04"
               ]
             },
             {
@@ -77957,11 +78661,15 @@
               },
               "correlates_with": [
                 "IND-F0401-03",
-                "IND-0401-05"
+                "IND-0401-05",
+                "IND-I0304-01"
               ]
             },
             {
               "id": "IND-I0401-05",
+              "correlates_with": [
+                "IND-I0301-01"
+              ],
               "behavior": "Threat actor disconnects the remote access infrastructure and abandons the staging server to sever attribution",
               "category": "digital",
               "detection_sources": [
@@ -78290,6 +78998,9 @@
           "indicators": [
             {
               "id": "IND-I0402-01",
+              "correlates_with": [
+                "IND-I0205-01"
+              ],
               "behavior": "Threat actor retains valid operator credentials harvested during the operation to enable later re-entry without renewed reconnaissance",
               "category": "access",
               "detection_sources": [
@@ -78330,6 +79041,9 @@
             },
             {
               "id": "IND-I0402-02",
+              "correlates_with": [
+                "IND-I0302-01"
+              ],
               "behavior": "Threat actor plants a dormant implant in control-system firmware timed to activate for a future disruptive event",
               "category": "digital",
               "detection_sources": [
@@ -78412,6 +79126,10 @@
             },
             {
               "id": "IND-I0402-04",
+              "correlates_with": [
+                "IND-I0205-03",
+                "IND-I0301-02"
+              ],
               "behavior": "Threat actor backdoors a remote maintenance account on OT equipment so the foothold survives password resets and preserves a re-entry channel",
               "category": "digital",
               "detection_sources": [
@@ -78766,6 +79484,13 @@
           "indicators": [
             {
               "id": "IND-I0403-01",
+              "correlates_with": [
+                "IND-I0203-01",
+                "IND-I0301-02",
+                "IND-I0303-01",
+                "IND-I0309-02",
+                "IND-O0404-03"
+              ],
               "behavior": "Threat actor wipes control-system event logs to erase traces of the unauthorized commands issued during the operation",
               "category": "digital",
               "detection_sources": [
@@ -78807,6 +79532,10 @@
             },
             {
               "id": "IND-I0403-02",
+              "correlates_with": [
+                "IND-I0301-03",
+                "IND-I0303-02"
+              ],
               "behavior": "Threat actor forges entries in the computerized maintenance management system to attribute the incident to routine equipment failure",
               "category": "digital",
               "detection_sources": [
@@ -78885,11 +79614,17 @@
                 "guidance": "Determine what the missing footage covered and reconstruct the approach from adjacent sources. Overwriting the recordings across the access window can remove the actor's face and route, though the gap itself may point to where to look elsewhere."
               },
               "correlates_with": [
-                "IND-F0407-03"
+                "IND-F0407-03",
+                "IND-I0204-01",
+                "IND-I0304-01"
               ]
             },
             {
               "id": "IND-I0403-04",
+              "correlates_with": [
+                "IND-I0206-05",
+                "IND-I0301-05"
+              ],
               "behavior": "Threat actor tampers with SCADA historian timestamps to obscure the true sequence of manipulated setpoints",
               "category": "digital",
               "detection_sources": [
@@ -79294,7 +80029,8 @@
               },
               "correlates_with": [
                 "IND-F0402-03",
-                "IND-0402-04"
+                "IND-0402-04",
+                "IND-I0304-04"
               ]
             },
             {
@@ -79421,6 +80157,9 @@
             },
             {
               "id": "IND-I0404-05",
+              "correlates_with": [
+                "IND-I0301-02"
+              ],
               "behavior": "Threat actor seeds planted device metadata and file artifacts pointing at an innocent third party across compromised systems",
               "category": "digital",
               "detection_sources": [
@@ -79772,7 +80511,9 @@
               },
               "correlates_with": [
                 "IND-F0404-02",
-                "IND-0404-01"
+                "IND-0404-01",
+                "IND-I0107-01",
+                "IND-O0405-03"
               ]
             },
             {
@@ -79816,11 +80557,18 @@
               },
               "correlates_with": [
                 "IND-F0404-05",
-                "IND-0404-04"
+                "IND-0404-04",
+                "IND-I0108-01",
+                "IND-I0208-02",
+                "IND-O0405-01"
               ]
             },
             {
               "id": "IND-I0405-03",
+              "correlates_with": [
+                "IND-I0107-02",
+                "IND-O0404-04"
+              ],
               "behavior": "Threat actor severs traceable financial links to collaborators to obscure the wider support network",
               "category": "financial",
               "detection_sources": [
@@ -79900,7 +80648,9 @@
                 "guidance": "Determine whether the dispersal is disbandment or preservation. Scattering and relocating members can break visible associations while keeping a trained cell intact, so map the movement before the links go cold."
               },
               "correlates_with": [
-                "IND-0404-02"
+                "IND-0404-02",
+                "IND-I0107-05",
+                "IND-I0304-04"
               ]
             },
             {
@@ -79943,7 +80693,8 @@
                 "guidance": "Assess whether the cover story holds and what the protected employee can still reach. A rehearsed account among coworkers can keep an insider in place and credible, so test the story and scope the access it may shield."
               },
               "correlates_with": [
-                "IND-0404-06"
+                "IND-0404-06",
+                "IND-I0208-05"
               ]
             }
           ],
@@ -80239,6 +80990,9 @@
           "indicators": [
             {
               "id": "IND-I0406-01",
+              "correlates_with": [
+                "IND-I0305-01"
+              ],
               "behavior": "Threat actor monitors utility outage maps and public status dashboards to confirm whether the targeted facility lost service",
               "category": "surveillance",
               "detection_sources": [
@@ -80316,11 +81070,16 @@
                 "guidance": "Determine whether gauging the disruption's scale is idle interest or preparation to strike again. Tracking news and broadcasts can measure the effect achieved, though tying the watcher to the actor takes more than the viewing itself."
               },
               "correlates_with": [
-                "IND-F0406-01"
+                "IND-F0406-01",
+                "IND-I0304-03",
+                "IND-I0305-03"
               ]
             },
             {
               "id": "IND-I0406-03",
+              "correlates_with": [
+                "IND-I0306-01"
+              ],
               "behavior": "Threat actor tracks social media posts from affected residents to verify that the intended physical effect occurred on the ground",
               "category": "surveillance",
               "detection_sources": [
@@ -80361,6 +81120,12 @@
             },
             {
               "id": "IND-I0406-04",
+              "correlates_with": [
+                "IND-I0101-01",
+                "IND-I0307-01",
+                "IND-I0308-01",
+                "IND-I0309-01"
+              ],
               "behavior": "Threat actor examines publicly exposed SCADA telemetry and grid frequency readings to measure the operational impact of the disruption",
               "category": "surveillance",
               "detection_sources": [
@@ -80753,11 +81518,19 @@
               },
               "correlates_with": [
                 "IND-F0409-01",
-                "IND-0407-01"
+                "IND-0407-01",
+                "IND-I0110-05",
+                "IND-I0304-04",
+                "IND-O0410-03"
               ]
             },
             {
               "id": "IND-I0407-02",
+              "correlates_with": [
+                "IND-I0110-01",
+                "IND-I0304-05",
+                "IND-O0410-01"
+              ],
               "behavior": "Threat actor posts a manifesto framing the infrastructure disruption as retaliation against the operating organization",
               "category": "communication",
               "detection_sources": [
@@ -80838,6 +81611,9 @@
             },
             {
               "id": "IND-I0407-04",
+              "correlates_with": [
+                "IND-I0110-02"
+              ],
               "behavior": "Threat actor boasts about the operation to associates and urges sympathizers to replicate the method against similar targets",
               "category": "communication",
               "detection_sources": [
@@ -80917,7 +81693,8 @@
               },
               "correlates_with": [
                 "IND-F0410-01",
-                "IND-0407-03"
+                "IND-0407-03",
+                "IND-I0304-02"
               ]
             }
           ],
@@ -81251,7 +82028,9 @@
               },
               "correlates_with": [
                 "IND-F0412-01",
-                "IND-0405-01"
+                "IND-0405-01",
+                "IND-I0305-01",
+                "IND-O0301-01"
               ]
             },
             {
@@ -81295,11 +82074,16 @@
                 "guidance": "Determine whether the actor still holds the access to make good on a repeat. A threat to extend the disruption bites only if the foothold survived the first event, so measure the standing capability behind the demand."
               },
               "correlates_with": [
-                "IND-0409-03"
+                "IND-0409-03",
+                "IND-I0110-03"
               ]
             },
             {
               "id": "IND-I0408-03",
+              "correlates_with": [
+                "IND-I0305-05",
+                "IND-O0301-02"
+              ],
               "behavior": "Threat actor publishes an extortion note claiming responsibility for the outage and setting a deadline for payment, warning that stolen operational data will be released if the demand tied to restoration goes unmet",
               "category": "communication",
               "detection_sources": [
@@ -81341,6 +82125,9 @@
             },
             {
               "id": "IND-I0408-04",
+              "correlates_with": [
+                "IND-I0305-04"
+              ],
               "behavior": "Threat actor conditions the return of control over affected control systems on the operator meeting stated financial terms, framing continued downtime as the direct cost of non-compliance",
               "category": "financial",
               "detection_sources": [

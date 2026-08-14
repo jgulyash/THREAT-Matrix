@@ -129,6 +129,36 @@ def check_references(
     return errors
 
 
+def check_symmetry(framework: dict) -> list[str]:
+    """Return a list of asymmetric-edge error messages.
+
+    correlates_with is an undirected co-occurrence relation: if indicator A
+    lists B, then B must list A. As of V1.7 the mesh is materialized
+    bidirectionally so the correlation graph is complete on its face for every
+    consumer, not only those that compute reverse links; this check keeps it
+    that way. (compensates_for and coordinates_with are directional by design
+    and are not symmetry-checked.)
+    """
+    corr: dict[str, set[str]] = {}
+    matrices = framework.get("matrices", {})
+    for matrix_val in matrices.values():
+        if not isinstance(matrix_val, dict):
+            continue
+        for tactic in matrix_val.get("tactics", []) or []:
+            for ind in tactic.get("indicators", []) or []:
+                if isinstance(ind, dict) and "id" in ind:
+                    corr[ind["id"]] = set(ind.get("correlates_with", []) or [])
+    errors: list[str] = []
+    for a, targets in corr.items():
+        for b in targets:
+            if b in corr and a not in corr[b]:
+                errors.append(
+                    f"asymmetric correlates_with: '{a}' lists '{b}', "
+                    f"but '{b}' does not list '{a}'"
+                )
+    return errors
+
+
 def main() -> int:
     if len(sys.argv) > 1:
         path = Path(sys.argv[1])
@@ -150,11 +180,13 @@ def main() -> int:
         return 1
     inds, cms, rps = collect_ids(framework)
     errors = check_references(framework, inds, cms, rps)
+    errors += check_symmetry(framework)
     if not errors:
         print(
             f"✓ mesh-refs lint PASSED — "
             f"{len(inds)} indicators, {len(cms)} countermeasures, "
-            f"{len(rps)} response protocols; all mesh references resolve."
+            f"{len(rps)} response protocols; all mesh references resolve "
+            f"and correlates_with is symmetric."
         )
         return 0
     print(
