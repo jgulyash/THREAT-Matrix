@@ -177,12 +177,13 @@ The contract has to be in writing before the platform is built on top of it. Sch
 **Theme:** Close the target model. The four matrices sort by what the threat actor targets; this release makes the remaining scope boundary explicit and completes the cross-matrix seams the model implies. One principle governs placement throughout: the threat actor's primary objective decides the matrix.
 
 **Delivers:**
-- Transportation infrastructure brought fully into the Infrastructure matrix (bridges, tunnels, rail, roadways, ports, transit) — a named critical-infrastructure sector, with its asset classes and structural and linear-target behaviors authored, including the attack-window timing tactic the Infrastructure matrix currently lacks
+- Transportation infrastructure brought fully into the Infrastructure matrix (bridges, tunnels, rail, roadways, ports, transit) — a named critical-infrastructure sector, with its asset classes and structural and linear-target behaviors authored
+- Infrastructure behavior gaps surfaced by real-case testing filled — an attack-window timing tactic (currently absent in both the Infrastructure and Organization matrices), operational signaling, response-and-communications denial as a named enabling act, and a physical counter-forensics home distinct from the digital one
 - The primary-objective boundary rule stated explicitly for passive transportation structures (Infrastructure when the objective is denying the transportation service or a cascading effect; Facility when the objective is the structure or occupants at that place)
 - Detection Mesh symmetry — bidirectional correlation edges materialized in the data with a symmetry check, so the correlation graph is complete on its face for every consumer rather than depending on each consumer to compute reverse links
 - Cross-matrix tactic-parity pass — tactics present in some matrices but absent in others audited and reconciled on the merits
 
-**Sequencing:** additive to the hardened schema; content authoring through the standard inter-rater review. The Person matrix's "one or more people" scope shipped earlier (from V1.2), so no person-scope work is in this release.
+**Sequencing:** additive to the hardened schema; content authoring through the standard inter-rater review, with tactic and indicator counts and diagrams resynced. The Person matrix's "one or more people" scope shipped earlier (from V1.2), so no person-scope work is in this release.
 
 ---
 
