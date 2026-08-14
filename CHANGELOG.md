@@ -3,7 +3,26 @@
 All notable changes to THREAT Matrix are documented here, per [VERSIONING.md](docs/VERSIONING.md).
 
 This project adheres to [Semantic Versioning](https://semver.org). Framework
-content and JSON Schema are versioned independently (latest — content: `1.6.0`, schema: `2.0.0`).
+content and JSON Schema are versioned independently (latest — content: `1.6.1`, schema: `2.1.0`).
+
+## [1.6.1] — 2026-08-13
+
+**Contract-integrity patch** — a doc-and-schema clarification release from an adversarial test-case exercise against v1.6.0 (six fictional scenarios, four retrospective real-incident mappings, eleven contract stress fixtures). No indicator content changed: all 815 indicators are byte-identical to 1.6.0. Schema `2.0.0` → `2.1.0`, content `1.6.0` → `1.6.1`, escalation rubric unchanged at `1.4.0`.
+
+**Semver note (deliberate).** The escalate-only floor is now enforced by conditional subschemas that newly reject a below-floor `conditioned_priority`. A consumer record that demoted a case below its type band validated clean before 1.6.1 and now fails. Such records were always doctrinally invalid (the escalate-only rule forbade them; only the enforcement was missing), and no external consumer is known, so this ships as a **minor** schema bump with the tightening called out here rather than a major bump. Consumers who emitted below-floor records were violating the contract and must correct them.
+
+### Changed
+
+- **Escalate-only floor is now schema-enforced** (was documented as "encoded in the schema" but was not). `$defs.conditioned_assessment` gains conditional subschemas (`allOf` of three `if/then` branches): for a stated `type_severity_band` of medium, high, or critical, `conditioned_priority` is constrained to that band or above. A below-floor demotion, including of a `severity_floor: critical` direct-force indicator, now fails validation. The elegant alternative of storing a raise-delta was rejected: it would violate the derive-don't-store doctrine (a stored raise-amount is a stored effect flag). The `conditioned_priority` and `escalate_only_rule` descriptions are corrected to state the two-layer enforcement honestly.
+- **Band fidelity named as a validator/SDK obligation** (the one thing schema cannot check). `binding_contract` now states that a conditioned assessment is valid only when its `type_severity_band` equals the authored `severity_band` of `indicator_id` at a stated framework version; misquoting the band to launder a floor is a contract violation the reference validator catches by cross-reference. JSON Schema cannot perform this external join.
+- **`boundary_rule`: interdicted-case placement clarified.** For an interdicted case, where no terminal objective was achieved, primary-matrix placement follows the INTENDED terminal objective at a stated evidence tier rather than the furthest tactic reached, so disruption does not move the matrix call. The `primary_objective_evidence_tier` annotation is pointed to its case-consumer home (below).
+- **`demotion_doctrine`: disposition made structured; reporting vs attribution separated.** Dispositions are now recorded in the structured `conditioned_assessment.disposition` field, alongside the score and never in it. `source_credibility` is clarified to measure reporting reliability, not hostile-actor-existence confidence, which is carried separately by `primary_objective_evidence_tier` (whose new `contested` value marks a disputed attribution).
+
+### Added
+
+- **Incident-annotation fields on `$defs.conditioned_assessment`** (bundled fix for two homeless annotations). Optional `primary_objective_evidence_tier` (`stated / strongly_inferred / weakly_inferred / contested / unknown`) gives the boundary_rule's incident-level attribution annotation a schema-valid home on the case record, adding a `contested` value for disputed hostile-actor existence (the case a retrospective mapping surfaced where `unknown` overstated the uncertainty). Optional `disposition` (`active_monitoring / heightened_monitoring / disrupted_by_interdiction / closed_benign / closed_resolved / referred_out`) makes case outcomes machine-readable so a disrupted plot or a benign reassessment exits by disposition rather than by an illegal score rewrite. The dormant type-level `primary_objective_evidence_tier` on the indicator object is annotated as retained-for-compatibility and redirected to this home.
+- **`consumer-smoke.py` regression guard.** The reference-consumer smoke test now asserts that a below-floor demotion of a floored-critical indicator fails schema validation, so the escalate-only floor cannot silently regress.
+- **`docs/methodology/v1-6-1-contract-clarifications.md`.** Records the two-invariant enforcement model (floor in schema; band fidelity in tooling), the legitimate-context carve-out override rule (a carve-out is a baseline assumption a conditioned case overrides when the same actor already carries active pathway indicators), the interdicted-placement rule, and the disposition and evidence-tier homes, with the test-exercise provenance.
 
 ## [1.6.0] — 2026-08-08
 
