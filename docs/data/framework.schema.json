@@ -1157,7 +1157,7 @@
             "weakly_inferred",
             "unknown"
           ],
-          "description": "Optional. Incident-level annotation of the confidence with which the threat actor's primary objective (which sets matrix placement per matrices.boundary_rule) is established. stated = claimed responsibility or manifested intent. strongly_inferred = operational evidence overwhelming. weakly_inferred = operational evidence ambiguous. unknown = no basis for inference; matrix placement defaults to the matrix containing the tactic that produced the most observable consequence (see matrices.boundary_rule). Full IRR protocol for this field is deferred to a future release."
+          "description": "Optional. Incident-level annotation of the confidence with which the threat actor's primary objective (which sets matrix placement per matrices.boundary_rule) is established. stated = claimed responsibility or manifested intent. strongly_inferred = operational evidence overwhelming. weakly_inferred = operational evidence ambiguous. unknown = no basis for inference; matrix placement defaults to the matrix containing the tactic that produced the most observable consequence (see matrices.boundary_rule). As of schema 2.1.0 the canonical home for this incident-level annotation is $defs.conditioned_assessment.primary_objective_evidence_tier, which is where a case consumer writes it and which adds a 'contested' value for disputed hostile-actor existence; this type-level field is retained for compatibility and is not populated on shipped indicators. Full IRR protocol for this field is deferred to a future release."
         },
         "conditioning_guidance": {
           "type": "object",
@@ -1652,8 +1652,15 @@
         "indicator_id": { "type": "string", "pattern": "^IND-[FOI]?[0-9]{4}-[0-9]{2}$", "description": "Reference to the type-level indicator whose score is being conditioned." },
         "type_severity_band": { "type": "string", "enum": ["low", "medium", "high", "critical"], "description": "The indicator's type-level severity_band \u2014 the FLOOR. conditioned_priority is never below this." },
         "instance": { "$ref": "#/$defs/instance_assessment" },
-        "conditioned_priority": { "type": "string", "enum": ["low", "medium", "high", "critical"], "description": "The resulting triage priority, always >= type_severity_band (escalate-only invariant). JSON Schema cannot compare the two enums directly, so consumers MUST NOT emit conditioned_priority below type_severity_band. The held-vs-raised distinction is derived from this field against type_severity_band; there is deliberately no stored effect flag and no representable downward move." }
-      }
+        "conditioned_priority": { "type": "string", "enum": ["low", "medium", "high", "critical"], "description": "The resulting triage priority, always >= type_severity_band (escalate-only invariant). The floor is enforced structurally by the conditional subschemas on this object: for a correctly stated type_severity_band, a below-floor conditioned_priority fails validation. The one obligation schema cannot enforce is band fidelity, that type_severity_band equals the authored severity_band of indicator_id at a stated framework version; that join is owned by the reference validator and the consumer SDK. The held-vs-raised distinction is derived from this field against type_severity_band; there is deliberately no stored effect flag and no representable downward move." },
+        "primary_objective_evidence_tier": { "type": "string", "enum": ["stated", "strongly_inferred", "weakly_inferred", "contested", "unknown"], "description": "Optional incident-level confidence that the threat actor's primary objective, and therefore the primary-matrix placement, is correctly identified. This is the incident-level home the boundary_rule annotation refers to. 'stated' the objective is explicit; 'strongly_inferred' and 'weakly_inferred' inferred from behavior; 'contested' the evidence conflicts or the existence of a hostile actor is itself disputed (distinct from 'unknown', which is no basis for inference)." },
+        "disposition": { "type": "string", "enum": ["active_monitoring", "heightened_monitoring", "disrupted_by_interdiction", "closed_benign", "closed_resolved", "referred_out"], "description": "Optional case-management outcome recorded ALONGSIDE the score, never written back into it (instance_conditioning.demotion_doctrine). A benign reassessment exits as 'closed_benign' and a disrupted plot as 'disrupted_by_interdiction' without lowering conditioned_priority: the disposition, not a score rewrite, carries the outcome." }
+      },
+      "allOf": [
+        { "if": { "required": ["type_severity_band"], "properties": { "type_severity_band": { "const": "medium" } } }, "then": { "properties": { "conditioned_priority": { "enum": ["medium", "high", "critical"] } } } },
+        { "if": { "required": ["type_severity_band"], "properties": { "type_severity_band": { "const": "high" } } }, "then": { "properties": { "conditioned_priority": { "enum": ["high", "critical"] } } } },
+        { "if": { "required": ["type_severity_band"], "properties": { "type_severity_band": { "const": "critical" } } }, "then": { "properties": { "conditioned_priority": { "enum": ["critical"] } } } }
+      ]
     }
   }
 }

@@ -67,6 +67,30 @@ try:
             failures.append(f"{rec_path.name}: conditioned_priority below type band (escalate-only)")
         # held-vs-raised is derived, not stored: raised iff priority > band.
         _ = rank[rec["conditioned_priority"]] > rank[rec["type_severity_band"]]
+
+    # v1.6.1 regression: the escalate-only floor is now enforced BY THE SCHEMA
+    # (the conditional subschemas on conditioned_assessment), not only by the
+    # rank comparison above. A below-floor demotion of a floored-critical
+    # direct-force indicator MUST now fail schema validation. Before v1.6.1 this
+    # record validated clean (the documented "encoded in the schema" was false);
+    # this assertion is the regression guard that the if/then floor holds.
+    below_floor = {
+        "indicator_id": "IND-0301-01",
+        "type_severity_band": "critical",
+        "instance": {
+            "target_focus": "specific_target",
+            "pathway_stage": "attack",
+            "means_in_hand": "confirmed_present",
+            "tempo_trajectory": "unknown",
+            "proximity_access": "at_or_near_target",
+            "source_credibility": "moderate",
+        },
+        "conditioned_priority": "high",
+    }
+    if not list(ca_validator.iter_errors(below_floor)):
+        failures.append(
+            "escalate-only floor is NOT schema-enforced: a below-floor demotion validated clean"
+        )
 except ImportError:
     pass  # jsonschema optional; the framework validator run already covers schema
 
