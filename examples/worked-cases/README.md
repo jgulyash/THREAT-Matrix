@@ -1,6 +1,6 @@
 # Worked Cases (fictional)
 
-Three end-to-end walk-throughs of the instance-conditioning contract, one per edge of its behavior: a case held at type, a case raised one band, and a case raised to critical. **Every case is fictional** — no real person, organization, or venue. Each `.json` is a schema-valid `conditioned_assessment`; the walk-through below shows how an analyst would arrive at it. The framework ships no instance data; these exist to show the contract in use.
+Four end-to-end walk-throughs of the instance-conditioning contract: one per edge of its scoring behavior — a case held at type, a case raised one band, a case raised to critical — and one showing the case-management exit: a raised case closed by interdiction, with the outcome carried by `disposition` rather than a score rewrite. **Every case is fictional** — no real person, organization, or venue. Each `.json` is a schema-valid `conditioned_assessment`; the walk-through below shows how an analyst would arrive at it. The framework ships no instance data; these exist to show the contract in use.
 
 ---
 
@@ -34,8 +34,19 @@ Three end-to-end walk-throughs of the instance-conditioning contract, one per ed
 - **Result:** conditioned_priority **critical**, one band above the high type — read as **raised**.
 - **What the analyst does next:** immediate escalation to threat management and, per policy, protective and law-enforcement channels. This is the false-LOW the contract exists to catch: a type-high indicator that a specific, capable, accelerating, proximate instance pushes to critical.
 
+## Case 4 — disrupted by interdiction (`case-4-disrupted-by-interdiction.json`)
+
+**Observed behavior.** Corroborated multi-source case: an individual repeatedly voices a grievance naming one person, is observed acquiring weapons and ammunition beyond any lawful hobbyist pattern in a compressed window, holds workplace access to the named person, and the timeline across observations is compressing. Threat management and law enforcement coordinate an interdiction before any approach: the means are seized and the access revoked.
+
+- **Indicator class:** IND-0104-01, Capability Acquisition — weapons, ammunition, or restricted equipment acquired in quantities or configurations inconsistent with hobbyist or sporting use. **Type band: high.**
+- **Instance record:** target_focus **specific_target**, pathway_stage preparation, means_in_hand **confirmed_present**, tempo **accelerating**, proximity_access **has_access**, source_credibility high.
+- **Raise guidance:** specific_target + confirmed means + accelerating → critical. The record also carries `primary_objective_evidence_tier: strongly_inferred` — the objective was never stated outright but is strongly inferred from the converging behavior.
+- **Result:** conditioned_priority **critical** — raised. Then the interdiction succeeds, and the case exits as **`disposition: disrupted_by_interdiction`**.
+- **What the score does NOT do:** move down. The conditioned_priority stays critical — that is what the case was when it was live, and the escalate-only invariant has no representable downward move. The disposition, not a demotion, carries the outcome (this is the demotion doctrine in `instance_conditioning.demotion_doctrine`). A rewritten score would falsify the record the interdiction decision was made on.
+- **What the analyst does next:** record the disposition; retain the record intact; run post-interdiction monitoring per policy. An interdicted actor can re-engage — new behavior opens a new record, conditioned fresh from the type band, informed by this history.
+
 ---
 
 ## The through-line
 
-The type band is the floor in all three. Nothing here lowers it — the all-unknown Case 1 holds, and only converging positive evidence raises. The difference between a monitoring record and an immediate escalation is carried entirely by the instance layer, joined to the type score, never by the type score alone.
+The type band is the floor in all four. Nothing here lowers it — the all-unknown Case 1 holds, only converging positive evidence raises, and even a successful interdiction does not walk the score back: Case 4 closes through `disposition` with its raised priority intact. The difference between a monitoring record and an immediate escalation is carried entirely by the instance layer, joined to the type score, never by the type score alone; the difference between a live case and a closed one is carried entirely by the disposition, never by the score.

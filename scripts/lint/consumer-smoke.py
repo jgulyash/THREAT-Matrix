@@ -91,6 +91,24 @@ try:
         failures.append(
             "escalate-only floor is NOT schema-enforced: a below-floor demotion validated clean"
         )
+
+    # V1.8: the disposition field (shipped v1.6.1) must be exercised by a worked
+    # case. Case 4 is the disrupted-by-interdiction walk-through; its doctrinal
+    # payload is that the disposition carries the case outcome while the raised
+    # score is never rewritten downward (demotion doctrine). Guard both: the
+    # field is present with the expected value, and the priority remains ABOVE
+    # the type band after closure (a demoted-on-close record is the regression).
+    case4 = REPO / "examples" / "worked-cases" / "case-4-disrupted-by-interdiction.json"
+    if not case4.exists():
+        failures.append("case-4-disrupted-by-interdiction.json missing: disposition unexercised by worked cases")
+    else:
+        rec = json.loads(case4.read_text())
+        if rec.get("disposition") != "disrupted_by_interdiction":
+            failures.append("case-4: disposition is not disrupted_by_interdiction")
+        if rank[rec["conditioned_priority"]] <= rank[rec["type_severity_band"]]:
+            failures.append(
+                "case-4: an interdicted case must retain its raised priority; the disposition, not a score rewrite, carries the outcome"
+            )
 except ImportError:
     pass  # jsonschema optional; the framework validator run already covers schema
 
