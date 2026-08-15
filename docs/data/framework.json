@@ -7864,7 +7864,8 @@
               "correlates_with": [
                 "IND-0103-01",
                 "IND-F0206-01",
-                "IND-0207-01"
+                "IND-0207-01",
+                "IND-0308-06"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -9971,7 +9972,8 @@
                 "execution"
               ],
               "correlates_with": [
-                "IND-0104-01"
+                "IND-0104-01",
+                "IND-0308-06"
               ],
               "source_refs": [
                 "NTAC-MASS-2021",
@@ -13684,6 +13686,63 @@
               "escalation_weight": 4.61,
               "severity_band": "medium",
               "target_identity": []
+            },
+            {
+              "id": "IND-0308-06",
+              "behavior": "Threat actor uses covert real-time coordination signals between team members during an operation (hand signals, light or flashlight cues, coded radio bursts, or pre-arranged audible signals) to synchronize a multi-actor approach or attack",
+              "category": "communication",
+              "detection_sources": [
+                "physical_observation",
+                "cctv",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CISA-CONVERGE-2021",
+                "CERT-CSG-7-2022"
+              ],
+              "modality": "physical",
+              "human_social": false,
+              "temporal_signature": "in_progress",
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 4.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.3,
+              "severity_band": "high",
+              "axis_confidence": {
+                "impact_potential": "inferred",
+                "blast_radius_potential": "inferred",
+                "recoverability_inverse": "inferred",
+                "detectability": "inferred"
+              },
+              "informs_axes": {
+                "actor_capability": "strong",
+                "actor_intent": "strong",
+                "actor_opportunity": "strong",
+                "threat_timing": "strong",
+                "threat_target": "moderate",
+                "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": [
+                  "tempo_trajectory",
+                  "proximity_access"
+                ],
+                "guidance": "Confirm whether the signaling is coordinated hostile activity or ambiguous ordinary behavior: synchronized cues among several people on site can point to a team moving in concert toward an act, though such signals have innocent explanations and one observation may mislead. Weigh whether the actors are advancing toward an act, since a signal seen once does not establish a coordinated operation in progress."
+              },
+              "correlates_with": [
+                "IND-0206-01",
+                "IND-0301-01",
+                "IND-F0206-01",
+                "IND-F0305-01",
+                "IND-I0304-01"
+              ]
             }
           ],
           "countermeasures": [
@@ -26706,7 +26765,8 @@
                 "IND-F0206-02",
                 "IND-F0206-05",
                 "IND-0206-01",
-                "IND-F0206-04"
+                "IND-F0206-04",
+                "IND-0308-06"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -30920,7 +30980,8 @@
               ],
               "correlates_with": [
                 "IND-F0305-02",
-                "IND-F0305-05"
+                "IND-F0305-05",
+                "IND-0308-06"
               ],
               "source_refs": [
                 "GULYASH-FIELD-OPS-2004-2026",
@@ -76390,7 +76451,8 @@
               "correlates_with": [
                 "IND-I0403-03",
                 "IND-I0401-04",
-                "IND-I0103-02"
+                "IND-I0103-02",
+                "IND-0308-06"
               ]
             },
             {
