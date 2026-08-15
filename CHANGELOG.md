@@ -3,7 +3,24 @@
 All notable changes to THREAT Matrix are documented here, per [VERSIONING.md](docs/VERSIONING.md).
 
 This project adheres to [Semantic Versioning](https://semver.org). Framework
-content and JSON Schema are versioned independently (latest — content: `1.6.1`, schema: `2.1.0`).
+content and JSON Schema are versioned independently (latest — content: `1.7.0`, schema: `2.1.0`).
+
+## [1.7.0] — 2026-08-15
+
+**Target Model Expansion** — closes the target model and its cross-matrix seams. Content `1.6.1` → `1.7.0`; schema unchanged at `2.1.0` (purely additive content + docs); escalation rubric unchanged. The framework grows from 159 to **161 tactics** and 815 to **828 indicators**. No existing indicator's content changed except one IRR recalibration (below).
+
+### Added
+
+- **Transportation infrastructure brought into scope** (2026-08-13 ruling). The Infrastructure matrix `scope` text and the TARGET MATRICES diagram now name transportation (bridges, tunnels, rail, roadways, ports, transit) alongside utility, industrial, and communications systems; the scope already covered "physical infrastructure / critical service delivery," so this makes a named CISA critical-infrastructure sector explicit. Four new Infrastructure indicators author the behaviors: `IND-I0304-06` structural attack on a transportation structure (critical), `IND-I0305-06` route/corridor denial (high), `IND-I0210-06` pre-marked standoff firing positions (high), `IND-I0403-06` physical counter-forensics (medium).
+- **Attack-window Timing Exploitation tactics** in Infrastructure (`TI0211`) and Organization (`TO0212`) — the parity gap where Person (TM0208) and Facility (TF0207) had the tactic and Infra/Org did not. Infra times to peak-load, maintenance/protection-offline, low-staffing, and live-status windows; Org times to leadership transitions, M&A integration, and reporting/regulatory-deadline windows. 8 indicators, full supporting content.
+- **Operational signaling** (`IND-0308-06`) under Person `TM0308` — covert real-time team-coordination signaling (the gap surfaced by the Metcalf flashlight signals), cross-linked via the Detection Mesh to the infrastructure and facility attacks it coordinates.
+- **Detection Mesh symmetry.** `correlates_with`, an undirected co-occurrence relation, is now materialized bidirectionally: 629 reverse edges added so the correlation graph is complete on its face for every consumer, not only those that compute reverse links. A new symmetry check in `scripts/lint/mesh-refs.py` (in the Mesh Refs CI gate) fails on any one-directional edge.
+
+### Changed
+
+- **`boundary_rule`** states the unifying placement principle explicitly (the threat actor's primary objective decides the matrix: people one-or-many → People, place/structure → Facility, service/system/link → Infrastructure, enterprise → Organizations) and the passive-transportation-structure seam (deny the service/link → Infrastructure; attack the structure or its people → Facility).
+- **Scoring IRR-locked.** All 13 new indicators went through a blind three-way inter-rater reliability pass (13/13 adjacent agreement; 12/13 authored bands held under majority). One recalibration: `IND-O0212-03` high → medium (detectability under-scored for a public deadline-pressure campaign).
+- **`docs/methodology/scope-findings.md`** annotated SUPERSEDED — the Person "one or more people" scope shipped from V1.2.2; the mass-casualty routing question is resolved by the primary-objective rule.
 
 ## [1.6.1] — 2026-08-13
 

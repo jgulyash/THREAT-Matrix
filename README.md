@@ -4,7 +4,7 @@
  
 The physical threat domain lacks a shared, open, standardized vocabulary. The **THREAT Matrix** is built to be that standard, one that not only catalogs threat behavior but scores it to support operational decisions.
 
-Four target matrices — **People, Facilities, Organizations, Infrastructure** — span a four-phase Threat Lifecycle: **Target Development → Mobilization → Execution → Aftermath**. It documents 159 tactics and 27 actor profiles across seven threat categories, with a behavioral Detection Mesh, escalation scoring, and response protocols layered on top. The THREAT Matrix names the behavior, weighs the threat, and drives the response.
+Four target matrices — **People, Facilities, Organizations, Infrastructure** — span a four-phase Threat Lifecycle: **Target Development → Mobilization → Execution → Aftermath**. It documents 161 tactics and 27 actor profiles across seven threat categories, with a behavioral Detection Mesh, escalation scoring, and response protocols layered on top. The THREAT Matrix names the behavior, weighs the threat, and drives the response.
 
 Cyber-Physical Nexus and AI-Initiated-Physical tags surface online-to-physical mobilization pathways and AI-enabled reconnaissance across tactics.
 
@@ -31,7 +31,7 @@ In 2023, a Lawrence Livermore National Laboratory study, sponsored by DOE/NNSA a
  
 ## Framework Architecture
  
-**Four target matrices — People, Facilities, Organizations, Infrastructure. A four-phase Threat Lifecycle: Target Development → Mobilization → Execution → Aftermath. 159 tactics live** (People 34, Facilities 40, Organizations 48, Infrastructure 37), woven by a cross-domain Detection Mesh.
+**Four target matrices — People, Facilities, Organizations, Infrastructure. A four-phase Threat Lifecycle: Target Development → Mobilization → Execution → Aftermath. 161 tactics live** (People 34, Facilities 40, Organizations 49, Infrastructure 38), woven by a cross-domain Detection Mesh.
  
 ### Threat Lifecycle
  
@@ -83,7 +83,7 @@ Full architectural rationale is in the `detection_mesh` block in `docs/data/fram
 
 The taxonomy names a behavior. The escalation layer scores it — turning "this indicator was observed" into "here is how severe it is, and how urgently it warrants action." Each scored indicator carries a `temporal_signature` and four `escalation_axes`; the framework computes a weight and severity band from them, so downstream consumers receive a ready-to-use priority signal rather than raw values to interpret.
 
-Escalation scoring covers **all 815 indicator classes across all four matrices and all four phases** — every indicator carries a `temporal_signature`, four `escalation_axes`, a computed `escalation_weight`, and a `severity_band`. Blast is authored to method-revealed collateral ceilings (see the `escalation_rubric` in `framework.json`). Framework-wide the bands distribute 14 low / 432 medium / 282 high / 87 critical: the low band is the investigative and attributional trace layer (egress, cleanup, attribution, and ambient pre-operational reconnaissance, whose direct residual harm is trace rather than realized or imminently enabled); the critical band holds the direct-force and life-safety behaviors held at critical by the casualty severity floor (43 floored), plus the weight-driven criticals — mass-casualty force application, method-revealing capability acquisitions, and the highest-weight in-execution commitment and barrier-defeat behaviors. The `informs_axes` annotation layer (a separate, coarser signal about what an indicator reveals) also covers all 815 indicators, each matrix authored through its own sealed-blind inter-rater reliability pass (weighted κ ≥ 0.60 per chunk).
+Escalation scoring covers **all 828 indicator classes across all four matrices and all four phases** — every indicator carries a `temporal_signature`, four `escalation_axes`, a computed `escalation_weight`, and a `severity_band`. Blast is authored to method-revealed collateral ceilings (see the `escalation_rubric` in `framework.json`). Framework-wide the bands distribute 14 low / 435 medium / 291 high / 88 critical: the low band is the investigative and attributional trace layer (egress, cleanup, attribution, and ambient pre-operational reconnaissance, whose direct residual harm is trace rather than realized or imminently enabled); the critical band holds the direct-force and life-safety behaviors held at critical by the casualty severity floor (43 floored), plus the weight-driven criticals — mass-casualty force application, method-revealing capability acquisitions, and the highest-weight in-execution commitment and barrier-defeat behaviors. The `informs_axes` annotation layer (a separate, coarser signal about what an indicator reveals) also covers all 828 indicators, each matrix authored through its own sealed-blind inter-rater reliability pass (weighted κ ≥ 0.60 per chunk).
 
 **temporal_signature** — where the indicator sits on the threat clock: `horizon → advancing → imminent → staging → in_progress → aftermath`. Four of the six split into early/late stages; `staging` and `in_progress` stay single-stage because their timelines are inherently compressed.
 
@@ -173,7 +173,7 @@ Standards talk to platforms. The contract is what makes integrations with RAG sy
 | **V1.4** | Infrastructure matrix complete (37 tactics) + cross-domain Detection Mesh (People–Facility–Infrastructure) | Shipped |
 | **V1.5** | Organizations matrix complete (48 tactics) + `informs_axes` on all indicators + full cross-domain Detection Mesh (indicator, countermeasure-compensation, and stakeholder-coordination links across all four matrices) | Shipped |
 | **V1.6** | Contract Hardening — full JSON Schema closure (object-level `additionalProperties`, complete field typing, per-matrix subschemas) + completed instance-conditioning contract + Behavioral Mode facets (tactic-level CPN retired; CPN computed over the mesh) + `conditioning_guidance` investigative tasking on all 815 indicators. The pre-platform gate that lets external consumers trust the contract against malformed input. | Shipped |
-| **V1.7** | Target Model Expansion — transportation infrastructure brought into the Infrastructure matrix, infrastructure behavior gaps from real-case testing filled, the primary-objective boundary rule made explicit, Detection Mesh symmetry, and a cross-matrix tactic-parity pass | Planned |
+| **V1.7** | Target Model Expansion — transportation infrastructure brought into the Infrastructure matrix, infrastructure behavior gaps from real-case testing filled, the primary-objective boundary rule made explicit, Detection Mesh symmetry, and a cross-matrix tactic-parity pass | Shipped |
 | **V1.8** | Consequence Layer — target-impact scoring (`risk = threat × vulnerability × consequence`): a framework-defined outcome-class taxonomy and consequence rubric, with specific target-value records held consumer-side | Planned |
 | **V2** | Platform release: MCP server, Python and TypeScript SDKs, ingestion contract, pre-built RAG embeddings, custom domain, change feed | Planned |
 | **V3** | Real-world case library | Planned |

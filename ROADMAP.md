@@ -1,6 +1,6 @@
 # THREAT Matrix — Development Roadmap
  
-**Current Version:** V1.6 (Contract Hardening — 159 tactics, schema 2.0.0, `conditioning_guidance` on all 815 indicators)
+**Current Version:** V1.7 (Target Model Expansion — 161 tactics, schema 2.1.0, transportation in scope, Detection Mesh symmetric)
 **Product:** THREAT Matrix
  
 ---
@@ -16,7 +16,7 @@
 | **V1.4** | Infrastructure matrix complete + cross-domain Detection Mesh (People–Facility–Infrastructure) | 37 | Shipped |
 | **V1.5** | Organizations matrix complete + `informs_axes` matrix-wide + full cross-domain Detection Mesh (indicator, countermeasure, stakeholder links) | 48 | Shipped |
 | **V1.6** | Contract Hardening — schema closure + instance-conditioning contract + Behavioral Mode facets + `conditioning_guidance` (pre-platform gate) | — | Shipped |
-| **V1.7** | Target Model Expansion — transportation infrastructure brought into the Infrastructure matrix, the primary-objective boundary rule made explicit, Detection Mesh symmetry, and a cross-matrix tactic-parity pass | — | Planned |
+| **V1.7** | Target Model Expansion — transportation infrastructure brought into the Infrastructure matrix, the primary-objective boundary rule made explicit, Detection Mesh symmetry, and a cross-matrix tactic-parity pass | — | Shipped |
 | **V1.8** | Consequence Layer — target-impact scoring (`risk = threat × vulnerability × consequence`) | — | Planned |
 | **V2** | Platform release — MCP server, SDKs, ingestion contract, RAG embeddings, custom domain, change feed | — | Planned |
 | **V3** | Case Library | — | Planned |
@@ -172,7 +172,7 @@ The contract has to be in writing before the platform is built on top of it. Sch
 ---
  
 ## V1.7 — Target Model Expansion
-**Status:** Planned
+**Status:** Shipped
 
 **Theme:** Close the target model. The four matrices sort by what the threat actor targets; this release makes the remaining scope boundary explicit and completes the cross-matrix seams the model implies. One principle governs placement throughout: the threat actor's primary objective decides the matrix.
 
