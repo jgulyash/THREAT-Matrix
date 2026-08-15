@@ -4,6 +4,6 @@
   "description": "Set phase_4_track to the invalid value retired on an aftermath tactic.",
   "expected_check": "V17",
   "mutations": [
-    {"op": "set", "path": "matrices.infrastructure.tactics.29.phase_4_track", "value": "retired"}
+    {"op": "set", "path": "matrices.infrastructure.tactics.30.phase_4_track", "value": "retired"}
   ]
 }

@@ -64516,7 +64516,8 @@
                 "guidance": "Assess the actor's means and access to the assets this map singles out. Tracing where one feeder's loss propagates can reveal what an attack would try to achieve, yet may show little of whether the actor can reach or disable any node on it."
               },
               "correlates_with": [
-                "IND-I0305-03"
+                "IND-I0305-03",
+                "IND-I0211-01"
               ]
             },
             {
@@ -65610,7 +65611,8 @@
                 "IND-I0302-01",
                 "IND-I0201-03",
                 "IND-I0302-02",
-                "IND-I0206-01"
+                "IND-I0206-01",
+                "IND-I0211-02"
               ]
             },
             {
@@ -66023,7 +66025,8 @@
               "correlates_with": [
                 "IND-I0206-03",
                 "IND-I0206-01",
-                "IND-I0301-05"
+                "IND-I0301-05",
+                "IND-I0211-04"
               ]
             },
             {
@@ -70601,7 +70604,8 @@
                 "IND-I0403-03",
                 "IND-I0103-01",
                 "IND-I0103-03",
-                "IND-I0107-01"
+                "IND-I0107-01",
+                "IND-I0211-03"
               ]
             },
             {
@@ -73980,6 +73984,398 @@
           ]
         },
         {
+          "id": "TI0211",
+          "name": "Timing Exploitation",
+          "tactic_families": [
+            "mobilization"
+          ],
+          "matrix": "infrastructure",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Selecting or engineering the moment of action to maximize impact or minimize detection and response: peak-load windows, maintenance or protection-offline windows, low-staffing periods, and live operational-status monitoring. The infrastructure analog of Person TM0208 and Facility TF0207.",
+          "assessment_guidance": {
+            "credibility": {
+              "criteria": "Credibility rises when the alignment between the actor's activity and a specific operational window is corroborated across modalities, recurs over time rather than appearing once, and rests on recoverable evidence that the actor acquired or tracked the schedule. It falls when a single coincidental overlap carries the whole claim, when the source or pattern is thin, and when an ordinary operational reason for the timing was never ruled out.",
+              "high_signal_anchors": [
+                "Cross-modal corroboration: schedule acquisition, approach observations, and status monitoring tied to the same window within overlapping timeframes.",
+                "Temporal persistence: the timing pattern recurs across cycles rather than a single alignment.",
+                "Recoverable evidence: acquired outage calendars, saved dispatch feeds, or access records that physically tie the actor to the window.",
+                "Operational specificity: the activity is fixed to a defined window (a named maintenance outage, a load peak) rather than generic interest."
+              ],
+              "low_signal_anchors": [
+                "A lone coincidental overlap with no second indicator.",
+                "A benign operational explanation (routine access, ordinary public interest) left unaddressed.",
+                "A source that cannot be re-contacted or a pattern seen only once."
+              ]
+            },
+            "capability": {
+              "criteria": "Capability registers where selecting or engineering the window requires more than opportunism: acquiring non-public schedules, monitoring live operational state, or holding access that lets the actor act inside the window. It stays low where the timing is generic, publicly obvious, and demands no schedule intelligence or reach into the system.",
+              "high_signal_anchors": [
+                "Acquisition of non-public operating, maintenance, or dispatch schedules.",
+                "Real-time monitoring of operational state to select the moment of action.",
+                "Access aligned to the window that would let the actor act within it."
+              ],
+              "low_signal_anchors": [
+                "Timing keyed only to publicly obvious cycles (a known holiday) with no schedule intelligence.",
+                "No sign of reach into the system that the window would be exploited against."
+              ]
+            },
+            "intent": {
+              "criteria": "Intent rises as the timing is chosen to maximize effect or suppress response, as it converges with other pre-operational activity against the same target, and as the actor refines the window over time. It falls where the alignment is incidental, where no other targeting activity accompanies it, and where a checkable legitimate purpose explains the timing.",
+              "high_signal_anchors": [
+                "Timing selected to a window that maximizes impact or minimizes detection and response.",
+                "Convergence of the timing choice with reconnaissance or capability activity against the same target.",
+                "Refinement of the window across observations toward a narrower, higher-effect moment."
+              ],
+              "low_signal_anchors": [
+                "Incidental alignment with no accompanying targeting behavior.",
+                "A verifiable legitimate purpose for presence during the window."
+              ]
+            },
+            "opportunity": {
+              "criteria": "Opportunity is central to this tactic: the window is the opportunity. It rises when the actor has, or is positioned to obtain, access that coincides with a window of degraded protection, thin staffing, or peak effect. It stays low when the actor holds only knowledge of the window with no path to act within it.",
+              "high_signal_anchors": [
+                "Access that coincides with a window of degraded protection or thin response.",
+                "A window of peak effect (peak load, protections offline) the actor is positioned to reach.",
+                "Positioning or presence established ahead of the window."
+              ],
+              "low_signal_anchors": [
+                "Knowledge of the window without any access or path to act within it.",
+                "A window that confers no real reduction in defense or gain in effect."
+              ]
+            }
+          },
+          "indicators": [
+            {
+              "id": "IND-I0211-01",
+              "behavior": "Threat actor times the operation to a peak-demand or peak-load window on the targeted system (grid summer or winter peak, water high-demand period, pipeline seasonal maximum) so a disruption propagates to the largest served population and is hardest to arrest",
+              "category": "planning",
+              "detection_sources": [
+                "ot_telemetry",
+                "open_source",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ],
+              "modality": "cyber_physical",
+              "human_social": false,
+              "crossing_mechanism": "digital",
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.5,
+                "recoverability_inverse": 5.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 6.22,
+              "severity_band": "high",
+              "axis_confidence": {
+                "impact_potential": "established",
+                "blast_radius_potential": "inferred",
+                "recoverability_inverse": "inferred",
+                "detectability": "inferred"
+              },
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "moderate",
+                "actor_opportunity": "strong",
+                "threat_timing": "strong",
+                "threat_target": "moderate",
+                "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": [
+                  "tempo_trajectory",
+                  "proximity_access"
+                ],
+                "guidance": "Weigh whether the peak-window alignment is deliberate targeting or coincidence: approaches that recur on the load calendar can point to an actor choosing the moment of greatest effect, though a single overlap may be ordinary activity in a high-demand period. Confirm whether the actor holds access to act inside that window, since knowing the window is not the same as reaching the system within it."
+              },
+              "correlates_with": [
+                "IND-I0301-01",
+                "IND-I0102-01"
+              ]
+            },
+            {
+              "id": "IND-I0211-02",
+              "behavior": "Threat actor times the action to a scheduled maintenance, testing, or changeover window when redundancy, protection relays, or safety-instrumented systems are taken offline or run in a degraded mode",
+              "category": "planning",
+              "detection_sources": [
+                "ot_telemetry",
+                "it_logs",
+                "vendor_reporting"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ],
+              "modality": "cyber_physical",
+              "human_social": false,
+              "crossing_mechanism": "digital",
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 6.5,
+                "detectability": 2.5
+              },
+              "escalation_weight": 6.47,
+              "severity_band": "high",
+              "axis_confidence": {
+                "impact_potential": "established",
+                "blast_radius_potential": "inferred",
+                "recoverability_inverse": "inferred",
+                "detectability": "inferred"
+              },
+              "informs_axes": {
+                "actor_capability": "strong",
+                "actor_intent": "moderate",
+                "actor_opportunity": "strong",
+                "threat_timing": "strong",
+                "threat_target": "moderate",
+                "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": [
+                  "proximity_access",
+                  "tempo_trajectory"
+                ],
+                "guidance": "Confirm whether the maintenance window was truly known to the actor and protections were in fact offline, not assumed: acquiring an outage schedule and moving against it can show an actor engineering a moment without safeguards, though maintenance calendars are routine and an overlap may be coincidental. A protections-down window raises what an act could reach, but does not establish the actor can act within it."
+              },
+              "correlates_with": [
+                "IND-I0302-01",
+                "IND-I0104-03"
+              ]
+            },
+            {
+              "id": "IND-I0211-03",
+              "behavior": "Threat actor aligns the approach with a control-room shift change, holiday, or overnight low-staffing period that lengthens the interval before an operator notices and responds to an anomaly",
+              "category": "planning",
+              "detection_sources": [
+                "physical_observation",
+                "access_logs",
+                "open_source"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ],
+              "modality": "physical",
+              "human_social": false,
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 2.5
+              },
+              "escalation_weight": 5.67,
+              "severity_band": "high",
+              "axis_confidence": {
+                "impact_potential": "inferred",
+                "blast_radius_potential": "inferred",
+                "recoverability_inverse": "inferred",
+                "detectability": "inferred"
+              },
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "moderate",
+                "actor_opportunity": "strong",
+                "threat_timing": "strong",
+                "threat_target": "moderate",
+                "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": [
+                  "tempo_trajectory",
+                  "proximity_access"
+                ],
+                "guidance": "Weigh whether timing to a low-staffing period is deliberate: an approach repeatedly set to shift changes or overnight lulls can point to an actor exploiting slower response, though a single instance may be ordinary access rather than intent. Confirm the actor could reach the system then, since a thin-staffing window widens the response gap without settling whether a path in exists."
+              },
+              "correlates_with": [
+                "IND-I0204-01"
+              ]
+            },
+            {
+              "id": "IND-I0211-04",
+              "behavior": "Threat actor uses real-time operational status feeds (public dispatch or market data, outage maps, live telemetry, or a compromised HMI view) to confirm the system's live state and select the moment of maximum effect",
+              "category": "surveillance",
+              "detection_sources": [
+                "network_monitoring",
+                "open_source",
+                "it_logs"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ],
+              "modality": "cyber",
+              "human_social": false,
+              "temporal_signature": "imminent_late",
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 5.0,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.47,
+              "severity_band": "high",
+              "axis_confidence": {
+                "impact_potential": "inferred",
+                "blast_radius_potential": "inferred",
+                "recoverability_inverse": "inferred",
+                "detectability": "inferred"
+              },
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "strong",
+                "actor_opportunity": "strong",
+                "threat_timing": "strong",
+                "threat_target": "moderate",
+                "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": [
+                  "tempo_trajectory",
+                  "proximity_access"
+                ],
+                "guidance": "Confirm whether the monitoring is operational targeting or ordinary situational awareness: watching live status up to a chosen moment can point to an actor timing an act to real conditions, though public feeds are widely watched for benign reasons. Confirm whether the actor can act on what the feed shows, since observing the live state is not the same as being positioned to exploit it."
+              },
+              "correlates_with": [
+                "IND-I0303-01",
+                "IND-I0105-01"
+              ]
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-I0211-01",
+              "measure": "Correlate approach, access, and reconnaissance activity against the operational calendar (peak-load periods, scheduled maintenance and protection-offline windows, shift changes) and flag activity that aligns with a window of degraded defense or peak effect",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "A single alignment can be coincidental, so the measure raises attention rather than confirming intent; effectiveness depends on maintaining an accurate, current model of the operational calendar.",
+              "compensates_for": [
+                "IND-I0211-01",
+                "IND-I0211-03"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "CM-I0211-02",
+              "measure": "Add compensating monitoring and response coverage during known windows of reduced defense (maintenance outages, protection-system work, low-staffing periods) and vary predictable windows where operationally feasible, so a degraded window does not also mean degraded detection",
+              "category": "preventive",
+              "domain": "safety_system_integrity",
+              "cost": "medium",
+              "complexity": "high",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Many windows (seasonal load peaks, required maintenance) cannot be moved; compensating coverage adds cost and may be relaxed exactly when budgets are tight.",
+              "compensates_for": [
+                "IND-I0211-02",
+                "IND-I0211-04"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            }
+          ],
+          "related_tactics": [
+            "TI0301",
+            "TI0302",
+            "TI0104"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP016",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            }
+          ],
+          "response_protocols": [
+            {
+              "id": "RP-I0211-01",
+              "trigger": "Observed activity aligns with a specific operational window that would degrade defense or maximize effect: approach or access timed to a maintenance or protection-offline window, a load peak, or a low-staffing period.",
+              "action": "Open or update the case and assess whether the timing is deliberate: reconstruct whether the actor acquired or tracked the schedule, whether the alignment recurs, and whether an ordinary operational explanation fits. Confirm whether the actor holds access that could be exercised within the window, harden or add monitoring to the window, and brief operations and control-room staff on the specific window at risk.",
+              "stakeholders": [
+                "ot_security",
+                "operations_control",
+                "security_operations"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Evidence that the actor both tracks the window and holds a path into the system that could be exercised within it, or that the aligned window is imminent.",
+              "legal_notes": "Schedule and telemetry access review should follow the operator's monitoring authority and data-handling policy; involve legal before any action affecting personnel or external parties.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            },
+            {
+              "id": "RP-I0211-02",
+              "trigger": "Detection that a party is monitoring real-time operational status of the asset (dispatch or market feeds, outage maps, telemetry, or an HMI view) in a pattern consistent with selecting a moment of action rather than routine operational use.",
+              "action": "Treat as possible operational timing surveillance. Determine the source and reach of the monitoring, whether it draws on legitimate access or a compromised view, and whether it converges with other targeting activity. Increase monitoring of the live-status surface and prepare to compress response timelines if the observation continues into an imminent window.",
+              "stakeholders": [
+                "ot_security",
+                "security_operations",
+                "engineering"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Monitoring is sourced from a compromised operational view, or continues in lockstep with an approaching high-effect window.",
+              "legal_notes": "Distinguish public-feed monitoring (limited recourse) from access to a compromised operational view (potential offense); coordinate with legal and, where a regulated system is involved, the relevant regulatory agency.",
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CTC-INFRATERROR-2026"
+              ]
+            }
+          ],
+          "field_notes": "Timing in infrastructure is often engineered rather than merely awaited: acquiring an outage calendar, tracking a load forecast, or watching live telemetry lets an actor place an action where protections are down or effect is greatest. The window itself is the opportunity, so the analytic question is usually whether the alignment is deliberate and whether the actor can act within it.",
+          "observed_contexts": [
+            "The 2013 Metcalf substation attack ended roughly one minute before police arrived, consistent with a response-window calculation",
+            "Grid and pipeline operators plan around seasonal peak-load windows during which a disruption propagates furthest"
+          ],
+          "evidence_basis": "literature_primary",
+          "source_refs": [
+            "NIST-SP800-82-2023",
+            "CTC-INFRATERROR-2026"
+          ]
+        },
+        {
           "id": "TI0301",
           "name": "Process Manipulation",
           "tactic_families": [
@@ -74124,7 +74520,8 @@
                 "IND-I0104-01",
                 "IND-I0207-02",
                 "IND-I0208-05",
-                "IND-I0209-02"
+                "IND-I0209-02",
+                "IND-I0211-01"
               ]
             },
             {
@@ -74643,7 +75040,8 @@
                 "IND-I0104-03",
                 "IND-I0201-02",
                 "IND-I0206-02",
-                "IND-I0207-03"
+                "IND-I0207-03",
+                "IND-I0211-02"
               ]
             },
             {
@@ -75124,7 +75522,8 @@
               "correlates_with": [
                 "IND-I0403-01",
                 "IND-I0206-04",
-                "IND-I0209-03"
+                "IND-I0209-03",
+                "IND-I0211-04"
               ]
             },
             {

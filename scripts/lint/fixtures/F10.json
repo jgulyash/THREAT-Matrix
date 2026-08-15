@@ -4,7 +4,7 @@
   "description": "Rename phase_4_track to the typo phase_4_trak on an aftermath tactic, leaving the phase-4 tactic without a valid track key.",
   "expected_check": "V17",
   "mutations": [
-    {"op": "del", "path": "matrices.infrastructure.tactics.29.phase_4_track"},
-    {"op": "set", "path": "matrices.infrastructure.tactics.29.phase_4_trak", "value": "evasion"}
+    {"op": "del", "path": "matrices.infrastructure.tactics.30.phase_4_track"},
+    {"op": "set", "path": "matrices.infrastructure.tactics.30.phase_4_trak", "value": "evasion"}
   ]
 }
