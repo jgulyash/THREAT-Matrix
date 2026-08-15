@@ -50183,13 +50183,13 @@
               "human_social": true,
               "temporal_signature": "staging",
               "escalation_axes": {
-                "impact_potential": 5.0,
-                "blast_radius_potential": 5.5,
+                "impact_potential": 4.5,
+                "blast_radius_potential": 5.0,
                 "recoverability_inverse": 4.5,
-                "detectability": 3.5
+                "detectability": 5.0
               },
-              "escalation_weight": 5.33,
-              "severity_band": "high",
+              "escalation_weight": 4.74,
+              "severity_band": "medium",
               "axis_confidence": {
                 "impact_potential": "inferred",
                 "blast_radius_potential": "inferred",
