@@ -5,7 +5,7 @@
   "schema_version": "2.1.0",
   "license": "MIT",
   "matrices": {
-    "boundary_rule": "Each tactic in this catalog is placed in exactly one matrix at authoring time, determined by the threat actor's primary objective. The WHAT/WHY/WHERE separation is the disambiguation tool for the People matrix specifically; for Facility, Organization, and Infrastructure, WHERE collapses into WHAT and the boundary is set by what the threat actor's primary objective targets. Motivation lives in actor profiles, not in matrix placement. Real-world incidents may legitimately invoke tactics from multiple matrices simultaneously; cross-matrix coverage is expressed through the Detection Mesh via indicator correlates_with references. When a downstream consumer requires a single primary-matrix call per incident, default to the matrix containing the tactic that achieved the threat actor's terminal objective; ties broken by precedence People > Facilities > Organizations > Infrastructure. Where the threat actor's primary objective is uncertain or unknown, primary-matrix placement defaults to the matrix containing the tactic that produced the most observable consequence; the incident-level confidence of this inference is annotated separately via primary_objective_evidence_tier (its case-consumer home is conditioned_assessment.primary_objective_evidence_tier). For an interdicted case, where no terminal objective was achieved, placement follows the INTENDED terminal objective at a stated evidence tier rather than the furthest tactic reached, so disruption does not move the matrix call. Consumers may override.",
+    "boundary_rule": "Each tactic in this catalog is placed in exactly one matrix at authoring time, determined by the threat actor's primary objective. The WHAT/WHY/WHERE separation is the disambiguation tool for the People matrix specifically; for Facility, Organization, and Infrastructure, WHERE collapses into WHAT and the boundary is set by what the threat actor's primary objective targets. Motivation lives in actor profiles, not in matrix placement. Real-world incidents may legitimately invoke tactics from multiple matrices simultaneously; cross-matrix coverage is expressed through the Detection Mesh via indicator correlates_with references. When a downstream consumer requires a single primary-matrix call per incident, default to the matrix containing the tactic that achieved the threat actor's terminal objective; ties broken by precedence People > Facilities > Organizations > Infrastructure. Where the threat actor's primary objective is uncertain or unknown, primary-matrix placement defaults to the matrix containing the tactic that produced the most observable consequence; the incident-level confidence of this inference is annotated separately via primary_objective_evidence_tier (its case-consumer home is conditioned_assessment.primary_objective_evidence_tier). For an interdicted case, where no terminal objective was achieved, placement follows the INTENDED terminal objective at a stated evidence tier rather than the furthest tactic reached, so disruption does not move the matrix call. One principle governs placement throughout: the threat actor's primary objective decides the matrix. Where the target is people, one or many, placement is People; where it is a place or structure, Facility; where it is a service, system, or link, Infrastructure; where it is the enterprise, Organizations. A passive transportation structure attacked to deny the transportation service or cause a cascading effect is Infrastructure; the same structure attacked as the place itself or for the people at it is Facility. Consumers may override.",
     "person": {
       "tactics": [
         {
@@ -13741,7 +13741,8 @@
                 "IND-0301-01",
                 "IND-F0206-01",
                 "IND-F0305-01",
-                "IND-I0304-01"
+                "IND-I0304-01",
+                "IND-I0210-06"
               ]
             }
           ],
@@ -65502,7 +65503,9 @@
               },
               "correlates_with": [
                 "IND-I0304-01",
-                "IND-I0204-03"
+                "IND-I0204-03",
+                "IND-I0210-06",
+                "IND-I0304-06"
               ]
             },
             {
@@ -74246,6 +74249,58 @@
                 "probe_factors": ["pathway_stage", "tempo_trajectory"],
                 "guidance": "Establish where in the operation this dormant foothold sits and when it might reactivate. Holding a quiet service account and an idle remote session can keep the actor in place between phases, though the stage and the timing may stay hidden, and a forgotten legitimate account can look the same."
               }
+            },
+            {
+              "id": "IND-I0210-06",
+              "behavior": "Threat actor pre-selects and marks firing positions, cover, or standoff attack positions with sightlines to the target during reconnaissance or staging, establishing the geometry of a planned armed attack",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "NIST-SP800-82-2023"
+              ],
+              "modality": "physical",
+              "human_social": false,
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 4.0,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.01,
+              "severity_band": "high",
+              "axis_confidence": {
+                "impact_potential": "inferred",
+                "blast_radius_potential": "inferred",
+                "recoverability_inverse": "inferred",
+                "detectability": "inferred"
+              },
+              "informs_axes": {
+                "actor_capability": "strong",
+                "actor_intent": "strong",
+                "actor_opportunity": "strong",
+                "threat_timing": "moderate",
+                "threat_target": "strong",
+                "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": [
+                  "proximity_access",
+                  "tempo_trajectory"
+                ],
+                "guidance": "Confirm whether marked positions are prepared firing or standoff positions rather than benign markings: sightline-selected spots covering the target can point to an actor setting the geometry of an armed attack, though survey marks and ordinary activity leave similar traces and one look may mislead. Weigh whether the actor has the access and means they imply, since a marked position is not yet a manned one."
+              },
+              "correlates_with": [
+                "IND-0308-06",
+                "IND-I0103-02"
+              ]
             }
           ],
           "countermeasures": [
@@ -76452,7 +76507,8 @@
                 "IND-I0403-03",
                 "IND-I0401-04",
                 "IND-I0103-02",
-                "IND-0308-06"
+                "IND-0308-06",
+                "IND-I0304-06"
               ]
             },
             {
@@ -76631,6 +76687,58 @@
               },
               "correlates_with": [
                 "IND-I0407-02"
+              ]
+            },
+            {
+              "id": "IND-I0304-06",
+              "behavior": "Threat actor attacks the structural integrity of a transportation structure (a bridge span, tunnel, overpass, or elevated track) through charge placement on load-bearing members, cable cutting, or vehicle-borne impact, to collapse or disable it",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "cctv"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "CTC-INFRATERROR-2026",
+                "NIST-SP800-82-2023"
+              ],
+              "modality": "physical",
+              "human_social": false,
+              "temporal_signature": "in_progress",
+              "escalation_axes": {
+                "impact_potential": 8.0,
+                "blast_radius_potential": 7.5,
+                "recoverability_inverse": 7.5,
+                "detectability": 6.0
+              },
+              "escalation_weight": 6.51,
+              "severity_band": "critical",
+              "axis_confidence": {
+                "impact_potential": "inferred",
+                "blast_radius_potential": "inferred",
+                "recoverability_inverse": "inferred",
+                "detectability": "inferred"
+              },
+              "informs_axes": {
+                "actor_capability": "strong",
+                "actor_intent": "strong",
+                "actor_opportunity": "moderate",
+                "threat_timing": "moderate",
+                "threat_target": "strong",
+                "threat_method": "strong"
+              },
+              "conditioning_guidance": {
+                "probe_factors": [
+                  "proximity_access",
+                  "means_in_hand"
+                ],
+                "guidance": "Confirm whether the structural damage is a deliberate attack rather than an accident or material failure: charge placement on load-bearing members or cable cutting can point to an actor intending collapse, though failures and construction incidents occur too and first reports may be ambiguous. Weigh whether the actor had access and means to reach the structure, since damage alone does not establish hostile cause."
+              },
+              "correlates_with": [
+                "IND-I0103-02",
+                "IND-I0304-01"
               ]
             }
           ],
@@ -76952,7 +77060,8 @@
                 "IND-I0408-01",
                 "IND-I0406-01",
                 "IND-I0101-01",
-                "IND-O0301-04"
+                "IND-O0301-04",
+                "IND-I0305-06"
               ]
             },
             {
@@ -77133,6 +77242,57 @@
                 "IND-I0408-03",
                 "IND-I0207-01",
                 "IND-I0210-01"
+              ]
+            },
+            {
+              "id": "IND-I0305-06",
+              "behavior": "Threat actor denies a transportation route or corridor without destroying its structure, by physically obstructing a chokepoint, disabling signaling or traffic control, or blocking a terminal, to halt the movement of people or goods",
+              "category": "access",
+              "detection_sources": [
+                "physical_observation",
+                "ot_telemetry"
+              ],
+              "phase_relevance": [
+                "execution"
+              ],
+              "source_refs": [
+                "NIST-SP800-82-2023",
+                "CISA-DIT-2023"
+              ],
+              "modality": "physical",
+              "human_social": false,
+              "temporal_signature": "in_progress",
+              "escalation_axes": {
+                "impact_potential": 6.0,
+                "blast_radius_potential": 6.0,
+                "recoverability_inverse": 4.0,
+                "detectability": 5.0
+              },
+              "escalation_weight": 5.18,
+              "severity_band": "high",
+              "axis_confidence": {
+                "impact_potential": "inferred",
+                "blast_radius_potential": "inferred",
+                "recoverability_inverse": "inferred",
+                "detectability": "inferred"
+              },
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "moderate",
+                "actor_opportunity": "strong",
+                "threat_timing": "moderate",
+                "threat_target": "strong",
+                "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": [
+                  "tempo_trajectory",
+                  "proximity_access"
+                ],
+                "guidance": "Weigh whether the route denial is deliberate targeting or an ordinary disruption: obstructing a chokepoint or disabling signaling can point to an actor intending to halt movement, though outages, accidents, and protests also close corridors and a single event may mislead. Confirm whether the actor is positioned and acting to sustain the denial, since a blocked route alone does not establish hostile intent."
+              },
+              "correlates_with": [
+                "IND-I0305-01"
               ]
             }
           ],
@@ -80331,7 +80491,8 @@
                 "IND-I0301-02",
                 "IND-I0303-01",
                 "IND-I0309-02",
-                "IND-O0404-03"
+                "IND-O0404-03",
+                "IND-I0403-06"
               ],
               "behavior": "Threat actor wipes control-system event logs to erase traces of the unauthorized commands issued during the operation",
               "category": "digital",
@@ -80546,6 +80707,57 @@
                 "probe_factors": ["source_credibility", "pathway_stage"],
                 "guidance": "Weigh the incident reports against independent readings before acting on them. Feeding responders a benign cause can buy the actor time and may mask a disruption still underway, so test the account before it drives the response."
               }
+            },
+            {
+              "id": "IND-I0403-06",
+              "behavior": "Threat actor applies physical counter-forensic discipline, handling materials to avoid fingerprints and DNA, using untraceable or wiped components, and removing physical trace from the scene, to defeat post-incident attribution",
+              "category": "behavioral_change",
+              "detection_sources": [
+                "physical_observation",
+                "peer_report"
+              ],
+              "phase_relevance": [
+                "aftermath"
+              ],
+              "source_refs": [
+                "FBI-PREATTACK-2018",
+                "CTC-INFRATERROR-2026"
+              ],
+              "modality": "physical",
+              "human_social": false,
+              "temporal_signature": "aftermath_early",
+              "escalation_axes": {
+                "impact_potential": 3.0,
+                "blast_radius_potential": 3.0,
+                "recoverability_inverse": 3.5,
+                "detectability": 3.5
+              },
+              "escalation_weight": 3.78,
+              "severity_band": "medium",
+              "axis_confidence": {
+                "impact_potential": "inferred",
+                "blast_radius_potential": "inferred",
+                "recoverability_inverse": "inferred",
+                "detectability": "inferred"
+              },
+              "informs_axes": {
+                "actor_capability": "strong",
+                "actor_intent": "moderate",
+                "actor_opportunity": "moderate",
+                "threat_timing": "weak",
+                "threat_target": "weak",
+                "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": [
+                  "proximity_access",
+                  "source_credibility"
+                ],
+                "guidance": "Weigh whether the absence of physical trace reflects counter-forensic discipline or ordinary conditions: print-free handling, wiped components, and removed evidence can point to a capable actor defeating attribution, though clean scenes also arise from weather or thin collection. Confirm the reporting basis, since missing trace is weaker evidence than recovered trace and is read too readily as sophistication."
+              },
+              "correlates_with": [
+                "IND-I0403-01"
+              ]
             }
           ],
           "countermeasures": [
@@ -83248,7 +83460,7 @@
           ]
         }
       ],
-      "scope": "Tactics centered on infrastructure or technical systems as the primary target. The threat actor's primary objective is disruption, degradation, or compromise of the system's function, physical infrastructure, cyber-physical systems, or critical service delivery. Cyber-physical convergence is carried per indicator by the modality facet and computed over the Detection Mesh rather than stored at the tactic level."
+      "scope": "Tactics centered on infrastructure or technical systems as the primary target. The threat actor's primary objective is disruption, degradation, or compromise of the system's function, physical infrastructure, cyber-physical systems, or critical service delivery. Covered infrastructure spans utility, industrial, communications, and transportation systems (bridges, tunnels, rail, roadways, ports, and transit) together with the control and data systems that operate them. Cyber-physical convergence is carried per indicator by the modality facet and computed over the Detection Mesh rather than stored at the tactic level."
     }
   },
   "actor_profiles": [

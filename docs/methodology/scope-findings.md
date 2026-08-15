@@ -1,5 +1,7 @@
 # Person-matrix scope investigation — findings
 
+> **SUPERSEDED (2026-08-14).** This note's central finding ("as currently built: NO, the Person matrix is Specific-Individual only") is out of date. The Person matrix was subsequently broadened to "one or more people" (shipped from V1.2.2): the `matrices.person.scope` field, the TARGET MATRICES diagram ("Target: One or more people"), and the scored population (mass-casualty criticals) all reflect the broadened scope. The mass-casualty routing question this note raised is resolved by the primary-objective boundary rule (people-as-target, one or many, route to People). Retained for historical context only; do not treat its conclusion as current.
+
 **Date:** 2026-05-22. **Question (Jay):** is the THREAT Matrix built so the person matrix covers a threat to *one or more* people (including mass-casualty events at a home/car/public area), or are multi-victim attacks meant to fall under the facility/organization/infrastructure matrices?
 
 ## What the framework actually says (evidence)
