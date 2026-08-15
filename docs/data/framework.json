@@ -44986,7 +44986,8 @@
                 "IND-I0108-01",
                 "IND-O0304-04",
                 "IND-O0105-04",
-                "IND-O0106-01"
+                "IND-O0106-01",
+                "IND-O0212-02"
               ]
             },
             {
@@ -47004,7 +47005,8 @@
             {
               "id": "IND-O0206-01",
               "correlates_with": [
-                "IND-O0102-02"
+                "IND-O0102-02",
+                "IND-O0212-01"
               ],
               "behavior": "The threat actor pushes to obtain signatory or financial authority beyond the role, requesting check-signing, wire approval, or account control that a member at that tenure and position would not normally hold.",
               "category": "financial",
@@ -49533,7 +49535,8 @@
             {
               "id": "IND-O0211-01",
               "correlates_with": [
-                "IND-O0104-02"
+                "IND-O0104-02",
+                "IND-O0212-02"
               ],
               "behavior": "The threat actor stands up or acquires a small vendor or consultancy that already holds a trusted relationship with the institution, using that standing to obtain legitimate access it would otherwise be denied.",
               "category": "acquisition",
@@ -49925,6 +49928,382 @@
             "CISA-CONVERGE-2021",
             "CERT-CSG-7-2022",
             "GULYASH-FIELD-OPS-2004-2026"
+          ]
+        },
+        {
+          "id": "TO0212",
+          "name": "Timing Exploitation",
+          "tactic_families": [
+            "mobilization"
+          ],
+          "matrix": "organization",
+          "phase": 2,
+          "phase_name": "Mobilization",
+          "notes": "Timing the hostile action to a window of organizational vulnerability: leadership transitions and succession gaps, mergers and integration churn, earnings or regulatory deadlines, and crises. The organization analog of Person TM0208 and Facility TF0207; timing here exploits diffuse attention and weakened control rather than a physical response window.",
+          "assessment_guidance": {
+            "credibility": {
+              "criteria": "Credibility rises when the alignment between the actor's activity and an organizational vulnerability window is corroborated across sources, recurs over time, and rests on evidence the actor tracked the window. It falls with a single coincidental overlap, a thin source, or an ordinary business explanation left unaddressed.",
+              "high_signal_anchors": [
+                "Corroboration across reporting that the actor tracked the transition, deal, or deadline.",
+                "The timing pattern recurs rather than appearing once.",
+                "Recoverable evidence the actor acquired the schedule or monitored the window."
+              ],
+              "low_signal_anchors": [
+                "A lone coincidental overlap with a public corporate date.",
+                "A benign business explanation for the activity left unruled.",
+                "A single thin, uncorroborated report."
+              ]
+            },
+            "capability": {
+              "criteria": "Capability registers where exploiting the window requires internal standing, an activated front, or sustained monitoring of the organization's state, rather than mere awareness of a public date.",
+              "high_signal_anchors": [
+                "Internal access or authority positioned to act during the window.",
+                "An activated front or recruited insider aligned to the window.",
+                "Sustained monitoring of organizational status to select the moment."
+              ],
+              "low_signal_anchors": [
+                "Timing keyed only to a public date with no internal reach.",
+                "No sign of a foothold the window would be exploited through."
+              ]
+            },
+            "intent": {
+              "criteria": "Intent rises as the timing is chosen to maximize leverage or exploit distraction, converges with other activity against the same organization, and is refined over time. It falls where the alignment is incidental or a legitimate business purpose explains it.",
+              "high_signal_anchors": [
+                "Timing chosen to a window of maximum leverage or diffuse attention.",
+                "Convergence with insider, front, or narrative activity against the same target.",
+                "Refinement of the window toward a narrower, higher-leverage moment."
+              ],
+              "low_signal_anchors": [
+                "Incidental alignment with no accompanying targeting activity.",
+                "A verifiable legitimate purpose for the timing."
+              ]
+            },
+            "opportunity": {
+              "criteria": "Opportunity is central: the window is the opportunity. It rises when the actor holds, or is positioned to obtain, standing that coincides with a moment of weakened control, divided attention, or peak leverage. It stays low when the actor holds only knowledge of the window.",
+              "high_signal_anchors": [
+                "Internal standing that coincides with a window of weakened control.",
+                "A moment of peak leverage the actor is positioned to apply.",
+                "Positioning established ahead of the window."
+              ],
+              "low_signal_anchors": [
+                "Knowledge of the window with no standing to act within it.",
+                "A window that confers no real reduction in the organization's defense."
+              ]
+            }
+          },
+          "indicators": [
+            {
+              "id": "IND-O0212-01",
+              "behavior": "Threat actor times a coordinated action or campaign to a leadership transition or succession gap, when decision authority is diffuse and governance attention is absorbed by the handover",
+              "category": "planning",
+              "detection_sources": [
+                "peer_report",
+                "open_source",
+                "public_records"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022",
+                "CISA-DIT-2023"
+              ],
+              "modality": "human_social",
+              "human_social": true,
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 5.0,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.44,
+              "severity_band": "high",
+              "axis_confidence": {
+                "impact_potential": "inferred",
+                "blast_radius_potential": "inferred",
+                "recoverability_inverse": "inferred",
+                "detectability": "inferred"
+              },
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "moderate",
+                "actor_opportunity": "strong",
+                "threat_timing": "strong",
+                "threat_target": "moderate",
+                "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": [
+                  "tempo_trajectory",
+                  "proximity_access"
+                ],
+                "guidance": "Weigh whether the alignment with the transition is deliberate: activity tracking the succession timeline can point to an actor exploiting diffuse authority, though leadership changes are public and an overlap may be coincidental. Confirm whether the actor holds internal standing to act while attention is divided, since a governance gap widens opportunity without settling whether the actor can reach inside it."
+              },
+              "correlates_with": [
+                "IND-O0206-01",
+                "IND-O0305-01"
+              ]
+            },
+            {
+              "id": "IND-O0212-02",
+              "behavior": "Threat actor times insider-enabled action or front-organization activation to a merger, acquisition, or integration window, when access controls are in flux and new relationships mask anomalous activity",
+              "category": "planning",
+              "detection_sources": [
+                "peer_report",
+                "public_records",
+                "communications_intercept"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022",
+                "CISA-DIT-2023"
+              ],
+              "modality": "human_social",
+              "human_social": true,
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 5.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 5.5,
+                "detectability": 3.0
+              },
+              "escalation_weight": 5.7,
+              "severity_band": "high",
+              "axis_confidence": {
+                "impact_potential": "inferred",
+                "blast_radius_potential": "inferred",
+                "recoverability_inverse": "inferred",
+                "detectability": "inferred"
+              },
+              "informs_axes": {
+                "actor_capability": "strong",
+                "actor_intent": "moderate",
+                "actor_opportunity": "strong",
+                "threat_timing": "strong",
+                "threat_target": "moderate",
+                "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": [
+                  "proximity_access",
+                  "tempo_trajectory"
+                ],
+                "guidance": "Confirm whether the M&A window was actually exploited rather than merely coincident: activity that rides integration churn (new access, vendor onboarding, diligence noise) can point to an actor using control flux as cover, though integrations are inherently noisy and anomalies may be benign. A window of controls-in-flux widens what an actor could reach, but does not by itself establish the actor holds that reach."
+              },
+              "correlates_with": [
+                "IND-O0202-01",
+                "IND-O0211-01"
+              ]
+            },
+            {
+              "id": "IND-O0212-03",
+              "behavior": "Threat actor times a delegitimization, coercion, or pressure campaign to an earnings, reporting, or regulatory-deadline window, when reputational stakes and time pressure are highest",
+              "category": "planning",
+              "detection_sources": [
+                "open_source",
+                "social_media",
+                "public_records"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022",
+                "CISA-DIT-2023"
+              ],
+              "modality": "human_social",
+              "human_social": true,
+              "temporal_signature": "staging",
+              "escalation_axes": {
+                "impact_potential": 5.0,
+                "blast_radius_potential": 5.5,
+                "recoverability_inverse": 4.5,
+                "detectability": 3.5
+              },
+              "escalation_weight": 5.33,
+              "severity_band": "high",
+              "axis_confidence": {
+                "impact_potential": "inferred",
+                "blast_radius_potential": "inferred",
+                "recoverability_inverse": "inferred",
+                "detectability": "inferred"
+              },
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "strong",
+                "actor_opportunity": "strong",
+                "threat_timing": "strong",
+                "threat_target": "moderate",
+                "threat_method": "moderate"
+              },
+              "conditioning_guidance": {
+                "probe_factors": [
+                  "tempo_trajectory",
+                  "proximity_access"
+                ],
+                "guidance": "Weigh whether timing to a high-stakes reporting window is deliberate leverage or coincidence: a campaign landing on an earnings or regulatory deadline can point to an actor maximizing pressure, though these dates are public and activity clusters there anyway. Confirm whether the actor can actually apply pressure at that moment, since a high-stakes window raises leverage without settling the actor's reach."
+              },
+              "correlates_with": [
+                "IND-O0302-01"
+              ]
+            },
+            {
+              "id": "IND-O0212-04",
+              "behavior": "Threat actor monitors organizational status signals (news, filings, internal leaks, workforce sentiment) to confirm a moment of distraction, weakness, or division and select when to act",
+              "category": "surveillance",
+              "detection_sources": [
+                "open_source",
+                "social_media",
+                "network_monitoring"
+              ],
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022",
+                "CISA-DIT-2023"
+              ],
+              "modality": "cyber",
+              "human_social": false,
+              "temporal_signature": "imminent_late",
+              "escalation_axes": {
+                "impact_potential": 4.5,
+                "blast_radius_potential": 5.0,
+                "recoverability_inverse": 4.5,
+                "detectability": 4.0
+              },
+              "escalation_weight": 4.96,
+              "severity_band": "medium",
+              "axis_confidence": {
+                "impact_potential": "inferred",
+                "blast_radius_potential": "inferred",
+                "recoverability_inverse": "inferred",
+                "detectability": "inferred"
+              },
+              "informs_axes": {
+                "actor_capability": "moderate",
+                "actor_intent": "strong",
+                "actor_opportunity": "strong",
+                "threat_timing": "strong",
+                "threat_target": "moderate",
+                "threat_method": "weak"
+              },
+              "conditioning_guidance": {
+                "probe_factors": [
+                  "tempo_trajectory",
+                  "proximity_access"
+                ],
+                "guidance": "Confirm whether the monitoring is operational timing or ordinary market and reputational awareness: tracking status signals up to a chosen moment can point to an actor waiting for weakness, though such signals are widely watched for benign reasons. Confirm whether the actor can act on what the signals show, since observing a moment of division is not the same as being positioned to exploit it."
+              },
+              "correlates_with": []
+            }
+          ],
+          "countermeasures": [
+            {
+              "id": "CM-O0212-01",
+              "measure": "Heighten insider-threat, access-review, and anomaly monitoring during known organizational vulnerability windows (leadership transitions, M&A integration, major reporting deadlines) rather than relaxing controls when attention is absorbed",
+              "category": "preventive",
+              "domain": "policy_procedure",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks_to_months",
+              "phase_relevance": [
+                "mobilization"
+              ],
+              "limitations": "These windows are exactly when staff and budget are stretched, so compensating vigilance is hardest to sustain when it is most needed.",
+              "compensates_for": [
+                "IND-O0212-01",
+                "IND-O0212-02"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022",
+                "CISA-DIT-2023"
+              ]
+            },
+            {
+              "id": "CM-O0212-02",
+              "measure": "Monitor for external activity (narrative, coercion, coordinated pressure) that clusters against the organization ahead of high-stakes reporting or regulatory dates, and prepare response so the deadline is not a forced-error window",
+              "category": "detective",
+              "domain": "technical_monitoring",
+              "cost": "medium",
+              "complexity": "medium",
+              "time_to_implement": "weeks",
+              "phase_relevance": [
+                "mobilization",
+                "execution"
+              ],
+              "limitations": "Ordinary market and press activity also clusters around these dates, so separating deliberate pressure from noise takes judgment.",
+              "compensates_for": [
+                "IND-O0212-03",
+                "IND-O0212-04"
+              ],
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
+          "related_tactics": [
+            "TO0206",
+            "TO0202",
+            "TO0301"
+          ],
+          "actor_associations": [
+            {
+              "actor_id": "AP019",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP020",
+              "relevance": "high"
+            },
+            {
+              "actor_id": "AP014",
+              "relevance": "medium"
+            },
+            {
+              "actor_id": "AP013",
+              "relevance": "medium"
+            }
+          ],
+          "response_protocols": [
+            {
+              "id": "RP-O0212-01",
+              "trigger": "Observed hostile activity aligns with an organizational vulnerability window: insider or front activity timed to a transition or M&A integration, or a pressure campaign timed to a reporting or regulatory deadline.",
+              "action": "Open or update the case and assess whether the timing is deliberate: reconstruct whether the actor tracked the window, whether the pattern recurs, and whether an ordinary business explanation fits. Confirm whether the actor holds internal standing or an activated front that could be exercised in the window, tighten access and monitoring for the window, and brief governance and security leadership on the specific window at risk.",
+              "stakeholders": [
+                "threat_management_team",
+                "security_operations",
+                "executive_leadership"
+              ],
+              "priority": "priority",
+              "escalation_trigger": "Evidence the actor both tracks the window and holds internal access or an activated front that could be exercised within it, or that the window is imminent.",
+              "legal_notes": "Insider monitoring and access review must follow employment law and the organization's monitoring authority; involve legal and HR before action affecting personnel.",
+              "source_refs": [
+                "GULYASH-FIELD-OPS-2004-2026",
+                "CERT-CSG-7-2022",
+                "CISA-DIT-2023"
+              ]
+            }
+          ],
+          "field_notes": "In the organization matrix, timing is usually engineered around governance and business rhythm rather than a physical response window: a succession gap, an integration, or a reporting deadline is a moment when attention is divided and controls are in flux. The analytic question is whether the alignment is deliberate and whether the actor has the internal standing to act while the window is open.",
+          "observed_contexts": [
+            "Insider and fraud activity is repeatedly observed to spike during reorganizations, layoffs, and merger integrations when access controls lag the change"
+          ],
+          "evidence_basis": "hybrid",
+          "source_refs": [
+            "GULYASH-FIELD-OPS-2004-2026",
+            "CERT-CSG-7-2022",
+            "CISA-DIT-2023"
           ]
         },
         {
@@ -50589,7 +50968,8 @@
                 "IND-O0411-02",
                 "IND-O0103-02",
                 "IND-O0201-01",
-                "IND-O0204-05"
+                "IND-O0204-05",
+                "IND-O0212-03"
               ]
             },
             {
@@ -52118,7 +52498,8 @@
               "correlates_with": [
                 "IND-O0406-03",
                 "IND-O0102-03",
-                "IND-O0206-03"
+                "IND-O0206-03",
+                "IND-O0212-01"
               ]
             },
             {
