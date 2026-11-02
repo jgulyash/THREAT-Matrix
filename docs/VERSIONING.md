@@ -110,6 +110,14 @@ Every release adds an entry to `CHANGELOG.md` (created at first release after V1
 
 Each section is omitted when empty. The same structure is used for both content and schema releases; a release that bumps only one artifact still uses one CHANGELOG entry covering the version bumped.
 
+## Major version record
+
+| Artifact | Version | Status | Reason | Migration guide |
+|---|---|---|---|---|
+| JSON Schema | 3.0.0 | Pre-announcement draft on `v3-design` | `evidence_basis` values renamed (an enum value removal); lifecycle contract added with a relaxed reserved shape; patterns, enums, and if/then rules tightened so previously valid documents can fail; empty `operations` stub removed and `v2_tactic_associations` no longer required | [docs/migration/2.1-to-3.0.md](./migration/2.1-to-3.0.md) |
+
+The 30-day pre-announcement clock starts on the date the announcement is published; the earliest release tag is that date plus 30 days.
+
 ## Migration guidance
 
 For MAJOR releases, a `docs/migration/X.Y-to-X+1.0.md` document ships with the release. It enumerates every breaking change, the remediation, and a worked example. For MINOR releases that change defaults or add commonly relied-upon fields, the CHANGELOG entry includes a brief migration note inline.

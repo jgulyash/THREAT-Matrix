@@ -73,7 +73,7 @@
 - `phase_mappings` top-level cross-walk to NTAC, Calhoun-Weston, CERT, and Cyber Kill Chain stages, which enables AI/RAG cross-framework interoperability natively
 - `detection_mesh` top-level architectural object documenting the cross-cutting Detection Mesh property along five axes (cross-phase, cross-matrix, cross-domain, cross-countermeasure, cross-stakeholder)
 - Detection Mesh graph links: `correlates_with` on indicators, `compensates_for` on countermeasures, `coordinates_with` on response protocols
-- `evidence_basis` enum on every tactic: machine-queryable provenance (`operational_primary`, `hybrid`, `literature_primary`, `literature_only`)
+- `evidence_basis` enum on every tactic: machine-queryable provenance (`operational_primary`, `hybrid`, `literature_primary`, `literature_only`; renamed in schema 3.0.0 to `practice_led`, `practice_and_literature`, `literature_led`, `literature_only`)
 - `schema_version` field: stable contract tracking for downstream consumers
 - Headless-first architectural commitment with formal JSON Schema published at `docs/data/framework.schema.json`
 - VOICE.md authoring guidelines codifying four locked voice rules

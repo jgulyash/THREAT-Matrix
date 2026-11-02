@@ -63,17 +63,17 @@ Encounter-first prose teaches a reader to recognize the pattern. Taxonomy-first 
 
 **The `evidence_basis` enum declares the grounding; the prose follows the declaration.**
 
-Practitioner register is the default when `evidence_basis` is `operational_primary` or `hybrid`. Academic register is appropriate when `evidence_basis` is `literature_primary` or `literature_only` — but even literature-grounded content should describe observable behaviors in encounter-first language.
+Practitioner register is the default when `evidence_basis` is `practice_led` or `practice_and_literature`. Academic register is appropriate when `evidence_basis` is `literature_led` or `literature_only`, but even literature-grounded content should describe observable behaviors in encounter-first language. (Schema 3.0.0 renamed the values: `operational_primary` became `practice_led`, `hybrid` became `practice_and_literature`, `literature_primary` became `literature_led`.)
 
 The framework supports BOTH registers. The schema declares which is which. The prose must follow the declaration.
 
-**For `operational_primary` content** — practitioner voice throughout. `field_notes` describes what the maintainer or contributor has actually seen. `observed_contexts` lists generic context archetypes from practice.
+**For `practice_led` content:** practitioner voice throughout. `field_notes` describes the pattern as it presents in practice, and every claim is corroborated by the public sources the tactic cites. `observed_contexts` lists generic context archetypes from practice.
 
 **For `literature_only` content** — the `field_notes` signal the documented grounding through an ANALYTIC register attributed to the sources, not a first-person disclaimer. The framework is not personal narration about any individual maintainer, so do not write "I haven't worked a case involving this directly." Instead attribute the pattern to the documented record. Example pattern: *"The documented pattern is that a threat actor... The literature describes... The analytic marker is..."* Honesty is first-class, carried by the documented-register attribution rather than a personal confession. The `observed_contexts` may be tagged `[literature: <source-id>]` so the reader sees the provenance.
 
 *(Amendment 2026-07-20: the prior example used a first-person "I haven't worked this directly" disclaimer. That was retired because the framework's voice is analyst-general, not personal memoir; the honesty signal is the documented-register attribution.)*
 
-**For `hybrid` content** — practitioner voice frames the observable detail; academic citation supports. The schema and prose work together.
+**For `practice_and_literature` content:** practitioner voice frames the observable detail; academic citation supports. The schema and prose work together.
 
 ---
 
@@ -131,7 +131,7 @@ Each pattern is voice-compliant under Rules 1–4. Pick the pattern that best fi
 | 1 | **Behavioral-observation** | "The first signal you usually catch is repetition where there shouldn't be any." | Tactics where the entry signal is unambiguous |
 | 2 | **Functional-definitional** | "Subject Profiling is the tactic that turns 'a name' into 'a target file'." | Tactics where the *function* is the most useful frame |
 | 3 | **Decision-point** | "Target Selection is the point where a vague or specific grievance lands on a named person." | Tactics that pivot on a binary or threshold |
-| 4 | **Literature-anchored** | "Pathway Indicators are the observable behaviors that mark a threat actor's progression toward an attack..." | `evidence_basis: hybrid` or `literature_primary` |
+| 4 | **Literature-anchored** | "Pathway Indicators are the observable behaviors that mark a threat actor's progression toward an attack..." | `evidence_basis: practice_and_literature` or `literature_led` |
 | 5 | **Counter-intuitive / tension** | "The thing about Cover Construction is that it doesn't usually fail at the cover — it fails at the second-order detail nobody scripted." | Tactics where common intuition is wrong |
 | 6 | **Mechanism / typology** | "Capability Acquisition resolves into three pathways: legitimate purchase, theft or diversion, and proxy procurement." | Tactics with distinct sub-types |
 
