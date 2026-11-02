@@ -32,12 +32,58 @@ export type WithinSiteFocus =
   | 'systems'
   | 'whole_site';
 
-// V1.1 tactic evidence-basis taxonomy
+// Schema 3.0.0 tactic evidence-basis taxonomy (authoring mode). Renamed from
+// the V1.1 values: operational_primary -> practice_led, hybrid ->
+// practice_and_literature, literature_primary -> literature_led,
+// literature_only unchanged. See docs/migration/2.1-to-3.0.md.
 export type EvidenceBasis =
-  | 'operational_primary'
-  | 'hybrid'
-  | 'literature_primary'
+  | 'practice_led'
+  | 'practice_and_literature'
+  | 'literature_led'
   | 'literature_only';
+
+// Schema 3.0.0 lifecycle contract (docs/DEPRECATION.md). Absent means active.
+export type LifecycleState = 'active' | 'deprecated' | 'superseded' | 'reserved';
+
+export interface LifecycleFields {
+  lifecycle_state?: LifecycleState;
+  deprecated_in?: string;
+  superseded_by?: string;
+  deprecation_reason?: string;
+  reserved_reason?: string;
+}
+
+// Schema 3.0.0 actor-profile categorical enums.
+export type ActorCategory =
+  | 'lone_actor'
+  | 'insider'
+  | 'criminal'
+  | 'corporate_espionage'
+  | 'ideological'
+  | 'nation_state'
+  | 'customer_aggressor';
+export type ActorCategoryLabel =
+  | 'Lone Actor'
+  | 'Insider'
+  | 'Criminal'
+  | 'Corporate Espionage'
+  | 'Ideological'
+  | 'Nation-State'
+  | 'Customer/Client Aggressor';
+export type ActorAwareness = 'witting' | 'unwitting' | 'negligent';
+export type ActorDirection =
+  | 'self_directed'
+  | 'criminal_directed'
+  | 'ideological_directed'
+  | 'state_directed';
+export type ActorAccessRelationship = 'external' | 'insider' | 'authorized';
+export type PhaseCompressionRisk = 'low' | 'medium' | 'high' | 'very_high' | 'n/a';
+export type ActorLevel = 'individual' | 'group' | 'organization';
+
+export interface V2TacticAssociation {
+  tactic_id: string;
+  relevance: 'high' | 'medium' | 'low';
+}
 
 // V1.2 tactic-level assessment guidance escalation priority (Title Case;
 // distinct from the lowercase Priority used on response_protocol)
@@ -99,7 +145,7 @@ export interface ConditioningGuidance {
   guidance: string;
 }
 
-export interface Indicator {
+export interface Indicator extends LifecycleFields {
   id: string;
   behavior: string;
   category: string;
@@ -128,7 +174,7 @@ export interface Indicator {
   within_site_focus?: WithinSiteFocus[];
 }
 
-export interface Countermeasure {
+export interface Countermeasure extends LifecycleFields {
   id: string;
   measure: string;
   category: string;
@@ -150,7 +196,7 @@ export interface MitigatesEdge {
   function: 'prevent' | 'detect' | 'deny' | 'unreviewed';
 }
 
-export interface ResponseProtocol {
+export interface ResponseProtocol extends LifecycleFields {
   id: string;
   trigger: string;
   action: string;
@@ -169,7 +215,7 @@ export interface ActorAssociation {
   employment_status?: string;
 }
 
-export interface Tactic {
+export interface Tactic extends LifecycleFields {
   id: string;
   name: string;
   tactic_families?: string[];
@@ -193,21 +239,23 @@ export interface Tactic {
   target_identity_scope?: TargetIdentity[];
 }
 
-export interface ActorProfile {
+export interface ActorProfile extends LifecycleFields {
   id: string;
   name: string;
-  category: string;
-  category_label: string;
-  awareness: string;
-  direction: string;
-  access_relationship: string;
-  phase_compression_risk: string;
-  actor_level?: string;
+  category: ActorCategory;
+  category_label: ActorCategoryLabel;
+  awareness: ActorAwareness;
+  direction: ActorDirection;
+  access_relationship: ActorAccessRelationship;
+  phase_compression_risk: PhaseCompressionRisk;
+  actor_level?: ActorLevel;
   attack_vectors?: string[];
   primary_matrices?: string[];
   description?: string;
   behavioral_markers?: string[];
   ai_enabled_risks?: string[];
+  // Schema 3.0.0: optional, typed items (was a required untyped empty array)
+  v2_tactic_associations?: V2TacticAssociation[];
 }
 
 export interface BibliographyEntry {
