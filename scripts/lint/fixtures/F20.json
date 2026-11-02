@@ -1,0 +1,12 @@
+{
+  "id": "F20",
+  "category": "schema 3.0.0 lifecycle contract",
+  "expect": "pass",
+  "description": "Positive fixture. Mark an indicator lifecycle_state deprecated with deprecated_in and a deprecation_reason. This is a legal 3.0.0 lifecycle record, so it must introduce no new failure (V26 in particular stays clean).",
+  "expected_check": "V26",
+  "mutations": [
+    {"op": "set", "path": "matrices.person.tactics.0.indicators.0.lifecycle_state", "value": "deprecated"},
+    {"op": "set", "path": "matrices.person.tactics.0.indicators.0.deprecated_in", "value": "3.1.0"},
+    {"op": "set", "path": "matrices.person.tactics.0.indicators.0.deprecation_reason", "value": "Fixture: deprecated with no replacement."}
+  ]
+}

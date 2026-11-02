@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """THREAT Matrix framework.json structural and scoring validator.
 
-Runs twenty-two checks (V01 through V22) over docs/data/framework.json and
+Runs twenty-seven checks (V01 through V27) over docs/data/framework.json and
 reports a per-check pass/fail summary. The checks reconstruct the defect
 categories a Principal Architecture Review would hunt for: duplicate IDs,
 dangling Detection Mesh references, wrong matrix placement, typo'd keys,
@@ -21,10 +21,16 @@ Usage:
   python3 scripts/lint/validate.py docs/data/framework.json --fixtures scripts/lint/fixtures
 
 The plain form validates canonical data and exits 0 when every check is
-green, 1 otherwise. The --fixtures form runs the negative-fixture harness:
-each fixture mutates a copy of canonical data and passes only when
+green, 1 otherwise. The --fixtures form runs the fixture harness. A negative
+fixture (the default) mutates a copy of canonical data and passes only when
 validation fails AND the fixture's expected check id is among the checks
-that fired.
+that fired. A positive fixture ("expect": "pass") passes only when its
+mutation introduces no failure line that canonical data does not already
+produce, so it proves a value is accepted.
+
+Schema 3.0.0: V24 pins schema_version to 3.0.0, V25 gates the renamed
+evidence_basis values, V26 gates the lifecycle contract, and V27 gates the
+bibliography key format on source_refs entries and bibliography keys.
 """
 from __future__ import annotations
 
@@ -68,6 +74,28 @@ BAND_RANK = {"low": 0, "medium": 1, "high": 2, "critical": 3}
 # [6.5, 10].
 WEIGHT_TOLERANCE = 0.06
 
+# Schema 3.0.0 contract constants.
+EXPECTED_SCHEMA_VERSION = "3.0.0"
+EVIDENCE_BASIS_VALUES = {
+    "practice_led",
+    "practice_and_literature",
+    "literature_led",
+    "literature_only",
+}
+# Retired 2.x values mapped to their 3.0.0 replacement, used only to make
+# the V25 failure message actionable.
+EVIDENCE_BASIS_RENAMES = {
+    "operational_primary": "practice_led",
+    "hybrid": "practice_and_literature",
+    "literature_primary": "literature_led",
+}
+LIFECYCLE_STATES = {"active", "deprecated", "superseded", "reserved"}
+SEMVER = re.compile(
+    r"^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)"
+    r"(-[0-9A-Za-z.-]+)?(\+[0-9A-Za-z.-]+)?$"
+)
+BIB_KEY = re.compile(r"^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$")
+
 ID_LETTER = re.compile(r"^(?:IND|CM|RP)-([FOI]?)[0-9]{4}-[0-9]{2}$")
 
 # Human-readable titles printed alongside each check id in the summary.
@@ -95,8 +123,12 @@ CHECK_TITLES = {
     "V21": "modality facet presence, enum, and cross-field invariants",
     "V22": "conditioning_guidance shape, factor enum, and voice constraints",
     "V23": "mitigates edge shape and dangling indicator ref",
+    "V24": "schema_version is the expected 3.0.0",
+    "V25": "evidence_basis uses the 3.0.0 values",
+    "V26": "lifecycle contract (state, deprecated_in, superseded_by, reserved_reason)",
+    "V27": "bibliography key format on source_refs and bibliography keys",
 }
-CHECK_IDS = [f"V{n:02d}" for n in range(1, 24)]
+CHECK_IDS = [f"V{n:02d}" for n in range(1, 28)]
 
 
 # Fallback thresholds if escalation_rubric.severity_thresholds is absent.
@@ -368,7 +400,113 @@ def run_all_checks(raw_text: str, data: dict) -> dict[str, list[str]]:
     # vacuously on canonical data.
     _walk_conditioned_priority(fail, data)
 
+    _check_schema_3(fail, data, tactic_ids, ind_ids, cm_ids, rp_ids)
+
     return results
+
+
+def _iter_lifecycle_objects(data: dict):
+    """Yield (namespace, object) for every object that carries the schema
+    3.0.0 lifecycle contract: tactics, indicators, countermeasures, response
+    protocols, and actor profiles."""
+    for _key, _val, tactic in iter_tactics(data):
+        yield "tactic", tactic
+        for kind, ns in (
+            ("indicators", "indicator"),
+            ("countermeasures", "countermeasure"),
+            ("response_protocols", "response_protocol"),
+        ):
+            for obj in tactic.get(kind, []) or []:
+                if isinstance(obj, dict):
+                    yield ns, obj
+    for profile in data.get("actor_profiles", []) or []:
+        if isinstance(profile, dict):
+            yield "actor_profile", profile
+
+
+def _check_schema_3(fail, data, tactic_ids, ind_ids, cm_ids, rp_ids):
+    """V24 through V27, the schema 3.0.0 contract checks."""
+    # V24 schema_version pin.
+    declared = data.get("schema_version")
+    if declared != EXPECTED_SCHEMA_VERSION:
+        fail(
+            "V24",
+            "framework",
+            f"schema_version is '{declared}' but this validator targets "
+            f"{EXPECTED_SCHEMA_VERSION}; migrate the document per "
+            f"docs/migration/2.1-to-3.0.md or run the validator that matches "
+            f"its schema version",
+        )
+
+    # V25 evidence_basis values.
+    for _key, _val, tactic in iter_tactics(data):
+        tid = tactic.get("id", "<no-id>")
+        basis = tactic.get("evidence_basis")
+        if basis not in EVIDENCE_BASIS_VALUES:
+            hint = EVIDENCE_BASIS_RENAMES.get(basis)
+            suffix = (
+                f" (retired 2.x value; rename to '{hint}')" if hint else ""
+            )
+            fail("V25", tid, f"evidence_basis '{basis}' is not valid{suffix}")
+
+    # V26 lifecycle contract.
+    namespaces = {
+        "tactic": tactic_ids,
+        "indicator": ind_ids,
+        "countermeasure": cm_ids,
+        "response_protocol": rp_ids,
+        "actor_profile": {
+            p.get("id")
+            for p in data.get("actor_profiles", []) or []
+            if isinstance(p, dict)
+        },
+    }
+    for ns, obj in _iter_lifecycle_objects(data):
+        oid = obj.get("id", "<no-id>")
+        state = obj.get("lifecycle_state", "active")
+        if state not in LIFECYCLE_STATES:
+            fail("V26", oid, f"lifecycle_state '{state}' is not valid")
+            continue
+        deprecated_in = obj.get("deprecated_in")
+        if deprecated_in is not None and not SEMVER.match(str(deprecated_in)):
+            fail("V26", oid, f"deprecated_in '{deprecated_in}' is not SemVer")
+        successor = obj.get("superseded_by")
+        if state == "superseded":
+            if not successor:
+                fail("V26", oid, "superseded state requires superseded_by")
+            elif successor == oid:
+                fail("V26", oid, "superseded_by points at itself")
+            elif successor not in namespaces[ns]:
+                fail(
+                    "V26",
+                    oid,
+                    f"superseded_by '{successor}' resolves to no {ns} "
+                    f"(same-namespace replacement required)",
+                )
+        elif successor is not None:
+            fail(
+                "V26",
+                oid,
+                f"superseded_by is only legal on superseded state "
+                f"(state is '{state}')",
+            )
+        if state == "reserved" and not obj.get("reserved_reason"):
+            fail("V26", oid, "reserved state requires reserved_reason")
+
+    # V27 bibliography key format.
+    for key in (data.get("bibliography") or {}):
+        if not BIB_KEY.match(str(key)):
+            fail("V27", key, "bibliography key does not match the key format")
+    for _ns, obj in _iter_lifecycle_objects(data):
+        oid = obj.get("id", "<no-id>")
+        for ref in obj.get("source_refs", []) or []:
+            if not BIB_KEY.match(str(ref)):
+                fail(
+                    "V27",
+                    oid,
+                    f"source_refs '{ref}' does not match the bibliography "
+                    f"key format",
+                )
 
 
 def _check_source_refs(fail, object_id, obj, bibliography):
@@ -773,6 +911,18 @@ def run_fixture(canonical_raw: str, fixture: dict):
     results = run_all_checks(raw_text, data)
     fired = [cid for cid in CHECK_IDS if results[cid]]
     expected = fixture.get("expected_check")
+    if fixture.get("expect") == "pass":
+        # Positive fixture: compare against the canonical baseline so that
+        # failures canonical data already produces do not count against it.
+        baseline = run_all_checks(canonical_raw, json.loads(canonical_raw))
+        new = [
+            cid
+            for cid in CHECK_IDS
+            if set(results[cid]) - set(baseline[cid])
+        ]
+        if new:
+            return False, new, "positive fixture introduced new failures"
+        return True, fired, "ok"
     if not fired:
         return False, fired, "validation passed clean on mutated data"
     if expected not in fired:
@@ -800,7 +950,10 @@ def run_fixture_harness(canonical_raw: str, fixtures_dir: Path) -> int:
         fixture = json.loads(fixture_path.read_text())
         passed, fired, note = run_fixture(canonical_raw, fixture)
         fid = fixture.get("id", name)
-        expected = fixture.get("expected_check", "?")
+        if fixture.get("expect") == "pass":
+            expected = f"pass on {fixture.get('expected_check', '?')}"
+        else:
+            expected = fixture.get("expected_check", "?")
         fired_str = ", ".join(fired) if fired else "none"
         if passed:
             print(f"✓ {fid} expects {expected} — fired: {fired_str}")

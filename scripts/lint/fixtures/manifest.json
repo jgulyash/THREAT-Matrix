@@ -1,5 +1,5 @@
 {
-  "description": "Negative fixtures for scripts/lint/validate.py. Each fixture mutates a copy of canonical framework.json and passes only when validation fails and its expected check id is among the checks that fired.",
+  "description": "Fixtures for scripts/lint/validate.py. Each fixture mutates a copy of canonical framework.json. A negative fixture (the default) passes only when validation fails and its expected check id is among the checks that fired. A positive fixture (\"expect\": \"pass\") passes only when its mutation introduces no failure that canonical data does not already produce.",
   "fixtures": [
     "F01.json",
     "F02.json",
@@ -18,6 +18,10 @@
     "F15.json",
     "F16.json",
     "F17.json",
-    "F18.json"
+    "F18.json",
+    "F19.json",
+    "F20.json",
+    "F21.json",
+    "F22.json"
   ]
 }

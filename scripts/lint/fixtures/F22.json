@@ -1,0 +1,9 @@
+{
+  "id": "F22",
+  "category": "schema 3.0.0 key format",
+  "description": "Append a dangling source_refs entry that also violates the bibliography key format (lowercase, no segments). V27 must fire on the format; V09 fires as a side effect because it resolves to no bibliography key.",
+  "expected_check": "V27",
+  "mutations": [
+    {"op": "append", "path": "matrices.person.tactics.0.indicators.0.source_refs", "value": "not_a_bib_key"}
+  ]
+}

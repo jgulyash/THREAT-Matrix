@@ -19,6 +19,11 @@ extra check as a side effect (for example, moving a tactic id also breaks the
 child-id embedding). That is expected; the harness requires only that the named
 check fires.
 
+A fixture that sets `"expect": "pass"` is a positive fixture. It passes when its
+mutation introduces no failure line that canonical data does not already
+produce. Comparing against the canonical baseline keeps a positive fixture
+meaningful while canonical data is mid-migration.
+
 ## Mutation ops
 
 - `set` sets the value at a dot-separated path (integer segments index lists).
@@ -49,6 +54,10 @@ fixtures reconstruct its stated categories rather than copy specific edits.
 | F12 | V14 | contradictory scoring | escalation_weight drifts about 2.0 off its axes composite. |
 | F13 | V17 | invalid lifecycle values | phase_4_track carries the invalid value retired. |
 | F14 | V18 | conditioned-priority lowering | conditioned_priority low sits under a high severity_band. |
+| F19 | V25 | schema 3.0.0 retired values | evidence_basis carries the retired 2.x value operational_primary. |
+| F20 | V26 (pass) | schema 3.0.0 lifecycle contract | Positive: an indicator marked deprecated with deprecated_in validates. |
+| F21 | V26 | schema 3.0.0 lifecycle contract | A countermeasure marked superseded carries no superseded_by. |
+| F22 | V27 | schema 3.0.0 key format | A source_refs entry is dangling and breaks the bibliography key format. |
 
 ## Check reference
 
@@ -73,3 +82,7 @@ fixtures reconstruct its stated categories rather than copy specific edits.
 | V17 | phase_4_track missing or invalid on a phase-4 tactic, or present below phase 4. |
 | V18 | conditioned_priority ranked below its type severity_band. |
 | V19 | Tactic matrix field that differs from its containing matrix key. |
+| V24 | schema_version other than 3.0.0 (schema 3.0.0). |
+| V25 | evidence_basis outside the 3.0.0 values; retired 2.x values get a rename hint. |
+| V26 | Lifecycle contract: invalid state, non-SemVer deprecated_in, superseded without a resolving same-namespace superseded_by, reserved without reserved_reason. |
+| V27 | Bibliography key, or source_refs entry, that breaks the key format. |

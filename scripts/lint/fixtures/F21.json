@@ -1,0 +1,10 @@
+{
+  "id": "F21",
+  "category": "schema 3.0.0 lifecycle contract",
+  "description": "Mark a countermeasure lifecycle_state superseded without superseded_by. A superseded item must name its same-namespace replacement, so V26 must fire.",
+  "expected_check": "V26",
+  "mutations": [
+    {"op": "set", "path": "matrices.person.tactics.0.countermeasures.0.lifecycle_state", "value": "superseded"},
+    {"op": "set", "path": "matrices.person.tactics.0.countermeasures.0.deprecated_in", "value": "3.1.0"}
+  ]
+}

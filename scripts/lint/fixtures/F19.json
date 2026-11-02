@@ -1,0 +1,9 @@
+{
+  "id": "F19",
+  "category": "schema 3.0.0 retired values",
+  "description": "Set evidence_basis to the retired 2.x value operational_primary. Schema 3.0.0 renamed it to practice_led, so V25 must fire.",
+  "expected_check": "V25",
+  "mutations": [
+    {"op": "set", "path": "matrices.person.tactics.0.evidence_basis", "value": "operational_primary"}
+  ]
+}
