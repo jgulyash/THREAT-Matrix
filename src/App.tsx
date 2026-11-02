@@ -57,7 +57,8 @@ export default function App() {
     const allTactics: Tactic[] = LIVE_MATRICES.flatMap(
       (m) => data.matrices[m]?.tactics || []
     );
-    const ap = data.actor_profiles;
+    // Reserved IDs (lifecycle_state 'reserved') are held, not data; hide them per DEPRECATION.md.
+    const ap = data.actor_profiles.filter((a) => (a.lifecycle_state ?? 'active') !== 'reserved');
     const bib = data.bibliography || {};
 
     const tacticMap: Record<string, Tactic> = {};

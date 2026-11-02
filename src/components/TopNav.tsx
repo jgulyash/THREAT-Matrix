@@ -28,7 +28,9 @@ export function TopNav({ route, navigate, theme, setTheme }: Props) {
   const liveTactics = LIVE_MATRICES.flatMap((m) => matrices[m]?.tactics || []);
   const nTactics = liveTactics.length;
   const nIndicators = liveTactics.reduce((n, t) => n + (t.indicators?.length || 0), 0);
-  const nProfiles = frameworkData.actor_profiles?.length || 0;
+  const nProfiles = (frameworkData.actor_profiles || []).filter(
+    (a: { lifecycle_state?: string }) => (a.lifecycle_state ?? 'active') !== 'reserved'
+  ).length;
   return (
     <nav className="topbar">
       <a

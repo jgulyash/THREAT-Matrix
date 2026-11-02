@@ -525,24 +525,7 @@
     "tactic": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "id",
-        "name",
-        "matrix",
-        "phase",
-        "phase_name",
-        "notes",
-        "field_notes",
-        "observed_contexts",
-        "evidence_basis",
-        "source_refs",
-        "tactic_families",
-        "related_tactics",
-        "indicators",
-        "countermeasures",
-        "response_protocols",
-        "actor_associations"
-      ],
+      "required": ["id"],
       "allOf": [
         {
           "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
@@ -550,7 +533,8 @@
         },
         {
           "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["reserved_reason"] }
+          "then": { "required": ["id", "lifecycle_state", "reserved_reason"] },
+          "else": { "required": ["id", "name", "matrix", "phase", "phase_name", "notes", "field_notes", "observed_contexts", "evidence_basis", "source_refs", "tactic_families", "related_tactics", "indicators", "countermeasures", "response_protocols", "actor_associations"] }
         }
       ],
       "properties": {
@@ -884,19 +868,7 @@
     "indicator": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "id",
-        "behavior",
-        "category",
-        "detection_sources",
-        "phase_relevance",
-        "source_refs",
-        "modality",
-        "human_social",
-        "temporal_signature",
-        "escalation_weight",
-        "escalation_axes"
-      ],
+      "required": ["id"],
       "allOf": [
         {
           "if": { "properties": { "modality": { "const": "human_social" } }, "required": ["modality"] },
@@ -921,7 +893,8 @@
         },
         {
           "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["reserved_reason"] }
+          "then": { "required": ["id", "lifecycle_state", "reserved_reason"] },
+          "else": { "required": ["id", "behavior", "category", "detection_sources", "phase_relevance", "source_refs", "modality", "human_social", "temporal_signature", "escalation_weight", "escalation_axes"] }
         }
       ],
       "properties": {
@@ -1288,19 +1261,7 @@
     "countermeasure": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "id",
-        "measure",
-        "category",
-        "domain",
-        "cost",
-        "complexity",
-        "time_to_implement",
-        "phase_relevance",
-        "limitations",
-        "compensates_for",
-        "source_refs"
-      ],
+      "required": ["id"],
       "allOf": [
         {
           "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
@@ -1308,7 +1269,8 @@
         },
         {
           "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["reserved_reason"] }
+          "then": { "required": ["id", "lifecycle_state", "reserved_reason"] },
+          "else": { "required": ["id", "measure", "category", "domain", "cost", "complexity", "time_to_implement", "phase_relevance", "limitations", "compensates_for", "source_refs"] }
         }
       ],
       "properties": {
@@ -1481,16 +1443,7 @@
     "response_protocol": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "id",
-        "trigger",
-        "action",
-        "stakeholders",
-        "priority",
-        "escalation_trigger",
-        "legal_notes",
-        "source_refs"
-      ],
+      "required": ["id"],
       "allOf": [
         {
           "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
@@ -1498,7 +1451,8 @@
         },
         {
           "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["reserved_reason"] }
+          "then": { "required": ["id", "lifecycle_state", "reserved_reason"] },
+          "else": { "required": ["id", "trigger", "action", "stakeholders", "priority", "escalation_trigger", "legal_notes", "source_refs"] }
         }
       ],
       "properties": {
@@ -1630,22 +1584,7 @@
     "actor_profile": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "id",
-        "name",
-        "category",
-        "category_label",
-        "description",
-        "awareness",
-        "direction",
-        "access_relationship",
-        "phase_compression_risk",
-        "actor_level",
-        "attack_vectors",
-        "primary_matrices",
-        "behavioral_markers",
-        "ai_enabled_risks"
-      ],
+      "required": ["id"],
       "allOf": [
         {
           "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
@@ -1653,7 +1592,8 @@
         },
         {
           "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["reserved_reason"] }
+          "then": { "required": ["id", "lifecycle_state", "reserved_reason"] },
+          "else": { "required": ["id", "name", "category", "category_label", "description", "awareness", "direction", "access_relationship", "phase_compression_risk", "actor_level", "attack_vectors", "primary_matrices", "behavioral_markers", "ai_enabled_risks"] }
         }
       ],
       "properties": {

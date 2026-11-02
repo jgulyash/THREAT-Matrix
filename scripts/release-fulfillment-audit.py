@@ -49,7 +49,7 @@ alltac = [t for n in ('person','facility','organization','infrastructure')
           for t in FW['matrices'][n]['tactics']]
 field_pop(allind, SCHEMA['$defs']['indicator']['properties'], 'INDICATOR fields')
 field_pop(alltac, SCHEMA['$defs']['tactic']['properties'], 'TACTIC fields')
-aps = FW['actor_profiles']
+aps = [a for a in FW['actor_profiles'] if a.get('lifecycle_state', 'active') != 'reserved']
 apkeys = sorted({k for a in aps for k in a})
 field_pop(aps, {k: None for k in apkeys}, 'ACTOR_PROFILE fields')
 

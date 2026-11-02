@@ -101,7 +101,7 @@ def print_summary(framework: dict) -> None:
     version = framework.get("version", "?")
     schema_version = framework.get("schema_version", "?")
     matrices = {k: v for k, v in framework.get("matrices", {}).items() if isinstance(v, dict)}
-    profiles = framework.get("actor_profiles", [])
+    profiles = [p for p in framework.get("actor_profiles", []) if p.get("lifecycle_state", "active") != "reserved"]
     bib = framework.get("bibliography", {})
 
     print(f"\n{name}")
