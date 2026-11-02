@@ -83943,7 +83943,7 @@
     "binding_contract": "A type score becomes a case assessment only when joined to its instance record: the conditioned_assessment object requires both. Wherever a score drives case operations (queue ranking, dashboards, handoffs, API triage) it must carry, or be joined to, its instance record. A bare type number rendered without one (including in the reference SPA, which displays Layer-1 taxonomy) is a Layer-1 datum, not an assessment of any case. A conditioned assessment is valid only when its type_severity_band equals the authored severity_band of indicator_id at a stated framework version: a consumer cannot launder a floor by misquoting the band, and the reference validator performs this cross reference.",
     "conditioning_guidance": "Indicators carry conditioning_guidance: framework-provided default investigative tasking naming the instance factors that are the hidden drivers of danger for that behavior (probe_factors, machine-filterable) with a practitioner directive (guidance). A starting point for consumer playbooks, intended for composition across combinations of observed indicators; consumers may follow, extend, or override it with their own procedures. Authored across all 815 indicators in V1.6; replaces the retired informs-keyed instance_conditioning_hints pilot.",
     "status": "Contract defined V1.3 (2026-07-09); completed V1.6: sixth factor proximity_access added, demotion doctrine, raise guidance, inhibitors exclusion, and credibility articulation recorded (rulings Q1, Q2, Q3a, Q3b, Q4; 2026-07-28 session). The consumer/UI instance-entry surface remains deferred to V2 (SDK ship trigger).",
-    "provenance": "Scoring review B-03 (structured instance record) and B-04 (display-binding contract); F12 (false-LOW is deadliest) and F13 (no computed capability discount). Contract completion: rulings Q1 (demotion doctrine), Q2 (raise guidance), Q3a (proximity_access), Q3b (inhibitors exclusion), Q4 (credibility articulation), 2026-07-28 session; see docs/methodology/instance-conditioning-contract-completion.md."
+    "provenance": "Scoring review B-03 (structured instance record) and B-04 (display-binding contract); F12 (false-LOW is deadliest) and F13 (no computed capability discount). Contract completion: rulings Q1 (demotion doctrine), Q2 (raise guidance), Q3a (proximity_access), Q3b (inhibitors exclusion), Q4 (credibility articulation), 2026-07-28 session; see docs/METHODOLOGY.md, section 2."
   },
   "phase_mappings": {
     "phase_1_target_development": {
@@ -84064,7 +84064,7 @@
       },
       {
         "name": "cross_matrix",
-        "description": "Threat actors do not respect matrix boundaries. The mesh weaves the matrices into one coherent detection space as each is built: inter-rater-validated People-Facility links shipped first, and every new matrix extends the weave across all four (People, Facilities, Organizations, Infrastructure)."
+        "description": "Threat actors do not respect matrix boundaries. The mesh weaves the matrices into one coherent detection space as each is built: reviewed People-Facility links shipped first, and every new matrix extends the weave across all four (People, Facilities, Organizations, Infrastructure)."
       },
       {
         "name": "cross_domain",

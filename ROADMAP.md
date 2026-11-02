@@ -164,7 +164,7 @@ The contract has to be in writing before the platform is built on top of it. Sch
 
 **Schema bump:** the first `schema_version` change since 1.1.0, a breaking bump, since `additionalProperties: false` rejects previously-tolerated input.
 
-**Shipped beyond the plan:** the completed instance-conditioning contract (sixth factor `proximity_access`, demotion doctrine, worked cases, escalate-only consumer join); `axis_confidence` evidence-basis markers on all 815 indicators; the `crossing` → `modality` facet migration with the four-value Behavioral Mode model and SPA filter; and `conditioning_guidance` (authored, assessment-scoped investigative tasking on all 815 indicators under a ratified voice rubric). Fast-follow queued for 2.0.x: `compute-cpn.py`, the computed-CPN reference implementation over the Detection Mesh (contract recorded in `docs/methodology/v2-design-constraints.md`).
+**Shipped beyond the plan:** the completed instance-conditioning contract (sixth factor `proximity_access`, demotion doctrine, worked cases, escalate-only consumer join); `axis_confidence` evidence-basis markers on all 815 indicators; the `crossing` → `modality` facet migration with the four-value Behavioral Mode model and SPA filter; and `conditioning_guidance` (authored, assessment-scoped investigative tasking on all 815 indicators under a ratified voice rubric). Fast-follow queued for 2.0.x: `compute-cpn.py`, the computed-CPN reference implementation over the Detection Mesh (contract recorded in the repository history; current rules in `docs/METHODOLOGY.md`).
 
 ---
  

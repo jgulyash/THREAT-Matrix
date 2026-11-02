@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jgulyash.github.io/THREAT-Matrix/data/coverage.schema.json",
   "title": "THREAT Matrix Coverage Contract",
-  "description": "The vulnerability term of the risk equation: consumer-held countermeasure deployment records and the derived coverage band, computed against the framework's mitigates relation (countermeasure to indicator, typed by function). Boundary-interface artifact: the framework defines these shapes and the derivation rule; each organization holds its own records, which are never published and never ship in framework.json. The full normative derivation rule lives in docs/methodology/coverage-derivation.md; the descriptions here are binding summaries of it. Derive-dont-store: a coverage band is a query result recomputed from the current records at each derivation, never authoritative stored state.",
+  "description": "The vulnerability term of the risk equation: consumer-held countermeasure deployment records and the derived coverage band, computed against the framework's mitigates relation (countermeasure to indicator, typed by function). Boundary-interface artifact: the framework defines these shapes and the derivation rule; each organization holds its own records, which are never published and never ship in framework.json. The full normative derivation rule lives in docs/METHODOLOGY.md, Appendix A; the descriptions here are binding summaries of it. Derive-dont-store: a coverage band is a query result recomputed from the current records at each derivation, never authoritative stored state.",
   "type": "object",
   "additionalProperties": false,
   "properties": {
