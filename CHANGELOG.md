@@ -3,7 +3,19 @@
 All notable changes to THREAT Matrix are documented here, per [VERSIONING.md](docs/VERSIONING.md).
 
 This project adheres to [Semantic Versioning](https://semver.org). Framework
-content and JSON Schema are versioned independently (latest — content: `1.7.0`, schema: `2.1.0`).
+content and JSON Schema are versioned independently (latest content: `1.7.1`, schema: `2.1.0`).
+
+## [1.7.1] - 2026-11-02
+
+**Bibliography: retired practitioner-observation source; every object now cites a public source.** Content `1.7.0` to `1.7.1`; schema unchanged at `2.1.0`. No tactic, indicator, countermeasure, or response protocol text changed. No identifier changed.
+
+### Changed
+- Retired the practitioner-observation bibliography entry `GULYASH-FIELD-OPS-2004-2026` and removed it from all 1,138 `source_refs` arrays that cited it.
+- 1,045 of those arrays already cited public sources and simply drop the key. The other 93 objects (10 indicators, 41 countermeasures, 42 response protocols) are re-sourced to public documents.
+- Bibliography grows from 52 to 121 entries: 70 public sources added (court documents, government reports, after-action reviews, standards, practitioner guides, and peer-reviewed papers), 1 retired. Every entry is referenced; none is orphaned.
+
+### Fixed
+- `source_refs` integrity: 0 dangling keys, 0 empty arrays across 2,999 references.
 
 ## [1.7.0] — 2026-08-15
 
