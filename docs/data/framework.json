@@ -2,7 +2,7 @@
   "name": "THREAT Matrix",
   "full_name": "Tactical Human Risk Enumeration and Adversary Taxonomy Matrix",
   "version": "1.7.1",
-  "schema_version": "2.1.0",
+  "schema_version": "3.0.0",
   "license": "MIT",
   "matrices": {
     "boundary_rule": "Each tactic in this catalog is placed in exactly one matrix at authoring time, determined by the threat actor's primary objective. The WHAT/WHY/WHERE separation is the disambiguation tool for the People matrix specifically; for Facility, Organization, and Infrastructure, WHERE collapses into WHAT and the boundary is set by what the threat actor's primary objective targets. Motivation lives in actor profiles, not in matrix placement. Real-world incidents may legitimately invoke tactics from multiple matrices simultaneously; cross-matrix coverage is expressed through the Detection Mesh via indicator correlates_with references. When a downstream consumer requires a single primary-matrix call per incident, default to the matrix containing the tactic that achieved the threat actor's terminal objective; ties broken by precedence People > Facilities > Organizations > Infrastructure. Where the threat actor's primary objective is uncertain or unknown, primary-matrix placement defaults to the matrix containing the tactic that produced the most observable consequence; the incident-level confidence of this inference is annotated separately via primary_objective_evidence_tier (its case-consumer home is conditioned_assessment.primary_objective_evidence_tier). For an interdicted case, where no terminal objective was achieved, placement follows the INTENDED terminal objective at a stated evidence tier rather than the furthest tactic reached, so disruption does not move the matrix call. One principle governs placement throughout: the threat actor's primary objective decides the matrix. Where the target is people, one or many, placement is People; where it is a place or structure, Facility; where it is a service, system, or link, Infrastructure; where it is the enterprise, Organizations. A passive transportation structure attacked to deny the transportation service or cause a cascading effect is Infrastructure; the same structure attacked as the place itself or for the people at it is Facility. Consumers may override.",
@@ -583,7 +583,7 @@
             "domestic stalking case progressing from generalized harassment to targeted research on the targeted subject's daily movements",
             "[literature: NTAC-MASS-2021 case pattern: pre-attack target grievance narrowed to a single named individual identified weeks or months before mobilization]"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Credibility of a Target Selection finding rises with convergence: separate indicator types pointing at the same named individual within overlapping timeframes: with a trajectory observed over time rather than a single moment, and with recoverable evidence that does not depend on accurate witness recall. It falls with single uncorroborated reports, targeting that stays diffuse, an unaddressed ordinary explanation, and reporters whose stake in the matter could distort what they pass on.",
@@ -1195,7 +1195,7 @@
             "fixated insider compiling profile of an executive's family members, vehicles, and weekend routine outside any job function",
             "[literature: MELOY-TRAP18-2016: pathway warning sign of pre-attack research and 'studying' of the intended targeted subject]"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Credibility of a Subject Profiling finding rises with convergence across collection modalities: digital, insider, and physical observation independently building one coherent operational picture: with a profile that is actively maintained and updated over time, and with recoverable evidence that does not depend on witness recall. It falls with isolated single-modality lookups, collection that fits an ordinary explanation, scattered detail that never assembles into a picture, and reporters whose stake could distort the account.",
@@ -1884,7 +1884,7 @@
             "executive protection case where reverse image search of an open-source post identified the subject standing across from the targeted subject's home",
             "[literature: NTAC-MASS-2021 case pattern: pre-attack site visits in the weeks before mass attacks at workplaces and public venues]"
           ],
-          "evidence_basis": "operational_primary"
+          "evidence_basis": "practice_led"
         },
         {
           "id": "TM0104",
@@ -2434,7 +2434,7 @@
             "[literature: NTAC-MASS-2021: pre-attack acquisition timelines for mass attacks against public spaces, including weapons, vehicles, and protective gear]",
             "extremist radicalization case where the threat actor researched 3D-printed firearm components and IED precursors online for months before any physical acquisition occurred"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "assessment_guidance": {
             "credibility": {
               "criteria": "Credibility of a Capability Acquisition finding rises with recoverable transactional evidence (financial, rental, delivery, and access records) that physically ties the actor to the materiel, with corroboration across separate acquisition threads, and with an anomaly of quantity, configuration, or timing that lawful use does not account for. It falls with uncorroborated single reports, acquisitions that have a checkable lawful purpose, an ordinary explanation left unaddressed, and reporters whose stake could distort the account.",
@@ -3094,7 +3094,7 @@
             "Across casework, insider actors building target access often work through people already in their orbit: co-workers, family members, professional contacts drawn in to extend access without drawing scrutiny",
             "lone-actor case where the absence of any associate involvement was itself diagnostic; the threat assessment team correctly anticipated a single-actor execution"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0106",
@@ -3655,7 +3655,7 @@
             "Vendor or contractor identity is the dominant cover-for-action pattern across facility-targeted casework: fabricated business presence supported by visible artifacts (badge requests, scheduled deliveries, accompanied walkthroughs) that precede any kinetic action",
             "domestic case where a low-tech behavioral cover (jogger, dog walker) sustained repeated environmental survey of the targeted subject's residence over several weeks"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0107",
@@ -4255,7 +4255,7 @@
             "workplace violence case with documented progression from generalized grievance to specific planning to means acquisition over a six-month window",
             "domestic terrorism investigation where peer-reported ideation and online identification with prior attackers preceded weapons acquisition by months"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0108",
@@ -4802,7 +4802,7 @@
             "[literature: NTAC-MASS-2021: pre-attack pattern of varied approaches and counter-surveillance behaviors observed in higher-sophistication mass attack cases]",
             "extremist case where the threat actor used Tor and pseudonymous social media for all targeted-subject reconnaissance, with no clear-net signal until very late in the planning cycle"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0201",
@@ -5336,7 +5336,7 @@
             "[literature: NTAC-MASS-2021: pre-attack rehearsal patterns documented in mass attacks against public spaces, including timing studies of security shift changes]",
             "facility attack case where the threat actor performed partial rehearsal at a similar building (same architecture, same retail tenant) before targeting the actual location"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0202",
@@ -5907,7 +5907,7 @@
             "[literature: FBI-PREATTACK-2018: pre-attack pattern of financial withdrawals consistent with cash-based operational expense in active shooter cases]",
             "insider threat case where compartmentalized communications via a separate device were detected through corroborating peer report and IT-anomaly observation, leading to interruption before mobilization completed"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0203",
@@ -6475,7 +6475,7 @@
             "Casework pattern: service-side access points (loading docks, vendor entrances, freight elevators) present a friendlier social-engineering surface than the front of house, and breach attempts during mobilization concentrate there",
             "domestic attack at a protected residence where the threat actor breached the perimeter at a side gate with no camera coverage, with detection occurring only when the threat actor was already inside the property"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0204",
@@ -7045,7 +7045,7 @@
             "Across casework, tailgating and escort manipulation are the standard methods for moving across interior access tiers: attaching to legitimate movement rather than presenting credentials, especially at the edges between public-facing and restricted zones",
             "domestic attack at a protected residence where the threat actor entered via the perimeter then defeated three interior locks in sequence using bump-key tools, recognized through audio sensor logs in retrospect"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0205",
@@ -7578,7 +7578,7 @@
             "Casework pattern: access elevation through cover-for-action: the threat actor presents in a role that grants higher access than their actual status authorizes: vendor, contractor, visiting executive, IT support, or a social-engineering call to reception that produces a temporary badge: and operates from inside that elevated tier without the friction of credential challenges",
             "facility attack case where the threat actor used a cloned employee badge to bypass automated verification, with the elevation recognized only after post-incident audit-trail analysis"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0206",
@@ -8103,7 +8103,7 @@
             "[literature: NTAC-MASS-2021: pre-attack pattern of static-position observation prior to mass attacks against public spaces]",
             "facility attack where the threat actor's operational alertness behaviors (horizon scanning, watch-checking) were captured on CCTV but not aggregated to a threat assessment trigger until after-action review"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0207",
@@ -8586,7 +8586,7 @@
             "[literature: NTAC-MASS-2021: pattern of pre-attack delays and stand-downs in mass attack cases, with kinetic moment occurring weeks or months after initial planning consolidation]",
             "near-miss case where the threat actor aborted entirely after extended pause; recognized only retrospectively when a separate investigation identified the threat actor's pre-attack research patterns matching the protected environment"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0208",
@@ -9146,7 +9146,7 @@
             "[literature: NTAC-MASS-2021: pattern of pre-attack timing alignment with shift changes and crowd events at mass attack cases]",
             "domestic case where the threat actor used live traffic data and a public event live-stream to confirm the targeted subject's residence absence before forced entry"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0209",
@@ -9643,7 +9643,7 @@
             "[literature: NTAC-MASS-2021: pre-attack pattern of repeated partial approaches at the live target environment in mass attack cases]",
             "facility attack case where access-log anomalies (unverified contractor visit, abandoned vendor delivery) preceded the kinetic moment by weeks and were recognized as partial approach rehearsal only in after-action review"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0301",
@@ -10161,7 +10161,7 @@
             "[literature: NTAC-MASS-2021: pattern of brief intervention windows during active force application events where deviation from the operational plan created opportunity for response]",
             "facility attack where the threat actor's announced commitment marker (visible weapon, verbal declaration) preceded the kinetic moment by several seconds and gave bystanders time to evacuate"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0302",
@@ -10670,7 +10670,7 @@
             "[literature: NTAC-MASS-2021: pattern of vehicle-ramming and forced-entry at mass attacks against public spaces, with on-site response capability identified as the determinative variable in casualty outcomes]",
             "domestic case where the threat actor used a hydraulic spreader to defeat a residential door lock, recovered post-incident from the threat actor's vehicle and tied to capability acquisition records weeks earlier"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0303",
@@ -11177,7 +11177,7 @@
             "Seizure events in execution sometimes proceed without physical force: the targeted subject complies under verbal threat alone, leaving no visible force signature and limited forensic surface for downstream reconstruction",
             "barricade incident where the threat actor occupied the targeted subject's residence and held it for negotiation, with the operational outcome determined by negotiation duration and tactical patience"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0304",
@@ -11643,7 +11643,7 @@
             "[literature: NTAC-SYSTEMS-2020: patterns of demand articulation and negotiation framing observed across hostage-incident cases, with implications for crisis-negotiation team posture]",
             "executive protection case where rapid law enforcement intervention during the captive-control window prevented the operational shift from kidnapping to ransom-demand by interrupting the threat actor's communications cadence"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0305",
@@ -12111,7 +12111,7 @@
             "[literature: NTAC-MASS-2021 case pattern: pre-attack surveillance of response timing including police response routes and on-site security shift changes]",
             "facility attack where physical barriers were positioned at perimeter access points to delay response force entry"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0306",
@@ -12591,7 +12591,7 @@
             "[literature: NTAC-MASS-2021: pattern of bystander-management decisions in mass-attack cases, with high-tempo operations accepting bystander exposure as operational cost]",
             "executive protection case where the threat actor used a fabricated film-production claim to delay bystander recognition that the operation was underway, gaining operational tempo before law enforcement was alerted"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0307",
@@ -13104,7 +13104,7 @@
             "[literature: CISA-CONVERGE-2021: pattern of cyber-enabled counter-surveillance during physical operations, including monitoring of facility CCTV systems via prior unauthorized access]",
             "executive protection case where mid-execution counter-surveillance triggered an abort when the threat actor recognized that an observer had identified the staged getaway vehicle, with the case closing without a kinetic event"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0308",
@@ -13653,7 +13653,7 @@
             "Cases involving coordinated actors routinely show compartmentalized communications (out-of-band channels, code phrases, time-of-day signaling) designed to evade workplace monitoring without losing coordination",
             "facility attack with three coordinated threat actors where the absence of recovered comms artifacts (devices destroyed, codes never written down) limited post-incident network reconstruction to bystander observation"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0401",
@@ -14171,7 +14171,7 @@
             "[literature: NTAC-MASS-2021: pattern of withdrawal planning differences between organized and ideologically-driven threat actors at mass attacks against public spaces]",
             "domestic attack at a residence where the threat actor's withdrawal route deliberately avoided arterial roads and known camera positions, identified retrospectively through cross-jurisdictional CCTV correlation"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0402",
@@ -14728,7 +14728,7 @@
             "[literature: FBI-PREATTACK-2018: pattern of pre-attack anti-forensic discipline at a subset of active shooter cases including device wiping and timeline curation]",
             "insider conspirator case where post-incident social media curation by a known associate revealed the network's operational discipline and supported expanded investigation"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0403",
@@ -15224,7 +15224,7 @@
             "[literature: FBI-PREATTACK-2018: pattern of post-incident behavioral normalization in active shooter cases, with disciplined return to routine identified as a marker of pre-meditation rather than impulsive attack]",
             "insider threat case where the threat actor's resumed workplace routine showed the precise tone-matching of pre-incident peer interactions but failed under cross-reference of badge-swipe patterns inconsistent with claimed activities"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0404",
@@ -15770,7 +15770,7 @@
             "[literature: NITTF-GUIDE-2017: pattern of insider-network discipline post-incident, including pre-coordinated response protocols and the diagnostic value of network-protection sophistication]",
             "lone-actor case where the absence of any network-protection signature was correctly read as confirmation of lone-actor profile, simplifying the post-incident investigation focus"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0405",
@@ -16262,7 +16262,7 @@
             "[literature: CISA-CONVERGE-2021: pattern of cyber-physical convergent operations using cryptocurrency for both capability acquisition and post-operation receipt, with disposition sophistication determining investigative success]",
             "ransom case where the threat actor's privacy-coin migration of proceeds substantially defeated blockchain forensics, with attribution achieved only through parallel investigation of accomplice communications"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0406",
@@ -16745,7 +16745,7 @@
             "[literature: NTAC-SYSTEMS-2020: pattern of methodology evolution across linked threat actor operations, with after-action assessment identified as the mechanism producing detection-resistance over time]",
             "professional operator case where the threat actor's pattern across five operations over a decade showed continuous tightening of operational signature, with each cycle producing fewer recoverable artifacts than the prior"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0407",
@@ -17251,7 +17251,7 @@
             "[literature: NTAC-MASS-2021: pattern of pre-recorded attribution material distribution at mass attack cases, including manifesto-platform pre-staging]",
             "nation-state operation where attribution was deliberately constructed to misdirect blame to a third party, identified retrospectively through forensic analysis of message metadata and operational artifacts"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0408",
@@ -17744,7 +17744,7 @@
             "[literature: CISA-CONVERGE-2021: pattern of cyber-physical convergent amplification using social media and encrypted channels to maximize ideological-attack communicative impact]",
             "domestic terrorism case where the threat actor's amplification strategy exploited a related news cycle weeks after the incident, returning the case to public attention and pressuring policy response"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TM0409",
@@ -18261,7 +18261,7 @@
             "In aftermath leverage, the actor's demands typically come in sequence with deadlines attached: specific demand sequences, time pressure, escalation triggers that shape the crisis-negotiation team's posture from the first contact",
             "transnational case where coercive leverage was applied through religious-figure intermediary to a foreign government, identified retrospectively when the intermediary disclosed the threat actor's instructions during post-resolution debriefing"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         }
       ],
       "scope": "Tactics centered on one or more human beings as the primary target. The threat actor's primary objective is harm, control, coercion, or surveillance directed at people. Setting and motivation are separate dimensions and do not change matrix placement."
@@ -18771,7 +18771,7 @@
           "actor referencing a prior high-profile facility attack as a model and asking how the target had been chosen",
           "[literature: NTAC-MASS-2021 / FBI-PREATTACK-2018 pattern: grievance-driven fixation on a symbolic site preceding facility attacks]"
          ],
-         "evidence_basis": "operational_primary"
+         "evidence_basis": "practice_led"
         },
         {
           "id": "TF0102",
@@ -19292,7 +19292,7 @@
             "extremist who annotated satellite and street imagery of a corporate campus, mapping entrances and parking from home",
             "[literature: CISA-SOFTTARGETS-2019 / RAND-SOFTTARGETS-2024 pattern: open-source occupancy and schedule collection against soft targets preceding attack planning]"
           ],
-          "evidence_basis": "operational_primary"
+          "evidence_basis": "practice_led"
         },
         {
           "id": "TF0103",
@@ -19817,7 +19817,7 @@
             "guard suspicious-activity report of an individual photographing camera placements and timing the patrol loop from a bench across the street over several days",
             "[literature: SANDIA-GARCIA-VAPPS-2006 / DHS-ISC-RMP-2021 pattern: ground reconnaissance and access probing preceding forced or covert entry against a defined facility]"
           ],
-          "evidence_basis": "operational_primary"
+          "evidence_basis": "practice_led"
         },
         {
           "id": "TF0104",
@@ -20334,7 +20334,7 @@
             "arson-and-collapse plot in which the actor studied a building's utility risers to identify where a fire would spread fastest and disable suppression",
             "[literature: FEMA-426-2011 / DOD-UFC4010-2018 pattern: structural standoff and progressive-collapse vulnerabilities as target-development focus preceding facility attacks]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0105",
@@ -20866,7 +20866,7 @@
             "insider-adjacent case where a former contractor elicited badge-reader type and alarm-zone layout from current staff",
             "[literature: SANDIA-GARCIA-VAPPS-2006 / DHS-ISC-RMP-2021 pattern: adversary path analysis and PPS gap-mapping preceding facility intrusion]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0106",
@@ -21362,7 +21362,7 @@
             "actor who bought a used cargo vehicle for cash and acquired breaching tools matched to a hardened facility entrance",
             "[literature: ATF-EIR-2024 / NFPA-INTENTIONAL-2021 pattern: precursor and accelerant acquisition preceding incendiary and explosive attacks on facilities]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0107",
@@ -21880,7 +21880,7 @@
             "aggrieved group whose shared grievance was converted into tasked operational roles, with one member soliciting funds and a safe location",
             "[literature: CTC-INFRATERROR-2026 / NITTF-GUIDE-2017 pattern: online recruitment and insider cultivation preceding coordinated attacks on facilities and infrastructure]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0108",
@@ -22425,7 +22425,7 @@
             "actor taking a genuine janitorial or delivery role with a facility vendor to obtain recurring after-hours access",
             "[literature: CISA-SOFTTARGETS-2019 / DOD-UFC4022-2017 pattern: impersonation of trusted vendors and inspectors to defeat access control at soft targets]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0109",
@@ -22948,7 +22948,7 @@
             "extremist livestreaming last-resort framing and uploading a manifesto referencing a place of worship as the intended site hours before mobilizing",
             "[literature: NTAC-MASS-2021 / MELOY-TRAP18-2016 pattern: leakage, last-resort framing, and energy-burst warning behaviors preceding targeted facility attacks]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0110",
@@ -23461,7 +23461,7 @@
             "case where an actor's first pass at a facility drew a plainclothes officer into the open, after which the actor never returned by the same route",
             "[literature: SANDIA-GARCIA-VAPPS-2006 / DHS-ISC-RMP-2021 pattern: adversary reaction-testing and coverage-mapping of a facility's protection system before an approach]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0201",
@@ -23989,7 +23989,7 @@
             "off-site case where an actor practiced a breach-and-move sequence on a vacant building of similar layout before targeting the live facility",
             "[literature: NTAC-MASS-2021 / FBI-PREATTACK-2018 pattern: pre-attack rehearsal and probing behavior preceding facility attacks]"
           ],
-          "evidence_basis": "operational_primary"
+          "evidence_basis": "practice_led"
         },
         {
           "id": "TF0202",
@@ -24509,7 +24509,7 @@
             "insider-facilitated case where a contractor uniform and a valid-looking work order were used to cache tools inside the perimeter ahead of an intended action",
             "[literature: ATF-EIR-2024 / FBI-PREATTACK-2018 pattern: pre-attack caching, device disguise, and OPSEC discipline preceding facility attacks]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0203",
@@ -25045,7 +25045,7 @@
             "coordinated activist incursion over a perimeter fence at a controlled industrial site, timed to a shift change and breaching as a group",
             "[literature: DOD-UFC4010-2018 / GAO-19-138-2018 pattern: layered perimeter defeat and guard-force response gaps documented in facility security assessments]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0204",
@@ -25595,7 +25595,7 @@
             "contractor-pretext penetration in which the actor's confident interior navigation, not a document, was what exposed prior layout knowledge",
             "[literature: DOD-UFC4022-2017 / GAO-19-138-2018 pattern: entry-control and interior access-control gaps enabling unescorted movement into controlled facility zones]"
           ],
-          "evidence_basis": "operational_primary"
+          "evidence_basis": "practice_led"
         },
         {
           "id": "TF0205",
@@ -26124,7 +26124,7 @@
             "actor observed returning after hours to reposition a concealed package against an interior load-bearing column",
             "[literature: ATF-EIR-2024 / FEMA-426-2011 pattern: device placement against structural and standoff-critical points to maximize effect]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0206",
@@ -26629,7 +26629,7 @@
             "person taking up a position covering a single controlled exit during service hours, consistent with channeling occupants toward a killing ground",
             "[literature: FBI-ACTIVESHOOTER-2024 / NTAC-MASS-2021 pattern: attackers occupying pre-selected positions commanding entrances and egress before initiating at soft-target sites]"
           ],
-          "evidence_basis": "operational_primary"
+          "evidence_basis": "practice_led"
         },
         {
           "id": "TF0207",
@@ -27138,7 +27138,7 @@
             "extremist fixing on a symbolic anniversary date and posting countdown language naming the site in the weeks before",
             "[literature: NTAC-MASS-2021 / FBI-PREATTACK-2018 pattern: attackers synchronizing action to peak-occupancy or symbolically significant windows to maximize impact]"
           ],
-          "evidence_basis": "operational_primary"
+          "evidence_basis": "practice_led"
         },
         {
           "id": "TF0208",
@@ -27667,7 +27667,7 @@
             "sabotage plot in which the actor located and reached the external power feed and water service to stage a coordinated utility denial",
             "[literature: NIST-SP800-82-2023 / CISA-CFATS-2023 pattern: unauthorized reach into ICS and life-safety systems as an enabling step preceding facility sabotage]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0209",
@@ -28176,7 +28176,7 @@
             "vehicle lined up at a run-up angle toward a crowded entrance during operating hours, consistent with a ramming approach rather than parking",
             "[literature: NTAC-MASS-2021 / FBI-PREATTACK-2018 pattern: final-approach and last-resort behaviors observed in the minutes before facility attacks]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0301",
@@ -28680,7 +28680,7 @@
             "after-hours fire set to an unoccupied place of worship, multiple points of origin found, no occupants present at the time of ignition",
             "[literature: ATF-AIR-2023 / NFPA-INTENTIONAL-2021 pattern: intentionally set structure fires with multiple points of origin and accelerant-consistent spread against occupied and symbolic facilities]"
           ],
-          "evidence_basis": "operational_primary"
+          "evidence_basis": "practice_led"
         },
         {
           "id": "TF0302",
@@ -29211,7 +29211,7 @@
             "secondary suspected device located along an evacuation route after an initial blast, targeting evacuees and first responders",
             "[literature: ATF-EIR-2024 / FEMA-426-2011 pattern: vehicle-borne and placed devices against occupied and symbolic facilities, with secondary-device targeting of responders]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0303",
@@ -29732,7 +29732,7 @@
             "grievance-driven actor who acquired structural drawings and marked the single column whose loss the documents showed would propagate to collapse",
             "[literature: FEMA-426-2011 / DOD-UFC4010-2018 pattern: progressive-collapse vulnerability and standoff dependence of load-bearing members in occupied structures]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0304",
@@ -30271,7 +30271,7 @@
             "activist action against a targeted site that dropped the video head-end and access-control monitoring immediately before a coordinated intrusion",
             "[literature: NIST-SP800-82-2023 / GAO-24-106744-2024 pattern: internet-exposed building-control and operational-technology systems manipulated to disable protective functions or drive equipment to unsafe states]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0305",
@@ -30795,7 +30795,7 @@
             "heavy vehicle rammed a perimeter gate and bollard line to defeat standoff, followed by dismounted threat actors moving toward the building",
             "[literature: CISA-HVM-2024 / ASTM-F2656-2020 pattern: hostile-vehicle attacks on unprotected pedestrian frontages defeating inadequate or absent standoff barriers]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0306",
@@ -31321,7 +31321,7 @@
             "blockade of a facility's loading dock and access points by vehicles and lock-on devices that denied use of the whole site",
             "[literature: FBI-HOBAS-2024 / NAF-CLINICVIOLENCE-2024 pattern: barricade and occupation incidents at clinics and public facilities escalating from denial-of-use to confinement of occupants]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0307",
@@ -31818,7 +31818,7 @@
             "clinic exterior subjected to recurring overnight glass breakage and lock-fouling as part of a sustained intimidation campaign",
             "[literature: FBI-HATECRIME-2024 / CTC-INFRATERROR-2026 pattern: targeted defacement and symbolic marking as community intimidation and a precursor to escalation against the site]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0308",
@@ -32352,7 +32352,7 @@
             "cluster of occupants reporting acute symptoms consistent with a waterborne exposure, isolating the served zone before the pathway was characterized",
             "[literature: NIOSH-BLDG-CBR-2002 / FEMA-426-2011 pattern: introduction of a CBR agent into building air or water systems to expose occupants through the facility's own distribution]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0309",
@@ -32874,7 +32874,7 @@
             "attack planning that included a secondary device staged at the parking-area ingress to strike arriving fire and police units",
             "[literature: FEMA-426-2011 / CISA-BOMBTHREAT-2023 pattern: secondary devices and defeated life-safety systems used to extend an attack and target responders]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0401",
@@ -33392,7 +33392,7 @@
             "utility-facility sabotage followed by cross-jurisdiction flight to a prepared location, with recovered mapping showing reconnoitered egress paths",
             "[literature: FBI-ACTIVESHOOTER-2024 / START-GTD-2020 pattern: planned egress and post-incident flight distinguishing premeditated facility attacks from spontaneous acts]"
           ],
-          "evidence_basis": "operational_primary"
+          "evidence_basis": "practice_led"
         },
         {
           "id": "TF0402",
@@ -33925,7 +33925,7 @@
             "incident in which items were staged to suggest a rival group's method, briefly redirecting the early investigation before forensic review exposed the inconsistency",
             "[literature: START-GTD-2020 / USFA-ARSON-2021 pattern: post-incident removal and destruction of probative materials complicating attribution at attacked sites]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0403",
@@ -34441,7 +34441,7 @@
             "actor who deleted burner accounts and reactivated a dormant clean social profile within hours of the attack, then posted ordinary content to backstop an innocent timeline",
             "[literature: CTC-INFRATERROR-2026 / FBI-PREATTACK-2018 pattern: post-attack reversion to a prepared legitimate identity and rehearsed alibi to defeat attribution]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0404",
@@ -34981,7 +34981,7 @@
             "insider who badged an actor into a restricted area coached to present the access as routine and to conceal the relationship during internal review",
             "[literature: CTC-INFRATERROR-2026 / NAF-CLINICVIOLENCE-2024 pattern: networked and issue-motivated offenders protecting co-participants and pressuring witnesses after an attack on a facility]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0405",
@@ -35492,7 +35492,7 @@
             "extortion-linked facility incident where demand proceeds were routed through a shell consulting entity presented as legitimate invoicing",
             "[literature: CHAINALYSIS-CCR-2024 / CTC-INFRATERROR-2026 pattern: post-incident laundering via crypto obfuscation and front entities documented across illicit-finance and infrastructure-attack casework]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0406",
@@ -35993,7 +35993,7 @@
             "actor revisiting the site and reviewing bystander footage to validate structural damage against the intended effect",
             "[literature: CTC-INFRATERROR-2026 / START-GTD-2020 pattern: post-incident lessons-learned and tradecraft dissemination feeding iterative campaigns against infrastructure and soft targets]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0407",
@@ -36518,7 +36518,7 @@
             "sabotage scene staged to present as an electrical fault, with misleading ignition sources introduced to defeat cause-and-origin reconstruction",
             "[literature: USFA-ARSON-2021 / NFPA-INTENTIONAL-2021 pattern: intentional-fire scenes engineered to frustrate ignitable-liquid-residue analysis and origin determination]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0408",
@@ -37031,7 +37031,7 @@
             "incident in which an unattended package left at the occupant reunification site forced a second evacuation before it could be rendered safe",
             "[literature: ATF-EIR-2024 / START-GTD-2020 pattern: secondary devices and re-attack positioning directed at responders and returning occupants following an initial facility attack]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0409",
@@ -37541,7 +37541,7 @@
             "spray-painted organizational symbol and slogan left at a firebombed site to signal authorship and movement affiliation",
             "[literature: CTC-INFRATERROR-2026 / FBI-HATECRIME-2024 pattern: post-attack claims and manifestos used to attribute, intimidate, and inspire emulation]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0410",
@@ -38037,7 +38037,7 @@
             "arson case where the actor filmed the fire and pushed the clip with grievance hashtags to seed imitation against similar clinics",
             "[literature: CTC-INFRATERROR-2026 / FBI-HATECRIME-2024 pattern: post-attack propaganda circulation and copycat contagion following facility attacks]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0411",
@@ -38532,7 +38532,7 @@
             "threat actor's released materials presenting the act as a template: instructional framing and coded references inviting emulation against similar sites",
             "[literature: FBI-HATECRIME-2024 / CTC-INFRATERROR-2026 pattern: ideological iconography and community-directed intimidation encoded into facility attacks and their communications]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         },
         {
           "id": "TF0412",
@@ -39054,7 +39054,7 @@
             "bomb-threat campaign following an initial detonation, using a deadline and a claimed secondary to pressure evacuation and concession",
             "[literature: CTC-INFRATERROR-2026 / CISA-BOMBTHREAT-2023 pattern: post-attack demand paired with a claimed follow-on device used to coerce a target facility]"
           ],
-          "evidence_basis": "hybrid"
+          "evidence_basis": "practice_and_literature"
         }
       ],
       "scope": "Tactics centered on a physical venue, structure, or built environment as the primary target. The threat actor's primary objective is damage, destruction, denial, or symbolic action against the place itself. Incidental human harm in an unoccupied facility does not move the tactic to People."
@@ -39575,7 +39575,7 @@
           "observed_contexts": [
             "campaigns where an ideologically motivated group singles out one institution among many peers because its mission or public standing embodies the value the group opposes, then treats every site and officer merely as a way into that institution"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CALHOUN-WESTON-2003",
             "START-GTD-2020"
@@ -40092,7 +40092,7 @@
           "observed_contexts": [
             "campaigns against member-governed or board-led institutions where a hostile party reconstructs the decision chain and identifies which few officers can bind or halt the organization before contesting its mandate"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "NTAC-SYSTEMS-2020"
           ]
@@ -40619,7 +40619,7 @@
           "observed_contexts": [
             "campaigns where a hostile group studies an institution's public messaging and prior controversies to find the legitimacy claim it can most credibly contest, then builds a narrative that turns the institution's own stated values against it"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026"
           ]
@@ -41143,7 +41143,7 @@
           "observed_contexts": [
             "campaigns where a hostile party maps the funders, regulators, and vendors an institution depends on for continuity, then plans pressure against a single load-bearing relationship whose loss cascades through the whole organization"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CISA-CONVERGE-2021"
           ]
@@ -41653,7 +41653,7 @@
           "observed_contexts": [
             "campaigns where a hostile group studies internal factions and morale fault lines within a membership organization to find where it can seed division and turn members against leadership or against one another"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CERT-CSG-7-2022"
           ]
@@ -42172,7 +42172,7 @@
           "observed_contexts": [
             "campaigns where a hostile party surveys an institution's workforce and affiliates for individuals whose grievance, ideology, or privileged access marks them as future recruitment or coercion candidates against the organization"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CERT-CSG-7-2022",
             "CISA-DIT-2023",
@@ -42696,7 +42696,7 @@
           "observed_contexts": [
             "campaigns where a hostile group inventories the records, member data, and internal communications an institution controls to identify what can be leaked, altered, or counterfeited to damage its standing or operations"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CISA-CONVERGE-2021"
           ]
@@ -43202,7 +43202,7 @@
           "observed_contexts": [
             "campaigns where a hostile party sends pretext inquiries or trial applications through an institution's intake and complaint channels to learn how it screens, escalates, and responds before committing to the main operation"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CALHOUN-WESTON-2003"
           ]
@@ -43704,7 +43704,7 @@
           "observed_contexts": [
             "cases where an individual moves from generalized grievance against an institution toward an active campaign, showing fixation on that specific organization, leakage of intent, and steps that convert planning into mobilization"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CALHOUN-WESTON-2003",
             "MELOY-TRAP18-2016",
@@ -44201,7 +44201,7 @@
           "observed_contexts": [
             "campaigns where a hostile group runs trial infiltration approaches or test disruptions against an institution to confirm the operation works before executing the full campaign against it"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CALHOUN-WESTON-2003"
           ]
@@ -44720,7 +44720,7 @@
           "observed_contexts": [
             "campaigns where a hostile party cultivates, induces, or coerces a trusted employee or member into acting against the institution from within, converting a previously identified candidate into an operating insider"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CERT-CSG-7-2022",
             "CISA-DIT-2023",
@@ -45224,7 +45224,7 @@
           "observed_contexts": [
             "campaigns where a hostile group builds a front group or false affiliate that borrows institutional legitimacy, giving the operation a credible face from which to approach, impersonate, or maneuver against the target institution"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026"
           ]
@@ -45746,7 +45746,7 @@
           "observed_contexts": [
             "coercion campaigns where a hostile group fabricates and pre-positions a delegitimizing narrative and forged records before it publicly pressures an institution to change a policy or stand down"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026"
           ]
@@ -46265,7 +46265,7 @@
           "observed_contexts": [
             "entryist patterns where a hostile actor joins, volunteers for, or contracts with an institution through legitimate channels in order to operate from a position the institution already trusts"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CISA-DIT-2023",
             "NITTF-GUIDE-2017"
@@ -46770,7 +46770,7 @@
           "observed_contexts": [
             "capture patterns where an actor who has gained legitimate presence then escalates into financial, administrative, or governance authority disproportionate to any genuine organizational role"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CERT-CSG-7-2022",
             "CISA-CONVERGE-2021"
@@ -47299,7 +47299,7 @@
           "observed_contexts": [
             "coercion buildups where a hostile actor collects leaked records, financial exposure, or compromising material to be held over an institution and used to bend its decisions"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CALHOUN-WESTON-2003"
           ]
@@ -47799,7 +47799,7 @@
           "observed_contexts": [
             "pre-operational buildups where a hostile group assembles funding, staff, platforms, and infrastructure to sustain a prolonged campaign against an institution before any public action begins"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CHAINALYSIS-CCR-2024"
           ]
@@ -48303,7 +48303,7 @@
           "observed_contexts": [
             "astroturf pressure campaigns where a hostile actor assembles proxies, front groups, and sympathetic third parties to simulate widespread consensus and multiply force against an institution"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "START-GTD-2020"
           ]
@@ -48804,7 +48804,7 @@
           "observed_contexts": [
             "concealment patterns where a hostile actor actively detects and evades an institution's own security, audit, and counterintelligence functions to protect embedded insiders and fronts while an operation is being built"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "NITTF-GUIDE-2017"
           ]
@@ -49296,7 +49296,7 @@
           "observed_contexts": [
             "trusted-intermediary attacks where a hostile actor compromises or co-opts a vendor, auditor, accreditor, or platform an institution depends on in order to reach or discredit it through a relationship it trusts"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CISA-CONVERGE-2021",
             "CERT-CSG-7-2022"
@@ -49666,7 +49666,7 @@
           "observed_contexts": [
             "Insider and fraud activity is repeatedly observed to spike during reorganizations, layoffs, and merger integrations when access controls lag the change"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CERT-CSG-7-2022",
             "CISA-DIT-2023"
@@ -50183,7 +50183,7 @@
           "observed_contexts": [
             "extortion campaigns where a hostile actor threatens an institution's mission, continuity, or standing unless it pays, changes policy, or submits, targeting the organization's freedom to decide rather than any single individual"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CALHOUN-WESTON-2003"
           ]
@@ -50696,7 +50696,7 @@
           "observed_contexts": [
             "legitimacy-contestation campaigns where a hostile actor works to strip an institution of its perceived mandate and right to exist in the eyes of stakeholders and the public"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026"
           ]
@@ -51202,7 +51202,7 @@
           "observed_contexts": [
             "confidence-collapse operations where a hostile actor manufactures or amplifies scandal to sever the trust that donors, members, partners, or funders place in an institution"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026"
           ]
@@ -51717,7 +51717,7 @@
           "observed_contexts": [
             "insider-vector campaigns where a hostile actor cultivates or coerces someone inside an institution to leak, sabotage, or degrade its operations and information position from within"
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CERT-CSG-7-2022",
             "CISA-DIT-2023",
@@ -52228,7 +52228,7 @@
           "observed_contexts": [
             "Coordinated slates of aligned candidates advancing into an institution's boards, standing committees, or executive posts until a threat actor controls enough decision seats to redirect the organization's mission from within governance rather than from outside pressure."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CERT-CSG-7-2022"
           ]
@@ -52714,7 +52714,7 @@
           "observed_contexts": [
             "Organized campaigns that court an institution's members, staff, donors, or affiliates toward a competing destination in synchronized waves, draining the human capital and institutional knowledge the organization needs to sustain its mission."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CERT-CSG-7-2022"
           ]
@@ -53210,7 +53210,7 @@
           "observed_contexts": [
             "Pressure campaigns directed at an institution's donors, banks, payment processors, grantmakers, or sponsors that persuade those intermediaries to sever ties, cutting financial continuity without any contact with the organization's own facilities or systems."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CHAINALYSIS-CCR-2024"
           ]
@@ -53727,7 +53727,7 @@
           "observed_contexts": [
             "Compelled or executed release of an institution's confidential records, internal deliberations, or governance communications, timed and framed to damage the organization's public standing and negotiating position rather than to harm any single individual."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CISA-CONVERGE-2021"
           ]
@@ -54216,7 +54216,7 @@
           "observed_contexts": [
             "Efforts that seed and inflame factional division, generational grievance, or chapter-versus-leadership conflict inside an institution, converting normal internal disagreement into durable schism that splits the organization's unity as a single body."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026"
           ]
@@ -54708,7 +54708,7 @@
           "observed_contexts": [
             "Coordinated flooding of an institution's administrative and intake channels with complaint volleys, mass fabricated applications, or bureaucratic overload that saturates staff capacity and denies the organization the throughput to conduct its mission."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CALHOUN-WESTON-2003"
           ]
@@ -55684,7 +55684,7 @@
           "observed_contexts": [
             "Acquisition of an institution's control through a controlling ownership stake, accumulated debt and creditor leverage, or a proxy contest, taking the organization outright by economic and legal ownership rather than by infiltrating its board from within."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CHAINALYSIS-CCR-2024"
           ]
@@ -56187,7 +56187,7 @@
           "observed_contexts": [
             "Forged official communications, cloned branding, and fraudulent channels that impersonate a target institution's own identity to redirect its resources, deceive its stakeholders, or corrode the credibility the organization depends on to operate."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026"
           ]
@@ -56672,7 +56672,7 @@
           "observed_contexts": [
             "Organized boycott, divestment, or advertiser and sponsor pressure campaigns that mobilize a market or public constituency to turn against an institution, coercing or degrading the organization through withdrawn demand rather than by severing individual funding ties."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "START-GTD-2020"
           ]
@@ -57643,7 +57643,7 @@
           "observed_contexts": [
             "Deliberate wind-down and closure of the shell entities, front groups, and cutout organizations used to act against an institution, timed to remove the organizational vectors and break attribution back to the campaign's sponsor after the operation concludes."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026"
           ]
@@ -58136,7 +58136,7 @@
           "observed_contexts": [
             "Campaigns against an institution in which a threat actor seeds planted artifacts, borrowed tooling, and proxy intermediaries so that early responsibility appears to rest with a rival organization or a generic criminal element rather than the sponsoring actor."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "START-GTD-2020"
           ]
@@ -58624,7 +58624,7 @@
           "observed_contexts": [
             "Delegitimization efforts against an institution in which a threat actor routes a sponsored narrative through seemingly organic media, commentators, and civil-society intermediaries so the framing appears to arise independently rather than from a coordinated source."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026"
           ]
@@ -59156,7 +59156,7 @@
           "observed_contexts": [
             "Post-operation cleanup in which a threat actor destroys or selectively purges the records, communications, and financial trails that would let an institution reconstruct how a campaign against it was mounted and by whom."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "NITTF-GUIDE-2017"
           ]
@@ -59663,7 +59663,7 @@
           "observed_contexts": [
             "Aftermath of an institutional operation in which a threat actor insulates cultivated insiders, co-conspirators, and cutouts from exposure or consequence in order to keep the human network available for future campaigns."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CERT-CSG-7-2022"
           ]
@@ -60159,7 +60159,7 @@
           "observed_contexts": [
             "Situations where a threat actor leaves dormant insiders, latent influence positions, or residual footholds inside an institution after an operation concludes, keeping the organization penetrable for a renewed campaign."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CERT-CSG-7-2022",
             "CISA-DIT-2023"
@@ -60660,7 +60660,7 @@
           "observed_contexts": [
             "Post-campaign money handling in which a threat actor moves, layers, or launders extortion proceeds or operational financing through intermediaries and conversions to obscure the origin of funds behind an attack on an institution."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CHAINALYSIS-CCR-2024"
           ]
@@ -61156,7 +61156,7 @@
           "observed_contexts": [
             "Patterns in which a threat actor evaluates whether an institution was actually degraded, delegitimized, or coerced as intended and refines tradecraft, with the learning visible in the tightened design of subsequent campaigns against comparable organizations."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CALHOUN-WESTON-2003"
           ]
@@ -61645,7 +61645,7 @@
           "observed_contexts": [
             "Cases where a threat actor's movement or front rebrands, relocates, or restructures after exposure or sanction while preserving the same leadership, financing, and hostility toward institutions in order to keep operating under a cleaner identity."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026"
           ]
@@ -62138,7 +62138,7 @@
           "observed_contexts": [
             "Instances where a threat actor publicly claims responsibility for a campaign against an institution through a statement, manifesto, or media contact in order to frame the act as a deliberate and attributable strike."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "START-GTD-2020",
             "CTC-INFRATERROR-2026"
@@ -62641,7 +62641,7 @@
           "observed_contexts": [
             "Efforts in which a threat actor deliberately publicizes and spreads an institution's degradation, defection, or exposure across channels to maximize reach and reaction, converting the institutional damage into a public spectacle."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026"
           ]
@@ -63139,7 +63139,7 @@
           "observed_contexts": [
             "Scenarios in which a threat actor leverages a completed act against an institution to press further demands, extending extortion, ultimatums, or conditional threats aimed at policy change or organizational submission."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CALHOUN-WESTON-2003"
           ]
@@ -63625,7 +63625,7 @@
           "observed_contexts": [
             "Patterns where a threat actor uses a demonstrated success against an institution as a mobilization tool to recruit followers, inspire copycats, and build momentum for additional operations against similar organizations."
           ],
-          "evidence_basis": "hybrid",
+          "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026",
             "START-GTD-2020"
@@ -73888,7 +73888,7 @@
               "escalation_weight": 6.22,
               "severity_band": "high",
               "axis_confidence": {
-                "impact_potential": "established",
+                "impact_potential": "inferred",
                 "blast_radius_potential": "inferred",
                 "recoverability_inverse": "inferred",
                 "detectability": "inferred"
@@ -73942,7 +73942,7 @@
               "escalation_weight": 6.47,
               "severity_band": "high",
               "axis_confidence": {
-                "impact_potential": "established",
+                "impact_potential": "inferred",
                 "blast_radius_potential": "inferred",
                 "recoverability_inverse": "inferred",
                 "detectability": "inferred"
@@ -74184,7 +74184,7 @@
             "The 2013 Metcalf substation attack ended roughly one minute before police arrived, consistent with a response-window calculation",
             "Grid and pipeline operators plan around seasonal peak-load windows during which a disruption propagates furthest"
           ],
-          "evidence_basis": "literature_primary",
+          "evidence_basis": "literature_led",
           "source_refs": [
             "NIST-SP800-82-2023",
             "CTC-INFRATERROR-2026"
@@ -76037,7 +76037,7 @@
                 "impact_potential": "inferred",
                 "blast_radius_potential": "inferred",
                 "recoverability_inverse": "inferred",
-                "detectability": "inferred"
+                "detectability": "established"
               },
               "informs_axes": {
                 "actor_capability": "strong",
@@ -83455,6 +83455,11 @@
       "state_actor_type": "proxy"
     },
     {
+      "id": "AP022",
+      "lifecycle_state": "reserved",
+      "reserved_reason": "Former-insider behavior is modeled via the employment_status modifier on actor_associations rather than as a separate profile (V1.0 design review)."
+    },
+    {
       "id": "AP014",
       "name": "State-Directed Corporate Front",
       "category": "nation_state",
@@ -83616,6 +83621,11 @@
         "deepfake_voice_video",
         "accelerated_target_research"
       ]
+    },
+    {
+      "id": "AP027",
+      "lifecycle_state": "reserved",
+      "reserved_reason": "Withdrawn during V1.0 pre-publication review; the identifier is held so it is never reused."
     },
     {
       "id": "AP028",
@@ -83851,7 +83861,7 @@
     },
     "severity_floor_rule": {
       "definition": "A triage floor layered on the severity math: an indicator whose behavior applies DIRECT PHYSICAL FORCE to a person's body carries severity_band = critical at minimum, regardless of its computed escalation_weight. escalation_weight is unchanged, it remains the true severity computation, so the gradient between a single assault (~4.6) and a mass bombing (~8.7) is preserved, but the triage band for any force against a person is critical. Such indicators carry a `severity_floor` field set to \"critical\". Rationale: a casualty is critical regardless of scale. The severity math gates the top band on blast_radius (population scope), which would place a single-victim killing at high and reserve critical for mass-casualty events; but for triage, any application of force to a person is a top-priority event. Count is a severity GRADIENT (in escalation_weight), not the critical THRESHOLD. This is a values/triage rule, not a change to the weight formula.",
-      "applies_to": "Behaviors that directly apply physical force to a person: weapon discharge, vehicle ramming, explosive detonation, physical assault, overpowering or incapacitating personnel, taking physical custody by restraint, forcible extraction, and physical restraint or force against a captive. Also included (Ruling 8-A, 2026-07-28): taking or maintaining custody or control of a person by weapon threat or credible threat of immediate force during in-progress execution, where a weapon is displayed at the victim and control is being established or maintained. SCOPE GUARD: threatened force WITHOUT the custody or control context does not floor: a weapon brandished during a dispute, or a communicated or conditional threat made outside an in-progress seizure, is carried by the type-level escalation_weight and instance conditioning, not by the floor. This narrow extension follows the precedent discipline of the V1.4 infrastructure severity_floor extension (narrow, mechanism-specific; Jay, 2026-07-18).",
+      "applies_to": "Behaviors that directly apply physical force to a person: weapon discharge, vehicle ramming, explosive detonation, physical assault, overpowering or incapacitating personnel, taking physical custody by restraint, forcible extraction, and physical restraint or force against a captive. Also included (Ruling 8-A, 2026-07-28): taking or maintaining custody or control of a person by weapon threat or credible threat of immediate force during in-progress execution, where a weapon is displayed at the victim and control is being established or maintained. SCOPE GUARD: threatened force WITHOUT the custody or control context does not floor: a weapon brandished during a dispute, or a communicated or conditional threat made outside an in-progress seizure, is carried by the type-level escalation_weight and instance conditioning, not by the floor. This narrow extension follows the precedent discipline of the V1.4 infrastructure severity_floor extension (narrow, mechanism-specific; Jay, 2026-07-18). FACILITY SECONDARY-STRIKE EXTENSION (documented with schema 3.0.0; authored in V1.4): an indicator that positions a second strike against responders or evacuees during an active incident also carries the floor, because the second strike is the application of force and triage must reach it before it lands. Scope is exactly three facility indicators: a secondary device discovered on a responder route (IND-F0408-01), an actor taking an overwatch position over the response or evacuation zone (IND-F0408-02), and an unattended package at an evacuation or casualty assembly area (IND-F0408-04). SCOPE GUARD: pre-incident placement or reconnaissance without an active incident does not floor.",
       "added": "V1.3 (2026-07-05)"
     },
     "detectability_guidance": {
@@ -84076,7 +84086,6 @@
       "response_protocols": "coordinates_with"
     }
   },
-  "operations": [],
   "warden_integration": {
     "status": "reserved",
     "version_target": "V3",
