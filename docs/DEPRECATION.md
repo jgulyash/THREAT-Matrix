@@ -55,7 +55,7 @@ In practice, content removal is rare. Most deprecated items remain in the framew
 
 ```json
 {
-  "id": "TA####",
+  "id": "TM####",
   "lifecycle_state": "deprecated",
   "deprecated_in": "X.Y.Z",
   "deprecation_reason": "Brief explanation suitable for inclusion in a CHANGELOG"
@@ -66,10 +66,10 @@ In practice, content removal is rare. Most deprecated items remain in the framew
 
 ```json
 {
-  "id": "TA####",
+  "id": "TM####",
   "lifecycle_state": "superseded",
   "deprecated_in": "X.Y.Z",
-  "superseded_by": "TA####",
+  "superseded_by": "TM####",
   "deprecation_reason": "Brief explanation"
 }
 ```
@@ -140,9 +140,9 @@ If a hypothetical `TM0190` were to be split into `TM0191` (selection) and `TM019
 {
   "id": "TM0190",
   "lifecycle_state": "deprecated",
-  "deprecated_in": "1.7.0",
+  "deprecated_in": "1.9.0",
   "deprecation_reason": "Split into TM0191 (selection) and TM0192 (recruitment) for clearer authoring boundaries. Consumers should map references to the appropriate successor based on the indicator set in use."
 }
 ```
 
-The next MINOR (1.8.0) would retain TM0190's content. The MINOR after that (1.9.0) would be the earliest at which content could be removed (transitioning to `reserved`); in practice, the maintainer would likely retain content indefinitely as historical record.
+The next MINOR (1.10.0) would retain TM0190's content. The MINOR after that (1.11.0) would be the earliest at which content could be removed (transitioning to `reserved`); in practice, the maintainer would likely retain content indefinitely as historical record.

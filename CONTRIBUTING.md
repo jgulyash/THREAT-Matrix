@@ -13,7 +13,7 @@ This document explains what kinds of contributions are useful, how to submit the
 - **Physical security operators** — facility infiltration, access control bypass, hostile reconnaissance
 - **Threat intelligence analysts** — actor profiling, TTP attribution, source analysis
 - **Researchers** — academic studies, after-action reviews, primary source documents
-- **Software developers** — schema work, React SPA features, V1.3–V1.5 matrix tooling
+- **Software developers:** schema work, React SPA features, matrix tooling
 
 Contributions from any of these backgrounds are welcome. Operational experience and source-backed claims carry the most weight.
 
@@ -23,7 +23,7 @@ Contributions from any of these backgrounds are welcome. Operational experience 
 
 ### 1. Suggest a new tactic
 
-If you have observed (or have documented evidence of) adversary behavior that isn't represented in the framework, open an issue describing it. The framework is intentionally incomplete in V1 — V1.3–V1.5 add the Facilities, Organizations, and Infrastructure matrices, and even the People matrix has known gaps.
+If you have observed (or have documented evidence of) adversary behavior that isn't represented in the framework, open an issue describing it. All four matrices (People, Facilities, Organizations, Infrastructure) are live, and every matrix still has known gaps.
 
 **Good tactic suggestions include:**
 - A short, behavior-first name (what the adversary is *doing*, not what defenders are worried about)
@@ -31,7 +31,7 @@ If you have observed (or have documented evidence of) adversary behavior that is
 - Which target matrix it applies to (People, Facilities, Organizations, Infrastructure)
 - 2–4 sentences describing the behavior in operational terms
 - A reference: a public after-action review, court document, NTAC publication, peer-reviewed study, or first-person account
-- (If applicable) Whether it has a Cyber-Physical Nexus dimension
+- (If applicable) Which operational surfaces it runs on (physical, cyber, cyber-physical, or human/social), the Behavioral Mode facet carried by every indicator
 
 **Use the issue template:** `New Tactic Suggestion`
 
@@ -51,7 +51,7 @@ Use cases that include actual or composite incidents (with appropriate redaction
 
 ### 4. Contribute a behavioral indicator
 
-Detection indicators map observable behaviors to tactics. V1.1 populated all 34 People-matrix tactics with indicators (190 total); V1.3–V1.5 author indicators for the Facilities, Organizations, and Infrastructure matrices as those matrices land. If you have indicator content for a specific tactic, open an issue describing the behavior, its detection sources, and the source you're drawing from — peer-reviewed study, after-action review, NTAC publication, or first-person operational account. Indicator contributions go through editorial review the same way tactic contributions do; PRs are accepted only after the issue discussion has reached agreement on the indicator's scope and grounding.
+Detection indicators map observable behaviors to tactics. V1.1 populated all 34 People-matrix tactics with indicators, and later releases authored indicators for the Facilities, Organizations, and Infrastructure matrices. All 161 tactics now carry indicators (828 total). If you have indicator content for a specific tactic, open an issue describing the behavior, its detection sources, and the source you're drawing from (peer-reviewed study, after-action review, NTAC publication, or first-person operational account). Indicator contributions go through editorial review the same way tactic contributions do; PRs are accepted only after the issue discussion has reached agreement on the indicator's scope and grounding.
 
 ### 5. Populate or extend Detection Mesh cross-references
 
@@ -75,7 +75,7 @@ The Detection Mesh weaves the framework's indicators, countermeasures, and respo
 
 **Granularity.** 2–4 references per item is typical. More than 4 usually signals over-linking; consider whether the additional references are genuine or just topically adjacent.
 
-**ID format.** `IND-XXXX-XX` (indicators), `CM-XXXX-XX` (countermeasures), `RP-XXXX-XX` (response protocols), where `XXXX` is the parent tactic's `TM` number and `XX` is the sequence within the tactic. The pre-commit hook validates that all mesh references resolve to existing IDs in `framework.json`; broken references block the commit. Hook source: `scripts/git-hooks/`.
+**ID format.** `IND-<tactic>-XX` (indicators), `CM-<tactic>-XX` (countermeasures), `RP-<tactic>-XX` (response protocols), where `<tactic>` is the parent tactic's four-digit number, prefixed by its matrix letter for Facilities (`F`), Organizations (`O`), and Infrastructure (`I`) tactics and unprefixed for People tactics (e.g., `IND-0103-01`, `IND-F0102-03`), and `XX` is the sequence within the tactic. The pre-commit hook validates that all mesh references resolve to existing IDs in `framework.json`; broken references block the commit. Hook source: `scripts/git-hooks/`.
 
 ### 6. Code contributions
 
@@ -84,14 +84,13 @@ The interactive browser is a React SPA built with Vite. Source lives in `src/`; 
 **Welcome code contributions:**
 - Bug fixes in the SPA (rendering, navigation, routing)
 - Accessibility improvements
-- Performance work (the SPA loads ~140KB of JSON; this can be improved)
+- Performance work (the SPA bundles about 5.6 MB of framework JSON; this can be improved)
 - New filter or view modes that don't conflict with the V2 roadmap (see [ROADMAP.md](ROADMAP.md))
 - Schema additions discussed and approved in an issue first
 
 **Hold on these for now:**
 - New tactics or actor profiles via PR — open an issue first so the addition can be reviewed against the framework's editorial standards
 - Major UI redesigns — the V1 visual identity (Amber Noir palette, IBM Plex Sans, the layout system) is intentional. See `docs/design/palette-comparison.html` for context.
-- V1.3–V1.5 matrix work — these are scheduled and will be opened for contribution as each version begins
 
 ---
 
@@ -133,7 +132,7 @@ then re-run your commit.
 
 ### Issues
 
-Open an issue at <https://github.com/jgulyash/THREAT-Matrix/issues>. Use the template that matches your contribution type. If none of the templates fit, use a blank issue and describe what you're suggesting.
+Open an issue at <https://github.com/jgulyash/THREAT-Matrix/issues>. Use the template that matches your contribution type. If none of the templates fit, use the Framework Issue template and describe what you're suggesting.
 
 Include sources where possible. "I read about this in a Department of Energy report" is fine — you don't have to track down the exact citation, but pointing to *something* makes the suggestion easier to evaluate.
 
@@ -162,7 +161,7 @@ This is a practitioner-led project maintained by [Jay Gulyash](https://www.linke
 
 **You will not get:**
 - A merge of every well-intentioned PR — the framework's value depends on editorial consistency
-- A debate about the framework's positioning relative to MITRE ATT&CK (the relationship is documented in the README; please read it before opening that thread)
+- A debate about the framework's positioning relative to other threat frameworks (the cross-walk is documented in the README's Cross-Framework Interoperability section; please read it before opening that thread)
 - Acceptance of fabricated metrics, AI-generated boilerplate, or content not grounded in real sources
 
 ---

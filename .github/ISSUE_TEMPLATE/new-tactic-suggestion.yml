@@ -1,7 +1,7 @@
 name: New Tactic Suggestion
 description: Suggest a new tactic to add to the THREAT Matrix framework
 title: "[Tactic] "
-labels: ["tactic-suggestion", "needs-review"]
+labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
@@ -30,7 +30,7 @@ body:
         - Person
         - Facility
         - Organization
-        - System
+        - Infrastructure
     validations:
       required: true
 
@@ -83,7 +83,7 @@ body:
         List any existing tactics (by ID or name) that are related to this suggestion.
         This helps evaluate placement and avoid duplication.
       placeholder: |
-        e.g., TM0103 (Physical Surveillance) - this tactic would precede surveillance in the Threat Lifecycle
+        e.g., TM0103 (Environmental Survey) - this tactic would precede the environmental survey in the Threat Lifecycle
     validations:
       required: false
 
@@ -95,15 +95,21 @@ body:
         Which actor profiles would use this tactic? Reference by ID (APxxx) or category name.
         Categories: Lone Actor, Insider, Criminal, Corporate Espionage, Ideological, Nation-State, Customer/Client Aggressor.
       placeholder: |
-        e.g., AP005 (Corporate Spy), Nation-State category broadly
+        e.g., AP012 (Corporate Spy), Nation-State category broadly
     validations:
       required: false
 
   - type: checkboxes
-    id: cpn
+    id: modality
     attributes:
-      label: Cyber-Physical Nexus (CPN)
-      description: Does this tactic have a cyber-physical nexus dimension?
+      label: Behavioral Mode
+      description: Which operational surfaces does this behavior run on? Select all that apply.
       options:
-        - label: This tactic involves both cyber and physical domains
+        - label: Physical
+          required: false
+        - label: Cyber
+          required: false
+        - label: Cyber-physical
+          required: false
+        - label: Human / social
           required: false

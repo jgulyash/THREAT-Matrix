@@ -30,7 +30,7 @@ IND-F0102-03
     └──────── matrix letter (matches TF0102; absent on People-matrix IDs)
 ```
 
-This is intentional. A consumer that sees `IND-F0102-03` knows without dereferencing the schema that this indicator belongs to tactic `TF0102` (and `IND-0103-01` to `TM0103`). The structural redundancy with the `tactic_id` field on the indicator object is a feature: it enables flat consumption (a consumer that flattens the document does not lose parent-child information).
+This is intentional. A consumer that sees `IND-F0102-03` knows without dereferencing the schema that this indicator belongs to tactic `TF0102` (and `IND-0103-01` to `TM0103`). The structural redundancy with the indicator's position under its parent tactic is a feature: it enables flat consumption (a consumer that flattens the document does not lose parent-child information).
 
 ### Tactic numbering scheme
 

@@ -1,7 +1,7 @@
 name: Framework Issue
 description: Report an issue with existing framework content — incorrect data, missing information, or structural problems
 title: "[Issue] "
-labels: ["framework-issue", "needs-review"]
+labels: ["bug"]
 body:
   - type: markdown
     attributes:
@@ -15,7 +15,7 @@ body:
     attributes:
       label: Affected Tactic or Profile ID(s)
       description: >
-        List the tactic IDs (TAxxxx) or actor profile IDs (APxxx) affected.
+        List the tactic IDs (TMxxxx, TFxxxx, TOxxxx, TIxxxx) or actor profile IDs (APxxx) affected.
         Reference the specific records in docs/data/framework.json.
       placeholder: e.g., TM0301, TM0302, AP012
     validations:
@@ -40,7 +40,7 @@ body:
       label: Description
       description: >
         Describe the issue in detail. What is wrong, and where exactly in the framework
-        does the problem appear? Reference specific fields (name, phase, notes, techniques,
+        does the problem appear? Reference specific fields (name, phase, notes,
         indicators, countermeasures, actor_associations) where applicable.
       placeholder: |
         Describe the problem. Be specific about which field or relationship is incorrect.
