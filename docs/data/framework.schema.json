@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://jgulyash.github.io/THREAT-Matrix/data/framework.schema.json",
+  "$id": "https://jgulyash.github.io/THREAT-Matrix/data/3.0.0/framework.schema.json",
+  "x-schema-version": "3.0.0",
   "title": "THREAT Matrix Framework Schema",
   "description": "JSON Schema for the THREAT Matrix framework.json canonical artifact. THREAT Matrix is an AI-native operational ontology for physical threat actor behavior. The schema is the public contract for consumers (RAG systems, AI agents, downstream security tooling). Field values must describe a property of the indicator/tactic type, not of any specific case or assessment. See CONTRIBUTING.md \"Schema design principles\" for the full rule.",
   "type": "object",
@@ -25,11 +26,13 @@
     },
     "version": {
       "type": "string",
-      "description": "Semantic version of the framework content release."
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$",
+      "description": "Semantic version of the framework content release (SemVer 2.0.0; pattern-enforced since schema 3.0.0)."
     },
     "schema_version": {
       "type": "string",
-      "description": "Semantic version of this schema. Increments on schema-breaking or schema-additive changes."
+      "pattern": "^3\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+      "description": "Semantic version of the schema this document targets (SemVer 2.0.0; pattern-enforced since schema 3.0.0). The pattern pins MAJOR 3, so a document declaring any other schema major is rejected while 3.x MINOR and PATCH values remain valid; scripts/lint/validate.py V24 enforces the exact value 3.0.0."
     },
     "license": {
       "type": "string",
@@ -294,10 +297,6 @@
         }
       }
     },
-    "operations": {
-      "type": "array",
-      "description": "Operations / scenarios composer (V5+). Real data is an empty array; will become a populated structure in V5 (the type will widen to object then)."
-    },
     "warden_integration": {
       "type": "object",
       "description": "WARDEN framework integration metadata.",
@@ -357,7 +356,8 @@
     },
     "bibliography": {
       "type": "object",
-      "description": "Central citation library. Each key is a unique reference ID; each value is a bibliographic entry.",
+      "description": "Central citation library. Each key is a unique reference ID; each value is a bibliographic entry. Keys follow the docs/IDENTIFIERS.md convention: uppercase letters and digits in hyphen-separated segments, starting with a letter, at least two segments (pattern-enforced since schema 3.0.0).",
+      "propertyNames": { "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$" },
       "additionalProperties": {
         "$ref": "#/$defs/bibliography_entry"
       }
@@ -543,10 +543,46 @@
         "response_protocols",
         "actor_associations"
       ],
+      "allOf": [
+        {
+          "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
+          "then": { "required": ["superseded_by"] }
+        },
+        {
+          "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
+          "then": { "required": ["reserved_reason"] }
+        }
+      ],
       "properties": {
         "id": {
           "type": "string",
           "pattern": "^T[MFOI][0-9]{4}$"
+        },
+        "lifecycle_state": {
+          "type": "string",
+          "enum": ["active", "deprecated", "superseded", "reserved"],
+          "default": "active",
+          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the tactic is active. superseded requires superseded_by; reserved requires reserved_reason."
+        },
+        "deprecated_in": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$",
+          "description": "Optional. Framework content version (SemVer) in which this tactic entered deprecated or superseded state. Absent on active tactics."
+        },
+        "superseded_by": {
+          "type": "string",
+          "pattern": "^T[MFOI][0-9]{4}$",
+          "description": "Required when lifecycle_state is superseded. Same-namespace ID of the replacement tactic, per docs/DEPRECATION.md."
+        },
+        "deprecation_reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional. Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md)."
+        },
+        "reserved_reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Required when lifecycle_state is reserved. Brief explanation of why the identifier slot is held."
         },
         "name": {
           "type": "string"
@@ -603,15 +639,16 @@
         "evidence_basis": {
           "type": "string",
           "enum": [
-            "operational_primary",
-            "hybrid",
-            "literature_primary",
+            "practice_led",
+            "practice_and_literature",
+            "literature_led",
             "literature_only"
           ],
-          "description": "Declares the tactic's grounding (V1.1 mandatory). Machine-readable provenance."
+          "description": "Declares how the tactic was authored. practice_led: tactic structure and indicators were authored from practitioner experience, with public sources cited that corroborate the pattern. practice_and_literature: authored from practice and published literature together. literature_led: derived mainly from published literature with practitioner review. literature_only: derived from published literature with no practitioner origin claimed. Whatever the value, every tactic, indicator, countermeasure, and response protocol cites public sources only."
         },
         "indicators": {
           "type": "array",
+          "minItems": 1,
           "items": {
             "$ref": "#/$defs/indicator"
           }
@@ -632,8 +669,10 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "type": "string"
-          }
+            "type": "string",
+            "pattern": "^T[MFOI][0-9]{4}$"
+          },
+          "description": "Tactic IDs related to this tactic. Each entry must be a tactic ID (pattern-enforced since schema 3.0.0)."
         },
         "actor_associations": {
           "type": "array",
@@ -646,9 +685,10 @@
           "minItems": 1,
           "uniqueItems": true,
           "items": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$"
           },
-          "description": "Bibliography keys. Min 1, with at least one Tier 1 source."
+          "description": "Bibliography keys. Min 1, with at least one Tier 1 source. Each entry must match the bibliography key convention (pattern-enforced since schema 3.0.0); resolution against the bibliography is checked by scripts/lint/validate.py V09."
         },
         "assessment_guidance": {
           "type": "object",
@@ -861,12 +901,59 @@
         {
           "if": { "properties": { "modality": { "const": "human_social" } }, "required": ["modality"] },
           "then": { "properties": { "human_social": { "const": true } }, "required": ["human_social"] }
+        },
+        {
+          "if": { "properties": { "modality": { "const": "cyber_physical" } }, "required": ["modality"] },
+          "then": { "required": ["crossing_mechanism"] },
+          "else": { "not": { "required": ["crossing_mechanism"] } }
+        },
+        {
+          "if": { "properties": { "severity_floor": { "const": "critical" } }, "required": ["severity_floor", "severity_band"] },
+          "then": { "properties": { "severity_band": { "const": "critical" } } }
+        },
+        {
+          "if": { "properties": { "severity_floor": { "const": "high" } }, "required": ["severity_floor", "severity_band"] },
+          "then": { "properties": { "severity_band": { "enum": ["high", "critical"] } } }
+        },
+        {
+          "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
+          "then": { "required": ["superseded_by"] }
+        },
+        {
+          "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
+          "then": { "required": ["reserved_reason"] }
         }
       ],
       "properties": {
         "id": {
           "type": "string",
           "pattern": "^IND-[FOI]?[0-9]{4}-[0-9]{2}$"
+        },
+        "lifecycle_state": {
+          "type": "string",
+          "enum": ["active", "deprecated", "superseded", "reserved"],
+          "default": "active",
+          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the indicator is active. superseded requires superseded_by; reserved requires reserved_reason."
+        },
+        "deprecated_in": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$",
+          "description": "Optional. Framework content version (SemVer) in which this indicator entered deprecated or superseded state. Absent on active indicators."
+        },
+        "superseded_by": {
+          "type": "string",
+          "pattern": "^IND-[FOI]?[0-9]{4}-[0-9]{2}$",
+          "description": "Required when lifecycle_state is superseded. Same-namespace ID of the replacement indicator, per docs/DEPRECATION.md."
+        },
+        "deprecation_reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional. Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md)."
+        },
+        "reserved_reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Required when lifecycle_state is reserved. Brief explanation of why the identifier slot is held."
         },
         "behavior": {
           "type": "string"
@@ -937,7 +1024,8 @@
           "minItems": 1,
           "uniqueItems": true,
           "items": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$"
           }
         },
         "modality": {
@@ -1213,10 +1301,46 @@
         "compensates_for",
         "source_refs"
       ],
+      "allOf": [
+        {
+          "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
+          "then": { "required": ["superseded_by"] }
+        },
+        {
+          "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
+          "then": { "required": ["reserved_reason"] }
+        }
+      ],
       "properties": {
         "id": {
           "type": "string",
           "pattern": "^CM-[FOI]?[0-9]{4}-[0-9]{2}$"
+        },
+        "lifecycle_state": {
+          "type": "string",
+          "enum": ["active", "deprecated", "superseded", "reserved"],
+          "default": "active",
+          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the countermeasure is active. superseded requires superseded_by; reserved requires reserved_reason."
+        },
+        "deprecated_in": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$",
+          "description": "Optional. Framework content version (SemVer) in which this countermeasure entered deprecated or superseded state. Absent on active countermeasures."
+        },
+        "superseded_by": {
+          "type": "string",
+          "pattern": "^CM-[FOI]?[0-9]{4}-[0-9]{2}$",
+          "description": "Required when lifecycle_state is superseded. Same-namespace ID of the replacement countermeasure, per docs/DEPRECATION.md."
+        },
+        "deprecation_reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional. Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md)."
+        },
+        "reserved_reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Required when lifecycle_state is reserved. Brief explanation of why the identifier slot is held."
         },
         "measure": {
           "type": "string"
@@ -1348,7 +1472,8 @@
           "minItems": 1,
           "uniqueItems": true,
           "items": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$"
           }
         }
       }
@@ -1366,10 +1491,46 @@
         "legal_notes",
         "source_refs"
       ],
+      "allOf": [
+        {
+          "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
+          "then": { "required": ["superseded_by"] }
+        },
+        {
+          "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
+          "then": { "required": ["reserved_reason"] }
+        }
+      ],
       "properties": {
         "id": {
           "type": "string",
           "pattern": "^RP-[FOI]?[0-9]{4}-[0-9]{2}$"
+        },
+        "lifecycle_state": {
+          "type": "string",
+          "enum": ["active", "deprecated", "superseded", "reserved"],
+          "default": "active",
+          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the response protocol is active. superseded requires superseded_by; reserved requires reserved_reason."
+        },
+        "deprecated_in": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$",
+          "description": "Optional. Framework content version (SemVer) in which this response protocol entered deprecated or superseded state. Absent on active response protocols."
+        },
+        "superseded_by": {
+          "type": "string",
+          "pattern": "^RP-[FOI]?[0-9]{4}-[0-9]{2}$",
+          "description": "Required when lifecycle_state is superseded. Same-namespace ID of the replacement response protocol, per docs/DEPRECATION.md."
+        },
+        "deprecation_reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional. Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md)."
+        },
+        "reserved_reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Required when lifecycle_state is reserved. Brief explanation of why the identifier slot is held."
         },
         "trigger": {
           "type": "string"
@@ -1431,7 +1592,8 @@
           "minItems": 1,
           "uniqueItems": true,
           "items": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$"
           }
         }
       }
@@ -1482,22 +1644,60 @@
         "attack_vectors",
         "primary_matrices",
         "behavioral_markers",
-        "ai_enabled_risks",
-        "v2_tactic_associations"
+        "ai_enabled_risks"
+      ],
+      "allOf": [
+        {
+          "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
+          "then": { "required": ["superseded_by"] }
+        },
+        {
+          "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
+          "then": { "required": ["reserved_reason"] }
+        }
       ],
       "properties": {
         "id": {
           "type": "string",
           "pattern": "^AP[0-9]{3}$"
         },
+        "lifecycle_state": {
+          "type": "string",
+          "enum": ["active", "deprecated", "superseded", "reserved"],
+          "default": "active",
+          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the actor profile is active. superseded requires superseded_by; reserved requires reserved_reason."
+        },
+        "deprecated_in": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$",
+          "description": "Optional. Framework content version (SemVer) in which this actor profile entered deprecated or superseded state. Absent on active actor profiles."
+        },
+        "superseded_by": {
+          "type": "string",
+          "pattern": "^AP[0-9]{3}$",
+          "description": "Required when lifecycle_state is superseded. Same-namespace ID of the replacement actor profile, per docs/DEPRECATION.md."
+        },
+        "deprecation_reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional. Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md)."
+        },
+        "reserved_reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Required when lifecycle_state is reserved. Brief explanation of why the identifier slot is held."
+        },
         "name": {
           "type": "string"
         },
         "category": {
-          "type": "string"
+          "type": "string",
+          "enum": ["lone_actor", "insider", "criminal", "corporate_espionage", "ideological", "nation_state", "customer_aggressor"],
+          "description": "Actor category (enum since schema 3.0.0; values per docs/IDENTIFIERS.md)."
         },
         "category_label": {
           "type": "string",
+          "enum": ["Lone Actor", "Insider", "Criminal", "Corporate Espionage", "Ideological", "Nation-State", "Customer/Client Aggressor"],
           "description": "Human-readable label for the actor category."
         },
         "description": {
@@ -1505,22 +1705,27 @@
         },
         "awareness": {
           "type": "string",
+          "enum": ["witting", "unwitting", "negligent"],
           "description": "Whether the actor is aware of / intends the threat activity (e.g. witting vs unwitting)."
         },
         "direction": {
           "type": "string",
+          "enum": ["self_directed", "criminal_directed", "ideological_directed", "state_directed"],
           "description": "Directionality of the actor relative to the protected entity (e.g. internal vs external)."
         },
         "access_relationship": {
           "type": "string",
+          "enum": ["external", "insider", "authorized"],
           "description": "The actor's access relationship to the target (insider access, trusted third party, outsider, etc.)."
         },
         "phase_compression_risk": {
           "type": "string",
+          "enum": ["low", "medium", "high", "very_high", "n/a"],
           "description": "Type-level note on this actor class's tendency to compress the attack lifecycle phases."
         },
         "actor_level": {
           "type": "string",
+          "enum": ["individual", "group", "organization"],
           "description": "Sophistication / resourcing tier of the actor class."
         },
         "attack_vectors": {
@@ -1555,8 +1760,17 @@
         },
         "v2_tactic_associations": {
           "type": "array",
-          "items": {},
-          "description": "Reserved for V2 tactic associations; currently an empty array on every profile."
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["tactic_id", "relevance"],
+            "properties": {
+              "tactic_id": { "type": "string", "pattern": "^T[MFOI][0-9]{4}$" },
+              "relevance": { "type": "string", "enum": ["high", "medium", "low"] }
+            }
+          },
+          "description": "Optional since schema 3.0.0 (removed from required). Reserved for profile-to-tactic associations; absent or an empty array today. When populated, each entry names a tactic ID and a relevance, mirroring actor_association in the opposite direction."
         },
         "insider_type": {
           "type": "string",
