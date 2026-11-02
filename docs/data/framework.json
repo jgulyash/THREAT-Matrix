@@ -3425,7 +3425,7 @@
                 "IND-0203-06"
               ],
               "source_refs": [
-                "911COMM-2004", "PROPUBLICA-2011", "STARTRIB-2025"
+                "NATCOM-911-2004", "PROPUBLICA-2011", "STARTRIB-2025"
               ],
               "modality": "human_social",
               "human_social": true,
@@ -18661,7 +18661,7 @@
            "limitations": "Much facility information is public by law (permits, assessor records) and cannot be withdrawn; raises the cost of research without eliminating it",
            "compensates_for": [],
            "source_refs": [
-            "ISC-FSP-GUIDE-2015", "DOD-OPSEC-5205.02M-2008"
+            "ISC-FSP-GUIDE-2015", "DOD-OPSEC-5205-02M-2008"
            ]
           }
          ],
@@ -27040,7 +27040,7 @@
                 {"indicator": "IND-F0207-01", "function": "unreviewed"}
               ],
               "source_refs": [
-                "DOD-OPSEC-5205.02M-2008", "ISC-FSP-GUIDE-2015"
+                "DOD-OPSEC-5205-02M-2008", "ISC-FSP-GUIDE-2015"
               ]
             }
           ],
@@ -35847,7 +35847,7 @@
               "limitations": "Much incident detail is public by law or emerges through litigation and journalism; withholding operational specifics must be balanced against transparency and community-trust obligations",
               "compensates_for": [],
               "source_refs": [
-                "DOJ-COPS-UVALDE-CIR-2024", "DOD-OPSEC-5205.02M-2008"
+                "DOJ-COPS-UVALDE-CIR-2024", "DOD-OPSEC-5205-02M-2008"
               ]
             },
             {
@@ -84956,7 +84956,7 @@
         "institutional_attrition"
       ]
     },
-    "911COMM-2004": {
+    "NATCOM-911-2004": {
       "type": "government_report",
       "title": "9/11 and Terrorist Travel: Staff Report of the National Commission on Terrorist Attacks Upon the United States",
       "author": "National Commission on Terrorist Attacks Upon the United States",
@@ -85198,7 +85198,7 @@
         "standardized_reporting"
       ]
     },
-    "DOD-OPSEC-5205.02M-2008": {
+    "DOD-OPSEC-5205-02M-2008": {
       "type": "standard",
       "title": "DoD Manual 5205.02: DoD Operations Security (OPSEC) Program Manual (Incorporating Change 2, October 29, 2020)",
       "author": "U.S. Department of Defense, USD(I&S)",
