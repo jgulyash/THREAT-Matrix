@@ -1,127 +1,142 @@
 # Versioning Policy
 
-THREAT Matrix is a published open standard. Two artifacts in this repository are versioned independently:
+Four artifacts in this repository carry their own version numbers. All follow [Semantic Versioning 2.0.0](https://semver.org).
 
-| Artifact | Versioned at | Current |
-|---|---|---|
-| **Framework content** | `version` in `docs/data/framework.json` | `1.7.0` |
-| **JSON Schema** | `schema_version` in `docs/data/framework.json` and the `$id` of `docs/data/framework.schema.json` | `2.1.0` |
+| Artifact | Recorded in | On this branch | Published on `main` |
+|---|---|---|---|
+| Vocabulary content | `version` in `docs/data/framework.json` | `2.0.0` | `1.7.0` |
+| Vocabulary schema | `schema_version` in `docs/data/framework.json`, and `x-schema-version` in `docs/data/framework.schema.json` | `3.0.0` | `2.1.0` |
+| Score-free case record | `record_version` in each record (`docs/data/case-record.schema.json`) | `1.0.0` | not yet published |
+| Experimental scoring overlay | `overlay_version` in `docs/data/scoring-overlay.json` | `0.1.0` | not yet published |
 
-Both follow [Semantic Versioning 2.0.0](https://semver.org). They move independently — a content release can ship without a schema bump, and vice versa.
+Content 2.0.0 and schema 3.0.0 are not released. They become the published versions only when the release is announced and tagged under the rules below. Until then the published contract is content 1.7.0 with schema 2.1.0.
+
+The vocabulary content and its schema move independently: a content release can ship without a schema change, and a schema change can ship without new content.
+
+**The overlay and the case record are versioned separately from the vocabulary.** The case record has its own schema and its own version. The scoring overlay has its own version and names the vocabulary version it applies to in `applies_to_framework_version`.
+
+**The scoring overlay is outside the stability promise.** It is experimental and non-normative. Its fields, values, and rules may change or be withdrawn in any overlay release, and no vocabulary release depends on it. Its version is below 1.0.0 for that reason.
+
+**The schema `$id` carries no version.** `https://jgulyash.github.io/THREAT-Matrix/data/framework.schema.json` names the location of the latest published schema, so what it serves changes at each release. To pin a schema version, take the schema file from a release tag.
 
 ## What triggers each level
 
-### Framework content (`framework.json`)
+### Vocabulary content (`framework.json`)
 
-- **MAJOR** — breaking changes to the taxonomy that downstream consumers must adapt to:
+- **MAJOR**: a change that consumers must adapt to.
   - Renaming a top-level matrix key
-  - Renaming or removing a tactic, actor profile, indicator, countermeasure, or response protocol identifier
-  - Restructuring the Threat Lifecycle phases (count, ordering, semantics)
-  - Removing a documented field that consumers may have depended on
-  - Changing the meaning of an existing identifier
-- **MINOR** — additive changes that do not break existing consumers:
+  - Removing a tactic, actor profile, indicator, countermeasure, or response protocol, or changing what an identifier means
+  - Restructuring the lifecycle phases
+  - Removing or moving a documented field
+- **MINOR**: an additive change.
   - New tactics, actor profiles, indicators, countermeasures, or response protocols
-  - New optional fields with documented defaults
-  - New entries in an `enum` field (consumers should ignore unknown values)
-  - New cross-framework `phase_mappings`
-  - Authoring of previously empty mandatory fields on existing identifiers
-- **PATCH** — corrections that do not change semantics:
-  - Typo fixes
-  - Bibliography metadata corrections
-  - Description tightening that preserves meaning
-  - Re-ordering of array elements where order is not semantic
-
-### JSON Schema (`framework.schema.json`)
-
-- **MAJOR** — the JSON shape changes in a way that breaks validation of previously valid documents:
-  - A previously optional field becomes required
-  - A field's allowed type changes (e.g., string → array)
-  - A previously valid enum value is removed
-- **MINOR** — additive shape changes:
   - New optional fields
-  - New enum values
-  - Loosened constraints (e.g., a regex becomes more permissive)
-- **PATCH** — clarifications that do not affect validation outcomes:
-  - `description` text updates
-  - Re-ordering of `properties` (when the document model is unaffected)
+  - A change of lifecycle state (deprecated or superseded)
+  - New `phase_mappings`
+- **PATCH**: a correction that does not change meaning.
+  - Typo fixes, bibliography corrections, wording that preserves meaning, reordering where order carries no meaning
 
-A content MAJOR bump implies a schema MAJOR bump if and only if the breaking content change requires a corresponding shape change. Content MAJOR bumps that only rename identifiers within an existing field structure do not require a schema bump.
+### Vocabulary schema (`framework.schema.json`)
+
+- **MAJOR**: a previously valid document can now fail.
+  - A previously optional field becomes required
+  - A field is removed from a closed object, or its type changes
+  - An enum value is removed or renamed
+  - A pattern or other constraint is tightened
+- **MINOR**: additive.
+  - New optional fields, new enum values, loosened constraints
+- **PATCH**: no effect on validation outcomes.
+  - `description` text, reordering of `properties`
+
+**Any change to the schema file changes the schema version.** At the least a PATCH. Two different schema files never carry the same version number. See the record of departures below for why this is stated as a rule.
+
+### Case record schema and overlay
+
+The case record schema follows the same three levels as the vocabulary schema. The overlay follows SemVer for its own number, with the caveat above: while it is below 1.0.0, any release may break.
 
 ## Stability promise
 
-Once a version is published — meaning the commit is pushed to `main` and a release tag exists — the artifacts at that version are **frozen**. Subsequent edits create a new release. This includes patch releases: a `1.1.0` document does not silently become a different `1.1.0` document.
+A version is published when its commit is on `main` and a release tag exists. A published version is frozen. Any later edit is a new release with a CHANGELOG entry, including a correction to a defect. A tag is never moved.
 
-If a published release contains a defect that requires correction, the correction ships as a new patch release with a CHANGELOG entry describing what was wrong.
+This promise covers the vocabulary content, the vocabulary schema, the case record schema, and identifiers. It does not cover the experimental scoring overlay, the viewer, the scripts, or the draft study and crosswalk material.
 
 ## Identifier stability
 
-See [IDENTIFIERS.md](./IDENTIFIERS.md). Summary: identifiers are never reused. A removed or retired identifier remains reserved.
+Identifiers are never reused, and the guarantee is checked against a committed manifest. See [IDENTIFIERS.md](./IDENTIFIERS.md).
 
-## Deprecation discipline
+## Deprecation
 
-See [DEPRECATION.md](./DEPRECATION.md). Summary: items are deprecated for at least one MINOR release before any consideration of content removal, and the identifier itself is preserved indefinitely.
+An object is deprecated or superseded for at least one MINOR release before its content may be removed, and its identifier is never assigned again. See [DEPRECATION.md](./DEPRECATION.md).
 
 ## Branches
 
 | Branch | Purpose |
 |---|---|
 | `main` | Latest published release |
-| `v1-build` | V1.x in-progress work |
-| `vN-design` | Pre-major-bump design work for future major version `N` |
+| `v1-build` | Earlier 1.x development |
+| `v3-design` | Work toward schema 3.0.0 and content 2.0.0 |
 
-Major-version development happens on a dedicated branch so that minor and patch releases on the current major can ship without contamination. This mirrors the OpenAPI 4.x ("Moonwalk") pattern.
+Continuous integration runs every gate on pushes and pull requests for all three.
 
-## Release cadence
+## Release rules
 
-THREAT Matrix is solo-maintained and releases when content is ready, not on a fixed calendar. The discipline:
+The project has one maintainer and releases when work is ready, not on a calendar.
 
-- **PATCH** ships as needed
-- **MINOR** ships when a coherent unit of work (a matrix slice, a contract addition) is complete
-- **MAJOR** is pre-announced at least 30 days before the release tag, with a migration guide and a side-by-side example available
-
-## Changelog template
-
-Every release adds an entry to `CHANGELOG.md` (created at first release after V1.1) using this fixed structure:
-
-```markdown
-## [X.Y.Z] — YYYY-MM-DD
-
-### Added
-- New tactics / actor profiles / indicators / countermeasures / response protocols
-- New schema fields, enum values, or mappings
-
-### Changed
-- Behavioral changes that are not breaking
-
-### Deprecated
-- Items marked `lifecycle_state: deprecated` or `superseded` this release
-- Pointer to DEPRECATION.md for sunset rules
-
-### Removed
-- Content removed after the deprecation window expired (the identifier
-  remains reserved)
-
-### Fixed
-- Typo / metadata / clarity corrections that do not change meaning
-
-### Security
-- Any change relevant to security posture of the framework or its consumers
-```
-
-Each section is omitted when empty. The same structure is used for both content and schema releases; a release that bumps only one artifact still uses one CHANGELOG entry covering the version bumped.
+- **PATCH** ships as needed.
+- **MINOR** ships when a coherent unit of work is complete.
+- **MAJOR** is announced at least 30 days before the release tag, with a migration guide. The guide is written against the latest published release and tested on it: the test command and its result are part of the guide. The 30-day clock starts when the announcement is public and the guide passes its test, not before. This matches [GOVERNANCE.md](../GOVERNANCE.md) section 4.
 
 ## Major version record
 
-| Artifact | Version | Status | Reason | Migration guide |
+| Artifact | Version | Status | What it contains | Migration guide |
 |---|---|---|---|---|
-| JSON Schema | 3.0.0 | Pre-announcement draft on `v3-design` | `evidence_basis` values renamed (an enum value removal); lifecycle contract added with a relaxed reserved shape; patterns, enums, and if/then rules tightened so previously valid documents can fail; empty `operations` stub removed and `v2_tactic_associations` no longer required | [docs/migration/2.1-to-3.0.md](./migration/2.1-to-3.0.md) |
+| Vocabulary schema | 3.0.0 | Drafted on `v3-design`. Not announced. The 30-day clock has not started. | Scores removed from the vocabulary: the five indicator score fields, `assessment_guidance.escalation_priority`, and the root `escalation_rubric` and `instance_conditioning` blocks are no longer allowed. `compensates_for` narrowed to countermeasure identifiers, with indicator targets moved to a new `mitigates` relation. `evidence_basis` values renamed. Root `operations` removed. `matrices.<name>.maturity` required. Lifecycle contract added, with `reserved` allowed on actor profiles only. Identifier, key, version, URL, DOI, and date patterns tightened; enums added on actor-profile fields and `phase_name`; four bibliography `type` values removed; `license` fixed to `MIT`; empty or padded text rejected. Indicator field `primary_objective_evidence_tier` removed. The case-record definitions `instance_assessment` and `conditioned_assessment` moved out to the overlay schema. | [migration/2.1-to-3.0.md](./migration/2.1-to-3.0.md) |
+| Vocabulary content | 2.0.0 | Drafted on `v3-design`. Ships with schema 3.0.0. | The content changes that schema 3.0.0 requires (scores moved out to the overlay file, the relation split, the renames, `maturity`), two reserved actor-profile stubs, and corrections to sources, `phase_relevance`, and two tactics' guidance. It is a MAJOR because documented fields were removed and moved. | Same guide |
 
-The 30-day pre-announcement clock starts on the date the announcement is published; the earliest release tag is that date plus 30 days.
+Earlier schema majors: 2.0.0 shipped with content 1.6.0 on 2026-08-08 and closed every object in the schema.
+
+## Record of departures from this policy
+
+These are stated so that a reader comparing the history with the policy does not have to find them.
+
+1. **A schema change without a version change, between 1.7.0 and this branch.** After content 1.7.0 was published, development branches narrowed `compensates_for` to countermeasure identifiers and added the `mitigates` relation while the schema file still declared 2.1.0. That changed schema was never published on `main`, but for a time two different schema files carried the label 2.1.0, and an earlier draft of the 3.0.0 migration guide was measured against the unpublished one. The relation split is now recorded as a breaking change of 3.0.0, the migration guide is written and tested against the published 2.1.0 document, and the rule above (any schema change changes the schema version) exists to prevent a repeat.
+2. **Schema 2.1.0 tightened validation as a MINOR.** Schema 2.1.0 (content 1.6.1) added a rule that rejects a case record whose priority is below its band. By the rule above that is a MAJOR. It shipped as a MINOR by a stated exception recorded in the CHANGELOG entry for 1.6.1.
+3. **Content label 1.7.1 on development branches.** The label 1.7.1 was used on two development branches for different documents and was never released from `main`. The next published content version after 1.7.0 is 2.0.0.
+
+## Changelog template
+
+Every release adds an entry to `CHANGELOG.md` with this structure. A section is omitted when empty.
+
+```markdown
+## [X.Y.Z] - YYYY-MM-DD
+
+### Added
+- New tactics, actor profiles, indicators, countermeasures, or response protocols
+- New schema fields, enum values, or mappings
+
+### Changed
+- Changes that are not breaking
+
+### Deprecated
+- Objects marked deprecated or superseded in this release, each with its reason
+  and the earliest release at which removal would be considered
+
+### Removed
+- Content removed after its sunset (the identifier is recorded in the ID manifest)
+
+### Fixed
+- Corrections that do not change meaning
+
+### Security
+- Any change relevant to the security or privacy of the project or its users
+```
+
+A release that changes more than one artifact uses one entry that names each version changed.
 
 ## Migration guidance
 
-For MAJOR releases, a `docs/migration/X.Y-to-X+1.0.md` document ships with the release. It enumerates every breaking change, the remediation, and a worked example. For MINOR releases that change defaults or add commonly relied-upon fields, the CHANGELOG entry includes a brief migration note inline.
+Every MAJOR release ships a guide under `docs/migration/`. It lists every breaking change with what changed, why, the remediation, and a before and after example, and it reports a test of the remediation on the latest published document. For a MINOR release that adds commonly used fields, the CHANGELOG entry carries a short note.
 
 ## Versioning of consumers
 
-The reference consumer (`examples/python_consumer.py`), the SPA, and any community consumers are not versioned by this policy. Each consumer pins the framework content and schema versions it has been tested against, and is responsible for its own release cadence.
+The reference consumer, the viewer, and outside consumers are not versioned by this policy. Each consumer states the vocabulary content and schema versions it was tested against.

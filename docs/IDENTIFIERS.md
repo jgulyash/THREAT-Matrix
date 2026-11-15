@@ -1,123 +1,178 @@
 # Identifier Contract
 
-Stable identifiers are the load-bearing surface of THREAT Matrix. Vector databases, AI agents, mappings to other frameworks, detection-rule libraries, and case-management systems all anchor on these IDs. This document is the formal contract.
+Other systems refer to THREAT Matrix content by identifier: case records, tags, search indexes, crosswalks, and mappings. This document defines the identifier formats, what is guaranteed about them, and how the guarantee is checked.
 
 ## Identifier formats
 
-| Namespace | Format | Example | Refers to |
+| Namespace | Form | Examples | Refers to |
 |---|---|---|---|
-| **Tactic** | `T<X>####` | `TM0103`, `TF0102` | A behavioral category — what the threat actor is trying to accomplish |
-| **Actor profile** | `AP###` | `AP005` | A category of threat actor (e.g., insider, lone actor, nation-state) |
-| **Indicator** | `IND-<x>####-##` | `IND-0103-01`, `IND-F0102-03` | An observable behavior tied to a specific tactic |
-| **Countermeasure** | `CM-<x>####-##` | `CM-0103-01`, `CM-F0102-03` | A defensive measure tied to a specific tactic |
-| **Response protocol** | `RP-<x>####-##` | `RP-0103-01`, `RP-F0101-01` | An operational response sequence tied to a specific tactic |
-| **Cyber-Physical Nexus marker** (retired v1.6) | `CPN-<x>####` | `CPN-0103`, `CPN-F0101` | Retired tactic-level convergence flag; cyber-physical convergence now lives on the per-indicator `modality` facet, and CPN participation is computed over the Detection Mesh |
-| **Bibliography reference** | `<ORG>-<SLUG>-<YEAR>[-<YEAR>]` | `NTAC-MASS-2021` | A cited source in `framework.json` `bibliography` |
+| Tactic | `T<letter><phase><nn>` | `TM0103`, `TF0102` | A category of behavior |
+| Actor profile | `AP<nnn>` | `AP005` | A category of threat actor |
+| Indicator | `IND-<letter?><phase><nn>-<nn>` | `IND-0103-01`, `IND-F0102-03` | One observable behavior under a tactic |
+| Countermeasure | `CM-<letter?><phase><nn>-<nn>` | `CM-0103-01`, `CM-F0102-03` | A defensive measure under a tactic |
+| Response protocol | `RP-<letter?><phase><nn>-<nn>` | `RP-0103-01`, `RP-F0101-01` | A response sequence under a tactic |
+| Bibliography key | uppercase letters and digits in hyphen-separated parts | `NTAC-MASS-2021`, `LLNL-TR-858139` | A cited source under `bibliography` |
+
+The exact grammar is the pattern in the schema (`docs/data/framework.schema.json`, definitions `tactic_id`, `actor_profile_id`, `indicator_id`, `countermeasure_id`, `response_protocol_id`, `bibliography_key`):
+
+| Namespace | Pattern |
+|---|---|
+| Tactic | `^T[MFOI]0[1-4](0[1-9]\|[1-9][0-9])$` |
+| Actor profile | `^AP(00[1-9]\|0[1-9][0-9]\|[1-9][0-9]{2})$` |
+| Indicator | `^IND-[FOI]?0[1-4](0[1-9]\|[1-9][0-9])-(0[1-9]\|[1-9][0-9])$` |
+| Countermeasure | `^CM-[FOI]?0[1-4](0[1-9]\|[1-9][0-9])-(0[1-9]\|[1-9][0-9])$` |
+| Response protocol | `^RP-[FOI]?0[1-4](0[1-9]\|[1-9][0-9])-(0[1-9]\|[1-9][0-9])$` |
+| Bibliography key | `^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$` |
+
+A bibliography key usually ends in a year, but the pattern does not require one, and 9 of the 120 keys have none. A bibliography key may not have the shape of an indicator, countermeasure, or response-protocol identifier.
+
+Identifiers are matched exactly. A value with trailing whitespace or a trailing newline is not a valid identifier. The validator enforces this with an exact full match; see the note on trailing newlines in [METHODOLOGY.md](./METHODOLOGY.md#5-review-process-and-gates).
 
 ### The matrix letter
 
-Tactic IDs carry a matrix letter after the `T`: `M` (People), `F` (Facilities), `O` (Organizations), `I` (Infrastructure) — `TM0103`, `TF0102`, `TO####`, `TI####`. Compound IDs (and the retired CPN markers) carry the same letter after their prefix hyphen for every matrix except People, whose IDs predate the letter and carry none: `IND-0103-01` (People) vs. `IND-F0102-03` (Facilities). The People letterless form is permanent — retrofitting a letter would violate the no-rename guarantee below.
+A tactic identifier carries a matrix letter after the `T`: `M` (People), `F` (Facilities), `O` (Organizations), `I` (Infrastructure). Indicator, countermeasure, and response-protocol identifiers carry the same letter after the hyphen for every matrix except People, whose identifiers predate the letter and carry none: `IND-0103-01` (People) and `IND-F0102-03` (Facilities). The letterless People form is permanent.
 
-### Anatomy of compound IDs
-
-Indicator, countermeasure, and response-protocol IDs encode their parent tactic in their structure:
+### Anatomy of a child identifier
 
 ```
 IND-F0102-03
     ^^^^^ ^^
-    ││    └── sequence within the tactic (zero-padded, two digits)
-    │└─────── parent tactic number (zero-padded, four digits)
-    └──────── matrix letter (matches TF0102; absent on People-matrix IDs)
+    ||    sequence within the tactic (two digits, 01 to 99)
+    |parent tactic number (four digits)
+    matrix letter (absent on People identifiers)
 ```
 
-This is intentional. A consumer that sees `IND-F0102-03` knows without dereferencing the schema that this indicator belongs to tactic `TF0102` (and `IND-0103-01` to `TM0103`). The structural redundancy with the indicator's position under its parent tactic is a feature: it enables flat consumption (a consumer that flattens the document does not lose parent-child information).
+`IND-F0102-03` belongs to tactic `TF0102`, and `IND-0103-01` to `TM0103`. A consumer that flattens the document does not lose the parent. The validator rejects a child whose letter and digits disagree with the tactic that contains it (check V12).
 
-### Tactic numbering scheme
+### Tactic numbering
 
-Tactic IDs are four-digit zero-padded numbers organized by Threat Lifecycle phase, within each matrix's letter:
+The first two digits of a tactic number are its lifecycle phase.
 
-| Phase | Range |
+| Phase | Tactic identifiers |
 |---|---|
-| Phase 1 — Target Development | `T<X>01##` |
-| Phase 2 — Mobilization | `T<X>02##` |
-| Phase 3 — Execution | `T<X>03##` |
-| Phase 4 — Aftermath | `T<X>04##` |
+| 1, Target Development | `T<letter>01nn` |
+| 2, Mobilization | `T<letter>02nn` |
+| 3, Execution | `T<letter>03nn` |
+| 4, Aftermath | `T<letter>04nn` |
 
-Within a phase, tactic numbers are assigned in authoring order, not in any semantic priority. New tactics added to a phase get the next available number.
+The validator rejects a tactic whose identifier does not encode its phase (check V34) or whose letter disagrees with its matrix (check V11). Within a phase, numbers are assigned in authoring order and carry no meaning.
 
-### Actor profile numbering scheme
+### Actor profile numbering
 
-Actor profile IDs are three-digit zero-padded numbers assigned in authoring order. They are not grouped by category; the `category` field on the profile object handles that. The current categories are: `lone_actor`, `insider`, `criminal`, `corporate_espionage`, `ideological`, `nation_state`, `customer_aggressor`.
+Actor profile identifiers are assigned in authoring order and are not grouped by category; the `category` field carries that. The identifiers in use run from `AP001` to `AP034`. Two of them, `AP022` and `AP027`, are reserved and carry no content, so there are 32 active profiles.
 
-## Stability guarantees
+### A retired form
 
-### IDs are never reused
+Until content version 1.6.0 a tactic could carry a `CPN-<letter?><nnnn>` marker for cyber-physical convergence. The marker was retired. Convergence is now recorded per indicator in `modality`. `CPN-` values do not appear in the data.
 
-Once an identifier is assigned to a published item, that identifier slot is **permanently reserved** to that item. This holds across:
+## Guarantees
 
-- Renames (the identifier survives a `name` change)
-- Deprecation (a deprecated item retains its identifier indefinitely)
-- Removal (a removed item's identifier is held in a reserved state — see [DEPRECATION.md](./DEPRECATION.md))
-- Major-version bumps (V1, V2, V3 do not renumber)
+### An identifier is never reused
 
-This is the strongest guarantee in this contract. Downstream consumers (vector indices, mappings, custom forks, published rule sets) depend on it absolutely. A reused ID would silently break those consumers without any way to detect the breakage from inside the document.
+Once an identifier has been assigned in a published release, it refers to that object permanently. This holds through:
 
-### Names can change
+- a change of `name` or description;
+- deprecation or supersession (the object keeps its identifier and its content);
+- removal of the object (the identifier is recorded as removed and never assigned again);
+- reservation (a reserved identifier never receives content);
+- MAJOR version changes (nothing is renumbered).
 
-The `name` field on every object is a human-readable label that may evolve — for clarity, voice consistency, or terminology updates. A `name` change is not a breaking change. Consumers must not key on `name`.
+### An identifier never changes parent
 
-### Descriptions can change
+A child identifier encodes its parent tactic, and that is permanent. When an indicator, countermeasure, or response protocol needs to live under a different tactic, a new identifier is issued there and the original becomes `superseded`, pointing at the new one. See [DEPRECATION.md](./DEPRECATION.md).
 
-The `notes`, `field_notes`, `description`, and `behavior` (etc.) fields are subject to revision. Consumers must not depend on exact text matching.
+### Names and descriptions can change
 
-### Items never change parents
+`name`, `notes`, `field_notes`, `behavior`, and other text may be revised. Do not key on text. Changes that alter meaning are handled by deprecation or supersession, not by silent edit.
 
-Compound IDs encode their parent tactic (`IND-0103-01` belongs to `TM0103`), and that encoding is permanent. An item is never moved to a different parent tactic with its identifier intact — the identifier would then misreport its own structure to every flat consumer.
+## The ID manifest
 
-When reorganization calls for an indicator, countermeasure, or response protocol to live under a different tactic, the move is modeled as **supersession, not mutation**:
+`docs/data/id-manifest.json` is the committed inventory of every identifier in the release. Its shape is defined by `docs/data/id-manifest.schema.json`. It is how the no-reuse guarantee is checked.
 
-1. A new identifier is issued under the destination tactic (next available sequence number).
-2. The original item transitions to `superseded`, with `superseded_by` pointing at the new identifier — same-namespace, per [DEPRECATION.md](./DEPRECATION.md).
-3. A one-to-many reorganization (one item split across several tactics) uses `deprecated` instead, following the split pattern documented in [DEPRECATION.md](./DEPRECATION.md).
+| Section | Holds |
+|---|---|
+| `version` | The content version the manifest describes |
+| `generated` | A UTC timestamp |
+| `ids.tactics`, `ids.actor_profiles`, `ids.indicators`, `ids.countermeasures`, `ids.response_protocols` | Every active, deprecated, or superseded identifier in that namespace, sorted |
+| `ids.reserved` | Identifiers that are held and carry no content: reserved actor profiles in the document, and any identifier from another namespace reserved by hand |
+| `removed` | Optional. Identifiers withdrawn from the document, each with `removed_in` (the content version) and `reason` |
 
-The no-reuse guarantee covers the rest: the original identifier remains permanently reserved to its original content, and consumers walk the `superseded_by` chain to the current item.
+An identifier appears in exactly one place: its namespace list, `reserved`, or `removed`.
 
-### Cross-framework mappings preserve source IDs verbatim
+The manifest for content 2.0.0 lists 161 tactics, 32 actor profiles, 828 indicators, 645 countermeasures, 323 response protocols, and 2 reserved identifiers (`AP022`, `AP027`). It has no `removed` section, because nothing has been removed.
 
-`phase_mappings` and any future cross-walk fields preserve the source framework's identifier exactly. THREAT Matrix does not transliterate, normalize, or alias mapped IDs — `mitre_attack: ["reconnaissance", "resource_development"]` uses the exact tactic-name keys MITRE publishes.
+For illustration, a complete small manifest with one removed identifier (the identifiers and the removal are invented for the example):
 
-## The `reserved` lifecycle state
+<!-- validate: id-manifest.schema.json -->
+```json
+{
+  "version": "3.0.0",
+  "generated": "2027-01-15T00:00:00Z",
+  "ids": {
+    "tactics": ["TM0101"],
+    "actor_profiles": ["AP001"],
+    "indicators": ["IND-0101-01"],
+    "countermeasures": ["CM-0101-01"],
+    "response_protocols": ["RP-0101-01"],
+    "reserved": ["AP022", "AP027"]
+  },
+  "removed": [
+    {
+      "id": "CM-0101-02",
+      "removed_in": "3.0.0",
+      "reason": "Example only. Deprecated in 2.1.0 and removed after its sunset."
+    }
+  ]
+}
+```
 
-Some identifiers exist in the framework as `reserved` rather than `active`, `deprecated`, or `superseded`. A reserved ID is intentionally held — it is not in use, not a tombstone of prior content, and not available for assignment. Reasons an ID may be reserved:
+### Checking
 
-- The item was withdrawn during pre-publication review (e.g., AP027 in V1.0)
-- The slot is being held for a planned future addition with a known semantic
-- The slot was assigned in a draft and the maintainer chose not to ship it
+```
+python3 scripts/lint/id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json
+```
 
-A reserved ID will never appear with content. It exists in the framework so that the next available number does not conflict with its slot. See [DEPRECATION.md](./DEPRECATION.md) for the full lifecycle-state taxonomy.
+This fails unless the manifest describes the document exactly. It detects:
 
-## Per-namespace stability discipline
+- an identifier in the manifest that is missing from the document without a `removed` record;
+- an identifier in the document that is missing from the manifest;
+- a reserved or removed identifier that is live again;
+- an identifier listed in two places, or twice;
+- an identifier in a different namespace from the one the manifest records;
+- a malformed or unsorted manifest, or a version that does not match the document.
 
-THREAT Matrix has five operational namespaces with different rates of change. The stability contract is the same for all five (no reuse), but the expected churn differs:
+With `--baseline OLDER_MANIFEST` it also compares against an older manifest and fails if any older identifier was dropped, reused, or moved to another namespace. Continuous integration runs the plain check on every push and, on pull requests, the baseline comparison against the base branch's manifest once that branch has one. Compared against a manifest generated from the published 1.7.0 document, the 2.0.0 manifest shows no identifier dropped, reused, or moved.
 
-| Namespace | Expected churn | Rationale |
+### Writing
+
+```
+python3 scripts/lint/id-manifest.py --write docs/data/id-manifest.json --previous docs/data/id-manifest.json
+```
+
+`--write OUT` builds the manifest from the document and writes it only if every check passes. `--previous MANIFEST` carries forward `removed` records and hand-reserved identifiers and runs the no-drop, no-reuse comparison first. `--removed "ID=reason"` records a withdrawal. `--reserve ID` holds an identifier that has no object in the document.
+
+### What the manifest does not catch
+
+- **Same identifier, different content.** The manifest records identifiers, not content. If an object's text were replaced with unrelated content under the same identifier, the manifest would not show it. Keeping an identifier's meaning stable is an obligation on the author and reviewer, visible in the CHANGELOG and the diff.
+- **Bibliography keys.** Bibliography keys are not in the manifest. A key can be removed when its entry is retired, and one was, in content 1.7.1 (recorded in the CHANGELOG). The gates do check that every `source_refs` entry resolves to a bibliography key and that every bibliography entry is cited.
+- **History before the first manifest.** The first committed manifest is for content 2.0.0.
+
+## Expected rate of change
+
+| Namespace | Expected change | Why |
 |---|---|---|
-| `TM####` (tactics) | Very low | Tactics are behavioral categories. A new tactic represents a recognized threat actor behavior that was not previously captured. |
-| `AP###` (actor profiles) | Low | Actor profiles are taxonomic groupings. They evolve as the taxonomy matures. |
-| `IND-*` (indicators) | Higher | Indicators evolve with detection practice and emerging attack patterns. |
-| `CM-*` (countermeasures) | Higher | Countermeasures evolve with defensive technology and operational practice. |
-| `RP-*` (response protocols) | Highest | Response protocols evolve with organizational maturity and regulatory context. |
+| Tactics | Very low | A new tactic is a newly recognized category of behavior |
+| Actor profiles | Low | Profiles are groupings that change slowly |
+| Indicators | Higher | Indicators are refined as descriptions and sources improve |
+| Countermeasures | Higher | Defensive practice changes |
+| Response protocols | Highest | Response practice varies by organization and law |
 
-A MINOR release will commonly add new indicators, countermeasures, and response protocols. New tactics and actor profiles are less frequent and trigger more substantial CHANGELOG entries.
+The contract is the same for every namespace.
 
-## Identifiers from other frameworks
+## Names from other frameworks
 
-THREAT Matrix references the following external identifier conventions verbatim, treating them as opaque strings:
+The vocabulary does not contain identifiers issued by other frameworks. The data holds no ATT&CK technique identifier, no CAPEC, D3FEND, or ATLAS identifier, and no PACT identifier.
 
-- **MITRE ATT&CK**: `T####`, `T####.###`, `S####`, `G####`, `TA####`
-- **MITRE CAPEC**: `CAPEC-####`
-- **MITRE D3FEND**: `D3-[ACRONYM]`
-- **MITRE ATLAS**: `AML.T####`, `AML.TA####`
-- **NTAC pathway / Calhoun-Weston / CERT insider**: free-text stage names, used as keys in `phase_mappings`
+`phase_mappings` relates each of the four lifecycle phases to stage or tactic names in six other published models, under the keys `ntac_pathway`, `calhoun_weston`, `cert_insider`, `cyber_kill_chain`, `mitre_attack`, and `mitre_atlas`. The values are short lowercase names such as `reconnaissance` or `grievance`. They are this project's own labels for those stages, written for lookup. They are not quotations or identifiers from the source frameworks, and a mapping is a finding aid, not a claim of equivalence.
 
-Cross-walks live in `phase_mappings` (Threat Lifecycle phase to source-framework stage) and on per-object cross-reference fields (TBD per framework).
+The draft crosswalks in [docs/crosswalks/](./crosswalks/README.md) do reference PACT identifiers and names. They are separate files, outside `framework.json`, and nothing in the vocabulary depends on them.

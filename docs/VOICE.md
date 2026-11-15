@@ -1,227 +1,195 @@
-# THREAT Matrix Voice Guidelines
+# THREAT Matrix Writing Rules
 
-**Date:** 2026-04-30
-**Amended:** 2026-07-20 (V1.5 review) — Rule 4 literature register clarified (no first-person disclaimer); Rule 5 third-party "adversary" carve-out added.
-**Status:** LOCKED for V1.1+ content authoring
-**Audience:** Maintainers and contributors authoring tactic content (`field_notes`, indicators, countermeasures, response protocols)
+**First issued:** 2026-04-30. **Amended:** 2026-07-20 and 2026-07-23 (Rules 4 and 5). **Amended:** 2026-11-15 (case-record rendering rule added to Rule 5; source wording aligned with public-sources-only).
+**Audience:** anyone writing or reviewing vocabulary text: `notes`, `field_notes`, `observed_contexts`, indicator `behavior`, countermeasure `measure`, and response-protocol `action` and `trigger`.
 
-THREAT Matrix is practitioner-first by design and by schema. The framework's evidence model (`evidence_basis` enum), source typing (Tier 1 includes attested operational experience), and mandatory `field_notes` field all enforce this structurally. These voice rules govern the prose that fills the schema.
+These rules govern the prose inside the vocabulary. They exist so that an entry reads as a description of something observable, cites its sources in the right place, and uses the same words for the same things throughout.
 
-The six rules below apply to all V1.1+ content authoring. They are not editorial preferences. They are quality discipline.
+**How the rules are enforced.** By review. No gate reads prose for these rules. The only mechanical checks on prose are that no text is empty or padded with whitespace, and that `conditioning_guidance` is at most 420 characters with no em or en dash. Everything else here is an obligation on the author and the reviewer.
+
+**Sources.** Every entry cites public sources only, in `source_refs`. Unpublished experience is not a source. See [METHODOLOGY.md](./METHODOLOGY.md#4-evidence-basis).
 
 ---
 
-## Rule 1 — Rewrite clinical-anchor framings
+## Rule 1: Citations live in source_refs, not in prose
 
-**Citations are structural, not prose.**
+Every tactic, indicator, countermeasure, and response protocol has a `source_refs` array. Citations go there. Prose does not repeat them as a list of authorities.
 
-Every tactic, indicator, countermeasure, and response protocol has a `source_refs` array for citations. The bibliography links live there. Prose must not duplicate citations rhetorically.
+**Wrong (authorities named in prose):**
+> "Psychologically driven actor with obsessive focus on a specific target. Clinical anchor: WAVR-21, PATH model, Threat Assessment in Schools."
 
-**Wrong (clinical anchor in prose):**
-> "Psychologically-driven actor with obsessive focus on a specific target. Clinical anchor: WAVR-21, PATH model, Threat Assessment in Schools."
-
-**Right (citations live in source_refs; prose stays practitioner):**
-> "Psychologically-driven actor with obsessive focus on a specific named target. The fixation is the defining characteristic — this actor's threat is organized entirely around one person."
+**Right (prose describes; citations sit in source_refs):**
+> "Psychologically driven actor with obsessive focus on a specific named target. The fixation is the defining characteristic: the behavior is organized around one person."
 >
 > `source_refs: ["WHITE-MELOY-WAVR21-2016", "CALHOUN-WESTON-2003", "VOSSEKUIL-FEIN-REDDY-2002"]`
 
-The reader who wants the academic backing finds it in source_refs. The reader who wants to know what the tactic looks like reads the prose without an academic detour.
+The reader who wants the source finds it in `source_refs`. The reader who wants to know what the behavior looks like reads the prose.
 
 ---
 
-## Rule 2 — Latinate to observable action
+## Rule 2: Describe observable action
 
-**Keep Latinate terms as formal labels (field names, phase names, tactic names) but rewrite descriptions in observable-action vocabulary.**
+Keep formal terms where they are labels (field names, phase names, tactic names). In descriptions, say what can be seen or recorded.
 
-Latinate descriptors signal academic distance. Observable-action descriptors signal practitioner literacy. Both can describe the same behavior; only the second connects to what a reviewer in the field actually encounters.
+**Abstract:** "Demonstrates escalating ideation, mobilization toward operational preparation, and increasing fixation on target."
 
-**Latinate (academic):** "Subject demonstrates escalating ideation, mobilization toward operational preparation, and increasing fixation on target."
+**Observable:** "Threat actor appears where the targeted subject is more often, makes purchases outside an established pattern, and raises the targeted subject unprompted in conversation."
 
-**Observable-action (practitioner):** "Subject is showing up where the target is more often. Started buying things they don't normally buy. Talks about the target without prompting in conversations."
-
-Use Latinate terms where they ARE the label (the phase is named "Mobilization"). In descriptions, render the label in observable-action language.
+Use a formal term where it is the label (the phase is named "Mobilization"). In a description, render it as observable behavior.
 
 ---
 
-## Rule 3 — Encounter-first structure
+## Rule 3: Observation first, classification second
 
-**What the practitioner encounters first, then what it means taxonomically, then citation last.**
+Say what is encountered first, then how it is classified. Citations stay in `source_refs`.
 
-Bad practitioner content tells you the taxonomy and assumes you'll connect it to encounter. Good practitioner content describes the encounter and lets the taxonomy follow.
+**Wrong (classification first):**
+> "Pathway behavior in Phase 1 (Target Development) involves research, planning, preparation, or implementation of an attack as documented by Meloy and Gill (2016)."
 
-**Wrong (taxonomy-first):**
-> "Pathway behavior in Phase 1 (Target Development) involves research, planning, preparation, or implementation of an attack as documented by Meloy & Gill (2016)."
-
-**Right (encounter-first):**
-> "The first thing you usually notice is the research artifact — a saved address, a downloaded blueprint, a printed schedule. Sometimes a peer brings it to you because it didn't sit right. Taxonomically this is pathway behavior in early-phase Target Development; the source literature on this construct is in Meloy & Gill (2016)."
-
-Encounter-first prose teaches a reader to recognize the pattern. Taxonomy-first prose teaches a reader to look it up.
+**Right (observation first):**
+> "The first thing usually noticed is a research artifact: a saved address, a downloaded floor plan, a printed schedule. Sometimes a colleague reports it because it did not seem right. This is pathway behavior in early Target Development."
 
 ---
 
-## Rule 4 — Voice follows evidence
+## Rule 4: Register follows the declared evidence basis
 
-**The `evidence_basis` enum declares the grounding; the prose follows the declaration.**
+Each tactic declares an `evidence_basis` value: `practice_led`, `practice_and_literature`, `literature_led`, or `literature_only`. The prose follows the declaration. Whatever the value, every claim rests on the public sources the entry cites.
 
-Practitioner register is the default when `evidence_basis` is `practice_led` or `practice_and_literature`. Academic register is appropriate when `evidence_basis` is `literature_led` or `literature_only`, but even literature-grounded content should describe observable behaviors in encounter-first language. (Schema 3.0.0 renamed the values: `operational_primary` became `practice_led`, `hybrid` became `practice_and_literature`, `literature_primary` became `literature_led`.)
+**For `practice_led` and `practice_and_literature`:** describe the pattern in plain, observable terms. `observed_contexts` lists generic kinds of setting, never named cases or people.
 
-The framework supports BOTH registers. The schema declares which is which. The prose must follow the declaration.
+**For `literature_led` and `literature_only`:** attribute the pattern to the documented record. Write "The documented pattern is that a threat actor...", "The literature describes...", "The analytic marker is...". Do not write in the first person, and do not claim or disclaim personal experience: the vocabulary is not a personal account. `observed_contexts` entries may be tagged `[literature: <bibliography key>]` so the reader sees where they come from.
 
-**For `practice_led` content:** practitioner voice throughout. `field_notes` describes the pattern as it presents in practice, and every claim is corroborated by the public sources the tactic cites. `observed_contexts` lists generic context archetypes from practice.
-
-**For `literature_only` content** — the `field_notes` signal the documented grounding through an ANALYTIC register attributed to the sources, not a first-person disclaimer. The framework is not personal narration about any individual maintainer, so do not write "I haven't worked a case involving this directly." Instead attribute the pattern to the documented record. Example pattern: *"The documented pattern is that a threat actor... The literature describes... The analytic marker is..."* Honesty is first-class, carried by the documented-register attribution rather than a personal confession. The `observed_contexts` may be tagged `[literature: <source-id>]` so the reader sees the provenance.
-
-*(Amendment 2026-07-20: the prior example used a first-person "I haven't worked this directly" disclaimer. That was retired because the framework's voice is analyst-general, not personal memoir; the honesty signal is the documented-register attribution.)*
-
-**For `practice_and_literature` content:** practitioner voice frames the observable detail; academic citation supports. The schema and prose work together.
+The declared value is the author's statement of how the tactic was written. It is not a claim of evidence, and the prose must not use a practice-led register to imply more support than the cited sources give.
 
 ---
 
-## Rule 5 — Canonical actor naming
+## Rule 5: Naming the people in an entry
 
-**The framework names two roles consistently across all behavior, indicator, countermeasure, and response-protocol prose. Notes and cpn_notes are exempt; metadata stays general.**
+### In vocabulary text
 
-| Concept | Canonical term | Pre-canonical wording (do not use) |
+Vocabulary text names two roles the same way everywhere.
+
+| Role | Term | Do not use |
 |---|---|---|
-| The adversary performing the observable behavior | **Threat actor** | "Subject" (capitalized) |
-| The person being targeted or protected | **targeted subject** *(primary)* / `the target` *(possessive carve-out)* / `named individual` *(variety)* | "target" (alone, when meaning the person, except in carve-out below) |
-| Actor-target compound | "the threat actor / targeted subject pair" | "subject-target pair" |
+| The class of person carrying out the behavior | **threat actor** | "Subject" (capitalized), "adversary", "attacker", "perpetrator" as the label for this role |
+| The person targeted or protected | **targeted subject**; `the target's <noun>` in possessives; `named individual` or `individual` for variety | "target" alone when it means the person; "victim", "mark" |
+| The pair | "the threat actor and targeted subject pair" | "subject-target pair" |
 
-**Possessive-compound carve-out.** In possessive compounds where the noun, not the person, carries the meaning, `target's <noun>` is acceptable: `the target's calendar`, `the target's residence`, `the target's vehicle`. Reading `the targeted subject's calendar` repeatedly produces the fatigue Rule 6 is designed to avoid. Use judgment: when the protectee is the foreground, write `targeted subject`; when the noun is the foreground, `target's <noun>` is acceptable.
+"Threat actor" is the label for a **class of behavior as described in the vocabulary**. An entry that says "Threat actor compiles the targeted subject's address and routine" describes what that kind of conduct looks like. It does not say that a person seen doing something similar is a threat actor.
 
-**Variety carve-out.** When the protectee has just been referenced as `targeted subject` and the next reference would create local redundancy, `named individual` or `individual` is an acceptable alternative — particularly in extended prose like `field_notes`. Do not introduce new alternatives (`subject`, `victim`, `mark`, etc.); the rotation is `targeted subject` / `the target's <noun>` / `named individual` / `individual`.
+**Possessives.** Where the noun carries the meaning, `the target's calendar`, `the target's residence`, and `the target's vehicle` are acceptable.
 
-**Latinate label carve-out.** Tactic names, phase names, and field names that are Latinate labels stay as-is — `Subject Profiling` (the tactic), `Target Selection` (the tactic), `Subject Description` (the field). Body prose still uses `Threat actor` and `targeted subject`.
+**Variety.** Where "targeted subject" has just been used, `named individual` or `individual` may follow. Do not introduce other alternatives.
 
-**Third-party "adversary" / historical "attacker" carve-outs (Amendment 2026-07-20, extended 2026-07-23).** "Adversary" and "attacker" are banned only as a label for THE threat actor executing the tactic; the canonical term for that actor is "threat actor." Five carve-outs are documented and must NOT be grep-banned in voice audits; surface each for judgment and keep it only in the sense below:
-> 1. **Third-party "adversary."** When "adversary" names a party OTHER than the threat actor, for example a rival institution the threat actor frames in an attribution-obfuscation tactic ("the trail terminates at a convenient adversary"), it is acceptable and often stronger than "rival."
-> 2. **Historical "prior attackers."** When "attacker(s)" names a prior/historical class the CURRENT threat actor references, models on, or studies ("identification with prior attackers", "studying prior attackers' methods"), it is acceptable; the acting label stays "threat actor."
-> 3. **Adjective "adversarial."** The adjective ("adversarial affiliation", "adversarial tone") is not an actor label and is acceptable.
-> 4. **Literature term-of-art.** "Adversary-path" / "adversary-sequence" analysis and bibliography titles reproduce cited-source terminology and stay as written (see Rule 4 literature register).
-> 5. **Compound "attacker-controlled."** The industry compound ("attacker-controlled path/code") is a standard term and is acceptable.
+**Labels stay as they are.** Tactic, phase, and field names that are established labels are not rewritten: `Subject Profiling`, `Target Selection`.
 
-The remaining hard bans (em and en dashes, smart quotes, "practitioner" in body prose) are unaffected.
+**Five uses of "adversary" and "attacker" that are acceptable,** because they do not label the threat actor carrying out the tactic:
 
-**Right (canonical):**
+1. "Adversary" for a third party the threat actor blames or frames ("the trail ends at a convenient adversary").
+2. "Prior attackers" for a historical class the threat actor studies or imitates.
+3. The adjective "adversarial" ("adversarial tone").
+4. Terms of art and titles reproduced from a cited source ("adversary sequence" analysis).
+5. The compound "attacker-controlled" for hardware, code, or a path.
+
+Do not strip these with a blanket search. Read each one and keep it only in the sense above.
+
+**Right:**
 > "Threat actor appears at locations associated with the targeted subject on multiple occasions with no apparent legitimate reason."
-> "Multiple correlated indicators detected for the same threat actor / targeted subject pair."
 > "Implement protective measures for the targeted subject."
 
-**Wrong (pre-canonical):**
+**Wrong:**
 > "Subject articulates specific grievance tied to a named individual..."
-> "...for the same subject-target pair."
 > "Implement protective measures for the identified target."
 
-This rule is enforced retroactively. Any pre-canonical wording surfaced during authoring is rewritten in the same commit that touches the tactic.
+### In a case record: the rendering rule
+
+A case record is about a real person. A person who has been reported or observed has not been assessed as posing a threat, and most never will be.
+
+- **In a case record about a person who has not been assessed as posing a threat, "threat actor" is rendered "person of concern".** The score-free case record fixes this in its schema: `subject_term` must be `person_of_concern`.
+- Do not copy the label "threat actor" from an indicator into a record, a report, a message, or a system field about a person.
+- Record what was observed in plain words, with its source. Tag the observation with the indicator identifier. The identifier points to the vocabulary's description of a class of behavior; it is not a description of the person.
+- "Targeted subject" is a vocabulary term. In a record, describe the person who may be at risk in the plain terms your organization uses.
+- Keep the same neutral wording for everyone. Do not vary it with the person's role, background, or how alarming the report sounded.
+
+The worksheet and worked cases in [examples/](../examples/README.md) follow this rule.
 
 ---
 
-## Rule 6 — Voice variety palette (anti pattern-collapse)
+## Rule 6: Variety
 
-**The framework will scale to 150+ tactics. If 30% of tactics use the same opener phrase, the corpus reads as Mad-Libs and the voice fails — irrespective of whether each individual paragraph is well-written. Variety is enforced at three levels: opener phrase, mid-paragraph pivot phrase, and diction.**
+A corpus of 161 tactics reads as a template if the same phrases recur. Variety is kept at three levels: the opening phrase, the pivot from definition to behavior, and word choice.
 
-**Pattern usage is unconstrained — phrase variety is the actual enforcement.** The six opener patterns below are tools, not quotas. Pick the pattern that best fits the tactic. The same pattern may be used for many tactics in a row as long as no opener PHRASE repeats more than three times across the corpus.
+### Openers
 
-### Six opener patterns (pick the best fit)
+Pick the pattern that fits the tactic. No opening **phrase** should appear more than three times across the corpus.
 
-Each pattern is voice-compliant under Rules 1–4. Pick the pattern that best fits the tactic — pattern frequency is descriptive, not prescriptive. The phrase-level cap (no opener PHRASE repeats more than three times across the full framework) is the variety enforcement.
+| Pattern | Example | Suits |
+|---|---|---|
+| Observation | "The first signal usually caught is repetition where there should be none." | Tactics with an unambiguous entry signal |
+| Function | "Subject Profiling is the tactic that turns a name into a target file." | Tactics best explained by what they accomplish |
+| Decision point | "Target Selection is the point where a grievance lands on a named person." | Tactics that turn on a threshold |
+| Literature | "Pathway Indicators are the observable behaviors that mark progression toward an attack..." | `practice_and_literature`, `literature_led`, `literature_only` |
+| Tension | "Cover Construction does not usually fail at the cover. It fails at a second-order detail nobody scripted." | Tactics where the common assumption is wrong |
+| Typology | "Capability Acquisition resolves into three pathways: legitimate purchase, theft or diversion, and proxy procurement." | Tactics with distinct sub-types |
+| Timing | "By the time Network Development is observable, the threat actor has decided help is needed." | Late-phase or threshold tactics |
 
-| # | Pattern | Example | Best for |
-|---|---|---|---|
-| 1 | **Behavioral-observation** | "The first signal you usually catch is repetition where there shouldn't be any." | Tactics where the entry signal is unambiguous |
-| 2 | **Functional-definitional** | "Subject Profiling is the tactic that turns 'a name' into 'a target file'." | Tactics where the *function* is the most useful frame |
-| 3 | **Decision-point** | "Target Selection is the point where a vague or specific grievance lands on a named person." | Tactics that pivot on a binary or threshold |
-| 4 | **Literature-anchored** | "Pathway Indicators are the observable behaviors that mark a threat actor's progression toward an attack..." | `evidence_basis: practice_and_literature` or `literature_led` |
-| 5 | **Counter-intuitive / tension** | "The thing about Cover Construction is that it doesn't usually fail at the cover — it fails at the second-order detail nobody scripted." | Tactics where common intuition is wrong |
-| 6 | **Mechanism / typology** | "Capability Acquisition resolves into three pathways: legitimate purchase, theft or diversion, and proxy procurement." | Tactics with distinct sub-types |
+### Pivots
 
-A 7th may be used when warranted: **temporal anchor** ("By the time Network Development is observable, the threat actor has decided they need help.") — useful for late-phase or threshold-driven tactics.
+No pivot phrase should appear in more than two tactics. Rotate among forms such as:
 
-### Mid-paragraph pivot variety
-
-The pivot is the sentence that moves the paragraph from definition to behavior. **No mid-pivot phrase may appear in more than two tactics.** Rotate among:
-
-- "Operationally, this resolves into..." / "Operationally, this can resolve into..."
-- "What separates this tactic from [adjacent] is..."
+- "Operationally, this resolves into..."
+- "What separates this tactic from [the adjacent one] is..."
 - "Past this point, the work has shifted from..."
 - "Where this tends to surface is..."
-- "In casework, the entry point is usually..."
 - "The detection vector is..."
-- "Two distinct streams produce this: A and B..."
+- "Two distinct streams produce this..."
 
-Avoid as default openers: "The signal you usually catch is..." (echoes Rule 1's exemplar). Avoid as defaults: "The threat actor is no longer just..." beyond two tactics.
+### Closings
 
-### Closing texture variety
-
-Avoid using `"X is heaviest in [phase] but compresses sharply just before [phase]"` more than twice. Rotate among:
+Do not reuse one closing formula. Rotate among forms such as:
 
 - "Most of X sits in [phase], with a tail into [phase]."
-- "X is front-loaded in [phase]; residual signal in [phase] is mostly attributable to [reason]."
-- "The window where this is most catchable is..."
+- "The window where this is most observable is..."
 - "After [event], X is essentially closed unless [condition]."
 
-### Rhetorical-stance caps
+### Stance
 
-The audience perceives stance more strongly than content. Stance variety is the single biggest defense against pattern-collapse.
-
-| Stance | Example | Cap (across the 150+ tactic corpus) |
+| Stance | Example | Share of tactic `field_notes` |
 |---|---|---|
-| **You-address** | "The first thing you catch is..." | ≤ 15% |
-| **Role-narrator** ("an analyst", "an investigator", "the threat management team", "the threat assessment team") | "An analyst usually surfaces this through..." / "The threat management team escalates when..." | ~30–35% |
-| **Case-pattern** | "In observed cases, the entry point is usually..." | ~25–30% |
-| **Mechanism-narrator** | "X surfaces in two ways..." | ~15–20% |
-| **Other / mixed** | situational | balance |
+| Second person | "The first thing you catch is..." | At most 15 percent |
+| Role as narrator | "An analyst usually surfaces this through..." | About 30 to 35 percent |
+| Pattern | "In documented cases, the entry point is usually..." | About 25 to 30 percent |
+| Mechanism | "X surfaces in two ways..." | About 15 to 20 percent |
 
-You-address is high-impact in small doses and corrosive at scale. Cap it tight.
+### Role words
 
-### Diction (analyst / investigator, not practitioner)
+In vocabulary text, name roles specifically: **analyst**, **investigator**, **threat management team**, **threat assessment team**, **security professional**, and domain roles such as **reception**, **security personnel**, and **threat reporters**. Do not use "practitioner" or "protective intelligence analyst" in vocabulary text, or an unanchored "expert" or "professional". No single role word should make up more than about 30 percent of role references in `field_notes`.
 
-The word **`practitioner`** is too clinical for body prose. In tactic content (`field_notes`, `observed_contexts`, indicator behaviors, countermeasure measures, response-protocol actions and triggers), use rotation:
+"Practitioner" is fine in documents about the project, such as this one.
 
-- **analyst** — threat assessment analyst, security analyst, intelligence analyst
-- **investigator** — threat assessment investigator, security investigator
-- **threat management team** — collective noun for the assessment body (no hyphen)
-- **threat assessment team** — collective noun for the assessment body
-- **security professional** — generalist role descriptor
-- **reception**, **security personnel**, **threat reporters** — domain-specific roles
+### Characters
 
-Excluded from the rotation: `practitioner` (clinical), `protective intelligence analyst` (over-specific compound that reads as a job title rather than a role), and unilateral substitutes like `expert` or `professional` without a domain anchor.
-
-`practitioner` may appear in meta-documents (this VOICE.md, README.md, CLAUDE.md) describing the audience — but not in the framework's tactic content itself.
-
-**Deployment rule:** across the corpus, no single role term should account for more than ~30% of role-references in tactic `field_notes`. The voice-audit pass at session start should grep tactic field_notes for role-term distribution and surface any term running hot.
-
-### Three-rule discipline (the standard)
-
-1. **No identical opener PHRASE** appears more than 3 times across the full corpus. (Pattern usage itself is unconstrained — best fit wins.)
-2. **No mid-paragraph pivot phrase** appears more than 2 times.
-3. **You-address stance** ≤ 15% of tactic `field_notes`.
-
-A periodic voice-audit pass (corpus-wide grep of common openers, pivots, and stance markers) is the operational enforcement.
+No em dashes, no en dashes used as dashes, and no typographic quotation marks in vocabulary text.
 
 ---
 
-## Application Checklist
+## Checklist
 
-Before submitting any tactic, indicator, countermeasure, or response protocol for V1.1, verify:
+Before proposing a tactic, indicator, countermeasure, or response protocol:
 
-- [ ] No "clinical anchor" or similar citation-in-prose framings (Rule 1)
-- [ ] Descriptions use observable-action vocabulary (Rule 2)
-- [ ] Encounter precedes taxonomy and citation (Rule 3)
-- [ ] Prose register matches the declared `evidence_basis` (Rule 4)
-- [ ] Canonical actor naming applied: "Threat actor" / "targeted subject"; possessive-compound carve-out and variety carve-out (`named individual`/`individual`) used where appropriate (Rule 5)
-- [ ] Opener pattern selected from the six-pattern palette and rotated against recent commits (Rule 6)
-- [ ] No `practitioner` and no `protective intelligence analyst` in tactic content; analyst / investigator / threat management team / threat assessment team rotation used (Rule 6)
-- [ ] You-address stance not over-used (Rule 6 cap: ≤ 15%)
-- [ ] No single role term > ~30% of role-references in field_notes (Rule 6)
-- [ ] `field_notes` written in 3–6 sentences, voice-led, encounter-first
-- [ ] `observed_contexts` lists pattern archetypes only (no case names, no PII)
-- [ ] `source_refs` includes at least one Tier 1 source
+- [ ] Citations are in `source_refs`, not listed in prose (Rule 1)
+- [ ] Every `source_refs` key is a public source in the bibliography
+- [ ] Descriptions say what can be observed (Rule 2)
+- [ ] Observation comes before classification (Rule 3)
+- [ ] Register matches the declared `evidence_basis`, with no first person (Rule 4)
+- [ ] "Threat actor" and "targeted subject" used as defined, for classes of behavior only (Rule 5)
+- [ ] Nothing in the entry names or describes a real, identifiable person (Rule 5)
+- [ ] Opening phrase, pivot, and closing are not overused elsewhere (Rule 6)
+- [ ] No "practitioner" or "protective intelligence analyst" in vocabulary text (Rule 6)
+- [ ] `field_notes` is three to six sentences, observation first
+- [ ] `observed_contexts` lists kinds of setting only: no case names, no personal information
+- [ ] The tactic's `false_positive_context` says what ordinary conduct looks like this
 
----
+## What these rules are not
 
-## What this is not
-
-These voice rules do not require the maintainer or contributors to be unable to write academic prose. The framework cites peer-reviewed literature throughout. What the rules require is that the prose carry practitioner literacy as the default and use academic register only where the evidence is academic.
-
-The reader who matters most is the practitioner who picks up the framework and recognizes their own work in it. Build for that reader.
+They do not rule out academic prose where the support is academic. They ask that the default be plain description of observable behavior, that the register never imply more support than the cited sources give, and that a label for a class of behavior never be attached to a person.

@@ -174,7 +174,7 @@ Status against these conditions today: none met; none yet failed; the clock has 
 
 ## 11. Code of conduct
 
-Participants are expected to follow the Contributor Covenant, version 2.1 (https://www.contributor-covenant.org/version/2/1/code_of_conduct/). A `CODE_OF_CONDUCT.md` file adopting it, with a reporting contact, is **to be added** to the repository root; until then, conduct concerns go to the maintainer through the private channel described in `SECURITY.md`.
+Participants are expected to follow the project's [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Conduct concerns go to the maintainer through the private channel described in `SECURITY.md`.
 
 Two project-specific rules apply in every venue: do not post details of real cases or identifiable people, and do not use project spaces to assess or speculate about any individual.
 

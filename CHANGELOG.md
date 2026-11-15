@@ -2,8 +2,56 @@
 
 All notable changes to THREAT Matrix are documented here, per [VERSIONING.md](docs/VERSIONING.md).
 
-This project adheres to [Semantic Versioning](https://semver.org). Framework
-content and JSON Schema are versioned independently (latest content: `1.7.1`, schema: `2.1.0`).
+This project adheres to [Semantic Versioning](https://semver.org). Vocabulary
+content, the vocabulary schema, the case record schema, and the experimental
+scoring overlay are versioned independently. Published on `main`: content
+`1.7.0`, schema `2.1.0`. Drafted on `v3-design`, not released: content `2.0.0`,
+schema `3.0.0`, case record `1.0.0`, overlay `0.1.0`.
+
+## [2.0.0] - Unreleased
+
+**The THREAT Matrix becomes an open behavioral vocabulary and evidence index. Scoring moves to a separate experimental overlay.** Content `1.7.0` to `2.0.0`; vocabulary schema `2.1.0` to `3.0.0`; new case record schema `1.0.0`; new experimental scoring overlay `0.1.0`. This is a MAJOR release. A document valid against schema 2.1.0 is not valid against 3.0.0. No identifier was renamed, renumbered, or removed. Migration guide: [docs/migration/2.1-to-3.0.md](docs/migration/2.1-to-3.0.md).
+
+### Changed (breaking)
+- **Scores removed from the vocabulary.** `escalation_axes`, `escalation_weight`, `severity_band`, `severity_floor`, and `axis_confidence` on all 828 indicators, `assessment_guidance.escalation_priority` on tactics, and the root `escalation_rubric` and `instance_conditioning` blocks moved to `docs/data/scoring-overlay.json` as `axes`, `type_weight`, `type_band`, `type_band_floor`, `axis_confidence`, `tactic_priorities`, `rubric`, and `instance_conditioning`. The overlay is experimental, non-normative, unvalidated, opt-in, and outside the stability promise.
+- **`compensates_for` split.** It now holds countermeasure identifiers only (362 entries). Indicator targets moved to a new `mitigates` relation of `{indicator, function}` edges (483 edges, every one with function `unreviewed`).
+- **`evidence_basis` values renamed:** `operational_primary` to `practice_led`, `hybrid` to `practice_and_literature`, `literature_primary` to `literature_led`.
+- **`matrices.<name>.maturity` required.** People and Facilities are `core`. Organizations and Infrastructure are `draft`.
+- **Schema tightened:** exact identifier grammar; bibliography key pattern; bibliography `url` limited to http and https; `doi` and `date` patterns; non-empty, unpadded text; enums on `phase_name` and seven actor-profile fields; `assessment_guidance` and `informs_axes` complete when present; `license` fixed to `MIT`.
+- **Case record split.** `instance_assessment` and `conditioned_assessment` left `framework.schema.json`. The scored record lives in `scoring-overlay.schema.json` as `scored_case_record` (`type_severity_band` renamed `type_band`) and is experimental. The default record is the new score-free `docs/data/case-record.schema.json`.
+
+### Added
+- Lifecycle contract: `lifecycle_state`, `deprecated_in`, `deprecation_reason`, `superseded_by` on every object type, and `reserved_reason` on actor profiles. Only actor profiles may be reserved. `AP022` and `AP027` appear as reserved stubs.
+- `docs/data/id-manifest.json` and its schema: a committed inventory of every identifier, checked on every change. No identifier was dropped, reused, or moved since 1.7.0.
+- Score-free case record: template, worksheet, and five fictional worked cases, using "person of concern", with protective factors, reassessment in either direction, and dispositions for no threat identified and transient concern.
+- Limitations and intended-use statement at the top of README.md and docs/METHODOLOGY.md, and in the viewer.
+- `scripts/migrate/2.1-to-3.0.py`, `scripts/export/flat.py`, `SECURITY.md`, `GOVERNANCE.md`, `MAINTAINERS.md`, `CODE_OF_CONDUCT.md`.
+- Drafts, not evidence: a presence-coding study protocol (`docs/study/`, not run) and two concept-level crosswalks (`docs/crosswalks/`, unreviewed).
+- Validator: 49 checks across the vocabulary, overlay, scored records, and coverage documents, with 157 fixtures. Continuous integration runs every gate on `main`, `v1-build`, and `v3-design`.
+- Countermeasures 641 to 645 and response protocols 322 to 323: `TO0212` and `TI0211` brought to the same shape as other tactics.
+
+### Removed
+- Root `operations` (an empty placeholder).
+- Indicator field `primary_objective_evidence_tier` (never populated).
+- Bibliography `type` values `field_observation`, `practitioner_elicitation`, `partner_attestation`, `case_composite`.
+- The self-description "standard" from every document.
+
+### Fixed
+- `phase_relevance` now includes the parent tactic's phase on 24 indicators and 48 countermeasures.
+- `axis_confidence` labels in the overlay follow their derivation rule on every indicator (12 corrected).
+- Three dead source URLs replaced; one duplicate source entry merged. The bibliography holds 120 entries, all public sources.
+- `TO0212` and `TI0211` now carry `false_positive_context` and `threshold_guidance`.
+- Worked case that treated lawful ability to acquire as means in hand.
+- Documents brought into line with the data and the gates: migration guide rewritten and tested against the published 1.7.0 document; review-process, lifecycle, identifier, and relation descriptions corrected.
+
+### Security
+- Private reporting route for vulnerabilities and privacy problems; issue templates warn against posting real case data.
+- Viewer: Content-Security-Policy, self-hosted fonts, http and https links only.
+
+### Notes
+- The label `1.7.1` was used on development branches and was never released from `main`. Its bibliography changes are part of 2.0.0.
+- Between 1.7.0 and this release, development branches changed the schema (the relation split) while it still declared 2.1.0. That schema was never published. From this release, any schema change changes the schema version (docs/VERSIONING.md).
+- No reliability study has been run. The scoring overlay is unvalidated.
 
 ## [1.7.1] - 2026-11-02
 

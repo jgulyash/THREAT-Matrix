@@ -3298,7 +3298,7 @@
             {
               "id": "RP-0106-01",
               "trigger": "Single Cover Construction indicator detected (unverifiable identity claim, fabricated credentials, role-knowledge incongruity reported by reception or peer)",
-              "action": "Document the indicator. Detain politely if the individual is on-site; verify identity through sponsoring contact or external corroboration. Report to threat management team within the same business day. Preserve any physical artifacts (business cards, IDs, vehicle photos).",
+              "action": "Document the indicator. If the individual is on-site, ask them to wait and do not physically detain them; verify identity through sponsoring contact or external corroboration. Report to threat management team within the same business day. Preserve any physical artifacts (business cards, IDs, vehicle photos).",
               "stakeholders": [
                 "security_operations",
                 "threat_management_team"
@@ -3317,7 +3317,7 @@
             {
               "id": "RP-0106-02",
               "trigger": "Cover construction detected at access to a sensitive area OR concurrent with other Phase 1 indicators OR coupled with proximity to the targeted subject",
-              "action": "Activate full incident response. Detain pending verification where lawful. Notify law enforcement; pretexting at protected sites may itself be unlawful. Implement enhanced posture for the targeted subject and the affected facility. Capture all physical and digital evidence of the cover construction.",
+              "action": "Activate full incident response. Ask the individual to remain pending verification; any detention is a matter for law enforcement or as local law permits. Notify law enforcement; pretexting at protected sites may itself be unlawful. Implement enhanced posture for the targeted subject and the affected facility. Capture all physical and digital evidence of the cover construction.",
               "stakeholders": [
                 "security_operations",
                 "threat_management_team",
@@ -5837,7 +5837,7 @@
             {
               "id": "RP-0203-01",
               "trigger": "Single Perimeter Breach indicator detected (off-hours unverified presence, tailgating attempt, fabricated credential at access point)",
-              "action": "Detain the individual politely if lawful; verify identity through sponsoring contact or external corroboration. Notify the threat assessment team within the same business hour. Preserve any physical artifacts and access-attempt logs. Activate enhanced perimeter monitoring at adjacent access points.",
+              "action": "Ask the individual to wait and do not physically detain them; verify identity through sponsoring contact or external corroboration. Notify the threat assessment team within the same business hour. Preserve any physical artifacts and access-attempt logs. Activate enhanced perimeter monitoring at adjacent access points.",
               "stakeholders": [
                 "security_operations",
                 "threat_management_team"
@@ -6830,7 +6830,7 @@
             {
               "id": "RP-0205-01",
               "trigger": "Single Access Elevation indicator detected (sponsoring contact unverifiable, badge tier mismatch, suspected social-engineering attempt)",
-              "action": "Detain the individual politely if on-site; verify identity through independent channels including direct contact with the named sponsoring person. Notify the threat assessment team within the same business hour. Preserve any physical artifacts including credentials, work orders, and business cards. Pull access logs for review.",
+              "action": "If the individual is on-site, ask them to wait and do not physically detain them; verify identity through independent channels including direct contact with the named sponsoring person. Notify the threat assessment team within the same business hour. Preserve any physical artifacts including credentials, work orders, and business cards. Pull access logs for review.",
               "stakeholders": [
                 "security_operations",
                 "threat_management_team",

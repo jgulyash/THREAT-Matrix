@@ -1,148 +1,145 @@
 # Deprecation Policy
 
-THREAT Matrix never silently removes content. This document defines the lifecycle states an identifier can occupy, how items move between states, and what consumers should do at each state.
+The THREAT Matrix does not silently remove or repurpose content. This document defines the lifecycle states an object can be in, the fields each state requires, how an object moves between states, and what a consumer should do with each. The JSON Schema (`docs/data/framework.schema.json`), the validator (`scripts/lint/validate.py`, check V26), the ID manifest tool (`scripts/lint/id-manifest.py`), and the viewer all follow the rules below.
+
+No object in version 2.0.0 is deprecated or superseded. The only lifecycle state in use today is `reserved`, on two actor profiles. The deprecated and superseded rules are defined and gated, and have not yet been exercised on real content.
 
 ## Lifecycle states
 
-Every identifier is in exactly one of the following states at any given release:
+| State | Meaning | Who may carry it |
+|---|---|---|
+| `active` | Current. This is the state when `lifecycle_state` is absent. | Any object |
+| `deprecated` | No longer recommended. No single replacement. Content is still present. | Any object |
+| `superseded` | No longer recommended. A replacement is named in `superseded_by`. Content is still present. | Any object |
+| `reserved` | The identifier is held and carries no content. | **Actor profiles only** |
 
-| State | Meaning | Identifier preserved? | Content present? |
-|---|---|---|---|
-| `active` | The default. The item is current and recommended. | Yes | Yes |
-| `deprecated` | The item is no longer recommended. No replacement is offered. The item is retained for one or more MINOR releases for consumer migration. | Yes | Yes |
-| `superseded` | The item is no longer recommended. A replacement is identified (`superseded_by`). | Yes | Yes |
-| `reserved` | The identifier slot is held intentionally. No content is present and none is planned. | Yes | No |
+"Any object" means a tactic, indicator, countermeasure, response protocol, or actor profile.
 
-A document MUST surface lifecycle state via a `lifecycle_state` field on every tactic, actor profile, indicator, countermeasure, and response protocol object. The default value when the field is absent is `active` (this is the current convention while V1.1 backfills are in progress; future MAJOR releases may make the field mandatory).
+`lifecycle_state` is optional. An object without it is `active`. In version 2.0.0, 2 of the 34 actor-profile entries carry the field (both `reserved`) and no other object does.
 
-## How an item moves between states
+### The reserved rule
 
-```
-              ┌──────────────┐
-   author ──> │   active     │
-              └──────┬───────┘
-                     │
-            (no replacement)         (replacement identified)
-                     │                       │
-                     v                       v
-              ┌──────────────┐        ┌──────────────┐
-              │  deprecated  │ ─────> │  superseded  │
-              │              │        │              │
-              └──────┬───────┘        └──────┬───────┘
-                     │                       │
-                     │      (sunset window)   │
-                     │                       │
-                     v                       v
-              ┌──────────────┐        ┌──────────────┐
-              │   reserved   │ <───── │   reserved   │
-              │ (no content) │        │ (no content) │
-              └──────────────┘        └──────────────┘
-```
+- Only an actor profile may be `reserved` inside `framework.json`. A tactic, indicator, countermeasure, or response protocol with `lifecycle_state: reserved` is rejected by the schema and by the validator.
+- A reserved actor profile carries exactly three properties: `id`, `lifecycle_state`, and `reserved_reason` (non-empty). Any other property is invalid, so a reserved profile cannot carry content.
+- A reserved identifier never receives content later. It is held so the number is never assigned again.
+- An identifier in one of the other four namespaces that must be held without an object is recorded in the ID manifest's `reserved` list, not in `framework.json`. See [IDENTIFIERS.md](./IDENTIFIERS.md).
 
-A `deprecated` item may transition to `superseded` if a replacement is later identified. A `superseded` item does not return to `deprecated`.
+## Required fields by state
 
-A `reserved` slot may receive new content under exceptional circumstances (a pre-publication withdrawal that is later vindicated). This is rare and triggers a CHANGELOG entry calling out the slot reuse — note that this is not identifier reuse for *different* content, which is forbidden by [IDENTIFIERS.md](./IDENTIFIERS.md). It is the original assignment being activated.
+| State | Required | Forbidden |
+|---|---|---|
+| `active` (or field absent) | none | `deprecated_in`, `deprecation_reason`, `superseded_by`, `reserved_reason` |
+| `deprecated` | `deprecated_in`, `deprecation_reason` | `superseded_by`, `reserved_reason` |
+| `superseded` | `deprecated_in`, `deprecation_reason`, `superseded_by` | `reserved_reason` |
+| `reserved` (actor profiles only) | `reserved_reason` | every property other than `id`, `lifecycle_state`, `reserved_reason` |
 
-## Sunset window
+Field rules:
 
-The minimum sunset window for `deprecated` and `superseded` items before any consideration of content removal is **one MINOR release**. The content of the deprecated item is preserved through that minor; only after the next minor ships may a future minor remove the content (transitioning the item to `reserved`).
+- `deprecated_in` is the content version (SemVer) in which the object left `active`. It may not be later than the document's own `version`.
+- `deprecation_reason` and `reserved_reason` are non-empty text.
+- `superseded_by` must name an object that exists, is in the same namespace, is `active`, and is not the object itself. A set of supersessions may not form a cycle. Because the target must be active, a superseded object always points directly at a current object: there is no chain to walk.
+- A deprecated or superseded object keeps all of its content and must still satisfy every other rule for its type.
 
-In practice, content removal is rare. Most deprecated items remain in the framework as historical record, with `lifecycle_state` flagging them. Consumers can filter on the field at query time.
+The schema enforces the required and forbidden fields and the shape of each value. The validator enforces what a schema cannot: that `superseded_by` resolves, is active, is in the same namespace, is not a self-reference or part of a cycle, and that `deprecated_in` is not later than the document version.
 
-## Required fields by lifecycle state
+### Examples
 
-### `deprecated`
+Each example below is a complete object that validates against the named schema definition. The deprecation and supersession shown are hypothetical: `CM-0101-02` is active in the published data.
 
+A deprecated countermeasure, as it would appear in a document at content version 2.1.0:
+
+<!-- validate: framework.schema.json#/$defs/countermeasure -->
 ```json
 {
-  "id": "TM####",
+  "id": "CM-0101-02",
+  "measure": "Deploy social media monitoring for mentions of protected individuals, organizational leaders, and key personnel across public platforms",
+  "category": "detective",
+  "domain": "technical_monitoring",
+  "cost": "medium",
+  "complexity": "medium",
+  "time_to_implement": "weeks",
+  "limitations": "Only captures public posts. Encrypted messaging and private communications are not visible. False positive rate is high without human analyst review.",
+  "source_refs": ["CISA-CONVERGE-2021"],
+  "phase_relevance": ["target_development", "mobilization"],
+  "compensates_for": [],
   "lifecycle_state": "deprecated",
-  "deprecated_in": "X.Y.Z",
-  "deprecation_reason": "Brief explanation suitable for inclusion in a CHANGELOG"
+  "deprecated_in": "2.1.0",
+  "deprecation_reason": "Hypothetical example. Withdrawn with no single replacement."
 }
 ```
 
-### `superseded`
+The same countermeasure superseded by another active countermeasure in the same namespace:
 
+<!-- validate: framework.schema.json#/$defs/countermeasure -->
 ```json
 {
-  "id": "TM####",
+  "id": "CM-0101-02",
+  "measure": "Deploy social media monitoring for mentions of protected individuals, organizational leaders, and key personnel across public platforms",
+  "category": "detective",
+  "domain": "technical_monitoring",
+  "cost": "medium",
+  "complexity": "medium",
+  "time_to_implement": "weeks",
+  "limitations": "Only captures public posts. Encrypted messaging and private communications are not visible. False positive rate is high without human analyst review.",
+  "source_refs": ["CISA-CONVERGE-2021"],
+  "phase_relevance": ["target_development", "mobilization"],
+  "compensates_for": [],
   "lifecycle_state": "superseded",
-  "deprecated_in": "X.Y.Z",
-  "superseded_by": "TM####",
-  "deprecation_reason": "Brief explanation"
+  "deprecated_in": "2.1.0",
+  "deprecation_reason": "Hypothetical example. Merged into CM-0101-05.",
+  "superseded_by": "CM-0101-05"
 }
 ```
 
-`superseded_by` MUST reference an `active` identifier in the same namespace. Cross-namespace supersession (e.g., a tactic superseded by an actor profile) is not supported by V1 — model that as deprecation with explanatory notes instead.
+A reserved actor profile, exactly as `AP022` appears in the data:
 
-### `reserved`
-
-```json
-{
-  "id": "AP###",
-  "lifecycle_state": "reserved",
-  "reserved_reason": "Brief explanation (e.g., 'withdrawn during V1.0 review')"
-}
-```
-
-A `reserved` object has no behavioral content and validates against a relaxed schema. Consumers should treat reserved IDs as "do not use" rather than as data.
-
-## Consumer guidance
-
-### Filtering at query time
-
-A consumer that surfaces tactics to an end user (UI, agent, report generator) SHOULD filter on `lifecycle_state` by default:
-
-- Show `active` items.
-- Hide `deprecated`, `superseded`, and `reserved` items unless the consumer explicitly opts in (e.g., a "Show retired items" toggle).
-- When a `superseded` item is referenced — for example, a historical detection rule still pointing at the old ID — surface the `superseded_by` pointer prominently so the user can navigate to the replacement.
-
-### Audit / forensic use
-
-A consumer that performs audit, forensic, or longitudinal analysis MUST honor all four states. Past data may reference identifiers that have since transitioned, and the analysis would be incomplete or wrong if those references could not be resolved. THREAT Matrix's commitment to permanent identifier preservation exists precisely to make this analysis reliable.
-
-### Bulk re-mapping
-
-A consumer can perform a bulk re-mapping pass before ingest using the `superseded_by` chain. The chain is acyclic and finite (a `superseded` item cannot point to another `superseded` item that points back). A consumer SHOULD walk the chain to its terminal `active` item — typically a single hop, but the chain length is not bounded by this policy.
-
-## Disclosure timing
-
-Deprecation is announced in the CHANGELOG entry of the MINOR release that introduces the `deprecated` or `superseded` state. The CHANGELOG entry includes:
-
-- The identifier
-- The new state
-- The replacement (if any)
-- The reason
-- The earliest release at which content removal would be considered
-
-This is the consumer's notice. There is no separate deprecation announcement process; CHANGELOG is authoritative.
-
-## Examples
-
-### Worked example: AP022 → modifier on actor associations
-
-In V1.0 design, `AP022` was proposed as "Former Insider." Review concluded that "former" is better modeled as an `employment_status` modifier on actor associations rather than a separate profile. AP022 was retired before V1.0 publication; the slot is `reserved`.
-
+<!-- validate: framework.schema.json#/$defs/actor_profile -->
 ```json
 {
   "id": "AP022",
   "lifecycle_state": "reserved",
-  "reserved_reason": "Former-insider behavior is modeled via employment_status modifier on actor_associations rather than as a separate profile (decision: V1.0 design review)."
+  "reserved_reason": "Former-insider behavior is modeled via the employment_status modifier on actor_associations rather than as a separate profile (V1.0 design review)."
 }
 ```
 
-### Worked example: hypothetical tactic supersession
+## How an object moves between states
 
-If a hypothetical `TM0190` were to be split into `TM0191` (selection) and `TM0192` (recruitment) in a MINOR release, `TM0190` would transition to `deprecated` (no single replacement) with the deprecation reason explaining the split:
+1. **Active to deprecated or superseded.** In a MINOR content release, the object gains `lifecycle_state`, `deprecated_in`, `deprecation_reason`, and, if a replacement exists, `superseded_by`. Its content stays.
+2. **Deprecated to superseded.** If a replacement is identified later, a deprecated object may become superseded. A superseded object does not go back to deprecated, and neither state returns to active.
+3. **Sunset.** A deprecated or superseded object keeps its content for at least one further MINOR release after the release that changed its state. Most are expected to stay indefinitely as a historical record.
+4. **Content removal.** After the sunset, an object may be removed from `framework.json`. Removal is a MAJOR content change under [VERSIONING.md](./VERSIONING.md). The identifier is then recorded in the ID manifest's `removed` section with the release that removed it and a reason. A removed identifier is never assigned again.
+5. **Splits.** When one object is split into several, it becomes `deprecated` (there is no single replacement) and the reason names the successors.
+6. **Moves.** An object never changes parent tactic with its identifier intact. A move is a supersession: a new identifier is issued under the destination tactic and the original becomes `superseded` pointing at it.
 
-```json
-{
-  "id": "TM0190",
-  "lifecycle_state": "deprecated",
-  "deprecated_in": "1.9.0",
-  "deprecation_reason": "Split into TM0191 (selection) and TM0192 (recruitment) for clearer authoring boundaries. Consumers should map references to the appropriate successor based on the indicator set in use."
-}
-```
+The one-MINOR sunset in step 3 and the one-way transitions in step 2 are commitments by the maintainer. They cannot be seen from a single document and no gate checks them. Removal without a record is gated: an identifier that disappears from the document without a `removed` entry fails the ID manifest check.
 
-The next MINOR (1.10.0) would retain TM0190's content. The MINOR after that (1.11.0) would be the earliest at which content could be removed (transitioning to `reserved`); in practice, the maintainer would likely retain content indefinitely as historical record.
+## What the viewer does
+
+The reference viewer implements the consumer guidance below as follows.
+
+| State | Viewer behavior |
+|---|---|
+| `active` | Shown normally. |
+| `deprecated` | Shown, marked with a "deprecated" tag in lists and a note on the detail view giving the version and the reason. Not hidden. |
+| `superseded` | Shown, marked with a "superseded" tag and a note giving the version, the reason, and a link to the replacement. Not hidden. |
+| `reserved` | Reserved actor profiles are kept out of the profile list and the profile count. Opening a reserved identifier directly (for example `#/actors/AP022`) shows a notice that the identifier is reserved, not a profile. |
+
+## Consumer guidance
+
+- **Treat a missing `lifecycle_state` as `active`.** The schema's `default` is an annotation. A validator does not insert the field.
+- **Mark deprecated and superseded objects wherever you show them.** Showing them unmarked is the error to avoid. A consumer may also offer a filter that hides them; the reference viewer does not.
+- **Follow `superseded_by`.** When stored data refers to a superseded identifier, show the replacement alongside it. The target is always active, so one hop is enough.
+- **Never present a reserved identifier as data.** Skip reserved actor profiles in lists and counts.
+- **For audit and longitudinal work, resolve every state.** Past records may refer to identifiers that have since been deprecated, superseded, or removed. Use the ID manifest's `removed` section to explain an identifier that is no longer in the document.
+- **To mirror identifiers,** compare your copy against `docs/data/id-manifest.json` at each release.
+
+## Disclosure
+
+A state change is announced in the CHANGELOG entry of the release that makes it. The entry gives the identifier, the new state, the replacement if any, the reason, and the earliest release at which content removal would be considered. There is no separate announcement; the CHANGELOG is the notice. A removal, being a MAJOR change, also follows the pre-announcement rule in [VERSIONING.md](./VERSIONING.md).
+
+## History of the two reserved profiles
+
+- `AP022` was proposed in the V1.0 design as a "former insider" profile. Review concluded that "former" is better expressed as the `employment_status` modifier on a tactic's actor association. The identifier was withdrawn before publication and is reserved.
+- `AP027` was withdrawn during V1.0 pre-publication review and is reserved.
+
+Neither appeared in a published document before schema 3.0.0, which is the first schema able to express a reserved identifier. They appear as reserved stubs from content version 2.0.0, and in the ID manifest's `reserved` list.

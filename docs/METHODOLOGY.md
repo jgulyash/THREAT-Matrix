@@ -1,204 +1,368 @@
 # THREAT Matrix Methodology
 
-This document explains how THREAT Matrix content is scoped, written, scored, checked, and grounded. It is written for security and threat-assessment professionals weighing adoption.
+This document says what the THREAT Matrix is and is not, how its content is written, what its relations mean and how complete they are, how changes are checked, and what has and has not been tested. It is written for threat assessment and security professionals deciding whether and how to use it.
 
-## 1. Scope and authorship
+## Limitations and intended use
 
-THREAT Matrix catalogs observable threat actor behavior against four target matrices: People, Facilities, Organizations, and Infrastructure. Each matrix runs across four lifecycle phases: Target Development, Mobilization, Execution, and Aftermath. The phases describe common patterns, not a required sequence. Threat actors skip, compress, and reorder them.
+**What this is.** The THREAT Matrix is an open behavioral vocabulary and evidence index for threat assessment and protective work. It gives named, identified descriptions of observable behavior, grouped into tactics and matrices, with the public sources each description draws on.
 
-| Object | Count |
-|---|---|
-| Tactics | 161 |
-| Indicators | 828 |
-| Countermeasures | 641 |
-| Response protocols | 322 |
-| Actor profiles | 32 |
+**Intended uses.**
 
-Each tactic sits in exactly one matrix, set by what the threat actor's primary objective targets. Motivation lives in actor profiles, not in matrix placement. A real incident can touch several matrices at once, and the Detection Mesh links those behaviors across matrices.
+- A shared vocabulary, so that different people and teams use the same term for the same behavior.
+- A training and case-discussion reference.
+- A tagging and interchange layer between tools and between organizations.
+- A structure for documenting what was observed, when, and where the information came from.
 
-**Out of scope.** The framework does not contain exploit code, weapon construction, step-by-step attack tradecraft, or targeting information about specific persons or organizations. It describes behavior at the tactic and indicator level. It does not ship case data. Instance records, deployment records, and coverage derivations are held by the adopting organization.
+**What it is not.**
 
-**Maintenance.** The project is maintained by its author, with public sources cited throughout. It is released under the MIT license. Content and schema carry separate semantic version numbers under the published versioning policy, and stable identifiers are never reused.
+- It is not a risk assessment instrument.
+- It is not predictive. Nothing in it estimates whether a person will act.
+- It has not been validated against outcomes.
+- It is not a score of any person.
+- It is not grounds, by itself, for adverse action against anyone.
+- It is not a substitute for individualized assessment by qualified professionals.
+- It is not legal advice.
 
-## 2. Indicator rubric
+**What an entry is.** Each entry is an authored description of a class of behavior, with public sources cited. An entry is not a finding about a person, and matching a person's conduct to an entry establishes nothing by itself. The same observable conduct often has an ordinary explanation; each tactic's `assessment_guidance.false_positive_context` exists for that reason and should be read with the entry.
 
-Every indicator is a type-level description of a behavior class. It is not a case. The fields below are scored for the class as written, never for a vivid hypothetical instance.
+**Source support varies.** Every tactic, indicator, countermeasure, and response protocol cites at least one public source. A citation shows where the behavior is discussed. It does not show that the source confirms every detail of the entry. 425 of the 828 indicators cite a single source. 8 of the 120 bibliography entries have neither a URL nor a DOI.
 
-**Escalation axes.** Each indicator carries four authored values from 0.0 to 10.0, recorded to one decimal place:
+**Scoring overlay.** The vocabulary file carries no scores. A separate file, `docs/data/scoring-overlay.json`, holds an experimental scoring overlay. It is experimental, non-normative, unvalidated, and opt-in. It is not part of the vocabulary contract. It is described only in the fenced section [Experimental scoring overlay](#experimental-scoring-overlay) near the end of this document.
 
-- **impact_potential** is the harm the behavior directly produces or imminently enables.
-- **blast_radius_potential** is the total affected scope, meaning victims, stakeholders, or downstream population.
-- **recoverability_inverse** is how hard the harm is to undo. Higher means harder.
-- **detectability** is how observable the behavior is to trained personnel or telemetry.
+**Maturity of the matrices.** People and Facilities are the core matrices. Organizations and Infrastructure are drafts: thinner, less well sourced, and likely to change. Some Organizations entries describe conduct that can be lawful, protected activity, including protest, boycott, litigation, regulatory complaint, shareholder action, union organizing, journalism, and public criticism. Such an entry must never be treated as an indicator of threat without independent evidence of unlawful or violent intent.
 
-Each matrix anchors these axes to its own harm type. Physical consequence anchors Infrastructure. Stakeholder scope anchors Organizations. The anchors live in the escalation rubric inside the framework data. Aftermath indicators score only the scope they enable going forward. The completed attack's scope belongs to the execution-phase indicators.
+**Bias and privacy.** A behavior label attached to a person in a record can follow that person and can be disclosed. Use the same threshold for everyone. Do not treat a protected characteristic, a belief, a diagnosis, or protected activity as an indicator. Record the source of every observation. Collect, share, and keep only what the law and your organization's policy allow. Some countermeasures in the vocabulary describe monitoring; whether a given form of monitoring is lawful where you operate is a question for counsel, not for this document. Only 67 of the 323 response protocols, all in the People matrix, carry an explicit statement that their legal notes are not legal advice; that statement applies to all 323.
 
-**Computed weight.** The escalation weight is computed at merge and never hand-authored:
+**Reliability.** No reliability study has been run. A study of whether independent practitioners agree on which People and Facilities indicators are present in written case narratives is planned. Its protocol is a draft and nothing has been collected. See [docs/study/README.md](study/README.md).
 
-```
-escalation_weight = (impact × blast_radius × recoverability_inverse × (10 − detectability))^(1/4)
-```
+## 1. Scope and maintenance
 
-The geometric mean means one low axis pulls the whole weight down, so no axis can fully compensate for another. Detectability is inverted because an observable behavior leaves an interdiction window. The weight therefore reads as expected residual harm. A high weight on a stealthy behavior does not mean stealth is severe. It means the interdiction discount is gone.
+The vocabulary describes observable behavior against four target matrices: People, Facilities, Organizations, and Infrastructure. Each matrix runs across four lifecycle phases: Target Development, Mobilization, Execution, and Aftermath. The phases describe common patterns, not a required sequence.
 
-**Bands.** The weight maps to a severity band at fixed thresholds:
+| Matrix | Maturity | Tactics | Indicators | Countermeasures | Response protocols |
+|---|---|---:|---:|---:|---:|
+| People | core | 34 | 191 | 137 | 69 |
+| Facilities | core | 40 | 200 | 160 | 80 |
+| Organizations | draft | 49 | 244 | 196 | 98 |
+| Infrastructure | draft | 38 | 193 | 152 | 76 |
+| Total | | 161 | 828 | 645 | 323 |
 
-| Band | Weight from |
-|---|---|
-| low | 0.0 |
-| medium | 3.0 |
-| high | 5.0 |
-| critical | 6.5 |
+There are 32 active actor profiles and 2 reserved actor-profile identifiers (`AP022`, `AP027`), and 120 bibliography entries.
 
-The low band holds behaviors whose direct residual harm is investigative or attributional trace: egress, cleanup, attribution, and ambient pre-operational reconnaissance. The cut was set to keep false lows to a minimum, because under-triaging a real signal is the most dangerous miss.
+Each tactic sits in exactly one matrix, set by what the threat actor's primary objective targets. Motivation lives in actor profiles, not in matrix placement. An incident can touch several matrices. The full placement rule is `matrices.boundary_rule` in the data, and each matrix's scope sentence is `matrices.<name>.scope`.
 
-**Severity floor.** An indicator whose behavior applies direct physical force to a person carries a band of critical whatever its weight. Force includes weapon discharge, ramming, detonation, assault, restraint, and taking or holding custody of a person by weapon threat during an attack in progress. The rule exists because the weight gates the top band on population scope, which would leave a single-victim killing at high. The weight itself is never floored, so the gap between one assault and a mass bombing stays visible. The floor is narrow on purpose. It applies only where critical is always correct. In Infrastructure it covers only execution behaviors whose direct mechanism is casualties. In Facilities it also covers three indicators that stage a second strike against responders or evacuees during an active incident: a secondary device on a responder route, an overwatch position over the response zone, and an unattended package at an assembly area. Organizations has no floor.
+**Out of scope.** The vocabulary does not contain exploit code, weapon construction, step-by-step attack tradecraft, or targeting information about specific persons or organizations. It ships no case data. Case records and coverage records are held by the organization that makes them.
 
-**Temporal signature.** A categorical value records how close to action the behavior typically appears: horizon, advancing, imminent, staging, in progress, or aftermath. This measures how soon, not how bad.
+**Maintenance.** The project is maintained by one person, cites public sources only, and is released under the MIT license. Roles, decision rules, and succession are in [GOVERNANCE.md](../GOVERNANCE.md). Version rules are in [VERSIONING.md](VERSIONING.md); identifier rules are in [IDENTIFIERS.md](IDENTIFIERS.md); lifecycle rules are in [DEPRECATION.md](DEPRECATION.md).
 
-**informs_axes.** Each indicator also records what observing it reveals on six axes. Three concern the threat actor: capability, intent, and opportunity. Three concern the postulated event: timing, target, and method. Each axis takes none, weak, moderate, or strong. The scale measures resolution, not severity. Weak resolves only the coarsest fact on that axis. Moderate adds one narrowing below it. Strong pins a specific value. Intent is read as general intent to act, never specific motive. Opportunity at moderate means informational opportunity, such as pattern-of-life or security-gap knowledge. Strong means realized opportunity to act. Values are categorical only.
+## 2. How the vocabulary is written
 
-**Modality facets.** Each indicator carries a modality and a human_social flag. Modality follows the behavior's instrument, never its effect, its target's importance, or the channel it travels through:
+Every indicator is a type-level description of a class of behavior. It is never a case. The fields below describe the class as written.
 
-- **physical** means matter, force, or presence is the instrument.
-- **cyber** means the instrument acts on a computing system's technical properties, including reading exposed data.
-- **cyber_physical** means the behavior itself crosses the seam, and it must name a crossing mechanism.
-- **human_social** means the mechanism lies in the human, social, or institutional domain. This includes persuasion, coercion, legal or financial pressure, and the threat actor's own warning behaviors.
+**Required on every indicator:** `id`, `behavior`, `category`, `detection_sources`, `phase_relevance`, `source_refs`, `modality`, `human_social`, `temporal_signature`. All 828 indicators also carry `informs_axes` and `conditioning_guidance`.
 
-The flag is set whenever human tradecraft appears anywhere in the behavior. Concealment takes the modality of what it operates on. Bundled alternatives take the modality of the branch that achieves the objective.
+**Modality.** `modality` follows the behavior's instrument, never its effect, its target's importance, or the channel it travels through:
 
-**Target fields.** People indicators record target_identity. Facility indicators record facility_target_scope and within_site_focus. All three use the revealed reading. A value is tagged only when observing the behavior actually reveals it. Capability, financing, cover, and most aftermath evasion reveal nothing about the victim and stay empty. Site-directed observation of a subject's home or office reveals the specific known person or persons.
+- `physical`: matter, force, or presence is the instrument.
+- `cyber`: the instrument acts on a computing system's technical properties, including reading exposed data.
+- `cyber_physical`: the behavior itself crosses between the two, and the indicator must name a `crossing_mechanism`.
+- `human_social`: the mechanism lies in the human, social, or institutional domain, including persuasion, coercion, legal or financial pressure, and warning behaviors.
 
-**Conditioning guidance.** Each indicator names the instance factors that are the hidden drivers of danger for its class. It uses machine-readable probe factors plus a directive of up to 420 characters telling the analyst what to collect. The six factors are target focus, pathway stage, means in hand, tempo and trajectory, proximity and access, and source credibility. The guidance is assessment tasking only, and response actions live in the tactic's response protocols. Claims are hedged in both directions, and no entry claims an act settles the threat actor picture. The guidance does not affect the score.
+`human_social` is also a separate true or false flag. It is true whenever the behavior's essence is influencing, recruiting, coercing, deceiving, or negotiating with people, whatever the modality. An indicator whose modality is `human_social` must carry the flag as true.
 
-**Instance conditioning.** A band becomes a case priority only when joined to an instance record. The join may raise priority above the type band and may never lower it. Two checks enforce this. The schema rejects a conditioned priority below the stated band. The validator confirms the stated band matches the authored band. Cases leave a queue by disposition, never by score demotion.
+**Temporal signature.** `temporal_signature` is a categorical value for how close to action the behavior typically appears: `horizon`, `advancing`, `imminent`, `staging`, `in_progress`, or `aftermath`, with optional early and late refinements on four of the six. It describes timing for the class of behavior. It is not a measure of seriousness and says nothing about any case.
 
-**Mesh links.** A cross-matrix link is valid only when both behaviors meet one of three tests. They are the same act, they share one literal resource, or they are one whole-actor signal such as a final-act signature. Different methods, different artifacts, or shared category alone make a link invalid.
+**informs_axes.** Each indicator records what observing it reveals on six axes. Three concern the threat actor: capability, intent, and opportunity. Three concern the postulated event: timing, target, and method. Each axis takes `none`, `weak`, `moderate`, or `strong`. The scale is resolution, not seriousness: `weak` resolves only the coarsest fact on that axis, `moderate` adds one narrowing, and `strong` pins a specific value. Intent is read as general intent to act, never specific motive. The values are authored and categorical.
 
-**Coverage.** Countermeasures link to the indicators they act on, typed as prevent, detect, or deny. An organization's coverage band is derived from its own deployment records. Detection alone caps coverage at partial.
+**Conditioning guidance.** `conditioning_guidance` names the case facts worth collecting when the behavior is observed. It has two parts: `probe_factors`, a list drawn from six factor names (target focus, pathway stage, means in hand, tempo and trajectory, proximity and access, source credibility), and `guidance`, a directive of at most 420 characters. It is a collection prompt. It does not produce a rating, and response actions live in the tactic's response protocols.
 
-## 3. Review process
+**Target fields.** People indicators may record `target_identity`. Facilities indicators may record `facility_target_scope` and `within_site_focus`. All three use the revealed reading: a value is recorded only when observing the behavior actually reveals it, and an empty or absent value means the behavior reveals nothing on that point.
 
-Content reaches a release only after it passes a fixed sequence of gates. The same checks run in a local pre-commit hook and in continuous integration on the development and release branches.
+**Tactic-level text.** Each tactic carries `notes`, `field_notes`, `observed_contexts` (generic context types, never named cases or people), `evidence_basis`, and `assessment_guidance`. Assessment guidance has six parts: criteria and anchors for credibility, capability, intent, and opportunity; `false_positive_context`; and `threshold_guidance`. These are prompts for structured professional judgment. They are not a scoring scheme.
 
-1. **Framework validator.** This runs twenty-seven numbered checks: duplicate identifiers, dangling references, matrix and prefix agreement, misspelled keys, band and weight consistency, valid lifecycle values, and the escalate-only rule.
-2. **Fixtures.** Twenty-two fixture copies of the data must each behave as expected: deliberately broken copies fail the specific check they target, and conforming copies pass.
-3. **Field parity.** Any field fully populated in one matrix must not be missing from another, unless a documented design decision allows it. Every matrix must carry its own indicator mesh.
-4. **Mesh references.** Every correlation, compensation, and coordination reference must resolve to an existing identifier of the right type and format.
-5. **Consumer smoke test.** The reference consumer loads and schema-validates the data, reads every matrix, and runs the instance-conditioning join against the template and worked cases.
-6. **Bundle freshness.** The published viewer must match a fresh build of the current data, so the site never shows stale content.
+**Writing rules.** Vocabulary text follows [VOICE.md](VOICE.md). In vocabulary text the class of actor is called "threat actor". In a case record about a person who has not been assessed as posing a threat, that label is rendered "person of concern" (section 6).
 
-Prose is written to locked voice rules. Description comes first and taxonomy second, and citations live in source references rather than in prose. Observable action replaces academic phrasing, and register follows the declared evidence basis. "Threat actor" is the only label for the actor, and repeated openers are capped across the corpus.
+## 3. Relations between objects
 
-Versioning is semantic. Content and schema version separately. A published version is frozen, and corrections ship as a new patch with a changelog entry. Major releases are announced at least thirty days ahead with a migration guide. Deprecation follows four lifecycle states: active, deprecated, superseded, and reserved. A deprecated item stays for at least one minor release, and its identifier is kept permanently. Items never change parent tactic. A move is handled as supersession.
+Four relations link objects by identifier. Their coverage today is uneven, and one of them is untyped. The figures below are from the 2.0.0 data.
+
+| Relation | Lives on | Meaning | Coverage today |
+|---|---|---|---|
+| `correlates_with` | Indicator, pointing to indicators | The two behaviors tend to occur together, in any phase or matrix. Stored in both directions. | 1,586 entries (360 cross a matrix boundary). 142 of 828 indicators have no entry: 68 Organizations, 37 People, 37 Infrastructure. |
+| `mitigates` | Countermeasure, pointing to indicators | The countermeasure acts on that behavior. Each edge is `{"indicator": "<id>", "function": "<value>"}`. | 483 edges on 287 countermeasures. 478 of 828 indicators have no edge: all 191 People indicators, 189 Infrastructure, 98 Facilities. |
+| `compensates_for` | Countermeasure, pointing to countermeasures | This countermeasure covers for the absence or failure of the other. Countermeasure identifiers only. | 362 entries on 247 of 645 countermeasures. |
+| `coordinates_with` | Response protocol, pointing to response protocols | The two protocols are activated together or in a set order. | 512 entries on 269 of 323 response protocols. |
+
+**The `mitigates` relation is untyped today.** The schema allows a `function` of `prevent`, `detect`, `deny`, or `unreviewed`. Every one of the 483 edges in the data has the function `unreviewed`. The relation therefore records that a link was drawn and nothing about how the countermeasure acts. Do not read it as a statement that a control prevents or detects anything. The absence of an edge is also not information: the People matrix has no `mitigates` edges at all, because none has been authored, not because no countermeasure applies.
+
+**`compensates_for` does not hold indicators.** Before schema 3.0.0 this field mixed countermeasure and indicator identifiers. Indicator targets now live only in `mitigates`. An indicator identifier in `compensates_for` is rejected.
+
+**What a correlation link claims.** A cross-matrix `correlates_with` link is meant to be drawn only when the two behaviors are the same act, share one literal resource, or form one signal about the whole actor. This is an authoring rule. No field records which test a link meets and no gate checks it (section 5).
+
+**What a missing link means.** Nothing. A missing `correlates_with` or `mitigates` entry means no link has been authored.
 
 ## 4. Evidence basis
 
-Every tactic declares an `evidence_basis` value stating where its structure came from.
+Every tactic declares an `evidence_basis` value. It states how the tactic was written. It is the author's declaration of method: no record of practitioner input is published, so the value is not evidence in itself.
 
-- **practice_led** means tactic structure and indicators were authored from practitioner experience. Every indicator cites public sources that corroborate the pattern.
-- **practice_and_literature** means the tactic was authored from practice and published literature together. Public sources are cited throughout.
-- **literature_led** means the tactic was derived mainly from published literature with practitioner review.
-- **literature_only** means the tactic was derived from published literature. No practitioner origin is claimed.
+- `practice_led`: tactic structure and indicators were written from practitioner experience, with public sources cited that discuss the pattern.
+- `practice_and_literature`: written from practice and published literature together.
+- `literature_led`: derived mainly from published literature with practitioner review.
+- `literature_only`: derived from published literature. No practitioner origin is claimed.
 
 | Value | Tactics | By matrix |
-|---|---|---|
-| practice_led | 10 | facility 9, person 1 |
-| practice_and_literature | 111 | person 33, facility 31, organization 47 |
-| literature_led | 1 | infrastructure 1 |
-| literature_only | 39 | infrastructure 37, organization 2 |
+|---|---:|---|
+| `practice_led` | 10 | Facilities 9, People 1 |
+| `practice_and_literature` | 111 | Organizations 47, People 33, Facilities 31 |
+| `literature_led` | 1 | Infrastructure 1 |
+| `literature_only` | 39 | Infrastructure 37, Organizations 2 |
 
-Whatever the value, every tactic, indicator, countermeasure, and response protocol cites public sources only.
+Whatever the value, every tactic, indicator, countermeasure, and response protocol cites public sources only. The bibliography holds no private, unpublished, or attested-experience entry, and the schema no longer allows the entry types that described such sources. Each `source_refs` entry must be a key in the bibliography, and every bibliography entry must be cited at least once; both are checked.
 
-These value names arrive with schema 3.0.0. They map from the 2.1.0 names: operational_primary maps to practice_led, hybrid to practice_and_literature, literature_primary to literature_led, and literature_only is unchanged.
+The 120 bibliography entries by type: government report 56, practitioner guide 18, academic paper 12, standard 12, court document 8, incident database 5, book 4, news investigation 4, after-action review 1.
 
-## 5. Reliability
+## 5. Review process and gates
 
-A reliability study with credentialed practitioners is planned. Its design:
+A change is checked by a set of gate commands. This section says exactly what runs where, what the gates check, and what they do not.
 
-- Four to six credentialed reviewers who had no part in authoring the content.
-- Thirty to forty vignettes, mixed across matrices and severity.
-- Each reviewer separately marks which indicators are present in each vignette.
-- Agreement is reported per matrix, and low-agreement indicators go back for rewrite.
+### The gate commands
 
-Results will be published here when the study is complete.
+```
+python3 scripts/lint/validate.py docs/data/framework.json
+python3 scripts/lint/validate.py docs/data/framework.json --overlay docs/data/scoring-overlay.json
+python3 scripts/lint/validate.py docs/data/framework.json --fixtures scripts/lint/fixtures
+python3 scripts/lint/validate.py docs/data/framework.json --overlay docs/data/scoring-overlay.json --records examples/experimental-scoring/worked-cases
+python3 scripts/lint/field-parity.py docs/data/framework.json
+python3 scripts/lint/mesh-refs.py docs/data/framework.json
+python3 scripts/lint/id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json
+python3 scripts/lint/consumer-smoke.py
+```
 
-## 6. Document history
+### Local hook
 
-This file consolidates the former `docs/methodology` folder into one reference. Normative rules from that folder are absorbed into the sections above, and the coverage derivation rule is carried in full in Appendix A. Dated records and historical designs are retired from the working tree and remain available in the repository's version history.
+`scripts/git-hooks/pre-commit` is opt-in: enable it once with `git config core.hooksPath scripts/git-hooks`. It acts only when a staged path is under `docs/data/`, `src/`, `scripts/`, or `examples/`, or is `index.html` or `package.json`. It exports the staged content to a temporary directory and checks that copy, never the working tree. It runs: `validate.py` on the framework, on the framework with the overlay, and on the scored worked cases; `field-parity.py`; `mesh-refs.py`; `id-manifest.py --check`; `derive-axis-confidence.py --check`; and `consumer-smoke.py` (skipped with a warning if the `jsonschema` package is not installed). It runs the `validate.py` fixture harness only when a file under `scripts/lint/` or a `docs/data/*.schema.json` file is staged. If a viewer build input is staged (anything under `src/`, `index.html`, `package.json`, `bun.lock`, `vite.config.ts`, a `tsconfig` file, or a `docs/data` file the viewer imports), it requires a rebuilt bundle to be staged as well (a new or changed file under `docs/assets/` and `docs/index.html`), and it checks that the staged `docs/index.html` references exactly the files in the staged `docs/assets/`. It does not run the viewer build. It can be bypassed with `git commit --no-verify`.
 
-| Former file | Disposition |
+### Continuous integration
+
+Three workflows run on every push and every pull request for `main`, `v1-build`, and `v3-design`, with a read-only token, actions pinned to commit SHAs, Python 3.14, and `jsonschema` 4.26.0. *Framework Validator* runs, in order: `validate.py docs/data/framework.json --require-schema`; the same with `--overlay docs/data/scoring-overlay.json`; the fixture harness (`--fixtures scripts/lint/fixtures`); the scored worked cases (`--overlay ... --records examples/experimental-scoring/worked-cases`); `field-parity.py`; `mesh-refs.py`; `id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json` (on pull requests also compared with the base branch's manifest, once the base branch has one); `consumer-smoke.py`; and `derive-axis-confidence.py --check`. *Mesh Refs* runs `mesh-refs.py` alone. *Bundle Freshness* checks that `docs/index.html` references exactly the files in `docs/assets/`, then deletes `docs/assets/`, rebuilds with bun 1.3.9, and fails unless `docs/index.html` and every file under `docs/assets/` are byte-identical to the committed ones and the build produced no uncommitted file. Nothing is deployed from CI.
+
+### What the gates check
+
+| Gate | Checks |
+|---|---|
+| `validate.py` on the vocabulary | 35 numbered checks: unique identifiers in every namespace; every reference resolves to an object of the right kind; identifier grammar, exact to the last character; a tactic's identifier agrees with its matrix and phase; a child's identifier agrees with its parent; the lifecycle contract; the modality and conditioning-guidance rules; bibliography keys, URLs (http and https only), DOIs, and dates; every bibliography entry is cited; no score field anywhere in the vocabulary; no empty or padded string; and the vocabulary against its JSON Schema. |
+| `validate.py --overlay` | 10 more checks on the overlay (45 in total). Described in the overlay section. |
+| `validate.py --records` | 3 more checks on scored case records (48 in total). Described in the overlay section. |
+| `validate.py --coverage FILE` | 1 check on an organization's coverage document. It brings the validator's total to 49 checks. It is not one of the gate commands, because the repository ships no coverage document. |
+| `validate.py --fixtures` | 157 fixtures. Each negative fixture applies a named defect to a fresh copy of the data and must be rejected by the check it targets; each positive fixture must pass cleanly. The harness fails if the unmodified data does not pass, if a fixture's change does not apply, or if any of the 49 checks lacks a negative fixture. |
+| `field-parity.py` | A field fully populated in one matrix is not missing from another; every matrix has indicator links of its own; no scoring field is present in the vocabulary. |
+| `mesh-refs.py` | Every `correlates_with`, `mitigates`, `compensates_for`, and `coordinates_with` reference resolves to the right kind of object; none refers to itself or repeats; `correlates_with` is symmetric. |
+| `id-manifest.py --check` | The committed ID manifest lists exactly the identifiers in the vocabulary; no identifier is in two places; with a baseline manifest, no identifier has been dropped without a removal record and no reserved or removed identifier has been reused. |
+| `consumer-smoke.py` | The vocabulary, the overlay, the five score-free worked cases, the three scored worked cases, and both templates validate against their schemas; the reference consumer prints no score unless asked and prints the overlay notice before any score when asked. |
+| Bundle Freshness (CI only) | The committed viewer equals a fresh build of the committed sources. |
+
+Check identifiers, their scope, and the fixture that covers each are listed in [scripts/lint/fixtures/README.md](../scripts/lint/fixtures/README.md).
+
+**A note on trailing newlines.** Identifier and key patterns in the schemas are plain anchored patterns. Python's schema validator treats the closing `$` leniently and accepts a value with one trailing newline. The rule that an identifier, key, or version has no trailing whitespace is therefore enforced by `validate.py` (exact full match), not by the JSON Schema when it is run from Python. A consumer that runs only a Python JSON Schema validator, without `validate.py`, will accept such a value.
+
+### What the gates do not check
+
+These rules are stated in this project's documents. No gate checks them. They are obligations on the author and the reviewer, not guarantees from the validator.
+
+- **Whether the content is right.** No gate reads a behavior description for accuracy, checks that a cited source supports the entry that cites it, or checks that a URL still resolves.
+- **The actor label.** That vocabulary text uses "threat actor" as its only label for the class of actor is a writing rule in VOICE.md. No gate reads prose for it.
+- **Correlation link validity.** That a cross-matrix `correlates_with` link meets one of the three tests in section 3. The gates check that a link resolves and is symmetric, not that it is justified.
+- **The `mitigates` function.** No gate requires an edge to be typed. All are `unreviewed`.
+- **The sunset rule.** That an item stays deprecated for at least one MINOR release before its content is removed. This cannot be seen from one document.
+- **Overlay content.** In the overlay, that every indicator describing direct force against a person carries the floor. The gates check the arithmetic and the labels, not whether the authored values or the floored set are right. The overlay itself lists three known inconsistencies in the floored set.
+- **Case records about real people.** The repository holds none and checks none.
+
+### Review by people
+
+Today every change is reviewed by the maintainer alone. No outside reviewer has been recruited and no outside review of any content has been recorded. [GOVERNANCE.md](../GOVERNANCE.md) section 3 sets the process: public sources required, all gates pass, and, while reviewer seats are vacant, a pull request stays open at least seven days for public comment and the merge note says no outside review was obtained.
+
+## 6. The score-free case record
+
+`docs/data/case-record.schema.json` (record version 1.0.0) defines the default way to document a case with this vocabulary. Templates and five fictional worked cases are in [examples/](../examples/README.md).
+
+A record holds: the vocabulary version it was written against; an organization-assigned case reference; the date; the assessor's role; a list of observations, each naming an indicator, when it was observed, the source, and whether it is corroborated; six instance factors with a free-text basis; protective factors (required, and may be an empty list); a free-text assessment summary; dated reassessments, each marked raised, lowered, or unchanged; a disposition; and an acknowledgment of the limitations above.
+
+Three rules matter most:
+
+1. **No score.** The record has no band, weight, priority, or score field, and its schema is closed, so one cannot be added.
+2. **Person of concern.** The record's `subject_term` is fixed to `person_of_concern`. The vocabulary calls the class of actor "threat actor" because it describes behavior classes. A record about a real person who has not been assessed as posing a threat must not carry that label, so in a case record it is rendered "person of concern".
+3. **Concern can go down.** Reassessments run in either direction, protective factors are always recorded, and the dispositions include `no_threat_identified` and `transient_no_further_action`.
+
+The six instance factors are prompts for what to find out about the case: target focus, pathway stage, means in hand, tempo and trajectory, proximity and access, and source credibility. Means in hand refers to means actually possessed or acquired. Lawful ability to acquire something is not means in hand.
+
+The repository ships no real case data and has no place to enter any. Keep records in your own case system, under your own retention and access rules.
+
+## 7. Reliability
+
+No reliability study has been run, so no claim is made about how consistently different people apply this vocabulary.
+
+A presence-coding study is planned for the People and Facilities matrices: independent, credentialed practitioners would each mark which indicators are present in written narratives of public, adjudicated cases, and agreement would be reported against thresholds fixed in advance. The protocol, coding manual, record schema, candidate case list, and analysis script are drafts in [docs/study/](study/README.md). The protocol is not registered, no one has been recruited, no case has been selected, and there is no data.
+
+If it runs, a passing result would support one statement: that trained people agreed on presence at a stated level in that sample. It would say nothing about prediction, about risk, or about the scoring overlay.
+
+## 8. Document history
+
+This file replaces the former `docs/methodology` folder. Rules from that folder that still apply are in the sections named below. Dated records and historical designs were retired from the working tree and remain in the repository history. In version 2.0.0 the scoring material moved out of the main sections into the fenced overlay section, and the limitations section was added at the top.
+
+| Former file | Now |
 |---|---|
 | README.md | Replaced by this document |
-| aftermath-seam-reconciliation.md | Section 2 |
-| bottom-cut-recalibration.md | Section 2 |
 | conditioning-guidance-authoring-rubric.md | Section 2 |
 | conditioning-guidance-field.md | Section 2 |
-| coverage-derivation.md | Appendix A (in full) |
 | informs-axes-boundary-rubric.md | Section 2 |
-| instance-conditioning-contract-completion.md | Section 2 |
-| mesh-link-rubric-v2.md | Section 2 |
 | modality-authoring-rubric.md | Section 2 |
 | people-target-identity-revealed-guide.md | Section 2 |
-| severity-floor-clarifications.md | Section 2 |
 | target-dimension-rubric-LOCKED.md | Section 2 |
-| v1-6-1-contract-clarifications.md | Sections 1, 2, and 3 |
-| scope-findings.md | Retired (dated working record) |
-| FINDINGS.md | Retired (dated working record) |
-| architect-detection-mesh-assessment.md | Retired (dated working record) |
-| facility-bibliography-research-20260706.md | Retired (dated working record) |
-| KAPPA-RESULTS.md | Retired (dated working record) |
-| architect-routing-rules.md | Retired (historical design) |
-| architect-sub-dimension-and-schema-patch.md | Retired (historical design) |
-| B1-infrastructure-scaffold-design.md | Retired (historical design) |
-| B1-infrastructure-scaffold-design-v2-APPROVED.md | Retired (historical design) |
-| cross-domain-mesh-scope.md | Retired (historical design) |
-| DESIGN-b5-infra-escalation-scoring.md | Retired (historical design) |
-| DESIGN-b5-org-escalation-scoring.md | Retired (historical design) |
-| RATIONALE-cpn-modality-and-mesh.md | Retired (historical design) |
-| v2-design-constraints.md | Retired (historical design) |
+| mesh-link-rubric-v2.md | Section 3 |
+| coverage-derivation.md | Appendix A |
+| aftermath-seam-reconciliation.md | Experimental scoring overlay section |
+| bottom-cut-recalibration.md | Experimental scoring overlay section |
+| instance-conditioning-contract-completion.md | Section 6 and the overlay section |
+| severity-floor-clarifications.md | Experimental scoring overlay section |
+| v1-6-1-contract-clarifications.md | Sections 1 and 5, and the overlay section |
+| Five dated working records | Retired |
+| Nine historical design documents | Retired |
 
-## Appendix A. Coverage derivation rule (normative)
+---
 
-The coverage band is the vulnerability term of the risk equation. It answers, for one protected target and one indicator, whether the organization has deployed countermeasures that act on that behavior. The framework defines the shapes and this rule; each organization holds its own records. Machine shapes: `data/coverage.schema.json`. This appendix is normative for the derivation.
+## Experimental scoring overlay
+
+> **Notice, as carried in the overlay file.** Experimental and non-normative. These values are authored, type-level estimates for classes of behavior. They have not been validated against outcomes or by independent human reviewers. They do not predict violence, they are not a score of any person, and they must not be used as grounds for adverse action. The vocabulary in framework.json is complete without this file.
+
+Everything in this section describes `docs/data/scoring-overlay.json` (overlay version 0.1.0, applies to vocabulary 2.0.0) and its schema `docs/data/scoring-overlay.schema.json`. None of it is part of the vocabulary contract. The overlay is versioned separately and is outside the stability promise in [VERSIONING.md](VERSIONING.md). The file declares its own status in machine-readable fields: `status: experimental`, `normative: false`, `validation_status: unvalidated`, `scope: type_level`, `not_a_risk_score: true`.
+
+This section explains how the numbers are produced so they can be inspected. It is not a recommendation to use them.
+
+### What the overlay holds
+
+- `indicator_scores`: one entry for each of the 828 indicators, keyed by indicator identifier. The key set must equal the vocabulary's indicator identifiers exactly.
+- `tactic_priorities`: one label for each of the 161 tactics (`Urgent`, `Immediate`, `Priority`, or `Routine`).
+- `rubric`: the text of the scoring rules, the thresholds, and the floor rule.
+- `instance_conditioning`: the text of the experimental case-level rules.
+
+### Axes
+
+Each entry has four authored values from 0.0 to 10.0, stored to one decimal place, under `axes`:
+
+- `impact_potential`: the harm the class of behavior directly produces or imminently enables.
+- `blast_radius_potential`: the scope affected.
+- `recoverability_inverse`: how hard the harm is to undo. Higher means harder.
+- `detectability`: how observable the behavior is to trained people or telemetry.
+
+These are one author's estimates for a class of behavior.
+
+### Weight
+
+```
+type_weight = round((impact_potential * blast_radius_potential * recoverability_inverse * (10 - detectability)) ** 0.25, 2)
+```
+
+The weight is the geometric mean of the three harm axes and inverted detectability, stored to two decimal places. One low axis pulls the whole weight down. Because detectability is inverted, a behavior that is hard to observe gets a higher weight than an otherwise identical behavior that is easy to observe. A higher weight therefore does not mean a more harmful behavior, and the weight is not an expectation of harm in any statistical sense. The validator recomputes the weight and rejects a stored value more than 0.005 from the result.
+
+### Band
+
+The `type_band` is read from the **stored, rounded** weight at the thresholds in `rubric.type_band_thresholds`, then raised to the floor if the entry has one.
+
+| Band | Stored weight from |
+|---|---|
+| `low` | 0.0 |
+| `medium` | 3.0 |
+| `high` | 5.0 |
+| `critical` | 6.5 |
+
+The current population is 14 low, 435 medium, 291 high, and 88 critical. The thresholds were set against the distribution of the authored values, as the overlay's own `rubric.calibration_guidance` records. They were not calibrated to outcomes.
+
+### Floor
+
+An entry may carry `type_band_floor`. Where present, the band is at least the floor; the weight is unchanged. In the current file the only floor value used is `critical`, on 43 indicators: 11 People, 24 Facilities, 8 Infrastructure. Organizations has none.
+
+`rubric.type_band_floor_rule` documents the rule and names every floored indicator:
+
+- People, direct physical force against a person: 11 indicators.
+- Facilities, direct physical force: 7 indicators.
+- Facilities, secondary strike against responders or evacuees during an active incident: 4 indicators.
+- Facilities, harm to occupants through the structure or its systems: 13 indicators.
+- Infrastructure, execution behaviors where casualties are the direct mechanism: 8 indicators.
+
+The same text lists three known, unresolved inconsistencies, where an indicator is not floored although a closely similar one is (`IND-F0302-05`, `IND-I0306-02`, `IND-0304-04`). They are published so the set can be reproduced exactly, not because the set is settled.
+
+### Axis confidence
+
+Each axis value carries a label under `axis_confidence`: `established`, `inferred`, or `thin`. The label is derived by rule from the value, by `scripts/analysis/derive-axis-confidence.py`, and the gate fails if a stored label differs from the rule. Of the 3,312 axis values, 2,348 are `inferred`, 917 are `established`, and 47 are `thin`. The overlay defines `inferred` as a reasoned assignment without a documented anchor. Impact and recoverability are `inferred` on every indicator.
+
+### The experimental scored record
+
+`scoring-overlay.schema.json` defines a scored case record (`$defs.scored_case_record`): one `indicator_id`, the `type_band` quoted from the overlay, an `instance` block with the six instance factors, a `conditioned_priority`, and optional `framework_version`, `overlay_version`, `primary_objective_evidence_tier`, and `disposition`.
+
+Its rule is escalate-only: the priority may be above the band and may never be below it. With `--records`, the validator checks three things: the indicator exists and the quoted band equals the overlay's band for that indicator; the priority is not below the quoted band or the overlay's band; and the record has the required shape.
+
+The limits of this record are the reason it is not the default:
+
+- It can only move one way. A case in which concern was lowered still shows the type band.
+- It holds one indicator. A real case usually involves several, and there is no rule for combining records.
+- It has no place for protective factors.
+- Its floor is an authored estimate, so it inherits that estimate's uncertainty.
+
+Do not place a scored record in a case file or use one to decide anything about a person. Use the score-free record in section 6. Three fictional scored records, kept so the format can be checked, are in [examples/experimental-scoring/](../examples/experimental-scoring/README.md).
+
+### Gates on the overlay
+
+With `--overlay`, `validate.py` adds ten checks: band against stored weight and floor; weight against the axes; floor values; axis-confidence labels against the rule; the header constants and version match; the key set against the vocabulary; tactic priority keys and values; decimal places; threshold ordering and the six factor names; and the overlay against its JSON Schema. These confirm that the file is internally consistent. They do not, and cannot, confirm that any value is right.
+
+---
+
+## Appendix A. Coverage derivation rule
+
+This appendix defines how an organization can derive, for one protected target and one indicator, whether it has deployed countermeasures that act on that behavior. The vocabulary defines the record shapes (`docs/data/coverage.schema.json`) and this rule. Each organization holds its own records; none is published here. The rule is normative for the derivation, with the limits stated first.
+
+### Limits in the current data
+
+- **Every edge is `unreviewed`.** The rule distinguishes `prevent`, `detect`, and `deny` edges. All 483 `mitigates` edges in version 2.0.0 have the function `unreviewed`, and an unreviewed edge caps the band at `partial`. Run on the published data alone, the rule can therefore never return `covered`.
+- **`not_assessable` cannot be derived.** The coverage schema allows the band `not_assessable` for a behavior that no organizationally deployable control addresses. The vocabulary has no field that marks an indicator this way. 478 of 828 indicators have no `mitigates` edge, including every People indicator, and the data does not say whether an edge is absent by design or simply not yet authored. Until such a marker exists, an organization that records `not_assessable` is recording its own judgment and should say so in the record.
+- **"Most serious indicators" is the organization's call.** Critical path dominance, below, depends on which indicators in play the organization treats as most serious. The vocabulary ranks nothing. That designation is a documented judgment by the organization.
 
 ### Inputs
 
-1. The framework's `mitigates` relation: countermeasure to indicator edges, each typed by function (`prevent`, `detect`, `deny`). An edge asserts that the countermeasure acts on that behavior's pathway. Edges may cross tactics; a countermeasure reaches wherever its function genuinely acts.
+1. The vocabulary's `mitigates` relation: countermeasure to indicator edges, each with a function (`prevent`, `detect`, `deny`, or `unreviewed`). An edge asserts that the countermeasure acts on that behavior. Edges may cross tactics.
 2. The organization's `cm_deployment_record` for the protected target: which countermeasures are deployed, where they apply, and when they were last verified operational.
 3. The indicators in scope: a live case's indicator set, or a what-if set.
 
 ### The derivation, per target and indicator
 
 1. Collect the mitigating countermeasures for the indicator from the `mitigates` relation.
-2. If the indicator carries no `mitigates` edge because it is marked `not_assessable` (no organizationally deployable control exists for the behavior), the band is `not_assessable`. It is excluded from `covered` and it never drives a posture step up.
+2. If the indicator has no `mitigates` edge, the published data gives no basis for a band. Record `not_assessable` only on the organization's own documented judgment that no deployable control exists for the behavior (see the limits above). A `not_assessable` band is excluded from `covered` and never drives a posture step up.
 3. Intersect the mitigating countermeasures with the target's deployments. Exclude before banding:
    - deployments whose `applies_to` scope does not reach the assessed target;
    - deployments with status `planned` or `not_deployed`;
    - deployments that are unverified, or whose `verified` date is older than the staleness window (default twelve months) at derivation time; these contribute at most `partial`;
-   - countermeasures the assessed threat actor's position defeats, such as access controls whose credentials the actor holds. Actor position is a case attribute on the threat side; a control the actor operates is not a control against that actor.
+   - countermeasures the assessed threat actor's position defeats, such as access controls whose credentials the actor holds.
 4. Band the result:
-   - `covered`: every relevant mitigating countermeasure class is deployed, verified, and in scope, and at least one contributing edge has function `prevent` or `deny`. Detection alone does not fully cover a behavior; a detect-only edge set caps the band at `partial`. An edge with function `unreviewed` also caps at `partial`; unreviewed edges must reach zero before the coverage layer ships.
-   - `partial`: some mitigation is deployed, or contributing deployments are unverified, stale, out of scope in part, or detect-only.
+   - `covered`: every relevant mitigating countermeasure class is deployed, verified, and in scope, and at least one contributing edge has function `prevent` or `deny`. Detection alone does not fully cover a behavior; a detect-only edge set caps the band at `partial`. An edge with function `unreviewed` also caps at `partial`.
+   - `partial`: some mitigation is deployed, or contributing deployments are unverified, stale, out of scope in part, detect-only, or reached only through unreviewed edges.
    - `exposed`: no relevant mitigating countermeasure is deployed, or critical path dominance applies.
-5. Critical path dominance: if the countermeasures mitigating the highest severity band indicators in play are absent, the band is `exposed` regardless of other deployments. The absent countermeasures are recorded as the gap list.
+5. Critical path dominance: if the countermeasures mitigating the indicators the organization has designated most serious among those in play are absent, the band is `exposed` regardless of other deployments. The absent countermeasures are recorded as the gap list.
 
-### How coverage enters posture
+### How coverage enters an organization's posture
 
-The published posture matrix remains the reference join. Coverage adjusts within it, upward only:
+This rule assumes the organization keeps its own protective posture levels. The vocabulary does not publish a posture scale. Coverage adjusts the organization's posture upward only:
 
-- `exposed` steps `maintain` to `watch` and `watch` to `harden`. At a cell already at `harden` or above, `exposed` does not raise the tier further; it flags the gap as top priority within that tier.
-- `covered` never lowers a cell automatically. An organization may take a signed deviation downward on the strength of verified coverage; the deviation machinery owns that move.
-- `partial` holds the cell; the gap detail rides the documented rationale.
+- `exposed` raises the posture one step, or, where the organization is already at its higher levels, marks the gap as the first priority within that level.
+- `covered` never lowers a posture automatically. An organization may record a signed deviation downward on the strength of verified coverage.
+- `partial` holds the posture; the gap detail goes in the documented rationale.
 
 ### Statelessness
 
-The derivation is a function of the current records, recomputed at each derivation. It is not a ratchet. When remediation closes a gap and a re-derivation returns the cell to its default, that return is not a deviation and requires no signature; the signed deviation machinery applies only to moves below the cell default.
+The derivation is a function of the current records, recomputed each time. When remediation closes a gap and a new derivation returns the posture to its default, that return is not a deviation and needs no signature.
 
 ### The audit line
 
-Every derivation records: the target, the indicator, the band, the derivation date, the framework version whose `mitigates` relation it ran against, and the age of the oldest input consumed. A stale join is visible on its face.
+Every derivation records: the target, the indicator, the band, the derivation date, the vocabulary version whose `mitigates` relation it ran against, and the age of the oldest input consumed.
 
 ### The disposition discipline
 
-An `exposed` band must carry a disposition: `funded`, `accepted_with_rationale`, `transferred`, or `compensating_interim`, with a review date. This keeps the record a remediation register rather than a gap map. A gap with a funded plan and a review date is a defensible record; a bare exposed flag with silence after it is not. Deployment records and derivations are consumer held, never published, and organizations with live litigation exposure should structure record generation under counsel.
+An `exposed` band must carry a disposition: `funded`, `accepted_with_rationale`, `transferred`, or `compensating_interim`, with a review date. Deployment records and derivations are held by the organization and never published. Organizations with live litigation exposure should structure record generation under counsel.

@@ -1,213 +1,185 @@
 # Contributing to the THREAT Matrix
 
-The THREAT Matrix grows through practitioner contribution. You don't need to be a developer to make this framework better — most of the high-value contributions come from operators, analysts, and researchers who have seen adversary behavior firsthand and can name what's missing.
+The THREAT Matrix is an open behavioral vocabulary and evidence index for threat assessment and protective work. It improves when people who know the subject point out what is missing, wrong, unclear, or poorly sourced. You do not need to write code to help.
 
-This document explains what kinds of contributions are useful, how to submit them, and what to expect after you do.
+Read these first:
 
----
+- [docs/METHODOLOGY.md](docs/METHODOLOGY.md), starting with its limitations and intended-use section.
+- [GOVERNANCE.md](GOVERNANCE.md), for how decisions are made. There is one maintainer and no outside reviewer today.
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+- [SECURITY.md](SECURITY.md), for anything that must be reported privately.
 
-## Who should contribute
+## Two rules that apply to everything
 
-- **Protective intelligence analysts** — fixated individuals, approach behavior, surveillance detection
-- **Insider threat practitioners** — grievance pathways, behavioral indicators, access misuse
-- **Physical security operators** — facility infiltration, access control bypass, hostile reconnaissance
-- **Threat intelligence analysts** — actor profiling, TTP attribution, source analysis
-- **Researchers** — academic studies, after-action reviews, primary source documents
-- **Software developers:** schema work, React SPA features, matrix tooling
+### 1. Public sources only
 
-Contributions from any of these backgrounds are welcome. Operational experience and source-backed claims carry the most weight.
+Every behavioral claim in the vocabulary must rest on a public source that a reader can obtain: a published report, standard, court document, after-action review, peer-reviewed paper, book, or reputable news investigation. Give a locator (page, paragraph, or section) where you can.
 
----
+Unpublished experience, private casework, and uncited assertion are not accepted as sources. If your experience tells you something is missing, that is a good reason to open an issue; the entry that results still has to cite a public source that describes the behavior.
 
-## What to contribute
+Do not include numbers such as "70 percent of cases involve X" unless you cite the study they come from.
 
-### 1. Suggest a new tactic
+### 2. No real case data and no personal information
 
-If you have observed (or have documented evidence of) adversary behavior that isn't represented in the framework, open an issue describing it. All four matrices (People, Facilities, Organizations, Infrastructure) are live, and every matrix still has known gaps.
+Never post, in an issue, pull request, discussion, commit message, or file:
 
-**Good tactic suggestions include:**
-- A short, behavior-first name (what the adversary is *doing*, not what defenders are worried about)
-- Which phase it belongs to (Target Development, Mobilization, Execution, Aftermath)
-- Which target matrix it applies to (People, Facilities, Organizations, Infrastructure)
-- 2–4 sentences describing the behavior in operational terms
-- A reference: a public after-action review, court document, NTAC publication, peer-reviewed study, or first-person account
-- (If applicable) Which operational surfaces it runs on (physical, cyber, cyber-physical, or human/social), the Behavioral Mode facet carried by every indicator
+- details of a real incident that are not already in published public sources;
+- the name or identifying details of any person, including people of concern, victims, witnesses, employees, and investigators;
+- anything about an open or recent investigation;
+- confidential material belonging to an employer or client.
 
-**Use the issue template:** `New Tactic Suggestion`
+Use a fictionalized example, or cite a published public source. Do not use project spaces to assess or speculate about any individual.
 
-### 2. Flag an inconsistency or error
+Public issues are indexed and effectively permanent. If personal or case information has been posted, or if you need to report a vulnerability or misuse of the vocabulary against individuals, use the private route in [SECURITY.md](SECURITY.md). Do not open a public issue with the details.
 
-If you spot something wrong — terminology drift, scope mismatch, an actor profile that doesn't fit its category, a tactic placed in the wrong phase, or a description that contradicts the source it cites — open an issue describing the problem and pointing to the specific record in `docs/data/framework.json`.
+## How to propose a change
 
-**Use the issue template:** `Framework Issue`
+### Open an issue first
 
-### 3. Propose a use case
+Use the template that fits. Blank issues are disabled.
 
-Real-world scenarios validate the framework against operational reality. If you have a use case where the THREAT Matrix would have helped (or where it falls short), describe it. This is especially valuable for sectors that aren't yet well-represented: healthcare, education, transportation, critical infrastructure, public events.
+| Template | Use it for |
+|---|---|
+| New Tactic Suggestion | A category of behavior that the vocabulary does not cover |
+| Framework Issue | Something wrong or unclear in existing content: wording, scope, a tactic in the wrong phase, a citation that does not support its entry, a broken link |
+| Use Case Proposal | How the vocabulary would be used, or where it falls short, illustrated with a fictionalized or public-source example only |
 
-Use cases that include actual or composite incidents (with appropriate redaction) are more useful than abstract ones. Use cases that surface gaps in the framework are more useful than ones that confirm it works.
+A useful suggestion for a tactic or indicator includes:
 
-**Use the issue template:** `Use Case Proposal`
+- a short name that says what is being done, not what a defender fears;
+- the matrix (People, Facilities, Organizations, Infrastructure) and the phase (Target Development, Mobilization, Execution, Aftermath);
+- two to four sentences describing the behavior as something observable;
+- at least one public source, with a locator.
 
-### 4. Contribute a behavioral indicator
+The People and Facilities matrices are the core. Organizations and Infrastructure are drafts. Reports that a draft entry describes lawful or protected activity, or that a citation does not support its entry, are especially useful.
 
-Detection indicators map observable behaviors to tactics. V1.1 populated all 34 People-matrix tactics with indicators, and later releases authored indicators for the Facilities, Organizations, and Infrastructure matrices. All 161 tactics now carry indicators (828 total). If you have indicator content for a specific tactic, open an issue describing the behavior, its detection sources, and the source you're drawing from (peer-reviewed study, after-action review, NTAC publication, or first-person operational account). Indicator contributions go through editorial review the same way tactic contributions do; PRs are accepted only after the issue discussion has reached agreement on the indicator's scope and grounding.
+### Then, if agreed, a pull request
 
-### 5. Populate or extend Detection Mesh cross-references
+1. Fork the repository and create a branch with a descriptive name.
+2. Make the change. Keep each commit to one logical change.
+3. Run the gates (below).
+4. Open a pull request against `main`. Say what the change does and why, and link the issue. For a content change, explain the reasoning, not only the diff.
 
-The Detection Mesh weaves the framework's indicators, countermeasures, and response protocols into a single traversable graph across the four matrices and the four threat-lifecycle phases. Three fields carry the mesh:
+For a new indicator, follow the steps in [GOVERNANCE.md](GOVERNANCE.md) section 5. In particular:
 
-- `correlates_with` on indicators — other indicator IDs that this indicator typically co-occurs with or precedes (cross-phase, cross-matrix, or within-tactic)
-- `compensates_for` on countermeasures — the indicator IDs this countermeasure detects or mitigates (coverage at indicator grain, the current authoring standard; earlier entries reference countermeasure IDs, a transitional dyadic form — do not author new ones)
-- `coordinates_with` on response protocols — other response protocol IDs that co-activate on the same indicator set across stakeholder authorities, in parallel where no dependency binds them
+- Write an observable behavior, not a trait, diagnosis, belief, or protected characteristic. One behavior per indicator.
+- Do not assign an identifier. The maintainer allocates the next unused one at merge. Identifiers are never reused or renumbered ([docs/IDENTIFIERS.md](docs/IDENTIFIERS.md)).
+- Do not add scores. The vocabulary carries none, and a new indicator enters without any entry in the experimental scoring overlay.
+- Do not change what an existing identifier means. A change of meaning is a deprecation or supersession under [docs/DEPRECATION.md](docs/DEPRECATION.md).
+- Follow the writing rules in [docs/VOICE.md](docs/VOICE.md).
 
-**What counts as a mesh link worth noting:**
+### What review to expect
 
-- Same actor profile typically exhibits both behaviors (one operational thread)
-- Observable handoff between two indicator types in field practice (e.g., grievance articulation → subject profiling)
-- Defense-in-depth complementarity for countermeasures (one detects what the other prevents)
-- Parallel-authority response coordination that's documented operationally (HR + Legal + Law Enforcement converging on the same case)
+The maintainer reviews every change. While no outside reviewer has been recruited, a content pull request stays open for at least seven days for public comment, and the merge note says that no outside review was obtained ([GOVERNANCE.md](GOVERNANCE.md) section 3). The maintainer merges or declines with reasons. Accepted contributions are credited in the change record if you wish.
 
-**What is NOT a mesh link:**
+A change that would need a gate relaxed, or that removes or renames a field, is a breaking change and follows [GOVERNANCE.md](GOVERNANCE.md) section 4 and [docs/VERSIONING.md](docs/VERSIONING.md).
 
-- "Vaguely related" or "topically similar" — the mesh is a precision instrument, not a tag soup
-- Speculative correlations not grounded in field observation or documented case material
+## The relations, defined
 
-**Granularity.** 2–4 references per item is typical. More than 4 usually signals over-linking; consider whether the additional references are genuine or just topically adjacent.
+If you add or correct links between objects, use these meanings. Coverage of each relation today is described in [docs/METHODOLOGY.md](docs/METHODOLOGY.md#3-relations-between-objects).
 
-**ID format.** `IND-<tactic>-XX` (indicators), `CM-<tactic>-XX` (countermeasures), `RP-<tactic>-XX` (response protocols), where `<tactic>` is the parent tactic's four-digit number, prefixed by its matrix letter for Facilities (`F`), Organizations (`O`), and Infrastructure (`I`) tactics and unprefixed for People tactics (e.g., `IND-0103-01`, `IND-F0102-03`), and `XX` is the sequence within the tactic. The pre-commit hook validates that all mesh references resolve to existing IDs in `framework.json`; broken references block the commit. Hook source: `scripts/git-hooks/`.
+| Field | On | Holds | Meaning |
+|---|---|---|---|
+| `correlates_with` | indicator | indicator identifiers | The two behaviors tend to occur together. Stored in both directions: if A lists B, B must list A. |
+| `mitigates` | countermeasure | edge objects `{"indicator": "<indicator id>", "function": "<value>"}` | The countermeasure acts on that behavior. `function` is `prevent`, `detect`, `deny`, or `unreviewed`. |
+| `compensates_for` | countermeasure | countermeasure identifiers only | This countermeasure covers for the absence or failure of that one. An indicator identifier here is an error. |
+| `coordinates_with` | response protocol | response protocol identifiers | The two protocols are activated together or in a set order. |
 
-### 6. Code contributions
+Notes:
 
-The interactive browser is a React SPA built with Vite. Source lives in `src/`; the build emits hashed bundles to `docs/assets/`. Data lives in `docs/data/framework.json`. Build with `bun run build`. Requires Bun 1.3.9+ (`curl -fsSL https://bun.sh/install | bash` if not installed).
+- Indicator coverage belongs in `mitigates`, never in `compensates_for`. Before schema 3.0.0 the two were mixed in one field.
+- Every existing `mitigates` edge has the function `unreviewed`. If you propose a typed function for an edge, cite the source that supports it.
+- A link is worth adding when the two objects are concretely related: the same act, one shared resource, or one documented handoff. Topical similarity is not enough. Two to four links per object is typical.
+- No link may point to its own object or repeat. Every identifier must resolve. The gates check both.
 
-**Welcome code contributions:**
-- Bug fixes in the SPA (rendering, navigation, routing)
-- Accessibility improvements
-- Performance work (the SPA bundles about 5.6 MB of framework JSON; this can be improved)
-- New filter or view modes that don't conflict with the V2 roadmap (see [ROADMAP.md](ROADMAP.md))
-- Schema additions discussed and approved in an issue first
+## The gates
 
-**Hold on these for now:**
-- New tactics or actor profiles via PR — open an issue first so the addition can be reviewed against the framework's editorial standards
-- Major UI redesigns — the V1 visual identity (Amber Noir palette, IBM Plex Sans, the layout system) is intentional. See `docs/design/palette-comparison.html` for context.
+Run these from the repository root before opening a pull request. They need Python 3 and `pip install jsonschema`. Continuous integration runs every one of them on every push and pull request.
 
----
+```
+python3 scripts/lint/validate.py docs/data/framework.json
+python3 scripts/lint/validate.py docs/data/framework.json --overlay docs/data/scoring-overlay.json
+python3 scripts/lint/validate.py docs/data/framework.json --fixtures scripts/lint/fixtures
+python3 scripts/lint/validate.py docs/data/framework.json --overlay docs/data/scoring-overlay.json --records examples/experimental-scoring/worked-cases
+python3 scripts/lint/field-parity.py docs/data/framework.json
+python3 scripts/lint/mesh-refs.py docs/data/framework.json
+python3 scripts/lint/id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json
+python3 scripts/lint/consumer-smoke.py
+```
+
+The fixture harness takes about 20 seconds. What each gate checks, and what none of them checks, is in [docs/METHODOLOGY.md](docs/METHODOLOGY.md#5-review-process-and-gates). Passing the gates shows that a change is well formed. It does not show that the content is right. That is what review is for.
+
+If your change adds an identifier, the ID manifest has to be regenerated, or the manifest gate fails:
+
+```
+python3 scripts/lint/id-manifest.py --write docs/data/id-manifest.json --previous docs/data/id-manifest.json
+```
+
+### The local hook
+
+`scripts/git-hooks/pre-commit` is opt-in: enable it once with `git config core.hooksPath scripts/git-hooks`. It acts only when a staged path is under `docs/data/`, `src/`, `scripts/`, or `examples/`, or is `index.html` or `package.json`. It exports the staged content to a temporary directory and checks that copy, never the working tree. It runs: `validate.py` on the framework, on the framework with the overlay, and on the scored worked cases; `field-parity.py`; `mesh-refs.py`; `id-manifest.py --check`; `derive-axis-confidence.py --check`; and `consumer-smoke.py` (skipped with a warning if the `jsonschema` package is not installed). It runs the `validate.py` fixture harness only when a file under `scripts/lint/` or a `docs/data/*.schema.json` file is staged. If a viewer build input is staged (anything under `src/`, `index.html`, `package.json`, `bun.lock`, `vite.config.ts`, a `tsconfig` file, or a `docs/data` file the viewer imports), it requires a rebuilt bundle to be staged as well (a new or changed file under `docs/assets/` and `docs/index.html`), and it checks that the staged `docs/index.html` references exactly the files in the staged `docs/assets/`. It does not run the viewer build. It can be bypassed with `git commit --no-verify`.
+
+Bypassing the hook only defers the failure: continuous integration runs the same gates and cannot be bypassed locally.
+
+### Continuous integration
+
+Three workflows run on every push and every pull request for `main`, `v1-build`, and `v3-design`: *Framework Validator* (every gate above, plus the axis-confidence check and, on pull requests, a comparison of the ID manifest with the base branch's), *Mesh Refs*, and *Bundle Freshness* (the committed viewer must equal a fresh build of the committed sources).
+
+## Code contributions
+
+The viewer is a React application built with Vite. Source is in `src/`. The build writes hashed files to `docs/assets/` and `docs/index.html`, and it bundles `docs/data/framework.json`, so a change to the data or the source needs a rebuild. Build with Bun 1.3.9, the version continuous integration uses:
+
+```
+rm -f docs/assets/index-*
+bun run build
+git add -A docs/assets docs/index.html
+```
+
+Welcome:
+
+- bug fixes, accessibility improvements, and performance work in the viewer;
+- improvements to the scripts and their tests;
+- other consumers of the data (list yours in the README's Consumers section).
+
+Open an issue before starting on:
+
+- any schema change;
+- a redesign of the viewer. Its visual identity is deliberate; the palette study is at `design/palette-comparison.html`.
+
+The viewer shows no score unless the reader switches the experimental overlay on. Changes must keep it that way.
+
+## What is not being accepted now
+
+See [ROADMAP.md](ROADMAP.md). In short: no new matrices, no new scoring layers, and no further schema major until 3.0.0 is released. Proposals that the scoring overlay be treated as part of the vocabulary, or that the project call itself a standard, are deferred to the conditions in [GOVERNANCE.md](GOVERNANCE.md) section 10.
 
 ## Responsible content
 
-Some kinds of content are intentionally out of scope. Pull requests must not contain operational instructions, exploit code, weapon construction, or step-by-step attack tradecraft. THREAT Matrix describes adversary behavior at the tactic and indicator level — what adversaries do, when in the threat lifecycle, in what patterns, and against what countermeasures and response protocols. It does not describe how to operationally execute attacks.
+Pull requests must not contain operational instructions, exploit code, weapon construction, or step-by-step attack tradecraft. The vocabulary describes behavior at the tactic and indicator level: what is observable, when, and what relates to it. It does not describe how to carry out an attack.
 
-Case examples must reference public-record incidents only. Do not name living persons. For deceased perpetrators in publicly adjudicated cases, stay within court-record and news-record facts; treat the source material with restraint.
+Examples that refer to real events must stay within what the cited public record states. Do not name living persons. If you are unsure whether something fits, open an issue describing it in general terms before submitting it.
 
-If you're unsure whether content fits, open an issue describing what you have in mind before submitting a PR.
+## Writing rules for content
 
----
-
-## Build hygiene — pre-commit hook setup
-
-THREAT Matrix's SPA bundles `docs/data/framework.json` into the JavaScript at build time (Vite). Edits to `framework.json` only reach the live viewer when the bundle is rebuilt. To prevent shipping a stale bundle (the v1.1.1 regression), this repository ships a pre-commit hook that catches `framework.json` edits without a corresponding bundle rebuild.
-
-**Install the hook once after cloning** (from repo root):
-
-```bash
-git config core.hooksPath scripts/git-hooks
-```
-
-The hook runs automatically on every `git commit`. If you stage `framework.json` without staging a `docs/assets/index-*.{js,css}` file, the commit is blocked with a clear message. To clear it, run:
-
-```bash
-rm -f docs/assets/index-*
-bun run build
-git add docs/assets/ docs/index.html
-```
-
-then re-run your commit.
-
-**Bypass (avoid):** `git commit --no-verify` skips the local hook. The CI workflow (`.github/workflows/bundle-freshness.yml`) re-runs the same check on every PR to `main` and every push to `v1-build`, so bypassing locally only defers the failure. If CI fails on bundle freshness, the same rebuild-and-recommit sequence above is the fix.
-
----
-
-## How to submit
-
-### Issues
-
-Open an issue at <https://github.com/jgulyash/THREAT-Matrix/issues>. Use the template that matches your contribution type. If none of the templates fit, use the Framework Issue template and describe what you're suggesting.
-
-Include sources where possible. "I read about this in a Department of Energy report" is fine — you don't have to track down the exact citation, but pointing to *something* makes the suggestion easier to evaluate.
-
-### Pull requests
-
-For code, schema, or documentation changes:
-
-1. Fork the repository
-2. Create a branch with a descriptive name (e.g., `fix-actor-filter-rendering`, `add-phase-1-keyboard-nav`)
-3. Make your changes. Keep commits focused — one logical change per commit.
-4. Submit a pull request against the `main` branch
-5. In the PR description, explain *what* the change does and *why* it's needed. Link to the relevant issue if one exists.
-
-For changes that touch `framework.json`, the PR description should explain the editorial reasoning behind the change, not just the data diff. The framework is opinionated — every record reflects deliberate decomposition choices.
-
----
-
-## What to expect
-
-This is a practitioner-led project maintained by [Jay Gulyash](https://www.linkedin.com/in/jay-gulyash-750489207). Response time on issues and PRs is typically a few days, sometimes longer during operational periods.
-
-**You will get:**
-- A response that engages seriously with what you submitted
-- A clear yes/no/needs-more-discussion on whether the change goes in
-- Credit in commit messages or release notes for accepted contributions
-
-**You will not get:**
-- A merge of every well-intentioned PR — the framework's value depends on editorial consistency
-- A debate about the framework's positioning relative to other threat frameworks (the cross-walk is documented in the README's Cross-Framework Interoperability section; please read it before opening that thread)
-- Acceptance of fabricated metrics, AI-generated boilerplate, or content not grounded in real sources
-
----
-
-## Editorial standards
-
-If you're contributing tactics, profiles, or descriptions, the following principles apply:
-
-1. **Behavior-first naming.** Tactic names describe what the adversary is *doing*, not what defenders are *worried about*. "Physical Surveillance" not "Surveillance Threat." "Identity Fabrication" not "Identity Risk."
-2. **Function over jargon.** A name that an analyst can read and immediately understand beats a name that requires the reader to look it up.
-3. **Source-backed claims.** Every tactic and actor profile should be defensible against a reviewer who asks "where did this come from?" Public sources are preferred. Operator experience is valid but should be flagged as such.
-4. **No fabricated metrics.** Don't include numbers like "70% of attacks involve X" unless you can cite the study. Made-up percentages destroy credibility.
-5. **Phase placement reflects behavioral logic, not convention.** If a behavior spans phases, document that. If it's ambiguous, discuss it before placing it.
-
----
+1. **Name the behavior.** "Physical Surveillance", not "Surveillance Threat".
+2. **Plain function over jargon.** A reader should understand a name without looking it up.
+3. **Observable, not inferred.** Describe what can be seen or recorded, not a state of mind.
+4. **Cited.** Every entry answers "where does this come from?" with a public source.
+5. **No invented metrics.**
+6. **Say what else it could be.** Many of these behaviors have ordinary explanations. False-positive context is part of the entry, not an afterthought.
+7. **Phase by behavior.** If a behavior spans phases, say so in `phase_relevance`, which must include the parent tactic's phase.
 
 ## Schema design principles
 
-THREAT Matrix is a type system for the physical-threat domain — a dictionary of stable, named descriptions of tactic classes, indicator classes, countermeasure types, response protocol types, and actor profile archetypes. Downstream consumers (RAG systems, AI agents, threat-management platforms like WARDEN) cite these definitions as the vocabulary for what they're observing, but the actual evidence, scoring, and decisions about specific threats live in the consumer's own data store, not in the framework.
+The vocabulary describes classes of behavior. It holds nothing about any case. Before proposing a field, apply this test:
 
-Before proposing a new field for `framework.schema.json`, apply this test:
-
-> **Could two competent consumers, observing the same world on the same day, legitimately disagree on this field's value for the same indicator/tactic — without either being wrong?**
+> Could two competent users, looking at the same world on the same day, legitimately disagree about this field's value for the same indicator or tactic?
 >
-> - **No** → dictionary-level. The value is a property of the *type*, not the consumer's read of the world. Goes in THREAT Matrix.
-> - **Yes** → consumer-level. The value depends on a specific assessment, telemetry, posture, or judgment that varies legitimately across consumers and across time. Goes in WARDEN / downstream.
-> - **Sometimes** → split it. There's almost certainly a stable type-property hiding inside an unstable case-property; expose the type-property and document the consumer-property as a recommended downstream pattern.
+> - **No.** The value is a property of the class. It may belong in the vocabulary.
+> - **Yes.** The value depends on a particular case, organization, or judgment. It belongs in the user's own records, not here.
+> - **Sometimes.** Split it: publish the stable part, and describe the case-dependent part as something users record themselves.
 
-Examples:
-
-- `temporal_signature` (whether an indicator typically signals horizon / advancing / imminent / etc.) → **dictionary**. The temporal positioning is a property of the indicator class.
-- `realization_probability` (how likely a specific threat is to land in 30 days) → **consumer**. Depends entirely on the consumer's telemetry and intel.
-- `escalation_weight` and its constituent `escalation_axes` → **dictionary** for the type-level potentials (impact, blast radius, recoverability, detectability of the indicator class); **consumer** for the case-level realizations (impact at *my* facility, *my* response time).
-
-If you're proposing a field that fails this test, the right home is documentation of a recommended downstream pattern — not the schema.
-
----
-
-## Code of conduct
-
-Be civil. Critique ideas, not people. If a contribution gets rejected, it's a judgment about the contribution, not the contributor — try again with a different angle, or ask what would make it acceptable.
-
-This framework exists to give practitioners a shared vocabulary. That goal only works if the project stays serious, source-backed, and free of bad-faith participation. Disagreement is welcome. Bullshit is not.
-
----
+`temporal_signature` passes: where a class of behavior typically sits relative to action is a property of the class. The likelihood that a particular person will act fails: it depends entirely on the case, and the vocabulary does not estimate it.
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the MIT License (see [LICENSE](LICENSE)). The THREAT Matrix is an open reference standard. Its value compounds with adoption.
+By contributing, you agree that your contribution is licensed under the MIT License (see [LICENSE](LICENSE)), that you have the right to submit it, and that it contains no confidential or personal case information.
