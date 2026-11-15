@@ -1,0 +1,59 @@
+{
+  "record_version": "1.0.0",
+  "framework_version": "2.0.0",
+  "case_ref": "EXAMPLE-0003",
+  "recorded_on": "2026-05-06",
+  "assessor_role": "Corporate security, threat assessment team, with human resources",
+  "subject_term": "person_of_concern",
+  "observations": [
+    {
+      "indicator_id": "IND-0101-01",
+      "observed_on": "2026-05-04",
+      "source": "Human resources case notes",
+      "corroboration": "corroborated"
+    },
+    {
+      "indicator_id": "IND-0101-03",
+      "observed_on": "2026-05-05",
+      "source": "Two coworkers, reporting separately to human resources",
+      "corroboration": "corroborated"
+    },
+    {
+      "indicator_id": "IND-0103-05",
+      "observed_on": "2026-05-05",
+      "source": "Team administrator, who was asked the question",
+      "corroboration": "single_source"
+    }
+  ],
+  "instance_factors": {
+    "target_focus": "specific_target",
+    "pathway_stage": "grievance",
+    "means_in_hand": "unknown",
+    "tempo_trajectory": "stalling",
+    "proximity_access": "has_access",
+    "source_credibility": "high",
+    "basis": "The grievance is about one named manager, so target focus is specific_target. After interview and collateral checks, the questions about the manager's schedule are explained and nothing indicates research or planning, so pathway stage is grievance. Means in hand is unknown: the team has no information that the person possesses or has acquired any means. Lawful ability to acquire something is not means in hand and is not recorded here. Statements about the grievance have dropped off since the formal process began, so tempo is stalling. The person works at the same site as the manager, so has_access describes the setting. Three separate reporters and the human resources notes agree, so the reporting is reliable."
+  },
+  "protective_factors": [
+    "The schedule questions have a benign explanation, confirmed by the employee relations adviser: the person had been advised to raise the matter with the manager in person and was trying to find a day when both were on site.",
+    "The grievance is now in the formal process and the person is taking part in it, with a representative.",
+    "Long tenure with no prior conduct concerns.",
+    "Coworkers and the person's representative describe steady support at home and at work.",
+    "The person has made no statement about harming or confronting anyone."
+  ],
+  "assessment_summary": "FICTIONAL. Human resources and two coworkers reported that an employee had voiced a grievance about a named manager several times over two weeks, more often as time went on, and had asked the team administrator which days that manager works on site. Three indicators fit the reports: a grievance tied to a named individual (IND-0101-01), returning to it with increasing frequency (IND-0101-03), and asking staff about a person's routine (IND-0103-05). On first review the team could not explain the schedule questions and opened the case for routine monitoring while it gathered more. Interview and collateral checks then supplied the explanation, and the grievance moved into the formal process. Concern was lowered at each review as protective factors and the benign explanation were confirmed. Closed as benign. The team did not ask about or record lawful ability to acquire anything; that is not means in hand.",
+  "reassessments": [
+    {
+      "on": "2026-05-12",
+      "direction": "lowered",
+      "rationale": "Interview and a check with the employee relations adviser explain the schedule questions: the person had been advised to speak with the manager in person. No statement of intent to harm or confront. Concern lowered; case kept open for one further review."
+    },
+    {
+      "on": "2026-06-09",
+      "direction": "lowered",
+      "rationale": "Grievance is in the formal process with a representative. No new reports from coworkers or human resources in four weeks. Protective factors confirmed. Case closed as benign."
+    }
+  ],
+  "disposition": "closed_benign",
+  "limitations_acknowledged": true
+}

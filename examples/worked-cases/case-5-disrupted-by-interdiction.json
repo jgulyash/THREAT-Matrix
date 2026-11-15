@@ -1,0 +1,61 @@
+{
+  "record_version": "1.0.0",
+  "framework_version": "2.0.0",
+  "case_ref": "EXAMPLE-0005",
+  "recorded_on": "2026-06-01",
+  "assessor_role": "Corporate security, threat assessment team, with law enforcement liaison",
+  "subject_term": "person_of_concern",
+  "observations": [
+    {
+      "indicator_id": "IND-0101-01",
+      "observed_on": "2026-05-18",
+      "source": "Human resources case notes and two coworkers",
+      "corroboration": "corroborated"
+    },
+    {
+      "indicator_id": "IND-0101-03",
+      "observed_on": "2026-05-27",
+      "source": "Two coworkers and a line manager, reporting separately",
+      "corroboration": "corroborated"
+    },
+    {
+      "indicator_id": "IND-0104-01",
+      "observed_on": "2026-06-08",
+      "source": "Law enforcement liaison, from records and items recovered",
+      "corroboration": "corroborated"
+    }
+  ],
+  "instance_factors": {
+    "target_focus": "specific_target",
+    "pathway_stage": "preparation",
+    "means_in_hand": "assessed_absent",
+    "tempo_trajectory": "stalling",
+    "proximity_access": "no_known_access",
+    "source_credibility": "high",
+    "basis": "These values describe the case after the interdiction on 2026-06-10. The grievance names one colleague, so target focus is specific_target. The acquisition observed before the interdiction is preparation behavior, and that remains the furthest stage reached. Means in hand is assessed_absent: law enforcement recovered the items, and the team has no information that others are held. Before the interdiction the value was confirmed_present, because the items were directly observed and recovered. No new behavior has been reported since, so tempo is stalling; before the interdiction it was accelerating. Workplace access was revoked on 2026-06-10, so proximity is no_known_access; before, it was has_access. Reporting came from records, recovered items, and several independent reporters, so credibility is high."
+  },
+  "protective_factors": [
+    "Before the interdiction the team looked for protective factors and benign explanations for the purchases and found none: the person had no record of sporting or hobby activity that would account for them, and a relative said the purchases were new.",
+    "Since the interdiction: the means have been removed, workplace access has ended, and the person is in contact with legal counsel and a relative who is cooperating with the team."
+  ],
+  "assessment_summary": "FICTIONAL. Over three weeks an employee voiced a grievance about one named colleague with growing frequency (IND-0101-01, IND-0101-03). Law enforcement then informed the team that, within a ten-day window, the person had acquired weapons and ammunition in quantities inconsistent with hobbyist or sporting use (IND-0104-01). The person held workplace access to the colleague, and the observations were coming closer together. The team's judgment was that this was a substantive concern needing immediate action. Threat management and law enforcement coordinated an interdiction before any approach to the colleague: the items were recovered and workplace access was revoked. The disposition records that outcome. The factor values describe the case as it stands after the interdiction, and the basis text and the reassessment entries keep the earlier picture, so the reasons for the intervention stay on the record. Monitoring continues under the organization's policy.",
+  "reassessments": [
+    {
+      "on": "2026-06-08",
+      "direction": "raised",
+      "rationale": "Law enforcement reports acquisition of weapons and ammunition in a compressed window, inconsistent with hobbyist or sporting use, alongside a corroborated and intensifying grievance about one colleague to whom the person has workplace access. Concern raised; immediate coordination with law enforcement."
+    },
+    {
+      "on": "2026-06-10",
+      "direction": "unchanged",
+      "rationale": "Interdiction carried out: items recovered, workplace access revoked. Concern held at the same level for this entry while the team confirms what was recovered and whether anything else is held."
+    },
+    {
+      "on": "2026-07-08",
+      "direction": "lowered",
+      "rationale": "Four weeks on, no new behavior reported, no information that other means are held, access remains revoked, and the person is engaging through counsel. Concern lowered. The record of the earlier assessment is kept as written, and monitoring continues under policy."
+    }
+  ],
+  "disposition": "disrupted_by_interdiction",
+  "limitations_acknowledged": true
+}

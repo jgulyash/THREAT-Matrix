@@ -1,0 +1,818 @@
+{
+  "crosswalk": "facilities-pact",
+  "status": "DRAFT. Concept-level. Unreviewed. Not endorsed by any author or organization cited.",
+  "crosswalk_version": "0.1.0-draft",
+  "framework_file": "docs/data/framework.json",
+  "matrix": "facility",
+  "checked_on": "2026-11-15",
+  "pact_source": {
+    "name": "Physical Access & Control Taxonomy (PACT)",
+    "publisher": "slashsec Red Teaming GmbH",
+    "site": "https://pact.slashsec.at/",
+    "matrix_page": "https://pact.slashsec.at/ttps/",
+    "license_page": "https://pact.slashsec.at/license/",
+    "json_repository": "https://github.com/slashsec-Red-Teaming-GmbH/pact-data-json",
+    "stix_repository": "https://github.com/slashsec-Red-Teaming-GmbH/pact-data-stix",
+    "license": "Apache License, Version 2.0",
+    "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+    "retrieved_on": "2026-11-15",
+    "json_repository_commit": "bacd977bc0110ca43c0dffeb998291005fb100ca",
+    "json_repository_commit_date": "2026-06-29",
+    "link_status": "all seven links returned 200 on 2026-11-15",
+    "attribution": "Physical Access & Control Taxonomy (PACT), (c) slashsec Red Teaming GmbH, licensed under the Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0)."
+  },
+  "method": "PACT tactic, technique, and sub-technique IDs and names were read from the public PACT site on the retrieval date. Each Facilities tactic was read (name, notes, indicator behavior sentences) and linked where the described activity overlaps. Only PACT IDs and names are reproduced; no PACT description text is copied.",
+  "confidence_values": {
+    "direct": "the Facilities tactic and the PACT objects describe the same activity",
+    "partial": "overlap on part of the tactic, or at tactic level only",
+    "none": "no PACT counterpart"
+  },
+  "pact_objects_seen": {
+    "tactics": 12,
+    "techniques": 37,
+    "sub_techniques_in_site_navigation": 47
+  },
+  "mappings": [
+    {
+      "tactic_id": "TF0101",
+      "tactic_name": "Facility Target Selection",
+      "phase": "Target Development",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Choosing which facility to attack, and why, precedes anything PACT describes; PACT starts with reconnaissance of a facility already chosen."
+    },
+    {
+      "tactic_id": "TF0102",
+      "tactic_name": "Site Profiling",
+      "phase": "Target Development",
+      "confidence": "direct",
+      "pact": [
+        {
+          "id": "PT0001",
+          "name": "Reconnaissance"
+        },
+        {
+          "id": "P0001",
+          "name": "Gather Victim Facility Information"
+        },
+        {
+          "id": "P0001.002",
+          "name": "Facility Rhythms"
+        },
+        {
+          "id": "P0002.002",
+          "name": "Remote Surveillance"
+        }
+      ],
+      "reason": "Remote collection on a chosen site's function, rhythms, and occupancy matches PACT reconnaissance of facility information and remote surveillance."
+    },
+    {
+      "tactic_id": "TF0103",
+      "tactic_name": "Physical Reconnaissance",
+      "phase": "Target Development",
+      "confidence": "direct",
+      "pact": [
+        {
+          "id": "PT0001",
+          "name": "Reconnaissance"
+        },
+        {
+          "id": "P0002",
+          "name": "Surveillance"
+        },
+        {
+          "id": "P0002.001",
+          "name": "On-site Surveillance"
+        },
+        {
+          "id": "P0003",
+          "name": "Gather Victim Facility Perimeter"
+        }
+      ],
+      "reason": "Casing visits and on-foot observation match on-site surveillance and perimeter mapping."
+    },
+    {
+      "tactic_id": "TF0104",
+      "tactic_name": "Structural & Blueprint Study",
+      "phase": "Target Development",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "PT0001",
+          "name": "Reconnaissance"
+        },
+        {
+          "id": "P0001.001",
+          "name": "Facility Plans"
+        }
+      ],
+      "reason": "Obtaining floor plans matches Facility Plans; study of structural engineering detail to cause damage has no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0105",
+      "tactic_name": "Security Posture Assessment",
+      "phase": "Target Development",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "PT0001",
+          "name": "Reconnaissance"
+        },
+        {
+          "id": "P0002",
+          "name": "Surveillance"
+        },
+        {
+          "id": "P0003",
+          "name": "Gather Victim Facility Perimeter"
+        }
+      ],
+      "reason": "Mapping cameras, guards, and controls falls under PACT surveillance and perimeter mapping; PACT has no separate technique for measuring response timing or probing reactions."
+    },
+    {
+      "tactic_id": "TF0106",
+      "tactic_name": "Capability Acquisition",
+      "phase": "Target Development",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "PT0002",
+          "name": "Resource Development"
+        }
+      ],
+      "reason": "Same stage as PACT Resource Development, but PACT resources are IDs, pretexts, and props, not accelerants, explosive components, breaching tools, or vehicles."
+    },
+    {
+      "tactic_id": "TF0107",
+      "tactic_name": "Network Development",
+      "phase": "Target Development",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "P0011",
+          "name": "Establish Trust"
+        },
+        {
+          "id": "P0008",
+          "name": "Valid Credentials"
+        }
+      ],
+      "reason": "Cultivating an insider relates to Establish Trust and to credentials obtained through insider assistance; recruiting co-conspirators has no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0108",
+      "tactic_name": "Cover Construction",
+      "phase": "Target Development",
+      "confidence": "direct",
+      "pact": [
+        {
+          "id": "PT0002",
+          "name": "Resource Development"
+        },
+        {
+          "id": "P0004",
+          "name": "Fabricate ID"
+        },
+        {
+          "id": "P0004.001",
+          "name": "Fabricate Victim Company ID"
+        },
+        {
+          "id": "P0004.002",
+          "name": "Fabricate Victim Vendor ID"
+        },
+        {
+          "id": "P0005",
+          "name": "Develop Pretext"
+        },
+        {
+          "id": "P0005.001",
+          "name": "Develop Pretext Story"
+        },
+        {
+          "id": "P0005.002",
+          "name": "Gather Pretext Props"
+        },
+        {
+          "id": "P0005.003",
+          "name": "Gather Pretext Uniform"
+        },
+        {
+          "id": "P0007.002",
+          "name": "Impersonate Staff or Vendor"
+        },
+        {
+          "id": "P0007.005",
+          "name": "Wear Cover Dress"
+        },
+        {
+          "id": "P0015",
+          "name": "Forge Key"
+        },
+        {
+          "id": "P0016",
+          "name": "Clone Badge"
+        }
+      ],
+      "reason": "Fabricated vendor identities, forged credentials, uniforms, and rehearsed pretexts match Fabricate ID, Develop Pretext, impersonation, and cover dress; badge and key copying is the nearest PACT credential technique."
+    },
+    {
+      "tactic_id": "TF0109",
+      "tactic_name": "Pathway / Escalation Indicators",
+      "phase": "Target Development",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Behavioral leakage and escalation signals about a place; PACT has no behavioral warning content."
+    },
+    {
+      "tactic_id": "TF0110",
+      "tactic_name": "Surveillance Detection",
+      "phase": "Target Development",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "PT0008",
+          "name": "Stealth"
+        },
+        {
+          "id": "P0021",
+          "name": "Select Low-Visibility Route"
+        }
+      ],
+      "reason": "Avoiding observation relates to PACT Stealth and low-visibility routes; testing for and detecting the site's surveillance of the actor has no PACT technique."
+    },
+    {
+      "tactic_id": "TF0201",
+      "tactic_name": "Operational Rehearsal",
+      "phase": "Mobilization",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "P0006",
+          "name": "Tailgate"
+        },
+        {
+          "id": "P0026.001",
+          "name": "Trigger False Alarm"
+        }
+      ],
+      "reason": "Rehearsal has no PACT counterpart; the probing acts some indicators describe (tailgating an entry, tripping an alarm to watch the response) correspond to PACT techniques used for a different purpose."
+    },
+    {
+      "tactic_id": "TF0202",
+      "tactic_name": "Concealment",
+      "phase": "Mobilization",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "PT0008",
+          "name": "Stealth"
+        },
+        {
+          "id": "P0007.005",
+          "name": "Wear Cover Dress"
+        },
+        {
+          "id": "P0013",
+          "name": "Hide on Premises"
+        }
+      ],
+      "reason": "Physical disguise and hiding relate to Stealth, cover dress, and Hide on Premises; caching attack materiel and disguising a device have no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0203",
+      "tactic_name": "Perimeter Breach",
+      "phase": "Mobilization",
+      "confidence": "direct",
+      "pact": [
+        {
+          "id": "PT0003",
+          "name": "Initial Access"
+        },
+        {
+          "id": "P0009",
+          "name": "Bypass Physical Access Controls"
+        },
+        {
+          "id": "P0009.003",
+          "name": "Bypass Perimeter Controls"
+        },
+        {
+          "id": "P0010",
+          "name": "Exploit Physical Access Weaknesses"
+        },
+        {
+          "id": "P0010.001",
+          "name": "Exploit Perimeter Controls"
+        }
+      ],
+      "reason": "Defeating fences, gates, and walls matches bypass and exploitation of perimeter controls under Initial Access."
+    },
+    {
+      "tactic_id": "TF0204",
+      "tactic_name": "Interior Penetration",
+      "phase": "Mobilization",
+      "confidence": "direct",
+      "pact": [
+        {
+          "id": "PT0007",
+          "name": "Lateral Movement"
+        },
+        {
+          "id": "P0006",
+          "name": "Tailgate"
+        },
+        {
+          "id": "P0009.002",
+          "name": "Bypass Door"
+        },
+        {
+          "id": "P0017",
+          "name": "Cross Security Zone"
+        },
+        {
+          "id": "P0017.001",
+          "name": "Cross Zone via Internal Door"
+        },
+        {
+          "id": "P0018",
+          "name": "Use Vertical Circulation"
+        },
+        {
+          "id": "P0018.001",
+          "name": "Use Stairwell"
+        },
+        {
+          "id": "P0019",
+          "name": "Use Service Route"
+        }
+      ],
+      "reason": "Moving past interior doors and checkpoints by service corridors, stairwells, and tailgating matches PACT Lateral Movement techniques."
+    },
+    {
+      "tactic_id": "TF0205",
+      "tactic_name": "Device/Materiel Emplacement",
+      "phase": "Mobilization",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Placing an explosive, incendiary, or vehicle-borne load has no PACT counterpart. PACT's planted device is a surveillance device for collection."
+    },
+    {
+      "tactic_id": "TF0206",
+      "tactic_name": "Position Establishment",
+      "phase": "Mobilization",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "P0013",
+          "name": "Hide on Premises"
+        }
+      ],
+      "reason": "Holding a concealed static position on or near the site loosely relates to Hide on Premises; firing points, standoff positions, and vehicle staging have no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0207",
+      "tactic_name": "Timing Exploitation",
+      "phase": "Mobilization",
+      "confidence": "direct",
+      "pact": [
+        {
+          "id": "P0022",
+          "name": "Activity Timing"
+        },
+        {
+          "id": "P0022.001",
+          "name": "Time Activity to Normal Operations"
+        },
+        {
+          "id": "P0022.002",
+          "name": "Time Activity Outside Regular Business Hours"
+        },
+        {
+          "id": "P0001.002",
+          "name": "Facility Rhythms"
+        }
+      ],
+      "reason": "Choosing an occupancy or low-security window matches Activity Timing and collection on facility rhythms. The Facilities tactic also covers symbolic dates, which PACT does not."
+    },
+    {
+      "tactic_id": "TF0208",
+      "tactic_name": "Utility & Systems Access",
+      "phase": "Mobilization",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "PT0007",
+          "name": "Lateral Movement"
+        },
+        {
+          "id": "P0019",
+          "name": "Use Service Route"
+        },
+        {
+          "id": "P0038",
+          "name": "Manipulate Electronic Access Control"
+        }
+      ],
+      "reason": "Reaching plant rooms and control systems relates to service routes and manipulation of electronic access control; PACT does not cover HVAC, fire, power, or building-automation access as such."
+    },
+    {
+      "tactic_id": "TF0209",
+      "tactic_name": "Approach",
+      "phase": "Mobilization",
+      "confidence": "none",
+      "pact": [],
+      "reason": "The final movement to the point of attack while carrying attack means has no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0301",
+      "tactic_name": "Incendiary Attack",
+      "phase": "Execution",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "PT0012",
+          "name": "Impact"
+        }
+      ],
+      "reason": "Tactic-level only. PACT Impact names physical damage in general; it has no technique for fire."
+    },
+    {
+      "tactic_id": "TF0302",
+      "tactic_name": "Explosive Attack",
+      "phase": "Execution",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "PT0012",
+          "name": "Impact"
+        }
+      ],
+      "reason": "Tactic-level only. PACT Impact names physical damage in general; it has no technique for explosives."
+    },
+    {
+      "tactic_id": "TF0303",
+      "tactic_name": "Structural Sabotage",
+      "phase": "Execution",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "PT0012",
+          "name": "Impact"
+        },
+        {
+          "id": "P0035",
+          "name": "Sabotage"
+        }
+      ],
+      "reason": "PACT Sabotage covers damage to equipment, utilities, and processes; attack on a building's load-bearing structure is not described."
+    },
+    {
+      "tactic_id": "TF0304",
+      "tactic_name": "Systems Sabotage",
+      "phase": "Execution",
+      "confidence": "direct",
+      "pact": [
+        {
+          "id": "PT0012",
+          "name": "Impact"
+        },
+        {
+          "id": "P0035",
+          "name": "Sabotage"
+        },
+        {
+          "id": "PT0009",
+          "name": "Defense Impairment"
+        },
+        {
+          "id": "P0024",
+          "name": "Disable Sensor"
+        },
+        {
+          "id": "P0024.001",
+          "name": "Disable Camera"
+        },
+        {
+          "id": "P0024.002",
+          "name": "Disable Intrusion Sensor"
+        },
+        {
+          "id": "P0024.003",
+          "name": "Disable Alarm Device"
+        },
+        {
+          "id": "P0038",
+          "name": "Manipulate Electronic Access Control"
+        }
+      ],
+      "reason": "Disabling power, safety, and security systems matches PACT Sabotage and the Defense Impairment sensor and alarm techniques."
+    },
+    {
+      "tactic_id": "TF0305",
+      "tactic_name": "Forced Entry / Vehicle Ram",
+      "phase": "Execution",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "P0009",
+          "name": "Bypass Physical Access Controls"
+        },
+        {
+          "id": "P0009.002",
+          "name": "Bypass Door"
+        },
+        {
+          "id": "P0009.003",
+          "name": "Bypass Perimeter Controls"
+        }
+      ],
+      "reason": "PACT bypass includes defeating doors and barriers through force; ramming with a vehicle and overpowering staff have no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0306",
+      "tactic_name": "Occupation & Blockade",
+      "phase": "Execution",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Occupation, lock-ons, and blockades have no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0307",
+      "tactic_name": "Vandalism & Defacement",
+      "phase": "Execution",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "PT0012",
+          "name": "Impact"
+        }
+      ],
+      "reason": "Tactic-level only. Defacement is physical damage in a broad sense; PACT has no technique for it."
+    },
+    {
+      "tactic_id": "TF0308",
+      "tactic_name": "Contamination",
+      "phase": "Execution",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Introducing a hazardous substance has no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0309",
+      "tactic_name": "Response Suppression",
+      "phase": "Execution",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "PT0009",
+          "name": "Defense Impairment"
+        },
+        {
+          "id": "P0024.003",
+          "name": "Disable Alarm Device"
+        },
+        {
+          "id": "P0026",
+          "name": "Employ Distraction"
+        },
+        {
+          "id": "P0026.001",
+          "name": "Trigger False Alarm"
+        },
+        {
+          "id": "P0026.002",
+          "name": "Stage Diversion"
+        },
+        {
+          "id": "P0037",
+          "name": "Distraction"
+        }
+      ],
+      "reason": "Disabling alarms and staging diversions match Defense Impairment and Distraction; blocking exits, secondary hazards, and jamming communications have no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0401",
+      "tactic_name": "Withdrawal",
+      "phase": "Aftermath",
+      "confidence": "partial",
+      "pact": [
+        {
+          "id": "PT0011",
+          "name": "Exfiltration"
+        },
+        {
+          "id": "P0031",
+          "name": "Exfiltrate via Entry Route"
+        },
+        {
+          "id": "P0032",
+          "name": "Exfiltrate via Emergency Route"
+        },
+        {
+          "id": "P0033",
+          "name": "Exfiltrate via Alternative Route"
+        }
+      ],
+      "reason": "Leaving the site matches PACT exit routes under Exfiltration; vehicle switches, appearance changes, and flight from the jurisdiction are not covered."
+    },
+    {
+      "tactic_id": "TF0402",
+      "tactic_name": "Evidence Management",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Removal, destruction, or planting of physical evidence has no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0403",
+      "tactic_name": "Cover Reestablishment",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Post-attack return to a normal routine has no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0404",
+      "tactic_name": "Network Protection",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Post-attack protection of co-conspirators has no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0405",
+      "tactic_name": "Financial Disposition",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Movement of funds has no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0406",
+      "tactic_name": "After-Action Assessment",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "pact": [],
+      "reason": "The actor's own review of a completed attack has no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0407",
+      "tactic_name": "Counter-Forensics",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Defeating forensic reconstruction has no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0408",
+      "tactic_name": "Secondary Device / Re-attack Positioning",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Secondary devices and re-attack positioning have no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0409",
+      "tactic_name": "Attribution Declaration",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Claims of responsibility have no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0410",
+      "tactic_name": "Audience Amplification",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Publicising a completed attack has no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0411",
+      "tactic_name": "Symbolic Messaging",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Symbolic messaging has no PACT counterpart."
+    },
+    {
+      "tactic_id": "TF0412",
+      "tactic_name": "Coercive Demand",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "pact": [],
+      "reason": "Demands that leverage a completed attack have no PACT counterpart."
+    }
+  ],
+  "coverage": {
+    "facilities_tactics_by_confidence": {
+      "direct": [
+        "TF0102",
+        "TF0103",
+        "TF0108",
+        "TF0203",
+        "TF0204",
+        "TF0207",
+        "TF0304"
+      ],
+      "partial": [
+        "TF0104",
+        "TF0105",
+        "TF0106",
+        "TF0107",
+        "TF0110",
+        "TF0201",
+        "TF0202",
+        "TF0206",
+        "TF0208",
+        "TF0301",
+        "TF0302",
+        "TF0303",
+        "TF0305",
+        "TF0307",
+        "TF0309",
+        "TF0401"
+      ],
+      "none": [
+        "TF0101",
+        "TF0109",
+        "TF0205",
+        "TF0209",
+        "TF0306",
+        "TF0308",
+        "TF0402",
+        "TF0403",
+        "TF0404",
+        "TF0405",
+        "TF0406",
+        "TF0407",
+        "TF0408",
+        "TF0409",
+        "TF0410",
+        "TF0411",
+        "TF0412"
+      ]
+    },
+    "pact_tactics_with_no_counterpart": [
+      {
+        "id": "PT0004",
+        "name": "Persistence"
+      },
+      {
+        "id": "PT0005",
+        "name": "Privilege Escalation"
+      },
+      {
+        "id": "PT0006",
+        "name": "Credential Access"
+      },
+      {
+        "id": "PT0010",
+        "name": "Collection"
+      }
+    ],
+    "pact_techniques_with_no_counterpart": [
+      {
+        "id": "P0012",
+        "name": "Manipulate Physical Access Controls"
+      },
+      {
+        "id": "P0014",
+        "name": "Steal Valid Credentials"
+      },
+      {
+        "id": "P0025",
+        "name": "Block Camera View"
+      },
+      {
+        "id": "P0027",
+        "name": "Steal Hardware"
+      },
+      {
+        "id": "P0028",
+        "name": "Copy Information"
+      },
+      {
+        "id": "P0029",
+        "name": "Steal Information"
+      },
+      {
+        "id": "P0030",
+        "name": "Plant Surveillance Device"
+      },
+      {
+        "id": "P0034",
+        "name": "Espionage"
+      },
+      {
+        "id": "P0036",
+        "name": "Theft"
+      },
+      {
+        "id": "P0039",
+        "name": "Dumpster Diving"
+      }
+    ]
+  }
+}

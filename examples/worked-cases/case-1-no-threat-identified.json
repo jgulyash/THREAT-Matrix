@@ -1,0 +1,40 @@
+{
+  "record_version": "1.0.0",
+  "framework_version": "2.0.0",
+  "case_ref": "EXAMPLE-0001",
+  "recorded_on": "2026-03-02",
+  "assessor_role": "Corporate security, threat assessment team",
+  "subject_term": "person_of_concern",
+  "observations": [
+    {
+      "indicator_id": "IND-0103-05",
+      "observed_on": "2026-03-02",
+      "source": "Front desk supervisor, who took the call and logged it",
+      "corroboration": "single_source"
+    }
+  ],
+  "instance_factors": {
+    "target_focus": "unknown",
+    "pathway_stage": "unknown",
+    "means_in_hand": "unknown",
+    "tempo_trajectory": "unknown",
+    "proximity_access": "no_known_access",
+    "source_credibility": "high",
+    "basis": "The call was logged by the front desk at the time and the caller's identity and purpose were later confirmed by the events team, so the reporting is reliable. Nothing observed places the caller on the pathway to violence, so target focus, pathway stage, and tempo stay at unknown. No information about means was sought or needed. The caller has no access to the building beyond a visitor pass on the day of the event."
+  },
+  "protective_factors": [
+    "The questions have a confirmed, legitimate purpose: the caller is a new coordinator at an events vendor under contract for a scheduled appearance by the executive.",
+    "The vendor and the internal events team both confirmed the engagement and the caller's role.",
+    "The caller gave a name and a call-back number, and answered when called back."
+  ],
+  "assessment_summary": "FICTIONAL. A front desk supervisor reported that an unfamiliar caller asked which days a named executive is in the building and how visitors are admitted to the executive floor. The wording of IND-0103-05 fits the report: an inquiry to staff about access procedures and a person's routine. The team checked the call-back number, spoke with the internal events team, and confirmed the caller is a vendor coordinator arranging a scheduled appearance. The behavior is fully explained. No threat identified. The front desk was thanked for reporting and reminded to route schedule questions to the events team.",
+  "reassessments": [
+    {
+      "on": "2026-03-03",
+      "direction": "lowered",
+      "rationale": "Identity and purpose confirmed with the events vendor and the internal events team. The inquiry is ordinary event logistics. Concern lowered to none and the report closed."
+    }
+  ],
+  "disposition": "no_threat_identified",
+  "limitations_acknowledged": true
+}

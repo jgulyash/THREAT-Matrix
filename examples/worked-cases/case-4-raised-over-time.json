@@ -1,0 +1,63 @@
+{
+  "record_version": "1.0.0",
+  "framework_version": "2.0.0",
+  "case_ref": "EXAMPLE-0004",
+  "recorded_on": "2026-02-10",
+  "assessor_role": "Corporate security, threat assessment team",
+  "subject_term": "person_of_concern",
+  "observations": [
+    {
+      "indicator_id": "IND-0101-02",
+      "observed_on": "2026-02-09",
+      "source": "Former coworker, who was shown the material by the person of concern",
+      "corroboration": "single_source"
+    },
+    {
+      "indicator_id": "IND-0102-01",
+      "observed_on": "2026-02-09",
+      "source": "Same former coworker",
+      "corroboration": "single_source"
+    },
+    {
+      "indicator_id": "IND-0103-01",
+      "observed_on": "2026-03-03",
+      "source": "Residential security camera footage, two dates, reviewed by the team",
+      "corroboration": "corroborated"
+    },
+    {
+      "indicator_id": "IND-0107-02",
+      "observed_on": "2026-03-17",
+      "source": "Former coworker, in a second report; a second former coworker gave a matching account",
+      "corroboration": "corroborated"
+    }
+  ],
+  "instance_factors": {
+    "target_focus": "specific_target",
+    "pathway_stage": "research_planning",
+    "means_in_hand": "assessed_present",
+    "tempo_trajectory": "accelerating",
+    "proximity_access": "at_or_near_target",
+    "source_credibility": "moderate",
+    "basis": "All four observations concern one named executive, so target focus is specific_target. The latest statements name a method and a time window, which is planning behavior, so pathway stage is research_planning. Means in hand is assessed_present, and the basis is possession, not eligibility: a former coworker reports being shown a handgun by the person of concern on 2026-03-15 and being told it had just been bought. The team has not seen it, so the value is assessed_present and not confirmed_present. The gap between observations has shortened from weeks to days, so tempo is accelerating. Camera footage places the person outside the executive's residence on two dates, so proximity is at_or_near_target. Source credibility is moderate: the camera footage is a record, but the statements and the handgun rest on two former coworkers whose accounts match and who have not been tested further."
+  },
+  "protective_factors": [
+    "A sibling is in regular contact with the person of concern and is cooperating with the team.",
+    "The person has stable housing and has kept appointments with a former supervisor who reached out.",
+    "No benign explanation for the visits to the residence has been found; the team asked the sibling and the former supervisor and neither could offer one."
+  ],
+  "assessment_summary": "FICTIONAL. A former contractor whose engagement was ended by a named executive came to the team's attention when a former coworker reported being shown a folder of the executive's home address, family members' names, and daily routine, built from online research (IND-0101-02, IND-0102-01). At that point the team opened routine monitoring: one source, no approach, no statement of intent. Three weeks later residential camera footage showed the person outside the executive's residence on two dates with no apparent reason to be there (IND-0103-01). Two weeks after that, two former coworkers separately reported that the person had moved from general anger to naming a method and a time window (IND-0107-02), and one reported being shown a handgun. Concern was raised at each of those reviews. The team's judgment is that this is a substantive concern that warrants protective measures for the executive and notification to law enforcement, both now in place. The record sets out what was observed and why the team reads it this way; it does not predict what the person will do.",
+  "reassessments": [
+    {
+      "on": "2026-03-04",
+      "direction": "raised",
+      "rationale": "Camera footage places the person outside the executive's residence on two dates, with no known reason to be there. This corroborates directed interest beyond online research. Concern raised; review interval shortened and the executive's protective detail briefed."
+    },
+    {
+      "on": "2026-03-18",
+      "direction": "raised",
+      "rationale": "Two matching accounts that the person has named a method and a time window, and one firsthand account of a recently bought handgun. Observations are now days apart. Concern raised; protective measures put in place and law enforcement notified under the organization's policy."
+    }
+  ],
+  "disposition": "heightened_monitoring",
+  "limitations_acknowledged": true
+}

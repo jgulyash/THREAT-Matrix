@@ -1,0 +1,796 @@
+{
+  "crosswalk": "people-warning-behaviors",
+  "status": "DRAFT. Concept-level. Unreviewed. Not endorsed by any author or organization cited.",
+  "crosswalk_version": "0.1.0-draft",
+  "framework_file": "docs/data/framework.json",
+  "matrix": "person",
+  "checked_on": "2026-11-15",
+  "method": "Each People tactic was read (name, notes, indicator behavior sentences) and linked by concept name to published warning-behavior, pathway-stage, and investigative-theme concepts. No licensed instrument's items, scoring, or wording is reproduced. One-line concept glosses are this project's paraphrase.",
+  "confidence_values": {
+    "direct": "the tactic or one of its indicators describes the same behavior the concept names",
+    "partial": "related, narrower, broader, or at a different point in time",
+    "none": "no published concept in this set corresponds"
+  },
+  "sources": [
+    {
+      "key": "MELOY-2012",
+      "citation": "Meloy, J. R., Hoffmann, J., Guldimann, A., and James, D. (2012). The role of warning behaviors in threat assessment: An exploration and suggested typology. Behavioral Sciences and the Law, 30(3), 256 to 279.",
+      "url": "https://doi.org/10.1002/bsl.999",
+      "url_status": "blocked to scripts (403), check in browser",
+      "used_for": "Names of the eight warning behaviors."
+    },
+    {
+      "key": "CALHOUN-WESTON-2003",
+      "citation": "Calhoun, F. S., and Weston, S. W. (2003). Contemporary Threat Management: A Practical Guide for Identifying, Assessing, and Managing Individuals of Violent Intent. Specialized Training Services.",
+      "url": null,
+      "url_status": "book, no public link; edition and page references to be confirmed",
+      "used_for": "Names of the six pathway stages."
+    },
+    {
+      "key": "FEIN-VOSSEKUIL-1998",
+      "citation": "Fein, R. A., and Vossekuil, B. (1998). Protective Intelligence and Threat Assessment Investigations: A Guide for State and Local Law Enforcement Officials. National Institute of Justice.",
+      "url": "https://www.ojp.gov/pdffiles1/nij/179981.pdf",
+      "url_status": "verified (200)",
+      "used_for": "Public-domain statement of attack as the end of a discernible process of thinking and behavior."
+    },
+    {
+      "key": "NTAC-2018",
+      "citation": "U.S. Secret Service National Threat Assessment Center (2018). Enhancing School Safety Using a Threat Assessment Model: An Operational Guide for Preventing Targeted School Violence.",
+      "url": "https://www.secretservice.gov/sites/default/files/reports/2020-10/USSS_NTAC_Enhancing_School_Safety_Guide_7.11.18.pdf",
+      "url_status": "verified (200); theme names read from the document",
+      "used_for": "Names of the thirteen investigative themes."
+    }
+  ],
+  "concepts": [
+    {
+      "id": "wb.pathway",
+      "group": "warning_behavior",
+      "name": "Pathway",
+      "gloss": "Research, planning, preparation, or implementation of an attack"
+    },
+    {
+      "id": "wb.fixation",
+      "group": "warning_behavior",
+      "name": "Fixation",
+      "gloss": "Increasingly pathological preoccupation with a person or a cause"
+    },
+    {
+      "id": "wb.identification",
+      "group": "warning_behavior",
+      "name": "Identification",
+      "gloss": "Taking on a warrior or attacker identity, or close association with weapons or prior attackers"
+    },
+    {
+      "id": "wb.novel_aggression",
+      "group": "warning_behavior",
+      "name": "Novel aggression",
+      "gloss": "A first act of violence that appears unrelated to the planned attack, testing ability to act"
+    },
+    {
+      "id": "wb.energy_burst",
+      "group": "warning_behavior",
+      "name": "Energy burst",
+      "gloss": "A rise in the frequency or variety of activity related to the target shortly before an attack"
+    },
+    {
+      "id": "wb.leakage",
+      "group": "warning_behavior",
+      "name": "Leakage",
+      "gloss": "Communicating to a third party an intent to do harm to a target"
+    },
+    {
+      "id": "wb.last_resort",
+      "group": "warning_behavior",
+      "name": "Last resort",
+      "gloss": "Words or acts showing a felt time limit or a belief that no alternative to violence remains"
+    },
+    {
+      "id": "wb.directly_communicated_threat",
+      "group": "warning_behavior",
+      "name": "Directly communicated threat",
+      "gloss": "A threat conveyed to the target or to law enforcement before an attack"
+    },
+    {
+      "id": "pv.grievance",
+      "group": "pathway_stage",
+      "name": "Grievance",
+      "gloss": "A sense of injury or injustice attributed to a person or institution"
+    },
+    {
+      "id": "pv.ideation",
+      "group": "pathway_stage",
+      "name": "Ideation",
+      "gloss": "Coming to see violence as an answer to the grievance"
+    },
+    {
+      "id": "pv.research_and_planning",
+      "group": "pathway_stage",
+      "name": "Research and planning",
+      "gloss": "Gathering information on the target and working out how to act"
+    },
+    {
+      "id": "pv.preparation",
+      "group": "pathway_stage",
+      "name": "Preparation",
+      "gloss": "Acquiring means and making arrangements"
+    },
+    {
+      "id": "pv.breach",
+      "group": "pathway_stage",
+      "name": "Breach",
+      "gloss": "Getting past the security or distance that separates the subject from the target"
+    },
+    {
+      "id": "pv.attack",
+      "group": "pathway_stage",
+      "name": "Attack",
+      "gloss": "The act itself"
+    },
+    {
+      "id": "ntac.motives",
+      "group": "ntac_theme",
+      "name": "Motives"
+    },
+    {
+      "id": "ntac.communications",
+      "group": "ntac_theme",
+      "name": "Communications"
+    },
+    {
+      "id": "ntac.inappropriate_interests",
+      "group": "ntac_theme",
+      "name": "Inappropriate interests"
+    },
+    {
+      "id": "ntac.weapons_access",
+      "group": "ntac_theme",
+      "name": "Weapons access"
+    },
+    {
+      "id": "ntac.stressors",
+      "group": "ntac_theme",
+      "name": "Stressors"
+    },
+    {
+      "id": "ntac.emotional_and_developmental_issues",
+      "group": "ntac_theme",
+      "name": "Emotional and developmental issues"
+    },
+    {
+      "id": "ntac.desperation_or_despair",
+      "group": "ntac_theme",
+      "name": "Desperation or despair"
+    },
+    {
+      "id": "ntac.violence_as_an_option",
+      "group": "ntac_theme",
+      "name": "Violence as an option"
+    },
+    {
+      "id": "ntac.concerned_others",
+      "group": "ntac_theme",
+      "name": "Concerned others"
+    },
+    {
+      "id": "ntac.capacity_to_carry_out_an_attack",
+      "group": "ntac_theme",
+      "name": "Capacity to carry out an attack"
+    },
+    {
+      "id": "ntac.planning",
+      "group": "ntac_theme",
+      "name": "Planning"
+    },
+    {
+      "id": "ntac.consistency",
+      "group": "ntac_theme",
+      "name": "Consistency"
+    },
+    {
+      "id": "ntac.protective_factors",
+      "group": "ntac_theme",
+      "name": "Protective factors"
+    }
+  ],
+  "mappings": [
+    {
+      "tactic_id": "TM0101",
+      "tactic_name": "Target Selection",
+      "phase": "Target Development",
+      "confidence": "direct",
+      "concepts": [
+        "pv.grievance",
+        "pv.research_and_planning",
+        "wb.pathway",
+        "wb.fixation",
+        "wb.leakage",
+        "wb.identification",
+        "ntac.motives",
+        "ntac.communications",
+        "ntac.inappropriate_interests",
+        "ntac.planning"
+      ],
+      "reason": "Indicators state a grievance tied to a target, repeated return to it, intent voiced to third parties, and target research, which are the grievance stage, fixation, leakage, and pathway research by name.",
+      "indicator_links": [
+        {
+          "indicator_id": "IND-0101-01",
+          "concepts": [
+            "pv.grievance",
+            "ntac.motives"
+          ]
+        },
+        {
+          "indicator_id": "IND-0101-02",
+          "concepts": [
+            "wb.pathway",
+            "pv.research_and_planning",
+            "ntac.planning"
+          ]
+        },
+        {
+          "indicator_id": "IND-0101-03",
+          "concepts": [
+            "wb.fixation"
+          ]
+        },
+        {
+          "indicator_id": "IND-0101-04",
+          "concepts": [
+            "wb.leakage",
+            "ntac.communications"
+          ]
+        },
+        {
+          "indicator_id": "IND-0101-05",
+          "concepts": [
+            "wb.identification",
+            "ntac.inappropriate_interests"
+          ]
+        }
+      ]
+    },
+    {
+      "tactic_id": "TM0102",
+      "tactic_name": "Subject Profiling",
+      "phase": "Target Development",
+      "confidence": "direct",
+      "concepts": [
+        "wb.pathway",
+        "pv.research_and_planning",
+        "ntac.planning"
+      ],
+      "reason": "Compiling a profile of the target's life is target research in the research and planning stage.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0103",
+      "tactic_name": "Environmental Survey",
+      "phase": "Target Development",
+      "confidence": "direct",
+      "concepts": [
+        "wb.pathway",
+        "pv.research_and_planning",
+        "ntac.planning"
+      ],
+      "reason": "Visiting, photographing, and studying target locations is site research in the research and planning stage.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0104",
+      "tactic_name": "Capability Acquisition",
+      "phase": "Target Development",
+      "confidence": "direct",
+      "concepts": [
+        "wb.pathway",
+        "pv.preparation",
+        "ntac.weapons_access",
+        "ntac.capacity_to_carry_out_an_attack",
+        "ntac.planning"
+      ],
+      "reason": "Acquiring weapons, tools, and credentials is the preparation stage and bears on weapons access and capacity.",
+      "indicator_links": [
+        {
+          "indicator_id": "IND-0104-01",
+          "concepts": [
+            "pv.preparation",
+            "ntac.weapons_access"
+          ]
+        }
+      ]
+    },
+    {
+      "tactic_id": "TM0105",
+      "tactic_name": "Network Development",
+      "phase": "Target Development",
+      "confidence": "partial",
+      "concepts": [
+        "pv.preparation",
+        "wb.leakage",
+        "ntac.communications"
+      ],
+      "reason": "Recruiting helpers is preparation, and sharing the grievance narrative resembles leakage, but the published concepts describe a lone subject and have no network concept.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0106",
+      "tactic_name": "Cover Construction",
+      "phase": "Target Development",
+      "confidence": "partial",
+      "concepts": [
+        "wb.pathway",
+        "pv.preparation",
+        "ntac.planning"
+      ],
+      "reason": "Building a pretext or false identity is a preparation act; the published concepts do not name cover or deception.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0107",
+      "tactic_name": "Pathway Indicators",
+      "phase": "Target Development",
+      "confidence": "direct",
+      "concepts": [
+        "wb.pathway",
+        "wb.identification",
+        "wb.energy_burst",
+        "wb.last_resort",
+        "wb.novel_aggression",
+        "pv.ideation",
+        "pv.research_and_planning",
+        "pv.preparation",
+        "ntac.violence_as_an_option",
+        "ntac.inappropriate_interests",
+        "ntac.desperation_or_despair",
+        "ntac.planning"
+      ],
+      "reason": "This tactic gathers the pathway and warning-behavior signals; five of its indicators correspond one to one with a named concept.",
+      "indicator_links": [
+        {
+          "indicator_id": "IND-0107-01",
+          "concepts": [
+            "pv.ideation",
+            "ntac.violence_as_an_option"
+          ]
+        },
+        {
+          "indicator_id": "IND-0107-02",
+          "concepts": [
+            "pv.research_and_planning",
+            "ntac.planning"
+          ]
+        },
+        {
+          "indicator_id": "IND-0107-03",
+          "concepts": [
+            "pv.preparation",
+            "wb.pathway"
+          ]
+        },
+        {
+          "indicator_id": "IND-0107-04",
+          "concepts": [
+            "wb.last_resort",
+            "ntac.desperation_or_despair"
+          ]
+        },
+        {
+          "indicator_id": "IND-0107-05",
+          "concepts": [
+            "wb.identification",
+            "ntac.inappropriate_interests"
+          ]
+        },
+        {
+          "indicator_id": "IND-0107-06",
+          "concepts": [
+            "wb.novel_aggression"
+          ]
+        },
+        {
+          "indicator_id": "IND-0107-07",
+          "concepts": [
+            "wb.energy_burst"
+          ]
+        }
+      ]
+    },
+    {
+      "tactic_id": "TM0108",
+      "tactic_name": "Surveillance Detection Countermeasures",
+      "phase": "Target Development",
+      "confidence": "partial",
+      "concepts": [
+        "wb.pathway",
+        "pv.research_and_planning"
+      ],
+      "reason": "Checking for surveillance is planning tradecraft; no published concept names it, so the link is to pathway behavior in general.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0201",
+      "tactic_name": "Operational Rehearsal",
+      "phase": "Mobilization",
+      "confidence": "direct",
+      "concepts": [
+        "wb.pathway",
+        "pv.preparation",
+        "ntac.planning",
+        "ntac.capacity_to_carry_out_an_attack"
+      ],
+      "reason": "Dry runs and timing checks are preparation and are named as planning behavior in the public guides.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0202",
+      "tactic_name": "Concealment",
+      "phase": "Mobilization",
+      "confidence": "partial",
+      "concepts": [
+        "pv.preparation",
+        "ntac.consistency"
+      ],
+      "reason": "Hiding activity is not a named concept; the indicator on mismatch between stated and actual activity touches the consistency theme.",
+      "indicator_links": [
+        {
+          "indicator_id": "IND-0202-05",
+          "concepts": [
+            "ntac.consistency"
+          ]
+        }
+      ]
+    },
+    {
+      "tactic_id": "TM0203",
+      "tactic_name": "Perimeter Breach",
+      "phase": "Mobilization",
+      "confidence": "direct",
+      "concepts": [
+        "wb.pathway",
+        "pv.breach"
+      ],
+      "reason": "Getting through the outer security layer is the breach stage.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0204",
+      "tactic_name": "Zone Penetration",
+      "phase": "Mobilization",
+      "confidence": "direct",
+      "concepts": [
+        "wb.pathway",
+        "pv.breach"
+      ],
+      "reason": "Moving through inner security layers continues the breach stage.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0205",
+      "tactic_name": "Access Elevation",
+      "phase": "Mobilization",
+      "confidence": "direct",
+      "concepts": [
+        "wb.pathway",
+        "pv.breach"
+      ],
+      "reason": "Gaining access by deception is breach by another means.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0206",
+      "tactic_name": "Position Establishment",
+      "phase": "Mobilization",
+      "confidence": "partial",
+      "concepts": [
+        "wb.pathway",
+        "pv.breach"
+      ],
+      "reason": "Taking up position sits between breach and attack; the stage model does not separate it.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0207",
+      "tactic_name": "Operational Pause",
+      "phase": "Mobilization",
+      "confidence": "partial",
+      "concepts": [
+        "wb.pathway"
+      ],
+      "reason": "A deliberate stand-down has no named counterpart; the literature notes movement along the pathway is not always forward, which is the nearest idea.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0208",
+      "tactic_name": "Timing Exploitation",
+      "phase": "Mobilization",
+      "confidence": "partial",
+      "concepts": [
+        "wb.pathway",
+        "pv.research_and_planning",
+        "ntac.planning"
+      ],
+      "reason": "Choosing a time window is a planning act; no published concept names timing.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0209",
+      "tactic_name": "Partial Approach Rehearsal",
+      "phase": "Mobilization",
+      "confidence": "partial",
+      "concepts": [
+        "wb.pathway",
+        "pv.breach"
+      ],
+      "reason": "An approach that stops short is implementation behavior near the breach stage; the published concepts do not name aborted approaches.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0301",
+      "tactic_name": "Force Application",
+      "phase": "Execution",
+      "confidence": "direct",
+      "concepts": [
+        "pv.attack",
+        "wb.directly_communicated_threat"
+      ],
+      "reason": "Use of force is the attack stage; one indicator includes a declaration of intent at the scene, which only partly matches a directly communicated threat.",
+      "indicator_links": [
+        {
+          "indicator_id": "IND-0301-05",
+          "concepts": [
+            "wb.directly_communicated_threat"
+          ]
+        }
+      ]
+    },
+    {
+      "tactic_id": "TM0302",
+      "tactic_name": "Barrier Defeat",
+      "phase": "Execution",
+      "confidence": "direct",
+      "concepts": [
+        "pv.breach",
+        "pv.attack"
+      ],
+      "reason": "Forcing a barrier is breach carried out at the moment of attack.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0303",
+      "tactic_name": "Objective Seizure",
+      "phase": "Execution",
+      "confidence": "partial",
+      "concepts": [
+        "pv.attack"
+      ],
+      "reason": "Seizing a person or asset is an attack-stage act; the published concepts were framed around assault, not seizure.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0304",
+      "tactic_name": "Captive Control",
+      "phase": "Execution",
+      "confidence": "partial",
+      "concepts": [
+        "pv.attack"
+      ],
+      "reason": "Controlling captives is conduct during an attack; no published concept covers it.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0305",
+      "tactic_name": "Response Suppression",
+      "phase": "Execution",
+      "confidence": "partial",
+      "concepts": [
+        "wb.pathway",
+        "pv.research_and_planning",
+        "pv.preparation"
+      ],
+      "reason": "Its indicators are research into and acquisition of means to delay response, which are planning and preparation acts.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0306",
+      "tactic_name": "Bystander Management",
+      "phase": "Execution",
+      "confidence": "partial",
+      "concepts": [
+        "pv.attack"
+      ],
+      "reason": "Managing bystanders is conduct during an attack; no published concept covers it.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0307",
+      "tactic_name": "Counter-Surveillance",
+      "phase": "Execution",
+      "confidence": "partial",
+      "concepts": [
+        "pv.attack"
+      ],
+      "reason": "Watching for responders is conduct during an attack; no published concept covers it.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0308",
+      "tactic_name": "Operational Communication",
+      "phase": "Execution",
+      "confidence": "none",
+      "concepts": [],
+      "reason": "Coordination among several actors during execution has no counterpart in concepts framed around one subject.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0401",
+      "tactic_name": "Withdrawal",
+      "phase": "Aftermath",
+      "confidence": "partial",
+      "concepts": [
+        "wb.last_resort"
+      ],
+      "reason": "The pathway model ends at the attack. One indicator, making no attempt to leave, relates to last resort thinking.",
+      "indicator_links": [
+        {
+          "indicator_id": "IND-0401-03",
+          "concepts": [
+            "wb.last_resort"
+          ]
+        }
+      ]
+    },
+    {
+      "tactic_id": "TM0402",
+      "tactic_name": "Evidence Management",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "concepts": [],
+      "reason": "Post-attack evidence handling is outside the pathway model, which ends at the attack.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0403",
+      "tactic_name": "Cover Reestablishment",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "concepts": [],
+      "reason": "Post-attack return to routine is outside the pathway model.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0404",
+      "tactic_name": "Network Protection",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "concepts": [],
+      "reason": "Post-attack protection of accomplices is outside the pathway model.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0405",
+      "tactic_name": "Financial Disposition",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "concepts": [],
+      "reason": "Handling of proceeds is outside the pathway model.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0406",
+      "tactic_name": "After-Action Assessment",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "concepts": [],
+      "reason": "Review of a completed operation is outside the pathway model.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0407",
+      "tactic_name": "Attribution Declaration",
+      "phase": "Aftermath",
+      "confidence": "partial",
+      "concepts": [
+        "wb.leakage",
+        "ntac.communications"
+      ],
+      "reason": "Claims after the fact are not leakage as published, which is communication before an attack; material prepared in advance for later release is the nearest link.",
+      "indicator_links": [
+        {
+          "indicator_id": "IND-0407-03",
+          "concepts": [
+            "wb.leakage"
+          ]
+        }
+      ]
+    },
+    {
+      "tactic_id": "TM0408",
+      "tactic_name": "Audience Amplification",
+      "phase": "Aftermath",
+      "confidence": "none",
+      "concepts": [],
+      "reason": "Spreading a claim after an attack has no counterpart.",
+      "indicator_links": []
+    },
+    {
+      "tactic_id": "TM0409",
+      "tactic_name": "Coercive Leverage",
+      "phase": "Aftermath",
+      "confidence": "partial",
+      "concepts": [
+        "wb.directly_communicated_threat"
+      ],
+      "reason": "Threats and demands sent to families or decision-makers are direct threats, but they follow a seizure rather than precede an attack.",
+      "indicator_links": [
+        {
+          "indicator_id": "IND-0409-04",
+          "concepts": [
+            "wb.directly_communicated_threat"
+          ]
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "tactics_by_confidence": {
+      "direct": [
+        "TM0101",
+        "TM0102",
+        "TM0103",
+        "TM0104",
+        "TM0107",
+        "TM0201",
+        "TM0203",
+        "TM0204",
+        "TM0205",
+        "TM0301",
+        "TM0302"
+      ],
+      "partial": [
+        "TM0105",
+        "TM0106",
+        "TM0108",
+        "TM0202",
+        "TM0206",
+        "TM0207",
+        "TM0208",
+        "TM0209",
+        "TM0303",
+        "TM0304",
+        "TM0305",
+        "TM0306",
+        "TM0307",
+        "TM0401",
+        "TM0407",
+        "TM0409"
+      ],
+      "none": [
+        "TM0308",
+        "TM0402",
+        "TM0403",
+        "TM0404",
+        "TM0405",
+        "TM0406",
+        "TM0408"
+      ]
+    },
+    "concepts_with_no_tactic": [
+      "ntac.stressors",
+      "ntac.emotional_and_developmental_issues",
+      "ntac.concerned_others",
+      "ntac.protective_factors"
+    ],
+    "concepts_with_partial_links_only": [
+      "ntac.consistency"
+    ],
+    "concepts_named_by_a_single_indicator_only": [
+      "wb.fixation",
+      "wb.novel_aggression",
+      "wb.energy_burst"
+    ],
+    "concepts_with_loose_indicator_links_only": [
+      "wb.novel_aggression",
+      "wb.directly_communicated_threat",
+      "ntac.consistency"
+    ]
+  }
+}

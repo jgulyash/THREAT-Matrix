@@ -1,0 +1,52 @@
+{
+  "record_version": "1.0.0",
+  "framework_version": "2.0.0",
+  "case_ref": "EXAMPLE-0002",
+  "recorded_on": "2026-04-14",
+  "assessor_role": "Human resources and corporate security, joint review",
+  "subject_term": "person_of_concern",
+  "observations": [
+    {
+      "indicator_id": "IND-0101-01",
+      "observed_on": "2026-04-14",
+      "source": "Coworker who was present, reporting to human resources the same day",
+      "corroboration": "single_source"
+    },
+    {
+      "indicator_id": "IND-0101-04",
+      "observed_on": "2026-04-14",
+      "source": "Same coworker; the person of concern later confirmed the words in interview",
+      "corroboration": "corroborated"
+    }
+  ],
+  "instance_factors": {
+    "target_focus": "specific_target",
+    "pathway_stage": "grievance",
+    "means_in_hand": "unknown",
+    "tempo_trajectory": "stalling",
+    "proximity_access": "has_access",
+    "source_credibility": "high",
+    "basis": "The remark named one supervisor, so target focus is specific_target. The behavior is a stated grievance and nothing beyond it, so pathway stage is grievance. Means in hand is unknown: the team has no information that the person possesses or has acquired any means, and did not go looking for it on the strength of one remark. The fact that an adult could lawfully acquire something is not means in hand and is not recorded. There was one remark and none since, so tempo is stalling. The person works on the same floor as the supervisor, so has_access describes the setting; it is not a behavior. The coworker's account and the person's own account match, so the reporting is reliable."
+  },
+  "protective_factors": [
+    "In interview the person said the remark was made in anger straight after a difficult performance review, said there was no intention behind it, and apologized without being asked.",
+    "No history of similar remarks or conduct concerns in eleven years of employment.",
+    "The person asked how to file a formal appeal of the review and has since filed it.",
+    "The coworker who reported it described the remark as out of character."
+  ],
+  "assessment_summary": "FICTIONAL. Minutes after a difficult performance review, an employee told a coworker that the supervisor 'will pay for this'. The coworker reported it to human resources the same day. Two indicators fit the words used: a grievance tied to a named individual (IND-0101-01) and a statement about that individual to a third party (IND-0101-04). The team interviewed the person the next morning. The person confirmed the words, explained them as anger in the moment, apologized, and asked about the appeal process. There is no plan, no further statement, and no other behavior of concern. The team reads this as a transient expression of anger, not a substantive threat. No further action beyond the routine check below. The supervisor was informed of the outcome.",
+  "reassessments": [
+    {
+      "on": "2026-04-15",
+      "direction": "lowered",
+      "rationale": "Interview held. The person confirmed the remark, gave a credible account of anger in the moment, apologized, and asked about the appeal process. No plan or intent found. Assessed as transient."
+    },
+    {
+      "on": "2026-04-29",
+      "direction": "unchanged",
+      "rationale": "Routine two-week check with human resources and the supervisor. No further remarks or incidents. The appeal is proceeding through the normal process. Assessment stands."
+    }
+  ],
+  "disposition": "transient_no_further_action",
+  "limitations_acknowledged": true
+}

@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jgulyash.github.io/THREAT-Matrix/data/case-record.schema.json",
+  "title": "THREAT Matrix score-free case record",
+  "version": "1.0.0",
+  "description": "A score-free case record that uses the THREAT Matrix vocabulary. This record documents observations and professional judgment. The vocabulary does not predict violence, and tagging an observation with an indicator says only that a described behavior was reported, not that harm is likely. A record is not grounds for adverse action by itself. Assessment of an individual must be individualized: it rests on the facts of the case, the context, the protective factors, and the judgment of a trained team, not on the vocabulary. The vocabulary's label \"threat actor\" is rendered \"person of concern\" for anyone who has not been assessed as posing a threat, and this record uses that term throughout. The record holds no band, weight, score, or priority, and it is closed at every level so that one cannot be added. The framework publishes this contract and fictional examples only; real records belong in the organization's own case system.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_version",
+    "framework_version",
+    "case_ref",
+    "recorded_on",
+    "assessor_role",
+    "subject_term",
+    "observations",
+    "instance_factors",
+    "protective_factors",
+    "assessment_summary",
+    "disposition",
+    "limitations_acknowledged"
+  ],
+  "properties": {
+    "record_version": {
+      "const": "1.0.0",
+      "description": "Version of this record contract."
+    },
+    "framework_version": {
+      "type": "string",
+      "minLength": 5,
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?![\\s\\S])",
+      "description": "Content version of framework.json whose indicator IDs and wording this record refers to, for example 2.0.0."
+    },
+    "case_ref": {
+      "$ref": "#/$defs/text",
+      "description": "Reference assigned by the organization. No personal data is required and none should be placed here."
+    },
+    "recorded_on": {
+      "$ref": "#/$defs/date",
+      "description": "Date the record was first written."
+    },
+    "assessor_role": {
+      "$ref": "#/$defs/text",
+      "description": "Role or team that made the assessment. A name is not required."
+    },
+    "subject_term": {
+      "const": "person_of_concern",
+      "description": "The term this record uses for the individual. Fixed: the vocabulary's label \"threat actor\" is rendered \"person of concern\" in a case record about someone who has not been assessed as posing a threat."
+    },
+    "observations": {
+      "type": "array",
+      "description": "Behaviors that were reported or observed, each tagged with the indicator whose wording fits. A case usually has several. An empty list is allowed when a report was received and nothing in the vocabulary fit; say so in assessment_summary.",
+      "items": { "$ref": "#/$defs/observation" }
+    },
+    "instance_factors": { "$ref": "#/$defs/instance_factors" },
+    "protective_factors": {
+      "type": "array",
+      "description": "Protective and stabilizing factors and benign explanations considered, one per item. Required so that the question is always asked. An empty list means none were identified at the time of writing, not that none exist.",
+      "items": { "$ref": "#/$defs/text" }
+    },
+    "assessment_summary": {
+      "$ref": "#/$defs/text",
+      "description": "The assessor's professional judgment in plain words: what was reported, what was found, what it is taken to mean, and what remains unknown."
+    },
+    "reassessments": {
+      "type": "array",
+      "description": "Dated reassessments, oldest first. Concern can go up, go down, or stay the same, and each entry says why.",
+      "items": { "$ref": "#/$defs/reassessment" }
+    },
+    "disposition": {
+      "type": "string",
+      "enum": [
+        "no_threat_identified",
+        "transient_no_further_action",
+        "active_monitoring",
+        "heightened_monitoring",
+        "referred_out",
+        "disrupted_by_interdiction",
+        "closed_benign",
+        "closed_resolved"
+      ],
+      "description": "Current case-management outcome. no_threat_identified: the report was assessed and no threat was found. transient_no_further_action: an expression of anger or frustration without sustained intent, resolved by explanation or apology, needing no further action. active_monitoring: the case is open and reviewed on a routine schedule. heightened_monitoring: the case is open with closer review or added safety measures. referred_out: passed to another body, such as law enforcement or a clinical service. disrupted_by_interdiction: an intervention removed the means, the access, or the opportunity. closed_benign: closed after a benign explanation was established. closed_resolved: closed after the underlying concern was resolved."
+    },
+    "limitations_acknowledged": {
+      "const": true,
+      "description": "Must be true. The assessor confirms that the vocabulary is not predictive, that this record is not a risk score, and that no adverse action rests on this record alone."
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "date": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 10,
+      "format": "date",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(?![\\s\\S])",
+      "description": "Calendar date, YYYY-MM-DD."
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["indicator_id", "observed_on", "source", "corroboration"],
+      "properties": {
+        "indicator_id": {
+          "type": "string",
+          "minLength": 11,
+          "maxLength": 12,
+          "pattern": "^IND-[FOI]?[0-9]{4}-[0-9]{2}(?![\\s\\S])",
+          "description": "ID of the indicator in framework.json whose behavior wording fits what was observed. The schema checks the form of the ID; whether it exists in the stated framework_version is checked against the data."
+        },
+        "observed_on": {
+          "description": "Date the behavior occurred or was reported, or the word unknown.",
+          "oneOf": [
+            { "$ref": "#/$defs/date" },
+            { "const": "unknown" }
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/text",
+          "description": "Where the information came from, described by role or record type."
+        },
+        "corroboration": {
+          "type": "string",
+          "enum": ["uncorroborated", "single_source", "corroborated"],
+          "description": "uncorroborated: the source could not be identified or checked. single_source: one identified source, not yet confirmed by another. corroborated: confirmed by a second independent source or by a record."
+        }
+      }
+    },
+    "instance_factors": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Six descriptive factors about this case at the time of the latest entry, plus the basis for them. They describe what is known. They are not combined into any number or rank. unknown is always an acceptable answer and never counts for or against the person of concern.",
+      "required": [
+        "target_focus",
+        "pathway_stage",
+        "means_in_hand",
+        "tempo_trajectory",
+        "proximity_access",
+        "source_credibility",
+        "basis"
+      ],
+      "properties": {
+        "target_focus": {
+          "type": "string",
+          "enum": ["diffuse", "narrowing", "specific_target", "unknown"],
+          "description": "How far the behavior is directed at a target. diffuse: no particular target. narrowing: a set of candidates or an associated place. specific_target: one person, group, or site. unknown: cannot be assessed."
+        },
+        "pathway_stage": {
+          "type": "string",
+          "enum": [
+            "grievance",
+            "ideation",
+            "research_planning",
+            "preparation",
+            "breach_or_probing",
+            "attack",
+            "aftermath",
+            "unknown"
+          ],
+          "description": "Where the observed behavior sits on the pathway to violence, as assessed for this case. unknown when the behavior does not place the person on the pathway or cannot be assessed."
+        },
+        "means_in_hand": {
+          "type": "string",
+          "enum": ["unknown", "assessed_absent", "partial", "assessed_present", "confirmed_present"],
+          "description": "Whether the person of concern actually possesses or has acquired the means now. Lawful ability to acquire something is not means in hand and must not be recorded as such. assessed_absent: the team judges, on stated information, that the means are not held. partial: some but not all of the means are held. assessed_present: the team judges the means are held, on credible information, though not directly observed. confirmed_present: the means were directly observed or recovered. unknown is the default."
+        },
+        "tempo_trajectory": {
+          "type": "string",
+          "enum": ["accelerating", "steady", "stalling", "unknown"],
+          "description": "Direction and rate of change in the behavior across observations."
+        },
+        "proximity_access": {
+          "type": "string",
+          "enum": ["no_known_access", "seeking_access", "has_access", "at_or_near_target", "unknown"],
+          "description": "The person's access to the target as a state. A coworker has access without seeking it; having access is a fact about the setting, not a behavior of concern in itself."
+        },
+        "source_credibility": {
+          "type": "string",
+          "enum": ["high", "moderate", "low", "unknown"],
+          "description": "Reliability of the reporting behind this record. It describes the reporting, not the person of concern."
+        },
+        "basis": {
+          "$ref": "#/$defs/text",
+          "description": "The facts each factor value rests on."
+        }
+      }
+    },
+    "reassessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["on", "direction", "rationale"],
+      "properties": {
+        "on": {
+          "$ref": "#/$defs/date",
+          "description": "Date of the reassessment."
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["raised", "lowered", "unchanged"],
+          "description": "Whether the team's level of concern went up, went down, or stayed the same compared with the previous entry."
+        },
+        "rationale": {
+          "$ref": "#/$defs/text",
+          "description": "What changed or did not change, and why the team reads it that way."
+        }
+      }
+    }
+  }
+}

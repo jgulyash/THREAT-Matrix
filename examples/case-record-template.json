@@ -1,0 +1,30 @@
+{
+  "record_version": "1.0.0",
+  "framework_version": "2.0.0",
+  "case_ref": "REPLACE-WITH-YOUR-CASE-REFERENCE",
+  "recorded_on": "2026-01-01",
+  "assessor_role": "REPLACE: role or team that made the assessment (a name is not required)",
+  "subject_term": "person_of_concern",
+  "observations": [
+    {
+      "indicator_id": "IND-0101-01",
+      "observed_on": "unknown",
+      "source": "REPLACE: where the information came from, by role or record type",
+      "corroboration": "uncorroborated"
+    }
+  ],
+  "instance_factors": {
+    "target_focus": "unknown",
+    "pathway_stage": "unknown",
+    "means_in_hand": "unknown",
+    "tempo_trajectory": "unknown",
+    "proximity_access": "unknown",
+    "source_credibility": "unknown",
+    "basis": "REPLACE: the facts each factor value rests on. Leave a factor at unknown when there is no information."
+  },
+  "protective_factors": [],
+  "assessment_summary": "REPLACE: your professional judgment in plain words. This template is a placeholder and describes no case. IND-0101-01 is a real indicator ID used only to show the format; replace it with the indicator whose wording fits what was observed.",
+  "reassessments": [],
+  "disposition": "active_monitoring",
+  "limitations_acknowledged": true
+}
