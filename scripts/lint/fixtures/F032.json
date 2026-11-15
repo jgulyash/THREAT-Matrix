@@ -1,0 +1,19 @@
+{
+  "id": "F032",
+  "expected_check": "V26",
+  "expected_message": "requires deprecated_in",
+  "audit_findings": "F03 S04 C06",
+  "description": "Mark an indicator deprecated without deprecated_in.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].lifecycle_state",
+      "value": "deprecated"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].deprecation_reason",
+      "value": "Fixture."
+    }
+  ]
+}

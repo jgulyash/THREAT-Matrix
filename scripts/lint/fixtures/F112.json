@@ -1,0 +1,20 @@
+{
+  "id": "F112",
+  "target": "overlay",
+  "expected_check": "V14",
+  "expected_message": "deviates",
+  "audit_findings": "S02",
+  "description": "Nudge a weight 6.5 to 6.49 and relabel the band high; the composite still rounds to 6.50.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-I0303-02.type_weight",
+      "value": 6.49
+    },
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-I0303-02.type_band",
+      "value": "high"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "F118",
+  "target": "overlay",
+  "expected_check": "V20",
+  "expected_message": "derivation rule",
+  "description": "Hand-set an axis_confidence value that the derivation rule does not give.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-0101-01.axis_confidence.blast_radius_potential",
+      "value": "inferred"
+    }
+  ]
+}

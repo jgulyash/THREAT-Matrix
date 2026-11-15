@@ -1,0 +1,15 @@
+{
+  "id": "F113",
+  "target": "overlay",
+  "expected_check": "V14",
+  "expected_message": "not numbers from 0 to 10",
+  "audit_findings": "S01",
+  "description": "Set a negative axis value.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-0101-01.axes.impact_potential",
+      "value": -5.0
+    }
+  ]
+}

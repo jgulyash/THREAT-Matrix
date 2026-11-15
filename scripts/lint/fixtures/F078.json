@@ -1,0 +1,14 @@
+{
+  "id": "F078",
+  "expected_check": "V33",
+  "expected_message": "refers to the object itself",
+  "audit_findings": "F08",
+  "description": "Make a response protocol coordinate with itself.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].response_protocols.[id=RP-0101-01].coordinates_with",
+      "value": "RP-0101-01"
+    }
+  ]
+}

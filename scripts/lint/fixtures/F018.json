@@ -1,0 +1,13 @@
+{
+  "id": "F018",
+  "expected_check": "V17",
+  "expected_message": "missing or invalid",
+  "description": "Set phase_4_track to a value outside evasion and attribution.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0401].phase_4_track",
+      "value": "retired"
+    }
+  ]
+}

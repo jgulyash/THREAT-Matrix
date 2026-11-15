@@ -1,0 +1,14 @@
+{
+  "id": "F104",
+  "expected_check": "V40",
+  "expected_message": "whitespace",
+  "audit_findings": "F11",
+  "description": "Give an indicator behavior a leading space.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].behavior",
+      "value": " Fixture behavior"
+    }
+  ]
+}

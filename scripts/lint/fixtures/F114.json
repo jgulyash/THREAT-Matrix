@@ -1,0 +1,14 @@
+{
+  "id": "F114",
+  "target": "overlay",
+  "expected_check": "V15",
+  "expected_message": "is not high or critical",
+  "description": "Set a floor value outside high and critical.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "indicator_scores.IND-0101-01.type_band_floor",
+      "value": "low"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "F134",
+  "target": "overlay",
+  "expected_check": "V46",
+  "description": "Add an unknown key inside the rubric; only the closed overlay schema rejects it.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "rubric.extra_note",
+      "value": "x"
+    }
+  ]
+}

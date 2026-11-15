@@ -1,239 +1,178 @@
+import { Fragment, type CSSProperties } from 'react';
 import type { Tactic } from '../types/framework';
-import { PHASE_SHORT, STUB, MATRICES, MATRIX_LABELS, MODALITY_LABELS, tacticMatchesFilters } from '../lib/constants';
-import { LIVE_MATRICES, type LiveMatrix } from '../lib/route';
-import type { TacticsByMatrix } from '../App';
-
-// Column identity colors come from the shared MATRICES descriptor.
-const MATRIX_COL: Record<string, string> = Object.fromEntries(
-  MATRICES.map((m) => [m.key, m.color])
-);
+import {
+  PHASE_NAMES,
+  PHASE_SHORT,
+  MATRICES,
+  MATRIX_LABELS,
+  MODALITY_LABELS,
+  TRACK_LABELS,
+  tacticMatchesFilters,
+  type MatrixKey,
+} from '../lib/constants';
+import { getMatrix } from '../lib/data';
+import { hrefFor, pathOf, type Route } from '../lib/route';
+import { Go, useFilters } from '../lib/nav';
+import { DraftTag } from './DraftTag';
 
 interface HeatMapCellProps {
   tactics: Tactic[];
+  matrix: MatrixKey;
   col: string;
+  phase: 1 | 2 | 3 | 4;
   track?: 'flight' | 'claim';
   isSelected: boolean;
-  onClick: () => void;
-  modalityFilter: string;
-  actorFilter: string;
+  showAll: boolean;
 }
 
-function HeatMapCell({ tactics, col, track, isSelected, onClick, modalityFilter, actorFilter }: HeatMapCellProps) {
-  const displayed = tactics.filter((t) => tacticMatchesFilters(t, modalityFilter, actorFilter));
+function HeatMapCell({ tactics, matrix, col, phase, track, isSelected, showAll }: HeatMapCellProps) {
+  const { mode, actor } = useFilters();
+  const displayed = tactics.filter((t) => tacticMatchesFilters(t, mode, actor));
   const count = displayed.length;
   const cls = track === 'flight' ? 'flight-cell' : track === 'claim' ? 'claim-cell' : '';
-  const limit = track ? 2 : 3;
+  const limit = showAll ? displayed.length : track ? 2 : 3;
+  const where = `${MATRIX_LABELS[matrix]}, ${PHASE_NAMES[phase]}${track ? ' ' + TRACK_LABELS[track] : ''}`;
   return (
-    <div
+    <Go
+      to={`/${matrix}/phase/${phase}${track ? '/' + track : ''}`}
       className={`hm-cell${cls ? ' ' + cls : ''}${isSelected ? ' selected' : ''}`}
-      onClick={onClick}
+      aria-label={`${where}: ${count} ${count === 1 ? 'tactic' : 'tactics'}`}
+      aria-current={isSelected ? 'true' : undefined}
     >
-      {track && (
-        <div className={`track-label ${track}`}>
-          {track === 'flight' ? 'Evade' : 'Claim'}
-        </div>
-      )}
+      {track && <div className={`track-label ${track}`}>{TRACK_LABELS[track]}</div>}
       <div className={`hm-count ${col}`}>{count}</div>
       {count > 0 && (
-        <div className="hm-names">
+        <div className={`hm-names${showAll ? ' all' : ''}`}>
           {displayed.slice(0, limit).map((t) => (
-            <div key={t.id} className="hm-name">{t.name}</div>
+            <div key={t.id} className="hm-name">
+              {t.name}
+              {t.lifecycle_state && t.lifecycle_state !== 'active' ? ` (${t.lifecycle_state})` : ''}
+            </div>
           ))}
           {count > limit && <div className="hm-overflow">+{count - limit} more</div>}
         </div>
       )}
-    </div>
-  );
-}
-
-interface StubCellProps {
-  count: number;
-  version: string;
-  track?: 'flight' | 'claim';
-}
-
-function StubCell({ count, version, track }: StubCellProps) {
-  const col = track ? 'amber' : 'blue';
-  const ex = track === 'flight' ? 'phase4-stub-flight' : track === 'claim' ? 'phase4-stub-claim' : '';
-  return (
-    <div className={`hm-cell stub${ex ? ' ' + ex : ''}`}>
-      {track && (
-        <div className={`track-label ${track}`} style={{ opacity: 0.5 }}>
-          {track === 'flight' ? 'Evade' : 'Claim'}
-        </div>
-      )}
-      <div className={`hm-count ${col}`}>{count}</div>
-      <div className="stub-planned">{version} Planned</div>
-    </div>
+    </Go>
   );
 }
 
 interface GridProps {
-  tacticsByMatrix: TacticsByMatrix;
-  navigate: (path: string) => void;
-  modalityFilter: string;
-  actorFilter: string;
+  // null shows every matrix side by side; a key scopes the grid to that matrix.
+  scope: MatrixKey | null;
   compact: boolean;
-  selectedMatrix: LiveMatrix | null;
-  selectedPhase: number | null;
-  selectedTrack: string | null;
-  selectedTacticId: string | null;
+  route: Route;
+  selectedPhase?: number | null;
+  selectedTrack?: string | null;
+  selectedTacticId?: string | null;
 }
 
 export function HeatMapGrid({
-  tacticsByMatrix,
-  navigate,
-  modalityFilter,
-  actorFilter,
+  scope,
   compact,
-  selectedMatrix,
-  selectedPhase,
-  selectedTrack,
-  selectedTacticId,
+  route,
+  selectedPhase = null,
+  selectedTrack = null,
+  selectedTacticId = null,
 }: GridProps) {
-  const pc = '140px';
-  const gc = `${pc} 1fr 1fr 1fr 1fr`;
-
-  // Live column counts derive from the data; stub totals from the STUB plan.
-  const liveCount = (m: LiveMatrix) => {
-    const tbp = tacticsByMatrix[m];
-    return tbp[1].length + tbp[2].length + tbp[3].length + tbp[4].flight.length + tbp[4].claim.length;
-  };
-  const stubCount = (m: keyof typeof STUB) =>
-    Object.values(STUB[m].phases).reduce((n, v) => n + v, 0) + STUB[m].flight + STUB[m].claim;
+  const { mode, actor } = useFilters();
+  const cols = MATRICES.filter((m) => !scope || m.key === scope);
+  const gridVars = { '--hm-cols': cols.length } as CSSProperties;
 
   // Filter transparency: when a filter is active, show how much is hidden so a
-  // reduced heat map never reads as missing/deleted data.
-  const filterActive = !!modalityFilter || !!actorFilter;
-  const shownCount = (m: LiveMatrix) => {
-    const tbp = tacticsByMatrix[m];
-    const all = [...tbp[1], ...tbp[2], ...tbp[3], ...tbp[4].flight, ...tbp[4].claim];
-    return all.filter((t) => tacticMatchesFilters(t, modalityFilter, actorFilter)).length;
-  };
-  const filterLabel = [modalityFilter ? MODALITY_LABELS[modalityFilter] : null, actorFilter || null]
-    .filter(Boolean)
-    .join(' + ');
+  // reduced heat map never reads as missing data.
+  const filterActive = !!mode || !!actor;
+  const shownCount = (m: MatrixKey) =>
+    getMatrix(m).tactics.filter((t) => tacticMatchesFilters(t, mode, actor)).length;
+  const filterLabel = [mode ? MODALITY_LABELS[mode] : null, actor || null].filter(Boolean).join(' + ');
 
-  const phaseSelected = (m: LiveMatrix, phase: 1 | 2 | 3) => {
-    if (selectedMatrix !== m) return false;
+  const phaseSelected = (m: MatrixKey, phase: 1 | 2 | 3) => {
+    if (scope !== m) return false;
     return selectedTacticId
-      ? tacticsByMatrix[m][phase].some((t) => t.id === selectedTacticId)
+      ? getMatrix(m).byPhase[phase].some((t) => t.id === selectedTacticId)
       : selectedPhase === phase;
   };
 
-  const trackSelected = (m: LiveMatrix, track: 'flight' | 'claim') => {
-    if (selectedMatrix !== m) return false;
-    const tactics = tacticsByMatrix[m][4][track];
+  const trackSelected = (m: MatrixKey, track: 'flight' | 'claim') => {
+    if (scope !== m) return false;
+    const tactics = getMatrix(m).byPhase[4][track];
     return (
       (!!selectedTacticId && tactics.some((t) => t.id === selectedTacticId)) ||
-      (!selectedTacticId && selectedPhase === 4 && selectedTrack === track)
+      (!selectedTacticId && selectedPhase === 4 && (selectedTrack === track || selectedTrack === null))
     );
   };
 
   return (
-    <div className="hm-wrap">
+    <div className={`hm-wrap${scope ? ' scoped' : ''}`}>
       {filterActive && (
         <div className="hm-filter-note">
           <span className="hm-filter-tag">⌖ Filtered · {filterLabel}</span>
           <span className="hm-filter-detail">
-            {LIVE_MATRICES.map((m, i) => (
-              <span key={m}>
+            {cols.map((m, i) => (
+              <span key={m.key}>
                 {i > 0 ? ' · ' : ''}
-                {MATRIX_LABELS[m]} <strong>{shownCount(m)}</strong> of {liveCount(m)}
+                {m.label} <strong>{shownCount(m.key)}</strong> of {getMatrix(m.key).tactics.length}
               </span>
             ))}
-            {' — clear the filter to see all tactics'}
+            {'. '}
+            <a href={hrefFor(pathOf(route))}>Clear the filter</a> to see all tactics.
           </span>
         </div>
       )}
-      <div className="hm-header-row" style={{ gridTemplateColumns: gc }}>
-        <div className="hm-col-hdr phase-col">Phase</div>
-        {MATRICES.map((m) => (
-          <div key={m.key} className={`hm-col-hdr ${m.color}`}>
-            {compact
-              ? m.label
-              : `${m.label} · ${m.version === null ? liveCount(m.key as LiveMatrix) : stubCount(m.key as keyof typeof STUB)}`}
+      <div className="hm-scroll">
+        <div className="hm-grid" style={gridVars}>
+          <div className="hm-header-row">
+            <div className="hm-col-hdr phase-col">Phase</div>
+            {cols.map((m) => (
+              <div key={m.key} className={`hm-col-hdr ${m.color}`}>
+                {compact ? m.label : `${m.label} · ${getMatrix(m.key).tactics.length}`}
+                <DraftTag matrix={m.key} />
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div className="hm-rows">
-        {([1, 2, 3] as const).map((phase) => (
-          <div key={phase} className="hm-row" style={{ gridTemplateColumns: gc }}>
-            <div className="hm-phase-cell">
-              <div className="hm-phase-name">{PHASE_SHORT[phase]}</div>
-            </div>
-            {MATRICES.map((m) =>
-              m.version === null ? (
-                <HeatMapCell
-                  key={m.key}
-                  tactics={tacticsByMatrix[m.key as LiveMatrix][phase]}
-                  col={MATRIX_COL[m.key as LiveMatrix]}
-                  isSelected={phaseSelected(m.key as LiveMatrix, phase)}
-                  onClick={() => navigate(`/${m.key}/phase/${phase}`)}
-                  modalityFilter={modalityFilter}
-                  actorFilter={actorFilter}
-                />
-              ) : (
-                <StubCell
-                  key={m.key}
-                  count={STUB[m.key as keyof typeof STUB].phases[phase]}
-                  version={m.version}
-                />
-              )
-            )}
-          </div>
-        ))}
-        <div className="phase4-row">
-          <div className="phase4-phase-cell" style={{ width: '140px' }}>
-            <div className="hm-phase-name">{PHASE_SHORT[4]}</div>
-          </div>
-          <div className="phase4-content">
-            <div className="phase4-sub-row">
-              {MATRICES.map((m) =>
-                m.version === null ? (
+          <div className="hm-rows">
+            {([1, 2, 3] as const).map((phase) => (
+              <div key={phase} className="hm-row">
+                <div className="hm-phase-cell">
+                  <div className="hm-phase-name">{PHASE_SHORT[phase]}</div>
+                </div>
+                {cols.map((m) => (
                   <HeatMapCell
                     key={m.key}
-                    tactics={tacticsByMatrix[m.key as LiveMatrix][4].flight}
-                    col={MATRIX_COL[m.key as LiveMatrix]}
-                    track="flight"
-                    isSelected={trackSelected(m.key as LiveMatrix, 'flight')}
-                    onClick={() => navigate(`/${m.key}/phase/4/flight`)}
-                    modalityFilter={modalityFilter}
-                    actorFilter={actorFilter}
+                    tactics={getMatrix(m.key).byPhase[phase]}
+                    matrix={m.key}
+                    col={m.color}
+                    phase={phase}
+                    isSelected={phaseSelected(m.key, phase)}
+                    showAll={!!scope}
                   />
-                ) : (
-                  <StubCell
-                    key={m.key}
-                    count={STUB[m.key as keyof typeof STUB].flight}
-                    version={m.version}
-                    track="flight"
-                  />
-                )
-              )}
-            </div>
-            <div className="phase4-divider" />
-            <div className="phase4-sub-row">
-              {MATRICES.map((m) =>
-                m.version === null ? (
-                  <HeatMapCell
-                    key={m.key}
-                    tactics={tacticsByMatrix[m.key as LiveMatrix][4].claim}
-                    col={MATRIX_COL[m.key as LiveMatrix]}
-                    track="claim"
-                    isSelected={trackSelected(m.key as LiveMatrix, 'claim')}
-                    onClick={() => navigate(`/${m.key}/phase/4/claim`)}
-                    modalityFilter={modalityFilter}
-                    actorFilter={actorFilter}
-                  />
-                ) : (
-                  <StubCell
-                    key={m.key}
-                    count={STUB[m.key as keyof typeof STUB].claim}
-                    version={m.version}
-                    track="claim"
-                  />
-                )
-              )}
+                ))}
+              </div>
+            ))}
+            <div className="phase4-row">
+              <div className="phase4-phase-cell">
+                <div className="hm-phase-name">{PHASE_SHORT[4]}</div>
+              </div>
+              <div className="phase4-content">
+                {(['flight', 'claim'] as const).map((track) => (
+                  <Fragment key={track}>
+                    {track === 'claim' && <div className="phase4-divider" />}
+                    <div className="phase4-sub-row">
+                      {cols.map((m) => (
+                        <HeatMapCell
+                          key={m.key}
+                          tactics={getMatrix(m.key).byPhase[4][track]}
+                          matrix={m.key}
+                          col={m.color}
+                          phase={4}
+                          track={track}
+                          isSelected={trackSelected(m.key, track)}
+                          showAll={!!scope}
+                        />
+                      ))}
+                    </div>
+                  </Fragment>
+                ))}
+              </div>
             </div>
           </div>
         </div>

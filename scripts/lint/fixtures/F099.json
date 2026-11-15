@@ -1,0 +1,13 @@
+{
+  "id": "F099",
+  "expected_check": "V39",
+  "audit_findings": "F05",
+  "description": "Empty informs_axes on an indicator; the schema requires all six axes when the block is present.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].informs_axes",
+      "value": {}
+    }
+  ]
+}

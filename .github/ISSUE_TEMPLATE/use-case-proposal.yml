@@ -1,20 +1,53 @@
 name: Use Case Proposal
-description: Propose a new use case or real-world application of the THREAT Matrix framework
+description: Propose a use case or application of the THREAT Matrix framework, using a fictionalized or public-source example only
 title: "[Use Case] "
 body:
   - type: markdown
     attributes:
       value: |
-        Use cases validate the framework against operational reality. We are especially interested in sectors that aren't yet well-represented: healthcare, education, transportation, critical infrastructure, and public events.
+        > **Do not post real incident data.**
+        >
+        > This issue will be public, indexed by search engines, and effectively permanent, including its edit history. Do not include:
+        >
+        > - any real incident that is not already described in published public sources
+        > - the name of any person, or anything that could identify one (subject of concern, victim, witness, employee, investigator): job title plus employer, location plus date, usernames, photographs, vehicle or address details
+        > - anything from an open, recent, or non-public investigation or case file
+        > - confidential or internal material belonging to an employer, client, or agency
+        >
+        > **Use a fictionalized example or a public-source example only.** A fictionalized example is invented, or changed so thoroughly that no real person, organization, place, or event can be recognized from it. A public-source example cites the published source (report, court record, news article) and adds nothing that is not in that source. Removing a name from a real case is not enough.
+        >
+        > If you posted something by mistake, do not just edit the issue (the history keeps it). Follow SECURITY.md to ask for it to be removed.
 
-        Use cases that surface gaps in the framework are more useful than ones that confirm it works. Actual or composite incidents (with appropriate redaction) are more useful than abstract scenarios.
+        Use cases test the framework against realistic conditions. Sectors that are not yet well represented are especially useful: healthcare, education, transportation, critical infrastructure, and public events.
+
+        Use cases that surface gaps in the framework are more useful than ones that confirm it works.
+
+  - type: checkboxes
+    id: no-real-data
+    attributes:
+      label: Before you submit
+      options:
+        - label: This proposal contains no real incident data, no names, and nothing that could identify a person. Every example in it is fictionalized or taken only from a cited public source.
+          required: true
 
   - type: input
     id: title
     attributes:
       label: Use Case Title
       description: A short descriptive title for this use case.
-      placeholder: e.g., Stadium Event Threat Assessment Using THREAT Matrix
+      placeholder: e.g., Stadium event threat assessment using THREAT Matrix
+    validations:
+      required: true
+
+  - type: dropdown
+    id: example-basis
+    attributes:
+      label: Basis of the example
+      description: What is the scenario below based on?
+      options:
+        - Fictionalized (invented, or changed so no real person, place, or event is recognizable)
+        - Public source only (cited below; nothing added beyond the source)
+        - No example (general application)
     validations:
       required: true
 
@@ -23,12 +56,14 @@ body:
     attributes:
       label: Description
       description: >
-        Describe the scenario or application. Include the sector, context, and what
-        problem the THREAT Matrix would help solve. If based on a real or composite
-        incident, redact identifying details as needed.
+        Describe the scenario or application: the sector, the context, and the
+        problem the framework would help with. Fictionalized or public-source
+        examples only. Do not describe a real case, a real person, or anything
+        from a non-public file. If the example comes from a public source,
+        cite it here.
       placeholder: |
-        Describe the use case: what happened (or could happen), in what environment,
-        and what the stakes are.
+        Describe the use case in general or fictional terms: the kind of
+        environment, the kind of behavior, and what is at stake.
     validations:
       required: true
 
@@ -37,8 +72,8 @@ body:
     attributes:
       label: Target Audience
       description: >
-        Who would benefit from this use case? What roles or teams would use the
-        framework in this context?
+        Who would benefit from this use case? Describe roles or teams, not
+        named people or named organizations.
       placeholder: |
         e.g., Corporate security teams conducting pre-event threat assessments for large public gatherings
     validations:
@@ -49,13 +84,12 @@ body:
     attributes:
       label: How the Framework Would Be Applied
       description: >
-        Describe how the THREAT Matrix would be used in this scenario. Which matrices,
+        Describe how the framework would be used in this scenario. Which matrices,
         phases, tactics, or actor profiles are relevant? How would a practitioner
-        walk through the framework to address this use case?
+        walk through the framework?
       placeholder: |
-        e.g., Map known adversary behaviors to Person matrix Phase 1 tactics, cross-reference
-        actor profiles to identify likely threat categories, use countermeasures to build
-        a mitigation plan.
+        e.g., Map observed behaviors to Person matrix Phase 1 tactics, cross-reference
+        actor profiles, and use countermeasures to build a mitigation plan.
     validations:
       required: false
 
@@ -64,11 +98,11 @@ body:
     attributes:
       label: Required Framework Changes
       description: >
-        Would this use case require any additions or changes to the framework?
+        Would this use case require additions or changes to the framework?
         New tactics, new actor profiles, new fields, or structural changes?
-        If the framework works as-is, say so — that is useful feedback too.
+        If the framework works as it is, say so; that is useful feedback too.
       placeholder: |
-        e.g., No changes needed — existing Person matrix covers this well.
+        e.g., No changes needed; the existing Person matrix covers this.
         Or: This use case reveals a gap in Phase 2 for facility-specific reconnaissance behaviors.
     validations:
       required: false

@@ -1,0 +1,14 @@
+{
+  "id": "F088",
+  "expected_check": "V36",
+  "expected_message": "date",
+  "audit_findings": "F06",
+  "description": "Give a bibliography entry a free-text date.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "bibliography.FEIN-VOSSEKUIL-1999.date",
+      "value": "yesterday"
+    }
+  ]
+}

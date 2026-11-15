@@ -1,0 +1,14 @@
+{
+  "id": "F103",
+  "expected_check": "V40",
+  "expected_message": "is empty",
+  "audit_findings": "F11",
+  "description": "Set a tactic name to the empty string.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].name",
+      "value": ""
+    }
+  ]
+}

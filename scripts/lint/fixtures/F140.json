@@ -1,0 +1,34 @@
+{
+  "id": "F140",
+  "target": "record",
+  "expected_check": "V18",
+  "expected_message": "below the authored type_band",
+  "audit_findings": "C02 S13",
+  "description": "The same laundering case also fails the escalate-only rule against the authored band.",
+  "base": {
+    "indicator_id": "IND-0301-01",
+    "type_band": "critical",
+    "instance": {
+      "target_focus": "unknown",
+      "pathway_stage": "unknown",
+      "means_in_hand": "unknown",
+      "tempo_trajectory": "unknown",
+      "proximity_access": "unknown",
+      "source_credibility": "unknown",
+      "basis": "Fixture record. Describes no case."
+    },
+    "conditioned_priority": "critical"
+  },
+  "mutations": [
+    {
+      "op": "set",
+      "path": "type_band",
+      "value": "low"
+    },
+    {
+      "op": "set",
+      "path": "conditioned_priority",
+      "value": "low"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "F015",
+  "expected_check": "V16",
+  "expected_message": "does not match phase",
+  "description": "Set a phase_name that does not match the phase.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].phase_name",
+      "value": "Execution"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "F023",
+  "expected_check": "V21",
+  "expected_message": "requires a valid crossing_mechanism",
+  "description": "Remove crossing_mechanism from a cyber_physical indicator.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "matrices.person.tactics.[id=TM0204].indicators.[id=IND-0204-03].crossing_mechanism"
+    }
+  ]
+}

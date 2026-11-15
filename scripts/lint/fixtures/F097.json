@@ -1,0 +1,14 @@
+{
+  "id": "F097",
+  "expected_check": "V38",
+  "audit_findings": "F09",
+  "description": "Write a bare NaN token where a number belongs.",
+  "mutations": [
+    {
+      "op": "raw_replace",
+      "find": "\"phase\": 1,",
+      "replace": "\"phase\": NaN,",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "F063",
+  "expected_check": "V28",
+  "expected_message": "actor_profiles is missing",
+  "audit_findings": "F08",
+  "description": "Empty the actor_profiles list.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "actor_profiles",
+      "value": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "F069",
+  "expected_check": "V30",
+  "audit_findings": "F08 S03",
+  "description": "Give a second actor profile an id that already exists.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "actor_profiles.[id=AP002].id",
+      "value": "AP001"
+    }
+  ]
+}

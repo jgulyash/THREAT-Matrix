@@ -1,0 +1,29 @@
+{
+  "id": "F141",
+  "target": "record",
+  "expected_check": "V47",
+  "expected_message": "is not an indicator",
+  "audit_findings": "F15",
+  "description": "Name an indicator the vocabulary does not hold.",
+  "base": {
+    "indicator_id": "IND-0101-01",
+    "type_band": "medium",
+    "instance": {
+      "target_focus": "unknown",
+      "pathway_stage": "unknown",
+      "means_in_hand": "unknown",
+      "tempo_trajectory": "unknown",
+      "proximity_access": "unknown",
+      "source_credibility": "unknown",
+      "basis": "Fixture record. Describes no case."
+    },
+    "conditioned_priority": "medium"
+  },
+  "mutations": [
+    {
+      "op": "set",
+      "path": "indicator_id",
+      "value": "IND-0199-01"
+    }
+  ]
+}

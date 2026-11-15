@@ -1,0 +1,17 @@
+{
+  "id": "F062",
+  "expected_check": "V28",
+  "expected_message": "unknown matrix key",
+  "description": "Add an unknown matrix key.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.cyber",
+      "value": {
+        "tactics": [],
+        "scope": "x",
+        "maturity": "draft"
+      }
+    }
+  ]
+}

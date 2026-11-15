@@ -1,0 +1,14 @@
+{
+  "id": "F096",
+  "expected_check": "V37",
+  "expected_message": "actor profile id",
+  "audit_findings": "F14",
+  "description": "Give an actor profile the all-zero id.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "actor_profiles.[id=AP002].id",
+      "value": "AP000"
+    }
+  ]
+}

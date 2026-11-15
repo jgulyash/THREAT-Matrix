@@ -1,0 +1,17 @@
+{
+  "id": "F072",
+  "expected_check": "V31",
+  "expected_message": "repeats actor_id",
+  "audit_findings": "F08",
+  "description": "Repeat an actor association.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].actor_associations",
+      "value": {
+        "actor_id": "AP001",
+        "relevance": "low"
+      }
+    }
+  ]
+}

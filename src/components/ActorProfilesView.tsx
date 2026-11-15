@@ -1,63 +1,62 @@
-import type { ActorProfile } from '../types/framework';
-import { orderedActorCategories, VECTOR_LABELS } from '../lib/constants';
+import { orderedActorCategories, VECTOR_LABELS, humanize, label } from '../lib/constants';
+import { actors, actorsByCategory } from '../lib/data';
+import { seg } from '../lib/route';
+import { Go } from '../lib/nav';
+import { LifecycleTag } from './Lifecycle';
 
-interface Props {
-  actorsByCategory: Record<string, ActorProfile[]>;
-  navigate: (path: string) => void;
-}
-
-export function ActorProfilesView({ actorsByCategory, navigate }: Props) {
-  const total = Object.values(actorsByCategory).reduce((s, a) => s + a.length, 0);
+export function ActorProfilesView() {
+  const groups = orderedActorCategories(actorsByCategory);
   return (
     <div className="actors-view">
-      <div className="actors-view-title">Actor Profiles</div>
-      <div className="actors-view-sub">
-        {total} profiles across {Object.keys(actorsByCategory).length} threat categories
+      <div className="actors-view-title" data-focus-target tabIndex={-1}>
+        Actor Profiles
       </div>
-      {orderedActorCategories(actorsByCategory).map(({ cat, label, actors }) => {
+      <div className="actors-view-sub">
+        {actors.length} profiles across {groups.length} categories
+      </div>
+      {groups.map(({ cat, label: catLabel, actors: list }) => {
         return (
           <div key={cat} className="actor-cat-section">
             <div className="actor-cat-label">
-              {label}
-              <span className="actor-cat-count">{actors.length}</span>
+              {catLabel}
+              <span className="actor-cat-count">{list.length}</span>
             </div>
             <div className="actor-cards-grid">
-              {actors.map((a) => (
-                <div
-                  key={a.id}
-                  className="actor-card"
-                  onClick={() => navigate(`/actors/${a.id}`)}
-                >
-                  <div className="actor-card-id">{a.id}</div>
+              {list.map((a) => (
+                <Go key={a.id} className="actor-card" to={`/actors/${seg(a.id)}`}>
+                  <div className="actor-card-id">
+                    {a.id}
+                    <LifecycleTag item={a} />
+                  </div>
                   <div className="actor-card-name">{a.name}</div>
                   <div className="actor-card-attrs">
                     <div className="actor-attr-row">
                       <span className="actor-attr-key">Awareness</span>
-                      <span>{a.awareness}</span>
+                      <span>{humanize(a.awareness || '')}</span>
                     </div>
                     <div className="actor-attr-row">
                       <span className="actor-attr-key">Direction</span>
-                      <span>{a.direction}</span>
+                      <span>{humanize(a.direction || '')}</span>
                     </div>
                     <div className="actor-attr-row">
                       <span className="actor-attr-key">Access</span>
-                      <span>{a.access_relationship}</span>
+                      <span>{humanize(a.access_relationship || '')}</span>
                     </div>
                     <div className="actor-attr-row">
                       <span className="actor-attr-key">Phase Risk</span>
-                      <span>{a.phase_compression_risk}</span>
+                      <span>{humanize(a.phase_compression_risk || '')}</span>
                     </div>
                   </div>
                   {a.attack_vectors && a.attack_vectors.length > 0 && (
                     <div className="actor-vectors">
                       {a.attack_vectors.slice(0, 3).map((v) => (
                         <span key={v} className="actor-vector-tag">
-                          {VECTOR_LABELS[v] || v}
+                          {label(VECTOR_LABELS, v)}
                         </span>
                       ))}
                     </div>
                   )}
-                </div>
+                </Go>
               ))}
             </div>
           </div>

@@ -2,16 +2,20 @@ import type { Countermeasure } from '../../types/framework';
 import {
   COUNTERMEASURE_CATEGORY_LABELS,
   DOMAIN_LABELS,
+  TIME_TO_IMPLEMENT_LABELS,
   groupByCategory,
+  humanize,
+  label,
 } from '../../lib/constants';
+import { LifecycleNote } from '../Lifecycle';
 import { SourceRefLink } from './SourceRefLink';
 
 interface Props {
   countermeasures: Countermeasure[];
-  navigate: (path: string) => void;
+  focusId?: string | null;
 }
 
-export function CountermeasureSection({ countermeasures, navigate }: Props) {
+export function CountermeasureSection({ countermeasures, focusId }: Props) {
   if (!countermeasures?.length) return null;
 
   const { orderedKeys, grouped } = groupByCategory(
@@ -27,31 +31,37 @@ export function CountermeasureSection({ countermeasures, navigate }: Props) {
       </div>
       {orderedKeys.map((cat) => (
         <div key={cat} className="dr-category-group">
-          <div className="dr-category-label">
-            {COUNTERMEASURE_CATEGORY_LABELS[cat] || cat}
-          </div>
-          {grouped[cat].map((cm) => (
-            <div key={cm.id} className="dr-item">
+          <div className="dr-category-label">{label(COUNTERMEASURE_CATEGORY_LABELS, cat)}</div>
+          {(grouped.get(cat) || []).map((cm) => (
+            <div
+              key={cm.id}
+              className={`dr-item${focusId === cm.id ? ' cited' : ''}`}
+              data-item-id={cm.id}
+              tabIndex={-1}
+            >
               <div className="dr-item-id">{cm.id}</div>
+              <LifecycleNote item={cm} />
               <div className="dr-item-body">{cm.measure}</div>
               <div className="dr-badge-row">
-                {cm.domain && (
-                  <span className="dr-tag" style={{ borderColor: 'var(--slate)', color: 'var(--slate)', background: 'var(--slate-dim)' }}>
-                    {DOMAIN_LABELS[cm.domain] || cm.domain}
+                {cm.domain && <span className="dr-tag domain">{label(DOMAIN_LABELS, cm.domain)}</span>}
+                {cm.cost && (
+                  <span className={`dr-badge ${cm.cost}`}>
+                    <span className="dr-badge-key">Cost</span>
+                    <span>{humanize(cm.cost)}</span>
                   </span>
                 )}
-                <span className={`dr-badge ${cm.cost}`}>
-                  <span className="dr-badge-key">Cost</span>
-                  <span>{cm.cost}</span>
-                </span>
-                <span className={`dr-badge ${cm.complexity}`}>
-                  <span className="dr-badge-key">Complexity</span>
-                  <span>{cm.complexity}</span>
-                </span>
-                <span className={`dr-badge ${cm.time_to_implement}`}>
-                  <span className="dr-badge-key">Time</span>
-                  <span>{cm.time_to_implement}</span>
-                </span>
+                {cm.complexity && (
+                  <span className={`dr-badge ${cm.complexity}`}>
+                    <span className="dr-badge-key">Complexity</span>
+                    <span>{humanize(cm.complexity)}</span>
+                  </span>
+                )}
+                {cm.time_to_implement && (
+                  <span className={`dr-badge ${cm.time_to_implement}`}>
+                    <span className="dr-badge-key">Time</span>
+                    <span>{label(TIME_TO_IMPLEMENT_LABELS, cm.time_to_implement)}</span>
+                  </span>
+                )}
               </div>
               {cm.limitations && (
                 <div className="dr-limitations">
@@ -59,13 +69,13 @@ export function CountermeasureSection({ countermeasures, navigate }: Props) {
                   {cm.limitations}
                 </div>
               )}
-              {cm.source_refs?.length > 0 && (
+              {cm.source_refs && cm.source_refs.length > 0 && (
                 <details className="dr-details">
                   <summary>Sources</summary>
                   <div className="dr-details-body">
                     <div className="dr-tag-row">
                       {cm.source_refs.map((ref) => (
-                        <SourceRefLink key={ref} refKey={ref} navigate={navigate} />
+                        <SourceRefLink key={ref} refKey={ref} />
                       ))}
                     </div>
                   </div>

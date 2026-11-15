@@ -4,23 +4,16 @@ import type {
   AssessmentGuidanceSection,
 } from '../types/framework';
 
-const FACTORS: Array<{ key: keyof AssessmentGuidance; label: string }> = [
+type FactorKey = 'credibility' | 'capability' | 'intent' | 'opportunity';
+
+const FACTORS: Array<{ key: FactorKey; label: string }> = [
   { key: 'credibility', label: 'Credibility' },
   { key: 'capability', label: 'Capability' },
   { key: 'intent', label: 'Intent' },
   { key: 'opportunity', label: 'Opportunity' },
 ];
 
-// Escalation priority is an ordinal label; map to the shared severity palette
-// so it reads consistently with the rest of the framework's urgency signalling.
-const PRIORITY_CLASS: Record<string, string> = {
-  Urgent: 'critical',
-  Immediate: 'high',
-  Priority: 'medium',
-  Routine: 'low',
-};
-
-// Fixed per-block descriptors — curated to fit one line at any panel width, so a
+// Fixed per-block descriptors, curated to fit one line at any panel width, so a
 // collapsed row reads as an intentional label rather than a truncated sentence.
 const TEASERS: Record<string, string> = {
   credibility: 'How much to trust the finding',
@@ -28,7 +21,7 @@ const TEASERS: Record<string, string> = {
   intent: 'Whether intent to act is forming',
   opportunity: 'Whether the actor can reach the target',
   false_positive: 'Benign activities that mimic it',
-  threshold: 'How findings escalate to action tiers',
+  threshold: 'When findings warrant further action',
 };
 
 interface AccProps {
@@ -75,29 +68,22 @@ function AnchorLists({ section }: { section: AssessmentGuidanceSection }) {
 
 export function AssessmentGuidanceView({ guidance }: { guidance?: AssessmentGuidance }) {
   if (!guidance) return null;
-  const {
-    false_positive_context: fp,
-    threshold_guidance: threshold,
-    escalation_priority: priority,
-  } = guidance;
+  const { false_positive_context: fp, threshold_guidance: threshold } = guidance;
   const hasFactor = FACTORS.some((f) => guidance[f.key]);
-  if (!hasFactor && !fp && !threshold && !priority) return null;
+  if (!hasFactor && !fp && !threshold) return null;
 
   return (
     <div className="det-section">
       <div className="dr-section-header">
         <span>Assessment Guidance</span>
-        {priority && (
-          <span className={`ind-sev ${PRIORITY_CLASS[priority] || 'medium'}`}>{priority}</span>
-        )}
       </div>
       <div className="ag-subtitle">How to weigh observed findings of this tactic.</div>
 
       {FACTORS.map((f) => {
-        const section = guidance[f.key] as AssessmentGuidanceSection | undefined;
+        const section = guidance[f.key];
         if (!section) return null;
         return (
-          <Accordion key={f.key} label={f.label} teaserText={TEASERS[f.key as string]}>
+          <Accordion key={f.key} label={f.label} teaserText={TEASERS[f.key]}>
             <AnchorLists section={section} />
           </Accordion>
         );

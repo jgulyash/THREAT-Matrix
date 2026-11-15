@@ -1,0 +1,14 @@
+{
+  "id": "F106",
+  "target": "overlay",
+  "expected_check": "V13",
+  "expected_message": "missing",
+  "audit_findings": "S01",
+  "description": "Remove type_band from a score entry.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "indicator_scores.IND-0101-01.type_band"
+    }
+  ]
+}

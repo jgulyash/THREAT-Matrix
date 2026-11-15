@@ -1,0 +1,27 @@
+{
+  "id": "F143",
+  "target": "record",
+  "expected_check": "V48",
+  "expected_message": "'instance' is missing",
+  "description": "Remove the instance block.",
+  "base": {
+    "indicator_id": "IND-0101-01",
+    "type_band": "medium",
+    "instance": {
+      "target_focus": "unknown",
+      "pathway_stage": "unknown",
+      "means_in_hand": "unknown",
+      "tempo_trajectory": "unknown",
+      "proximity_access": "unknown",
+      "source_credibility": "unknown",
+      "basis": "Fixture record. Describes no case."
+    },
+    "conditioned_priority": "medium"
+  },
+  "mutations": [
+    {
+      "op": "del",
+      "path": "instance"
+    }
+  ]
+}

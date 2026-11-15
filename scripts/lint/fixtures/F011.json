@@ -1,0 +1,12 @@
+{
+  "id": "F011",
+  "expected_check": "V10",
+  "description": "Add a cross-matrix correlates_with reference (infrastructure letter on a person indicator) that resolves to no indicator.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].correlates_with",
+      "value": "IND-I0199-99"
+    }
+  ]
+}

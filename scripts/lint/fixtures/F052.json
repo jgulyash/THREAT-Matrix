@@ -1,0 +1,23 @@
+{
+  "id": "F052",
+  "expect": "pass",
+  "expected_check": "V26",
+  "description": "A deprecated tactic with deprecated_in and deprecation_reason is legal.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].lifecycle_state",
+      "value": "deprecated"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].deprecated_in",
+      "value": "1.7.0"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].deprecation_reason",
+      "value": "Fixture: deprecated."
+    }
+  ]
+}

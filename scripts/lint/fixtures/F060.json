@@ -1,0 +1,12 @@
+{
+  "id": "F060",
+  "expected_check": "V28",
+  "expected_message": "must be core or draft",
+  "description": "Remove a matrix's maturity.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "matrices.organization.maturity"
+    }
+  ]
+}

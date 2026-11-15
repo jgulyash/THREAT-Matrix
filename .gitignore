@@ -13,9 +13,22 @@ vite.config.js
 
 # Compiled Python caches (never track build artifacts)
 __pycache__/
-*.pyc
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
 
-# Internal research / working docs — never commit (may contain proprietary-instrument references)
+# Generated script output (never commit): flat export, migration results,
+# temporary manifests. Write these to out/ or build/.
+out/
+build/
+.id-manifest-*.tmp
+*.migrated.json
+*.orig
+
+# Internal research and working docs: never commit (may contain proprietary-instrument references)
 _Private/
 _Internal/
 *-Research-INTERNAL.md

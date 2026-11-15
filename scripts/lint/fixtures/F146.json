@@ -1,0 +1,28 @@
+{
+  "id": "F146",
+  "target": "record",
+  "expect": "pass",
+  "expected_check": "V18",
+  "description": "Raising priority above the type band is legal.",
+  "base": {
+    "indicator_id": "IND-0101-01",
+    "type_band": "medium",
+    "instance": {
+      "target_focus": "unknown",
+      "pathway_stage": "unknown",
+      "means_in_hand": "unknown",
+      "tempo_trajectory": "unknown",
+      "proximity_access": "unknown",
+      "source_credibility": "unknown",
+      "basis": "Fixture record. Describes no case."
+    },
+    "conditioned_priority": "medium"
+  },
+  "mutations": [
+    {
+      "op": "set",
+      "path": "conditioned_priority",
+      "value": "critical"
+    }
+  ]
+}

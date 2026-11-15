@@ -1,0 +1,13 @@
+{
+  "id": "F061",
+  "expected_check": "V28",
+  "expected_message": "must be core or draft",
+  "description": "Set a matrix maturity outside core and draft.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.maturity",
+      "value": "stable"
+    }
+  ]
+}

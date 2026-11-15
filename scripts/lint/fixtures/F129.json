@@ -1,0 +1,15 @@
+{
+  "id": "F129",
+  "target": "overlay",
+  "expected_check": "V44",
+  "expected_message": "one decimal place",
+  "audit_findings": "C14",
+  "description": "Record an axis to five decimals.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-0101-01.axes.impact_potential",
+      "value": 3.14159
+    }
+  ]
+}

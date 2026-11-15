@@ -1,0 +1,14 @@
+{
+  "id": "F130",
+  "target": "overlay",
+  "expected_check": "V44",
+  "expected_message": "two decimal places",
+  "description": "Record a weight to three decimals.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-0101-01.type_weight",
+      "value": 4.491
+    }
+  ]
+}

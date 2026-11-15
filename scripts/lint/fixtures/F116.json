@@ -1,0 +1,14 @@
+{
+  "id": "F116",
+  "target": "overlay",
+  "expected_check": "V20",
+  "expected_message": "is not established, inferred, or thin",
+  "description": "Set an axis_confidence value outside the three levels.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-0101-01.axis_confidence.detectability",
+      "value": "certain"
+    }
+  ]
+}

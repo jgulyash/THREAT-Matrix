@@ -1,0 +1,14 @@
+{
+  "id": "F119",
+  "target": "overlay",
+  "expected_check": "V41",
+  "expected_message": "status",
+  "description": "Declare the overlay stable.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "status",
+      "value": "stable"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "F126",
+  "target": "overlay",
+  "expected_check": "V42",
+  "expected_message": "names no indicator",
+  "description": "Add a score entry for an indicator the vocabulary does not hold.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "indicator_scores.IND-0199-01",
+      "value": {
+        "axes": {
+          "impact_potential": 5.0,
+          "blast_radius_potential": 2.5,
+          "recoverability_inverse": 6.5,
+          "detectability": 5.0
+        },
+        "type_weight": 4.49,
+        "type_band": "medium",
+        "axis_confidence": {
+          "impact_potential": "inferred",
+          "blast_radius_potential": "established",
+          "recoverability_inverse": "inferred",
+          "detectability": "inferred"
+        }
+      }
+    }
+  ]
+}

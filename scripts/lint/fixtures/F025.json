@@ -1,0 +1,13 @@
+{
+  "id": "F025",
+  "expected_check": "V22",
+  "expected_message": "em or en dash",
+  "description": "Put an em dash in conditioning_guidance.guidance.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].conditioning_guidance.guidance",
+      "value": "Assess the pace — the tempo will show it."
+    }
+  ]
+}

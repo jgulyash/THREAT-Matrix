@@ -1,0 +1,23 @@
+{
+  "id": "F046",
+  "expected_check": "V26",
+  "expected_message": "carries content beyond",
+  "audit_findings": "F02 C06",
+  "description": "Mark an actor profile reserved while it keeps its content and drops description.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "actor_profiles.[id=AP001].lifecycle_state",
+      "value": "reserved"
+    },
+    {
+      "op": "add",
+      "path": "actor_profiles.[id=AP001].reserved_reason",
+      "value": "x"
+    },
+    {
+      "op": "del",
+      "path": "actor_profiles.[id=AP001].description"
+    }
+  ]
+}

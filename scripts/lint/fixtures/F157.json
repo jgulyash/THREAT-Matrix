@@ -1,0 +1,14 @@
+{
+  "id": "F157",
+  "expected_check": "V24",
+  "expected_message": "is not SemVer",
+  "audit_findings": "F07",
+  "description": "Give the content version a trailing newline.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "version",
+      "value": "2.0.0\n"
+    }
+  ]
+}

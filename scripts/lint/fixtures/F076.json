@@ -1,0 +1,13 @@
+{
+  "id": "F076",
+  "expected_check": "V33",
+  "expected_message": "more than once",
+  "description": "Repeat a correlates_with entry.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].correlates_with",
+      "value": "IND-0101-04"
+    }
+  ]
+}

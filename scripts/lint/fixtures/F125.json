@@ -1,0 +1,13 @@
+{
+  "id": "F125",
+  "target": "overlay",
+  "expected_check": "V42",
+  "expected_message": "has no score entry",
+  "description": "Remove one indicator's score entry.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "indicator_scores.IND-0101-01"
+    }
+  ]
+}

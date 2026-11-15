@@ -1,0 +1,12 @@
+{
+  "id": "F003",
+  "expected_check": "V03",
+  "description": "Give a second countermeasure an id that already exists.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].countermeasures.[id=CM-0101-02].id",
+      "value": "CM-0101-01"
+    }
+  ]
+}

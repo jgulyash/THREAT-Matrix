@@ -1,0 +1,14 @@
+{
+  "id": "F093",
+  "expected_check": "V37",
+  "expected_message": "actor_id",
+  "audit_findings": "F07",
+  "description": "Give an actor association an actor_id with a trailing newline.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].actor_associations.0.actor_id",
+      "value": "AP001\n"
+    }
+  ]
+}

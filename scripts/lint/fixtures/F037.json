@@ -1,0 +1,49 @@
+{
+  "id": "F037",
+  "expected_check": "V26",
+  "expected_message": "cycle",
+  "audit_findings": "S04 C05",
+  "description": "Build a two-node supersession cycle.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].lifecycle_state",
+      "value": "superseded"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].deprecated_in",
+      "value": "2.0.0"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].deprecation_reason",
+      "value": "Fixture."
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].superseded_by",
+      "value": "IND-0101-02"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-02].lifecycle_state",
+      "value": "superseded"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-02].deprecated_in",
+      "value": "2.0.0"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-02].deprecation_reason",
+      "value": "Fixture."
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-02].superseded_by",
+      "value": "IND-0101-01"
+    }
+  ]
+}

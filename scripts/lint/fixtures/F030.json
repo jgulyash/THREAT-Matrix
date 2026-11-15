@@ -1,0 +1,12 @@
+{
+  "id": "F030",
+  "expected_check": "V25",
+  "description": "Set evidence_basis to the retired 2.x value operational_primary.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].evidence_basis",
+      "value": "operational_primary"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "F024",
+  "expected_check": "V22",
+  "expected_message": "is not an instance factor",
+  "description": "Give conditioning_guidance an invented probe factor.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].conditioning_guidance.probe_factors",
+      "value": [
+        "momentum_index"
+      ]
+    }
+  ]
+}

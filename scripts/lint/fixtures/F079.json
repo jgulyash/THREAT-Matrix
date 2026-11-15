@@ -1,0 +1,17 @@
+{
+  "id": "F079",
+  "expected_check": "V33",
+  "expected_message": "mitigates names indicator",
+  "audit_findings": "F08",
+  "description": "Name the same indicator in two mitigates edges with different functions.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.facility.tactics.[id=TF0102].countermeasures.[id=CM-F0102-03].mitigates",
+      "value": {
+        "indicator": "IND-F0102-02",
+        "function": "prevent"
+      }
+    }
+  ]
+}

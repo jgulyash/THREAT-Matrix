@@ -1,0 +1,13 @@
+{
+  "id": "F022",
+  "expected_check": "V21",
+  "expected_message": "only legal on cyber_physical",
+  "description": "Add crossing_mechanism to an indicator that is not cyber_physical.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].crossing_mechanism",
+      "value": "digital"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "F051",
+  "expect": "pass",
+  "expected_check": "V26",
+  "description": "A superseded countermeasure whose superseded_by names an active countermeasure is legal.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].countermeasures.[id=CM-0101-01].lifecycle_state",
+      "value": "superseded"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].countermeasures.[id=CM-0101-01].deprecated_in",
+      "value": "2.0.0"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].countermeasures.[id=CM-0101-01].deprecation_reason",
+      "value": "Fixture: replaced."
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].countermeasures.[id=CM-0101-01].superseded_by",
+      "value": "CM-0101-02"
+    }
+  ]
+}

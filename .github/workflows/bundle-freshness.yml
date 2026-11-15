@@ -1,20 +1,31 @@
 name: Bundle Freshness
 
-# Catches the v1.1.1-class regression where docs/data/framework.json
-# changes without a corresponding rebuild of docs/assets/index-*.{js,css}.
-# Runs on PRs to main (release-merge moment) and pushes to v1-build
-# (active dev branch). The local pre-commit hook at
-# scripts/git-hooks/pre-commit covers the per-commit case; this workflow
-# is the durable safety net.
+# The viewer bundles docs/data/framework.json and src/ into hashed files
+# under docs/assets at build time, and bakes those file names into
+# docs/index.html. This workflow proves the committed build output is
+# exactly what a fresh build of the committed sources produces:
+#
+#   1. docs/index.html references exactly the files present in docs/assets
+#      (no missing bundle, no stale or stray file).
+#   2. After deleting docs/assets and rebuilding, docs/index.html and every
+#      file under docs/assets are byte-identical to the committed ones, and
+#      the build created no file that is not committed.
+#
+# The pre-commit hook at scripts/git-hooks/pre-commit runs check 1 against
+# staged content and requires the bundle to be staged with its inputs; it
+# does not run the build. This workflow is the gate that rebuilds.
 
 on:
   pull_request:
     branches:
       - main
+      - v1-build
+      - v3-design
   push:
     branches:
       - main
       - v1-build
+      - v3-design
 
 concurrency:
   group: bundle-freshness-${{ github.ref }}
@@ -25,75 +36,62 @@ permissions:
 
 jobs:
   bundle-freshness:
-    name: Verify SPA bundle matches source
+    name: Verify committed bundle equals a fresh build
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.14'
 
       - name: Set up Bun
-        uses: oven-sh/setup-bun@v2
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
         with:
           bun-version: 1.3.9
 
-      - name: Hash committed bundle
-        run: |
-          set -euo pipefail
-          shopt -s nullglob
-          committed=(docs/assets/index-*.js docs/assets/index-*.css)
-          if [ ${#committed[@]} -eq 0 ]; then
-            echo "✗ No committed bundle found at docs/assets/index-*.{js,css}." >&2
-            echo "  The repository must contain a built bundle." >&2
-            exit 1
-          fi
-          printf '%s\n' "${committed[@]}" | sort | xargs sha256sum | awk '{print $1}' > /tmp/committed-hashes.txt
-          echo "Committed bundle SHA-256:"
-          cat /tmp/committed-hashes.txt
+      - name: Committed index.html references exactly the committed assets
+        run: python3 scripts/git-hooks/check-bundle-refs.py .
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Rebuild bundle
+      - name: Rebuild bundle from scratch
         run: |
-          rm -f docs/assets/index-*
+          set -eu
+          rm -rf docs/assets
           bun run build
 
-      - name: Hash fresh bundle
+      - name: Fresh build equals the committed build output
         run: |
-          set -euo pipefail
-          shopt -s nullglob
-          fresh=(docs/assets/index-*.js docs/assets/index-*.css)
-          if [ ${#fresh[@]} -eq 0 ]; then
-            echo "✗ Fresh build produced no bundle at docs/assets/index-*.{js,css}." >&2
+          set -eu
+          status=0
+          if ! git diff --exit-code --stat -- docs/index.html docs/assets; then
+            echo "FAILED: a fresh build changed or removed committed build output (listed above)." >&2
+            status=1
+          fi
+          untracked="$(git status --porcelain --untracked-files=all -- docs/index.html docs/assets)"
+          if [ -n "$untracked" ]; then
+            echo "FAILED: build output differs from what is committed:" >&2
+            printf '%s\n' "$untracked" >&2
+            status=1
+          fi
+          if [ "$status" -ne 0 ]; then
+            echo "" >&2
+            echo "The committed docs/index.html and docs/assets are not what the committed" >&2
+            echo "sources build. To fix locally:" >&2
+            echo "  rm -f docs/assets/index-*" >&2
+            echo "  bun run build" >&2
+            echo "  git add -A docs/assets docs/index.html" >&2
             exit 1
           fi
-          printf '%s\n' "${fresh[@]}" | sort | xargs sha256sum | awk '{print $1}' > /tmp/fresh-hashes.txt
-          echo "Fresh bundle SHA-256:"
-          cat /tmp/fresh-hashes.txt
+          echo "PASSED: docs/index.html and docs/assets are byte-identical to a fresh build."
 
-      - name: Compare hashes
-        run: |
-          if ! diff -q /tmp/committed-hashes.txt /tmp/fresh-hashes.txt > /dev/null; then
-            echo ""
-            echo "✗ Bundle freshness check FAILED"
-            echo ""
-            echo "  The committed SPA bundle does not match a fresh build."
-            echo "  This means src/ or docs/data/framework.json changed"
-            echo "  without the corresponding rebuild of docs/assets/index-*."
-            echo ""
-            echo "  To fix locally:"
-            echo "    rm -f docs/assets/index-*"
-            echo "    bun run build"
-            echo "    git add docs/assets/ docs/index.html"
-            echo "    git commit -m 'build: rebuild bundle'"
-            echo ""
-            echo "  See CHANGELOG.md [1.1.1] for the bug class this prevents."
-            echo ""
-            echo "  Committed:"
-            sed 's/^/    /' /tmp/committed-hashes.txt
-            echo "  Fresh:"
-            sed 's/^/    /' /tmp/fresh-hashes.txt
-            exit 1
-          fi
-          echo "✓ Bundle freshness check PASSED"
+      - name: Fresh index.html references exactly the fresh assets
+        run: python3 scripts/git-hooks/check-bundle-refs.py .

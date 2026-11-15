@@ -1,0 +1,14 @@
+{
+  "id": "F083",
+  "expected_check": "V35",
+  "description": "Set a countermeasure's phase_relevance so it omits the parent tactic's phase.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].countermeasures.[id=CM-0101-01].phase_relevance",
+      "value": [
+        "aftermath"
+      ]
+    }
+  ]
+}

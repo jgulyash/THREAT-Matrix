@@ -1,0 +1,14 @@
+{
+  "id": "F122",
+  "target": "overlay",
+  "expected_check": "V41",
+  "expected_message": "does not equal the framework version",
+  "description": "Bind the overlay to a different framework version.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "applies_to_framework_version",
+      "value": "1.7.1"
+    }
+  ]
+}

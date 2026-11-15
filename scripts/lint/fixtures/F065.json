@@ -1,0 +1,12 @@
+{
+  "id": "F065",
+  "expected_check": "V28",
+  "expected_message": "required top-level key 'version'",
+  "description": "Remove the top-level version.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "version"
+    }
+  ]
+}

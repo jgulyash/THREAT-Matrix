@@ -1,0 +1,10 @@
+# Keeps the commit-pinned GitHub Actions in .github/workflows current.
+# Each update arrives as a pull request that changes the pinned SHA and the
+# version comment together, so the pin is reviewed instead of going stale.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 3

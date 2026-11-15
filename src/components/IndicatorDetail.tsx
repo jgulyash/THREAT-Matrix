@@ -1,60 +1,36 @@
-import type { Indicator, Tactic } from '../types/framework';
 import {
   INDICATOR_CATEGORY_LABELS,
   DETECTION_SOURCE_LABELS,
   TARGET_IDENTITY_LABELS,
   FACILITY_TARGET_SCOPE_LABELS,
   WITHIN_SITE_FOCUS_LABELS,
-  SEVERITY_BAND_LABELS,
   PROBE_FACTOR_LABELS,
   TEMPORAL_SIGNATURE_LABELS,
-  EVIDENCE_TIER_LABELS,
-  ESCALATION_AXIS_LABELS,
   INFORMS_AXIS_LABELS,
   PHASE_RELEVANCE_LABELS,
+  MATRIX_LABELS,
   MODALITY_LABELS,
   MODALITY_DEFS,
   CROSSING_MECHANISM_LABELS,
+  PRIORITY_ORDER,
+  label,
 } from '../lib/constants';
+import { correlatedFrom, indicatorById, type IndicatorEntry } from '../lib/data';
+import { LINKS } from '../lib/links';
+import { seg } from '../lib/route';
+import { Go } from '../lib/nav';
 import { SourceRefLink } from './detection-response/SourceRefLink';
-
-export interface IndicatorEntry {
-  indicator: Indicator;
-  tactic: Tactic;
-}
+import { DraftTag } from './DraftTag';
+import { LifecycleNote } from './Lifecycle';
+import { IndicatorScores } from './overlay/IndicatorScores';
 
 interface Props {
   indicatorId: string;
-  indicatorMap: Record<string, IndicatorEntry>;
-  navigate: (path: string) => void;
 }
 
-function IndicatorLinkCard({
-  relId,
-  entry,
-  fallbackTactic,
-  navigate,
-}: {
-  relId: string;
-  entry: IndicatorEntry | undefined;
-  fallbackTactic: Tactic;
-  navigate: (path: string) => void;
-}) {
-  const go = () =>
-    navigate(`/${(entry?.tactic || fallbackTactic).matrix}/indicator/${relId}`);
-  return (
-    <div
-      className="ind-related-link"
-      role="button"
-      tabIndex={0}
-      onClick={go}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          go();
-        }
-      }}
-    >
+function IndicatorLinkCard({ relId, entry }: { relId: string; entry: IndicatorEntry | undefined }) {
+  const body = (
+    <>
       <div className="ind-related-head">
         <span className="adv-tactic-id">{relId}</span>
         {entry && <span className="ind-related-tactic">{entry.tactic.name}</span>}
@@ -62,82 +38,78 @@ function IndicatorLinkCard({
       <div className="ind-related-beh">
         {entry ? entry.indicator.behavior : 'Unresolved reference'}
       </div>
-    </div>
+    </>
+  );
+  if (!entry) return <div className="ind-related-link unresolved">{body}</div>;
+  return (
+    <Go className="ind-related-link" to={`/${entry.tactic.matrix}/indicator/${seg(relId)}`}>
+      {body}
+    </Go>
   );
 }
 
-export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) {
-  const entry = indicatorMap[indicatorId];
-
-  if (!entry) {
-    return (
-      <div className="actor-detail-view">
-        <div className="adv-back" onClick={() => navigate('/person')}>
-          ← Heat Map
-        </div>
-        <div style={{ color: 'var(--text-dim)', fontSize: '13px' }}>
-          Indicator <strong>{indicatorId}</strong> not found.
-        </div>
-      </div>
-    );
-  }
+// The router has already confirmed that indicatorId exists.
+export function IndicatorDetail({ indicatorId }: Props) {
+  const entry = indicatorById.get(indicatorId);
+  if (!entry) return null;
 
   const { indicator: ind, tactic } = entry;
-  const catLabel = INDICATOR_CATEGORY_LABELS[ind.category] || ind.category;
+  const tacticPath = `/${tactic.matrix}/tactic/${seg(tactic.id)}`;
 
-  // informs_axes is sparse pre-IRR-consensus; render only populated axes
+  // Render only the populated parts of informs_axes.
   const informsRows = ind.informs_axes
     ? (Object.entries(ind.informs_axes) as [string, string | undefined][]).filter(
         ([, v]) => v && v !== 'none'
       )
     : [];
 
-  const escalationAxes = ind.escalation_axes
-    ? (Object.entries(ind.escalation_axes) as [string, number | undefined][]).filter(
-        ([, v]) => typeof v === 'number'
-      )
-    : [];
-
   const related = (ind.correlates_with || []).map((relId) => ({
     relId,
-    entry: indicatorMap[relId] as IndicatorEntry | undefined,
+    entry: indicatorById.get(relId),
   }));
 
   // Reverse links: indicators whose correlates_with points here. Outbound links
   // already render under Related Indicators, so mutual pairs are excluded.
   const outbound = new Set(ind.correlates_with || []);
-  const referencedBy = Object.values(indicatorMap).filter(
-    (e) =>
-      e.indicator.id !== ind.id &&
-      !outbound.has(e.indicator.id) &&
-      (e.indicator.correlates_with || []).includes(ind.id)
+  const referencedBy = (correlatedFrom.get(ind.id) || []).filter(
+    (e) => e.indicator.id !== ind.id && !outbound.has(e.indicator.id)
   );
+
+  // The first protocol in the order the tactic view lists them.
+  const firstProtocol = [...tactic.response_protocols].sort((a, b) => {
+    const ai = PRIORITY_ORDER.indexOf(a.priority);
+    const bi = PRIORITY_ORDER.indexOf(b.priority);
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  })[0];
 
   return (
     <div className="actor-detail-view">
-      <div
-        className="adv-back"
-        onClick={() => navigate(`/${tactic.matrix}/tactic/${tactic.id}`)}
-      >
+      <Go className="adv-back" to={tacticPath}>
         ← {tactic.id} {tactic.name}
-      </div>
+      </Go>
 
       <div className="adv-category-row">
-        <span className="adv-category-name">{ind.id}</span>
+        <span className="adv-category-name" data-focus-target tabIndex={-1}>
+          {ind.id}
+        </span>
       </div>
 
       <div className="ind-crumb">
+        <span>
+          {MATRIX_LABELS[tactic.matrix]}
+          <DraftTag matrix={tactic.matrix} />
+        </span>
+        <span className="dp-crumb-sep">›</span>
         <span>Phase {tactic.phase}</span>
         <span className="dp-crumb-sep">›</span>
-        <span
-          className="ind-crumb-link"
-          onClick={() => navigate(`/${tactic.matrix}/tactic/${tactic.id}`)}
-        >
+        <Go className="ind-crumb-link" to={tacticPath}>
           {tactic.name}
-        </span>
+        </Go>
         <span className="dp-crumb-sep">›</span>
         <span className="dp-crumb-active">{ind.id}</span>
       </div>
+
+      <LifecycleNote item={ind} />
 
       <div className="adv-two-col">
         <div className="adv-two-col-left">
@@ -151,7 +123,7 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
             <div className="adv-attrs-list">
               <div className="adv-attr-row-new">
                 <div className="adv-attr-key">Category</div>
-                <div className="adv-attr-val">{catLabel}</div>
+                <div className="adv-attr-val">{label(INDICATOR_CATEGORY_LABELS, ind.category)}</div>
               </div>
               <div className="adv-attr-row-new">
                 <div className="adv-attr-key">Behavioral Mode</div>
@@ -160,12 +132,11 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
                     className={`dr-tag modality mod-${ind.modality}`}
                     title={MODALITY_DEFS[ind.modality]}
                   >
-                    {MODALITY_LABELS[ind.modality] || ind.modality}
+                    {label(MODALITY_LABELS, ind.modality)}
                   </span>
                   {ind.crossing_mechanism && (
                     <span className="dr-tag modality-mech">
-                      {CROSSING_MECHANISM_LABELS[ind.crossing_mechanism] ||
-                        ind.crossing_mechanism}
+                      {label(CROSSING_MECHANISM_LABELS, ind.crossing_mechanism)}
                     </span>
                   )}
                   {ind.human_social && ind.modality !== 'human_social' && (
@@ -182,18 +153,15 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
                 <div className="adv-attr-row-new">
                   <div className="adv-attr-key">Phase Relevance</div>
                   <div className="adv-attr-val">
-                    {ind.phase_relevance
-                      .map((p) => PHASE_RELEVANCE_LABELS[p] || p)
-                      .join(', ')}
+                    {ind.phase_relevance.map((p) => label(PHASE_RELEVANCE_LABELS, p)).join(', ')}
                   </div>
                 </div>
               )}
-              {ind.primary_objective_evidence_tier && (
+              {ind.temporal_signature && (
                 <div className="adv-attr-row-new">
-                  <div className="adv-attr-key">Objective Evidence</div>
+                  <div className="adv-attr-key">Temporal Signature</div>
                   <div className="adv-attr-val">
-                    {EVIDENCE_TIER_LABELS[ind.primary_objective_evidence_tier] ||
-                      ind.primary_objective_evidence_tier}
+                    {label(TEMPORAL_SIGNATURE_LABELS, ind.temporal_signature)}
                   </div>
                 </div>
               )}
@@ -205,7 +173,7 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
                 <div className="dr-tag-row">
                   {ind.target_identity.map((ti) => (
                     <span key={ti} className="dr-tag identity">
-                      {TARGET_IDENTITY_LABELS[ti] || ti}
+                      {label(TARGET_IDENTITY_LABELS, ti)}
                     </span>
                   ))}
                 </div>
@@ -218,7 +186,7 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
                 <div className="dr-tag-row">
                   {ind.facility_target_scope.map((ts) => (
                     <span key={ts} className="dr-tag identity">
-                      {FACILITY_TARGET_SCOPE_LABELS[ts] || ts}
+                      {label(FACILITY_TARGET_SCOPE_LABELS, ts)}
                     </span>
                   ))}
                 </div>
@@ -231,7 +199,7 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
                 <div className="dr-tag-row">
                   {ind.within_site_focus.map((wf) => (
                     <span key={wf} className="dr-tag identity">
-                      {WITHIN_SITE_FOCUS_LABELS[wf] || wf}
+                      {label(WITHIN_SITE_FOCUS_LABELS, wf)}
                     </span>
                   ))}
                 </div>
@@ -244,7 +212,7 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
                 <div className="dr-tag-row">
                   {ind.detection_sources.map((src) => (
                     <span key={src} className="dr-tag">
-                      {DETECTION_SOURCE_LABELS[src] || src}
+                      {label(DETECTION_SOURCE_LABELS, src)}
                     </span>
                   ))}
                 </div>
@@ -252,119 +220,39 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
             )}
           </div>
 
-          {(ind.temporal_signature ||
-            ind.severity_band ||
-            typeof ind.escalation_weight === 'number' ||
-            escalationAxes.length > 0) && (
+          {ind.conditioning_guidance && (
             <div className="adv-section">
-              <div className="adv-section-label">
-                Escalation Profile
-                <span className="type-level-tag">Type-level</span>
-              </div>
-              <details className="type-level-note">
-                <summary>Class score, not a case assessment</summary>
-                This is the score for the indicator <em>class</em>, not an assessment of any
-                specific case. Case priority requires an instance record — target focus,
-                pathway stage, means in hand, tempo, source credibility, and proximity/access —
-                joined to this score, and it may only be <strong>raised</strong> above the type
-                band, never lowered below it. See the{' '}
-                <a
-                  href="https://github.com/jgulyash/THREAT-Matrix/blob/main/examples/instance-record-worksheet.md"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  instance-record worksheet
-                </a>{' '}
-                and{' '}
-                <a
-                  href="https://github.com/jgulyash/THREAT-Matrix/tree/main/examples/worked-cases"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  worked cases
-                </a>
-                .
-              </details>
-              {ind.conditioning_guidance && (
-                <div className="cond-guidance">
-                  <div className="ind-subhead">Conditioning Guidance</div>
-                  <div className="cond-guidance-scope">
-                    Assessment tasking only. Immediate response actions live in this
-                    tactic's{' '}
-                    <a
-                      className="cond-guidance-rp-link"
-                      onClick={() => navigate(`/${tactic.matrix}/tactic/${tactic.id}`)}
-                    >
-                      Response Protocols
-                    </a>
-                    .
-                  </div>
-                  <p className="cond-guidance-text">{ind.conditioning_guidance.guidance}</p>
-                  <div className="dr-tag-row">
-                    {ind.conditioning_guidance.probe_factors.map((f) => (
-                      <span key={f} className="dr-tag probe" title="Instance factor to probe at assessment time">
-                        {PROBE_FACTOR_LABELS[f] || f}
-                      </span>
-                    ))}
-                  </div>
+              <div className="adv-section-label">Conditioning Guidance</div>
+              <div className="cond-guidance">
+                <div className="cond-guidance-scope">
+                  Assessment tasking only: what to establish about the case at hand. Immediate
+                  response actions live in this tactic's{' '}
+                  <Go
+                    className="cond-guidance-rp-link"
+                    to={firstProtocol ? `${tacticPath}/${seg(firstProtocol.id)}` : tacticPath}
+                  >
+                    Response Protocols
+                  </Go>
+                  . Observations are recorded in the{' '}
+                  <a
+                    className="cond-guidance-rp-link"
+                    href={LINKS.caseWorksheet}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    case record worksheet
+                  </a>
+                  , which carries no score.
                 </div>
-              )}
-              <div className="adv-attrs-list">
-                {ind.temporal_signature && (
-                  <div className="adv-attr-row-new">
-                    <div className="adv-attr-key">Temporal Signature</div>
-                    <div className="adv-attr-val">
-                      {TEMPORAL_SIGNATURE_LABELS[ind.temporal_signature] ||
-                        ind.temporal_signature}
-                    </div>
-                  </div>
-                )}
-                {ind.severity_band && (
-                  <div className="adv-attr-row-new">
-                    <div className="adv-attr-key">Severity Band</div>
-                    <div className="adv-attr-val">
-                      <span className={`ind-sev ${ind.severity_band}`}>
-                        {SEVERITY_BAND_LABELS[ind.severity_band] || ind.severity_band}
-                      </span>
-                    </div>
-                  </div>
-                )}
-                {typeof ind.escalation_weight === 'number' && (
-                  <div className="adv-attr-row-new">
-                    <div className="adv-attr-key">Escalation Weight</div>
-                    <div className="adv-attr-val">{ind.escalation_weight.toFixed(2)}</div>
-                  </div>
-                )}
+                <p className="cond-guidance-text">{ind.conditioning_guidance.guidance}</p>
+                <div className="dr-tag-row">
+                  {(ind.conditioning_guidance.probe_factors || []).map((f) => (
+                    <span key={f} className="dr-tag probe" title="Instance factor to probe at assessment time">
+                      {label(PROBE_FACTOR_LABELS, f)}
+                    </span>
+                  ))}
+                </div>
               </div>
-              {escalationAxes.length > 0 && (
-                <>
-                  <div className="ind-subhead">Escalation Axes</div>
-                  <div className="ind-axes-grid">
-                    {escalationAxes.map(([k, v]) => (
-                      <div key={k} className="ind-axis">
-                        <div className="ind-axis-label">
-                          {ESCALATION_AXIS_LABELS[k] || k}
-                          {ind.axis_confidence?.[k as keyof typeof ind.axis_confidence] === 'thin' && (
-                            <span
-                              className="ind-axis-thin"
-                              title="Thin evidence basis: this axis carries a wider error bar and is a candidate for earlier human review. It is not a lower score."
-                            >
-                              {' '}◦ thin
-                            </span>
-                          )}
-                        </div>
-                        <div className="ind-axis-bar">
-                          <div
-                            className="ind-axis-fill"
-                            style={{ width: `${Math.min(100, (v as number) * 10)}%` }}
-                          />
-                        </div>
-                        <div className="ind-axis-val">{(v as number).toFixed(1)}</div>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              )}
             </div>
           )}
 
@@ -374,7 +262,7 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
               <div className="adv-attrs-list">
                 {informsRows.map(([k, v]) => (
                   <div key={k} className="adv-attr-row-new">
-                    <div className="adv-attr-key">{INFORMS_AXIS_LABELS[k] || k}</div>
+                    <div className="adv-attr-key">{label(INFORMS_AXIS_LABELS, k)}</div>
                     <div className="adv-attr-val">
                       <span className={`ind-strength ${v}`}>{v}</span>
                     </div>
@@ -383,6 +271,8 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
               </div>
             </div>
           )}
+
+          <IndicatorScores indicatorId={ind.id} />
         </div>
 
         <div className="adv-two-col-right">
@@ -393,19 +283,11 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
             {related.length > 0 ? (
               <div>
                 {related.map(({ relId, entry: rel }) => (
-                  <IndicatorLinkCard
-                    key={relId}
-                    relId={relId}
-                    entry={rel}
-                    fallbackTactic={tactic}
-                    navigate={navigate}
-                  />
+                  <IndicatorLinkCard key={relId} relId={relId} entry={rel} />
                 ))}
               </div>
             ) : (
-              <div style={{ color: 'var(--text-dim)', fontSize: '13px' }}>
-                No correlated indicators recorded.
-              </div>
+              <div className="adv-empty">No correlated indicators recorded.</div>
             )}
           </div>
 
@@ -416,13 +298,7 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
               </div>
               <div>
                 {referencedBy.map((rel) => (
-                  <IndicatorLinkCard
-                    key={rel.indicator.id}
-                    relId={rel.indicator.id}
-                    entry={rel}
-                    fallbackTactic={tactic}
-                    navigate={navigate}
-                  />
+                  <IndicatorLinkCard key={rel.indicator.id} relId={rel.indicator.id} entry={rel} />
                 ))}
               </div>
             </div>
@@ -433,7 +309,7 @@ export function IndicatorDetail({ indicatorId, indicatorMap, navigate }: Props) 
               <div className="adv-section-label">Sources</div>
               <div className="dr-tag-row">
                 {ind.source_refs.map((ref) => (
-                  <SourceRefLink key={ref} refKey={ref} navigate={navigate} />
+                  <SourceRefLink key={ref} refKey={ref} />
                 ))}
               </div>
             </div>

@@ -1,0 +1,464 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jgulyash.github.io/THREAT-Matrix/data/scoring-overlay.schema.json",
+  "x-schema-version": "0.1.0",
+  "title": "THREAT Matrix Experimental Scoring Overlay Schema",
+  "description": "JSON Schema for docs/data/scoring-overlay.json and for scored case records. The overlay is experimental, opt-in, and non-normative: it attaches authored, type-level estimates to indicator classes of the THREAT Matrix vocabulary (framework.json). The values have not been validated against outcomes, do not predict violence, are never a score of a person, and must not be used as grounds for adverse action. The vocabulary is complete without this document. The root of this schema describes the overlay document; $defs.scored_case_record describes one scored case record and $defs.instance_assessment its instance factors. Every object is closed. Rules that need both documents (the key set of indicator_scores equals the indicator IDs of framework.json, the stored weight equals the composite of its axes, the band follows from the stored weight and the floor, a record quotes the authored band) are enforced by scripts/lint/validate.py with --overlay and --records.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "overlay_version",
+    "applies_to_framework_version",
+    "status",
+    "normative",
+    "validation_status",
+    "scope",
+    "not_a_risk_score",
+    "notice",
+    "rubric",
+    "instance_conditioning",
+    "tactic_priorities",
+    "indicator_scores"
+  ],
+  "properties": {
+    "name": {
+      "$ref": "#/$defs/prose",
+      "description": "Name of the overlay document."
+    },
+    "overlay_version": {
+      "$ref": "#/$defs/semver",
+      "description": "Semantic version of this overlay."
+    },
+    "applies_to_framework_version": {
+      "$ref": "#/$defs/semver",
+      "description": "The framework.json content version whose indicator and tactic IDs this overlay keys on. scripts/lint/validate.py requires it to equal the version of the framework document it is checked against."
+    },
+    "status": {
+      "const": "experimental",
+      "description": "The overlay is experimental."
+    },
+    "normative": {
+      "const": false,
+      "description": "The overlay is not part of the vocabulary's contract. A consumer may ignore it entirely."
+    },
+    "validation_status": {
+      "type": "string",
+      "enum": ["unvalidated", "validated"],
+      "description": "Whether the values have been validated by a documented study. unvalidated until a study with published method and results exists."
+    },
+    "scope": {
+      "const": "type_level",
+      "description": "Every value describes a class of behavior, never a case, a person, or an incident."
+    },
+    "not_a_risk_score": {
+      "const": true,
+      "description": "The values are not a risk score for any individual."
+    },
+    "notice": {
+      "$ref": "#/$defs/prose",
+      "description": "The limitation notice a consumer must keep with any use of the overlay."
+    },
+    "rubric": {
+      "type": "object",
+      "description": "How type_weight is derived from the four axes and mapped to a type band. Reference material for a consumer that recomputes or overrides the values.",
+      "additionalProperties": false,
+      "required": [
+        "composite_math",
+        "type_band_thresholds",
+        "type_band_floor_rule",
+        "detectability_guidance",
+        "blast_radius_guidance",
+        "axis_confidence_rubric",
+        "rubric_version",
+        "calibration_guidance"
+      ],
+      "properties": {
+        "composite_math": {
+          "$ref": "#/$defs/prose",
+          "description": "The formula for type_weight: the fourth root of impact_potential times blast_radius_potential times recoverability_inverse times (10 minus detectability), rounded to two decimals."
+        },
+        "type_band_thresholds": {
+          "type": "object",
+          "description": "Lower bound of each band on the stored two-decimal type_weight. scripts/lint/validate.py requires low to be 0 and the four values to be strictly increasing.",
+          "additionalProperties": false,
+          "required": ["low", "medium", "high", "critical"],
+          "properties": {
+            "low": { "const": 0 },
+            "medium": { "$ref": "#/$defs/score_number" },
+            "high": { "$ref": "#/$defs/score_number" },
+            "critical": { "$ref": "#/$defs/score_number" }
+          }
+        },
+        "type_band_floor_rule": {
+          "type": "object",
+          "description": "The floor rule: which behavior classes carry a type_band_floor that holds the type band at or above a stated value whatever the computed weight.",
+          "additionalProperties": false,
+          "required": ["definition", "applies_to", "added"],
+          "properties": {
+            "definition": { "$ref": "#/$defs/prose" },
+            "applies_to": { "$ref": "#/$defs/prose" },
+            "added": { "$ref": "#/$defs/prose" }
+          }
+        },
+        "detectability_guidance": {
+          "type": "object",
+          "description": "Reading guidance for the detectability axis.",
+          "additionalProperties": false,
+          "required": [
+            "flip_rationale",
+            "misread_guard",
+            "self_censoring_caveat",
+            "added",
+            "aftermath_note"
+          ],
+          "properties": {
+            "flip_rationale": { "$ref": "#/$defs/prose" },
+            "misread_guard": { "$ref": "#/$defs/prose" },
+            "self_censoring_caveat": { "$ref": "#/$defs/prose" },
+            "added": { "$ref": "#/$defs/prose" },
+            "aftermath_note": { "$ref": "#/$defs/prose" }
+          }
+        },
+        "blast_radius_guidance": {
+          "type": "object",
+          "description": "Reading guidance and method base rates for the blast_radius_potential axis.",
+          "additionalProperties": false,
+          "required": [
+            "definition",
+            "method_collateral_base_rates",
+            "authoring_notes",
+            "collateral_reveal_guidance",
+            "authoring_status",
+            "aftermath_rule"
+          ],
+          "properties": {
+            "definition": { "$ref": "#/$defs/prose" },
+            "method_collateral_base_rates": {
+              "type": "object",
+              "description": "Per-method base rates on the 0 to 10 axis scale. note is prose; every other key is a bounded number.",
+              "additionalProperties": false,
+              "required": [
+                "note",
+                "explosive_incendiary_chemical",
+                "vehicle_ramming",
+                "firearm_public_or_crowded",
+                "firearm_isolated_or_precise",
+                "edged_or_blunt_weapon",
+                "hands_on_assault",
+                "abduction_or_seizure",
+                "captive_control",
+                "covert_or_poison_targeted"
+              ],
+              "properties": {
+                "note": { "$ref": "#/$defs/prose" },
+                "explosive_incendiary_chemical": { "$ref": "#/$defs/score_number" },
+                "vehicle_ramming": { "$ref": "#/$defs/score_number" },
+                "firearm_public_or_crowded": { "$ref": "#/$defs/score_number" },
+                "firearm_isolated_or_precise": { "$ref": "#/$defs/score_number" },
+                "edged_or_blunt_weapon": { "$ref": "#/$defs/score_number" },
+                "hands_on_assault": { "$ref": "#/$defs/score_number" },
+                "abduction_or_seizure": { "$ref": "#/$defs/score_number" },
+                "captive_control": { "$ref": "#/$defs/score_number" },
+                "covert_or_poison_targeted": { "$ref": "#/$defs/score_number" }
+              }
+            },
+            "authoring_notes": { "$ref": "#/$defs/prose" },
+            "collateral_reveal_guidance": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "principle",
+                "tiers",
+                "instance_deferral",
+                "computed_critical_requires_both"
+              ],
+              "properties": {
+                "principle": { "$ref": "#/$defs/prose" },
+                "tiers": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "indiscriminate_or_population_target_revealed",
+                    "public_or_crowd_venue_revealed",
+                    "bystanders_present_or_managed",
+                    "cohesive_group_or_affinity_target_revealed",
+                    "single_individual_or_venue_unrevealed"
+                  ],
+                  "properties": {
+                    "indiscriminate_or_population_target_revealed": { "$ref": "#/$defs/prose" },
+                    "public_or_crowd_venue_revealed": { "$ref": "#/$defs/prose" },
+                    "bystanders_present_or_managed": { "$ref": "#/$defs/prose" },
+                    "cohesive_group_or_affinity_target_revealed": { "$ref": "#/$defs/prose" },
+                    "single_individual_or_venue_unrevealed": { "$ref": "#/$defs/prose" }
+                  }
+                },
+                "instance_deferral": { "$ref": "#/$defs/prose" },
+                "computed_critical_requires_both": { "$ref": "#/$defs/prose" }
+              }
+            },
+            "authoring_status": { "$ref": "#/$defs/prose" },
+            "aftermath_rule": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "rule",
+                "facility_floor_scope",
+                "copycat_tier",
+                "claims_rule",
+                "audience_vs_victims_guard",
+                "anti_harmonization_guard"
+              ],
+              "properties": {
+                "rule": { "$ref": "#/$defs/prose" },
+                "facility_floor_scope": { "$ref": "#/$defs/prose" },
+                "copycat_tier": { "$ref": "#/$defs/prose" },
+                "claims_rule": { "$ref": "#/$defs/prose" },
+                "audience_vs_victims_guard": { "$ref": "#/$defs/prose" },
+                "anti_harmonization_guard": { "$ref": "#/$defs/prose" }
+              }
+            }
+          }
+        },
+        "axis_confidence_rubric": {
+          "type": "object",
+          "description": "Level meanings and the derivation rule for axis_confidence. The rule is mechanical and scripts/lint/validate.py recomputes it for every indicator.",
+          "additionalProperties": false,
+          "required": ["levels", "derivation_rules", "misread_guard", "provenance"],
+          "properties": {
+            "levels": { "$ref": "#/$defs/prose" },
+            "derivation_rules": { "$ref": "#/$defs/prose" },
+            "misread_guard": { "$ref": "#/$defs/prose" },
+            "provenance": { "$ref": "#/$defs/prose" }
+          }
+        },
+        "rubric_version": {
+          "$ref": "#/$defs/semver",
+          "description": "Version of the rubric. Changes when the formula, thresholds, or guidance change."
+        },
+        "calibration_guidance": {
+          "$ref": "#/$defs/prose",
+          "description": "Guidance for a consumer that moves the thresholds for its own environment."
+        }
+      }
+    },
+    "instance_conditioning": {
+      "type": "object",
+      "description": "The instance-conditioning layer of the overlay: how a type band is joined to a case record's instance factors to give a conditioned priority. Escalate-only: the join may raise priority above the type band and never lowers it.",
+      "additionalProperties": false,
+      "required": [
+        "layer",
+        "factors",
+        "escalate_only_rule",
+        "demotion_doctrine",
+        "raise_guidance",
+        "inhibitors_exclusion",
+        "binding_contract",
+        "conditioning_guidance",
+        "status",
+        "provenance"
+      ],
+      "properties": {
+        "layer": { "$ref": "#/$defs/prose" },
+        "factors": {
+          "type": "array",
+          "description": "The six instance factors, each exactly once. These are the required properties of $defs.instance_assessment.",
+          "minItems": 6,
+          "maxItems": 6,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "target_focus",
+              "pathway_stage",
+              "means_in_hand",
+              "tempo_trajectory",
+              "proximity_access",
+              "source_credibility"
+            ]
+          }
+        },
+        "escalate_only_rule": { "$ref": "#/$defs/prose" },
+        "demotion_doctrine": { "$ref": "#/$defs/prose" },
+        "raise_guidance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["purpose", "patterns"],
+          "properties": {
+            "purpose": { "$ref": "#/$defs/prose" },
+            "patterns": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "$ref": "#/$defs/prose" }
+            }
+          }
+        },
+        "inhibitors_exclusion": { "$ref": "#/$defs/prose" },
+        "binding_contract": { "$ref": "#/$defs/prose" },
+        "conditioning_guidance": { "$ref": "#/$defs/prose" },
+        "status": { "$ref": "#/$defs/prose" },
+        "provenance": { "$ref": "#/$defs/prose" }
+      }
+    },
+    "tactic_priorities": {
+      "type": "object",
+      "description": "Type-level priority class per tactic, keyed by tactic ID. Characterizes the typical urgency of the tactic class, never the urgency of a case. A tactic may be absent. scripts/lint/validate.py requires every key to be a tactic ID of framework.json.",
+      "minProperties": 1,
+      "propertyNames": { "$ref": "#/$defs/tactic_id" },
+      "additionalProperties": {
+        "type": "string",
+        "enum": ["Urgent", "Immediate", "Priority", "Routine"]
+      }
+    },
+    "indicator_scores": {
+      "type": "object",
+      "description": "Type-level scores keyed by indicator ID. scripts/lint/validate.py requires the key set to equal the indicator IDs of framework.json: none missing, none extra.",
+      "minProperties": 1,
+      "propertyNames": { "$ref": "#/$defs/indicator_id" },
+      "additionalProperties": { "$ref": "#/$defs/indicator_score" }
+    }
+  },
+  "$defs": {
+    "prose": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\S([\\s\\S]*\\S)?$",
+      "description": "A non-empty text value with no leading or trailing whitespace."
+    },
+    "semver": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$",
+      "description": "A SemVer 2.0.0 version string."
+    },
+    "tactic_id": {
+      "type": "string",
+      "pattern": "^T[MFOI]0[1-4](0[1-9]|[1-9][0-9])$",
+      "description": "Tactic ID, same grammar as framework.schema.json."
+    },
+    "indicator_id": {
+      "type": "string",
+      "pattern": "^IND-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$",
+      "description": "Indicator ID, same grammar as framework.schema.json."
+    },
+    "score_number": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 10,
+      "description": "A number on the 0 to 10 scale. scripts/lint/validate.py also rejects NaN and Infinity, which JSON does not allow."
+    },
+    "band": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"],
+      "description": "A band, in rising order: low, medium, high, critical."
+    },
+    "confidence_level": {
+      "type": "string",
+      "enum": ["established", "inferred", "thin"],
+      "description": "Evidence basis of one axis value. Categorical only. A thin axis is a wider error bar and a reason for earlier human review; it never lowers a band."
+    },
+    "indicator_score": {
+      "type": "object",
+      "description": "The experimental type-level score of one indicator class. Every part is required; a score with a missing axis, weight, or band is invalid.",
+      "additionalProperties": false,
+      "required": ["axes", "type_weight", "type_band", "axis_confidence"],
+      "properties": {
+        "axes": {
+          "type": "object",
+          "description": "The four authored axis values, each on the 0 to 10 scale and recorded to one decimal place (the decimal rule is checked by scripts/lint/validate.py).",
+          "additionalProperties": false,
+          "required": ["impact_potential", "blast_radius_potential", "recoverability_inverse", "detectability"],
+          "properties": {
+            "impact_potential": {
+              "$ref": "#/$defs/score_number",
+              "description": "Magnitude of harm the behavior class directly produces or imminently enables."
+            },
+            "blast_radius_potential": {
+              "$ref": "#/$defs/score_number",
+              "description": "Geographic or population scope of the harm if it lands."
+            },
+            "recoverability_inverse": {
+              "$ref": "#/$defs/score_number",
+              "description": "How hard the harm the behavior class directly produces is to undo. Higher is less recoverable."
+            },
+            "detectability": {
+              "$ref": "#/$defs/score_number",
+              "description": "How observable the behavior class is while in progress. Enters the composite as 10 minus this value."
+            }
+          }
+        },
+        "type_weight": {
+          "$ref": "#/$defs/score_number",
+          "description": "The composite of the four axes per rubric.composite_math, stored to two decimals. scripts/lint/validate.py recomputes it with a tolerance of 0.005."
+        },
+        "type_band": {
+          "$ref": "#/$defs/band",
+          "description": "The band of the stored type_weight per rubric.type_band_thresholds, raised to type_band_floor when a floor is present."
+        },
+        "type_band_floor": {
+          "type": "string",
+          "enum": ["high", "critical"],
+          "description": "Optional floor. When present, type_band is never below it; type_weight is left as computed."
+        },
+        "axis_confidence": {
+          "type": "object",
+          "description": "Evidence basis of each axis value, derived by the rule in rubric.axis_confidence_rubric.",
+          "additionalProperties": false,
+          "required": ["impact_potential", "blast_radius_potential", "recoverability_inverse", "detectability"],
+          "properties": {
+            "impact_potential": { "$ref": "#/$defs/confidence_level" },
+            "blast_radius_potential": { "$ref": "#/$defs/confidence_level" },
+            "recoverability_inverse": { "$ref": "#/$defs/confidence_level" },
+            "detectability": { "$ref": "#/$defs/confidence_level" }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "type_band_floor": { "const": "critical" } }, "required": ["type_band_floor"] },
+          "then": { "properties": { "type_band": { "const": "critical" } } }
+        },
+        {
+          "if": { "properties": { "type_band_floor": { "const": "high" } }, "required": ["type_band_floor"] },
+          "then": { "properties": { "type_band": { "enum": ["high", "critical"] } } }
+        }
+      ]
+    },
+    "instance_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_focus", "pathway_stage", "means_in_hand", "tempo_trajectory", "proximity_access", "source_credibility"],
+      "description": "The instance factors of one case: discrete observations about a specific situation, kept separate from the type-level values. The same six factors and values as instance_factors in the score-free case record (case-record.schema.json). The overlay ships no instances; a consumer writes one per case.",
+      "properties": {
+        "target_focus": { "type": "string", "enum": ["diffuse", "narrowing", "specific_target", "unknown"], "description": "Direction of the observed behavior toward a target: diffuse (no resolved target), narrowing (a candidate set or associated place), specific_target (a specific subject or asset). unknown when not assessable." },
+        "pathway_stage": { "type": "string", "enum": ["grievance", "ideation", "research_planning", "preparation", "breach_or_probing", "attack", "aftermath", "unknown"], "description": "Assessed position on the pathway to violence in this case, which may lead or lag the indicator class's type-level phase." },
+        "means_in_hand": { "type": "string", "enum": ["unknown", "assessed_absent", "partial", "assessed_present", "confirmed_present"], "description": "Whether the means are actually held now. Possession, not eligibility: lawful ability to acquire is not means in hand. unknown is the default and never lowers priority." },
+        "tempo_trajectory": { "type": "string", "enum": ["accelerating", "steady", "stalling", "unknown"], "description": "Direction and rate of movement along the pathway across observations." },
+        "proximity_access": { "type": "string", "enum": ["no_known_access", "seeking_access", "has_access", "at_or_near_target", "unknown"], "description": "Access state relative to the target. A state, not a stage: an insider has access without ever breaching. unknown is the default and never lowers priority." },
+        "source_credibility": { "type": "string", "enum": ["high", "moderate", "low", "unknown"], "description": "Reliability of the reporting behind the record. It conditions how much the other five factors can raise priority and never lowers the type band." },
+        "basis": { "$ref": "#/$defs/prose", "description": "Optional free-text evidentiary basis or assessor note." }
+      }
+    },
+    "scored_case_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["indicator_id", "type_band", "instance", "conditioned_priority"],
+      "description": "An experimental scored case record: one indicator's type band joined to the instance factors of a case. Escalate-only: conditioned_priority may sit above type_band and never below it, which the conditionals on this object enforce. Whether the instance held or raised the band is not stored; it is read by comparing the two fields. Leaving a queue is a disposition, never a lowered priority. Band fidelity cannot be expressed in a schema: scripts/lint/validate.py --overlay ... --records ... requires indicator_id to exist in framework.json and type_band to equal the overlay's authored type_band for that indicator, so the escalate-only rule cannot be defeated by misquoting the band. The default record for case work is the score-free case record (case-record.schema.json); this record is for consumers who have opted in to the overlay.",
+      "properties": {
+        "indicator_id": { "$ref": "#/$defs/indicator_id", "description": "The indicator whose type band is being conditioned. Must exist in framework.json." },
+        "type_band": { "$ref": "#/$defs/band", "description": "The overlay's authored type_band for indicator_id, quoted exactly. This is the floor: conditioned_priority is never below it." },
+        "instance": { "$ref": "#/$defs/instance_assessment" },
+        "conditioned_priority": { "$ref": "#/$defs/band", "description": "The resulting triage priority, at or above type_band." },
+        "framework_version": { "$ref": "#/$defs/semver", "description": "Optional. The framework.json content version the record was written against. When present, scripts/lint/validate.py requires it to equal the version of the framework document being checked." },
+        "overlay_version": { "$ref": "#/$defs/semver", "description": "Optional. The overlay version whose type_band the record quotes. When present, scripts/lint/validate.py requires it to equal the overlay_version of the overlay being checked." },
+        "primary_objective_evidence_tier": { "type": "string", "enum": ["stated", "strongly_inferred", "weakly_inferred", "contested", "unknown"], "description": "Optional. How well the primary objective behind the observed behavior, and so the matrix placement, is established in this case. stated: explicit. strongly_inferred and weakly_inferred: inferred from behavior. contested: the evidence conflicts, or whether there is a hostile actor at all is disputed. unknown: no basis for inference." },
+        "disposition": { "type": "string", "enum": ["no_threat_identified", "transient_no_further_action", "active_monitoring", "heightened_monitoring", "referred_out", "disrupted_by_interdiction", "closed_benign", "closed_resolved"], "description": "Optional case-management outcome, recorded beside the priority and never written back into it. Same values as the score-free case record." }
+      },
+      "allOf": [
+        { "if": { "required": ["type_band"], "properties": { "type_band": { "const": "medium" } } }, "then": { "properties": { "conditioned_priority": { "enum": ["medium", "high", "critical"] } } } },
+        { "if": { "required": ["type_band"], "properties": { "type_band": { "const": "high" } } }, "then": { "properties": { "conditioned_priority": { "enum": ["high", "critical"] } } } },
+        { "if": { "required": ["type_band"], "properties": { "type_band": { "const": "critical" } } }, "then": { "properties": { "conditioned_priority": { "enum": ["critical"] } } } }
+      ]
+    }
+  }
+}

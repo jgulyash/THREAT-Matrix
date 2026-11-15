@@ -1,0 +1,14 @@
+{
+  "id": "F019",
+  "expected_check": "V17",
+  "expected_message": "forbidden below phase 4",
+  "audit_findings": "F13",
+  "description": "Add phase_4_track to a phase 1 tactic.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].phase_4_track",
+      "value": "evasion"
+    }
+  ]
+}

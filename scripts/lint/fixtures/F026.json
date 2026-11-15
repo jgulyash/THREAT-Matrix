@@ -1,0 +1,16 @@
+{
+  "id": "F026",
+  "expected_check": "V23",
+  "expected_message": "resolves to no indicator",
+  "description": "Add a mitigates edge whose indicator resolves to nothing.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.facility.tactics.[id=TF0102].countermeasures.[id=CM-F0102-03].mitigates",
+      "value": {
+        "indicator": "IND-0199-99",
+        "function": "detect"
+      }
+    }
+  ]
+}

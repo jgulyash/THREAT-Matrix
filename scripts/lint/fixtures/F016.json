@@ -1,0 +1,13 @@
+{
+  "id": "F016",
+  "expected_check": "V16",
+  "expected_message": "not an integer from 1 to 4",
+  "description": "Set phase to the JSON boolean true, which is not an integer phase.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].phase",
+      "value": true
+    }
+  ]
+}

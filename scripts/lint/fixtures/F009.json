@@ -1,0 +1,12 @@
+{
+  "id": "F009",
+  "expected_check": "V08",
+  "description": "Add a coordinates_with reference that resolves to no response protocol.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].response_protocols.[id=RP-0101-01].coordinates_with",
+      "value": "RP-0199-99"
+    }
+  ]
+}

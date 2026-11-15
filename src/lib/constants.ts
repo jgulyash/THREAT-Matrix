@@ -14,32 +14,26 @@ export const PHASE_SHORT: Record<number, string> = {
   4: 'Aftermath',
 };
 
-export const STUB: Record<
-  'organization' | 'infrastructure',
-  { phases: Record<number, number>; flight: number; claim: number }
-> = {
-  organization: { phases: { 1: 9, 2: 11, 3: 15 }, flight: 9, claim: 4 },
-  infrastructure: { phases: { 1: 10, 2: 10, 3: 9 }, flight: 6, claim: 2 },
-};
-
-// The single ordered descriptor for the four target matrices — drives column
-// order, display labels, identity colors, live-vs-stub status, and planned
-// versions everywhere (heat map, nav tabs, bibliography sections, stub
-// landings). Promoting a matrix to live = flipping its `version` to null.
-// Labels are plural to match the V1.2.2 scope prose; data keys / routes /
+// The single ordered descriptor for the four target matrices: drives column
+// order, display labels, and identity colors everywhere (heat map, nav tabs,
+// bibliography sections). Labels are plural; data keys, routes, and the
 // schema enum stay singular (matrices.person, /person) for consumer stability.
 export const MATRICES = [
-  { key: 'person', label: 'People', color: 'amber', version: null },
-  { key: 'facility', label: 'Facilities', color: 'teal', version: null },
-  { key: 'organization', label: 'Organizations', color: 'red', version: null },
-  { key: 'infrastructure', label: 'Infrastructure', color: 'blue', version: null },
+  { key: 'person', label: 'People', color: 'amber' },
+  { key: 'facility', label: 'Facilities', color: 'teal' },
+  { key: 'organization', label: 'Organizations', color: 'red' },
+  { key: 'infrastructure', label: 'Infrastructure', color: 'blue' },
 ] as const;
+
+export type MatrixKey = (typeof MATRICES)[number]['key'];
+export const MATRIX_KEYS: MatrixKey[] = MATRICES.map((m) => m.key);
 
 export const MATRIX_LABELS: Record<string, string> = Object.fromEntries(
   MATRICES.map((m) => [m.key, m.label])
 );
 
-export const STUB_MATRICES = MATRICES.filter((m) => m.version !== null);
+export const isMatrixKey = (v: string): v is MatrixKey =>
+  (MATRIX_KEYS as string[]).includes(v);
 
 export const CATEGORY_ORDER = [
   'lone_actor',
@@ -51,9 +45,28 @@ export const CATEGORY_ORDER = [
   'customer_aggressor',
 ];
 
+// Readable fallback for an enum value with no label: "weeks_to_months"
+// becomes "Weeks To Months". Used by label() so a value added to the data
+// before the viewer learns it never shows as a raw identifier.
+export function humanize(value: string): string {
+  if (value === 'n/a') return 'N/A';
+  return value
+    .replace(/[_-]+/g, ' ')
+    .trim()
+    .replace(/\b[a-z]/g, (c) => c.toUpperCase());
+}
+
+// Own-property lookup with a readable fallback. Never resolves inherited
+// keys such as "constructor".
+export function label(labels: Record<string, string>, value: string | undefined | null): string {
+  if (value === undefined || value === null || value === '') return '';
+  return Object.prototype.hasOwnProperty.call(labels, value) ? labels[value] : humanize(String(value));
+}
+
 export const VECTOR_LABELS: Record<string, string> = {
   physical_primary: 'Physical',
   cyber_enabled_physical: 'Cyber-Enabled',
+  cyber_initiated_physical: 'Cyber-Initiated',
   cyber_intrusion: 'Cyber',
   ai_enabled: 'AI-Enabled',
   ai_initiated_physical: 'AI-Initiated',
@@ -66,6 +79,7 @@ export const AI_RISK_LABELS: Record<string, string> = {
   synthetic_identity: 'Synthetic Identity',
   deepfake_communication: 'Deepfake Comms',
   deepfake_manipulation: 'Deepfake Manipulation',
+  deepfake_voice_video: 'Deepfake Voice / Video',
   ai_generated_content: 'AI Content',
   autonomous_attack_planning: 'Auto Planning',
   autonomous_targeting: 'Autonomous Targeting',
@@ -87,7 +101,7 @@ export const INDICATOR_CATEGORY_LABELS: Record<string, string> = {
   digital: 'Digital',
 };
 
-// V1.2.2 People-matrix scope sub-dimension
+// People matrix scope sub-dimension
 export const TARGET_IDENTITY_LABELS: Record<string, string> = {
   named_individual: 'Named Individual',
   role_or_identity_category: 'Role / Identity Category',
@@ -95,7 +109,7 @@ export const TARGET_IDENTITY_LABELS: Record<string, string> = {
   indiscriminate: 'Indiscriminate',
 };
 
-// V1.3 Facility-matrix target sub-dimensions (revealed reading)
+// Facility matrix target sub-dimensions
 export const FACILITY_TARGET_SCOPE_LABELS: Record<string, string> = {
   specific_site: 'Specific Site',
   site_class: 'Site Class',
@@ -110,15 +124,7 @@ export const WITHIN_SITE_FOCUS_LABELS: Record<string, string> = {
   whole_site: 'Whole Site',
 };
 
-// V1.2 escalation severity band
-export const SEVERITY_BAND_LABELS: Record<string, string> = {
-  low: 'Low',
-  medium: 'Medium',
-  high: 'High',
-  critical: 'Critical',
-};
-
-// V1.2 temporal signature ({tempo}_{stage})
+// Temporal signature ({tempo}_{stage})
 export const TEMPORAL_SIGNATURE_LABELS: Record<string, string> = {
   horizon: 'Horizon',
   horizon_early: 'Horizon · Early',
@@ -136,23 +142,7 @@ export const TEMPORAL_SIGNATURE_LABELS: Record<string, string> = {
   aftermath_late: 'Aftermath · Late',
 };
 
-// V1.2.2 primary-objective evidence tier
-export const EVIDENCE_TIER_LABELS: Record<string, string> = {
-  stated: 'Stated',
-  strongly_inferred: 'Strongly Inferred',
-  weakly_inferred: 'Weakly Inferred',
-  unknown: 'Unknown',
-};
-
-// V1.2 escalation axes (escalation_axes sub-scores)
-export const ESCALATION_AXIS_LABELS: Record<string, string> = {
-  impact_potential: 'Impact Potential',
-  blast_radius_potential: 'Blast Radius',
-  recoverability_inverse: 'Recoverability (inv.)',
-  detectability: 'Detectability',
-};
-
-// V1.2 informs_axes (which axes of the threat picture an indicator informs)
+// informs_axes (which parts of the threat picture an indicator informs)
 export const INFORMS_AXIS_LABELS: Record<string, string> = {
   actor_capability: 'Actor · Capability',
   actor_intent: 'Actor · Intent',
@@ -217,6 +207,34 @@ export const DOMAIN_LABELS: Record<string, string> = {
   technical_monitoring: 'Technical Monitoring',
   environmental_design: 'Environmental Design',
   behavioral_intervention: 'Behavioral Intervention',
+  network_segmentation: 'Network Segmentation',
+  system_hardening: 'System Hardening',
+  safety_system_integrity: 'Safety System Integrity',
+  supply_chain_assurance: 'Supply Chain Assurance',
+};
+
+export const TIME_TO_IMPLEMENT_LABELS: Record<string, string> = {
+  immediate: 'Immediate',
+  days: 'Days',
+  weeks: 'Weeks',
+  months: 'Months',
+  weeks_to_months: 'Weeks to Months',
+};
+
+export const BIB_TYPE_LABELS: Record<string, string> = {
+  government_report: 'Gov Report',
+  academic_paper: 'Academic',
+  book: 'Book',
+  court_document: 'Court Doc',
+  after_action_review: 'AAR',
+  news_investigation: 'Investigation',
+  incident_database: 'Incident DB',
+  practitioner_guide: 'Practitioner Guide',
+  standard: 'Standard',
+  field_observation: 'Field Observation',
+  practitioner_elicitation: 'Practitioner Elicitation',
+  partner_attestation: 'Partner Attestation',
+  case_composite: 'Case Composite',
 };
 
 export const PRIORITY_ORDER: Priority[] = [
@@ -227,19 +245,22 @@ export const PRIORITY_ORDER: Priority[] = [
   'ongoing',
 ];
 
-// Ordered, empty-skipping actor-category groups with a display label.
-// Single source of truth for the CATEGORY_ORDER iteration shared by the
-// FilterBar dropdown and the ActorProfilesView grid — so a category that
-// appears in the data but not in CATEGORY_ORDER cannot silently drop from
-// one surface while showing in the other.
+// Ordered, empty-skipping actor-category groups with a display label. Single
+// source of truth shared by the FilterBar dropdown and the ActorProfilesView
+// grid. A category present in the data but absent from CATEGORY_ORDER is
+// appended, so it cannot drop from one surface while showing in the other.
 export const orderedActorCategories = (
-  actorsByCategory: Record<string, ActorProfile[]>
-): { cat: string; label: string; actors: ActorProfile[] }[] =>
-  CATEGORY_ORDER.filter((c) => actorsByCategory[c]?.length).map((cat) => ({
-    cat,
-    label: actorsByCategory[cat][0].category_label,
-    actors: actorsByCategory[cat],
-  }));
+  actorsByCategory: Map<string, ActorProfile[]>
+): { cat: string; label: string; actors: ActorProfile[] }[] => {
+  const keys = [
+    ...CATEGORY_ORDER.filter((c) => actorsByCategory.get(c)?.length),
+    ...[...actorsByCategory.keys()].filter((c) => !CATEGORY_ORDER.includes(c)),
+  ];
+  return keys.map((cat) => {
+    const actors = actorsByCategory.get(cat) || [];
+    return { cat, label: actors[0]?.category_label || humanize(cat), actors };
+  });
+};
 
 export const tacticMatchesFilters = (
   t: Tactic,
@@ -251,7 +272,7 @@ export const tacticMatchesFilters = (
   (!actorFilter ||
     (t.actor_associations || []).some((a) => a.actor_id === actorFilter));
 
-// V1.6 Behavioral Mode (modality) — display labels + one-line definitions.
+// Behavioral Mode (modality): display labels and one-line definitions.
 // Data field stays `modality`; the UI reads "Behavioral Mode".
 export const MODALITY_LABELS: Record<string, string> = {
   physical: 'Physical',
@@ -269,7 +290,7 @@ export const MODALITY_DEFS: Record<string, string> = {
 
 export const MODALITY_ORDER = ['physical', 'cyber', 'cyber_physical', 'human_social'];
 
-// V1.6 conditioning_guidance probe-factor labels (instance-factor enum names).
+// conditioning_guidance probe-factor labels (instance-factor enum names).
 export const PROBE_FACTOR_LABELS: Record<string, string> = {
   target_focus: 'Target Focus',
   pathway_stage: 'Pathway Stage',
@@ -292,20 +313,23 @@ export const resolveTrack = (t: Tactic): 'flight' | 'claim' | null =>
     ? 'claim'
     : null;
 
+export const TRACK_LABELS: Record<'flight' | 'claim', string> = { flight: 'Evade', claim: 'Claim' };
+
 export function groupByCategory<T extends { category?: string }>(
   items: T[],
   labels: Record<string, string>
-): { orderedKeys: string[]; grouped: Record<string, T[]> } {
-  const grouped = items.reduce<Record<string, T[]>>((acc, item) => {
+): { orderedKeys: string[]; grouped: Map<string, T[]> } {
+  const grouped = new Map<string, T[]>();
+  items.forEach((item) => {
     const k = item.category || 'other';
-    if (!acc[k]) acc[k] = [];
-    acc[k].push(item);
-    return acc;
-  }, {});
+    const list = grouped.get(k);
+    if (list) list.push(item);
+    else grouped.set(k, [item]);
+  });
   const order = Object.keys(labels);
   const orderedKeys = [
-    ...order.filter((k) => grouped[k]),
-    ...Object.keys(grouped).filter((k) => !order.includes(k)),
+    ...order.filter((k) => grouped.has(k)),
+    ...[...grouped.keys()].filter((k) => !order.includes(k)),
   ];
   return { orderedKeys, grouped };
 }

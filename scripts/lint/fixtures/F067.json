@@ -1,0 +1,15 @@
+{
+  "id": "F067",
+  "expected_check": "V29",
+  "expected_message": "belongs in the scoring overlay",
+  "description": "Put the retired top-level escalation_rubric back.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "escalation_rubric",
+      "value": {
+        "composite_math": "x"
+      }
+    }
+  ]
+}

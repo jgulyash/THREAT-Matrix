@@ -1,0 +1,17 @@
+{
+  "id": "F133",
+  "target": "overlay",
+  "expected_check": "V45",
+  "expected_message": "six instance factors",
+  "audit_findings": "F12",
+  "description": "List an invented instance factor.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "instance_conditioning.factors",
+      "value": [
+        "bogus_factor"
+      ]
+    }
+  ]
+}

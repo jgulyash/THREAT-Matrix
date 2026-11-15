@@ -1,11 +1,13 @@
 name: Framework Issue
-description: Report an issue with existing framework content — incorrect data, missing information, or structural problems
+description: "Report an issue with existing framework content: incorrect data, missing information, or structural problems"
 title: "[Issue] "
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
+        > **Do not post real incident data.** This issue will be public, indexed by search engines, and effectively permanent, including its edit history. Do not include the name of any person or anything that could identify one, any detail of a real incident that is not already in a published public source, anything from an open or non-public investigation, or confidential employer or client material. Use fictionalized examples or cited public sources only. To report a security or privacy problem, follow SECURITY.md instead of opening a detailed issue.
+
         Use this template to flag inconsistencies, errors, or problems in the THREAT Matrix framework data.
 
         Examples: terminology drift, scope mismatch, an actor profile that doesn't fit its category, a tactic placed in the wrong phase, or a description that contradicts the source it cites.
@@ -64,8 +66,9 @@ body:
     attributes:
       label: Supporting Evidence or Sources
       description: >
-        Provide sources that support your correction. Government reports, academic research,
-        court documents, and after-action reviews preferred.
+        Provide published sources that support your correction. Government reports, academic research,
+        court documents, and after-action reviews preferred. Cite public sources only; do not
+        describe or attach material from a real case file.
       placeholder: |
         - Source: title, author/org, year, URL or document reference
     validations:

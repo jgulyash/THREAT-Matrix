@@ -1,0 +1,12 @@
+{
+  "id": "F013",
+  "expected_check": "V12",
+  "description": "Give an indicator an id that embeds a different parent tactic.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].id",
+      "value": "IND-0102-99"
+    }
+  ]
+}

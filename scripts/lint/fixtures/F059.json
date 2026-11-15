@@ -1,0 +1,13 @@
+{
+  "id": "F059",
+  "expected_check": "V28",
+  "expected_message": "has no indicators",
+  "description": "Empty one tactic's indicators list.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].indicators",
+      "value": []
+    }
+  ]
+}

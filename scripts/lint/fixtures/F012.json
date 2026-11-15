@@ -1,0 +1,12 @@
+{
+  "id": "F012",
+  "expected_check": "V11",
+  "description": "Give a person tactic a facility prefix.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0106].id",
+      "value": "TF0190"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "F056",
+  "expected_check": "V27",
+  "expected_message": "bibliography key does not match",
+  "audit_findings": "F14",
+  "description": "Add a bibliography entry whose key has the shape of an indicator id.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "bibliography.IND-0101-01",
+      "value": {
+        "type": "book",
+        "title": "Fixture entry",
+        "author": "Fixture",
+        "date": "2020",
+        "url": null,
+        "doi": null,
+        "relevance_summary": "Fixture entry.",
+        "matrices": [
+          "person"
+        ],
+        "topics": [
+          "fixture"
+        ]
+      }
+    },
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].source_refs",
+      "value": "IND-0101-01"
+    }
+  ]
+}

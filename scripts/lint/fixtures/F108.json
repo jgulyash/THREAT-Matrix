@@ -1,0 +1,25 @@
+{
+  "id": "F108",
+  "target": "overlay",
+  "expected_check": "V14",
+  "expected_message": "axes is missing",
+  "audit_findings": "F05 S01",
+  "description": "Empty the axes and claim weight 9.9 and band critical.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-0101-01.axes",
+      "value": {}
+    },
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-0101-01.type_weight",
+      "value": 9.9
+    },
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-0101-01.type_band",
+      "value": "critical"
+    }
+  ]
+}

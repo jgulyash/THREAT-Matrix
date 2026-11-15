@@ -28,7 +28,7 @@
     "framework_version": {
       "type": "string",
       "minLength": 5,
-      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?![\\s\\S])",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
       "description": "Content version of framework.json whose indicator IDs and wording this record refers to, for example 2.0.0."
     },
     "case_ref": {
@@ -97,7 +97,7 @@
       "minLength": 10,
       "maxLength": 10,
       "format": "date",
-      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(?![\\s\\S])",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$",
       "description": "Calendar date, YYYY-MM-DD."
     },
     "observation": {
@@ -109,7 +109,7 @@
           "type": "string",
           "minLength": 11,
           "maxLength": 12,
-          "pattern": "^IND-[FOI]?[0-9]{4}-[0-9]{2}(?![\\s\\S])",
+          "pattern": "^IND-[FOI]?[0-9]{4}-[0-9]{2}$",
           "description": "ID of the indicator in framework.json whose behavior wording fits what was observed. The schema checks the form of the ID; whether it exists in the stated framework_version is checked against the data."
         },
         "observed_on": {

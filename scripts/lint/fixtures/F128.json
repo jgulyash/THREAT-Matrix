@@ -1,0 +1,14 @@
+{
+  "id": "F128",
+  "target": "overlay",
+  "expected_check": "V43",
+  "expected_message": "is not Urgent",
+  "description": "Set a tactic priority outside the four values.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "tactic_priorities.TM0101",
+      "value": "Low"
+    }
+  ]
+}

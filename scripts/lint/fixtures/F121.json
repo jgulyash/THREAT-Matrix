@@ -1,0 +1,14 @@
+{
+  "id": "F121",
+  "target": "overlay",
+  "expected_check": "V41",
+  "expected_message": "not_a_risk_score",
+  "description": "Declare the overlay a risk score.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "not_a_risk_score",
+      "value": false
+    }
+  ]
+}

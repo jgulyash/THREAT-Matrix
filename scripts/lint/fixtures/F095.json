@@ -1,0 +1,14 @@
+{
+  "id": "F095",
+  "expected_check": "V37",
+  "expected_message": "indicator id",
+  "audit_findings": "F14",
+  "description": "Give an indicator the zero sequence number.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].id",
+      "value": "IND-0101-00"
+    }
+  ]
+}

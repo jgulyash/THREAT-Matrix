@@ -1,0 +1,23 @@
+{
+  "id": "F042",
+  "expected_check": "V26",
+  "expected_message": "may not be reserved",
+  "audit_findings": "F02 F04 S05 C04",
+  "description": "Mark an indicator reserved while it keeps its content.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].lifecycle_state",
+      "value": "reserved"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].reserved_reason",
+      "value": "x"
+    },
+    {
+      "op": "del",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].source_refs"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "F147",
+  "target": "record",
+  "expect": "pass",
+  "expected_check": "V47",
+  "description": "Stating the framework and overlay versions being checked is legal.",
+  "base": {
+    "indicator_id": "IND-0101-01",
+    "type_band": "medium",
+    "instance": {
+      "target_focus": "unknown",
+      "pathway_stage": "unknown",
+      "means_in_hand": "unknown",
+      "tempo_trajectory": "unknown",
+      "proximity_access": "unknown",
+      "source_credibility": "unknown",
+      "basis": "Fixture record. Describes no case."
+    },
+    "conditioned_priority": "medium"
+  },
+  "mutations": [
+    {
+      "op": "add",
+      "path": "framework_version",
+      "value": "2.0.0"
+    },
+    {
+      "op": "add",
+      "path": "overlay_version",
+      "value": "0.1.0"
+    }
+  ]
+}

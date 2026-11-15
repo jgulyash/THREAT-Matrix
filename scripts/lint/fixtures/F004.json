@@ -1,0 +1,12 @@
+{
+  "id": "F004",
+  "expected_check": "V04",
+  "description": "Give a second response protocol an id that already exists.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].response_protocols.[id=RP-0101-02].id",
+      "value": "RP-0101-01"
+    }
+  ]
+}

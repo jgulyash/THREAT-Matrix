@@ -1,0 +1,19 @@
+{
+  "id": "F074",
+  "expected_check": "V32",
+  "expected_message": "v2_tactic_associations",
+  "audit_findings": "F08",
+  "description": "Add a v2_tactic_associations entry that resolves to no tactic.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "actor_profiles.[id=AP001].v2_tactic_associations",
+      "value": [
+        {
+          "tactic_id": "TM0199",
+          "relevance": "high"
+        }
+      ]
+    }
+  ]
+}

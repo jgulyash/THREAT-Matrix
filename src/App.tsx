@@ -1,184 +1,119 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import type { FrameworkData, Tactic, ActorProfile } from './types/framework';
-import { parseRoute, LIVE_MATRICES, type LiveMatrix } from './lib/route';
-import { resolveTrack, tacticMatchesFilters } from './lib/constants';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { isMatrixView, parseLocation } from './lib/route';
+import { readPref, writePref } from './lib/storage';
+import { FilterContext } from './lib/nav';
+import { OverlayProvider } from './lib/overlay';
 import { TopNav } from './components/TopNav';
 import { FilterBar } from './components/FilterBar';
 import { HeatMapGrid } from './components/HeatMapGrid';
 import { SplitView } from './components/SplitView';
 import { ActorProfilesView } from './components/ActorProfilesView';
 import { ActorDetailView } from './components/ActorDetailView';
-import { IndicatorDetail, type IndicatorEntry } from './components/IndicatorDetail';
+import { IndicatorDetail } from './components/IndicatorDetail';
 import { BibliographyView } from './components/BibliographyView';
-import frameworkData from '../docs/data/framework.json';
+import { SearchView } from './components/SearchView';
+import { ErrorBoundary } from './components/ErrorBoundary';
+import { NotFoundView, ReservedActorView } from './components/NoticeViews';
+import { Footer, LandingNotice, MatrixHeader } from './components/LandingNotice';
+import { OverlayToggle } from './components/overlay/OverlayToggle';
 
-export type TacticsByPhase = {
-  1: Tactic[];
-  2: Tactic[];
-  3: Tactic[];
-  4: { flight: Tactic[]; claim: Tactic[] };
+type Theme = 'dark' | 'light';
+const THEME_KEY = 'threat-matrix-theme';
+
+const applyTheme = (t: Theme) => {
+  if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  else document.documentElement.removeAttribute('data-theme');
 };
 
-export type TacticsByMatrix = Record<LiveMatrix, TacticsByPhase>;
+// The route path without the filter query: focus moves only when this changes.
+const pathKey = () => window.location.hash.split('?')[0];
 
 export default function App() {
-  const data = frameworkData as unknown as FrameworkData;
-
-  const [route, setRoute] = useState(() => parseRoute());
-  const [modalityFilter, setModalityFilter] = useState('');
-  const [actorFilter, setActorFilter] = useState('');
-  const [theme, setThemeState] = useState<'dark' | 'light'>(() =>
-    (localStorage.getItem('threat-matrix-theme') as 'dark' | 'light' | null) || 'dark'
+  const [loc, setLoc] = useState(() => parseLocation());
+  const [theme, setThemeState] = useState<Theme>(() =>
+    readPref(THEME_KEY) === 'light' ? 'light' : 'dark'
   );
+  const mainRef = useRef<HTMLElement>(null);
+  const lastPath = useRef(pathKey());
 
-  const setTheme = useCallback((t: 'dark' | 'light') => {
+  const setTheme = useCallback((t: Theme) => {
     setThemeState(t);
-    localStorage.setItem('threat-matrix-theme', t);
-    document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : '');
+    writePref(THEME_KEY, t);
+    applyTheme(t);
   }, []);
 
   useEffect(() => {
-    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    applyTheme(theme);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    const h = () => setRoute(parseRoute());
+    const h = () => setLoc(parseLocation());
     window.addEventListener('hashchange', h);
     return () => window.removeEventListener('hashchange', h);
   }, []);
 
-  const navigate = useCallback((path: string) => {
-    window.location.hash = '#' + path;
-  }, []);
+  const { route, filters } = loc;
 
-  const derived = useMemo(() => {
-    // All tactics across the live (rendered) matrices; IDs are globally unique
-    // (TM####/TF####, IND-####/IND-F####), so the lookup maps stay flat.
-    const allTactics: Tactic[] = LIVE_MATRICES.flatMap(
-      (m) => data.matrices[m]?.tactics || []
-    );
-    // Reserved IDs (lifecycle_state 'reserved') are held, not data; hide them per DEPRECATION.md.
-    const ap = data.actor_profiles.filter((a) => (a.lifecycle_state ?? 'active') !== 'reserved');
-    const bib = data.bibliography || {};
-
-    const tacticMap: Record<string, Tactic> = {};
-    allTactics.forEach((t) => { tacticMap[t.id] = t; });
-
-    const actorMap: Record<string, ActorProfile> = {};
-    ap.forEach((a) => { actorMap[a.id] = a; });
-
-    // Flat lookup of every rendered indicator → its parent tactic
-    const indicatorMap: Record<string, IndicatorEntry> = {};
-    allTactics.forEach((t) => {
-      (t.indicators || []).forEach((ind) => {
-        indicatorMap[ind.id] = { indicator: ind, tactic: t };
-      });
-    });
-
-    const tbm = {} as TacticsByMatrix;
-    LIVE_MATRICES.forEach((m) => {
-      const tbp: TacticsByPhase = { 1: [], 2: [], 3: [], 4: { flight: [], claim: [] } };
-      (data.matrices[m]?.tactics || []).forEach((t) => {
-        if (t.phase !== 4) tbp[t.phase as 1 | 2 | 3].push(t);
-        else if (resolveTrack(t) === 'flight') tbp[4].flight.push(t);
-        else tbp[4].claim.push(t);
-      });
-      tbm[m] = tbp;
-    });
-
-    const abc: Record<string, ActorProfile[]> = {};
-    ap.forEach((a) => {
-      if (!abc[a.category]) abc[a.category] = [];
-      abc[a.category].push(a);
-    });
-
-    const getActorTactics = (id: string) =>
-      allTactics.filter((t) => tacticMatchesFilters(t, '', id));
-
-    // Reverse lookup: which tactics cite each bibliography entry
-    const bibReverseMap: Record<string, Tactic[]> = {};
-    allTactics.forEach((t) => {
-      const refs = new Set<string>();
-      (t.source_refs || []).forEach((r) => refs.add(r));
-      (t.indicators || []).forEach((i) => (i.source_refs || []).forEach((r) => refs.add(r)));
-      (t.countermeasures || []).forEach((c) => (c.source_refs || []).forEach((r) => refs.add(r)));
-      (t.response_protocols || []).forEach((r) => (r.source_refs || []).forEach((x) => refs.add(x)));
-      refs.forEach((key) => {
-        if (!bibReverseMap[key]) bibReverseMap[key] = [];
-        bibReverseMap[key].push(t);
-      });
-    });
-
-    return { tacticMap, actorMap, indicatorMap, tbm, abc, bib, bibReverseMap, getActorTactics };
-  }, [data]);
-
-  const { tacticMap, actorMap, indicatorMap, tbm, abc, bib, bibReverseMap, getActorTactics } = derived;
-  const isActors = route.view === 'actors' || route.view === 'actorDetail';
-  const isReferences = route.view === 'references';
-  const isIndicator = route.view === 'indicator';
+  // After a navigation, move keyboard focus to the new view's heading so the
+  // next Tab continues from the content that just appeared. Typing in the
+  // search field and views that focus a specific entry keep their own focus.
+  useEffect(() => {
+    const key = pathKey();
+    if (key === lastPath.current) return;
+    lastPath.current = key;
+    const main = mainRef.current;
+    if (!main) return;
+    const active = document.activeElement;
+    if (active instanceof HTMLInputElement && active.type === 'search') return;
+    const ownFocus =
+      (route.view === 'references' && route.citedKey) || (route.view === 'tactic' && route.focusId);
+    if (ownFocus) return;
+    main.scrollTop = 0;
+    window.scrollTo(0, 0);
+    const target = main.querySelector<HTMLElement>('[data-focus-target]') || main;
+    target.focus({ preventScroll: true });
+  }, [loc]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="app-root">
-      <TopNav route={route} navigate={navigate} theme={theme} setTheme={setTheme} />
-      {!isActors && !isReferences && !isIndicator && (
-        <FilterBar
-          modalityFilter={modalityFilter}
-          setModalityFilter={setModalityFilter}
-          actorFilter={actorFilter}
-          setActorFilter={setActorFilter}
-          actorsByCategory={abc}
-        />
-      )}
-      <div className="main-content">
-        {route.view === 'heatmap' && (
-          <HeatMapGrid
-            tacticsByMatrix={tbm}
-            navigate={navigate}
-            modalityFilter={modalityFilter}
-            actorFilter={actorFilter}
-            compact={false}
-            selectedMatrix={null}
-            selectedPhase={null}
-            selectedTrack={null}
-            selectedTacticId={null}
-          />
-        )}
-        {(route.view === 'phase' || route.view === 'tactic') && (
-          <SplitView
-            tacticsByMatrix={tbm}
-            route={route}
-            navigate={navigate}
-            tacticMap={tacticMap}
-            actorMap={actorMap}
-            modalityFilter={modalityFilter}
-            actorFilter={actorFilter}
-          />
-        )}
-        {route.view === 'indicator' && (
-          <IndicatorDetail
-            indicatorId={route.indicatorId}
-            indicatorMap={indicatorMap}
-            navigate={navigate}
-          />
-        )}
-        {route.view === 'actors' && (
-          <ActorProfilesView actorsByCategory={abc} navigate={navigate} />
-        )}
-        {route.view === 'actorDetail' && (
-          <ActorDetailView
-            actor={actorMap[route.actorId]}
-            navigate={navigate}
-            getActorTactics={getActorTactics}
-          />
-        )}
-        {route.view === 'references' && (
-          <BibliographyView
-            bibliography={bib}
-            bibReverseMap={bibReverseMap}
-            navigate={navigate}
-          />
-        )}
-      </div>
-    </div>
+    <FilterContext.Provider value={filters}>
+      <OverlayProvider>
+        <div className="app-root">
+          <button type="button" className="skip-link" onClick={() => mainRef.current?.focus()}>
+            Skip to content
+          </button>
+          <TopNav route={route} theme={theme} setTheme={setTheme} />
+          {isMatrixView(route) && <FilterBar route={route} filters={filters} />}
+          <main className="main-content" ref={mainRef} tabIndex={-1}>
+            <ErrorBoundary>
+              {route.view === 'overview' && (
+                <>
+                  <LandingNotice />
+                  <HeatMapGrid scope={null} compact={false} route={route} />
+                </>
+              )}
+              {route.view === 'heatmap' && (
+                <>
+                  <MatrixHeader matrix={route.matrix} />
+                  <HeatMapGrid scope={route.matrix} compact={false} route={route} />
+                </>
+              )}
+              {(route.view === 'phase' || route.view === 'tactic') && <SplitView route={route} />}
+              {route.view === 'indicator' && <IndicatorDetail indicatorId={route.indicatorId} />}
+              {route.view === 'actors' && <ActorProfilesView />}
+              {route.view === 'actorDetail' && <ActorDetailView actorId={route.actorId} />}
+              {route.view === 'reservedActor' && (
+                <ReservedActorView actorId={route.actorId} reason={route.reason} />
+              )}
+              {route.view === 'references' && <BibliographyView citedKey={route.citedKey} />}
+              {route.view === 'search' && <SearchView query={route.query} />}
+              {route.view === 'notFound' && <NotFoundView what={route.what} />}
+            </ErrorBoundary>
+          </main>
+          <Footer>
+            <OverlayToggle />
+          </Footer>
+        </div>
+      </OverlayProvider>
+    </FilterContext.Provider>
   );
 }

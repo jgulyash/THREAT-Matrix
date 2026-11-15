@@ -1,0 +1,14 @@
+{
+  "id": "F058",
+  "expected_check": "V28",
+  "expected_message": "empty",
+  "audit_findings": "S06",
+  "description": "Empty one matrix's tactics list.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics",
+      "value": []
+    }
+  ]
+}

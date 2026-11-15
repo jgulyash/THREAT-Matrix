@@ -1,0 +1,12 @@
+{
+  "id": "F055",
+  "expected_check": "V27",
+  "description": "Add a source_refs entry that breaks the bibliography key format.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].source_refs",
+      "value": "not_a_bib_key"
+    }
+  ]
+}

@@ -1,13 +1,14 @@
 import type { ResponseProtocol } from '../../types/framework';
-import { PRIORITY_ORDER, STAKEHOLDER_LABELS } from '../../lib/constants';
+import { PRIORITY_ORDER, STAKEHOLDER_LABELS, humanize, label } from '../../lib/constants';
+import { LifecycleNote } from '../Lifecycle';
 import { SourceRefLink } from './SourceRefLink';
 
 interface Props {
   protocols: ResponseProtocol[];
-  navigate: (path: string) => void;
+  focusId?: string | null;
 }
 
-export function ResponseProtocolSection({ protocols, navigate }: Props) {
+export function ResponseProtocolSection({ protocols, focusId }: Props) {
   if (!protocols?.length) return null;
 
   const sorted = [...protocols].sort((a, b) => {
@@ -17,15 +18,23 @@ export function ResponseProtocolSection({ protocols, navigate }: Props) {
   });
 
   return (
-    <div className="det-section">
+    <div className="det-section" id="response-protocols">
       <div className="dr-section-header">
         <span>Response Protocols</span>
         <span className="dr-section-count">{protocols.length} protocols</span>
       </div>
       {sorted.map((rp) => (
-        <div key={rp.id} className="dr-item">
+        <div
+          key={rp.id}
+          className={`dr-item${focusId === rp.id ? ' cited' : ''}`}
+          data-item-id={rp.id}
+          tabIndex={-1}
+        >
           <div className="dr-item-id">{rp.id}</div>
-          <span className={`dr-priority-badge ${rp.priority}`}>{rp.priority}</span>
+          {rp.priority && (
+            <span className={`dr-priority-badge ${rp.priority}`}>{humanize(rp.priority)}</span>
+          )}
+          <LifecycleNote item={rp} />
 
           <div className="dr-rp-label">Trigger</div>
           <div className="dr-rp-trigger">{rp.trigger}</div>
@@ -33,13 +42,13 @@ export function ResponseProtocolSection({ protocols, navigate }: Props) {
           <div className="dr-rp-label">Action</div>
           <div className="dr-rp-action">{rp.action}</div>
 
-          {rp.stakeholders?.length > 0 && (
+          {rp.stakeholders && rp.stakeholders.length > 0 && (
             <>
               <div className="dr-rp-label">Stakeholders</div>
               <div className="dr-tag-row">
                 {rp.stakeholders.map((s) => (
                   <span key={s} className="dr-tag stakeholder">
-                    {STAKEHOLDER_LABELS[s] || s.replace(/_/g, ' ')}
+                    {label(STAKEHOLDER_LABELS, s)}
                   </span>
                 ))}
               </div>
@@ -60,13 +69,13 @@ export function ResponseProtocolSection({ protocols, navigate }: Props) {
             </details>
           )}
 
-          {rp.source_refs?.length > 0 && (
+          {rp.source_refs && rp.source_refs.length > 0 && (
             <details className="dr-details">
               <summary>Sources</summary>
               <div className="dr-details-body">
                 <div className="dr-tag-row">
                   {rp.source_refs.map((ref) => (
-                    <SourceRefLink key={ref} refKey={ref} navigate={navigate} />
+                    <SourceRefLink key={ref} refKey={ref} />
                   ))}
                 </div>
               </div>

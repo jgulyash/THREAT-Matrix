@@ -1,0 +1,14 @@
+{
+  "id": "F084",
+  "expected_check": "V36",
+  "expected_message": "url",
+  "audit_findings": "F06",
+  "description": "Give a bibliography entry a javascript: URL.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "bibliography.FEIN-VOSSEKUIL-1999.url",
+      "value": "javascript:alert(1)"
+    }
+  ]
+}

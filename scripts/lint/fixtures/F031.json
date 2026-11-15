@@ -1,0 +1,23 @@
+{
+  "id": "F031",
+  "expected_check": "V26",
+  "expected_message": "requires superseded_by",
+  "description": "Mark a countermeasure superseded without superseded_by.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].countermeasures.[id=CM-0101-01].lifecycle_state",
+      "value": "superseded"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].countermeasures.[id=CM-0101-01].deprecated_in",
+      "value": "2.0.0"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].countermeasures.[id=CM-0101-01].deprecation_reason",
+      "value": "Fixture."
+    }
+  ]
+}

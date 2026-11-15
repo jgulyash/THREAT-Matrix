@@ -1,0 +1,14 @@
+{
+  "id": "F092",
+  "expected_check": "V37",
+  "expected_message": "actor profile id",
+  "audit_findings": "F07",
+  "description": "Give an actor profile an id with a trailing newline.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "actor_profiles.[id=AP001].id",
+      "value": "AP001\n"
+    }
+  ]
+}

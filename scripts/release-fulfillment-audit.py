@@ -1,126 +1,319 @@
 #!/usr/bin/env python3
-"""
-THREAT Matrix — Promise-vs-Fulfillment release audit.
+"""THREAT Matrix promise-versus-fulfillment release audit.
 
 Run before every release:  python3 scripts/release-fulfillment-audit.py
 
-WHY THIS EXISTS: a pure emptiness check ("is this array empty?") misses the more
-important class of gap — where a structure is POPULATED but the framework's own
-stated doctrine/description/contract claims something the data does not deliver
-(e.g. the Detection Mesh named cross_matrix/cross_domain axes while having 0 such
-links — the V1.3-era gap that motivated this script). This audit applies the
-DOCTRINE-VS-DATA lens mechanically.
+Why this exists: an emptiness check ("is this array empty?") misses a more
+important class of gap, where a structure is populated but the document's
+own description claims something the data does not deliver (for example, a
+Detection Mesh axis that is named while zero links of that kind exist).
+This audit applies that description-versus-data lens mechanically.
 
-It reports; it does not gate. Review each FLAG against the V1.4 backlog — some
-partials are by-design (revealed-reading target fields, direct-force severity_floor).
-Investigate anything not already tracked.
+It reports; it does not gate. Review each FLAG before release. Some
+partial fields are by design and are labelled as such.
+
+Sections:
+  1. Field fulfillment: schema-defined fields versus actual population.
+  2. Detection Mesh: each named axis versus delivered links.
+  3. Top-level structures that are scaffolded but empty.
+  4. Experimental scoring overlay coverage (only if the overlay file is
+     present; the vocabulary is complete without it).
+  5. Description claims that need a manual check each release.
+
+framework.json carries no scores, and this script reads none from it.
+
+Exit codes: 0 the report was produced (flags do not change the exit
+code); 2 an input could not be read or is not the expected shape.
+
+Usage:
+  python3 scripts/release-fulfillment-audit.py
+      [--framework docs/data/framework.json]
+      [--schema docs/data/framework.schema.json]
+      [--overlay docs/data/scoring-overlay.json]
 """
-import json, os, sys, re
+from __future__ import annotations
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(HERE)
-FW = json.load(open(os.path.join(ROOT, 'docs/data/framework.json')))
-SCHEMA = json.load(open(os.path.join(ROOT, 'docs/data/framework.schema.json')))
+import argparse
+import json
+import re
+import sys
+from pathlib import Path
 
-# Partials that are intentional by design — reported but not FLAGGED as gaps.
+NAME = "release-fulfillment-audit"
+REPO = Path(__file__).resolve().parents[1]
+
+# Partial population that is intentional. Reported, not flagged.
 BY_DESIGN = {
-    'severity_floor',            # direct-force behaviors only
-    'target_identity', 'facility_target_scope', 'within_site_focus',
-    'target_identity_scope',     # revealed reading — empty when behavior reveals nothing
-    'phase_4_track',             # aftermath tactics only
+    # Revealed-reading target fields: empty when the behavior reveals nothing.
+    "target_identity", "facility_target_scope", "within_site_focus", "target_identity_scope",
+    # Aftermath tactics only.
+    "phase_4_track",
+    # Optional lifecycle fields: absent on active objects.
+    "lifecycle_state", "deprecated_in", "superseded_by", "deprecation_reason", "reserved_reason",
 }
 
-def rule(t): print('\n' + '=' * 72 + f'\n{t}\n' + '=' * 72)
 
-def field_pop(items, props, label):
-    print(f'\n{label} (n={len(items)}):')
-    for f in props:
-        pop = sum(1 for it in items if it.get(f) not in (None, [], {}, ''))
-        if pop == len(items): continue
-        tag = 'SHELL (0)' if pop == 0 else 'partial'
-        note = '  [by-design]' if f in BY_DESIGN else ('  <-- FLAG' if pop == 0 else '  <-- review')
-        print(f'  {f:36s} {pop}/{len(items)}  {tag}{note}')
+class InputError(Exception):
+    """An input document could not be read or is not the expected shape."""
 
-# ---- 1. Field fulfillment ----
-rule('1. FIELD FULFILLMENT — schema-defined fields vs actual population')
-allind = [i for n in ('person','facility','organization','infrastructure')
-          for t in FW['matrices'][n]['tactics'] for i in t['indicators']]
-alltac = [t for n in ('person','facility','organization','infrastructure')
-          for t in FW['matrices'][n]['tactics']]
-field_pop(allind, SCHEMA['$defs']['indicator']['properties'], 'INDICATOR fields')
-field_pop(alltac, SCHEMA['$defs']['tactic']['properties'], 'TACTIC fields')
-aps = [a for a in FW['actor_profiles'] if a.get('lifecycle_state', 'active') != 'reserved']
-apkeys = sorted({k for a in aps for k in a})
-field_pop(aps, {k: None for k in apkeys}, 'ACTOR_PROFILE fields')
 
-# ---- 2. Detection Mesh axis delivery ----
-rule('2. DETECTION MESH — each named axis vs actual delivered links')
-MATRICES = ('person', 'facility', 'organization', 'infrastructure')
-meta = {i['id']: (n, t['phase']) for n in MATRICES
-        for t in FW['matrices'][n]['tactics'] for i in t['indicators']}
-xphase = xmatrix = same = 0
-for n in MATRICES:
-    for t in FW['matrices'][n]['tactics']:
-        for i in t['indicators']:
-            for r in i.get('correlates_with', []):
-                if r in meta:
-                    if meta[r][0] != n: xmatrix += 1
-                    elif meta[r][1] != t['phase']: xphase += 1
-                    else: same += 1
-def cross_matrix_count(container, field, idmap):
-    c = 0
-    for n in MATRICES:
-        for t in FW['matrices'][n]['tactics']:
-            for it in t.get(container, []):
-                for r in it.get(field, []):
-                    if idmap.get(r) and idmap[r] != n: c += 1
-    return c
-cm_map = {cm['id']: n for n in MATRICES for t in FW['matrices'][n]['tactics'] for cm in t.get('countermeasures',[])}
-rp_map = {rp['id']: n for n in MATRICES for t in FW['matrices'][n]['tactics'] for rp in t.get('response_protocols',[])}
-axes = [a['name'] for a in FW['detection_mesh']['axes']]
-delivered = {
-    'cross_phase': xphase,
-    'cross_matrix': xmatrix,
-    'cross_domain': xmatrix,
-    'cross_countermeasure': cross_matrix_count('countermeasures','compensates_for',cm_map),
-    'cross_stakeholder': cross_matrix_count('response_protocols','coordinates_with',rp_map),
-}
-print(f'  named mesh axes: {axes}')
-for ax in axes:
-    d = delivered.get(ax)
-    if d is None:
-        print(f'  {ax:22s} (cross-domain) : n/a  <-- add a delivery check')
+def load_json(path, label: str):
+    try:
+        with open(path, encoding="utf-8") as handle:
+            return json.load(handle)
+    except FileNotFoundError:
+        raise InputError(f"{label} not found at {path}")
+    except UnicodeDecodeError:
+        raise InputError(f"{label} at {path} is not valid UTF-8")
+    except json.JSONDecodeError as exc:
+        raise InputError(f"{label} at {path} is not valid JSON ({exc.msg}, line {exc.lineno})")
+    except RecursionError:
+        raise InputError(f"{label} at {path} is nested too deeply to parse")
+    except OSError as exc:
+        raise InputError(f"{label} could not be read at {path} ({exc.__class__.__name__})")
+
+
+def rule(title: str) -> None:
+    print("\n" + "=" * 72 + f"\n{title}\n" + "=" * 72)
+
+
+def as_list(value) -> list:
+    return value if isinstance(value, list) else []
+
+
+def dicts(value) -> list[dict]:
+    return [item for item in as_list(value) if isinstance(item, dict)]
+
+
+def field_pop(items: list[dict], props, label: str) -> None:
+    print(f"\n{label} (n={len(items)}):")
+    if not items:
+        print("  (none)  <-- FLAG")
+        return
+    for field in props:
+        pop = sum(1 for item in items if item.get(field) not in (None, [], {}, ""))
+        if pop == len(items):
+            continue
+        tag = "SHELL (0)" if pop == 0 else "partial"
+        if field in BY_DESIGN:
+            note = "  [by design]"
+        else:
+            note = "  <-- FLAG" if pop == 0 else "  <-- review"
+        print(f"  {field:36s} {pop}/{len(items)}  {tag}{note}")
+
+
+def schema_props(schema: dict, name: str) -> list[str]:
+    """Property names of $defs.<name>, tolerant of schema restructuring."""
+    node = schema.get("$defs", {}).get(name) if isinstance(schema.get("$defs"), dict) else None
+    if not isinstance(node, dict):
+        return []
+    props = node.get("properties")
+    return list(props) if isinstance(props, dict) else []
+
+
+def run(args) -> int:
+    fw = load_json(args.framework, "framework document")
+    schema = load_json(args.schema, "framework schema")
+    if not isinstance(fw, dict):
+        raise InputError("framework document top level is not a JSON object")
+    if not isinstance(schema, dict):
+        raise InputError("framework schema top level is not a JSON object")
+    matrices_raw = fw.get("matrices")
+    if not isinstance(matrices_raw, dict):
+        raise InputError("framework document has no 'matrices' object")
+    matrices = {
+        key: value for key, value in matrices_raw.items()
+        if isinstance(value, dict) and isinstance(value.get("tactics"), list)
+    }
+    if not matrices:
+        raise InputError("framework document has no matrix with a 'tactics' array")
+
+    tactics = {key: dicts(value["tactics"]) for key, value in matrices.items()}
+    all_tactics = [t for key in matrices for t in tactics[key]]
+    all_inds = [i for t in all_tactics for i in dicts(t.get("indicators"))]
+
+    print(
+        f"THREAT Matrix release audit: content version {fw.get('version')!r}, "
+        f"schema version {fw.get('schema_version')!r}"
+    )
+    print("Matrices: " + ", ".join(
+        f"{key} ({value.get('maturity', 'maturity unset')}, {len(tactics[key])} tactics)"
+        for key, value in matrices.items()
+    ))
+
+    # ---- 1. Field fulfillment ----
+    rule("1. FIELD FULFILLMENT: schema-defined fields versus actual population")
+    ind_props = schema_props(schema, "indicator") or sorted({k for i in all_inds for k in i})
+    tac_props = schema_props(schema, "tactic") or sorted({k for t in all_tactics for k in t})
+    field_pop(all_inds, ind_props, "INDICATOR fields")
+    field_pop(all_tactics, tac_props, "TACTIC fields")
+    profiles = [
+        p for p in dicts(fw.get("actor_profiles"))
+        if p.get("lifecycle_state", "active") != "reserved"
+    ]
+    field_pop(profiles, sorted({k for p in profiles for k in p}), "ACTOR_PROFILE fields (reserved stubs excluded)")
+
+    # ---- 2. Detection Mesh axis delivery ----
+    rule("2. DETECTION MESH: each named axis versus delivered links")
+    meta = {}
+    for key in matrices:
+        for tactic in tactics[key]:
+            for ind in dicts(tactic.get("indicators")):
+                if isinstance(ind.get("id"), str):
+                    meta[ind["id"]] = (key, tactic.get("phase"), ind.get("category"))
+    cross_phase = cross_matrix = cross_domain = same = 0
+    for key in matrices:
+        for tactic in tactics[key]:
+            for ind in dicts(tactic.get("indicators")):
+                for ref in as_list(ind.get("correlates_with")):
+                    if not isinstance(ref, str) or ref not in meta:
+                        continue
+                    other_matrix, other_phase, other_category = meta[ref]
+                    if other_matrix != key:
+                        cross_matrix += 1
+                    elif other_phase != tactic.get("phase"):
+                        cross_phase += 1
+                    else:
+                        same += 1
+                    # Counted independently of the matrix and phase split.
+                    if other_category != ind.get("category"):
+                        cross_domain += 1
+
+    def owner_map(container: str) -> dict[str, str]:
+        return {
+            item["id"]: key
+            for key in matrices for tactic in tactics[key]
+            for item in dicts(tactic.get(container)) if isinstance(item.get("id"), str)
+        }
+
+    def cross_matrix_refs(container: str, field: str, id_map: dict[str, str]) -> int:
+        count = 0
+        for key in matrices:
+            for tactic in tactics[key]:
+                for item in dicts(tactic.get(container)):
+                    for ref in as_list(item.get(field)):
+                        if isinstance(ref, str) and id_map.get(ref) not in (None, key):
+                            count += 1
+        return count
+
+    delivered = {
+        "cross_phase": cross_phase,
+        "cross_matrix": cross_matrix,
+        "cross_domain": cross_domain,
+        "cross_countermeasure": cross_matrix_refs("countermeasures", "compensates_for", owner_map("countermeasures")),
+        "cross_stakeholder": cross_matrix_refs("response_protocols", "coordinates_with", owner_map("response_protocols")),
+    }
+    mesh = fw.get("detection_mesh") if isinstance(fw.get("detection_mesh"), dict) else {}
+    axes = [a.get("name") for a in dicts(mesh.get("axes"))]
+    print(f"  named mesh axes: {axes}")
+    if not axes:
+        print("  no detection_mesh.axes found  <-- FLAG")
+    for axis in axes:
+        count = delivered.get(axis)
+        if count is None:
+            print(f"  {str(axis):22s} : n/a  <-- add a delivery measure for this axis")
+        else:
+            print(f"  {str(axis):22s} : {count} delivered" + ("" if count > 0 else "  <-- FLAG: named but 0 delivered"))
+    print(f"  (within-matrix same-phase correlates_with links: {same})")
+    print("  Measures: cross_phase and cross_matrix partition correlates_with links by")
+    print("  the two indicators' phase and matrix. cross_domain counts correlates_with")
+    print("  links whose two indicators have a different 'category' (detection domain);")
+    print("  it overlaps the other two. cross_countermeasure and cross_stakeholder count")
+    print("  compensates_for and coordinates_with references that cross a matrix.")
+    edges = [
+        edge for t in all_tactics for cm in dicts(t.get("countermeasures"))
+        for edge in dicts(cm.get("mitigates"))
+    ]
+    unreviewed = sum(1 for edge in edges if edge.get("function") == "unreviewed")
+    print(f"  mitigates edges: {len(edges)} total, {unreviewed} with function 'unreviewed'"
+          + ("  <-- review: unreviewed edges remain" if unreviewed else ""))
+
+    # ---- 3. Empty top-level structures ----
+    rule("3. TOP-LEVEL STRUCTURES: scaffolded but empty")
+    flagged = False
+    for key, value in fw.items():
+        if isinstance(value, (list, dict)) and len(value) == 0:
+            print(f"  {key}: empty  <-- FLAG")
+            flagged = True
+    for key in matrices:
+        if not tactics[key]:
+            print(f"  matrix {key}: 0 tactics  <-- FLAG (empty matrix scaffold)")
+            flagged = True
+    if not flagged:
+        print("  none")
+
+    # ---- 4. Experimental overlay coverage ----
+    rule("4. EXPERIMENTAL SCORING OVERLAY: coverage (non-normative, optional)")
+    overlay_path = Path(args.overlay)
+    if not overlay_path.exists():
+        print(f"  overlay not present at {overlay_path}; the vocabulary is complete without it.")
     else:
-        print(f'  {ax:22s} : {d} delivered' + ('' if d > 0 else '  <-- FLAG: named but 0 delivered'))
-print(f'  (within-matrix same-phase links: {same})')
+        overlay = load_json(overlay_path, "scoring overlay")
+        scores = overlay.get("indicator_scores") if isinstance(overlay, dict) else None
+        if not isinstance(scores, dict):
+            print("  overlay has no indicator_scores object  <-- FLAG")
+        else:
+            live = {
+                i["id"] for i in all_inds
+                if isinstance(i.get("id"), str) and i.get("lifecycle_state") != "reserved"
+            }
+            missing = sorted(live - set(scores))
+            extra = sorted(set(scores) - live)
+            print(f"  overlay_version {overlay.get('overlay_version')!r}, applies_to_framework_version "
+                  f"{overlay.get('applies_to_framework_version')!r}, status {overlay.get('status')!r}, "
+                  f"validation_status {overlay.get('validation_status')!r}")
+            if overlay.get("applies_to_framework_version") != fw.get("version"):
+                print("  applies_to_framework_version differs from the framework version  <-- FLAG")
+            print(f"  indicator_scores: {len(scores)} entries for {len(live)} indicators; "
+                  f"missing {len(missing)}, extra {len(extra)}"
+                  + ("  <-- FLAG" if missing or extra else ""))
+            priorities = overlay.get("tactic_priorities")
+            if isinstance(priorities, dict):
+                tactic_ids = {t.get("id") for t in all_tactics}
+                unknown = sorted(set(priorities) - tactic_ids)
+                print(f"  tactic_priorities: {len(priorities)} entries for {len(tactic_ids)} tactics; "
+                      f"unknown tactic ids {len(unknown)}" + ("  <-- FLAG" if unknown else ""))
+        print("  This section reports coverage only. It does not assess whether any score is accurate.")
 
-# ---- 3. Empty top-level structures ----
-rule('3. TOP-LEVEL STRUCTURES — scaffolded but empty')
-for k, v in FW.items():
-    if isinstance(v, list) and len(v) == 0:
-        print(f'  {k}: []  <-- FLAG (empty list)')
-    if isinstance(v, dict) and 'tactics' in v and len(v.get('tactics', [])) == 0:
-        print(f'  matrix {k}: 0 tactics  <-- FLAG (empty matrix scaffold)')
+    # ---- 5. Manual checks ----
+    rule("5. DESCRIPTION CLAIMS: verify by hand each release (data cannot self-check these)")
+    consumer_refs = len(re.findall(r"consumer|downstream|triage tooling", json.dumps(fw), flags=re.I))
+    print(f"""  [ ] detection_mesh.principle prose matches the axis-delivery numbers in
+      section 2 above.
+  [ ] {consumer_refs} 'consumer', 'downstream', or 'triage tooling' references in the
+      document describe tooling that may not exist. Each is labelled as
+      guidance or roadmap, not implied as shipped.
+  [ ] Matrices labelled draft are presented as draft everywhere they appear.
+  [ ] No text in framework.json presents a score, band, or priority; all
+      scoring lives in the experimental overlay and is described there as
+      experimental, non-normative, and unvalidated.
+  [ ] Any field or object added this cycle whose description promises
+      behavior is populated where the description says it is.""")
 
-# ---- 4. Doctrine claims requiring MANUAL verification ----
-rule('4. DOCTRINE CLAIMS — verify by hand each release (data cannot self-check these)')
-consumer_refs = len(re.findall(r'consumer|downstream|triage tooling',
-                    json.dumps(FW), flags=re.I))
-print(f"""  [ ] instance_conditioning binding_contract scopes the norm to CASE
-      OPERATIONS (queue ranking, dashboards, handoffs, API triage) and carves
-      out the reference SPA as Layer-1 display — does any case-operations
-      surface ship a bare type score with no instance record joined?
-      Contract vs consumers must agree.
-  [ ] detection_mesh.principle prose ("any matrix ... anywhere else",
-      "countermeasures from any domain") — matches the axis-delivery numbers in
-      section 2 above?
-  [ ] {consumer_refs} 'consumer/downstream/triage tooling should...' references
-      describe an engine/mapping-layer that may not exist — is that still
-      roadmap, and is it labeled as such (not implied as shipped)?
-  [ ] Any NEW field/object added this cycle with a description that promises
-      behavior — is it populated where the description says it is?""")
+    print("\n" + "=" * 72)
+    print("Audit complete. FLAG = the schema or a description promises something the data does not meet.")
+    print("Review every FLAG before release.")
+    print("=" * 72)
+    return 0
 
-print('\n' + '=' * 72)
-print('Audit complete. FLAG = doctrine/schema promises data does not meet.')
-print('Cross-check every FLAG against the V1.4 backlog before release.')
-print('=' * 72)
+
+def main() -> int:
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(errors="backslashreplace")
+        except (AttributeError, ValueError):
+            pass
+    parser = argparse.ArgumentParser(description="THREAT Matrix promise-versus-fulfillment release audit.")
+    parser.add_argument("--framework", default=str(REPO / "docs" / "data" / "framework.json"))
+    parser.add_argument("--schema", default=str(REPO / "docs" / "data" / "framework.schema.json"))
+    parser.add_argument("--overlay", default=str(REPO / "docs" / "data" / "scoring-overlay.json"))
+    args = parser.parse_args()
+    try:
+        return run(args)
+    except InputError as exc:
+        print(f"error: {NAME}: {exc}", file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    sys.exit(main())

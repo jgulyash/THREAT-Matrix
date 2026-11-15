@@ -1,0 +1,14 @@
+{
+  "id": "F117",
+  "target": "overlay",
+  "expected_check": "V20",
+  "expected_message": "is missing",
+  "audit_findings": "F05",
+  "description": "Remove one axis from axis_confidence.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "indicator_scores.IND-0101-01.axis_confidence.impact_potential"
+    }
+  ]
+}

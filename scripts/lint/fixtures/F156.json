@@ -1,0 +1,33 @@
+{
+  "id": "F156",
+  "expected_check": "V27",
+  "expected_message": "bibliography key does not match",
+  "audit_findings": "F07 S15",
+  "description": "Add a bibliography key with a trailing newline, cited by a tactic.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "bibliography.FAKE-2099\n",
+      "value": {
+        "type": "book",
+        "title": "Fixture entry",
+        "author": "Fixture",
+        "date": "2020",
+        "url": null,
+        "doi": null,
+        "relevance_summary": "Fixture entry.",
+        "matrices": [
+          "person"
+        ],
+        "topics": [
+          "fixture"
+        ]
+      }
+    },
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].source_refs",
+      "value": "FAKE-2099\n"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "F035",
+  "expected_check": "V26",
+  "expected_message": "only legal on reserved",
+  "audit_findings": "F03",
+  "description": "Put reserved_reason on an active actor profile.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "actor_profiles.[id=AP001].reserved_reason",
+      "value": "Fixture."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "F047",
+  "expected_check": "V26",
+  "expected_message": "non-empty reserved_reason",
+  "description": "Remove reserved_reason from a reserved actor profile.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "actor_profiles.[id=AP022].reserved_reason"
+    }
+  ]
+}

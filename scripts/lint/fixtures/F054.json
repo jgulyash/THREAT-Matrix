@@ -1,0 +1,13 @@
+{
+  "id": "F054",
+  "expect": "pass",
+  "expected_check": "V26",
+  "description": "An explicit lifecycle_state active with no lifecycle detail field is legal.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].lifecycle_state",
+      "value": "active"
+    }
+  ]
+}

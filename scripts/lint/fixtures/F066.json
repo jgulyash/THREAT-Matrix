@@ -1,0 +1,14 @@
+{
+  "id": "F066",
+  "expected_check": "V29",
+  "expected_message": "scoring field",
+  "audit_findings": "F05 S01",
+  "description": "Put a retired scoring field back on an indicator.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].escalation_weight",
+      "value": 9.9
+    }
+  ]
+}

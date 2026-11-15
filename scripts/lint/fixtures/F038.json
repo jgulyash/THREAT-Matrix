@@ -1,0 +1,28 @@
+{
+  "id": "F038",
+  "expected_check": "V26",
+  "expected_message": "points at itself",
+  "description": "Point superseded_by at the object itself.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].lifecycle_state",
+      "value": "superseded"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].deprecated_in",
+      "value": "2.0.0"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].deprecation_reason",
+      "value": "Fixture."
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].superseded_by",
+      "value": "IND-0101-01"
+    }
+  ]
+}

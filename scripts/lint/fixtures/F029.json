@@ -1,0 +1,14 @@
+{
+  "id": "F029",
+  "expected_check": "V24",
+  "expected_message": "is not SemVer",
+  "audit_findings": "F14",
+  "description": "Set a content version that is not SemVer.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "version",
+      "value": "2.0.0-.."
+    }
+  ]
+}

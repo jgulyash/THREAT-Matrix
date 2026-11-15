@@ -1,0 +1,13 @@
+{
+  "id": "F123",
+  "target": "overlay",
+  "expected_check": "V41",
+  "expected_message": "'notice' is missing",
+  "description": "Remove the notice.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "notice"
+    }
+  ]
+}

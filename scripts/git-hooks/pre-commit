@@ -1,97 +1,207 @@
 #!/usr/bin/env bash
 #
-# THREAT Matrix pre-commit hook: bundle-freshness check
+# THREAT Matrix pre-commit hook.
 #
-# The SPA bundles docs/data/framework.json into docs/assets/index-*.js at
-# build time (Vite). Edits to framework.json do not reach the live viewer
-# until the bundle is rebuilt. This hook blocks commits where
-# framework.json is staged but no bundle file is also staged, catching
-# the v1.1.1-class regression at the local commit boundary.
+# What it does, in order:
 #
-# Install (run once, from repo root):
+#   1. Decides whether this commit needs checking. It does when any staged
+#      path is under docs/data/, src/, scripts/, or examples/, or is
+#      index.html or package.json. Otherwise it exits 0 at once.
+#   2. Exports the STAGED content (the git index) to a temporary directory
+#      and runs every check there. The working tree is never linted, so
+#      what is checked is exactly what will be committed.
+#   3. Runs the gate commands (the same commands CI runs):
+#        validate.py (plain, with the overlay, the fixture harness, and the
+#        scored worked cases), field-parity.py, mesh-refs.py,
+#        id-manifest.py --check, consumer-smoke.py,
+#        derive-axis-confidence.py --check.
+#      consumer-smoke.py needs the jsonschema package. If it is not
+#      installed, that one gate is skipped with a warning; CI runs it.
+#      The fixture harness is the slow gate (it re-validates the document
+#      once per fixture), so it runs only when the validator, a fixture, or
+#      a schema is staged (scripts/lint/ or docs/data/*.schema.json). CI
+#      always runs it.
+#   4. Bundle rule. If a viewer build input is staged (anything under src/,
+#      index.html, package.json, bun.lock, vite.config.ts, tsconfig*.json,
+#      or a docs/data file the viewer imports), then a rebuilt bundle must
+#      be staged too: at least one added or modified file under
+#      docs/assets/, and docs/index.html.
+#   5. Checks that the staged docs/index.html references exactly the files
+#      in the staged docs/assets/.
+#
+# It does not run the viewer build. CI rebuilds and compares.
+#
+# Install (run once, from the repository root):
 #   git config core.hooksPath scripts/git-hooks
 #
-# Bypass (avoid):
-#   git commit --no-verify
-# The CI workflow (.github/workflows/bundle-freshness.yml) re-runs the
-# same check on every PR to main and every push to v1-build, so bypassing
-# locally only defers the failure.
+# Bypass (avoid): git commit --no-verify. CI runs the same gates on every
+# push and pull request for main, v1-build, and v3-design.
 
-set -euo pipefail
+set -eu
 
-staged_files="$(git diff --cached --name-only)"
+fail() {
+  printf '\npre-commit FAILED: %s\n' "$1" >&2
+  shift
+  for line in "$@"; do
+    printf '  %s\n' "$line" >&2
+  done
+  printf '\n' >&2
+  exit 1
+}
 
-# If framework.json isn't staged, nothing to check.
-if ! printf '%s\n' "$staged_files" | grep -qE '^docs/data/framework\.json$'; then
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+work="$(mktemp -d "${TMPDIR:-/tmp}/tm-precommit.XXXXXX")"
+cleanup() {
+  # Remove only the directory this run created with mktemp.
+  case "$work" in
+    */tm-precommit.??????)
+      if [ -d "$work" ]; then
+        rm -rf -- "$work"
+      fi
+      ;;
+  esac
+}
+trap cleanup EXIT
+
+# ---- 1. Which staged paths matter -----------------------------------------
+# NUL-delimited list written to a file, then read back: no pipeline, so no
+# early-exit reader can make a writer fail and skip the checks.
+git diff --cached --name-only -z > "$work/staged.list"
+
+trigger=false
+bundle_input=false
+harness_needed=false
+data_paths=()
+while IFS= read -r -d '' path; do
+  case "$path" in
+    docs/data/*|src/*|scripts/*|examples/*|index.html|package.json)
+      trigger=true
+      ;;
+  esac
+  case "$path" in
+    scripts/lint/*|docs/data/*.schema.json)
+      harness_needed=true
+      ;;
+  esac
+  case "$path" in
+    src/*|index.html|package.json|bun.lock|vite.config.ts|tsconfig*.json)
+      bundle_input=true
+      ;;
+    docs/data/*)
+      data_paths+=("$path")
+      ;;
+  esac
+done < "$work/staged.list"
+
+if [ "$trigger" != "true" ]; then
   exit 0
 fi
 
-# framework.json is staged — first validate Detection Mesh references.
-if command -v python3 >/dev/null 2>&1; then
-  if ! python3 scripts/lint/mesh-refs.py docs/data/framework.json; then
-    cat >&2 <<'EOF'
+# ---- 2. Export the staged tree ---------------------------------------------
+tree="$work/tree"
+mkdir "$tree"
+git checkout-index --all --prefix="$tree/"
 
-✗ pre-commit FAILED — Detection Mesh reference-resolution lint
+# A staged docs/data file is a build input when the staged viewer source
+# imports it by name.
+if [ "${#data_paths[@]}" -gt 0 ] && [ -d "$tree/src" ]; then
+  for path in "${data_paths[@]}"; do
+    base="${path##*/}"
+    if grep -rqF -- "data/$base" "$tree/src"; then
+      bundle_input=true
+    fi
+  done
+fi
 
-  One or more mesh fields (indicator.correlates_with,
-  countermeasure.compensates_for, response_protocol.coordinates_with)
-  reference an ID that does not exist in framework.json or does not
-  match the canonical IND-XXXX-XX / CM-XXXX-XX / RP-XXXX-XX format.
+# ---- 3. Gate commands, run against the staged tree --------------------------
+if ! command -v python3 >/dev/null 2>&1; then
+  fail "python3 is not installed" \
+    "The gates need Python 3. Install it, or commit with --no-verify and" \
+    "let CI run the gates."
+fi
 
-  See the broken-reference list above. Fix by either correcting the
-  reference or adding the missing indicator / countermeasure /
-  response_protocol, then re-run your commit.
-
-EOF
-    exit 1
+run_gate() {
+  # run_gate "label" command args...
+  label="$1"
+  shift
+  if ! ( cd "$tree" && "$@" ); then
+    fail "$label" \
+      "The check above ran against the STAGED content, not the working tree." \
+      "Fix the problem, stage the fix with git add, and commit again."
   fi
+}
+
+for required in docs/data/framework.json docs/data/scoring-overlay.json docs/data/id-manifest.json; do
+  if [ ! -f "$tree/$required" ]; then
+    fail "$required is not in the staged tree" \
+      "Every commit must carry the framework, the overlay, and the ID manifest."
+  fi
+done
+
+run_gate "validate (framework)" \
+  python3 scripts/lint/validate.py docs/data/framework.json
+run_gate "validate (framework + overlay)" \
+  python3 scripts/lint/validate.py docs/data/framework.json --overlay docs/data/scoring-overlay.json
+if [ "$harness_needed" = "true" ]; then
+  run_gate "validate (fixture harness)" \
+    python3 scripts/lint/validate.py docs/data/framework.json --fixtures scripts/lint/fixtures
 else
-  cat >&2 <<'EOF'
+  printf '%s\n' "pre-commit: fixture harness not run (no validator, fixture, or schema change staged); CI runs it."
+fi
+run_gate "validate (scored worked cases)" \
+  python3 scripts/lint/validate.py docs/data/framework.json --overlay docs/data/scoring-overlay.json --records examples/experimental-scoring/worked-cases
+run_gate "field-parity" \
+  python3 scripts/lint/field-parity.py docs/data/framework.json
+run_gate "mesh-refs" \
+  python3 scripts/lint/mesh-refs.py docs/data/framework.json
+run_gate "id-manifest" \
+  python3 scripts/lint/id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json
+run_gate "axis-confidence" \
+  python3 scripts/analysis/derive-axis-confidence.py --check
 
-⚠ pre-commit: python3 not found — skipping Detection Mesh reference lint.
-  Install Python 3 to enable local mesh-refs validation. CI will catch
-  broken references on push.
-
-EOF
+if python3 -c 'import jsonschema, referencing' >/dev/null 2>&1; then
+  run_gate "consumer-smoke" \
+    python3 scripts/lint/consumer-smoke.py
+else
+  printf '%s\n' \
+    "pre-commit WARNING: the jsonschema package is not installed, so" \
+    "  consumer-smoke.py (JSON Schema validation of every shipped document)" \
+    "  was SKIPPED. Install it with: pip install jsonschema" \
+    "  CI runs this gate on push." >&2
 fi
 
-# framework.json is staged — verify BOTH a bundle file AND docs/index.html
-# are also staged. Vite bakes the hashed bundle filename into index.html,
-# so a rebuilt bundle without an updated index.html leaves the deployed
-# page pointing at the wrong (or 404) asset hash.
-bundle_staged=false
-index_staged=false
-if printf '%s\n' "$staged_files" | grep -qE '^docs/assets/index-.*\.(js|css)$'; then
-  bundle_staged=true
+# ---- 4. Bundle rule ----------------------------------------------------------
+if [ "$bundle_input" = "true" ]; then
+  git diff --cached --name-only -z --diff-filter=AM -- docs/assets > "$work/assets.list"
+  assets_staged=false
+  if [ -s "$work/assets.list" ]; then
+    assets_staged=true
+  fi
+  index_staged=false
+  if ! git diff --cached --quiet --diff-filter=AM -- docs/index.html; then
+    index_staged=true
+  fi
+  if [ "$assets_staged" != "true" ] || [ "$index_staged" != "true" ]; then
+    fail "bundle is not staged with its inputs" \
+      "A viewer build input is staged (src/, index.html, package.json, bun.lock," \
+      "vite.config.ts, tsconfig, or a docs/data file the viewer imports), but the" \
+      "rebuilt bundle is not fully staged:" \
+      "  docs/assets/ (added or modified file): $([ "$assets_staged" = "true" ] && echo staged || echo MISSING)" \
+      "  docs/index.html:                       $([ "$index_staged" = "true" ] && echo staged || echo MISSING)" \
+      "To fix:" \
+      "  rm -f docs/assets/index-*" \
+      "  bun run build" \
+      "  git add -A docs/assets docs/index.html"
+  fi
 fi
-if printf '%s\n' "$staged_files" | grep -qE '^docs/index\.html$'; then
-  index_staged=true
+
+# ---- 5. index.html and assets agree, in the staged tree ---------------------
+if [ -f "$tree/docs/index.html" ]; then
+  run_gate "bundle references" \
+    python3 scripts/git-hooks/check-bundle-refs.py .
 fi
 
-if [ "$bundle_staged" = "true" ] && [ "$index_staged" = "true" ]; then
-  exit 0
-fi
-
-cat >&2 <<EOF
-✗ pre-commit FAILED — bundle-freshness check
-
-  docs/data/framework.json is staged for commit, but the rebuilt
-  SPA artifacts are not fully staged:
-
-    docs/assets/index-*.{js,css}   $([ "$bundle_staged" = "true" ] && echo "✓ staged" || echo "✗ MISSING")
-    docs/index.html                 $([ "$index_staged" = "true" ] && echo "✓ staged" || echo "✗ MISSING")
-
-  Vite bundles framework.json at build time AND bakes the hashed
-  bundle filename into index.html. Both must move together — the
-  bundle alone is not enough; the HTML alone is not enough.
-
-  To fix:
-    rm -f docs/assets/index-*
-    bun run build
-    git add docs/assets/ docs/index.html
-
-  Then re-run your commit. See CHANGELOG.md [1.1.1] for the
-  release-class bug this hook prevents.
-
-EOF
-exit 1
+printf 'pre-commit PASSED: all gates ran against the staged content.\n'
+exit 0

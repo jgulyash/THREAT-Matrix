@@ -1,0 +1,14 @@
+{
+  "id": "F073",
+  "expected_check": "V32",
+  "expected_message": "related_tactics",
+  "audit_findings": "F08 S03",
+  "description": "Add a related_tactics entry that resolves to no tactic.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].related_tactics",
+      "value": "TM0199"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "F020",
+  "expected_check": "V19",
+  "description": "Set a person tactic's matrix field to facility.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].matrix",
+      "value": "facility"
+    }
+  ]
+}

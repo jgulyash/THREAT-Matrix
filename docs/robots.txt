@@ -1,0 +1,16 @@
+# THREAT Matrix published site.
+#
+# Everything under this site is public by design: the viewer, the data
+# files, and the schemas. Indexing is welcome.
+#
+# This file deliberately lists no Disallow rules. robots.txt is not access
+# control, and a Disallow line only advertises the path it names. Anything
+# that should not be public must not be published here at all.
+#
+# Note: crawlers read robots.txt only from the root of a host. While this
+# site is served as a project site under a path (not at a host root), this
+# file is informational and takes effect only if the site moves to its own
+# domain.
+
+User-agent: *
+Allow: /

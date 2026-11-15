@@ -1,0 +1,18 @@
+{
+  "id": "F045",
+  "expected_check": "V26",
+  "expected_message": "may not be reserved",
+  "audit_findings": "F04 S05 C04",
+  "description": "Append a bare reserved indicator stub; indicators may not be reserved.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].indicators",
+      "value": {
+        "id": "IND-0101-90",
+        "lifecycle_state": "reserved",
+        "reserved_reason": "Fixture."
+      }
+    }
+  ]
+}

@@ -1,26 +1,39 @@
 name: Framework Validator
 
-# Enforces the data invariants that JSON Schema structurally cannot:
-#   - ID uniqueness (tactics, indicators, countermeasures, response
-#     protocols, bibliography keys, raw duplicate JSON keys)
-#   - referential integrity (correlates_with, compensates_for,
-#     coordinates_with, source_refs, cross-matrix edges)
-#   - cross-field consistency (severity_band vs escalation_weight,
-#     id prefix vs matrix, phase_4_track, conditioned-priority
-#     escalate-only rule)
-# The negative-fixture harness proves the validator catches the 14
-# adversarial invalid states reconstructed from the 2026-07-18
-# Principal Architecture Review. Runs alongside Mesh Refs and Bundle
-# Freshness on the same trigger surface.
+# Runs every gate command on the vocabulary (docs/data/framework.json), the
+# experimental scoring overlay (docs/data/scoring-overlay.json), the ID
+# manifest, and the shipped examples. The pre-commit hook at
+# scripts/git-hooks/pre-commit runs the same commands against staged
+# content; this workflow is the gate that cannot be bypassed locally.
+#
+# Gates, in order:
+#   1. validate.py on the framework (JSON Schema required, plus the
+#      invariants a schema cannot express: uniqueness, reference
+#      resolution, lifecycle rules, cross-field consistency)
+#   2. validate.py with the overlay (overlay schema, key set, score math)
+#   3. validate.py fixture harness (known-bad documents must be rejected)
+#   4. validate.py on the scored worked cases
+#   5. field-parity.py (cross-matrix field parity; no score in the vocabulary)
+#   6. mesh-refs.py (mesh references resolve; no self-reference or duplicate)
+#   7. id-manifest.py --check (the committed manifest matches the framework;
+#      on pull requests also compared with the base branch's manifest so an
+#      ID cannot be dropped or reused)
+#   8. consumer-smoke.py (every shipped document validates against its
+#      schema; the reference consumer runs with and without the overlay)
+#   9. derive-axis-confidence.py --check (overlay axis_confidence labels
+#      match their derivation rule)
 
 on:
   pull_request:
     branches:
       - main
+      - v1-build
+      - v3-design
   push:
     branches:
       - main
       - v1-build
+      - v3-design
 
 concurrency:
   group: validate-${{ github.ref }}
@@ -31,29 +44,62 @@ permissions:
 
 jobs:
   validate:
-    name: Validate framework invariants
+    name: Validate framework, overlay, manifest, and examples
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
-          python-version: '3.x'
+          python-version: '3.14'
 
-      - name: Run framework validator
-        run: python3 scripts/lint/validate.py docs/data/framework.json
+      - name: Install pinned validation dependency
+        run: python3 -m pip install --disable-pip-version-check 'jsonschema==4.26.0'
 
-      - name: Run negative-fixture harness
+      - name: Validate framework (schema required)
+        run: python3 scripts/lint/validate.py docs/data/framework.json --require-schema
+
+      - name: Validate framework with the experimental overlay
+        run: python3 scripts/lint/validate.py docs/data/framework.json --overlay docs/data/scoring-overlay.json --require-schema
+
+      - name: Run fixture harness
         run: python3 scripts/lint/validate.py docs/data/framework.json --fixtures scripts/lint/fixtures
+
+      - name: Validate scored worked cases
+        run: python3 scripts/lint/validate.py docs/data/framework.json --overlay docs/data/scoring-overlay.json --records examples/experimental-scoring/worked-cases
 
       - name: Run field-parity gate
         run: python3 scripts/lint/field-parity.py docs/data/framework.json
 
-      - name: Install reference-consumer dependency
-        run: pip install jsonschema
+      - name: Run mesh-refs lint
+        run: python3 scripts/lint/mesh-refs.py docs/data/framework.json
 
-      - name: Run reference-consumer smoke test
+      - name: Check ID manifest against the framework
+        run: python3 scripts/lint/id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json
+
+      - name: Check ID manifest against the base branch (no ID dropped or reused)
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          set -eu
+          git fetch --no-tags --depth=1 origin "refs/heads/${BASE_REF}:refs/remotes/origin/${BASE_REF}"
+          if git cat-file -e "origin/${BASE_REF}:docs/data/id-manifest.json" 2>/dev/null; then
+            git show "origin/${BASE_REF}:docs/data/id-manifest.json" > "${RUNNER_TEMP}/base-id-manifest.json"
+            python3 scripts/lint/id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json \
+              --baseline "${RUNNER_TEMP}/base-id-manifest.json"
+          else
+            echo "The base branch ${BASE_REF} has no docs/data/id-manifest.json yet; baseline comparison skipped."
+          fi
+
+      - name: Run consumer smoke test
         run: python3 scripts/lint/consumer-smoke.py
+
+      - name: Check overlay axis_confidence against its derivation rule
+        run: python3 scripts/analysis/derive-axis-confidence.py --check

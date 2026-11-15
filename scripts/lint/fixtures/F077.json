@@ -1,0 +1,14 @@
+{
+  "id": "F077",
+  "expected_check": "V33",
+  "expected_message": "refers to the object itself",
+  "audit_findings": "F08",
+  "description": "Make a countermeasure compensate for itself.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].countermeasures.[id=CM-0101-01].compensates_for",
+      "value": "CM-0101-01"
+    }
+  ]
+}

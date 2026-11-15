@@ -1,0 +1,15 @@
+{
+  "id": "F107",
+  "target": "overlay",
+  "expected_check": "V13",
+  "expected_message": "contradicts",
+  "audit_findings": "D-04",
+  "description": "Relabel a weight 6.5 indicator high without touching the weight.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-I0303-02.type_band",
+      "value": "high"
+    }
+  ]
+}

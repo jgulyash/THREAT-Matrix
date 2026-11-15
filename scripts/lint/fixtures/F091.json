@@ -1,0 +1,14 @@
+{
+  "id": "F091",
+  "expected_check": "V37",
+  "expected_message": "tactic id",
+  "audit_findings": "F07",
+  "description": "Give a tactic an id with a trailing newline.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].id",
+      "value": "TM0101\n"
+    }
+  ]
+}

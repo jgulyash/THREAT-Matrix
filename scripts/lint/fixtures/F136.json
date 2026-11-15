@@ -1,0 +1,19 @@
+{
+  "id": "F136",
+  "target": "overlay",
+  "expect": "pass",
+  "expected_check": "V13",
+  "description": "A floor may raise the band above what the weight implies: add a high floor to a medium-weight indicator and label it high.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "indicator_scores.IND-0101-01.type_band_floor",
+      "value": "high"
+    },
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-0101-01.type_band",
+      "value": "high"
+    }
+  ]
+}

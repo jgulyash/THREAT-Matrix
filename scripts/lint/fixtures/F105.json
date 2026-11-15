@@ -1,0 +1,14 @@
+{
+  "id": "F105",
+  "target": "overlay",
+  "expected_check": "V13",
+  "expected_message": "contradicts",
+  "description": "Label a weight 4.49 indicator low; the stored weight implies medium.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-0101-01.type_band",
+      "value": "low"
+    }
+  ]
+}

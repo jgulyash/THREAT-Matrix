@@ -1,0 +1,13 @@
+{
+  "id": "F021",
+  "expected_check": "V21",
+  "expected_message": "requires human_social true",
+  "description": "Set human_social false on an indicator whose modality is human_social.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].human_social",
+      "value": false
+    }
+  ]
+}

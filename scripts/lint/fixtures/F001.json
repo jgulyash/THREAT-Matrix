@@ -1,0 +1,12 @@
+{
+  "id": "F001",
+  "expected_check": "V01",
+  "description": "Give a second infrastructure tactic an id that already exists.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.infrastructure.tactics.[id=TI0102].id",
+      "value": "TI0101"
+    }
+  ]
+}

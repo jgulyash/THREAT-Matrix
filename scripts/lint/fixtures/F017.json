@@ -1,0 +1,13 @@
+{
+  "id": "F017",
+  "expected_check": "V17",
+  "expected_message": "missing or invalid",
+  "audit_findings": "F13",
+  "description": "Remove phase_4_track from an aftermath tactic.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "matrices.person.tactics.[id=TM0401].phase_4_track"
+    }
+  ]
+}

@@ -1,27 +1,34 @@
 import type { Tactic } from '../types/framework';
-import { PHASE_NAMES, tacticMatchesFilters } from '../lib/constants';
+import { MATRIX_LABELS, PHASE_NAMES, TRACK_LABELS, tacticMatchesFilters, type MatrixKey } from '../lib/constants';
+import { seg } from '../lib/route';
+import { Go, useFilters } from '../lib/nav';
+import { DraftTag } from './DraftTag';
+import { LifecycleTag } from './Lifecycle';
 
 interface Props {
   tactics: Tactic[];
-  matrix: string;
-  phase: number;
-  track: string | null;
-  navigate: (path: string) => void;
-  modalityFilter: string;
-  actorFilter: string;
+  matrix: MatrixKey;
+  phase: 1 | 2 | 3 | 4;
+  track: 'flight' | 'claim' | null;
 }
 
-export function PhasePanel({ tactics, matrix, phase, track, navigate, modalityFilter, actorFilter }: Props) {
-  const disp = tactics.filter((t) => tacticMatchesFilters(t, modalityFilter, actorFilter));
-  const filtered = !!modalityFilter || !!actorFilter;
-  const tl = track === 'flight' ? 'Evade' : track === 'claim' ? 'Claim' : null;
+export function PhasePanel({ tactics, matrix, phase, track }: Props) {
+  const { mode, actor } = useFilters();
+  const disp = tactics.filter((t) => tacticMatchesFilters(t, mode, actor));
+  const filtered = !!mode || !!actor;
+  const tl = track ? TRACK_LABELS[track] : null;
   return (
     <>
       <div className="dp-header">
-        <div className="dp-back" onClick={() => navigate(`/${matrix}`)}>
-          ← Back
-        </div>
+        <Go className="dp-back" to={`/${matrix}`}>
+          ← {MATRIX_LABELS[matrix]} matrix
+        </Go>
         <div className="dp-crumb">
+          <span>
+            {MATRIX_LABELS[matrix]}
+            <DraftTag matrix={matrix} />
+          </span>
+          <span className="dp-crumb-sep">›</span>
           <span>Phase {phase}</span>
           <span className="dp-crumb-sep">›</span>
           <span className="dp-crumb-active">
@@ -29,7 +36,9 @@ export function PhasePanel({ tactics, matrix, phase, track, navigate, modalityFi
             {tl ? ` · ${tl}` : ''}
           </span>
         </div>
-        <div className="dp-header-title">{tl ? `${tl} Tactics` : PHASE_NAMES[phase]}</div>
+        <div className="dp-header-title" data-focus-target tabIndex={-1}>
+          {tl ? `${tl} Tactics` : PHASE_NAMES[phase]}
+        </div>
         <div className="dp-header-sub">
           {disp.length}
           {filtered ? ` of ${tactics.length} (filtered)` : ''} tactics
@@ -37,17 +46,16 @@ export function PhasePanel({ tactics, matrix, phase, track, navigate, modalityFi
       </div>
       <div className="dp-content">
         {disp.length === 0 && (
-          <div style={{ color: 'var(--text-dim)', fontSize: '11px', padding: '8px 0' }}>
-            No tactics match the active filter in this phase.
+          <div className="dp-empty">
+            {filtered ? 'No tactics match the active filter in this phase.' : 'No tactics in this phase.'}
           </div>
         )}
         {disp.map((t) => (
-          <div
-            key={t.id}
-            className="dp-card"
-            onClick={() => navigate(`/${t.matrix}/tactic/${t.id}`)}
-          >
-            <div className="dp-card-id">{t.id}</div>
+          <Go key={t.id} className="dp-card" to={`/${t.matrix}/tactic/${seg(t.id)}`}>
+            <div className="dp-card-id">
+              {t.id}
+              <LifecycleTag item={t} />
+            </div>
             <div className="dp-card-title">{t.name}</div>
             <div className="dp-card-body">
               {t.notes ? t.notes.slice(0, 120) + (t.notes.length > 120 ? '…' : '') : ''}
@@ -56,7 +64,7 @@ export function PhasePanel({ tactics, matrix, phase, track, navigate, modalityFi
               {t.phase_4_track === 'evasion' && <span className="dp-ctag flight">Evade</span>}
               {t.phase_4_track === 'attribution' && <span className="dp-ctag claim">Claim</span>}
             </div>
-          </div>
+          </Go>
         ))}
       </div>
     </>

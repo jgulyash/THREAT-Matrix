@@ -1,0 +1,23 @@
+{
+  "id": "F041",
+  "expected_check": "V26",
+  "expected_message": "may not be reserved",
+  "audit_findings": "F02 F04 S05 C04",
+  "description": "Mark a tactic reserved while it keeps its content; only actor profiles may be reserved.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].lifecycle_state",
+      "value": "reserved"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].reserved_reason",
+      "value": "x"
+    },
+    {
+      "op": "del",
+      "path": "matrices.person.tactics.[id=TM0101].source_refs"
+    }
+  ]
+}

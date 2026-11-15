@@ -1,0 +1,14 @@
+{
+  "id": "F155",
+  "expected_check": "V27",
+  "expected_message": "does not match the bibliography key format",
+  "audit_findings": "F07 S15",
+  "description": "Add a source_refs entry that is a real bibliography key followed by a newline.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].source_refs",
+      "value": "NTAC-MASS-2021\n"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "F137",
+  "target": "overlay",
+  "expect": "pass",
+  "expected_check": "V43",
+  "description": "A tactic may have no priority entry.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "tactic_priorities.TM0101"
+    }
+  ]
+}

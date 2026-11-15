@@ -1,0 +1,27 @@
+{
+  "id": "F090",
+  "expected_check": "V36",
+  "expected_message": "cited by no source_refs",
+  "description": "Add a bibliography entry that nothing cites.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "bibliography.FIXTURE-UNCITED-2099",
+      "value": {
+        "type": "book",
+        "title": "Fixture entry",
+        "author": "Fixture",
+        "date": "2020",
+        "url": null,
+        "doi": null,
+        "relevance_summary": "Fixture entry.",
+        "matrices": [
+          "person"
+        ],
+        "topics": [
+          "fixture"
+        ]
+      }
+    }
+  ]
+}

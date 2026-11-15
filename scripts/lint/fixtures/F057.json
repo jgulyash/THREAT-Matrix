@@ -1,0 +1,13 @@
+{
+  "id": "F057",
+  "expected_check": "V28",
+  "expected_message": "matrices is missing",
+  "audit_findings": "S06",
+  "description": "Remove the matrices block.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "matrices"
+    }
+  ]
+}

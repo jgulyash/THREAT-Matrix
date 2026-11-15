@@ -1,0 +1,15 @@
+{
+  "id": "F135",
+  "target": "overlay",
+  "expected_check": "V38",
+  "audit_findings": "F09",
+  "description": "Write a weight that overflows to infinity.",
+  "mutations": [
+    {
+      "op": "raw_replace",
+      "find": "\"type_weight\": 4.49,",
+      "replace": "\"type_weight\": 1e999,",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "F008",
+  "expected_check": "V07",
+  "expected_message": "targets an indicator",
+  "description": "Put an indicator id in compensates_for, which holds countermeasure-to-countermeasure redundancy only.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].countermeasures.[id=CM-0101-01].compensates_for",
+      "value": "IND-0101-01"
+    }
+  ]
+}

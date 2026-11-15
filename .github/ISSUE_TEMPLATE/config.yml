@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Report a security or privacy problem (private)
+    url: https://github.com/jgulyash/THREAT-Matrix/security/policy
+    about: Do not open a public issue with details. Read the security policy for the private reporting route.
   - name: Contributing Guide
     url: https://github.com/jgulyash/THREAT-Matrix/blob/main/CONTRIBUTING.md
-    about: Read the contributing guide before submitting
+    about: Read the contributing guide before submitting. Never post real incident data or anything identifying a person.

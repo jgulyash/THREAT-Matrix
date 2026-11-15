@@ -1,0 +1,13 @@
+{
+  "id": "F068",
+  "expected_check": "V29",
+  "expected_message": "tactic_priorities",
+  "description": "Put escalation_priority back in a tactic's assessment_guidance.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].assessment_guidance.escalation_priority",
+      "value": "Urgent"
+    }
+  ]
+}

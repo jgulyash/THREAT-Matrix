@@ -1,0 +1,18 @@
+{
+  "id": "F081",
+  "expected_check": "V34",
+  "audit_findings": "C14",
+  "description": "Relabel a phase 1 tactic as phase 3 without changing its id.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].phase",
+      "value": 3
+    },
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].phase_name",
+      "value": "Execution"
+    }
+  ]
+}

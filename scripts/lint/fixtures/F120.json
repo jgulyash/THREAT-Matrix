@@ -1,0 +1,14 @@
+{
+  "id": "F120",
+  "target": "overlay",
+  "expected_check": "V41",
+  "expected_message": "normative",
+  "description": "Declare the overlay normative.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "normative",
+      "value": true
+    }
+  ]
+}

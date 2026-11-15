@@ -1,56 +1,56 @@
-import type { ActorProfile, Tactic } from '../types/framework';
-import { VECTOR_LABELS, AI_RISK_LABELS } from '../lib/constants';
+import { VECTOR_LABELS, AI_RISK_LABELS, MATRIX_LABELS, humanize, label } from '../lib/constants';
+import { actorById, actorTactics } from '../lib/data';
+import { seg } from '../lib/route';
+import { Go } from '../lib/nav';
+import { DraftTag } from './DraftTag';
+import { LifecycleNote } from './Lifecycle';
 
 interface Props {
-  actor: ActorProfile | undefined;
-  navigate: (path: string) => void;
-  getActorTactics: (id: string) => Tactic[];
+  actorId: string;
 }
 
-export function ActorDetailView({ actor, navigate, getActorTactics }: Props) {
-  if (!actor) {
-    return (
-      <div className="actor-detail-view">
-        <div className="adv-back" onClick={() => navigate('/actors')}>
-          ← All Profiles
-        </div>
-        <div style={{ color: 'var(--text-dim)', fontSize: '13px' }}>Actor not found.</div>
-      </div>
-    );
-  }
+// The router has already confirmed that actorId is a listed profile.
+export function ActorDetailView({ actorId }: Props) {
+  const actor = actorById.get(actorId);
+  if (!actor) return null;
 
-  const associated = getActorTactics(actor.id);
+  const associated = actorTactics(actor.id);
 
   const attrs: Array<[string, string | undefined]> = [
     ['Awareness', actor.awareness],
     ['Direction', actor.direction],
     ['Access Relationship', actor.access_relationship],
     ['Phase Compression Risk', actor.phase_compression_risk],
-    ...(actor.actor_level ? [['Actor Level', actor.actor_level] as [string, string]] : []),
+    ['Actor Level', actor.actor_level],
   ];
 
   return (
     <div className="actor-detail-view">
-      <div className="adv-back" onClick={() => navigate('/actors')}>
+      <Go className="adv-back" to="/actors">
         ← All Profiles
-      </div>
+      </Go>
       <div className="adv-category-row">
         <span className="adv-category-name">{actor.category_label}</span>
         <span className="adv-category-sep">›</span>
         <span className="adv-category-id">{actor.id}</span>
       </div>
-      <div className="adv-name">{actor.name}</div>
+      <div className="adv-name" data-focus-target tabIndex={-1}>
+        {actor.name}
+      </div>
+      <LifecycleNote item={actor} />
       <div className="adv-two-col">
         <div className="adv-two-col-left">
           <div className="adv-section">
             <div className="adv-section-label">Profile Attributes</div>
             <div className="adv-attrs-list">
-              {attrs.map(([k, v]) => (
-                <div key={k} className="adv-attr-row-new">
-                  <div className="adv-attr-key">{k}</div>
-                  <div className="adv-attr-val">{v}</div>
-                </div>
-              ))}
+              {attrs
+                .filter(([, v]) => !!v)
+                .map(([k, v]) => (
+                  <div key={k} className="adv-attr-row-new">
+                    <div className="adv-attr-key">{k}</div>
+                    <div className="adv-attr-val">{humanize(v || '')}</div>
+                  </div>
+                ))}
             </div>
           </div>
           {actor.description && (
@@ -62,10 +62,10 @@ export function ActorDetailView({ actor, navigate, getActorTactics }: Props) {
           {actor.attack_vectors && actor.attack_vectors.length > 0 && (
             <div className="adv-section">
               <div className="adv-section-label">Attack Vectors</div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+              <div className="actor-vectors wide">
                 {actor.attack_vectors.map((v) => (
                   <span key={v} className="actor-vector-tag">
-                    {VECTOR_LABELS[v] || v}
+                    {label(VECTOR_LABELS, v)}
                   </span>
                 ))}
               </div>
@@ -90,7 +90,7 @@ export function ActorDetailView({ actor, navigate, getActorTactics }: Props) {
               <div>
                 {actor.ai_enabled_risks.map((r) => (
                   <span key={r} className="adv-risk-tag">
-                    {AI_RISK_LABELS[r] || r}
+                    {label(AI_RISK_LABELS, r)}
                   </span>
                 ))}
               </div>
@@ -105,14 +105,16 @@ export function ActorDetailView({ actor, navigate, getActorTactics }: Props) {
               </div>
               <div>
                 {associated.map((t) => (
-                  <div
+                  <Go
                     key={t.id}
                     className="adv-tactic-link"
-                    onClick={() => navigate(`/${t.matrix}/tactic/${t.id}`)}
+                    to={`/${t.matrix}/tactic/${seg(t.id)}`}
+                    title={MATRIX_LABELS[t.matrix]}
                   >
                     <span className="adv-tactic-id">{t.id}</span>
                     <span>{t.name}</span>
-                  </div>
+                    <DraftTag matrix={t.matrix} />
+                  </Go>
                 ))}
               </div>
             </div>

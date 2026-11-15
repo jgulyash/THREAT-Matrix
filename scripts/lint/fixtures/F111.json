@@ -1,0 +1,15 @@
+{
+  "id": "F111",
+  "target": "overlay",
+  "expected_check": "V14",
+  "expected_message": "type_weight",
+  "audit_findings": "S01",
+  "description": "Store the weight as a string.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-0101-01.type_weight",
+      "value": "9.9"
+    }
+  ]
+}

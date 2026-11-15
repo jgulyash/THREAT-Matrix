@@ -1,0 +1,16 @@
+{
+  "id": "F027",
+  "expected_check": "V23",
+  "expected_message": "invalid function",
+  "description": "Add a mitigates edge with an invalid function.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.facility.tactics.[id=TF0102].countermeasures.[id=CM-F0102-03].mitigates",
+      "value": {
+        "indicator": "IND-F0102-01",
+        "function": "stop"
+      }
+    }
+  ]
+}

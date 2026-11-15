@@ -1,0 +1,17 @@
+{
+  "id": "F053",
+  "expect": "pass",
+  "expected_check": "V26",
+  "description": "A reserved actor profile stub (id, lifecycle_state, reserved_reason only) is legal.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "actor_profiles",
+      "value": {
+        "id": "AP099",
+        "lifecycle_state": "reserved",
+        "reserved_reason": "Fixture: identifier held."
+      }
+    }
+  ]
+}

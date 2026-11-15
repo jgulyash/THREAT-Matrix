@@ -1,0 +1,13 @@
+{
+  "id": "F005",
+  "expected_check": "V05",
+  "description": "Repeat the id key inside one tactic in the raw text, which a JSON parser would silently collapse.",
+  "mutations": [
+    {
+      "op": "raw_replace",
+      "find": "\"id\": \"TM0101\",",
+      "replace": "\"id\": \"TM0101\", \"id\": \"TM0101\",",
+      "count": 1
+    }
+  ]
+}

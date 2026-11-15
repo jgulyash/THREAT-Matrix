@@ -1,0 +1,13 @@
+{
+  "id": "F014",
+  "expected_check": "V16",
+  "expected_message": "not an integer from 1 to 4",
+  "description": "Set a tactic phase outside 1 to 4.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].phase",
+      "value": 9
+    }
+  ]
+}

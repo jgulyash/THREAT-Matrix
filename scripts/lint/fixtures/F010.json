@@ -1,0 +1,12 @@
+{
+  "id": "F010",
+  "expected_check": "V09",
+  "description": "Add a source_refs entry that is not a bibliography key.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].source_refs",
+      "value": "NONEXISTENT-2099"
+    }
+  ]
+}

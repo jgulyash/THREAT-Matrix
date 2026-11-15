@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://jgulyash.github.io/THREAT-Matrix/data/3.0.0/framework.schema.json",
+  "$id": "https://jgulyash.github.io/THREAT-Matrix/data/framework.schema.json",
   "x-schema-version": "3.0.0",
   "title": "THREAT Matrix Framework Schema",
-  "description": "JSON Schema for the THREAT Matrix framework.json canonical artifact. THREAT Matrix is an AI-native operational ontology for physical threat actor behavior. The schema is the public contract for consumers (RAG systems, AI agents, downstream security tooling). Field values must describe a property of the indicator/tactic type, not of any specific case or assessment. See CONTRIBUTING.md \"Schema design principles\" for the full rule.",
+  "description": "JSON Schema (3.0.0) for THREAT Matrix framework.json: an open behavioral vocabulary and evidence index for threat assessment. The document carries tactics, indicators, countermeasures, response protocols, actor profiles, and a bibliography. It carries no scores: the experimental, non-normative scoring overlay is a separate document with its own schema (scoring-overlay.schema.json). Field values describe a property of the indicator or tactic type, never of a specific case or assessment. See CONTRIBUTING.md \"Schema design principles\". Every object is closed. Patterns are plain anchored ECMA-262 expressions with no lookaround and no backreferences, so any regex engine can compile them. Under ECMA-262 the closing $ rejects a trailing newline; Python's re module is lenient there, so scripts/lint/validate.py re-checks every identifier and key with an exact full match.",
   "type": "object",
   "required": [
     "name",
@@ -17,30 +17,29 @@
   ],
   "properties": {
     "name": {
-      "type": "string",
+      "$ref": "#/$defs/prose",
       "description": "Short name of the framework."
     },
     "full_name": {
-      "type": "string",
+      "$ref": "#/$defs/prose",
       "description": "Full descriptive name."
     },
     "version": {
-      "type": "string",
-      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$",
-      "description": "Semantic version of the framework content release (SemVer 2.0.0; pattern-enforced since schema 3.0.0)."
+      "$ref": "#/$defs/semver",
+      "description": "Semantic version of the framework content release (SemVer 2.0.0, pattern-enforced)."
     },
     "schema_version": {
       "type": "string",
       "pattern": "^3\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
-      "description": "Semantic version of the schema this document targets (SemVer 2.0.0; pattern-enforced since schema 3.0.0). The pattern pins MAJOR 3, so a document declaring any other schema major is rejected while 3.x MINOR and PATCH values remain valid; scripts/lint/validate.py V24 enforces the exact value 3.0.0."
+      "description": "Semantic version of the schema this document targets. The pattern pins MAJOR 3, so a document declaring any other schema major is rejected while 3.x MINOR and PATCH values remain valid; scripts/lint/validate.py pins the exact value it was written for."
     },
     "license": {
-      "type": "string",
-      "description": "Framework license. Currently MIT."
+      "const": "MIT",
+      "description": "Framework license (SPDX identifier)."
     },
     "matrices": {
       "type": "object",
-      "description": "Four target matrices: person, facility, organization, infrastructure. Each matrix contains tactics and a scope sentence describing the primary threat actor objective that places a tactic in that matrix. The matrices container also carries a boundary_rule describing the framework-vs-operational partition principle. Since V1.6 each matrix is validated by its own per-matrix subschema: a matrix's tactics must carry that matrix's id prefix (TM/TF/TO/TI) AND a matrix field const-equal to the containing key, so a person tactic given a TF id or a matrix:'facility' field is rejected by schema alone.",
+      "description": "Four target matrices: person, facility, organization, infrastructure. Each matrix contains tactics and a scope sentence describing the primary threat actor objective that places a tactic in that matrix. The matrices container also carries a boundary_rule describing the framework-vs-operational partition principle. Each matrix is validated by its own per-matrix subschema: a matrix's tactics must carry that matrix's id prefix (TM/TF/TO/TI) AND a matrix field const-equal to the containing key, so a person tactic given a TF id or a matrix:'facility' field is rejected by schema alone.",
       "additionalProperties": false,
       "required": [
         "boundary_rule",
@@ -51,250 +50,72 @@
       ],
       "properties": {
         "boundary_rule": {
-          "type": "string",
+          "$ref": "#/$defs/prose",
           "description": "Framework-vs-operational boundary principle governing matrix placement. Authoring-time: one matrix per tactic, set by the threat actor's primary objective. Operational-time: real incidents may invoke tactics from multiple matrices via Detection Mesh cross-references (correlates_with at the indicator level). Type-level statement of the framework's organizing principle."
         },
         "person": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["tactics", "scope"],
+          "required": ["tactics", "scope", "maturity"],
           "properties": {
             "tactics": {
               "type": "array",
               "minItems": 1,
               "items": { "$ref": "#/$defs/tactic_person" }
             },
-            "scope": { "$ref": "#/$defs/matrix_scope" }
+            "scope": { "$ref": "#/$defs/matrix_scope" },
+            "maturity": { "$ref": "#/$defs/matrix_maturity" }
           }
         },
         "facility": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["tactics", "scope"],
+          "required": ["tactics", "scope", "maturity"],
           "properties": {
             "tactics": {
               "type": "array",
               "minItems": 1,
               "items": { "$ref": "#/$defs/tactic_facility" }
             },
-            "scope": { "$ref": "#/$defs/matrix_scope" }
+            "scope": { "$ref": "#/$defs/matrix_scope" },
+            "maturity": { "$ref": "#/$defs/matrix_maturity" }
           }
         },
         "organization": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["tactics", "scope"],
+          "required": ["tactics", "scope", "maturity"],
           "properties": {
             "tactics": {
               "type": "array",
               "minItems": 1,
               "items": { "$ref": "#/$defs/tactic_organization" }
             },
-            "scope": { "$ref": "#/$defs/matrix_scope" }
+            "scope": { "$ref": "#/$defs/matrix_scope" },
+            "maturity": { "$ref": "#/$defs/matrix_maturity" }
           }
         },
         "infrastructure": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["tactics", "scope"],
+          "required": ["tactics", "scope", "maturity"],
           "properties": {
             "tactics": {
               "type": "array",
               "minItems": 1,
               "items": { "$ref": "#/$defs/tactic_infrastructure" }
             },
-            "scope": { "$ref": "#/$defs/matrix_scope" }
+            "scope": { "$ref": "#/$defs/matrix_scope" },
+            "maturity": { "$ref": "#/$defs/matrix_maturity" }
           }
         }
       }
     },
     "actor_profiles": {
       "type": "array",
+      "minItems": 1,
       "items": {
         "$ref": "#/$defs/actor_profile"
-      }
-    },
-    "escalation_rubric": {
-      "type": "object",
-      "description": "Framework-published recommendation for deriving escalation_weight from escalation_axes and mapping to severity_band. Type-level reference; consumers may follow or override with documented rationale. See CONTRIBUTING.md \"Schema design principles\".",
-      "additionalProperties": false,
-      "required": [
-        "composite_math",
-        "severity_thresholds",
-        "severity_floor_rule",
-        "detectability_guidance",
-        "blast_radius_guidance",
-        "axis_confidence_rubric",
-        "rubric_version",
-        "calibration_guidance"
-      ],
-      "properties": {
-        "composite_math": {
-          "type": "string",
-          "description": "Recommended formula for deriving escalation_weight from escalation_axes. Multiplicative across axes is the default; weighted-additive variants are acceptable when documented."
-        },
-        "severity_thresholds": {
-          "type": "object",
-          "description": "Numeric thresholds mapping escalation_weight to severity_band buckets.",
-          "additionalProperties": false,
-          "required": ["low", "medium", "high", "critical"],
-          "properties": {
-            "low": { "type": "number" },
-            "medium": { "type": "number" },
-            "high": { "type": "number" },
-            "critical": { "type": "number" }
-          }
-        },
-        "severity_floor_rule": {
-          "type": "object",
-          "description": "V1.3 triage-floor rule: behaviors applying direct physical force to a person carry a severity_floor that forces severity_band to at least that value regardless of computed weight.",
-          "additionalProperties": false,
-          "required": ["definition", "applies_to", "added"],
-          "properties": {
-            "definition": { "type": "string" },
-            "applies_to": { "type": "string" },
-            "added": { "type": "string" }
-          }
-        },
-        "detectability_guidance": {
-          "type": "object",
-          "description": "Reading guidance for the detectability axis (rubric v1.2.0 flip and aftermath handling).",
-          "additionalProperties": false,
-          "required": [
-            "flip_rationale",
-            "misread_guard",
-            "self_censoring_caveat",
-            "added",
-            "aftermath_note"
-          ],
-          "properties": {
-            "flip_rationale": { "type": "string" },
-            "misread_guard": { "type": "string" },
-            "self_censoring_caveat": { "type": "string" },
-            "added": { "type": "string" },
-            "aftermath_note": { "type": "string" }
-          }
-        },
-        "blast_radius_guidance": {
-          "type": "object",
-          "description": "Reading guidance and method-collateral base rates for the blast_radius_potential axis.",
-          "additionalProperties": false,
-          "required": [
-            "definition",
-            "method_collateral_base_rates",
-            "authoring_notes",
-            "collateral_reveal_guidance",
-            "authoring_status",
-            "aftermath_rule"
-          ],
-          "properties": {
-            "definition": { "type": "string" },
-            "method_collateral_base_rates": {
-              "type": "object",
-              "description": "Per-method typical collateral base rates (0.0-10.0). note is prose; the remaining keys are numeric base rates.",
-              "additionalProperties": false,
-              "required": [
-                "note",
-                "explosive_incendiary_chemical",
-                "vehicle_ramming",
-                "firearm_public_or_crowded",
-                "firearm_isolated_or_precise",
-                "edged_or_blunt_weapon",
-                "hands_on_assault",
-                "abduction_or_seizure",
-                "captive_control",
-                "covert_or_poison_targeted"
-              ],
-              "properties": {
-                "note": { "type": "string" },
-                "explosive_incendiary_chemical": { "type": "number" },
-                "vehicle_ramming": { "type": "number" },
-                "firearm_public_or_crowded": { "type": "number" },
-                "firearm_isolated_or_precise": { "type": "number" },
-                "edged_or_blunt_weapon": { "type": "number" },
-                "hands_on_assault": { "type": "number" },
-                "abduction_or_seizure": { "type": "number" },
-                "captive_control": { "type": "number" },
-                "covert_or_poison_targeted": { "type": "number" }
-              }
-            },
-            "authoring_notes": { "type": "string" },
-            "collateral_reveal_guidance": {
-              "type": "object",
-              "additionalProperties": false,
-              "required": [
-                "principle",
-                "tiers",
-                "instance_deferral",
-                "computed_critical_requires_both"
-              ],
-              "properties": {
-                "principle": { "type": "string" },
-                "tiers": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "required": [
-                    "indiscriminate_or_population_target_revealed",
-                    "public_or_crowd_venue_revealed",
-                    "bystanders_present_or_managed",
-                    "cohesive_group_or_affinity_target_revealed",
-                    "single_individual_or_venue_unrevealed"
-                  ],
-                  "properties": {
-                    "indiscriminate_or_population_target_revealed": { "type": "string" },
-                    "public_or_crowd_venue_revealed": { "type": "string" },
-                    "bystanders_present_or_managed": { "type": "string" },
-                    "cohesive_group_or_affinity_target_revealed": { "type": "string" },
-                    "single_individual_or_venue_unrevealed": { "type": "string" }
-                  }
-                },
-                "instance_deferral": { "type": "string" },
-                "computed_critical_requires_both": { "type": "string" }
-              }
-            },
-            "authoring_status": { "type": "string" },
-            "aftermath_rule": {
-              "type": "object",
-              "additionalProperties": false,
-              "required": [
-                "rule",
-                "facility_floor_scope",
-                "copycat_tier",
-                "claims_rule",
-                "audience_vs_victims_guard",
-                "anti_harmonization_guard"
-              ],
-              "properties": {
-                "rule": { "type": "string" },
-                "facility_floor_scope": { "type": "string" },
-                "copycat_tier": { "type": "string" },
-                "claims_rule": { "type": "string" },
-                "audience_vs_victims_guard": { "type": "string" },
-                "anti_harmonization_guard": { "type": "string" }
-              }
-            }
-          }
-        },
-        "axis_confidence_rubric": {
-          "type": "object",
-          "description": "Derivation rules and level semantics for the per-axis axis_confidence marker (Ruling 10-A).",
-          "additionalProperties": false,
-          "required": ["levels", "derivation_rules", "misread_guard", "provenance"],
-          "properties": {
-            "levels": { "type": "string" },
-            "derivation_rules": { "type": "string" },
-            "misread_guard": { "type": "string" },
-            "provenance": { "type": "string" }
-          }
-        },
-        "rubric_version": {
-          "type": "string",
-          "description": "Bumps when the rubric changes."
-        },
-        "calibration_guidance": {
-          "type": "string",
-          "description": "Type-level framework guidance on calibrating severity_thresholds to a consumer's threat-posture environment. The framework's default thresholds reflect the rubric v1.2.0 recalibration (medium/high keep the equal-quartile cuts; critical lowered from 7.5 to 6.5 against the realized scored population); consumers operating in higher-threat-posture environments (critical infrastructure, executive protection, dignitary protection) should shift `high` and `critical` thresholds downward to surface medium-weight indicators earlier in triage. Lower-posture environments may shift them upward. Document any deviation per CONTRIBUTING.md \"Schema design principles\"."
-        }
       }
     },
     "warden_integration": {
@@ -303,9 +124,9 @@
       "additionalProperties": false,
       "required": ["status", "version_target", "notes"],
       "properties": {
-        "status": { "type": "string" },
-        "version_target": { "type": "string" },
-        "notes": { "type": "string" }
+        "status": { "$ref": "#/$defs/prose" },
+        "version_target": { "$ref": "#/$defs/prose" },
+        "notes": { "$ref": "#/$defs/prose" }
       }
     },
     "ai_architecture": {
@@ -321,15 +142,15 @@
         "v2_roadmap"
       ],
       "properties": {
-        "version": { "type": "string" },
-        "philosophy": { "type": "string" },
+        "version": { "$ref": "#/$defs/prose" },
+        "philosophy": { "$ref": "#/$defs/prose" },
         "vectors": {
           "type": "object",
           "additionalProperties": false,
           "required": ["ai_initiated_physical", "ai_enabled_risks"],
           "properties": {
-            "ai_initiated_physical": { "type": "string" },
-            "ai_enabled_risks": { "type": "string" }
+            "ai_initiated_physical": { "$ref": "#/$defs/prose" },
+            "ai_enabled_risks": { "$ref": "#/$defs/prose" }
           }
         },
         "capability_taxonomy": {
@@ -343,21 +164,21 @@
             "autonomous_targeting"
           ],
           "properties": {
-            "accelerated_target_research": { "type": "string" },
-            "synthetic_identity": { "type": "string" },
-            "deepfake_manipulation": { "type": "string" },
-            "automated_surveillance": { "type": "string" },
-            "autonomous_targeting": { "type": "string" }
+            "accelerated_target_research": { "$ref": "#/$defs/prose" },
+            "synthetic_identity": { "$ref": "#/$defs/prose" },
+            "deepfake_manipulation": { "$ref": "#/$defs/prose" },
+            "automated_surveillance": { "$ref": "#/$defs/prose" },
+            "autonomous_targeting": { "$ref": "#/$defs/prose" }
           }
         },
-        "cpn_impact": { "type": "string" },
-        "v2_roadmap": { "type": "string" }
+        "cpn_impact": { "$ref": "#/$defs/prose" },
+        "v2_roadmap": { "$ref": "#/$defs/prose" }
       }
     },
     "bibliography": {
       "type": "object",
-      "description": "Central citation library. Each key is a unique reference ID; each value is a bibliographic entry. Keys follow the docs/IDENTIFIERS.md convention: uppercase letters and digits in hyphen-separated segments, starting with a letter, at least two segments (pattern-enforced since schema 3.0.0).",
-      "propertyNames": { "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$" },
+      "description": "Central citation library. Each key is a unique reference ID; each value is a bibliographic entry. Keys follow the docs/IDENTIFIERS.md convention: uppercase letters and digits in hyphen-separated segments, starting with a letter, at least two segments, and never the shape of an indicator, countermeasure, or response-protocol ID (pattern-enforced). scripts/lint/validate.py additionally requires every entry to be cited by at least one source_refs.",
+      "propertyNames": { "$ref": "#/$defs/bibliography_key" },
       "additionalProperties": {
         "$ref": "#/$defs/bibliography_entry"
       }
@@ -366,50 +187,22 @@
       "type": "object",
       "description": "Cross-walk from THREAT Matrix phases to NTAC, Calhoun-Weston, CERT, Cyber Kill Chain, MITRE ATT&CK, and MITRE ATLAS stages. Enables AI/RAG cross-framework interoperability across physical, cyber, and AI-systems threat actor models.",
       "additionalProperties": false,
-      "patternProperties": {
-        "^phase_[1-4]_(target_development|mobilization|execution|aftermath)$": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "ntac_pathway",
-            "calhoun_weston",
-            "cert_insider",
-            "cyber_kill_chain",
-            "mitre_attack",
-            "mitre_atlas"
-          ],
-          "properties": {
-            "ntac_pathway": {
-              "type": "array",
-              "items": { "type": "string" }
-            },
-            "calhoun_weston": {
-              "type": "array",
-              "items": { "type": "string" }
-            },
-            "cert_insider": {
-              "type": "array",
-              "items": { "type": "string" }
-            },
-            "cyber_kill_chain": {
-              "type": "array",
-              "items": { "type": "string" }
-            },
-            "mitre_attack": {
-              "type": "array",
-              "items": { "type": "string" }
-            },
-            "mitre_atlas": {
-              "type": "array",
-              "items": { "type": "string" }
-            }
-          }
-        }
+      "required": [
+        "phase_1_target_development",
+        "phase_2_mobilization",
+        "phase_3_execution",
+        "phase_4_aftermath"
+      ],
+      "properties": {
+        "phase_1_target_development": { "$ref": "#/$defs/phase_mapping" },
+        "phase_2_mobilization": { "$ref": "#/$defs/phase_mapping" },
+        "phase_3_execution": { "$ref": "#/$defs/phase_mapping" },
+        "phase_4_aftermath": { "$ref": "#/$defs/phase_mapping" }
       }
     },
     "detection_mesh": {
       "type": "object",
-      "description": "Architectural prose object describing the cross-cutting Detection Mesh property along five axes.",
+      "description": "Architectural prose object describing the cross-cutting Detection Mesh property along five axes. The axes array carries each of the five named axes exactly once.",
       "additionalProperties": false,
       "required": [
         "principle",
@@ -419,10 +212,19 @@
       ],
       "properties": {
         "principle": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "axes": {
           "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "allOf": [
+            { "contains": { "properties": { "name": { "const": "cross_phase" } }, "required": ["name"] } },
+            { "contains": { "properties": { "name": { "const": "cross_matrix" } }, "required": ["name"] } },
+            { "contains": { "properties": { "name": { "const": "cross_domain" } }, "required": ["name"] } },
+            { "contains": { "properties": { "name": { "const": "cross_countermeasure" } }, "required": ["name"] } },
+            { "contains": { "properties": { "name": { "const": "cross_stakeholder" } }, "required": ["name"] } }
+          ],
           "items": {
             "type": "object",
             "additionalProperties": false,
@@ -442,17 +244,18 @@
                 ]
               },
               "description": {
-                "type": "string"
+                "$ref": "#/$defs/prose"
               }
             }
           }
         },
         "doctrinal_antecedent": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "schema_links": {
           "type": "object",
           "additionalProperties": false,
+          "required": ["indicators", "countermeasures", "response_protocols"],
           "properties": {
             "indicators": {
               "type": "string",
@@ -469,114 +272,177 @@
           }
         }
       }
-    },
-    "instance_conditioning": {
-      "type": "object",
-      "description": "Instance-conditioning layer (type-level record): declares the layer, factors, escalate-only rule, demotion doctrine, raise guidance, inhibitors exclusion, binding contract, conditioning hints, status, and provenance. Fully typed in V1.6.",
-      "additionalProperties": false,
-      "required": [
-        "layer",
-        "factors",
-        "escalate_only_rule",
-        "demotion_doctrine",
-        "raise_guidance",
-        "inhibitors_exclusion",
-        "binding_contract",
-        "conditioning_guidance",
-        "status",
-        "provenance"
-      ],
-      "properties": {
-        "layer": { "type": "string" },
-        "factors": {
-          "type": "array",
-          "minItems": 1,
-          "items": { "type": "string" }
-        },
-        "escalate_only_rule": { "type": "string" },
-        "demotion_doctrine": { "type": "string" },
-        "raise_guidance": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["purpose", "patterns"],
-          "properties": {
-            "purpose": { "type": "string" },
-            "patterns": {
-              "type": "array",
-              "minItems": 1,
-              "items": { "type": "string" }
-            }
-          }
-        },
-        "inhibitors_exclusion": { "type": "string" },
-        "binding_contract": { "type": "string" },
-        "conditioning_guidance": { "type": "string" },
-        "status": { "type": "string" },
-        "provenance": { "type": "string" }
-      }
     }
   },
   "additionalProperties": false,
   "$defs": {
-    "matrix_scope": {
+    "prose": {
       "type": "string",
+      "minLength": 1,
+      "pattern": "^\\S([\\s\\S]*\\S)?$",
+      "description": "A non-empty text value with no leading or trailing whitespace. Interior whitespace, including line breaks, is allowed."
+    },
+    "semver": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$",
+      "description": "A SemVer 2.0.0 version string (the grammar published at semver.org, ASCII digits only)."
+    },
+    "tactic_id": {
+      "type": "string",
+      "pattern": "^T[MFOI]0[1-4](0[1-9]|[1-9][0-9])$",
+      "description": "Tactic ID: T, a matrix letter (M person, F facility, O organization, I infrastructure), a two-digit phase (01 to 04), and a two-digit sequence starting at 01."
+    },
+    "indicator_id": {
+      "type": "string",
+      "pattern": "^IND-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$",
+      "description": "Indicator ID: IND, an optional matrix letter (none for person), the parent tactic's four digits, and a two-digit sequence starting at 01."
+    },
+    "countermeasure_id": {
+      "type": "string",
+      "pattern": "^CM-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$",
+      "description": "Countermeasure ID, same grammar as an indicator ID with the CM prefix."
+    },
+    "response_protocol_id": {
+      "type": "string",
+      "pattern": "^RP-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$",
+      "description": "Response-protocol ID, same grammar as an indicator ID with the RP prefix."
+    },
+    "actor_profile_id": {
+      "type": "string",
+      "pattern": "^AP(00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$",
+      "description": "Actor profile ID: AP and a three-digit sequence starting at 001."
+    },
+    "bibliography_key": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$",
+      "not": { "pattern": "^(IND|CM|RP)-[FOI]?[0-9]{4}-[0-9]{2}$" },
+      "description": "Bibliography key: uppercase letters and digits in hyphen-separated segments, starting with a letter, at least two segments. A string in the shape of an indicator, countermeasure, or response-protocol ID is not a legal key, so the namespaces cannot collide."
+    },
+    "http_url": {
+      "type": "string",
+      "pattern": "^https?://[^\\s]+$",
+      "description": "An http or https URL with no whitespace."
+    },
+    "matrix_maturity": {
+      "type": "string",
+      "enum": ["core", "draft"],
+      "description": "Maturity of a matrix. core: the matrix is part of the reviewed vocabulary. draft: the matrix is published for comment and may change without a deprecation cycle."
+    },
+    "lifecycle_rules": {
+      "description": "The lifecycle contract shared by tactics, indicators, countermeasures, response protocols, and actor profiles (docs/DEPRECATION.md). active (or absent): no lifecycle detail field. deprecated: deprecated_in and deprecation_reason, no superseded_by. superseded: deprecated_in, deprecation_reason, and superseded_by. reserved (actor profiles only): reserved_reason and no other lifecycle detail field. reserved_reason is legal only in the reserved state.",
+      "allOf": [
+        {
+          "if": { "properties": { "lifecycle_state": { "const": "active" } } },
+          "then": { "not": { "anyOf": [ { "required": ["deprecated_in"] }, { "required": ["superseded_by"] }, { "required": ["deprecation_reason"] }, { "required": ["reserved_reason"] } ] } }
+        },
+        {
+          "if": { "properties": { "lifecycle_state": { "const": "deprecated" } }, "required": ["lifecycle_state"] },
+          "then": { "required": ["deprecated_in", "deprecation_reason"], "not": { "anyOf": [ { "required": ["superseded_by"] }, { "required": ["reserved_reason"] } ] } }
+        },
+        {
+          "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
+          "then": { "required": ["deprecated_in", "deprecation_reason", "superseded_by"], "not": { "required": ["reserved_reason"] } }
+        },
+        {
+          "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
+          "then": { "required": ["reserved_reason"], "not": { "anyOf": [ { "required": ["deprecated_in"] }, { "required": ["superseded_by"] }, { "required": ["deprecation_reason"] } ] } }
+        }
+      ]
+    },
+    "phase_mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ntac_pathway",
+        "calhoun_weston",
+        "cert_insider",
+        "cyber_kill_chain",
+        "mitre_attack",
+        "mitre_atlas"
+      ],
+      "properties": {
+        "ntac_pathway": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/prose" }
+        },
+        "calhoun_weston": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/prose" }
+        },
+        "cert_insider": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/prose" }
+        },
+        "cyber_kill_chain": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/prose" }
+        },
+        "mitre_attack": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/prose" }
+        },
+        "mitre_atlas": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/prose" }
+        }
+      }
+    },
+    "matrix_scope": {
+      "$ref": "#/$defs/prose",
       "description": "Canonical scope sentence for a matrix, expressed in WHAT/WHY/WHERE terms. Defines the primary threat actor objective that places a tactic in this matrix at authoring time. Type-level field; not case-specific. See matrices.boundary_rule for the framework-vs-operational distinction."
     },
     "tactic": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id"],
+      "required": ["id", "name", "matrix", "phase", "phase_name", "notes", "field_notes", "observed_contexts", "evidence_basis", "source_refs", "tactic_families", "related_tactics", "indicators", "countermeasures", "response_protocols", "actor_associations"],
       "allOf": [
+        { "$ref": "#/$defs/lifecycle_rules" },
         {
-          "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["superseded_by"] }
+          "if": { "properties": { "phase": { "const": 1 } }, "required": ["phase"] },
+          "then": { "properties": { "id": { "pattern": "^T[MFOI]01" }, "phase_name": { "const": "Target Development" } }, "not": { "required": ["phase_4_track"] } }
         },
         {
-          "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["id", "lifecycle_state", "reserved_reason"] },
-          "else": { "required": ["id", "name", "matrix", "phase", "phase_name", "notes", "field_notes", "observed_contexts", "evidence_basis", "source_refs", "tactic_families", "related_tactics", "indicators", "countermeasures", "response_protocols", "actor_associations"] }
+          "if": { "properties": { "phase": { "const": 2 } }, "required": ["phase"] },
+          "then": { "properties": { "id": { "pattern": "^T[MFOI]02" }, "phase_name": { "const": "Mobilization" } }, "not": { "required": ["phase_4_track"] } }
+        },
+        {
+          "if": { "properties": { "phase": { "const": 3 } }, "required": ["phase"] },
+          "then": { "properties": { "id": { "pattern": "^T[MFOI]03" }, "phase_name": { "const": "Execution" } }, "not": { "required": ["phase_4_track"] } }
+        },
+        {
+          "if": { "properties": { "phase": { "const": 4 } }, "required": ["phase"] },
+          "then": { "properties": { "id": { "pattern": "^T[MFOI]04" }, "phase_name": { "const": "Aftermath" } }, "required": ["phase_4_track"] }
         }
       ],
       "properties": {
-        "id": {
-          "type": "string",
-          "pattern": "^T[MFOI][0-9]{4}$"
-        },
+        "id": { "$ref": "#/$defs/tactic_id" },
         "lifecycle_state": {
           "type": "string",
-          "enum": ["active", "deprecated", "superseded", "reserved"],
+          "enum": ["active", "deprecated", "superseded"],
           "default": "active",
-          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the tactic is active. superseded requires superseded_by; reserved requires reserved_reason."
+          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the tactic is active. deprecated requires deprecated_in and deprecation_reason. superseded requires those plus superseded_by. An active tactic carries none of the lifecycle detail fields. reserved is not a legal state here: in schema 3.0.0 only actor profiles may be reserved, and reserved identifiers of this namespace are recorded in the ID manifest's reserved list."
         },
         "deprecated_in": {
-          "type": "string",
-          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$",
-          "description": "Optional. Framework content version (SemVer) in which this tactic entered deprecated or superseded state. Absent on active tactics."
+          "$ref": "#/$defs/semver",
+          "description": "Framework content version (SemVer) in which this tactic entered deprecated or superseded state. Required in those states, forbidden otherwise. scripts/lint/validate.py also rejects a value later than the document version."
         },
         "superseded_by": {
-          "type": "string",
-          "pattern": "^T[MFOI][0-9]{4}$",
-          "description": "Required when lifecycle_state is superseded. Same-namespace ID of the replacement tactic, per docs/DEPRECATION.md."
+          "$ref": "#/$defs/tactic_id",
+          "description": "Required when lifecycle_state is superseded, forbidden otherwise. Same-namespace ID of the replacement tactic. scripts/lint/validate.py requires the target to exist, to be active, and not to be this tactic itself, so a supersession chain cannot loop."
         },
         "deprecation_reason": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Optional. Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md)."
-        },
-        "reserved_reason": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Required when lifecycle_state is reserved. Brief explanation of why the identifier slot is held."
+          "$ref": "#/$defs/prose",
+          "description": "Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md). Required in those states, forbidden otherwise."
         },
         "name": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "tactic_families": {
           "type": "array",
           "minItems": 1,
           "uniqueItems": true,
           "items": {
-            "type": "string"
+            "$ref": "#/$defs/prose"
           }
         },
         "matrix": {
@@ -595,30 +461,30 @@
         },
         "phase_name": {
           "type": "string",
-          "description": "Human-readable phase name. Current data uses Title Case with phase number prefix (e.g., '1 Target Development'); V1.2 may normalize."
+          "enum": ["Target Development", "Mobilization", "Execution", "Aftermath"],
+          "description": "Human-readable phase name. Fully determined by phase: 1 Target Development, 2 Mobilization, 3 Execution, 4 Aftermath (enforced by the conditionals on this object). The third and fourth characters of the tactic id encode the same phase."
         },
         "phase_4_track": {
           "type": "string",
           "enum": ["evasion", "attribution"],
-          "description": "Aftermath sub-track for phase-4 tactics: 'evasion' (Evade \u2014 withdrawal, evidence management, cover, counter-forensics, re-attack positioning) or 'attribution' (Claim \u2014 declaring, amplifying, messaging, coercive leverage). Framework-level structure carried by every matrix's phase-4 tactics; absent on phases 1\u20133. Formalized V1.3 (previously an undocumented data field on the People matrix)."
+          "description": "Aftermath sub-track for phase-4 tactics: 'evasion' (Evade: withdrawal, evidence management, cover, counter-forensics, re-attack positioning) or 'attribution' (Claim: declaring, amplifying, messaging, coercive leverage). Framework-level structure carried by every matrix's phase-4 tactics; required on phase 4 and forbidden on phases 1 to 3 (enforced by the conditionals on this object)."
         },
         "notes": {
-          "type": "string",
+          "$ref": "#/$defs/prose",
           "description": "Formal taxonomic description of the tactic."
         },
         "field_notes": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Practitioner-voice paragraph (V1.1 mandatory)."
+          "$ref": "#/$defs/prose",
+          "description": "Practitioner-voice paragraph."
         },
         "observed_contexts": {
           "type": "array",
           "minItems": 1,
           "uniqueItems": true,
           "items": {
-            "type": "string"
+            "$ref": "#/$defs/prose"
           },
-          "description": "Generic context archetypes (V1.1 mandatory). Pattern archetypes only; never case names."
+          "description": "Generic context archetypes. Pattern archetypes only; never case names."
         },
         "evidence_basis": {
           "type": "string",
@@ -652,14 +518,13 @@
         "related_tactics": {
           "type": "array",
           "uniqueItems": true,
-          "items": {
-            "type": "string",
-            "pattern": "^T[MFOI][0-9]{4}$"
-          },
-          "description": "Tactic IDs related to this tactic. Each entry must be a tactic ID (pattern-enforced since schema 3.0.0)."
+          "items": { "$ref": "#/$defs/tactic_id" },
+          "description": "Tactic IDs related to this tactic. Each entry must be a tactic ID (pattern-enforced). scripts/lint/validate.py requires each entry to resolve to an existing tactic other than this one."
         },
         "actor_associations": {
           "type": "array",
+          "uniqueItems": true,
+          "description": "Actor profiles associated with this tactic. scripts/lint/validate.py requires each actor_id to resolve to a non-reserved actor profile and allows one entry per actor_id and employment_status pair.",
           "items": {
             "$ref": "#/$defs/actor_association"
           }
@@ -668,58 +533,58 @@
           "type": "array",
           "minItems": 1,
           "uniqueItems": true,
-          "items": {
-            "type": "string",
-            "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$"
-          },
-          "description": "Bibliography keys. Min 1, with at least one Tier 1 source. Each entry must match the bibliography key convention (pattern-enforced since schema 3.0.0); resolution against the bibliography is checked by scripts/lint/validate.py V09."
+          "items": { "$ref": "#/$defs/bibliography_key" },
+          "description": "Bibliography keys, at least one. Each entry must match the bibliography key convention (pattern-enforced); resolution against the bibliography is checked by scripts/lint/validate.py."
         },
         "assessment_guidance": {
           "type": "object",
           "additionalProperties": false,
-          "description": "Optional structured per-tactic scoring guidance. Type-level inherent property of the tactic class; consumers cite the criteria preambles, high/low signal anchors, false-positive contexts, and threshold guidance to inform their own assessments. The criteria field on each of credibility/capability/intent/opportunity articulates the underlying judgment rule (e.g., 'Credibility rises with X, Y, Z; falls with A, B, C'); the high_signal_anchors and low_signal_anchors arrays illustrate the criteria with specific patterns and are indicative rather than exhaustive. Not a case-specific score. See CONTRIBUTING.md \"Schema design principles\".",
+          "required": ["credibility", "capability", "intent", "opportunity", "false_positive_context", "threshold_guidance"],
+          "description": "Optional structured per-tactic assessment guidance; when present all six parts are required. Type-level inherent property of the tactic class; consumers cite the criteria preambles, high/low signal anchors, false-positive contexts, and threshold guidance to inform their own assessments. The criteria field on each of credibility/capability/intent/opportunity articulates the underlying judgment rule (e.g., 'Credibility rises with X, Y, Z; falls with A, B, C'); the high_signal_anchors and low_signal_anchors arrays illustrate the criteria with specific patterns and are indicative rather than exhaustive. Not a score and not case-specific. See CONTRIBUTING.md \"Schema design principles\".",
           "properties": {
             "credibility": {
               "type": "object",
               "additionalProperties": false,
+              "required": ["criteria", "high_signal_anchors", "low_signal_anchors"],
               "properties": {
                 "criteria": {
-                  "type": "string",
+                  "$ref": "#/$defs/prose",
                   "description": "Type-level prose preamble articulating the underlying credibility-judgment rule. Carries the contract; anchors illustrate it."
                 },
                 "high_signal_anchors": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/$defs/prose"
                   }
                 },
                 "low_signal_anchors": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/$defs/prose"
                   }
                 }
               }
             },
             "capability": {
-              "description": "Per-tactic aid for READING a specific actor's capability from evidence — the third of three deliberately distinct capability constructs: impact_potential presumes the class's capability ceiling; informs_axes.actor_capability scores what observing the class reveals about capability; this block guides the evidence reading. The per-case instance judgment is the future instance-conditioning record (B-03).",
+              "description": "Per-tactic aid for reading a specific actor's capability from evidence. Distinct from informs_axes.actor_capability, which records what observing the indicator class reveals about capability. The per-case judgment belongs in a case record, never in this document.",
               "type": "object",
               "additionalProperties": false,
+              "required": ["criteria", "high_signal_anchors", "low_signal_anchors"],
               "properties": {
                 "criteria": {
-                  "type": "string",
+                  "$ref": "#/$defs/prose",
                   "description": "Type-level prose preamble articulating the underlying capability-judgment rule. Carries the contract; anchors illustrate it."
                 },
                 "high_signal_anchors": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/$defs/prose"
                   }
                 },
                 "low_signal_anchors": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/$defs/prose"
                   }
                 }
               }
@@ -727,21 +592,22 @@
             "intent": {
               "type": "object",
               "additionalProperties": false,
+              "required": ["criteria", "high_signal_anchors", "low_signal_anchors"],
               "properties": {
                 "criteria": {
-                  "type": "string",
+                  "$ref": "#/$defs/prose",
                   "description": "Type-level prose preamble articulating the underlying intent-judgment rule. Carries the contract; anchors illustrate it."
                 },
                 "high_signal_anchors": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/$defs/prose"
                   }
                 },
                 "low_signal_anchors": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/$defs/prose"
                   }
                 }
               }
@@ -749,21 +615,22 @@
             "opportunity": {
               "type": "object",
               "additionalProperties": false,
+              "required": ["criteria", "high_signal_anchors", "low_signal_anchors"],
               "properties": {
                 "criteria": {
-                  "type": "string",
+                  "$ref": "#/$defs/prose",
                   "description": "Type-level prose preamble articulating the underlying opportunity-judgment rule. Carries the contract; anchors illustrate it."
                 },
                 "high_signal_anchors": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/$defs/prose"
                   }
                 },
                 "low_signal_anchors": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/$defs/prose"
                   }
                 }
               }
@@ -771,33 +638,24 @@
             "false_positive_context": {
               "type": "object",
               "additionalProperties": false,
+              "required": ["criteria", "contexts"],
               "description": "Patterns where surface behavior matches the tactic's indicators but the underlying activity is legitimate. Criteria + contexts shape mirrors the credibility/capability/intent/opportunity sub-fields.",
               "properties": {
                 "criteria": {
-                  "type": "string",
+                  "$ref": "#/$defs/prose",
                   "description": "Type-level prose articulating what distinguishes a false-positive from a real concern. Carries the contract; contexts illustrate it."
                 },
                 "contexts": {
                   "type": "array",
                   "items": {
-                    "type": "string"
+                    "$ref": "#/$defs/prose"
                   }
                 }
               }
             },
             "threshold_guidance": {
-              "type": "string",
-              "description": "Prose describing the escalation threshold."
-            },
-            "escalation_priority": {
-              "type": "string",
-              "enum": [
-                "Urgent",
-                "Immediate",
-                "Priority",
-                "Routine"
-              ],
-              "description": "Type-level priority class for the tactic — characterizes typical action-urgency at the tactic-class level, not case-level urgency at any specific assessment. See CONTRIBUTING.md \"Schema design principles\"."
+              "$ref": "#/$defs/prose",
+              "description": "Prose describing when the tactic's indicators warrant escalation to a threat assessment team."
             }
           }
         },
@@ -818,12 +676,12 @@
       }
     },
     "tactic_person": {
-      "description": "A tactic in the person matrix: the base tactic plus a matrix-specific id prefix and matrix const. Closes the wrong-matrix-placement class (F07/F08) in schema alone.",
+      "description": "A tactic in the person matrix: the base tactic plus a matrix-specific id prefix and matrix const. Rejects a tactic placed under the wrong matrix key in schema alone.",
       "allOf": [
         { "$ref": "#/$defs/tactic" },
         {
           "properties": {
-            "id": { "type": "string", "pattern": "^TM[0-9]{4}$" },
+            "id": { "type": "string", "pattern": "^TM" },
             "matrix": { "const": "person" }
           }
         }
@@ -835,7 +693,7 @@
         { "$ref": "#/$defs/tactic" },
         {
           "properties": {
-            "id": { "type": "string", "pattern": "^TF[0-9]{4}$" },
+            "id": { "type": "string", "pattern": "^TF" },
             "matrix": { "const": "facility" }
           }
         }
@@ -847,7 +705,7 @@
         { "$ref": "#/$defs/tactic" },
         {
           "properties": {
-            "id": { "type": "string", "pattern": "^TO[0-9]{4}$" },
+            "id": { "type": "string", "pattern": "^TO" },
             "matrix": { "const": "organization" }
           }
         }
@@ -859,7 +717,7 @@
         { "$ref": "#/$defs/tactic" },
         {
           "properties": {
-            "id": { "type": "string", "pattern": "^TI[0-9]{4}$" },
+            "id": { "type": "string", "pattern": "^TI" },
             "matrix": { "const": "infrastructure" }
           }
         }
@@ -868,8 +726,9 @@
     "indicator": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id"],
+      "required": ["id", "behavior", "category", "detection_sources", "phase_relevance", "source_refs", "modality", "human_social", "temporal_signature"],
       "allOf": [
+        { "$ref": "#/$defs/lifecycle_rules" },
         {
           "if": { "properties": { "modality": { "const": "human_social" } }, "required": ["modality"] },
           "then": { "properties": { "human_social": { "const": true } }, "required": ["human_social"] }
@@ -878,58 +737,30 @@
           "if": { "properties": { "modality": { "const": "cyber_physical" } }, "required": ["modality"] },
           "then": { "required": ["crossing_mechanism"] },
           "else": { "not": { "required": ["crossing_mechanism"] } }
-        },
-        {
-          "if": { "properties": { "severity_floor": { "const": "critical" } }, "required": ["severity_floor", "severity_band"] },
-          "then": { "properties": { "severity_band": { "const": "critical" } } }
-        },
-        {
-          "if": { "properties": { "severity_floor": { "const": "high" } }, "required": ["severity_floor", "severity_band"] },
-          "then": { "properties": { "severity_band": { "enum": ["high", "critical"] } } }
-        },
-        {
-          "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["superseded_by"] }
-        },
-        {
-          "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["id", "lifecycle_state", "reserved_reason"] },
-          "else": { "required": ["id", "behavior", "category", "detection_sources", "phase_relevance", "source_refs", "modality", "human_social", "temporal_signature", "escalation_weight", "escalation_axes"] }
         }
       ],
       "properties": {
-        "id": {
-          "type": "string",
-          "pattern": "^IND-[FOI]?[0-9]{4}-[0-9]{2}$"
-        },
+        "id": { "$ref": "#/$defs/indicator_id" },
         "lifecycle_state": {
           "type": "string",
-          "enum": ["active", "deprecated", "superseded", "reserved"],
+          "enum": ["active", "deprecated", "superseded"],
           "default": "active",
-          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the indicator is active. superseded requires superseded_by; reserved requires reserved_reason."
+          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the indicator is active. deprecated requires deprecated_in and deprecation_reason. superseded requires those plus superseded_by. An active indicator carries none of the lifecycle detail fields. reserved is not a legal state here: in schema 3.0.0 only actor profiles may be reserved, and reserved identifiers of this namespace are recorded in the ID manifest's reserved list."
         },
         "deprecated_in": {
-          "type": "string",
-          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$",
-          "description": "Optional. Framework content version (SemVer) in which this indicator entered deprecated or superseded state. Absent on active indicators."
+          "$ref": "#/$defs/semver",
+          "description": "Framework content version (SemVer) in which this indicator entered deprecated or superseded state. Required in those states, forbidden otherwise. scripts/lint/validate.py also rejects a value later than the document version."
         },
         "superseded_by": {
-          "type": "string",
-          "pattern": "^IND-[FOI]?[0-9]{4}-[0-9]{2}$",
-          "description": "Required when lifecycle_state is superseded. Same-namespace ID of the replacement indicator, per docs/DEPRECATION.md."
+          "$ref": "#/$defs/indicator_id",
+          "description": "Required when lifecycle_state is superseded, forbidden otherwise. Same-namespace ID of the replacement indicator. scripts/lint/validate.py requires the target to exist, to be active, and not to be this indicator itself, so a supersession chain cannot loop."
         },
         "deprecation_reason": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Optional. Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md)."
-        },
-        "reserved_reason": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Required when lifecycle_state is reserved. Brief explanation of why the identifier slot is held."
+          "$ref": "#/$defs/prose",
+          "description": "Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md). Required in those states, forbidden otherwise."
         },
         "behavior": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "category": {
           "type": "string",
@@ -986,25 +817,19 @@
         "correlates_with": {
           "type": "array",
           "uniqueItems": true,
-          "items": {
-            "type": "string",
-            "pattern": "^IND-[FOI]?[0-9]{4}-[0-9]{2}$"
-          },
-          "description": "Indicator IDs this behavior co-occurs with (Detection Mesh cross-correlation). Referents are indicator IDs only, within or across matrices; cross-matrix links are reviewed against the mesh link rule (docs/METHODOLOGY.md, section 2) before authoring."
+          "items": { "$ref": "#/$defs/indicator_id" },
+          "description": "Indicator IDs this behavior co-occurs with (Detection Mesh cross-correlation). Referents are indicator IDs only, within or across matrices; cross-matrix links are reviewed against the mesh link rule (docs/METHODOLOGY.md) before authoring. scripts/lint/validate.py requires each entry to resolve to an existing indicator other than this one."
         },
         "source_refs": {
           "type": "array",
           "minItems": 1,
           "uniqueItems": true,
-          "items": {
-            "type": "string",
-            "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$"
-          }
+          "items": { "$ref": "#/$defs/bibliography_key" }
         },
         "modality": {
           "type": "string",
           "enum": ["physical", "cyber", "cyber_physical", "human_social"],
-          "description": "Intrinsic modality of the behavior (V1.6 rename of 'crossing', restoring the locked S32 vocabulary), decided by the behavior's own mechanism, its INSTRUMENT, and the zone its access reaches; never its effect, target importance, or the venue it travels through. physical = matter, force, or presence is the instrument (kinetic/on-site/hand act); cyber = the instrument operates on a computing system's access, code, data, or machinery (a platform used merely as a communication channel does NOT qualify); cyber_physical = the behavior itself crosses the seam (a cyber action reaching/reading/writing the OT control plane, a physical implant gaining cyber reach, or a technical digital-or-electromagnetic means producing a physical-infrastructure effect); human_social = the instrument operates on people or institutions (persuasion, coercion, recruitment, legal or financial process) with no technical instrument, in which case the human_social boolean facet is necessarily true. CPN is NOT stored; it is computed over the Detection Mesh from crossings plus same-operation kill-chain membership."
+          "description": "Intrinsic modality of the behavior, decided by the behavior's own mechanism, its INSTRUMENT, and the zone its access reaches; never its effect, target importance, or the venue it travels through. physical = matter, force, or presence is the instrument (kinetic/on-site/hand act); cyber = the instrument operates on a computing system's access, code, data, or machinery (a platform used merely as a communication channel does NOT qualify); cyber_physical = the behavior itself crosses the seam (a cyber action reaching/reading/writing the OT control plane, a physical implant gaining cyber reach, or a technical digital-or-electromagnetic means producing a physical-infrastructure effect); human_social = the instrument operates on people or institutions (persuasion, coercion, recruitment, legal or financial process) with no technical instrument, in which case the human_social boolean facet is necessarily true. CPN is NOT stored; it is computed over the Detection Mesh from crossings plus same-operation kill-chain membership."
         },
         "crossing_mechanism": {
           "type": "string",
@@ -1035,79 +860,14 @@
           ],
           "description": "Type-level property of the indicator class describing how close to action it typically appears. Distinct from phase_relevance, which describes which lifecycle phase the indicator belongs to. Base values (horizon, advancing, imminent, staging, in_progress, aftermath) define primary pathway positions; optional _early / _late refinements are available for horizon, advancing, imminent, and aftermath where within-band variation carries meaningful operational signal. Staging and in_progress are not split (staging is already a tight terminal-prep window; in_progress is binary). Authors should use the base value when within-band position is ambiguous; use a granular variant only when the indicator class clearly clusters at the early or late edge of its band. Type-level inherent property; not case-specific. See CONTRIBUTING.md \"Schema design principles\"."
         },
-        "escalation_weight": {
-          "type": "number",
-          "minimum": 0.0,
-          "maximum": 10.0,
-          "description": "Type-level composite over escalation_axes (0.0–10.0, two-decimal precision). Recommended derivation is published in escalation_rubric.composite_math; consumers may follow the recommendation or override with documented rationale. Type-level inherent property of the indicator class, not a case-specific score. See CONTRIBUTING.md \"Schema design principles\"."
-        },
-        "escalation_axes": {
-          "type": "object",
-          "additionalProperties": false,
-          "description": "Type-level inherent properties of the indicator class along four axes. Sub-fields use _potential and _inverse suffixes deliberately, signalling that these describe the behavior class's typical implications, not case-level realizations at any specific facility or assessment. See CONTRIBUTING.md \"Schema design principles\".",
-          "properties": {
-            "impact_potential": {
-              "type": "number",
-              "minimum": 0.0,
-              "maximum": 10.0,
-              "description": "Type-level magnitude of harm the behavior class directly produces or imminently enables — a severity gradient along the pathway (reconnaissance/tradecraft low, planning/access mid, force application and capability acquisition high). Presumes the capability CEILING of the class (what it could effect at most); contrast informs_axes.actor_capability (what observing the class reveals about skill) and assessment_guidance.capability (how to read a specific actor's capability from evidence). The per-case does-THIS-actor-have-the-skill judgment belongs to the instance-conditioning layer (B-03) and is never discounted into this value."
-            },
-            "blast_radius_potential": {
-              "type": "number",
-              "minimum": 0.0,
-              "maximum": 10.0,
-              "description": "Type-level geographic / population scope if the threat lands."
-            },
-            "recoverability_inverse": {
-              "type": "number",
-              "minimum": 0.0,
-              "maximum": 10.0,
-              "description": "Type-level inverse-recoverability \u2014 how hard the harm is to undo. Permanence weighted higher; lives lost = highest. Reading election (rubric v1.2.0): this axis scores the harm the behavior class DIRECTLY produces \u2014 it does not inherit the permanence of the harm a behavior presages or enables (contrast impact_potential, which counts harm a behavior directly produces or imminently enables). Victim-facing pre-attack behaviors (surveillance, approach) score their durable psychological harm; operational support behaviors (rehearsal, diversion, coordination comms) score their own transient harm. Known seam: some phase-1/2 preparatory indicators were authored before this election under a presaged-harm reading and sit above it \u2014 reconciliation is a backlogged scoring pass (B-10), not silent per-indicator drift."
-            },
-            "detectability": {
-              "type": "number",
-              "minimum": 0.0,
-              "maximum": 10.0,
-              "description": "Type-level observability of the indicator in flight by trained personnel."
-            }
-          }
-        },
-        "severity_band": {
-          "type": "string",
-          "enum": [
-            "low",
-            "medium",
-            "high",
-            "critical"
-          ],
-          "description": "Optional derived bucket from escalation_weight per escalation_rubric.severity_thresholds. Consumers may compute on read or store. Type-level descriptor of the indicator class. Note: when severity_floor is present, severity_band is the greater of the computed band and the floor (see escalation_rubric.severity_floor_rule). See CONTRIBUTING.md \"Schema design principles\"."
-        },
-        "severity_floor": {
-          "type": "string",
-          "enum": [
-            "high",
-            "critical"
-          ],
-          "description": "V1.3 triage floor. Present on indicators whose behavior applies direct physical force to a person; forces severity_band to at least this value regardless of the computed escalation_weight (which is left unchanged). Currently 'critical' for all such behaviors — a casualty is critical at any scale. See escalation_rubric.severity_floor_rule."
-        },
-        "axis_confidence": {
-          "type": "object",
-          "additionalProperties": false,
-          "description": "Optional per-axis evidence-basis marker (Ruling 10-A, V1.6): rule-derived by scripts/analysis/derive-axis-confidence.py, categorical only (numeric confidence is banned for the same false-precision reason informs_axes bans numbers). Confidence is evidence basis, NOT severity: a thin axis is a wider error bar and a candidate for earlier human review, NEVER an automatic demotion (a computed discount by the back door is banned per instance_conditioning). See escalation_rubric.axis_confidence_rubric for the derivation rules.",
-          "properties": {
-            "impact_potential": { "type": "string", "enum": ["established", "inferred", "thin"] },
-            "blast_radius_potential": { "type": "string", "enum": ["established", "inferred", "thin"] },
-            "recoverability_inverse": { "type": "string", "enum": ["established", "inferred", "thin"] },
-            "detectability": { "type": "string", "enum": ["established", "inferred", "thin"] }
-          }
-        },
         "informs_axes": {
           "type": "object",
           "additionalProperties": false,
-          "description": "Type-level metadata describing which axes of the larger threat picture this indicator class typically informs, and how finely. Universal resolution scale (resolution, not severity; severity lives in escalation_axes): none = no signal on the axis; weak = resolves only the axis's coarsest grain (the axis-relevant fact exists); moderate = one grain finer (the coarse fact plus one narrowing); strong = resolves to a specific value. Rate the indicator class as written, type-level; never a vivid case instance. Six axes covering actor (capability / intent / opportunity) and the postulated event (timing / target / method). Categorical scale {strong, moderate, weak, none}; not numeric. The framework's collective judgment about how strongly an indicator class informs an axis is itself categorical at root; numeric values would be false precision. For AI/ML consumers needing continuous features, the documented mapping is strong=0.9, moderate=0.6, weak=0.3, none=0.0; this mapping is a downstream-consumer convention only, not framework-level scoring. Coverage: authored across all 815 indicator classes in all four matrices (People in V1.3; Facility, Infrastructure, and Organizations in V1.4–V1.5); per-axis level semantics are formalized in each axis description (V1.3 refinements #1–#4). Field remains optional on any indicator. See CONTRIBUTING.md \"Schema design principles\".",
+          "required": ["actor_capability", "actor_intent", "actor_opportunity", "threat_timing", "threat_target", "threat_method"],
+          "description": "Type-level metadata describing which axes of the larger threat picture this indicator class typically informs, and how finely. Optional; when present all six axes are required. Universal resolution scale (resolution, not severity): none = no signal on the axis; weak = resolves only the axis's coarsest grain (the axis-relevant fact exists); moderate = one grain finer (the coarse fact plus one narrowing); strong = resolves to a specific value. Rate the indicator class as written, type-level; never a vivid case instance. Six axes covering actor (capability / intent / opportunity) and the postulated event (timing / target / method). Categorical scale {strong, moderate, weak, none}; not numeric. The framework's collective judgment about how strongly an indicator class informs an axis is itself categorical at root; numeric values would be false precision. For AI/ML consumers needing continuous features, the documented mapping is strong=0.9, moderate=0.6, weak=0.3, none=0.0; this mapping is a downstream-consumer convention only and is not part of the vocabulary. See CONTRIBUTING.md \"Schema design principles\".",
           "properties": {
             "actor_capability": {
-              "description": "What observing the class REVEALS about the actor's skill, tradecraft, and operational sophistication; distinct from impact_potential (which presumes the class's capability ceiling) and from assessment_guidance.capability (a per-tactic aid for reading a specific actor's capability from evidence). Grains: none = purely passive/ambient behavior achievable with zero skill and zero deliberate effort (rare); weak = a deliberate action with no tradecraft visible; moderate = a real competence demonstrated (pretext durability, multi-modal coordination, concealed-imaging tradecraft, counter-surveillance); strong = advanced or specialized tradecraft (productive analysis of restricted artifacts, credential fabrication, manufacturing, regulatory-control defeat).",
+              "description": "What observing the class REVEALS about the actor's skill, tradecraft, and operational sophistication; distinct from assessment_guidance.capability (a per-tactic aid for reading a specific actor's capability from evidence). Grains: none = purely passive/ambient behavior achievable with zero skill and zero deliberate effort (rare); weak = a deliberate action with no tradecraft visible; moderate = a real competence demonstrated (pretext durability, multi-modal coordination, concealed-imaging tradecraft, counter-surveillance); strong = advanced or specialized tradecraft (productive analysis of restricted artifacts, credential fabrication, manufacturing, regulatory-control defeat).",
               "type": "string",
               "enum": [
                 "strong",
@@ -1117,7 +877,7 @@
               ]
             },
             "actor_intent": {
-              "description": "The actor's GENERAL intent-to-act, read at type level only — specific motive class is case-level and excluded. Grains: weak = diffuse or ambient adverse interest, not yet directed; moderate = purposive, directed attention toward the subject without clear commitment; strong = clear general intent-to-act (broad-to-narrow behavioral progression, operational specificity, retention of acquired materials, grievance paired with reconnaissance). Never raise to strong because a specific motive can be imagined. Formalizes V1.3 refinement #1.",
+              "description": "The actor's GENERAL intent-to-act, read at type level only: specific motive class is case-level and excluded. Grains: weak = diffuse or ambient adverse interest, not yet directed; moderate = purposive, directed attention toward the subject without clear commitment; strong = clear general intent-to-act (broad-to-narrow behavioral progression, operational specificity, retention of acquired materials, grievance paired with reconnaissance). Never raise to strong because a specific motive can be imagined.",
               "type": "string",
               "enum": [
                 "strong",
@@ -1127,7 +887,7 @@
               ]
             },
             "actor_opportunity": {
-              "description": "The actor's opportunity, tiered rather than averaged across its two sub-meanings: weak = generic or ambient reach only; moderate = a resolved exploitable condition at the INFORMATIONAL tier (pattern-of-life knowledge, security-gap awareness); strong = REALIZED action-opportunity (an exploited insider relationship, direct unsupervised access, demonstrated reach within an exploitable window). During-execution support behaviors inherit the operation's realized opportunity (strong). Formalizes V1.3 refinement #2.",
+              "description": "The actor's opportunity, tiered rather than averaged across its two sub-meanings: weak = generic or ambient reach only; moderate = a resolved exploitable condition at the INFORMATIONAL tier (pattern-of-life knowledge, security-gap awareness); strong = REALIZED action-opportunity (an exploited insider relationship, direct unsupervised access, demonstrated reach within an exploitable window). During-execution support behaviors inherit the operation's realized opportunity (strong).",
               "type": "string",
               "enum": [
                 "strong",
@@ -1157,7 +917,7 @@
               ]
             },
             "threat_method": {
-              "description": "How the attack would be conducted — the ATTACK method only: access and approach tradecraft does not inform method (reads none or weak). All execution in framework scope is physical; never treat physical-vs-digital as a narrowing (digital reconnaissance still describes a physical attack downstream). Grains: none = method-agnostic, all physical methods remain in play; weak = barely narrows the physical-methods space; moderate = narrows to 2–3 candidate physical methods; strong = pins a specific physical method (e.g., VBIED, hostage scenario, targeted assassination). Formalizes V1.3 refinement #3.",
+              "description": "How the attack would be conducted: the ATTACK method only: access and approach tradecraft does not inform method (reads none or weak). All execution in framework scope is physical; never treat physical-vs-digital as a narrowing (digital reconnaissance still describes a physical attack downstream). Grains: none = method-agnostic, all physical methods remain in play; weak = barely narrows the physical-methods space; moderate = narrows to 2 to 3 candidate physical methods; strong = pins a specific physical method (e.g., VBIED, hostage scenario, targeted assassination).",
               "type": "string",
               "enum": [
                 "strong",
@@ -1180,7 +940,7 @@
             ]
           },
           "uniqueItems": true,
-          "description": "Optional multi-select sub-dimension within the People matrix: the victim identity-class(es) this indicator class REVEALS (revealed reading; tag only what the behavior actually indicates; empty/absent = reveals nothing about victim identity). named_individual = one OR MORE specific pre-identified persons are the object; surveillance/profiling/approach/force/seizure/captivity/leverage directed at the person(s), OR a specific target-associated site/environment/route coupled to them (a site reveals that specific known person(s), singular or plural, are the target). role_or_identity_category = selection is by role/what-they-are (a judge, cops by uniform, clinic staff, journalists). affinity_group = a cohesive group property selects the victims (demographic, religious, ethnic; e.g. worshippers, a gathering). indiscriminate = anyone / random crowd, no selection filter (mass-casualty by proximity/availability). Empty/absent = the behavior class reveals nothing about victim identity (capability acquisition, breach/access mechanics, OPSEC/tradecraft, logistics, financing, evidence management, most aftermath evasion). Coupling rule: tag only when observing the class resolves WHO the victim is; the person(s) or their coupled site/environment; behaviors that merely presuppose a victim without revealing the class stay empty. Replaces the prior compatibility reading, which tagged every class a behavior COULD serve and left the field near-constant at 179/190 all-four."
+          "description": "Optional multi-select sub-dimension within the People matrix: the victim identity-class(es) this indicator class REVEALS (revealed reading; tag only what the behavior actually indicates; empty/absent = reveals nothing about victim identity). named_individual = one OR MORE specific pre-identified persons are the object; surveillance/profiling/approach/force/seizure/captivity/leverage directed at the person(s), OR a specific target-associated site/environment/route coupled to them (a site reveals that specific known person(s), singular or plural, are the target). role_or_identity_category = selection is by role/what-they-are (a judge, cops by uniform, clinic staff, journalists). affinity_group = a cohesive group property selects the victims (demographic, religious, ethnic; e.g. worshippers, a gathering). indiscriminate = anyone / random crowd, no selection filter (mass-casualty by proximity/availability). Empty/absent = the behavior class reveals nothing about victim identity (capability acquisition, breach/access mechanics, OPSEC/tradecraft, logistics, financing, evidence management, most aftermath evasion). Coupling rule: tag only when observing the class resolves WHO the victim is; the person(s) or their coupled site/environment; behaviors that merely presuppose a victim without revealing the class stay empty."
         },
         "facility_target_scope": {
           "type": "array",
@@ -1194,7 +954,7 @@
             ]
           },
           "uniqueItems": true,
-          "description": "Optional Facility-matrix sub-dimension: the breadth of site selection this indicator class REVEALS about the actor (revealed reading — tag only what the behavior actually indicates, not what it could apply to; empty/absent = reveals nothing about breadth). specific_site = one identified building (grievance tied to a named facility, surveillance of a specific building, as-built drawings of this site). site_class = any facility of a FUNCTIONAL/OPERATIONAL type — grouped by what the site does (any branch of an org, any hospital, any transit hub, clinics/schools of a type). symbolic_category = any site of an IDEOLOGICALLY/SYMBOLICALLY-defined category — grouped by what the site represents (any government building, any place of worship of a faith, landmarks). The discriminator between site_class and symbolic_category is the BASIS OF GROUPING (function vs meaning), not specificity; both are breadth values (any member of the group). A single named site chosen for symbolic motive is specific_site, not symbolic_category. indiscriminate = any accessible site, opportunistic with no site preference. The Facility parallel to the People matrix `target_identity`; captures breadth (which/how many sites) distinct from blast_radius (how many victims) and informs_axes.threat_target (how well the indicator resolves the target). TARGET-COUPLING RULE: populate only when the behavior reveals the breadth of an ACTUAL target selection; general knowledge, capability, or method acquisition not coupled to a target or target-class carries no scope (empty). SYMBOLIC RULE: symbolic_category applies only when symbolism defines the target BREADTH (a category chosen for its meaning); symbolic MOTIVE for a named or class target does not make it symbolic_category — a specific building chosen for what it represents is specific_site. MULTI-TAG RULE: assign multiple values only when the behavior text explicitly spans breadths, or the observable behavior independently supports each — never because several possibilities can be inferred."
+          "description": "Optional Facility-matrix sub-dimension: the breadth of site selection this indicator class REVEALS about the actor (revealed reading: tag only what the behavior actually indicates, not what it could apply to; empty/absent = reveals nothing about breadth). specific_site = one identified building (grievance tied to a named facility, surveillance of a specific building, as-built drawings of this site). site_class = any facility of a FUNCTIONAL/OPERATIONAL type: grouped by what the site does (any branch of an org, any hospital, any transit hub, clinics/schools of a type). symbolic_category = any site of an IDEOLOGICALLY/SYMBOLICALLY-defined category: grouped by what the site represents (any government building, any place of worship of a faith, landmarks). The discriminator between site_class and symbolic_category is the BASIS OF GROUPING (function vs meaning), not specificity; both are breadth values (any member of the group). A single named site chosen for symbolic motive is specific_site, not symbolic_category. indiscriminate = any accessible site, opportunistic with no site preference. The Facility parallel to the People matrix `target_identity`; captures breadth (which/how many sites) distinct from victim count and from informs_axes.threat_target (how well the indicator resolves the target). TARGET-COUPLING RULE: populate only when the behavior reveals the breadth of an ACTUAL target selection; general knowledge, capability, or method acquisition not coupled to a target or target-class carries no scope (empty). SYMBOLIC RULE: symbolic_category applies only when symbolism defines the target BREADTH (a category chosen for its meaning); symbolic MOTIVE for a named or class target does not make it symbolic_category: a specific building chosen for what it represents is specific_site. MULTI-TAG RULE: assign multiple values only when the behavior text explicitly spans breadths, or the observable behavior independently supports each: never because several possibilities can be inferred."
         },
         "within_site_focus": {
           "type": "array",
@@ -1208,22 +968,12 @@
             ]
           },
           "uniqueItems": true,
-          "description": "Optional Facility-matrix sub-dimension: what inside the facility the indicator class REVEALS as the harm focus (revealed reading; empty/absent = unresolved). structure = the building/physical asset (arson, structural sabotage, defacement, demolition). occupants = the people inside (mass-casualty intent, hostage-taking, active-shooter positioning). systems = utilities/controls/functional systems whose defeat or contamination is the aim (power, water, HVAC/contamination, fire/security-system defeat that is the attack itself — NOT security-system defeat merely to gain access). whole_site = the site as an undifferentiated unit (seizure/occupation, generic threat against the facility). Decision rule for occupied-structure attacks: `occupants` when casualty intent is shown, `structure` when the aim is property/denial with incidental casualties, both only when the behavior genuinely reveals both aims. Facility-native (no People analog); load-bearing for triage. AIM-COUPLING RULE: populate only when the behavior reveals the within-site OBJECT OF HARM. Recon of site dimensions (floor plans, layout, security posture), method/capability acquisition (breaching tools, accelerants, ramming vehicles), and general technical literacy carry no focus (empty) unless explicitly coupled to a within-site aim. Floor-plan/layout study is recon, NOT a structure focus — reserve `structure` for load-bearing/collapse/destruction aims; reserve `systems` for utility/HVAC/fire-system defeat that is the attack itself."
-        },
-        "primary_objective_evidence_tier": {
-          "type": "string",
-          "enum": [
-            "stated",
-            "strongly_inferred",
-            "weakly_inferred",
-            "unknown"
-          ],
-          "description": "Optional. Incident-level annotation of the confidence with which the threat actor's primary objective (which sets matrix placement per matrices.boundary_rule) is established. stated = claimed responsibility or manifested intent. strongly_inferred = operational evidence overwhelming. weakly_inferred = operational evidence ambiguous. unknown = no basis for inference; matrix placement defaults to the matrix containing the tactic that produced the most observable consequence (see matrices.boundary_rule). As of schema 2.1.0 the canonical home for this incident-level annotation is $defs.conditioned_assessment.primary_objective_evidence_tier, which is where a case consumer writes it and which adds a 'contested' value for disputed hostile-actor existence; this type-level field is retained for compatibility and is not populated on shipped indicators. Full IRR protocol for this field is deferred to a future release."
+          "description": "Optional Facility-matrix sub-dimension: what inside the facility the indicator class REVEALS as the harm focus (revealed reading; empty/absent = unresolved). structure = the building/physical asset (arson, structural sabotage, defacement, demolition). occupants = the people inside (mass-casualty intent, hostage-taking, active-shooter positioning). systems = utilities/controls/functional systems whose defeat or contamination is the aim (power, water, HVAC/contamination, fire/security-system defeat that is the attack itself: NOT security-system defeat merely to gain access). whole_site = the site as an undifferentiated unit (seizure/occupation, generic threat against the facility). Decision rule for occupied-structure attacks: `occupants` when casualty intent is shown, `structure` when the aim is property/denial with incidental casualties, both only when the behavior genuinely reveals both aims. Facility-native (no People analog); load-bearing for triage. AIM-COUPLING RULE: populate only when the behavior reveals the within-site OBJECT OF HARM. Recon of site dimensions (floor plans, layout, security posture), method/capability acquisition (breaching tools, accelerants, ramming vehicles), and general technical literacy carry no focus (empty) unless explicitly coupled to a within-site aim. Floor-plan/layout study is recon, NOT a structure focus: reserve `structure` for load-bearing/collapse/destruction aims; reserve `systems` for utility/HVAC/fire-system defeat that is the attack itself."
         },
         "conditioning_guidance": {
           "type": "object",
           "additionalProperties": false,
-          "description": "Framework-provided default investigative-tasking guidance for conditioning this indicator at instance time: which instance factors to probe (probe_factors, machine-filterable) and a natural-language directive (guidance). Assessment-scoped only: immediate response actions (alerting, notification, mitigation) are carried by the tactic's response_protocols, never by this field. A starting point, NOT a complete or prescriptive instruction: consumers may follow, extend, or override it with their own playbooks (as with escalation_rubric). Intended for composition across combinations of observed indicators (see detection_mesh / correlates_with), not single-indicator reading. Type-level; does not affect the score.",
+          "description": "Framework-provided default investigative-tasking guidance for conditioning this indicator at instance time: which instance factors to probe (probe_factors, machine-filterable) and a natural-language directive (guidance). Assessment-scoped only: immediate response actions (alerting, notification, mitigation) are carried by the tactic's response_protocols, never by this field. A starting point, NOT a complete or prescriptive instruction: consumers may follow, extend, or override it with their own playbooks. Intended for composition across combinations of observed indicators (see detection_mesh / correlates_with), not single-indicator reading. Type-level.",
           "required": [
             "probe_factors",
             "guidance"
@@ -1245,13 +995,14 @@
                   "source_credibility"
                 ]
               },
-              "description": "Machine-readable index of the instance factors this indicator's guidance points at. Enum names match $defs.instance_assessment's six factors."
+              "description": "Machine-readable index of the instance factors this indicator's guidance points at. Enum names are the six instance factors of the case record (docs/data/case-record.schema.json, instance_factors)."
             },
             "guidance": {
               "type": "string",
               "minLength": 1,
               "maxLength": 420,
-              "pattern": "^[^—–]*$",
+              "pattern": "^[^\u2014\u2013]*$",
+              "not": { "pattern": "^\\s|\\s$" },
               "description": "Natural-language practitioner directive: what to go collect and why it decides how dangerous the case is. No em or en dashes (enforced by pattern)."
             }
           }
@@ -1261,51 +1012,32 @@
     "countermeasure": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id"],
+      "required": ["id", "measure", "category", "domain", "cost", "complexity", "time_to_implement", "phase_relevance", "limitations", "compensates_for", "source_refs"],
       "allOf": [
-        {
-          "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["superseded_by"] }
-        },
-        {
-          "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["id", "lifecycle_state", "reserved_reason"] },
-          "else": { "required": ["id", "measure", "category", "domain", "cost", "complexity", "time_to_implement", "phase_relevance", "limitations", "compensates_for", "source_refs"] }
-        }
+        { "$ref": "#/$defs/lifecycle_rules" }
       ],
       "properties": {
-        "id": {
-          "type": "string",
-          "pattern": "^CM-[FOI]?[0-9]{4}-[0-9]{2}$"
-        },
+        "id": { "$ref": "#/$defs/countermeasure_id" },
         "lifecycle_state": {
           "type": "string",
-          "enum": ["active", "deprecated", "superseded", "reserved"],
+          "enum": ["active", "deprecated", "superseded"],
           "default": "active",
-          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the countermeasure is active. superseded requires superseded_by; reserved requires reserved_reason."
+          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the countermeasure is active. deprecated requires deprecated_in and deprecation_reason. superseded requires those plus superseded_by. An active countermeasure carries none of the lifecycle detail fields. reserved is not a legal state here: in schema 3.0.0 only actor profiles may be reserved, and reserved identifiers of this namespace are recorded in the ID manifest's reserved list."
         },
         "deprecated_in": {
-          "type": "string",
-          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$",
-          "description": "Optional. Framework content version (SemVer) in which this countermeasure entered deprecated or superseded state. Absent on active countermeasures."
+          "$ref": "#/$defs/semver",
+          "description": "Framework content version (SemVer) in which this countermeasure entered deprecated or superseded state. Required in those states, forbidden otherwise. scripts/lint/validate.py also rejects a value later than the document version."
         },
         "superseded_by": {
-          "type": "string",
-          "pattern": "^CM-[FOI]?[0-9]{4}-[0-9]{2}$",
-          "description": "Required when lifecycle_state is superseded. Same-namespace ID of the replacement countermeasure, per docs/DEPRECATION.md."
+          "$ref": "#/$defs/countermeasure_id",
+          "description": "Required when lifecycle_state is superseded, forbidden otherwise. Same-namespace ID of the replacement countermeasure. scripts/lint/validate.py requires the target to exist, to be active, and not to be this countermeasure itself, so a supersession chain cannot loop."
         },
         "deprecation_reason": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Optional. Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md)."
-        },
-        "reserved_reason": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Required when lifecycle_state is reserved. Brief explanation of why the identifier slot is held."
+          "$ref": "#/$defs/prose",
+          "description": "Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md). Required in those states, forbidden otherwise."
         },
         "measure": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "category": {
           "type": "string",
@@ -1375,15 +1107,12 @@
           }
         },
         "limitations": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "compensates_for": {
           "type": "array",
           "uniqueItems": true,
-          "items": {
-            "type": "string",
-            "pattern": "^CM-[FOI]?[0-9]{4}-[0-9]{2}$"
-          },
+          "items": { "$ref": "#/$defs/countermeasure_id" },
           "description": "Countermeasure-to-countermeasure compensation: this countermeasure compensates for the ABSENCE or failure of the referenced countermeasure (redundancy relation). Indicator coverage does NOT live here; it lives in mitigates. An IND- referent in this field is a type error."
         },
         "mitigates": {
@@ -1397,10 +1126,7 @@
               "function"
             ],
             "properties": {
-              "indicator": {
-                "type": "string",
-                "pattern": "^IND-[FOI]?[0-9]{4}-[0-9]{2}$"
-              },
+              "indicator": { "$ref": "#/$defs/indicator_id" },
               "function": {
                 "type": "string",
                 "enum": [
@@ -1409,11 +1135,11 @@
                   "deny",
                   "unreviewed"
                 ],
-                "description": "How this countermeasure acts on the behavior's pathway: prevent (stops the act), detect (surfaces the act), deny (removes the act's value). Authored per edge, never inherited from the countermeasure. 'unreviewed' is a provisional value for migrated legacy edges pending review; it must reach zero before the coverage layer ships, and a detect-only edge caps coverage at partial."
+                "description": "How this countermeasure acts on the behavior's pathway: prevent (stops the act), detect (surfaces the act), deny (removes the act's value). Authored per edge, never inherited from the countermeasure. 'unreviewed' is a provisional value for edges whose function has not yet been reviewed; under the coverage contract (coverage.schema.json) an unreviewed or detect-only edge caps coverage at partial."
               }
             }
           },
-          "description": "The countermeasure-to-indicator mitigation relation: this countermeasure prevents, detects, or denies the referenced behavior, per the ratified linking criterion (acts on the behavior's pathway; same-tactic membership is not sufficient; cross-tactic edges are expected where a countermeasure genuinely reaches). This is the coverage-derivation input, the scored indicator-level coverage relation committed by the earlier transitional note."
+          "description": "The countermeasure-to-indicator mitigation relation: this countermeasure prevents, detects, or denies the referenced behavior, per the linking criterion (acts on the behavior's pathway; same-tactic membership is not sufficient; cross-tactic edges are expected where a countermeasure genuinely reaches). This relation is the input to coverage derivation (coverage.schema.json). scripts/lint/validate.py requires each edge to resolve to an existing indicator and allows one edge per indicator."
         },
         "target_identity": {
           "type": "array",
@@ -1427,70 +1153,48 @@
               "indiscriminate"
             ]
           },
-          "description": "Optional. Mirror of indicator target_identity for the small set of person-matrix countermeasures whose coverage is scoped by victim identity-class. Present on 4 countermeasures; same enum and multi-select semantics as indicator.target_identity."
+          "description": "Optional. Mirror of indicator target_identity for the small set of person-matrix countermeasures whose coverage is scoped by victim identity-class. Same enum and multi-select semantics as indicator.target_identity."
         },
         "source_refs": {
           "type": "array",
           "minItems": 1,
           "uniqueItems": true,
-          "items": {
-            "type": "string",
-            "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$"
-          }
+          "items": { "$ref": "#/$defs/bibliography_key" }
         }
       }
     },
     "response_protocol": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id"],
+      "required": ["id", "trigger", "action", "stakeholders", "priority", "escalation_trigger", "legal_notes", "source_refs"],
       "allOf": [
-        {
-          "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["superseded_by"] }
-        },
-        {
-          "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["id", "lifecycle_state", "reserved_reason"] },
-          "else": { "required": ["id", "trigger", "action", "stakeholders", "priority", "escalation_trigger", "legal_notes", "source_refs"] }
-        }
+        { "$ref": "#/$defs/lifecycle_rules" }
       ],
       "properties": {
-        "id": {
-          "type": "string",
-          "pattern": "^RP-[FOI]?[0-9]{4}-[0-9]{2}$"
-        },
+        "id": { "$ref": "#/$defs/response_protocol_id" },
         "lifecycle_state": {
           "type": "string",
-          "enum": ["active", "deprecated", "superseded", "reserved"],
+          "enum": ["active", "deprecated", "superseded"],
           "default": "active",
-          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the response protocol is active. superseded requires superseded_by; reserved requires reserved_reason."
+          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the response protocol is active. deprecated requires deprecated_in and deprecation_reason. superseded requires those plus superseded_by. An active response protocol carries none of the lifecycle detail fields. reserved is not a legal state here: in schema 3.0.0 only actor profiles may be reserved, and reserved identifiers of this namespace are recorded in the ID manifest's reserved list."
         },
         "deprecated_in": {
-          "type": "string",
-          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$",
-          "description": "Optional. Framework content version (SemVer) in which this response protocol entered deprecated or superseded state. Absent on active response protocols."
+          "$ref": "#/$defs/semver",
+          "description": "Framework content version (SemVer) in which this response protocol entered deprecated or superseded state. Required in those states, forbidden otherwise. scripts/lint/validate.py also rejects a value later than the document version."
         },
         "superseded_by": {
-          "type": "string",
-          "pattern": "^RP-[FOI]?[0-9]{4}-[0-9]{2}$",
-          "description": "Required when lifecycle_state is superseded. Same-namespace ID of the replacement response protocol, per docs/DEPRECATION.md."
+          "$ref": "#/$defs/response_protocol_id",
+          "description": "Required when lifecycle_state is superseded, forbidden otherwise. Same-namespace ID of the replacement response protocol. scripts/lint/validate.py requires the target to exist, to be active, and not to be this response protocol itself, so a supersession chain cannot loop."
         },
         "deprecation_reason": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Optional. Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md)."
-        },
-        "reserved_reason": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Required when lifecycle_state is reserved. Brief explanation of why the identifier slot is held."
+          "$ref": "#/$defs/prose",
+          "description": "Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md). Required in those states, forbidden otherwise."
         },
         "trigger": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "action": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "stakeholders": {
           "type": "array",
@@ -1527,28 +1231,22 @@
           ]
         },
         "escalation_trigger": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "coordinates_with": {
           "type": "array",
           "uniqueItems": true,
-          "items": {
-            "type": "string",
-            "pattern": "^RP-[FOI]?[0-9]{4}-[0-9]{2}$"
-          },
+          "items": { "$ref": "#/$defs/response_protocol_id" },
           "description": "Response-protocol IDs that co-activate on overlapping indicator sets (Detection Mesh co-activation). A directed dependency layer (gates / precedes / deconflicts) is the committed evolution of this relation."
         },
         "legal_notes": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "source_refs": {
           "type": "array",
           "minItems": 1,
           "uniqueItems": true,
-          "items": {
-            "type": "string",
-            "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$"
-          }
+          "items": { "$ref": "#/$defs/bibliography_key" }
         }
       }
     },
@@ -1560,10 +1258,7 @@
         "relevance"
       ],
       "properties": {
-        "actor_id": {
-          "type": "string",
-          "pattern": "^AP[0-9]{3}$"
-        },
+        "actor_id": { "$ref": "#/$defs/actor_profile_id" },
         "relevance": {
           "type": "string",
           "enum": [
@@ -1586,54 +1281,47 @@
       "additionalProperties": false,
       "required": ["id"],
       "allOf": [
-        {
-          "if": { "properties": { "lifecycle_state": { "const": "superseded" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["superseded_by"] }
-        },
+        { "$ref": "#/$defs/lifecycle_rules" },
         {
           "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
-          "then": { "required": ["id", "lifecycle_state", "reserved_reason"] },
+          "then": {
+            "required": ["id", "lifecycle_state", "reserved_reason"],
+            "propertyNames": { "enum": ["id", "lifecycle_state", "reserved_reason"] }
+          },
           "else": { "required": ["id", "name", "category", "category_label", "description", "awareness", "direction", "access_relationship", "phase_compression_risk", "actor_level", "attack_vectors", "primary_matrices", "behavioral_markers", "ai_enabled_risks"] }
         }
       ],
       "properties": {
-        "id": {
-          "type": "string",
-          "pattern": "^AP[0-9]{3}$"
-        },
+        "id": { "$ref": "#/$defs/actor_profile_id" },
         "lifecycle_state": {
           "type": "string",
           "enum": ["active", "deprecated", "superseded", "reserved"],
           "default": "active",
-          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the actor profile is active. superseded requires superseded_by; reserved requires reserved_reason."
+          "description": "Optional lifecycle state per docs/DEPRECATION.md. When absent the actor profile is active. deprecated requires deprecated_in and deprecation_reason. superseded requires those plus superseded_by. An active actor profile carries none of the lifecycle detail fields. reserved is legal on actor profiles only: a reserved profile carries id, lifecycle_state, and reserved_reason and nothing else."
         },
         "deprecated_in": {
-          "type": "string",
-          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$",
-          "description": "Optional. Framework content version (SemVer) in which this actor profile entered deprecated or superseded state. Absent on active actor profiles."
+          "$ref": "#/$defs/semver",
+          "description": "Framework content version (SemVer) in which this actor profile entered deprecated or superseded state. Required in those states, forbidden otherwise. scripts/lint/validate.py also rejects a value later than the document version."
         },
         "superseded_by": {
-          "type": "string",
-          "pattern": "^AP[0-9]{3}$",
-          "description": "Required when lifecycle_state is superseded. Same-namespace ID of the replacement actor profile, per docs/DEPRECATION.md."
+          "$ref": "#/$defs/actor_profile_id",
+          "description": "Required when lifecycle_state is superseded, forbidden otherwise. Same-namespace ID of the replacement actor profile. scripts/lint/validate.py requires the target to exist, to be active, and not to be this actor profile itself, so a supersession chain cannot loop."
         },
         "deprecation_reason": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Optional. Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md)."
+          "$ref": "#/$defs/prose",
+          "description": "Brief explanation of a deprecated or superseded state, suitable for a CHANGELOG entry (docs/DEPRECATION.md). Required in those states, forbidden otherwise."
         },
         "reserved_reason": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Required when lifecycle_state is reserved. Brief explanation of why the identifier slot is held."
+          "$ref": "#/$defs/prose",
+          "description": "Required when lifecycle_state is reserved, forbidden otherwise. Brief explanation of why the identifier slot is held."
         },
         "name": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "category": {
           "type": "string",
           "enum": ["lone_actor", "insider", "criminal", "corporate_espionage", "ideological", "nation_state", "customer_aggressor"],
-          "description": "Actor category (enum since schema 3.0.0; values per docs/IDENTIFIERS.md)."
+          "description": "Actor category (values per docs/IDENTIFIERS.md)."
         },
         "category_label": {
           "type": "string",
@@ -1641,7 +1329,7 @@
           "description": "Human-readable label for the actor category."
         },
         "description": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "awareness": {
           "type": "string",
@@ -1672,7 +1360,7 @@
           "type": "array",
           "minItems": 1,
           "uniqueItems": true,
-          "items": { "type": "string" },
+          "items": { "$ref": "#/$defs/prose" },
           "description": "Attack vectors typically available to this actor class."
         },
         "primary_matrices": {
@@ -1689,13 +1377,13 @@
           "type": "array",
           "minItems": 1,
           "uniqueItems": true,
-          "items": { "type": "string" },
+          "items": { "$ref": "#/$defs/prose" },
           "description": "Observable behavioral markers characteristic of this actor class."
         },
         "ai_enabled_risks": {
           "type": "array",
           "uniqueItems": true,
-          "items": { "type": "string" },
+          "items": { "$ref": "#/$defs/prose" },
           "description": "AI-specific risk amplifiers applicable to this actor class (may be empty). See ai_architecture.vectors.ai_enabled_risks."
         },
         "v2_tactic_associations": {
@@ -1706,26 +1394,26 @@
             "additionalProperties": false,
             "required": ["tactic_id", "relevance"],
             "properties": {
-              "tactic_id": { "type": "string", "pattern": "^T[MFOI][0-9]{4}$" },
+              "tactic_id": { "$ref": "#/$defs/tactic_id" },
               "relevance": { "type": "string", "enum": ["high", "medium", "low"] }
             }
           },
-          "description": "Optional since schema 3.0.0 (removed from required). Reserved for profile-to-tactic associations; absent or an empty array today. When populated, each entry names a tactic ID and a relevance, mirroring actor_association in the opposite direction."
+          "description": "Optional. Held for profile-to-tactic associations. When populated, each entry names a tactic ID and a relevance, mirroring actor_association in the opposite direction; scripts/lint/validate.py requires each tactic_id to resolve."
         },
         "insider_type": {
-          "type": "string",
+          "$ref": "#/$defs/prose",
           "description": "Optional. Present on insider actor classes (e.g. malicious / negligent / compromised)."
         },
         "insider_subtype": {
-          "type": "string",
+          "$ref": "#/$defs/prose",
           "description": "Optional. Finer insider classification (e.g. recruited / coerced / unwitting)."
         },
         "employment_status": {
-          "type": "string",
+          "$ref": "#/$defs/prose",
           "description": "Optional. Employment status of the insider actor class (e.g. current)."
         },
         "state_actor_type": {
-          "type": "string",
+          "$ref": "#/$defs/prose",
           "description": "Optional. Present on state-actor classes (e.g. direct / proxy / front / sponsored)."
         }
       }
@@ -1756,36 +1444,36 @@
             "news_investigation",
             "incident_database",
             "practitioner_guide",
-            "standard",
-            "field_observation",
-            "practitioner_elicitation",
-            "partner_attestation",
-            "case_composite"
+            "standard"
           ]
         },
         "title": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "author": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "date": {
-          "type": "string"
+          "type": "string",
+          "pattern": "^([0-9]{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01]))?)?|[0-9]{4}-[0-9]{4}|n\\.d\\.( \\(accessed [0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])\\))?)$",
+          "description": "Publication date: YYYY, YYYY-MM, YYYY-MM-DD, a year range YYYY-YYYY, or n.d. (optionally followed by an access date in the form n.d. (accessed YYYY-MM-DD))."
         },
         "url": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "anyOf": [
+            { "type": "null" },
+            { "$ref": "#/$defs/http_url" }
+          ],
+          "description": "Public location of the source, or null when none exists. http and https only; every other scheme is rejected."
         },
         "doi": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "anyOf": [
+            { "type": "null" },
+            { "type": "string", "pattern": "^10\\.[0-9]{4,9}/[^\\s]+$" }
+          ],
+          "description": "Bare DOI (10.NNNN/suffix, no resolver prefix), or null."
         },
         "relevance_summary": {
-          "type": "string"
+          "$ref": "#/$defs/prose"
         },
         "matrices": {
           "type": "array",
@@ -1805,45 +1493,11 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "type": "string"
+            "$ref": "#/$defs/prose"
           },
           "description": "Optional. Attack-method / subject tags for filtering sources by need (e.g., bombing, arson, structural_sabotage, forced_entry, vehicle_ramming, soft_targets, target_selection, cbrn_contamination, cyber_physical, building_systems_sabotage, occupation_siege, symbolic_ideological, active_shooter, insider_threat, mass_attack, threat_assessment, protective_intelligence, risk_methodology, physical_protection_systems, incident_data, financial_crime). Free-string to allow extension; the listed vocabulary is the recommended starter set."
         }
       }
-    },
-    "instance_assessment": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["target_focus", "pathway_stage", "means_in_hand", "tempo_trajectory", "proximity_access", "source_credibility"],
-      "description": "Layer 2 \u2014 a per-CASE instance-conditioning record for a specific assessment of a specific actor and target, SEPARATE from the type-level indicator score. The framework defines this contract but ships NO instances (it is a type-level artifact; consumers instantiate per case). Records discrete observations, never optional prose, and never a computed capability discount. See the top-level instance_conditioning block for the escalate-only rule and binding contract.",
-      "properties": {
-        "target_focus": { "type": "string", "enum": ["diffuse", "narrowing", "specific_target", "unknown"], "description": "Directionality of the observed behavior toward a target: diffuse (no resolved target) \u2192 narrowing (candidate set or associated locus) \u2192 specific_target (a specific subject/asset resolved). unknown when not assessable." },
-        "pathway_stage": { "type": "string", "enum": ["grievance", "ideation", "research_planning", "preparation", "breach_or_probing", "attack", "aftermath", "unknown"], "description": "This actor's assessed position on the pathway to violence (NTAC / phase_mappings vocabulary) \u2014 the CASE stage, which may lead or lag the indicator class's type-level phase." },
-        "means_in_hand": { "type": "string", "enum": ["unknown", "assessed_absent", "partial", "assessed_present", "confirmed_present"], "description": "Whether THIS actor actually has the capability/means now \u2014 the honest per-case capability cell. unknown is the default and must NOT lower priority (absence of evidence is not evidence of absence; capability is volatile and easy to be wrong about). Used to ESCALATE when present, never to discount." },
-        "tempo_trajectory": { "type": "string", "enum": ["accelerating", "steady", "stalling", "unknown"], "description": "Direction and rate of the actor's movement along the pathway across observations." },
-        "proximity_access": { "type": "string", "enum": ["no_known_access", "seeking_access", "has_access", "at_or_near_target", "unknown"], "description": "The actor's access state relative to the target \u2014 a STATE, not a stage: an insider has access without ever breaching, and folding access into pathway_stage conflates having access with seeking it. unknown is the safe default and must NOT lower priority (same doctrine as means_in_hand). Used to ESCALATE when attained, never to discount. Ruling Q3a, 2026-07-28 session." },
-        "source_credibility": { "type": "string", "enum": ["high", "moderate", "low", "unknown"], "description": "Reliability of the reporting behind this record \u2014 conditions how much weight the other five factors carry. In an escalate-only system it functions as a brake on raising, never a scaler down: a low-credibility screaming instance cannot be dismissed (the type floor holds) and cannot stampede the queue (the raise waits for corroboration). Ruling Q4, 2026-07-28 session." },
-        "basis": { "type": "string", "description": "Optional free-text evidentiary basis or analyst note." }
-      }
-    },
-    "conditioned_assessment": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["indicator_id", "type_severity_band", "instance", "conditioned_priority"],
-      "description": "The binding object (B-04): a type-level indicator score CONDITIONED by an instance record. A type score becomes a case assessment only when joined to its instance record \u2014 this object requires BOTH, so a consumer cannot emit a conditioned assessment from the bare number. Escalate-only: conditioned_priority may raise priority above the type band but never lower it below (the false-LOW is the deadly error; a silent capability discount is forbidden). Whether the instance HELD or RAISED the band is not stored: it is derived by comparing conditioned_priority to type_severity_band (raised iff conditioned_priority > type_severity_band), the same base-vs-environmental comparison CVSS uses; storing it would duplicate state that can drift. Raise decisions follow the advisory instance_conditioning.raise_guidance patterns; de-prioritization is a case-management disposition and is never written back into the score (instance_conditioning.demotion_doctrine).",
-      "properties": {
-        "indicator_id": { "type": "string", "pattern": "^IND-[FOI]?[0-9]{4}-[0-9]{2}$", "description": "Reference to the type-level indicator whose score is being conditioned." },
-        "type_severity_band": { "type": "string", "enum": ["low", "medium", "high", "critical"], "description": "The indicator's type-level severity_band \u2014 the FLOOR. conditioned_priority is never below this." },
-        "instance": { "$ref": "#/$defs/instance_assessment" },
-        "conditioned_priority": { "type": "string", "enum": ["low", "medium", "high", "critical"], "description": "The resulting triage priority, always >= type_severity_band (escalate-only invariant). The floor is enforced structurally by the conditional subschemas on this object: for a correctly stated type_severity_band, a below-floor conditioned_priority fails validation. The one obligation schema cannot enforce is band fidelity, that type_severity_band equals the authored severity_band of indicator_id at a stated framework version; that join is owned by the reference validator and the consumer SDK. The held-vs-raised distinction is derived from this field against type_severity_band; there is deliberately no stored effect flag and no representable downward move." },
-        "primary_objective_evidence_tier": { "type": "string", "enum": ["stated", "strongly_inferred", "weakly_inferred", "contested", "unknown"], "description": "Optional incident-level confidence that the threat actor's primary objective, and therefore the primary-matrix placement, is correctly identified. This is the incident-level home the boundary_rule annotation refers to. 'stated' the objective is explicit; 'strongly_inferred' and 'weakly_inferred' inferred from behavior; 'contested' the evidence conflicts or the existence of a hostile actor is itself disputed (distinct from 'unknown', which is no basis for inference)." },
-        "disposition": { "type": "string", "enum": ["active_monitoring", "heightened_monitoring", "disrupted_by_interdiction", "closed_benign", "closed_resolved", "referred_out"], "description": "Optional case-management outcome recorded ALONGSIDE the score, never written back into it (instance_conditioning.demotion_doctrine). A benign reassessment exits as 'closed_benign' and a disrupted plot as 'disrupted_by_interdiction' without lowering conditioned_priority: the disposition, not a score rewrite, carries the outcome." }
-      },
-      "allOf": [
-        { "if": { "required": ["type_severity_band"], "properties": { "type_severity_band": { "const": "medium" } } }, "then": { "properties": { "conditioned_priority": { "enum": ["medium", "high", "critical"] } } } },
-        { "if": { "required": ["type_severity_band"], "properties": { "type_severity_band": { "const": "high" } } }, "then": { "properties": { "conditioned_priority": { "enum": ["high", "critical"] } } } },
-        { "if": { "required": ["type_severity_band"], "properties": { "type_severity_band": { "const": "critical" } } }, "then": { "properties": { "conditioned_priority": { "enum": ["critical"] } } } }
-      ]
     }
   }
 }

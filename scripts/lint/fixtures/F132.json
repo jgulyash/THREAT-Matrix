@@ -1,0 +1,15 @@
+{
+  "id": "F132",
+  "target": "overlay",
+  "expected_check": "V45",
+  "expected_message": "base rate",
+  "audit_findings": "F12",
+  "description": "Set a method base rate outside the 0 to 10 scale.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "rubric.blast_radius_guidance.method_collateral_base_rates.vehicle_ramming",
+      "value": 250
+    }
+  ]
+}

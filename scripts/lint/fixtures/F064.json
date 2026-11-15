@@ -1,0 +1,13 @@
+{
+  "id": "F064",
+  "expected_check": "V28",
+  "expected_message": "is not an object",
+  "description": "Put a string where an indicator object belongs.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].indicators",
+      "value": "IND-0101-99"
+    }
+  ]
+}

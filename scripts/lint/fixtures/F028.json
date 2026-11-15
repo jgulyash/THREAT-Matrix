@@ -1,0 +1,13 @@
+{
+  "id": "F028",
+  "expected_check": "V24",
+  "expected_message": "schema_version",
+  "description": "Declare a schema_version other than the one this validator targets.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "schema_version",
+      "value": "3.0.1"
+    }
+  ]
+}

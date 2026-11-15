@@ -1,0 +1,13 @@
+{
+  "id": "F049",
+  "expected_check": "V26",
+  "expected_message": "is not valid",
+  "description": "Set lifecycle_state to a value outside the four states.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].lifecycle_state",
+      "value": "retired"
+    }
+  ]
+}

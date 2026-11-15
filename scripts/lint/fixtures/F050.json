@@ -1,0 +1,23 @@
+{
+  "id": "F050",
+  "expect": "pass",
+  "expected_check": "V26",
+  "description": "A deprecated indicator with deprecated_in and deprecation_reason is legal.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].lifecycle_state",
+      "value": "deprecated"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].deprecated_in",
+      "value": "2.0.0"
+    },
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].deprecation_reason",
+      "value": "Fixture: deprecated with no replacement."
+    }
+  ]
+}

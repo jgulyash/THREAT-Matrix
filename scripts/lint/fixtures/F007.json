@@ -1,0 +1,13 @@
+{
+  "id": "F007",
+  "expected_check": "V07",
+  "expected_message": "resolves to no countermeasure",
+  "description": "Add a compensates_for reference that resolves to no countermeasure.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].countermeasures.[id=CM-0101-01].compensates_for",
+      "value": "CM-0199-99"
+    }
+  ]
+}

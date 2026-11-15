@@ -1,94 +1,46 @@
-import type { Tactic, ActorProfile } from '../types/framework';
 import type { Route } from '../lib/route';
-import type { TacticsByMatrix } from '../App';
 import { resolveTrack } from '../lib/constants';
+import { phaseTactics, tacticById } from '../lib/data';
 import { HeatMapGrid } from './HeatMapGrid';
 import { PhasePanel } from './PhasePanel';
 import { TacticDetail } from './TacticDetail';
 
 interface Props {
-  tacticsByMatrix: TacticsByMatrix;
   route: Extract<Route, { view: 'phase' } | { view: 'tactic' }>;
-  navigate: (path: string) => void;
-  tacticMap: Record<string, Tactic>;
-  actorMap: Record<string, ActorProfile>;
-  modalityFilter: string;
-  actorFilter: string;
 }
 
-export function SplitView({
-  tacticsByMatrix,
-  route,
-  navigate,
-  tacticMap,
-  actorMap,
-  modalityFilter,
-  actorFilter,
-}: Props) {
+// The router has already validated the route: a tactic route always resolves
+// to a tactic, and a phase route always carries a phase from 1 to 4.
+export function SplitView({ route }: Props) {
   const matrix = route.matrix;
-  const tacticsByPhase = tacticsByMatrix[matrix];
-  const ot = route.view === 'tactic' ? tacticMap[route.tacticId] : null;
-
-  let pp: number;
-  let pt: string | null;
-  let ptactics: Tactic[];
-
-  if (ot) {
-    pp = ot.phase;
-    if (pp === 4) {
-      pt = resolveTrack(ot);
-      ptactics = pt === 'flight' ? tacticsByPhase[4].flight : tacticsByPhase[4].claim;
-    } else {
-      pt = null;
-      ptactics = tacticsByPhase[pp as 1 | 2 | 3] || [];
-    }
-  } else if (route.view === 'phase' && route.phase === 4) {
-    pp = 4;
-    pt = route.track;
-    ptactics = route.track === 'flight' ? tacticsByPhase[4].flight : tacticsByPhase[4].claim;
-  } else if (route.view === 'phase') {
-    pp = route.phase;
-    pt = null;
-    ptactics = tacticsByPhase[route.phase as 1 | 2 | 3] || [];
-  } else {
-    pp = 1;
-    pt = null;
-    ptactics = [];
-  }
+  const tactic = route.view === 'tactic' ? tacticById.get(route.tacticId) : undefined;
+  const phase = tactic ? tactic.phase : route.view === 'phase' ? route.phase : 1;
+  const track = tactic ? resolveTrack(tactic) : route.view === 'phase' ? route.track : null;
 
   return (
     <div className="split-view">
       <div className="split-hm">
         <HeatMapGrid
-          tacticsByMatrix={tacticsByMatrix}
-          navigate={navigate}
-          modalityFilter={modalityFilter}
-          actorFilter={actorFilter}
+          scope={matrix}
           compact={true}
-          selectedMatrix={matrix}
-          selectedPhase={pp}
-          selectedTrack={pt}
-          selectedTacticId={route.view === 'tactic' ? route.tacticId : null}
+          route={route}
+          selectedPhase={phase}
+          selectedTrack={track}
+          selectedTacticId={tactic ? tactic.id : null}
         />
       </div>
       <div className="detail-panel">
-        {ot ? (
+        {tactic ? (
           <TacticDetail
-            tactic={ot}
-            actorMap={actorMap}
-            navigate={navigate}
-            fromPhase={pp}
-            fromTrack={pt}
+            tactic={tactic}
+            focusId={route.view === 'tactic' ? route.focusId : null}
           />
         ) : (
           <PhasePanel
-            tactics={ptactics}
+            tactics={phaseTactics(matrix, phase, track)}
             matrix={matrix}
-            phase={pp}
-            track={pt}
-            navigate={navigate}
-            modalityFilter={modalityFilter}
-            actorFilter={actorFilter}
+            phase={phase}
+            track={track}
           />
         )}
       </div>

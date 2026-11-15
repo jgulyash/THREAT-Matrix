@@ -1,0 +1,14 @@
+{
+  "id": "F086",
+  "expected_check": "V36",
+  "expected_message": "url",
+  "audit_findings": "F06 F07",
+  "description": "Give a bibliography entry a URL with a trailing newline.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "bibliography.FEIN-VOSSEKUIL-1999.url",
+      "value": "https://example.org/a\n"
+    }
+  ]
+}

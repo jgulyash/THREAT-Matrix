@@ -1,0 +1,29 @@
+{
+  "id": "F142",
+  "target": "record",
+  "expected_check": "V47",
+  "expected_message": "framework_version",
+  "audit_findings": "F15",
+  "description": "State a framework version other than the one being checked.",
+  "base": {
+    "indicator_id": "IND-0101-01",
+    "type_band": "medium",
+    "instance": {
+      "target_focus": "unknown",
+      "pathway_stage": "unknown",
+      "means_in_hand": "unknown",
+      "tempo_trajectory": "unknown",
+      "proximity_access": "unknown",
+      "source_credibility": "unknown",
+      "basis": "Fixture record. Describes no case."
+    },
+    "conditioned_priority": "medium"
+  },
+  "mutations": [
+    {
+      "op": "add",
+      "path": "framework_version",
+      "value": "1.7.1"
+    }
+  ]
+}

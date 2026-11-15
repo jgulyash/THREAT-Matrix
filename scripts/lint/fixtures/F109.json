@@ -1,0 +1,14 @@
+{
+  "id": "F109",
+  "target": "overlay",
+  "expected_check": "V14",
+  "expected_message": "axes is missing",
+  "audit_findings": "F05 S01",
+  "description": "Remove one axis.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "indicator_scores.IND-0101-01.axes.detectability"
+    }
+  ]
+}

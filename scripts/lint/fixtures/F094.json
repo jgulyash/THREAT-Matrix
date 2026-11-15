@@ -1,0 +1,14 @@
+{
+  "id": "F094",
+  "expected_check": "V37",
+  "expected_message": "related_tactics",
+  "audit_findings": "F07",
+  "description": "Give related_tactics an entry with a trailing newline.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].related_tactics",
+      "value": "TM0104\n"
+    }
+  ]
+}

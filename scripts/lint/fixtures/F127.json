@@ -1,0 +1,14 @@
+{
+  "id": "F127",
+  "target": "overlay",
+  "expected_check": "V43",
+  "expected_message": "not a tactic id",
+  "description": "Add a tactic priority for a tactic the vocabulary does not hold.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "tactic_priorities.TM0199",
+      "value": "Priority"
+    }
+  ]
+}

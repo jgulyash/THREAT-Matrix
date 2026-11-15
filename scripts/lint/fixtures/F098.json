@@ -1,0 +1,12 @@
+{
+  "id": "F098",
+  "expected_check": "V39",
+  "description": "Add an unknown property to a tactic; only the closed schema rejects it.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].risk_score",
+      "value": 7
+    }
+  ]
+}

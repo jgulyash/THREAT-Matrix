@@ -1,0 +1,15 @@
+{
+  "id": "F110",
+  "target": "overlay",
+  "expected_check": "V14",
+  "expected_message": "not numbers",
+  "audit_findings": "S01",
+  "description": "Store an axis as a string.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-0101-01.axes.impact_potential",
+      "value": "5.0"
+    }
+  ]
+}

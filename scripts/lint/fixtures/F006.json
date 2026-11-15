@@ -1,0 +1,12 @@
+{
+  "id": "F006",
+  "expected_check": "V06",
+  "description": "Add a same-matrix correlates_with reference that resolves to no indicator.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].correlates_with",
+      "value": "IND-0199-99"
+    }
+  ]
+}

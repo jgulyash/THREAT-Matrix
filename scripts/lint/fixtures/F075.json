@@ -1,0 +1,14 @@
+{
+  "id": "F075",
+  "expected_check": "V33",
+  "expected_message": "refers to the object itself",
+  "audit_findings": "F08 S03",
+  "description": "Make an indicator correlate with itself.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].correlates_with",
+      "value": "IND-0101-01"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "F131",
+  "target": "overlay",
+  "expected_check": "V45",
+  "expected_message": "strictly increasing",
+  "audit_findings": "F12",
+  "description": "Invert the band thresholds.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "rubric.type_band_thresholds.high",
+      "value": 2.0
+    }
+  ]
+}

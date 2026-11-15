@@ -1,0 +1,14 @@
+{
+  "id": "F124",
+  "target": "overlay",
+  "expected_check": "V41",
+  "expected_message": "unknown key",
+  "description": "Add an unknown key to a score entry.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "indicator_scores.IND-0101-01.risk_score",
+      "value": 9
+    }
+  ]
+}

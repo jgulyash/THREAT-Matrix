@@ -1,0 +1,13 @@
+{
+  "id": "F100",
+  "expected_check": "V39",
+  "audit_findings": "F18",
+  "description": "Use a bibliography type that is no longer in the enum.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "bibliography.FEIN-VOSSEKUIL-1999.type",
+      "value": "field_observation"
+    }
+  ]
+}

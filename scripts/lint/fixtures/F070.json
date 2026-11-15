@@ -1,0 +1,17 @@
+{
+  "id": "F070",
+  "expected_check": "V31",
+  "expected_message": "resolves to no actor profile",
+  "audit_findings": "F08 S03",
+  "description": "Associate a tactic with an actor profile that does not exist.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "matrices.person.tactics.[id=TM0101].actor_associations",
+      "value": {
+        "actor_id": "AP999",
+        "relevance": "high"
+      }
+    }
+  ]
+}

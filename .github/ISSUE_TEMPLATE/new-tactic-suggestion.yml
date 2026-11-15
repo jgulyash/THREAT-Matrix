@@ -6,6 +6,8 @@ body:
   - type: markdown
     attributes:
       value: |
+        > **Do not post real incident data.** This issue will be public, indexed by search engines, and effectively permanent, including its edit history. Do not include the name of any person or anything that could identify one, any detail of a real incident that is not already in a published public source, anything from an open or non-public investigation, or confidential employer or client material. Use fictionalized examples or cited public sources only. To report a security or privacy problem, follow SECURITY.md instead of opening a detailed issue.
+
         Thank you for suggesting a new tactic. The THREAT Matrix evolves through practitioner contribution.
 
         **Source quality matters.** Government reports (NTAC, DHS, DOE), academic research, court documents, and after-action reviews carry the most weight. News articles are acceptable as supporting evidence but should not be the sole source.
@@ -65,8 +67,9 @@ body:
     attributes:
       label: Evidence and Sources
       description: >
-        At least one real-world source is required. All framework data must be grounded in
-        observed or feasible adversary behavior with cited sources. Preferred source types:
+        At least one published source is required. All framework data must be grounded in
+        observed or feasible adversary behavior with cited public sources. Do not describe a
+        real case from your own work or name any person; cite what is already published. Preferred source types:
         government reports (NTAC, DHS, DOE, LLNL), academic/peer-reviewed research, court
         documents, after-action reviews. News articles are acceptable as supporting evidence.
       placeholder: |

@@ -1,0 +1,14 @@
+{
+  "id": "F115",
+  "target": "overlay",
+  "expected_check": "V15",
+  "expected_message": "below type_band_floor",
+  "description": "Label a floored-critical indicator high.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-0301-01.type_band",
+      "value": "high"
+    }
+  ]
+}

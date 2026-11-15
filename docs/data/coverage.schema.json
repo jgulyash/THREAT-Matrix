@@ -2,9 +2,10 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://jgulyash.github.io/THREAT-Matrix/data/coverage.schema.json",
   "title": "THREAT Matrix Coverage Contract",
-  "description": "The vulnerability term of the risk equation: consumer-held countermeasure deployment records and the derived coverage band, computed against the framework's mitigates relation (countermeasure to indicator, typed by function). Boundary-interface artifact: the framework defines these shapes and the derivation rule; each organization holds its own records, which are never published and never ship in framework.json. The full normative derivation rule lives in docs/METHODOLOGY.md, Appendix A; the descriptions here are binding summaries of it. Derive-dont-store: a coverage band is a query result recomputed from the current records at each derivation, never authoritative stored state.",
+  "description": "The vulnerability term of the risk equation: consumer-held countermeasure deployment records and the derived coverage band, computed against the framework's mitigates relation (countermeasure to indicator, typed by function). Boundary-interface artifact: the framework defines these shapes and the derivation rule; each organization holds its own records, which are never published and never ship in framework.json. The full normative derivation rule lives in docs/METHODOLOGY.md, Appendix A; the descriptions here are binding summaries of it. Derive-dont-store: a coverage band is a query result recomputed from the current records at each derivation, never authoritative stored state. A coverage document carries a deployment record, a derivation, or both; an empty object is not a coverage document. Rules a schema cannot express (one deployment entry per countermeasure, IDs that exist in framework.json, dates that are real calendar dates) are checked by scripts/lint/validate.py --coverage FILE.",
   "type": "object",
   "additionalProperties": false,
+  "minProperties": 1,
   "properties": {
     "cm_deployment_record": {
       "$ref": "#/$defs/cm_deployment_record"
@@ -28,23 +29,27 @@
         "protected_target": {
           "type": "string",
           "minLength": 1,
+          "pattern": "^\\S([\\s\\S]*\\S)?$",
           "description": "Consumer-side reference to the protected target this record covers (a role, site, system, or asset class; never a named private individual in the published artifact sense)."
         },
         "deployments": {
           "type": "array",
+          "uniqueItems": true,
           "items": {
             "$ref": "#/$defs/deployment"
           },
-          "description": "One entry per countermeasure the organization has deployed, partially deployed, planned, or explicitly declined for this target."
+          "description": "One entry per countermeasure the organization has deployed, partially deployed, planned, or explicitly declined for this target. A countermeasure appears at most once: uniqueItems rejects an exact repeat, and scripts/lint/validate.py --coverage rejects two entries with the same cm_id and different content, which a schema cannot express."
         },
         "basis": {
           "type": "string",
           "minLength": 1,
+          "pattern": "^\\S([\\s\\S]*\\S)?$",
           "description": "How this record was compiled: survey, audit, physical walkdown."
         },
         "reviewed": {
           "type": "string",
           "format": "date",
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$",
           "description": "Date of the last whole-record review."
         }
       }
@@ -59,7 +64,7 @@
       "properties": {
         "cm_id": {
           "type": "string",
-          "pattern": "^CM-[FOI]?[0-9]{4}-[0-9]{2}$",
+          "pattern": "^CM-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$",
           "description": "A framework countermeasure id; the enumeration is the framework's countermeasure catalog."
         },
         "status": {
@@ -76,7 +81,8 @@
           "type": "array",
           "items": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "pattern": "^\\S([\\s\\S]*\\S)?$"
           },
           "description": "Structured scope: the target classes or zones this deployment actually reaches (replaces free-text-only scoping so a mis-scoped control is visible to the derivation). A deployment whose applies_to does not reach the assessed target does not contribute to that target's coverage."
         },
@@ -87,6 +93,7 @@
         "verified": {
           "type": "string",
           "format": "date",
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$",
           "description": "Date the control was last verified OPERATIONAL (not merely procured). A deployment with no verified date, or one older than the staleness window (default 12 months) at derivation time, is treated as unverified and contributes at most partial coverage. The staleness window guards the false-covered failure: verify-once must not read as covered forever."
         }
       }
@@ -105,11 +112,12 @@
       "properties": {
         "protected_target": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "pattern": "^\\S([\\s\\S]*\\S)?$"
         },
         "indicator_id": {
           "type": "string",
-          "pattern": "^IND-[FOI]?[0-9]{4}-[0-9]{2}$"
+          "pattern": "^IND-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$"
         },
         "coverage_band": {
           "type": "string",
@@ -123,23 +131,25 @@
         },
         "derivation_date": {
           "type": "string",
-          "format": "date"
+          "format": "date",
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
         },
         "framework_version": {
           "type": "string",
-          "minLength": 1,
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$",
           "description": "The framework content version whose mitigates relation this derivation ran against; the audit line cites it."
         },
         "oldest_input_age_months": {
           "type": "number",
           "minimum": 0,
+          "maximum": 1200,
           "description": "Age in months of the oldest input record consumed (deployment verified dates, record reviewed dates). Carried on the audit line so a stale join is visible on its face."
         },
         "missing_critical_path": {
           "type": "array",
           "items": {
             "type": "string",
-            "pattern": "^CM-[FOI]?[0-9]{4}-[0-9]{2}$"
+            "pattern": "^CM-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$"
           },
           "description": "When critical-path dominance drives the band to exposed, the absent countermeasures that drove it: the gap list the posture decision documents."
         },
@@ -156,7 +166,8 @@
         "disposition_review_date": {
           "type": "string",
           "format": "date",
-          "description": "REQUIRED alongside disposition: when the disposition is next reviewed."
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "REQUIRED alongside disposition, and only alongside it (enforced by dependentRequired): when the disposition is next reviewed."
         }
       },
       "allOf": [
@@ -178,7 +189,11 @@
             ]
           }
         }
-      ]
+      ],
+      "dependentRequired": {
+        "disposition": ["disposition_review_date"],
+        "disposition_review_date": ["disposition"]
+      }
     }
   }
 }

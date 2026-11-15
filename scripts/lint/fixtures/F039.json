@@ -1,0 +1,29 @@
+{
+  "id": "F039",
+  "expected_check": "V26",
+  "expected_message": "is reserved",
+  "audit_findings": "F03 S04 C05",
+  "description": "Point an actor profile's superseded_by at a reserved profile.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "actor_profiles.[id=AP001].lifecycle_state",
+      "value": "superseded"
+    },
+    {
+      "op": "add",
+      "path": "actor_profiles.[id=AP001].deprecated_in",
+      "value": "2.0.0"
+    },
+    {
+      "op": "add",
+      "path": "actor_profiles.[id=AP001].deprecation_reason",
+      "value": "Fixture."
+    },
+    {
+      "op": "add",
+      "path": "actor_profiles.[id=AP001].superseded_by",
+      "value": "AP022"
+    }
+  ]
+}
