@@ -29,13 +29,13 @@ export function IndicatorSection({ indicators }: Props) {
 
   return (
     <div className="det-section">
-      <div className="dr-section-header">
+      <h2 className="dr-section-header">
         <span>Indicators</span>
         <span className="dr-section-count">{indicators.length} observable</span>
-      </div>
+      </h2>
       {orderedKeys.map((cat) => (
         <div key={cat} className="dr-category-group">
-          <div className="dr-category-label">{label(INDICATOR_CATEGORY_LABELS, cat)}</div>
+          <h3 className="dr-category-label">{label(INDICATOR_CATEGORY_LABELS, cat)}</h3>
           {(grouped.get(cat) || []).map((ind) => (
             <div key={ind.id} className="dr-item">
               <Go

@@ -19,6 +19,9 @@ function ExternalLinks() {
 export function LandingNotice() {
   return (
     <section className="intro" aria-label="About THREAT Matrix">
+      <h1 className="sr-only" data-focus-target tabIndex={-1}>
+        THREAT Matrix overview
+      </h1>
       <p>
         <strong>THREAT Matrix</strong> is an open behavioral vocabulary and evidence index for threat
         assessment: observable behaviors, organized by target and phase, each tied to its sources. It
@@ -45,11 +48,11 @@ export function MatrixHeader({ matrix }: { matrix: MatrixKey }) {
   const info = getMatrix(matrix);
   return (
     <section className="intro" aria-label={`${MATRIX_LABELS[matrix]} matrix`}>
-      <p className="intro-title" data-focus-target tabIndex={-1}>
+      <h1 className="intro-title" data-focus-target tabIndex={-1}>
         {MATRIX_LABELS[matrix]} matrix
         <DraftTag matrix={matrix} />
         <span className="intro-count">{info.tactics.length} tactics</span>
-      </p>
+      </h1>
       {info.scope && <p>{info.scope}</p>}
       {isDraft(matrix) && (
         <p>This matrix is a draft. Its content is still under review and may change between versions.</p>

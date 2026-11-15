@@ -8,19 +8,19 @@ export function ActorProfilesView() {
   const groups = orderedActorCategories(actorsByCategory);
   return (
     <div className="actors-view">
-      <div className="actors-view-title" data-focus-target tabIndex={-1}>
+      <h1 className="actors-view-title" data-focus-target tabIndex={-1}>
         Actor Profiles
-      </div>
+      </h1>
       <div className="actors-view-sub">
         {actors.length} profiles across {groups.length} categories
       </div>
       {groups.map(({ cat, label: catLabel, actors: list }) => {
         return (
           <div key={cat} className="actor-cat-section">
-            <div className="actor-cat-label">
+            <h2 className="actor-cat-label">
               {catLabel}
               <span className="actor-cat-count">{list.length}</span>
-            </div>
+            </h2>
             <div className="actor-cards-grid">
               {list.map((a) => (
                 <Go key={a.id} className="actor-card" to={`/actors/${seg(a.id)}`}>

@@ -34,14 +34,14 @@ export function ActorDetailView({ actorId }: Props) {
         <span className="adv-category-sep">›</span>
         <span className="adv-category-id">{actor.id}</span>
       </div>
-      <div className="adv-name" data-focus-target tabIndex={-1}>
+      <h1 className="adv-name" data-focus-target tabIndex={-1}>
         {actor.name}
-      </div>
+      </h1>
       <LifecycleNote item={actor} />
       <div className="adv-two-col">
         <div className="adv-two-col-left">
           <div className="adv-section">
-            <div className="adv-section-label">Profile Attributes</div>
+            <h2 className="adv-section-label">Profile Attributes</h2>
             <div className="adv-attrs-list">
               {attrs
                 .filter(([, v]) => !!v)
@@ -55,13 +55,13 @@ export function ActorDetailView({ actorId }: Props) {
           </div>
           {actor.description && (
             <div className="adv-section">
-              <div className="adv-section-label">Description</div>
+              <h2 className="adv-section-label">Description</h2>
               <div className="adv-body">{actor.description}</div>
             </div>
           )}
           {actor.attack_vectors && actor.attack_vectors.length > 0 && (
             <div className="adv-section">
-              <div className="adv-section-label">Attack Vectors</div>
+              <h2 className="adv-section-label">Attack Vectors</h2>
               <div className="actor-vectors wide">
                 {actor.attack_vectors.map((v) => (
                   <span key={v} className="actor-vector-tag">
@@ -73,7 +73,7 @@ export function ActorDetailView({ actorId }: Props) {
           )}
           {actor.behavioral_markers && actor.behavioral_markers.length > 0 && (
             <div className="adv-section">
-              <div className="adv-section-label">Behavioral Markers</div>
+              <h2 className="adv-section-label">Behavioral Markers</h2>
               <div className="adv-markers">
                 {actor.behavioral_markers.map((m, i) => (
                   <div key={i} className="adv-marker">
@@ -86,7 +86,7 @@ export function ActorDetailView({ actorId }: Props) {
           )}
           {actor.ai_enabled_risks && actor.ai_enabled_risks.length > 0 && (
             <div className="adv-section">
-              <div className="adv-section-label">AI-Enabled Risks</div>
+              <h2 className="adv-section-label">AI-Enabled Risks</h2>
               <div>
                 {actor.ai_enabled_risks.map((r) => (
                   <span key={r} className="adv-risk-tag">
@@ -100,9 +100,9 @@ export function ActorDetailView({ actorId }: Props) {
         <div className="adv-two-col-right">
           {associated.length > 0 && (
             <div className="adv-section">
-              <div className="adv-section-label">
+              <h2 className="adv-section-label">
                 Associated Tactics ({associated.length})
-              </div>
+              </h2>
               <div>
                 {associated.map((t) => (
                   <Go

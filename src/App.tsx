@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { isMatrixView, parseLocation } from './lib/route';
+import { isMatrixView, parseLocation, type Route } from './lib/route';
+import { MATRIX_LABELS, PHASE_NAMES } from './lib/constants';
+import { actorById, tacticById } from './lib/data';
 import { readPref, writePref } from './lib/storage';
 import { FilterContext } from './lib/nav';
 import { OverlayProvider } from './lib/overlay';
@@ -24,6 +26,39 @@ const applyTheme = (t: Theme) => {
   if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
   else document.documentElement.removeAttribute('data-theme');
 };
+
+const PRODUCT = 'THREAT Matrix';
+
+// Each route names itself in the document title: view name, then the product.
+function titleFor(r: Route): string {
+  const view = (() => {
+    switch (r.view) {
+      case 'overview':
+        return 'Overview';
+      case 'heatmap':
+        return `${MATRIX_LABELS[r.matrix]} matrix`;
+      case 'phase':
+        return `${PHASE_NAMES[r.phase]} · ${MATRIX_LABELS[r.matrix]}`;
+      case 'tactic':
+        return `${r.tacticId} ${tacticById.get(r.tacticId)?.name || ''}`.trim();
+      case 'indicator':
+        return `Indicator ${r.indicatorId}`;
+      case 'actors':
+        return 'Actor Profiles';
+      case 'actorDetail':
+        return `${r.actorId} ${actorById.get(r.actorId)?.name || ''}`.trim();
+      case 'reservedActor':
+        return `${r.actorId} (reserved identifier)`;
+      case 'references':
+        return r.citedKey ? `Source ${r.citedKey}` : 'References';
+      case 'search':
+        return r.query ? `Search: ${r.query}` : 'Search';
+      default:
+        return 'Not found';
+    }
+  })();
+  return `${view} | ${PRODUCT}`;
+}
 
 // The route path without the filter query: focus moves only when this changes.
 const pathKey = () => window.location.hash.split('?')[0];
@@ -53,6 +88,10 @@ export default function App() {
   }, []);
 
   const { route, filters } = loc;
+
+  useEffect(() => {
+    document.title = titleFor(route);
+  }, [route]);
 
   // After a navigation, move keyboard focus to the new view's heading so the
   // next Tab continues from the content that just appeared. Typing in the

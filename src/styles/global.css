@@ -25,6 +25,9 @@
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;background:var(--bg)}
+/* Headings carry structure only; every heading takes its look from its class. */
+h1,h2,h3{font-size:inherit;font-weight:inherit;line-height:inherit}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 body{font-family:'IBM Plex Sans',sans-serif;color:var(--text);font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased}
 /* Global scrollbars: visible, amber-accented on hover */
 *{scrollbar-width:auto;scrollbar-color:var(--border-act) transparent}
@@ -407,7 +410,7 @@ a.hm-cell:focus-visible,a.dp-card:focus-visible,a.actor-card:focus-visible,a.ind
 
 /* ===== Landing statement, matrix header, footer ===== */
 .intro{flex-shrink:0;margin:14px 20px 0;padding:10px 14px;border-left:2px solid var(--border-act);background:var(--section-bg);border-radius:3px;font-size:14px;line-height:1.55;color:var(--text-muted)}
-.intro p+p{margin-top:4px}
+.intro p+p,.intro h1+p{margin-top:4px}
 .intro strong{color:var(--text);font-weight:700}
 .intro a,.site-footer a{color:var(--text-muted);text-decoration:underline;text-underline-offset:2px}
 .intro a:hover,.site-footer a:hover{color:var(--amber)}

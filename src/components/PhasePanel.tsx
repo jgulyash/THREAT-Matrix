@@ -36,9 +36,9 @@ export function PhasePanel({ tactics, matrix, phase, track }: Props) {
             {tl ? ` · ${tl}` : ''}
           </span>
         </div>
-        <div className="dp-header-title" data-focus-target tabIndex={-1}>
+        <h1 className="dp-header-title" data-focus-target tabIndex={-1}>
           {tl ? `${tl} Tactics` : PHASE_NAMES[phase]}
-        </div>
+        </h1>
         <div className="dp-header-sub">
           {disp.length}
           {filtered ? ` of ${tactics.length} (filtered)` : ''} tactics

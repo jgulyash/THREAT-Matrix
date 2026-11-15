@@ -3,9 +3,9 @@ import { Go } from '../lib/nav';
 export function NotFoundView({ what }: { what: string }) {
   return (
     <div className="notice-view">
-      <div className="notice-view-title" data-focus-target tabIndex={-1}>
+      <h1 className="notice-view-title" data-focus-target tabIndex={-1}>
         Not found
-      </div>
+      </h1>
       <div className="notice-view-body">
         {what ? (
           <>
@@ -26,9 +26,9 @@ export function NotFoundView({ what }: { what: string }) {
 export function ReservedActorView({ actorId, reason }: { actorId: string; reason: string }) {
   return (
     <div className="notice-view">
-      <div className="notice-view-title" data-focus-target tabIndex={-1}>
+      <h1 className="notice-view-title" data-focus-target tabIndex={-1}>
         {actorId} is a reserved identifier
-      </div>
+      </h1>
       <div className="notice-view-body">
         This identifier is held so that it is never reused. It has no profile and is not counted
         among the actor profiles.{reason ? ` ${reason}` : ''}

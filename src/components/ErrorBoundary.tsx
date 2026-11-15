@@ -38,7 +38,7 @@ export class ErrorBoundary extends Component<Props, State> {
     if (!this.state.failed) return this.props.children;
     return (
       <div className="notice-view" role="alert">
-        <div className="notice-view-title">This view could not be displayed</div>
+        <h1 className="notice-view-title">This view could not be displayed</h1>
         <div className="notice-view-body">
           Something went wrong while rendering this page. The rest of the site is unaffected.
         </div>

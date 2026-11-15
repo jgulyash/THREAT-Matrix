@@ -87,26 +87,26 @@ export function TacticDetail({ tactic, focusId }: Props) {
           <span className="det-id">{tactic.id}</span>
           {tl && <span className={`det-track-badge ${tl}`}>{TRACK_LABELS[tl].toUpperCase()}</span>}
         </div>
-        <div className="dp-header-title" data-focus-target tabIndex={-1}>
+        <h1 className="dp-header-title" data-focus-target tabIndex={-1}>
           {tactic.name}
-        </div>
+        </h1>
         <LifecycleNote item={tactic} />
       </div>
       <div className="dp-content" ref={contentRef}>
         <div className="det-section">
-          <div className="det-section-label">Description</div>
+          <h2 className="det-section-label">Description</h2>
           <div className="det-body">{tactic.notes}</div>
         </div>
 
         {cats.length > 0 && (
           <div className="det-section">
-            <div className="det-section-label">Actor Associations</div>
+            <h2 className="det-section-label">Actor Associations</h2>
             <div className="det-actor-groups">
               {cats.map((cat) => {
                 const chips = groups.get(cat) || [];
                 return (
                   <div key={cat}>
-                    <div className="det-actor-cat-label">{chips[0].actor.category_label}</div>
+                    <h3 className="det-actor-cat-label">{chips[0].actor.category_label}</h3>
                     <div className="det-actor-chips">
                       {chips.map(({ actor, relevance, status }) => (
                         <Go
@@ -148,7 +148,7 @@ export function TacticDetail({ tactic, focusId }: Props) {
         {/* Tactic source citations (aggregate) */}
         {tactic.source_refs && tactic.source_refs.length > 0 && (
           <div className="det-section">
-            <div className="det-section-label">Sources</div>
+            <h2 className="det-section-label">Sources</h2>
             <div className="dr-tag-row">
               {tactic.source_refs.map((ref) => (
                 <SourceRefLink key={ref} refKey={ref} />

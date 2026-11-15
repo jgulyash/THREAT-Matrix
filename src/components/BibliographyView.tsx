@@ -48,16 +48,16 @@ export function BibliographyView({ citedKey }: Props) {
 
   return (
     <div className="bib-view" ref={viewRef}>
-      <div className="bib-title" data-focus-target tabIndex={-1}>
+      <h1 className="bib-title" data-focus-target tabIndex={-1}>
         Bibliography
-      </div>
+      </h1>
       <div className="bib-sub">
         {entries.length} sources cited across the framework, grouped by the
         matrix each source informs. Each entry lists the tactics that reference it.
       </div>
       {sections.map(({ matrix, label: sectionLabel, entries: sectionEntries }) => (
         <div key={matrix}>
-          <div className="dr-section-header">
+          <h2 className="dr-section-header">
             <span>
               {sectionLabel}
               <DraftTag matrix={matrix} />
@@ -65,7 +65,7 @@ export function BibliographyView({ citedKey }: Props) {
             <span className="dr-section-count">
               {sectionEntries.length} source{sectionEntries.length === 1 ? '' : 's'}
             </span>
-          </div>
+          </h2>
           {sectionEntries.map(([key, entry]) => {
             const citingTactics = citedBy.get(key) || [];
             const url = safeHttpUrl(entry.url);

@@ -15,6 +15,7 @@ export function OverlayToggle() {
         />
         Show experimental scoring overlay
       </label>
+      <span className="overlay-status">Your choice is remembered in this browser.</span>
       <span role="status" aria-live="polite">
         {status === 'loading' && <span className="overlay-status">Loading overlay…</span>}
         {status === 'error' && (

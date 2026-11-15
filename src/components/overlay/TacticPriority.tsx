@@ -20,9 +20,9 @@ export function TacticPriority({ tacticId }: { tacticId: string }) {
     : 'medium';
   return (
     <div className="det-section" data-overlay-section>
-      <div className="dr-section-header">
+      <h2 className="dr-section-header">
         <span>Experimental scoring overlay</span>
-      </div>
+      </h2>
       <OverlayNotice overlay={overlay} />
       {priority ? (
         <div className="overlay-row">

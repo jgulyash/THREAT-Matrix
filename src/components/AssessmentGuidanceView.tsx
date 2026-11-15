@@ -74,9 +74,9 @@ export function AssessmentGuidanceView({ guidance }: { guidance?: AssessmentGuid
 
   return (
     <div className="det-section">
-      <div className="dr-section-header">
+      <h2 className="dr-section-header">
         <span>Assessment Guidance</span>
-      </div>
+      </h2>
       <div className="ag-subtitle">How to weigh observed findings of this tactic.</div>
 
       {FACTORS.map((f) => {

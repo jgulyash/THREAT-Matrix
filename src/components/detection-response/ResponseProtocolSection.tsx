@@ -19,10 +19,10 @@ export function ResponseProtocolSection({ protocols, focusId }: Props) {
 
   return (
     <div className="det-section" id="response-protocols">
-      <div className="dr-section-header">
+      <h2 className="dr-section-header">
         <span>Response Protocols</span>
         <span className="dr-section-count">{protocols.length} protocols</span>
-      </div>
+      </h2>
       {sorted.map((rp) => (
         <div
           key={rp.id}
@@ -36,15 +36,15 @@ export function ResponseProtocolSection({ protocols, focusId }: Props) {
           )}
           <LifecycleNote item={rp} />
 
-          <div className="dr-rp-label">Trigger</div>
+          <h3 className="dr-rp-label">Trigger</h3>
           <div className="dr-rp-trigger">{rp.trigger}</div>
 
-          <div className="dr-rp-label">Action</div>
+          <h3 className="dr-rp-label">Action</h3>
           <div className="dr-rp-action">{rp.action}</div>
 
           {rp.stakeholders && rp.stakeholders.length > 0 && (
             <>
-              <div className="dr-rp-label">Stakeholders</div>
+              <h3 className="dr-rp-label">Stakeholders</h3>
               <div className="dr-tag-row">
                 {rp.stakeholders.map((s) => (
                   <span key={s} className="dr-tag stakeholder">

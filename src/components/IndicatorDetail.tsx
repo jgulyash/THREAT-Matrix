@@ -89,9 +89,9 @@ export function IndicatorDetail({ indicatorId }: Props) {
       </Go>
 
       <div className="adv-category-row">
-        <span className="adv-category-name" data-focus-target tabIndex={-1}>
+        <h1 className="adv-category-name" data-focus-target tabIndex={-1}>
           {ind.id}
-        </span>
+        </h1>
       </div>
 
       <div className="ind-crumb">
@@ -114,12 +114,12 @@ export function IndicatorDetail({ indicatorId }: Props) {
       <div className="adv-two-col">
         <div className="adv-two-col-left">
           <div className="adv-section">
-            <div className="adv-section-label">Observable Behavior</div>
+            <h2 className="adv-section-label">Observable Behavior</h2>
             <div className="adv-body">{ind.behavior}</div>
           </div>
 
           <div className="adv-section">
-            <div className="adv-section-label">Classification</div>
+            <h2 className="adv-section-label">Classification</h2>
             <div className="adv-attrs-list">
               <div className="adv-attr-row-new">
                 <div className="adv-attr-key">Category</div>
@@ -169,7 +169,7 @@ export function IndicatorDetail({ indicatorId }: Props) {
 
             {ind.target_identity && ind.target_identity.length > 0 && (
               <>
-                <div className="ind-subhead">Target Identity</div>
+                <h3 className="ind-subhead">Target Identity</h3>
                 <div className="dr-tag-row">
                   {ind.target_identity.map((ti) => (
                     <span key={ti} className="dr-tag identity">
@@ -182,7 +182,7 @@ export function IndicatorDetail({ indicatorId }: Props) {
 
             {ind.facility_target_scope && ind.facility_target_scope.length > 0 && (
               <>
-                <div className="ind-subhead">Target Scope</div>
+                <h3 className="ind-subhead">Target Scope</h3>
                 <div className="dr-tag-row">
                   {ind.facility_target_scope.map((ts) => (
                     <span key={ts} className="dr-tag identity">
@@ -195,7 +195,7 @@ export function IndicatorDetail({ indicatorId }: Props) {
 
             {ind.within_site_focus && ind.within_site_focus.length > 0 && (
               <>
-                <div className="ind-subhead">Within-Site Focus</div>
+                <h3 className="ind-subhead">Within-Site Focus</h3>
                 <div className="dr-tag-row">
                   {ind.within_site_focus.map((wf) => (
                     <span key={wf} className="dr-tag identity">
@@ -208,7 +208,7 @@ export function IndicatorDetail({ indicatorId }: Props) {
 
             {ind.detection_sources && ind.detection_sources.length > 0 && (
               <>
-                <div className="ind-subhead">Detection Sources</div>
+                <h3 className="ind-subhead">Detection Sources</h3>
                 <div className="dr-tag-row">
                   {ind.detection_sources.map((src) => (
                     <span key={src} className="dr-tag">
@@ -222,7 +222,7 @@ export function IndicatorDetail({ indicatorId }: Props) {
 
           {ind.conditioning_guidance && (
             <div className="adv-section">
-              <div className="adv-section-label">Conditioning Guidance</div>
+              <h2 className="adv-section-label">Conditioning Guidance</h2>
               <div className="cond-guidance">
                 <div className="cond-guidance-scope">
                   Assessment tasking only: what to establish about the case at hand. Immediate
@@ -258,7 +258,7 @@ export function IndicatorDetail({ indicatorId }: Props) {
 
           {informsRows.length > 0 && (
             <div className="adv-section">
-              <div className="adv-section-label">Informs Threat Picture</div>
+              <h2 className="adv-section-label">Informs Threat Picture</h2>
               <div className="adv-attrs-list">
                 {informsRows.map(([k, v]) => (
                   <div key={k} className="adv-attr-row-new">
@@ -277,9 +277,9 @@ export function IndicatorDetail({ indicatorId }: Props) {
 
         <div className="adv-two-col-right">
           <div className="adv-section">
-            <div className="adv-section-label">
+            <h2 className="adv-section-label">
               Related Indicators ({related.length})
-            </div>
+            </h2>
             {related.length > 0 ? (
               <div>
                 {related.map(({ relId, entry: rel }) => (
@@ -293,9 +293,9 @@ export function IndicatorDetail({ indicatorId }: Props) {
 
           {referencedBy.length > 0 && (
             <div className="adv-section">
-              <div className="adv-section-label">
+              <h2 className="adv-section-label">
                 Referenced By ({referencedBy.length})
-              </div>
+              </h2>
               <div>
                 {referencedBy.map((rel) => (
                   <IndicatorLinkCard key={rel.indicator.id} relId={rel.indicator.id} entry={rel} />
@@ -306,7 +306,7 @@ export function IndicatorDetail({ indicatorId }: Props) {
 
           {ind.source_refs && ind.source_refs.length > 0 && (
             <div className="adv-section">
-              <div className="adv-section-label">Sources</div>
+              <h2 className="adv-section-label">Sources</h2>
               <div className="dr-tag-row">
                 {ind.source_refs.map((ref) => (
                   <SourceRefLink key={ref} refKey={ref} />

@@ -43,7 +43,7 @@ export function IndicatorScores({ indicatorId }: { indicatorId: string }) {
 
   return (
     <div className="adv-section" data-overlay-section>
-      <div className="adv-section-label">Experimental scoring overlay</div>
+      <h2 className="adv-section-label">Experimental scoring overlay</h2>
       <OverlayNotice overlay={overlay} />
       {!score ? (
         <div className="overlay-empty">The overlay has no entry for {indicatorId}.</div>
@@ -80,10 +80,10 @@ export function IndicatorScores({ indicatorId }: { indicatorId: string }) {
           </div>
           {axes.length > 0 && (
             <>
-              <div className="ind-subhead">
+              <h3 className="ind-subhead">
                 Axes (0 to 10)
                 <ScoreTag />
-              </div>
+              </h3>
               <div className="ind-axes-grid">
                 {axes.map(([k, v]) => {
                   const conf = score.axis_confidence?.[k];

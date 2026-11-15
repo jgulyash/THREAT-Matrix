@@ -25,13 +25,13 @@ export function CountermeasureSection({ countermeasures, focusId }: Props) {
 
   return (
     <div className="det-section">
-      <div className="dr-section-header">
+      <h2 className="dr-section-header">
         <span>Countermeasures</span>
         <span className="dr-section-count">{countermeasures.length} measures</span>
-      </div>
+      </h2>
       {orderedKeys.map((cat) => (
         <div key={cat} className="dr-category-group">
-          <div className="dr-category-label">{label(COUNTERMEASURE_CATEGORY_LABELS, cat)}</div>
+          <h3 className="dr-category-label">{label(COUNTERMEASURE_CATEGORY_LABELS, cat)}</h3>
           {(grouped.get(cat) || []).map((cm) => (
             <div
               key={cm.id}

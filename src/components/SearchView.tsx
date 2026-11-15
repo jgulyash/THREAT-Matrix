@@ -14,9 +14,9 @@ export function SearchView({ query }: { query: string }) {
 
   return (
     <div className="bib-view search-view">
-      <div className="bib-title" data-focus-target tabIndex={-1}>
+      <h1 className="bib-title" data-focus-target tabIndex={-1}>
         Search
-      </div>
+      </h1>
       <div className="bib-sub" data-search-summary role="status" aria-live="polite">
         {tooShort
           ? `Type at least ${MIN_QUERY} characters in the search field. Press / from anywhere to focus it. Search covers tactic names, indicator behavior text, countermeasure and protocol text, actor profile names, sources, and IDs.`
@@ -28,12 +28,12 @@ export function SearchView({ query }: { query: string }) {
       </div>
       {results.groups.map((g) => (
         <div key={g.kind} data-search-group={g.kind}>
-          <div className="dr-section-header">
+          <h2 className="dr-section-header">
             <span>{SEARCH_KIND_LABELS[g.kind]}</span>
             <span className="dr-section-count">
               {g.hits.length > GROUP_LIMIT ? `first ${GROUP_LIMIT} of ${g.hits.length}` : g.hits.length}
             </span>
-          </div>
+          </h2>
           <div className="search-results">
             {g.hits.slice(0, GROUP_LIMIT).map((d) => (
               <Go key={`${d.kind}-${d.id}`} className="ind-related-link" to={d.to}>
