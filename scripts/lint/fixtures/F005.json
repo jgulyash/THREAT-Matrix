@@ -1,6 +1,7 @@
 {
   "id": "F005",
   "expected_check": "V05",
+  "expected_message": "appears more than once",
   "description": "Repeat the id key inside one tactic in the raw text, which a JSON parser would silently collapse.",
   "mutations": [
     {

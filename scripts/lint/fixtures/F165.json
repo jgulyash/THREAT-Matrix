@@ -1,0 +1,13 @@
+{
+  "id": "F165",
+  "expected_check": "V39",
+  "expected_message": "'notes' is a required property",
+  "audit_findings": "N8",
+  "description": "Remove a tactic's required notes.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "matrices.person.tactics.[id=TM0101].notes"
+    }
+  ]
+}

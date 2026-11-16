@@ -15,9 +15,11 @@ name: Framework Validator
 #   4. validate.py on the scored worked cases
 #   5. field-parity.py (cross-matrix field parity; no score in the vocabulary)
 #   6. mesh-refs.py (mesh references resolve; no self-reference or duplicate)
-#   7. id-manifest.py --check (the committed manifest matches the framework;
-#      on pull requests also compared with the base branch's manifest so an
-#      ID cannot be dropped or reused)
+#   7. id-manifest.py --check (the committed manifest matches the framework,
+#      and no ID in the committed published baseline
+#      docs/data/baselines/id-manifest-1.7.0.json has been dropped or
+#      reused; then the same against the previous manifest: the base
+#      branch's on pull requests, the previous commit's on pushes)
 #   8. consumer-smoke.py (every shipped document validates against its
 #      schema; the reference consumer runs with and without the overlay)
 #   9. derive-axis-confidence.py --check (overlay axis_confidence labels
@@ -72,7 +74,7 @@ jobs:
         run: python3 scripts/lint/validate.py docs/data/framework.json --fixtures scripts/lint/fixtures
 
       - name: Validate scored worked cases
-        run: python3 scripts/lint/validate.py docs/data/framework.json --overlay docs/data/scoring-overlay.json --records examples/experimental-scoring/worked-cases
+        run: python3 scripts/lint/validate.py docs/data/framework.json --overlay docs/data/scoring-overlay.json --records examples/experimental-scoring/worked-cases --require-schema
 
       - name: Run field-parity gate
         run: python3 scripts/lint/field-parity.py docs/data/framework.json
@@ -80,22 +82,38 @@ jobs:
       - name: Run mesh-refs lint
         run: python3 scripts/lint/mesh-refs.py docs/data/framework.json
 
-      - name: Check ID manifest against the framework
-        run: python3 scripts/lint/id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json
+      - name: Check ID manifest against the framework and the published baseline
+        run: >
+          python3 scripts/lint/id-manifest.py
+          --check docs/data/framework.json docs/data/id-manifest.json
+          --baseline docs/data/baselines/id-manifest-1.7.0.json
 
-      - name: Check ID manifest against the base branch (no ID dropped or reused)
-        if: github.event_name == 'pull_request'
+      - name: Check ID manifest against the previous manifest (no ID dropped or reused)
         env:
+          EVENT_NAME: ${{ github.event_name }}
           BASE_REF: ${{ github.base_ref }}
+          BEFORE_SHA: ${{ github.event.before }}
         run: |
           set -eu
-          git fetch --no-tags --depth=1 origin "refs/heads/${BASE_REF}:refs/remotes/origin/${BASE_REF}"
-          if git cat-file -e "origin/${BASE_REF}:docs/data/id-manifest.json" 2>/dev/null; then
-            git show "origin/${BASE_REF}:docs/data/id-manifest.json" > "${RUNNER_TEMP}/base-id-manifest.json"
+          previous="${RUNNER_TEMP}/previous-id-manifest.json"
+          source_rev=""
+          if [ "${EVENT_NAME}" = "pull_request" ]; then
+            git fetch --no-tags --depth=1 origin "refs/heads/${BASE_REF}:refs/remotes/origin/${BASE_REF}"
+            source_rev="origin/${BASE_REF}"
+          elif [ -n "${BEFORE_SHA}" ] && [ "${BEFORE_SHA}" != "0000000000000000000000000000000000000000" ]; then
+            if git fetch --no-tags --depth=1 origin "${BEFORE_SHA}"; then
+              source_rev="${BEFORE_SHA}"
+            else
+              echo "The previous commit ${BEFORE_SHA} could not be fetched (for example after a force push)."
+            fi
+          fi
+          if [ -n "${source_rev}" ] && git cat-file -e "${source_rev}:docs/data/id-manifest.json" 2>/dev/null; then
+            git show "${source_rev}:docs/data/id-manifest.json" > "${previous}"
             python3 scripts/lint/id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json \
-              --baseline "${RUNNER_TEMP}/base-id-manifest.json"
+              --baseline docs/data/baselines/id-manifest-1.7.0.json --baseline "${previous}"
           else
-            echo "The base branch ${BASE_REF} has no docs/data/id-manifest.json yet; baseline comparison skipped."
+            echo "No previous docs/data/id-manifest.json to compare with (new branch, or the previous commit has none)."
+            echo "The published baseline comparison in the step above still applies."
           fi
 
       - name: Run consumer smoke test

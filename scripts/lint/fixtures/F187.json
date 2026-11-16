@@ -1,0 +1,15 @@
+{
+  "id": "F187",
+  "target": "framework_schema",
+  "expected_check": "V39",
+  "expected_message": "constraint digest",
+  "audit_findings": "N8",
+  "description": "Self-test: open the tactic object to unknown properties in the schema file.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "$defs.tactic.additionalProperties",
+      "value": true
+    }
+  ]
+}

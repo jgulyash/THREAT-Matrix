@@ -2,6 +2,7 @@
   "id": "F135",
   "target": "overlay",
   "expected_check": "V38",
+  "expected_message": "not finite",
   "audit_findings": "F09",
   "description": "Write a weight that overflows to infinity.",
   "mutations": [

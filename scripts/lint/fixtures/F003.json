@@ -1,6 +1,7 @@
 {
   "id": "F003",
   "expected_check": "V03",
+  "expected_message": "countermeasure id is not unique",
   "description": "Give a second countermeasure an id that already exists.",
   "mutations": [
     {

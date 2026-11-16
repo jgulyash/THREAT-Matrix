@@ -1,0 +1,14 @@
+{
+  "id": "F180",
+  "expected_check": "V39",
+  "expected_message": "does not match",
+  "audit_findings": "F12",
+  "description": "Set ai_architecture.version to free text.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "ai_architecture.version",
+      "value": "not-a-version"
+    }
+  ]
+}

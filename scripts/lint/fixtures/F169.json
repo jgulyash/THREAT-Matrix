@@ -1,0 +1,13 @@
+{
+  "id": "F169",
+  "expected_check": "V39",
+  "expected_message": "'measure' is a required property",
+  "audit_findings": "N8",
+  "description": "Remove a countermeasure's required measure.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "matrices.person.tactics.[id=TM0101].countermeasures.[id=CM-0101-01].measure"
+    }
+  ]
+}

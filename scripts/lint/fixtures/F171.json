@@ -1,0 +1,13 @@
+{
+  "id": "F171",
+  "expected_check": "V39",
+  "expected_message": "'trigger' is a required property",
+  "audit_findings": "N8",
+  "description": "Remove a response protocol's required trigger.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "matrices.person.tactics.[id=TM0101].response_protocols.[id=RP-0101-01].trigger"
+    }
+  ]
+}

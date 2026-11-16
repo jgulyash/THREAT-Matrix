@@ -1,0 +1,13 @@
+{
+  "id": "F175",
+  "expected_check": "V39",
+  "expected_message": "'title' is a required property",
+  "audit_findings": "N8",
+  "description": "Remove a bibliography entry's required title.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "bibliography.FEIN-VOSSEKUIL-1999.title"
+    }
+  ]
+}

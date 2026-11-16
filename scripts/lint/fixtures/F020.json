@@ -1,6 +1,7 @@
 {
   "id": "F020",
   "expected_check": "V19",
+  "expected_message": "differs from containing matrix key",
   "description": "Set a person tactic's matrix field to facility.",
   "mutations": [
     {

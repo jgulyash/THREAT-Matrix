@@ -1,0 +1,35 @@
+{
+  "id": "F185",
+  "target": "coverage",
+  "expected_check": "V49",
+  "expected_message": "'basis' is a required property",
+  "audit_findings": "N8",
+  "description": "Remove the deployment record's required basis.",
+  "base": {
+    "cm_deployment_record": {
+      "protected_target": "Fixture site",
+      "deployments": [
+        {
+          "cm_id": "CM-0101-01",
+          "status": "deployed",
+          "verified": "2026-01-15"
+        }
+      ],
+      "basis": "Fixture walkdown",
+      "reviewed": "2026-02-01"
+    },
+    "coverage_derivation": {
+      "protected_target": "Fixture site",
+      "indicator_id": "IND-0101-01",
+      "coverage_band": "partial",
+      "derivation_date": "2026-02-01",
+      "framework_version": "2.0.0"
+    }
+  },
+  "mutations": [
+    {
+      "op": "del",
+      "path": "cm_deployment_record.basis"
+    }
+  ]
+}

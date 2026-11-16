@@ -1,6 +1,7 @@
 {
   "id": "F098",
   "expected_check": "V39",
+  "expected_message": "Additional properties are not allowed",
   "description": "Add an unknown property to a tactic; only the closed schema rejects it.",
   "mutations": [
     {

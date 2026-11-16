@@ -94,7 +94,7 @@ Notes:
 
 ## The gates
 
-Run these from the repository root before opening a pull request. They need Python 3 and `pip install jsonschema`. Continuous integration runs every one of them on every push and pull request.
+Run these from the repository root before opening a pull request. They need Python 3 and the `jsonschema` package (`pip install jsonschema`); without it the validator fails, because schema validation is a required part of every run. Continuous integration runs every one of them on every push and pull request.
 
 ```
 python3 scripts/lint/validate.py docs/data/framework.json
@@ -109,6 +109,14 @@ python3 scripts/lint/consumer-smoke.py
 
 The fixture harness takes about 20 seconds. What each gate checks, and what none of them checks, is in [docs/METHODOLOGY.md](docs/METHODOLOGY.md#5-review-process-and-gates). Passing the gates shows that a change is well formed. It does not show that the content is right. That is what review is for.
 
+The manifest gate as continuous integration and the hook run it, with the published baseline:
+
+```
+python3 scripts/lint/id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json --baseline docs/data/baselines/id-manifest-1.7.0.json
+```
+
+Do not edit or remove `docs/data/baselines/id-manifest-1.7.0.json`. It is the record of the identifiers in the published 1.7.0 release, and the hook fails without it.
+
 If your change adds an identifier, the ID manifest has to be regenerated, or the manifest gate fails:
 
 ```
@@ -117,13 +125,23 @@ python3 scripts/lint/id-manifest.py --write docs/data/id-manifest.json --previou
 
 ### The local hook
 
-`scripts/git-hooks/pre-commit` is opt-in: enable it once with `git config core.hooksPath scripts/git-hooks`. It acts only when a staged path is under `docs/data/`, `src/`, `scripts/`, or `examples/`, or is `index.html` or `package.json`. It exports the staged content to a temporary directory and checks that copy, never the working tree. It runs: `validate.py` on the framework, on the framework with the overlay, and on the scored worked cases; `field-parity.py`; `mesh-refs.py`; `id-manifest.py --check`; `derive-axis-confidence.py --check`; and `consumer-smoke.py` (skipped with a warning if the `jsonschema` package is not installed). It runs the `validate.py` fixture harness only when a file under `scripts/lint/` or a `docs/data/*.schema.json` file is staged. If a viewer build input is staged (anything under `src/`, `index.html`, `package.json`, `bun.lock`, `vite.config.ts`, a `tsconfig` file, or a `docs/data` file the viewer imports), it requires a rebuilt bundle to be staged as well (a new or changed file under `docs/assets/` and `docs/index.html`), and it checks that the staged `docs/index.html` references exactly the files in the staged `docs/assets/`. It does not run the viewer build. It can be bypassed with `git commit --no-verify`.
+`scripts/git-hooks/pre-commit` is opt-in: enable it once with `git config core.hooksPath scripts/git-hooks`. It acts when a staged path is under `docs/data/`, `src/`, `scripts/`, `examples/`, `docs/assets/`, or `.github/workflows/`, or is `index.html`, `docs/index.html`, `package.json`, `bun.lock`, `vite.config.ts`, or a `tsconfig` file. It exports the staged content to a temporary directory and checks that copy, never the working tree. It requires the `jsonschema` package and stops with a message if it is not installed; nothing is skipped for lack of it. It runs: `validate.py` on the framework, on the framework with the overlay, and on the scored worked cases; `field-parity.py`; `mesh-refs.py`; `id-manifest.py --check` with two baselines, the committed published baseline `docs/data/baselines/id-manifest-1.7.0.json` and the manifest in the previous commit; `derive-axis-confidence.py --check`; and `consumer-smoke.py`. It runs the `validate.py` fixture harness only when a file under `scripts/lint/` or a `docs/data/*.schema.json` file is staged. If a viewer build input is staged (anything under `src/`, `index.html`, `package.json`, `bun.lock`, `vite.config.ts`, a `tsconfig` file, or a `docs/data` file the viewer imports), it requires a rebuilt bundle to be staged as well (a new or changed file under `docs/assets/` and `docs/index.html`). On every commit it checks, it confirms that the staged `docs/index.html` references exactly the files in the staged `docs/assets/`. It does not run the viewer build, and for a change to a workflow file it runs the data gates but cannot judge the workflow itself. It can be bypassed with `git commit --no-verify`.
 
 Bypassing the hook only defers the failure: continuous integration runs the same gates and cannot be bypassed locally.
 
 ### Continuous integration
 
-Three workflows run on every push and every pull request for `main`, `v1-build`, and `v3-design`: *Framework Validator* (every gate above, plus the axis-confidence check and, on pull requests, a comparison of the ID manifest with the base branch's), *Mesh Refs*, and *Bundle Freshness* (the committed viewer must equal a fresh build of the committed sources).
+Three workflows run on every push and every pull request for `main`, `v1-build`, and `v3-design`: *Framework Validator* (every gate above, with the ID manifest compared against the committed published baseline `docs/data/baselines/id-manifest-1.7.0.json` and against the previous manifest, plus the axis-confidence check), *Mesh Refs*, and *Bundle Freshness* (the committed viewer must equal a fresh build of the committed sources).
+
+### If you change a schema
+
+Open an issue first: any schema change changes the schema version ([docs/VERSIONING.md](docs/VERSIONING.md)). The validator pins a digest of each schema file's constraints in `SCHEMA_PINS` in `scripts/lint/validate.py`. If you change a required list, an enum, a pattern, or any other constraint in a `docs/data/*.schema.json` file, the schema checks fail until you update `SCHEMA_PINS` in the same commit. Print the current digests with:
+
+```
+python3 scripts/lint/validate.py --print-schema-pins
+```
+
+Copy the printed values into `SCHEMA_PINS`. A change to `description` text alone does not change a digest. The point of the pin is that a constraint cannot be loosened without the change being visible in review, so say in the pull request which constraint changed and why.
 
 ## Code contributions
 

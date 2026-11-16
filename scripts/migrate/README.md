@@ -28,7 +28,7 @@ python3 scripts/migrate/2.1-to-3.0.py path/to/framework-2.1.json \
     --report out/migration-report.json
 ```
 
-Then check the result with the project gates:
+Then check the result. Four gates apply to any migrated document, including a fork:
 
 ```
 python3 scripts/lint/validate.py out/framework.json --schema-dir docs/data
@@ -36,6 +36,16 @@ python3 scripts/lint/validate.py out/framework.json --overlay out/scoring-overla
 python3 scripts/lint/mesh-refs.py out/framework.json
 python3 scripts/lint/field-parity.py out/framework.json
 ```
+
+`--schema-dir docs/data` tells `validate.py` where the 3.0.0 schemas are; without it the validator looks next to your document and reports that it cannot read them.
+
+Three other gates of this repository are tied to its own files and are **not** expected to pass on a fork's document. Do not use them to judge a migration:
+
+| Gate | Why it does not apply to a fork |
+|---|---|
+| `validate.py --fixtures scripts/lint/fixtures` | The fixtures address objects in this repository's `framework.json` by position and ID. Against other content some fixtures cannot apply. |
+| `id-manifest.py --check` | Compares a document with this repository's committed manifest and published baseline. A fork has its own identifier history; generate its own manifest with `id-manifest.py --write OUT --framework out/framework.json`. |
+| `consumer-smoke.py` | Validates the files shipped in this repository (`docs/data/`, `examples/`), not a document you pass in. |
 
 Options:
 
@@ -74,7 +84,7 @@ Score moves (change E):
 | indicator `severity_floor` | `indicator_scores[<indicator id>].type_band_floor` |
 | indicator `axis_confidence` | `indicator_scores[<indicator id>].axis_confidence` |
 | tactic `assessment_guidance.escalation_priority` | `tactic_priorities[<tactic id>]` |
-| root `escalation_rubric` | `rubric`, with `severity_thresholds` renamed `type_band_thresholds` and `severity_floor_rule` renamed `type_band_floor_rule` |
+| root `escalation_rubric` | `rubric`, with `severity_thresholds` renamed `type_band_thresholds` and `severity_floor_rule` renamed `type_band_floor_rule`. The floor rule also gains `floored_indicators`: the sorted list of the indicators that carried `severity_floor`, derived, not authored. |
 | root `instance_conditioning` | `instance_conditioning` |
 
 The overlay header is written with `status: experimental`, `normative: false`, `validation_status: unvalidated`, `scope: type_level`, `not_a_risk_score: true`, and the standard notice.
@@ -97,24 +107,34 @@ Key order and all other content are preserved. `mitigates` is placed directly af
   - a required field that the input never had;
   - a `compensates_for` value that is neither a countermeasure ID nor an indicator ID (removed and listed);
   - an indicator with no score or an incomplete score (a partial overlay entry is invalid).
+  - a tactic with no `escalation_priority` (the overlay needs exactly one `tactic_priorities` entry per tactic; the tool does not choose a value).
 
 The list is printed, and written in full to the `--report` file under `manual_remediation`. Each item has a `kind`, a `where`, a `detail`, and a `remediation`.
 
 ## Result on the published 2.1.0 document
 
-Run against `docs/data/framework.json` from the `main` branch (content 1.7.0, schema 2.1.0), the tool performs these changes: 1 `schema_version`; 122 `evidence_basis` renames (111, 10, and 1); 1 root `operations` dropped; 476 indicator references moved from `compensates_for` into `mitigates` edges on 283 countermeasures, with 360 countermeasure references kept; scores moved for 828 indicators (43 with a floor) and 159 tactic priorities; the rubric and the instance-conditioning block moved; 4 `maturity` values added.
+Run against `docs/data/framework.json` from the `main` branch (content 1.7.0, schema 2.1.0), the tool performs these changes: 1 `schema_version`; 122 `evidence_basis` renames (111, 10, and 1); 1 root `operations` dropped; 476 indicator references moved from `compensates_for` into `mitigates` edges on 283 countermeasures, with 360 countermeasure references kept; scores moved for 828 indicators (43 with a floor) and 159 tactic priorities; the rubric and the instance-conditioning block moved, and `rubric.type_band_floor_rule.floored_indicators` written with the 43 floored indicator IDs; 4 `maturity` values added.
 
-Against the 3.0.0 schema the published document has 1,596 errors before migration. After migration, 5 schema errors and 2 failing validator checks remain. All of them are content problems in the published document that 3.0.0 checks and 2.1.0 did not, and each is listed by the tool with a suggested fix:
+Measured results, in three stages:
+
+| Stage | JSON Schema errors | `validate.py` failing checks |
+|---|---|---|
+| Before: the published document as it is | 2,072 against `framework.schema.json` | 8 (V07, V24, V25, V28, V29, V35, V37, V39) |
+| After the tool | 5 in the vocabulary document, 0 in the overlay | 4 with the overlay (V39, V35, V20, V43); 2 without it (V39, V35) |
+| After the listed manual corrections (91 edits) | 0 and 0 | 0: 36 of 36 without the overlay, 47 of 47 with it |
+
+V39 is the JSON Schema check, so it is the same 5 schema errors counted once as a check. V20 and V43 are overlay checks, which is why they appear only when the overlay is passed. Everything that remains after the tool is a content problem in the published document that 3.0.0 checks and 2.1.0 did not. Each is listed by the tool with a suggested fix:
 
 | Remaining item | Count | Manual fix |
 |---|---|---|
-| A bibliography entry has a `type` that 3.0.0 no longer allows | 1 | Give the entry an allowed `type`, or remove the entry and the references to it. |
-| Two tactics (one organization, one infrastructure) lack `assessment_guidance.false_positive_context` and `threshold_guidance` | 4 | Write the two missing guidance fields for each tactic. |
+| A bibliography entry has a `type` that 3.0.0 no longer allows (schema) | 1 | Give the entry an allowed `type`, or remove the entry and the references to it. |
+| Two tactics (one organization, one infrastructure) lack `assessment_guidance.false_positive_context` and `threshold_guidance` (schema) | 4 | Write the two missing guidance fields for each tactic, in the shape `framework.schema.json` defines for them (`false_positive_context` is an object, not a string; copy the structure from a neighboring tactic). |
 | `phase_relevance` on an indicator or countermeasure omits its parent tactic's phase (validator check V35) | 72 | Add the parent tactic's phase to `phase_relevance`, or move the object. |
 | `axis_confidence` labels in the overlay disagree with their derivation rule (validator check V20) | 12 | Set each label to the value `scripts/analysis/derive-axis-confidence.py --print-derived` gives. |
+| The same two tactics have no `escalation_priority`, so the overlay has no `tactic_priorities` entry for them (validator check V43) | 2 | Add an entry for each to the overlay's `tactic_priorities` (`Urgent`, `Immediate`, `Priority`, or `Routine`). The tool never invents one. |
 | Text values that still mention an old field name | 7 groups | Edit the wording. Not a validation failure. |
 
-With those corrected by hand, the migrated pair passes `validate.py` with and without the overlay, `mesh-refs.py`, and `field-parity.py`. The tool never makes these corrections itself, because each is a content decision.
+The first five rows are 91 edits in total (1 + 4 + 72 + 12 + 2). With those made by hand, the migrated pair passes `validate.py` with and without the overlay, `mesh-refs.py`, and `field-parity.py`. The tool never makes these corrections itself, because each is a content decision.
 
 Reproduce the list with:
 

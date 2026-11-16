@@ -1,0 +1,14 @@
+{
+  "id": "F174",
+  "expected_check": "V39",
+  "expected_message": "is not one of",
+  "audit_findings": "N8",
+  "description": "Set an actor profile awareness outside the enum.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "actor_profiles.[id=AP001].awareness",
+      "value": "oblivious"
+    }
+  ]
+}

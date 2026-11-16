@@ -1,0 +1,16 @@
+{
+  "id": "F178",
+  "expected_check": "V39",
+  "expected_message": "Additional properties are not allowed",
+  "audit_findings": "N8",
+  "description": "Add an unknown property at the top level.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "risk_model",
+      "value": {
+        "enabled": true
+      }
+    }
+  ]
+}

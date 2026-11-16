@@ -28,7 +28,7 @@
   "mutations": [
     {
       "op": "set",
-      "path": "cm_deployment_record.deployments.0.cm_id",
+      "path": "cm_deployment_record.deployments.[cm_id=CM-0101-01].cm_id",
       "value": "CM-0199-01"
     }
   ]

@@ -5,8 +5,11 @@
 # What it does, in order:
 #
 #   1. Decides whether this commit needs checking. It does when any staged
-#      path is under docs/data/, src/, scripts/, or examples/, or is
-#      index.html or package.json. Otherwise it exits 0 at once.
+#      path is under docs/data/, src/, scripts/, examples/, docs/assets/, or
+#      .github/workflows/, or is index.html, docs/index.html, package.json,
+#      bun.lock, vite.config.ts, or a tsconfig*.json file. That covers every
+#      gated document, every viewer build input, and every build output.
+#      Otherwise it exits 0 at once.
 #   2. Exports the STAGED content (the git index) to a temporary directory
 #      and runs every check there. The working tree is never linted, so
 #      what is checked is exactly what will be committed.
@@ -15,8 +18,12 @@
 #        scored worked cases), field-parity.py, mesh-refs.py,
 #        id-manifest.py --check, consumer-smoke.py,
 #        derive-axis-confidence.py --check.
-#      consumer-smoke.py needs the jsonschema package. If it is not
-#      installed, that one gate is skipped with a warning; CI runs it.
+#      JSON Schema validation is required: the jsonschema package must be
+#      installed, and the hook fails with a clear message if it is not.
+#      id-manifest.py --check also compares against the committed published
+#      baseline (docs/data/baselines/id-manifest-1.7.0.json) and against the
+#      manifest in the previous commit (HEAD), so an ID cannot be dropped or
+#      reused by regenerating the manifest in the same commit.
 #      The fixture harness is the slow gate (it re-validates the document
 #      once per fixture), so it runs only when the validator, a fixture, or
 #      a schema is staged (scripts/lint/ or docs/data/*.schema.json). CI
@@ -26,8 +33,8 @@
 #      or a docs/data file the viewer imports), then a rebuilt bundle must
 #      be staged too: at least one added or modified file under
 #      docs/assets/, and docs/index.html.
-#   5. Checks that the staged docs/index.html references exactly the files
-#      in the staged docs/assets/.
+#   5. Checks, on every checked commit, that the staged docs/index.html
+#      references exactly the files in the staged docs/assets/.
 #
 # It does not run the viewer build. CI rebuilds and compares.
 #
@@ -76,7 +83,9 @@ harness_needed=false
 data_paths=()
 while IFS= read -r -d '' path; do
   case "$path" in
-    docs/data/*|src/*|scripts/*|examples/*|index.html|package.json)
+    docs/data/*|src/*|scripts/*|examples/*|index.html|package.json|\
+    bun.lock|vite.config.ts|tsconfig*.json|docs/index.html|docs/assets/*|\
+    .github/workflows/*)
       trigger=true
       ;;
   esac
@@ -140,10 +149,17 @@ for required in docs/data/framework.json docs/data/scoring-overlay.json docs/dat
   fi
 done
 
+if ! python3 -c 'import jsonschema, referencing' >/dev/null 2>&1; then
+  fail "the jsonschema package is not installed" \
+    "JSON Schema validation is a required gate and cannot be skipped." \
+    "Install it with: python3 -m pip install 'jsonschema==4.26.0'" \
+    "(version 4.18 or later works; CI uses 4.26.0)."
+fi
+
 run_gate "validate (framework)" \
-  python3 scripts/lint/validate.py docs/data/framework.json
+  python3 scripts/lint/validate.py docs/data/framework.json --require-schema
 run_gate "validate (framework + overlay)" \
-  python3 scripts/lint/validate.py docs/data/framework.json --overlay docs/data/scoring-overlay.json
+  python3 scripts/lint/validate.py docs/data/framework.json --overlay docs/data/scoring-overlay.json --require-schema
 if [ "$harness_needed" = "true" ]; then
   run_gate "validate (fixture harness)" \
     python3 scripts/lint/validate.py docs/data/framework.json --fixtures scripts/lint/fixtures
@@ -151,26 +167,32 @@ else
   printf '%s\n' "pre-commit: fixture harness not run (no validator, fixture, or schema change staged); CI runs it."
 fi
 run_gate "validate (scored worked cases)" \
-  python3 scripts/lint/validate.py docs/data/framework.json --overlay docs/data/scoring-overlay.json --records examples/experimental-scoring/worked-cases
+  python3 scripts/lint/validate.py docs/data/framework.json --overlay docs/data/scoring-overlay.json --records examples/experimental-scoring/worked-cases --require-schema
 run_gate "field-parity" \
   python3 scripts/lint/field-parity.py docs/data/framework.json
 run_gate "mesh-refs" \
   python3 scripts/lint/mesh-refs.py docs/data/framework.json
+# Baselines: the committed published baseline, and the manifest as it is in
+# the previous commit. Both must still be honored by the staged manifest.
+manifest_args=(--check docs/data/framework.json docs/data/id-manifest.json)
+if [ -f "$tree/docs/data/baselines/id-manifest-1.7.0.json" ]; then
+  manifest_args+=(--baseline docs/data/baselines/id-manifest-1.7.0.json)
+else
+  fail "docs/data/baselines/id-manifest-1.7.0.json is not in the staged tree" \
+    "The published ID baseline must stay committed; it is what proves that no" \
+    "published identifier was dropped or reused."
+fi
+if git cat-file -e HEAD:docs/data/id-manifest.json 2>/dev/null; then
+  git show HEAD:docs/data/id-manifest.json > "$work/previous-id-manifest.json"
+  manifest_args+=(--baseline "$work/previous-id-manifest.json")
+fi
 run_gate "id-manifest" \
-  python3 scripts/lint/id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json
+  python3 scripts/lint/id-manifest.py "${manifest_args[@]}"
 run_gate "axis-confidence" \
   python3 scripts/analysis/derive-axis-confidence.py --check
 
-if python3 -c 'import jsonschema, referencing' >/dev/null 2>&1; then
-  run_gate "consumer-smoke" \
-    python3 scripts/lint/consumer-smoke.py
-else
-  printf '%s\n' \
-    "pre-commit WARNING: the jsonschema package is not installed, so" \
-    "  consumer-smoke.py (JSON Schema validation of every shipped document)" \
-    "  was SKIPPED. Install it with: pip install jsonschema" \
-    "  CI runs this gate on push." >&2
-fi
+run_gate "consumer-smoke" \
+  python3 scripts/lint/consumer-smoke.py
 
 # ---- 4. Bundle rule ----------------------------------------------------------
 if [ "$bundle_input" = "true" ]; then
@@ -198,10 +220,9 @@ if [ "$bundle_input" = "true" ]; then
 fi
 
 # ---- 5. index.html and assets agree, in the staged tree ---------------------
-if [ -f "$tree/docs/index.html" ]; then
-  run_gate "bundle references" \
-    python3 scripts/git-hooks/check-bundle-refs.py .
-fi
+# Always run: a missing docs/index.html or docs/assets is itself a failure.
+run_gate "bundle references" \
+  python3 scripts/git-hooks/check-bundle-refs.py .
 
 printf 'pre-commit PASSED: all gates ran against the staged content.\n'
 exit 0

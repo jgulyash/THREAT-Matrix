@@ -1,9 +1,10 @@
 {
   "id": "F137",
   "target": "overlay",
-  "expect": "pass",
   "expected_check": "V43",
-  "description": "A tactic may have no priority entry.",
+  "expected_message": "has no tactic_priorities entry",
+  "audit_findings": "N9",
+  "description": "Remove one tactic's priority entry; every tactic needs exactly one.",
   "mutations": [
     {
       "op": "del",

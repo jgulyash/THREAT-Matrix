@@ -33,9 +33,14 @@ Modes:
       Runs the fixture harness (see scripts/lint/fixtures/README.md).
 
 Options:
-  --require-schema   fail when the jsonschema package is not importable
-                     (CI mode). Without it a missing package is reported as a
-                     skipped check and a warning.
+  --no-schema        skip the JSON Schema checks. Without this flag the
+                     schemas are always run and a missing jsonschema package
+                     is a failure. A run with --no-schema says so in its
+                     summary and must not be used as a release gate.
+  --require-schema   accepted for compatibility; schema validation is
+                     required by default.
+  --print-schema-pins  print the constraint digests of the schema files
+                     (see SCHEMA_PINS) and exit.
   --schema-dir DIR   directory holding the *.schema.json files (default: the
                      directory of the framework file).
 
@@ -48,18 +53,21 @@ Exit code 0 when every check in scope is green, 1 otherwise. The validator
 never prints PASSED for a document that lacks the top-level structure or
 holds no tactics or indicators.
 
-Only the Python 3 standard library is required. The JSON Schema checks use
-the optional jsonschema package.
+The JSON Schema checks need the jsonschema package (pip install jsonschema).
+Everything else uses only the Python 3 standard library.
 """
 from __future__ import annotations
 
 import argparse
 import datetime
+import hashlib
 import importlib.util
 import json
 import math
 import re
+import shutil
 import sys
+import tempfile
 from pathlib import Path
 
 try:  # optional dependency
@@ -260,6 +268,7 @@ OVERLAY_REQUIRED_KEYS = (
 )
 OVERLAY_CONSTANTS = {
     "status": "experimental",
+    "validation_status": "unvalidated",
     "normative": False,
     "scope": "type_level",
     "not_a_risk_score": True,
@@ -306,22 +315,80 @@ CHECKS: dict[str, tuple[str, str]] = {
     "V38": ("non-finite number (NaN or Infinity)", "framework"),
     "V39": ("JSON Schema: framework.schema.json", "framework"),
     "V40": ("empty string or leading or trailing whitespace", "framework"),
+    "V50": ("actor category and label agree; matrix-scoped fields sit in their matrix", "framework"),
     "V13": ("type_band vs stored type_weight and floor", "overlay"),
     "V14": ("type_weight vs axes composite; axes and weight present and numeric", "overlay"),
     "V15": ("type_band_floor invalid or band below floor", "overlay"),
     "V20": ("axis_confidence complete, valid, and rule-derived", "overlay"),
     "V41": ("overlay document structure, constants, and version binding", "overlay"),
     "V42": ("indicator_scores keys equal the vocabulary's indicator ids", "overlay"),
-    "V43": ("tactic_priorities keys are tactic ids with valid values", "overlay"),
+    "V43": ("tactic_priorities has exactly one valid entry per tactic", "overlay"),
     "V44": ("axes to one decimal, weight to two decimals", "overlay"),
     "V45": ("rubric thresholds, base rates, and instance factors", "overlay"),
     "V46": ("JSON Schema: scoring-overlay.schema.json", "overlay"),
+    "V51": ("floored indicators equal rubric.type_band_floor_rule.floored_indicators", "overlay"),
     "V18": ("conditioned_priority below the type band", "records"),
     "V47": ("record band fidelity: indicator exists and type_band is the authored band", "records"),
     "V48": ("scored case record shape", "records"),
     "V49": ("coverage document", "coverage"),
 }
 SCHEMA_CHECKS = {"V39", "V46"}
+
+# Dash-like characters banned from conditioning_guidance.guidance: figure
+# dash, en dash, em dash, horizontal bar, minus sign.
+BANNED_DASHES = "\u2012\u2013\u2014\u2015\u2212"
+
+CATEGORY_LABELS = {
+    "lone_actor": "Lone Actor",
+    "insider": "Insider",
+    "criminal": "Criminal",
+    "corporate_espionage": "Corporate Espionage",
+    "ideological": "Ideological",
+    "nation_state": "Nation-State",
+    "customer_aggressor": "Customer/Client Aggressor",
+}
+# Sub-dimension fields that belong to one matrix only: (object kind, field) -> matrix.
+MATRIX_SCOPED_FIELDS = {
+    ("tactic", "target_identity_scope"): "person",
+    ("indicator", "target_identity"): "person",
+    ("countermeasure", "target_identity"): "person",
+    ("indicator", "facility_target_scope"): "facility",
+    ("indicator", "within_site_focus"): "facility",
+}
+
+# Constraint digests of the schema files. A digest covers every keyword of
+# the schema except annotations (description, title, default, $comment), so
+# loosening a required list, an enum, a pattern, or additionalProperties
+# changes it and fails the schema check. After an intended schema change,
+# run `validate.py --print-schema-pins` and paste the new values here in
+# the same commit; the diff of this table is the review record.
+SCHEMA_PINS = {
+    "framework.schema.json": "32190a59bbbff6283a1ca8e8",
+    "scoring-overlay.schema.json": "06250c754d6eabbb234d859f",
+    "coverage.schema.json": "ff6e4c1ce267d6a1fc6cdb98",
+}
+_ANNOTATIONS = ("description", "title", "default", "$comment")
+_NAME_MAPS = ("properties", "$defs", "patternProperties", "dependentSchemas", "dependentRequired")
+
+
+def _constraints(node, names: bool = False):
+    """Copy of a schema with annotation keywords removed. Inside a map of
+    names (properties, $defs) the keys are names, not keywords."""
+    if isinstance(node, dict):
+        out = {}
+        for key, value in node.items():
+            if not names and key in _ANNOTATIONS:
+                continue
+            out[key] = _constraints(value, (not names) and key in _NAME_MAPS)
+        return out
+    if isinstance(node, list):
+        return [_constraints(item) for item in node]
+    return node
+
+
+def schema_digest(schema) -> str:
+    canonical = json.dumps(_constraints(schema), sort_keys=True, ensure_ascii=True, separators=(",", ":"))
+    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()[:24]
 SCOPE_ORDER = ("framework", "overlay", "records", "coverage")
 
 
@@ -447,15 +514,12 @@ def schema_check(results: Results, check_id: str, schema_path: Path, instance,
                  require: bool, pointer: str | None = None, label: str = "") -> None:
     """Validate instance against a schema file (or one of its $defs)."""
     if jsonschema is None:
-        if require:
-            results.fail(
-                check_id,
-                schema_path.name,
-                "the jsonschema package is not importable and --require-schema is set; "
-                "install it (pip install jsonschema)",
-            )
-        else:
-            results.skipped[check_id] = "jsonschema is not installed"
+        results.fail(
+            check_id,
+            schema_path.name,
+            "the jsonschema package is not importable; install it (pip install jsonschema). "
+            "Schema validation is required unless --no-schema is passed explicitly",
+        )
         return
     try:
         schema = json.loads(schema_path.read_text(encoding="utf-8"))
@@ -467,6 +531,16 @@ def schema_check(results: Results, check_id: str, schema_path: Path, instance,
     except Exception as exc:  # jsonschema.SchemaError
         results.fail(check_id, schema_path.name, f"schema is not valid Draft 2020-12 ({str(exc)[:160]})")
         return
+    pinned = SCHEMA_PINS.get(schema_path.name)
+    digest = schema_digest(schema)
+    if pinned is not None and digest != pinned:
+        results.fail(
+            check_id,
+            schema_path.name,
+            f"schema constraint digest {digest} does not equal the pinned {pinned}: a required list, enum, "
+            f"pattern, or other constraint changed. If the change is intended, update SCHEMA_PINS in "
+            f"scripts/lint/validate.py (validate.py --print-schema-pins)",
+        )
     if pointer:
         schema = {"$schema": schema.get("$schema"), "$ref": f"#/$defs/{pointer}", "$defs": schema.get("$defs", {})}
     validator = jsonschema.Draft202012Validator(schema, format_checker=jsonschema.FormatChecker())
@@ -602,7 +676,7 @@ def check_framework(raw_text: str, schema_dir: Path | None, require_schema: bool
     if run_schema and schema_dir is not None:
         schema_check(results, "V39", schema_dir / "framework.schema.json", data, require_schema)
     elif not run_schema:
-        results.skipped["V39"] = "not run for this fixture"
+        results.skipped["V39"] = "schema checks switched off"
 
     fail = results.fail
     bibliography = as_dict(data.get("bibliography"))
@@ -638,6 +712,15 @@ def check_framework(raw_text: str, schema_dir: Path | None, require_schema: bool
         pid = profile.get("id")
         if not full(ACTOR_ID, pid):
             fail("V37", pid, "actor profile id does not match AP followed by three digits (001 or higher)")
+        category = profile.get("category")
+        if isinstance(category, str) and category in CATEGORY_LABELS:
+            if profile.get("category_label") != CATEGORY_LABELS[category]:
+                fail(
+                    "V50",
+                    pid,
+                    f"category_label {show(profile.get('category_label'))} does not match category "
+                    f"'{category}' (expected '{CATEGORY_LABELS[category]}')",
+                )
         if not isinstance(pid, str):
             continue
         if pid in profiles:
@@ -786,6 +869,13 @@ def check_framework(raw_text: str, schema_dir: Path | None, require_schema: bool
         if "escalation_priority" in as_dict(tactic.get("assessment_guidance")):
             fail("V29", tid, "assessment_guidance.escalation_priority belongs in the overlay's tactic_priorities")
 
+        def scoped_fields(kind, object_id, obj, _matrix=matrix_key):
+            # V50 a matrix-scoped sub-dimension field outside its matrix.
+            for (scoped_kind, field), home in MATRIX_SCOPED_FIELDS.items():
+                if scoped_kind == kind and field in obj and _matrix != home:
+                    fail("V50", object_id, f"'{field}' is a {home}-matrix field and may not appear in the {_matrix} matrix")
+
+        scoped_fields("tactic", tid, tactic)
         source_refs(tid, tactic)
 
         # V32 related_tactics.
@@ -851,6 +941,7 @@ def check_framework(raw_text: str, schema_dir: Path | None, require_schema: bool
                 continue
             iid = child_common("indicator", "IND", ind, seen_ind, "V02")
             phase_relevance(iid, ind)
+            scoped_fields("indicator", iid, ind)
             for field in RETIRED_INDICATOR_FIELDS:
                 if field in ind:
                     fail("V29", iid, f"'{field}' is a scoring field; scores live in the overlay, not the vocabulary")
@@ -872,6 +963,7 @@ def check_framework(raw_text: str, schema_dir: Path | None, require_schema: bool
                 continue
             cid = child_common("countermeasure", "CM", cm, seen_cm, "V03")
             phase_relevance(cid, cm)
+            scoped_fields("countermeasure", cid, cm)
 
             def dangling_comp(ref, _cid=cid):
                 if ref.startswith("IND-"):
@@ -952,6 +1044,8 @@ def check_framework(raw_text: str, schema_dir: Path | None, require_schema: bool
         date = entry.get("date")
         if not full(BIB_DATE, date):
             fail("V36", key, f"date {show(date)} is not YYYY, YYYY-MM, YYYY-MM-DD, YYYY-YYYY, or n.d.")
+        elif re.fullmatch(r"[0-9]{4}-[0-9]{4}", date) and int(date[:4]) >= int(date[5:]):
+            fail("V36", key, f"date {show(date)} is a year range that does not run forward")
         elif ISO_DATE.fullmatch(date):
             try:
                 datetime.date.fromisoformat(date)
@@ -1085,8 +1179,8 @@ def _check_conditioning_guidance(fail, ind_id, ind) -> None:
     else:
         if len(guidance) > 420:
             fail("V22", ind_id, f"guidance is {len(guidance)} chars; max is 420")
-        if "\u2014" in guidance or "\u2013" in guidance:
-            fail("V22", ind_id, "guidance contains an em or en dash")
+        if any(ch in guidance for ch in BANNED_DASHES):
+            fail("V22", ind_id, "guidance contains an em or en dash or another dash-like character")
 
 
 def _check_modality(fail, ind_id, ind) -> None:
@@ -1196,7 +1290,7 @@ def check_overlay(results: Results, raw_text: str, ctx: Context, schema_dir: Pat
     if run_schema and schema_dir is not None:
         schema_check(results, "V46", schema_dir / "scoring-overlay.schema.json", overlay, require_schema)
     elif not run_schema:
-        results.skipped["V46"] = "not run for this fixture"
+        results.skipped["V46"] = "schema checks switched off"
 
     # V41 structure, constants, version binding.
     for key in OVERLAY_REQUIRED_KEYS:
@@ -1208,8 +1302,6 @@ def check_overlay(results: Results, raw_text: str, ctx: Context, schema_dir: Pat
     for key, expected in OVERLAY_CONSTANTS.items():
         if key in overlay and (overlay[key] != expected or type(overlay[key]) is not type(expected)):
             fail("V41", "overlay", f"{key} must be {json.dumps(expected)} (found {show(overlay[key])})")
-    if "validation_status" in overlay and overlay["validation_status"] not in ("unvalidated", "validated"):
-        fail("V41", "overlay", f"validation_status {show(overlay['validation_status'])} must be unvalidated or validated")
     if "overlay_version" in overlay and not full(SEMVER, overlay["overlay_version"]):
         fail("V41", "overlay", f"overlay_version {show(overlay['overlay_version'])} is not SemVer")
     applies = overlay.get("applies_to_framework_version")
@@ -1261,6 +1353,8 @@ def check_overlay(results: Results, raw_text: str, ctx: Context, schema_dir: Pat
                 fail("V43", tid, "tactic_priorities key is not a tactic id of the vocabulary")
             if not isinstance(value, str) or value not in TACTIC_PRIORITY_VALUES:
                 fail("V43", tid, f"priority {show(value)} is not Urgent, Immediate, Priority, or Routine")
+        for tid in sorted(ctx.tactic_ids - set(priorities)):
+            fail("V43", tid, "tactic of the vocabulary has no tactic_priorities entry")
 
     # V42 key set.
     scores = overlay.get("indicator_scores")
@@ -1278,6 +1372,19 @@ def check_overlay(results: Results, raw_text: str, ctx: Context, schema_dir: Pat
         fail("V42", iid, "score entry names no indicator of the vocabulary")
     if len(extra) > 20:
         fail("V42", "indicator_scores", f"{len(extra) - 20} further unknown indicator(s) not shown")
+
+    # V51 the floored set must equal the published list.
+    listed = as_dict(rubric.get("type_band_floor_rule")).get("floored_indicators")
+    carrying = {iid for iid, entry in scores.items() if isinstance(entry, dict) and "type_band_floor" in entry}
+    if not isinstance(listed, list) or not all(isinstance(item, str) for item in listed):
+        fail("V51", "rubric.type_band_floor_rule.floored_indicators", "missing or not a list of indicator ids")
+    else:
+        if len(set(listed)) != len(listed):
+            fail("V51", "rubric.type_band_floor_rule.floored_indicators", "list repeats an indicator id")
+        for iid in sorted(carrying - set(listed)):
+            fail("V51", iid, "carries a type_band_floor but is not in rubric.type_band_floor_rule.floored_indicators")
+        for iid in sorted(set(listed) - carrying):
+            fail("V51", iid, "is in rubric.type_band_floor_rule.floored_indicators but carries no type_band_floor")
 
     derive, _source = load_confidence_rule()
 
@@ -1486,25 +1593,28 @@ def check_record(results: Results, name: str, record, ctx: Context, overlay: dic
 
 
 def check_records_dir(results: Results, records_dir: Path, ctx: Context, overlay,
-                      schema_dir: Path | None, require_schema: bool) -> int:
-    """Check every JSON file in the directory. Return the file count."""
+                      schema_dir: Path | None, require_schema: bool, run_schema: bool = True) -> int:
+    """Check every JSON file under the directory, subdirectories included,
+    matching the .json suffix in any letter case. Return the file count."""
     if not records_dir.is_dir():
         results.fail("V48", str(records_dir), "records directory does not exist")
         return 0
-    files = sorted(p for p in records_dir.iterdir() if p.suffix == ".json" and p.is_file())
+    files = sorted(p for p in records_dir.rglob("*") if p.suffix.lower() == ".json" and p.is_file())
     if not files:
         results.fail("V48", str(records_dir), "records directory holds no JSON file; nothing was checked")
         return 0
-    for path in files:
+    for file_path in files:
+        path = file_path
+        name = file_path.relative_to(records_dir).as_posix()
         try:
             record, duplicates, nonfinite = load_document(path.read_text(encoding="utf-8"))
         except (OSError, ValueError, RecursionError) as exc:
-            results.fail("V48", path.name, f"file is not readable JSON ({exc.__class__.__name__})")
+            results.fail("V48", name, f"file is not readable JSON ({exc.__class__.__name__})")
             continue
         for key in duplicates:
-            results.fail("V48", path.name, f"JSON object key '{key}' appears more than once")
-        check_non_finite(results, nonfinite, record, path.name)
-        check_record(results, path.name, record, ctx, overlay, schema_dir, require_schema)
+            results.fail("V48", name, f"JSON object key '{key}' appears more than once")
+        check_non_finite(results, nonfinite, record, name)
+        check_record(results, name, record, ctx, overlay, schema_dir, require_schema, run_schema)
     return len(files)
 
 
@@ -1532,16 +1642,21 @@ def check_coverage(results: Results, name: str, document, ctx: Context,
         if key not in ("cm_deployment_record", "coverage_derivation"):
             fail("V49", name, f"unknown top-level key '{key}'")
 
-    def real_date(where, value):
+    today = datetime.date.today()
+
+    def real_date(where, value, allow_future=False):
         if value is None:
             return
         if not full(ISO_DATE, value):
             fail("V49", name, f"{where} {show(value)} is not a YYYY-MM-DD date")
             return
         try:
-            datetime.date.fromisoformat(value)
+            parsed = datetime.date.fromisoformat(value)
         except ValueError:
             fail("V49", name, f"{where} {show(value)} is not a real calendar date")
+            return
+        if not allow_future and parsed > today:
+            fail("V49", name, f"{where} {value} is in the future")
 
     record = document.get("cm_deployment_record")
     if record is not None:
@@ -1571,11 +1686,21 @@ def check_coverage(results: Results, name: str, document, ctx: Context,
             if not isinstance(indicator_id, str) or indicator_id not in ctx.indicator_matrix:
                 fail("V49", name, f"coverage_derivation indicator_id {show(indicator_id)} is not an indicator of the vocabulary")
             real_date("coverage_derivation.derivation_date", derivation.get("derivation_date"))
-            real_date("coverage_derivation.disposition_review_date", derivation.get("disposition_review_date"))
+            real_date("coverage_derivation.disposition_review_date", derivation.get("disposition_review_date"), allow_future=True)
             if ("disposition" in derivation) != ("disposition_review_date" in derivation):
                 fail("V49", name, "disposition and disposition_review_date must appear together")
             if derivation.get("coverage_band") == "exposed" and "disposition" not in derivation:
                 fail("V49", name, "an exposed derivation requires a disposition")
+            if isinstance(record, dict):
+                # Rules that apply when one document carries both parts.
+                if derivation.get("protected_target") != record.get("protected_target"):
+                    fail("V49", name, "coverage_derivation protected_target differs from the deployment record's protected_target")
+                contributing = [
+                    d for d in as_list(record.get("deployments"))
+                    if isinstance(d, dict) and d.get("status") in ("deployed", "partial")
+                ]
+                if derivation.get("coverage_band") == "covered" and not contributing:
+                    fail("V49", name, "coverage_band is covered but the deployment record holds no deployed or partial countermeasure")
             for cm_id in as_list(derivation.get("missing_critical_path")):
                 if not isinstance(cm_id, str) or cm_id not in ctx.cm_ids:
                     fail("V49", name, f"missing_critical_path {show(cm_id)} is not a countermeasure of the vocabulary")
@@ -1621,7 +1746,7 @@ def print_report(results: Results, scopes) -> bool:
         print(
             f"⚠ {len(skipped)} check(s) skipped ({', '.join(skipped)}): "
             f"{'; '.join(sorted(set(results.skipped[c] for c in skipped)))}. "
-            f"Run with --require-schema in CI."
+            f"This run is not a release gate."
         )
     if all_green:
         print(f"✓ validate PASSED: {green} of {len(ids)} checks green, {len(skipped)} skipped, 0 failed.")
@@ -1800,7 +1925,13 @@ class Harness:
         return results
 
 
+SCHEMA_TARGETS = {
+    "framework_schema": ("framework", "framework.schema.json"),
+    "overlay_schema": ("overlay", "scoring-overlay.schema.json"),
+}
 TARGET_SCOPES = {
+    "framework_schema": ("framework",),
+    "overlay_schema": ("framework", "overlay"),
     "framework": ("framework",),
     "overlay": ("framework", "overlay"),
     "record": ("framework", "overlay", "records"),
@@ -1823,13 +1954,41 @@ def run_fixture(harness: Harness, fixture: dict):
     if expect == "fail" and CHECKS[expected][1] not in TARGET_SCOPES[target]:
         return "fail", [], f"expected_check {expected} does not run for target '{target}'"
     scopes = TARGET_SCOPES[target]
-    needs_schema = expected in SCHEMA_CHECKS or expect == "pass" or bool(fixture.get("schema"))
-    if expected in SCHEMA_CHECKS and not harness.have_schema and not harness.require_schema:
-        return "skip", [], "jsonschema is not installed; schema fixture not run"
+    needs_schema = expected in SCHEMA_CHECKS or expect == "pass" or target in ("record", "coverage")
+    if expect == "fail" and not (isinstance(fixture.get("expected_message"), str) and fixture["expected_message"]):
+        return "fail", [], "a negative fixture must name an expected_message (text one failure line must contain)"
 
     framework_raw = harness.framework_raw
     overlay_raw = harness.overlay_raw
     document = None
+    if target in SCHEMA_TARGETS:
+        # Harness self-test: mutate a SCHEMA file and require the schema
+        # check to notice, with the canonical documents left untouched.
+        doc_target, schema_name = SCHEMA_TARGETS[target]
+        tmp = Path(tempfile.mkdtemp(prefix="tm-schema-fixture-"))
+        try:
+            for schema_file in harness.schema_dir.glob("*.schema.json"):
+                shutil.copy(schema_file, tmp / schema_file.name)
+            try:
+                mutated = apply_mutations((tmp / schema_name).read_text(encoding="utf-8"), fixture.get("mutations"))
+            except (MutationError, KeyError, TypeError, ValueError) as exc:
+                return "fail", [], f"mutation did not apply: {exc}"
+            (tmp / schema_name).write_text(mutated, encoding="utf-8")
+            original_dir = harness.schema_dir
+            harness.schema_dir = tmp
+            try:
+                results = harness.run(doc_target, framework_raw, overlay_raw, None, True)
+            finally:
+                harness.schema_dir = original_dir
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+        fired = results.fired(scopes)
+        if expected not in fired:
+            return "fail", fired, f"expected {expected} did not fire on the mutated schema"
+        needle = fixture["expected_message"]
+        if not any(needle in line for line in results.failures[expected]):
+            return "fail", fired, f"{expected} fired but no failure line contains {needle!r}"
+        return "pass", fired, "ok"
     try:
         if target == "framework":
             framework_raw = apply_mutations(framework_raw, fixture.get("mutations"))
@@ -1895,6 +2054,12 @@ def run_fixture_harness(framework_raw: str, overlay_raw: str | None, fixtures_di
         if name not in names:
             problems.append(f"fixture file {name} is not listed in the manifest")
 
+    if jsonschema is None:
+        print(
+            "✗ fixture harness FAILED: the jsonschema package is not importable. The harness cannot prove "
+            "the schema fixtures without it and does not run in part (pip install jsonschema)."
+        )
+        return 1
     harness = Harness(framework_raw, overlay_raw, schema_dir, require_schema)
 
     # Baseline: the canonical documents must pass on their own, otherwise a
@@ -2006,7 +2171,11 @@ def main(argv=None) -> int:
     parser.add_argument("--coverage", help="path to a coverage document")
     parser.add_argument("--fixtures", help="directory of fixtures; runs the fixture harness")
     parser.add_argument("--require-schema", action="store_true",
-                        help="fail when the jsonschema package is not importable")
+                        help="accepted for compatibility; schema validation is required by default")
+    parser.add_argument("--no-schema", action="store_true",
+                        help="skip the JSON Schema checks (not a release gate)")
+    parser.add_argument("--print-schema-pins", action="store_true",
+                        help="print the constraint digests of the schema files and exit")
     parser.add_argument("--schema-dir", help="directory holding the *.schema.json files")
     args = parser.parse_args(argv)
 
@@ -2019,6 +2188,18 @@ def main(argv=None) -> int:
     if framework_raw is None:
         return 1
     schema_dir = Path(args.schema_dir) if args.schema_dir else framework_path.resolve().parent
+    run_schema = not args.no_schema
+    if args.no_schema and args.require_schema:
+        print("✗ validate: --no-schema and --require-schema contradict each other", file=sys.stderr)
+        return 1
+    if args.print_schema_pins:
+        for schema_name in SCHEMA_PINS:
+            try:
+                digest = schema_digest(json.loads((schema_dir / schema_name).read_text(encoding="utf-8")))
+            except (OSError, ValueError) as exc:
+                digest = f"unreadable ({exc.__class__.__name__})"
+            print(f'    "{schema_name}": "{digest}",')
+        return 0
 
     overlay_raw = None
     if args.overlay:
@@ -2032,11 +2213,14 @@ def main(argv=None) -> int:
                 sibling = framework_path.resolve().parent / "scoring-overlay.json"
                 if sibling.is_file():
                     overlay_raw = read_text(sibling, "scoring overlay")
-            return run_fixture_harness(framework_raw, overlay_raw, Path(args.fixtures), schema_dir, args.require_schema)
+            if args.no_schema:
+                print("✗ validate: the fixture harness does not run with --no-schema", file=sys.stderr)
+                return 1
+            return run_fixture_harness(framework_raw, overlay_raw, Path(args.fixtures), schema_dir, True)
 
         scopes = ["framework"]
         try:
-            results, ctx, _data = check_framework(framework_raw, schema_dir, args.require_schema)
+            results, ctx, _data = check_framework(framework_raw, schema_dir, True, run_schema)
         except (ValueError, RecursionError) as exc:
             print(f"✗ validate: framework.json is not valid JSON ({exc})", file=sys.stderr)
             return 1
@@ -2048,7 +2232,7 @@ def main(argv=None) -> int:
                 results.fail("V41", "overlay", "not checked: the vocabulary is too broken to check the overlay against")
             else:
                 try:
-                    overlay = check_overlay(results, overlay_raw, ctx, schema_dir, args.require_schema)
+                    overlay = check_overlay(results, overlay_raw, ctx, schema_dir, True, run_schema)
                 except (ValueError, RecursionError) as exc:
                     results.fail("V41", "overlay", f"overlay is not valid JSON ({exc})")
                 _derive, source = load_confidence_rule()
@@ -2058,7 +2242,7 @@ def main(argv=None) -> int:
                 if not isinstance(overlay, dict):
                     results.fail("V48", args.records, "not checked: the overlay is not usable")
                 else:
-                    count = check_records_dir(results, Path(args.records), ctx, overlay, schema_dir, args.require_schema)
+                    count = check_records_dir(results, Path(args.records), ctx, overlay, schema_dir, True, run_schema)
                     results.notes.append(f"scored case records checked: {count}")
 
         if args.coverage:
@@ -2078,7 +2262,7 @@ def main(argv=None) -> int:
                 if not ctx.usable:
                     results.fail("V49", args.coverage, "not checked: the vocabulary is too broken to check against")
                 else:
-                    check_coverage(results, Path(args.coverage).name, document, ctx, schema_dir, args.require_schema)
+                    check_coverage(results, Path(args.coverage).name, document, ctx, schema_dir, True, run_schema)
 
         return 0 if print_report(results, scopes) else 1
     except Exception as exc:  # fail closed, with one readable line

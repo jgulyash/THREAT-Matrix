@@ -2,6 +2,7 @@
   "id": "F134",
   "target": "overlay",
   "expected_check": "V46",
+  "expected_message": "Additional properties are not allowed",
   "description": "Add an unknown key inside the rubric; only the closed overlay schema rejects it.",
   "mutations": [
     {

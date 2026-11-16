@@ -1,6 +1,7 @@
 {
   "id": "F083",
   "expected_check": "V35",
+  "expected_message": "omits the parent tactic's phase",
   "description": "Set a countermeasure's phase_relevance so it omits the parent tactic's phase.",
   "mutations": [
     {

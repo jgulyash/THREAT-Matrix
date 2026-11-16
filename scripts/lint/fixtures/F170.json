@@ -1,0 +1,14 @@
+{
+  "id": "F170",
+  "expected_check": "V39",
+  "expected_message": "is not one of",
+  "audit_findings": "N8",
+  "description": "Set a countermeasure domain outside the enum.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].countermeasures.[id=CM-0101-01].domain",
+      "value": "magic"
+    }
+  ]
+}

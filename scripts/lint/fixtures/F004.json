@@ -1,6 +1,7 @@
 {
   "id": "F004",
   "expected_check": "V04",
+  "expected_message": "response protocol id is not unique",
   "description": "Give a second response protocol an id that already exists.",
   "mutations": [
     {

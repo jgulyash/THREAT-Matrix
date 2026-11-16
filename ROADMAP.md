@@ -44,10 +44,10 @@ Four steps, in this order. Each depends on the one before.
 **Status: done on this branch. Not released.**
 
 - The schema is closed and tightened (3.0.0): identifier grammar, bibliography keys, URLs limited to http and https, required structures, lifecycle rules.
-- The validator runs 49 checks across the vocabulary, the overlay, scored records, and coverage documents, and runs the JSON Schemas themselves. 157 fixtures prove that each check rejects the defect it is for.
+- The validator runs 51 checks across the vocabulary, the overlay, scored records, and coverage documents. It runs the JSON Schemas themselves, requires them, and pins their constraints. 199 fixtures prove that each check rejects the defect it is for.
 - The lifecycle contract is gated: required fields per state, supersession targets must be active with no cycles, and only actor profiles may be reserved.
-- A committed ID manifest makes the no-reuse rule checkable, and it is checked on every change.
-- The local hook checks staged content. Continuous integration runs every gate on `main`, `v1-build`, and `v3-design`.
+- A committed ID manifest makes the no-reuse rule checkable. On every commit through the hook, and on every push and pull request, it is compared with a committed baseline of the published 1.7.0 identifiers and with the previous manifest.
+- The local hook checks staged content and requires schema validation. Continuous integration runs every gate on `main`, `v1-build`, and `v3-design`.
 - The migration guide is written against the published 2.1.0 document and tested on it, with a migration tool and a flat export.
 
 Still to do: announce and tag the release under the 30-day rule.

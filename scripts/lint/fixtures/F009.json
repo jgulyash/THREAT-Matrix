@@ -1,6 +1,7 @@
 {
   "id": "F009",
   "expected_check": "V08",
+  "expected_message": "coordinates_with",
   "description": "Add a coordinates_with reference that resolves to no response protocol.",
   "mutations": [
     {

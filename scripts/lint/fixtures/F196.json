@@ -1,0 +1,13 @@
+{
+  "id": "F196",
+  "expected_check": "V36",
+  "expected_message": "does not run forward",
+  "description": "Give a bibliography entry a year range that runs backward.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "bibliography.FEIN-VOSSEKUIL-1999.date",
+      "value": "2021-2020"
+    }
+  ]
+}

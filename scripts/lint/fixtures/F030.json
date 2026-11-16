@@ -1,6 +1,7 @@
 {
   "id": "F030",
   "expected_check": "V25",
+  "expected_message": "retired 2.x value",
   "description": "Set evidence_basis to the retired 2.x value operational_primary.",
   "mutations": [
     {

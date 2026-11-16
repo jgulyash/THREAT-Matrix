@@ -1,0 +1,16 @@
+{
+  "id": "F192",
+  "expected_check": "V50",
+  "expected_message": "person-matrix field",
+  "audit_findings": "F12",
+  "description": "Put the person-matrix field target_identity on a facility indicator.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.facility.tactics.[id=TF0102].indicators.[id=IND-F0102-01].target_identity",
+      "value": [
+        "named_individual"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "F166",
+  "expected_check": "V39",
+  "expected_message": "'category' is a required property",
+  "audit_findings": "N8",
+  "description": "Remove an indicator's required category.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].category"
+    }
+  ]
+}

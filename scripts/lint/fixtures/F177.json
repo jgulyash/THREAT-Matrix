@@ -1,0 +1,14 @@
+{
+  "id": "F177",
+  "expected_check": "V39",
+  "expected_message": "is not one of",
+  "audit_findings": "N8",
+  "description": "Set an actor association relevance outside the enum.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].actor_associations.[actor_id=AP001].relevance",
+      "value": "extreme"
+    }
+  ]
+}

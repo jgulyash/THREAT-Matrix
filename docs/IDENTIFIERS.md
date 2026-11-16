@@ -26,7 +26,7 @@ The exact grammar is the pattern in the schema (`docs/data/framework.schema.json
 
 A bibliography key usually ends in a year, but the pattern does not require one, and 9 of the 120 keys have none. A bibliography key may not have the shape of an indicator, countermeasure, or response-protocol identifier.
 
-Identifiers are matched exactly. A value with trailing whitespace or a trailing newline is not a valid identifier. The validator enforces this with an exact full match; see the note on trailing newlines in [METHODOLOGY.md](./METHODOLOGY.md#5-review-process-and-gates).
+Identifiers are matched exactly. A value with trailing whitespace or a trailing newline is not a valid identifier. Both the schemas and the validator reject one; see the note on trailing newlines in [METHODOLOGY.md](./METHODOLOGY.md#5-review-process-and-gates).
 
 ### The matrix letter
 
@@ -141,7 +141,17 @@ This fails unless the manifest describes the document exactly. It detects:
 - an identifier in a different namespace from the one the manifest records;
 - a malformed or unsorted manifest, or a version that does not match the document.
 
-With `--baseline OLDER_MANIFEST` it also compares against an older manifest and fails if any older identifier was dropped, reused, or moved to another namespace. Continuous integration runs the plain check on every push and, on pull requests, the baseline comparison against the base branch's manifest once that branch has one. Compared against a manifest generated from the published 1.7.0 document, the 2.0.0 manifest shows no identifier dropped, reused, or moved.
+With `--baseline OLDER_MANIFEST`, which may be given more than once, it also compares the document itself against each older manifest. It fails if an identifier in the baseline is missing from the document without a `removed` record that gives a reason, if a baseline identifier has moved to another namespace, or if an identifier the baseline lists as reserved or removed is live.
+
+`docs/data/baselines/id-manifest-1.7.0.json` is the committed baseline of the identifiers in the published 1.7.0 release. The hook and continuous integration always pass it, together with the previous manifest (the previous commit's in the hook and on a push, the base branch's on a pull request):
+
+```
+python3 scripts/lint/id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json --baseline docs/data/baselines/id-manifest-1.7.0.json
+```
+
+Against that baseline, the 2.0.0 document shows no identifier dropped, reused, or moved.
+
+Two limits. Run without `--baseline`, the check compares only the document and the current manifest, so it cannot see an identifier that was deleted together with a regenerated manifest; that is why every automated call passes a baseline. And identifiers added after 1.7.0 are protected by the comparison with the previous manifest, not by the 1.7.0 file, so a force push that rewrites both the document and the manifest can evade the push comparison for those identifiers until a baseline file is committed for a later release.
 
 ### Writing
 
@@ -155,7 +165,7 @@ python3 scripts/lint/id-manifest.py --write docs/data/id-manifest.json --previou
 
 - **Same identifier, different content.** The manifest records identifiers, not content. If an object's text were replaced with unrelated content under the same identifier, the manifest would not show it. Keeping an identifier's meaning stable is an obligation on the author and reviewer, visible in the CHANGELOG and the diff.
 - **Bibliography keys.** Bibliography keys are not in the manifest. A key can be removed when its entry is retired, and one was, in content 1.7.1 (recorded in the CHANGELOG). The gates do check that every `source_refs` entry resolves to a bibliography key and that every bibliography entry is cited.
-- **History before the first manifest.** The first committed manifest is for content 2.0.0.
+- **History before 1.7.0.** The oldest committed inventory is the baseline for the published 1.7.0 release. Nothing checks identifiers against releases before it.
 
 ## Expected rate of change
 

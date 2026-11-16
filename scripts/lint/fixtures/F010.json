@@ -1,6 +1,7 @@
 {
   "id": "F010",
   "expected_check": "V09",
+  "expected_message": "is not a bibliography key",
   "description": "Add a source_refs entry that is not a bibliography key.",
   "mutations": [
     {

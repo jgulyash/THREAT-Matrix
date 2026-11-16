@@ -1,6 +1,7 @@
 {
   "id": "F102",
   "expected_check": "V39",
+  "expected_message": "is a required property",
   "audit_findings": "F05",
   "description": "Empty a tactic's assessment_guidance; the schema requires all six parts when the block is present.",
   "mutations": [

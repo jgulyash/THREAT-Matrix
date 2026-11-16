@@ -1,0 +1,14 @@
+{
+  "id": "F183",
+  "target": "overlay",
+  "expected_check": "V46",
+  "expected_message": "'demotion_doctrine' is a required property",
+  "audit_findings": "N8",
+  "description": "Remove a required part of instance_conditioning.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "instance_conditioning.demotion_doctrine"
+    }
+  ]
+}

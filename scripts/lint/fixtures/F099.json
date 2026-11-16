@@ -1,6 +1,7 @@
 {
   "id": "F099",
   "expected_check": "V39",
+  "expected_message": "is a required property",
   "audit_findings": "F05",
   "description": "Empty informs_axes on an indicator; the schema requires all six axes when the block is present.",
   "mutations": [

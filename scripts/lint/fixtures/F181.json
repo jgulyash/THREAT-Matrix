@@ -1,0 +1,14 @@
+{
+  "id": "F181",
+  "target": "overlay",
+  "expected_check": "V46",
+  "expected_message": "'composite_math' is a required property",
+  "audit_findings": "N8",
+  "description": "Remove a required rubric part.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "rubric.composite_math"
+    }
+  ]
+}

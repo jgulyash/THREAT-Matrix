@@ -1,0 +1,20 @@
+{
+  "id": "F158",
+  "target": "overlay",
+  "expected_check": "V51",
+  "expected_message": "is not in rubric.type_band_floor_rule.floored_indicators",
+  "audit_findings": "N1",
+  "description": "Fabricate a floor: add type_band_floor critical to an unfloored medium indicator and raise its band to critical.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "indicator_scores.IND-0101-01.type_band_floor",
+      "value": "critical"
+    },
+    {
+      "op": "set",
+      "path": "indicator_scores.IND-0101-01.type_band",
+      "value": "critical"
+    }
+  ]
+}

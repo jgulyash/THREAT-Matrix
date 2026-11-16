@@ -1,6 +1,7 @@
 {
   "id": "F069",
   "expected_check": "V30",
+  "expected_message": "actor profile id is not unique",
   "audit_findings": "F08 S03",
   "description": "Give a second actor profile an id that already exists.",
   "mutations": [

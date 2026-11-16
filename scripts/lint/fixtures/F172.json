@@ -1,0 +1,14 @@
+{
+  "id": "F172",
+  "expected_check": "V39",
+  "expected_message": "is not one of",
+  "audit_findings": "N8",
+  "description": "Set a response protocol priority outside the enum.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].response_protocols.[id=RP-0101-01].priority",
+      "value": "whenever"
+    }
+  ]
+}

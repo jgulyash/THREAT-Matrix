@@ -24,7 +24,7 @@ The THREAT Matrix is changing what it says it is.
 
 ## What breaks
 
-Schema 3.0.0 is a MAJOR release. A document that validates against schema 2.1.0 does not validate against 3.0.0. The published 1.7.0 document produces 1,596 schema errors against it. The breaking changes:
+Schema 3.0.0 is a MAJOR release. A document that validates against schema 2.1.0 does not validate against 3.0.0. The published 1.7.0 document fails it at 1,596 places. The breaking changes:
 
 1. **Scores leave the vocabulary.** The five indicator score fields, the per-tactic priority, the rubric, and the case-level scoring rules move to `docs/data/scoring-overlay.json` under new names.
 2. **`compensates_for` is split.** It now holds countermeasure identifiers only. Indicator targets move to a new `mitigates` relation. Every `mitigates` edge is currently untyped (`unreviewed`).
@@ -39,9 +39,9 @@ No identifier is renamed, renumbered, or removed.
 
 ## What to do
 
-The migration guide lists every change with the reason, the remediation, and a before and after example: [docs/migration/2.1-to-3.0.md](./2.1-to-3.0.md).
+The migration guide lists every change with the reason, the remediation, and a before and after example: [docs/migration/2.1-to-3.0.md](../docs/migration/2.1-to-3.0.md).
 
-A migration tool, `scripts/migrate/2.1-to-3.0.py`, performs the shape changes. It was tested on the published 1.7.0 document. It takes that document from 1,596 schema errors to 5, and lists the remaining work: 89 values that are content defects in the published document, each with a remediation. With those corrected, every gate passes. The tool does not review or validate content, and moving a score into the overlay does not validate it. The test is recorded in [docs/migration/3.0.0-validation-report.md](./3.0.0-validation-report.md).
+A migration tool, `scripts/migrate/2.1-to-3.0.py`, performs the shape changes. It was tested on the published 1.7.0 document. It takes that document from 1,596 failing places to 5 schema errors, and lists the remaining work, each item with a remediation: 91 values that are content defects in the published document. With those corrected, the four gates that apply to a migrated document pass. The tool does not review or validate content, and moving a score into the overlay does not validate it. The test is recorded in [docs/migration/3.0.0-validation-report.md](../docs/migration/3.0.0-validation-report.md).
 
 ## Timing
 

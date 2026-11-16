@@ -29,7 +29,7 @@
         "protected_target": {
           "type": "string",
           "minLength": 1,
-          "pattern": "^\\S([\\s\\S]*\\S)?$",
+          "pattern": "^\\S([\\s\\S]*\\S)?$", "not": { "pattern": "^\\s|\\s$" },
           "description": "Consumer-side reference to the protected target this record covers (a role, site, system, or asset class; never a named private individual in the published artifact sense)."
         },
         "deployments": {
@@ -43,13 +43,13 @@
         "basis": {
           "type": "string",
           "minLength": 1,
-          "pattern": "^\\S([\\s\\S]*\\S)?$",
+          "pattern": "^\\S([\\s\\S]*\\S)?$", "not": { "pattern": "^\\s|\\s$" },
           "description": "How this record was compiled: survey, audit, physical walkdown."
         },
         "reviewed": {
           "type": "string",
           "format": "date",
-          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$",
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$", "not": { "pattern": "\\s" },
           "description": "Date of the last whole-record review."
         }
       }
@@ -64,7 +64,7 @@
       "properties": {
         "cm_id": {
           "type": "string",
-          "pattern": "^CM-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$",
+          "pattern": "^CM-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$", "not": { "pattern": "\\s" },
           "description": "A framework countermeasure id; the enumeration is the framework's countermeasure catalog."
         },
         "status": {
@@ -82,7 +82,7 @@
           "items": {
             "type": "string",
             "minLength": 1,
-            "pattern": "^\\S([\\s\\S]*\\S)?$"
+            "pattern": "^\\S([\\s\\S]*\\S)?$", "not": { "pattern": "^\\s|\\s$" }
           },
           "description": "Structured scope: the target classes or zones this deployment actually reaches (replaces free-text-only scoping so a mis-scoped control is visible to the derivation). A deployment whose applies_to does not reach the assessed target does not contribute to that target's coverage."
         },
@@ -93,7 +93,7 @@
         "verified": {
           "type": "string",
           "format": "date",
-          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$",
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$", "not": { "pattern": "\\s" },
           "description": "Date the control was last verified OPERATIONAL (not merely procured). A deployment with no verified date, or one older than the staleness window (default 12 months) at derivation time, is treated as unverified and contributes at most partial coverage. The staleness window guards the false-covered failure: verify-once must not read as covered forever."
         }
       }
@@ -113,11 +113,11 @@
         "protected_target": {
           "type": "string",
           "minLength": 1,
-          "pattern": "^\\S([\\s\\S]*\\S)?$"
+          "pattern": "^\\S([\\s\\S]*\\S)?$", "not": { "pattern": "^\\s|\\s$" }
         },
         "indicator_id": {
           "type": "string",
-          "pattern": "^IND-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$"
+          "pattern": "^IND-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$", "not": { "pattern": "\\s" }
         },
         "coverage_band": {
           "type": "string",
@@ -132,11 +132,11 @@
         "derivation_date": {
           "type": "string",
           "format": "date",
-          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$", "not": { "pattern": "\\s" }
         },
         "framework_version": {
           "type": "string",
-          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$", "not": { "pattern": "\\s" },
           "description": "The framework content version whose mitigates relation this derivation ran against; the audit line cites it."
         },
         "oldest_input_age_months": {
@@ -149,7 +149,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "pattern": "^CM-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$"
+            "pattern": "^CM-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$", "not": { "pattern": "\\s" }
           },
           "description": "When critical-path dominance drives the band to exposed, the absent countermeasures that drove it: the gap list the posture decision documents."
         },
@@ -166,7 +166,7 @@
         "disposition_review_date": {
           "type": "string",
           "format": "date",
-          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$",
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$", "not": { "pattern": "\\s" },
           "description": "REQUIRED alongside disposition, and only alongside it (enforced by dependentRequired): when the disposition is next reviewed."
         }
       },

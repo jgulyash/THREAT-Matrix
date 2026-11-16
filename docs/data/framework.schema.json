@@ -30,7 +30,7 @@
     },
     "schema_version": {
       "type": "string",
-      "pattern": "^3\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+      "pattern": "^3\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$", "not": { "pattern": "\\s" },
       "description": "Semantic version of the schema this document targets. The pattern pins MAJOR 3, so a document declaring any other schema major is rejected while 3.x MINOR and PATCH values remain valid; scripts/lint/validate.py pins the exact value it was written for."
     },
     "license": {
@@ -142,7 +142,7 @@
         "v2_roadmap"
       ],
       "properties": {
-        "version": { "$ref": "#/$defs/prose" },
+        "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+(\\.[0-9]+)?$", "not": { "pattern": "\\s" } },
         "philosophy": { "$ref": "#/$defs/prose" },
         "vectors": {
           "type": "object",
@@ -178,6 +178,7 @@
     "bibliography": {
       "type": "object",
       "description": "Central citation library. Each key is a unique reference ID; each value is a bibliographic entry. Keys follow the docs/IDENTIFIERS.md convention: uppercase letters and digits in hyphen-separated segments, starting with a letter, at least two segments, and never the shape of an indicator, countermeasure, or response-protocol ID (pattern-enforced). scripts/lint/validate.py additionally requires every entry to be cited by at least one source_refs.",
+      "minProperties": 1,
       "propertyNames": { "$ref": "#/$defs/bibliography_key" },
       "additionalProperties": {
         "$ref": "#/$defs/bibliography_entry"
@@ -280,47 +281,53 @@
       "type": "string",
       "minLength": 1,
       "pattern": "^\\S([\\s\\S]*\\S)?$",
+      "not": { "pattern": "^\\s|\\s$" },
       "description": "A non-empty text value with no leading or trailing whitespace. Interior whitespace, including line breaks, is allowed."
     },
     "semver": {
       "type": "string",
-      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$", "not": { "pattern": "\\s" },
       "description": "A SemVer 2.0.0 version string (the grammar published at semver.org, ASCII digits only)."
     },
     "tactic_id": {
       "type": "string",
-      "pattern": "^T[MFOI]0[1-4](0[1-9]|[1-9][0-9])$",
+      "maxLength": 6,
+      "pattern": "^T[MFOI]0[1-4](0[1-9]|[1-9][0-9])$", "not": { "pattern": "\\s" },
       "description": "Tactic ID: T, a matrix letter (M person, F facility, O organization, I infrastructure), a two-digit phase (01 to 04), and a two-digit sequence starting at 01."
     },
     "indicator_id": {
       "type": "string",
-      "pattern": "^IND-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$",
+      "maxLength": 12,
+      "pattern": "^IND-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$", "not": { "pattern": "\\s" },
       "description": "Indicator ID: IND, an optional matrix letter (none for person), the parent tactic's four digits, and a two-digit sequence starting at 01."
     },
     "countermeasure_id": {
       "type": "string",
-      "pattern": "^CM-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$",
+      "maxLength": 11,
+      "pattern": "^CM-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$", "not": { "pattern": "\\s" },
       "description": "Countermeasure ID, same grammar as an indicator ID with the CM prefix."
     },
     "response_protocol_id": {
       "type": "string",
-      "pattern": "^RP-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$",
+      "maxLength": 11,
+      "pattern": "^RP-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$", "not": { "pattern": "\\s" },
       "description": "Response-protocol ID, same grammar as an indicator ID with the RP prefix."
     },
     "actor_profile_id": {
       "type": "string",
-      "pattern": "^AP(00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$",
+      "maxLength": 5,
+      "pattern": "^AP(00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$", "not": { "pattern": "\\s" },
       "description": "Actor profile ID: AP and a three-digit sequence starting at 001."
     },
     "bibliography_key": {
       "type": "string",
       "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$",
-      "not": { "pattern": "^(IND|CM|RP)-[FOI]?[0-9]{4}-[0-9]{2}$" },
+      "not": { "anyOf": [ { "pattern": "^(IND|CM|RP)-[FOI]?[0-9]{4}-[0-9]{2}$" }, { "pattern": "\\s" } ] },
       "description": "Bibliography key: uppercase letters and digits in hyphen-separated segments, starting with a letter, at least two segments. A string in the shape of an indicator, countermeasure, or response-protocol ID is not a legal key, so the namespaces cannot collide."
     },
     "http_url": {
       "type": "string",
-      "pattern": "^https?://[^\\s]+$",
+      "pattern": "^https?://[^\\s]+$", "not": { "pattern": "\\s" },
       "description": "An http or https URL with no whitespace."
     },
     "matrix_maturity": {
@@ -1001,9 +1008,9 @@
               "type": "string",
               "minLength": 1,
               "maxLength": 420,
-              "pattern": "^[^\u2014\u2013]*$",
+              "pattern": "^[^\u2012-\u2015\u2212]*$",
               "not": { "pattern": "^\\s|\\s$" },
-              "description": "Natural-language practitioner directive: what to go collect and why it decides how dangerous the case is. No em or en dashes (enforced by pattern)."
+              "description": "Natural-language practitioner directive: what to go collect and why it decides how dangerous the case is. No dash-like punctuation: figure dash, en dash, em dash, horizontal bar, and minus sign (U+2012 to U+2015, U+2212) are rejected by pattern."
             }
           }
         }
@@ -1282,6 +1289,13 @@
       "required": ["id"],
       "allOf": [
         { "$ref": "#/$defs/lifecycle_rules" },
+        { "if": { "properties": { "category": { "const": "lone_actor" } }, "required": ["category"] }, "then": { "properties": { "category_label": { "const": "Lone Actor" } } } },
+        { "if": { "properties": { "category": { "const": "insider" } }, "required": ["category"] }, "then": { "properties": { "category_label": { "const": "Insider" } } } },
+        { "if": { "properties": { "category": { "const": "criminal" } }, "required": ["category"] }, "then": { "properties": { "category_label": { "const": "Criminal" } } } },
+        { "if": { "properties": { "category": { "const": "corporate_espionage" } }, "required": ["category"] }, "then": { "properties": { "category_label": { "const": "Corporate Espionage" } } } },
+        { "if": { "properties": { "category": { "const": "ideological" } }, "required": ["category"] }, "then": { "properties": { "category_label": { "const": "Ideological" } } } },
+        { "if": { "properties": { "category": { "const": "nation_state" } }, "required": ["category"] }, "then": { "properties": { "category_label": { "const": "Nation-State" } } } },
+        { "if": { "properties": { "category": { "const": "customer_aggressor" } }, "required": ["category"] }, "then": { "properties": { "category_label": { "const": "Customer/Client Aggressor" } } } },
         {
           "if": { "properties": { "lifecycle_state": { "const": "reserved" } }, "required": ["lifecycle_state"] },
           "then": {
@@ -1326,7 +1340,7 @@
         "category_label": {
           "type": "string",
           "enum": ["Lone Actor", "Insider", "Criminal", "Corporate Espionage", "Ideological", "Nation-State", "Customer/Client Aggressor"],
-          "description": "Human-readable label for the actor category."
+          "description": "Human-readable label for the actor category. Fixed by category (enforced by the conditionals on this object)."
         },
         "description": {
           "$ref": "#/$defs/prose"
@@ -1455,7 +1469,7 @@
         },
         "date": {
           "type": "string",
-          "pattern": "^([0-9]{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01]))?)?|[0-9]{4}-[0-9]{4}|n\\.d\\.( \\(accessed [0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])\\))?)$",
+          "pattern": "^([0-9]{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01]))?)?|[0-9]{4}-[0-9]{4}|n\\.d\\.( \\(accessed [0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])\\))?)$", "not": { "pattern": "[\\n\\r\\t]" },
           "description": "Publication date: YYYY, YYYY-MM, YYYY-MM-DD, a year range YYYY-YYYY, or n.d. (optionally followed by an access date in the form n.d. (accessed YYYY-MM-DD))."
         },
         "url": {
@@ -1468,7 +1482,7 @@
         "doi": {
           "anyOf": [
             { "type": "null" },
-            { "type": "string", "pattern": "^10\\.[0-9]{4,9}/[^\\s]+$" }
+            { "type": "string", "pattern": "^10\\.[0-9]{4,9}/[^\\s]+$", "not": { "pattern": "\\s" } }
           ],
           "description": "Bare DOI (10.NNNN/suffix, no resolver prefix), or null."
         },

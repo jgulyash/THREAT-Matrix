@@ -1,6 +1,7 @@
 {
   "id": "F012",
   "expected_check": "V11",
+  "expected_message": "id prefix does not match",
   "description": "Give a person tactic a facility prefix.",
   "mutations": [
     {

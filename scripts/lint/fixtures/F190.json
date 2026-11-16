@@ -1,0 +1,15 @@
+{
+  "id": "F190",
+  "target": "overlay_schema",
+  "expected_check": "V46",
+  "expected_message": "constraint digest",
+  "audit_findings": "N2 N8",
+  "description": "Self-test: let the overlay schema accept validated.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "properties.validation_status.const",
+      "value": "validated"
+    }
+  ]
+}

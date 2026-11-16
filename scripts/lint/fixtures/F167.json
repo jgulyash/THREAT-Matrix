@@ -1,0 +1,14 @@
+{
+  "id": "F167",
+  "expected_check": "V39",
+  "expected_message": "is not one of",
+  "audit_findings": "N8",
+  "description": "Set an indicator category outside the enum.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].category",
+      "value": "espionage"
+    }
+  ]
+}

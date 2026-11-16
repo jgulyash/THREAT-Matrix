@@ -1,6 +1,7 @@
 {
   "id": "F013",
   "expected_check": "V12",
+  "expected_message": "does not embed parent tactic",
   "description": "Give an indicator an id that embeds a different parent tactic.",
   "mutations": [
     {

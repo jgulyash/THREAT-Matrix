@@ -1,0 +1,17 @@
+{
+  "id": "F189",
+  "target": "overlay_schema",
+  "expected_check": "V46",
+  "expected_message": "constraint digest",
+  "audit_findings": "N8",
+  "description": "Self-test: cut the score entry's required list in the overlay schema file.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "$defs.indicator_score.required",
+      "value": [
+        "axes"
+      ]
+    }
+  ]
+}

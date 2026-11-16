@@ -1,0 +1,13 @@
+{
+  "id": "F173",
+  "expected_check": "V39",
+  "expected_message": "'name' is a required property",
+  "audit_findings": "N8",
+  "description": "Remove an actor profile's required name.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "actor_profiles.[id=AP001].name"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 {
   "id": "F055",
   "expected_check": "V27",
+  "expected_message": "does not match the bibliography key format",
   "description": "Add a source_refs entry that breaks the bibliography key format.",
   "mutations": [
     {

@@ -19,17 +19,22 @@ Manifest sections:
 
 Modes:
 
-  --check FRAMEWORK MANIFEST [--baseline OLDER_MANIFEST]
+  --check FRAMEWORK MANIFEST [--baseline OLDER_MANIFEST ...]
       Fail unless the committed manifest describes the framework exactly.
       Detects: an ID in the manifest that is missing from the framework
       without a `removed` record; an ID in the framework that is missing
       from the manifest; a reserved or removed ID that is live again
       (reuse); an ID listed as both live and reserved; a duplicate ID; an
       ID in a different namespace than the manifest records; a malformed
-      or unsorted manifest; a version mismatch. With --baseline it also
-      compares against an older manifest (for example the one on the
-      release branch) and fails if any older ID was dropped, reused, or
-      moved to another namespace.
+      or unsorted manifest; a version mismatch. With --baseline
+      (repeatable) it also compares against an older manifest, such as
+      the committed published baseline
+      docs/data/baselines/id-manifest-1.7.0.json or the previous commit's
+      manifest. It fails if any ID in the baseline is missing from the
+      framework and not listed under `removed` with a reason, if a
+      baseline-reserved or baseline-removed ID is live, or if an ID moved
+      to another namespace. Without a baseline, an ID deleted together
+      with a regenerated manifest cannot be seen; always pass one.
 
   --write OUT [--framework F] [--previous MANIFEST] [--generated TS]
               [--removed ID=REASON ...] [--reserve ID ...]
@@ -45,8 +50,9 @@ only; if the jsonschema package is importable, the manifest is also
 validated against docs/data/id-manifest.schema.json.
 
 Usage:
-  python3 scripts/lint/id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json
-  python3 scripts/lint/id-manifest.py --write docs/data/id-manifest.json
+  python3 scripts/lint/id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json \\
+      --baseline docs/data/baselines/id-manifest-1.7.0.json
+  python3 scripts/lint/id-manifest.py --write docs/data/id-manifest.json --previous docs/data/id-manifest.json
 """
 from __future__ import annotations
 
@@ -408,7 +414,7 @@ def fail(problems: list[str], headline: str) -> int:
     return 1
 
 
-def cmd_check(framework_path: str, manifest_path: str, baseline_path: str | None) -> int:
+def cmd_check(framework_path: str, manifest_path: str, baseline_paths: list[str]) -> int:
     framework = load_json(framework_path, "framework document")
     manifest = load_json(manifest_path, "ID manifest")
     buckets, problems = build_inventory(framework)
@@ -417,16 +423,26 @@ def cmd_check(framework_path: str, manifest_path: str, baseline_path: str | None
         problems += schema_problems(manifest, "manifest")
     if not problems:
         problems += compare_framework(buckets, framework.get("version"), manifest)
-    if baseline_path and not problems:
+    baseline_versions = []
+    for baseline_path in baseline_paths:
         baseline = load_json(baseline_path, "baseline ID manifest")
-        problems += manifest_problems(baseline, "baseline manifest")
+        baseline_problems = manifest_problems(baseline, f"baseline manifest {baseline_path}")
+        if baseline_problems:
+            problems += baseline_problems
+            continue
+        baseline_versions.append(str(baseline.get("version")))
         if not problems:
             problems += compare_manifests(baseline, manifest)
+            problems += compare_baseline_to_framework(baseline, buckets, manifest)
     if problems:
-        return fail(problems, "the manifest and the framework disagree")
+        return fail(problems, "the manifest, the framework, and the baseline(s) disagree"
+                    if baseline_paths else "the manifest and the framework disagree")
     counts = ", ".join(f"{name} {len(buckets[name])}" for name in (*NAMESPACES, "reserved"))
     removed = len(manifest.get("removed") or [])
-    against = f"; no ID dropped, reused, or moved since baseline {load_version(baseline_path)}" if baseline_path else ""
+    against = (
+        f"; no ID dropped, reused, or moved since baseline(s) {', '.join(baseline_versions)}"
+        if baseline_versions else ""
+    )
     print(
         f"PASSED {NAME}: manifest {manifest['version']} matches the framework exactly "
         f"({counts}; removed {removed}){against}."
@@ -434,9 +450,37 @@ def cmd_check(framework_path: str, manifest_path: str, baseline_path: str | None
     return 0
 
 
-def load_version(path: str) -> str:
-    data = load_json(path, "baseline ID manifest")
-    return str(data.get("version")) if isinstance(data, dict) else "?"
+def compare_baseline_to_framework(baseline: dict, buckets: dict[str, list[str]], manifest: dict) -> list[str]:
+    """Check the baseline directly against the framework document.
+
+    This does not rely on the current manifest's namespace lists, so an ID
+    deleted from the framework together with a regenerated manifest is
+    still caught. The only accepted reason for a baseline ID to be absent
+    from the framework is a `removed` record with a reason.
+    """
+    problems: list[str] = []
+    live_old, reserved_old, removed_old = sections(baseline)
+    live_now = {identifier for namespace in NAMESPACES for identifier in buckets[namespace]}
+    held_now = set(buckets["reserved"]) | sections(manifest)[1]
+    removed_now = {
+        entry["id"] for entry in (manifest.get("removed") or [])
+        if isinstance(entry, dict) and isinstance(entry.get("id"), str)
+        and isinstance(entry.get("reason"), str) and entry["reason"].strip()
+    }
+    label = baseline.get("version")
+    for identifier in sorted(live_old):
+        if identifier not in live_now and identifier not in held_now and identifier not in removed_now:
+            problems.append(
+                f"{identifier}: in baseline {label} but missing from the framework, and not listed "
+                f"under `removed` with a reason"
+            )
+    for identifier in sorted(reserved_old | removed_old):
+        if identifier in live_now:
+            problems.append(
+                f"{identifier}: reserved or removed in baseline {label} but live in the framework "
+                f"(a held ID is never reused)"
+            )
+    return problems
 
 
 def parse_removed(pairs: list[str], version: str) -> list[dict]:
@@ -527,8 +571,9 @@ def main() -> int:
     mode.add_argument("--check", nargs=2, metavar=("FRAMEWORK", "MANIFEST"),
                       help="fail unless MANIFEST describes FRAMEWORK exactly")
     mode.add_argument("--write", metavar="OUT", help="build the manifest and write it to OUT")
-    parser.add_argument("--baseline", metavar="OLDER_MANIFEST",
-                        help="with --check: also compare against an older manifest (no drop, no reuse)")
+    parser.add_argument("--baseline", metavar="OLDER_MANIFEST", action="append", default=[],
+                        help="with --check: also compare against an older manifest (no drop, no reuse); "
+                             "repeatable, for example the published baseline and the previous commit's manifest")
     parser.add_argument("--framework", default=str(REPO / "docs" / "data" / "framework.json"),
                         help="with --write: the framework document to inventory")
     parser.add_argument("--previous", metavar="MANIFEST",

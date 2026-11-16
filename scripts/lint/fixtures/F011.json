@@ -1,6 +1,7 @@
 {
   "id": "F011",
   "expected_check": "V10",
+  "expected_message": "cross-matrix correlates_with",
   "description": "Add a cross-matrix correlates_with reference (infrastructure letter on a person indicator) that resolves to no indicator.",
   "mutations": [
     {

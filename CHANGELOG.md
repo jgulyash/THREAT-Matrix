@@ -27,7 +27,7 @@ schema `3.0.0`, case record `1.0.0`, overlay `0.1.0`.
 - Limitations and intended-use statement at the top of README.md and docs/METHODOLOGY.md, and in the viewer.
 - `scripts/migrate/2.1-to-3.0.py`, `scripts/export/flat.py`, `SECURITY.md`, `GOVERNANCE.md`, `MAINTAINERS.md`, `CODE_OF_CONDUCT.md`.
 - Drafts, not evidence: a presence-coding study protocol (`docs/study/`, not run) and two concept-level crosswalks (`docs/crosswalks/`, unreviewed).
-- Validator: 49 checks across the vocabulary, overlay, scored records, and coverage documents, with 157 fixtures. Continuous integration runs every gate on `main`, `v1-build`, and `v3-design`.
+- Validator: 51 checks across the vocabulary, overlay, scored records, and coverage documents, with 199 fixtures. JSON Schema validation is a required part of every run, and a digest of each schema's constraints is pinned so a loosened schema fails. The ID manifest is compared on every push and pull request with a committed baseline of the published 1.7.0 identifiers (`docs/data/baselines/id-manifest-1.7.0.json`) and with the previous manifest. The overlay must list its floored indicators and carry exactly one priority per tactic. Continuous integration runs every gate on `main`, `v1-build`, and `v3-design`.
 - Countermeasures 641 to 645 and response protocols 322 to 323: `TO0212` and `TI0211` brought to the same shape as other tactics.
 
 ### Removed
@@ -41,6 +41,7 @@ schema `3.0.0`, case record `1.0.0`, overlay `0.1.0`.
 - `axis_confidence` labels in the overlay follow their derivation rule on every indicator (12 corrected).
 - Three dead source URLs replaced; one duplicate source entry merged. The bibliography holds 120 entries, all public sources.
 - `TO0212` and `TI0211` now carry `false_positive_context` and `threshold_guidance`.
+- Four response protocols no longer instruct staff to detain a person; they say to ask the person to wait and not to detain them.
 - Worked case that treated lawful ability to acquire as means in hand.
 - Documents brought into line with the data and the gates: migration guide rewritten and tested against the published 1.7.0 document; review-process, lifecycle, identifier, and relation descriptions corrected.
 

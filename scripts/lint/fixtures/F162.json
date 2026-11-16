@@ -1,0 +1,15 @@
+{
+  "id": "F162",
+  "target": "overlay",
+  "expected_check": "V41",
+  "expected_message": "validation_status",
+  "audit_findings": "N2",
+  "description": "Declare the overlay validated.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "validation_status",
+      "value": "validated"
+    }
+  ]
+}

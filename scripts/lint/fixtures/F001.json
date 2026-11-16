@@ -1,6 +1,7 @@
 {
   "id": "F001",
   "expected_check": "V01",
+  "expected_message": "not unique across all matrices",
   "description": "Give a second infrastructure tactic an id that already exists.",
   "mutations": [
     {

@@ -1,0 +1,14 @@
+{
+  "id": "F168",
+  "expected_check": "V39",
+  "expected_message": "Additional properties are not allowed",
+  "audit_findings": "N8",
+  "description": "Add an unknown property to an indicator.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].confidence",
+      "value": "high"
+    }
+  ]
+}

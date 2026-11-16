@@ -1,0 +1,16 @@
+{
+  "id": "F193",
+  "expected_check": "V50",
+  "expected_message": "facility-matrix field",
+  "audit_findings": "F12",
+  "description": "Put the facility-matrix field within_site_focus on a person indicator.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "matrices.person.tactics.[id=TM0101].indicators.[id=IND-0101-01].within_site_focus",
+      "value": [
+        "occupants"
+      ]
+    }
+  ]
+}

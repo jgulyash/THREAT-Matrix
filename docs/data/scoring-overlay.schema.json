@@ -43,9 +43,8 @@
       "description": "The overlay is not part of the vocabulary's contract. A consumer may ignore it entirely."
     },
     "validation_status": {
-      "type": "string",
-      "enum": ["unvalidated", "validated"],
-      "description": "Whether the values have been validated by a documented study. unvalidated until a study with published method and results exists."
+      "const": "unvalidated",
+      "description": "The values have not been validated. This is a constant in this schema version: a claim of validation needs a schema change that adds a reference to the published study."
     },
     "scope": {
       "const": "type_level",
@@ -94,11 +93,17 @@
           "type": "object",
           "description": "The floor rule: which behavior classes carry a type_band_floor that holds the type band at or above a stated value whatever the computed weight.",
           "additionalProperties": false,
-          "required": ["definition", "applies_to", "added"],
+          "required": ["definition", "applies_to", "added", "floored_indicators"],
           "properties": {
             "definition": { "$ref": "#/$defs/prose" },
             "applies_to": { "$ref": "#/$defs/prose" },
-            "added": { "$ref": "#/$defs/prose" }
+            "added": { "$ref": "#/$defs/prose" },
+            "floored_indicators": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": { "$ref": "#/$defs/indicator_id" },
+              "description": "The complete list of indicators that carry a type_band_floor. scripts/lint/validate.py requires the set of score entries with a type_band_floor to equal this list exactly, so a floor cannot be added or removed without changing the published rule."
+            }
           }
         },
         "detectability_guidance": {
@@ -303,7 +308,7 @@
     },
     "tactic_priorities": {
       "type": "object",
-      "description": "Type-level priority class per tactic, keyed by tactic ID. Characterizes the typical urgency of the tactic class, never the urgency of a case. A tactic may be absent. scripts/lint/validate.py requires every key to be a tactic ID of framework.json.",
+      "description": "Type-level priority class per tactic, keyed by tactic ID. Characterizes the typical urgency of the tactic class, never the urgency of a case. scripts/lint/validate.py requires exactly one entry for every tactic of framework.json: none missing, none extra.",
       "minProperties": 1,
       "propertyNames": { "$ref": "#/$defs/tactic_id" },
       "additionalProperties": {
@@ -324,21 +329,24 @@
       "type": "string",
       "minLength": 1,
       "pattern": "^\\S([\\s\\S]*\\S)?$",
+      "not": { "pattern": "^\\s|\\s$" },
       "description": "A non-empty text value with no leading or trailing whitespace."
     },
     "semver": {
       "type": "string",
-      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$", "not": { "pattern": "\\s" },
       "description": "A SemVer 2.0.0 version string."
     },
     "tactic_id": {
       "type": "string",
-      "pattern": "^T[MFOI]0[1-4](0[1-9]|[1-9][0-9])$",
+      "maxLength": 6,
+      "pattern": "^T[MFOI]0[1-4](0[1-9]|[1-9][0-9])$", "not": { "pattern": "\\s" },
       "description": "Tactic ID, same grammar as framework.schema.json."
     },
     "indicator_id": {
       "type": "string",
-      "pattern": "^IND-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$",
+      "maxLength": 12,
+      "pattern": "^IND-[FOI]?0[1-4](0[1-9]|[1-9][0-9])-(0[1-9]|[1-9][0-9])$", "not": { "pattern": "\\s" },
       "description": "Indicator ID, same grammar as framework.schema.json."
     },
     "score_number": {

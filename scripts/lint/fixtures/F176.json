@@ -1,0 +1,14 @@
+{
+  "id": "F176",
+  "expected_check": "V39",
+  "expected_message": "Additional properties are not allowed",
+  "audit_findings": "N8",
+  "description": "Add an unknown property to a bibliography entry.",
+  "mutations": [
+    {
+      "op": "add",
+      "path": "bibliography.FEIN-VOSSEKUIL-1999.rating",
+      "value": 5
+    }
+  ]
+}

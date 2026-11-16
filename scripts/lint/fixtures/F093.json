@@ -7,7 +7,7 @@
   "mutations": [
     {
       "op": "set",
-      "path": "matrices.person.tactics.[id=TM0101].actor_associations.0.actor_id",
+      "path": "matrices.person.tactics.[id=TM0101].actor_associations.[actor_id=AP001].actor_id",
       "value": "AP001\n"
     }
   ]

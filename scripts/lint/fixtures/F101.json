@@ -1,6 +1,7 @@
 {
   "id": "F101",
   "expected_check": "V39",
+  "expected_message": "was expected",
   "audit_findings": "F11",
   "description": "Set a license other than the published one.",
   "mutations": [

@@ -1,0 +1,14 @@
+{
+  "id": "F160",
+  "target": "overlay",
+  "expected_check": "V51",
+  "expected_message": "carries a type_band_floor but is not in",
+  "audit_findings": "N1",
+  "description": "Drop one id from the published floored list while its score entry keeps the floor.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "rubric.type_band_floor_rule.floored_indicators.0"
+    }
+  ]
+}

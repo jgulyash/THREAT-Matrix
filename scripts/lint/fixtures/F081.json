@@ -1,6 +1,7 @@
 {
   "id": "F081",
   "expected_check": "V34",
+  "expected_message": "encodes phase",
   "audit_findings": "C14",
   "description": "Relabel a phase 1 tactic as phase 3 without changing its id.",
   "mutations": [

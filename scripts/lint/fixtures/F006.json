@@ -1,6 +1,7 @@
 {
   "id": "F006",
   "expected_check": "V06",
+  "expected_message": "correlates_with",
   "description": "Add a same-matrix correlates_with reference that resolves to no indicator.",
   "mutations": [
     {

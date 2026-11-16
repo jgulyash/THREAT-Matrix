@@ -1,6 +1,7 @@
 {
   "id": "F002",
   "expected_check": "V02",
+  "expected_message": "indicator id is not unique",
   "description": "Give a second indicator an id that already exists in the same tactic.",
   "mutations": [
     {

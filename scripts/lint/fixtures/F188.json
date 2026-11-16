@@ -1,0 +1,15 @@
+{
+  "id": "F188",
+  "target": "framework_schema",
+  "expected_check": "V39",
+  "expected_message": "constraint digest",
+  "audit_findings": "N8",
+  "description": "Self-test: widen an enum in the schema file.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "$defs.matrix_maturity.enum",
+      "value": "stable"
+    }
+  ]
+}

@@ -26,29 +26,40 @@ The harness exits non-zero unless all of the following hold.
   exist, a `set` that writes the value already there, a `raw_replace` whose
   text is absent, and an empty mutation list are harness failures.
 - A negative fixture (the default) passes only when its `expected_check`
-  fires. When the fixture also names an `expected_message`, a failure line of
-  that check must contain it, so a fixture cannot pass on the wrong rule of a
-  check that has several. Other checks that fired are printed after
-  "also fired".
+  fires and one failure line of that check contains the fixture's
+  `expected_message`. The message is mandatory on every negative fixture, so
+  a fixture cannot pass on the wrong rule of a check that has several. Other
+  checks that fired are printed after "also fired".
 - A positive fixture (`"expect": "pass"`) passes only when the mutated
   document produces no failure at all, with the JSON Schema run as well.
 - Every check id has at least one passing negative fixture.
 
-The trailing-newline rule on identifiers and keys is enforced by the validator (exact full match, checks V24, V27, V36, V37), not by the schema patterns, because Python's schema validator treats a closing `$` leniently and accepts a final newline.
+The trailing-newline rule on identifiers and keys is enforced twice: by the validator (exact full match, checks V24, V27, V36, V37) and by the schemas, which pair every anchored pattern with a `not` whitespace pattern (and `maxLength` on fixed-width IDs) because Python's schema validator treats a closing `$` leniently and would otherwise accept a final newline.
 
-When the `jsonschema` package is not installed, fixtures for the two schema
-checks (V39, V46) are reported as SKIPPED and positive fixtures run without
-the schema pass. With `--require-schema` a missing package is a failure.
+The harness needs the `jsonschema` package. Without it the harness fails
+outright; it never runs in part and never reports a skipped fixture as
+covered. Outside the harness, schema validation is also required by default:
+a missing package is a failure unless `--no-schema` is passed explicitly.
+
+Schema self-tests. Fixtures with target `framework_schema` or
+`overlay_schema` mutate a copy of the SCHEMA file and leave the documents
+alone. They pass only when the schema check notices, which it does through
+the constraint digest pinned in `SCHEMA_PINS` in `validate.py`: the digest
+covers every schema keyword except annotations, so cutting a `required`
+list, widening an enum, or opening a closed object fails V39 or V46. After
+an intended schema change, run `python3 scripts/lint/validate.py
+docs/data/framework.json --print-schema-pins` and update `SCHEMA_PINS` in
+the same commit.
 
 ## Fixture format
 
 | Key | Meaning |
 | --- | --- |
 | `id` | Fixture id, unique. |
-| `target` | `framework` (default), `overlay`, `record`, or `coverage`. Which document the mutations edit. |
+| `target` | `framework` (default), `overlay`, `record`, `coverage`, `framework_schema`, or `overlay_schema`. Which document the mutations edit. |
 | `expect` | `fail` (default) or `pass`. |
 | `expected_check` | The check id that must fire (negative) or the check the fixture is about (positive). |
-| `expected_message` | Optional. Text that one failure line of the expected check must contain. |
+| `expected_message` | Required on negative fixtures. Text that one failure line of the expected check must contain. |
 | `audit_findings` | Optional. Audit finding ids the fixture reproduces. |
 | `base` | For `record` and `coverage` targets: the document the mutations edit. It must pass on its own. |
 | `mutations` | The list of ops. |
@@ -90,7 +101,7 @@ Scope says which mode runs the check: `framework` always, `overlay` with
 | V17 | framework | phase_4_track missing or invalid on a phase 4 tactic, or present below phase 4. | F017, F018, F019 | none |
 | V19 | framework | A tactic matrix field that differs from its containing matrix key. | F020 | none |
 | V21 | framework | Modality facet: modality and human_social present and valid; human_social modality forces the flag; crossing_mechanism exactly on cyber_physical. | F021, F022, F023 | none |
-| V22 | framework | conditioning_guidance: exactly probe_factors and guidance, valid factor names, at most 420 characters, no em or en dash. | F024, F025 | none |
+| V22 | framework | conditioning_guidance: exactly probe_factors and guidance, valid factor names, at most 420 characters, no em or en dash or other dash-like character (U+2012 to U+2015, U+2212). | F024, F025, F194, F195 | none |
 | V23 | framework | A mitigates edge that is malformed, has an invalid function, or resolves to no indicator. | F026, F027 | none |
 | V24 | framework | schema_version other than the pinned value, or a content version that is not SemVer 2.0.0. | F028, F029, F157 | none |
 | V25 | framework | evidence_basis outside the 3.0.0 values; retired 2.x values get a rename hint. | F030 | none |
@@ -104,25 +115,27 @@ Scope says which mode runs the check: `framework` always, `overlay` with
 | V33 | framework | A relation that refers to its own object or lists an entry twice: correlates_with, compensates_for, coordinates_with, related_tactics, source_refs, mitigates (one edge per indicator). | F075, F076, F077, F078, F079, F080 | none |
 | V34 | framework | A tactic id whose third and fourth characters do not encode the tactic's phase. | F081 | none |
 | V35 | framework | An indicator or countermeasure whose phase_relevance omits the parent tactic's phase. | F082, F083 | none |
-| V36 | framework | A bibliography entry that nothing cites, or whose url is not null or http(s), whose doi is not null or a bare DOI, or whose date is not in an accepted form. | F084, F085, F086, F087, F088, F089, F090 | none |
+| V36 | framework | A bibliography entry that nothing cites, or whose url is not null or http(s), whose doi is not null or a bare DOI, or whose date is not in an accepted form. | F084, F085, F086, F087, F088, F089, F090, F196 | none |
 | V37 | framework | An identifier or id reference that does not match its grammar exactly: trailing newline or other whitespace, zero sequence number, wrong shape. | F091, F092, F093, F094, F095, F096 | none |
 | V38 | framework | A bare NaN or Infinity token, or a number that overflows to infinity, in any document checked. | F097, F135 | none |
-| V39 | framework | The vocabulary validated against framework.schema.json (needs the jsonschema package). | F098, F099, F100, F101, F102 | none |
+| V39 | framework | The vocabulary validated against framework.schema.json, and that schema's constraint digest against SCHEMA_PINS in validate.py, so a loosened required list, enum, pattern, or closed object fails here. | F098, F099, F100, F101, F102, F164, F165, F166, F167, F168, F169, F170, F171, F172, F173, F174, F175, F176, F177, F178, F179, F180, F186, F187, F188 | none |
 | V40 | framework | An empty string, or a string with leading or trailing whitespace, anywhere in the vocabulary or the overlay. | F103, F104 | none |
+| V50 | framework | An actor profile whose category_label does not match its category, or a matrix-scoped field outside its matrix (target_identity and target_identity_scope are person-matrix fields; facility_target_scope and within_site_focus are facility-matrix fields). | F191, F192, F193 | none |
 | V13 | overlay | Overlay: type_band missing or invalid, or not the band of the STORED type_weight under rubric.type_band_thresholds raised to the floor. | F105, F106, F107 | F136 |
 | V14 | overlay | Overlay: axes missing, incomplete, or non-numeric; type_weight missing or non-numeric; or the weight further than 0.005 from the composite of the axes. Never skipped. | F108, F109, F110, F111, F112, F113 | none |
 | V15 | overlay | Overlay: type_band_floor outside high and critical, or a band below its floor. | F114, F115 | none |
 | V20 | overlay | Overlay: axis_confidence missing an axis, carrying an invalid level, or differing from the derivation rule. | F116, F117, F118 | none |
-| V41 | overlay | Overlay: required keys, no unknown keys, the constants (status experimental, normative false, scope type_level, not_a_risk_score true), validation_status, SemVer overlay_version, and applies_to_framework_version equal to the vocabulary's version. | F119, F120, F121, F122, F123, F124 | none |
+| V41 | overlay | Overlay: required keys, no unknown keys, the constants (status experimental, validation_status unvalidated, normative false, scope type_level, not_a_risk_score true), SemVer overlay_version, and applies_to_framework_version equal to the vocabulary's version. | F119, F120, F121, F122, F123, F124, F162 | none |
 | V42 | overlay | Overlay: indicator_scores keys equal the vocabulary's indicator ids, none missing and none extra. | F125, F126 | none |
-| V43 | overlay | Overlay: tactic_priorities keys are tactic ids of the vocabulary and values are Urgent, Immediate, Priority, or Routine. | F127, F128 | F137 |
+| V43 | overlay | Overlay: tactic_priorities has exactly one entry for every tactic of the vocabulary, none missing and none extra, with values Urgent, Immediate, Priority, or Routine. | F127, F128, F137 | none |
 | V44 | overlay | Overlay: an axis not recorded to one decimal place, or a weight not recorded to two. | F129, F130 | none |
 | V45 | overlay | Overlay: band thresholds that are not numeric, do not start at 0, are not strictly increasing, or exceed 10; a base rate outside 0 to 10; a non-SemVer rubric_version; instance_conditioning.factors other than the six factors. | F131, F132, F133 | none |
-| V46 | overlay | The overlay validated against scoring-overlay.schema.json (needs the jsonschema package). | F134 | none |
+| V46 | overlay | The overlay validated against scoring-overlay.schema.json, and that schema's constraint digest against SCHEMA_PINS. | F134, F163, F181, F182, F183, F189, F190 | none |
+| V51 | overlay | Overlay: the set of score entries carrying type_band_floor must equal rubric.type_band_floor_rule.floored_indicators exactly, so a floor cannot be added or removed without changing the published list. | F158, F159, F160, F161 | none |
 | V18 | records | Scored record: conditioned_priority below the stated type_band, or below the overlay's authored band for the indicator. | F138, F140 | F146 |
 | V47 | records | Scored record: indicator_id not in the vocabulary, type_band not equal to the overlay's authored type_band, or a stated framework_version or overlay_version that is not the one being checked. | F139, F141, F142 | F147 |
-| V48 | records | Scored record: not an object, a missing or unknown key, an invalid band, instance factor, tier, or disposition; also the scored_case_record schema when jsonschema is installed. An empty records directory fails here. | F143, F144, F145 | none |
-| V49 | coverage | Coverage document (--coverage): the coverage schema when jsonschema is installed, plus a cm_id listed in more than one deployment entry, ids that are not in the vocabulary, dates that are not real calendar dates, and disposition without its review date. | F148, F149, F150, F151, F152, F153 | F154 |
+| V48 | records | Scored record: not an object, a missing or unknown key, an invalid band, instance factor, tier, or disposition; also the scored_case_record schema when jsonschema is installed. The directory is walked with its subdirectories, .json is matched in any letter case, an unparseable file fails, and a directory with no record fails. | F143, F144, F145 | none |
+| V49 | coverage | Coverage document (--coverage): the coverage schema when jsonschema is installed, plus a cm_id listed in more than one deployment entry, ids that are not in the vocabulary, dates that are not real calendar dates or lie in the future, disposition without its review date, and, when one document holds both parts, a derivation for a different target or a covered band with nothing deployed. | F148, F149, F150, F151, F152, F153, F184, F185, F197, F198, F199 | F154 |
 
 ## Check id history
 
@@ -138,7 +151,8 @@ that read score fields kept their ids and moved to overlay or record scope.
 | V20 | axis_confidence enum values on indicators | axis_confidence complete, valid, and equal to the derivation rule, in the overlay |
 | V24 | schema_version pin | schema_version pin and SemVer content version |
 | V26 | lifecycle state, SemVer, superseded_by, reserved_reason | the full lifecycle contract above |
-| V28 to V49 | not present | added |
+| V43 | (added with the overlay) keys must be tactic ids | exactly one entry per tactic |
+| V28 to V51 | not present | added |
 
 No id was renumbered and none was reused for a different subject.
 
@@ -281,8 +295,8 @@ No id was renumbered and none was reused for a different subject.
 | F133 | overlay | V45 | F12 | List an invented instance factor. |
 | F134 | overlay | V46 |  | Add an unknown key inside the rubric; only the closed overlay schema rejects it. |
 | F135 | overlay | V38 | F09 | Write a weight that overflows to infinity. |
-| F136 | overlay | accepts (V13) |  | A floor may raise the band above what the weight implies: add a high floor to a medium-weight indicator and label it high. |
-| F137 | overlay | accepts (V43) |  | A tactic may have no priority entry. |
+| F136 | overlay | accepts (V13) |  | A floor may raise the band above what the weight implies: add a high floor to a medium-weight indicator, list it in the published floored list, and label it high. |
+| F137 | overlay | V43 | N9 | Remove one tactic's priority entry; every tactic needs exactly one. |
 | F138 | record | V18 | S13 | Lower conditioned_priority below a correctly quoted type band. |
 | F139 | record | V47 | C02 S13 | Quote a floored-critical indicator as low and set priority low: the band-laundering case. |
 | F140 | record | V18 | C02 S13 | The same laundering case also fails the escalate-only rule against the authored band. |
@@ -303,3 +317,45 @@ No id was renumbered and none was reused for a different subject.
 | F155 | framework | V27 | F07 S15 | Add a source_refs entry that is a real bibliography key followed by a newline. |
 | F156 | framework | V27 | F07 S15 | Add a bibliography key with a trailing newline, cited by a tactic. |
 | F157 | framework | V24 | F07 | Give the content version a trailing newline. |
+| F158 | overlay | V51 | N1 | Fabricate a floor: add type_band_floor critical to an unfloored medium indicator and raise its band to critical. |
+| F159 | overlay | V51 | N1 | Remove the floor from a floored indicator whose weight is already critical. |
+| F160 | overlay | V51 | N1 | Drop one id from the published floored list while its score entry keeps the floor. |
+| F161 | overlay | V51 | N1 | Add an unfloored indicator to the published floored list. |
+| F162 | overlay | V41 | N2 | Declare the overlay validated. |
+| F163 | overlay | V46 | N2 | Declare the overlay validated; the overlay schema holds validation_status constant. |
+| F164 | framework | V39 | N12 | Empty the bibliography; the schema requires at least one entry. |
+| F165 | framework | V39 | N8 | Remove a tactic's required notes. |
+| F166 | framework | V39 | N8 | Remove an indicator's required category. |
+| F167 | framework | V39 | N8 | Set an indicator category outside the enum. |
+| F168 | framework | V39 | N8 | Add an unknown property to an indicator. |
+| F169 | framework | V39 | N8 | Remove a countermeasure's required measure. |
+| F170 | framework | V39 | N8 | Set a countermeasure domain outside the enum. |
+| F171 | framework | V39 | N8 | Remove a response protocol's required trigger. |
+| F172 | framework | V39 | N8 | Set a response protocol priority outside the enum. |
+| F173 | framework | V39 | N8 | Remove an actor profile's required name. |
+| F174 | framework | V39 | N8 | Set an actor profile awareness outside the enum. |
+| F175 | framework | V39 | N8 | Remove a bibliography entry's required title. |
+| F176 | framework | V39 | N8 | Add an unknown property to a bibliography entry. |
+| F177 | framework | V39 | N8 | Set an actor association relevance outside the enum. |
+| F178 | framework | V39 | N8 | Add an unknown property at the top level. |
+| F179 | framework | V39 | N8 | Add an unknown property to a matrix object. |
+| F180 | framework | V39 | F12 | Set ai_architecture.version to free text. |
+| F181 | overlay | V46 | N8 | Remove a required rubric part. |
+| F182 | overlay | V46 | N8 | Add an unknown key to the detectability guidance. |
+| F183 | overlay | V46 | N8 | Remove a required part of instance_conditioning. |
+| F184 | coverage | V49 | N8 | Set a deployment status outside the enum; only the coverage schema knows the enum. |
+| F185 | coverage | V49 | N8 | Remove the deployment record's required basis. |
+| F186 | framework_schema | V39 | N8 | Self-test: cut $defs.indicator.required down to id in the schema file itself. |
+| F187 | framework_schema | V39 | N8 | Self-test: open the tactic object to unknown properties in the schema file. |
+| F188 | framework_schema | V39 | N8 | Self-test: widen an enum in the schema file. |
+| F189 | overlay_schema | V46 | N8 | Self-test: cut the score entry's required list in the overlay schema file. |
+| F190 | overlay_schema | V46 | N2 N8 | Self-test: let the overlay schema accept validated. |
+| F191 | framework | V50 | F12 | Give an actor profile a label that belongs to another category. |
+| F192 | framework | V50 | F12 | Put the person-matrix field target_identity on a facility indicator. |
+| F193 | framework | V50 | F12 | Put the facility-matrix field within_site_focus on a person indicator. |
+| F194 | framework | V22 | F14 | Put a horizontal bar (U+2015) in conditioning_guidance.guidance. |
+| F195 | framework | V22 | F14 | Put a minus sign (U+2212) in conditioning_guidance.guidance. |
+| F196 | framework | V36 |  | Give a bibliography entry a year range that runs backward. |
+| F197 | coverage | V49 |  | Claim covered while the deployment record holds no deployed countermeasure. |
+| F198 | coverage | V49 |  | Derive coverage for a target other than the deployment record's. |
+| F199 | coverage | V49 |  | Set a verified date in the future. |

@@ -1,0 +1,14 @@
+{
+  "id": "F159",
+  "target": "overlay",
+  "expected_check": "V51",
+  "expected_message": "carries no type_band_floor",
+  "audit_findings": "N1",
+  "description": "Remove the floor from a floored indicator whose weight is already critical.",
+  "mutations": [
+    {
+      "op": "del",
+      "path": "indicator_scores.IND-0301-01.type_band_floor"
+    }
+  ]
+}

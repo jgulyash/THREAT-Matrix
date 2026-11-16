@@ -19,7 +19,52 @@
     "type_band_floor_rule": {
       "definition": "A triage floor layered on the severity math: an indicator whose behavior applies DIRECT PHYSICAL FORCE to a person's body carries type_band = critical at minimum, regardless of its computed type_weight. type_weight is unchanged, it remains the true severity computation, so the gradient between a single assault (~4.6) and a mass bombing (~8.7) is preserved, but the triage band for any force against a person is critical. Such indicators carry a `type_band_floor` field set to \"critical\". Rationale: a casualty is critical regardless of scale. The severity math gates the top band on blast_radius (population scope), which would place a single-victim killing at high and reserve critical for mass-casualty events; but for triage, any application of force to a person is a top-priority event. Count is a severity GRADIENT (in type_weight), not the critical THRESHOLD. This is a values/triage rule, not a change to the weight formula.",
       "applies_to": "Behaviors that directly apply physical force to a person: weapon discharge, vehicle ramming, explosive detonation, physical assault, overpowering or incapacitating personnel, taking physical custody by restraint, forcible extraction, and physical restraint or force against a captive. Also included (extension of 2026-07-28): taking or maintaining custody or control of a person by weapon threat or credible threat of immediate force during in-progress execution, where a weapon is displayed at the victim and control is being established or maintained. SCOPE GUARD: threatened force WITHOUT the custody or control context does not floor: a weapon brandished during a dispute, or a communicated or conditional threat made outside an in-progress seizure, is carried by the type-level type_weight and instance conditioning, not by the floor. This narrow extension follows the precedent discipline of the V1.4 infrastructure type_band_floor extension (narrow, mechanism-specific; 2026-07-18). DOCUMENTED POPULATION AND EXTENSIONS. The floor is carried by 43 indicators: 11 person, 24 facility, 8 infrastructure. Person, direct force: IND-0301-01, IND-0301-02, IND-0301-03, IND-0301-04, IND-0302-03, IND-0303-01, IND-0303-03, IND-0303-04, IND-0304-01, IND-0304-03, IND-0306-02. Facility, direct force: IND-F0203-04, IND-F0204-05, IND-F0302-02, IND-F0305-01, IND-F0305-03, IND-F0306-04, IND-F0309-05. Facility extension 1, secondary strike (an indicator that positions a second strike against responders or evacuees during an active incident): IND-F0309-03, IND-F0408-01, IND-F0408-02, IND-F0408-04. Facility extension 2, occupied-structure harm (execution behaviors that harm occupants through the structure or its systems, such as incendiary attack, structural sabotage, contamination of air or water, and blocked exits): IND-F0301-01, IND-F0301-02, IND-F0301-05, IND-F0303-01, IND-F0303-02, IND-F0303-04, IND-F0304-02, IND-F0304-05, IND-F0308-01, IND-F0308-02, IND-F0308-04, IND-F0308-05, IND-F0309-01. Infrastructure extension, life-safety mechanisms (execution behaviors that defeat a safety system or manipulate a treatment or control process so that casualties are the direct mechanism): IND-I0302-01, IND-I0302-02, IND-I0302-04, IND-I0302-05, IND-I0304-05, IND-I0306-01, IND-I0306-03, IND-I0306-05. KNOWN INCONSISTENCIES, UNRESOLVED: IND-F0302-05 (second device on evacuation or responder routes) is not floored while IND-F0309-03 is; IND-I0306-02 (raw water intake contamination) is not floored while IND-I0306-01, IND-I0306-03, and IND-I0306-05 are; IND-0304-04 is not floored while IND-0304-01 and IND-0304-03 are. They are listed so a consumer can reproduce the published set exactly.",
-      "added": "V1.3 (2026-07-05)"
+      "added": "V1.3 (2026-07-05)",
+      "floored_indicators": [
+        "IND-0301-01",
+        "IND-0301-02",
+        "IND-0301-03",
+        "IND-0301-04",
+        "IND-0302-03",
+        "IND-0303-01",
+        "IND-0303-03",
+        "IND-0303-04",
+        "IND-0304-01",
+        "IND-0304-03",
+        "IND-0306-02",
+        "IND-F0203-04",
+        "IND-F0204-05",
+        "IND-F0301-01",
+        "IND-F0301-02",
+        "IND-F0301-05",
+        "IND-F0302-02",
+        "IND-F0303-01",
+        "IND-F0303-02",
+        "IND-F0303-04",
+        "IND-F0304-02",
+        "IND-F0304-05",
+        "IND-F0305-01",
+        "IND-F0305-03",
+        "IND-F0306-04",
+        "IND-F0308-01",
+        "IND-F0308-02",
+        "IND-F0308-04",
+        "IND-F0308-05",
+        "IND-F0309-01",
+        "IND-F0309-03",
+        "IND-F0309-05",
+        "IND-F0408-01",
+        "IND-F0408-02",
+        "IND-F0408-04",
+        "IND-I0302-01",
+        "IND-I0302-02",
+        "IND-I0302-04",
+        "IND-I0302-05",
+        "IND-I0304-05",
+        "IND-I0306-01",
+        "IND-I0306-03",
+        "IND-I0306-05"
+      ]
     },
     "detectability_guidance": {
       "flip_rationale": "Detectability enters the composite INVERTED ((10 - detectability)) by design: high observability by trained personnel shrinks expected residual harm because an interdiction window exists, while stealth removes that window. This matches the CVSS and insider-threat convention of conditioning realized risk on observability. The composite therefore reads as EXPECTED RESIDUAL HARM, not raw severity: a stealthy indicator class outweighs an equally harmful conspicuous one because it is less likely to be interrupted.",
@@ -84,7 +129,7 @@
       "proximity_access",
       "source_credibility"
     ],
-    "escalate_only_rule": "Instance conditioning may RAISE a case's priority above the type band: to catch the false-LOW, a mild-looking type with an alarming instance, which is the deadliest error: but may NEVER lower it below the type band. There is no computed capability discount: means_in_hand='unknown' is the safe default and does not demote a case. The floor is enforced in two layers, since schema alone cannot do all of it: the conditional subschemas on scored_case_record reject a conditioned_priority below the stated type_band, and the reference validator plus the consumer SDK enforce band fidelity, that type_band equals the authored type_band of the indicator at a stated framework version. The held-vs-raised distinction is derived by comparison (raised iff conditioned_priority exceeds type_band), never stored as a separate flag.",
+    "escalate_only_rule": "Instance conditioning may RAISE a case's priority above the type band: to catch the false-LOW, a mild-looking type with an alarming instance, which is the deadliest error: but may NEVER lower it below the type band. There is no computed capability discount: means_in_hand='unknown' is the safe default and does not demote a case. The floor is enforced in two layers, since schema alone cannot do all of it: the conditional subschemas on scored_case_record reject a conditioned_priority below the stated type_band, and the reference validator enforces band fidelity, that type_band equals the authored type_band of the indicator at a stated framework version. The held-vs-raised distinction is derived by comparison (raised iff conditioned_priority exceeds type_band), never stored as a separate flag.",
     "demotion_doctrine": "The conditioned priority is an escalation detector, not a queue-ranking model; de-prioritization is a case-management decision that must never be written back into the score. This answers the volume objection: at scale, cases leave the queue by DISPOSITION (closure, monitoring tiers), never by score demotion. A demotion path would let capability discounts in through the back door. The disposition is recorded in the structured scored_case_record.disposition field (for example disrupted_by_interdiction, closed_benign, or a monitoring tier), alongside the score and never inside it. Note also that source_credibility measures reporting reliability, not hostile-attribution confidence: whether a hostile actor exists at all is a separate judgment carried by primary_objective_evidence_tier, whose 'contested' value marks a disputed attribution.",
     "raise_guidance": {
       "purpose": "Advisory patterns for inter-analyst consistency, NOT a formula. Nothing here is computed and the escalate-only invariant is unchanged: these patterns describe when analysts typically raise, and a raise is always a human call.",
@@ -541,8 +586,8 @@
     "IND-0104-01": {
       "axes": {
         "impact_potential": 9.0,
-        "blast_radius_potential": 8,
-        "recoverability_inverse": 4,
+        "blast_radius_potential": 8.0,
+        "recoverability_inverse": 4.0,
         "detectability": 4.5
       },
       "type_weight": 6.31,
@@ -557,8 +602,8 @@
     "IND-0104-02": {
       "axes": {
         "impact_potential": 7.5,
-        "blast_radius_potential": 7,
-        "recoverability_inverse": 4,
+        "blast_radius_potential": 7.0,
+        "recoverability_inverse": 4.0,
         "detectability": 4.0
       },
       "type_weight": 5.96,
@@ -573,8 +618,8 @@
     "IND-0104-03": {
       "axes": {
         "impact_potential": 6.5,
-        "blast_radius_potential": 3,
-        "recoverability_inverse": 4,
+        "blast_radius_potential": 3.0,
+        "recoverability_inverse": 4.0,
         "detectability": 3.5
       },
       "type_weight": 4.75,
@@ -589,8 +634,8 @@
     "IND-0104-04": {
       "axes": {
         "impact_potential": 9.0,
-        "blast_radius_potential": 7,
-        "recoverability_inverse": 4,
+        "blast_radius_potential": 7.0,
+        "recoverability_inverse": 4.0,
         "detectability": 3.0
       },
       "type_weight": 6.48,
@@ -605,8 +650,8 @@
     "IND-0104-05": {
       "axes": {
         "impact_potential": 9.0,
-        "blast_radius_potential": 9,
-        "recoverability_inverse": 4,
+        "blast_radius_potential": 9.0,
+        "recoverability_inverse": 4.0,
         "detectability": 2.5
       },
       "type_weight": 7.02,
@@ -621,8 +666,8 @@
     "IND-0104-06": {
       "axes": {
         "impact_potential": 6.5,
-        "blast_radius_potential": 4,
-        "recoverability_inverse": 4,
+        "blast_radius_potential": 4.0,
+        "recoverability_inverse": 4.0,
         "detectability": 5.5
       },
       "type_weight": 4.65,
@@ -653,8 +698,8 @@
     "IND-0105-02": {
       "axes": {
         "impact_potential": 5.5,
-        "blast_radius_potential": 3,
-        "recoverability_inverse": 4,
+        "blast_radius_potential": 3.0,
+        "recoverability_inverse": 4.0,
         "detectability": 3.0
       },
       "type_weight": 4.64,
@@ -733,8 +778,8 @@
     "IND-0106-01": {
       "axes": {
         "impact_potential": 4.5,
-        "blast_radius_potential": 3,
-        "recoverability_inverse": 4,
+        "blast_radius_potential": 3.0,
+        "recoverability_inverse": 4.0,
         "detectability": 4.5
       },
       "type_weight": 4.15,
@@ -749,8 +794,8 @@
     "IND-0106-02": {
       "axes": {
         "impact_potential": 4.5,
-        "blast_radius_potential": 3,
-        "recoverability_inverse": 4,
+        "blast_radius_potential": 3.0,
+        "recoverability_inverse": 4.0,
         "detectability": 4.5
       },
       "type_weight": 4.15,
@@ -766,7 +811,7 @@
       "axes": {
         "impact_potential": 4.5,
         "blast_radius_potential": 2.5,
-        "recoverability_inverse": 4,
+        "recoverability_inverse": 4.0,
         "detectability": 2.5
       },
       "type_weight": 4.29,
@@ -781,8 +826,8 @@
     "IND-0106-04": {
       "axes": {
         "impact_potential": 4.5,
-        "blast_radius_potential": 3,
-        "recoverability_inverse": 4,
+        "blast_radius_potential": 3.0,
+        "recoverability_inverse": 4.0,
         "detectability": 5.5
       },
       "type_weight": 3.95,
@@ -798,7 +843,7 @@
       "axes": {
         "impact_potential": 4.5,
         "blast_radius_potential": 2.5,
-        "recoverability_inverse": 4,
+        "recoverability_inverse": 4.0,
         "detectability": 6.0
       },
       "type_weight": 3.66,
@@ -814,7 +859,7 @@
       "axes": {
         "impact_potential": 4.5,
         "blast_radius_potential": 2.5,
-        "recoverability_inverse": 4,
+        "recoverability_inverse": 4.0,
         "detectability": 5.0
       },
       "type_weight": 3.87,
@@ -1085,8 +1130,8 @@
     "IND-0201-04": {
       "axes": {
         "impact_potential": 6.0,
-        "blast_radius_potential": 4,
-        "recoverability_inverse": 4,
+        "blast_radius_potential": 4.0,
+        "recoverability_inverse": 4.0,
         "detectability": 3.0
       },
       "type_weight": 5.09,
@@ -1102,7 +1147,7 @@
       "axes": {
         "impact_potential": 6.0,
         "blast_radius_potential": 3.5,
-        "recoverability_inverse": 4,
+        "recoverability_inverse": 4.0,
         "detectability": 2.5
       },
       "type_weight": 5.01,
@@ -1134,7 +1179,7 @@
       "axes": {
         "impact_potential": 4.5,
         "blast_radius_potential": 2.5,
-        "recoverability_inverse": 4,
+        "recoverability_inverse": 4.0,
         "detectability": 5.0
       },
       "type_weight": 3.87,
@@ -1150,7 +1195,7 @@
       "axes": {
         "impact_potential": 4.5,
         "blast_radius_potential": 2.5,
-        "recoverability_inverse": 4,
+        "recoverability_inverse": 4.0,
         "detectability": 2.0
       },
       "type_weight": 4.36,
@@ -1166,7 +1211,7 @@
       "axes": {
         "impact_potential": 4.5,
         "blast_radius_potential": 2.5,
-        "recoverability_inverse": 4,
+        "recoverability_inverse": 4.0,
         "detectability": 2.5
       },
       "type_weight": 4.29,
@@ -1181,8 +1226,8 @@
     "IND-0202-04": {
       "axes": {
         "impact_potential": 4.5,
-        "blast_radius_potential": 3,
-        "recoverability_inverse": 4,
+        "blast_radius_potential": 3.0,
+        "recoverability_inverse": 4.0,
         "detectability": 3.0
       },
       "type_weight": 4.41,
@@ -1198,7 +1243,7 @@
       "axes": {
         "impact_potential": 4.5,
         "blast_radius_potential": 2.5,
-        "recoverability_inverse": 4,
+        "recoverability_inverse": 4.0,
         "detectability": 4.5
       },
       "type_weight": 3.97,
@@ -1214,7 +1259,7 @@
       "axes": {
         "impact_potential": 4.5,
         "blast_radius_potential": 2.5,
-        "recoverability_inverse": 4,
+        "recoverability_inverse": 4.0,
         "detectability": 5.0
       },
       "type_weight": 3.87,
@@ -1229,7 +1274,7 @@
     "IND-0203-01": {
       "axes": {
         "impact_potential": 6.5,
-        "blast_radius_potential": 5,
+        "blast_radius_potential": 5.0,
         "recoverability_inverse": 5.5,
         "detectability": 5.0
       },
@@ -1245,7 +1290,7 @@
     "IND-0203-02": {
       "axes": {
         "impact_potential": 6.5,
-        "blast_radius_potential": 5,
+        "blast_radius_potential": 5.0,
         "recoverability_inverse": 5.5,
         "detectability": 4.5
       },
@@ -1261,7 +1306,7 @@
     "IND-0203-03": {
       "axes": {
         "impact_potential": 6.5,
-        "blast_radius_potential": 5,
+        "blast_radius_potential": 5.0,
         "recoverability_inverse": 5.5,
         "detectability": 4.5
       },
@@ -1277,7 +1322,7 @@
     "IND-0203-04": {
       "axes": {
         "impact_potential": 6.5,
-        "blast_radius_potential": 5,
+        "blast_radius_potential": 5.0,
         "recoverability_inverse": 5.5,
         "detectability": 5.5
       },
@@ -1293,7 +1338,7 @@
     "IND-0203-05": {
       "axes": {
         "impact_potential": 6.5,
-        "blast_radius_potential": 5,
+        "blast_radius_potential": 5.0,
         "recoverability_inverse": 5.5,
         "detectability": 4.0
       },
@@ -1309,7 +1354,7 @@
     "IND-0203-06": {
       "axes": {
         "impact_potential": 6.5,
-        "blast_radius_potential": 5,
+        "blast_radius_potential": 5.0,
         "recoverability_inverse": 5.5,
         "detectability": 4.0
       },
@@ -1421,7 +1466,7 @@
     "IND-0205-01": {
       "axes": {
         "impact_potential": 6.0,
-        "blast_radius_potential": 5,
+        "blast_radius_potential": 5.0,
         "recoverability_inverse": 5.5,
         "detectability": 4.5
       },
@@ -1437,7 +1482,7 @@
     "IND-0205-02": {
       "axes": {
         "impact_potential": 6.0,
-        "blast_radius_potential": 5,
+        "blast_radius_potential": 5.0,
         "recoverability_inverse": 5.5,
         "detectability": 4.5
       },
@@ -1453,7 +1498,7 @@
     "IND-0205-03": {
       "axes": {
         "impact_potential": 6.0,
-        "blast_radius_potential": 5,
+        "blast_radius_potential": 5.0,
         "recoverability_inverse": 5.5,
         "detectability": 4.0
       },
@@ -1485,7 +1530,7 @@
     "IND-0205-05": {
       "axes": {
         "impact_potential": 6.0,
-        "blast_radius_potential": 5,
+        "blast_radius_potential": 5.0,
         "recoverability_inverse": 5.5,
         "detectability": 3.5
       },
@@ -1501,7 +1546,7 @@
     "IND-0205-06": {
       "axes": {
         "impact_potential": 6.0,
-        "blast_radius_potential": 3,
+        "blast_radius_potential": 3.0,
         "recoverability_inverse": 5.5,
         "detectability": 4.0
       },

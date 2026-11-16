@@ -1,0 +1,15 @@
+{
+  "id": "F163",
+  "target": "overlay",
+  "expected_check": "V46",
+  "expected_message": "'unvalidated' was expected",
+  "audit_findings": "N2",
+  "description": "Declare the overlay validated; the overlay schema holds validation_status constant.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "validation_status",
+      "value": "validated"
+    }
+  ]
+}

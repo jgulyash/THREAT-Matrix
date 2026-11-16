@@ -41,7 +41,9 @@ Changes performed (every breaking change between 2.1.0 and 3.0.0):
        escalation_priority -> tactic_priorities[tactic_id]
        escalation_rubric   -> rubric (severity_thresholds ->
                               type_band_thresholds, severity_floor_rule ->
-                              type_band_floor_rule)
+                              type_band_floor_rule; the rule also gains
+                              floored_indicators, the sorted list of the
+                              indicators that carried severity_floor)
        instance_conditioning -> instance_conditioning
   F. matrices.<name>.maturity is added where absent: "core" for person and
      facility, "draft" for every other matrix.
@@ -54,7 +56,9 @@ What it cannot do automatically is reported as a list, never as a crash:
 bibliography keys or source_refs that the tightened key grammar rejects,
 bibliography URLs that are not http or https, compensates_for values that
 are neither countermeasure nor indicator IDs, indicators with an
-incomplete score, and (when the jsonschema package, the 3.0.0 schemas, and
+incomplete score, tactics with no escalation_priority (the overlay needs
+one tactic_priorities entry per tactic and the tool never invents one),
+and (when the jsonschema package, the 3.0.0 schemas, and
 scripts/lint/validate.py are available) every remaining schema error and
 every failing validator check, grouped. Those remaining items are content
 problems in the input, which 3.0.0 checks and 2.1.0 did not.
@@ -304,6 +308,16 @@ class Migration:
             if isinstance(guidance, dict) and "escalation_priority" in guidance:
                 tactic_priorities[str(tactic_id)] = guidance.pop("escalation_priority")
                 self.counts["E. assessment_guidance.escalation_priority moved to tactic_priorities"] += 1
+            else:
+                # Never invented: the overlay needs one entry per tactic, and
+                # choosing a priority is a content decision.
+                self.note(
+                    "tactic-priority", str(tactic_id),
+                    "the tactic has no assessment_guidance.escalation_priority, so the overlay has no "
+                    "tactic_priorities entry for it (the overlay requires exactly one per tactic)",
+                    "Add tactic_priorities[<tactic id>] to the overlay with one of Urgent, Immediate, "
+                    "Priority, Routine. This tool does not choose a value.",
+                )
             for indicator in tactic.get("indicators") or []:
                 if not isinstance(indicator, dict):
                     continue
@@ -345,6 +359,24 @@ class Migration:
                     self.counts[f"E. rubric {key} -> {new_key}"] += 1
                 renamed[new_key] = value
             rubric = renamed
+            # 3.0.0 publishes the complete list of floored indicators inside
+            # the floor rule. It is derived, not authored: exactly the
+            # indicators that carried severity_floor.
+            floored = sorted(
+                ind_id for ind_id, entry in indicator_scores.items() if "type_band_floor" in entry
+            )
+            floor_rule = rubric.get("type_band_floor_rule")
+            if isinstance(floor_rule, dict):
+                floor_rule["floored_indicators"] = floored
+                self.counts["E. rubric.type_band_floor_rule.floored_indicators written (derived list)"] = len(floored)
+            else:
+                self.note(
+                    "rubric", "rubric.type_band_floor_rule",
+                    "the floor rule is missing or is not an object, so floored_indicators could not be written",
+                    "Write rubric.type_band_floor_rule by hand (definition, applies_to, added, "
+                    f"floored_indicators). The derived floored_indicators list has {len(floored)} ID(s): "
+                    "every indicator_scores entry that has a type_band_floor, sorted.",
+                )
 
         conditioning = self.doc.pop("instance_conditioning", None)
         if conditioning is None:
@@ -514,6 +546,8 @@ def schema_residue(framework, overlay, schema_dir: Path) -> tuple[list[dict], st
 
 
 VALIDATOR_HINTS = {
+    "V43": "The overlay needs exactly one tactic_priorities entry per tactic. Add the missing entries "
+           "(listed above under tactic-priority) with one of Urgent, Immediate, Priority, Routine.",
     "V35": "Content rule added in 3.0.0. Add the parent tactic's phase to each listed object's "
            "phase_relevance, or move the object to the tactic whose phase it describes.",
     "V20": "The published axis_confidence labels disagree with their own derivation rule for these "

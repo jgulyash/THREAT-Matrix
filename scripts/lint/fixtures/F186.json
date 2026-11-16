@@ -1,0 +1,17 @@
+{
+  "id": "F186",
+  "target": "framework_schema",
+  "expected_check": "V39",
+  "expected_message": "constraint digest",
+  "audit_findings": "N8",
+  "description": "Self-test: cut $defs.indicator.required down to id in the schema file itself.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "$defs.indicator.required",
+      "value": [
+        "id"
+      ]
+    }
+  ]
+}

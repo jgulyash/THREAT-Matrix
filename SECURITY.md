@@ -22,6 +22,9 @@ Ordinary content corrections (a wrong citation, a tactic in the wrong phase,
 a broken link) are not security reports. Use the public issue templates for
 those.
 
+Reports about a participant's conduct and governance enquiries may use the
+same private channel described below.
+
 ## How to report
 
 1. **Preferred: GitHub private vulnerability reporting.** On the repository

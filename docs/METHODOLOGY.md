@@ -88,10 +88,10 @@ Four relations link objects by identifier. Their coverage today is uneven, and o
 
 | Relation | Lives on | Meaning | Coverage today |
 |---|---|---|---|
-| `correlates_with` | Indicator, pointing to indicators | The two behaviors tend to occur together, in any phase or matrix. Stored in both directions. | 1,586 entries (360 cross a matrix boundary). 142 of 828 indicators have no entry: 68 Organizations, 37 People, 37 Infrastructure. |
-| `mitigates` | Countermeasure, pointing to indicators | The countermeasure acts on that behavior. Each edge is `{"indicator": "<id>", "function": "<value>"}`. | 483 edges on 287 countermeasures. 478 of 828 indicators have no edge: all 191 People indicators, 189 Infrastructure, 98 Facilities. |
+| `correlates_with` | Indicator, pointing to indicators | The two behaviors tend to occur together, in any phase or matrix. Stored in both directions. | 1,586 entries (360 cross a matrix boundary). 142 of 828 indicators have no entry: 68 Organizations, 37 People, 37 Infrastructure. On 107 of them the field is absent and on 35 it is an empty list; the two mean the same. |
+| `mitigates` | Countermeasure, pointing to indicators | The countermeasure acts on that behavior. Each edge is `{"indicator": "<id>", "function": "<value>"}`. | 483 edges on 287 countermeasures (Organizations 341, Facilities 135, Infrastructure 7, People 0). Every edge points to an indicator in the countermeasure's own tactic. 478 of 828 indicators have no edge: all 191 People indicators, 189 Infrastructure, 98 Facilities. |
 | `compensates_for` | Countermeasure, pointing to countermeasures | This countermeasure covers for the absence or failure of the other. Countermeasure identifiers only. | 362 entries on 247 of 645 countermeasures. |
-| `coordinates_with` | Response protocol, pointing to response protocols | The two protocols are activated together or in a set order. | 512 entries on 269 of 323 response protocols. |
+| `coordinates_with` | Response protocol, pointing to response protocols | The two protocols are activated together or in a set order. Directed: an entry on A naming B does not require an entry on B naming A. | 512 entries on 269 of 323 response protocols. 340 of the 512 have no matching entry in the other direction. |
 
 **The `mitigates` relation is untyped today.** The schema allows a `function` of `prevent`, `detect`, `deny`, or `unreviewed`. Every one of the 483 edges in the data has the function `unreviewed`. The relation therefore records that a link was drawn and nothing about how the countermeasure acts. Do not read it as a statement that a control prevents or detects anything. The absence of an edge is also not information: the People matrix has no `mitigates` edges at all, because none has been authored, not because no countermeasure applies.
 
@@ -99,7 +99,11 @@ Four relations link objects by identifier. Their coverage today is uneven, and o
 
 **What a correlation link claims.** A cross-matrix `correlates_with` link is meant to be drawn only when the two behaviors are the same act, share one literal resource, or form one signal about the whole actor. This is an authoring rule. No field records which test a link meets and no gate checks it (section 5).
 
-**What a missing link means.** Nothing. A missing `correlates_with` or `mitigates` entry means no link has been authored.
+**Direction.** `correlates_with` is undirected and stored both ways; the gates reject a one-way entry. `coordinates_with` is directed, and one-way entries are permitted: a protocol may name another that it gates, precedes, or runs alongside without the second naming the first. No field records which of those three the author meant. `mitigates` and `compensates_for` run one way by definition.
+
+**The data's own summary of the links is incomplete.** `detection_mesh.schema_links` in the vocabulary names `correlates_with`, `compensates_for`, and `coordinates_with`. It does not name `mitigates`.
+
+**What a missing link means.** Nothing. A missing or empty `correlates_with`, `mitigates`, or `coordinates_with` means no link has been authored. `coordinates_with` is absent on 6 response protocols and empty on 48.
 
 ## 4. Evidence basis
 
@@ -140,30 +144,32 @@ python3 scripts/lint/consumer-smoke.py
 
 ### Local hook
 
-`scripts/git-hooks/pre-commit` is opt-in: enable it once with `git config core.hooksPath scripts/git-hooks`. It acts only when a staged path is under `docs/data/`, `src/`, `scripts/`, or `examples/`, or is `index.html` or `package.json`. It exports the staged content to a temporary directory and checks that copy, never the working tree. It runs: `validate.py` on the framework, on the framework with the overlay, and on the scored worked cases; `field-parity.py`; `mesh-refs.py`; `id-manifest.py --check`; `derive-axis-confidence.py --check`; and `consumer-smoke.py` (skipped with a warning if the `jsonschema` package is not installed). It runs the `validate.py` fixture harness only when a file under `scripts/lint/` or a `docs/data/*.schema.json` file is staged. If a viewer build input is staged (anything under `src/`, `index.html`, `package.json`, `bun.lock`, `vite.config.ts`, a `tsconfig` file, or a `docs/data` file the viewer imports), it requires a rebuilt bundle to be staged as well (a new or changed file under `docs/assets/` and `docs/index.html`), and it checks that the staged `docs/index.html` references exactly the files in the staged `docs/assets/`. It does not run the viewer build. It can be bypassed with `git commit --no-verify`.
+`scripts/git-hooks/pre-commit` is opt-in: enable it once with `git config core.hooksPath scripts/git-hooks`. It acts when a staged path is under `docs/data/`, `src/`, `scripts/`, `examples/`, `docs/assets/`, or `.github/workflows/`, or is `index.html`, `docs/index.html`, `package.json`, `bun.lock`, `vite.config.ts`, or a `tsconfig` file. It exports the staged content to a temporary directory and checks that copy, never the working tree. It requires the `jsonschema` package and stops with a message if it is not installed; nothing is skipped for lack of it. It runs: `validate.py` on the framework, on the framework with the overlay, and on the scored worked cases; `field-parity.py`; `mesh-refs.py`; `id-manifest.py --check` with two baselines, the committed published baseline `docs/data/baselines/id-manifest-1.7.0.json` and the manifest in the previous commit; `derive-axis-confidence.py --check`; and `consumer-smoke.py`. It runs the `validate.py` fixture harness only when a file under `scripts/lint/` or a `docs/data/*.schema.json` file is staged. If a viewer build input is staged (anything under `src/`, `index.html`, `package.json`, `bun.lock`, `vite.config.ts`, a `tsconfig` file, or a `docs/data` file the viewer imports), it requires a rebuilt bundle to be staged as well (a new or changed file under `docs/assets/` and `docs/index.html`). On every commit it checks, it confirms that the staged `docs/index.html` references exactly the files in the staged `docs/assets/`. It does not run the viewer build, and for a change to a workflow file it runs the data gates but cannot judge the workflow itself. It can be bypassed with `git commit --no-verify`.
 
 ### Continuous integration
 
-Three workflows run on every push and every pull request for `main`, `v1-build`, and `v3-design`, with a read-only token, actions pinned to commit SHAs, Python 3.14, and `jsonschema` 4.26.0. *Framework Validator* runs, in order: `validate.py docs/data/framework.json --require-schema`; the same with `--overlay docs/data/scoring-overlay.json`; the fixture harness (`--fixtures scripts/lint/fixtures`); the scored worked cases (`--overlay ... --records examples/experimental-scoring/worked-cases`); `field-parity.py`; `mesh-refs.py`; `id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json` (on pull requests also compared with the base branch's manifest, once the base branch has one); `consumer-smoke.py`; and `derive-axis-confidence.py --check`. *Mesh Refs* runs `mesh-refs.py` alone. *Bundle Freshness* checks that `docs/index.html` references exactly the files in `docs/assets/`, then deletes `docs/assets/`, rebuilds with bun 1.3.9, and fails unless `docs/index.html` and every file under `docs/assets/` are byte-identical to the committed ones and the build produced no uncommitted file. Nothing is deployed from CI.
+Three workflows run on every push and every pull request for `main`, `v1-build`, and `v3-design`, with a read-only token, actions pinned to commit SHAs, Python 3.14, and `jsonschema` 4.26.0. *Framework Validator* runs, in order: `validate.py docs/data/framework.json`; the same with `--overlay docs/data/scoring-overlay.json`; the fixture harness (`--fixtures scripts/lint/fixtures`); the scored worked cases (`--overlay ... --records examples/experimental-scoring/worked-cases`); `field-parity.py`; `mesh-refs.py`; `id-manifest.py --check docs/data/framework.json docs/data/id-manifest.json --baseline docs/data/baselines/id-manifest-1.7.0.json`; a second manifest comparison against the previous manifest (the base branch's on a pull request, the previous commit's on a push; skipped with a message when there is none to fetch, for example on a new branch or after a force push); `consumer-smoke.py`; and `derive-axis-confidence.py --check`. JSON Schema validation is part of `validate.py` and is required; a missing `jsonschema` package fails the run. *Mesh Refs* runs `mesh-refs.py` alone. *Bundle Freshness* checks that `docs/index.html` references exactly the files in `docs/assets/`, then deletes `docs/assets/`, rebuilds with bun 1.3.9, and fails unless `docs/index.html` and every file under `docs/assets/` are byte-identical to the committed ones and the build produced no uncommitted file. Nothing is deployed from CI.
 
 ### What the gates check
 
 | Gate | Checks |
 |---|---|
-| `validate.py` on the vocabulary | 35 numbered checks: unique identifiers in every namespace; every reference resolves to an object of the right kind; identifier grammar, exact to the last character; a tactic's identifier agrees with its matrix and phase; a child's identifier agrees with its parent; the lifecycle contract; the modality and conditioning-guidance rules; bibliography keys, URLs (http and https only), DOIs, and dates; every bibliography entry is cited; no score field anywhere in the vocabulary; no empty or padded string; and the vocabulary against its JSON Schema. |
-| `validate.py --overlay` | 10 more checks on the overlay (45 in total). Described in the overlay section. |
-| `validate.py --records` | 3 more checks on scored case records (48 in total). Described in the overlay section. |
-| `validate.py --coverage FILE` | 1 check on an organization's coverage document. It brings the validator's total to 49 checks. It is not one of the gate commands, because the repository ships no coverage document. |
-| `validate.py --fixtures` | 157 fixtures. Each negative fixture applies a named defect to a fresh copy of the data and must be rejected by the check it targets; each positive fixture must pass cleanly. The harness fails if the unmodified data does not pass, if a fixture's change does not apply, or if any of the 49 checks lacks a negative fixture. |
+| `validate.py` on the vocabulary | 36 numbered checks: unique identifiers in every namespace; every reference resolves to an object of the right kind; identifier grammar, exact to the last character; a tactic's identifier agrees with its matrix and phase; a child's identifier agrees with its parent; the lifecycle contract; the modality and conditioning-guidance rules; bibliography keys, URLs (http and https only), DOIs, and dates; every bibliography entry is cited; no score field anywhere in the vocabulary; no empty or padded string; an actor profile's category and label agree, and matrix-specific fields appear only in their matrix; and the vocabulary against its JSON Schema, together with a pinned digest of that schema's constraints, so that a loosened schema fails too. |
+| `validate.py --overlay` | 11 more checks on the overlay (47 in total). Described in the overlay section. |
+| `validate.py --records` | 3 more checks on scored case records (50 in total). Described in the overlay section. |
+| `validate.py --coverage FILE` | 1 check on an organization's coverage document. It brings the validator's total to 51 checks. It is not one of the gate commands, because the repository ships no coverage document. |
+| `validate.py --fixtures` | 199 fixtures (190 negative, 9 positive). Each negative fixture applies a named defect to a fresh copy of the data and must be rejected by the check it targets; each positive fixture must pass cleanly. The harness fails if the unmodified data does not pass, if a fixture's change does not apply, or if any of the 51 checks lacks a negative fixture. |
 | `field-parity.py` | A field fully populated in one matrix is not missing from another; every matrix has indicator links of its own; no scoring field is present in the vocabulary. |
 | `mesh-refs.py` | Every `correlates_with`, `mitigates`, `compensates_for`, and `coordinates_with` reference resolves to the right kind of object; none refers to itself or repeats; `correlates_with` is symmetric. |
-| `id-manifest.py --check` | The committed ID manifest lists exactly the identifiers in the vocabulary; no identifier is in two places; with a baseline manifest, no identifier has been dropped without a removal record and no reserved or removed identifier has been reused. |
+| `id-manifest.py --check` | The committed ID manifest lists exactly the identifiers in the vocabulary, and no identifier is in two places. With `--baseline`, which the hook and continuous integration always pass, no identifier in the baseline is missing from the vocabulary without a removal record, and no reserved or removed identifier is live again. The baselines used are the committed manifest of the published 1.7.0 release and the previous manifest. Run by hand without `--baseline`, the check cannot see an identifier that was dropped together with a regenerated manifest. |
 | `consumer-smoke.py` | The vocabulary, the overlay, the five score-free worked cases, the three scored worked cases, and both templates validate against their schemas; the reference consumer prints no score unless asked and prints the overlay notice before any score when asked. |
 | Bundle Freshness (CI only) | The committed viewer equals a fresh build of the committed sources. |
 
 Check identifiers, their scope, and the fixture that covers each are listed in [scripts/lint/fixtures/README.md](../scripts/lint/fixtures/README.md).
 
-**A note on trailing newlines.** Identifier and key patterns in the schemas are plain anchored patterns. Python's schema validator treats the closing `$` leniently and accepts a value with one trailing newline. The rule that an identifier, key, or version has no trailing whitespace is therefore enforced by `validate.py` (exact full match), not by the JSON Schema when it is run from Python. A consumer that runs only a Python JSON Schema validator, without `validate.py`, will accept such a value.
+**Schema validation is required.** `validate.py` runs the JSON Schemas as part of its checks and fails if the `jsonschema` package is missing. `--no-schema` skips them and says in its summary that the run is not a release gate. The validator also holds a digest of each schema's constraints (`SCHEMA_PINS` in `scripts/lint/validate.py`). If a required list, enum, pattern, or closed object in a schema file changes, the schema check fails until the digest is updated in the same change, so a schema cannot be loosened unnoticed.
+
+**A note on trailing newlines.** Python's regular-expression engine lets a closing `$` match before a final newline, so a plain anchored pattern would accept an identifier with a newline appended. The rule that an identifier, key, or version has no trailing whitespace is enforced twice: each anchored pattern in the schemas is paired with a second pattern that rejects whitespace, and `validate.py` applies an exact full match of its own. Both reject such a value when run from Python.
 
 ### What the gates do not check
 
@@ -174,7 +180,8 @@ These rules are stated in this project's documents. No gate checks them. They ar
 - **Correlation link validity.** That a cross-matrix `correlates_with` link meets one of the three tests in section 3. The gates check that a link resolves and is symmetric, not that it is justified.
 - **The `mitigates` function.** No gate requires an edge to be typed. All are `unreviewed`.
 - **The sunset rule.** That an item stays deprecated for at least one MINOR release before its content is removed. This cannot be seen from one document.
-- **Overlay content.** In the overlay, that every indicator describing direct force against a person carries the floor. The gates check the arithmetic and the labels, not whether the authored values or the floored set are right. The overlay itself lists three known inconsistencies in the floored set.
+- **Overlay content.** In the overlay, that every indicator describing direct force against a person carries the floor. The gates check the arithmetic, the labels, and that the floored entries are exactly the 43 the rubric lists. They do not check whether the authored values or that list are right. The overlay itself names three known inconsistencies in the floored set.
+- **Workflow files.** No gate checks that a workflow file is correct.
 - **Case records about real people.** The repository holds none and checks none.
 
 ### Review by people
@@ -241,7 +248,7 @@ This section explains how the numbers are produced so they can be inspected. It 
 ### What the overlay holds
 
 - `indicator_scores`: one entry for each of the 828 indicators, keyed by indicator identifier. The key set must equal the vocabulary's indicator identifiers exactly.
-- `tactic_priorities`: one label for each of the 161 tactics (`Urgent`, `Immediate`, `Priority`, or `Routine`).
+- `tactic_priorities`: one label for each of the 161 tactics (`Urgent`, `Immediate`, `Priority`, or `Routine`). The validator requires exactly one entry per tactic.
 - `rubric`: the text of the scoring rules, the thresholds, and the floor rule.
 - `instance_conditioning`: the text of the experimental case-level rules.
 
@@ -281,7 +288,7 @@ The current population is 14 low, 435 medium, 291 high, and 88 critical. The thr
 
 An entry may carry `type_band_floor`. Where present, the band is at least the floor; the weight is unchanged. In the current file the only floor value used is `critical`, on 43 indicators: 11 People, 24 Facilities, 8 Infrastructure. Organizations has none.
 
-`rubric.type_band_floor_rule` documents the rule and names every floored indicator:
+`rubric.type_band_floor_rule` documents the rule, and its `floored_indicators` list names every floored indicator. The validator fails if the entries that carry a floor differ from that list in either direction, so a floor cannot be added or removed without changing the published list.
 
 - People, direct physical force against a person: 11 indicators.
 - Facilities, direct physical force: 7 indicators.
@@ -312,7 +319,7 @@ Do not place a scored record in a case file or use one to decide anything about 
 
 ### Gates on the overlay
 
-With `--overlay`, `validate.py` adds ten checks: band against stored weight and floor; weight against the axes; floor values; axis-confidence labels against the rule; the header constants and version match; the key set against the vocabulary; tactic priority keys and values; decimal places; threshold ordering and the six factor names; and the overlay against its JSON Schema. These confirm that the file is internally consistent. They do not, and cannot, confirm that any value is right.
+With `--overlay`, `validate.py` adds eleven checks: band against stored weight and floor; weight against the axes; floor values; the floored set against the rubric's list; axis-confidence labels against the rule; the header constants and version match; the key set against the vocabulary; exactly one valid priority per tactic; decimal places; threshold ordering and the six factor names; and the overlay against its JSON Schema and that schema's pinned digest. These confirm that the file is internally consistent. They do not, and cannot, confirm that any value is right.
 
 ---
 

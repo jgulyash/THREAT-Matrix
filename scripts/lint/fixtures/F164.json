@@ -1,0 +1,14 @@
+{
+  "id": "F164",
+  "expected_check": "V39",
+  "expected_message": "non-empty",
+  "audit_findings": "N12",
+  "description": "Empty the bibliography; the schema requires at least one entry.",
+  "mutations": [
+    {
+      "op": "set",
+      "path": "bibliography",
+      "value": {}
+    }
+  ]
+}

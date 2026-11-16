@@ -1,0 +1,15 @@
+{
+  "id": "F161",
+  "target": "overlay",
+  "expected_check": "V51",
+  "expected_message": "carries no type_band_floor",
+  "audit_findings": "N1",
+  "description": "Add an unfloored indicator to the published floored list.",
+  "mutations": [
+    {
+      "op": "append",
+      "path": "rubric.type_band_floor_rule.floored_indicators",
+      "value": "IND-0101-01"
+    }
+  ]
+}
