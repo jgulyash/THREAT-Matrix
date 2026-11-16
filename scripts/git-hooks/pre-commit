@@ -196,7 +196,9 @@ run_gate "consumer-smoke" \
 
 # ---- 4. Bundle rule ----------------------------------------------------------
 if [ "$bundle_input" = "true" ]; then
-  git diff --cached --name-only -z --diff-filter=AM -- docs/assets > "$work/assets.list"
+  # --no-renames: a rebuilt bundle that differs only slightly from the old one
+  # is otherwise reported as a rename (R), which the AM filter would miss.
+  git diff --cached --no-renames --name-only -z --diff-filter=AM -- docs/assets > "$work/assets.list"
   assets_staged=false
   if [ -s "$work/assets.list" ]; then
     assets_staged=true
