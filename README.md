@@ -198,7 +198,7 @@ What the file holds, for each of the 828 indicators as a class of behavior:
 
 - four authored axis values from 0 to 10 (`axes`): impact potential, blast radius potential, recoverability (inverse), and detectability;
 - a computed `type_weight`, the fourth root of impact times blast radius times recoverability times (10 minus detectability), stored to two decimals;
-- a `type_band` (low, medium, high, critical) read from the stored weight at fixed thresholds, raised to an authored floor on the 43 indicators that carry one;
+- a `type_band` (low, medium, high, critical) read from the stored weight at fixed thresholds, raised to an authored floor on the 45 indicators that carry one;
 - an `axis_confidence` label per axis. 2,348 of the 3,312 axis values are labelled `inferred`, which the overlay defines as a reasoned assignment without a documented anchor.
 
 It also holds the rubric text, a per-tactic priority label, and the definition of an experimental scored case record.

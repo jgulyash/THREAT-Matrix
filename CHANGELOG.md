@@ -42,6 +42,7 @@ schema `3.0.0`, case record `1.0.0`, overlay `0.1.0`.
 ### Fixed
 - `phase_relevance` now includes the parent tactic's phase on 24 indicators and 48 countermeasures.
 - `axis_confidence` labels in the overlay follow their derivation rule on every indicator (12 corrected).
+- Overlay floor made consistent with its own rule: `IND-F0302-05` and `IND-0304-04` now carry the `critical` floor, so 45 indicators are floored. `IND-0304-04` moves from `high` to `critical`; the band of `IND-F0302-05` is unchanged. The rule text states why `IND-I0306-02` is not floored.
 - Three dead source URLs replaced; one duplicate source entry merged. The bibliography holds 120 entries, all public sources.
 - `TO0212` and `TI0211` now carry `false_positive_context` and `threshold_guidance`.
 - Four response protocols no longer instruct staff to detain a person; they say to ask the person to wait and not to detain them.

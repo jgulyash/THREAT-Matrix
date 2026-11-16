@@ -286,17 +286,17 @@ The current population is 14 low, 435 medium, 291 high, and 88 critical. The thr
 
 ### Floor
 
-An entry may carry `type_band_floor`. Where present, the band is at least the floor; the weight is unchanged. In the current file the only floor value used is `critical`, on 43 indicators: 11 People, 24 Facilities, 8 Infrastructure. Organizations has none.
+An entry may carry `type_band_floor`. Where present, the band is at least the floor; the weight is unchanged. In the current file the only floor value used is `critical`, on 45 indicators: 12 People, 25 Facilities, 8 Infrastructure. Organizations has none.
 
 `rubric.type_band_floor_rule` documents the rule, and its `floored_indicators` list names every floored indicator. The validator fails if the entries that carry a floor differ from that list in either direction, so a floor cannot be added or removed without changing the published list.
 
-- People, direct physical force against a person: 11 indicators.
+- People, direct physical force against a person, including holding and moving a captive: 12 indicators.
 - Facilities, direct physical force: 7 indicators.
-- Facilities, secondary strike against responders or evacuees during an active incident: 4 indicators.
+- Facilities, secondary strike against responders or evacuees during an active incident: 5 indicators.
 - Facilities, harm to occupants through the structure or its systems: 13 indicators.
 - Infrastructure, execution behaviors where casualties are the direct mechanism: 8 indicators.
 
-The same text lists three known, unresolved inconsistencies, where an indicator is not floored although a closely similar one is (`IND-F0302-05`, `IND-I0306-02`, `IND-0304-04`). They are published so the set can be reproduced exactly, not because the set is settled.
+The same text names one indicator that is not floored although closely similar ones are: `IND-I0306-02`, contamination of a raw water intake ahead of treatment. The treatment process still stands between the contamination and people, so casualties are not the direct mechanism. It is named so the set can be reproduced exactly, not because the set is settled.
 
 ### Axis confidence
 
