@@ -2,7 +2,7 @@
 
 The THREAT Matrix does not silently remove or repurpose content. This document defines the lifecycle states an object can be in, the fields each state requires, how an object moves between states, and what a consumer should do with each. The JSON Schema (`docs/data/framework.schema.json`), the validator (`scripts/lint/validate.py`, check V26), the ID manifest tool (`scripts/lint/id-manifest.py`), and the viewer all follow the rules below.
 
-No object in version 2.0.0 is deprecated or superseded. The only lifecycle state in use today is `reserved`, on two actor profiles. The deprecated and superseded rules are defined and gated, and have not yet been exercised on real content.
+In version 2.0.0, twelve Organizations tactics are deprecated, together with their 60 indicators, 48 countermeasures, and 24 response protocols (144 objects). Each names conduct that is commonly lawful or protected activity. The tactics are `TO0302`, `TO0303`, `TO0305` to `TO0312`, `TO0314`, and `TO0315`. Their content stays in the document and no replacement is named. Two actor profiles are `reserved`. No object is superseded: the superseded rules are defined and gated, and have not yet been exercised on real content.
 
 ## Lifecycle states
 
@@ -15,7 +15,7 @@ No object in version 2.0.0 is deprecated or superseded. The only lifecycle state
 
 "Any object" means a tactic, indicator, countermeasure, response protocol, or actor profile.
 
-`lifecycle_state` is optional. An object without it is `active`. In version 2.0.0, 2 of the 34 actor-profile entries carry the field (both `reserved`) and no other object does.
+`lifecycle_state` is optional. An object without it is `active`. In version 2.0.0, 2 of the 34 actor-profile entries carry the field (both `reserved`), and 144 objects in the Organizations matrix carry it (all `deprecated`). No other object does.
 
 ### The reserved rule
 

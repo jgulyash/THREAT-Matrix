@@ -30,6 +30,9 @@ schema `3.0.0`, case record `1.0.0`, overlay `0.1.0`.
 - Validator: 51 checks across the vocabulary, overlay, scored records, and coverage documents, with 199 fixtures. JSON Schema validation is a required part of every run, and a digest of each schema's constraints is pinned so a loosened schema fails. The ID manifest is compared on every push and pull request with a committed baseline of the published 1.7.0 identifiers (`docs/data/baselines/id-manifest-1.7.0.json`) and with the previous manifest. The overlay must list its floored indicators and carry exactly one priority per tactic. Continuous integration runs every gate on `main`, `v1-build`, and `v3-design`.
 - Countermeasures 641 to 645 and response protocols 322 to 323: `TO0212` and `TI0211` brought to the same shape as other tactics.
 
+### Deprecated
+- Twelve Organizations tactics that name conduct that is commonly lawful or protected activity: `TO0302`, `TO0303`, `TO0305` to `TO0312`, `TO0314`, `TO0315`, with their 60 indicators, 48 countermeasures, and 24 response protocols (144 objects). Each carries `lifecycle_state: deprecated`, `deprecated_in: 2.0.0`, and a reason. Content and identifiers stay in the document. No replacement is named.
+
 ### Removed
 - Root `operations` (an empty placeholder).
 - Indicator field `primary_objective_evidence_tier` (never populated).

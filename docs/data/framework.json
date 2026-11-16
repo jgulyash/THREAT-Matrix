@@ -45803,7 +45803,10 @@
                 "IND-O0201-01",
                 "IND-O0204-05",
                 "IND-O0212-03"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0302 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0302-02",
@@ -45838,7 +45841,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
                 "guidance": "Assess how much genuine backing stands behind the petitions and whether they can reach a body able to defund or dissolve the institution. Whether the signatures are organic or bought, and whether one actor orchestrates it, can stay open; a staged demand and a real constituency can threaten the institution very differently."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0302 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0302-03",
@@ -45873,7 +45879,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "means_in_hand"],
                 "guidance": "Track how fast the narrative climbs from fringe venues toward the mainstream outlets the institution's audiences trust, and the reach behind the push. Whether one coordinated hand drives the schedule can stay open; whether it crosses over, and how quickly, may weigh more than the seeding, and an organic rise and an engineered climb can read alike."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0302 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0302-04",
@@ -45903,7 +45912,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
                 "guidance": "Weigh how many credible defectors the actor has recruited and how fast their statements reach the institution's audiences. Whether one effort or several court them, and whether the renunciations are the whole campaign, can stay open; the damage may rest on the weight of the voices and their spread rather than the fact of a defection."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0302 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0302-05",
@@ -45937,7 +45949,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "means_in_hand"],
                 "guidance": "Track how far the impersonation spreads before it can be countered and how many take it as real. Whether one actor or a network runs the channels can stay open; a spoofed channel can point to the method, yet its damage may turn on how far the false statements travel and whether audiences believe them."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0302 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "countermeasures": [
@@ -45959,7 +45974,10 @@
               ],
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0302 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0302-02",
@@ -45979,7 +45997,10 @@
               ],
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0302 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0302-03",
@@ -45999,7 +46020,10 @@
               ],
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0302 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0302-04",
@@ -46020,7 +46044,10 @@
               ],
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0302 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "related_tactics": [
@@ -46100,7 +46127,10 @@
               "legal_notes": "separate protected speech from defamation and coordinate any legal response with counsel",
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0302 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "RP-O0302-02",
@@ -46120,7 +46150,10 @@
               "legal_notes": "ensure regulatory engagement follows official channels and disclosure rules",
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0302 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "field_notes": "The thing about a delegitimization campaign is that the strongest version rarely disputes the facts of what the institution did. In practice the investigator meets it as sustained messaging that questions not conduct but whether the institution should exist at all. That contest over mandate and standing, aimed at stakeholders and the public, is what separates it from ordinary scandal. The threat actor works to strip the organization of its perceived authority and right to operate, so the investigator gauges whether the narrative attacks conduct or recognition itself and treats an assault on standing as the diagnostic.",
@@ -46130,7 +46163,10 @@
           "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026"
-          ]
+          ],
+          "lifecycle_state": "deprecated",
+          "deprecated_in": "2.0.0",
+          "deprecation_reason": "Names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement. Must not be treated as an indicator of threat."
         },
         {
           "id": "TO0303",
@@ -46266,7 +46302,10 @@
               "correlates_with": [
                 "IND-O0403-03",
                 "IND-O0204-02"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0303 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0303-02",
@@ -46300,7 +46339,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "pathway_stage"],
                 "guidance": "Identify which donors the actor is approaching and how many already waver. Whether one actor or several seed the doubt can stay open; the threat may turn on which relationships give way and how far the persuasion has moved, and ordinary donor caution and engineered doubt can look the same early on."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0303 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0303-03",
@@ -46332,7 +46374,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
                 "guidance": "Establish what the actor actually holds and pin the window the release targets. Whether one actor or a coordinated effort set the timing can stay open; the harm may rest on the substance behind the disclosure and the moment it hits, and a timed bluff and a real cache can read alike until shown."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0303 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0303-04",
@@ -46366,7 +46411,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "means_in_hand"],
                 "guidance": "Assess how close the manufactured scandal is to crossing into press the institution's funders monitor and how much real concern sits behind the amplification. Whether one operation or several drive it can stay open; the damage may land once it breaks past the bots into trusted coverage, and manufactured noise and real concern can read alike."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0303 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0303-05",
@@ -46397,7 +46445,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
                 "guidance": "Establish whether the clustered withdrawals trace to the rumor campaign and whether the exodus is still spreading. A sharp cancellation pattern can mark a strangulation or an ordinary giving dip, and timing alone may not separate them."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0303 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "countermeasures": [
@@ -46419,7 +46470,10 @@
               ],
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0303 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0303-02",
@@ -46439,7 +46493,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0303 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0303-03",
@@ -46460,7 +46517,10 @@
               ],
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0303 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0303-04",
@@ -46480,7 +46540,10 @@
               ],
               "source_refs": [
                 "NITTF-GUIDE-2017"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0303 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "related_tactics": [
@@ -46560,7 +46623,10 @@
               "legal_notes": "preserve evidence of fabrication and weigh defamation options with counsel",
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0303 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "RP-O0303-02",
@@ -46580,7 +46646,10 @@
               "legal_notes": "document financial impact and any fiduciary disclosure obligations",
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0303 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "field_notes": "A trust destruction operation runs through the specific confidence relationships that sustain an institution: donors, funders, members, and partners. The threat management team tends to catch it as engineered scandal aimed with precision at one of those relationships rather than at the institution's mandate. The threat actor manufactures or amplifies doubt to collapse the trust the organization depends on, so the team reads the failure of one particular relationship, distinct from a public challenge to the institution's authority to exist, as the shape of the attack.",
@@ -46590,7 +46659,10 @@
           "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026"
-          ]
+          ],
+          "lifecycle_state": "deprecated",
+          "deprecated_in": "2.0.0",
+          "deprecation_reason": "Names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement. Must not be treated as an indicator of threat."
         },
         {
           "id": "TO0304",
@@ -47201,7 +47273,10 @@
                 "IND-O0102-03",
                 "IND-O0206-03",
                 "IND-O0212-01"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0305 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0305-02",
@@ -47237,7 +47312,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
                 "guidance": "Determine how many votes the sponsored admissions manufacture and how near the vote stands. Funding aligned members can show intent to seize a majority, but whether the bought bloc reaches a winning count, and in time, may be what decides the danger."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0305 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0305-03",
@@ -47271,7 +47349,10 @@
               "correlates_with": [
                 "IND-O0406-03",
                 "IND-O0205-05"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0305 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0305-04",
@@ -47305,7 +47386,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "means_in_hand"],
                 "guidance": "Determine how many gatekeeping roles the faction has secured and whether it controls the process to fill the rest. Moving loyalists into counsel or the nominating chair can show the capture, but its reach may depend on how far the process has already gone."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0305 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0305-05",
@@ -47339,7 +47423,10 @@
               },
               "correlates_with": [
                 "IND-O0406-03"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0305 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "countermeasures": [
@@ -47363,7 +47450,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0305 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0305-02",
@@ -47385,7 +47475,10 @@
               ],
               "source_refs": [
                 "NITTF-GUIDE-2017"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0305 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0305-03",
@@ -47407,7 +47500,10 @@
               ],
               "source_refs": [
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0305 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0305-04",
@@ -47428,7 +47524,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0305 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "related_tactics": [
@@ -47500,7 +47599,10 @@
               "legal_notes": "Actions must follow the organization's own bylaws and applicable nonprofit governance law; document deliberations to withstand challenge.",
               "source_refs": [
                 "CALHOUN-WESTON-2003"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0305 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "RP-O0305-02",
@@ -47519,7 +47621,10 @@
               "legal_notes": "Coordinate with counsel on fiduciary duty, potential injunctive relief, and member notice requirements before public statements.",
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0305 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "field_notes": "A security professional catches this in the arrival pattern: new board or committee members showing up together rather than one at a time, often tracing back to a single outside sponsor. In casework the tell is coordination, where the new occupants move in concert to redirect the organization's mandate instead of competing on the merits of institutional direction. That coordination separates governance capture from ordinary leadership turnover, where seats change hands but no shared hand steers them. The target is the institution's decision-making machinery, not the people who happen to hold the seats.",
@@ -47529,7 +47634,10 @@
           "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CERT-CSG-7-2022"
-          ]
+          ],
+          "lifecycle_state": "deprecated",
+          "deprecated_in": "2.0.0",
+          "deprecation_reason": "Names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement. Must not be treated as an indicator of threat."
         },
         {
           "id": "TO0306",
@@ -47666,7 +47774,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
                 "guidance": "Assess how broad the outreach runs and how many recipients lean toward going. Whether one actor or a coordinated effort drives it can stay open; private invitations can point to intent, but the threat may rest on the reach and how many it has actually moved, and routine member churn and engineered defection can look alike."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0306 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0306-02",
@@ -47700,7 +47811,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
                 "guidance": "Establish whether the departures trace to an outside effort and whether the exodus is still building. Resignations echoing the same talking points can mark engineered defection or a real rift, and the pattern alone may not separate them."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0306 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0306-03",
@@ -47731,7 +47845,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "pathway_stage"],
                 "guidance": "Identify which of the targeted personnel the institution cannot absorb losing and how close they are to accepting. Whether one rival or several court them can stay open; the operational damage may depend on whose exit cannot be covered rather than the number approached."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0306 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0306-04",
@@ -47763,7 +47880,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
                 "guidance": "Track the message's reach and how fast it drives members out. Whether one actor or a network seeds it can stay open; the framing can point to the tactic, but it may threaten the institution only once it spreads widely enough to move the base, and organic disaffection and a seeded exodus can read alike."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0306 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0306-05",
@@ -47794,7 +47914,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
                 "guidance": "Determine how much of the membership the exported lists expose and how far the solicitation has already reached. Whether the insider acts alone or for an outside body can stay open; the harm may depend on what was taken and how many have since been contacted, not on the export alone."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0306 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "countermeasures": [
@@ -47818,7 +47941,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0306 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0306-02",
@@ -47840,7 +47966,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0306 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0306-03",
@@ -47862,7 +47991,10 @@
               ],
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0306 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0306-04",
@@ -47883,7 +48015,10 @@
               ],
               "source_refs": [
                 "NITTF-GUIDE-2017"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0306 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "related_tactics": [
@@ -47943,7 +48078,10 @@
               "legal_notes": "Conduct exit interviews within employment law limits; avoid retaliation and preserve confidentiality of stated reasons.",
               "source_refs": [
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0306 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "RP-O0306-02",
@@ -47962,7 +48100,10 @@
               "legal_notes": "Review non-solicitation and confidentiality obligations of departing staff; consult counsel before asserting any claim.",
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0306 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "field_notes": "Defection Engineering is the tactic that turns individual departures into a coordinated hollowing-out of an institution. An analyst catches it in the timing, where staff, donors, or affiliates leave in clustered waves rather than the scattered, individually motivated attrition an institution normally absorbs. In casework those departures trace back to a shared inducement offered by a threat actor, which marks the pattern as engineered rather than organic. The taxonomy question is whether the exits are coordinated enough to drain the organization's capacity, since the target is its membership base and human capital as an institutional resource. Isolated resignations do not qualify; the coordination and the numbers do.",
@@ -47972,7 +48113,10 @@
           "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CERT-CSG-7-2022"
-          ]
+          ],
+          "lifecycle_state": "deprecated",
+          "deprecated_in": "2.0.0",
+          "deprecation_reason": "Names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement. Must not be treated as an indicator of threat."
         },
         {
           "id": "TO0307",
@@ -48108,7 +48252,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "pathway_stage"],
                 "guidance": "Identify which funders the campaign works and how many pledges have already been pulled. Whether one actor or a coordinated effort runs it can stay open; the threat to finances may turn on which backers give way, and ordinary pledge attrition and an engineered campaign can look the same at first."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0307 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0307-02",
@@ -48139,7 +48286,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
                 "guidance": "Establish whether the complaints behind the closure are a coordinated effort and whether other processors will follow. An account freeze can flow from a real risk flag or an engineered pressure campaign, and the notice on its own may not settle which."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0307 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0307-03",
@@ -48173,7 +48323,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
                 "guidance": "Assess whether the allegations carry any substance and how much funding a suspension would halt. Whether one actor or several filed them can stay open; an empty claim and a founded one can both stall funds while the review runs, so the freeze alone may settle little about the actor."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0307 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0307-04",
@@ -48208,7 +48361,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
                 "guidance": "Weigh the campaign's real weight and how close the named sponsors are to walking. Whether one actor or a coordinated effort sustains it can stay open; a loud call and one that genuinely moves sponsors differ, and the danger may turn on which waver rather than the volume of the demand."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0307 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0307-05",
@@ -48239,7 +48395,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
                 "guidance": "Verify whether the fabricated claims are gaining credence with the body and how much recurring funding that listing gates. Whether one actor or several seeded them can stay open; the damage may land only if the body acts, and only as deep as the streams it controls, so the filing alone may settle little."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0307 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "countermeasures": [
@@ -48263,7 +48422,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0307 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0307-02",
@@ -48284,7 +48446,10 @@
               ],
               "source_refs": [
                 "CHAINALYSIS-CCR-2024"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0307 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0307-03",
@@ -48306,7 +48471,10 @@
               ],
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0307 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0307-04",
@@ -48328,7 +48496,10 @@
               ],
               "source_refs": [
                 "DUNLAP-LAWFARE-2001"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0307 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "related_tactics": [
@@ -48396,7 +48567,10 @@
               "legal_notes": "Preserve evidence of any unlawful coordination or discrimination; review contract terms before alleging breach.",
               "source_refs": [
                 "CHAINALYSIS-CCR-2024"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0307 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "RP-O0307-02",
@@ -48415,7 +48589,10 @@
               "legal_notes": "Consult counsel on regulatory reporting duties and potential claims against unlawful de-banking before public disclosure.",
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0307 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "field_notes": "Funding Strangulation pivots on a decision made by everyone except the target: whether the banks, processors, grantmakers, and sponsors that keep it solvent decide the organization is a liability worth dropping. In casework a threat actor works to push those intermediaries across that line, severing financial lifelines without ever touching facilities or systems. That indirection is the taxonomic marker, separating funding strangulation from a direct attack on the institution's operations. The target is financial continuity, achieved by turning the money supply against the body it sustains.",
@@ -48425,7 +48602,10 @@
           "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CHAINALYSIS-CCR-2024"
-          ]
+          ],
+          "lifecycle_state": "deprecated",
+          "deprecated_in": "2.0.0",
+          "deprecation_reason": "Names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement. Must not be treated as an indicator of threat."
         },
         {
           "id": "TO0308",
@@ -48565,7 +48745,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "means_in_hand"],
                 "guidance": "Determine how damaging the staged material is and how close the insider stands to releasing it. Bulk copying of governance records to outside storage can show intent and method, but the threat may depend on the sensitivity of what was taken and whether release is imminent."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0308 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0308-02",
@@ -48598,7 +48781,10 @@
               },
               "correlates_with": [
                 "IND-O0412-02"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0308 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0308-03",
@@ -48632,7 +48818,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "means_in_hand"],
                 "guidance": "Assess whether the motion can compel disclosure and what sensitive material it would surface. Whether one actor or several file them can stay open; the threat may depend on whether the motion has teeth, and a nuisance filing and one that reaches the deliberations can look alike on paper."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0308 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0308-04",
@@ -48668,7 +48857,10 @@
                 "IND-O0411-01",
                 "IND-O0402-01",
                 "IND-O0207-01"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0308 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0308-05",
@@ -48699,7 +48891,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "means_in_hand"],
                 "guidance": "Establish whether any staff have given up privileged material and what the actor means to do with it. Pretext probing for governance records can show the intent to weaponize them, though how much has leaked, and how close a usable cache is, may remain unclear."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0308 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "countermeasures": [
@@ -48723,7 +48918,10 @@
               ],
               "source_refs": [
                 "CERT-CSG-7-2022"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0308 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0308-02",
@@ -48745,7 +48943,10 @@
               ],
               "source_refs": [
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0308 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0308-03",
@@ -48767,7 +48968,10 @@
               ],
               "source_refs": [
                 "NITTF-GUIDE-2017"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0308 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0308-04",
@@ -48789,7 +48993,10 @@
               ],
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0308 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "related_tactics": [
@@ -48873,7 +49080,10 @@
               "legal_notes": "Preserve chain of custody; weigh confidentiality claims and whistleblower protections before pursuing containment.",
               "source_refs": [
                 "CISA-CONVERGE-2021"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0308 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "RP-O0308-02",
@@ -48892,7 +49102,10 @@
               "legal_notes": "Review defamation, privacy, and breach-notification obligations with counsel before any public statement.",
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0308 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "field_notes": "The counter-intuitive part of Forced Exposure is that the same leak reads as a personal attack when it is actually aimed at an institution. A threat management team resolves it by asking who a disclosure is built to damage, and in casework the answer points to the organization when the material released is governance records, internal deliberations, or confidential files, timed and framed to injure its standing as a body. That framing separates forced exposure from personal doxxing, where the identical leak would be pointed at an individual for private harm. The target is the organization's reputation and position, and the disclosure is the weapon a threat actor turns against it.",
@@ -48902,7 +49115,10 @@
           "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CISA-CONVERGE-2021"
-          ]
+          ],
+          "lifecycle_state": "deprecated",
+          "deprecated_in": "2.0.0",
+          "deprecation_reason": "Names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement. Must not be treated as an indicator of threat."
         },
         {
           "id": "TO0309",
@@ -49040,7 +49256,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
                 "guidance": "Determine how deeply the wedge narratives have penetrated the membership and how divided the factions already are. Whether one actor or a network seeds it can stay open; the danger may depend on the reach and whether the divide is already set, and a manufactured wedge and a real grievance can read alike."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0309 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0309-02",
@@ -49071,7 +49290,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
                 "guidance": "Establish how convincingly the impersonations pass and the scale of the network behind them. Whether one operation or several run it can stay open; the harm may rest on whether real members believe it, and a handful of fake accounts and a genuine split can look the same at a glance."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0309 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0309-03",
@@ -49105,7 +49327,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "means_in_hand"],
                 "guidance": "Determine how far the caucus has actually formed and how many members it has drawn in. Whether one actor or several are behind it can stay open; the threat may turn on whether it is still an idea or a forming body, and organic dissent and cultivated splitting can read alike early."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0309 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0309-04",
@@ -49135,7 +49360,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "pathway_stage"],
                 "guidance": "Assess which circulated communications are genuine and which are doctored and how deep the rift already runs. Whether one actor or several drive it can stay open; the damage may depend on how convincing the distortions are, and a real disclosure and a tailored fabrication can read alike."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0309 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0309-05",
@@ -49166,7 +49394,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
                 "guidance": "Assess whether the discord is orchestrated or organic infighting and how far the split can spread. Whether one effort or several drive it can stay open; orchestrated fracture and organic conflict can read the same, and the danger is how deep it runs rather than any single clash."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0309 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "countermeasures": [
@@ -49190,7 +49421,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0309 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0309-02",
@@ -49212,7 +49446,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0309 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0309-03",
@@ -49234,7 +49471,10 @@
               ],
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0309 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0309-04",
@@ -49255,7 +49495,10 @@
               ],
               "source_refs": [
                 "CISA-DISINFO-TACTICS"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0309 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "related_tactics": [
@@ -49319,7 +49562,10 @@
               "legal_notes": "Respect members' protected speech and association rights; focus response on facts, not suppression of dissent.",
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0309 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "RP-O0309-02",
@@ -49338,7 +49584,10 @@
               "legal_notes": "Consult counsel on control of name, assets, and governance before contesting a breakaway's claims.",
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0309 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "field_notes": "Cohesion Fracturing works along the seams an institution already carries: factions, generations, and chapters. A threat assessment team registers it as a sudden amplification of internal grievance, where a threat actor invests in widening those seams so that ordinary organizational friction hardens into schism. The taxonomic distinction is intent and investment, since normal disagreement resolves while engineered fracturing is fed until the institution can no longer reconcile it. The target is the organization's unity and coherence as a single body.",
@@ -49348,7 +49597,10 @@
           "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CTC-INFRATERROR-2026"
-          ]
+          ],
+          "lifecycle_state": "deprecated",
+          "deprecated_in": "2.0.0",
+          "deprecation_reason": "Names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement. Must not be treated as an indicator of threat."
         },
         {
           "id": "TO0310",
@@ -49484,7 +49736,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
                 "guidance": "Determine the actor's real reach and whether the flood can be sustained. Whether one actor or an organized base drives it can stay open; a burst from a few hands can look like a movement before it fades, and mass submissions bury legitimate work only while the volume holds."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0310 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0310-02",
@@ -49517,7 +49772,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
                 "guidance": "Establish the true source and scale behind the surge of fake or duplicate submissions. Whether one actor or several drive it can stay open; a flood from one automated hand and a genuine crowd are different threats, and the scale governs how long real applicants stay shut out."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0310 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0310-03",
@@ -49547,7 +49805,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
                 "guidance": "Assemble a picture of the actor's resources and how long the filings can keep coming. Whether one actor or a coordinated effort is behind them can stay open; the paralysis holds only while the filings continue, and the paperwork may show little of the endurance behind it."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0310 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0310-04",
@@ -49581,7 +49842,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "source_credibility"],
                 "guidance": "Weigh how large the mobilized base really is and whether the call will translate into volume. Whether one organizer or several drive it can stay open; a template saturates intake only if enough people answer it, and a loud script and a real crowd can look alike before the calls land."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0310 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0310-05",
@@ -49611,7 +49875,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
                 "guidance": "Identify the scale of the booking activity and whether it can be sustained. Whether one actor or a coordinated effort drives it can stay open; the denial bites only while the fake reservations outpace the slots reclaimed, and a short burst and a durable campaign can read alike at first."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0310 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "countermeasures": [
@@ -49635,7 +49902,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0310 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0310-02",
@@ -49657,7 +49927,10 @@
               ],
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0310 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0310-03",
@@ -49678,7 +49951,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0310 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0310-04",
@@ -49699,7 +49975,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0310 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "related_tactics": [
@@ -49767,7 +50046,10 @@
               "legal_notes": "Preserve logs of the flooding campaign; consult counsel on any statutory service or response deadlines at risk.",
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0310 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "RP-O0310-02",
@@ -49786,7 +50068,10 @@
               "legal_notes": "Document service impacts for any deadline-relief request; review obligations before pausing a statutory intake channel.",
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0310 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "field_notes": "By the time Operational Paralysis is visible, the organization is already drowning in demand it is obligated to process. A security professional picks it up as a surge of legitimate-looking volume, taking the form of complaint floods, mass fake applications, or intake saturation, each item plausible enough to require a response yet inauthentic in aggregate. The taxonomy hinges on mechanism, since this is administrative and process paralysis, which excludes technical denial of service and physical occupation. The target is the institution's capacity to conduct its mission, denied by drowning its channels rather than breaching them. The channel is almost always digital: the complaint floods, mass fake applications, and intake saturation arrive through web forms, email, and social submissions, so coordinated online activity, not a technical outage, is what drives the process to a standstill.",
@@ -49796,7 +50081,10 @@
           "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CALHOUN-WESTON-2003"
-          ]
+          ],
+          "lifecycle_state": "deprecated",
+          "deprecated_in": "2.0.0",
+          "deprecation_reason": "Names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement. Must not be treated as an indicator of threat."
         },
         {
           "id": "TO0311",
@@ -49931,7 +50219,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
                 "guidance": "Assess the resources funding the litigation and how long the actor can keep filing. Whether one actor or a coordinated effort brings the near-identical claims can stay open; the suits bleed the institution only while the cost can be sustained, and the filings may reveal little of the reserves behind them."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0311 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0311-02",
@@ -49965,7 +50256,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
                 "guidance": "Establish whether the complainants are truly separate or one coordinated hand and the reach behind them. Whether this is the whole aim can stay open; the filings strain the institution only if the numbers are real, and identical language can point to a single author or a genuine crowd."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0311 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0311-03",
@@ -49996,7 +50290,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "means_in_hand"],
                 "guidance": "Determine the actor's staying power and how long the objections can drag on. Whether one actor or several lodge them can stay open; the stall holds only while the filings keep coming, and the record may show little of the endurance funding it."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0311 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0311-04",
@@ -50026,7 +50323,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
                 "guidance": "Weigh the actor's capacity to sustain the demands and how far the campaign will run. Whether one actor or several drive it can stay open; the demands bite only while they keep arriving, and their volume may not show how long that lasts or the resources behind it."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0311 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0311-05",
@@ -50058,7 +50358,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
                 "guidance": "Verify how deep the fund actually runs and how long it can sustain the pressure. Whether one actor or a coordinated backing stands behind it can stay open; the stated goal and the means to reach it are not the same, and the fundraising claims may overstate or understate the reserves."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0311 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "countermeasures": [
@@ -50082,7 +50385,10 @@
               ],
               "source_refs": [
                 "DUNLAP-LAWFARE-2001"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0311 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0311-02",
@@ -50104,7 +50410,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0311 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0311-03",
@@ -50124,7 +50433,10 @@
               ],
               "source_refs": [
                 "DUNLAP-LAWFARE-2001"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0311 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0311-04",
@@ -50144,7 +50456,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0311 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "related_tactics": [
@@ -50215,7 +50530,10 @@
               "legal_notes": "preserve all filings and internal analysis under litigation hold and route external statements through counsel to avoid waiving privilege",
               "source_refs": [
                 "DUNLAP-LAWFARE-2001"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0311 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "RP-O0311-02",
@@ -50234,7 +50552,10 @@
               "legal_notes": "document good-faith regulatory cooperation and confirm mandatory disclosure obligations before responding to the agency",
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0311 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "field_notes": "The documented pattern in lawfare is that the tell lives in the aggregate rather than in any one instrument, since a single filing or complaint tends to look legitimate on its face. The literature describes serial vexatious suits, mass regulatory complaints, and licensing or permit challenges whose object is attrition and cost rather than any remedy the institution could actually satisfy. The analytic read turns on cadence and intent: filings timed to bleed budget and staff hours, coordinated across venues, with no good-faith settlement path on offer. The documented signature is lawful process wielded as an instrument of exhaustion against the institution.",
@@ -50245,7 +50566,10 @@
           "source_refs": [
             "CALHOUN-WESTON-2003",
             "DUNLAP-LAWFARE-2001"
-          ]
+          ],
+          "lifecycle_state": "deprecated",
+          "deprecated_in": "2.0.0",
+          "deprecation_reason": "Names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement. Must not be treated as an indicator of threat."
         },
         {
           "id": "TO0312",
@@ -50380,7 +50704,10 @@
               },
               "correlates_with": [
                 "IND-O0406-03"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0312 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0312-02",
@@ -50413,7 +50740,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
                 "guidance": "Assess how much of the institution's debt the actor holds and how soon a default can be forced. The purchase can signal an intent to dictate terms, but the leverage to seize control depends on the position's size."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0312 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0312-03",
@@ -50446,7 +50776,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
                 "guidance": "Weigh whether the actor has the votes and how close the slate is to winning. The dissident ballot signals a bid for the institution's governance, but a solicitation is not the same as the support to carry it."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0312 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0312-04",
@@ -50476,7 +50809,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["tempo_trajectory", "means_in_hand"],
                 "guidance": "Establish how much time remains before the institution must accept and whether the actor can actually fund the rescue. Whether one actor or a coordinated bid stands behind it can stay open; the leverage grows as the liquidity gap widens, and a genuine lifeline and a control grab can wear the same terms."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0312 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0312-05",
@@ -50507,7 +50843,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
                 "guidance": "Identify whether the actor can act on the opening this mapping uncovers and how soon a bid might follow. Commissioning valuations and lien searches can reveal the cheapest route to control, but may show little of the capital or timing behind an actual move."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0312 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "countermeasures": [
@@ -50531,7 +50870,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0312 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0312-02",
@@ -50553,7 +50895,10 @@
               ],
               "source_refs": [
                 "CHAINALYSIS-CCR-2024"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0312 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0312-03",
@@ -50573,7 +50918,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0312 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0312-04",
@@ -50593,7 +50941,10 @@
               ],
               "source_refs": [
                 "SEC-UNIVERSAL-PROXY-RULE-2021", "LII-17CFR-240-14A-19-2022", "SEC-UNIVERSAL-PROXY-PAGE-2021"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0312 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "related_tactics": [
@@ -50656,7 +51007,10 @@
               "legal_notes": "confirm disclosure and fiduciary obligations before deploying any defensive measure and document the business-judgment rationale",
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0312 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "RP-O0312-02",
@@ -50675,7 +51029,10 @@
               "legal_notes": "ensure solicitation materials meet disclosure rules and avoid statements that could expose directors to breach-of-duty claims",
               "source_refs": [
                 "SEC-UNIVERSAL-PROXY-RULE-2021", "LII-17CFR-240-14A-19-2022"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0312 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "field_notes": "The first signal an investigator catches is a shift in the institution's ownership or debt records rather than any move on its board, and that distinction carries the case. The analyst watches for controlling ownership stakes assembled quietly, creditor and debt leverage engineered into a lever, or a proxy fight staged to seize the control apparatus outright. The threat actor here takes the organization by economic and legal ownership, not by placing allies in seats, so the evidence sits in cap tables, loan covenants, and voting agreements rather than in personnel files. When those instruments converge on control, the read is hostile control acquisition.",
@@ -50685,7 +51042,10 @@
           "evidence_basis": "practice_and_literature",
           "source_refs": [
             "CHAINALYSIS-CCR-2024"
-          ]
+          ],
+          "lifecycle_state": "deprecated",
+          "deprecated_in": "2.0.0",
+          "deprecation_reason": "Names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement. Must not be treated as an indicator of threat."
         },
         {
           "id": "TO0313",
@@ -51280,7 +51640,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "tempo_trajectory"],
                 "guidance": "Assess whether the boycott has real mass behind it and whether it is gaining momentum. Whether one actor or several run it can stay open; the call pressures the institution only once enough people answer and keep it up, and a branded launch and a genuine movement can look alike early."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0314 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0314-02",
@@ -51314,7 +51677,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["pathway_stage", "means_in_hand"],
                 "guidance": "Determine how close the pressured advertisers and sponsors are to walking and how much leverage the actor really holds over them. Whether one actor or several drive it can stay open; the harm lands only if the pressure actually moves them, not on the dossiers alone."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0314 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0314-03",
@@ -51348,7 +51714,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "means_in_hand"],
                 "guidance": "Establish how much of the turnout is genuine and how much is manufactured by the bot networks. Whether one operation or several run it can stay open; the question is whether a real constituency is turning or a few accounts simulate one, and inflated metrics can read as mass support."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0314 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0314-04",
@@ -51378,7 +51747,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "pathway_stage"],
                 "guidance": "Identify which funding ties are genuinely exposed and whether the holders are moving to divest. Whether one actor or several run it can stay open; the institution is hurt only when real money leaves, and a published scorecard and an actual withdrawal are not the same."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0314 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0314-05",
@@ -51411,7 +51783,10 @@
               },
               "correlates_with": [
                 "IND-F0306-01"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0314 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "countermeasures": [
@@ -51435,7 +51810,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0314 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0314-02",
@@ -51458,7 +51836,10 @@
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021",
                 "CISA-DISINFO-TACTICS"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0314 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0314-03",
@@ -51478,7 +51859,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0314 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0314-04",
@@ -51498,7 +51882,10 @@
               ],
               "source_refs": [
                 "RAND-ELECTIONS-RRA704-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0314 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "related_tactics": [
@@ -51557,7 +51944,10 @@
               "legal_notes": "ensure public rebuttals are factually defensible and avoid characterizing lawful protest activity in ways that invite counterclaims",
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0314 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "RP-O0314-02",
@@ -51576,7 +51966,10 @@
               "legal_notes": "review contractual terms governing sponsor and advertiser exits and preserve records of any coercion for potential tortious-interference claims",
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0314 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "field_notes": "Boycott and Market Coercion is the point where pressure stops running through the institution's funders and starts running through its crowd. The threat assessment team sees it arrive as an organized boycott, a divestment drive, or an advertiser and sponsor pressure campaign that mobilizes a market or public constituency against the organization. The threat actor works the demand side, turning customers, members, or the wider public into the instrument of coercion rather than approaching individual backers one at a time. When the coercion runs through mobilized demand, the team scores it as boycott and market coercion.",
@@ -51586,7 +51979,10 @@
           "evidence_basis": "practice_and_literature",
           "source_refs": [
             "START-GTD-2020"
-          ]
+          ],
+          "lifecycle_state": "deprecated",
+          "deprecated_in": "2.0.0",
+          "deprecation_reason": "Names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement. Must not be treated as an indicator of threat."
         },
         {
           "id": "TO0315",
@@ -51718,7 +52114,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
                 "guidance": "Assess the actor's reach and how close the reporting is to the platform's suspension threshold. Whether one actor or several drive it can stay open; the reports strip the channel only if the volume crosses the line, and a handful of complaints and a coordinated flood look alike until counted."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0315 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0315-02",
@@ -51748,7 +52147,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["means_in_hand", "pathway_stage"],
                 "guidance": "Determine how much leverage the actor holds over the provider and how close it is to acting. Whether one actor or several drive it can stay open; the claims bite only if the provider acts on them, and a noisy complaint and one that genuinely sways the provider differ."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0315 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0315-03",
@@ -51783,7 +52185,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "pathway_stage"],
                 "guidance": "Verify whether the complaint package carries real merit with the standing authority and how close it is to revocation. Whether one actor or several filed it can stay open; the filing threatens the institution's legitimacy only if the authority takes it up, so the challenge alone may settle little."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0315 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0315-04",
@@ -51816,7 +52221,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["target_focus", "pathway_stage"],
                 "guidance": "Identify which dependencies are most exposed and whether the pressured providers will actually walk. Whether one actor or several drive it can stay open; the damage depends on which providers refuse, not on the naming campaign itself, and a public callout and a real cutoff differ."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0315 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "IND-O0315-05",
@@ -51848,7 +52256,10 @@
               "conditioning_guidance": {
                 "probe_factors": ["source_credibility", "tempo_trajectory"],
                 "guidance": "Weigh how solid the allegations are and how the timing aligns with peak public pressure. Whether one actor or several drive it can stay open; a gatekeeper may sever access to avoid controversy, the danger rising as a credible complaint meets peak attention. A thin dossier and a solid one can both land when the timing is right."
-              }
+              },
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0315 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "countermeasures": [
@@ -51872,7 +52283,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0315 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0315-02",
@@ -51894,7 +52308,10 @@
               ],
               "source_refs": [
                 "FATF-NPO-BEST-PRACTICES-2015", "CSN-DE-RISKING-RESPONSE-GUIDE-2026"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0315 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0315-03",
@@ -51914,7 +52331,10 @@
               ],
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0315 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "CM-O0315-04",
@@ -51935,7 +52355,10 @@
               ],
               "source_refs": [
                 "RAND-DISINFO-RR4373-2021"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0315 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "related_tactics": [
@@ -52003,7 +52426,10 @@
               "legal_notes": "review the gatekeeper agreement for due-process and notice rights and preserve all correspondence for potential breach or unfair-practice claims",
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0315 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             },
             {
               "id": "RP-O0315-02",
@@ -52022,7 +52448,10 @@
               "legal_notes": "assess claims for wrongful termination of service or discrimination and confirm regulatory notification duties tied to the lost standing",
               "source_refs": [
                 "GISF-SECURITYTOGO-2020"
-              ]
+              ],
+              "lifecycle_state": "deprecated",
+              "deprecated_in": "2.0.0",
+              "deprecation_reason": "Parent tactic TO0315 is deprecated: it names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement."
             }
           ],
           "field_notes": "The documented pattern in forced de-platforming is that the pressure never lands on the institution itself; it lands on a gatekeeper standing between the organization and its ability to operate. The reporting describes campaigns that push a platform, payment processor, accreditor, or charity-status authority to revoke the institution's access, certification, or standing. In that record the leverage is indirect: the threat actor compels a third-party chokepoint to disable the organization from the outside rather than confronting it head on. The analytic marker is a gatekeeper decision, engineered by outside pressure, that strips the institution of something it needs to function.",
@@ -52033,7 +52462,10 @@
           "source_refs": [
             "CTC-INFRATERROR-2026",
             "GISF-SECURITYTOGO-2020"
-          ]
+          ],
+          "lifecycle_state": "deprecated",
+          "deprecated_in": "2.0.0",
+          "deprecation_reason": "Names conduct that is commonly lawful or protected activity. Withdrawn from active use with no replacement. Must not be treated as an indicator of threat."
         },
         {
           "id": "TO0401",
