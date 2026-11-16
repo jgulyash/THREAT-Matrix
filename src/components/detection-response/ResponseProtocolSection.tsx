@@ -32,7 +32,9 @@ export function ResponseProtocolSection({ protocols, focusId }: Props) {
         >
           <div className="dr-item-id">{rp.id}</div>
           {rp.priority && (
-            <span className={`dr-priority-badge ${rp.priority}`}>{humanize(rp.priority)}</span>
+            <span className={`dr-priority-badge ${rp.priority}`}>
+              Response timeframe: {humanize(rp.priority)}
+            </span>
           )}
           <LifecycleNote item={rp} />
 

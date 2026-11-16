@@ -152,6 +152,16 @@ export const INFORMS_AXIS_LABELS: Record<string, string> = {
   threat_method: 'Event · Method',
 };
 
+// Display words for the informs_axes scale. The scale is resolution, not
+// seriousness (METHODOLOGY section 2), so the viewer shows words that say so.
+// The data values (none, weak, moderate, strong) are unchanged.
+export const INFORMS_RESOLUTION_LABELS: Record<string, string> = {
+  none: 'No signal',
+  weak: 'Coarse',
+  moderate: 'Narrowed',
+  strong: 'Specific',
+};
+
 export const PHASE_RELEVANCE_LABELS: Record<string, string> = {
   target_development: 'Target Development',
   mobilization: 'Mobilization',

@@ -7,6 +7,7 @@ import {
   PROBE_FACTOR_LABELS,
   TEMPORAL_SIGNATURE_LABELS,
   INFORMS_AXIS_LABELS,
+  INFORMS_RESOLUTION_LABELS,
   PHASE_RELEVANCE_LABELS,
   MATRIX_LABELS,
   MODALITY_LABELS,
@@ -258,13 +259,20 @@ export function IndicatorDetail({ indicatorId }: Props) {
 
           {informsRows.length > 0 && (
             <div className="adv-section">
-              <h2 className="adv-section-label">Informs Threat Picture</h2>
+              <h2 className="adv-section-label">What Observing This Resolves</h2>
+              <p className="type-level-note">
+                Resolution, not seriousness. Each row says how finely observing this behavior
+                pins down one part of the picture. It is not a score and does not rate a person
+                or a case.
+              </p>
               <div className="adv-attrs-list">
                 {informsRows.map(([k, v]) => (
                   <div key={k} className="adv-attr-row-new">
                     <div className="adv-attr-key">{label(INFORMS_AXIS_LABELS, k)}</div>
                     <div className="adv-attr-val">
-                      <span className={`ind-strength ${v}`}>{v}</span>
+                      <span className={`ind-strength ${v}`} title={`Data value: ${v}`}>
+                        {label(INFORMS_RESOLUTION_LABELS, v)}
+                      </span>
                     </div>
                   </div>
                 ))}
